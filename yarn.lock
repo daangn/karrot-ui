@@ -4971,6 +4971,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/figma-expose-variables@workspace:tools/figma-expose-variables"
   dependencies:
+    "@create-figma-plugin/utilities": ^3.2.1
     "@figma/plugin-typings": "*"
     concurrently: ^6.3.0
     esbuild: ^0.15.13
