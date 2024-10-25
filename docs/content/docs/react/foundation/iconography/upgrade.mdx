@@ -34,7 +34,7 @@ import { Accordions, Accordion } from "fumadocs-ui/components/accordion";
 
 <Callout type="warn" title="시작하기 전">
 
-많은 변경사항이 발생하게 되므로, 커밋하지 않은 변경사항이 없는지 확인해요.
+많은 변경사항이 발생하게 되므로, 커밋하지 않은 변경사항이 없는지 확인하고 시작하는 것이 좋아요.
 
 </Callout>
 
@@ -46,9 +46,9 @@ import { Accordions, Accordion } from "fumadocs-ui/components/accordion";
 
 <Accordions>
 
-<Accordion title="Codemod 스크립트 실행 결과 미리보기">
+<Accordion title="실행 결과 미리보기">
 
-스크립트 실행 전
+실행 전
 
 ```tsx
 import {
@@ -70,7 +70,7 @@ function App() {
 }
 ```
 
-스크립트 실행 후
+실행 후
 
 ```tsx
 import {
@@ -912,7 +912,7 @@ npm install @daangn/vue3-icon
 REP ...을 ...로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요
 ```
 
-- codemod 스크립트 사용 시, `--log` flag를 사용하면, `migrate-icons-warnings.log`에 기록돼요.
+- codemod 스크립트를 `--log` flag와 함께 사용 시, 5개 아이콘이 사용된 내역이 `migrate-icons-warnings.log`에 기록돼요.
 - 다음을 활용하여 코드를 직접 검색할 수 있어요.
 
 <Tabs items={["정규 표현식", "git grep"]}>
@@ -933,7 +933,8 @@ git grep -E '(IconBold|IconCobuying|IconDelivery|IconSuggest|IconWriteStory)(Thi
 
 **이전 아이콘과 리뉴얼된 아이콘은 `n:1`로 대응돼요.** 따라서, 같은 페이지에 표시되었던 서로 다른 두 아이콘이, 동일한 리뉴얼된 아이콘으로 대체되는 경우가 있어요. 의도한 목적대로 아이콘이 표시되는지 확인해요.
 
-- 한 아이콘 내의 `thin` variant와 `regular` variant는 모두 `line` variant로 대체돼요.
+- 한 이전 아이콘의 3개 variant 중 `thin` variant와 `regular` variant는 리뉴얼된 아이콘에서 모두 `line` variant로 대체돼요.
   - 예를 들면, `icon_forward_thin`, `icon_forward_regular`는 모두 [`icon_arrow_right_line`](/docs/design/foundation/iconography?icon=icon_arrow_right_line)으로 대체돼요.
+  - 이전 아이콘의 `fill` variant는 리뉴얼된 아이콘에서도 `fill` variant로 대체돼요.
 - 완전히 다른 이전 아이콘이 하나의 리뉴얼된 아이콘으로 대체되는 경우도 있어요.
   - 예를 들면, `icon_headphone_regular`, `icon_helpcenter_regular`, `icon_helper_regular`는 모두 [`icon_headset_line`](/docs/design/foundation/iconography?icon=icon_headset_line)으로 대체돼요.
