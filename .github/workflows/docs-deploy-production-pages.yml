@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 20.11.0
           cache: yarn
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Dependencies
         run: yarn install --immutable

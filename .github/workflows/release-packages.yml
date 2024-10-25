@@ -28,6 +28,8 @@ jobs:
         with:
           node-version: 18.x
           cache: yarn
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Dependencies
         run: yarn install --immutable
