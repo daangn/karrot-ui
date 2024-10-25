@@ -95,7 +95,7 @@ describe("importDeclaration: import source에만 변경 있는 경우", () => {
 
 describe("importDeclaration: import source와 specifier 모두 변경 있는 경우", () => {
   test("[가장 일반적] 패키지명에 변경 필요하고, specifier match 있음", () => {
-    const input = `import { IconSortThin, IconSellRegular } from "@seed-design/icon";
+    const input = `import { IconSortThin, IconSellRegular, } from "@seed-design/icon";
     import { IconListFill as IconListAlias } from "@seed-design/icon";
     import { IconChartRegular } from "@seed-design/icon";`;
 
@@ -526,6 +526,21 @@ describe("comments 유지", () => {
   `);
   });
 
+  test("comments 유지, 중간에", () => {
+    const input = `import {
+      // test
+      IconArrowUpwardThin,
+      IconArrowUpwardFill
+    } from "@seed-design/icon";`;
+
+    expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+      "import {
+      // test
+      IconArrowUpLine, IconArrowUpFill
+      } from "@daangn/react-icon";"
+    `);
+  });
+
   test("comments 유지 (나눠지는 경우)", () => {
     const input = `// comment
     import { IconCarRegular, IconCarThin, IconJobsFill, IconSellRegular } from "@seed-design/icon";
@@ -561,4 +576,172 @@ describe("comments 유지", () => {
         );}"
     `);
   });
+});
+
+test("반환값", () => {
+  const input = `import { IconCertificationRegular, IconSellRegular } from "@seed-design/icon";
+
+  function getIcon() {
+    return <IconCertificationRegular />;
+  }
+
+  function getIcon2() {
+    return <IconSellRegular />;
+  }
+
+  console.log(getIcon());`;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+
+      function getIcon() {
+        return <IconCrosshairLine />;
+      }
+
+      function getIcon2() {
+        return <IconPlusSquareLine />;
+      }
+
+      console.log(getIcon());"
+  `);
+});
+
+test("조건부 렌더링", () => {
+  const input = `import { IconCertificationRegular, IconSellRegular } from "@seed-design/icon";
+
+  export function test() {
+    const condition = true;
+
+    return (
+      <div>
+        {condition ? <IconCertificationRegular /> : <IconSellRegular />}
+      </div>
+    );
+  }`;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+
+      export function test() {
+        const condition = true;
+
+        return (
+          (<div>
+            {condition ? <IconCrosshairLine /> : <IconPlusSquareLine />}
+          </div>)
+        );
+      }"
+  `);
+});
+
+test("prop", () => {
+  const input = `import { IconCertificationRegular, IconSellRegular } from "@seed-design/icon";
+
+  function test() {
+    return <SomeComponent icon={<IconCertificationRegular />} />;
+  }
+
+  function test2() {
+    return <SomeComponent icon={IconSellRegular} />;
+  }`;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+
+      function test() {
+        return <SomeComponent icon={<IconCrosshairLine />} />;
+      }
+
+      function test2() {
+        return <SomeComponent icon={IconPlusSquareLine} />;
+      }"
+  `);
+});
+
+test("objects", () => {
+  const input = `import { IconCertificationRegular, IconSellRegular } from "@seed-design/icon";
+
+  function test() {
+    return [<IconCertificationRegular />, <IconSellRegular />];
+  }
+    
+  function test2() {
+    return [IconCertificationRegular, IconSellRegular];
+  }
+
+  function test3() {
+    return { icon: <IconCertificationRegular />, icon2: IconSellRegular };
+  }
+    
+  `;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+
+      function test() {
+        return [<IconCrosshairLine />, <IconPlusSquareLine />];
+      }
+        
+      function test2() {
+        return [IconCrosshairLine, IconPlusSquareLine];
+      }
+
+      function test3() {
+        return { icon: <IconCrosshairLine />, icon2: IconPlusSquareLine };
+      }"
+  `);
+});
+
+test("참조", () => {
+  const input = `import * as icons from "@seed-design/icon";
+  const path = "@seed-design/icon/IconSellRegular";
+  const deepPath = "@seed-design/icon/lib/something/IconSellRegular";
+  
+  const iconName = "IconCertificationRegular";
+  const iconName2 = "IconSellRegular";
+  const IconComponent = icons[iconName];
+
+  const config = {
+    icon: "IconCertificationFill",
+    icon2: "IconSellFill",
+  }
+
+  return <IconComponent />;`;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import * as icons from "@daangn/react-icon";
+      const path = "@daangn/react-icon/IconPlusSquareLine";
+      const deepPath = "@daangn/react-icon/lib/something/IconPlusSquareLine";
+      
+      const iconName = "IconCrosshairLine";
+      const iconName2 = "IconPlusSquareLine";
+      const IconComponent = icons[iconName];
+
+      const config = {
+        icon: "IconCrosshairFill",
+        icon2: "IconPlusSquareFill",
+      }
+
+      return <IconComponent />;"
+  `);
+});
+
+test("dynamic imports", () => {
+  const input = `import { IconCertificationRegular, IconSellRegular } from "@seed-design/icon";
+  const Icon = React.lazy(() => import("@seed-design/icon/IconCertificationRegular"));
+  const Icon2 = await import("@seed-design/icon/IconSellRegular");
+  const path = "@seed-design/icon/IconSellRegular";
+  const deepPath = "@seed-design/icon/lib/something/IconSellRegular";
+
+  console.log(Icon, Icon2);`;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+      const Icon = React.lazy(() => import("@daangn/react-icon/IconCrosshairLine"));
+      const Icon2 = await import("@daangn/react-icon/IconPlusSquareLine");
+      const path = "@daangn/react-icon/IconPlusSquareLine";
+      const deepPath = "@daangn/react-icon/lib/something/IconPlusSquareLine";
+
+      console.log(Icon, Icon2);"
+  `);
 });

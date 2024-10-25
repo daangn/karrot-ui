@@ -1,7 +1,8 @@
-import jscodeshift, { ImportSpecifier } from "jscodeshift";
+import jscodeshift from "jscodeshift";
 import type { MigrateIconsOptions } from "../transforms/migrate-icons.js";
 import type { Logger } from "winston";
-import { partition, uniq, uniqBy, uniqWith } from "es-toolkit";
+import { partition, uniqWith } from "es-toolkit";
+import { string } from "zod";
 
 interface ReplaceImportDeclarationsParams {
   importDeclarations: jscodeshift.Collection<jscodeshift.ImportDeclaration>;
@@ -117,7 +118,7 @@ export function replaceImportDeclarations({
             report?.(message);
           }
 
-          return jscodeshift.importSpecifier(
+          const newSpecifier = jscodeshift.importSpecifier(
             jscodeshift.identifier(matchFound.newName),
             jscodeshift.identifier(
               currentSpecifier.local.name === matchFound.oldName
@@ -125,6 +126,10 @@ export function replaceImportDeclarations({
                 : currentSpecifier.local.name,
             ),
           );
+
+          newSpecifier.comments = currentSpecifier.comments;
+
+          return newSpecifier;
         });
 
         const newSpecifiersWithoutDuplicates = uniqWith(
@@ -300,5 +305,103 @@ export function replaceIdentifiers({
     logger?.debug(`${filePath}: identifier ${identifier.node.name} -> ${newName}`);
 
     identifier.replace(jscodeshift.identifier(newName));
+  });
+}
+
+interface ReplaceStringLiteralsProps {
+  stringLiterals: jscodeshift.Collection<jscodeshift.StringLiteral>;
+  match: MigrateIconsOptions["match"];
+  logger?: Logger;
+  report?: jscodeshift.API["report"];
+  filePath: jscodeshift.FileInfo["path"];
+  replaceIconsKeptForNow?: boolean;
+}
+
+export function replaceStringLiterals({
+  stringLiterals,
+  match,
+  logger,
+  report,
+  filePath,
+  replaceIconsKeptForNow,
+}: ReplaceStringLiteralsProps) {
+  // biome-ignore lint/complexity/noForEach: <explanation>
+  stringLiterals.forEach((stringLiteral) => {
+    const identifierMatchFound = match.identifier.find(
+      ({ oldName }) => oldName === stringLiteral.node.value,
+    );
+    const sourceMatchFound = match.source.find(({ startsWith }) =>
+      stringLiteral.node.value.startsWith(startsWith),
+    );
+
+    if (identifierMatchFound) {
+      if (!replaceIconsKeptForNow && identifierMatchFound.keepForNow) {
+        const message = `string literal ${stringLiteral.node.value}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
+
+        logger?.warn(`${filePath}: ${message}`);
+        console.warn(message);
+        report?.(message);
+
+        return;
+      }
+
+      if (identifierMatchFound.isActionRequired) {
+        const message = `string literal ${stringLiteral.node.value}을 ${identifierMatchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+
+        logger?.warn(`${filePath}: ${message}`);
+        console.warn(message);
+        report?.(message);
+      }
+
+      const newName = identifierMatchFound.newName;
+
+      logger?.debug(`${filePath}: string literal ${stringLiteral.node.value} -> ${newName}`);
+
+      stringLiteral.replace(jscodeshift.stringLiteral(newName));
+    }
+
+    if (sourceMatchFound && stringLiteral.parent?.node.type !== "ImportDeclaration") {
+      console.log(stringLiteral.node.value);
+
+      const sourceMatch = match.source.find(({ startsWith }) =>
+        stringLiteral.node.value.startsWith(startsWith),
+      );
+
+      if (!sourceMatch) return;
+
+      const newSourceValue = stringLiteral.node.value
+        .replace(sourceMatch.startsWith, sourceMatch.replaceWith)
+        .split("/")
+        .map((split, index) => {
+          const matchFound = match.identifier.find(({ oldName }) => oldName === split);
+
+          if (!matchFound || index !== stringLiteral.node.value.split("/").length - 1) return split;
+
+          if (!replaceIconsKeptForNow && matchFound.keepForNow) {
+            const message = `import source ${stringLiteral.node.value}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
+
+            logger?.warn(`${filePath}: ${message}`);
+            console.warn(message);
+            report?.(message);
+
+            return split;
+          }
+
+          if (matchFound.isActionRequired) {
+            const message = `import source ${stringLiteral.node.value}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+
+            logger?.warn(`${filePath}: ${message}`);
+            console.warn(message);
+            report?.(message);
+          }
+
+          return matchFound.newName;
+        })
+        .join("/");
+
+      stringLiteral.replace(jscodeshift.stringLiteral(newSourceValue));
+
+      logger?.debug(`${filePath}: string literal ${stringLiteral.node.value} -> ${newSourceValue}`);
+    }
   });
 }

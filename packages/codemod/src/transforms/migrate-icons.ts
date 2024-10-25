@@ -1,8 +1,11 @@
 import type { Transform } from "jscodeshift";
-import { replaceIdentifiers, replaceImportDeclarations } from "../utils/replace-node.js";
+import {
+  replaceIdentifiers,
+  replaceImportDeclarations,
+  replaceStringLiterals,
+} from "../utils/replace-node.js";
 import { createLogger, format, transports } from "winston";
 import { identifierMatchReact } from "../utils/identifier-match.js";
-import { intersection, uniq } from "es-toolkit";
 
 export interface MigrateIconsOptions {
   match?: {
@@ -60,6 +63,27 @@ const migrateIcons: Transform = (
   const j = api.jscodeshift;
   const tree = j(file.source);
 
+  const oldNames = match.identifier.map(({ oldName }) => oldName);
+
+  const stringLiterals = tree.find(j.StringLiteral, {
+    value: (value) =>
+      oldNames.includes(value) ||
+      match.source.some(({ startsWith }) => value.startsWith(startsWith)),
+  });
+
+  logger?.debug(`${file.path}: string literal ${stringLiterals.length}개 발견`);
+
+  logger?.debug(`${file.path}: string literal 변환 시작`);
+
+  replaceStringLiterals({
+    stringLiterals,
+    match,
+    logger,
+    report: api.report,
+    filePath: file.path,
+    replaceIconsKeptForNow,
+  });
+
   const importDeclarations = tree.find(j.ImportDeclaration, {
     source: {
       value: (value: unknown) => {
@@ -88,8 +112,6 @@ const migrateIcons: Transform = (
   logger?.debug(`${file.path}: import문 변환 완료`);
 
   logger?.debug(`${file.path}: identifier 변환 시작`);
-
-  const oldNames = match.identifier.map(({ oldName }) => oldName);
 
   const identifiers = tree.find(j.Identifier, {
     name: (value) => oldNames.includes(value),
