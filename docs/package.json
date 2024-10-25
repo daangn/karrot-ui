@@ -15,6 +15,7 @@
     "@daangn/icon-data": "0.0.0-alpha-20241022092935",
     "@daangn/react-icon": "0.0.0-alpha-20241022090157",
     "@seed-design/react-checkbox": "0.0.0-alpha-20241004093556",
+    "@seed-design/react-icon": "^0.7.3",
     "@seed-design/react-tabs": "0.0.0-alpha-20241014145845",
     "@seed-design/recipe": "0.0.0-alpha-20241014145845",
     "@seed-design/stylesheet": "0.0.0-alpha-20241014145845",

@@ -4404,6 +4404,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/react-icon@npm:^0.7.3":
+  version: 0.7.3
+  resolution: "@seed-design/react-icon@npm:0.7.3"
+  peerDependencies:
+    react: 17.x || 18.x
+  checksum: 2ce5e2e80f2e3681d87f6d9bcd97e48777db7c164f6e2c095c7d62bc81f7d3ebdc068fd51682f4c6f9b1c4bbe2ea4f758896130859b21f137cafa0b7ec89d458
+  languageName: node
+  linkType: hard
+
 "@seed-design/react-popover@0.0.0-alpha-20241004093556, @seed-design/react-popover@workspace:packages/react-headless/popover":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-popover@workspace:packages/react-headless/popover"
@@ -7013,6 +7022,7 @@ __metadata:
     "@daangn/icon-data": 0.0.0-alpha-20241022092935
     "@daangn/react-icon": 0.0.0-alpha-20241022090157
     "@seed-design/react-checkbox": 0.0.0-alpha-20241004093556
+    "@seed-design/react-icon": ^0.7.3
     "@seed-design/react-tabs": 0.0.0-alpha-20241014145845
     "@seed-design/recipe": 0.0.0-alpha-20241014145845
     "@seed-design/stylesheet": 0.0.0-alpha-20241014145845
