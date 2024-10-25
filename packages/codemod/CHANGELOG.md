@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.0-alpha-20241025045021
+
+### Patch Changes
+
+- Replace string literals
+
 ## 0.0.0-alpha-20241024093332
 
 ### Patch Changes
