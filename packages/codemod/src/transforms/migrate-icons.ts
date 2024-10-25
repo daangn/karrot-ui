@@ -96,7 +96,6 @@ const migrateIcons: Transform = (
 
   if (importDeclarations.length === 0) {
     logger?.debug(`${file.path}: 이 파일에는 import문 없음`);
-    return file.source;
   }
 
   logger?.debug(`${file.path}: import문 ${importDeclarations.length}개 발견`);

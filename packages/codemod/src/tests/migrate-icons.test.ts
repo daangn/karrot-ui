@@ -727,8 +727,7 @@ test("참조", () => {
 });
 
 test("dynamic imports", () => {
-  const input = `import { IconCertificationRegular, IconSellRegular } from "@seed-design/icon";
-  const Icon = React.lazy(() => import("@seed-design/icon/IconCertificationRegular"));
+  const input = `const Icon = React.lazy(() => import("@seed-design/icon/IconCertificationRegular"));
   const Icon2 = await import("@seed-design/icon/IconSellRegular");
   const path = "@seed-design/icon/IconSellRegular";
   const deepPath = "@seed-design/icon/lib/something/IconSellRegular";
@@ -736,8 +735,7 @@ test("dynamic imports", () => {
   console.log(Icon, Icon2);`;
 
   expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
-      const Icon = React.lazy(() => import("@daangn/react-icon/IconCrosshairLine"));
+    "const Icon = React.lazy(() => import("@daangn/react-icon/IconCrosshairLine"));
       const Icon2 = await import("@daangn/react-icon/IconPlusSquareLine");
       const path = "@daangn/react-icon/IconPlusSquareLine";
       const deepPath = "@daangn/react-icon/lib/something/IconPlusSquareLine";
