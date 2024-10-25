@@ -6,6 +6,9 @@ on:
     paths:
       - "docs/**"
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 name: Deploy seed-design-v3 docs (Production)
 
 jobs:
@@ -20,13 +23,9 @@ jobs:
         with:
           node-version: 20.11.0
           cache: yarn
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Dependencies
         run: yarn install --immutable
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Packages
         run: yarn build-only-package
