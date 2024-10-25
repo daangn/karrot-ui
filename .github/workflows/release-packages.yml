@@ -8,9 +8,6 @@ on:
       - "packages/**"
       - "docs/**"
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 jobs:
   release:
     name: Release Seed Design Packages
@@ -34,6 +31,8 @@ jobs:
 
       - name: Install Dependencies
         run: yarn install --immutable
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 릴리즈 Pull Request를 만들거나 패키지를 배포해요
         id: changesets
