@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.1
+
+### Patch Changes
+
+- ee15292: Add codemod `migrate-icons` to help users easily migrate v2 icons to v3 ones
+
 ## 0.0.0-alpha-20241025045021
 
 ### Patch Changes
