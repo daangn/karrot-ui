@@ -57,28 +57,20 @@ export function replaceImportDeclarations({
       standardImportSourceMatch &&
       currentSpecifiers.every((specifier) => specifier.type === "ImportSpecifier")
     ) {
-      const specifiersWithNewNameAvailable = currentSpecifiers.filter((specifier) =>
-        availableNewNames.includes(specifier.imported.name),
-      );
-
       const [specifiersToMoveToDefaultPackage, specifiersToMoveToMulticolor] = partition(
-        specifiersWithNewNameAvailable,
+        currentSpecifiers,
         (specifier) =>
           !match.identifier.find(({ oldName }) => oldName === specifier.imported.name)
             ?.moveToMulticolor,
       );
 
       // 새 패키지의 default 버전으로 마이그레이션할 specifiers
-      if (specifiersToMoveToDefaultPackage.length > 0) {
-        // FIXME: 메시지 수정
-        const message = `moving specifiers to default package: ${specifiersToMoveToDefaultPackage.map(({ imported }) => imported.name).join(", ")}`;
-
-        logger?.warn(`${filePath}: ${message}`);
-        console.warn(message);
-        report?.(message);
-
+      const newSpecifiersToMoveToDefaultPackage = getNewSpecifiersWithoutDuplicates({
+        specifiers: specifiersToMoveToDefaultPackage,
+      });
+      if (newSpecifiersToMoveToDefaultPackage.length > 0) {
         const newImportDeclaration = jscodeshift.importDeclaration(
-          getNewSpecifiersWithoutDuplicates({ specifiers: specifiersToMoveToDefaultPackage }),
+          newSpecifiersToMoveToDefaultPackage,
           jscodeshift.literal(standardImportSourceMatch.replaceWith.default),
           currentImportKind,
         );
@@ -89,16 +81,21 @@ export function replaceImportDeclarations({
       }
 
       // 새 패키지의 multicolor 버전으로 마이그레이션할 specifiers
-      if (specifiersToMoveToMulticolor.length > 0) {
-        // FIXME: 메시지 수정
-        const message = `moving specifiers to multicolor package: ${specifiersToMoveToMulticolor.map(({ imported }) => imported.name).join(", ")}`;
+      const newSpecifiersToMoveToMulticolor = getNewSpecifiersWithoutDuplicates({
+        specifiers: specifiersToMoveToMulticolor,
+      });
+      if (newSpecifiersToMoveToMulticolor.length > 0) {
+        const iconsString = specifiersToMoveToMulticolor
+          .map(({ imported }) => imported.name)
+          .join(", ");
+        const message = `import specifier ${iconsString}는 멀티컬러 패키지로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
         report?.(message);
 
         const newImportDeclaration = jscodeshift.importDeclaration(
-          getNewSpecifiersWithoutDuplicates({ specifiers: specifiersToMoveToMulticolor }),
+          newSpecifiersToMoveToMulticolor,
           jscodeshift.literal(standardImportSourceMatch.replaceWith.multicolor),
           currentImportKind,
         );
@@ -107,6 +104,10 @@ export function replaceImportDeclarations({
 
         jscodeshift(imp).insertAfter(newImportDeclaration);
       }
+
+      const specifiersWithNewNameAvailable = currentSpecifiers.filter((specifier) =>
+        availableNewNames.includes(specifier.imported.name),
+      );
 
       // 모든 specifier가 새 패키지(default or multicolor)로 이동되었을 경우 기존 import문 제거
       if (specifiersWithNewNameAvailable.length > 0) {
@@ -176,9 +177,7 @@ export function replaceImportDeclarations({
         if (!matchFound) return currentSpecifier;
 
         if (matchFound.moveToMulticolor) {
-          // FIXME: 메시지 수정
-
-          const message = "multicolor로 이동";
+          const message = `import specifier ${matchFound.oldName}는 멀티컬러 패키지의 ${matchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
@@ -186,7 +185,7 @@ export function replaceImportDeclarations({
         }
 
         if (matchFound.isActionRequired) {
-          const message = `imported specifier ${currentSpecifier.local.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+          const message = `import specifier ${currentSpecifier.local.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
 
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
@@ -219,43 +218,45 @@ export function replaceImportDeclarations({
   }: {
     specifiers: jscodeshift.ImportSpecifier[];
   }) {
-    const newSpecifiers = specifiers.map((currentSpecifier) => {
-      // 먼저 match된 것을 사용 (home -> house -> window4house 대응)
-      const matchFound = match.identifier.find(
-        (match) => match.oldName === currentSpecifier.imported.name,
-      );
+    const newSpecifiers = specifiers
+      .map((currentSpecifier) => {
+        // 먼저 match된 것을 사용 (home -> house -> window4house 대응)
+        const matchFound = match.identifier.find(
+          (match) => match.oldName === currentSpecifier.imported.name,
+        );
 
-      if (!matchFound) {
-        const message = `imported specifier ${currentSpecifier.imported.name}에 대한 변환 정보 없음`;
+        if (!matchFound) {
+          const message = `import specifier ${currentSpecifier.imported.name}에 대한 변환 정보 없음`;
 
-        logger?.error(`${filePath}: ${message}`);
-        console.warn(message);
-        report?.(message);
+          logger?.error(`${filePath}: ${message}`);
+          console.warn(message);
+          report?.(message);
 
-        return currentSpecifier;
-      }
+          return null;
+        }
 
-      if (matchFound.isActionRequired) {
-        const message = `imported specifier ${currentSpecifier.imported.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+        if (matchFound.isActionRequired) {
+          const message = `import specifier ${currentSpecifier.imported.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
 
-        logger?.warn(`${filePath}: ${message}`);
-        console.warn(message);
-        report?.(message);
-      }
+          logger?.warn(`${filePath}: ${message}`);
+          console.warn(message);
+          report?.(message);
+        }
 
-      const newSpecifier = jscodeshift.importSpecifier(
-        jscodeshift.identifier(matchFound.newName),
-        jscodeshift.identifier(
-          currentSpecifier.local.name === matchFound.oldName
-            ? matchFound.newName
-            : currentSpecifier.local.name,
-        ),
-      );
+        const newSpecifier = jscodeshift.importSpecifier(
+          jscodeshift.identifier(matchFound.newName),
+          jscodeshift.identifier(
+            currentSpecifier.local.name === matchFound.oldName
+              ? matchFound.newName
+              : currentSpecifier.local.name,
+          ),
+        );
 
-      newSpecifier.comments = currentSpecifier.comments;
+        newSpecifier.comments = currentSpecifier.comments;
 
-      return newSpecifier;
-    });
+        return newSpecifier;
+      })
+      .filter(Boolean);
 
     const newSpecifiersWithoutDuplicates = uniqWith(
       newSpecifiers,
@@ -289,8 +290,7 @@ export function replaceIdentifiers({
     if (!matchFound) return;
 
     if (matchFound.moveToMulticolor) {
-      // FIXME: 메시지 수정
-      const message = `multicolor로 이동`;
+      const message = `identifier ${matchFound.oldName}는 멀티컬러 패키지의 ${matchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
       logger?.warn(`${filePath}: ${message}`);
       console.warn(message);
@@ -346,6 +346,14 @@ export function replaceStringLiterals({
         report?.(message);
       }
 
+      if (identifierMatchFound.moveToMulticolor) {
+        const message = `string literal ${stringLiteral.node.value}은 멀티컬러 패키지의 ${identifierMatchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
+
+        logger?.warn(`${filePath}: ${message}`);
+        console.warn(message);
+        report?.(message);
+      }
+
       const newName = identifierMatchFound.newName;
 
       logger?.debug(`${filePath}: string literal ${stringLiteral.node.value} -> ${newName}`);
@@ -386,8 +394,7 @@ export function replaceStringLiterals({
           }
 
           if (matchFound.moveToMulticolor) {
-            // FIXME: 메시지 수정
-            const message = `multicolor로 이동`;
+            const message = `string literal ${stringLiteral.node.value}은 멀티컬러 패키지의 ${matchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
             logger?.warn(`${filePath}: ${message}`);
             console.warn(message);
