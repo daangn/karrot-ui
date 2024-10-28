@@ -88,7 +88,7 @@ export function replaceImportDeclarations({
         const iconsString = specifiersToMoveToMulticolor
           .map(({ imported }) => imported.name)
           .join(", ");
-        const message = `import specifier ${iconsString}는 멀티컬러 패키지로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
+        const message = `import specifier ${iconsString}를 멀티컬러 패키지의 아이콘으로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
@@ -177,7 +177,7 @@ export function replaceImportDeclarations({
         if (!matchFound) return currentSpecifier;
 
         if (matchFound.moveToMulticolor) {
-          const message = `import specifier ${matchFound.oldName}는 멀티컬러 패키지의 ${matchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
+          const message = `import specifier ${matchFound.oldName}를 멀티컬러 패키지의 ${matchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
@@ -290,7 +290,7 @@ export function replaceIdentifiers({
     if (!matchFound) return;
 
     if (matchFound.moveToMulticolor) {
-      const message = `identifier ${matchFound.oldName}는 멀티컬러 패키지의 ${matchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
+      const message = `identifier ${matchFound.oldName}를 멀티컬러 패키지의 ${matchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
       logger?.warn(`${filePath}: ${message}`);
       console.warn(message);
@@ -347,7 +347,7 @@ export function replaceStringLiterals({
       }
 
       if (identifierMatchFound.moveToMulticolor) {
-        const message = `string literal ${stringLiteral.node.value}은 멀티컬러 패키지의 ${identifierMatchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
+        const message = `string literal ${stringLiteral.node.value}를 멀티컬러 패키지의 ${identifierMatchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
@@ -394,7 +394,7 @@ export function replaceStringLiterals({
           }
 
           if (matchFound.moveToMulticolor) {
-            const message = `string literal ${stringLiteral.node.value}은 멀티컬러 패키지의 ${matchFound.newName}로 이동했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
+            const message = `string literal ${stringLiteral.node.value}를 멀티컬러 패키지의 ${matchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
             logger?.warn(`${filePath}: ${message}`);
             console.warn(message);

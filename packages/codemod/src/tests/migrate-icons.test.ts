@@ -679,3 +679,47 @@ test("dynamic imports", () => {
       console.log(Icon, Icon2);"
   `);
 });
+
+test("docs", () => {
+  const input = `import {
+    IconSellRegular,
+    IconListFill,
+    IconCarRegular,
+    IconAddFill as AddIconAlias,
+  } from "@seed-design/react-icon";
+  import IconSellFill from "@seed-design/react-icon/IconSellFill";
+
+  function App() {
+    console.log(IconSellRegular);
+
+    return (
+      <>
+        <IconListFill />
+        <AddIconAlias />
+        <IconCarRegular />
+      </>
+    );
+  }`;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import { IconCarFrontside } from "@daangn/react-multicolor-icon";
+
+    import {
+      IconPlusSquareLine,
+      IconDothorizline3VerticalFill,
+      IconPlusFill as AddIconAlias,
+    } from "@daangn/react-monochrome-icon";
+
+    import IconPlusSquareFill from "@daangn/react-monochrome-icon/IconPlusSquareFill";
+
+    function App() {
+      console.log(IconPlusSquareLine);
+
+      return (<>
+        <IconDothorizline3VerticalFill />
+        <AddIconAlias />
+        <IconCarFrontside />
+      </>);
+    }"
+  `);
+});
