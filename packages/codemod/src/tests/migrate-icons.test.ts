@@ -4,16 +4,12 @@ import { applyTransform } from "jscodeshift/src/testUtils.js";
 
 interface ApplyMigrateIconsTransformParams {
   input: string;
-  replaceIconsKeptForNow?: boolean;
 }
 
-function applyMigrateIconsTransform({
-  input,
-  replaceIconsKeptForNow,
-}: ApplyMigrateIconsTransformParams) {
+function applyMigrateIconsTransform({ input }: ApplyMigrateIconsTransformParams) {
   const transformResult = applyTransform(
     migrateIcons,
-    { match: reactMatch, replaceIconsKeptForNow },
+    { match: reactMatch },
     { path: "path/to/file", source: input },
     { parser: "tsx" },
   );
@@ -78,7 +74,7 @@ describe("importDeclaration: import source에만 변경 있는 경우", () => {
     const input = `import IconNotMatched from "@seed-design/react-icon/IconUndoFill";`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(
-      `"import IconNotMatched from "@daangn/react-icon/IconArrowUturnLeftFill";"`,
+      `"import IconNotMatched from "@daangn/react-monochrome-icon/IconArrowUturnLeftFill";"`,
     );
   });
 
@@ -87,8 +83,8 @@ describe("importDeclaration: import source에만 변경 있는 경우", () => {
     import * as Icons2 from "@seed-design/react-icon";`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import * as Icons from "@daangn/react-icon";
-          import * as Icons2 from "@daangn/react-icon";"
+      "import * as Icons from "@daangn/react-monochrome-icon";
+          import * as Icons2 from "@daangn/react-monochrome-icon";"
     `);
   });
 });
@@ -100,9 +96,9 @@ describe("importDeclaration: import source와 specifier 모두 변경 있는 경
     import { IconChartRegular } from "@seed-design/icon";`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import { IconArrowUpArrowDownLine, IconPlusSquareLine } from "@daangn/react-icon";
-          import { IconDothorizline3VerticalFill as IconListAlias } from "@daangn/react-icon";
-          import { IconBarchartSquareLine } from "@daangn/react-icon";"
+      "import { IconArrowUpArrowDownLine, IconPlusSquareLine } from "@daangn/react-monochrome-icon";
+          import { IconDothorizline3VerticalFill as IconListAlias } from "@daangn/react-monochrome-icon";
+          import { IconBarchartSquareLine } from "@daangn/react-monochrome-icon";"
     `);
   });
 
@@ -111,8 +107,8 @@ describe("importDeclaration: import source와 specifier 모두 변경 있는 경
 		import IconSellThin from "@seed-design/icon/dist/lib/test/somewhat/IconSellThin";`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import IconDothorizline3VerticalLine from "@daangn/react-icon/IconDothorizline3VerticalLine";
-      		import IconPlusSquareLine from "@daangn/react-icon/dist/lib/test/somewhat/IconPlusSquareLine";"
+      "import IconDothorizline3VerticalLine from "@daangn/react-monochrome-icon/IconDothorizline3VerticalLine";
+      		import IconPlusSquareLine from "@daangn/react-monochrome-icon/dist/lib/test/somewhat/IconPlusSquareLine";"
     `);
   });
 
@@ -140,8 +136,8 @@ describe("importDeclaration: import source와 specifier 모두 변경 있는 경
         IconPlusSquareLine,
         IconDothorizline3VerticalFill,
         IconPlusFill as AddIconAlias,
-      } from "@daangn/react-icon";
-            import IconPlusSquareFill from "@daangn/react-icon/IconPlusSquareFill";
+      } from "@daangn/react-monochrome-icon";
+            import IconPlusSquareFill from "@daangn/react-monochrome-icon/IconPlusSquareFill";
 
             function App() {
               console.log(IconPlusSquareLine);
@@ -164,7 +160,7 @@ describe("identifiers: identifier 변경까지 있는 경우", () => {
     return IconListFill;`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-icon";
+      "import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-monochrome-icon";
 
           console.log(IconPlusSquareLine);
 
@@ -186,8 +182,8 @@ describe("identifiers: identifier 변경까지 있는 경우", () => {
     }`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-icon";
-      		import { IconPlusSquareLine as IconSellAlias } from "@daangn/react-icon";
+      "import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-monochrome-icon";
+      		import { IconPlusSquareLine as IconSellAlias } from "@daangn/react-monochrome-icon";
       		
       		console.log(IconPlusSquareLine);
       		
@@ -218,8 +214,8 @@ describe("identifiers: identifier 변경까지 있는 경우", () => {
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
       "// some comment
-          import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-icon";
-      		import { IconPlusSquareLine as IconSellAlias } from "@daangn/react-icon";
+          import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-monochrome-icon";
+      		import { IconPlusSquareLine as IconSellAlias } from "@daangn/react-monochrome-icon";
       		
       		console.log(IconPlusSquareLine);
       		
@@ -252,8 +248,8 @@ describe("identifiers: identifier 변경까지 있는 경우", () => {
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
       ""use client";
           
-          import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-icon";
-      		import { IconPlusSquareLine as IconSellAlias } from "@daangn/react-icon";
+          import { IconPlusSquareLine, IconDothorizline3VerticalFill } from "@daangn/react-monochrome-icon";
+      		import { IconPlusSquareLine as IconSellAlias } from "@daangn/react-monochrome-icon";
       		
       		console.log(IconPlusSquareLine);
       		
@@ -274,7 +270,7 @@ describe("identifiers: identifier 변경까지 있는 경우", () => {
     console.log(Icons.IconSellRegular);`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import * as Icons from "@daangn/react-icon";
+      "import * as Icons from "@daangn/react-monochrome-icon";
           
           console.log(Icons.IconPlusSquareLine);"
     `);
@@ -286,7 +282,7 @@ describe("n:1 매핑", () => {
     const input = `import { IconSellThin, IconSellRegular, IconSellFill } from "@seed-design/icon";`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(
-      `"import { IconPlusSquareLine, IconPlusSquareFill } from "@daangn/react-icon";"`,
+      `"import { IconPlusSquareLine, IconPlusSquareFill } from "@daangn/react-monochrome-icon";"`,
     );
   });
 
@@ -317,7 +313,7 @@ describe("n:1 매핑", () => {
         IconPlusSquareFill,
         IconCrosshairLine,
         IconCrosshairFill,
-      } from "@daangn/react-icon";
+      } from "@daangn/react-monochrome-icon";
           
           console.log(IconPlusSquareFill);
           
@@ -335,7 +331,7 @@ describe("n:1 매핑", () => {
   });
 });
 
-describe("변환 정보 있지만, 확인 필요하거나 유지하기로 결정된 경우", () => {
+describe("변환 정보 있지만 확인 필요함", () => {
   test("확인 필요한 importSpecifier (action required)", () => {
     const input = `import { IconSuggestRegular } from "@seed-design/icon";
     
@@ -344,7 +340,7 @@ describe("변환 정보 있지만, 확인 필요하거나 유지하기로 결정
     }`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import { IconLightbulbDot5Line } from "@daangn/react-icon";
+      "import { IconLightbulbDot5Line } from "@daangn/react-monochrome-icon";
           
           function test() {
             return <IconLightbulbDot5Line />;
@@ -356,7 +352,7 @@ describe("변환 정보 있지만, 확인 필요하거나 유지하기로 결정
     const input = `import IconSuggestRegular from "@seed-design/icon/IconSuggestRegular";`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(
-      `"import IconLightbulbDot5Line from "@daangn/react-icon/IconLightbulbDot5Line";"`,
+      `"import IconLightbulbDot5Line from "@daangn/react-monochrome-icon/IconLightbulbDot5Line";"`,
     );
   });
 
@@ -366,13 +362,15 @@ describe("변환 정보 있지만, 확인 필요하거나 유지하기로 결정
     console.log(Icons.IconSuggestRegular);`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import * as Icons from "@daangn/react-icon";
+      "import * as Icons from "@daangn/react-monochrome-icon";
           
           console.log(Icons.IconLightbulbDot5Line);"
     `);
   });
+});
 
-  test("변환 정보 있지만, 변환하지 않고 유지 (단독 사용)", () => {
+describe("멀티컬러로 넘어감", () => {
+  test("멀티컬러로 넘어감", () => {
     const input = `import { IconCarRegular } from "@seed-design/icon";
     
     function test() {
@@ -380,39 +378,31 @@ describe("변환 정보 있지만, 확인 필요하거나 유지하기로 결정
     }`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import { IconCarRegular } from "@seed-design/icon";
+      "import { IconCarFrontside } from "@daangn/react-multicolor-icon";
           
           function test() {
-            return <IconCarRegular />;
+            return <IconCarFrontside />;
           }"
     `);
   });
 
-  test("임시로 유지하기로 했었던 아이콘까지 replace (단독 사용)", () => {
-    const input = `import { IconCarRegular } from "@seed-design/icon";
+  test("멀티컬러로 넘어감 (다양한 variants)", () => {
+    const input = `import { IconCarRegular, IconCarFill, IconCarThin } from "@seed-design/icon";`;
 
-    function test() {
-      return <IconCarRegular />;
-    }`;
-
-    expect(
-      applyMigrateIconsTransform({ input, replaceIconsKeptForNow: true }),
-    ).toMatchInlineSnapshot(`
-      "import { IconCarFrontsideLine } from "@daangn/react-icon";
-
-          function test() {
-            return <IconCarFrontsideLine />;
-          }"
-    `);
+    expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(
+      `"import { IconCarFrontside } from "@daangn/react-multicolor-icon";"`,
+    );
   });
 
-  test("변환 정보 있지만, 변환하지 않고 유지 (섞인 경우)", () => {
-    const input = `import { IconCarRegular, IconCarThin, IconJobsFill, IconSellRegular } from "@seed-design/icon";
+  test("멀티컬러로 넘어감 (섞인 경우)", () => {
+    const input = `import { IconCarRegular, IconCarThin, IconJobsRegular, IconJobsFill, IconSellRegular } from "@seed-design/icon";
     import IconRestaurantThin from "@seed-design/react-icon/lib/IconRestaurantThin";
     import IconSellRegular from "@seed-design/icon/IconSellRegular";
+    import IconJobsThin from "@seed-design/icon/IconJobsThin";
     
     export function test() {
       return (<div>
+        <IconJobsRegular />
         <IconCarRegular />
         <IconCarThin />
         <IconJobsFill />
@@ -420,89 +410,22 @@ describe("변환 정보 있지만, 확인 필요하거나 유지하기로 결정
       </div>);}`;
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import { IconPlusSquareLine } from "@daangn/react-icon";
-      import { IconCarRegular, IconCarThin, IconJobsFill } from "@seed-design/icon";
-      import IconRestaurantThin from "@seed-design/react-icon/lib/IconRestaurantThin";
-      import IconPlusSquareLine from "@daangn/react-icon/IconPlusSquareLine";
+      "import { IconCarFrontside, IconPersonMagnifyingglass } from "@daangn/react-multicolor-icon";
+      import { IconPlusSquareLine } from "@daangn/react-monochrome-icon";
+      import IconForkSpoonLine from "@daangn/react-monochrome-icon/lib/IconForkSpoonLine";
+      import IconPlusSquareLine from "@daangn/react-monochrome-icon/IconPlusSquareLine";
+      import IconPersonMagnifyingglass from "@daangn/react-multicolor-icon/IconPersonMagnifyingglass";
 
       export function test() {
         return (
           (<div>
-            <IconCarRegular />
-            <IconCarThin />
-            <IconJobsFill />
+            <IconPersonMagnifyingglass />
+            <IconCarFrontside />
+            <IconCarFrontside />
+            <IconPersonMagnifyingglass />
             <IconPlusSquareLine />
           </div>)
         );}"
-    `);
-  });
-
-  test("임시로 유지하기로 했었던 아이콘까지 replace (섞인 경우)", () => {
-    const input = `import { IconCarRegular, IconCarThin, IconJobsFill, IconSellRegular } from "@seed-design/icon";
-    import IconRestaurantThin from "@seed-design/react-icon/lib/IconRestaurantThin";
-    import IconSellFill from "@seed-design/icon/IconSellFill";
-    
-    export function test() {
-      return (<div>
-        <IconCarRegular />
-        <IconCarThin />
-        <IconJobsFill />
-        <IconSellRegular />
-      </div>);}`;
-
-    expect(
-      applyMigrateIconsTransform({ input, replaceIconsKeptForNow: true }),
-    ).toMatchInlineSnapshot(`
-      "import { IconCarFrontsideLine, IconPersonMagnifyingglassFill, IconPlusSquareLine } from "@daangn/react-icon";
-          import IconForkSpoonLine from "@daangn/react-icon/lib/IconForkSpoonLine";
-          import IconPlusSquareFill from "@daangn/react-icon/IconPlusSquareFill";
-          
-          export function test() {
-            return (
-              (<div>
-                <IconCarFrontsideLine />
-                <IconCarFrontsideLine />
-                <IconPersonMagnifyingglassFill />
-                <IconPlusSquareLine />
-              </div>)
-            );}"
-    `);
-  });
-
-  test("나눠진 결과를 이후 합치는 경우", () => {
-    const input = `import { IconPlusSquareLine } from "@daangn/react-icon";
-      import { IconCarRegular, IconCarThin, IconJobsFill } from "@seed-design/icon";
-      import IconRestaurantThin from "@seed-design/react-icon/lib/IconRestaurantThin";
-      import IconPlusSquareLine from "@daangn/react-icon/IconPlusSquareLine";
-
-      export function test() {
-        return (
-          (<div>
-            <IconCarRegular />
-            <IconCarThin />
-            <IconJobsFill />
-            <IconPlusSquareLine />
-          </div>)
-        );}
-    `;
-
-    expect(
-      applyMigrateIconsTransform({ input, replaceIconsKeptForNow: true }),
-    ).toMatchInlineSnapshot(`
-      "import { IconPlusSquareLine } from "@daangn/react-icon";
-            import { IconCarFrontsideLine, IconPersonMagnifyingglassFill } from "@daangn/react-icon";
-            import IconForkSpoonLine from "@daangn/react-icon/lib/IconForkSpoonLine";
-            import IconPlusSquareLine from "@daangn/react-icon/IconPlusSquareLine";
-
-            export function test() {
-              return (
-                (<div>
-                  <IconCarFrontsideLine />
-                  <IconCarFrontsideLine />
-                  <IconPersonMagnifyingglassFill />
-                  <IconPlusSquareLine />
-                </div>)
-              );}"
     `);
   });
 });
@@ -518,11 +441,11 @@ describe("comments 유지", () => {
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
     "// comment
-        import { IconArrowUpLine, IconArrowDownFill } from "@daangn/react-icon";
+        import { IconArrowUpLine, IconArrowDownFill } from "@daangn/react-monochrome-icon";
         // comment
-        import { IconPlusSquareLine as IconAlias } from "@daangn/react-icon";
+        import { IconPlusSquareLine as IconAlias } from "@daangn/react-monochrome-icon";
         // comment
-        import { IconLocationpinLine } from "@daangn/react-icon";"
+        import { IconLocationpinLine } from "@daangn/react-monochrome-icon";"
   `);
   });
 
@@ -537,7 +460,7 @@ describe("comments 유지", () => {
       "import {
       // test
       IconArrowUpLine, IconArrowUpFill
-      } from "@daangn/react-icon";"
+      } from "@daangn/react-monochrome-icon";"
     `);
   });
 
@@ -557,20 +480,20 @@ describe("comments 유지", () => {
 
     expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
       "// comment
-      import { IconPlusSquareLine } from "@daangn/react-icon";
+      import { IconCarFrontside, IconPersonMagnifyingglass } from "@daangn/react-multicolor-icon";
 
       // comment
-      import { IconCarRegular, IconCarThin, IconJobsFill } from "@seed-design/icon";
+      import { IconPlusSquareLine } from "@daangn/react-monochrome-icon";
 
       // comment
-      import IconRestaurantThin from "@seed-design/react-icon/lib/IconRestaurantThin";
+      import IconForkSpoonLine from "@daangn/react-monochrome-icon/lib/IconForkSpoonLine";
 
       export function test() {
         return (
           (<div>
-            <IconCarRegular />
-            <IconCarThin />
-            <IconJobsFill />
+            <IconCarFrontside />
+            <IconCarFrontside />
+            <IconPersonMagnifyingglass />
             <IconPlusSquareLine />
           </div>)
         );}"
@@ -579,7 +502,7 @@ describe("comments 유지", () => {
 });
 
 test("반환값", () => {
-  const input = `import { IconCertificationRegular, IconSellRegular } from "@seed-design/icon";
+  const input = `import { IconCertificationRegular, IconSellRegular, IconCarFill } from "@seed-design/icon";
 
   function getIcon() {
     return <IconCertificationRegular />;
@@ -589,20 +512,29 @@ test("반환값", () => {
     return <IconSellRegular />;
   }
 
+  function getIcon3() {
+    return <IconCarFill />;
+  }
+
   console.log(getIcon());`;
 
   expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+    "import { IconCarFrontside } from "@daangn/react-multicolor-icon";
+    import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-monochrome-icon";
 
-      function getIcon() {
-        return <IconCrosshairLine />;
-      }
+    function getIcon() {
+      return <IconCrosshairLine />;
+    }
 
-      function getIcon2() {
-        return <IconPlusSquareLine />;
-      }
+    function getIcon2() {
+      return <IconPlusSquareLine />;
+    }
 
-      console.log(getIcon());"
+    function getIcon3() {
+      return <IconCarFrontside />;
+    }
+
+    console.log(getIcon());"
   `);
 });
 
@@ -620,7 +552,7 @@ test("조건부 렌더링", () => {
   }`;
 
   expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-monochrome-icon";
 
       export function test() {
         const condition = true;
@@ -646,7 +578,7 @@ test("prop", () => {
   }`;
 
   expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-monochrome-icon";
 
       function test() {
         return <SomeComponent icon={<IconCrosshairLine />} />;
@@ -676,7 +608,7 @@ test("objects", () => {
   `;
 
   expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-icon";
+    "import { IconCrosshairLine, IconPlusSquareLine } from "@daangn/react-monochrome-icon";
 
       function test() {
         return [<IconCrosshairLine />, <IconPlusSquareLine />];
@@ -696,6 +628,7 @@ test("참조", () => {
   const input = `import * as icons from "@seed-design/icon";
   const path = "@seed-design/icon/IconSellRegular";
   const deepPath = "@seed-design/icon/lib/something/IconSellRegular";
+  const pathToBeMulticolor = "@seed-design/icon/IconCarRegular";
   
   const iconName = "IconCertificationRegular";
   const iconName2 = "IconSellRegular";
@@ -709,9 +642,10 @@ test("참조", () => {
   return <IconComponent />;`;
 
   expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-    "import * as icons from "@daangn/react-icon";
-      const path = "@daangn/react-icon/IconPlusSquareLine";
-      const deepPath = "@daangn/react-icon/lib/something/IconPlusSquareLine";
+    "import * as icons from "@daangn/react-monochrome-icon";
+      const path = "@daangn/react-monochrome-icon/IconPlusSquareLine";
+      const deepPath = "@daangn/react-monochrome-icon/lib/something/IconPlusSquareLine";
+      const pathToBeMulticolor = "@daangn/react-multicolor-icon/IconCarFrontside";
       
       const iconName = "IconCrosshairLine";
       const iconName2 = "IconPlusSquareLine";
@@ -731,14 +665,16 @@ test("dynamic imports", () => {
   const Icon2 = await import("@seed-design/icon/IconSellRegular");
   const path = "@seed-design/icon/IconSellRegular";
   const deepPath = "@seed-design/icon/lib/something/IconSellRegular";
+  const LazyMulticolor = React.lazy(() => import("@seed-design/icon/IconCarRegular"));
 
   console.log(Icon, Icon2);`;
 
   expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-    "const Icon = React.lazy(() => import("@daangn/react-icon/IconCrosshairLine"));
-      const Icon2 = await import("@daangn/react-icon/IconPlusSquareLine");
-      const path = "@daangn/react-icon/IconPlusSquareLine";
-      const deepPath = "@daangn/react-icon/lib/something/IconPlusSquareLine";
+    "const Icon = React.lazy(() => import("@daangn/react-monochrome-icon/IconCrosshairLine"));
+      const Icon2 = await import("@daangn/react-monochrome-icon/IconPlusSquareLine");
+      const path = "@daangn/react-monochrome-icon/IconPlusSquareLine";
+      const deepPath = "@daangn/react-monochrome-icon/lib/something/IconPlusSquareLine";
+      const LazyMulticolor = React.lazy(() => import("@daangn/react-multicolor-icon/IconCarFrontside"));
 
       console.log(Icon, Icon2);"
   `);

@@ -36,21 +36,21 @@ parse(data, { delimiter: "\t" }, (_err, records) => {
       oldName: `${pascalOldName}Thin`,
       newName: pascalValue.line,
       ...(isActionRequired && { isActionRequired }),
-      ...(!isAvailableNow && { keepForNow: true }),
+      ...(!isAvailableNow && { moveToMulticolor: true }),
     });
 
     result.push({
       oldName: `${pascalOldName}Regular`,
       newName: pascalValue.line,
       ...(isActionRequired && { isActionRequired }),
-      ...(!isAvailableNow && { keepForNow: true }),
+      ...(!isAvailableNow && { moveToMulticolor: true }),
     });
 
     result.push({
       oldName: `${pascalOldName}Fill`,
       newName: pascalValue.fill,
       ...(isActionRequired && { isActionRequired }),
-      ...(!isAvailableNow && { keepForNow: true }),
+      ...(!isAvailableNow && { moveToMulticolor: true }),
     });
   }
 
