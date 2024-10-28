@@ -43,22 +43,19 @@ npx @seed-design/codemod migrate-icons <...경로> <옵션>
 npx @seed-design/codemod migrate-icons src/ui --extensions=ts,tsx
 ```
 
-- 기존 아이콘 React 패키지를 참조하는 코드를 [새 패키지](https://github.com/daangn/seed-icon-v3/blob/main/packages/react/README.md)를 참조하도록 변환해요.
-  - `@seed-design/icon` 또는 `@seed-design/react-icon` import source를 @daangn/react-icon으로 변환해요
-- 아이콘 이름 변경에 따른 코드 수정을 수행해요
-  - 예시: `IconStoryRegular` → `IconTriangleRightChatbubbleLeftLine`,
+- 기존 아이콘 React 패키지를 참조하는 코드를 새 패키지를 참조하도록 변환해요.
+  - `@seed-design/icon` 또는 `@seed-design/react-icon` import source를, 사용하는 아이콘에 따라 [`@daangn/react-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-monochrome-icon)과 [`@daangn/react-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)으로 변환해요.
+- 아이콘 이름 변경에 따른 코드 수정을 수행해요.
+  - 예시: `IconAddCircleThin` → `IconPlusCircleLine`,
 
 > [!IMPORTANT]
 >
-> - `@daangn/react-icon` 패키지 설치/업데이트와 이전 패키지 제거는 직접 해 주세요.
+> - 신규 패키지 설치와 이전 패키지 제거는 직접 해 주세요.
 
 > [!CAUTION]
 >
 > - [import assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-3.html#import-attributes) 등 deprecated된 문법이 있으면 파서에 따라 파싱 오류가 표시될 수 있어요.
-> - 코드 변환 이후 몇 가지 사항을 직접 확인해야 해요. 자세한 내용은 [Notion 페이지](https://www.notion.so/daangn/12128c3a9f8f8063b569c897116c8f40)를 참고해주세요.
->   - 기존 아이콘 198개 중 5개 아이콘은, 신규 아이콘팩에 대응되는 아이콘이 있지만, 대응되는 아이콘이 적절한지 확인해야 해요.
->   - `--log` flag를 사용하면, 5개 아이콘이 사용된 경우 `migrate-icons-warnings.log`에 기록돼요.
->   - flag를 사용하지 않아도 터미널에 경고 메시지가 표시돼요. flag를 사용하지 않는 경우 메시지를 잘 확인해주세요.
+> - 마이그레이션 이후 [사이드 이펙트](https://v3.seed-design.io/docs/react/foundation/iconography/upgrade#발생-가능한-사이드-이펙트)가 발생할 수 있어요.
 
 ## 테스트
 
