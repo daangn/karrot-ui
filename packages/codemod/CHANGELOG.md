@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.2-alpha-20241028102047
+
+### Patch Changes
+
+- Migreate specific icons to the new multicolor package
+
 ## 0.0.1
 
 ### Patch Changes
