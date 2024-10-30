@@ -138,7 +138,11 @@ const jsonSchemaTemplate = ({
       "anyOf": [
         ${unitSizeDeclarations
           .map((declaration) => declarationToObjTemplate(declaration))
-          .join(",\n")}
+          .join(",\n")},
+        {
+          "type": "string",
+          "pattern": "^\\d+(\\.\\d+)?(pt|px)$"
+        }
       ]
     }
   }
