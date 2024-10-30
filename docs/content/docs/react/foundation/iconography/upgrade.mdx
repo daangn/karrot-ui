@@ -7,28 +7,29 @@ import { Accordions, Accordion } from "fumadocs-ui/components/accordion";
 
 ## 업그레이드 방법
 
-현재 아이콘을 사용하고 있는 방법에 따라 적용할 수 있는 두 가지 방법이 있어요.
+현재 아이콘을 사용하고 있는 방법에 따라 적용할 수 있는 2가지 방법이 있어요.
 
 ### Codemod 스크립트
 
-아래 두 아이콘 패키지를 사용하고 있다면, 제공되는 codemod 스크립트를 사용해서 리뉴얼된 아이콘 패키지로 손쉽게 업그레이드할 수 있어요.
+아래 3개 아이콘 패키지를 사용하고 있다면, 제공되는 codemod 스크립트를 사용해서 리뉴얼된 아이콘 패키지로 손쉽게 업그레이드할 수 있어요.
 
 - [`@seed-deesign/react-icon`](https://www.npmjs.com/package/@seed-design/react-icon)
 - [`@seed-design/icon`](https://www.npmjs.com/package/@seed-design/icon) (deprecated)
+- [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon) (deprecated) (React 컴포넌트를 사용하는 경우)
 
-두 패키지에서 사용하고 있는 아이콘에 따라 [`@daangn/react-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-monochrome-icon)과 [`@daangn/react-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)으로 대체돼요.
+3개 패키지에서 사용하고 있는 아이콘에 따라 [`@daangn/react-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-monochrome-icon)과 [`@daangn/react-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)으로 대체돼요.
 
 ### 수동 업그레이드
 
 다음과 같은 경우에는 수동으로 업그레이드해야 해요.
 
 - PNG, SVG 등의 파일로 기존 아이콘을 사용하는 경우
+  - [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon) (deprecated)에서 제공되는 SVG 파일을 사용하는 경우
 - 다음 패키지를 사용하는 경우
   - [`@seed-design/vue2-icon`](https://www.npmjs.com/package/@seed-design/vue2-icon)
+    - 이 패키지는 다음 2개 패키지로 대체돼요: [`@daangn/vue2-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-monochrome-icon)과 [`@daangn/vue2-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-multicolor-icon)
   - [`@seed-design/vue3-icon`](https://www.npmjs.com/package/@seed-design/vue3-icon)
-  - 두 패키지는 각각 다음 패키지로 대체돼요.
-    - [`@daangn/vue2-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-monochrome-icon)과 [`@daangn/vue2-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-multicolor-icon)
-    - [`@daangn/vue3-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue3-monochrome-icon)과 [`@daangn/vue3-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue3-multicolor-icon)
+    - 이 패키지는 다음 2개 패키지로 대체돼요: [`@daangn/vue3-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue3-monochrome-icon)과 [`@daangn/vue3-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue3-multicolor-icon)
 
 ## 작업 순서
 
@@ -114,7 +115,7 @@ npm install @daangn/react-monochrome-icon @daangn/react-multicolor-icon
 
 <Callout type="info" title="패키지 설명">
 
-두 패키지 중 필요한 패키지만 설치해요.
+2개 패키지 중 필요한 패키지만 설치해요.
 
 - `@daangn/react-monochrome-icon`
   - 단색 아이콘 패키지에요. **일반** 아이콘, **카테고리** 아이콘, **서비스** 아이콘이 포함되어 있어요.
@@ -217,7 +218,7 @@ Time elapsed: 49.376seconds
 이전 아이콘이 모두 대체된 경우, 이전 패키지를 제거해요.
 
 ```package-install
-npm uninstall @seed-design/icon @seed-design/react-icon
+npm uninstall @seed-design/icon @seed-design/react-icon @karrotmarket/karrot-ui-icon
 ```
 
 </Step>
@@ -246,11 +247,12 @@ npm uninstall @seed-design/icon @seed-design/react-icon
 
 다음 패키지를 사용하는 경우, 패키지를 제거해요.
 
+- [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon)
 - [`@seed-design/vue2-icon`](https://www.npmjs.com/package/@seed-design/vue2-icon)
 - [`@seed-design/vue3-icon`](https://www.npmjs.com/package/@seed-design/vue3-icon)
 
 ```package-install
-npm uninstall @seed-design/vue2-icon @seed-design/vue3-icon
+npm uninstall @karrotmarket/karrot-ui-icon @seed-design/vue2-icon @seed-design/vue3-icon
 ```
 
 </Step>
@@ -380,7 +382,7 @@ git grep -E '(IconHouse|IconCar|IconJobs|IconStory)(Thin|Regular|Fill)|(IconWind
 
 ### 여러 이전 아이콘이 하나의 리뉴얼된 아이콘으로 대체되는 경우
 
-**이전 아이콘과 리뉴얼된 아이콘은 `n:1`로 대응돼요.** 따라서, 같은 페이지에 표시되었던 서로 다른 두 아이콘이, 동일한 리뉴얼된 아이콘으로 대체되는 경우가 있어요. 의도한 목적대로 아이콘이 표시되는지 확인해요.
+**이전 아이콘과 리뉴얼된 아이콘은 `n:1`로 대응돼요.** 따라서, 같은 페이지에 표시되었던 서로 다른 여러 개의 아이콘이, 동일한 리뉴얼된 아이콘으로 대체되는 경우가 있어요. 의도한 목적대로 아이콘이 표시되는지 확인해요.
 
 - 한 이전 아이콘의 3개 variant 중 `thin` variant와 `regular` variant는 리뉴얼된 아이콘에서 모두 `line` variant로 대체돼요.
   - 예를 들면, `IconForwardThin`, `IconForwardRegular`는 모두 [`IconArrowRightLine`](/docs/design/foundation/iconography?icon=icon_arrow_right_line)으로 대체돼요.

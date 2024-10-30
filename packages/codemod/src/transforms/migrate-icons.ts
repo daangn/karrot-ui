@@ -41,6 +41,13 @@ export const reactMatch: MigrateIconsOptions["match"] = {
         multicolor: "@daangn/react-multicolor-icon",
       },
     },
+    {
+      startsWith: "@karrotmarket/karrot-ui-icon/lib/react",
+      replaceWith: {
+        default: "@daangn/react-monochrome-icon",
+        multicolor: "@daangn/react-multicolor-icon",
+      },
+    },
   ],
   identifier: identifierMatchReact,
 };

@@ -119,6 +119,9 @@ describe("importDeclaration: import source와 specifier 모두 변경 있는 경
         IconAddFill as AddIconAlias,
       } from "@seed-design/react-icon";
       import IconSellFill from "@seed-design/react-icon/IconSellFill";
+      import IconAddThin from '@karrotmarket/karrot-ui-icon/lib/react/IconAddThin';
+      import IconCloseThin from '@karrotmarket/karrot-ui-icon/lib/react/IconCloseThin';
+      import IconCarRegular from '@karrotmarket/karrot-ui-icon/lib/react/IconCarRegular';
 
       function App() {
         console.log(IconSellRegular);
@@ -126,6 +129,8 @@ describe("importDeclaration: import source와 specifier 모두 변경 있는 경
         return (
           <>
             <IconListFill />
+            <IconCloseThin />
+            <IconCarRegular />
             <AddIconAlias />
           </>
         );
@@ -138,12 +143,17 @@ describe("importDeclaration: import source와 specifier 모두 변경 있는 경
         IconPlusFill as AddIconAlias,
       } from "@daangn/react-monochrome-icon";
             import IconPlusSquareFill from "@daangn/react-monochrome-icon/IconPlusSquareFill";
+            import IconPlusLine from "@daangn/react-monochrome-icon/IconPlusLine";
+            import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
+            import IconCarFrontside from "@daangn/react-multicolor-icon/IconCarFrontside";
 
             function App() {
               console.log(IconPlusSquareLine);
 
               return (<>
                 <IconDothorizline3VerticalFill />
+                <IconXmarkLine />
+                <IconCarFrontside />
                 <AddIconAlias />
               </>);
             }"
