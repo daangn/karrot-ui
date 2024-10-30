@@ -6,7 +6,16 @@
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["docs", "@seed-design/stackflow-spa"],
+  "ignore": [
+    "docs",
+    "@seed-design/stackflow-spa",
+    "@seed-design/figma-checklist-widget",
+    "@seed-design/figma-codegen",
+    "@seed-design/figma-contrast-checker",
+    "@seed-design/figma-expose-variables",
+    "@seed-design/figma-extractor",
+    "@seed-design/figma-spec-widget"
+  ],
   "snapshot": {
     "useCalculatedVersion": true
   }
