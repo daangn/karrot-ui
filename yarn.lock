@@ -5238,7 +5238,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/stylesheet@0.0.0-alpha-20241014145845, @seed-design/stylesheet@workspace:packages/stylesheet":
+"@seed-design/stylesheet@npm:0.0.0-alpha-20241014145845":
+  version: 0.0.0-alpha-20241014145845
+  resolution: "@seed-design/stylesheet@npm:0.0.0-alpha-20241014145845"
+  checksum: 5118cecfc4f511581296a128b99480406692cfe2d9dc71dd2cfe8280f6ad46d2b8e51d5fa90cbc70bd028c3e05cc029507a3a3182bcace8e30d3721a9cde6f75
+  languageName: node
+  linkType: hard
+
+"@seed-design/stylesheet@workspace:packages/stylesheet":
   version: 0.0.0-use.local
   resolution: "@seed-design/stylesheet@workspace:packages/stylesheet"
   dependencies:
