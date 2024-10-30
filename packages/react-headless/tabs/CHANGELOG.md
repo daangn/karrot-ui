@@ -1,5 +1,13 @@
 # @seed-design/react-tabs
 
+## 0.0.0-alpha-20241030023710
+
+### Patch Changes
+
+- alpha 배포해요
+- Updated dependencies
+  - @seed-design/dom-utils@0.0.0-alpha-20241030023710
+
 ## 0.0.0-alpha-20241014145845
 
 ### Patch Changes

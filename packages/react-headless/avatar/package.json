@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/react-avatar",
-  "version": "0.0.0-alpha-20241004093556",
+  "version": "0.0.0-alpha-20241030023710",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
@@ -20,12 +20,13 @@
     "src"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
+    "prepack": "yarn build",
+    "clean": "rm -rf lib",
     "build": "nanobundle build"
   },
   "dependencies": {
     "@radix-ui/react-use-layout-effect": "^1.0.1",
-    "@seed-design/dom-utils": "0.0.0-alpha-20241004093556"
+    "@seed-design/dom-utils": "0.0.0-alpha-20241030023710"
   },
   "devDependencies": {
     "nanobundle": "^1.6.0"

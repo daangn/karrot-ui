@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/react-tabs",
-  "version": "0.0.0-alpha-20241014145845",
+  "version": "0.0.0-alpha-20241030023710",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
@@ -20,13 +20,14 @@
     "src"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
+    "prepack": "yarn build",
+    "clean": "rm -rf lib",
     "build": "nanobundle build"
   },
   "dependencies": {
     "@radix-ui/react-use-controllable-state": "1.0.1",
     "@radix-ui/react-use-size": "^1.1.0",
-    "@seed-design/dom-utils": "0.0.0-alpha-20241004093556",
+    "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
     "@use-gesture/react": "^10.3.1"
   },
   "devDependencies": {

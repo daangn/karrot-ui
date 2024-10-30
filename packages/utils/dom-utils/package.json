@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/dom-utils",
-  "version": "0.0.0-alpha-20241004093556",
+  "version": "0.0.0-alpha-20241030023710",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
@@ -20,7 +20,8 @@
     "src"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
+    "prepack": "yarn build",
+    "clean": "rm -rf lib",
     "build": "nanobundle build"
   },
   "devDependencies": {

@@ -4917,7 +4917,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/dom-utils@0.0.0-alpha-20241004093556, @seed-design/dom-utils@workspace:packages/utils/dom-utils":
+"@seed-design/dom-utils@0.0.0-alpha-20241030023710, @seed-design/dom-utils@workspace:packages/utils/dom-utils":
   version: 0.0.0-use.local
   resolution: "@seed-design/dom-utils@workspace:packages/utils/dom-utils"
   dependencies:
@@ -5041,7 +5041,7 @@ __metadata:
   resolution: "@seed-design/react-avatar@workspace:packages/react-headless/avatar"
   dependencies:
     "@radix-ui/react-use-layout-effect": ^1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241004093556
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -5049,12 +5049,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-checkbox@0.0.0-alpha-20241004093556, @seed-design/react-checkbox@workspace:packages/react-headless/checkbox":
+"@seed-design/react-checkbox@0.0.0-alpha-20241030023710, @seed-design/react-checkbox@workspace:packages/react-headless/checkbox":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-checkbox@workspace:packages/react-headless/checkbox"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241004093556
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -5071,12 +5071,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@seed-design/react-popover@0.0.0-alpha-20241004093556, @seed-design/react-popover@workspace:packages/react-headless/popover":
+"@seed-design/react-popover@0.0.0-alpha-20241030023710, @seed-design/react-popover@workspace:packages/react-headless/popover":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-popover@workspace:packages/react-headless/popover"
   dependencies:
     "@floating-ui/react": ^0.26.19
-    "@seed-design/dom-utils": 0.0.0-alpha-20241004093556
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     tshy: ^1.17.0
     typescript: ^5.4.5
   peerDependencies:
@@ -5085,12 +5085,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-radio-group@0.0.0-alpha-20241004093556, @seed-design/react-radio-group@workspace:packages/react-headless/radio-group":
+"@seed-design/react-radio-group@0.0.0-alpha-20241030023710, @seed-design/react-radio-group@workspace:packages/react-headless/radio-group":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-radio-group@workspace:packages/react-headless/radio-group"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241004093556
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -5098,12 +5098,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-switch@0.0.0-alpha-20241004093556, @seed-design/react-switch@workspace:packages/react-headless/switch":
+"@seed-design/react-switch@0.0.0-alpha-20241030023710, @seed-design/react-switch@workspace:packages/react-headless/switch":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-switch@workspace:packages/react-headless/switch"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241004093556
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -5111,13 +5111,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-tabs@0.0.0-alpha-20241014145845, @seed-design/react-tabs@workspace:packages/react-headless/tabs":
+"@seed-design/react-tabs@0.0.0-alpha-20241030023710, @seed-design/react-tabs@workspace:packages/react-headless/tabs":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-tabs@workspace:packages/react-headless/tabs"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
     "@radix-ui/react-use-size": ^1.1.0
-    "@seed-design/dom-utils": 0.0.0-alpha-20241004093556
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     "@use-gesture/react": ^10.3.1
     nanobundle: ^1.6.0
   peerDependencies:
@@ -5126,12 +5126,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-text-field@0.0.0-alpha-20241004093556, @seed-design/react-text-field@workspace:packages/react-headless/text-field":
+"@seed-design/react-text-field@0.0.0-alpha-20241030023710, @seed-design/react-text-field@workspace:packages/react-headless/text-field":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-text-field@workspace:packages/react-headless/text-field"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241004093556
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
     unicode-segmenter: ^0.7.0
   peerDependencies:
@@ -5198,7 +5198,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/recipe@0.0.0-alpha-20241014145845, @seed-design/recipe@workspace:packages/recipe":
+"@seed-design/recipe@0.0.0-alpha-20241030023710, @seed-design/recipe@workspace:packages/recipe":
   version: 0.0.0-use.local
   resolution: "@seed-design/recipe@workspace:packages/recipe"
   dependencies:
@@ -5212,13 +5212,13 @@ __metadata:
   dependencies:
     "@radix-ui/react-slot": ^1.0.2
     "@seed-design/icon": ^0.6.1
-    "@seed-design/react-popover": 0.0.0-alpha-20241004093556
-    "@seed-design/react-radio-group": 0.0.0-alpha-20241004093556
-    "@seed-design/react-switch": 0.0.0-alpha-20241004093556
-    "@seed-design/react-tabs": 0.0.0-alpha-20241014145845
-    "@seed-design/react-text-field": 0.0.0-alpha-20241004093556
-    "@seed-design/recipe": 0.0.0-alpha-20241014145845
-    "@seed-design/stylesheet": 0.0.0-alpha-20241014145845
+    "@seed-design/react-popover": 0.0.0-alpha-20241030023710
+    "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
+    "@seed-design/react-switch": 0.0.0-alpha-20241030023710
+    "@seed-design/react-tabs": 0.0.0-alpha-20241030023710
+    "@seed-design/react-text-field": 0.0.0-alpha-20241030023710
+    "@seed-design/recipe": 0.0.0-alpha-20241030023710
+    "@seed-design/stylesheet": 3.0.0-alpha-20241030023710
     "@stackflow/core": ^1.1.0
     "@stackflow/plugin-basic-ui": ^1.10.0
     "@stackflow/plugin-history-sync": ^1.7.0
@@ -5238,14 +5238,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/stylesheet@npm:0.0.0-alpha-20241014145845":
-  version: 0.0.0-alpha-20241014145845
-  resolution: "@seed-design/stylesheet@npm:0.0.0-alpha-20241014145845"
-  checksum: 5118cecfc4f511581296a128b99480406692cfe2d9dc71dd2cfe8280f6ad46d2b8e51d5fa90cbc70bd028c3e05cc029507a3a3182bcace8e30d3721a9cde6f75
-  languageName: node
-  linkType: hard
-
-"@seed-design/stylesheet@workspace:packages/stylesheet":
+"@seed-design/stylesheet@3.0.0-alpha-20241030023710, @seed-design/stylesheet@workspace:packages/stylesheet":
   version: 0.0.0-use.local
   resolution: "@seed-design/stylesheet@workspace:packages/stylesheet"
   dependencies:
@@ -7838,11 +7831,11 @@ __metadata:
   dependencies:
     "@daangn/icon-data": 0.0.0-alpha-20241022092935
     "@daangn/react-icon": 0.0.0-alpha-20241022090157
-    "@seed-design/react-checkbox": 0.0.0-alpha-20241004093556
+    "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
     "@seed-design/react-icon": ^0.7.3
-    "@seed-design/react-tabs": 0.0.0-alpha-20241014145845
-    "@seed-design/recipe": 0.0.0-alpha-20241014145845
-    "@seed-design/stylesheet": 0.0.0-alpha-20241014145845
+    "@seed-design/react-tabs": 0.0.0-alpha-20241030023710
+    "@seed-design/recipe": 0.0.0-alpha-20241030023710
+    "@seed-design/stylesheet": 3.0.0-alpha-20241030023710
     "@stackflow/config": ^1.2.0
     "@stackflow/core": ^1.1.0
     "@stackflow/plugin-basic-ui": ^1.10.0
