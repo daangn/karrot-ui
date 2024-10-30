@@ -2309,19 +2309,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/icon-data@npm:0.0.0-alpha-20241022092935":
-  version: 0.0.0-alpha-20241022092935
-  resolution: "@daangn/icon-data@npm:0.0.0-alpha-20241022092935::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.0-alpha-20241022092935%2Fbcb180a0f082b013239986d22fe9c7abbf73a837"
-  checksum: 2d40bf8be770977da8cd77ed7202d65b1dfd6eeb80afd2b32736ddd7318fc90efcd9ef1ef855054429d3f5e94dabc6fbb4462d385827b9acbf75e43a4ec698ae
-  languageName: node
-  linkType: hard
-
-"@daangn/react-icon@npm:0.0.0-alpha-20241022090157":
-  version: 0.0.0-alpha-20241022090157
-  resolution: "@daangn/react-icon@npm:0.0.0-alpha-20241022090157::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-icon%2F0.0.0-alpha-20241022090157%2F4056a3adf61f469786763ae24728ddeeb29d6e02"
-  peerDependencies:
-    react: 17.x || 18.x
-  checksum: 5bc212a12078dd7b88b20c090be6ec7682daea8e01842be692a80a8944800b4cce51188d72fc3dcd4df5f6b3c684b84f5fca1c83a61c5662db6b309ca1c60d65
+"@daangn/icon-data@npm:alpha":
+  version: 0.0.0-alpha-20241030033336
+  resolution: "@daangn/icon-data@npm:0.0.0-alpha-20241030033336::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.0-alpha-20241030033336%2F2b249efc42e4830fa0fafe89f4d5d75b26d7c583"
+  checksum: 35956e604e680c9294a465c8eb19721c5b5edb79c380000d3e234b5d82c90ac11437f7261c7ff5b7b596ab5ffb7b494f00a96b0f1dc46eb977158129d4d1222e
   languageName: node
   linkType: hard
 
@@ -2331,6 +2322,24 @@ __metadata:
   peerDependencies:
     react: 17.x || 18.x
   checksum: 1b6f30e5aa62f3e1036e938de334a48b33d75e634c569a59f2e2b37e980b100202990cc8a3763398e97e83695df05e8f9f35bb85760daa79c42ef9c5f6005980
+  languageName: node
+  linkType: hard
+
+"@daangn/react-monochrome-icon@npm:alpha":
+  version: 0.0.0-alpha-20241030033336
+  resolution: "@daangn/react-monochrome-icon@npm:0.0.0-alpha-20241030033336::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.0-alpha-20241030033336%2F3dcf105c90a70cf4b8caca31a0e58f8733585077"
+  peerDependencies:
+    react: 17.x || 18.x
+  checksum: 4bdc896f1279bc50bba9ca6d8fcbe5b41c0fc3014997b66c85270ae3a8fd019ae8225c2951d9ba0890f3ccc8412a26f4a7ec45c591f83efdbd18ce24a4dbe05a
+  languageName: node
+  linkType: hard
+
+"@daangn/react-multicolor-icon@npm:alpha":
+  version: 0.0.0-alpha-20241030033336
+  resolution: "@daangn/react-multicolor-icon@npm:0.0.0-alpha-20241030033336::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-multicolor-icon%2F0.0.0-alpha-20241030033336%2Fbce62f8a0339acbe959bc3d81ef408f1599bd86f"
+  peerDependencies:
+    react: 17.x || 18.x
+  checksum: e50c465ad036a14045ffc287ba8dd6e91a4abdfa37940f1bead84b90595ea6cabff89a6637d475457d25a08cc92d46dfe85a37340732bcb8fe9584c3780a3665
   languageName: node
   linkType: hard
 
@@ -7829,8 +7838,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
   dependencies:
-    "@daangn/icon-data": 0.0.0-alpha-20241022092935
-    "@daangn/react-icon": 0.0.0-alpha-20241022090157
+    "@daangn/icon-data": alpha
+    "@daangn/react-monochrome-icon": alpha
+    "@daangn/react-multicolor-icon": alpha
     "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
     "@seed-design/react-icon": ^0.7.3
     "@seed-design/react-tabs": 0.0.0-alpha-20241030023710
@@ -7848,6 +7858,8 @@ __metadata:
     autoprefixer: ^10.4.20
     chalk: ^5.3.0
     change-case: ^5.4.4
+    class-variance-authority: ^0.7.0
+    clsx: ^2.1.1
     fumadocs-core: 13.4.10
     fumadocs-docgen: ^1.2.0
     fumadocs-mdx: 10.0.2

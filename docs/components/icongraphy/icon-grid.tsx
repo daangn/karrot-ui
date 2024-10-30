@@ -1,7 +1,9 @@
-import * as React from "react";
 import * as changeCase from "change-case";
+import * as React from "react";
 
+import { cva } from "class-variance-authority";
 import { useIcon } from "./icon-context";
+import { Tags } from "./tags";
 
 export const IconGrid = () => {
   const { iconComponents, iconData, search, setSelectedIcon, selectedIcon } = useIcon();
@@ -40,14 +42,33 @@ export const IconGrid = () => {
           return null;
         }
 
+        const iconComponentVariants = cva(
+          "aspect-square rounded-md flex items-center justify-center cursor-pointer transition-colors",
+          {
+            variants: {
+              selected: {
+                true: "bg-seed-bg-brand-weak hover:bg-seed-bg-brand-weak-pressed border-seed-stroke-brand",
+                false: "bg-seed-bg-layer-default hover:bg-seed-bg-layer-default-pressed",
+              },
+              danger: {
+                true: "border-seed-stroke-danger border-[1px] bg-seed-bg-danger-weak",
+                false: "border-[1px]",
+              },
+            },
+          },
+        );
+
         return (
           <div
             onClick={() => onSelect(snakeCaseIconName)}
             key={iconName}
-            className={`aspect-square rounded-md flex items-center justify-center ${isSelected ? "hover:bg-seed-bg-brand-weak-pressed" : "hover:bg-seed-bg-layer-default-pressed"} cursor-pointer transition-colors ${isSelected ? "bg-seed-bg-brand-weak" : "bg-seed-bg-layer-default"}`}
+            className={iconComponentVariants({
+              danger: iconData[snakeCaseIconName].metadatas.includes(Tags.FIGMA_NOT_PUBLISHED),
+              selected: isSelected,
+            })}
             data-metadatas={metadataString}
           >
-            <IconComponent className="text-seed-" />
+            <IconComponent />
           </div>
         );
       })}
