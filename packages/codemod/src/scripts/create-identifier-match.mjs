@@ -3,9 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "url";
 import { pascalCase } from "change-case";
-import * as availableMonochromeIcons from "@daangn/react-icon";
-// import * as availableMonochromeIcons from "@daangn/react-monochrome-icon";
-// import * as availableMulticolorIcons from "@daangn/react-multicolor-icon";
+import * as availableMonochromeIcons from "@daangn/react-monochrome-icon";
+import * as availableMulticolorIcons from "@daangn/react-multicolor-icon";
 
 const filePath = path.join(path.dirname(fileURLToPath(import.meta.url)), "data.tsv");
 const data = fs.readFileSync(filePath, "utf8");
@@ -28,9 +27,9 @@ parse(data, { delimiter: "\t" }, (_err, records) => {
       fill: `${pascalCase(newName)}Fill`,
     };
 
-    // if (moveToMulticolor && pascalValue.default in availableMulticolorIcons === false) {
-    //   console.warn(`"${pascalValue.default}" is not available in @daangn/react-multicolor-icon.`);
-    // }
+    if (moveToMulticolor && pascalValue.default in availableMulticolorIcons === false) {
+      console.warn(`"${pascalValue.default}" is not available in @daangn/react-multicolor-icon.`);
+    }
 
     if (!moveToMulticolor) {
       if (pascalValue.line in availableMonochromeIcons === false) {
