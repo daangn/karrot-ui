@@ -25,7 +25,8 @@
     "build:style": "nanobundle build"
   },
   "dependencies": {
-    "@seed-design/recipe-generator-core": "0.0.0"
+    "@seed-design/recipe-generator-core": "0.0.0",
+    "@seed-design/vars": "0.0.0"
   },
   "devDependencies": {
     "nanobundle": "^1.6.0"
