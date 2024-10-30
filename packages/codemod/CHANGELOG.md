@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.2-alpha-20241030021453
+
+### Patch Changes
+
+- Replace `@karrotmarket/karrot-ui-icon/lib/react`
+
 ## 0.0.2-alpha-20241028102047
 
 ### Patch Changes
