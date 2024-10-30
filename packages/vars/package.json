@@ -34,7 +34,8 @@
     "lib"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
+    "clean": "rm -rf lib",
+    "prepack": "yarn build",
     "generate:component": "yarn generate-vars ./src/component",
     "build": "yarn build:style",
     "build:style": "yarn generate:component && nanobundle build"
