@@ -784,3 +784,32 @@ export function Test2() {
   `);
   });
 });
+
+test("home -> house -> window4house", () => {
+  const input = `import { IconHomeFill, IconHomeRegular, IconHomeThin, IconCommunityRegular, IconHouseThin, IconHouseRegular, IconSellRegular } from "@seed-design/icon";
+
+  function test() {
+    return <div>
+      <IconHomeThin />
+      <IconHomeFill />
+      <IconHouseThin />
+      <IconHouseRegular />
+    </div>;
+  }`;
+
+  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    "import { IconWindow4House } from "@daangn/react-multicolor-icon";
+    import { IconHouseFill, IconHouseLine, IconPostLine, IconPlusSquareLine } from "@daangn/react-monochrome-icon";
+
+    function test() {
+      return (
+        <div>
+          <IconHouseLine />
+          <IconHouseFill />
+          <IconWindow4House />
+          <IconWindow4House />
+        </div>
+      );
+    }"
+  `);
+});

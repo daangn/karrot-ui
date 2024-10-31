@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.2-alpha-20241031025011
+
+### Patch Changes
+
+- Fix `icon_home` being replaced with `icon_window4_house`
+
 ## 0.0.2-alpha-20241031022819
 
 ### Patch Changes
