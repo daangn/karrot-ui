@@ -1,5 +1,11 @@
 # @seed-design/cli
 
+## 0.0.0-alpha-20241031063855
+
+### Patch Changes
+
+- change BASE_URL
+
 ## 0.0.0-alpha-20241016030836
 
 ### Patch Changes
