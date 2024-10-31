@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.2-alpha-20241031022819
+
+### Patch Changes
+
+- Notify inline SVGs being used
+
 ## 0.0.2-alpha-20241030021453
 
 ### Patch Changes

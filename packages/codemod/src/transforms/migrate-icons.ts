@@ -136,6 +136,22 @@ const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIcons
     filePath: file.path,
   });
 
+  const inlineSvgs = tree.find(j.JSXElement, {
+    openingElement: {
+      name: {
+        name: "svg",
+      },
+    },
+  });
+
+  if (inlineSvgs.length > 0) {
+    const message = `inline svg가 ${inlineSvgs.length}개 있어요`;
+
+    logger?.warn(`${file.path}: ${message}`);
+    console.warn(message);
+    api.report?.(message);
+  }
+
   logger?.debug(`${file.path}: identifier 변환 완료`);
 
   logger?.debug(`${file.path}: 확인 완료`);
