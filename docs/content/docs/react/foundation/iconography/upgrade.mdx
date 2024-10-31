@@ -15,7 +15,7 @@ import { Accordions, Accordion } from "fumadocs-ui/components/accordion";
 
 - [`@seed-deesign/react-icon`](https://www.npmjs.com/package/@seed-design/react-icon)
 - [`@seed-design/icon`](https://www.npmjs.com/package/@seed-design/icon) (deprecated)
-- [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon) (deprecated) (React 컴포넌트를 사용하는 경우)
+- [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon)에서 제공되는 React 컴포넌트를 사용하는 경우 (deprecated)
 
 3개 패키지에서 사용하고 있는 아이콘에 따라 [`@daangn/react-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-monochrome-icon)과 [`@daangn/react-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)으로 대체돼요.
 
@@ -24,8 +24,8 @@ import { Accordions, Accordion } from "fumadocs-ui/components/accordion";
 다음과 같은 경우에는 수동으로 업그레이드해야 해요.
 
 - PNG, SVG 등의 파일로 기존 아이콘을 사용하는 경우
-  - [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon) (deprecated)에서 제공되는 SVG 파일을 사용하는 경우
-- 다음 패키지를 사용하는 경우
+  - [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon)에서 제공되는 SVG 파일을 사용하는 경우 (deprecated)
+- Vue 아이콘 패키지를 사용하는 경우
   - [`@seed-design/vue2-icon`](https://www.npmjs.com/package/@seed-design/vue2-icon)
     - 이 패키지는 다음 2개 패키지로 대체돼요: [`@daangn/vue2-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-monochrome-icon)과 [`@daangn/vue2-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-multicolor-icon)
   - [`@seed-design/vue3-icon`](https://www.npmjs.com/package/@seed-design/vue3-icon)
@@ -248,11 +248,13 @@ npm uninstall @seed-design/icon @seed-design/react-icon @karrotmarket/karrot-ui-
 다음 패키지를 사용하는 경우, 패키지를 제거해요.
 
 - [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon)
+- [`@seed-design/icon`](https://www.npmjs.com/package/@seed-design/icon)
+- [`@seed-design/react-icon`](https://www.npmjs.com/package/@seed-design/react-icon)
 - [`@seed-design/vue2-icon`](https://www.npmjs.com/package/@seed-design/vue2-icon)
 - [`@seed-design/vue3-icon`](https://www.npmjs.com/package/@seed-design/vue3-icon)
 
 ```package-install
-npm uninstall @karrotmarket/karrot-ui-icon @seed-design/vue2-icon @seed-design/vue3-icon
+npm uninstall @karrotmarket/karrot-ui-icon @seed-design/icon @seed-design/react-icon @seed-design/vue2-icon @seed-design/vue3-icon
 ```
 
 </Step>
@@ -346,7 +348,7 @@ git grep -E '(IconBold|IconCobuying|IconDelivery|IconSuggest|IconWriteStory)(Thi
 ### 단색 아이콘이 쓰여야 하는 곳에 멀티컬러 아이콘이 쓰이는 경우
 
 - 이전 아이콘 중 아래 4개 아이콘은 멀티컬러 아이콘(`@daangn/react-multicolor-icon`)으로 대체돼요.
-- 따라서, 단색 아이콘(`@daangn/react-monochrome-icon`)이 쓰여야 하는 곳인지 직접 확인이 필요해요.
+- 따라서, 멀티컬러 사용이 적절한지 확인이 필요해요. 단색 아이콘(`@daangn/react-monochrome-icon`)이 쓰여야 하는 곳이라면 수정해야 해요.
 
 | 이전 아이콘 이름 | 리뉴얼된 아이콘 이름                  |
 | ---------------- | ------------------------------------- |
