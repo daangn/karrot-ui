@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.2-alpha-20241031032411
+
+### Patch Changes
+
+- Return if importdefaultspecifiers
+
 ## 0.0.2-alpha-20241031025011
 
 ### Patch Changes

@@ -285,7 +285,11 @@ export function replaceIdentifiers({
   // biome-ignore lint/complexity/noForEach: <explanation>
   identifiers.forEach((identifier) => {
     // import specifier인 경우 아무것도 안 함 (replaceImportDeclarations에서 처리)
-    if (identifier.parent?.node.type === "ImportSpecifier") return;
+    if (
+      identifier.parent?.node.type === "ImportSpecifier" ||
+      identifier.parent?.node.type === "ImportDefaultSpecifier"
+    )
+      return;
 
     // 먼저 match된 것을 사용 (home -> house -> window4house 대응)
     const matchFound = identifierMatch.find(({ oldName }) => oldName === identifier.node.name);

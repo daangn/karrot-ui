@@ -785,8 +785,9 @@ export function Test2() {
   });
 });
 
-test("home -> house -> window4house", () => {
-  const input = `import { IconHomeFill, IconHomeRegular, IconHomeThin, IconCommunityRegular, IconHouseThin, IconHouseRegular, IconSellRegular } from "@seed-design/icon";
+describe("home -> house -> window4house", () => {
+  test("import specifiers", () => {
+    const input = `import { IconHomeFill, IconHomeRegular, IconHomeThin, IconCommunityRegular, IconHouseThin, IconHouseRegular, IconSellRegular } from "@seed-design/icon";
 
   function test() {
     return <div>
@@ -797,7 +798,7 @@ test("home -> house -> window4house", () => {
     </div>;
   }`;
 
-  expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+    expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
     "import { IconWindow4House } from "@daangn/react-multicolor-icon";
     import { IconHouseFill, IconHouseLine, IconPostLine, IconPlusSquareLine } from "@daangn/react-monochrome-icon";
 
@@ -812,4 +813,41 @@ test("home -> house -> window4house", () => {
       );
     }"
   `);
+  });
+
+  test("import default specifiers", () => {
+    const input = `import IconHomeFill from "@seed-design/icon/IconHomeFill";
+    import IconHomeRegular from "@seed-design/icon/IconHomeRegular";
+    import IconCommunityRegular from "@seed-design/icon/IconCommunityRegular";
+    import IconHouseThin from "@seed-design/icon/IconHouseThin";
+    import IconSellRegular from "@seed-design/icon/IconSellRegular";
+    
+    function test() {
+      return <div>
+      <IconHomeThin />
+      <IconHomeFill />
+      <IconHouseThin />
+      <IconHouseRegular />
+    </div>;
+      }`;
+
+    expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
+      "import IconHouseFill from "@daangn/react-monochrome-icon/IconHouseFill";
+          import IconHouseLine from "@daangn/react-monochrome-icon/IconHouseLine";
+          import IconPostLine from "@daangn/react-monochrome-icon/IconPostLine";
+          import IconWindow4House from "@daangn/react-multicolor-icon/IconWindow4House";
+          import IconPlusSquareLine from "@daangn/react-monochrome-icon/IconPlusSquareLine";
+          
+          function test() {
+            return (
+              <div>
+              <IconHouseLine />
+              <IconHouseFill />
+              <IconWindow4House />
+              <IconWindow4House />
+            </div>
+            );
+            }"
+    `);
+  });
 });
