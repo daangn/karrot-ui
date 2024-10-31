@@ -1,5 +1,11 @@
 # @seed-design/cli
 
+## 0.0.0-alpha-20241031064135
+
+### Patch Changes
+
+- implement cli command `check-deprecated-icon-files`
+
 ## 0.0.0-alpha-20241031063855
 
 ### Patch Changes
