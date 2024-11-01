@@ -1,0 +1,123 @@
+---
+title: Inline Banner
+---
+
+<ComponentExample name="inline-banner-preview" />
+
+## 설치
+
+<Installation name="inline-banner" />
+
+## Props
+
+<AutoTypeTable
+  path="./registry/component/inline-banner.tsx"
+  name="InlineBannerProps"
+/>
+
+<Callout type="warn" title={`tone="danger"인 경우`}>
+
+- `onXIconClick` prop을 통해 컴포넌트를 dismissible하게 만들 수 없습니다.
+- 컴포넌트가 상단에 고정되어 표시됩니다.
+
+</Callout>
+
+<StackflowExample name="inline-banner-activity" />
+
+## 예제
+
+### Interaction
+
+<Tabs items={["Default", "Link", "Dismissible"]}>
+
+<Tab value="Default">
+
+<ComponentExample name="inline-banner-default" />
+
+</Tab>
+
+<Tab value="Link">
+
+<ComponentExample name="inline-banner-link" />
+
+</Tab>
+
+<Tab value="Dismissible">
+
+<ComponentExample name="inline-banner-dismissible" />
+
+</Tab>
+
+</Tabs>
+
+### Layout
+
+<Tabs items={["텍스트만", "아이콘"]}>
+
+<Tab value="텍스트만">
+
+<ComponentExample name="inline-banner-text-only" />
+
+</Tab>
+
+<Tab value="아이콘">
+
+<ComponentExample name="inline-banner-with-icon" />
+
+</Tab>
+
+</Tabs>
+
+### Variants & Tones
+
+<Tabs items={['Weak', 'Solid']}>
+
+<Tab value="Weak">
+
+#### Neutral Weak
+
+<ComponentExample name="inline-banner-neutral-weak" />
+
+#### Positive Weak
+
+<ComponentExample name="inline-banner-positive-weak" />
+
+#### Informative Weak
+
+<ComponentExample name="inline-banner-informative-weak" />
+
+#### Warning Weak
+
+<ComponentExample name="inline-banner-warning-weak" />
+
+#### Danger Weak
+
+<ComponentExample name="inline-banner-danger-weak" />
+
+</Tab>
+
+<Tab value="Solid">
+
+#### Neutral Solid
+
+<ComponentExample name="inline-banner-neutral-solid" />
+
+#### Positive Solid
+
+<ComponentExample name="inline-banner-positive-solid" />
+
+#### Informative Solid
+
+<ComponentExample name="inline-banner-informative-solid" />
+
+#### Warning Solid
+
+<ComponentExample name="inline-banner-warning-solid" />
+
+#### Danger Solid
+
+<ComponentExample name="inline-banner-danger-solid" />
+
+</Tab>
+
+</Tabs>
