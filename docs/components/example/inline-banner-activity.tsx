@@ -10,24 +10,24 @@ import AppScreen from "@/components/stackflow/ActivityLayout";
 
 declare module "@stackflow/config" {
   interface Register {
-    InlineBannerActivity: unknown;
+    InlineBanner: unknown;
   }
 }
 
-const InlineBannerActivityActivity: ActivityComponentType<"InlineBannerActivity"> = () => {
+const InlineBannerActivity: ActivityComponentType<"InlineBanner"> = () => {
   const [tone, setTone] =
     React.useState<Extract<InlineBannerProps["tone"], "neutral" | "danger">>("danger");
 
   return (
     <AppScreen>
-      <InlineBanner tone={tone as "neutral"}>
+      <InlineBanner tone={tone as "danger"}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </InlineBanner>
       <div style={{ display: "flex", flexDirection: "column", padding: "1rem", gap: "0.75rem" }}>
         <ActionButton onClick={() => setTone((prev) => (prev === "danger" ? "neutral" : "danger"))}>
           Toggle tone
         </ActionButton>
-        <p style={{ marginBlock: 0 }}>
+        <p style={{ marginBlock: 0, lineHeight: 1.35 }}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. At a eaque fugiat sint sapiente.
           Id, hic ex, blanditiis totam animi amet delectus temporibus quae fugiat magnam, quos eaque
           dolorum a? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus labore unde
@@ -53,4 +53,4 @@ const InlineBannerActivityActivity: ActivityComponentType<"InlineBannerActivity"
   );
 };
 
-export default InlineBannerActivityActivity;
+export default InlineBannerActivity;

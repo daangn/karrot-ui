@@ -17,7 +17,7 @@ title: Inline Banner
 
 <Callout type="warn" title={`tone="danger"인 경우`}>
 
-- `onXIconClick` prop을 통해 컴포넌트를 dismissible하게 만들 수 없습니다.
+- `dismissible` prop을 사용할 수 없습니다.
 - 컴포넌트가 상단에 고정되어 표시됩니다.
 
 </Callout>
@@ -28,7 +28,7 @@ title: Inline Banner
 
 ### Interaction
 
-<Tabs items={["Default", "Link", "Dismissible"]}>
+<Tabs items={["Default", "Action", "Dismissible"]}>
 
 <Tab value="Default">
 
@@ -36,9 +36,9 @@ title: Inline Banner
 
 </Tab>
 
-<Tab value="Link">
+<Tab value="Action">
 
-<ComponentExample name="inline-banner-link" />
+<ComponentExample name="inline-banner-action" />
 
 </Tab>
 
