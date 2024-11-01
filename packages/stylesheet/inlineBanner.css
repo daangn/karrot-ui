@@ -4,6 +4,8 @@
     align-items: center;
     gap: var(--seed-v3-unit-4);
     width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     padding-inline: var(--seed-v3-unit-4);
     padding-block: var(--seed-v3-unit-2\.5)
 }

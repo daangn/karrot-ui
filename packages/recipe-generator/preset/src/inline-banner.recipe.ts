@@ -21,6 +21,8 @@ export const inlineBanner = defineRecipe({
       gap: vars.base.enabled.root.gap,
 
       width: "100%",
+      WebkitFontSmoothing: "antialiased",
+      MozOsxFontSmoothing: "grayscale",
 
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
