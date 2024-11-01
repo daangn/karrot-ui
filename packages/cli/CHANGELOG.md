@@ -1,5 +1,11 @@
 # @seed-design/cli
 
+## 0.0.0-alpha-20241101030717
+
+### Patch Changes
+
+- url을 변경해요
+
 ## 0.0.0-alpha-20241031064135
 
 ### Patch Changes
