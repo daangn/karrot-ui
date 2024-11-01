@@ -11,35 +11,48 @@ export interface MigrateIconsOptions {
   match?: {
     source: {
       startsWith: string;
-      replaceWith?: string;
+      replaceWith: {
+        default: string;
+        multicolor: string;
+      };
     }[];
     identifier: {
       oldName: string;
       newName: string;
       isActionRequired?: boolean;
-      keepForNow?: boolean;
+      moveToMulticolor?: boolean;
     }[];
   };
-  replaceIconsKeptForNow?: boolean;
 }
 
 export const reactMatch: MigrateIconsOptions["match"] = {
   source: [
-    { startsWith: "@seed-design/icon", replaceWith: "@daangn/react-icon" },
-    { startsWith: "@seed-design/react-icon", replaceWith: "@daangn/react-icon" },
+    {
+      startsWith: "@seed-design/icon",
+      replaceWith: {
+        default: "@daangn/react-monochrome-icon",
+        multicolor: "@daangn/react-multicolor-icon",
+      },
+    },
+    {
+      startsWith: "@seed-design/react-icon",
+      replaceWith: {
+        default: "@daangn/react-monochrome-icon",
+        multicolor: "@daangn/react-multicolor-icon",
+      },
+    },
+    {
+      startsWith: "@karrotmarket/karrot-ui-icon/lib/react",
+      replaceWith: {
+        default: "@daangn/react-monochrome-icon",
+        multicolor: "@daangn/react-multicolor-icon",
+      },
+    },
   ],
   identifier: identifierMatchReact,
 };
 
-const migrateIcons: Transform = (
-  file,
-  api,
-  {
-    match = reactMatch,
-    // XXX: keep for now하기로 결정한 아이콘까지 변경하고 싶으면 true로 배포
-    replaceIconsKeptForNow = false,
-  }: MigrateIconsOptions,
-) => {
+const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIconsOptions) => {
   const logger =
     process.env.LOG === "true"
       ? createLogger({
@@ -81,7 +94,6 @@ const migrateIcons: Transform = (
     logger,
     report: api.report,
     filePath: file.path,
-    replaceIconsKeptForNow,
   });
 
   const importDeclarations = tree.find(j.ImportDeclaration, {
@@ -105,7 +117,6 @@ const migrateIcons: Transform = (
     logger,
     report: api.report,
     filePath: file.path,
-    replaceIconsKeptForNow,
   });
 
   logger?.debug(`${file.path}: import문 변환 완료`);
@@ -123,8 +134,23 @@ const migrateIcons: Transform = (
     logger,
     report: api.report,
     filePath: file.path,
-    replaceIconsKeptForNow,
   });
+
+  const inlineSvgs = tree.find(j.JSXElement, {
+    openingElement: {
+      name: {
+        name: "svg",
+      },
+    },
+  });
+
+  if (inlineSvgs.length > 0) {
+    const message = `inline svg가 ${inlineSvgs.length}개 있어요`;
+
+    logger?.warn(`${file.path}: ${message}`);
+    console.warn(message);
+    api.report?.(message);
+  }
 
   logger?.debug(`${file.path}: identifier 변환 완료`);
 

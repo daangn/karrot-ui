@@ -9,7 +9,7 @@ import {
   IconHouseLine,
   IconPersonLine,
   IconPlusSquareFill,
-} from "@daangn/react-icon";
+} from "@daangn/react-monochrome-icon";
 
 type PropOf<T> = T extends React.ComponentType<infer U> ? U : never;
 

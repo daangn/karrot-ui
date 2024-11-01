@@ -1,4 +1,4 @@
-import { IconPlusFill } from "@daangn/react-icon";
+import { IconPlusFill } from "@daangn/react-monochrome-icon";
 import { ActionButton } from "seed-design/ui/action-button";
 
 export default function ActionButtonPrefixIcon() {

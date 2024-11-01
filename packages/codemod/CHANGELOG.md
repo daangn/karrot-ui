@@ -1,5 +1,41 @@
 # @seed-design/codemod
 
+## 0.0.2
+
+### Patch Changes
+
+- 멀티컬러 패키지로의 마이그레이션에 대응, @karrotmarket/karrot-ui-icon/lib/react 마이그레이션
+
+## 0.0.2-alpha-20241031032411
+
+### Patch Changes
+
+- Return if importdefaultspecifiers
+
+## 0.0.2-alpha-20241031025011
+
+### Patch Changes
+
+- Fix `icon_home` being replaced with `icon_window4_house`
+
+## 0.0.2-alpha-20241031022819
+
+### Patch Changes
+
+- Notify inline SVGs being used
+
+## 0.0.2-alpha-20241030021453
+
+### Patch Changes
+
+- Replace `@karrotmarket/karrot-ui-icon/lib/react`
+
+## 0.0.2-alpha-20241028102047
+
+### Patch Changes
+
+- Migreate specific icons to the new multicolor package
+
 ## 0.0.1
 
 ### Patch Changes

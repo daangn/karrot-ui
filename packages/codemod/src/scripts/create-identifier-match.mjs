@@ -3,7 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "url";
 import { pascalCase } from "change-case";
-import * as availableIcons from "@daangn/react-icon";
+import * as availableMonochromeIcons from "@daangn/react-monochrome-icon";
+import * as availableMulticolorIcons from "@daangn/react-multicolor-icon";
 
 const filePath = path.join(path.dirname(fileURLToPath(import.meta.url)), "data.tsv");
 const data = fs.readFileSync(filePath, "utf8");
@@ -11,46 +12,54 @@ const data = fs.readFileSync(filePath, "utf8");
 parse(data, { delimiter: "\t" }, (_err, records) => {
   const result = [];
 
-  for (const [oldName, newName, ar] of records) {
+  for (const [oldName, newName, isActionRequiredValue, moveToMulticolorValue] of records) {
     const pascalOldName = pascalCase(oldName);
-    const isActionRequired = ar.trim() === "1";
+    const isActionRequired = isActionRequiredValue.trim() === "1";
+    const moveToMulticolor = moveToMulticolorValue.trim() === "1";
 
     if (newName === "") {
       throw new Error(`"${oldName}" has no mapping value`);
     }
 
     const pascalValue = {
+      default: `${pascalCase(newName)}`,
       line: `${pascalCase(newName)}Line`,
       fill: `${pascalCase(newName)}Fill`,
     };
 
-    const isAvailableNow = pascalValue.line in availableIcons && pascalValue.fill in availableIcons;
+    if (moveToMulticolor && pascalValue.default in availableMulticolorIcons === false) {
+      console.warn(`"${pascalValue.default}" is not available in @daangn/react-multicolor-icon.`);
+    }
 
-    if (!isAvailableNow) {
-      console.warn(
-        `"${oldName}" -> "${newName}" is not available in @daangn/react-icon. Set keepForNow: true`,
-      );
+    if (!moveToMulticolor) {
+      if (pascalValue.line in availableMonochromeIcons === false) {
+        console.warn(`"${pascalValue.line}" is not available in @daangn/react-monochrome-icon.`);
+      }
+
+      if (pascalValue.fill in availableMonochromeIcons === false) {
+        console.warn(`"${pascalValue.fill}" is not available in @daangn/react-monochrome-icon.`);
+      }
     }
 
     result.push({
       oldName: `${pascalOldName}Thin`,
-      newName: pascalValue.line,
+      newName: moveToMulticolor ? pascalValue.default : pascalValue.line,
       ...(isActionRequired && { isActionRequired }),
-      ...(!isAvailableNow && { keepForNow: true }),
+      ...(moveToMulticolor && { moveToMulticolor }),
     });
 
     result.push({
       oldName: `${pascalOldName}Regular`,
-      newName: pascalValue.line,
+      newName: moveToMulticolor ? pascalValue.default : pascalValue.line,
       ...(isActionRequired && { isActionRequired }),
-      ...(!isAvailableNow && { keepForNow: true }),
+      ...(moveToMulticolor && { moveToMulticolor }),
     });
 
     result.push({
       oldName: `${pascalOldName}Fill`,
-      newName: pascalValue.fill,
+      newName: moveToMulticolor ? pascalValue.default : pascalValue.fill,
       ...(isActionRequired && { isActionRequired }),
-      ...(!isAvailableNow && { keepForNow: true }),
+      ...(moveToMulticolor && { moveToMulticolor }),
     });
   }
 

@@ -2,7 +2,6 @@ import jscodeshift from "jscodeshift";
 import type { MigrateIconsOptions } from "../transforms/migrate-icons.js";
 import type { Logger } from "winston";
 import { partition, uniqWith } from "es-toolkit";
-import { string } from "zod";
 
 interface ReplaceImportDeclarationsParams {
   importDeclarations: jscodeshift.Collection<jscodeshift.ImportDeclaration>;
@@ -10,7 +9,6 @@ interface ReplaceImportDeclarationsParams {
   logger?: Logger;
   report?: jscodeshift.API["report"];
   filePath: jscodeshift.FileInfo["path"];
-  replaceIconsKeptForNow?: boolean;
 }
 
 export function replaceImportDeclarations({
@@ -19,9 +17,8 @@ export function replaceImportDeclarations({
   logger,
   report,
   filePath,
-  replaceIconsKeptForNow,
 }: ReplaceImportDeclarationsParams) {
-  const iconsWithNewName = match.identifier.map(({ oldName }) => oldName);
+  const availableNewNames = match.identifier.map(({ oldName }) => oldName);
 
   // biome-ignore lint/complexity/noForEach: <explanation>
   importDeclarations.forEach((imp) => {
@@ -30,131 +27,97 @@ export function replaceImportDeclarations({
     const currentImportKind = imp.node.importKind;
     const currentComments = imp.node.comments;
 
-    const exactSourceMatch = match.source.find(
+    const standardImportSourceMatch = match.source.find(
       ({ startsWith }) => startsWith === currentSourceValue,
     );
-    const deepImportMatch =
-      !exactSourceMatch &&
+    const deepImportSourceMatch =
+      !standardImportSourceMatch &&
       match.source.find(({ startsWith }) =>
         typeof currentSourceValue !== "string" ? false : currentSourceValue.startsWith(startsWith),
       );
 
+    // import * as package from "package";
     if (
-      exactSourceMatch &&
+      standardImportSourceMatch &&
       currentSpecifiers.every((specifier) => specifier.type === "ImportNamespaceSpecifier")
     ) {
-      const newSourceValue = exactSourceMatch.replaceWith;
-
-      const importDeclaration = jscodeshift.importDeclaration(
+      const newImportDeclaration = jscodeshift.importDeclaration(
         currentSpecifiers,
-        jscodeshift.literal(newSourceValue),
+        jscodeshift.literal(standardImportSourceMatch.replaceWith.default),
         currentImportKind,
       );
 
-      importDeclaration.comments = currentComments;
+      newImportDeclaration.comments = currentComments;
 
-      jscodeshift(imp).replaceWith(importDeclaration);
+      jscodeshift(imp).replaceWith(newImportDeclaration);
     }
 
+    // import { specifier1, specifier2 } from "package";
     if (
-      exactSourceMatch &&
+      standardImportSourceMatch &&
       currentSpecifiers.every((specifier) => specifier.type === "ImportSpecifier")
     ) {
-      const specifiersWithoutIconsWithoutNewName = currentSpecifiers.filter((specifier) =>
-        iconsWithNewName.includes(specifier.imported.name),
-      );
-
-      const [specifiersToKeepInCurrentPackage, specifiersToMigrateToNewPackage] = partition(
-        specifiersWithoutIconsWithoutNewName,
+      const [specifiersToMoveToDefaultPackage, specifiersToMoveToMulticolor] = partition(
+        currentSpecifiers,
         (specifier) =>
-          !replaceIconsKeptForNow &&
-          match.identifier.find(({ oldName }) => oldName === specifier.imported.name)?.keepForNow,
+          !match.identifier.find(({ oldName }) => oldName === specifier.imported.name)
+            ?.moveToMulticolor,
       );
 
-      if (specifiersToKeepInCurrentPackage.length > 0) {
-        const importDeclaration = jscodeshift.importDeclaration(
-          specifiersToKeepInCurrentPackage,
-          jscodeshift.literal(currentSourceValue),
+      // 새 패키지의 default 버전으로 마이그레이션할 specifiers
+      const newSpecifiersToMoveToDefaultPackage = getNewSpecifiersWithoutDuplicates({
+        specifiers: specifiersToMoveToDefaultPackage,
+      });
+      if (newSpecifiersToMoveToDefaultPackage.length > 0) {
+        const newImportDeclaration = jscodeshift.importDeclaration(
+          newSpecifiersToMoveToDefaultPackage,
+          jscodeshift.literal(standardImportSourceMatch.replaceWith.default),
           currentImportKind,
         );
 
-        importDeclaration.comments = currentComments;
+        newImportDeclaration.comments = currentComments;
 
-        jscodeshift(imp).insertAfter(importDeclaration);
+        jscodeshift(imp).insertAfter(newImportDeclaration);
       }
 
-      if (specifiersToMigrateToNewPackage.length > 0) {
-        const newSpecifiers = specifiersToMigrateToNewPackage.map((currentSpecifier) => {
-          // 먼저 match된 것을 사용 (home -> house -> window4house 대응)
-          const matchFound = match.identifier.find(
-            (match) => match.oldName === currentSpecifier.imported.name,
-          );
+      // 새 패키지의 multicolor 버전으로 마이그레이션할 specifiers
+      const newSpecifiersToMoveToMulticolor = getNewSpecifiersWithoutDuplicates({
+        specifiers: specifiersToMoveToMulticolor,
+      });
+      if (newSpecifiersToMoveToMulticolor.length > 0) {
+        const iconsString = specifiersToMoveToMulticolor
+          .map(({ imported }) => imported.name)
+          .join(", ");
+        const message = `import specifier ${iconsString}를 멀티컬러 패키지의 아이콘으로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
-          if (!matchFound) {
-            const message = `imported specifier ${currentSpecifier.imported.name}에 대한 변환 정보 없음`;
+        logger?.warn(`${filePath}: ${message}`);
+        console.warn(message);
+        report?.(message);
 
-            logger?.error(`${filePath}: ${message}`);
-            console.warn(message);
-            report?.(message);
-
-            return currentSpecifier;
-          }
-
-          if (!replaceIconsKeptForNow && matchFound.keepForNow) {
-            const message = `import source ${currentSourceValue}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
-
-            logger?.warn(`${filePath}: ${message}`);
-            console.warn(message);
-            report?.(message);
-
-            return currentSpecifier;
-          }
-
-          if (matchFound.isActionRequired) {
-            const message = `imported specifier ${currentSpecifier.imported.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
-
-            logger?.warn(`${filePath}: ${message}`);
-            console.warn(message);
-            report?.(message);
-          }
-
-          const newSpecifier = jscodeshift.importSpecifier(
-            jscodeshift.identifier(matchFound.newName),
-            jscodeshift.identifier(
-              currentSpecifier.local.name === matchFound.oldName
-                ? matchFound.newName
-                : currentSpecifier.local.name,
-            ),
-          );
-
-          newSpecifier.comments = currentSpecifier.comments;
-
-          return newSpecifier;
-        });
-
-        const newSpecifiersWithoutDuplicates = uniqWith(
-          newSpecifiers,
-          (a, b) => a.type === b.type && a.imported.name === b.imported.name,
-        );
-
-        const importDeclaration = jscodeshift.importDeclaration(
-          newSpecifiersWithoutDuplicates,
-          jscodeshift.literal(exactSourceMatch.replaceWith),
+        const newImportDeclaration = jscodeshift.importDeclaration(
+          newSpecifiersToMoveToMulticolor,
+          jscodeshift.literal(standardImportSourceMatch.replaceWith.multicolor),
           currentImportKind,
         );
 
-        importDeclaration.comments = currentComments;
+        newImportDeclaration.comments = currentComments;
 
-        jscodeshift(imp).insertAfter(importDeclaration);
+        jscodeshift(imp).insertAfter(newImportDeclaration);
       }
 
-      if (specifiersWithoutIconsWithoutNewName.length > 0) {
+      const specifiersWithNewNameAvailable = currentSpecifiers.filter((specifier) =>
+        availableNewNames.includes(specifier.imported.name),
+      );
+
+      // 모든 specifier가 새 패키지(default or multicolor)로 이동되었을 경우 기존 import문 제거
+      if (specifiersWithNewNameAvailable.length > 0) {
         jscodeshift(imp).remove();
       }
     }
 
+    // import Icon from "package/some/path/to/Icon";
     if (
-      deepImportMatch &&
+      deepImportSourceMatch &&
       currentSpecifiers.every((specifier) => specifier.type === "ImportDefaultSpecifier")
     ) {
       const newSourceValue = (() => {
@@ -162,7 +125,7 @@ export function replaceImportDeclarations({
 
         const splits = currentSourceValue.split("/");
 
-        let shouldKeepPackageName = false;
+        let shouldMigrateToMulticolor = false;
 
         const splitsWithIconNameReplaced = splits.map((split, index) => {
           // 마지막 아닌 경우 pass
@@ -173,18 +136,6 @@ export function replaceImportDeclarations({
           // 마지막인데 match 없는 경우 pass
           if (!matchFound) return split;
 
-          if (!replaceIconsKeptForNow && matchFound.keepForNow) {
-            const message = `import source ${currentSourceValue}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
-
-            logger?.warn(`${filePath}: ${message}`);
-            console.warn(message);
-            report?.(message);
-
-            shouldKeepPackageName = true;
-
-            return split;
-          }
-
           if (matchFound.isActionRequired) {
             const message = `import source ${currentSourceValue}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
 
@@ -193,10 +144,14 @@ export function replaceImportDeclarations({
             report?.(message);
           }
 
+          if (matchFound.moveToMulticolor) {
+            shouldMigrateToMulticolor = true;
+          }
+
+          // multicolor로 이동하는지는 이 스코프에서 안 중요
+
           return matchFound.newName;
         });
-
-        if (shouldKeepPackageName) return splitsWithIconNameReplaced.join("/");
 
         const sourceMatch = match.source.find(({ startsWith }) =>
           currentSourceValue.startsWith(startsWith),
@@ -204,11 +159,14 @@ export function replaceImportDeclarations({
 
         if (!sourceMatch) return splitsWithIconNameReplaced.join("/");
 
-        const newPackageName = splitsWithIconNameReplaced
+        return splitsWithIconNameReplaced
           .join("/")
-          .replace(sourceMatch.startsWith, sourceMatch.replaceWith);
-
-        return newPackageName;
+          .replace(
+            sourceMatch.startsWith,
+            shouldMigrateToMulticolor
+              ? sourceMatch.replaceWith.multicolor
+              : sourceMatch.replaceWith.default,
+          );
       })();
 
       const newSpecifiers = currentSpecifiers.map((currentSpecifier) => {
@@ -218,18 +176,16 @@ export function replaceImportDeclarations({
 
         if (!matchFound) return currentSpecifier;
 
-        if (!replaceIconsKeptForNow && matchFound.keepForNow) {
-          const message = `import source ${currentSourceValue}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
+        if (matchFound.moveToMulticolor) {
+          const message = `import specifier ${matchFound.oldName}를 멀티컬러 패키지의 ${matchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
           report?.(message);
-
-          return currentSpecifier;
         }
 
         if (matchFound.isActionRequired) {
-          const message = `imported specifier ${currentSpecifier.local.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+          const message = `import specifier ${currentSpecifier.local.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
 
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
@@ -245,17 +201,70 @@ export function replaceImportDeclarations({
         );
       });
 
-      const importDeclaration = jscodeshift.importDeclaration(
+      const newImportDeclaration = jscodeshift.importDeclaration(
         newSpecifiers,
         jscodeshift.literal(newSourceValue),
         currentImportKind,
       );
 
-      importDeclaration.comments = currentComments;
+      newImportDeclaration.comments = currentComments;
 
-      jscodeshift(imp).replaceWith(importDeclaration);
+      jscodeshift(imp).replaceWith(newImportDeclaration);
     }
   });
+
+  function getNewSpecifiersWithoutDuplicates({
+    specifiers,
+  }: {
+    specifiers: jscodeshift.ImportSpecifier[];
+  }) {
+    const newSpecifiers = specifiers
+      .map((currentSpecifier) => {
+        // 먼저 match된 것을 사용 (home -> house -> window4house 대응)
+        const matchFound = match.identifier.find(
+          (match) => match.oldName === currentSpecifier.imported.name,
+        );
+
+        if (!matchFound) {
+          const message = `import specifier ${currentSpecifier.imported.name}에 대한 변환 정보 없음`;
+
+          logger?.error(`${filePath}: ${message}`);
+          console.warn(message);
+          report?.(message);
+
+          return null;
+        }
+
+        if (matchFound.isActionRequired) {
+          const message = `import specifier ${currentSpecifier.imported.name}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+
+          logger?.warn(`${filePath}: ${message}`);
+          console.warn(message);
+          report?.(message);
+        }
+
+        const newSpecifier = jscodeshift.importSpecifier(
+          jscodeshift.identifier(matchFound.newName),
+          jscodeshift.identifier(
+            currentSpecifier.local.name === matchFound.oldName
+              ? matchFound.newName
+              : currentSpecifier.local.name,
+          ),
+        );
+
+        newSpecifier.comments = currentSpecifier.comments;
+
+        return newSpecifier;
+      })
+      .filter(Boolean);
+
+    const newSpecifiersWithoutDuplicates = uniqWith(
+      newSpecifiers,
+      (a, b) => a.type === b.type && a.imported.name === b.imported.name,
+    );
+
+    return newSpecifiersWithoutDuplicates;
+  }
 }
 
 interface ReplaceIdentifiersParams {
@@ -264,7 +273,6 @@ interface ReplaceIdentifiersParams {
   logger?: Logger;
   report?: jscodeshift.API["report"];
   filePath: jscodeshift.FileInfo["path"];
-  replaceIconsKeptForNow?: boolean;
 }
 
 export function replaceIdentifiers({
@@ -273,23 +281,27 @@ export function replaceIdentifiers({
   logger,
   report,
   filePath,
-  replaceIconsKeptForNow,
 }: ReplaceIdentifiersParams) {
   // biome-ignore lint/complexity/noForEach: <explanation>
   identifiers.forEach((identifier) => {
+    // import specifier인 경우 아무것도 안 함 (replaceImportDeclarations에서 처리)
+    if (
+      identifier.parent?.node.type === "ImportSpecifier" ||
+      identifier.parent?.node.type === "ImportDefaultSpecifier"
+    )
+      return;
+
     // 먼저 match된 것을 사용 (home -> house -> window4house 대응)
     const matchFound = identifierMatch.find(({ oldName }) => oldName === identifier.node.name);
 
     if (!matchFound) return;
 
-    if (!replaceIconsKeptForNow && matchFound.keepForNow) {
-      const message = `identifier ${identifier.node.name}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
+    if (matchFound.moveToMulticolor) {
+      const message = `identifier ${matchFound.oldName}를 멀티컬러 패키지의 ${matchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
       logger?.warn(`${filePath}: ${message}`);
       console.warn(message);
       report?.(message);
-
-      return;
     }
 
     if (matchFound.isActionRequired) {
@@ -314,7 +326,6 @@ interface ReplaceStringLiteralsProps {
   logger?: Logger;
   report?: jscodeshift.API["report"];
   filePath: jscodeshift.FileInfo["path"];
-  replaceIconsKeptForNow?: boolean;
 }
 
 export function replaceStringLiterals({
@@ -323,7 +334,6 @@ export function replaceStringLiterals({
   logger,
   report,
   filePath,
-  replaceIconsKeptForNow,
 }: ReplaceStringLiteralsProps) {
   // biome-ignore lint/complexity/noForEach: <explanation>
   stringLiterals.forEach((stringLiteral) => {
@@ -335,18 +345,16 @@ export function replaceStringLiterals({
     );
 
     if (identifierMatchFound) {
-      if (!replaceIconsKeptForNow && identifierMatchFound.keepForNow) {
-        const message = `string literal ${stringLiteral.node.value}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
+      if (identifierMatchFound.isActionRequired) {
+        const message = `string literal ${stringLiteral.node.value}을 ${identifierMatchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
 
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
         report?.(message);
-
-        return;
       }
 
-      if (identifierMatchFound.isActionRequired) {
-        const message = `string literal ${stringLiteral.node.value}을 ${identifierMatchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+      if (identifierMatchFound.moveToMulticolor) {
+        const message = `string literal ${stringLiteral.node.value}를 멀티컬러 패키지의 ${identifierMatchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
@@ -361,34 +369,39 @@ export function replaceStringLiterals({
     }
 
     if (sourceMatchFound && stringLiteral.parent?.node.type !== "ImportDeclaration") {
-      console.log(stringLiteral.node.value);
-
       const sourceMatch = match.source.find(({ startsWith }) =>
         stringLiteral.node.value.startsWith(startsWith),
       );
 
       if (!sourceMatch) return;
 
+      const identifierMatchFoundAtLast = match.identifier.find(
+        ({ oldName }) => oldName === stringLiteral.node.value.split("/").pop(),
+      );
+
       const newSourceValue = stringLiteral.node.value
-        .replace(sourceMatch.startsWith, sourceMatch.replaceWith)
+        .replace(
+          sourceMatch.startsWith,
+          identifierMatchFoundAtLast?.moveToMulticolor
+            ? sourceMatch.replaceWith.multicolor
+            : sourceMatch.replaceWith.default,
+        )
         .split("/")
         .map((split, index) => {
           const matchFound = match.identifier.find(({ oldName }) => oldName === split);
 
           if (!matchFound || index !== stringLiteral.node.value.split("/").length - 1) return split;
 
-          if (!replaceIconsKeptForNow && matchFound.keepForNow) {
-            const message = `import source ${stringLiteral.node.value}에 대한 변환 정보가 있지만, 아직 신규 아이콘 패키지에 배포되지 않아 변환하지 않아요`;
+          if (matchFound.isActionRequired) {
+            const message = `string literal ${stringLiteral.node.value}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
 
             logger?.warn(`${filePath}: ${message}`);
             console.warn(message);
             report?.(message);
-
-            return split;
           }
 
-          if (matchFound.isActionRequired) {
-            const message = `import source ${stringLiteral.node.value}을 ${matchFound.newName}로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요`;
+          if (matchFound.moveToMulticolor) {
+            const message = `string literal ${stringLiteral.node.value}를 멀티컬러 패키지의 ${matchFound.newName}로 변환했지만, 멀티컬러 사용이 적절한지 확인이 필요해요`;
 
             logger?.warn(`${filePath}: ${message}`);
             console.warn(message);

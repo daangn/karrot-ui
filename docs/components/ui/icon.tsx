@@ -1,4 +1,4 @@
-import { IconArrowRightFill } from "@daangn/react-icon";
+import { IconArrowRightFill } from "@daangn/react-monochrome-icon";
 
 type SeedIconType = React.ForwardRefExoticComponent<
   Omit<

@@ -1,4 +1,4 @@
-import { IconPlusFill } from "@daangn/react-icon";
+import { IconPlusFill } from "@daangn/react-monochrome-icon";
 import { ActionChip } from "seed-design/ui/action-chip";
 
 export default function ActionChipPrefixIcon() {

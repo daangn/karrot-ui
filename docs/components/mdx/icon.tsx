@@ -1,4 +1,4 @@
-import * as V3Icons from "@daangn/react-icon";
+import * as V3Icons from "@daangn/react-monochrome-icon";
 import * as V2Icons from "@seed-design/react-icon";
 import Link from "fumadocs-core/link";
 import * as changecase from "change-case";
