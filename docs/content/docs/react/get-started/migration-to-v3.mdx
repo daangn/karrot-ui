@@ -1,0 +1,152 @@
+---
+title: V3로 마이그레이션하기
+---
+
+Seed Design V3로 마이그레이션하기 위해 필요한 작업들을 안내해요.
+
+<Steps>
+
+<Step>
+### 의존성 설치
+
+필요한 의존성들을 설치해요.
+
+<Callout>
+현재는 아직 정식 배포가 아니므로 `@alpha` 태그를 붙여 알파버전으로 설치해주세요.
+</Callout>
+
+```package-install
+@seed-design/stylesheet@alpha @seed-design/recipe@alpha
+```
+</Step>
+
+{/* ----------------------------------------------------------------------- */}
+{/* ----------------------------------------------------------------------- */}
+
+<Step>
+### token.css import하기
+
+<Callout>
+`token.css`는 V3에 새롭게 추가된 컬러 토큰과 같은 디자인 시스템의 토큰들을 포함하고 있어요.
+
+현재는 V2의 `global.css`와 공존하고 있지만, 추후에는 삭제될 예정입니다.
+</Callout>
+
+```ts title="index.tsx"
+import "@seed-design/stylesheet/token.css";
+```
+</Step>
+
+{/* ----------------------------------------------------------------------- */}
+{/* ----------------------------------------------------------------------- */}
+
+<Step>
+### seed-design.json 생성
+
+<Callout>
+`seed-design.json` 파일을 생성하여 프로젝트 세팅을 해요.
+자세한 설정은 [옵션](/docs/react/get-started/seed-design#옵션)을 참고해주세요.
+</Callout>
+
+<Tabs items={['CLI로 추가', '직접 추가']}>
+<Tab value="CLI로 추가">
+<Steps>
+<Step>
+
+### init 명령어 입력하기
+
+</Step>
+```sh
+npx @seed-design/cli@latest init
+```
+
+<Step>
+### seed-design 설정
+```sh
+◇  Would you like to use TypeScript (recommended)?
+│  Yes
+│
+◇  Are you using React Server Components?
+│  No
+│
+◇  Would you like to use CSS Modules? (If true, CSS import will be added in components)
+│  Yes
+│
+◇  Enter the path to your seed-design directory
+│  ./seed-design
+│
+◇  seed-design.json written to seed-design.json
+```
+</Step>
+</Steps>
+</Tab>
+
+<Tab value="직접 추가">
+아래 파일을 프로젝트 루트에 생성해주세요.
+
+```json title="seed-design.json"
+{
+  "rsc": false,
+  "tsx": true,
+  "css": true,
+  "path": "./seed-design"
+}
+```
+</Tab>
+</Tabs>
+
+</Step>
+
+{/* ----------------------------------------------------------------------- */}
+{/* ----------------------------------------------------------------------- */}
+
+<Step>
+### tsconfig.json 설정하기
+
+<Callout>
+컴포넌트가 추가되면 `seed-design/ui/{component}`로 import할 수 있도록 `tsconfig.json`에 path를 추가해주세요.
+</Callout>
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    // your options
+    "paths": { // [!code highlight]
+      "seed-design/*": [ // [!code highlight]
+        "./seed-design/*" // [!code highlight]
+      ] // [!code highlight]
+    } // [!code highlight]
+  }
+}
+```
+</Step>
+
+{/* ----------------------------------------------------------------------- */}
+{/* ----------------------------------------------------------------------- */}
+
+<Step>
+### 필요한 컴포넌트 추가하기
+
+<Callout>
+자세한 `add` 명령어 사용법은 [CLI](/docs/react/get-started/cli#add)를 참고해주세요.
+</Callout>
+
+```sh
+npx @seed-design/cli@latest add action-button
+```
+
+이후 프로젝트 루트에서 `./seed-design/ui/{component}`에 컴포넌트가 추가된 것을 확인할 수 있어요.
+
+```tsx title="App.tsx"
+import { ActionButton } from "seed-design/ui/action-button";
+
+export default function App() {
+  return <ActionButton>라벨</ActionButton>;
+}
+```
+
+또한 컴포넌트 자세한 `prop`들은 컴포넌트 페이지를 참고해주세요.
+
+</Step>
+
+</Steps>

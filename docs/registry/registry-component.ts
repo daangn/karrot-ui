@@ -28,17 +28,17 @@ export const registryComponent: RegistryComponent = [
   },
   {
     name: "checkbox",
-    dependencies: ["@seed-design/react-checkbox"],
+    dependencies: ["@seed-design/react-checkbox@alpha"],
     files: ["component/checkbox.tsx"],
   },
   {
     name: "tabs",
-    dependencies: ["@seed-design/react-tabs"],
+    dependencies: ["@seed-design/react-tabs@alpha"],
     files: ["component/tabs.tsx"],
   },
   {
     name: "chip-tabs",
-    dependencies: ["@seed-design/react-tabs"],
+    dependencies: ["@seed-design/react-tabs@alpha"],
     files: ["component/chip-tabs.tsx"],
   },
   {
@@ -48,7 +48,7 @@ export const registryComponent: RegistryComponent = [
   },
   {
     name: "switch",
-    dependencies: ["@seed-design/react-switch"],
+    dependencies: ["@seed-design/react-switch@alpha"],
     files: ["component/switch.tsx"],
   },
 ];
