@@ -1,6 +1,12 @@
 interface InlineBannerVariant {
+  /**
+  * @default weak
+  */
   variant: "solid" | "weak";
-  tone: "neutral" | "positive" | "informative" | "warning" | "danger"
+/**
+  * @default neutral
+  */
+  tone: "neutral" | "positive" | "informative" | "warning" | "danger";
 }
 
 type InlineBannerVariantMap = {

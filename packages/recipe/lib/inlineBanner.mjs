@@ -31,7 +31,10 @@ const inlineBannerSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "tone": "neutral",
+  "variant": "weak"
+};
 
 const compoundVariants = [
   {

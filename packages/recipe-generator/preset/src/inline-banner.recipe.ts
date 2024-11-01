@@ -70,8 +70,17 @@ export const inlineBanner = defineRecipe({
       positive: {},
       informative: {},
       warning: {},
-      danger: {},
+      danger: {
+        root: {
+          position: "sticky",
+          top: 0,
+        },
+      },
     },
+  },
+  defaultVariants: {
+    tone: "neutral",
+    variant: "weak",
   },
   compoundVariants: [
     {
