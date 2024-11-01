@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.2
+
+### Patch Changes
+
+- 멀티컬러 패키지로의 마이그레이션에 대응, @karrotmarket/karrot-ui-icon/lib/react 마이그레이션
+
 ## 0.0.2-alpha-20241031032411
 
 ### Patch Changes
