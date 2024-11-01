@@ -10,7 +10,7 @@ export const inlineBanner = defineRecipe({
     "prefixIcon",
     "label",
     "actionLabel",
-    "closeButton",
+    "dismissButton",
     "xIcon",
   ],
   base: {
@@ -58,7 +58,7 @@ export const inlineBanner = defineRecipe({
       // XXX
       textUnderlineOffset: "2px",
     },
-    closeButton: {
+    dismissButton: {
       flex: "none",
     },
     xIcon: {

@@ -26,8 +26,8 @@ const inlineBannerSlotNames = [
     "inlineBanner__actionLabel"
   ],
   [
-    "closeButton",
-    "inlineBanner__closeButton"
+    "dismissButton",
+    "inlineBanner__dismissButton"
   ],
   [
     "xIcon",

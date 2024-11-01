@@ -16,12 +16,12 @@ interface BaseInlineBannerProps extends InlineBannerVariantProps {
 
 interface DismissibleInlineBannerProps extends BaseInlineBannerProps {
   tone?: Exclude<InlineBannerVariantProps["tone"], "danger">;
-  dismissible?: true;
+  dismissAriaLabel?: string;
   action?: never;
 }
 
 interface NondismissibleInlineBannerProps extends BaseInlineBannerProps {
-  dismissible?: false | never;
+  dismissAriaLabel?: never;
   action?: {
     onClick: React.MouseEventHandler<HTMLButtonElement>;
     label: string;
@@ -73,7 +73,7 @@ export const InlineBanner = React.forwardRef<
       tone = "neutral",
       prefixIcon,
       action,
-      dismissible,
+      dismissAriaLabel,
       ...otherProps
     },
     ref,
@@ -97,10 +97,11 @@ export const InlineBanner = React.forwardRef<
           )}
           <span className={classNames.label}>{children}</span>
         </div>
-        {dismissible && (
+        {dismissAriaLabel && (
           <button
             type="button"
-            className={classNames.closeButton}
+            aria-label={dismissAriaLabel}
+            className={classNames.dismissButton}
             onClick={() => rootRef.current?.remove()}
           >
             <XmarkLine className={classNames.xIcon} />

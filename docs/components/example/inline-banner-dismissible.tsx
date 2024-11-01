@@ -7,7 +7,7 @@ export default function InlineBannerDismissible() {
   return (
     <div className="flex gap-2 w-full flex-col">
       <InlineBanner
-        dismissible
+        dismissAriaLabel="닫기"
         tone="warning"
         variant="weak"
         prefixIcon={<IconExclamationmarkCircleFill />}
@@ -15,7 +15,7 @@ export default function InlineBannerDismissible() {
         사업자 정보를 등록해주세요.
       </InlineBanner>
       <InlineBanner
-        dismissible
+        dismissAriaLabel="닫기"
         tone="warning"
         variant="weak"
         prefixIcon={<IconExclamationmarkCircleFill />}
