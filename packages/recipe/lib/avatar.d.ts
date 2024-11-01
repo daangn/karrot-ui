@@ -1,5 +1,5 @@
 interface AvatarVariant {
-  size: "20" | "24" | "36" | "48" | "64" | "80" | "96"
+  size: "20" | "24" | "36" | "48" | "64" | "80" | "96";
 }
 
 type AvatarVariantMap = {

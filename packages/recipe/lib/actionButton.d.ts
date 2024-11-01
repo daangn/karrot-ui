@@ -1,7 +1,16 @@
 interface ActionButtonVariant {
+  /**
+  * @default brandSolid
+  */
   variant: "brandSolid" | "brandWeak" | "neutralSolid" | "neutralWeak" | "dangerSolid";
+/**
+  * @default medium
+  */
   size: "xsmall" | "small" | "medium" | "large";
-  layout: "withText" | "iconOnly"
+/**
+  * @default withText
+  */
+  layout: "withText" | "iconOnly";
 }
 
 type ActionButtonVariantMap = {

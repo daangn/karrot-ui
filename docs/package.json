@@ -31,6 +31,7 @@
     "fumadocs-core": "13.4.10",
     "fumadocs-docgen": "^1.2.0",
     "fumadocs-mdx": "10.0.2",
+    "fumadocs-typescript": "^3.0.1",
     "fumadocs-ui": "13.4.10",
     "next": "^14.2.8",
     "react": "^18.3.1",

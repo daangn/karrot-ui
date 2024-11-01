@@ -1,5 +1,8 @@
 interface TabsVariant {
-  layout: "fill" | "hug"
+  /**
+  * @default hug
+  */
+  layout: "fill" | "hug";
 }
 
 type TabsVariantMap = {

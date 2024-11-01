@@ -337,6 +337,11 @@ const actionButton = defineRecipe({
       },
     },
   ],
+  defaultVariants: {
+    variant: "brandSolid",
+    size: "medium",
+    layout: "withText",
+  },
 });
 
 export default actionButton;

@@ -23,7 +23,11 @@ const actionButtonSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "variant": "brandSolid",
+  "size": "medium",
+  "layout": "withText"
+};
 
 const compoundVariants = [
   {

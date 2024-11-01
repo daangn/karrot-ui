@@ -10,20 +10,25 @@ import {
   type ExpandButtonVariantProps,
 } from "@seed-design/recipe/expandButton";
 
-export interface ExpandButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ExpandButtonVariantProps {
+export interface ExpandButtonProps extends ExpandButtonVariantProps {
   suffixIcon?: React.ReactNode;
 
+  /**
+   * @default false
+   */
   asChild?: boolean;
 }
+
+export interface ReactExpandButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    ExpandButtonProps {}
 
 /**
  * @see https://v3.seed-design.io/docs/react/components/expand-button
  */
 export const ExpandButton = React.forwardRef<
   HTMLButtonElement,
-  ExpandButtonProps
+  ReactExpandButtonProps
 >(
   (
     { className, children, suffixIcon, asChild = false, ...otherProps },

@@ -1,6 +1,12 @@
 interface TabVariant {
+  /**
+  * @default hug
+  */
   layout: "fill" | "hug";
-  size: "medium" | "small"
+/**
+  * @default medium
+  */
+  size: "medium" | "small";
 }
 
 type TabVariantMap = {

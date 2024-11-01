@@ -5,16 +5,14 @@ import { StackflowExample } from "@/components/stackflow-example";
 import { File, Files, Folder } from "fumadocs-ui/components/files";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { createTypeTable } from "fumadocs-typescript/ui";
 import defaultMdxComponents from "fumadocs-ui/mdx";
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from "fumadocs-ui/page";
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import { AtomIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+const { AutoTypeTable } = createTypeTable();
 
 export default async function Page({
   params,
@@ -45,6 +43,7 @@ export default async function Page({
             Files,
             AtomIcon,
             StackflowExample,
+            AutoTypeTable,
           }}
         />
       </DocsBody>

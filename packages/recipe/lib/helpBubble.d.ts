@@ -1,5 +1,8 @@
 interface HelpBubbleVariant {
-  variant: "nonModal" | "modal"
+  /**
+  * @default nonModal
+  */
+  variant: "nonModal" | "modal";
 }
 
 type HelpBubbleVariantMap = {
