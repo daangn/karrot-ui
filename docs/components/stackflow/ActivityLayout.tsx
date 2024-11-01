@@ -42,7 +42,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       }}
     >
       <div className="absolute inset-0 flex flex-col leading-[1.15]">
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 overflow-y-auto">{children}</div>
         <BottomTab />
       </div>
     </AppScreen>
