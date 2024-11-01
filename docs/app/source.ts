@@ -3,7 +3,7 @@ import { loader } from "fumadocs-core/source";
 import { createMDXSource } from "fumadocs-mdx";
 import { create } from "@/components/ui/icon";
 
-import * as icons from "@daangn/react-icon";
+import * as icons from "@daangn/react-monochrome-icon";
 
 export const source = loader({
   baseUrl: "/docs",
