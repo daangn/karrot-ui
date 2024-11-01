@@ -93,7 +93,8 @@ export const addCommand = (cli: CAC) => {
 
       for (const component of registryComponentItems) {
         for (const registry of component.registries) {
-          const UIFolderPath = config.resolvedUIPaths;
+          const defaultPath = path.resolve(cwd, "seed-design/ui");
+          const UIFolderPath = config.resolvedUIPaths || defaultPath;
 
           if (!fs.existsSync(UIFolderPath)) {
             await fs.mkdir(UIFolderPath, { recursive: true });
