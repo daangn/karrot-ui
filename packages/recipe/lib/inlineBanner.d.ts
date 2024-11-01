@@ -15,7 +15,7 @@ type InlineBannerVariantMap = {
 
 export type InlineBannerVariantProps = Partial<InlineBannerVariant>;
 
-export type InlineBannerSlotName = "root" | "content" | "prefixIconContainer" | "prefixIcon" | "xIcon" | "label" | "link";
+export type InlineBannerSlotName = "root" | "content" | "prefixIconContainer" | "prefixIcon" | "label" | "actionLabel" | "closeButton" | "xIcon";
 
 export const inlineBannerVariantMap: InlineBannerVariantMap;
 

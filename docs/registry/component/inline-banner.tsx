@@ -10,24 +10,27 @@ import {
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
 
-export type InlineBannerProps = InlineBannerVariantProps & {
+interface BaseInlineBannerProps extends InlineBannerVariantProps {
   prefixIcon?: React.ReactNode;
-} & (
-    | {
-        tone: Extract<InlineBannerVariantProps["tone"], "danger">;
-        onXIconClick?: never;
-        link?: { href: string; label: string };
-      }
-    | ({
-        tone?: Exclude<InlineBannerVariantProps["tone"], "danger">;
-      } & (
-        | {
-            link?: never;
-            onXIconClick: React.MouseEventHandler<HTMLButtonElement>;
-          }
-        | { link?: { href: string; label: string }; onXIconClick?: never }
-      ))
-  );
+}
+
+interface DismissibleInlineBannerProps extends BaseInlineBannerProps {
+  tone?: Exclude<InlineBannerVariantProps["tone"], "danger">;
+  dismissible?: true;
+  action?: never;
+}
+
+interface NondismissibleInlineBannerProps extends BaseInlineBannerProps {
+  dismissible?: false | never;
+  action?: {
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
+    label: string;
+  };
+}
+
+export type InlineBannerProps =
+  | DismissibleInlineBannerProps
+  | NondismissibleInlineBannerProps;
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
   InlineBannerProps;
@@ -69,15 +72,20 @@ export const InlineBanner = React.forwardRef<
       variant = "weak",
       tone = "neutral",
       prefixIcon,
-      onXIconClick,
+      action,
+      dismissible,
       ...otherProps
     },
     ref,
   ) => {
     const classNames = inlineBanner({ variant, tone });
+
+    const rootRef = React.useRef<HTMLDivElement>(null);
+    React.useImperativeHandle(ref, () => rootRef.current as HTMLDivElement);
+
     return (
       <div
-        ref={ref}
+        ref={rootRef}
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
@@ -89,13 +97,22 @@ export const InlineBanner = React.forwardRef<
           )}
           <span className={classNames.label}>{children}</span>
         </div>
-        {onXIconClick && (
+        {dismissible && (
           <button
             type="button"
-            className={classNames.xIcon}
-            onClick={onXIconClick}
+            className={classNames.closeButton}
+            onClick={() => rootRef.current?.remove()}
           >
-            <XmarkLine />
+            <XmarkLine className={classNames.xIcon} />
+          </button>
+        )}
+        {action && (
+          <button
+            type="button"
+            className={classNames.actionLabel}
+            onClick={action.onClick}
+          >
+            {action.label}
           </button>
         )}
       </div>

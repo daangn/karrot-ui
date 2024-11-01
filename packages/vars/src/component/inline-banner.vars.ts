@@ -15,16 +15,32 @@ export const vars = {
       "prefixIcon": {
         "size": "16px"
       },
-      "xIcon": {
-        "size": "16px"
-      },
       "label": {
         "fontSize": "var(--seed-v3-font-size-100)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
-      "link": {
+      "actionLabel": {
         "fontSize": "var(--seed-v3-font-size-50)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
+      },
+      "xIcon": {
+        "size": "16px"
+      }
+    }
+  },
+  "variantSolid": {
+    "enabled": {
+      "prefixIcon": {
+        "color": "var(--seed-v3-color-fg-static-white)"
+      },
+      "label": {
+        "color": "var(--seed-v3-color-fg-static-white)"
+      },
+      "actionLabel": {
+        "color": "var(--seed-v3-color-fg-static-white)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-static-white)"
       }
     }
   },
@@ -63,19 +79,6 @@ export const vars = {
       }
     }
   },
-  "variantSolid": {
-    "enabled": {
-      "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      },
-      "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      },
-      "xIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      }
-    }
-  },
   "variantWeakToneNeutral": {
     "enabled": {
       "root": {
@@ -85,6 +88,9 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "label": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "actionLabel": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "xIcon": {
@@ -103,6 +109,9 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
+      "actionLabel": {
+        "color": "var(--seed-v3-color-fg-positive-contrast)"
+      },
       "xIcon": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       }
@@ -117,6 +126,9 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
       "label": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
+      "actionLabel": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
       "xIcon": {
@@ -135,6 +147,9 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
+      "actionLabel": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
       "xIcon": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       }
@@ -151,7 +166,7 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-danger)"
       },
-      "xIcon": {
+      "actionLabel": {
         "color": "var(--seed-v3-color-fg-danger)"
       }
     }

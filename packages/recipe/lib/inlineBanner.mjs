@@ -18,16 +18,20 @@ const inlineBannerSlotNames = [
     "inlineBanner__prefixIcon"
   ],
   [
-    "xIcon",
-    "inlineBanner__xIcon"
-  ],
-  [
     "label",
     "inlineBanner__label"
   ],
   [
-    "link",
-    "inlineBanner__link"
+    "actionLabel",
+    "inlineBanner__actionLabel"
+  ],
+  [
+    "closeButton",
+    "inlineBanner__closeButton"
+  ],
+  [
+    "xIcon",
+    "inlineBanner__xIcon"
   ]
 ];
 

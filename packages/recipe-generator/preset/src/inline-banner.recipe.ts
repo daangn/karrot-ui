@@ -3,7 +3,16 @@ import { defineRecipe } from "./helper";
 
 export const inlineBanner = defineRecipe({
   name: "inlineBanner",
-  slots: ["root", "content", "prefixIconContainer", "prefixIcon", "xIcon", "label", "link"],
+  slots: [
+    "root",
+    "content",
+    "prefixIconContainer",
+    "prefixIcon",
+    "label",
+    "actionLabel",
+    "closeButton",
+    "xIcon",
+  ],
   base: {
     root: {
       display: "flex",
@@ -32,22 +41,29 @@ export const inlineBanner = defineRecipe({
       width: vars.base.enabled.prefixIcon.size,
       height: vars.base.enabled.prefixIcon.size,
     },
-    xIcon: {
-      width: vars.base.enabled.xIcon.size,
-      height: vars.base.enabled.xIcon.size,
-      flex: "none",
-    },
     label: {
       fontSize: vars.base.enabled.label.fontSize,
       fontWeight: vars.base.enabled.label.fontWeight,
-
       // FIXME
       lineHeight: "19px",
     },
-    link: {
-      fontSize: vars.base.enabled.link.fontSize,
-      fontWeight: vars.base.enabled.link.fontWeight,
+    actionLabel: {
+      flex: "none",
+
+      fontSize: vars.base.enabled.actionLabel.fontSize,
+      fontWeight: vars.base.enabled.actionLabel.fontWeight,
+      lineHeight: "16px",
+
       textDecoration: "underline",
+      // XXX
+      textUnderlineOffset: "2px",
+    },
+    closeButton: {
+      flex: "none",
+    },
+    xIcon: {
+      width: vars.base.enabled.xIcon.size,
+      height: vars.base.enabled.xIcon.size,
     },
   },
   variants: {
@@ -58,6 +74,9 @@ export const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantSolid.enabled.label.color,
+        },
+        actionLabel: {
+          color: vars.variantSolid.enabled.actionLabel.color,
         },
         xIcon: {
           color: vars.variantSolid.enabled.xIcon.color,
@@ -141,6 +160,9 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.variantWeakToneNeutral.enabled.label.color,
         },
+        actionLabel: {
+          color: vars.variantWeakToneNeutral.enabled.actionLabel.color,
+        },
         xIcon: {
           color: vars.variantWeakToneNeutral.enabled.xIcon.color,
         },
@@ -158,6 +180,9 @@ export const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantWeakTonePositive.enabled.label.color,
+        },
+        actionLabel: {
+          color: vars.variantWeakTonePositive.enabled.actionLabel.color,
         },
         xIcon: {
           color: vars.variantWeakTonePositive.enabled.xIcon.color,
@@ -177,6 +202,9 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.variantWeakToneInformative.enabled.label.color,
         },
+        actionLabel: {
+          color: vars.variantWeakToneInformative.enabled.actionLabel.color,
+        },
         xIcon: {
           color: vars.variantWeakToneInformative.enabled.xIcon.color,
         },
@@ -194,6 +222,9 @@ export const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantWeakToneWarning.enabled.label.color,
+        },
+        actionLabel: {
+          color: vars.variantWeakToneWarning.enabled.actionLabel.color,
         },
         xIcon: {
           color: vars.variantWeakToneWarning.enabled.xIcon.color,
@@ -213,8 +244,8 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.variantWeakToneDanger.enabled.label.color,
         },
-        xIcon: {
-          color: vars.variantWeakToneDanger.enabled.xIcon.color,
+        actionLabel: {
+          color: vars.variantWeakToneDanger.enabled.actionLabel.color,
         },
       },
     },

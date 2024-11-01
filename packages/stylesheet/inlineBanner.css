@@ -22,25 +22,33 @@
     width: 16px;
     height: 16px
 }
-.inlineBanner__xIcon {
-    width: 16px;
-    height: 16px;
-    flex: none
-}
 .inlineBanner__label {
     font-size: var(--seed-v3-font-size-100);
     font-weight: var(--seed-v3-font-weight-medium);
     line-height: 19px
 }
-.inlineBanner__link {
+.inlineBanner__actionLabel {
+    flex: none;
     font-size: var(--seed-v3-font-size-50);
     font-weight: var(--seed-v3-font-weight-regular);
-    text-decoration: underline
+    line-height: 16px;
+    text-decoration: underline;
+    text-underline-offset: 2px
+}
+.inlineBanner__closeButton {
+    flex: none
+}
+.inlineBanner__xIcon {
+    width: 16px;
+    height: 16px
 }
 .inlineBanner__prefixIcon--variant_solid {
     color: var(--seed-v3-color-fg-static-white)
 }
 .inlineBanner__label--variant_solid {
+    color: var(--seed-v3-color-fg-static-white)
+}
+.inlineBanner__actionLabel--variant_solid {
     color: var(--seed-v3-color-fg-static-white)
 }
 .inlineBanner__xIcon--variant_solid {
@@ -74,6 +82,9 @@
 .inlineBanner__label--variant_weak-tone_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
+.inlineBanner__actionLabel--variant_weak-tone_neutral {
+    color: var(--seed-v3-color-fg-neutral)
+}
 .inlineBanner__xIcon--variant_weak-tone_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
@@ -84,6 +95,9 @@
     color: var(--seed-v3-color-fg-positive-contrast)
 }
 .inlineBanner__label--variant_weak-tone_positive {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.inlineBanner__actionLabel--variant_weak-tone_positive {
     color: var(--seed-v3-color-fg-positive-contrast)
 }
 .inlineBanner__xIcon--variant_weak-tone_positive {
@@ -98,6 +112,9 @@
 .inlineBanner__label--variant_weak-tone_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
+.inlineBanner__actionLabel--variant_weak-tone_informative {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
 .inlineBanner__xIcon--variant_weak-tone_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
@@ -108,6 +125,9 @@
     color: var(--seed-v3-color-fg-warning-contrast)
 }
 .inlineBanner__label--variant_weak-tone_warning {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__actionLabel--variant_weak-tone_warning {
     color: var(--seed-v3-color-fg-warning-contrast)
 }
 .inlineBanner__xIcon--variant_weak-tone_warning {
@@ -122,6 +142,6 @@
 .inlineBanner__label--variant_weak-tone_danger {
     color: var(--seed-v3-color-fg-danger)
 }
-.inlineBanner__xIcon--variant_weak-tone_danger {
+.inlineBanner__actionLabel--variant_weak-tone_danger {
     color: var(--seed-v3-color-fg-danger)
 }

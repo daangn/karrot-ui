@@ -11,14 +11,25 @@ base:
       size: "19px"
     prefixIcon:
       size: "16px"
-    xIcon:
-      size: "16px"
     label:
       fontSize: $font-size[100]
       fontWeight: $font-weight.medium
-    link:
+    actionLabel:
       fontSize: $font-size[50]
       fontWeight: $font-weight.regular
+    xIcon:
+      size: "16px"
+
+variant=solid:
+  enabled:
+    prefixIcon:
+      color: $color.fg.static-white
+    label:
+      color: $color.fg.static-white
+    actionLabel:
+      color: $color.fg.static-white
+    xIcon:
+      color: $color.fg.static-white
 
 variant=solid, tone=neutral:
   enabled:
@@ -41,15 +52,6 @@ variant=solid, tone=danger:
     root:
       color: $color.bg.danger-solid
 
-variant=solid:
-  enabled:
-    prefixIcon:
-      color: $color.fg.static-white
-    label:
-      color: $color.fg.static-white
-    xIcon:
-      color: $color.fg.static-white
-
 variant=weak, tone=neutral:
   enabled:
     root:
@@ -57,6 +59,8 @@ variant=weak, tone=neutral:
     prefixIcon:
       color: $color.fg.neutral
     label:
+      color: $color.fg.neutral
+    actionLabel:
       color: $color.fg.neutral
     xIcon:
       color: $color.fg.neutral
@@ -68,6 +72,8 @@ variant=weak, tone=positive:
       color: $color.fg.positive-contrast
     label:
       color: $color.fg.positive-contrast
+    actionLabel:
+      color: $color.fg.positive-contrast
     xIcon:
       color: $color.fg.positive-contrast
 variant=weak, tone=informative:
@@ -77,6 +83,8 @@ variant=weak, tone=informative:
     prefixIcon:
       color: $color.fg.informative-contrast
     label:
+      color: $color.fg.informative-contrast
+    actionLabel:
       color: $color.fg.informative-contrast
     xIcon:
       color: $color.fg.informative-contrast
@@ -88,6 +96,8 @@ variant=weak, tone=warning:
       color: $color.fg.warning-contrast
     label:
       color: $color.fg.warning-contrast
+    actionLabel:
+      color: $color.fg.warning-contrast
     xIcon:
       color: $color.fg.warning-contrast
 variant=weak, tone=danger:
@@ -98,5 +108,5 @@ variant=weak, tone=danger:
       color: $color.fg.danger
     label:
       color: $color.fg.danger
-    xIcon: # shouldn't be available
+    actionLabel:
       color: $color.fg.danger
