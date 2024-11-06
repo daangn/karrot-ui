@@ -14,13 +14,9 @@
     align-items: start;
     gap: var(--seed-v3-unit-2)
 }
-.inlineBanner__prefixIconContainer {
-    display: flex;
-    align-items: center;
-    flex: none;
-    height: 19px
-}
 .inlineBanner__prefixIcon {
+    flex: none;
+    margin-block: 1.5px;
     width: 16px;
     height: 16px
 }

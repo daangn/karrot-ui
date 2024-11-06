@@ -91,9 +91,7 @@ export const InlineBanner = React.forwardRef<
       >
         <div className={classNames.content}>
           {prefixIcon && (
-            <div className={classNames.prefixIconContainer}>
-              <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
-            </div>
+            <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
           )}
           <span className={classNames.label}>{children}</span>
         </div>

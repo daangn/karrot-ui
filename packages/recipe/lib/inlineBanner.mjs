@@ -10,10 +10,6 @@ const inlineBannerSlotNames = [
     "inlineBanner__content"
   ],
   [
-    "prefixIconContainer",
-    "inlineBanner__prefixIconContainer"
-  ],
-  [
     "prefixIcon",
     "inlineBanner__prefixIcon"
   ],

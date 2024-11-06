@@ -3,16 +3,7 @@ import { defineRecipe } from "./helper";
 
 export const inlineBanner = defineRecipe({
   name: "inlineBanner",
-  slots: [
-    "root",
-    "content",
-    "prefixIconContainer",
-    "prefixIcon",
-    "label",
-    "actionLabel",
-    "dismissButton",
-    "xIcon",
-  ],
+  slots: ["root", "content", "prefixIcon", "label", "actionLabel", "dismissButton", "xIcon"],
   base: {
     root: {
       display: "flex",
@@ -32,14 +23,11 @@ export const inlineBanner = defineRecipe({
       alignItems: "start",
       gap: vars.base.enabled.content.gap,
     },
-    prefixIconContainer: {
-      display: "flex",
-      alignItems: "center",
+    prefixIcon: {
       flex: "none",
 
-      height: vars.base.enabled.prefixIconContainer.size,
-    },
-    prefixIcon: {
+      marginBlock: vars.base.enabled.prefixIcon.marginY,
+
       width: vars.base.enabled.prefixIcon.size,
       height: vars.base.enabled.prefixIcon.size,
     },

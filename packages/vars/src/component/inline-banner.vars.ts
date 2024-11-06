@@ -9,11 +9,9 @@ export const vars = {
       "content": {
         "gap": "var(--seed-v3-unit-2)"
       },
-      "prefixIconContainer": {
-        "size": "19px"
-      },
       "prefixIcon": {
-        "size": "16px"
+        "size": "16px",
+        "marginY": "1.5px"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-100)",

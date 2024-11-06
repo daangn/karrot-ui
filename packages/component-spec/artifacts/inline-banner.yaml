@@ -7,10 +7,9 @@ base:
       paddingY: $unit[2.5]
     content:
       gap: $unit[2]
-    prefixIconContainer:
-      size: "19px"
     prefixIcon:
       size: "16px"
+      marginY: "1.5px"
     label:
       fontSize: $font-size[100]
       fontWeight: $font-weight.medium
