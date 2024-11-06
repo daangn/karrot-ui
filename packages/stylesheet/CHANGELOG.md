@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241106040203
+
+### Patch Changes
+
+- iOS dynamic font 관련 코드를 제거해요
+
 ## 3.0.0-alpha-20241030023710
 
 ### Patch Changes
