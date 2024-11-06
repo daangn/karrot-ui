@@ -1,7 +1,7 @@
 import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
 import { InlineBanner } from "seed-design/ui/inline-banner";
 
-export default function InlineBannerWithTitleText() {
+export default function InlineBannerWithIconAndTitleText() {
   return (
     <InlineBanner
       tone="informative"
