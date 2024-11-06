@@ -20,7 +20,7 @@ export const inlineBanner = defineRecipe({
     },
     content: {
       display: "flex",
-      alignItems: "start",
+      alignItems: "flex-start",
       gap: vars.base.enabled.content.gap,
     },
     prefixIcon: {

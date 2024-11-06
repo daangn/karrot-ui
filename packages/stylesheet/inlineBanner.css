@@ -11,7 +11,7 @@
 }
 .inlineBanner__content {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     gap: var(--seed-v3-unit-2)
 }
 .inlineBanner__prefixIcon {
