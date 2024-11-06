@@ -1,9 +1,9 @@
 import { InlineBanner } from "seed-design/ui/inline-banner";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
 
-export default function InlineBannerWarningSolid() {
+export default function InlineBannerInformativeWeak() {
   return (
-    <InlineBanner tone="warning" variant="solid" prefixIcon={<IconExclamationmarkCircleFill />}>
+    <InlineBanner tone="informative" prefixIcon={<IconExclamationmarkCircleFill />}>
       사업자 정보를 등록해주세요.
     </InlineBanner>
   );

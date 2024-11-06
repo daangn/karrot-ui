@@ -6,12 +6,14 @@ base:
       paddingX: $unit[4]
       paddingY: $unit[2.5]
     content:
+      fontSize: $font-size[100]
       gap: $unit[2]
     prefixIcon:
       size: "16px"
       marginY: "1.5px"
+    title:
+      fontWeight: $font-weight.bold
     label:
-      fontSize: $font-size[100]
       fontWeight: $font-weight.medium
     actionLabel:
       fontSize: $font-size[50]
@@ -19,91 +21,69 @@ base:
     xIcon:
       size: "16px"
 
-variant=solid:
-  enabled:
-    prefixIcon:
-      color: $color.fg.static-white
-    label:
-      color: $color.fg.static-white
-    actionLabel:
-      color: $color.fg.static-white
-    xIcon:
-      color: $color.fg.static-white
-
-variant=solid, tone=neutral:
-  enabled:
-    root:
-      color: $color.palette.gray-700
-variant=solid, tone=positive:
-  enabled:
-    root:
-      color: $color.bg.positive-solid
-variant=solid, tone=informative:
-  enabled:
-    root:
-      color: $color.bg.informative-solid
-variant=solid, tone=warning:
-  enabled:
-    root:
-      color: $color.bg.warning-solid
-variant=solid, tone=danger:
-  enabled:
-    root:
-      color: $color.bg.danger-solid
-
-variant=weak, tone=neutral:
+tone=neutral:
   enabled:
     root:
       color: $color.bg.neutral-weak
     prefixIcon:
       color: $color.fg.neutral
+    title:
+      color: $color.fg.neutral
     label:
       color: $color.fg.neutral
     actionLabel:
       color: $color.fg.neutral
     xIcon:
       color: $color.fg.neutral
-variant=weak, tone=positive:
+tone=positive:
   enabled:
     root:
       color: $color.bg.positive-weak
     prefixIcon:
       color: $color.fg.positive-contrast
+    title:
+      color: $color.fg.positive-contrast
     label:
       color: $color.fg.positive-contrast
     actionLabel:
       color: $color.fg.positive-contrast
     xIcon:
       color: $color.fg.positive-contrast
-variant=weak, tone=informative:
+tone=informative:
   enabled:
     root:
       color: $color.bg.informative-weak
     prefixIcon:
       color: $color.fg.informative-contrast
+    title:
+      color: $color.fg.informative-contrast
     label:
       color: $color.fg.informative-contrast
     actionLabel:
       color: $color.fg.informative-contrast
     xIcon:
       color: $color.fg.informative-contrast
-variant=weak, tone=warning:
+tone=warning:
   enabled:
     root:
       color: $color.bg.warning-weak
     prefixIcon:
       color: $color.fg.warning-contrast
+    title:
+      color: $color.fg.warning-contrast
     label:
       color: $color.fg.warning-contrast
     actionLabel:
       color: $color.fg.warning-contrast
     xIcon:
       color: $color.fg.warning-contrast
-variant=weak, tone=danger:
+tone=danger:
   enabled:
     root:
       color: $color.bg.danger-weak
     prefixIcon:
+      color: $color.fg.danger
+    title:
       color: $color.fg.danger
     label:
       color: $color.fg.danger

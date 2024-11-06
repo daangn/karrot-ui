@@ -3,7 +3,7 @@ import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
 
 export default function InlineBannerDangerWeak() {
   return (
-    <InlineBanner tone="danger" variant="weak" prefixIcon={<IconExclamationmarkCircleFill />}>
+    <InlineBanner tone="danger" prefixIcon={<IconExclamationmarkCircleFill />}>
       사업자 정보를 등록해주세요.
     </InlineBanner>
   );

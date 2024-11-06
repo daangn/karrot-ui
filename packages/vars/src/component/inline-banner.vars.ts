@@ -7,14 +7,17 @@ export const vars = {
         "paddingY": "var(--seed-v3-unit-2\\.5)"
       },
       "content": {
+        "fontSize": "var(--seed-v3-font-size-100)",
         "gap": "var(--seed-v3-unit-2)"
       },
       "prefixIcon": {
         "size": "16px",
         "marginY": "1.5px"
       },
+      "title": {
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
+      },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-100)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
       "actionLabel": {
@@ -26,58 +29,7 @@ export const vars = {
       }
     }
   },
-  "variantSolid": {
-    "enabled": {
-      "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      },
-      "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      },
-      "actionLabel": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      },
-      "xIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      }
-    }
-  },
-  "variantSolidToneNeutral": {
-    "enabled": {
-      "root": {
-        "color": "var(--seed-v3-color-palette-gray-700)"
-      }
-    }
-  },
-  "variantSolidTonePositive": {
-    "enabled": {
-      "root": {
-        "color": "var(--seed-v3-color-bg-positive-solid)"
-      }
-    }
-  },
-  "variantSolidToneInformative": {
-    "enabled": {
-      "root": {
-        "color": "var(--seed-v3-color-bg-informative-solid)"
-      }
-    }
-  },
-  "variantSolidToneWarning": {
-    "enabled": {
-      "root": {
-        "color": "var(--seed-v3-color-bg-warning-solid)"
-      }
-    }
-  },
-  "variantSolidToneDanger": {
-    "enabled": {
-      "root": {
-        "color": "var(--seed-v3-color-bg-danger-solid)"
-      }
-    }
-  },
-  "variantWeakToneNeutral": {
+  "toneNeutral": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak)"
@@ -85,6 +37,9 @@ export const vars = {
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
+      "title": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
@@ -96,7 +51,7 @@ export const vars = {
       }
     }
   },
-  "variantWeakTonePositive": {
+  "tonePositive": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-positive-weak)"
@@ -104,6 +59,9 @@ export const vars = {
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
+      "title": {
+        "color": "var(--seed-v3-color-fg-positive-contrast)"
+      },
       "label": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
@@ -115,7 +73,7 @@ export const vars = {
       }
     }
   },
-  "variantWeakToneInformative": {
+  "toneInformative": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-informative-weak)"
@@ -123,6 +81,9 @@ export const vars = {
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
+      "title": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
       "label": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
@@ -134,7 +95,7 @@ export const vars = {
       }
     }
   },
-  "variantWeakToneWarning": {
+  "toneWarning": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-warning-weak)"
@@ -142,6 +103,9 @@ export const vars = {
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
+      "title": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
       "label": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
@@ -153,12 +117,15 @@ export const vars = {
       }
     }
   },
-  "variantWeakToneDanger": {
+  "toneDanger": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-danger-weak)"
       },
       "prefixIcon": {
+        "color": "var(--seed-v3-color-fg-danger)"
+      },
+      "title": {
         "color": "var(--seed-v3-color-fg-danger)"
       },
       "label": {

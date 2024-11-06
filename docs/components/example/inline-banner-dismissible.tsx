@@ -9,7 +9,6 @@ export default function InlineBannerDismissible() {
       <InlineBanner
         dismissAriaLabel="닫기"
         tone="warning"
-        variant="weak"
         prefixIcon={<IconExclamationmarkCircleFill />}
       >
         사업자 정보를 등록해주세요.
@@ -17,7 +16,6 @@ export default function InlineBannerDismissible() {
       <InlineBanner
         dismissAriaLabel="닫기"
         tone="warning"
-        variant="weak"
         prefixIcon={<IconExclamationmarkCircleFill />}
       >
         사업자 정보를 등록해주세요. 사업자 등록을 하지 않으면, 판매자로서의 활동이 제한됩니다.

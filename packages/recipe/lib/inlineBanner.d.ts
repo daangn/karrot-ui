@@ -1,9 +1,5 @@
 interface InlineBannerVariant {
   /**
-  * @default weak
-  */
-  variant: "solid" | "weak";
-/**
   * @default neutral
   */
   tone: "neutral" | "positive" | "informative" | "warning" | "danger";
@@ -15,7 +11,7 @@ type InlineBannerVariantMap = {
 
 export type InlineBannerVariantProps = Partial<InlineBannerVariant>;
 
-export type InlineBannerSlotName = "root" | "content" | "prefixIcon" | "label" | "actionLabel" | "dismissButton" | "xIcon";
+export type InlineBannerSlotName = "root" | "content" | "prefixIcon" | "title" | "spacer" | "label" | "actionLabel" | "dismissButton" | "xIcon";
 
 export const inlineBannerVariantMap: InlineBannerVariantMap;
 

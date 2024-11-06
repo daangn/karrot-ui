@@ -3,7 +3,17 @@ import { defineRecipe } from "./helper";
 
 export const inlineBanner = defineRecipe({
   name: "inlineBanner",
-  slots: ["root", "content", "prefixIcon", "label", "actionLabel", "dismissButton", "xIcon"],
+  slots: [
+    "root",
+    "content",
+    "prefixIcon",
+    "title",
+    "spacer",
+    "label",
+    "actionLabel",
+    "dismissButton",
+    "xIcon",
+  ],
   base: {
     root: {
       display: "flex",
@@ -22,6 +32,11 @@ export const inlineBanner = defineRecipe({
       display: "flex",
       alignItems: "flex-start",
       gap: vars.base.enabled.content.gap,
+
+      fontSize: vars.base.enabled.content.fontSize,
+
+      // FIXME
+      lineHeight: "19px",
     },
     prefixIcon: {
       flex: "none",
@@ -31,17 +46,21 @@ export const inlineBanner = defineRecipe({
       width: vars.base.enabled.prefixIcon.size,
       height: vars.base.enabled.prefixIcon.size,
     },
+    title: {
+      fontWeight: vars.base.enabled.title.fontWeight,
+    },
+    spacer: {
+      letterSpacing: "0.25em",
+    },
     label: {
-      fontSize: vars.base.enabled.label.fontSize,
       fontWeight: vars.base.enabled.label.fontWeight,
-      // FIXME
-      lineHeight: "19px",
     },
     actionLabel: {
       flex: "none",
 
       fontSize: vars.base.enabled.actionLabel.fontSize,
       fontWeight: vars.base.enabled.actionLabel.fontWeight,
+      // FIXME
       lineHeight: "16px",
 
       textDecoration: "underline",
@@ -56,188 +75,110 @@ export const inlineBanner = defineRecipe({
       height: vars.base.enabled.xIcon.size,
     },
   },
+  defaultVariants: {
+    tone: "neutral",
+  },
   variants: {
-    variant: {
-      solid: {
+    tone: {
+      neutral: {
+        root: {
+          backgroundColor: vars.toneNeutral.enabled.root.color,
+        },
         prefixIcon: {
-          color: vars.variantSolid.enabled.prefixIcon.color,
+          color: vars.toneNeutral.enabled.prefixIcon.color,
+        },
+        title: {
+          color: vars.toneNeutral.enabled.title.color,
         },
         label: {
-          color: vars.variantSolid.enabled.label.color,
+          color: vars.toneNeutral.enabled.label.color,
         },
         actionLabel: {
-          color: vars.variantSolid.enabled.actionLabel.color,
+          color: vars.toneNeutral.enabled.actionLabel.color,
         },
         xIcon: {
-          color: vars.variantSolid.enabled.xIcon.color,
+          color: vars.toneNeutral.enabled.xIcon.color,
         },
       },
-      weak: {},
-    },
-    tone: {
-      neutral: {},
-      positive: {},
-      informative: {},
-      warning: {},
+      positive: {
+        root: {
+          backgroundColor: vars.tonePositive.enabled.root.color,
+        },
+        prefixIcon: {
+          color: vars.tonePositive.enabled.prefixIcon.color,
+        },
+        title: {
+          color: vars.tonePositive.enabled.title.color,
+        },
+        label: {
+          color: vars.tonePositive.enabled.label.color,
+        },
+        actionLabel: {
+          color: vars.tonePositive.enabled.actionLabel.color,
+        },
+        xIcon: {
+          color: vars.tonePositive.enabled.xIcon.color,
+        },
+      },
+      informative: {
+        root: {
+          backgroundColor: vars.toneInformative.enabled.root.color,
+        },
+        prefixIcon: {
+          color: vars.toneInformative.enabled.prefixIcon.color,
+        },
+        title: {
+          color: vars.toneInformative.enabled.title.color,
+        },
+        label: {
+          color: vars.toneInformative.enabled.label.color,
+        },
+        actionLabel: {
+          color: vars.toneInformative.enabled.actionLabel.color,
+        },
+        xIcon: {
+          color: vars.toneInformative.enabled.xIcon.color,
+        },
+      },
+      warning: {
+        root: {
+          backgroundColor: vars.toneWarning.enabled.root.color,
+        },
+        prefixIcon: {
+          color: vars.toneWarning.enabled.prefixIcon.color,
+        },
+        title: {
+          color: vars.toneWarning.enabled.title.color,
+        },
+        label: {
+          color: vars.toneWarning.enabled.label.color,
+        },
+        actionLabel: {
+          color: vars.toneWarning.enabled.actionLabel.color,
+        },
+        xIcon: {
+          color: vars.toneWarning.enabled.xIcon.color,
+        },
+      },
       danger: {
         root: {
           position: "sticky",
           top: 0,
+          backgroundColor: vars.toneDanger.enabled.root.color,
+        },
+        prefixIcon: {
+          color: vars.toneDanger.enabled.prefixIcon.color,
+        },
+        title: {
+          color: vars.toneDanger.enabled.title.color,
+        },
+        label: {
+          color: vars.toneDanger.enabled.label.color,
+        },
+        actionLabel: {
+          color: vars.toneDanger.enabled.actionLabel.color,
         },
       },
     },
   },
-  defaultVariants: {
-    tone: "neutral",
-    variant: "weak",
-  },
-  compoundVariants: [
-    {
-      variant: "solid",
-      tone: "neutral",
-      css: {
-        root: {
-          backgroundColor: vars.variantSolidToneNeutral.enabled.root.color,
-        },
-      },
-    },
-    {
-      variant: "solid",
-      tone: "positive",
-      css: {
-        root: {
-          backgroundColor: vars.variantSolidTonePositive.enabled.root.color,
-        },
-      },
-    },
-    {
-      variant: "solid",
-      tone: "informative",
-      css: {
-        root: {
-          backgroundColor: vars.variantSolidToneInformative.enabled.root.color,
-        },
-      },
-    },
-    {
-      variant: "solid",
-      tone: "warning",
-      css: {
-        root: {
-          backgroundColor: vars.variantSolidToneWarning.enabled.root.color,
-        },
-      },
-    },
-    {
-      variant: "solid",
-      tone: "danger",
-      css: {
-        root: {
-          backgroundColor: vars.variantSolidToneDanger.enabled.root.color,
-        },
-      },
-    },
-    {
-      variant: "weak",
-      tone: "neutral",
-      css: {
-        root: {
-          backgroundColor: vars.variantWeakToneNeutral.enabled.root.color,
-        },
-        prefixIcon: {
-          color: vars.variantWeakToneNeutral.enabled.prefixIcon.color,
-        },
-        label: {
-          color: vars.variantWeakToneNeutral.enabled.label.color,
-        },
-        actionLabel: {
-          color: vars.variantWeakToneNeutral.enabled.actionLabel.color,
-        },
-        xIcon: {
-          color: vars.variantWeakToneNeutral.enabled.xIcon.color,
-        },
-      },
-    },
-    {
-      variant: "weak",
-      tone: "positive",
-      css: {
-        root: {
-          backgroundColor: vars.variantWeakTonePositive.enabled.root.color,
-        },
-        prefixIcon: {
-          color: vars.variantWeakTonePositive.enabled.prefixIcon.color,
-        },
-        label: {
-          color: vars.variantWeakTonePositive.enabled.label.color,
-        },
-        actionLabel: {
-          color: vars.variantWeakTonePositive.enabled.actionLabel.color,
-        },
-        xIcon: {
-          color: vars.variantWeakTonePositive.enabled.xIcon.color,
-        },
-      },
-    },
-    {
-      variant: "weak",
-      tone: "informative",
-      css: {
-        root: {
-          backgroundColor: vars.variantWeakToneInformative.enabled.root.color,
-        },
-        prefixIcon: {
-          color: vars.variantWeakToneInformative.enabled.prefixIcon.color,
-        },
-        label: {
-          color: vars.variantWeakToneInformative.enabled.label.color,
-        },
-        actionLabel: {
-          color: vars.variantWeakToneInformative.enabled.actionLabel.color,
-        },
-        xIcon: {
-          color: vars.variantWeakToneInformative.enabled.xIcon.color,
-        },
-      },
-    },
-    {
-      variant: "weak",
-      tone: "warning",
-      css: {
-        root: {
-          backgroundColor: vars.variantWeakToneWarning.enabled.root.color,
-        },
-        prefixIcon: {
-          color: vars.variantWeakToneWarning.enabled.prefixIcon.color,
-        },
-        label: {
-          color: vars.variantWeakToneWarning.enabled.label.color,
-        },
-        actionLabel: {
-          color: vars.variantWeakToneWarning.enabled.actionLabel.color,
-        },
-        xIcon: {
-          color: vars.variantWeakToneWarning.enabled.xIcon.color,
-        },
-      },
-    },
-    {
-      variant: "weak",
-      tone: "danger",
-      css: {
-        root: {
-          backgroundColor: vars.variantWeakToneDanger.enabled.root.color,
-        },
-        prefixIcon: {
-          color: vars.variantWeakToneDanger.enabled.prefixIcon.color,
-        },
-        label: {
-          color: vars.variantWeakToneDanger.enabled.label.color,
-        },
-        actionLabel: {
-          color: vars.variantWeakToneDanger.enabled.actionLabel.color,
-        },
-      },
-    },
-  ],
 });

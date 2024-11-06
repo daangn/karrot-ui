@@ -12,7 +12,9 @@
 .inlineBanner__content {
     display: flex;
     align-items: flex-start;
-    gap: var(--seed-v3-unit-2)
+    gap: var(--seed-v3-unit-2);
+    font-size: var(--seed-v3-font-size-100);
+    line-height: 19px
 }
 .inlineBanner__prefixIcon {
     flex: none;
@@ -20,10 +22,14 @@
     width: 16px;
     height: 16px
 }
+.inlineBanner__title {
+    font-weight: var(--seed-v3-font-weight-bold)
+}
+.inlineBanner__spacer {
+    letter-spacing: 0.25em
+}
 .inlineBanner__label {
-    font-size: var(--seed-v3-font-size-100);
-    font-weight: var(--seed-v3-font-weight-medium);
-    line-height: 19px
+    font-weight: var(--seed-v3-font-weight-medium)
 }
 .inlineBanner__actionLabel {
     flex: none;
@@ -40,106 +46,92 @@
     width: 16px;
     height: 16px
 }
-.inlineBanner__prefixIcon--variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+.inlineBanner__root--tone_neutral {
+    background-color: var(--seed-v3-color-bg-neutral-weak)
 }
-.inlineBanner__label--variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+.inlineBanner__prefixIcon--tone_neutral {
+    color: var(--seed-v3-color-fg-neutral)
 }
-.inlineBanner__actionLabel--variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+.inlineBanner__title--tone_neutral {
+    color: var(--seed-v3-color-fg-neutral)
 }
-.inlineBanner__xIcon--variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+.inlineBanner__label--tone_neutral {
+    color: var(--seed-v3-color-fg-neutral)
+}
+.inlineBanner__actionLabel--tone_neutral {
+    color: var(--seed-v3-color-fg-neutral)
+}
+.inlineBanner__xIcon--tone_neutral {
+    color: var(--seed-v3-color-fg-neutral)
+}
+.inlineBanner__root--tone_positive {
+    background-color: var(--seed-v3-color-bg-positive-weak)
+}
+.inlineBanner__prefixIcon--tone_positive {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.inlineBanner__title--tone_positive {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.inlineBanner__label--tone_positive {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.inlineBanner__actionLabel--tone_positive {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.inlineBanner__xIcon--tone_positive {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.inlineBanner__root--tone_informative {
+    background-color: var(--seed-v3-color-bg-informative-weak)
+}
+.inlineBanner__prefixIcon--tone_informative {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.inlineBanner__title--tone_informative {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.inlineBanner__label--tone_informative {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.inlineBanner__actionLabel--tone_informative {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.inlineBanner__xIcon--tone_informative {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.inlineBanner__root--tone_warning {
+    background-color: var(--seed-v3-color-bg-warning-weak)
+}
+.inlineBanner__prefixIcon--tone_warning {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__title--tone_warning {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__label--tone_warning {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__actionLabel--tone_warning {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__xIcon--tone_warning {
+    color: var(--seed-v3-color-fg-warning-contrast)
 }
 .inlineBanner__root--tone_danger {
     position: sticky;
-    top: 0
-}
-.inlineBanner__root--variant_solid-tone_neutral {
-    background-color: var(--seed-v3-color-palette-gray-700)
-}
-.inlineBanner__root--variant_solid-tone_positive {
-    background-color: var(--seed-v3-color-bg-positive-solid)
-}
-.inlineBanner__root--variant_solid-tone_informative {
-    background-color: var(--seed-v3-color-bg-informative-solid)
-}
-.inlineBanner__root--variant_solid-tone_warning {
-    background-color: var(--seed-v3-color-bg-warning-solid)
-}
-.inlineBanner__root--variant_solid-tone_danger {
-    background-color: var(--seed-v3-color-bg-danger-solid)
-}
-.inlineBanner__root--variant_weak-tone_neutral {
-    background-color: var(--seed-v3-color-bg-neutral-weak)
-}
-.inlineBanner__prefixIcon--variant_weak-tone_neutral {
-    color: var(--seed-v3-color-fg-neutral)
-}
-.inlineBanner__label--variant_weak-tone_neutral {
-    color: var(--seed-v3-color-fg-neutral)
-}
-.inlineBanner__actionLabel--variant_weak-tone_neutral {
-    color: var(--seed-v3-color-fg-neutral)
-}
-.inlineBanner__xIcon--variant_weak-tone_neutral {
-    color: var(--seed-v3-color-fg-neutral)
-}
-.inlineBanner__root--variant_weak-tone_positive {
-    background-color: var(--seed-v3-color-bg-positive-weak)
-}
-.inlineBanner__prefixIcon--variant_weak-tone_positive {
-    color: var(--seed-v3-color-fg-positive-contrast)
-}
-.inlineBanner__label--variant_weak-tone_positive {
-    color: var(--seed-v3-color-fg-positive-contrast)
-}
-.inlineBanner__actionLabel--variant_weak-tone_positive {
-    color: var(--seed-v3-color-fg-positive-contrast)
-}
-.inlineBanner__xIcon--variant_weak-tone_positive {
-    color: var(--seed-v3-color-fg-positive-contrast)
-}
-.inlineBanner__root--variant_weak-tone_informative {
-    background-color: var(--seed-v3-color-bg-informative-weak)
-}
-.inlineBanner__prefixIcon--variant_weak-tone_informative {
-    color: var(--seed-v3-color-fg-informative-contrast)
-}
-.inlineBanner__label--variant_weak-tone_informative {
-    color: var(--seed-v3-color-fg-informative-contrast)
-}
-.inlineBanner__actionLabel--variant_weak-tone_informative {
-    color: var(--seed-v3-color-fg-informative-contrast)
-}
-.inlineBanner__xIcon--variant_weak-tone_informative {
-    color: var(--seed-v3-color-fg-informative-contrast)
-}
-.inlineBanner__root--variant_weak-tone_warning {
-    background-color: var(--seed-v3-color-bg-warning-weak)
-}
-.inlineBanner__prefixIcon--variant_weak-tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__label--variant_weak-tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__actionLabel--variant_weak-tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__xIcon--variant_weak-tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__root--variant_weak-tone_danger {
+    top: 0;
     background-color: var(--seed-v3-color-bg-danger-weak)
 }
-.inlineBanner__prefixIcon--variant_weak-tone_danger {
+.inlineBanner__prefixIcon--tone_danger {
     color: var(--seed-v3-color-fg-danger)
 }
-.inlineBanner__label--variant_weak-tone_danger {
+.inlineBanner__title--tone_danger {
     color: var(--seed-v3-color-fg-danger)
 }
-.inlineBanner__actionLabel--variant_weak-tone_danger {
+.inlineBanner__label--tone_danger {
+    color: var(--seed-v3-color-fg-danger)
+}
+.inlineBanner__actionLabel--tone_danger {
     color: var(--seed-v3-color-fg-danger)
 }

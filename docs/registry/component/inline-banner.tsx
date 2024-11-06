@@ -11,6 +11,7 @@ import {
 } from "@seed-design/recipe/inlineBanner";
 
 interface BaseInlineBannerProps extends InlineBannerVariantProps {
+  titleText?: string;
   prefixIcon?: React.ReactNode;
 }
 
@@ -69,16 +70,16 @@ export const InlineBanner = React.forwardRef<
     {
       children,
       className,
-      variant = "weak",
       tone = "neutral",
       prefixIcon,
+      titleText,
       action,
       dismissAriaLabel,
       ...otherProps
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant, tone });
+    const classNames = inlineBanner({ tone });
 
     const rootRef = React.useRef<HTMLDivElement>(null);
     React.useImperativeHandle(ref, () => rootRef.current as HTMLDivElement);
@@ -93,7 +94,15 @@ export const InlineBanner = React.forwardRef<
           {prefixIcon && (
             <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
           )}
-          <span className={classNames.label}>{children}</span>
+          <div>
+            {titleText && (
+              <>
+                <span className={classNames.title}>{titleText}</span>
+                <span className={classNames.spacer}> </span>
+              </>
+            )}
+            <span className={classNames.label}>{children}</span>
+          </div>
         </div>
         {dismissAriaLabel && (
           <button
