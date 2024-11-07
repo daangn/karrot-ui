@@ -22,7 +22,7 @@ const Heading3 = ({ children }: { children: React.ReactNode }) => (
 export async function Installation(props: InstallationProps) {
   const { name } = props;
 
-  const json = (await import(`@/public/__registry__/component/${name}.json`).then((module) => {
+  const json = (await import(`@/public/__registry__/ui/${name}.json`).then((module) => {
     return module.default;
   })) as RegistryUIItemMachineGenerated;
 
@@ -56,7 +56,7 @@ export async function Installation(props: InstallationProps) {
                   <CodeBlock
                     key={registry.name}
                     lang="tsx"
-                    wrapper={{ allowCopy: true }}
+                    wrapper={{ allowCopy: true, title: `${registry.type}/${registry.name}` }}
                     code={registry.content}
                   />
                 );
