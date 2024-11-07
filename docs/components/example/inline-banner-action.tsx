@@ -4,17 +4,19 @@ import { InlineBanner } from "seed-design/ui/inline-banner";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
 
 export default function InlineBannerAction() {
+  const onClick = () => window.alert("자세히 보기 클릭");
+
   return (
     <div className="flex gap-2 w-full flex-col">
       <InlineBanner
-        action={{ onClick: () => {}, label: "자세히 보기" }}
+        action={{ label: "자세히 보기", onClick }}
         tone="warning"
         prefixIcon={<IconExclamationmarkCircleFill />}
       >
         사업자 정보를 등록해주세요.
       </InlineBanner>
       <InlineBanner
-        action={{ onClick: () => {}, label: "자세히 보기" }}
+        action={{ label: "자세히 보기", onClick }}
         tone="warning"
         prefixIcon={<IconExclamationmarkCircleFill />}
       >

@@ -4,10 +4,13 @@ import { InlineBanner } from "seed-design/ui/inline-banner";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
 
 export default function InlineBannerDismissible() {
+  const onDismiss = () => window.alert("닫기 버튼 클릭");
+
   return (
     <div className="flex gap-2 w-full flex-col">
       <InlineBanner
         dismissAriaLabel="닫기"
+        onDismiss={onDismiss}
         tone="warning"
         prefixIcon={<IconExclamationmarkCircleFill />}
       >
@@ -15,6 +18,7 @@ export default function InlineBannerDismissible() {
       </InlineBanner>
       <InlineBanner
         dismissAriaLabel="닫기"
+        onDismiss={onDismiss}
         tone="warning"
         prefixIcon={<IconExclamationmarkCircleFill />}
       >
