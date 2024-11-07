@@ -33,8 +33,8 @@ export const registryComponent: RegistryComponent = [
   },
   {
     name: "inline-banner",
-    dependencies: [],
-    files: ["component/inline-banner.tsx"],
+    dependencies: ["@radix-ui/react-slot", "@daangn/react-monochrome-icon"],
+    files: ["component/inline-banner.tsx", "hook/use-dismissible.ts"],
   },
   {
     name: "tabs",

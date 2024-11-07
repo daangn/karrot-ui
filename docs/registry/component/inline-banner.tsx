@@ -10,10 +10,7 @@ import {
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
 import { IconXmarkLine } from "@daangn/react-monochrome-icon";
-import {
-  useDismissible,
-  type DismissibleProps,
-} from "../hooks/use-dismissible";
+import { useDismissible, type DismissibleProps } from "../hook/use-dismissible";
 
 interface BaseInlineBannerProps extends InlineBannerVariantProps {
   titleText?: string;
