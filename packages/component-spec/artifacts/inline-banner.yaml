@@ -41,7 +41,7 @@ tone=neutral:
       color: $color.fg.neutral
     label:
       color: $color.fg.neutral
-    actionLabel:
+    actionButton:
       color: $color.fg.neutral
     xIcon:
       color: $color.fg.neutral
@@ -55,7 +55,7 @@ tone=positive:
       color: $color.fg.positive-contrast
     label:
       color: $color.fg.positive-contrast
-    actionLabel:
+    actionButton:
       color: $color.fg.positive-contrast
     xIcon:
       color: $color.fg.positive-contrast
@@ -69,7 +69,7 @@ tone=informative:
       color: $color.fg.informative-contrast
     label:
       color: $color.fg.informative-contrast
-    actionLabel:
+    actionButton:
       color: $color.fg.informative-contrast
     xIcon:
       color: $color.fg.informative-contrast
@@ -83,7 +83,7 @@ tone=warning:
       color: $color.fg.warning-contrast
     label:
       color: $color.fg.warning-contrast
-    actionLabel:
+    actionButton:
       color: $color.fg.warning-contrast
     xIcon:
       color: $color.fg.warning-contrast
@@ -97,5 +97,5 @@ tone=danger:
       color: $color.fg.danger
     label:
       color: $color.fg.danger
-    actionLabel:
+    actionButton:
       color: $color.fg.danger

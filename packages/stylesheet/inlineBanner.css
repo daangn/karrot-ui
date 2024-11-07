@@ -67,7 +67,7 @@
 .inlineBanner__label--tone_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
-.inlineBanner__actionLabel--tone_neutral {
+.inlineBanner__actionButton--tone_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
 .inlineBanner__xIcon--tone_neutral {
@@ -85,7 +85,7 @@
 .inlineBanner__label--tone_positive {
     color: var(--seed-v3-color-fg-positive-contrast)
 }
-.inlineBanner__actionLabel--tone_positive {
+.inlineBanner__actionButton--tone_positive {
     color: var(--seed-v3-color-fg-positive-contrast)
 }
 .inlineBanner__xIcon--tone_positive {
@@ -103,7 +103,7 @@
 .inlineBanner__label--tone_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.inlineBanner__actionLabel--tone_informative {
+.inlineBanner__actionButton--tone_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
 .inlineBanner__xIcon--tone_informative {
@@ -121,7 +121,7 @@
 .inlineBanner__label--tone_warning {
     color: var(--seed-v3-color-fg-warning-contrast)
 }
-.inlineBanner__actionLabel--tone_warning {
+.inlineBanner__actionButton--tone_warning {
     color: var(--seed-v3-color-fg-warning-contrast)
 }
 .inlineBanner__xIcon--tone_warning {
@@ -141,6 +141,6 @@
 .inlineBanner__label--tone_danger {
     color: var(--seed-v3-color-fg-danger)
 }
-.inlineBanner__actionLabel--tone_danger {
+.inlineBanner__actionButton--tone_danger {
     color: var(--seed-v3-color-fg-danger)
 }

@@ -110,8 +110,8 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.toneNeutral.enabled.label.color,
         },
-        actionLabel: {
-          color: vars.toneNeutral.enabled.actionLabel.color,
+        actionButton: {
+          color: vars.toneNeutral.enabled.actionButton.color,
         },
         xIcon: {
           color: vars.toneNeutral.enabled.xIcon.color,
@@ -130,8 +130,8 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.tonePositive.enabled.label.color,
         },
-        actionLabel: {
-          color: vars.tonePositive.enabled.actionLabel.color,
+        actionButton: {
+          color: vars.tonePositive.enabled.actionButton.color,
         },
         xIcon: {
           color: vars.tonePositive.enabled.xIcon.color,
@@ -150,8 +150,8 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.toneInformative.enabled.label.color,
         },
-        actionLabel: {
-          color: vars.toneInformative.enabled.actionLabel.color,
+        actionButton: {
+          color: vars.toneInformative.enabled.actionButton.color,
         },
         xIcon: {
           color: vars.toneInformative.enabled.xIcon.color,
@@ -170,8 +170,8 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.toneWarning.enabled.label.color,
         },
-        actionLabel: {
-          color: vars.toneWarning.enabled.actionLabel.color,
+        actionButton: {
+          color: vars.toneWarning.enabled.actionButton.color,
         },
         xIcon: {
           color: vars.toneWarning.enabled.xIcon.color,
@@ -192,8 +192,8 @@ export const inlineBanner = defineRecipe({
         label: {
           color: vars.toneDanger.enabled.label.color,
         },
-        actionLabel: {
-          color: vars.toneDanger.enabled.actionLabel.color,
+        actionButton: {
+          color: vars.toneDanger.enabled.actionButton.color,
         },
       },
     },

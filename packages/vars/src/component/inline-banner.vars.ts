@@ -56,7 +56,7 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "actionLabel": {
+      "actionButton": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "xIcon": {
@@ -78,7 +78,7 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
-      "actionLabel": {
+      "actionButton": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
       "xIcon": {
@@ -100,7 +100,7 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "actionLabel": {
+      "actionButton": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
       "xIcon": {
@@ -122,7 +122,7 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "actionLabel": {
+      "actionButton": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
       "xIcon": {
@@ -144,7 +144,7 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-danger)"
       },
-      "actionLabel": {
+      "actionButton": {
         "color": "var(--seed-v3-color-fg-danger)"
       }
     }
