@@ -12,7 +12,8 @@ import {
 import { IconXmarkLine } from "@daangn/react-monochrome-icon";
 import { useDismissible, type DismissibleProps } from "../hook/use-dismissible";
 
-interface BaseInlineBannerProps extends InlineBannerVariantProps {
+interface BaseInlineBannerProps
+  extends Omit<InlineBannerVariantProps, "layout"> {
   titleText?: string;
   prefixIcon?: React.ReactNode;
 }
@@ -62,7 +63,10 @@ export const InlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ tone });
+    const classNames = inlineBanner({
+      tone,
+      ...(!action && !dismissAriaLabel && { layout: "contentOnly" }),
+    });
 
     const rootRef = React.useRef<HTMLDivElement>(null);
     React.useImperativeHandle(ref, () => rootRef.current as HTMLDivElement);
@@ -108,7 +112,7 @@ export const InlineBanner = React.forwardRef<
         {action && (
           <button
             type="button"
-            className={classNames.actionLabel}
+            className={classNames.actionButton}
             onClick={action.onClick}
           >
             {action.label}

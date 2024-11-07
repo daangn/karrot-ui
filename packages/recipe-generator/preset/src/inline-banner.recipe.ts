@@ -10,7 +10,7 @@ export const inlineBanner = defineRecipe({
     "title",
     "spacer",
     "label",
-    "actionLabel",
+    "actionButton",
     "dismissButton",
     "xIcon",
   ],
@@ -25,13 +25,15 @@ export const inlineBanner = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
-      paddingInline: vars.base.enabled.root.paddingX,
-      paddingBlock: vars.base.enabled.root.paddingY,
+      paddingInlineStart: vars.base.enabled.root.paddingXStart,
+      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
     },
     content: {
       display: "flex",
       alignItems: "flex-start",
       gap: vars.base.enabled.content.gap,
+
+      paddingBlock: vars.base.enabled.content.paddingY,
 
       fontSize: vars.base.enabled.content.fontSize,
 
@@ -55,11 +57,14 @@ export const inlineBanner = defineRecipe({
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
     },
-    actionLabel: {
+    actionButton: {
       flex: "none",
 
-      fontSize: vars.base.enabled.actionLabel.fontSize,
-      fontWeight: vars.base.enabled.actionLabel.fontWeight,
+      height: vars.base.enabled.actionButton.size,
+      paddingInline: vars.base.enabled.actionButton.paddingX,
+
+      fontSize: vars.base.enabled.actionButton.fontSize,
+      fontWeight: vars.base.enabled.actionButton.fontWeight,
       // FIXME
       lineHeight: "16px",
 
@@ -69,16 +74,28 @@ export const inlineBanner = defineRecipe({
     },
     dismissButton: {
       flex: "none",
+
+      width: vars.base.enabled.dismissButton.size,
+      height: vars.base.enabled.dismissButton.size,
     },
     xIcon: {
       width: vars.base.enabled.xIcon.size,
       height: vars.base.enabled.xIcon.size,
+
+      margin: "auto",
     },
   },
   defaultVariants: {
     tone: "neutral",
   },
   variants: {
+    layout: {
+      contentOnly: {
+        root: {
+          paddingInlineEnd: vars.layoutContentOnly.enabled.root.paddingXEnd,
+        },
+      },
+    },
     tone: {
       neutral: {
         root: {

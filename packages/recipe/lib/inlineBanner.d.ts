@@ -1,5 +1,6 @@
 interface InlineBannerVariant {
-  /**
+  layout: "contentOnly";
+/**
   * @default neutral
   */
   tone: "neutral" | "positive" | "informative" | "warning" | "danger";
@@ -11,7 +12,7 @@ type InlineBannerVariantMap = {
 
 export type InlineBannerVariantProps = Partial<InlineBannerVariant>;
 
-export type InlineBannerSlotName = "root" | "content" | "prefixIcon" | "title" | "spacer" | "label" | "actionLabel" | "dismissButton" | "xIcon";
+export type InlineBannerSlotName = "root" | "content" | "prefixIcon" | "title" | "spacer" | "label" | "actionButton" | "dismissButton" | "xIcon";
 
 export const inlineBannerVariantMap: InlineBannerVariantMap;
 

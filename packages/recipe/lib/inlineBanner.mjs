@@ -26,8 +26,8 @@ const inlineBannerSlotNames = [
     "inlineBanner__label"
   ],
   [
-    "actionLabel",
-    "inlineBanner__actionLabel"
+    "actionButton",
+    "inlineBanner__actionButton"
   ],
   [
     "dismissButton",
@@ -46,6 +46,9 @@ const defaultVariant = {
 const compoundVariants = [];
 
 export const inlineBannerVariantMap = {
+  "layout": [
+    "contentOnly"
+  ],
   "tone": [
     "neutral",
     "positive",

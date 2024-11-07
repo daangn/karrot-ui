@@ -2,24 +2,34 @@
 base:
   enabled:
     root:
-      gap: $unit[4]
-      paddingX: $unit[4]
-      paddingY: $unit[2.5]
+      gap: $unit[1]
+      paddingXStart: $unit[4]
+      paddingXEnd: $unit[1]
     content:
       fontSize: $font-size[100]
       gap: $unit[2]
+      paddingY: $unit[2.5]
     prefixIcon:
-      size: "16px"
+      size: $unit[4]
       marginY: "1.5px"
     title:
       fontWeight: $font-weight.bold
     label:
       fontWeight: $font-weight.medium
-    actionLabel:
+    actionButton:
+      size: $unit[10]
+      paddingX: $unit[3]
       fontSize: $font-size[50]
       fontWeight: $font-weight.regular
+    dismissButton:
+      size: $unit[10]
     xIcon:
-      size: "16px"
+      size: $unit[4]
+
+layout=content only:
+  enabled:
+    root:
+      paddingXEnd: $unit[4]
 
 tone=neutral:
   enabled:

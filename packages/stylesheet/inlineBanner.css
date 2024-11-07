@@ -2,25 +2,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--seed-v3-unit-4);
+    gap: var(--seed-v3-unit-1);
     width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-inline: var(--seed-v3-unit-4);
-    padding-block: var(--seed-v3-unit-2\.5)
+    padding-inline-start: var(--seed-v3-unit-4);
+    padding-inline-end: var(--seed-v3-unit-1)
 }
 .inlineBanner__content {
     display: flex;
     align-items: flex-start;
     gap: var(--seed-v3-unit-2);
+    padding-block: var(--seed-v3-unit-2\.5);
     font-size: var(--seed-v3-font-size-100);
     line-height: 19px
 }
 .inlineBanner__prefixIcon {
     flex: none;
     margin-block: 1.5px;
-    width: 16px;
-    height: 16px
+    width: var(--seed-v3-unit-4);
+    height: var(--seed-v3-unit-4)
 }
 .inlineBanner__title {
     font-weight: var(--seed-v3-font-weight-bold)
@@ -31,8 +32,10 @@
 .inlineBanner__label {
     font-weight: var(--seed-v3-font-weight-medium)
 }
-.inlineBanner__actionLabel {
+.inlineBanner__actionButton {
     flex: none;
+    height: var(--seed-v3-unit-10);
+    padding-inline: var(--seed-v3-unit-3);
     font-size: var(--seed-v3-font-size-50);
     font-weight: var(--seed-v3-font-weight-regular);
     line-height: 16px;
@@ -40,11 +43,17 @@
     text-underline-offset: 2px
 }
 .inlineBanner__dismissButton {
-    flex: none
+    flex: none;
+    width: var(--seed-v3-unit-10);
+    height: var(--seed-v3-unit-10)
 }
 .inlineBanner__xIcon {
-    width: 16px;
-    height: 16px
+    width: var(--seed-v3-unit-4);
+    height: var(--seed-v3-unit-4);
+    margin: auto
+}
+.inlineBanner__root--layout_contentOnly {
+    padding-inline-end: var(--seed-v3-unit-4)
 }
 .inlineBanner__root--tone_neutral {
     background-color: var(--seed-v3-color-bg-neutral-weak)

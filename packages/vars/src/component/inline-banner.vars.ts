@@ -2,16 +2,17 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-4)",
-        "paddingX": "var(--seed-v3-unit-4)",
-        "paddingY": "var(--seed-v3-unit-2\\.5)"
+        "gap": "var(--seed-v3-unit-1)",
+        "paddingXStart": "var(--seed-v3-unit-4)",
+        "paddingXEnd": "var(--seed-v3-unit-1)"
       },
       "content": {
         "fontSize": "var(--seed-v3-font-size-100)",
-        "gap": "var(--seed-v3-unit-2)"
+        "gap": "var(--seed-v3-unit-2)",
+        "paddingY": "var(--seed-v3-unit-2\\.5)"
       },
       "prefixIcon": {
-        "size": "16px",
+        "size": "var(--seed-v3-unit-4)",
         "marginY": "1.5px"
       },
       "title": {
@@ -20,12 +21,24 @@ export const vars = {
       "label": {
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
-      "actionLabel": {
+      "actionButton": {
+        "size": "var(--seed-v3-unit-10)",
+        "paddingX": "var(--seed-v3-unit-3)",
         "fontSize": "var(--seed-v3-font-size-50)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
+      "dismissButton": {
+        "size": "var(--seed-v3-unit-10)"
+      },
       "xIcon": {
-        "size": "16px"
+        "size": "var(--seed-v3-unit-4)"
+      }
+    }
+  },
+  "layoutContentOnly": {
+    "enabled": {
+      "root": {
+        "paddingXEnd": "var(--seed-v3-unit-4)"
       }
     }
   },
