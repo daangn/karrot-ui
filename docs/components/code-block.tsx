@@ -15,6 +15,9 @@ export async function CodeBlock({
   lang,
   wrapper,
 }: CodeBlockProps): Promise<React.ReactElement> {
+  if (!code) {
+    return <div>코드가 없어요.</div>;
+  }
   const hast = await codeToHast(code, {
     lang,
     defaultColor: false,

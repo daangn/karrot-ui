@@ -7,6 +7,7 @@
     "dev": "next dev",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
+    "gen": "yarn generate:all",
     "generate:all": "yarn generate:registry && yarn generate:example",
     "generate:registry": "vite-node scripts/generate-registry.ts",
     "generate:example": "vite-node scripts/generate-example.ts"

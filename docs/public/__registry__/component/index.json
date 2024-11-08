@@ -47,7 +47,7 @@
   {
     "name": "checkbox",
     "dependencies": [
-      "@seed-design/react-checkbox"
+      "@seed-design/react-checkbox@alpha"
     ],
     "files": [
       "component/checkbox.tsx"
@@ -56,7 +56,7 @@
   {
     "name": "tabs",
     "dependencies": [
-      "@seed-design/react-tabs"
+      "@seed-design/react-tabs@alpha"
     ],
     "files": [
       "component/tabs.tsx"
@@ -65,7 +65,7 @@
   {
     "name": "chip-tabs",
     "dependencies": [
-      "@seed-design/react-tabs"
+      "@seed-design/react-tabs@alpha"
     ],
     "files": [
       "component/chip-tabs.tsx"
@@ -83,7 +83,7 @@
   {
     "name": "switch",
     "dependencies": [
-      "@seed-design/react-switch"
+      "@seed-design/react-switch@alpha"
     ],
     "files": [
       "component/switch.tsx"
