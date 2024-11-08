@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=./schema.json
+base:
+  enabled:
+    root:
+      paddingY: $unit[0.5]
+      gap: $unit[0.5]
+      borderWidth: "0.125rem"
+    label:
+      fontWeight: $font-weight.regular
+  pressed:
+    root:
+      color: $color.palette.gray-200
+      borderColor: $color.palette.gray-200
+  disabled:
+    icon:
+      color: $color.fg.disabled
+    label:
+      color: $color.fg.disabled
+
+variant=brand:
+  enabled:
+    icon:
+      color: $color.fg.brand
+    label:
+      color: $color.fg.brand
+variant=neutral:
+  enabled:
+    icon:
+      color: $color.fg.neutral
+    label:
+      color: $color.fg.neutral
+variant=neutral subtle:
+  enabled:
+    icon:
+      color: $color.fg.neutral-subtle
+    label:
+      color: $color.fg.neutral-subtle
+variant=danger:
+  enabled:
+    icon:
+      color: $color.fg.danger
+    label:
+      color: $color.fg.danger
+
+size=large:
+  enabled:
+    root:
+      cornerRadius: $radii[1.5]
+    icon:
+      size: $unit[4]
+    label:
+      fontSize: $font-size[300]
+size=medium:
+  enabled:
+    root:
+      cornerRadius: $radii[1.5]
+    icon:
+      size: $unit[3.5]
+    label:
+      fontSize: $font-size[200]
+size=small:
+  enabled:
+    root:
+      cornerRadius: $radii[1]
+    icon:
+      size: $unit[3.5]
+    label:
+      fontSize: $font-size[100]
