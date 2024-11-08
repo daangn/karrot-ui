@@ -14,8 +14,6 @@ for (const k in process.env) {
   define[`process.env.${k}`] = JSON.stringify(process.env[k]);
 }
 
-console.log(define);
-
 esbuild
   .build({
     entryPoints: ["./src/index.ts"],

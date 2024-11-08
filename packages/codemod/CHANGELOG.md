@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.3
+
+### Patch Changes
+
+- Release 0.0.3
+
 ## 0.0.3-alpha-20241108080931
 
 ### Patch Changes

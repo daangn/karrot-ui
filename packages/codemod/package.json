@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/codemod",
-  "version": "0.0.3-alpha-20241108080931",
+  "version": "0.0.3",
   "type": "module",
   "repository": {
     "type": "git",
