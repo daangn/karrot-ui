@@ -1,5 +1,17 @@
 # @seed-design/codemod
 
+## 0.0.3-alpha-20241108030926
+
+### Patch Changes
+
+- make @daangn/\* deps optional
+
+## 0.0.3-alpha-20241108030003
+
+### Patch Changes
+
+- move actual icon packages to devdeps
+
 ## 0.0.2
 
 ### Patch Changes

@@ -4870,6 +4870,11 @@ __metadata:
     vitest: ^2.0.5
     winston: ^3.15.0
     zod: ^3.23.8
+  dependenciesMeta:
+    "@daangn/react-monochrome-icon":
+      optional: true
+    "@daangn/react-multicolor-icon":
+      optional: true
   bin:
     codemod: ./bin/index.mjs
   languageName: unknown
