@@ -10,6 +10,8 @@ base:
       gap: $unit[2]
       paddingY: $unit[2.5]
     prefixIcon:
+      # XXX: scalable해야 할 것 같음 (결정 x)
+      # size: "1rem"
       size: $unit[4]
       marginY: "1.5px"
     title:

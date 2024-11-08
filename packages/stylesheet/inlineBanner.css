@@ -15,7 +15,7 @@
     gap: var(--seed-v3-unit-2);
     padding-block: var(--seed-v3-unit-2\.5);
     font-size: var(--seed-v3-font-size-100);
-    line-height: 19px
+    line-height: 1.1875rem
 }
 .inlineBanner__prefixIcon {
     flex: none;
@@ -38,7 +38,7 @@
     padding-inline: var(--seed-v3-unit-3);
     font-size: var(--seed-v3-font-size-50);
     font-weight: var(--seed-v3-font-weight-regular);
-    line-height: 16px;
+    line-height: 1rem;
     text-decoration: underline;
     text-underline-offset: 2px
 }

@@ -38,7 +38,7 @@ export const inlineBanner = defineRecipe({
       fontSize: vars.base.enabled.content.fontSize,
 
       // FIXME
-      lineHeight: "19px",
+      lineHeight: "1.1875rem",
     },
     prefixIcon: {
       flex: "none",
@@ -66,7 +66,7 @@ export const inlineBanner = defineRecipe({
       fontSize: vars.base.enabled.actionButton.fontSize,
       fontWeight: vars.base.enabled.actionButton.fontWeight,
       // FIXME
-      lineHeight: "16px",
+      lineHeight: "1rem",
 
       textDecoration: "underline",
       // XXX
