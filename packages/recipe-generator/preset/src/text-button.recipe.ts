@@ -33,6 +33,8 @@ const textButton = defineRecipe({
       },
     },
     label: {
+      textAlign: "center",
+
       fontWeight: vars.base.enabled.label.fontWeight,
       [pseudo(disabled)]: {
         color: vars.base.disabled.label.color,
@@ -85,6 +87,7 @@ const textButton = defineRecipe({
     size: {
       large: {
         root: {
+          minHeight: "2rem",
           borderRadius: vars.sizeLarge.enabled.root.cornerRadius,
         },
         icon: {
@@ -94,11 +97,12 @@ const textButton = defineRecipe({
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
           // XXX
-          lineHeight: "24px",
+          lineHeight: "1.5rem",
         },
       },
       medium: {
         root: {
+          minHeight: "1.875rem",
           borderRadius: vars.sizeMedium.enabled.root.cornerRadius,
         },
         icon: {
@@ -108,11 +112,12 @@ const textButton = defineRecipe({
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
           // XXX
-          lineHeight: "21px",
+          lineHeight: "1.3125rem",
         },
       },
       small: {
         root: {
+          minHeight: "1.75rem",
           borderRadius: vars.sizeSmall.enabled.root.cornerRadius,
         },
         icon: {
@@ -122,7 +127,7 @@ const textButton = defineRecipe({
         label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
           // XXX
-          lineHeight: "19px",
+          lineHeight: "1.1875rem",
         },
       },
     },
