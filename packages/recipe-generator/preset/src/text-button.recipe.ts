@@ -19,68 +19,51 @@ const textButton = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
+      [pseudo(disabled)]: {
+        color: vars.base.disabled.root.color,
+        cursor: "not-allowed",
+      },
+
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.root.color,
         borderColor: vars.base.pressed.root.borderColor,
       },
-      [pseudo(disabled)]: {
-        cursor: "not-allowed",
-      },
-    },
-    icon: {
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.icon.color,
+
+      [pseudo(disabled, active)]: {
+        backgroundColor: "transparent",
+        borderColor: "transparent",
       },
     },
     label: {
       textAlign: "center",
 
       fontWeight: vars.base.enabled.label.fontWeight,
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.label.color,
-      },
     },
+  },
+  defaultVariants: {
+    variant: "brand",
+    size: "medium",
   },
   variants: {
     variant: {
       brand: {
-        icon: {
-          color: vars.variantBrand.enabled.icon.color,
-        },
-        label: {
-          color: vars.variantBrand.enabled.label.color,
+        root: {
+          color: vars.variantBrand.enabled.root.color,
         },
       },
       neutral: {
-        icon: {
-          color: vars.variantNeutral.enabled.icon.color,
-        },
-        label: {
-          color: vars.variantNeutral.enabled.label.color,
+        root: {
+          color: vars.variantNeutral.enabled.root.color,
         },
       },
       neutralSubtle: {
-        icon: {
-          color: vars.variantNeutralSubtle.enabled.icon.color,
-        },
-        label: {
-          color: vars.variantNeutralSubtle.enabled.label.color,
-        },
-        danger: {
-          icon: {
-            color: vars.variantDanger.enabled.icon.color,
-          },
-          label: {
-            color: vars.variantDanger.enabled.label.color,
-          },
+        root: {
+          color: vars.variantNeutralSubtle.enabled.root.color,
         },
       },
       danger: {
-        icon: {
-          color: vars.variantDanger.enabled.icon.color,
-        },
-        label: {
-          color: vars.variantDanger.enabled.label.color,
+        root: {
+          color: vars.variantDanger.enabled.root.color,
         },
       },
     },
@@ -131,10 +114,6 @@ const textButton = defineRecipe({
         },
       },
     },
-  },
-  defaultVariants: {
-    variant: "brand",
-    size: "medium",
   },
 });
 

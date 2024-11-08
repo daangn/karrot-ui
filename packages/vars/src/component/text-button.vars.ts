@@ -17,50 +17,35 @@ export const vars = {
       }
     },
     "disabled": {
-      "icon": {
-        "color": "var(--seed-v3-color-fg-disabled)"
-      },
-      "label": {
+      "root": {
         "color": "var(--seed-v3-color-fg-disabled)"
       }
     }
   },
   "variantBrand": {
     "enabled": {
-      "icon": {
-        "color": "var(--seed-v3-color-fg-brand)"
-      },
-      "label": {
+      "root": {
         "color": "var(--seed-v3-color-fg-brand)"
       }
     }
   },
   "variantNeutral": {
     "enabled": {
-      "icon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "label": {
+      "root": {
         "color": "var(--seed-v3-color-fg-neutral)"
       }
     }
   },
   "variantNeutralSubtle": {
     "enabled": {
-      "icon": {
-        "color": "var(--seed-v3-color-fg-neutral-subtle)"
-      },
-      "label": {
+      "root": {
         "color": "var(--seed-v3-color-fg-neutral-subtle)"
       }
     }
   },
   "variantDanger": {
     "enabled": {
-      "icon": {
-        "color": "var(--seed-v3-color-fg-danger)"
-      },
-      "label": {
+      "root": {
         "color": "var(--seed-v3-color-fg-danger)"
       }
     }

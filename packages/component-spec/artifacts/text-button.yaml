@@ -12,34 +12,24 @@ base:
       color: $color.palette.gray-200
       borderColor: $color.palette.gray-200
   disabled:
-    icon:
-      color: $color.fg.disabled
-    label:
+    root:
       color: $color.fg.disabled
 
 variant=brand:
   enabled:
-    icon:
-      color: $color.fg.brand
-    label:
+    root:
       color: $color.fg.brand
 variant=neutral:
   enabled:
-    icon:
-      color: $color.fg.neutral
-    label:
+    root:
       color: $color.fg.neutral
 variant=neutral subtle:
   enabled:
-    icon:
-      color: $color.fg.neutral-subtle
-    label:
+    root:
       color: $color.fg.neutral-subtle
 variant=danger:
   enabled:
-    icon:
-      color: $color.fg.danger
-    label:
+    root:
       color: $color.fg.danger
 
 size=large:

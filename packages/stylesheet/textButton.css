@@ -8,51 +8,32 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.textButton__root:is(:disabled, [disabled], [data-disabled]) {
+    color: var(--seed-v3-color-fg-disabled);
+    cursor: not-allowed;
+}
 .textButton__root:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-palette-gray-200);
     border-color: var(--seed-v3-color-palette-gray-200);
 }
-.textButton__root:is(:disabled, [disabled], [data-disabled]) {
-    cursor: not-allowed;
-}
-.textButton__icon:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+.textButton__root:is(:disabled, [disabled], [data-disabled]):is(:active, [data-active]) {
+    background-color: transparent;
+    border-color: transparent;
 }
 .textButton__label {
     text-align: center;
     font-weight: var(--seed-v3-font-weight-regular);
 }
-.textButton__label:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
-}
-.textButton__icon--variant_brand {
+.textButton__root--variant_brand {
     color: var(--seed-v3-color-fg-brand);
 }
-.textButton__label--variant_brand {
-    color: var(--seed-v3-color-fg-brand);
-}
-.textButton__icon--variant_neutral {
+.textButton__root--variant_neutral {
     color: var(--seed-v3-color-fg-neutral);
 }
-.textButton__label--variant_neutral {
-    color: var(--seed-v3-color-fg-neutral);
-}
-.textButton__icon--variant_neutralSubtle {
+.textButton__root--variant_neutralSubtle {
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
-.textButton__label--variant_neutralSubtle {
-    color: var(--seed-v3-color-fg-neutral-subtle);
-}
-.textButton__danger--variant_neutralSubtle icon {
-    color: var(--seed-v3-color-fg-danger);
-}
-.textButton__danger--variant_neutralSubtle label {
-    color: var(--seed-v3-color-fg-danger);
-}
-.textButton__icon--variant_danger {
-    color: var(--seed-v3-color-fg-danger);
-}
-.textButton__label--variant_danger {
+.textButton__root--variant_danger {
     color: var(--seed-v3-color-fg-danger);
 }
 .textButton__root--size_large {
