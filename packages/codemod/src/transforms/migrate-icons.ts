@@ -6,6 +6,7 @@ import {
 } from "../utils/replace-node.js";
 import { createLogger, format, transports } from "winston";
 import { identifierMatchReact } from "../utils/identifier-match.js";
+import { createTrack } from "../utils/log.js";
 
 export interface MigrateIconsOptions {
   match?: {
@@ -53,6 +54,8 @@ export const reactMatch: MigrateIconsOptions["match"] = {
 };
 
 const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIconsOptions) => {
+  const track = createTrack({ transform: "migrate-icons", file: file.path });
+
   const logger =
     process.env.LOG === "true"
       ? createLogger({
@@ -93,6 +96,7 @@ const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIcons
     match,
     logger,
     report: api.report,
+    track,
     filePath: file.path,
   });
 
@@ -116,6 +120,7 @@ const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIcons
     match,
     logger,
     report: api.report,
+    track,
     filePath: file.path,
   });
 
@@ -133,6 +138,7 @@ const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIcons
     identifierMatch: match.identifier,
     logger,
     report: api.report,
+    track,
     filePath: file.path,
   });
 
@@ -150,6 +156,7 @@ const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIcons
     logger?.warn(`${file.path}: ${message}`);
     console.warn(message);
     api.report?.(message);
+    track({ event: "inline svg 발견", properties: { count: inlineSvgs.length } });
   }
 
   logger?.debug(`${file.path}: identifier 변환 완료`);

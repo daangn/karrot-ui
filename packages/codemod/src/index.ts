@@ -4,12 +4,13 @@ import { cac } from "cac";
 import { execaNode } from "execa";
 import { createRequire } from "module";
 import { dirname, resolve } from "path";
-import { LOG_PREFIX } from "./utils/log.js";
+import { createTrack, LOG_PREFIX } from "./utils/log.js";
 import fs from "fs";
 import { z } from "zod";
 
 const TRANSFORM_PATH = resolve(dirname(import.meta.filename), "transforms");
 const cli = cac();
+const track = createTrack();
 const require = createRequire(import.meta.url);
 
 const transformOptionsSchema = z.object({
@@ -34,6 +35,8 @@ cli
   .option("--ignore-config <ignoreConfig>", "Ignore config")
   .example("  $ npx @seed-design/codemod migrate-icons src/ui")
   .action(async (transformName, paths, opts) => {
+    track({ event: "실행", properties: { transformName, paths } });
+
     const options = transformOptionsSchema.parse(opts);
 
     const availableTransforms = getAvailableTransforms();
@@ -84,6 +87,8 @@ async function runTransform(
 
   const fixedPaths = paths.map((path) => resolve(process.cwd(), path));
   const fixedPathsCombined = fixedPaths.join(" ");
+
+  track({ event: "transform 실행", properties: { transformPath, fixedPathsCombined, options } });
 
   await execaNode({ stdout: "inherit", env: { LOG: `${log}` } })`
     ${jscodeshiftPath} ${fixedPathsCombined}

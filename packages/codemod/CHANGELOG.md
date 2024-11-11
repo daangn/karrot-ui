@@ -1,5 +1,41 @@
 # @seed-design/codemod
 
+## 0.0.3
+
+### Patch Changes
+
+- Release 0.0.3
+
+## 0.0.3-alpha-20241108080931
+
+### Patch Changes
+
+- track inline svgs
+
+## 0.0.3-alpha-20241108075855
+
+### Patch Changes
+
+- Use write key from env
+
+## 0.0.3-alpha-20241108073245
+
+### Patch Changes
+
+- Submit logs to June.so
+
+## 0.0.3-alpha-20241108030926
+
+### Patch Changes
+
+- make @daangn/\* deps optional
+
+## 0.0.3-alpha-20241108030003
+
+### Patch Changes
+
+- move actual icon packages to devdeps
+
 ## 0.0.2
 
 ### Patch Changes

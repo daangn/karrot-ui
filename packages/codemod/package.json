@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/codemod",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "repository": {
     "type": "git",
@@ -19,8 +19,7 @@
     "test": "LOG=true yarn vitest"
   },
   "dependencies": {
-    "@daangn/react-monochrome-icon": "alpha",
-    "@daangn/react-multicolor-icon": "alpha",
+    "@june-so/analytics-node": "^8.0.0",
     "cac": "^6.7.14",
     "es-toolkit": "^1.25.2",
     "execa": "^9.4.1",
@@ -34,9 +33,14 @@
     "@types/node": "^22.7.5",
     "change-case": "^5.4.4",
     "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
     "esbuild": "^0.24.0",
     "typescript": "^5.4.5",
     "vitest": "^2.0.5"
+  },
+  "optionalDependencies": {
+    "@daangn/react-monochrome-icon": "alpha",
+    "@daangn/react-multicolor-icon": "alpha"
   },
   "publishConfig": {
     "access": "public"

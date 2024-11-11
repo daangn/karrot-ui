@@ -2,12 +2,15 @@ import jscodeshift from "jscodeshift";
 import type { MigrateIconsOptions } from "../transforms/migrate-icons.js";
 import type { Logger } from "winston";
 import { partition, uniqWith } from "es-toolkit";
+import type { Analytics } from "@june-so/analytics-node";
+import type { createTrack } from "./log.js";
 
 interface ReplaceImportDeclarationsParams {
   importDeclarations: jscodeshift.Collection<jscodeshift.ImportDeclaration>;
   match: MigrateIconsOptions["match"];
   logger?: Logger;
   report?: jscodeshift.API["report"];
+  track?: ReturnType<typeof createTrack>;
   filePath: jscodeshift.FileInfo["path"];
 }
 
@@ -16,6 +19,7 @@ export function replaceImportDeclarations({
   match,
   logger,
   report,
+  track,
   filePath,
 }: ReplaceImportDeclarationsParams) {
   const availableNewNames = match.identifier.map(({ oldName }) => oldName);
@@ -93,6 +97,10 @@ export function replaceImportDeclarations({
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
         report?.(message);
+        track?.({
+          event: "멀티컬러 아이콘 사용",
+          properties: { type: "importSpecifier", icons: iconsString },
+        });
 
         const newImportDeclaration = jscodeshift.importDeclaration(
           newSpecifiersToMoveToMulticolor,
@@ -142,6 +150,10 @@ export function replaceImportDeclarations({
             logger?.warn(`${filePath}: ${message}`);
             console.warn(message);
             report?.(message);
+            track?.({
+              event: "확인 필요한 아이콘 사용",
+              properties: { type: "importDefaultSpecifier", source: currentSourceValue },
+            });
           }
 
           if (matchFound.moveToMulticolor) {
@@ -182,6 +194,10 @@ export function replaceImportDeclarations({
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
           report?.(message);
+          track?.({
+            event: "멀티컬러 아이콘 사용",
+            properties: { type: "importDefaultSpecifier", icon: matchFound.oldName },
+          });
         }
 
         if (matchFound.isActionRequired) {
@@ -190,6 +206,10 @@ export function replaceImportDeclarations({
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
           report?.(message);
+          track?.({
+            event: "확인 필요한 아이콘 사용",
+            properties: { type: "importDefaultSpecifier", icon: currentSpecifier.imported.name },
+          });
         }
 
         return jscodeshift.importDefaultSpecifier(
@@ -231,6 +251,10 @@ export function replaceImportDeclarations({
           logger?.error(`${filePath}: ${message}`);
           console.warn(message);
           report?.(message);
+          track?.({
+            event: "변환 정보 없음",
+            properties: { type: "importSpecifier", icon: currentSpecifier.imported.name },
+          });
 
           return null;
         }
@@ -241,6 +265,10 @@ export function replaceImportDeclarations({
           logger?.warn(`${filePath}: ${message}`);
           console.warn(message);
           report?.(message);
+          track?.({
+            event: "확인 필요한 아이콘 사용",
+            properties: { type: "importSpecifier", icon: currentSpecifier.imported.name },
+          });
         }
 
         const newSpecifier = jscodeshift.importSpecifier(
@@ -272,6 +300,7 @@ interface ReplaceIdentifiersParams {
   identifierMatch: MigrateIconsOptions["match"]["identifier"];
   logger?: Logger;
   report?: jscodeshift.API["report"];
+  track?: ReturnType<typeof createTrack>;
   filePath: jscodeshift.FileInfo["path"];
 }
 
@@ -280,6 +309,7 @@ export function replaceIdentifiers({
   identifierMatch,
   logger,
   report,
+  track,
   filePath,
 }: ReplaceIdentifiersParams) {
   // biome-ignore lint/complexity/noForEach: <explanation>
@@ -302,6 +332,10 @@ export function replaceIdentifiers({
       logger?.warn(`${filePath}: ${message}`);
       console.warn(message);
       report?.(message);
+      track?.({
+        event: "멀티컬러 아이콘 사용",
+        properties: { type: "identifier", icon: matchFound.oldName },
+      });
     }
 
     if (matchFound.isActionRequired) {
@@ -310,11 +344,19 @@ export function replaceIdentifiers({
       logger?.warn(`${filePath}: ${message}`);
       console.warn(message);
       report?.(message);
+      track?.({
+        event: "확인 필요한 아이콘 사용",
+        properties: { type: "identifier", icon: identifier.node.name },
+      });
     }
 
     const newName = matchFound.newName;
 
     logger?.debug(`${filePath}: identifier ${identifier.node.name} -> ${newName}`);
+    track?.({
+      event: "변환",
+      properties: { type: "identifier", oldName: identifier.node.name, newName },
+    });
 
     identifier.replace(jscodeshift.identifier(newName));
   });
@@ -325,6 +367,7 @@ interface ReplaceStringLiteralsProps {
   match: MigrateIconsOptions["match"];
   logger?: Logger;
   report?: jscodeshift.API["report"];
+  track?: ReturnType<typeof createTrack>;
   filePath: jscodeshift.FileInfo["path"];
 }
 
@@ -333,6 +376,7 @@ export function replaceStringLiterals({
   match,
   logger,
   report,
+  track,
   filePath,
 }: ReplaceStringLiteralsProps) {
   // biome-ignore lint/complexity/noForEach: <explanation>
@@ -351,6 +395,10 @@ export function replaceStringLiterals({
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
         report?.(message);
+        track?.({
+          event: "확인 필요한 아이콘 사용",
+          properties: { type: "stringLiteral", icon: stringLiteral.node.value },
+        });
       }
 
       if (identifierMatchFound.moveToMulticolor) {
@@ -359,11 +407,19 @@ export function replaceStringLiterals({
         logger?.warn(`${filePath}: ${message}`);
         console.warn(message);
         report?.(message);
+        track?.({
+          event: "멀티컬러 아이콘 사용",
+          properties: { type: "stringLiteral", icon: stringLiteral.node.value },
+        });
       }
 
       const newName = identifierMatchFound.newName;
 
       logger?.debug(`${filePath}: string literal ${stringLiteral.node.value} -> ${newName}`);
+      track?.({
+        event: "변환",
+        properties: { type: "stringLiteral", oldName: stringLiteral.node.value, newName },
+      });
 
       stringLiteral.replace(jscodeshift.stringLiteral(newName));
     }
@@ -398,6 +454,10 @@ export function replaceStringLiterals({
             logger?.warn(`${filePath}: ${message}`);
             console.warn(message);
             report?.(message);
+            track?.({
+              event: "확인 필요한 아이콘 사용",
+              properties: { type: "stringLiteral", icon: stringLiteral.node.value },
+            });
           }
 
           if (matchFound.moveToMulticolor) {
@@ -406,6 +466,10 @@ export function replaceStringLiterals({
             logger?.warn(`${filePath}: ${message}`);
             console.warn(message);
             report?.(message);
+            track?.({
+              event: "멀티컬러 아이콘 사용",
+              properties: { type: "stringLiteral", icon: stringLiteral.node.value },
+            });
           }
 
           return matchFound.newName;
@@ -415,6 +479,14 @@ export function replaceStringLiterals({
       stringLiteral.replace(jscodeshift.stringLiteral(newSourceValue));
 
       logger?.debug(`${filePath}: string literal ${stringLiteral.node.value} -> ${newSourceValue}`);
+      track?.({
+        event: "변환",
+        properties: {
+          type: "stringLiteral",
+          oldName: stringLiteral.node.value,
+          newName: newSourceValue,
+        },
+      });
     }
   });
 }
