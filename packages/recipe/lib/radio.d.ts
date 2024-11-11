@@ -1,4 +1,5 @@
 interface RadioVariant {
+  fontWeight: "bold";
   size: "large" | "medium" | "small"
 }
 

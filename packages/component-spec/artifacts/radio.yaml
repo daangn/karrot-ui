@@ -1,0 +1,83 @@
+base:
+  enabled:
+    root:
+      gap: $unit[2]
+    control:
+      color: $color.bg.layer-default
+      strokeColor: $color.stroke.control
+      strokeWidth: 1px
+      cornerRadius: $radii.full
+    label:
+      color: $color.fg.neutral
+  enabled,pressed:
+    control:
+      color: $color.bg.layer-default-pressed
+  enabled,selected:
+    control:
+      color: $color.bg.brand-solid
+    icon:
+      color: $color.fg.static-white
+  enabled,selected,pressed:
+    control:
+      color: $color.bg.brand-solid-pressed
+  disabled:
+    control:
+      color: $color.palette.gray-300
+    label:
+      color: $color.palette.gray-500
+  disabled,selected:
+    control:
+      strokeColor: $color.palette.gray-300
+    icon:
+      color: $color.palette.gray-300
+
+fontWeight=bold:
+  enabled:
+    label:
+      fontWeight: $font-weight.bold
+
+size=large:
+  enabled:
+    root:
+      minHeight: $unit[9]
+    control:
+      size: $unit[6]
+      marginYStart: 0.375rem
+    icon:
+      size: $unit[2.5]
+    label:
+      fontSize: $font-size[200]
+      marginYStart: 0.46875rem
+  disabled:
+    icon:
+      size: $unit[3]
+size=medium:
+  enabled:
+    root:
+      minHeight: $unit[8]
+    control:
+      size: $unit[5]
+      marginYStart: 0.375rem
+    icon:
+      size: $unit[2]
+    label:
+      fontSize: $font-size[100]
+      marginYStart: 0.40625rem
+  disabled:
+    icon:
+      size: $unit[2.5]
+size=small:
+  enabled:
+    root:
+      minHeight: $unit[7]
+    control:
+      size: $unit[4.5]
+      marginYStart: 0.3125rem
+    icon:
+      size: $unit[2]
+    label:
+      fontSize: $font-size[75]
+      marginYStart: 0.3125rem
+  disabled:
+    icon:
+      size: $unit[2]
