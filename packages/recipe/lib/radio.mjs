@@ -24,6 +24,9 @@ const defaultVariant = {};
 const compoundVariants = [];
 
 export const radioVariantMap = {
+  "fontWeight": [
+    "bold"
+  ],
   "size": [
     "large",
     "medium",

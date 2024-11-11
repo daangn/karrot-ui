@@ -66,6 +66,11 @@ export const registryUI: RegistryUI = [
     files: ["ui:expand-button.tsx"],
   },
   {
+    name: "radio-group",
+    dependencies: ["@seed-design/react-radio-group@alpha"],
+    files: ["component/radio-group.tsx"],
+  },
+  {
     name: "switch",
     dependencies: ["@seed-design/react-switch@alpha"],
     files: ["ui:switch.tsx"],
