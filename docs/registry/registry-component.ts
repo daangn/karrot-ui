@@ -4,56 +4,56 @@ export const registryComponent: RegistryComponent = [
   {
     name: "alert-dialog",
     innerDependencies: ["action-button"],
-    files: ["component/alert-dialog.tsx"],
+    files: ["ui/alert-dialog.tsx"],
   },
   {
     name: "action-button",
     dependencies: ["@radix-ui/react-slot"],
-    files: ["component/action-button.tsx"],
+    files: ["ui/action-button.tsx"],
   },
   {
     name: "action-chip",
     dependencies: ["@radix-ui/react-slot"],
-    files: ["component/action-chip.tsx"],
+    files: ["ui/action-chip.tsx"],
   },
   {
     name: "badge",
     dependencies: ["@radix-ui/react-slot"],
-    files: ["component/badge.tsx"],
+    files: ["ui/badge.tsx"],
   },
   {
     name: "control-chip",
     dependencies: ["@radix-ui/react-slot"],
-    files: ["component/control-chip.tsx"],
+    files: ["ui/control-chip.tsx"],
   },
   {
     name: "checkbox",
     dependencies: ["@seed-design/react-checkbox@alpha"],
-    files: ["component/checkbox.tsx"],
+    files: ["ui/checkbox.tsx"],
   },
   {
     name: "inline-banner",
     dependencies: ["@radix-ui/react-slot", "@daangn/react-monochrome-icon"],
-    files: ["component/inline-banner.tsx", "hook/use-dismissible.ts"],
+    files: ["ui/inline-banner.tsx", "hook/use-dismissible.ts"],
   },
   {
     name: "tabs",
     dependencies: ["@seed-design/react-tabs@alpha"],
-    files: ["component/tabs.tsx"],
+    files: ["ui/tabs.tsx"],
   },
   {
     name: "chip-tabs",
     dependencies: ["@seed-design/react-tabs@alpha"],
-    files: ["component/chip-tabs.tsx"],
+    files: ["ui/chip-tabs.tsx"],
   },
   {
     name: "expand-button",
     dependencies: ["@radix-ui/react-slot"],
-    files: ["component/expand-button.tsx"],
+    files: ["ui/expand-button.tsx"],
   },
   {
     name: "switch",
     dependencies: ["@seed-design/react-switch@alpha"],
-    files: ["component/switch.tsx"],
+    files: ["ui/switch.tsx"],
   },
 ];
