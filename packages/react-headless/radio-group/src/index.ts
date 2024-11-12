@@ -37,11 +37,6 @@ export function useRadioGroupState(props: UseRadioGroupStateProps) {
 }
 
 export interface UseRadioGroupProps extends UseRadioGroupStateProps {
-  /**
-   * @default "ltr"
-   */
-  dir?: "ltr" | "rtl" | string;
-
   disabled?: boolean;
 
   name?: string;
@@ -75,7 +70,6 @@ export function useRadioGroup(props: UseRadioGroupProps) {
   } = useRadioGroupState(props);
 
   const {
-    dir = "ltr",
     disabled,
     form,
     name,
@@ -100,14 +94,9 @@ export function useRadioGroup(props: UseRadioGroupProps) {
       role: "radiogroup",
       "aria-labelledby": getLabelId(id),
       ...stateProps,
-      dir: dir,
-      style: {
-        position: "relative",
-      },
     }),
 
     labelProps: elementProps({
-      dir: dir,
       ...stateProps,
       id: getLabelId(id),
       // TODO: label 클릭 시 체크가 되어있는 radio에 포커스를 잡아야 한다. 체크된 게 없다면, 첫 번째 radio에 포커스를 잡아야 한다.
@@ -150,7 +139,6 @@ export function useRadioGroup(props: UseRadioGroupProps) {
         restProps: itemRestProps,
 
         rootProps: elementProps({
-          dir: dir,
           ...itemStateProps,
           onPointerMove() {
             if (itemState.isDisabled) return;
@@ -177,7 +165,6 @@ export function useRadioGroup(props: UseRadioGroupProps) {
         }),
 
         controlProps: elementProps({
-          dir: dir,
           "aria-hidden": true,
           ...itemStateProps,
         }),

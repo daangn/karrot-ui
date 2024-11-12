@@ -12,11 +12,14 @@ const radio = defineRecipe({
       cursor: "pointer",
 
       gap: vars.base.enabled.root.gap,
+
+      [pseudo(disabled)]: {
+        cursor: "not-allowed",
+      },
     },
     control: {
       backgroundColor: vars.base.enabled.control.color,
 
-      borderWidth: vars.base.enabled.control.strokeWidth,
       borderColor: vars.base.enabled.control.strokeColor,
 
       borderRadius: vars.base.enabled.control.cornerRadius,
@@ -26,21 +29,24 @@ const radio = defineRecipe({
       justifyContent: "center",
       flex: "none",
 
-      [pseudo(checked)]: {
-        backgroundColor: vars.base.enabledSelected.control.color,
-        borderWidth: 0,
-      },
       [pseudo(active)]: {
-        // backgroundColor: vars.base.pressed.control.color,
+        backgroundColor: vars.base.enabledPressed.control.color,
+      },
+      [pseudo(checked)]: {
+        borderWidth: vars.base.enabledSelected.control.strokeWidth,
+        backgroundColor: vars.base.enabledSelected.control.color,
       },
       [pseudo(active, checked)]: {
-        // backgroundColor: vars.base.pressedSelected.control.color,
+        backgroundColor: vars.base.enabledSelectedPressed.control.color,
       },
+
       [pseudo(disabled)]: {
         backgroundColor: vars.base.disabled.control.color,
       },
       [pseudo(disabled, checked)]: {
-        backgroundColor: "none",
+        backgroundColor: "transparent",
+
+        borderColor: vars.base.disabledSelected.control.strokeColor,
       },
     },
     icon: {
@@ -52,7 +58,6 @@ const radio = defineRecipe({
         backgroundColor: vars.base.enabledSelected.icon.color,
       },
       [pseudo(disabled, checked)]: {
-        display: "block",
         backgroundColor: vars.base.disabledSelected.icon.color,
       },
     },
@@ -64,8 +69,17 @@ const radio = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    size: "medium",
+    fontWeight: "regular",
+  },
   variants: {
     fontWeight: {
+      regular: {
+        label: {
+          fontWeight: vars.fontWeightRegular.enabled.label.fontWeight,
+        },
+      },
       bold: {
         label: {
           fontWeight: vars.fontWeightBold.enabled.label.fontWeight,
@@ -81,10 +95,19 @@ const radio = defineRecipe({
           width: vars.sizeLarge.enabled.control.size,
           height: vars.sizeLarge.enabled.control.size,
           marginBlockStart: vars.sizeLarge.enabled.control.marginYStart,
+
+          borderWidth: vars.sizeLarge.enabled.control.strokeWidth,
+
+          [pseudo(disabled, checked)]: {
+            borderWidth: vars.sizeLarge.disabledSelected.control.strokeWidth,
+          },
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
           marginBlockStart: vars.sizeLarge.enabled.label.marginYStart,
+
+          // XXX
+          lineHeight: "1.3125rem",
         },
         icon: {
           width: vars.sizeLarge.enabled.icon.size,
@@ -99,10 +122,19 @@ const radio = defineRecipe({
           width: vars.sizeMedium.enabled.control.size,
           height: vars.sizeMedium.enabled.control.size,
           marginBlockStart: vars.sizeMedium.enabled.control.marginYStart,
+
+          borderWidth: vars.sizeMedium.enabled.control.strokeWidth,
+
+          [pseudo(disabled, checked)]: {
+            borderWidth: vars.sizeMedium.disabledSelected.control.strokeWidth,
+          },
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
           marginBlockStart: vars.sizeMedium.enabled.label.marginYStart,
+
+          // XXX
+          lineHeight: "1.1875rem",
         },
         icon: {
           width: vars.sizeMedium.enabled.icon.size,
@@ -117,10 +149,19 @@ const radio = defineRecipe({
           width: vars.sizeSmall.enabled.control.size,
           height: vars.sizeSmall.enabled.control.size,
           marginBlockStart: vars.sizeSmall.enabled.control.marginYStart,
+
+          borderWidth: vars.sizeSmall.enabled.control.strokeWidth,
+
+          [pseudo(disabled, checked)]: {
+            borderWidth: vars.sizeSmall.disabledSelected.control.strokeWidth,
+          },
         },
         label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
           marginBlockStart: vars.sizeSmall.enabled.label.marginYStart,
+
+          // XXX
+          lineHeight: "1.125rem",
         },
         icon: {
           width: vars.sizeSmall.enabled.icon.size,

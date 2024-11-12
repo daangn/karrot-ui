@@ -1,0 +1,13 @@
+.radioGroup__root {
+    display: flex;
+    flex-direction: column
+}
+.radioGroup__radios {
+    display: flex
+}
+.radioGroup__radios--orientation_horizontal {
+    flex-direction: row
+}
+.radioGroup__radios--orientation_vertical {
+    flex-direction: column
+}

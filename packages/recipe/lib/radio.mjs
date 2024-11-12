@@ -19,12 +19,16 @@ const radioSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "size": "medium",
+  "fontWeight": "regular"
+};
 
 const compoundVariants = [];
 
 export const radioVariantMap = {
   "fontWeight": [
+    "regular",
     "bold"
   ],
   "size": [
