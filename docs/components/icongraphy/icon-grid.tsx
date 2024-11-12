@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { cva } from "class-variance-authority";
 import { useIcon } from "./icon-context";
-import { Tags } from "./tags";
+import { Tag } from "./tags";
 
 export const IconGrid = () => {
   const { iconComponents, iconData, search, setSelectedIcon, selectedIcon } = useIcon();
@@ -58,12 +58,17 @@ export const IconGrid = () => {
           },
         );
 
+        const dangerTags = [Tag.figmaNotPublished, Tag.fat, Tag.service];
+        const isDanger = iconData[snakeCaseIconName].metadatas.some((metadata) =>
+          dangerTags.includes(metadata),
+        );
+
         return (
           <div
             onClick={() => onSelect(snakeCaseIconName)}
             key={iconName}
             className={iconComponentVariants({
-              danger: iconData[snakeCaseIconName].metadatas.includes(Tags.FIGMA_NOT_PUBLISHED),
+              danger: isDanger,
               selected: isSelected,
             })}
             data-metadatas={metadataString}

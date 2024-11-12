@@ -5,7 +5,7 @@ import { Badge } from "seed-design/ui/badge";
 import { useIcon } from "./icon-context";
 
 import * as changeCase from "change-case";
-import { Tags } from "./tags";
+import { Tag } from "./tags";
 
 export const IconBottomInfomation = () => {
   const { selectedIcon, search, iconComponents } = useIcon();
@@ -25,7 +25,9 @@ export const IconBottomInfomation = () => {
       React.RefAttributes<SVGSVGElement>
   >;
 
-  const isDanger = selectedIcon.metadatas.includes(Tags.FIGMA_NOT_PUBLISHED);
+  const isFigmaNotPublishedIcon = selectedIcon.metadatas.includes(Tag.figmaNotPublished);
+  const isFatIcon = selectedIcon.metadatas.includes(Tag.fat);
+  const isServiceIcon = selectedIcon.metadatas.includes(Tag.service);
 
   return (
     <div className="flex justify-between fixed bottom-0 min-h-28 left-0 right-0 bg-seed-bg-layer-default border-t border-gray-200 p-4 z-30">
@@ -33,11 +35,33 @@ export const IconBottomInfomation = () => {
         <div className="flex gap-4 items-end">
           <div className="text-xl font-bold">{selectedIcon.name}</div>
           <div className="text-sm">{pascalCaseIconName}</div>
-          {isDanger && (
-            <div className="text-seed-fg-danger">
-              해당 아이콘은 서비스, 카테고리 아이콘이므로 사용시 디자인 코어에 문의해주세요.
-            </div>
-          )}
+          <div className="flex flex-col gap-1">
+            {isFigmaNotPublishedIcon && (
+              <div className="text-seed-fg-danger text-xs">
+                <span className="font-bold">[피그마 컴포넌트로 배포되지 않은 아이콘]</span>
+                <span> 해당 아이콘은 남용이 불가능합니다. 디자인 코어팀에 문의해주세요.</span>
+              </div>
+            )}
+            {isFatIcon && (
+              <div className="text-seed-fg-danger text-xs">
+                <span className="font-bold">[Fat 아이콘]</span>
+                <span>
+                  {" "}
+                  해당 아이콘은 특정 컴포넌트를 위해 특수제작된 아이콘입니다. 디자인 코어팀에
+                  문의해주세요.
+                </span>
+              </div>
+            )}
+            {isServiceIcon && (
+              <div className="text-seed-fg-danger text-xs">
+                <span className="font-bold">[서비스 아이콘]</span>
+                <span>
+                  {" "}
+                  해당 아이콘은 서비스 아이콘입니다. 특정 서비스 이외에는 사용이 불가능합니다.
+                </span>
+              </div>
+            )}
+          </div>
         </div>
         <div>
           {selectedIcon?.metadatas.map((metadata) => (
