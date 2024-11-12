@@ -18,6 +18,7 @@ export async function CodeBlock({
   if (!code) {
     return <div>코드가 없어요.</div>;
   }
+
   const hast = await codeToHast(code, {
     lang,
     defaultColor: false,
@@ -38,5 +39,9 @@ export async function CodeBlock({
     },
   });
 
-  return <Base.CodeBlock {...wrapper}>{rendered}</Base.CodeBlock>;
+  return (
+    <Base.CodeBlock className="[&_.line]:min-h-[20px]" {...wrapper}>
+      {rendered}
+    </Base.CodeBlock>
+  );
 }
