@@ -7,7 +7,6 @@ export const vars = {
       "control": {
         "color": "var(--seed-v3-color-bg-layer-default)",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
-        "strokeWidth": "1px",
         "cornerRadius": "var(--seed-v3-radii-full)"
       },
       "label": {
@@ -21,6 +20,7 @@ export const vars = {
     },
     "enabledSelected": {
       "control": {
+        "strokeWidth": "0px",
         "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "icon": {
@@ -49,6 +49,13 @@ export const vars = {
       }
     }
   },
+  "fontWeightRegular": {
+    "enabled": {
+      "label": {
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
+      }
+    }
+  },
   "fontWeightBold": {
     "enabled": {
       "label": {
@@ -63,7 +70,8 @@ export const vars = {
       },
       "control": {
         "size": "var(--seed-v3-unit-6)",
-        "marginYStart": "0.375rem"
+        "marginYStart": "0.375rem",
+        "strokeWidth": "3px"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2\\.5)"
@@ -77,6 +85,11 @@ export const vars = {
       "icon": {
         "size": "var(--seed-v3-unit-3)"
       }
+    },
+    "disabledSelected": {
+      "control": {
+        "strokeWidth": "1px"
+      }
     }
   },
   "sizeMedium": {
@@ -86,7 +99,8 @@ export const vars = {
       },
       "control": {
         "size": "var(--seed-v3-unit-5)",
-        "marginYStart": "0.375rem"
+        "marginYStart": "0.375rem",
+        "strokeWidth": "1px"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2)"
@@ -100,6 +114,11 @@ export const vars = {
       "icon": {
         "size": "var(--seed-v3-unit-2\\.5)"
       }
+    },
+    "disabledSelected": {
+      "control": {
+        "strokeWidth": "1px"
+      }
     }
   },
   "sizeSmall": {
@@ -109,7 +128,8 @@ export const vars = {
       },
       "control": {
         "size": "var(--seed-v3-unit-4\\.5)",
-        "marginYStart": "0.3125rem"
+        "marginYStart": "0.3125rem",
+        "strokeWidth": "1px"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2)"
@@ -122,6 +142,11 @@ export const vars = {
     "disabled": {
       "icon": {
         "size": "var(--seed-v3-unit-2)"
+      }
+    },
+    "disabledSelected": {
+      "control": {
+        "strokeWidth": "1px"
       }
     }
   }

@@ -1,6 +1,12 @@
 interface RadioVariant {
-  fontWeight: "bold";
-  size: "large" | "medium" | "small"
+  /**
+  * @default regular
+  */
+  fontWeight: "regular" | "bold";
+/**
+  * @default medium
+  */
+  size: "large" | "medium" | "small";
 }
 
 type RadioVariantMap = {
