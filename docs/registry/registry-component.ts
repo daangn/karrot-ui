@@ -32,6 +32,11 @@ export const registryComponent: RegistryComponent = [
     files: ["component/checkbox.tsx"],
   },
   {
+    name: "inline-banner",
+    dependencies: ["@radix-ui/react-slot", "@daangn/react-monochrome-icon"],
+    files: ["component/inline-banner.tsx", "hook/use-dismissible.ts"],
+  },
+  {
     name: "tabs",
     dependencies: ["@seed-design/react-tabs@alpha"],
     files: ["component/tabs.tsx"],

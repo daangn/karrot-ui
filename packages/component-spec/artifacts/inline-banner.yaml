@@ -1,0 +1,103 @@
+# yaml-language-server: $schema=./schema.json
+base:
+  enabled:
+    root:
+      gap: $unit[1]
+      paddingXStart: $unit[4]
+      paddingXEnd: $unit[1]
+    content:
+      fontSize: $font-size[100]
+      gap: $unit[2]
+      paddingY: $unit[2.5]
+    prefixIcon:
+      # XXX: scalable해야 할 것 같음 (결정 x)
+      # size: "1rem"
+      size: $unit[4]
+      marginY: "1.5px"
+    title:
+      fontWeight: $font-weight.bold
+    label:
+      fontWeight: $font-weight.medium
+    actionButton:
+      size: $unit[10]
+      paddingX: $unit[3]
+      fontSize: $font-size[50]
+      fontWeight: $font-weight.regular
+    dismissButton:
+      size: $unit[10]
+    xIcon:
+      size: $unit[4]
+
+layout=content only:
+  enabled:
+    root:
+      paddingXEnd: $unit[4]
+
+tone=neutral:
+  enabled:
+    root:
+      color: $color.bg.neutral-weak
+    prefixIcon:
+      color: $color.fg.neutral
+    title:
+      color: $color.fg.neutral
+    label:
+      color: $color.fg.neutral
+    actionButton:
+      color: $color.fg.neutral
+    xIcon:
+      color: $color.fg.neutral
+tone=positive:
+  enabled:
+    root:
+      color: $color.bg.positive-weak
+    prefixIcon:
+      color: $color.fg.positive-contrast
+    title:
+      color: $color.fg.positive-contrast
+    label:
+      color: $color.fg.positive-contrast
+    actionButton:
+      color: $color.fg.positive-contrast
+    xIcon:
+      color: $color.fg.positive-contrast
+tone=informative:
+  enabled:
+    root:
+      color: $color.bg.informative-weak
+    prefixIcon:
+      color: $color.fg.informative-contrast
+    title:
+      color: $color.fg.informative-contrast
+    label:
+      color: $color.fg.informative-contrast
+    actionButton:
+      color: $color.fg.informative-contrast
+    xIcon:
+      color: $color.fg.informative-contrast
+tone=warning:
+  enabled:
+    root:
+      color: $color.bg.warning-weak
+    prefixIcon:
+      color: $color.fg.warning-contrast
+    title:
+      color: $color.fg.warning-contrast
+    label:
+      color: $color.fg.warning-contrast
+    actionButton:
+      color: $color.fg.warning-contrast
+    xIcon:
+      color: $color.fg.warning-contrast
+tone=danger:
+  enabled:
+    root:
+      color: $color.bg.danger-weak
+    prefixIcon:
+      color: $color.fg.danger
+    title:
+      color: $color.fg.danger
+    label:
+      color: $color.fg.danger
+    actionButton:
+      color: $color.fg.danger

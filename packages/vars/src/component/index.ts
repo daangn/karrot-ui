@@ -11,6 +11,7 @@ export { vars as dialog } from "./dialog.vars";
 export { vars as expandButton } from "./expand-button.vars";
 export { vars as fab } from "./fab.vars";
 export { vars as helpBubble } from "./help-bubble.vars";
+export { vars as inlineBanner } from "./inline-banner.vars";
 export { vars as progressCircle } from "./progress-circle.vars";
 export { vars as radio } from "./radio.vars";
 export { vars as switch } from "./switch.vars";
