@@ -9,7 +9,9 @@ interface TrackParams {
 }
 
 export const createTrack = (metadata?: Record<string, unknown>) => {
-  const analytics = new Analytics(process.env.PUBLIC_JUNE_SO_WRITE_KEY ?? "");
+  if (process.env.PUBLIC_JUNE_SO_WRITE_KEY === undefined) return null;
+
+  const analytics = new Analytics(process.env.PUBLIC_JUNE_SO_WRITE_KEY);
   const userId = process.env.USER ?? "unknown";
 
   return ({ event, properties }: TrackParams) =>

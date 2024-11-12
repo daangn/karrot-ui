@@ -35,7 +35,7 @@ cli
   .option("--ignore-config <ignoreConfig>", "Ignore config")
   .example("  $ npx @seed-design/codemod migrate-icons src/ui")
   .action(async (transformName, paths, opts) => {
-    track({ event: "실행", properties: { transformName, paths } });
+    track?.({ event: "실행", properties: { transformName, paths } });
 
     const options = transformOptionsSchema.parse(opts);
 
@@ -88,7 +88,7 @@ async function runTransform(
   const fixedPaths = paths.map((path) => resolve(process.cwd(), path));
   const fixedPathsCombined = fixedPaths.join(" ");
 
-  track({ event: "transform 실행", properties: { transformPath, fixedPathsCombined, options } });
+  track?.({ event: "transform 실행", properties: { transformPath, fixedPathsCombined, options } });
 
   await execaNode({ stdout: "inherit", env: { LOG: `${log}` } })`
     ${jscodeshiftPath} ${fixedPathsCombined}

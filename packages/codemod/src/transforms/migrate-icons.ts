@@ -156,7 +156,7 @@ const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIcons
     logger?.warn(`${file.path}: ${message}`);
     console.warn(message);
     api.report?.(message);
-    track({ event: "inline svg 발견", properties: { count: inlineSvgs.length } });
+    track?.({ event: "inline svg 발견", properties: { count: inlineSvgs.length } });
   }
 
   logger?.debug(`${file.path}: identifier 변환 완료`);

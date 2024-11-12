@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.4
+
+### Patch Changes
+
+- map chevron_right to chevron_right_small
+
 ## 0.0.3
 
 ### Patch Changes
