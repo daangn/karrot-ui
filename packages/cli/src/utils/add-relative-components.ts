@@ -1,8 +1,8 @@
-import type { RegistryComponentMachineGenerated } from "@/src/schema";
+import type { RegistryUIMachineGenerated } from "@/src/schema";
 
 export function addRelativeComponents(
   userSelects: string[],
-  registryIndex: RegistryComponentMachineGenerated,
+  registryIndex: RegistryUIMachineGenerated,
 ) {
   const selectedComponents = new Set<string>();
 

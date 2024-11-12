@@ -1,5 +1,5 @@
 import { getConfig } from "@/src/utils/get-config";
-import { fetchRegistryComponentItem, getRegistryComponentIndex } from "@/src/utils/get-metadata";
+import { fetchRegistryUIItem, getRegistryUIIndex } from "@/src/utils/get-metadata";
 import { getPackageManager } from "@/src/utils/get-package-manager";
 import { transform } from "@/src/utils/transformers";
 import * as p from "@clack/prompts";
@@ -45,7 +45,7 @@ export const addCommand = (cli: CAC) => {
         process.exit(1);
       }
 
-      const registryComponentIndex = await getRegistryComponentIndex();
+      const registryComponentIndex = await getRegistryUIIndex();
 
       let selectedComponents: string[] = options.all
         ? registryComponentIndex.map((registry) => registry.name)
@@ -82,7 +82,7 @@ export const addCommand = (cli: CAC) => {
       const allComponents = addRelativeComponents(selectedComponents, registryComponentIndex);
       const addedComponents = allComponents.filter((c) => !selectedComponents.includes(c));
       const config = await getConfig(cwd);
-      const registryComponentItems = await fetchRegistryComponentItem(allComponents);
+      const registryComponentItems = await fetchRegistryUIItem(allComponents);
 
       p.log.message(`Selection: ${highlight(selectedComponents.join(", "))}`);
       if (addedComponents.length) {
@@ -91,16 +91,29 @@ export const addCommand = (cli: CAC) => {
         );
       }
 
+      // 선택된 컴포넌트.json 레지스트리 파일 기반으로 컴포넌트를 추가합니다.
       for (const component of registryComponentItems) {
         for (const registry of component.registries) {
-          const defaultPath = path.resolve(cwd, "seed-design/ui");
-          const UIFolderPath = config.resolvedUIPaths || defaultPath;
-
-          if (!fs.existsSync(UIFolderPath)) {
-            await fs.mkdir(UIFolderPath, { recursive: true });
+          let targetPath = "";
+          switch (registry.type) {
+            case "ui":
+              targetPath = config.resolvedUIPaths;
+              break;
+            case "hook":
+              targetPath = config.resolbedHookPaths;
+              break;
+            case "util":
+              targetPath = config.resolvedUtilPaths;
+              break;
+            default:
+              break;
           }
 
-          let filePath = path.resolve(UIFolderPath, registry.name);
+          if (!fs.existsSync(targetPath)) {
+            await fs.mkdir(targetPath, { recursive: true });
+          }
+
+          let filePath = path.resolve(targetPath, registry.name);
 
           const content = await transform({
             filename: registry.name,
