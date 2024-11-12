@@ -1,15 +1,15 @@
-import { registryComponentSchema, type RegistryComponentMachineGenerated } from "@/src/schema";
+import { registryUISchema, type RegistryUIMachineGenerated } from "@/src/schema";
 
 const BASE_URL =
   process.env.NODE_ENV === "prod" ? "https://v3.seed-design.io" : "http://localhost:3000";
 
-export async function fetchRegistryComponentItem(
+export async function fetchRegistryUIItem(
   fileNames?: string[],
-): Promise<RegistryComponentMachineGenerated> {
+): Promise<RegistryUIMachineGenerated> {
   try {
     const results = await Promise.all(
       fileNames.map(async (fileName) => {
-        const response = await fetch(`${BASE_URL}/__registry__/component/${fileName}.json`);
+        const response = await fetch(`${BASE_URL}/__registry__/ui/${fileName}.json`);
         return await response.json();
       }),
     );
@@ -21,11 +21,11 @@ export async function fetchRegistryComponentItem(
   }
 }
 
-export async function getRegistryComponentIndex() {
+export async function getRegistryUIIndex() {
   try {
-    const [result] = await fetchRegistryComponentItem(["index"]);
+    const [result] = await fetchRegistryUIItem(["index"]);
 
-    return registryComponentSchema.parse(result);
+    return registryUISchema.parse(result);
   } catch (error) {
     console.log(error);
     throw new Error(`Failed to fetch components from ${BASE_URL}.`);

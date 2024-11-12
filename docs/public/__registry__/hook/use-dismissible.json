@@ -1,0 +1,10 @@
+{
+  "name": "use-dismissible",
+  "registries": [
+    {
+      "name": "use-dismissible.ts",
+      "type": "hook",
+      "content": "import * as React from \"react\";\n\nexport interface DismissibleProps {\n  /**\n   * @default true\n   */\n  defaultOpen?: boolean;\n  isOpen?: boolean;\n  onDismiss?: () => void;\n}\n\nexport function useDismissible({\n  defaultOpen = true,\n  isOpen: isPropOpen,\n  onDismiss,\n}: DismissibleProps) {\n  const [isStateOpen, setIsStateOpen] = React.useState(\n    isPropOpen ?? defaultOpen,\n  );\n\n  function onDismissButtonClick() {\n    onDismiss?.();\n\n    if (isPropOpen === undefined) {\n      setIsStateOpen(false);\n    }\n  }\n\n  React.useEffect(() => {\n    if (isPropOpen !== undefined && isPropOpen !== isStateOpen) {\n      setIsStateOpen(isPropOpen);\n    }\n  }, [isPropOpen, isStateOpen]);\n\n  return {\n    isOpen: isStateOpen,\n    onDismissButtonClick,\n  };\n}\n"
+    }
+  ]
+}

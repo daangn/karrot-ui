@@ -1,6 +1,8 @@
 import { cosmiconfig } from "cosmiconfig";
 import path from "path";
+import * as p from "@clack/prompts";
 import { z } from "zod";
+import color from "picocolors";
 
 const MODULE_NAME = "seed-design";
 
@@ -22,6 +24,8 @@ export type RawConfig = z.infer<typeof rawConfigSchema>;
 
 export const configSchema = rawConfigSchema.extend({
   resolvedUIPaths: z.string(),
+  resolbedHookPaths: z.string(),
+  resolvedUtilPaths: z.string(),
 });
 
 export async function getConfig(cwd: string) {
@@ -42,6 +46,8 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
   return configSchema.parse({
     ...config,
     resolvedUIPaths: path.join(seedComponentRootPath, "ui"),
+    resolbedHookPaths: path.join(seedComponentRootPath, "hook"),
+    resolvedUtilPaths: path.join(seedComponentRootPath, "util"),
   });
 }
 
@@ -50,12 +56,13 @@ export async function getRawConfig(cwd: string): Promise<RawConfig | null> {
     const configResult = await explorer.search(cwd);
 
     if (!configResult) {
+      p.log.message(color.red(`${cwd} 경로에 seed-design.json 파일이 없습니다.`));
       return null;
     }
 
     return rawConfigSchema.parse(configResult.config);
   } catch (error) {
     console.log(error);
-    throw new Error(`Invalid configuration found in ${cwd}/seed-design.json.`);
+    throw new Error(`${cwd} 경로에 seed-design.json 파일을 읽을 수 없습니다.`);
   }
 }

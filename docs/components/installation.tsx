@@ -1,4 +1,4 @@
-import type { RegistryComponentItemMachineGenerated } from "@/registry/schema";
+import type { RegistryUIItemMachineGenerated } from "@/registry/schema";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import type * as React from "react";
@@ -22,11 +22,9 @@ const Heading3 = ({ children }: { children: React.ReactNode }) => (
 export async function Installation(props: InstallationProps) {
   const { name } = props;
 
-  const json = (await import(
-    `@/public/__registry__/component/${name}.json`
-  ).then((module) => {
+  const json = (await import(`@/public/__registry__/component/${name}.json`).then((module) => {
     return module.default;
-  })) as RegistryComponentItemMachineGenerated;
+  })) as RegistryUIItemMachineGenerated;
 
   return (
     <ErrorBoundary>
