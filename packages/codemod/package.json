@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/codemod",
-  "version": "0.0.5",
+  "version": "0.0.6-alpha-20241113101316",
   "type": "module",
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "execa": "^9.4.1",
     "jscodeshift": "^17.0.0",
     "picocolors": "^1.1.1",
+    "semver": "^7.6.3",
     "winston": "^3.15.0",
     "zod": "^3.23.8"
   },

@@ -5,13 +5,18 @@ import { execaNode } from "execa";
 import { createRequire } from "module";
 import { dirname, resolve } from "path";
 import { createTrack, LOG_PREFIX } from "./utils/log.js";
-import fs from "fs";
+import { readdirSync } from "fs";
 import { z } from "zod";
+import { satisfies, minVersion } from "semver";
+
+const require = createRequire(import.meta.url);
+const packageJson = require("../package.json");
+
+checkNodeVersion();
 
 const TRANSFORM_PATH = resolve(dirname(import.meta.filename), "transforms");
 const cli = cac();
 const track = createTrack();
-const require = createRequire(import.meta.url);
 
 const transformOptionsSchema = z.object({
   list: z.boolean().optional(),
@@ -23,8 +28,8 @@ const transformOptionsSchema = z.object({
 });
 
 cli
+  .version(packageJson.version)
   .help()
-  .version(require("../package.json").version)
   .command("[transformName] [...paths]", "코드 변환 (codemod)")
   .option("-l, --list", "사용 가능한 transform 목록을 보여줘요")
   .option("--log", "로그를 파일로 저장해요")
@@ -79,6 +84,20 @@ cli
 
 cli.parse();
 
+function checkNodeVersion() {
+  if (satisfies(process.versions.node, packageJson.engines.node) === false) {
+    console.error(
+      `Node.js 버전 요구사항을 만족시키지 않아요: "${packageJson.engines.node}"
+Node.js 버전을 업그레이드해주세요.
+현재 버전: ${process.versions.node}
+
+  $ nvm install ${minVersion(packageJson.engines.node)}`,
+    );
+
+    process.exit(1);
+  }
+}
+
 async function runTransform(
   transformPath: string,
   paths: string[],
@@ -110,8 +129,7 @@ async function runTransform(
 }
 
 function getAvailableTransforms() {
-  return fs
-    .readdirSync(TRANSFORM_PATH)
+  return readdirSync(TRANSFORM_PATH)
     .filter((file) => file.endsWith(".mjs") || file.endsWith(".js") || file.endsWith(".cjs"))
     .map((file) => file.split(".").slice(0, -1).join("."));
 }

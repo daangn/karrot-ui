@@ -4902,6 +4902,7 @@ __metadata:
     execa: ^9.4.1
     jscodeshift: ^17.0.0
     picocolors: ^1.1.1
+    semver: ^7.6.3
     typescript: ^5.4.5
     vitest: ^2.0.5
     winston: ^3.15.0
@@ -14367,7 +14368,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.5.3":
+"semver@npm:^7.5.3, semver@npm:^7.6.3":
   version: 7.6.3
   resolution: "semver@npm:7.6.3"
   bin:

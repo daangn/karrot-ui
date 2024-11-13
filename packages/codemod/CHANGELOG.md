@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.6-alpha-20241113101316
+
+### Patch Changes
+
+- Require Node.js 20.16
+
 ## 0.0.5
 
 ### Patch Changes
