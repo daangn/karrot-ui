@@ -1,5 +1,11 @@
 # @seed-design/cli
 
+## 0.0.0-alpha-20241113031935
+
+### Patch Changes
+
+- registry 기준으로 hook, util, ui 파일을 구분하여 설치해요.
+
 ## 0.0.0-alpha-20241101153412
 
 ### Patch Changes
