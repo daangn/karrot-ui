@@ -5104,6 +5104,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/react-dismissible@workspace:packages/react-headless/dismissible":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-dismissible@workspace:packages/react-headless/dismissible"
+  dependencies:
+    nanobundle: ^1.6.0
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/react-icon@npm:^0.7.3":
   version: 0.7.3
   resolution: "@seed-design/react-icon@npm:0.7.3"

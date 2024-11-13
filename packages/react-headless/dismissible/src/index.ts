@@ -14,9 +14,7 @@ export function useDismissible({
   isOpen: isPropOpen,
   onDismiss,
 }: DismissibleProps) {
-  const [isStateOpen, setIsStateOpen] = React.useState(
-    isPropOpen ?? defaultOpen,
-  );
+  const [isStateOpen, setIsStateOpen] = React.useState(isPropOpen ?? defaultOpen);
 
   function onDismissButtonClick() {
     onDismiss?.();
