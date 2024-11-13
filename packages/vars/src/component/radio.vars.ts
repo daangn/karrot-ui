@@ -6,6 +6,7 @@ export const vars = {
       },
       "control": {
         "color": "var(--seed-v3-color-bg-layer-default)",
+        "strokeWidth": "1.25px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radii-full)"
       },
@@ -42,6 +43,7 @@ export const vars = {
     },
     "disabledSelected": {
       "control": {
+        "strokeWidth": "1.25px",
         "strokeColor": "var(--seed-v3-color-palette-gray-300)"
       },
       "icon": {
@@ -70,8 +72,7 @@ export const vars = {
       },
       "control": {
         "size": "var(--seed-v3-unit-6)",
-        "marginYStart": "0.375rem",
-        "strokeWidth": "1px"
+        "marginYStart": "0.375rem"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2\\.5)"
@@ -85,11 +86,6 @@ export const vars = {
       "icon": {
         "size": "var(--seed-v3-unit-3)"
       }
-    },
-    "disabledSelected": {
-      "control": {
-        "strokeWidth": "1px"
-      }
     }
   },
   "sizeMedium": {
@@ -99,8 +95,7 @@ export const vars = {
       },
       "control": {
         "size": "var(--seed-v3-unit-5)",
-        "marginYStart": "0.375rem",
-        "strokeWidth": "1px"
+        "marginYStart": "0.375rem"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2)"
@@ -114,11 +109,6 @@ export const vars = {
       "icon": {
         "size": "var(--seed-v3-unit-2\\.5)"
       }
-    },
-    "disabledSelected": {
-      "control": {
-        "strokeWidth": "1px"
-      }
     }
   },
   "sizeSmall": {
@@ -128,8 +118,7 @@ export const vars = {
       },
       "control": {
         "size": "var(--seed-v3-unit-4\\.5)",
-        "marginYStart": "0.3125rem",
-        "strokeWidth": "1px"
+        "marginYStart": "0.3125rem"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2)"
@@ -142,11 +131,6 @@ export const vars = {
     "disabled": {
       "icon": {
         "size": "var(--seed-v3-unit-2)"
-      }
-    },
-    "disabledSelected": {
-      "control": {
-        "strokeWidth": "1px"
       }
     }
   }

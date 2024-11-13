@@ -1,3 +1,4 @@
+import { radioGroup as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 
 const radioGroup = defineRecipe({
@@ -7,6 +8,8 @@ const radioGroup = defineRecipe({
     root: {
       display: "flex",
       flexDirection: "column",
+
+      gap: vars.base.enabled.root.gap,
     },
     radios: {
       display: "flex",
@@ -20,6 +23,8 @@ const radioGroup = defineRecipe({
       horizontal: {
         radios: {
           flexDirection: "row",
+
+          gap: vars.orientationVertical.enabled.radios.gap,
         },
       },
       vertical: {

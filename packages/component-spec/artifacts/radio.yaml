@@ -4,6 +4,7 @@ base:
       gap: $unit[2]
     control:
       color: $color.bg.layer-default
+      strokeWidth: 1.25px
       strokeColor: $color.stroke.control
       cornerRadius: $radii.full
     label:
@@ -27,6 +28,7 @@ base:
       color: $color.palette.gray-500
   disabled,selected:
     control:
+      strokeWidth: 1.25px
       strokeColor: $color.palette.gray-300
     icon:
       color: $color.palette.gray-300
@@ -47,9 +49,6 @@ size=large:
     control:
       size: $unit[6]
       marginYStart: 0.375rem
-      # XXX
-      # strokeWidth: 1.25px
-      strokeWidth: 1px
     icon:
       size: $unit[2.5]
     label:
@@ -58,9 +57,6 @@ size=large:
   disabled:
     icon:
       size: $unit[3]
-  disabled,selected:
-    control:
-      strokeWidth: 1px
 size=medium:
   enabled:
     root:
@@ -68,7 +64,6 @@ size=medium:
     control:
       size: $unit[5]
       marginYStart: 0.375rem
-      strokeWidth: 1px
     icon:
       size: $unit[2]
     label:
@@ -77,9 +72,6 @@ size=medium:
   disabled:
     icon:
       size: $unit[2.5]
-  disabled,selected:
-    control:
-      strokeWidth: 1px
 size=small:
   enabled:
     root:
@@ -87,7 +79,6 @@ size=small:
     control:
       size: $unit[4.5]
       marginYStart: 0.3125rem
-      strokeWidth: 1px
     icon:
       size: $unit[2]
     label:
@@ -96,6 +87,3 @@ size=small:
   disabled:
     icon:
       size: $unit[2]
-  disabled,selected:
-    control:
-      strokeWidth: 1px

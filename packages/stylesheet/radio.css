@@ -8,6 +8,7 @@
 }
 .radio__control {
     background-color: var(--seed-v3-color-bg-layer-default);
+    border-width: 1.25px;
     border-color: var(--seed-v3-color-stroke-control);
     border-radius: var(--seed-v3-radii-full);
     display: flex;
@@ -30,6 +31,7 @@
 }
 .radio__control:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
     background-color: transparent;
+    border-width: 1.25px;
     border-color: var(--seed-v3-color-palette-gray-300);
 }
 .radio__icon {
@@ -62,10 +64,6 @@
     width: var(--seed-v3-unit-6);
     height: var(--seed-v3-unit-6);
     margin-block-start: 0.375rem;
-    border-width: 1px;
-}
-.radio__control--size_large:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
-    border-width: 1px;
 }
 .radio__label--size_large {
     font-size: var(--seed-v3-font-size-200);
@@ -83,10 +81,6 @@
     width: var(--seed-v3-unit-5);
     height: var(--seed-v3-unit-5);
     margin-block-start: 0.375rem;
-    border-width: 1px;
-}
-.radio__control--size_medium:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
-    border-width: 1px;
 }
 .radio__label--size_medium {
     font-size: var(--seed-v3-font-size-100);
@@ -104,10 +98,6 @@
     width: var(--seed-v3-unit-4\.5);
     height: var(--seed-v3-unit-4\.5);
     margin-block-start: 0.3125rem;
-    border-width: 1px;
-}
-.radio__control--size_small:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
-    border-width: 1px;
 }
 .radio__label--size_small {
     font-size: var(--seed-v3-font-size-75);

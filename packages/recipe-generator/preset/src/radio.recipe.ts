@@ -20,6 +20,7 @@ const radio = defineRecipe({
     control: {
       backgroundColor: vars.base.enabled.control.color,
 
+      borderWidth: vars.base.enabled.control.strokeWidth,
       borderColor: vars.base.enabled.control.strokeColor,
 
       borderRadius: vars.base.enabled.control.cornerRadius,
@@ -46,6 +47,7 @@ const radio = defineRecipe({
       [pseudo(disabled, checked)]: {
         backgroundColor: "transparent",
 
+        borderWidth: vars.base.disabledSelected.control.strokeWidth,
         borderColor: vars.base.disabledSelected.control.strokeColor,
       },
     },
@@ -95,12 +97,6 @@ const radio = defineRecipe({
           width: vars.sizeLarge.enabled.control.size,
           height: vars.sizeLarge.enabled.control.size,
           marginBlockStart: vars.sizeLarge.enabled.control.marginYStart,
-
-          borderWidth: vars.sizeLarge.enabled.control.strokeWidth,
-
-          [pseudo(disabled, checked)]: {
-            borderWidth: vars.sizeLarge.disabledSelected.control.strokeWidth,
-          },
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
@@ -122,12 +118,6 @@ const radio = defineRecipe({
           width: vars.sizeMedium.enabled.control.size,
           height: vars.sizeMedium.enabled.control.size,
           marginBlockStart: vars.sizeMedium.enabled.control.marginYStart,
-
-          borderWidth: vars.sizeMedium.enabled.control.strokeWidth,
-
-          [pseudo(disabled, checked)]: {
-            borderWidth: vars.sizeMedium.disabledSelected.control.strokeWidth,
-          },
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
@@ -149,12 +139,6 @@ const radio = defineRecipe({
           width: vars.sizeSmall.enabled.control.size,
           height: vars.sizeSmall.enabled.control.size,
           marginBlockStart: vars.sizeSmall.enabled.control.marginYStart,
-
-          borderWidth: vars.sizeSmall.enabled.control.strokeWidth,
-
-          [pseudo(disabled, checked)]: {
-            borderWidth: vars.sizeSmall.disabledSelected.control.strokeWidth,
-          },
         },
         label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
