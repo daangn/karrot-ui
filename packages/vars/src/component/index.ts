@@ -15,6 +15,7 @@ export { vars as inlineBanner } from "./inline-banner.vars";
 export { vars as progressCircle } from "./progress-circle.vars";
 export { vars as radio } from "./radio.vars";
 export { vars as segmentedControl } from "./segmented-control.vars";
+export { vars as radioGroup } from "./radio-group.vars";
 export { vars as switch } from "./switch.vars";
 export { vars as tab } from "./tab.vars";
 export { vars as tablist } from "./tablist.vars";
