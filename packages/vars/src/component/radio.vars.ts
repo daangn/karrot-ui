@@ -38,7 +38,7 @@ export const vars = {
         "color": "var(--seed-v3-color-palette-gray-300)"
       },
       "label": {
-        "color": "var(--seed-v3-color-palette-gray-500)"
+        "color": "var(--seed-v3-color-fg-disabled)"
       }
     },
     "disabledSelected": {

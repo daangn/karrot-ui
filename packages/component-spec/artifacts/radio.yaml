@@ -25,7 +25,7 @@ base:
     control:
       color: $color.palette.gray-300
     label:
-      color: $color.palette.gray-500
+      color: $color.fg.disabled
   disabled,selected:
     control:
       strokeWidth: 1.25px
