@@ -71,7 +71,7 @@ export const vars = {
       "control": {
         "size": "var(--seed-v3-unit-6)",
         "marginYStart": "0.375rem",
-        "strokeWidth": "3px"
+        "strokeWidth": "1px"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2\\.5)"
