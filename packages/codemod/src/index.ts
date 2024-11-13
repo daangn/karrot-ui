@@ -23,6 +23,8 @@ const transformOptionsSchema = z.object({
 });
 
 cli
+  .help()
+  .version(require("../package.json").version)
   .command("[transformName] [...paths]", "코드 변환 (codemod)")
   .option("-l, --list", "사용 가능한 transform 목록을 보여줘요")
   .option("--log", "로그를 파일로 저장해요")
@@ -75,7 +77,6 @@ cli
     await runTransform(transformPath, paths, options);
   });
 
-cli.help();
 cli.parse();
 
 async function runTransform(
