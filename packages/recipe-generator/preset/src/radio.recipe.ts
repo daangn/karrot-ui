@@ -96,7 +96,7 @@ const radio = defineRecipe({
         control: {
           width: vars.sizeLarge.enabled.control.size,
           height: vars.sizeLarge.enabled.control.size,
-          marginBlockStart: vars.sizeLarge.enabled.control.marginYStart,
+          marginBlockStart: `calc((${vars.sizeLarge.enabled.root.minHeight} - ${vars.sizeLarge.enabled.control.size}) / 2)`,
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
@@ -117,7 +117,7 @@ const radio = defineRecipe({
         control: {
           width: vars.sizeMedium.enabled.control.size,
           height: vars.sizeMedium.enabled.control.size,
-          marginBlockStart: vars.sizeMedium.enabled.control.marginYStart,
+          marginBlockStart: `calc((${vars.sizeMedium.enabled.root.minHeight} - ${vars.sizeMedium.enabled.control.size}) / 2)`,
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
@@ -138,7 +138,7 @@ const radio = defineRecipe({
         control: {
           width: vars.sizeSmall.enabled.control.size,
           height: vars.sizeSmall.enabled.control.size,
-          marginBlockStart: vars.sizeSmall.enabled.control.marginYStart,
+          marginBlockStart: `calc((${vars.sizeSmall.enabled.root.minHeight} - ${vars.sizeSmall.enabled.control.size}) / 2)`,
         },
         label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
