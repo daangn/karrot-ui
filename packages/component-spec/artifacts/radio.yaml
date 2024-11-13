@@ -47,7 +47,9 @@ size=large:
     control:
       size: $unit[6]
       marginYStart: 0.375rem
-      strokeWidth: 3px
+      # XXX
+      # strokeWidth: 1.25px
+      strokeWidth: 1px
     icon:
       size: $unit[2.5]
     label:
