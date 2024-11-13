@@ -22,7 +22,7 @@ const Heading3 = ({ children }: { children: React.ReactNode }) => (
 export async function Installation(props: InstallationProps) {
   const { name } = props;
 
-  const json = (await import(`@/public/__registry__/component/${name}.json`).then((module) => {
+  const json = (await import(`@/public/__registry__/ui/${name}.json`).then((module) => {
     return module.default;
   })) as RegistryUIItemMachineGenerated;
 
