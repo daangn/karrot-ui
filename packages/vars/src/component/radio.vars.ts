@@ -71,15 +71,14 @@ export const vars = {
         "minHeight": "var(--seed-v3-unit-9)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-6)",
-        "marginYStart": "0.375rem"
+        "size": "var(--seed-v3-unit-6)"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2\\.5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-200)",
-        "marginYStart": "0.46875rem"
+        "marginYStart": "7.5px"
       }
     },
     "disabled": {
@@ -94,15 +93,14 @@ export const vars = {
         "minHeight": "var(--seed-v3-unit-8)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-5)",
-        "marginYStart": "0.375rem"
+        "size": "var(--seed-v3-unit-5)"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-100)",
-        "marginYStart": "0.40625rem"
+        "marginYStart": "6.5px"
       }
     },
     "disabled": {
@@ -117,15 +115,14 @@ export const vars = {
         "minHeight": "var(--seed-v3-unit-7)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-4\\.5)",
-        "marginYStart": "0.3125rem"
+        "size": "var(--seed-v3-unit-4\\.5)"
       },
       "icon": {
         "size": "var(--seed-v3-unit-2)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-75)",
-        "marginYStart": "0.3125rem"
+        "marginYStart": "5px"
       }
     },
     "disabled": {

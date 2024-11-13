@@ -48,12 +48,11 @@ size=large:
       minHeight: $unit[9]
     control:
       size: $unit[6]
-      marginYStart: 0.375rem
     icon:
       size: $unit[2.5]
     label:
       fontSize: $font-size[200]
-      marginYStart: 0.46875rem
+      marginYStart: 7.5px
   disabled:
     icon:
       size: $unit[3]
@@ -63,12 +62,11 @@ size=medium:
       minHeight: $unit[8]
     control:
       size: $unit[5]
-      marginYStart: 0.375rem
     icon:
       size: $unit[2]
     label:
       fontSize: $font-size[100]
-      marginYStart: 0.40625rem
+      marginYStart: 6.5px
   disabled:
     icon:
       size: $unit[2.5]
@@ -78,12 +76,11 @@ size=small:
       minHeight: $unit[7]
     control:
       size: $unit[4.5]
-      marginYStart: 0.3125rem
     icon:
       size: $unit[2]
     label:
       fontSize: $font-size[75]
-      marginYStart: 0.3125rem
+      marginYStart: 5px
   disabled:
     icon:
       size: $unit[2]
