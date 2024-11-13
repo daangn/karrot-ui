@@ -49,7 +49,7 @@
     color: var(--seed-v3-color-fg-neutral);
 }
 .radio__label:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-palette-gray-500);
+    color: var(--seed-v3-color-fg-disabled);
 }
 .radio__label--fontWeight_regular {
     font-weight: var(--seed-v3-font-weight-regular);
