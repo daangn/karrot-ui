@@ -16,6 +16,7 @@ const require = createRequire(import.meta.url);
 const transformOptionsSchema = z.object({
   list: z.boolean().optional(),
   log: z.boolean().optional(),
+  track: z.boolean(),
   parser: z.enum(["babel", "babylon", "flow", "ts", "tsx"]).optional(),
   extensions: z.string().optional(),
   ignoreConfig: z.string().optional(),
@@ -25,6 +26,7 @@ cli
   .command("[transformName] [...paths]", "코드 변환 (codemod)")
   .option("-l, --list", "사용 가능한 transform 목록을 보여줘요")
   .option("--log", "로그를 파일로 저장해요")
+  .option("--no-track", "사용 통계를 수집하지 않아요")
   // https://jscodeshift.com/run/cli
   .option(
     "-p, --parser <parser>",
@@ -35,9 +37,11 @@ cli
   .option("--ignore-config <ignoreConfig>", "Ignore config")
   .example("  $ npx @seed-design/codemod migrate-icons src/ui")
   .action(async (transformName, paths, opts) => {
-    track?.({ event: "실행", properties: { transformName, paths } });
-
     const options = transformOptionsSchema.parse(opts);
+
+    if (options.track) {
+      track?.({ event: "실행", properties: { transformName, paths } });
+    }
 
     const availableTransforms = getAvailableTransforms();
 
@@ -80,7 +84,7 @@ async function runTransform(
   options: z.infer<typeof transformOptionsSchema>,
 ) {
   const jscodeshiftPath = require.resolve("jscodeshift/bin/jscodeshift");
-  const { log, parser, extensions, ignoreConfig } = options;
+  const { log, parser, extensions, ignoreConfig, track: isTrackEnabled } = options;
 
   // `../`로 시작하는 path에서 ignore-pattern 작동하지 않는 문제
   // https://github.com/facebook/jscodeshift/issues/556
@@ -88,9 +92,14 @@ async function runTransform(
   const fixedPaths = paths.map((path) => resolve(process.cwd(), path));
   const fixedPathsCombined = fixedPaths.join(" ");
 
-  track?.({ event: "transform 실행", properties: { transformPath, fixedPathsCombined, options } });
+  if (isTrackEnabled) {
+    track?.({
+      event: "transform 실행",
+      properties: { transformPath, fixedPathsCombined, options },
+    });
+  }
 
-  await execaNode({ stdout: "inherit", env: { LOG: `${log}` } })`
+  await execaNode({ stdout: "inherit", env: { LOG: `${log}`, TRACK: `${isTrackEnabled}` } })`
     ${jscodeshiftPath} ${fixedPathsCombined}
       -t ${transformPath}
       --parser=${parser}

@@ -2,7 +2,6 @@ import jscodeshift from "jscodeshift";
 import type { MigrateIconsOptions } from "../transforms/migrate-icons.js";
 import type { Logger } from "winston";
 import { partition, uniqWith } from "es-toolkit";
-import type { Analytics } from "@june-so/analytics-node";
 import type { createTrack } from "./log.js";
 
 interface ReplaceImportDeclarationsParams {
@@ -208,7 +207,7 @@ export function replaceImportDeclarations({
           report?.(message);
           track?.({
             event: "확인 필요한 아이콘 사용",
-            properties: { type: "importDefaultSpecifier", icon: currentSpecifier.imported.name },
+            properties: { type: "importDefaultSpecifier", icon: currentSpecifier.local.name },
           });
         }
 
