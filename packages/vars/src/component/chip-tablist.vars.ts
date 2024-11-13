@@ -13,7 +13,7 @@ export const vars = {
       }
     }
   },
-  "variantBrandWeak": {
+  "variantBrandSolid": {
     "enabled": {
       "triggerList": {
         "gap": "8px"

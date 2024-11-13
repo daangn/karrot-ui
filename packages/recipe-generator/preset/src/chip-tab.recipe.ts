@@ -66,44 +66,44 @@ const chipTab = defineRecipe({
           },
         },
       },
-      brandWeak: {
+      brandSolid: {
         root: {
-          fontWeight: vars.variantBrandWeak.enabled.label.fontWeight,
-          backgroundColor: vars.variantBrandWeak.enabled.root.color,
+          fontWeight: vars.variantBrandSolid.enabled.label.fontWeight,
+          backgroundColor: vars.variantBrandSolid.enabled.root.color,
 
           [pseudo(selected)]: {
-            backgroundColor: vars.variantBrandWeak.selected.root.color,
+            backgroundColor: vars.variantBrandSolid.selected.root.color,
           },
 
           [pseudo(active)]: {
-            backgroundColor: vars.variantBrandWeak.enabledPressed.root.color,
+            backgroundColor: vars.variantBrandSolid.enabledPressed.root.color,
           },
 
           [pseudo(selected, active)]: {
-            backgroundColor: vars.variantBrandWeak.selectedPressed.root.color,
+            backgroundColor: vars.variantBrandSolid.selectedPressed.root.color,
           },
 
           [pseudo(disabled)]: {
             cursor: "not-allowed",
-            backgroundColor: vars.variantBrandWeak.disabled.root.color,
+            backgroundColor: vars.variantBrandSolid.disabled.root.color,
           },
 
           [pseudo(disabled, selected)]: {
-            backgroundColor: vars.variantBrandWeak.selectedDisabled.root.color,
+            backgroundColor: vars.variantBrandSolid.selectedDisabled.root.color,
           },
         },
 
         label: {
-          color: vars.variantBrandWeak.enabled.label.color,
-          fontWeight: vars.variantBrandWeak.enabled.label.fontWeight,
+          color: vars.variantBrandSolid.enabled.label.color,
+          fontWeight: vars.variantBrandSolid.enabled.label.fontWeight,
 
           [pseudo(selected)]: {
-            color: vars.variantBrandWeak.selected.label.color,
-            fontWeight: vars.variantBrandWeak.selected.label.fontWeight,
+            color: vars.variantBrandSolid.selected.label.color,
+            fontWeight: vars.variantBrandSolid.selected.label.fontWeight,
           },
 
           [pseudo(disabled)]: {
-            color: vars.variantBrandWeak.disabled.label.color,
+            color: vars.variantBrandSolid.disabled.label.color,
           },
         },
       },

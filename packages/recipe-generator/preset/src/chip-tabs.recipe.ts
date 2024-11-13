@@ -46,9 +46,9 @@ const chipTabs = defineRecipe({
           gap: vars.variantNeutralSolid.enabled.triggerList.gap,
         },
       },
-      brandWeak: {
+      brandSolid: {
         triggerList: {
-          gap: vars.variantBrandWeak.enabled.triggerList.gap,
+          gap: vars.variantBrandSolid.enabled.triggerList.gap,
         },
       },
     },

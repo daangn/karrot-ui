@@ -52,7 +52,7 @@ export const vars = {
       }
     }
   },
-  "variantBrandWeak": {
+  "variantBrandSolid": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak)"
@@ -69,16 +69,16 @@ export const vars = {
     },
     "selected": {
       "root": {
-        "color": "var(--seed-v3-color-bg-brand-weak)"
+        "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-brand-contrast)",
+        "color": "var(--seed-v3-color-fg-static-white)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     },
     "selectedPressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-brand-weak-pressed)"
+        "color": "var(--seed-v3-color-bg-brand-solid-pressed)"
       }
     },
     "disabled": {

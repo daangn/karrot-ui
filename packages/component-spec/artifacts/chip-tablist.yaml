@@ -11,7 +11,7 @@ variant=neutral solid:
     triggerList:
       gap: 0px
 
-variant=brand weak:
+variant=brand solid:
   enabled:
     triggerList:
       gap: 8px

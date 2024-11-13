@@ -1,18 +1,14 @@
 "use client";
 
 import * as React from "react";
-import {
-  ChipTabs,
-  ChipTabTrigger,
-  ChipTabTriggerList,
-} from "seed-design/ui/chip-tabs";
+import { ChipTabs, ChipTabTrigger, ChipTabTriggerList } from "seed-design/ui/chip-tabs";
 
-export default function ChipTabsVariantBrandWeak() {
+export default function ChipTabsVariantBrandSolid() {
   const [value, setValue] = React.useState("1");
   return (
     <>
       <ChipTabs
-        variant="brandWeak"
+        variant="brandSolid"
         defaultValue="1"
         value={value}
         onValueChange={(value) => setValue(value)}

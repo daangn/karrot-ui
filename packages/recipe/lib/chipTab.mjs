@@ -18,7 +18,7 @@ const compoundVariants = [];
 export const chipTabVariantMap = {
   "variant": [
     "neutralSolid",
-    "brandWeak"
+    "brandSolid"
   ]
 };
 
