@@ -111,6 +111,15 @@
     ]
   },
   {
+    "name": "radio-group",
+    "dependencies": [
+      "@seed-design/react-radio-group@alpha"
+    ],
+    "files": [
+      "ui:radio-group.tsx"
+    ]
+  },
+  {
     "name": "switch",
     "dependencies": [
       "@seed-design/react-switch@alpha"
