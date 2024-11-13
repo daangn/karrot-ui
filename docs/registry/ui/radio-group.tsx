@@ -44,15 +44,18 @@ const useRadioContext = () => {
 };
 
 export interface RadioGroupProps
-  extends Assign<React.HTMLAttributes<HTMLFieldSetElement>, UseRadioGroupProps>,
-    RadioGroupVariantProps,
+  extends RadioGroupVariantProps,
+    UseRadioGroupProps,
     RadioVariantProps {
   label?: string;
 }
 
+type ReactRadioGroupProps = RadioGroupProps &
+  Assign<React.HTMLAttributes<HTMLFieldSetElement>, UseRadioGroupProps>;
+
 export const RadioGroup = React.forwardRef<
   HTMLFieldSetElement,
-  RadioGroupProps
+  ReactRadioGroupProps
 >(
   (
     {
@@ -99,11 +102,12 @@ export const RadioGroup = React.forwardRef<
 );
 RadioGroup.displayName = "RadioGroup";
 
-export interface RadioProps
-  extends Assign<React.HTMLAttributes<HTMLInputElement>, RadioItemProps>,
-    RadioVariantProps {}
+export interface RadioProps extends RadioVariantProps {}
 
-export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
+type ReactRadioProps = RadioProps &
+  Assign<React.HTMLAttributes<HTMLInputElement>, RadioItemProps>;
+
+export const Radio = React.forwardRef<HTMLInputElement, ReactRadioProps>(
   ({ className, size, fontWeight, children, ...otherProps }, ref) => {
     const { api, size: ctxSize, fontWeight: ctxFontWeight } = useRadioContext();
     const { getItemProps } = api;

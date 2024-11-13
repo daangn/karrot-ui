@@ -1,8 +1,8 @@
 import { RadioGroup, Radio } from "seed-design/ui/radio-group";
 
-export default function RadioGroupPreview() {
+export default function RadioGroupLarge() {
   return (
-    <RadioGroup>
+    <RadioGroup size="large">
       <Radio value="duis">duis</Radio>
       <Radio value="officia">officia</Radio>
       <Radio value="sint">sint</Radio>
