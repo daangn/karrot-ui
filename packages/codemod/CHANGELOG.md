@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.5
+
+### Patch Changes
+
+- Revert identifier-map to map old chevron_right to old chevron_right, allow turning analytics off
+
 ## 0.0.4
 
 ### Patch Changes

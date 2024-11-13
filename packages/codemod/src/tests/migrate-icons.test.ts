@@ -538,30 +538,6 @@ describe("변환 정보 있지만 확인 필요함", () => {
           console.log(Icons.IconLightbulbDot5Line);"
     `);
   });
-
-  test("chevronright -> chevronrightsmall", () => {
-    const input = `import { IconChevronRightRegular, IconChevronLeftFill } from "@seed-design/icon";
-    
-    function test() {
-      return <div>
-        <IconChevronRightRegular />
-        <IconChevronLeftFill />
-      </div>;
-    }`;
-
-    expect(applyMigrateIconsTransform({ input })).toMatchInlineSnapshot(`
-      "import { IconChevronRightSmallLine, IconChevronLeftFill } from "@daangn/react-monochrome-icon";
-          
-          function test() {
-            return (
-              <div>
-                <IconChevronRightSmallLine />
-                <IconChevronLeftFill />
-              </div>
-            );
-          }"
-    `);
-  });
 });
 
 describe("멀티컬러로 넘어감", () => {
