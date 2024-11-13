@@ -154,7 +154,7 @@
       "@seed-design/react-radio-group@alpha"
     ],
     "files": [
-      "component/radio-group.tsx"
+      "ui:radio-group.tsx"
     ]
   },
   {

@@ -97,7 +97,7 @@ export const registryUI: RegistryUI = [
   {
     name: "radio-group",
     dependencies: ["@seed-design/react-radio-group@alpha"],
-    files: ["component/radio-group.tsx"],
+    files: ["ui:radio-group.tsx"],
   },
   {
     name: "switch",
