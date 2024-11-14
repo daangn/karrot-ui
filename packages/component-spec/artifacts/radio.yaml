@@ -1,37 +1,13 @@
+# yaml-language-server: $schema=./schema.json
 base:
   enabled:
     root:
       gap: $unit[2]
-    control:
-      color: $color.bg.layer-default
-      strokeWidth: 1.25px
-      strokeColor: $color.stroke.control
-      cornerRadius: $radii.full
     label:
       color: $color.fg.neutral
-  enabled,pressed:
-    control:
-      color: $color.bg.layer-default-pressed
-  enabled,selected:
-    control:
-      strokeWidth: 0px
-      color: $color.bg.brand-solid
-    icon:
-      color: $color.fg.static-white
-  enabled,selected,pressed:
-    control:
-      color: $color.bg.brand-solid-pressed
   disabled:
-    control:
-      color: $color.palette.gray-300
     label:
       color: $color.fg.disabled
-  disabled,selected:
-    control:
-      strokeWidth: 1.25px
-      strokeColor: $color.palette.gray-300
-    icon:
-      color: $color.palette.gray-300
 
 fontWeight=regular:
   enabled:
@@ -46,41 +22,20 @@ size=large:
   enabled:
     root:
       minHeight: $unit[9]
-    control:
-      size: $unit[6]
-    icon:
-      size: $unit[2.5]
     label:
       fontSize: $font-size[200]
       marginYStart: 7.5px
-  disabled:
-    icon:
-      size: $unit[3]
 size=medium:
   enabled:
     root:
       minHeight: $unit[8]
-    control:
-      size: $unit[5]
-    icon:
-      size: $unit[2]
     label:
       fontSize: $font-size[100]
       marginYStart: 6.5px
-  disabled:
-    icon:
-      size: $unit[2.5]
 size=small:
   enabled:
     root:
       minHeight: $unit[7]
-    control:
-      size: $unit[4.5]
-    icon:
-      size: $unit[2]
     label:
       fontSize: $font-size[75]
       marginYStart: 5px
-  disabled:
-    icon:
-      size: $unit[2]

@@ -10,10 +10,6 @@ const radioSlotNames = [
     "radio__control"
   ],
   [
-    "icon",
-    "radio__icon"
-  ],
-  [
     "label",
     "radio__label"
   ]

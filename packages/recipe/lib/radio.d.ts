@@ -15,7 +15,7 @@ type RadioVariantMap = {
 
 export type RadioVariantProps = Partial<RadioVariant>;
 
-export type RadioSlotName = "root" | "control" | "icon" | "label";
+export type RadioSlotName = "root" | "control" | "label";
 
 export const radioVariantMap: RadioVariantMap;
 
