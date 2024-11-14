@@ -299,7 +299,7 @@
         },
         {
           "const": "$color.palette.gray-800",
-          "description": "theme-light: rgba(91, 96, 106, 1), theme-dark: rgba(220, 222, 227, 1)"
+          "description": "theme-light: rgba(88, 96, 112, 1), theme-dark: rgba(220, 222, 227, 1)"
         },
         {
           "const": "$color.palette.gray-900",
@@ -347,43 +347,43 @@
         },
         {
           "const": "$color.palette.blue-100",
-          "description": "theme-light: rgba(240, 246, 255, 1), theme-dark: rgba(35, 39, 44, 1)"
+          "description": "theme-light: rgba(239, 246, 255, 1), theme-dark: rgba(35, 39, 44, 1)"
         },
         {
           "const": "$color.palette.blue-200",
-          "description": "theme-light: rgba(222, 237, 255, 1), theme-dark: rgba(34, 52, 68, 1)"
+          "description": "theme-light: rgba(226, 237, 252, 1), theme-dark: rgba(34, 52, 68, 1)"
         },
         {
           "const": "$color.palette.blue-300",
-          "description": "theme-light: rgba(187, 226, 255, 1), theme-dark: rgba(24, 69, 100, 1)"
+          "description": "theme-light: rgba(202, 224, 250, 1), theme-dark: rgba(24, 69, 100, 1)"
         },
         {
           "const": "$color.palette.blue-400",
-          "description": "theme-light: rgba(145, 211, 255, 1), theme-dark: rgba(3, 90, 135, 1)"
+          "description": "theme-light: rgba(166, 208, 253, 1), theme-dark: rgba(3, 90, 135, 1)"
         },
         {
           "const": "$color.palette.blue-500",
-          "description": "theme-light: rgba(97, 189, 255, 1), theme-dark: rgba(0, 112, 168, 1)"
+          "description": "theme-light: rgba(113, 188, 253, 1), theme-dark: rgba(0, 112, 168, 1)"
         },
         {
           "const": "$color.palette.blue-600",
-          "description": "theme-light: rgba(60, 158, 220, 1), theme-dark: rgba(0, 138, 202, 1)"
+          "description": "theme-light: rgba(32, 155, 253, 1), theme-dark: rgba(0, 138, 202, 1)"
         },
         {
           "const": "$color.palette.blue-700",
-          "description": "theme-light: rgba(41, 135, 191, 1), theme-dark: rgba(13, 166, 241, 1)"
+          "description": "theme-light: rgba(0, 130, 229, 1), theme-dark: rgba(13, 166, 241, 1)"
         },
         {
           "const": "$color.palette.blue-800",
-          "description": "theme-light: rgba(21, 99, 144, 1), theme-dark: rgba(107, 192, 242, 1)"
+          "description": "theme-light: rgba(0, 97, 165, 1), theme-dark: rgba(107, 192, 242, 1)"
         },
         {
           "const": "$color.palette.blue-900",
-          "description": "theme-light: rgba(4, 69, 102, 1), theme-dark: rgba(173, 219, 242, 1)"
+          "description": "theme-light: rgba(4, 67, 112, 1), theme-dark: rgba(173, 219, 242, 1)"
         },
         {
           "const": "$color.palette.blue-1000",
-          "description": "theme-light: rgba(0, 40, 63, 1), theme-dark: rgba(217, 244, 250, 1)"
+          "description": "theme-light: rgba(10, 40, 59, 1), theme-dark: rgba(217, 244, 250, 1)"
         },
         {
           "const": "$color.palette.red-100",
@@ -467,43 +467,43 @@
         },
         {
           "const": "$color.palette.yellow-100",
-          "description": "theme-light: rgba(253, 244, 226, 1), theme-dark: rgba(42, 38, 35, 1)"
+          "description": "theme-light: rgba(255, 249, 230, 1), theme-dark: rgba(44, 37, 18, 1)"
         },
         {
           "const": "$color.palette.yellow-200",
-          "description": "theme-light: rgba(254, 233, 207, 1), theme-dark: rgba(62, 47, 33, 1)"
+          "description": "theme-light: rgba(253, 243, 206, 1), theme-dark: rgba(62, 47, 33, 1)"
         },
         {
           "const": "$color.palette.yellow-300",
-          "description": "theme-light: rgba(248, 216, 181, 1), theme-dark: rgba(87, 60, 32, 1)"
+          "description": "theme-light: rgba(251, 228, 154, 1), theme-dark: rgba(87, 60, 32, 1)"
         },
         {
           "const": "$color.palette.yellow-400",
-          "description": "theme-light: rgba(247, 194, 130, 1), theme-dark: rgba(117, 76, 28, 1)"
+          "description": "theme-light: rgba(247, 210, 76, 1), theme-dark: rgba(117, 76, 28, 1)"
         },
         {
           "const": "$color.palette.yellow-500",
-          "description": "theme-light: rgba(245, 164, 55, 1), theme-dark: rgba(146, 95, 32, 1)"
+          "description": "theme-light: rgba(227, 184, 44, 1), theme-dark: rgba(146, 95, 32, 1)"
         },
         {
           "const": "$color.palette.yellow-600",
-          "description": "theme-light: rgba(210, 137, 43, 1), theme-dark: rgba(176, 118, 52, 1)"
+          "description": "theme-light: rgba(196, 151, 37, 1), theme-dark: rgba(176, 118, 52, 1)"
         },
         {
           "const": "$color.palette.yellow-700",
-          "description": "theme-light: rgba(171, 110, 35, 1), theme-dark: rgba(203, 146, 68, 1)"
+          "description": "theme-light: rgba(155, 120, 33, 1), theme-dark: rgba(203, 146, 68, 1)"
         },
         {
           "const": "$color.palette.yellow-800",
-          "description": "theme-light: rgba(126, 87, 34, 1), theme-dark: rgba(226, 173, 102, 1)"
+          "description": "theme-light: rgba(117, 91, 34, 1), theme-dark: rgba(226, 173, 102, 1)"
         },
         {
           "const": "$color.palette.yellow-900",
-          "description": "theme-light: rgba(84, 60, 31, 1), theme-dark: rgba(238, 208, 171, 1)"
+          "description": "theme-light: rgba(79, 62, 31, 1), theme-dark: rgba(238, 208, 171, 1)"
         },
         {
           "const": "$color.palette.yellow-1000",
-          "description": "theme-light: rgba(50, 35, 18, 1), theme-dark: rgba(243, 239, 230, 1)"
+          "description": "theme-light: rgba(44, 37, 18, 1), theme-dark: rgba(243, 239, 230, 1)"
         },
         {
           "const": "$color.palette.static-black",
@@ -520,14 +520,6 @@
         {
           "const": "$color.palette.static-black-alpha-500",
           "description": "theme-light: rgba(0, 0, 0, 0.5), theme-dark: rgba(0, 0, 0, 0.5)"
-        },
-        {
-          "const": "$color.palette.static-white-alpha-50",
-          "description": "theme-light: rgba(255, 255, 255, 0.05), theme-dark: rgba(255, 255, 255, 0.05)"
-        },
-        {
-          "const": "$color.palette.static-white-alpha-200",
-          "description": "theme-light: rgba(255, 255, 255, 0.2), theme-dark: rgba(255, 255, 255, 0.2)"
         },
         {
           "const": "$color.palette.static-black-alpha-50",
@@ -604,6 +596,22 @@
         {
           "const": "$color.bg.magic-weak-pressed",
           "description": "theme-light: palette/purple-200, theme-dark: palette/purple-200"
+        },
+        {
+          "const": "$color.bg.neutral-muted",
+          "description": "theme-light: palette/gray-800, theme-dark: palette/gray-400"
+        },
+        {
+          "const": "$color.bg.floating-solid",
+          "description": "theme-light: palette/gray-900, theme-dark: palette/gray-300"
+        },
+        {
+          "const": "$color.palette.static-white-alpha-700",
+          "description": "theme-light: rgba(255, 255, 255, 0.7), theme-dark: rgba(255, 255, 255, 0.7)"
+        },
+        {
+          "const": "$color.bg.neutral-muted-pressed",
+          "description": "theme-light: palette/gray-700, theme-dark: palette/gray-500"
         }
       ]
     },

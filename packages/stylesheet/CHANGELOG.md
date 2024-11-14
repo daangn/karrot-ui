@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241114012817
+
+### Patch Changes
+
+- 토큰을 업데이트해요
+
 ## 3.0.0-alpha-20241114011809
 
 ### Patch Changes
