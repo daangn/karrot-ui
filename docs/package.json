@@ -20,7 +20,7 @@
     "@seed-design/react-icon": "^0.7.3",
     "@seed-design/react-tabs": "0.0.0-alpha-20241030023710",
     "@seed-design/recipe": "0.0.0-alpha-20241114011809",
-    "@seed-design/stylesheet": "3.0.0-alpha-20241114012817",
+    "@seed-design/stylesheet": "3.0.0-alpha-20241114060527",
     "@stackflow/config": "^1.2.0",
     "@stackflow/core": "^1.1.0",
     "@stackflow/plugin-basic-ui": "^1.10.0",

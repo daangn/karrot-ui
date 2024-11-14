@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241114060527
+
+### Patch Changes
+
+- feat: ChipTab label의 color를 `neutral` 에서 `neutral-muted`으로 변경해요
+
 ## 3.0.0-alpha-20241114012817
 
 ### Patch Changes
