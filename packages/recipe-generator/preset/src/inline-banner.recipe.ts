@@ -1,7 +1,7 @@
 import { inlineBanner as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 
-export const inlineBanner = defineRecipe({
+const inlineBanner = defineRecipe({
   name: "inlineBanner",
   slots: [
     "root",
@@ -199,3 +199,5 @@ export const inlineBanner = defineRecipe({
     },
   },
 });
+
+export default inlineBanner;
