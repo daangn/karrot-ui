@@ -58,7 +58,7 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-neutral-weak)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-neutral)",
+        "color": "var(--seed-v3-color-fg-neutral-muted)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     },

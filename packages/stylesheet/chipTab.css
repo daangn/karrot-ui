@@ -63,7 +63,7 @@
     background-color: var(--seed-v3-color-bg-disabled);
 }
 .chipTab__label--variant_brandSolid {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-v3-color-fg-neutral-muted);
     font-weight: var(--seed-v3-font-weight-medium);
 }
 .chipTab__label--variant_brandSolid:is(:selected, [data-selected]) {

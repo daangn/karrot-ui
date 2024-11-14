@@ -42,7 +42,7 @@ variant=brand solid:
     root:
       color: $color.bg.neutral-weak
     label:
-      color: $color.fg.neutral
+      color: $color.fg.neutral-muted
       fontWeight: $font-weight.medium
   enabled,pressed:
     root:
