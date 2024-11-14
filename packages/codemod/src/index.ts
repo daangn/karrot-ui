@@ -122,7 +122,10 @@ async function runTransform(
     });
   }
 
-  await execaNode({ stdout: "inherit", env: { LOG: `${log}`, TRACK: `${isTrackEnabled}` } })`
+  await execaNode({
+    stdout: "inherit",
+    env: { LOG: `${log}`, TRACK: `${isTrackEnabled}`, GIT_INFO: JSON.stringify(gitInfo) },
+  })`
     ${jscodeshiftPath} ${fixedPathsCombined}
       -t ${transformPath}
       --parser=${parser}

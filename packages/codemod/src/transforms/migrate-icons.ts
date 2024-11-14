@@ -7,7 +7,6 @@ import {
 import { createLogger, format, transports } from "winston";
 import { identifierMatchReact } from "../utils/identifier-match.js";
 import { createTrack } from "../utils/log.js";
-import { getGitInfo } from "../utils/getGitInfo.js";
 
 export interface MigrateIconsOptions {
   match?: {
@@ -54,15 +53,13 @@ export const reactMatch: MigrateIconsOptions["match"] = {
   identifier: identifierMatchReact,
 };
 
-const gitInfo = await getGitInfo();
-
 const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIconsOptions) => {
   const track =
     process.env.TRACK === "true"
       ? createTrack({
           transform: "migrate-icons",
           file: file.path,
-          ...gitInfo,
+          ...JSON.parse(process.env.GIT_INFO),
         })
       : undefined;
 

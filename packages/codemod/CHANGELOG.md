@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.7
+
+### Patch Changes
+
+- Transform 정상 작동하도록 수정
+
 ## 0.0.6
 
 ### Patch Changes
