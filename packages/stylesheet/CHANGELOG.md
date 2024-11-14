@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241114011809
+
+### Patch Changes
+
+- ChipTabs의 `brandWeak` variant를 `brandSolid` variant로 교체해요
+
 ## 3.0.0-alpha-20241106040203
 
 ### Patch Changes

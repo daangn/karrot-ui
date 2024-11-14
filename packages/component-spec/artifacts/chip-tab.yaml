@@ -37,7 +37,7 @@ variant=neutral solid:
     label:
       color: $color.fg.disabled
 
-variant=brand weak:
+variant=brand solid:
   enabled:
     root:
       color: $color.bg.neutral-weak
@@ -49,13 +49,13 @@ variant=brand weak:
       color: $color.bg.neutral-weak-pressed
   selected:
     root:
-      color: $color.bg.brand-weak
+      color: $color.bg.brand-solid
     label:
-      color: $color.fg.brand-contrast
+      color: $color.fg.static-white
       fontWeight: $font-weight.bold
   selected,pressed:
     root:
-      color: $color.bg.brand-weak-pressed
+      color: $color.bg.brand-solid-pressed
   disabled:
     root:
       color: $color.bg.disabled

@@ -42,34 +42,34 @@
 .chipTab__label--variant_neutralSolid:is(:disabled, [disabled], [data-disabled]):is(:selected, [data-selected]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.chipTab__root--variant_brandWeak {
+.chipTab__root--variant_brandSolid {
     font-weight: var(--seed-v3-font-weight-medium);
     background-color: var(--seed-v3-color-bg-neutral-weak);
 }
-.chipTab__root--variant_brandWeak:is(:selected, [data-selected]) {
-    background-color: var(--seed-v3-color-bg-brand-weak);
+.chipTab__root--variant_brandSolid:is(:selected, [data-selected]) {
+    background-color: var(--seed-v3-color-bg-brand-solid);
 }
-.chipTab__root--variant_brandWeak:is(:active, [data-active]) {
+.chipTab__root--variant_brandSolid:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
-.chipTab__root--variant_brandWeak:is(:selected, [data-selected]):is(:active, [data-active]) {
-    background-color: var(--seed-v3-color-bg-brand-weak-pressed);
+.chipTab__root--variant_brandSolid:is(:selected, [data-selected]):is(:active, [data-active]) {
+    background-color: var(--seed-v3-color-bg-brand-solid-pressed);
 }
-.chipTab__root--variant_brandWeak:is(:disabled, [disabled], [data-disabled]) {
+.chipTab__root--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
     cursor: not-allowed;
     background-color: var(--seed-v3-color-bg-disabled);
 }
-.chipTab__root--variant_brandWeak:is(:disabled, [disabled], [data-disabled]):is(:selected, [data-selected]) {
+.chipTab__root--variant_brandSolid:is(:disabled, [disabled], [data-disabled]):is(:selected, [data-selected]) {
     background-color: var(--seed-v3-color-bg-disabled);
 }
-.chipTab__label--variant_brandWeak {
+.chipTab__label--variant_brandSolid {
     color: var(--seed-v3-color-fg-neutral);
     font-weight: var(--seed-v3-font-weight-medium);
 }
-.chipTab__label--variant_brandWeak:is(:selected, [data-selected]) {
-    color: var(--seed-v3-color-fg-brand-contrast);
+.chipTab__label--variant_brandSolid:is(:selected, [data-selected]) {
+    color: var(--seed-v3-color-fg-static-white);
     font-weight: var(--seed-v3-font-weight-bold);
 }
-.chipTab__label--variant_brandWeak:is(:disabled, [disabled], [data-disabled]) {
+.chipTab__label--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
