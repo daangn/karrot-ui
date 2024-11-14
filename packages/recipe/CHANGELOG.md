@@ -1,5 +1,11 @@
 # @seed-design/recipe
 
+## 0.0.0-alpha-20241114011809
+
+### Patch Changes
+
+- ChipTabs의 `brandWeak` variant를 `brandSolid` variant로 교체해요
+
 ## 0.0.0-alpha-20241030023710
 
 ### Patch Changes
