@@ -9,6 +9,7 @@ import {
   type RadioGroupVariantProps,
   radioGroup,
 } from "@seed-design/recipe/radioGroup";
+import { radioControl } from "@seed-design/recipe/radioControl";
 import { type RadioVariantProps, radio } from "@seed-design/recipe/radio";
 import clsx from "clsx";
 import * as React from "react";
@@ -16,6 +17,7 @@ import * as React from "react";
 import type { Assign } from "../util/types";
 import { visuallyHidden } from "../util/visuallyHidden";
 
+import "@seed-design/stylesheet/radioControl.css";
 import "@seed-design/stylesheet/radio.css";
 import "@seed-design/stylesheet/radioGroup.css";
 
@@ -114,19 +116,23 @@ export const Radio = React.forwardRef<HTMLInputElement, ReactRadioProps>(
     const { stateProps, restProps, controlProps, hiddenInputProps, rootProps } =
       getItemProps(otherProps);
 
-    // radio별로 지정 가능, context로 fallback
     const classNames = radio({
       size: size ?? ctxSize,
       fontWeight: fontWeight ?? ctxFontWeight,
     });
+    const controlClassNames = radioControl({ size: size ?? ctxSize });
+
     return (
       <label
         className={clsx(classNames.root, className)}
         {...rootProps}
         {...restProps}
       >
-        <div {...controlProps} className={classNames.control}>
-          <div {...stateProps} className={classNames.icon} />
+        <div
+          {...controlProps}
+          className={clsx(classNames.control, controlClassNames.root)}
+        >
+          <div {...stateProps} className={controlClassNames.icon} />
         </div>
         <input ref={ref} {...hiddenInputProps} style={visuallyHidden} />
         <span {...stateProps} className={classNames.label}>

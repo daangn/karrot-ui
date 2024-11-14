@@ -1,0 +1,63 @@
+.radioControl__root {
+    background-color: var(--seed-v3-color-bg-layer-default);
+    border-width: 1.25px;
+    border-color: var(--seed-v3-color-stroke-control);
+    border-radius: var(--seed-v3-radii-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+}
+.radioControl__root:is(:active, [data-active]) {
+    background-color: var(--seed-v3-color-bg-layer-default-pressed);
+}
+.radioControl__root:is(:checked, [data-checked]) {
+    border-width: 0px;
+    background-color: var(--seed-v3-color-bg-brand-solid);
+}
+.radioControl__root:is(:active, [data-active]):is(:checked, [data-checked]) {
+    background-color: var(--seed-v3-color-bg-brand-solid-pressed);
+}
+.radioControl__root:is(:disabled, [disabled], [data-disabled]) {
+    background-color: var(--seed-v3-color-palette-gray-300);
+}
+.radioControl__root:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
+    background-color: transparent;
+    border-width: 1.25px;
+    border-color: var(--seed-v3-color-palette-gray-300);
+}
+.radioControl__icon {
+    display: none;
+    border-radius: var(--seed-v3-radii-full);
+}
+.radioControl__icon:is(:checked, [data-checked]) {
+    display: block;
+    background-color: var(--seed-v3-color-fg-static-white);
+}
+.radioControl__icon:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
+    background-color: var(--seed-v3-color-palette-gray-300);
+}
+.radioControl__root--size_large {
+    width: var(--seed-v3-unit-6);
+    height: var(--seed-v3-unit-6);
+}
+.radioControl__icon--size_large {
+    width: var(--seed-v3-unit-2\.5);
+    height: var(--seed-v3-unit-2\.5);
+}
+.radioControl__root--size_medium {
+    width: var(--seed-v3-unit-5);
+    height: var(--seed-v3-unit-5);
+}
+.radioControl__icon--size_medium {
+    width: var(--seed-v3-unit-2);
+    height: var(--seed-v3-unit-2);
+}
+.radioControl__root--size_small {
+    width: var(--seed-v3-unit-4\.5);
+    height: var(--seed-v3-unit-4\.5);
+}
+.radioControl__icon--size_small {
+    width: var(--seed-v3-unit-2);
+    height: var(--seed-v3-unit-2);
+}

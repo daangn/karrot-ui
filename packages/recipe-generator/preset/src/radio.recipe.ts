@@ -1,10 +1,11 @@
 import { radio as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
-import { checked, disabled, active, pseudo } from "./pseudo";
+import { disabled, pseudo } from "./pseudo";
+import { radioControl as controlVars } from "@seed-design/vars/component";
 
 const radio = defineRecipe({
   name: "radio",
-  slots: ["root", "control", "icon", "label"],
+  slots: ["root", "control", "label"],
   base: {
     root: {
       display: "flex",
@@ -15,52 +16,6 @@ const radio = defineRecipe({
 
       [pseudo(disabled)]: {
         cursor: "not-allowed",
-      },
-    },
-    control: {
-      backgroundColor: vars.base.enabled.control.color,
-
-      borderWidth: vars.base.enabled.control.strokeWidth,
-      borderColor: vars.base.enabled.control.strokeColor,
-
-      borderRadius: vars.base.enabled.control.cornerRadius,
-
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flex: "none",
-
-      [pseudo(active)]: {
-        backgroundColor: vars.base.enabledPressed.control.color,
-      },
-      [pseudo(checked)]: {
-        borderWidth: vars.base.enabledSelected.control.strokeWidth,
-        backgroundColor: vars.base.enabledSelected.control.color,
-      },
-      [pseudo(active, checked)]: {
-        backgroundColor: vars.base.enabledSelectedPressed.control.color,
-      },
-
-      [pseudo(disabled)]: {
-        backgroundColor: vars.base.disabled.control.color,
-      },
-      [pseudo(disabled, checked)]: {
-        backgroundColor: "transparent",
-
-        borderWidth: vars.base.disabledSelected.control.strokeWidth,
-        borderColor: vars.base.disabledSelected.control.strokeColor,
-      },
-    },
-    icon: {
-      display: "none",
-      borderRadius: "100%",
-
-      [pseudo(checked)]: {
-        display: "block",
-        backgroundColor: vars.base.enabledSelected.icon.color,
-      },
-      [pseudo(disabled, checked)]: {
-        backgroundColor: vars.base.disabledSelected.icon.color,
       },
     },
     label: {
@@ -94,9 +49,7 @@ const radio = defineRecipe({
           minHeight: vars.sizeLarge.enabled.root.minHeight,
         },
         control: {
-          width: vars.sizeLarge.enabled.control.size,
-          height: vars.sizeLarge.enabled.control.size,
-          marginBlockStart: `calc((${vars.sizeLarge.enabled.root.minHeight} - ${vars.sizeLarge.enabled.control.size}) / 2)`,
+          marginBlockStart: `calc((${vars.sizeLarge.enabled.root.minHeight} - ${controlVars.sizeLarge.enabled.root.size}) / 2)`,
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
@@ -105,19 +58,13 @@ const radio = defineRecipe({
           // XXX
           lineHeight: "1.3125rem",
         },
-        icon: {
-          width: vars.sizeLarge.enabled.icon.size,
-          height: vars.sizeLarge.enabled.icon.size,
-        },
       },
       medium: {
         root: {
           minHeight: vars.sizeMedium.enabled.root.minHeight,
         },
         control: {
-          width: vars.sizeMedium.enabled.control.size,
-          height: vars.sizeMedium.enabled.control.size,
-          marginBlockStart: `calc((${vars.sizeMedium.enabled.root.minHeight} - ${vars.sizeMedium.enabled.control.size}) / 2)`,
+          marginBlockStart: `calc((${vars.sizeMedium.enabled.root.minHeight} - ${controlVars.sizeMedium.enabled.root.size}) / 2)`,
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
@@ -126,19 +73,13 @@ const radio = defineRecipe({
           // XXX
           lineHeight: "1.1875rem",
         },
-        icon: {
-          width: vars.sizeMedium.enabled.icon.size,
-          height: vars.sizeMedium.enabled.icon.size,
-        },
       },
       small: {
         root: {
           minHeight: vars.sizeSmall.enabled.root.minHeight,
         },
         control: {
-          width: vars.sizeSmall.enabled.control.size,
-          height: vars.sizeSmall.enabled.control.size,
-          marginBlockStart: `calc((${vars.sizeSmall.enabled.root.minHeight} - ${vars.sizeSmall.enabled.control.size}) / 2)`,
+          marginBlockStart: `calc((${vars.sizeSmall.enabled.root.minHeight} - ${controlVars.sizeSmall.enabled.root.size}) / 2)`,
         },
         label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
@@ -146,10 +87,6 @@ const radio = defineRecipe({
 
           // XXX
           lineHeight: "1.125rem",
-        },
-        icon: {
-          width: vars.sizeSmall.enabled.icon.size,
-          height: vars.sizeSmall.enabled.icon.size,
         },
       },
     },
