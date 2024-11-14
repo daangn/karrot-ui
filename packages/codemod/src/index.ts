@@ -8,15 +8,18 @@ import { createTrack, LOG_PREFIX } from "./utils/log.js";
 import { readdirSync } from "fs";
 import { z } from "zod";
 import { satisfies, minVersion } from "semver";
+import { getGitInfo } from "./utils/getGitInfo.js";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("../package.json");
 
-checkNodeVersion();
+checkNodejsVersion();
 
 const TRANSFORM_PATH = resolve(dirname(import.meta.filename), "transforms");
 const cli = cac();
-const track = createTrack();
+
+const gitInfo = await getGitInfo();
+const track = createTrack({ ...gitInfo });
 
 const transformOptionsSchema = z.object({
   list: z.boolean().optional(),
@@ -84,7 +87,7 @@ cli
 
 cli.parse();
 
-function checkNodeVersion() {
+function checkNodejsVersion() {
   if (satisfies(process.versions.node, packageJson.engines.node) === false) {
     console.error(
       `Node.js 버전 요구사항을 만족시키지 않아요: "${packageJson.engines.node}"

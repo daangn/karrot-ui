@@ -1,5 +1,17 @@
 # @seed-design/codemod
 
+## 0.0.6
+
+### Patch Changes
+
+- Release 0.0.6
+
+## 0.0.6-alpha-20241114065324
+
+### Patch Changes
+
+- Node.js 버전 검증, git 관련 정보 수집
+
 ## 0.0.6-alpha-20241113101316
 
 ### Patch Changes

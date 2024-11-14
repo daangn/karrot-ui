@@ -18,8 +18,8 @@ export const createTrack = (metadata?: Record<string, unknown>) => {
     analytics.track({
       event: `@seed-design/codemod: ${event}`,
       userId,
-      anonymousId: "anonymous",
       properties: {
+        cwd: process.cwd(),
         ...metadata,
         ...properties,
       },
