@@ -34,7 +34,7 @@ export const registryUI: RegistryUI = [
   {
     name: "inline-banner",
     dependencies: [
-      "@seed-design/react-dismissible@alpha",
+      "@seed-design/react-dismissible",
       "@radix-ui/react-slot",
       "@daangn/react-monochrome-icon",
     ],
