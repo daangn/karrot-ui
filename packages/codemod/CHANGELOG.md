@@ -1,5 +1,29 @@
 # @seed-design/codemod
 
+## 0.0.7
+
+### Patch Changes
+
+- Transform 정상 작동하도록 수정
+
+## 0.0.6
+
+### Patch Changes
+
+- Release 0.0.6
+
+## 0.0.6-alpha-20241114065324
+
+### Patch Changes
+
+- Node.js 버전 검증, git 관련 정보 수집
+
+## 0.0.6-alpha-20241113101316
+
+### Patch Changes
+
+- Require Node.js 20.16
+
 ## 0.0.5
 
 ### Patch Changes

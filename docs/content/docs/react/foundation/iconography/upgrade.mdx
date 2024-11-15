@@ -140,6 +140,18 @@ npx @seed-design/codemod migrate-icons <...경로> <옵션>
 npx @seed-design/codemod migrate-icons src
 ```
 
+<Callout type="info" title="Node.js 요구사항">
+
+스크립트 실행을 위해서는 **Node.js 20.16.0 이상**의 버전이 필요해요. 스크립트가 실행된다면 버전을 충족하고 있다는 의미에요.
+
+nvm을 사용한다면 codemod 실행을 위해 Node.js 버전을 잠시 변경할 수 있어요.
+
+```shell
+nvm install 20.16
+```
+
+</Callout>
+
 <Callout type="info" title="옵션">
 
 - `--log`
@@ -150,22 +162,9 @@ npx @seed-design/codemod migrate-icons src
   - 이 옵션을 지정하지 않으면 경로 안의 `js`, `jsx`, `ts`, `tsx` 파일을 변환해요. (`d.ts` 제외)
   - 예시: `--extensions="ts,tsx"`
 - [`--ignore-config`](https://jscodeshift.com/run/cli/#--ignore-configfile)
-  - 변환하지 않을 파일 패턴이 정의된 파일을 지정해요.
+  - 변환하지 않을 경로들을 glob 패턴으로 작성한 파일을 지정해요.
   - 예시: `--ignore-config=".gitignore"`
-  - 이 옵션을 지정하지 않아도 jscodeshift에 의해 `node_modules`는 자동으로 무시돼요.
-
-</Callout>
-
-<Callout type="error" title="파싱 오류">
-
-```
-ERR /Users/seed/foo/bar.js Transformation error (Unexpected reserved word 'package'. (3:3))
-```
-
-codemod 스크립트 실행 중 파싱 오류가 발생할 수 있어요. 파싱 오류는 다음과 같은 이유로 발생해요.
-
-- `assert`를 사용한 [import assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-3.html#import-attributes)과 같은, deprecated된 문법이 있는 경우
-- `package`와 같은 예약어를 변수 이름으로 사용한 경우 등
+  - 이 옵션을 지정하지 않아도 jscodeshift에 의해 `**/node_modules/**`는 자동으로 무시돼요.
 
 </Callout>
 
@@ -187,17 +186,29 @@ Results:
 Time elapsed: 43.376seconds
 ```
 
-파싱 오류 등으로 인해 코드 확인이 이루어지지 못한 파일의 수가 `errors`로 표시돼요. 에러가 있다면, 해당 파일에서 문제가 발생한 부분을 수정하고 다시 스크립트를 실행하거나, 해당 파일의 아이콘 마이그레이션을 직접 진행해주세요.
+<Callout type="info" title="결과별 설명">
+
+- `errors`: 파싱 오류 등으로 인해, 아이콘을 참조하는 코드가 있는지 확인하지 못한 파일의 수에요.
+  - 에러가 발생한 파일에 이전 아이콘을 참조하는 코드가 없다면, 해당 파일에서 발생하는 에러는 무시해도 좋아요.
+  - 이전 아이콘을 참조하는 코드가 있다면, 문제가 발생한 부분을 수정하고 다시 스크립트를 실행하거나, 해당 파일의 아이콘 마이그레이션을 직접 진행해주세요.
+- `unmodified`: 아이콘을 참조하는 코드가 없어, 아무 변환도 이루어지지 않은 파일의 수에요.
+- `skipped`: 빈 파일 등 변환 대상이 아니어서, 아무 변환도 이루어지지 않은 파일의 수에요.
+- `ok`: 변환이 이루어진 파일의 수에요.
+
+</Callout>
+
+<Callout type="error" title="파싱 오류">
 
 ```
-All done.
-Results:
-1 errors // [!code highlight]
-4149 unmodified
-3 skipped
-247 ok
-Time elapsed: 49.376seconds
+ERR /Users/seed/foo/bar.js Transformation error (Unexpected reserved word 'package'. (3:3))
 ```
+
+codemod 스크립트 실행 중 파싱 오류가 발생할 수 있어요. 파싱 오류는 다음과 같은 이유로 발생해요.
+
+- `assert`를 사용한 [import assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-3.html#import-attributes)과 같은, deprecated된 문법이 있는 경우
+- `package`와 같은 예약어를 변수 이름으로 사용한 경우 등
+
+</Callout>
 
 </Step>
 
@@ -213,7 +224,7 @@ Time elapsed: 49.376seconds
 
 #### 이전 패키지 제거
 
-이전 아이콘이 모두 대체된 경우, 이전 패키지를 제거해요.
+이전 아이콘이 모두 대체된 것을 확인하고, 이전 패키지를 제거해요.
 
 ```package-install
 npm uninstall @seed-design/icon @seed-design/react-icon @karrotmarket/karrot-ui-icon
@@ -225,7 +236,8 @@ npm uninstall @seed-design/icon @seed-design/react-icon @karrotmarket/karrot-ui-
 
 #### 사이드 이펙트 확인
 
-[사이드 이펙트](#발생-가능한-사이드-이펙트)가 발생했는지 확인하여 의도한 대로 변경이 이루어졌는지 검토해요.
+- [사이드 이펙트](#발생-가능한-사이드-이펙트)가 발생했는지 확인하여 의도한 대로 변경이 이루어졌는지 검토해요.
+- 디자인 QA 과정에서, 자동으로 변경된 아이콘이 아닌 새로운 아이콘을 사용하도록 결정되었을 수 있어요. 이러한 경우, Figma 디자인 파일을 참고하여 코드에 반영해요.
 
 </Step>
 
@@ -243,14 +255,10 @@ npm uninstall @seed-design/icon @seed-design/react-icon @karrotmarket/karrot-ui-
 
 #### 이전 패키지 제거
 
-다음 패키지를 사용하는 경우, 패키지를 제거해요.
-
-- [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon)
-- [`@seed-design/vue2-icon`](https://www.npmjs.com/package/@seed-design/vue2-icon)
-- [`@seed-design/vue3-icon`](https://www.npmjs.com/package/@seed-design/vue3-icon)
+이전 아이콘 패키지들을 제거해요.
 
 ```package-install
-npm uninstall @karrotmarket/karrot-ui-icon @seed-design/vue2-icon @seed-design/vue3-icon
+npm uninstall @seed-design/icon @seed-design/react-icon @karrotmarket/karrot-ui-icon @seed-design/vue2-icon @seed-design/vue3-icon
 ```
 
 </Step>
@@ -302,7 +310,8 @@ npm install @daangn/vue3-monochrome-icon @daangn/vue3-multicolor-icon
 
 #### 사이드 이펙트 확인
 
-[사이드 이펙트](#발생-가능한-사이드-이펙트)가 발생했는지 확인하여 의도한 대로 변경이 이루어졌는지 검토해요.
+- [사이드 이펙트](#발생-가능한-사이드-이펙트)가 발생했는지 확인하여 의도한 대로 변경이 이루어졌는지 검토해요.
+- 디자인 QA 과정에서, [V2 V3 아이콘 맵핑](/docs/react/foundation/iconography/v2-v3-list)에 따른 아이콘이 아닌 새로운 아이콘을 사용하도록 결정되었을 수 있어요. 이러한 경우, Figma 디자인 파일을 참고하여 코드에 반영해요.
 
 </Step>
 
@@ -398,5 +407,5 @@ git grep -E '(IconHouse|IconCar|IconJobs|IconStory)(Thin|Regular|Fill)|(IconWind
   - 이전 아이콘의 `fill` variant는 리뉴얼된 아이콘에서도 `fill` variant로 대체돼요.
 - 이전 아이콘이 멀티컬러 아이콘으로 대체되는 경우, variant 접미사가 없는 리뉴얼된 아이콘으로 대체돼요.
   - 예를 들면, `IconCarThin`, `IconCarRegular`, `IconCarFill`은 모두 `IconCar`로 대체돼요.
-- 완전히 다른 이전 아이콘이 하나의 리뉴얼된 아이콘으로 대체되는 경우도 있어요.
+- 여러 개의 이전 아이콘이 하나의 리뉴얼된 아이콘으로 대체되는 경우도 있어요.
   - 예를 들면, `IconHeadphoneRegular`, `IconHelpcenterRegular`, `IconHelperRegular`는 모두 [`IconHeadsetLine`](/docs/design/foundation/iconography/monochrome?icon=icon_headset_line)으로 대체돼요.

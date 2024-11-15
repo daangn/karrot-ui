@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/codemod",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "type": "module",
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "execa": "^9.4.1",
     "jscodeshift": "^17.0.0",
     "picocolors": "^1.1.1",
+    "semver": "^7.6.3",
+    "simple-git": "^3.27.0",
     "winston": "^3.15.0",
     "zod": "^3.23.8"
   },
@@ -44,5 +46,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "node": ">=20.16.0"
   }
 }

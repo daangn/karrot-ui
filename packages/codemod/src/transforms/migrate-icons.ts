@@ -56,7 +56,11 @@ export const reactMatch: MigrateIconsOptions["match"] = {
 const migrateIcons: Transform = (file, api, { match = reactMatch }: MigrateIconsOptions) => {
   const track =
     process.env.TRACK === "true"
-      ? createTrack({ transform: "migrate-icons", file: file.path })
+      ? createTrack({
+          transform: "migrate-icons",
+          file: file.path,
+          ...JSON.parse(process.env.GIT_INFO),
+        })
       : undefined;
 
   const logger =
