@@ -10,8 +10,8 @@ const radioGroupSlotNames = [
     "radioGroup__label"
   ],
   [
-    "radios",
-    "radioGroup__radios"
+    "options",
+    "radioGroup__options"
   ]
 ];
 

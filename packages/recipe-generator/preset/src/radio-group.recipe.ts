@@ -3,7 +3,7 @@ import { defineRecipe } from "./helper";
 
 const radioGroup = defineRecipe({
   name: "radioGroup",
-  slots: ["root", "label", "radios"],
+  slots: ["root", "label", "options"],
   base: {
     root: {
       display: "flex",
@@ -11,7 +11,7 @@ const radioGroup = defineRecipe({
 
       gap: vars.base.enabled.root.gap,
     },
-    radios: {
+    options: {
       display: "flex",
     },
   },
@@ -21,14 +21,14 @@ const radioGroup = defineRecipe({
   variants: {
     orientation: {
       horizontal: {
-        radios: {
+        options: {
           flexDirection: "row",
 
-          gap: vars.orientationVertical.enabled.radios.gap,
+          gap: vars.orientationVertical.enabled.options.gap,
         },
       },
       vertical: {
-        radios: {
+        options: {
           flexDirection: "column",
         },
       },

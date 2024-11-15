@@ -4,6 +4,6 @@ base:
       gap: $unit[2]
 orientation=vertical:
   enabled:
-    radios:
+    options:
       # XXX: 임의
       gap: $unit[4]

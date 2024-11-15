@@ -11,7 +11,7 @@ type RadioGroupVariantMap = {
 
 export type RadioGroupVariantProps = Partial<RadioGroupVariant>;
 
-export type RadioGroupSlotName = "root" | "label" | "radios";
+export type RadioGroupSlotName = "root" | "label" | "options";
 
 export const radioGroupVariantMap: RadioGroupVariantMap;
 
