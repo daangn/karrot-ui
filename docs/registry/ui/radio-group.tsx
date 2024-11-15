@@ -93,7 +93,7 @@ export const RadioGroup = React.forwardRef<
             {label}
           </legend>
         )}
-        <div className={classNames.radios}>
+        <div className={classNames.options}>
           <RadioContext.Provider value={{ api, size, fontWeight, orientation }}>
             {children}
           </RadioContext.Provider>

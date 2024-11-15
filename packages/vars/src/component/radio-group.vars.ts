@@ -8,7 +8,7 @@ export const vars = {
   },
   "orientationVertical": {
     "enabled": {
-      "radios": {
+      "options": {
         "gap": "var(--seed-v3-unit-4)"
       }
     }
