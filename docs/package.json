@@ -13,8 +13,8 @@
     "generate:example": "vite-node scripts/generate-example.ts"
   },
   "dependencies": {
-    "@daangn/icon-data": "^0.0.1",
-    "@daangn/react-monochrome-icon": "^0.0.1",
+    "@daangn/icon-data": "^0.0.4",
+    "@daangn/react-monochrome-icon": "^0.0.4",
     "@daangn/react-multicolor-icon": "alpha",
     "@seed-design/react-checkbox": "0.0.0-alpha-20241030023710",
     "@seed-design/react-icon": "^0.7.3",

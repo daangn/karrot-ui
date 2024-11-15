@@ -2309,19 +2309,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/icon-data@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@daangn/icon-data@npm:0.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.1%2F1b5a5c6d0522ada132d1a53bb1f3b494016ee154"
-  checksum: e9c1b57982e4f7a343c3489b44c6ef28123f8524e4985cef656dc65d7fa2c750b5feec068822d47307686adce1b66cf4e5800642c712f03126718e4d1458f95a
+"@daangn/icon-data@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@daangn/icon-data@npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.4%2F56a62c926a73bf75bf916c6e164632e173852134"
+  checksum: 4ea100e208214b70fa33897ff44f90f8e4f0025222a7e55bfa8d202915c8bc6daac04d6e3cc711bae135d5f3f4e749849c925f401981386a0b1e3495f467026f
   languageName: node
   linkType: hard
 
-"@daangn/react-monochrome-icon@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@daangn/react-monochrome-icon@npm:0.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.1%2F71cb011ed1ba97925da1e98618ee96ad89dd5440"
+"@daangn/react-monochrome-icon@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@daangn/react-monochrome-icon@npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.4%2Fe42a30959b107075c9e22caec8ea225cd6a828e0"
   peerDependencies:
     react: 17.x || 18.x
-  checksum: 6a6eb0c98801118f1dc958aa9aeb4738e05f999b7c632e8caa94da5d16bf0abbd12467b30a8c90bc45bb2b276228e2aae0b3b929cd8c98489b86b99bd691c1dc
+  checksum: d745bd69c8b7de17f7fef7650dc72b28e65fde7c787f4f99625e3e214d2b49f93ea7deb54843a6e1c57e54c627d5190dff012590be683f715fc931d8f451e1c3
   languageName: node
   linkType: hard
 
@@ -7997,8 +7997,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
   dependencies:
-    "@daangn/icon-data": ^0.0.1
-    "@daangn/react-monochrome-icon": ^0.0.1
+    "@daangn/icon-data": ^0.0.4
+    "@daangn/react-monochrome-icon": ^0.0.4
     "@daangn/react-multicolor-icon": alpha
     "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
     "@seed-design/react-icon": ^0.7.3
