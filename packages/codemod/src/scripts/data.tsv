@@ -119,7 +119,9 @@ icon_mic_off	icon_microphone_slash	0	0
 icon_mission	icon_book_open	0	0
 icon_mobile	icon_mobile	0	0
 icon_money_send	icon_won_circle_arrow_right	0	0
+icon_money_send_yen	icon_yen_circle_arrow_right	0	0
 icon_money_won	icon_won_circle	0	0
+icon_money_yen	icon_yen_circle	0	0
 icon_moon	icon_moon	0	0
 icon_more_horiz	icon_dot3_horizontal	0	0
 icon_more_vert	icon_dot3_vertical	0	0
@@ -144,6 +146,7 @@ icon_photo_several	icon_picture2_stacked	0	0
 icon_play	icon_triangle_right	0	0
 icon_poll	icon_barchart_square	0	0
 icon_price_won	icon_won	0	0
+icon_price_yen	icon_yen	0	0
 icon_product	icon_shoppingbag	0	0
 icon_profile	icon_person	0	0
 icon_profile_badge	icon_checkmark_badge	0	0

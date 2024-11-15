@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.8
+
+### Patch Changes
+
+- Yen 아이콘 신규 맵핑 반영
+
 ## 0.0.7
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/codemod",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "vitest": "^2.0.5"
   },
   "optionalDependencies": {
-    "@daangn/react-monochrome-icon": "alpha",
+    "@daangn/react-monochrome-icon": "^0.0.4",
     "@daangn/react-multicolor-icon": "alpha"
   },
   "publishConfig": {

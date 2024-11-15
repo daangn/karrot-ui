@@ -2325,15 +2325,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/react-monochrome-icon@npm:alpha":
-  version: 0.0.0-alpha-20241030033336
-  resolution: "@daangn/react-monochrome-icon@npm:0.0.0-alpha-20241030033336::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.0-alpha-20241030033336%2F3dcf105c90a70cf4b8caca31a0e58f8733585077"
-  peerDependencies:
-    react: 17.x || 18.x
-  checksum: 4bdc896f1279bc50bba9ca6d8fcbe5b41c0fc3014997b66c85270ae3a8fd019ae8225c2951d9ba0890f3ccc8412a26f4a7ec45c591f83efdbd18ce24a4dbe05a
-  languageName: node
-  linkType: hard
-
 "@daangn/react-multicolor-icon@npm:alpha":
   version: 0.0.0-alpha-20241030033336
   resolution: "@daangn/react-multicolor-icon@npm:0.0.0-alpha-20241030033336::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-multicolor-icon%2F0.0.0-alpha-20241030033336%2Fbce62f8a0339acbe959bc3d81ef408f1599bd86f"
@@ -4904,7 +4895,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/codemod@workspace:packages/codemod"
   dependencies:
-    "@daangn/react-monochrome-icon": alpha
+    "@daangn/react-monochrome-icon": ^0.0.4
     "@daangn/react-multicolor-icon": alpha
     "@june-so/analytics-node": ^8.0.0
     "@types/jscodeshift": ^0.12.0
