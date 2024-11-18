@@ -11,7 +11,7 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
         data-seed="light-only"
         data-seed-scale-color="light"
         data-seed-scale-letter-spacing="ios"
-        style={{ display: "flex", flexDirection: "column", gap: 16, flexWrap: "wrap" }}
+        style={{ display: "flex", flexDirection: "column", padding: "0 20px" }}
       >
         <Story />
       </html>
@@ -24,7 +24,7 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
       data-seed="dark-only"
       data-seed-scale-color="dark"
       data-seed-scale-letter-spacing="ios"
-      style={{ display: "flex", flexDirection: "column", gap: 16, flexWrap: "wrap" }}
+      style={{ display: "flex", flexDirection: "column", padding: "0 20px" }}
     >
       <Story />
     </html>

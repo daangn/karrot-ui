@@ -8,7 +8,6 @@ import { SeedThemeDecorator } from "./decorator";
 
 const meta = {
   component: Badge,
-  // @see https://storybook.js.org/docs/writing-stories/decorators
   decorators: [SeedThemeDecorator],
 } satisfies Meta<typeof Badge>;
 
@@ -18,14 +17,14 @@ type Story = StoryObj<typeof meta>;
 
 export const LightTheme: Story = {
   args: {
-    children: "Action Chip",
+    children: "Badege",
   },
   render: (args) => <VariantTable Component={Badge} variantMap={badgeVariantMap} {...args} />,
 };
 
 export const DarkTheme: Story = {
   args: {
-    children: "Action Chip",
+    children: "Badege",
   },
   render: (args) => <VariantTable Component={Badge} variantMap={badgeVariantMap} {...args} />,
 };
