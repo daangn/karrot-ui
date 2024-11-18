@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "seed-design/ui/badge";
 
 import { badgeVariantMap } from "@seed-design/recipe/badge";
-import { VariantTable } from "./variant-table";
-import { SeedThemeDecorator } from "./decorator";
+import { VariantTable } from "./components/variant-table";
+import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
   component: Badge,
@@ -17,14 +17,36 @@ type Story = StoryObj<typeof meta>;
 
 export const LightTheme: Story = {
   args: {
-    children: "Badege",
+    children: "Badge",
   },
-  render: (args) => <VariantTable Component={Badge} variantMap={badgeVariantMap} {...args} />,
+  render: (args) => (
+    <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
+  ),
 };
 
 export const DarkTheme: Story = {
   args: {
-    children: "Badege",
+    children: "Badge",
   },
-  render: (args) => <VariantTable Component={Badge} variantMap={badgeVariantMap} {...args} />,
+  render: (args) => (
+    <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
+  ),
+};
+
+export const FontScalingExtraSmall: Story = {
+  args: {
+    children: "Badge",
+  },
+  render: (args) => (
+    <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
+  ),
+};
+
+export const FontScalingExtraExtraLarge: Story = {
+  args: {
+    children: "Badge",
+  },
+  render: (args) => (
+    <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
+  ),
 };

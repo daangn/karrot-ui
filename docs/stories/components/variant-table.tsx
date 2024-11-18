@@ -37,7 +37,7 @@ export const VariantTable = (props: Props) => {
     <div>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
-          <tr>
+          <tr style={{ fontSize: "14px" }}>
             {variantKeys.map((key) => (
               <th key={key}>{key}</th>
             ))}
@@ -53,14 +53,14 @@ export const VariantTable = (props: Props) => {
                   <td key={key}>
                     <span
                       style={{
-                        fontSize: "0.6rem",
+                        fontSize: "12px",
                         paddingRight: "2px",
                         color: "var(--seed-v3-color-fg-placeholder)",
                       }}
                     >
                       {key}:
                     </span>
-                    <code>{combination[key]}</code>
+                    <code style={{ fontSize: "14px" }}>{combination[key]}</code>
                   </td>
                 ))}
                 <td
