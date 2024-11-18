@@ -50,9 +50,25 @@ export const VariantTable = (props: Props) => {
             return (
               <tr key={combinationKey}>
                 {variantKeys.map((key) => (
-                  <td key={key}>{combination[key]}</td>
+                  <td key={key}>
+                    <span
+                      style={{
+                        fontSize: "0.6rem",
+                        paddingRight: "2px",
+                        color: "var(--seed-v3-color-fg-placeholder)",
+                      }}
+                    >
+                      {key}:
+                    </span>
+                    <code>{combination[key]}</code>
+                  </td>
                 ))}
-                <td>
+                <td
+                  style={{
+                    display: "flex",
+                    padding: 16,
+                  }}
+                >
                   <Component {...combination} {...rest} />
                 </td>
               </tr>
@@ -60,7 +76,13 @@ export const VariantTable = (props: Props) => {
           })}
         </tbody>
       </table>
-      <div>Total variations: {combinations.length}</div>
+      <div
+        style={{
+          marginTop: 16,
+        }}
+      >
+        총 {combinations.length}개의 조합이 있습니다.
+      </div>
     </div>
   );
 };

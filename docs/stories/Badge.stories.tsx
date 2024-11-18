@@ -4,20 +4,26 @@ import { Badge } from "seed-design/ui/badge";
 
 import { badgeVariantMap } from "@seed-design/recipe/badge";
 import { VariantTable } from "./variant-table";
-import { IconAUppercaseALowercaseLine } from "@daangn/react-monochrome-icon";
+import { SeedThemeDecorator } from "./decorator";
 
 const meta = {
   component: Badge,
-  parameters: {
-    layout: "centered",
-  },
+  // @see https://storybook.js.org/docs/writing-stories/decorators
+  decorators: [SeedThemeDecorator],
 } satisfies Meta<typeof Badge>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const LightTheme: Story = {
+  args: {
+    children: "Action Chip",
+  },
+  render: (args) => <VariantTable Component={Badge} variantMap={badgeVariantMap} {...args} />,
+};
+
+export const DarkTheme: Story = {
   args: {
     children: "Action Chip",
   },
