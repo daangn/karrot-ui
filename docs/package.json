@@ -10,7 +10,9 @@
     "gen": "yarn generate:all",
     "generate:all": "yarn generate:registry && yarn generate:example",
     "generate:registry": "vite-node scripts/generate-registry.ts",
-    "generate:example": "vite-node scripts/generate-example.ts"
+    "generate:example": "vite-node scripts/generate-example.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@daangn/icon-data": "^0.0.4",
@@ -43,6 +45,14 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-essentials": "^8.4.4",
+    "@storybook/addon-interactions": "^8.4.4",
+    "@storybook/addon-onboarding": "^8.4.4",
+    "@storybook/blocks": "^8.4.4",
+    "@storybook/nextjs": "^8.4.4",
+    "@storybook/react": "^8.4.4",
+    "@storybook/test": "^8.4.4",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.5.4",
     "@types/react": "^18.3.5",
@@ -50,6 +60,7 @@
     "autoprefixer": "^10.4.20",
     "chalk": "^5.3.0",
     "postcss": "^8.4.45",
+    "storybook": "^8.4.4",
     "tailwindcss": "^3.4.10",
     "ts-pattern": "^5.5.0",
     "typescript": "^5.5.4",
