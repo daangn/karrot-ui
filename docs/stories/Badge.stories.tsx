@@ -42,7 +42,7 @@ export const FontScalingExtraSmall: Story = {
   ),
 };
 
-export const FontScalingExtraExtraLarge: Story = {
+export const FontScalingExtraExtraExtraLarge: Story = {
   args: {
     children: "Badge",
   },

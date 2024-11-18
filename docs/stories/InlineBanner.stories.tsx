@@ -46,7 +46,7 @@ export const FontScalingExtraSmall: Story = {
   ),
 };
 
-export const FontScalingExtraExtraLarge: Story = {
+export const FontScalingExtraExtraExtraLarge: Story = {
   args: {
     children: "This is a title",
     prefixIcon: <IconBellLine />,
