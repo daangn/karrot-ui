@@ -18,7 +18,7 @@ import {
 interface BaseInlineBannerProps
   extends Omit<InlineBannerVariantProps, "layout"> {
   titleText?: string;
-  prefixIcon?: React.ReactNode;
+  contentIcon?: React.ReactNode;
 }
 
 interface DismissibleInlineBannerProps
@@ -35,8 +35,10 @@ interface NondismissibleInlineBannerProps
   dismissAriaLabel?: never;
   action?: {
     onClick: React.MouseEventHandler<HTMLButtonElement>;
-    label: string;
-  };
+  } & (
+    | { label: string; buttonIcon?: never }
+    | { label?: never; buttonIcon: React.ReactNode }
+  );
 }
 
 export type InlineBannerProps =
@@ -55,7 +57,8 @@ export const InlineBanner = React.forwardRef<
       children,
       className,
       tone = "neutral",
-      prefixIcon,
+      variant = "weak",
+      contentIcon,
       titleText,
       action,
       dismissAriaLabel,
@@ -68,11 +71,9 @@ export const InlineBanner = React.forwardRef<
   ) => {
     const classNames = inlineBanner({
       tone,
-      ...(!action && !dismissAriaLabel && { layout: "contentOnly" }),
+      variant,
+      layout: action || dismissAriaLabel ? "withAction" : "withoutAction",
     });
-
-    const rootRef = React.useRef<HTMLDivElement>(null);
-    React.useImperativeHandle(ref, () => rootRef.current as HTMLDivElement);
 
     const { isOpen, onDismissButtonClick } = useDismissible({
       defaultOpen,
@@ -84,13 +85,13 @@ export const InlineBanner = React.forwardRef<
 
     return (
       <div
-        ref={rootRef}
+        ref={ref}
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
         <div className={classNames.content}>
-          {prefixIcon && (
-            <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
+          {contentIcon && (
+            <Slot className={classNames.contentIcon}>{contentIcon}</Slot>
           )}
           <div>
             {titleText && (
@@ -106,19 +107,22 @@ export const InlineBanner = React.forwardRef<
           <button
             type="button"
             aria-label={dismissAriaLabel}
-            className={classNames.dismissButton}
+            className={classNames.button}
             onClick={onDismissButtonClick}
           >
-            <IconXmarkLine className={classNames.xIcon} />
+            <IconXmarkLine className={classNames.buttonIcon} />
           </button>
         )}
         {action && (
           <button
             type="button"
-            className={classNames.actionButton}
+            className={action.label ? classNames.link : classNames.button}
             onClick={action.onClick}
           >
             {action.label}
+            {action.buttonIcon && (
+              <Slot className={classNames.buttonIcon}>{action.buttonIcon}</Slot>
+            )}
           </button>
         )}
       </div>

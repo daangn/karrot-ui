@@ -6,13 +6,13 @@ const inlineBanner = defineRecipe({
   slots: [
     "root",
     "content",
-    "prefixIcon",
+    "contentIcon",
     "title",
     "spacer",
     "label",
-    "actionButton",
-    "dismissButton",
-    "xIcon",
+    "link",
+    "button",
+    "buttonIcon",
   ],
   base: {
     root: {
@@ -26,7 +26,6 @@ const inlineBanner = defineRecipe({
       MozOsxFontSmoothing: "grayscale",
 
       paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
     },
     content: {
       display: "flex",
@@ -36,17 +35,16 @@ const inlineBanner = defineRecipe({
       paddingBlock: vars.base.enabled.content.paddingY,
 
       fontSize: vars.base.enabled.content.fontSize,
-
       // FIXME
       lineHeight: "1.1875rem",
     },
-    prefixIcon: {
+    contentIcon: {
       flex: "none",
 
-      marginBlock: vars.base.enabled.prefixIcon.marginY,
+      marginBlock: vars.base.enabled.contentIcon.marginY,
 
-      width: vars.base.enabled.prefixIcon.size,
-      height: vars.base.enabled.prefixIcon.size,
+      width: vars.base.enabled.contentIcon.size,
+      height: vars.base.enabled.contentIcon.size,
     },
     title: {
       fontWeight: vars.base.enabled.title.fontWeight,
@@ -57,14 +55,14 @@ const inlineBanner = defineRecipe({
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
     },
-    actionButton: {
+    link: {
       flex: "none",
 
-      height: vars.base.enabled.actionButton.size,
-      paddingInline: vars.base.enabled.actionButton.paddingX,
+      height: vars.base.enabled.link.size,
+      paddingInline: vars.base.enabled.link.paddingX,
 
-      fontSize: vars.base.enabled.actionButton.fontSize,
-      fontWeight: vars.base.enabled.actionButton.fontWeight,
+      fontSize: vars.base.enabled.link.fontSize,
+      fontWeight: vars.base.enabled.link.fontWeight,
       // FIXME
       lineHeight: "1rem",
 
@@ -72,27 +70,33 @@ const inlineBanner = defineRecipe({
       // XXX
       textUnderlineOffset: "2px",
     },
-    dismissButton: {
+    button: {
       flex: "none",
 
-      width: vars.base.enabled.dismissButton.size,
-      height: vars.base.enabled.dismissButton.size,
+      width: vars.base.enabled.button.size,
+      height: vars.base.enabled.button.size,
     },
-    xIcon: {
-      width: vars.base.enabled.xIcon.size,
-      height: vars.base.enabled.xIcon.size,
+    buttonIcon: {
+      width: vars.base.enabled.buttonIcon.size,
+      height: vars.base.enabled.buttonIcon.size,
 
       margin: "auto",
     },
   },
   defaultVariants: {
     tone: "neutral",
+    variant: "weak",
   },
   variants: {
     layout: {
-      contentOnly: {
+      withAction: {
         root: {
-          paddingInlineEnd: vars.layoutContentOnly.enabled.root.paddingXEnd,
+          paddingInlineEnd: vars.layoutWithAction.enabled.root.paddingXEnd,
+        },
+      },
+      withoutAction: {
+        root: {
+          paddingInlineEnd: vars.layoutWithoutAction.enabled.root.paddingXEnd,
         },
       },
     },
@@ -101,8 +105,8 @@ const inlineBanner = defineRecipe({
         root: {
           backgroundColor: vars.toneNeutral.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.toneNeutral.enabled.prefixIcon.color,
+        contentIcon: {
+          color: vars.toneNeutral.enabled.contentIcon.color,
         },
         title: {
           color: vars.toneNeutral.enabled.title.color,
@@ -110,19 +114,19 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.toneNeutral.enabled.label.color,
         },
-        actionButton: {
-          color: vars.toneNeutral.enabled.actionButton.color,
+        link: {
+          color: vars.toneNeutral.enabled.link.color,
         },
-        xIcon: {
-          color: vars.toneNeutral.enabled.xIcon.color,
+        buttonIcon: {
+          color: vars.toneNeutral.enabled.buttonIcon.color,
         },
       },
       positive: {
         root: {
           backgroundColor: vars.tonePositive.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.tonePositive.enabled.prefixIcon.color,
+        contentIcon: {
+          color: vars.tonePositive.enabled.contentIcon.color,
         },
         title: {
           color: vars.tonePositive.enabled.title.color,
@@ -130,19 +134,19 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.tonePositive.enabled.label.color,
         },
-        actionButton: {
-          color: vars.tonePositive.enabled.actionButton.color,
+        link: {
+          color: vars.tonePositive.enabled.link.color,
         },
-        xIcon: {
-          color: vars.tonePositive.enabled.xIcon.color,
+        buttonIcon: {
+          color: vars.tonePositive.enabled.buttonIcon.color,
         },
       },
       informative: {
         root: {
           backgroundColor: vars.toneInformative.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.toneInformative.enabled.prefixIcon.color,
+        contentIcon: {
+          color: vars.toneInformative.enabled.contentIcon.color,
         },
         title: {
           color: vars.toneInformative.enabled.title.color,
@@ -150,19 +154,16 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.toneInformative.enabled.label.color,
         },
-        actionButton: {
-          color: vars.toneInformative.enabled.actionButton.color,
+        link: {
+          color: vars.toneInformative.enabled.link.color,
         },
-        xIcon: {
-          color: vars.toneInformative.enabled.xIcon.color,
+        buttonIcon: {
+          color: vars.toneInformative.enabled.buttonIcon.color,
         },
       },
       warning: {
-        root: {
-          backgroundColor: vars.toneWarning.enabled.root.color,
-        },
-        prefixIcon: {
-          color: vars.toneWarning.enabled.prefixIcon.color,
+        contentIcon: {
+          color: vars.toneWarning.enabled.contentIcon.color,
         },
         title: {
           color: vars.toneWarning.enabled.title.color,
@@ -170,34 +171,63 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.toneWarning.enabled.label.color,
         },
-        actionButton: {
-          color: vars.toneWarning.enabled.actionButton.color,
+        link: {
+          color: vars.toneWarning.enabled.link.color,
         },
-        xIcon: {
-          color: vars.toneWarning.enabled.xIcon.color,
+        buttonIcon: {
+          color: vars.toneWarning.enabled.buttonIcon.color,
         },
       },
       danger: {
         root: {
           position: "sticky",
           top: 0,
-          backgroundColor: vars.toneDanger.enabled.root.color,
-        },
-        prefixIcon: {
-          color: vars.toneDanger.enabled.prefixIcon.color,
-        },
-        title: {
-          color: vars.toneDanger.enabled.title.color,
-        },
-        label: {
-          color: vars.toneDanger.enabled.label.color,
-        },
-        actionButton: {
-          color: vars.toneDanger.enabled.actionButton.color,
         },
       },
     },
+    variant: {
+      weak: {},
+      solid: {},
+    },
   },
+  compoundVariants: [
+    {
+      tone: "warning",
+      variant: "weak",
+      css: {
+        root: {
+          backgroundColor: vars.toneWarningVariantWeak.enabled.root.color,
+        },
+      },
+    },
+    {
+      tone: "warning",
+      variant: "solid",
+      css: {
+        root: {
+          backgroundColor: vars.toneWarningVariantSolid.enabled.root.color,
+        },
+      },
+    },
+    {
+      tone: "danger",
+      variant: "weak",
+      css: {
+        root: {
+          backgroundColor: vars.toneDangerVariantWeak.enabled.root.color,
+        },
+      },
+    },
+    {
+      tone: "danger",
+      variant: "solid",
+      css: {
+        root: {
+          backgroundColor: vars.toneDangerVariantSolid.enabled.root.color,
+        },
+      },
+    },
+  ],
 });
 
 export default inlineBanner;
