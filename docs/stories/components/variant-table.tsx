@@ -2,7 +2,7 @@ type VariantMap = Record<string, string[]>;
 
 interface Props {
   variantMap: VariantMap;
-  Component: React.ComponentType;
+  Component: React.ComponentType | React.ElementType;
 }
 
 const generateCombinations = (variantMap: VariantMap) => {
@@ -30,6 +30,7 @@ const generateCombinations = (variantMap: VariantMap) => {
 
 export const VariantTable = (props: Props) => {
   const { variantMap, Component, ...rest } = props;
+
   const combinations = generateCombinations(variantMap);
   const variantKeys = Object.keys(variantMap);
 
