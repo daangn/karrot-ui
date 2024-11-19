@@ -50,17 +50,19 @@ export const VariantTable = (props: Props) => {
             return (
               <tr key={combinationKey}>
                 {variantKeys.map((key) => (
-                  <td key={key}>
-                    <span
-                      style={{
-                        fontSize: "12px",
-                        paddingRight: "2px",
-                        color: "var(--seed-v3-color-fg-placeholder)",
-                      }}
-                    >
-                      {key}:
-                    </span>
-                    <code style={{ fontSize: "14px" }}>{combination[key]}</code>
+                  <td key={key} style={{ width: "10%" }}>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <span
+                        style={{
+                          fontSize: "12px",
+                          paddingRight: "2px",
+                          color: "var(--seed-v3-color-fg-placeholder)",
+                        }}
+                      >
+                        {key}:
+                      </span>
+                      <code style={{ fontSize: "13px" }}>{combination[key]}</code>
+                    </div>
                   </td>
                 ))}
                 <td

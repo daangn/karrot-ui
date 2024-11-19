@@ -29,6 +29,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     >
       <head>
         <meta name="color-scheme" content="light dark" />
+        <link rel="icon" href="/favicon.svg" />
       </head>
       <body>
         <RootProvider
