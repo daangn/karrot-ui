@@ -16,6 +16,7 @@ import radio from "./radio.recipe";
 import switchRecipe from "./switch.recipe";
 import tab from "./tab.recipe";
 import tabs from "./tabs.recipe";
+import textButton from "./text-button.recipe";
 
 const recipes = {
   avatar,
@@ -36,6 +37,7 @@ const recipes = {
   chipTabs,
   progressCircle,
   expandButton,
+  textButton,
 };
 
 export default recipes;

@@ -75,4 +75,9 @@ export const registryUI: RegistryUI = [
     dependencies: ["@seed-design/react-switch@alpha"],
     files: ["ui:switch.tsx"],
   },
+  {
+    name: "text-button",
+    dependencies: ["@radix-ui/react-slot"],
+    files: ["component/text-button.tsx"],
+  },
 ];
