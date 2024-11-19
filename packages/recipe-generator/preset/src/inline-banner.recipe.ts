@@ -1,24 +1,25 @@
 import { inlineBanner as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 
-export const inlineBanner = defineRecipe({
+const inlineBanner = defineRecipe({
   name: "inlineBanner",
   slots: [
     "root",
     "content",
-    "prefixIcon",
+    "icon",
     "title",
     "spacer",
     "label",
-    "actionButton",
+    "linkLabel",
     "dismissButton",
     "xIcon",
+    "chevronRightIcon",
   ],
   base: {
     root: {
       display: "flex",
-      justifyContent: "space-between",
       alignItems: "center",
+      justifyContent: "space-between",
       gap: vars.base.enabled.root.gap,
 
       width: "100%",
@@ -26,7 +27,6 @@ export const inlineBanner = defineRecipe({
       MozOsxFontSmoothing: "grayscale",
 
       paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
     },
     content: {
       display: "flex",
@@ -36,17 +36,17 @@ export const inlineBanner = defineRecipe({
       paddingBlock: vars.base.enabled.content.paddingY,
 
       fontSize: vars.base.enabled.content.fontSize,
-
       // FIXME
       lineHeight: "1.1875rem",
+      textAlign: "start",
     },
-    prefixIcon: {
+    icon: {
       flex: "none",
 
-      marginBlock: vars.base.enabled.prefixIcon.marginY,
+      marginBlock: vars.base.enabled.icon.marginY,
 
-      width: vars.base.enabled.prefixIcon.size,
-      height: vars.base.enabled.prefixIcon.size,
+      width: vars.base.enabled.icon.size,
+      height: vars.base.enabled.icon.size,
     },
     title: {
       fontWeight: vars.base.enabled.title.fontWeight,
@@ -57,14 +57,14 @@ export const inlineBanner = defineRecipe({
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
     },
-    actionButton: {
+    linkLabel: {
       flex: "none",
 
-      height: vars.base.enabled.actionButton.size,
-      paddingInline: vars.base.enabled.actionButton.paddingX,
+      height: vars.base.enabled.linkLabel.size,
+      paddingInline: vars.base.enabled.linkLabel.paddingX,
 
-      fontSize: vars.base.enabled.actionButton.fontSize,
-      fontWeight: vars.base.enabled.actionButton.fontWeight,
+      fontSize: vars.base.enabled.linkLabel.fontSize,
+      fontWeight: vars.base.enabled.linkLabel.fontWeight,
       // FIXME
       lineHeight: "1rem",
 
@@ -84,118 +84,205 @@ export const inlineBanner = defineRecipe({
 
       margin: "auto",
     },
+    chevronRightIcon: {
+      flex: "none",
+
+      width: vars.base.enabled.chevronRightIcon.size,
+      height: vars.base.enabled.chevronRightIcon.size,
+
+      margin: vars.base.enabled.chevronRightIcon.margin,
+    },
   },
   defaultVariants: {
-    tone: "neutral",
+    variant: "neutralWeak",
   },
   variants: {
-    layout: {
-      contentOnly: {
+    type: {
+      default: {
         root: {
-          paddingInlineEnd: vars.layoutContentOnly.enabled.root.paddingXEnd,
+          paddingInlineEnd: vars.typeDefault.enabled.root.paddingXEnd,
+        },
+      },
+      link: {
+        root: {
+          paddingInlineEnd: vars.typeLink.enabled.root.paddingXEnd,
+        },
+      },
+      dismissible: {
+        root: {
+          paddingInlineEnd: vars.typeDismissible.enabled.root.paddingXEnd,
+        },
+      },
+      actionable: {
+        root: {
+          paddingInlineEnd: vars.typeActionable.enabled.root.paddingXEnd,
         },
       },
     },
-    tone: {
-      neutral: {
+    variant: {
+      neutralWeak: {
         root: {
-          backgroundColor: vars.toneNeutral.enabled.root.color,
+          backgroundColor: vars.variantNeutralWeak.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.toneNeutral.enabled.prefixIcon.color,
+        icon: {
+          color: vars.variantNeutralWeak.enabled.icon.color,
         },
         title: {
-          color: vars.toneNeutral.enabled.title.color,
+          color: vars.variantNeutralWeak.enabled.title.color,
         },
         label: {
-          color: vars.toneNeutral.enabled.label.color,
+          color: vars.variantNeutralWeak.enabled.label.color,
         },
-        actionButton: {
-          color: vars.toneNeutral.enabled.actionButton.color,
+        linkLabel: {
+          color: vars.variantNeutralWeak.enabled.linkLabel.color,
         },
         xIcon: {
-          color: vars.toneNeutral.enabled.xIcon.color,
+          color: vars.variantNeutralWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantNeutralWeak.enabled.chevronRightIcon.color,
         },
       },
-      positive: {
+      positiveWeak: {
         root: {
-          backgroundColor: vars.tonePositive.enabled.root.color,
+          backgroundColor: vars.variantPositiveWeak.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.tonePositive.enabled.prefixIcon.color,
+        icon: {
+          color: vars.variantPositiveWeak.enabled.icon.color,
         },
         title: {
-          color: vars.tonePositive.enabled.title.color,
+          color: vars.variantPositiveWeak.enabled.title.color,
         },
         label: {
-          color: vars.tonePositive.enabled.label.color,
+          color: vars.variantPositiveWeak.enabled.label.color,
         },
-        actionButton: {
-          color: vars.tonePositive.enabled.actionButton.color,
+        linkLabel: {
+          color: vars.variantPositiveWeak.enabled.linkLabel.color,
         },
         xIcon: {
-          color: vars.tonePositive.enabled.xIcon.color,
+          color: vars.variantPositiveWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantPositiveWeak.enabled.chevronRightIcon.color,
         },
       },
-      informative: {
+      informativeWeak: {
         root: {
-          backgroundColor: vars.toneInformative.enabled.root.color,
+          backgroundColor: vars.variantInformativeWeak.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.toneInformative.enabled.prefixIcon.color,
+        icon: {
+          color: vars.variantInformativeWeak.enabled.icon.color,
         },
         title: {
-          color: vars.toneInformative.enabled.title.color,
+          color: vars.variantInformativeWeak.enabled.title.color,
         },
         label: {
-          color: vars.toneInformative.enabled.label.color,
+          color: vars.variantInformativeWeak.enabled.label.color,
         },
-        actionButton: {
-          color: vars.toneInformative.enabled.actionButton.color,
+        linkLabel: {
+          color: vars.variantInformativeWeak.enabled.linkLabel.color,
         },
         xIcon: {
-          color: vars.toneInformative.enabled.xIcon.color,
+          color: vars.variantInformativeWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantInformativeWeak.enabled.chevronRightIcon.color,
         },
       },
-      warning: {
+      warningWeak: {
         root: {
-          backgroundColor: vars.toneWarning.enabled.root.color,
+          backgroundColor: vars.variantWarningWeak.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.toneWarning.enabled.prefixIcon.color,
+        icon: {
+          color: vars.variantWarningWeak.enabled.icon.color,
         },
         title: {
-          color: vars.toneWarning.enabled.title.color,
+          color: vars.variantWarningWeak.enabled.title.color,
         },
         label: {
-          color: vars.toneWarning.enabled.label.color,
+          color: vars.variantWarningWeak.enabled.label.color,
         },
-        actionButton: {
-          color: vars.toneWarning.enabled.actionButton.color,
+        linkLabel: {
+          color: vars.variantWarningWeak.enabled.linkLabel.color,
         },
         xIcon: {
-          color: vars.toneWarning.enabled.xIcon.color,
+          color: vars.variantWarningWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantWarningWeak.enabled.chevronRightIcon.color,
         },
       },
-      danger: {
+      warningSolid: {
+        root: {
+          backgroundColor: vars.variantWarningSolid.enabled.root.color,
+        },
+        icon: {
+          color: vars.variantWarningSolid.enabled.icon.color,
+        },
+        title: {
+          color: vars.variantWarningSolid.enabled.title.color,
+        },
+        label: {
+          color: vars.variantWarningSolid.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantWarningSolid.enabled.linkLabel.color,
+        },
+        xIcon: {
+          color: vars.variantWarningSolid.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantWarningSolid.enabled.chevronRightIcon.color,
+        },
+      },
+      dangerWeak: {
         root: {
           position: "sticky",
           top: 0,
-          backgroundColor: vars.toneDanger.enabled.root.color,
+
+          backgroundColor: vars.variantDangerWeak.enabled.root.color,
         },
-        prefixIcon: {
-          color: vars.toneDanger.enabled.prefixIcon.color,
+        icon: {
+          color: vars.variantDangerWeak.enabled.icon.color,
         },
         title: {
-          color: vars.toneDanger.enabled.title.color,
+          color: vars.variantDangerWeak.enabled.title.color,
         },
         label: {
-          color: vars.toneDanger.enabled.label.color,
+          color: vars.variantDangerWeak.enabled.label.color,
         },
-        actionButton: {
-          color: vars.toneDanger.enabled.actionButton.color,
+        linkLabel: {
+          color: vars.variantDangerWeak.enabled.linkLabel.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantDangerWeak.enabled.chevronRightIcon.color,
+        },
+      },
+      dangerSolid: {
+        root: {
+          position: "sticky",
+          top: 0,
+
+          backgroundColor: vars.variantDangerSolid.enabled.root.color,
+        },
+        icon: {
+          color: vars.variantDangerSolid.enabled.icon.color,
+        },
+        title: {
+          color: vars.variantDangerSolid.enabled.title.color,
+        },
+        label: {
+          color: vars.variantDangerSolid.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantDangerSolid.enabled.linkLabel.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantDangerSolid.enabled.chevronRightIcon.color,
         },
       },
     },
   },
 });
+
+export default inlineBanner;

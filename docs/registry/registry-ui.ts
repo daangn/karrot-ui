@@ -33,8 +33,27 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "inline-banner",
-    dependencies: ["@radix-ui/react-slot", "@daangn/react-monochrome-icon"],
-    files: ["ui:inline-banner.tsx", "hook:use-dismissible.ts"],
+    dependencies: ["@radix-ui/react-slot"],
+    files: ["ui:inline-banner.tsx"],
+  },
+  {
+    name: "dismissible-inline-banner",
+    dependencies: [
+      "@seed-design/react-dismissible",
+      "@daangn/react-monochrome-icon",
+      "@radix-ui/react-slot",
+    ],
+    files: ["ui:dismissible-inline-banner.tsx"],
+  },
+  {
+    name: "actionable-inline-banner",
+    dependencies: ["@daangn/react-monochrome-icon", "@radix-ui/react-slot"],
+    files: ["ui:actionable-inline-banner.tsx"],
+  },
+  {
+    name: "link-inline-banner",
+    dependencies: ["@radix-ui/react-slot"],
+    files: ["ui:link-inline-banner.tsx"],
   },
   {
     name: "tabs",

@@ -15,16 +15,22 @@ declare module "@stackflow/config" {
 }
 
 const InlineBannerActivity: ActivityComponentType<"InlineBanner"> = () => {
-  const [tone, setTone] =
-    React.useState<Extract<InlineBannerProps["tone"], "neutral" | "danger">>("danger");
+  const [variant, setVariant] =
+    React.useState<Extract<InlineBannerProps["variant"], "neutralWeak" | "dangerSolid">>(
+      "dangerSolid",
+    );
 
   return (
     <AppScreen>
-      <InlineBanner tone={tone as "danger"}>
+      <InlineBanner variant={variant}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </InlineBanner>
       <div style={{ display: "flex", flexDirection: "column", padding: "1rem", gap: "0.75rem" }}>
-        <ActionButton onClick={() => setTone((prev) => (prev === "danger" ? "neutral" : "danger"))}>
+        <ActionButton
+          onClick={() =>
+            setVariant((prev) => (prev === "dangerSolid" ? "neutralWeak" : "dangerSolid"))
+          }
+        >
           Toggle tone
         </ActionButton>
         <p style={{ marginBlock: 0, lineHeight: 1.35 }}>

@@ -10,7 +10,7 @@ import controlChip from "./control-chip.recipe";
 import dialog from "./dialog.recipe";
 import expandButton from "./expand-button.recipe";
 import helpBubble from "./help-bubble.recipe";
-import { inlineBanner } from "./inline-banner.recipe";
+import inlineBanner from "./inline-banner.recipe";
 import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
 import switchRecipe from "./switch.recipe";

@@ -1,9 +1,9 @@
 interface InlineBannerVariant {
-  layout: "contentOnly";
+  type: "default" | "link" | "dismissible" | "actionable";
 /**
-  * @default neutral
+  * @default neutralWeak
   */
-  tone: "neutral" | "positive" | "informative" | "warning" | "danger";
+  variant: "neutralWeak" | "positiveWeak" | "informativeWeak" | "warningWeak" | "warningSolid" | "dangerWeak" | "dangerSolid";
 }
 
 type InlineBannerVariantMap = {
@@ -12,7 +12,7 @@ type InlineBannerVariantMap = {
 
 export type InlineBannerVariantProps = Partial<InlineBannerVariant>;
 
-export type InlineBannerSlotName = "root" | "content" | "prefixIcon" | "title" | "spacer" | "label" | "actionButton" | "dismissButton" | "xIcon";
+export type InlineBannerSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "dismissButton" | "xIcon" | "chevronRightIcon";
 
 export const inlineBannerVariantMap: InlineBannerVariantMap;
 

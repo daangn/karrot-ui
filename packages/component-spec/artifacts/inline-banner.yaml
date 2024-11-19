@@ -4,12 +4,11 @@ base:
     root:
       gap: $unit[1]
       paddingXStart: $unit[4]
-      paddingXEnd: $unit[1]
     content:
-      fontSize: $font-size[100]
       gap: $unit[2]
-      paddingY: $unit[2.5]
-    prefixIcon:
+      paddingY: 10.5px
+      fontSize: $font-size[100]
+    icon:
       # XXX: scalable해야 할 것 같음 (결정 x)
       # size: "1rem"
       size: $unit[4]
@@ -18,7 +17,7 @@ base:
       fontWeight: $font-weight.bold
     label:
       fontWeight: $font-weight.medium
-    actionButton:
+    linkLabel:
       size: $unit[10]
       paddingX: $unit[3]
       fontSize: $font-size[50]
@@ -27,77 +26,132 @@ base:
       size: $unit[10]
     xIcon:
       size: $unit[4]
+    chevronRightIcon:
+      size: $unit[4]
+      margin: $unit[3]
 
-layout=content only:
+type=default:
   enabled:
     root:
       paddingXEnd: $unit[4]
+type=link:
+  enabled:
+    root:
+      paddingXEnd: $unit[1]
+type=dismissible:
+  enabled:
+    root:
+      paddingXEnd: $unit[1]
+type=actionable:
+  enabled:
+    root:
+      paddingXEnd: $unit[1]
 
-tone=neutral:
+variant=neutral weak:
   enabled:
     root:
       color: $color.bg.neutral-weak
-    prefixIcon:
+    icon:
       color: $color.fg.neutral
     title:
       color: $color.fg.neutral
     label:
       color: $color.fg.neutral
-    actionButton:
+    linkLabel:
       color: $color.fg.neutral
     xIcon:
       color: $color.fg.neutral
-tone=positive:
+    chevronRightIcon:
+      color: $color.fg.neutral
+variant=positive weak:
   enabled:
     root:
       color: $color.bg.positive-weak
-    prefixIcon:
+    icon:
       color: $color.fg.positive-contrast
     title:
       color: $color.fg.positive-contrast
     label:
       color: $color.fg.positive-contrast
-    actionButton:
+    linkLabel:
       color: $color.fg.positive-contrast
     xIcon:
       color: $color.fg.positive-contrast
-tone=informative:
+    chevronRightIcon:
+      color: $color.fg.positive-contrast
+variant=informative weak:
   enabled:
     root:
       color: $color.bg.informative-weak
-    prefixIcon:
+    icon:
       color: $color.fg.informative-contrast
     title:
       color: $color.fg.informative-contrast
     label:
       color: $color.fg.informative-contrast
-    actionButton:
+    linkLabel:
       color: $color.fg.informative-contrast
     xIcon:
       color: $color.fg.informative-contrast
-tone=warning:
+    chevronRightIcon:
+      color: $color.fg.informative-contrast
+variant=warning weak:
   enabled:
     root:
       color: $color.bg.warning-weak
-    prefixIcon:
+    icon:
       color: $color.fg.warning-contrast
     title:
       color: $color.fg.warning-contrast
     label:
       color: $color.fg.warning-contrast
-    actionButton:
+    linkLabel:
       color: $color.fg.warning-contrast
     xIcon:
       color: $color.fg.warning-contrast
-tone=danger:
+    chevronRightIcon:
+      color: $color.fg.warning-contrast
+variant=warning solid:
+  enabled:
+    root:
+      color: $color.bg.warning-solid
+    icon:
+      color: $color.fg.warning-contrast
+    title:
+      color: $color.fg.warning-contrast
+    label:
+      color: $color.fg.warning-contrast
+    linkLabel:
+      color: $color.fg.warning-contrast
+    xIcon:
+      color: $color.fg.warning-contrast
+    chevronRightIcon:
+      color: $color.fg.warning-contrast
+variant=danger weak:
   enabled:
     root:
       color: $color.bg.danger-weak
-    prefixIcon:
-      color: $color.fg.danger
+    icon:
+      color: $color.fg.danger-contrast
     title:
-      color: $color.fg.danger
+      color: $color.fg.danger-contrast
     label:
-      color: $color.fg.danger
-    actionButton:
-      color: $color.fg.danger
+      color: $color.fg.danger-contrast
+    linkLabel:
+      color: $color.fg.danger-contrast
+    chevronRightIcon:
+      color: $color.fg.danger-contrast
+variant=danger solid:
+  enabled:
+    root:
+      color: $color.bg.danger-solid
+    icon:
+      color: $color.fg.static-white
+    title:
+      color: $color.fg.static-white
+    label:
+      color: $color.fg.static-white
+    linkLabel:
+      color: $color.fg.static-white
+    chevronRightIcon:
+      color: $color.fg.static-white

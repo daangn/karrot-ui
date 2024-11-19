@@ -9,36 +9,12 @@ import {
   inlineBanner,
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
-import { IconXmarkLine } from "@daangn/react-monochrome-icon";
-import { useDismissible, type DismissibleProps } from "../hook/use-dismissible";
 
-interface BaseInlineBannerProps
-  extends Omit<InlineBannerVariantProps, "layout"> {
+export interface InlineBannerProps
+  extends Omit<InlineBannerVariantProps, "type"> {
+  icon?: React.ReactNode;
   titleText?: string;
-  prefixIcon?: React.ReactNode;
 }
-
-interface DismissibleInlineBannerProps
-  extends BaseInlineBannerProps,
-    DismissibleProps {
-  tone?: Exclude<InlineBannerVariantProps["tone"], "danger">;
-  dismissAriaLabel?: string;
-  action?: never;
-}
-
-interface NondismissibleInlineBannerProps
-  extends BaseInlineBannerProps,
-    Partial<Record<keyof DismissibleProps, never>> {
-  dismissAriaLabel?: never;
-  action?: {
-    onClick: React.MouseEventHandler<HTMLButtonElement>;
-    label: string;
-  };
-}
-
-export type InlineBannerProps =
-  | DismissibleInlineBannerProps
-  | NondismissibleInlineBannerProps;
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
   InlineBannerProps;
@@ -51,44 +27,23 @@ export const InlineBanner = React.forwardRef<
     {
       children,
       className,
-      tone = "neutral",
-      prefixIcon,
+      variant = "neutralWeak",
+      icon,
       titleText,
-      action,
-      dismissAriaLabel,
-      defaultOpen,
-      isOpen: isPropOpen,
-      onDismiss,
       ...otherProps
     },
     ref,
   ) => {
-    const classNames = inlineBanner({
-      tone,
-      ...(!action && !dismissAriaLabel && { layout: "contentOnly" }),
-    });
-
-    const rootRef = React.useRef<HTMLDivElement>(null);
-    React.useImperativeHandle(ref, () => rootRef.current as HTMLDivElement);
-
-    const { isOpen, onDismissButtonClick } = useDismissible({
-      defaultOpen,
-      isOpen: isPropOpen,
-      onDismiss,
-    });
-
-    if (!isOpen) return null;
+    const classNames = inlineBanner({ variant, type: "default" });
 
     return (
       <div
-        ref={rootRef}
+        ref={ref}
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
         <div className={classNames.content}>
-          {prefixIcon && (
-            <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
-          )}
+          {icon && <Slot className={classNames.icon}>{icon}</Slot>}
           <div>
             {titleText && (
               <>
@@ -99,25 +54,6 @@ export const InlineBanner = React.forwardRef<
             <span className={classNames.label}>{children}</span>
           </div>
         </div>
-        {dismissAriaLabel && (
-          <button
-            type="button"
-            aria-label={dismissAriaLabel}
-            className={classNames.dismissButton}
-            onClick={onDismissButtonClick}
-          >
-            <IconXmarkLine className={classNames.xIcon} />
-          </button>
-        )}
-        {action && (
-          <button
-            type="button"
-            className={classNames.actionButton}
-            onClick={action.onClick}
-          >
-            {action.label}
-          </button>
-        )}
       </div>
     );
   },
