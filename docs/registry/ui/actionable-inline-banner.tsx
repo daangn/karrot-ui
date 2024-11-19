@@ -34,6 +34,7 @@ export const ActionableInlineBanner = React.forwardRef<
     {
       children,
       className,
+      type = "button",
       variant = "neutralWeak",
       icon,
       onClick,
@@ -49,6 +50,7 @@ export const ActionableInlineBanner = React.forwardRef<
         onClick={onClick}
         ref={ref}
         className={clsx(classNames.root, className)}
+        type={type}
         {...otherProps}
       >
         <div className={classNames.content}>

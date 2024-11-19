@@ -76,6 +76,7 @@
   {
     "name": "actionable-inline-banner",
     "dependencies": [
+      "@daangn/react-monochrome-icon",
       "@radix-ui/react-slot"
     ],
     "files": [

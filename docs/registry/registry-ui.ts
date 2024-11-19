@@ -47,7 +47,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "actionable-inline-banner",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@daangn/react-monochrome-icon", "@radix-ui/react-slot"],
     files: ["ui:actionable-inline-banner.tsx"],
   },
   {
