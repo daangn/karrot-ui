@@ -4,7 +4,7 @@ import { LinkInlineBanner } from "seed-design/ui/link-inline-banner";
 
 export default function LinkInlineBannerPreview() {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 w-full">
       <LinkInlineBanner linkLabel="Details" onLinkLabelClick={() => window.alert("Hello World")}>
         ullamco
       </LinkInlineBanner>

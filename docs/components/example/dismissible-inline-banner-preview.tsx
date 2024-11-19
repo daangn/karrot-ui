@@ -6,7 +6,7 @@ export default function DismissibleInlineBannerPreview() {
   const onDismiss = () => window.alert("닫기 버튼 클릭");
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 w-full">
       <DismissibleInlineBanner dismissAriaLabel="닫기" onDismiss={onDismiss}>
         ullamco
       </DismissibleInlineBanner>
