@@ -9,41 +9,11 @@ import {
   inlineBanner,
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
-import { IconXmarkLine } from "@daangn/react-monochrome-icon";
-import {
-  useDismissible,
-  type DismissibleProps,
-} from "@seed-design/react-dismissible";
 
-interface BaseInlineBannerProps
-  extends Omit<InlineBannerVariantProps, "layout"> {
+export interface InlineBannerProps extends InlineBannerVariantProps {
   titleText?: string;
-  contentIcon?: React.ReactNode;
+  icon?: React.ReactNode;
 }
-
-interface DismissibleInlineBannerProps
-  extends BaseInlineBannerProps,
-    DismissibleProps {
-  tone?: Exclude<InlineBannerVariantProps["tone"], "danger">;
-  dismissAriaLabel?: string;
-  action?: never;
-}
-
-interface NondismissibleInlineBannerProps
-  extends BaseInlineBannerProps,
-    Partial<Record<keyof DismissibleProps, never>> {
-  dismissAriaLabel?: never;
-  action?: {
-    onClick: React.MouseEventHandler<HTMLButtonElement>;
-  } & (
-    | { label: string; buttonIcon?: never }
-    | { label?: never; buttonIcon: React.ReactNode }
-  );
-}
-
-export type InlineBannerProps =
-  | DismissibleInlineBannerProps
-  | NondismissibleInlineBannerProps;
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
   InlineBannerProps;
@@ -56,32 +26,14 @@ export const InlineBanner = React.forwardRef<
     {
       children,
       className,
-      tone = "neutral",
-      variant = "weak",
-      contentIcon,
+      variant = "neutralWeak",
+      icon,
       titleText,
-      action,
-      dismissAriaLabel,
-      defaultOpen,
-      isOpen: isPropOpen,
-      onDismiss,
       ...otherProps
     },
     ref,
   ) => {
-    const classNames = inlineBanner({
-      tone,
-      variant,
-      layout: action || dismissAriaLabel ? "withAction" : "withoutAction",
-    });
-
-    const { isOpen, onDismissButtonClick } = useDismissible({
-      defaultOpen,
-      isOpen: isPropOpen,
-      onDismiss,
-    });
-
-    if (!isOpen) return null;
+    const classNames = inlineBanner({ variant });
 
     return (
       <div
@@ -90,9 +42,7 @@ export const InlineBanner = React.forwardRef<
         {...otherProps}
       >
         <div className={classNames.content}>
-          {contentIcon && (
-            <Slot className={classNames.contentIcon}>{contentIcon}</Slot>
-          )}
+          {icon && <Slot className={classNames.icon}>{icon}</Slot>}
           <div>
             {titleText && (
               <>
@@ -103,28 +53,6 @@ export const InlineBanner = React.forwardRef<
             <span className={classNames.label}>{children}</span>
           </div>
         </div>
-        {dismissAriaLabel && (
-          <button
-            type="button"
-            aria-label={dismissAriaLabel}
-            className={classNames.button}
-            onClick={onDismissButtonClick}
-          >
-            <IconXmarkLine className={classNames.buttonIcon} />
-          </button>
-        )}
-        {action && (
-          <button
-            type="button"
-            className={action.label ? classNames.link : classNames.button}
-            onClick={action.onClick}
-          >
-            {action.label}
-            {action.buttonIcon && (
-              <Slot className={classNames.buttonIcon}>{action.buttonIcon}</Slot>
-            )}
-          </button>
-        )}
       </div>
     );
   },

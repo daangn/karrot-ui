@@ -1,13 +1,8 @@
 interface InlineBannerVariant {
-  layout: "withAction" | "withoutAction";
-/**
-  * @default neutral
+  /**
+  * @default neutralWeak
   */
-  tone: "neutral" | "positive" | "informative" | "warning" | "danger";
-/**
-  * @default weak
-  */
-  variant: "weak" | "solid";
+  variant: "neutralWeak" | "positiveWeak" | "informativeWeak" | "warningWeak" | "warningSolid" | "dangerWeak" | "dangerSolid";
 }
 
 type InlineBannerVariantMap = {
@@ -16,7 +11,7 @@ type InlineBannerVariantMap = {
 
 export type InlineBannerVariantProps = Partial<InlineBannerVariant>;
 
-export type InlineBannerSlotName = "root" | "content" | "contentIcon" | "title" | "spacer" | "label" | "link" | "button" | "buttonIcon";
+export type InlineBannerSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label";
 
 export const inlineBannerVariantMap: InlineBannerVariantMap;
 

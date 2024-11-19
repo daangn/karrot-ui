@@ -1,12 +1,9 @@
 .inlineBanner__root {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--seed-v3-unit-1);
     width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-inline-start: var(--seed-v3-unit-4)
+    padding-inline-start: var(--seed-v3-unit-4);
+    padding-inline-end: var(--seed-v3-unit-4)
 }
 .inlineBanner__content {
     display: flex;
@@ -14,9 +11,10 @@
     gap: var(--seed-v3-unit-2);
     padding-block: 10.5px;
     font-size: var(--seed-v3-font-size-100);
-    line-height: 1.1875rem
+    line-height: 1.1875rem;
+    text-align: start
 }
-.inlineBanner__contentIcon {
+.inlineBanner__icon {
     flex: none;
     margin-block: 1.5px;
     width: var(--seed-v3-unit-4);
@@ -31,114 +29,91 @@
 .inlineBanner__label {
     font-weight: var(--seed-v3-font-weight-medium)
 }
-.inlineBanner__link {
-    flex: none;
-    height: var(--seed-v3-unit-10);
-    padding-inline: var(--seed-v3-unit-3);
-    font-size: var(--seed-v3-font-size-50);
-    font-weight: var(--seed-v3-font-weight-regular);
-    line-height: 1rem;
-    text-decoration: underline;
-    text-underline-offset: 2px
-}
-.inlineBanner__button {
-    flex: none;
-    width: var(--seed-v3-unit-10);
-    height: var(--seed-v3-unit-10)
-}
-.inlineBanner__buttonIcon {
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
-    margin: auto
-}
-.inlineBanner__root--layout_withAction {
-    padding-inline-end: var(--seed-v3-unit-1)
-}
-.inlineBanner__root--layout_withoutAction {
-    padding-inline-end: var(--seed-v3-unit-4)
-}
-.inlineBanner__root--tone_neutral {
+.inlineBanner__root--variant_neutralWeak {
     background-color: var(--seed-v3-color-bg-neutral-weak)
 }
-.inlineBanner__contentIcon--tone_neutral {
+.inlineBanner__icon--variant_neutralWeak {
     color: var(--seed-v3-color-fg-neutral)
 }
-.inlineBanner__title--tone_neutral {
+.inlineBanner__title--variant_neutralWeak {
     color: var(--seed-v3-color-fg-neutral)
 }
-.inlineBanner__label--tone_neutral {
+.inlineBanner__label--variant_neutralWeak {
     color: var(--seed-v3-color-fg-neutral)
 }
-.inlineBanner__link--tone_neutral {
-    color: var(--seed-v3-color-fg-neutral)
-}
-.inlineBanner__buttonIcon--tone_neutral {
-    color: var(--seed-v3-color-fg-neutral)
-}
-.inlineBanner__root--tone_positive {
+.inlineBanner__root--variant_positiveWeak {
     background-color: var(--seed-v3-color-bg-positive-weak)
 }
-.inlineBanner__contentIcon--tone_positive {
+.inlineBanner__icon--variant_positiveWeak {
     color: var(--seed-v3-color-fg-positive-contrast)
 }
-.inlineBanner__title--tone_positive {
+.inlineBanner__title--variant_positiveWeak {
     color: var(--seed-v3-color-fg-positive-contrast)
 }
-.inlineBanner__label--tone_positive {
+.inlineBanner__label--variant_positiveWeak {
     color: var(--seed-v3-color-fg-positive-contrast)
 }
-.inlineBanner__link--tone_positive {
-    color: var(--seed-v3-color-fg-positive-contrast)
-}
-.inlineBanner__buttonIcon--tone_positive {
-    color: var(--seed-v3-color-fg-positive-contrast)
-}
-.inlineBanner__root--tone_informative {
+.inlineBanner__root--variant_informativeWeak {
     background-color: var(--seed-v3-color-bg-informative-weak)
 }
-.inlineBanner__contentIcon--tone_informative {
+.inlineBanner__icon--variant_informativeWeak {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.inlineBanner__title--tone_informative {
+.inlineBanner__title--variant_informativeWeak {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.inlineBanner__label--tone_informative {
+.inlineBanner__label--variant_informativeWeak {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.inlineBanner__link--tone_informative {
-    color: var(--seed-v3-color-fg-informative-contrast)
-}
-.inlineBanner__buttonIcon--tone_informative {
-    color: var(--seed-v3-color-fg-informative-contrast)
-}
-.inlineBanner__contentIcon--tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__title--tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__label--tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__link--tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__buttonIcon--tone_warning {
-    color: var(--seed-v3-color-fg-warning-contrast)
-}
-.inlineBanner__root--tone_danger {
-    position: sticky;
-    top: 0
-}
-.inlineBanner__root--tone_warning-variant_weak {
+.inlineBanner__root--variant_warningWeak {
     background-color: var(--seed-v3-color-bg-warning-weak)
 }
-.inlineBanner__root--tone_warning-variant_solid {
+.inlineBanner__icon--variant_warningWeak {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__title--variant_warningWeak {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__label--variant_warningWeak {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__root--variant_warningSolid {
     background-color: var(--seed-v3-color-bg-warning-solid)
 }
-.inlineBanner__root--tone_danger-variant_weak {
+.inlineBanner__icon--variant_warningSolid {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__title--variant_warningSolid {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__label--variant_warningSolid {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.inlineBanner__root--variant_dangerWeak {
+    position: sticky;
+    top: 0;
     background-color: var(--seed-v3-color-bg-danger-weak)
 }
-.inlineBanner__root--tone_danger-variant_solid {
+.inlineBanner__icon--variant_dangerWeak {
+    color: var(--seed-v3-color-fg-danger-contrast)
+}
+.inlineBanner__title--variant_dangerWeak {
+    color: var(--seed-v3-color-fg-danger-contrast)
+}
+.inlineBanner__label--variant_dangerWeak {
+    color: var(--seed-v3-color-fg-danger-contrast)
+}
+.inlineBanner__root--variant_dangerSolid {
+    position: sticky;
+    top: 0;
     background-color: var(--seed-v3-color-bg-danger-solid)
+}
+.inlineBanner__icon--variant_dangerSolid {
+    color: var(--seed-v3-color-fg-static-white)
+}
+.inlineBanner__title--variant_dangerSolid {
+    color: var(--seed-v3-color-fg-static-white)
+}
+.inlineBanner__label--variant_dangerSolid {
+    color: var(--seed-v3-color-fg-static-white)
 }

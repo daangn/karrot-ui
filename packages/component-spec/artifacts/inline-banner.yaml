@@ -2,13 +2,13 @@
 base:
   enabled:
     root:
-      gap: $unit[1]
       paddingXStart: $unit[4]
+      paddingXEnd: $unit[4]
     content:
       gap: $unit[2]
       paddingY: 10.5px
       fontSize: $font-size[100]
-    contentIcon:
+    icon:
       # XXX: scalable해야 할 것 같음 (결정 x)
       # size: "1rem"
       size: $unit[4]
@@ -17,115 +17,74 @@ base:
       fontWeight: $font-weight.bold
     label:
       fontWeight: $font-weight.medium
-    link:
-      size: $unit[10]
-      paddingX: $unit[3]
-      fontSize: $font-size[50]
-      fontWeight: $font-weight.regular
-    button:
-      size: $unit[10]
-    buttonIcon:
-      size: $unit[4]
 
-layout=with action:
-  enabled:
-    root:
-      paddingXEnd: $unit[1]
-layout=without action:
-  enabled:
-    root:
-      paddingXEnd: $unit[4]
-
-tone=neutral:
+variant=neutral weak:
   enabled:
     root:
       color: $color.bg.neutral-weak
-    contentIcon:
+    icon:
       color: $color.fg.neutral
     title:
       color: $color.fg.neutral
     label:
       color: $color.fg.neutral
-    link:
-      color: $color.fg.neutral
-    buttonIcon:
-      color: $color.fg.neutral
-tone=positive:
+variant=positive weak:
   enabled:
     root:
       color: $color.bg.positive-weak
-    contentIcon:
+    icon:
       color: $color.fg.positive-contrast
     title:
       color: $color.fg.positive-contrast
     label:
       color: $color.fg.positive-contrast
-    link:
-      color: $color.fg.positive-contrast
-    buttonIcon:
-      color: $color.fg.positive-contrast
-tone=informative:
+variant=informative weak:
   enabled:
     root:
       color: $color.bg.informative-weak
-    contentIcon:
+    icon:
       color: $color.fg.informative-contrast
     title:
       color: $color.fg.informative-contrast
     label:
       color: $color.fg.informative-contrast
-    link:
-      color: $color.fg.informative-contrast
-    buttonIcon:
-      color: $color.fg.informative-contrast
-
-tone=warning:
-  enabled:
-    contentIcon:
-      color: $color.fg.warning-contrast
-    title:
-      color: $color.fg.warning-contrast
-    label:
-      color: $color.fg.warning-contrast
-    link:
-      color: $color.fg.warning-contrast
-    buttonIcon:
-      color: $color.fg.warning-contrast
-
-tone=warning,variant=weak:
+variant=warning weak:
   enabled:
     root:
       color: $color.bg.warning-weak
-tone=warning,variant=solid:
+    icon:
+      color: $color.fg.warning-contrast
+    title:
+      color: $color.fg.warning-contrast
+    label:
+      color: $color.fg.warning-contrast
+variant=warning solid:
   enabled:
     root:
       color: $color.bg.warning-solid
-
-tone=danger,variant=weak:
+    icon:
+      color: $color.fg.warning-contrast
+    title:
+      color: $color.fg.warning-contrast
+    label:
+      color: $color.fg.warning-contrast
+variant=danger weak:
   enabled:
     root:
       color: $color.bg.danger-weak
-    contentIcon:
+    icon:
       color: $color.fg.danger-contrast
     title:
       color: $color.fg.danger-contrast
     label:
       color: $color.fg.danger-contrast
-    link:
-      color: $color.fg.danger-contrast
-    buttonIcon:
-      color: $color.fg.danger-contrast
-tone=danger,variant=solid:
+variant=danger solid:
   enabled:
     root:
       color: $color.bg.danger-solid
-    contentIcon:
+    icon:
       color: $color.fg.static-white
     title:
       color: $color.fg.static-white
     label:
-      color: $color.fg.static-white
-    link:
-      color: $color.fg.static-white
-    buttonIcon:
       color: $color.fg.static-white

@@ -10,8 +10,8 @@ const inlineBannerSlotNames = [
     "inlineBanner__content"
   ],
   [
-    "contentIcon",
-    "inlineBanner__contentIcon"
+    "icon",
+    "inlineBanner__icon"
   ],
   [
     "title",
@@ -24,60 +24,24 @@ const inlineBannerSlotNames = [
   [
     "label",
     "inlineBanner__label"
-  ],
-  [
-    "link",
-    "inlineBanner__link"
-  ],
-  [
-    "button",
-    "inlineBanner__button"
-  ],
-  [
-    "buttonIcon",
-    "inlineBanner__buttonIcon"
   ]
 ];
 
 const defaultVariant = {
-  "tone": "neutral",
-  "variant": "weak"
+  "variant": "neutralWeak"
 };
 
-const compoundVariants = [
-  {
-    "tone": "warning",
-    "variant": "weak"
-  },
-  {
-    "tone": "warning",
-    "variant": "solid"
-  },
-  {
-    "tone": "danger",
-    "variant": "weak"
-  },
-  {
-    "tone": "danger",
-    "variant": "solid"
-  }
-];
+const compoundVariants = [];
 
 export const inlineBannerVariantMap = {
-  "layout": [
-    "withAction",
-    "withoutAction"
-  ],
-  "tone": [
-    "neutral",
-    "positive",
-    "informative",
-    "warning",
-    "danger"
-  ],
   "variant": [
-    "weak",
-    "solid"
+    "neutralWeak",
+    "positiveWeak",
+    "informativeWeak",
+    "warningWeak",
+    "warningSolid",
+    "dangerWeak",
+    "dangerSolid"
   ]
 };
 

@@ -3,7 +3,7 @@ import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
 
 export default function InlineBannerWithIcon() {
   return (
-    <InlineBanner tone="informative" prefixIcon={<IconILowercaseSerifCircleFill />}>
+    <InlineBanner variant="informativeWeak" icon={<IconILowercaseSerifCircleFill />}>
       다른 사람과 예약된 물품이 있어요.
     </InlineBanner>
   );

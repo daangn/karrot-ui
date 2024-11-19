@@ -1,0 +1,15 @@
+{
+  "name": "dismissible-inline-banner",
+  "dependencies": [
+    "@seed-design/react-dismissible",
+    "@daangn/react-monochrome-icon",
+    "@radix-ui/react-slot"
+  ],
+  "registries": [
+    {
+      "name": "dismissible-inline-banner.tsx",
+      "type": "ui",
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/inlineBanner.css\";\nimport \"@seed-design/stylesheet/dismissibleInlineBanner.css\";\n\nimport * as React from \"react\";\nimport clsx from \"clsx\";\nimport { Slot } from \"@radix-ui/react-slot\";\nimport { inlineBanner } from \"@seed-design/recipe/inlineBanner\";\nimport {\n  dismissibleInlineBanner,\n  type DismissibleInlineBannerVariantProps,\n} from \"@seed-design/recipe/dismissibleInlineBanner\";\nimport { IconXmarkLine } from \"@daangn/react-monochrome-icon\";\nimport {\n  useDismissible,\n  type DismissibleProps,\n} from \"@seed-design/react-dismissible\";\n\nexport interface DismissibleInlineBannerProps\n  extends DismissibleInlineBannerVariantProps,\n    DismissibleProps {\n  titleText?: string;\n  icon?: React.ReactNode;\n  variant?: Exclude<\n    DismissibleInlineBannerVariantProps[\"variant\"],\n    \"dangerWeak\" | \"dangerSolid\"\n  >;\n  dismissAriaLabel: string;\n}\n\ntype ReactDismissibleInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &\n  DismissibleInlineBannerProps;\n\nexport const DismissibleInlineBanner = React.forwardRef<\n  HTMLDivElement,\n  ReactDismissibleInlineBannerProps\n>(\n  (\n    {\n      children,\n      className,\n      variant = \"neutralWeak\",\n      icon,\n      titleText,\n      defaultOpen,\n      isOpen: isPropOpen,\n      onDismiss,\n      dismissAriaLabel,\n      ...otherProps\n    },\n    ref,\n  ) => {\n    const classNames = inlineBanner({ variant });\n    const dismissibleClassNames = dismissibleInlineBanner({ variant });\n\n    const { isOpen, onDismissButtonClick } = useDismissible({\n      defaultOpen,\n      isOpen: isPropOpen,\n      onDismiss,\n    });\n\n    if (!isOpen) return null;\n\n    return (\n      <div\n        ref={ref}\n        className={clsx(dismissibleClassNames.root, classNames.root, className)}\n        {...otherProps}\n      >\n        <div className={classNames.content}>\n          {icon && <Slot className={classNames.icon}>{icon}</Slot>}\n          <div>\n            {titleText && (\n              <>\n                <span className={classNames.title}>{titleText}</span>\n                <span className={classNames.spacer}> </span>\n              </>\n            )}\n            <span className={classNames.label}>{children}</span>\n          </div>\n        </div>\n        <button\n          type=\"button\"\n          aria-label={dismissAriaLabel}\n          className={dismissibleClassNames.dismissButton}\n          onClick={onDismissButtonClick}\n        >\n          <IconXmarkLine className={dismissibleClassNames.xIcon} />\n        </button>\n      </div>\n    );\n  },\n);\nDismissibleInlineBanner.displayName = \"DismissibleInlineBanner\";\n"
+    }
+  ]
+}
