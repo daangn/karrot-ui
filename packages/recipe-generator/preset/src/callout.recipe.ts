@@ -67,14 +67,16 @@ export const callout = defineRecipe({
     dismissButton: {
       flex: "none",
 
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+
       width: vars.base.enabled.dismissButton.size,
       height: vars.base.enabled.dismissButton.size,
     },
     xIcon: {
       width: vars.base.enabled.xIcon.size,
       height: vars.base.enabled.xIcon.size,
-
-      margin: "auto",
     },
     chevronRightIcon: {
       flex: "none",
