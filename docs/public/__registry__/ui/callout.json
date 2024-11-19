@@ -1,0 +1,13 @@
+{
+  "name": "callout",
+  "dependencies": [
+    "@radix-ui/react-slot"
+  ],
+  "registries": [
+    {
+      "name": "callout.tsx",
+      "type": "ui",
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/callout.css\";\n\nimport * as React from \"react\";\nimport clsx from \"clsx\";\nimport { Slot } from \"@radix-ui/react-slot\";\nimport { callout, type CalloutVariantProps } from \"@seed-design/recipe/callout\";\n\nexport interface CalloutProps extends Omit<CalloutVariantProps, \"type\"> {\n  icon?: React.ReactNode;\n  titleText?: string;\n  linkLabel?: string;\n  onLinkLabelClick?: React.MouseEventHandler<HTMLButtonElement>;\n}\n\ntype ReactCalloutProps = React.HTMLAttributes<HTMLDivElement> & CalloutProps;\n\nexport const Callout = React.forwardRef<HTMLDivElement, ReactCalloutProps>(\n  (\n    {\n      children,\n      className,\n      variant = \"neutral\",\n      icon,\n      titleText,\n      linkLabel,\n      onLinkLabelClick,\n      ...otherProps\n    },\n    ref,\n  ) => {\n    const classNames = callout({ variant, type: \"default\" });\n\n    return (\n      <div\n        ref={ref}\n        className={clsx(classNames.root, className)}\n        {...otherProps}\n      >\n        <div className={classNames.content}>\n          {icon && <Slot className={classNames.icon}>{icon}</Slot>}\n          <div>\n            {titleText && (\n              <>\n                <span className={classNames.title}>{titleText}</span>\n                <span className={classNames.spacer}> </span>\n              </>\n            )}\n            <span className={classNames.label}>{children}</span>\n            {linkLabel && (\n              <>\n                <span className={classNames.spacer}> </span>\n                <button\n                  type=\"button\"\n                  className={classNames.linkLabel}\n                  onClick={onLinkLabelClick}\n                >\n                  {linkLabel}\n                </button>\n              </>\n            )}\n          </div>\n        </div>\n      </div>\n    );\n  },\n);\nCallout.displayName = \"Callout\";\n"
+    }
+  ]
+}

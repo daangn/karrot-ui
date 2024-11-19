@@ -2,53 +2,54 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-x12)",
-        "paddingX": "var(--seed-v3-unit-x4)",
-        "paddingY": "var(--seed-v3-unit-x3_5)",
-        "cornerRadius": "var(--seed-v3-radius-x2_5)"
+        "paddingXStart": "var(--seed-v3-unit-3\\.5)",
+        "paddingY": "5px",
+        "cornerRadius": "var(--seed-v3-radii-2\\.5)"
       },
-      "title": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "fontWeight": "var(--seed-v3-font-weight-bold)"
-      },
-      "description": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
+      "content": {
+        "gap": "var(--seed-v3-unit-3)",
+        "paddingY": "9.5px",
+        "fontSize": "var(--seed-v3-font-size-100)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-x4)",
-        "marginRight": "var(--seed-v3-unit-x1_5)"
+        "size": "var(--seed-v3-unit-4)"
       },
-      "actionIndicator": {
-        "size": "var(--seed-v3-unit-x4_5)",
-        "marginLeft": "var(--seed-v3-unit-x2_5)"
+      "title": {
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
-      "closeButton": {
-        "size": "var(--seed-v3-unit-x4_5)",
-        "marginLeft": "var(--seed-v3-unit-x2_5)"
+      "label": {
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
+      },
+      "dismissButton": {
+        "size": "var(--seed-v3-unit-10)"
+      },
+      "xIcon": {
+        "size": "var(--seed-v3-unit-4)"
+      },
+      "chevronRightIcon": {
+        "size": "var(--seed-v3-unit-4)",
+        "margin": "var(--seed-v3-unit-3)"
       }
     }
   },
-  "variantOutline": {
+  "typeDefault": {
     "enabled": {
       "root": {
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)",
-        "strokeWidth": "1px"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "icon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "actionIndicator": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "closeButton": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "paddingXEnd": "var(--seed-v3-unit-3\\.5)"
+      }
+    }
+  },
+  "typeDismissible": {
+    "enabled": {
+      "root": {
+        "paddingXEnd": "var(--seed-v3-unit-0\\.5)"
+      }
+    }
+  },
+  "typeActionable": {
+    "enabled": {
+      "root": {
+        "paddingXEnd": "var(--seed-v3-unit-0\\.5)"
       }
     }
   },
@@ -57,20 +58,28 @@ export const vars = {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak)"
       },
-      "title": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
       "icon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "actionIndicator": {
+      "title": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "closeButton": {
+      "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
       }
     }
   },
@@ -79,20 +88,28 @@ export const vars = {
       "root": {
         "color": "var(--seed-v3-color-bg-informative-weak)"
       },
-      "title": {
-        "color": "var(--seed-v3-color-fg-informative-contrast)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-informative-contrast)"
-      },
       "icon": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "actionIndicator": {
+      "title": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "closeButton": {
+      "label": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-informative-weak-pressed)"
       }
     }
   },
@@ -101,20 +118,28 @@ export const vars = {
       "root": {
         "color": "var(--seed-v3-color-bg-warning-weak)"
       },
-      "title": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
-      },
       "icon": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "actionIndicator": {
+      "title": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "closeButton": {
+      "label": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-warning-weak-pressed)"
       }
     }
   },
@@ -123,20 +148,58 @@ export const vars = {
       "root": {
         "color": "var(--seed-v3-color-bg-danger-weak)"
       },
-      "title": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
-      },
       "icon": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
-      "actionIndicator": {
+      "title": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
-      "closeButton": {
+      "label": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-danger-weak-pressed)"
+      }
+    }
+  },
+  "variantMagic": {
+    "enabled": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-magic-weak)"
+      },
+      "icon": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "title": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "label": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-magic-weak-pressed)"
       }
     }
   }

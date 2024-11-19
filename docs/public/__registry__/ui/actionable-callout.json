@@ -1,0 +1,13 @@
+{
+  "name": "actionable-callout",
+  "dependencies": [
+    "@daangn/react-monochrome-icon"
+  ],
+  "registries": [
+    {
+      "name": "actionable-callout.tsx",
+      "type": "ui",
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/callout.css\";\n\nimport * as React from \"react\";\nimport clsx from \"clsx\";\nimport { callout, type CalloutVariantProps } from \"@seed-design/recipe/callout\";\nimport { IconChevronRightFill } from \"@daangn/react-monochrome-icon\";\n\nexport interface ActionableCalloutProps\n  extends Omit<CalloutVariantProps, \"type\"> {\n  titleText?: string;\n  onClick: React.MouseEventHandler<HTMLButtonElement>;\n}\n\ntype ReactActionableCalloutProps = React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n> &\n  ActionableCalloutProps;\n\nexport const ActionableCallout = React.forwardRef<\n  HTMLButtonElement,\n  ReactActionableCalloutProps\n>(\n  (\n    {\n      children,\n      className,\n      type = \"button\",\n      variant = \"neutral\",\n      titleText,\n      onClick,\n      ...otherProps\n    },\n    ref,\n  ) => {\n    const classNames = callout({ variant, type: \"actionable\" });\n\n    return (\n      <button\n        onClick={onClick}\n        ref={ref}\n        className={clsx(classNames.root, className)}\n        type={type}\n        {...otherProps}\n      >\n        <div className={classNames.content}>\n          <div>\n            {titleText && (\n              <>\n                <span className={classNames.title}>{titleText}</span>\n                <span className={classNames.spacer}> </span>\n              </>\n            )}\n            <span className={classNames.label}>{children}</span>\n          </div>\n        </div>\n        <IconChevronRightFill className={classNames.chevronRightIcon} />\n      </button>\n    );\n  },\n);\nActionableCallout.displayName = \"ActionableCallout\";\n"
+    }
+  ]
+}
