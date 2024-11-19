@@ -2,8 +2,8 @@
 base:
   enabled:
     root:
+      gap: $unit[1]
       paddingXStart: $unit[4]
-      paddingXEnd: $unit[4]
     content:
       gap: $unit[2]
       paddingY: 10.5px
@@ -17,6 +17,35 @@ base:
       fontWeight: $font-weight.bold
     label:
       fontWeight: $font-weight.medium
+    linkLabel:
+      size: $unit[10]
+      paddingX: $unit[3]
+      fontSize: $font-size[50]
+      fontWeight: $font-weight.regular
+    dismissButton:
+      size: $unit[10]
+    xIcon:
+      size: $unit[4]
+    chevronRightIcon:
+      size: $unit[4]
+      margin: $unit[3]
+
+type=default:
+  enabled:
+    root:
+      paddingXEnd: $unit[4]
+type=link:
+  enabled:
+    root:
+      paddingXEnd: $unit[1]
+type=dismissible:
+  enabled:
+    root:
+      paddingXEnd: $unit[1]
+type=actionable:
+  enabled:
+    root:
+      paddingXEnd: $unit[1]
 
 variant=neutral weak:
   enabled:
@@ -28,6 +57,12 @@ variant=neutral weak:
       color: $color.fg.neutral
     label:
       color: $color.fg.neutral
+    linkLabel:
+      color: $color.fg.neutral
+    xIcon:
+      color: $color.fg.neutral
+    chevronRightIcon:
+      color: $color.fg.neutral
 variant=positive weak:
   enabled:
     root:
@@ -37,6 +72,12 @@ variant=positive weak:
     title:
       color: $color.fg.positive-contrast
     label:
+      color: $color.fg.positive-contrast
+    linkLabel:
+      color: $color.fg.positive-contrast
+    xIcon:
+      color: $color.fg.positive-contrast
+    chevronRightIcon:
       color: $color.fg.positive-contrast
 variant=informative weak:
   enabled:
@@ -48,6 +89,12 @@ variant=informative weak:
       color: $color.fg.informative-contrast
     label:
       color: $color.fg.informative-contrast
+    linkLabel:
+      color: $color.fg.informative-contrast
+    xIcon:
+      color: $color.fg.informative-contrast
+    chevronRightIcon:
+      color: $color.fg.informative-contrast
 variant=warning weak:
   enabled:
     root:
@@ -57,6 +104,12 @@ variant=warning weak:
     title:
       color: $color.fg.warning-contrast
     label:
+      color: $color.fg.warning-contrast
+    linkLabel:
+      color: $color.fg.warning-contrast
+    xIcon:
+      color: $color.fg.warning-contrast
+    chevronRightIcon:
       color: $color.fg.warning-contrast
 variant=warning solid:
   enabled:
@@ -68,6 +121,12 @@ variant=warning solid:
       color: $color.fg.warning-contrast
     label:
       color: $color.fg.warning-contrast
+    linkLabel:
+      color: $color.fg.warning-contrast
+    xIcon:
+      color: $color.fg.warning-contrast
+    chevronRightIcon:
+      color: $color.fg.warning-contrast
 variant=danger weak:
   enabled:
     root:
@@ -78,6 +137,10 @@ variant=danger weak:
       color: $color.fg.danger-contrast
     label:
       color: $color.fg.danger-contrast
+    linkLabel:
+      color: $color.fg.danger-contrast
+    chevronRightIcon:
+      color: $color.fg.danger-contrast
 variant=danger solid:
   enabled:
     root:
@@ -87,4 +150,8 @@ variant=danger solid:
     title:
       color: $color.fg.static-white
     label:
+      color: $color.fg.static-white
+    linkLabel:
+      color: $color.fg.static-white
+    chevronRightIcon:
       color: $color.fg.static-white

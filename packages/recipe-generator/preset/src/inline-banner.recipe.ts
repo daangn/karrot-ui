@@ -3,15 +3,30 @@ import { defineRecipe } from "./helper";
 
 const inlineBanner = defineRecipe({
   name: "inlineBanner",
-  slots: ["root", "content", "icon", "title", "spacer", "label"],
+  slots: [
+    "root",
+    "content",
+    "icon",
+    "title",
+    "spacer",
+    "label",
+    "linkLabel",
+    "dismissButton",
+    "xIcon",
+    "chevronRightIcon",
+  ],
   base: {
     root: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: vars.base.enabled.root.gap,
+
       width: "100%",
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
       paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
     },
     content: {
       display: "flex",
@@ -42,11 +57,68 @@ const inlineBanner = defineRecipe({
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
     },
+    linkLabel: {
+      flex: "none",
+
+      height: vars.base.enabled.linkLabel.size,
+      paddingInline: vars.base.enabled.linkLabel.paddingX,
+
+      fontSize: vars.base.enabled.linkLabel.fontSize,
+      fontWeight: vars.base.enabled.linkLabel.fontWeight,
+      // FIXME
+      lineHeight: "1rem",
+
+      textDecoration: "underline",
+      // XXX
+      textUnderlineOffset: "2px",
+    },
+    dismissButton: {
+      flex: "none",
+
+      width: vars.base.enabled.dismissButton.size,
+      height: vars.base.enabled.dismissButton.size,
+    },
+    xIcon: {
+      width: vars.base.enabled.xIcon.size,
+      height: vars.base.enabled.xIcon.size,
+
+      margin: "auto",
+    },
+    chevronRightIcon: {
+      flex: "none",
+
+      width: vars.base.enabled.chevronRightIcon.size,
+      height: vars.base.enabled.chevronRightIcon.size,
+
+      margin: vars.base.enabled.chevronRightIcon.margin,
+    },
   },
   defaultVariants: {
     variant: "neutralWeak",
   },
   variants: {
+    type: {
+      default: {
+        root: {
+          paddingInlineEnd: vars.typeDefault.enabled.root.paddingXEnd,
+        },
+      },
+      link: {
+        root: {
+          paddingInlineEnd: vars.typeLink.enabled.root.paddingXEnd,
+        },
+      },
+      dismissible: {
+        root: {
+          paddingInlineEnd: vars.typeDismissible.enabled.root.paddingXEnd,
+        },
+      },
+      actionable: {
+        root: {
+          paddingInlineEnd: vars.typeActionable.enabled.root.paddingXEnd,
+        },
+      },
+    },
     variant: {
       neutralWeak: {
         root: {
@@ -60,6 +132,15 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantNeutralWeak.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantNeutralWeak.enabled.linkLabel.color,
+        },
+        xIcon: {
+          color: vars.variantNeutralWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantNeutralWeak.enabled.chevronRightIcon.color,
         },
       },
       positiveWeak: {
@@ -75,6 +156,15 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantPositiveWeak.enabled.label.color,
         },
+        linkLabel: {
+          color: vars.variantPositiveWeak.enabled.linkLabel.color,
+        },
+        xIcon: {
+          color: vars.variantPositiveWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantPositiveWeak.enabled.chevronRightIcon.color,
+        },
       },
       informativeWeak: {
         root: {
@@ -88,6 +178,15 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantInformativeWeak.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantInformativeWeak.enabled.linkLabel.color,
+        },
+        xIcon: {
+          color: vars.variantInformativeWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantInformativeWeak.enabled.chevronRightIcon.color,
         },
       },
       warningWeak: {
@@ -103,6 +202,15 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantWarningWeak.enabled.label.color,
         },
+        linkLabel: {
+          color: vars.variantWarningWeak.enabled.linkLabel.color,
+        },
+        xIcon: {
+          color: vars.variantWarningWeak.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantWarningWeak.enabled.chevronRightIcon.color,
+        },
       },
       warningSolid: {
         root: {
@@ -116,6 +224,15 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantWarningSolid.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantWarningSolid.enabled.linkLabel.color,
+        },
+        xIcon: {
+          color: vars.variantWarningSolid.enabled.xIcon.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantWarningSolid.enabled.chevronRightIcon.color,
         },
       },
       dangerWeak: {
@@ -134,6 +251,12 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantDangerWeak.enabled.label.color,
         },
+        linkLabel: {
+          color: vars.variantDangerWeak.enabled.linkLabel.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantDangerWeak.enabled.chevronRightIcon.color,
+        },
       },
       dangerSolid: {
         root: {
@@ -150,6 +273,12 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantDangerSolid.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantDangerSolid.enabled.linkLabel.color,
+        },
+        chevronRightIcon: {
+          color: vars.variantDangerSolid.enabled.chevronRightIcon.color,
         },
       },
     },

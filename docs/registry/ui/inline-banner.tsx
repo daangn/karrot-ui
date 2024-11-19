@@ -10,9 +10,10 @@ import {
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
 
-export interface InlineBannerProps extends InlineBannerVariantProps {
-  titleText?: string;
+export interface InlineBannerProps
+  extends Omit<InlineBannerVariantProps, "type"> {
   icon?: React.ReactNode;
+  titleText?: string;
 }
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
@@ -33,7 +34,7 @@ export const InlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant });
+    const classNames = inlineBanner({ variant, type: "default" });
 
     return (
       <div

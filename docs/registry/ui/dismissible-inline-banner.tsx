@@ -1,16 +1,14 @@
 "use client";
 
 import "@seed-design/stylesheet/inlineBanner.css";
-import "@seed-design/stylesheet/dismissibleInlineBanner.css";
 
 import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
-import { inlineBanner } from "@seed-design/recipe/inlineBanner";
 import {
-  dismissibleInlineBanner,
-  type DismissibleInlineBannerVariantProps,
-} from "@seed-design/recipe/dismissibleInlineBanner";
+  inlineBanner,
+  type InlineBannerVariantProps,
+} from "@seed-design/recipe/inlineBanner";
 import { IconXmarkLine } from "@daangn/react-monochrome-icon";
 import {
   useDismissible,
@@ -18,14 +16,14 @@ import {
 } from "@seed-design/react-dismissible";
 
 export interface DismissibleInlineBannerProps
-  extends DismissibleInlineBannerVariantProps,
-    DismissibleProps {
-  titleText?: string;
-  icon?: React.ReactNode;
+  extends DismissibleProps,
+    Omit<InlineBannerVariantProps, "type"> {
   variant?: Exclude<
-    DismissibleInlineBannerVariantProps["variant"],
+    InlineBannerVariantProps["variant"],
     "dangerWeak" | "dangerSolid"
   >;
+  icon?: React.ReactNode;
+  titleText?: string;
   dismissAriaLabel: string;
 }
 
@@ -51,8 +49,7 @@ export const DismissibleInlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant });
-    const dismissibleClassNames = dismissibleInlineBanner({ variant });
+    const classNames = inlineBanner({ variant, type: "dismissible" });
 
     const { isOpen, onDismissButtonClick } = useDismissible({
       defaultOpen,
@@ -65,7 +62,7 @@ export const DismissibleInlineBanner = React.forwardRef<
     return (
       <div
         ref={ref}
-        className={clsx(dismissibleClassNames.root, classNames.root, className)}
+        className={clsx(classNames.root, className)}
         {...otherProps}
       >
         <div className={classNames.content}>
@@ -83,10 +80,10 @@ export const DismissibleInlineBanner = React.forwardRef<
         <button
           type="button"
           aria-label={dismissAriaLabel}
-          className={dismissibleClassNames.dismissButton}
+          className={classNames.dismissButton}
           onClick={onDismissButtonClick}
         >
-          <IconXmarkLine className={dismissibleClassNames.xIcon} />
+          <IconXmarkLine className={classNames.xIcon} />
         </button>
       </div>
     );

@@ -1,20 +1,18 @@
 "use client";
 
 import "@seed-design/stylesheet/inlineBanner.css";
-import "@seed-design/stylesheet/linkInlineBanner.css";
 
 import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
-import { inlineBanner } from "@seed-design/recipe/inlineBanner";
 import {
-  linkInlineBanner,
-  type LinkInlineBannerVariantProps,
-} from "@seed-design/recipe/linkInlineBanner";
+  inlineBanner,
+  type InlineBannerVariantProps,
+} from "@seed-design/recipe/inlineBanner";
 
-export type LinkInlineBannerProps = LinkInlineBannerVariantProps & {
-  titleText?: string;
+export type LinkInlineBannerProps = Omit<InlineBannerVariantProps, "type"> & {
   icon?: React.ReactNode;
+  titleText?: string;
   linkLabel: string;
   onLinkLabelClick: React.MouseEventHandler<HTMLButtonElement>;
 };
@@ -40,13 +38,12 @@ export const LinkInlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant });
-    const linkClassNames = linkInlineBanner({ variant });
+    const classNames = inlineBanner({ variant, type: "link" });
 
     return (
       <div
         ref={ref}
-        className={clsx(linkClassNames.root, classNames.root, className)}
+        className={clsx(classNames.root, className)}
         {...otherProps}
       >
         <div className={classNames.content}>
@@ -63,7 +60,7 @@ export const LinkInlineBanner = React.forwardRef<
         </div>
         <button
           type="button"
-          className={linkClassNames.linkLabel}
+          className={classNames.linkLabel}
           onClick={onLinkClick}
         >
           {linkLabel}

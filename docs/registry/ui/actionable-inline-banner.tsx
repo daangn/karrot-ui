@@ -1,21 +1,22 @@
 "use client";
 
 import "@seed-design/stylesheet/inlineBanner.css";
-import "@seed-design/stylesheet/actionableInlineBanner.css";
 
 import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
-import { inlineBanner } from "@seed-design/recipe/inlineBanner";
 import {
-  actionableInlineBanner,
-  type ActionableInlineBannerVariantProps,
-} from "@seed-design/recipe/actionableInlineBanner";
+  inlineBanner,
+  type InlineBannerVariantProps,
+} from "@seed-design/recipe/inlineBanner";
 import { IconChevronRightLine } from "@daangn/react-monochrome-icon";
 
-export type ActionableInlineBannerProps = ActionableInlineBannerVariantProps & {
-  titleText?: string;
+export type ActionableInlineBannerProps = Omit<
+  InlineBannerVariantProps,
+  "type"
+> & {
   icon?: React.ReactNode;
+  titleText?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
@@ -41,14 +42,13 @@ export const ActionableInlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant });
-    const actionableClassNames = actionableInlineBanner({ variant });
+    const classNames = inlineBanner({ variant, type: "actionable" });
 
     return (
       <button
         onClick={onClick}
         ref={ref}
-        className={clsx(actionableClassNames.root, classNames.root, className)}
+        className={clsx(classNames.root, className)}
         {...otherProps}
       >
         <div className={classNames.content}>
@@ -63,9 +63,7 @@ export const ActionableInlineBanner = React.forwardRef<
             <span className={classNames.label}>{children}</span>
           </div>
         </div>
-        <IconChevronRightLine
-          className={actionableClassNames.chevronRightIcon}
-        />
+        <IconChevronRightLine className={classNames.chevronRightIcon} />
       </button>
     );
   },

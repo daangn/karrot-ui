@@ -24,6 +24,22 @@ const inlineBannerSlotNames = [
   [
     "label",
     "inlineBanner__label"
+  ],
+  [
+    "linkLabel",
+    "inlineBanner__linkLabel"
+  ],
+  [
+    "dismissButton",
+    "inlineBanner__dismissButton"
+  ],
+  [
+    "xIcon",
+    "inlineBanner__xIcon"
+  ],
+  [
+    "chevronRightIcon",
+    "inlineBanner__chevronRightIcon"
   ]
 ];
 
@@ -34,6 +50,12 @@ const defaultVariant = {
 const compoundVariants = [];
 
 export const inlineBannerVariantMap = {
+  "type": [
+    "default",
+    "link",
+    "dismissible",
+    "actionable"
+  ],
   "variant": [
     "neutralWeak",
     "positiveWeak",
