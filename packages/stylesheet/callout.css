@@ -7,7 +7,8 @@
     -moz-osx-font-smoothing: grayscale;
     padding-inline-start: var(--seed-v3-unit-3\.5);
     padding-block: 5px;
-    border-radius: var(--seed-v3-radii-2\.5)
+    border-radius: var(--seed-v3-radii-2\.5);
+    border: none
 }
 .callout__content {
     display: flex;
@@ -34,7 +35,12 @@
 }
 .callout__linkLabel {
     text-decoration: underline;
-    text-underline-offset: 2px
+    text-underline-offset: 2px;
+    display: inline;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    line-height: inherit
 }
 .callout__dismissButton {
     flex: none;
@@ -42,7 +48,9 @@
     justify-content: center;
     align-items: center;
     width: var(--seed-v3-unit-10);
-    height: var(--seed-v3-unit-10)
+    height: var(--seed-v3-unit-10);
+    border: none;
+    background-color: transparent
 }
 .callout__xIcon {
     width: var(--seed-v3-unit-4);
@@ -61,7 +69,8 @@
     padding-inline-end: var(--seed-v3-unit-0\.5)
 }
 .callout__root--type_actionable {
-    padding-inline-end: var(--seed-v3-unit-0\.5)
+    padding-inline-end: var(--seed-v3-unit-0\.5);
+    cursor: pointer
 }
 .callout__root--variant_neutral {
     background-color: var(--seed-v3-color-bg-neutral-weak)

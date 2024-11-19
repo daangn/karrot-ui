@@ -27,6 +27,14 @@ export const registryUI: RegistryUI = [
     files: ["ui:callout.tsx"],
   },
   {
+    name: "dismissible-callout",
+    dependencies: [
+      "@seed-design/react-dismissible",
+      "@daangn/react-monochrome-icon",
+    ],
+    files: ["ui:dismissible-callout.tsx"],
+  },
+  {
     name: "actionable-callout",
     dependencies: ["@daangn/react-monochrome-icon"],
     files: ["ui:actionable-callout.tsx"],
