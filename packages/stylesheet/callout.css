@@ -38,13 +38,15 @@
 }
 .callout__dismissButton {
     flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: var(--seed-v3-unit-10);
     height: var(--seed-v3-unit-10)
 }
 .callout__xIcon {
     width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
-    margin: auto
+    height: var(--seed-v3-unit-4)
 }
 .callout__chevronRightIcon {
     flex: none;
