@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const LightTheme: Story = {
   args: {
     children: "This is a title",
-    prefixIcon: <IconBellLine />,
+    icon: <IconBellLine />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />
@@ -29,7 +29,7 @@ export const LightTheme: Story = {
 export const DarkTheme: Story = {
   args: {
     children: "This is a title",
-    prefixIcon: <IconBellLine />,
+    icon: <IconBellLine />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />
@@ -39,7 +39,7 @@ export const DarkTheme: Story = {
 export const FontScalingExtraSmall: Story = {
   args: {
     children: "This is a title",
-    prefixIcon: <IconBellLine />,
+    icon: <IconBellLine />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />
@@ -49,7 +49,7 @@ export const FontScalingExtraSmall: Story = {
 export const FontScalingExtraExtraExtraLarge: Story = {
   args: {
     children: "This is a title",
-    prefixIcon: <IconBellLine />,
+    icon: <IconBellLine />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />
