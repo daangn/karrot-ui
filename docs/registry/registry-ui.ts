@@ -22,6 +22,16 @@ export const registryUI: RegistryUI = [
     files: ["ui:badge.tsx"],
   },
   {
+    name: "callout",
+    dependencies: ["@radix-ui/react-slot"],
+    files: ["ui:callout.tsx"],
+  },
+  {
+    name: "actionable-callout",
+    dependencies: ["@daangn/react-monochrome-icon"],
+    files: ["ui:actionable-callout.tsx"],
+  },
+  {
     name: "control-chip",
     dependencies: ["@radix-ui/react-slot"],
     files: ["ui:control-chip.tsx"],

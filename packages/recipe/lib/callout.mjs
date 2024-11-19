@@ -6,42 +6,82 @@ const calloutSlotNames = [
     "callout__root"
   ],
   [
-    "icon",
-    "callout__icon"
-  ],
-  [
     "content",
     "callout__content"
+  ],
+  [
+    "icon",
+    "callout__icon"
   ],
   [
     "title",
     "callout__title"
   ],
   [
-    "description",
-    "callout__description"
+    "spacer",
+    "callout__spacer"
   ],
   [
-    "actionIndicator",
-    "callout__actionIndicator"
+    "label",
+    "callout__label"
   ],
   [
-    "closeButton",
-    "callout__closeButton"
+    "linkLabel",
+    "callout__linkLabel"
+  ],
+  [
+    "dismissButton",
+    "callout__dismissButton"
+  ],
+  [
+    "xIcon",
+    "callout__xIcon"
+  ],
+  [
+    "chevronRightIcon",
+    "callout__chevronRightIcon"
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "variant": "neutral"
+};
 
-const compoundVariants = [];
+const compoundVariants = [
+  {
+    "type": "actionable",
+    "variant": "neutral"
+  },
+  {
+    "type": "actionable",
+    "variant": "informative"
+  },
+  {
+    "type": "actionable",
+    "variant": "warning"
+  },
+  {
+    "type": "actionable",
+    "variant": "danger"
+  },
+  {
+    "type": "actionable",
+    "variant": "magic"
+  }
+];
 
 export const calloutVariantMap = {
+  "type": [
+    "default",
+    "dismissible",
+    "actionable"
+  ],
   "variant": [
-    "outline",
     "neutral",
     "informative",
     "warning",
-    "danger"
+    "danger",
+    "magic"
   ]
 };
 

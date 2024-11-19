@@ -2,141 +2,204 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-12)",
-        "paddingX": "var(--seed-v3-unit-4)",
-        "paddingY": "var(--seed-v3-unit-3\\.5)",
+        "paddingXStart": "var(--seed-v3-unit-3\\.5)",
+        "paddingY": "5px",
         "cornerRadius": "var(--seed-v3-radii-2\\.5)"
       },
-      "title": {
-        "fontSize": "var(--seed-v3-font-size-100)",
-        "fontWeight": "var(--seed-v3-font-weight-bold)"
-      },
-      "description": {
-        "fontSize": "var(--seed-v3-font-size-100)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
+      "content": {
+        "gap": "var(--seed-v3-unit-3)",
+        "paddingY": "9.5px",
+        "fontSize": "var(--seed-v3-font-size-100)"
       },
       "icon": {
+        "size": "var(--seed-v3-unit-4)"
+      },
+      "title": {
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
+      },
+      "label": {
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
+      },
+      "dismissButton": {
+        "size": "var(--seed-v3-unit-10)"
+      },
+      "xIcon": {
+        "size": "var(--seed-v3-unit-4)"
+      },
+      "chevronRightIcon": {
         "size": "var(--seed-v3-unit-4)",
-        "marginRight": "var(--seed-v3-unit-1\\.5)"
-      },
-      "actionIndicator": {
-        "size": "var(--seed-v3-unit-4\\.5)",
-        "marginLeft": "var(--seed-v3-unit-2\\.5)"
-      },
-      "closeButton": {
-        "size": "var(--seed-v3-unit-4\\.5)",
-        "marginLeft": "var(--seed-v3-unit-2\\.5)"
+        "margin": "var(--seed-v3-unit-3)"
       }
     }
   },
-  "variantOutline": {
+  "typeDefault": {
     "enabled": {
       "root": {
-        "strokeColor": "var(--seed-v3-color-stroke-decorative)",
-        "strokeWidth": "1px"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "icon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "actionIndicator": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "closeButton": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "paddingXEnd": "var(--seed-v3-unit-3\\.5)"
+      }
+    }
+  },
+  "typeDismissible": {
+    "enabled": {
+      "root": {
+        "paddingXEnd": "var(--seed-v3-unit-0\\.5)"
+      }
+    }
+  },
+  "typeActionable": {
+    "enabled": {
+      "root": {
+        "paddingXEnd": "var(--seed-v3-unit-0\\.5)"
       }
     }
   },
   "variantNeutral": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral)"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "color": "var(--seed-v3-color-bg-neutral-weak)"
       },
       "icon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "actionIndicator": {
+      "title": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "closeButton": {
+      "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
       }
     }
   },
   "variantInformative": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-informative)"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-informative-banner)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-informative-banner)"
+        "color": "var(--seed-v3-color-bg-informative-weak)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-informative-banner)"
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "actionIndicator": {
-        "color": "var(--seed-v3-color-fg-informative-banner)"
+      "title": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "closeButton": {
-        "color": "var(--seed-v3-color-fg-informative-banner)"
+      "label": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-informative-weak-pressed)"
       }
     }
   },
   "variantWarning": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-warning)"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-warning-banner)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-warning-banner)"
+        "color": "var(--seed-v3-color-bg-warning-weak)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-warning-banner)"
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "actionIndicator": {
-        "color": "var(--seed-v3-color-fg-warning-banner)"
+      "title": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "closeButton": {
-        "color": "var(--seed-v3-color-fg-warning-banner)"
+      "label": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-warning-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-warning-weak-pressed)"
       }
     }
   },
   "variantDanger": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger)"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-danger-banner)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-danger-banner)"
+        "color": "var(--seed-v3-color-bg-danger-weak)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-danger-banner)"
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
-      "actionIndicator": {
-        "color": "var(--seed-v3-color-fg-danger-banner)"
+      "title": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
-      "closeButton": {
-        "color": "var(--seed-v3-color-fg-danger-banner)"
+      "label": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-danger-weak-pressed)"
+      }
+    }
+  },
+  "variantMagic": {
+    "enabled": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-magic-weak)"
+      },
+      "icon": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "title": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "label": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "linkLabel": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "xIcon": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      },
+      "chevronRightIcon": {
+        "color": "var(--seed-v3-color-fg-magic-contrast)"
+      }
+    },
+    "pressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-magic-weak-pressed)"
       }
     }
   }

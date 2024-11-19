@@ -1,93 +1,138 @@
+# yaml-language-server: $schema=./schema.json
 base:
   enabled:
     root:
-      minHeight: $unit[12]
-      paddingX: $unit[4]
-      paddingY: $unit[3.5]
+      paddingXStart: $unit[3.5]
+      paddingY: "5px"
       cornerRadius: $radii[2.5]
-    title:
+    content:
+      gap: $unit[3]
+      paddingY: "9.5px"
       fontSize: $font-size[100]
-      fontWeight: $font-weight.bold
-    description:
-      fontSize: $font-size[100]
-      fontWeight: $font-weight.regular
     icon:
+      # XXX: scalable 결정 x
       size: $unit[4]
-      marginRight: $unit[1.5]
-    actionIndicator:
-      size: $unit[4.5]
-      marginLeft: $unit[2.5]
-    closeButton:
-      size: $unit[4.5]
-      marginLeft: $unit[2.5]
-variant=outline:
+    title:
+      fontWeight: $font-weight.bold
+    label:
+      fontWeight: $font-weight.regular
+    dismissButton:
+      size: $unit[10]
+    xIcon:
+      size: $unit[4]
+    chevronRightIcon:
+      size: $unit[4]
+      margin: $unit[3]
+
+type=default:
   enabled:
     root:
-      strokeColor: $color.stroke.decorative
-      strokeWidth: 1px
-    title:
-      color: $color.fg.neutral
-    description:
-      color: $color.fg.neutral
-    icon:
-      color: $color.fg.neutral
-    actionIndicator:
-      color: $color.fg.neutral
-    closeButton:
-      color: $color.fg.neutral
+      paddingXEnd: $unit[3.5]
+type=dismissible:
+  enabled:
+    root:
+      paddingXEnd: $unit[0.5]
+type=actionable:
+  enabled:
+    root:
+      paddingXEnd: $unit[0.5]
+
 variant=neutral:
   enabled:
     root:
-      color: $color.bg.neutral
-    title:
-      color: $color.fg.neutral
-    description:
-      color: $color.fg.neutral
+      color: $color.bg.neutral-weak
     icon:
       color: $color.fg.neutral
-    actionIndicator:
+    title:
       color: $color.fg.neutral
-    closeButton:
+    label:
       color: $color.fg.neutral
+    linkLabel:
+      color: $color.fg.neutral
+    xIcon:
+      color: $color.fg.neutral
+    chevronRightIcon:
+      color: $color.fg.neutral
+  pressed:
+    root:
+      color: $color.bg.neutral-weak-pressed
+
 variant=informative:
   enabled:
     root:
-      color: $color.bg.informative
-    title:
-      color: $color.fg.informative-banner
-    description:
-      color: $color.fg.informative-banner
+      color: $color.bg.informative-weak
     icon:
-      color: $color.fg.informative-banner
-    actionIndicator:
-      color: $color.fg.informative-banner
-    closeButton:
-      color: $color.fg.informative-banner
+      color: $color.fg.informative-contrast
+    title:
+      color: $color.fg.informative-contrast
+    label:
+      color: $color.fg.informative-contrast
+    linkLabel:
+      color: $color.fg.informative-contrast
+    xIcon:
+      color: $color.fg.informative-contrast
+    chevronRightIcon:
+      color: $color.fg.informative-contrast
+  pressed:
+    root:
+      color: $color.bg.informative-weak-pressed
+
 variant=warning:
   enabled:
     root:
-      color: $color.bg.warning
-    title:
-      color: $color.fg.warning-banner
-    description:
-      color: $color.fg.warning-banner
+      color: $color.bg.warning-weak
     icon:
-      color: $color.fg.warning-banner
-    actionIndicator:
-      color: $color.fg.warning-banner
-    closeButton:
-      color: $color.fg.warning-banner
+      color: $color.fg.warning-contrast
+    title:
+      color: $color.fg.warning-contrast
+    label:
+      color: $color.fg.warning-contrast
+    linkLabel:
+      color: $color.fg.warning-contrast
+    xIcon:
+      color: $color.fg.warning-contrast
+    chevronRightIcon:
+      color: $color.fg.warning-contrast
+  pressed:
+    root:
+      color: $color.bg.warning-weak-pressed
+
 variant=danger:
   enabled:
     root:
-      color: $color.bg.danger
-    title:
-      color: $color.fg.danger-banner
-    description:
-      color: $color.fg.danger-banner
+      color: $color.bg.danger-weak
     icon:
-      color: $color.fg.danger-banner
-    actionIndicator:
-      color: $color.fg.danger-banner
-    closeButton:
-      color: $color.fg.danger-banner
+      color: $color.fg.danger-contrast
+    title:
+      color: $color.fg.danger-contrast
+    label:
+      color: $color.fg.danger-contrast
+    linkLabel:
+      color: $color.fg.danger-contrast
+    xIcon:
+      color: $color.fg.danger-contrast
+    chevronRightIcon:
+      color: $color.fg.danger-contrast
+  pressed:
+    root:
+      color: $color.bg.danger-weak-pressed
+
+variant=magic:
+  enabled:
+    root:
+      color: $color.bg.magic-weak
+    icon:
+      color: $color.fg.magic-contrast
+    title:
+      color: $color.fg.magic-contrast
+    label:
+      color: $color.fg.magic-contrast
+    linkLabel:
+      color: $color.fg.magic-contrast
+    xIcon:
+      color: $color.fg.magic-contrast
+    chevronRightIcon:
+      color: $color.fg.magic-contrast
+  pressed:
+    root:
+      color: $color.bg.magic-weak-pressed
