@@ -134,7 +134,7 @@
       "@radix-ui/react-slot"
     ],
     "files": [
-      "component/text-button.tsx"
+      "ui:text-button.tsx"
     ]
   }
 ]
