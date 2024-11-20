@@ -1,10 +1,13 @@
 "use client";
 
-import "@seed-design/stylesheet/callout.css";
+import "@seed-design/stylesheet/dismissibleCallout.css";
 
 import * as React from "react";
 import clsx from "clsx";
-import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
+import {
+  dismissibleCallout,
+  type DismissibleCalloutVariantProps,
+} from "@seed-design/recipe/dismissibleCallout";
 import { IconXmarkFill } from "@daangn/react-monochrome-icon";
 import {
   useDismissible,
@@ -13,7 +16,7 @@ import {
 
 export interface DismissibleCalloutProps
   extends DismissibleProps,
-    Omit<CalloutVariantProps, "type"> {
+    DismissibleCalloutVariantProps {
   titleText?: string;
   dismissAriaLabel: string;
   linkLabel?: string;
@@ -43,7 +46,7 @@ export const DismissibleCallout = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = callout({ variant, type: "dismissible" });
+    const classNames = dismissibleCallout({ variant });
 
     const { isOpen, onDismissButtonClick } = useDismissible({
       defaultOpen,

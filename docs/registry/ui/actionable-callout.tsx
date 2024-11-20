@@ -1,14 +1,16 @@
 "use client";
 
-import "@seed-design/stylesheet/callout.css";
+import "@seed-design/stylesheet/actionableCallout.css";
 
 import * as React from "react";
 import clsx from "clsx";
-import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
+import {
+  actionableCallout,
+  type ActionableCalloutVariantProps,
+} from "@seed-design/recipe/actionableCallout";
 import { IconChevronRightFill } from "@daangn/react-monochrome-icon";
 
-export interface ActionableCalloutProps
-  extends Omit<CalloutVariantProps, "type"> {
+export interface ActionableCalloutProps extends ActionableCalloutVariantProps {
   titleText?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
@@ -35,7 +37,7 @@ export const ActionableCallout = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = callout({ variant, type: "actionable" });
+    const classNames = actionableCallout({ variant });
 
     return (
       <button

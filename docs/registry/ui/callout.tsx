@@ -30,7 +30,7 @@ export const Callout = React.forwardRef<HTMLDivElement, ReactCalloutProps>(
     },
     ref,
   ) => {
-    const classNames = callout({ variant, type: "default" });
+    const classNames = callout({ variant });
 
     return (
       <div

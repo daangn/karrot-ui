@@ -3,6 +3,8 @@ import actionChip from "./action-chip.recipe";
 import avatar from "./avatar.recipe";
 import badge from "./badge.recipe";
 import callout from "./callout.recipe";
+import actionableCallout from "./actionable-callout.recipe";
+import dismissibleCallout from "./dismissible-callout.recipe";
 import checkbox from "./checkbox.recipe";
 import chipTab from "./chip-tab.recipe";
 import chipTabs from "./chip-tabs.recipe";
@@ -28,6 +30,8 @@ const recipes = {
   actionChip,
   controlChip,
   callout,
+  actionableCallout,
+  dismissibleCallout,
   switch: switchRecipe,
   helpBubble,
   inlineBanner,

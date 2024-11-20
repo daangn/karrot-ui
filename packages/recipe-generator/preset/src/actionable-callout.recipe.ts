@@ -1,9 +1,10 @@
 import { callout as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
+import { active, pseudo } from "./pseudo";
 
-export const callout = defineRecipe({
-  name: "callout",
-  slots: ["root", "content", "icon", "title", "spacer", "label", "linkLabel"],
+export const actionableCallout = defineRecipe({
+  name: "actionableCallout",
+  slots: ["root", "content", "title", "spacer", "label", "chevronRightIcon"],
   base: {
     root: {
       display: "flex",
@@ -15,10 +16,15 @@ export const callout = defineRecipe({
       MozOsxFontSmoothing: "grayscale",
 
       paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.typeDefault.enabled.root.paddingXEnd,
+      paddingInlineEnd: vars.typeActionable.enabled.root.paddingXEnd,
       paddingBlock: vars.base.enabled.root.paddingY,
 
       borderRadius: vars.base.enabled.root.cornerRadius,
+
+      // XXX: css reset 생기면 불필요할 가능성
+      cursor: "pointer",
+      border: "none",
+      font: "inherit",
     },
     content: {
       display: "flex",
@@ -33,12 +39,6 @@ export const callout = defineRecipe({
       lineHeight: "1.3125rem",
       textAlign: "start",
     },
-    icon: {
-      flex: "none",
-
-      width: vars.base.enabled.icon.size,
-      height: vars.base.enabled.icon.size,
-    },
     title: {
       fontWeight: vars.base.enabled.title.fontWeight,
     },
@@ -48,18 +48,13 @@ export const callout = defineRecipe({
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
     },
-    linkLabel: {
-      textDecoration: "underline",
-      // XXX
-      textUnderlineOffset: "2px",
+    chevronRightIcon: {
+      flex: "none",
 
-      // XXX: css reset 생기면 불필요할 가능성
-      display: "inline",
-      backgroundColor: "transparent",
-      padding: 0,
-      border: "none",
-      lineHeight: "inherit",
-      font: "inherit",
+      width: vars.base.enabled.chevronRightIcon.size,
+      height: vars.base.enabled.chevronRightIcon.size,
+
+      margin: vars.base.enabled.chevronRightIcon.margin,
     },
   },
   defaultVariants: {
@@ -70,9 +65,10 @@ export const callout = defineRecipe({
       neutral: {
         root: {
           backgroundColor: vars.variantNeutral.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantNeutral.enabled.icon.color,
+
+          [pseudo(active)]: {
+            backgroundColor: vars.variantNeutral.pressed.root.color,
+          },
         },
         title: {
           color: vars.variantNeutral.enabled.title.color,
@@ -80,16 +76,17 @@ export const callout = defineRecipe({
         label: {
           color: vars.variantNeutral.enabled.label.color,
         },
-        linkLabel: {
-          color: vars.variantNeutral.enabled.linkLabel.color,
+        chevronRightIcon: {
+          color: vars.variantNeutral.enabled.chevronRightIcon.color,
         },
       },
       informative: {
         root: {
           backgroundColor: vars.variantInformative.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantInformative.enabled.icon.color,
+
+          [pseudo(active)]: {
+            backgroundColor: vars.variantInformative.pressed.root.color,
+          },
         },
         title: {
           color: vars.variantInformative.enabled.title.color,
@@ -97,16 +94,17 @@ export const callout = defineRecipe({
         label: {
           color: vars.variantInformative.enabled.label.color,
         },
-        linkLabel: {
-          color: vars.variantInformative.enabled.linkLabel.color,
+        chevronRightIcon: {
+          color: vars.variantInformative.enabled.chevronRightIcon.color,
         },
       },
       warning: {
         root: {
           backgroundColor: vars.variantWarning.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantWarning.enabled.icon.color,
+
+          [pseudo(active)]: {
+            backgroundColor: vars.variantWarning.pressed.root.color,
+          },
         },
         title: {
           color: vars.variantWarning.enabled.title.color,
@@ -114,16 +112,17 @@ export const callout = defineRecipe({
         label: {
           color: vars.variantWarning.enabled.label.color,
         },
-        linkLabel: {
-          color: vars.variantWarning.enabled.linkLabel.color,
+        chevronRightIcon: {
+          color: vars.variantWarning.enabled.chevronRightIcon.color,
         },
       },
       danger: {
         root: {
           backgroundColor: vars.variantDanger.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantDanger.enabled.icon.color,
+
+          [pseudo(active)]: {
+            backgroundColor: vars.variantDanger.pressed.root.color,
+          },
         },
         title: {
           color: vars.variantDanger.enabled.title.color,
@@ -131,16 +130,17 @@ export const callout = defineRecipe({
         label: {
           color: vars.variantDanger.enabled.label.color,
         },
-        linkLabel: {
-          color: vars.variantDanger.enabled.linkLabel.color,
+        chevronRightIcon: {
+          color: vars.variantDanger.enabled.chevronRightIcon.color,
         },
       },
       magic: {
         root: {
           backgroundColor: vars.variantMagic.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantMagic.enabled.icon.color,
+
+          [pseudo(active)]: {
+            backgroundColor: vars.variantMagic.pressed.root.color,
+          },
         },
         title: {
           color: vars.variantMagic.enabled.title.color,
@@ -148,12 +148,12 @@ export const callout = defineRecipe({
         label: {
           color: vars.variantMagic.enabled.label.color,
         },
-        linkLabel: {
-          color: vars.variantMagic.enabled.linkLabel.color,
+        chevronRightIcon: {
+          color: vars.variantMagic.enabled.chevronRightIcon.color,
         },
       },
     },
   },
 });
 
-export default callout;
+export default actionableCallout;

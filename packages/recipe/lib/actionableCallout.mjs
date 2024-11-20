@@ -1,33 +1,29 @@
 import { createClassName } from "./className.mjs";
 
-const calloutSlotNames = [
+const actionableCalloutSlotNames = [
   [
     "root",
-    "callout__root"
+    "actionableCallout__root"
   ],
   [
     "content",
-    "callout__content"
-  ],
-  [
-    "icon",
-    "callout__icon"
+    "actionableCallout__content"
   ],
   [
     "title",
-    "callout__title"
+    "actionableCallout__title"
   ],
   [
     "spacer",
-    "callout__spacer"
+    "actionableCallout__spacer"
   ],
   [
     "label",
-    "callout__label"
+    "actionableCallout__label"
   ],
   [
-    "linkLabel",
-    "callout__linkLabel"
+    "chevronRightIcon",
+    "actionableCallout__chevronRightIcon"
   ]
 ];
 
@@ -37,7 +33,7 @@ const defaultVariant = {
 
 const compoundVariants = [];
 
-export const calloutVariantMap = {
+export const actionableCalloutVariantMap = {
   "variant": [
     "neutral",
     "informative",
@@ -47,11 +43,11 @@ export const calloutVariantMap = {
   ]
 };
 
-export const calloutVariantKeys = Object.keys(calloutVariantMap);
+export const actionableCalloutVariantKeys = Object.keys(actionableCalloutVariantMap);
 
-export function callout(props) {
+export function actionableCallout(props) {
   return Object.fromEntries(
-    calloutSlotNames.map(([slot, className]) => {
+    actionableCalloutSlotNames.map(([slot, className]) => {
       return [
         slot,
         createClassName(className, { ...defaultVariant, ...props }, compoundVariants),

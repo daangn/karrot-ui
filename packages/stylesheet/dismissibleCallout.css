@@ -1,4 +1,4 @@
-.callout__root {
+.dismissibleCallout__root {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,11 +6,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding-inline-start: var(--seed-v3-unit-3\.5);
-    padding-inline-end: var(--seed-v3-unit-3\.5);
+    padding-inline-end: var(--seed-v3-unit-0\.5);
     padding-block: 5px;
     border-radius: var(--seed-v3-radii-2\.5)
 }
-.callout__content {
+.dismissibleCallout__content {
     display: flex;
     align-items: center;
     gap: var(--seed-v3-unit-3);
@@ -19,21 +19,16 @@
     line-height: 1.3125rem;
     text-align: start
 }
-.callout__icon {
-    flex: none;
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4)
-}
-.callout__title {
+.dismissibleCallout__title {
     font-weight: var(--seed-v3-font-weight-bold)
 }
-.callout__spacer {
+.dismissibleCallout__spacer {
     letter-spacing: 0.25em
 }
-.callout__label {
+.dismissibleCallout__label {
     font-weight: var(--seed-v3-font-weight-regular)
 }
-.callout__linkLabel {
+.dismissibleCallout__linkLabel {
     text-decoration: underline;
     text-underline-offset: 2px;
     display: inline;
@@ -43,78 +38,93 @@
     line-height: inherit;
     font: inherit
 }
-.callout__root--variant_neutral {
+.dismissibleCallout__dismissButton {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--seed-v3-unit-10);
+    height: var(--seed-v3-unit-10);
+    border: none;
+    background-color: transparent;
+    padding: 0
+}
+.dismissibleCallout__xIcon {
+    width: var(--seed-v3-unit-4);
+    height: var(--seed-v3-unit-4)
+}
+.dismissibleCallout__root--variant_neutral {
     background-color: var(--seed-v3-color-bg-neutral-weak)
 }
-.callout__icon--variant_neutral {
+.dismissibleCallout__title--variant_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
-.callout__title--variant_neutral {
+.dismissibleCallout__label--variant_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
-.callout__label--variant_neutral {
+.dismissibleCallout__linkLabel--variant_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
-.callout__linkLabel--variant_neutral {
+.dismissibleCallout__xIcon--variant_neutral {
     color: var(--seed-v3-color-fg-neutral)
 }
-.callout__root--variant_informative {
+.dismissibleCallout__root--variant_informative {
     background-color: var(--seed-v3-color-bg-informative-weak)
 }
-.callout__icon--variant_informative {
+.dismissibleCallout__title--variant_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.callout__title--variant_informative {
+.dismissibleCallout__label--variant_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.callout__label--variant_informative {
+.dismissibleCallout__linkLabel--variant_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.callout__linkLabel--variant_informative {
+.dismissibleCallout__xIcon--variant_informative {
     color: var(--seed-v3-color-fg-informative-contrast)
 }
-.callout__root--variant_warning {
+.dismissibleCallout__root--variant_warning {
     background-color: var(--seed-v3-color-bg-warning-weak)
 }
-.callout__icon--variant_warning {
+.dismissibleCallout__title--variant_warning {
     color: var(--seed-v3-color-fg-warning-contrast)
 }
-.callout__title--variant_warning {
+.dismissibleCallout__label--variant_warning {
     color: var(--seed-v3-color-fg-warning-contrast)
 }
-.callout__label--variant_warning {
+.dismissibleCallout__linkLabel--variant_warning {
     color: var(--seed-v3-color-fg-warning-contrast)
 }
-.callout__linkLabel--variant_warning {
+.dismissibleCallout__xIcon--variant_warning {
     color: var(--seed-v3-color-fg-warning-contrast)
 }
-.callout__root--variant_danger {
+.dismissibleCallout__root--variant_danger {
     background-color: var(--seed-v3-color-bg-danger-weak)
 }
-.callout__icon--variant_danger {
+.dismissibleCallout__title--variant_danger {
     color: var(--seed-v3-color-fg-danger-contrast)
 }
-.callout__title--variant_danger {
+.dismissibleCallout__label--variant_danger {
     color: var(--seed-v3-color-fg-danger-contrast)
 }
-.callout__label--variant_danger {
+.dismissibleCallout__linkLabel--variant_danger {
     color: var(--seed-v3-color-fg-danger-contrast)
 }
-.callout__linkLabel--variant_danger {
+.dismissibleCallout__xIcon--variant_danger {
     color: var(--seed-v3-color-fg-danger-contrast)
 }
-.callout__root--variant_magic {
+.dismissibleCallout__root--variant_magic {
     background-color: var(--seed-v3-color-bg-magic-weak)
 }
-.callout__icon--variant_magic {
+.dismissibleCallout__title--variant_magic {
     color: var(--seed-v3-color-fg-magic-contrast)
 }
-.callout__title--variant_magic {
+.dismissibleCallout__label--variant_magic {
     color: var(--seed-v3-color-fg-magic-contrast)
 }
-.callout__label--variant_magic {
+.dismissibleCallout__linkLabel--variant_magic {
     color: var(--seed-v3-color-fg-magic-contrast)
 }
-.callout__linkLabel--variant_magic {
+.dismissibleCallout__xIcon--variant_magic {
     color: var(--seed-v3-color-fg-magic-contrast)
 }
