@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { InlineBanner } from "seed-design/ui/inline-banner";
+import { ActionableInlineBanner } from "seed-design/ui/actionable-inline-banner";
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";
@@ -8,9 +8,9 @@ import { IconBellLine } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
-  component: InlineBanner,
+  component: ActionableInlineBanner,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof InlineBanner>;
+} satisfies Meta<typeof ActionableInlineBanner>;
 
 export default meta;
 
@@ -21,6 +21,7 @@ const CommonStoryTemplate: Story = {
     children:
       "Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis exercitation.",
     icon: <IconBellLine />,
+    onClick: () => {},
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />

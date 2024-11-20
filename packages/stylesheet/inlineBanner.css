@@ -40,17 +40,25 @@
     font-weight: var(--seed-v3-font-weight-regular);
     line-height: 1rem;
     text-decoration: underline;
-    text-underline-offset: 2px
+    text-underline-offset: 2px;
+    border: none;
+    background-color: transparent;
+    padding-block: 0
 }
 .inlineBanner__dismissButton {
     flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: var(--seed-v3-unit-10);
-    height: var(--seed-v3-unit-10)
+    height: var(--seed-v3-unit-10);
+    border: none;
+    background-color: transparent;
+    padding: 0
 }
 .inlineBanner__xIcon {
     width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
-    margin: auto
+    height: var(--seed-v3-unit-4)
 }
 .inlineBanner__chevronRightIcon {
     flex: none;
@@ -68,7 +76,10 @@
     padding-inline-end: var(--seed-v3-unit-1)
 }
 .inlineBanner__root--type_actionable {
-    padding-inline-end: var(--seed-v3-unit-1)
+    padding-inline-end: var(--seed-v3-unit-1);
+    border: none;
+    padding-block: 0;
+    font: inherit
 }
 .inlineBanner__root--variant_neutralWeak {
     background-color: var(--seed-v3-color-bg-neutral-weak)
