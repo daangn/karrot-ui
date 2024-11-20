@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=./schema.json
+base:
+  enabled:
+    root:
+      cornerRadius: $radii.full
+      padding: $unit[1]
+      color: $color.bg.neutral-weak
+    option:
+      cornerRadius: $radii.full
+      paddingX: $unit[4]
+      paddingY: "5px"
+      fontSize: $font-size[200]
+      fontWeight: $font-weight.medium
+      color: $color.fg.neutral-muted
+    indicator:
+      cornerRadius: $radii.full
+      color: $color.bg.layer-default
+      # TODO: token으로 교체
+      dropShadow: "0 1px 6px rgba(0, 0, 0, 5%)"
+  pressed:
+    indicator:
+      color: $color.bg.neutral-weak-pressed
+  selected:
+    option:
+      color: $color.fg.neutral
+      fontWeight: $font-weight.bold
+  selected,pressed:
+    indicator:
+      color: $color.bg.layer-default-pressed
+  disabled:
+    option:
+      color: $color.fg.disabled

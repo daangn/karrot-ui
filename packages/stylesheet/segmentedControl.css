@@ -1,0 +1,36 @@
+.segmentedControl__root {
+    position: relative;
+    display: flex;
+    border-radius: var(--seed-v3-radii-full);
+    padding: var(--seed-v3-unit-1);
+    background-color: var(--seed-v3-color-bg-neutral-weak);
+}
+.segmentedControl__option {
+    border-radius: var(--seed-v3-radii-full);
+    padding-inline: var(--seed-v3-unit-4);
+    padding-block: 5px;
+    font-size: var(--seed-v3-font-size-200);
+    font-weight: var(--seed-v3-font-weight-medium);
+    color: var(--seed-v3-color-fg-neutral-muted);
+    z-index: 10;
+}
+.segmentedControl__option:is(:checked, [data-checked]) {
+    color: var(--seed-v3-color-fg-neutral);
+    font-weight: var(--seed-v3-font-weight-bold);
+}
+.segmentedControl__option:is(:disabled, [disabled], [data-disabled]) {
+    color: var(--seed-v3-color-fg-disabled);
+}
+.segmentedControl__indicator {
+    position: absolute;
+    inset-block: var(--seed-v3-unit-1);
+    border-radius: var(--seed-v3-radii-full);
+    background-color: var(--seed-v3-color-bg-layer-default);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 5%);
+}
+.segmentedControl__indicator:is(:active, [data-active]) {
+    background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
+}
+.segmentedControl__indicator:is(:checked, [data-checked]):is(:active, [data-active]) {
+    background-color: var(--seed-v3-color-bg-layer-default-pressed);
+}
