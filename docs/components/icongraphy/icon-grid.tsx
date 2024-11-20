@@ -63,7 +63,6 @@ export const IconGrid = () => {
         const isDanger =
           iconStyle === "multicolor" ||
           iconData[snakeCaseIconName]?.metadatas.some((metadata) => dangerTags.includes(metadata));
-        const serviceName = getServiceName(iconData[snakeCaseIconName]?.metadatas);
 
         return (
           <div
@@ -76,11 +75,6 @@ export const IconGrid = () => {
             data-metadatas={metadataString}
           >
             <IconComponent />
-            {serviceName && (
-              <div className="absolute bottom-0 text-seed-palette-gray-800 text-[8px]">
-                {serviceName}
-              </div>
-            )}
           </div>
         );
       })}
