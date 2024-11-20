@@ -1,8 +1,7 @@
-import type { HomeLayoutProps } from "fumadocs-ui/layouts/home";
-import type { DocsLayoutProps } from "fumadocs-ui/layouts/docs";
-import { RootToggle } from "fumadocs-ui/components/layout/root-toggle";
 import { source } from "@/app/source";
-import { modes } from "@/utils/modes";
+import { Slot } from "@radix-ui/react-slot";
+import type { DocsLayoutProps } from "fumadocs-ui/layouts/docs";
+import type { HomeLayoutProps } from "fumadocs-ui/layouts/home";
 
 /**
  * Shared layout configurations
@@ -56,23 +55,26 @@ export const docsOptions: DocsLayoutProps = {
   },
 
   sidebar: {
-    banner: (
-      <RootToggle
-        options={modes.map((mode) => ({
-          url: `/docs/${mode.param}`,
+    tabs: {
+      transform(option, node) {
+        const meta = source.getNodeMeta(node);
+        if (!meta) return option;
+
+        return {
+          ...option,
           icon: (
-            <mode.icon
-              className="size-9 shrink-0 rounded-md bg-gradient-to-t from-fd-background/80 p-1.5"
+            <Slot
+              className="bg-gradient-to-t from-fd-background/80 p-1 [&_svg]:size-5"
               style={{
-                backgroundColor: `hsl(var(--${mode.param}-color)/.3)`,
-                color: `hsl(var(--${mode.param}-color))`,
+                color: `hsl(var(--${meta.file.dirname}-color))`,
+                backgroundColor: `hsl(var(--${meta.file.dirname}-color)/.3)`,
               }}
-            />
+            >
+              {node.icon}
+            </Slot>
           ),
-          title: mode.name,
-          description: mode.description,
-        }))}
-      />
-    ),
+        };
+      },
+    },
   },
 };

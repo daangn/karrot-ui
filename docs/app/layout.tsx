@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <html
-      lang="en"
+      lang="ko"
       className={inter.className}
       data-seed
       data-seed-scale-color="light"
