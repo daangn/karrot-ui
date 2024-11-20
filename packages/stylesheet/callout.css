@@ -41,7 +41,8 @@
     padding: 0;
     border: none;
     line-height: inherit;
-    font: inherit
+    font: inherit;
+    cursor: pointer
 }
 .callout__root--variant_neutral {
     background-color: var(--seed-v3-color-bg-neutral-weak)

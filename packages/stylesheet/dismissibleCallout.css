@@ -36,7 +36,8 @@
     padding: 0;
     border: none;
     line-height: inherit;
-    font: inherit
+    font: inherit;
+    cursor: pointer
 }
 .dismissibleCallout__dismissButton {
     flex: none;
@@ -47,7 +48,8 @@
     height: var(--seed-v3-unit-10);
     border: none;
     background-color: transparent;
-    padding: 0
+    padding: 0;
+    cursor: pointer
 }
 .dismissibleCallout__xIcon {
     width: var(--seed-v3-unit-4);

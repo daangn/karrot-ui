@@ -60,6 +60,7 @@ export const callout = defineRecipe({
       border: "none",
       lineHeight: "inherit",
       font: "inherit",
+      cursor: "pointer",
     },
   },
   defaultVariants: {

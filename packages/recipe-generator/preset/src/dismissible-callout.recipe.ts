@@ -54,6 +54,7 @@ export const dismissibleCallout = defineRecipe({
       border: "none",
       lineHeight: "inherit",
       font: "inherit",
+      cursor: "pointer",
     },
     dismissButton: {
       flex: "none",
@@ -69,6 +70,7 @@ export const dismissibleCallout = defineRecipe({
       border: "none",
       backgroundColor: "transparent",
       padding: 0,
+      cursor: "pointer",
     },
     xIcon: {
       width: vars.base.enabled.xIcon.size,
