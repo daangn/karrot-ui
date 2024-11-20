@@ -31,7 +31,15 @@ export default function Layout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body>
-        <RootProvider search={{}}>{children}</RootProvider>
+        <RootProvider
+          search={{
+            options: {
+              type: "static",
+            },
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
