@@ -30,9 +30,6 @@ export const callout = defineRecipe({
       paddingBlock: vars.base.enabled.root.paddingY,
 
       borderRadius: vars.base.enabled.root.cornerRadius,
-
-      // XXX: css reset 생기면 불필요할 가능성
-      border: "none",
     },
     content: {
       display: "flex",
@@ -73,6 +70,7 @@ export const callout = defineRecipe({
       padding: 0,
       border: "none",
       lineHeight: "inherit",
+      font: "inherit",
     },
     dismissButton: {
       flex: "none",
@@ -87,6 +85,7 @@ export const callout = defineRecipe({
       // XXX: css reset 생기면 불필요할 가능성
       border: "none",
       backgroundColor: "transparent",
+      padding: 0,
     },
     xIcon: {
       width: vars.base.enabled.xIcon.size,
@@ -122,6 +121,8 @@ export const callout = defineRecipe({
 
           // XXX: css reset 생기면 불필요할 가능성
           cursor: "pointer",
+          border: "none",
+          font: "inherit",
         },
       },
     },
