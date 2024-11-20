@@ -18,7 +18,7 @@ icon_calendar	icon_calendar	0	0
 icon_call	icon_phone	0	0
 icon_call_declined	icon_phone_xmark	0	0
 icon_camera	icon_camera	0	0
-icon_car	icon_car_frontside	0	1
+icon_car	icon_car_frontside	0	0
 icon_car_around_view	icon_arrow_clockwise_oval	0	0
 icon_car_blind_spot	icon_car_rear_upside_wave2_reversed_down_left	0	0
 icon_car_cruise_control	icon_speedometer	0	0
@@ -86,7 +86,7 @@ icon_help	icon_questionmark_circle	0	0
 icon_helpcenter	icon_headset	0	0
 icon_helper	icon_headset	0	0
 icon_home	icon_house	0	0
-icon_house	icon_window4_house	0	1
+icon_house	icon_window4_house	0	0
 icon_housekeeping_book	icon_book	0	0
 icon_import	icon_document_arrow_left	0	0
 icon_info	icon_i_lowercase_serif_circle	0	0
@@ -95,7 +95,7 @@ icon_interest_list	icon_star	0	0
 icon_invite	icon_envelope	0	0
 icon_invite_friend	icon_person_plus	0	0
 icon_ios_share	icon_arrow_up_bracket_down	0	0
-icon_jobs	icon_person_magnifyingglass	0	1
+icon_jobs	icon_person_magnifyingglass	0	0
 icon_keyboard_hiding	icon_keyboard_chevron_down	0	0
 icon_keyword	icon_tag	0	0
 icon_laptop	icon_laptop	0	0
@@ -171,7 +171,7 @@ icon_sell	icon_plus_square	0	0
 icon_setting	icon_gear	0	0
 icon_signout	icon_bracket_left_arrow_right	0	0
 icon_sort	icon_arrow_up_arrow_down	0	0
-icon_story	icon_triangle_right_chatbubble_left	0	1
+icon_story	icon_triangle_right_chatbubble_left	0	0
 icon_story_article	icon_document_pen	0	0
 icon_subtract_circle	icon_minus_circle	0	0
 icon_subtraction	icon_minus	0	0
