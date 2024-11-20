@@ -6,6 +6,7 @@ import { useIcon } from "./icon-context";
 
 import * as changeCase from "change-case";
 import { Tag } from "./tags";
+import { getServiceName } from "./utils";
 
 export const IconBottomInfomation = () => {
   const { selectedIcon, search, iconComponents } = useIcon();
@@ -28,6 +29,7 @@ export const IconBottomInfomation = () => {
   const isFigmaNotPublishedIcon = selectedIcon.metadatas.includes(Tag.figmaNotPublished);
   const isFatIcon = selectedIcon.metadatas.includes(Tag.fat);
   const isServiceIcon = selectedIcon.metadatas.includes(Tag.service);
+  const serviceName = getServiceName(selectedIcon.metadatas);
 
   return (
     <div className="flex justify-between fixed bottom-0 min-h-28 left-0 right-0 bg-seed-bg-layer-default border-t border-gray-200 p-4 z-30">
@@ -36,6 +38,11 @@ export const IconBottomInfomation = () => {
           <div className="text-xl font-bold">{selectedIcon.name}</div>
           <div className="text-sm">{pascalCaseIconName}</div>
           <div className="flex flex-col gap-1">
+            {serviceName && (
+              <div className="text-seed-fg-danger text-xs">
+                <span className="font-bold">[{serviceName} 서비스 아이콘]</span>
+              </div>
+            )}
             {isFigmaNotPublishedIcon && (
               <div className="text-seed-fg-danger text-xs">
                 <span className="font-bold">[피그마 컴포넌트로 배포되지 않은 아이콘]</span>

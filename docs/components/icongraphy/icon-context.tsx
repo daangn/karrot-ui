@@ -18,6 +18,8 @@ interface State {
   iconData: Record<string, IconData>;
   iconComponents: Record<string, React.ComponentType>;
 
+  iconStyle: "monochrome" | "multicolor";
+
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
 
@@ -29,6 +31,7 @@ const context = React.createContext<State>({
   search: "",
   iconData: {},
   setSearch: () => {},
+  iconStyle: "monochrome",
   iconComponents: {},
   selectedIcon: undefined,
   setSelectedIcon: () => {},
@@ -38,9 +41,11 @@ export const IconProvider = ({
   children,
   iconData,
   iconComponents,
+  iconStyle,
 }: React.PropsWithChildren<{
   iconData: Record<string, IconData>;
   iconComponents: Record<string, React.ComponentType>;
+  iconStyle: "monochrome" | "multicolor";
 }>) => {
   const [search, setSearch] = React.useState("");
   const [selectedIcon, setSelectedIcon] = React.useState<IconData | undefined>(undefined);
@@ -76,6 +81,7 @@ export const IconProvider = ({
     <context.Provider
       value={{
         search,
+        iconStyle,
         iconData,
         setSearch,
         iconComponents,

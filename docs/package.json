@@ -15,9 +15,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@daangn/icon-data": "^0.0.4",
-    "@daangn/react-monochrome-icon": "^0.0.4",
-    "@daangn/react-multicolor-icon": "alpha",
+    "@daangn/icon-data": "^0.0.7",
+    "@daangn/react-monochrome-icon": "^0.0.6",
+    "@daangn/react-multicolor-icon": "^0.0.2",
     "@seed-design/react-checkbox": "0.0.0-alpha-20241030023710",
     "@seed-design/react-dismissible": "0.0.0",
     "@seed-design/react-icon": "^0.7.3",
