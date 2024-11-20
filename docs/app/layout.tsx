@@ -15,10 +15,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const SearchDialog = () => <></>; // Temporal no-op component
-
 export default function Layout({ children }: { children: ReactNode }) {
   useThemeSync();
+
   return (
     <html
       lang="en"
@@ -32,13 +31,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body>
-        <RootProvider
-          search={{
-            SearchDialog,
-          }}
-        >
-          {children}
-        </RootProvider>
+        <RootProvider search={{}}>{children}</RootProvider>
       </body>
     </html>
   );
