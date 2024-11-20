@@ -4,6 +4,7 @@ description: 리뉴얼된 아이콘으로 업그레이드하는 방법을 안내
 ---
 
 import { Accordions, Accordion } from "fumadocs-ui/components/accordion";
+import { V2, V3 } from "@/components/mdx/icon";
 
 ## 업그레이드 방법
 
@@ -327,26 +328,36 @@ npm install @daangn/vue3-monochrome-icon @daangn/vue3-multicolor-icon
 
 ### 정확히 대응되는 리뉴얼된 아이콘이 없는 경우
 
-- 이전 아이콘 중 아래 5개 아이콘은 리뉴얼된 아이콘 패키지에 시각적으로 정확히 대응되는 항목이 없어요.
+- 이전 아이콘 중 아래 5개 아이콘(총 15개 variant)은 리뉴얼된 아이콘 패키지에 시각적으로 정확히 대응되는 항목이 없어요.
 - codemod 스크립트 실행 시 **추천되는 아이콘으로 변환되지만**, 시각적인 차이가 크기 때문에 변경 후 확인이 필요해요.
 
-| 이전 아이콘 이름   | 리뉴얼된 아이콘 이름                                                                                                                              |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon_bold`        | [`icon_t_uppercase_serif`](/docs/design/foundation/iconography/monochrome?icon=icon_t_uppercase_serif_fill)                                       |
-| `icon_cobuying`    | [`icon_shoppingbag2_stacked`](/docs/design/foundation/iconography/monochrome?icon=icon_shoppingbag2_stacked_fill)                                 |
-| `icon_delivery`    | [`icon_truck`](/docs/design/foundation/iconography/monochrome?icon=icon_truck_fill)                                                               |
-| `icon_suggest`     | [`icon_lightbulb_dot5`](/docs/design/foundation/iconography/monochrome?icon=icon_lightbulb_dot5_fill)                                             |
-| `icon_write_story` | [`icon_horizline2_vertical_chatbubble_right`](/docs/design/foundation/iconography/monochrome?icon=icon_horizline2_vertical_chatbubble_right_fill) |
+| 이전 아이콘 이름                    | 리뉴얼된 아이콘 이름                                                      |
+| ----------------------------------- | ------------------------------------------------------------------------- |
+| <V2 name="IconBoldThin" />          | <V3 type="monochrome" name="IconTUppercaseSerifLine" />                   |
+| <V2 name="IconBoldRegular" />       | <V3 type="monochrome" name="IconTUppercaseSerifLine" />                   |
+| <V2 name="IconBoldFill" />          | <V3 type="monochrome" name="IconTUppercaseSerifFill" />                   |
+| <V2 name="IconCobuyingThin" />      | <V3 type="monochrome" name="IconShoppingbag2StackedLine" />               |
+| <V2 name="IconCobuyingRegular" />   | <V3 type="monochrome" name="IconShoppingbag2StackedLine" />               |
+| <V2 name="IconCobuyingFill" />      | <V3 type="monochrome" name="IconShoppingbag2StackedFill" />               |
+| <V2 name="IconDeliveryThin" />      | <V3 type="monochrome" name="IconTruckLine" />                             |
+| <V2 name="IconDeliveryRegular" />   | <V3 type="monochrome" name="IconTruckLine" />                             |
+| <V2 name="IconDeliveryFill" />      | <V3 type="monochrome" name="IconTruckFill" />                             |
+| <V2 name="IconSuggestThin" />       | <V3 type="monochrome" name="IconLightbulbDot5Line" />                     |
+| <V2 name="IconSuggestRegular" />    | <V3 type="monochrome" name="IconLightbulbDot5Line" />                     |
+| <V2 name="IconSuggestFill" />       | <V3 type="monochrome" name="IconLightbulbDot5Fill" />                     |
+| <V2 name="IconWriteStoryThin" />    | <V3 type="monochrome" name="IconHorizline2VerticalChatbubbleRightLine" /> |
+| <V2 name="IconWriteStoryRegular" /> | <V3 type="monochrome" name="IconHorizline2VerticalChatbubbleRightLine" /> |
+| <V2 name="IconWriteStoryFill" />    | <V3 type="monochrome" name="IconHorizline2VerticalChatbubbleRightFill" /> |
 
 <Callout type="info" title="사용 여부 확인 방법">
 
-- codemod 스크립트 사용 시, 5개 아이콘이 사용된 경우 터미널에 메시지가 출력돼요.
+- codemod 스크립트 사용 시, 5개 아이콘(총 15개 variant)이 사용된 경우 터미널에 메시지가 출력돼요.
 
 ```
 REP ...을 ...로 변경했지만, 변경된 아이콘이 적절한지 확인이 필요해요
 ```
 
-- codemod 스크립트를 `--log` flag와 함께 사용 시, 5개 아이콘이 사용된 내역이 `migrate-icons-warnings.log`에 기록돼요.
+- codemod 스크립트를 `--log` flag와 함께 사용 시, 사용된 내역이 `migrate-icons-warnings.log`에 기록돼요.
 - 다음을 활용하여 코드를 직접 검색할 수 있어요.
 
 <Tabs items={["정규 표현식", "git grep"]}>
