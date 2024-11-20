@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { InlineBanner } from "seed-design/ui/inline-banner";
+import { LinkInlineBanner } from "seed-design/ui/link-inline-banner";
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";
@@ -8,9 +8,9 @@ import { IconBellLine } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
-  component: InlineBanner,
+  component: LinkInlineBanner,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof InlineBanner>;
+} satisfies Meta<typeof LinkInlineBanner>;
 
 export default meta;
 
@@ -21,6 +21,8 @@ const CommonStoryTemplate: Story = {
     children:
       "Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis exercitation.",
     icon: <IconBellLine />,
+    linkLabel: "자세히 보기",
+    onLinkLabelClick: () => {},
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />

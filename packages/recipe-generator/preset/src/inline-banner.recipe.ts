@@ -71,18 +71,30 @@ const inlineBanner = defineRecipe({
       textDecoration: "underline",
       // XXX
       textUnderlineOffset: "2px",
+
+      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+      border: "none",
+      backgroundColor: "transparent",
+      padding: 0,
     },
     dismissButton: {
       flex: "none",
 
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+
       width: vars.base.enabled.dismissButton.size,
       height: vars.base.enabled.dismissButton.size,
+
+      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+      border: "none",
+      backgroundColor: "transparent",
+      padding: 0,
     },
     xIcon: {
       width: vars.base.enabled.xIcon.size,
       height: vars.base.enabled.xIcon.size,
-
-      margin: "auto",
     },
     chevronRightIcon: {
       flex: "none",
@@ -116,6 +128,12 @@ const inlineBanner = defineRecipe({
       actionable: {
         root: {
           paddingInlineEnd: vars.typeActionable.enabled.root.paddingXEnd,
+
+          // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+          // https://daangn.slack.com/archives/C07FGUB49B5/p1729739060343499
+          border: "none",
+          paddingBlock: 0,
+          font: "inherit",
         },
       },
     },
