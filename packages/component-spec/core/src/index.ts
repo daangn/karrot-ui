@@ -1,3 +1,3 @@
 export * from "./parse";
 export * from "./stringify";
-export { ParsedExpression } from "./types";
+export { ParsedComponentExpression as ParsedExpression } from "./types";

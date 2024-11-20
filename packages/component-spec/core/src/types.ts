@@ -17,13 +17,14 @@ export interface TokenCollectionModel {
 }
 
 export interface TokenCollectionExpression {
-  [x: string]: string;
-}
-
-export interface Token {
-  category: string;
-  group: string[];
-  key: string | number;
+  modes: string[];
+  definitions: {
+    [tokenName: string]: {
+      values: {
+        [mode: string]: string;
+      };
+    };
+  };
 }
 
 export interface ComponentExpression {
@@ -36,7 +37,24 @@ export interface ComponentExpression {
   };
 }
 
-export type ParsedExpression = Array<{
+export interface Token {
+  category: string;
+  group: string[];
+  key: string | number;
+}
+
+export type ParsedTokenCollectionExpression = {
+  modes: string[];
+  definitions: Array<{
+    token: Token;
+    values: Array<{
+      mode: string;
+      value: string;
+    }>;
+  }>;
+};
+
+export type ParsedComponentExpression = Array<{
   key: Record<string, string>;
   state: Array<{
     key: string[];

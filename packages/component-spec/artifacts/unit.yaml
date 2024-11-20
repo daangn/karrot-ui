@@ -1,0 +1,23 @@
+kind: TokenCollection
+metadata:
+  id: unit
+  name: Unit
+data:
+  $unit.x0_5: 2px
+  $unit.x1: 4px
+  $unit.x1_5: 6px
+  $unit.x2: 8px
+  $unit.x2_5: 10px
+  $unit.x3: 12px
+  $unit.x3_5: 14px
+  $unit.x4: 16px
+  $unit.x5: 20px
+  $unit.x6: 24px
+  $unit.x7: 28px
+  $unit.x8: 32px
+  $unit.x9: 36px
+  $unit.x10: 40px
+  $unit.x12: 48px
+  $unit.x13: 52px
+  $unit.x14: 56px
+  $unit.x16: 64px

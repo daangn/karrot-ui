@@ -1,0 +1,15 @@
+kind: TokenCollection
+metadata:
+  id: font-size
+  name: Font Size
+data:
+  $font-size.t1: 11px
+  $font-size.t2: 12px
+  $font-size.t3: 13px
+  $font-size.t4: 14px
+  $font-size.t5: 16px
+  $font-size.t6: 18px
+  $font-size.t7: 20px
+  $font-size.t8: 22px
+  $font-size.t9: 24px
+  $font-size.t10: 26px

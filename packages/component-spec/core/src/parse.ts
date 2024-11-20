@@ -1,4 +1,10 @@
-import type { ComponentExpression, ParsedExpression, Token } from "./types";
+import type {
+  ComponentExpression,
+  ParsedComponentExpression,
+  ParsedTokenCollectionExpression,
+  Token,
+  TokenCollectionExpression,
+} from "./types";
 
 function isTokenExpression(expression: string | number | string[]): boolean {
   if (typeof expression === "number") {
@@ -59,8 +65,8 @@ function parseState(stateExpression: string) {
   return stateExpression.split(",");
 }
 
-export function parse(input: ComponentExpression): ParsedExpression {
-  const parsedExpressions: ParsedExpression = [];
+export function parseComponent(input: ComponentExpression): ParsedComponentExpression {
+  const parsedExpressions: ParsedComponentExpression = [];
 
   for (const variantExpression in input) {
     const variant = parseVariant(variantExpression);
@@ -103,4 +109,22 @@ export function parse(input: ComponentExpression): ParsedExpression {
   }
 
   return parsedExpressions;
+}
+
+export function parseTokenCollection(
+  input: TokenCollectionExpression,
+): ParsedTokenCollectionExpression {
+  const definitions = [];
+
+  for (const tokenName in input.definitions) {
+    const values = [];
+
+    for (const mode in input.definitions[tokenName].values) {
+      values.push({ mode, value: input.definitions[tokenName].values[mode] });
+    }
+
+    definitions.push({ token: parseToken(tokenName), values });
+  }
+
+  return { modes: input.modes, definitions };
 }

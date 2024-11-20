@@ -1,5 +1,5 @@
 import { camelCase } from "change-case";
-import type { ParsedExpression, Token } from "./types";
+import type { ParsedComponentExpression, Token } from "./types";
 
 const PREFIX = "seed-v3";
 
@@ -29,7 +29,7 @@ function stringifyTokenCssVar(token: Token) {
     .replaceAll(".", "\\.")})`;
 }
 
-export function stringifyTs(expressions: ParsedExpression) {
+export function stringifyTs(expressions: ParsedComponentExpression) {
   const result = {};
 
   for (const expression of expressions) {

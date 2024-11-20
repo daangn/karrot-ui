@@ -1,10 +1,9 @@
-import { outdent } from "outdent";
 import { expect, test } from "vitest";
 
-import { parse } from "./parse";
 import YAML from "yaml";
+import { parseComponent } from "./parse";
 
-import type { ParsedExpression } from "./types";
+import type { ParsedComponentExpression } from "./types";
 
 test("parse array", () => {
   const yaml = `
@@ -18,9 +17,9 @@ test("parse array", () => {
           - 0px 1px 3px 0px rgba(0, 0, 0, 0.06)
   `;
 
-  const parsed = parse(YAML.parse(yaml));
+  const parsed = parseComponent(YAML.parse(yaml));
 
-  const expected: ParsedExpression = [
+  const expected: ParsedComponentExpression = [
     {
       key: {},
       state: [
@@ -64,9 +63,9 @@ test("parse array with token", () => {
           - $shadow.1
   `;
 
-  const parsed = parse(YAML.parse(yaml));
+  const parsed = parseComponent(YAML.parse(yaml));
 
-  const expected: ParsedExpression = [
+  const expected: ParsedComponentExpression = [
     {
       key: {},
       state: [

@@ -1,0 +1,11 @@
+kind: TokenCollection
+metadata:
+  id: color
+  name: Color
+data:
+  $palette.gray-100:
+    theme-light: "#000000"
+    theme-dark: "#dddddd"
+  $fg.neutral:
+    theme-light: $palette.gray-100
+    theme-dark: $palette.gray-100
