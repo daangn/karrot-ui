@@ -4,7 +4,7 @@ import { ActionButton } from "seed-design/ui/action-button";
 
 import { actionButtonVariantMap } from "@seed-design/recipe/actionButton";
 import { VariantTable } from "./components/variant-table";
-import { IconBellLine } from "@daangn/react-monochrome-icon";
+import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 const CommonStoryTemplate: Story = {
   args: {
     children: "Action Chip",
-    prefixIcon: <IconBellLine />,
+    prefixIcon: <IconBellFill />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={actionButtonVariantMap} {...args} />

@@ -4,7 +4,7 @@ import { ActionableInlineBanner } from "seed-design/ui/actionable-inline-banner"
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";
-import { IconBellLine } from "@daangn/react-monochrome-icon";
+import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
@@ -20,7 +20,7 @@ const CommonStoryTemplate: Story = {
   args: {
     children:
       "Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis exercitation.",
-    icon: <IconBellLine />,
+    icon: <IconBellFill />,
     onClick: () => {},
   },
   render: (args) => (

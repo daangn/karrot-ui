@@ -4,7 +4,7 @@ import { ActionChip } from "seed-design/ui/action-chip";
 
 import { actionChipVariantMap } from "@seed-design/recipe/actionChip";
 import { VariantTable } from "./components/variant-table";
-import { IconBellLine } from "@daangn/react-monochrome-icon";
+import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const LightTheme: Story = {
   args: {
     children: "Action Chip",
-    prefixIcon: <IconBellLine />,
+    prefixIcon: <IconBellFill />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
@@ -29,7 +29,7 @@ export const LightTheme: Story = {
 export const DarkTheme: Story = {
   args: {
     children: "Action Chip",
-    prefixIcon: <IconBellLine />,
+    prefixIcon: <IconBellFill />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
@@ -39,7 +39,7 @@ export const DarkTheme: Story = {
 export const FontScalingExtraSmall: Story = {
   args: {
     children: "Action Chip",
-    prefixIcon: <IconBellLine />,
+    prefixIcon: <IconBellFill />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
@@ -49,7 +49,7 @@ export const FontScalingExtraSmall: Story = {
 export const FontScalingExtraExtraExtraLarge: Story = {
   args: {
     children: "Action Chip",
-    prefixIcon: <IconBellLine />,
+    prefixIcon: <IconBellFill />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
