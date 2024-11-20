@@ -1,5 +1,5 @@
-import type { HomeLayoutProps } from "fumadocs-ui/home-layout";
-import type { DocsLayoutProps } from "fumadocs-ui/layout";
+import type { HomeLayoutProps } from "fumadocs-ui/layouts/home";
+import type { DocsLayoutProps } from "fumadocs-ui/layouts/docs";
 import { RootToggle } from "fumadocs-ui/components/layout/root-toggle";
 import { source } from "@/app/source";
 import { modes } from "@/utils/modes";
