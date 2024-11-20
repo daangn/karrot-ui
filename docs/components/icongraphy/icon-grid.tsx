@@ -4,9 +4,10 @@ import * as React from "react";
 import { cva } from "class-variance-authority";
 import { useIcon } from "./icon-context";
 import { Tag } from "./tags";
+import { getServiceName } from "./utils";
 
 export const IconGrid = () => {
-  const { iconComponents, iconData, search, setSelectedIcon, selectedIcon } = useIcon();
+  const { iconComponents, iconData, search, setSelectedIcon, selectedIcon, iconStyle } = useIcon();
 
   const onSelect = (iconName: string) => {
     const isSameIcon = selectedIcon?.name === iconName;
@@ -36,14 +37,14 @@ export const IconGrid = () => {
         >;
         const snakeCaseIconName = changeCase.snakeCase(iconName);
         const isSelected = selectedIcon?.name === snakeCaseIconName;
-        const metadataString = iconData[snakeCaseIconName].metadatas.join(", ");
+        const metadataString = iconData[snakeCaseIconName]?.metadatas.join(", ");
 
         if (search !== "" && !metadataString.includes(search)) {
           return null;
         }
 
         const iconComponentVariants = cva(
-          "aspect-square rounded-md flex items-center justify-center cursor-pointer transition-colors",
+          "relative aspect-square rounded-md flex items-center justify-center cursor-pointer transition-colors",
           {
             variants: {
               selected: {
@@ -59,9 +60,10 @@ export const IconGrid = () => {
         );
 
         const dangerTags = [Tag.figmaNotPublished, Tag.fat, Tag.service];
-        const isDanger = iconData[snakeCaseIconName].metadatas.some((metadata) =>
-          dangerTags.includes(metadata),
-        );
+        const isDanger =
+          iconStyle === "multicolor" ||
+          iconData[snakeCaseIconName]?.metadatas.some((metadata) => dangerTags.includes(metadata));
+        const serviceName = getServiceName(iconData[snakeCaseIconName]?.metadatas);
 
         return (
           <div
@@ -74,6 +76,11 @@ export const IconGrid = () => {
             data-metadatas={metadataString}
           >
             <IconComponent />
+            {serviceName && (
+              <div className="absolute bottom-0 text-seed-palette-gray-800 text-[8px]">
+                {serviceName}
+              </div>
+            )}
           </div>
         );
       })}

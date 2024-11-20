@@ -21,7 +21,7 @@ export const Icons = ({ iconStyle }: Props) => {
   const IconData = iconStyle === "multicolor" ? MulticolorData : MonochromeData;
   const Components = iconStyle === "multicolor" ? MulticolorComponents : MonochormeComponents;
   return (
-    <IconProvider iconData={IconData} iconComponents={Components}>
+    <IconProvider iconStyle={iconStyle} iconData={IconData} iconComponents={Components}>
       <IconSearch />
       <IconGrid />
       <IconBottomInfomation />
