@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.9
+
+### Patch Changes
+
+- 멀티컬러로 이동시키던 아이콘 모노크롬으로 이동
+
 ## 0.0.8
 
 ### Patch Changes
