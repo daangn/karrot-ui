@@ -66,6 +66,7 @@ const linkInlineBanner = defineRecipe({
       border: "none",
       backgroundColor: "transparent",
       paddingBlock: 0,
+      cursor: "pointer",
     },
   },
   defaultVariants: {

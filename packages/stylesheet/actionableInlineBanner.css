@@ -10,7 +10,8 @@
     padding-inline-end: var(--seed-v3-unit-1);
     border: none;
     padding-block: 0;
-    font: inherit
+    font: inherit;
+    cursor: pointer
 }
 .actionableInlineBanner__content {
     display: flex;

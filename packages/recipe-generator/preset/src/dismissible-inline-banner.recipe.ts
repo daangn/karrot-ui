@@ -61,6 +61,7 @@ const dismissibleInlineBanner = defineRecipe({
       border: "none",
       backgroundColor: "transparent",
       padding: 0,
+      cursor: "pointer",
     },
     xIcon: {
       width: vars.base.enabled.xIcon.size,

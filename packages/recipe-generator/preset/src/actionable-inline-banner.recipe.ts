@@ -23,6 +23,7 @@ const actionableInlineBanner = defineRecipe({
       border: "none",
       paddingBlock: 0,
       font: "inherit",
+      cursor: "pointer",
     },
     content: {
       display: "flex",

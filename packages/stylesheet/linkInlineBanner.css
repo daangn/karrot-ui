@@ -44,7 +44,8 @@
     text-underline-offset: 2px;
     border: none;
     background-color: transparent;
-    padding-block: 0
+    padding-block: 0;
+    cursor: pointer
 }
 .linkInlineBanner__root--variant_neutralWeak {
     background-color: var(--seed-v3-color-bg-neutral-weak)

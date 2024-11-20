@@ -42,7 +42,8 @@
     height: var(--seed-v3-unit-10);
     border: none;
     background-color: transparent;
-    padding: 0
+    padding: 0;
+    cursor: pointer
 }
 .dismissibleInlineBanner__xIcon {
     width: var(--seed-v3-unit-4);
