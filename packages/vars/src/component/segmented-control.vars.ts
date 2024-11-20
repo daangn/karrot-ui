@@ -21,7 +21,7 @@ export const vars = {
       }
     },
     "pressed": {
-      "indicator": {
+      "option": {
         "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
       }
     },
@@ -32,7 +32,7 @@ export const vars = {
       }
     },
     "selectedPressed": {
-      "indicator": {
+      "option": {
         "color": "var(--seed-v3-color-bg-layer-default-pressed)"
       }
     },

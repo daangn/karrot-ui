@@ -19,7 +19,6 @@ import {
 export interface SegmentedControlProps extends SegmentedControlVariantProps {}
 
 import type { Assign } from "../util/types";
-import { visuallyHidden } from "../util/visuallyHidden";
 
 const TabsContext = React.createContext<{
   api: ReturnType<typeof useTabs>;
@@ -43,7 +42,8 @@ type ReactSegmentedControlProps = SegmentedControlProps &
   Assign<React.HTMLAttributes<HTMLFieldSetElement>, UseTabsProps>;
 
 export const SegmentedControl = React.forwardRef<
-  HTMLFieldSetElement,
+  // HTMLFieldSetElement,
+  HTMLDivElement,
   ReactSegmentedControlProps
 >(({ className, children, ...otherProps }, ref) => {
   const api = useTabs(otherProps);
@@ -56,10 +56,11 @@ export const SegmentedControl = React.forwardRef<
   const classNames = segmentedControl();
 
   return (
-    <fieldset
+    <div // TODO: fieldset으로 교체
       ref={ref}
-      {...tabTriggerListProps}
       className={clsx(classNames.root, className)}
+      {...tabTriggerListProps}
+      {...otherProps}
     >
       <TabsContext.Provider value={{ api }}>
         {children}
@@ -76,7 +77,7 @@ export const SegmentedControl = React.forwardRef<
           }}
         />
       </TabsContext.Provider>
-    </fieldset>
+    </div>
   );
 });
 SegmentedControl.displayName = "SegmentedControl";
@@ -98,7 +99,7 @@ export const SegmentedControlOption = React.forwardRef<
     api: { getTabTriggerProps },
   } = useTabsContext();
 
-  const { rootProps, labelProps } = getTabTriggerProps({ value });
+  const { rootProps } = getTabTriggerProps({ value });
 
   const classNames = segmentedControl();
 
@@ -108,8 +109,22 @@ export const SegmentedControlOption = React.forwardRef<
       {...rootProps}
       {...otherProps}
       className={clsx(classNames.option, className)}
+      // style={{
+      //   ...(rootProps["data-value"] === "1"
+      //     ? {
+      //         borderStartEndRadius: 0,
+      //         borderEndEndRadius: 0,
+      //       }
+      //     : {}),
+      //   ...(rootProps["data-value"] === `${tabCount}`
+      //     ? {
+      //         borderStartStartRadius: 0,
+      //         borderEndStartRadius: 0,
+      //       }
+      //     : {}),
+      // }}
     >
-      <div {...labelProps}>{children}</div>
+      {children}
     </button>
   );
 

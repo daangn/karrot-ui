@@ -1,6 +1,6 @@
 import { segmentedControl as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
-import { disabled, active, pseudo, checked } from "./pseudo";
+import { disabled, active, pseudo, selected } from "./pseudo";
 
 const segmentedControl = defineRecipe({
   name: "segmentedControl",
@@ -30,10 +30,18 @@ const segmentedControl = defineRecipe({
 
       zIndex: "10",
 
-      [pseudo(checked)]: {
+      [pseudo(active)]: {
+        backgroundColor: vars.base.pressed.option.color,
+      },
+
+      [pseudo(selected)]: {
         color: vars.base.selected.option.color,
 
         fontWeight: vars.base.selected.option.fontWeight,
+      },
+
+      [pseudo(selected, active)]: {
+        backgroundColor: vars.base.selectedPressed.option.color,
       },
 
       [pseudo(disabled)]: {
@@ -49,14 +57,6 @@ const segmentedControl = defineRecipe({
       backgroundColor: vars.base.enabled.indicator.color,
 
       boxShadow: vars.base.enabled.indicator.dropShadow,
-
-      [pseudo(active)]: {
-        backgroundColor: vars.base.pressed.indicator.color,
-      },
-
-      [pseudo(checked, active)]: {
-        backgroundColor: vars.base.selectedPressed.indicator.color,
-      },
     },
   },
   variants: {},
