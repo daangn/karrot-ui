@@ -3,7 +3,10 @@ import * as V2Icons from "@seed-design/react-icon";
 import Link from "fumadocs-core/link";
 import * as changecase from "change-case";
 
-export const V3 = ({ name }: { name: keyof typeof V3Icons }) => {
+export const V3 = ({
+  name,
+  type,
+}: { name: keyof typeof V3Icons; type: "monochrome" | "multicolor" }) => {
   const NewIcon = V3Icons[name];
 
   if (!NewIcon) {
@@ -14,7 +17,7 @@ export const V3 = ({ name }: { name: keyof typeof V3Icons }) => {
   return (
     <div className="flex items-center gap-2">
       <NewIcon size={20} />
-      <Link href={`/docs/design/foundation/iconography?icon=${snakeCase}`}>
+      <Link href={`/docs/design/foundation/iconography/${type}?icon=${snakeCase}`}>
         <code>{name}</code>
       </Link>
     </div>
