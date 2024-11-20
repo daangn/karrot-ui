@@ -18,7 +18,7 @@ import { V2, V3 } from "@/components/mdx/icon";
 - [`@seed-design/icon`](https://www.npmjs.com/package/@seed-design/icon) (deprecated)
 - [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon) (deprecated) (React 컴포넌트를 사용하는 경우)
 
-3개 패키지에서 사용하고 있는 아이콘에 따라 [`@daangn/react-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-monochrome-icon)과 [`@daangn/react-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)으로 대체돼요.
+3개 패키지에서 사용하고 있는 아이콘은 [`@daangn/react-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-monochrome-icon)의 아이콘으로 대체돼요.
 
 ### 수동 업그레이드
 
@@ -27,10 +27,8 @@ import { V2, V3 } from "@/components/mdx/icon";
 - PNG, SVG 등의 파일로 기존 아이콘을 사용하는 경우
   - [`@karrotmarket/karrot-ui-icon`](https://www.npmjs.com/package/@karrotmarket/karrot-ui-icon) (deprecated)에서 제공되는 SVG 파일을 사용하는 경우
 - 다음 패키지를 사용하는 경우
-  - [`@seed-design/vue2-icon`](https://www.npmjs.com/package/@seed-design/vue2-icon)
-    - 이 패키지는 다음 2개 패키지로 대체돼요: [`@daangn/vue2-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-monochrome-icon)과 [`@daangn/vue2-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-multicolor-icon)
-  - [`@seed-design/vue3-icon`](https://www.npmjs.com/package/@seed-design/vue3-icon)
-    - 이 패키지는 다음 2개 패키지로 대체돼요: [`@daangn/vue3-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue3-monochrome-icon)과 [`@daangn/vue3-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue3-multicolor-icon)
+  - [`@seed-design/vue2-icon`](https://www.npmjs.com/package/@seed-design/vue2-icon) → [`@daangn/vue2-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue2-monochrome-icon)으로 대체돼요.
+  - [`@seed-design/vue3-icon`](https://www.npmjs.com/package/@seed-design/vue3-icon) → [`@daangn/vue3-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/vue3-monochrome-icon)으로 대체돼요.
 
 ## 작업 순서
 
@@ -77,10 +75,10 @@ function App() {
 실행 후
 
 ```tsx
-import { IconCarFrontside } from "@daangn/react-multicolor-icon";
 import {
   IconPlusSquareLine,
   IconDothorizline3VerticalFill,
+  IconCarFrontsideLine,
   IconPlusFill as AddIconAlias,
 } from "@daangn/react-monochrome-icon";
 import IconPlusSquareFill from "@daangn/react-monochrome-icon/IconPlusSquareFill";
@@ -92,7 +90,7 @@ function App() {
     <>
       <IconDothorizline3VerticalFill />
       <AddIconAlias />
-      <IconCarFrontside />
+      <IconCarFrontsideLine />
     </>
   );
 }
@@ -119,7 +117,7 @@ npm install @daangn/react-monochrome-icon @daangn/react-multicolor-icon
 - [`@daangn/react-monochrome-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-monochrome-icon)
   - 단색 아이콘 패키지에요. **일반** 아이콘, **카테고리** 아이콘, **서비스** 아이콘이 포함되어 있어요.
   - 이 패키지에서 제공되는 서비스 아이콘은 검은색으로만 사용할 수 있어요.
-  - codemod 실행 시, 기존 아이콘은 모두 이 패키지의 아이콘으로 대체돼요.
+  - codemod 실행 시, 기존 패키지들의 아이콘은 모두 이 패키지의 아이콘으로 대체돼요.
 - [`@daangn/react-multicolor-icon`](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)
   - 멀티컬러 아이콘 패키지에요. **카테고리** 아이콘과 **서비스** 아이콘이 포함되어 있어요.
   - 이 패키지에서 제공되는 카테고리 아이콘과 서비스 아이콘은 패키지에서 제공되는 색상 그대로만 사용할 수 있어요.
@@ -241,6 +239,7 @@ npm uninstall @seed-design/icon @seed-design/react-icon @karrotmarket/karrot-ui-
 
 - [사이드 이펙트](#발생-가능한-사이드-이펙트)가 발생했는지 확인하여 의도한 대로 변경이 이루어졌는지 검토해요.
 - 디자인 QA 과정에서, 자동으로 변경된 아이콘이 아닌 새로운 아이콘을 사용하도록 결정되었을 수 있어요. 이러한 경우, Figma 디자인 파일을 참고하여 코드에 반영해요.
+- 멀티컬러 아이콘 사용이 필요한 곳에는 [멀티컬러 아이콘 패키지](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)를 사용해주세요.
 
 </Step>
 
@@ -288,6 +287,21 @@ npm install @daangn/vue2-monochrome-icon @daangn/vue2-multicolor-icon
 npm install @daangn/vue3-monochrome-icon @daangn/vue3-multicolor-icon
 ```
 
+<Callout type="info" title="패키지 설명">
+
+2개 패키지 중 필요한 패키지만 설치해요.
+
+- `@daangn/*-monochrome-icon`
+  - 단색 아이콘 패키지에요. **일반** 아이콘, **카테고리** 아이콘, **서비스** 아이콘이 포함되어 있어요.
+  - 이 패키지에서 제공되는 서비스 아이콘은 검은색으로만 사용할 수 있어요.
+  - codemod 실행 시, 기존 패키지들의 아이콘은 모두 이 패키지의 아이콘으로 대체돼요.
+- `@daangn/*-multicolor-icon`
+  - 멀티컬러 아이콘 패키지에요. **카테고리** 아이콘과 **서비스** 아이콘이 포함되어 있어요.
+  - 이 패키지에서 제공되는 카테고리 아이콘과 서비스 아이콘은 패키지에서 제공되는 색상 그대로만 사용할 수 있어요.
+  - 기존에 SVG로 사용하던 멀티컬러 아이콘들을 이 패키지로 직접 대체할 수 있어요. 따라서, 필요한 경우에만 설치해도 좋아요.
+
+</Callout>
+
 </Step>
 
 <Step>
@@ -298,12 +312,12 @@ npm install @daangn/vue3-monochrome-icon @daangn/vue3-multicolor-icon
 
 <Callout type="warn" title="이름 변경 관련 유의 사항">
 
-- 기존 아이콘의 `icon_home`은 신규 아이콘에서 `icon_house`로 이름이 바뀌었어요.
-- 기존 아이콘의 `icon_house`는 신규 아이콘에서 `icon_window4_house`로 이름이 바뀌었어요.
+- 기존 아이콘의 `IconHome*`은 신규 아이콘에서 `IconHouse*`로 이름이 바뀌었어요.
+- 기존 아이콘의 `IconHouse*`는 신규 아이콘에서 `IconWindow4House*`로 이름이 바뀌었어요.
 
-따라서, 수동 마이그레이션 시 `icon_home`이 `icon_window4_house`로 잘못 변경되지 않게 주의해야 해요.
+따라서, 수동 마이그레이션 시 `IconHome*`이 `IconWindow4House*`로 잘못 변경되지 않게 주의해야 해요.
 
-**`icon_house`를 먼저 마이그레이션**하고, `icon_home`을 마이그레이션하는 것을 추천해요.
+**`IconHouse*`를 먼저 마이그레이션**하고, `IconHome*`을 마이그레이션하는 것을 추천해요.
 
 </Callout>
 
@@ -315,6 +329,7 @@ npm install @daangn/vue3-monochrome-icon @daangn/vue3-multicolor-icon
 
 - [사이드 이펙트](#발생-가능한-사이드-이펙트)가 발생했는지 확인하여 의도한 대로 변경이 이루어졌는지 검토해요.
 - 디자인 QA 과정에서, [V2 V3 아이콘 맵핑](/docs/react/foundation/iconography/v2-v3-list)에 따른 아이콘이 아닌 새로운 아이콘을 사용하도록 결정되었을 수 있어요. 이러한 경우, Figma 디자인 파일을 참고하여 코드에 반영해요.
+- 멀티컬러 아이콘 사용이 필요한 곳에는 [멀티컬러 아이콘 패키지](https://github.com/daangn/seed-icon-v3/pkgs/npm/react-multicolor-icon)를 사용해주세요.
 
 </Step>
 
@@ -378,8 +393,8 @@ git grep -E '(IconBold|IconCobuying|IconDelivery|IconSuggest|IconWriteStory)(Thi
 
 **이전 아이콘과 리뉴얼된 아이콘은 `n:1`로 대응돼요.** 따라서, 같은 페이지에 표시되었던 서로 다른 여러 개의 아이콘이, 동일한 리뉴얼된 아이콘으로 대체되는 경우가 있어요. 의도한 목적대로 아이콘이 표시되는지 확인해요.
 
-- 한 이전 아이콘의 3개 variant 중 `thin` variant와 `regular` variant는 리뉴얼된 아이콘에서 모두 `line` variant로 대체돼요.
+- 한 이전 아이콘의 3개 variant 중 `Thin` variant와 `Regular` variant는 리뉴얼된 아이콘에서 모두 `Line` variant로 대체돼요.
   - 예를 들면, `IconForwardThin`, `IconForwardRegular`는 모두 [`IconArrowRightLine`](/docs/design/foundation/iconography/monochrome?icon=icon_arrow_right_line)으로 대체돼요.
-  - 이전 아이콘의 `fill` variant는 리뉴얼된 아이콘에서도 `fill` variant로 대체돼요.
+  - 이전 아이콘의 `Fill` variant는 리뉴얼된 아이콘에서도 `Fill` variant로 대체돼요.
 - 여러 개의 이전 아이콘이 하나의 리뉴얼된 아이콘으로 대체되는 경우도 있어요.
   - 예를 들면, `IconHeadphoneRegular`, `IconHelpcenterRegular`, `IconHelperRegular`는 모두 [`IconHeadsetLine`](/docs/design/foundation/iconography/monochrome?icon=icon_headset_line)으로 대체돼요.
