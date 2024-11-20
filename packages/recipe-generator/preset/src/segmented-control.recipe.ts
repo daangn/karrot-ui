@@ -11,6 +11,8 @@ const segmentedControl = defineRecipe({
 
       display: "flex",
 
+      height: vars.base.enabled.root.height,
+
       borderRadius: vars.base.enabled.root.cornerRadius,
 
       padding: vars.base.enabled.root.padding,
@@ -23,8 +25,11 @@ const segmentedControl = defineRecipe({
       paddingInline: vars.base.enabled.option.paddingX,
       paddingBlock: vars.base.enabled.option.paddingY,
 
+      minWidth: vars.base.enabled.option.minWidth,
+
       fontSize: vars.base.enabled.option.fontSize,
       fontWeight: vars.base.enabled.option.fontWeight,
+      lineHeight: "1.3125rem",
 
       color: vars.base.enabled.option.color,
 

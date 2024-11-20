@@ -1,6 +1,7 @@
 .segmentedControl__root {
     position: relative;
     display: flex;
+    height: var(--seed-v3-unit-10);
     border-radius: var(--seed-v3-radii-full);
     padding: var(--seed-v3-unit-1);
     background-color: var(--seed-v3-color-bg-neutral-weak);
@@ -9,8 +10,10 @@
     border-radius: var(--seed-v3-radii-full);
     padding-inline: var(--seed-v3-unit-4);
     padding-block: 5px;
+    min-width: 86px;
     font-size: var(--seed-v3-font-size-200);
     font-weight: var(--seed-v3-font-weight-medium);
+    line-height: 1.3125rem;
     color: var(--seed-v3-color-fg-neutral-muted);
     z-index: 10;
 }

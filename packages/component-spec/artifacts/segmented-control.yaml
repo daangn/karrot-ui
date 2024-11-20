@@ -5,10 +5,12 @@ base:
       cornerRadius: $radii.full
       padding: $unit[1]
       color: $color.bg.neutral-weak
+      height: $unit[10]
     option:
       cornerRadius: $radii.full
       paddingX: $unit[4]
-      paddingY: "5px"
+      paddingY: 5px
+      minWidth: 86px
       fontSize: $font-size[200]
       fontWeight: $font-weight.medium
       color: $color.fg.neutral-muted
