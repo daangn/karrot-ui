@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionableInlineBanner } from "seed-design/ui/actionable-inline-banner";
 
-import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
+import { actionableInlineBannerVariantMap } from "@seed-design/recipe/actionableInlineBanner";
 import { VariantTable } from "./components/variant-table";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -24,7 +24,11 @@ const CommonStoryTemplate: Story = {
     onClick: () => {},
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />
+    <VariantTable
+      Component={meta.component}
+      variantMap={actionableInlineBannerVariantMap}
+      {...args}
+    />
   ),
 };
 

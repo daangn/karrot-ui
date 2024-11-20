@@ -1,14 +1,14 @@
 "use client";
 
-import "@seed-design/stylesheet/inlineBanner.css";
+import "@seed-design/stylesheet/dismissibleInlineBanner.css";
 
 import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
 import {
-  inlineBanner,
-  type InlineBannerVariantProps,
-} from "@seed-design/recipe/inlineBanner";
+  dismissibleInlineBanner,
+  type DismissibleInlineBannerVariantProps,
+} from "@seed-design/recipe/dismissibleInlineBanner";
 import { IconXmarkLine } from "@daangn/react-monochrome-icon";
 import {
   useDismissible,
@@ -17,11 +17,7 @@ import {
 
 export interface DismissibleInlineBannerProps
   extends DismissibleProps,
-    Omit<InlineBannerVariantProps, "type"> {
-  variant?: Exclude<
-    InlineBannerVariantProps["variant"],
-    "dangerWeak" | "dangerSolid"
-  >;
+    DismissibleInlineBannerVariantProps {
   icon?: React.ReactNode;
   titleText?: string;
   dismissAriaLabel: string;
@@ -49,7 +45,7 @@ export const DismissibleInlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant, type: "dismissible" });
+    const classNames = dismissibleInlineBanner({ variant });
 
     const { isOpen, onDismissButtonClick } = useDismissible({
       defaultOpen,

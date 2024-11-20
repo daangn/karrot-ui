@@ -34,7 +34,7 @@ export const InlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant, type: "default" });
+    const classNames = inlineBanner({ variant });
 
     return (
       <div

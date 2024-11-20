@@ -1,0 +1,125 @@
+.dismissibleInlineBanner__root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--seed-v3-unit-1);
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-inline-start: var(--seed-v3-unit-4);
+    padding-inline-end: var(--seed-v3-unit-1)
+}
+.dismissibleInlineBanner__content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--seed-v3-unit-2);
+    padding-block: 10.5px;
+    font-size: var(--seed-v3-font-size-100);
+    line-height: 1.1875rem;
+    text-align: start
+}
+.dismissibleInlineBanner__icon {
+    flex: none;
+    margin-block: 1.5px;
+    width: var(--seed-v3-unit-4);
+    height: var(--seed-v3-unit-4)
+}
+.dismissibleInlineBanner__title {
+    font-weight: var(--seed-v3-font-weight-bold)
+}
+.dismissibleInlineBanner__spacer {
+    letter-spacing: 0.25em
+}
+.dismissibleInlineBanner__label {
+    font-weight: var(--seed-v3-font-weight-medium)
+}
+.dismissibleInlineBanner__dismissButton {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--seed-v3-unit-10);
+    height: var(--seed-v3-unit-10);
+    border: none;
+    background-color: transparent;
+    padding: 0
+}
+.dismissibleInlineBanner__xIcon {
+    width: var(--seed-v3-unit-4);
+    height: var(--seed-v3-unit-4)
+}
+.dismissibleInlineBanner__root--variant_neutralWeak {
+    background-color: var(--seed-v3-color-bg-neutral-weak)
+}
+.dismissibleInlineBanner__icon--variant_neutralWeak {
+    color: var(--seed-v3-color-fg-neutral)
+}
+.dismissibleInlineBanner__title--variant_neutralWeak {
+    color: var(--seed-v3-color-fg-neutral)
+}
+.dismissibleInlineBanner__label--variant_neutralWeak {
+    color: var(--seed-v3-color-fg-neutral)
+}
+.dismissibleInlineBanner__xIcon--variant_neutralWeak {
+    color: var(--seed-v3-color-fg-neutral)
+}
+.dismissibleInlineBanner__root--variant_positiveWeak {
+    background-color: var(--seed-v3-color-bg-positive-weak)
+}
+.dismissibleInlineBanner__icon--variant_positiveWeak {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.dismissibleInlineBanner__title--variant_positiveWeak {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.dismissibleInlineBanner__label--variant_positiveWeak {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.dismissibleInlineBanner__xIcon--variant_positiveWeak {
+    color: var(--seed-v3-color-fg-positive-contrast)
+}
+.dismissibleInlineBanner__root--variant_informativeWeak {
+    background-color: var(--seed-v3-color-bg-informative-weak)
+}
+.dismissibleInlineBanner__icon--variant_informativeWeak {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.dismissibleInlineBanner__title--variant_informativeWeak {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.dismissibleInlineBanner__label--variant_informativeWeak {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.dismissibleInlineBanner__xIcon--variant_informativeWeak {
+    color: var(--seed-v3-color-fg-informative-contrast)
+}
+.dismissibleInlineBanner__root--variant_warningWeak {
+    background-color: var(--seed-v3-color-bg-warning-weak)
+}
+.dismissibleInlineBanner__icon--variant_warningWeak {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.dismissibleInlineBanner__title--variant_warningWeak {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.dismissibleInlineBanner__label--variant_warningWeak {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.dismissibleInlineBanner__xIcon--variant_warningWeak {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.dismissibleInlineBanner__root--variant_warningSolid {
+    background-color: var(--seed-v3-color-bg-warning-solid)
+}
+.dismissibleInlineBanner__icon--variant_warningSolid {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.dismissibleInlineBanner__title--variant_warningSolid {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.dismissibleInlineBanner__label--variant_warningSolid {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}
+.dismissibleInlineBanner__xIcon--variant_warningSolid {
+    color: var(--seed-v3-color-fg-warning-contrast)
+}

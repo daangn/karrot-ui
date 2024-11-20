@@ -1,29 +1,33 @@
 import { createClassName } from "./className.mjs";
 
-const inlineBannerSlotNames = [
+const actionableInlineBannerSlotNames = [
   [
     "root",
-    "inlineBanner__root"
+    "actionableInlineBanner__root"
   ],
   [
     "content",
-    "inlineBanner__content"
+    "actionableInlineBanner__content"
   ],
   [
     "icon",
-    "inlineBanner__icon"
+    "actionableInlineBanner__icon"
   ],
   [
     "title",
-    "inlineBanner__title"
+    "actionableInlineBanner__title"
   ],
   [
     "spacer",
-    "inlineBanner__spacer"
+    "actionableInlineBanner__spacer"
   ],
   [
     "label",
-    "inlineBanner__label"
+    "actionableInlineBanner__label"
+  ],
+  [
+    "chevronRightIcon",
+    "actionableInlineBanner__chevronRightIcon"
   ]
 ];
 
@@ -33,7 +37,7 @@ const defaultVariant = {
 
 const compoundVariants = [];
 
-export const inlineBannerVariantMap = {
+export const actionableInlineBannerVariantMap = {
   "variant": [
     "neutralWeak",
     "positiveWeak",
@@ -45,11 +49,11 @@ export const inlineBannerVariantMap = {
   ]
 };
 
-export const inlineBannerVariantKeys = Object.keys(inlineBannerVariantMap);
+export const actionableInlineBannerVariantKeys = Object.keys(actionableInlineBannerVariantMap);
 
-export function inlineBanner(props) {
+export function actionableInlineBanner(props) {
   return Object.fromEntries(
-    inlineBannerSlotNames.map(([slot, className]) => {
+    actionableInlineBannerSlotNames.map(([slot, className]) => {
       return [
         slot,
         createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
