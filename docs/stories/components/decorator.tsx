@@ -1,20 +1,31 @@
 import type { Decorator } from "@storybook/react";
+import type { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
 
 const STORY_LIGHT_THEME = "Light Theme";
 const STORY_DARK_THEME = "Dark Theme";
 
 const FONT_SCALING = "Font Scaling";
 
+const DEFAULT_PROPERTIES: DetailedHTMLProps<
+  HtmlHTMLAttributes<HTMLHtmlElement>,
+  HTMLHtmlElement
+> & {
+  [key: string]: unknown;
+} = {
+  lang: "ko",
+  "data-seed-scale-letter-spacing": "ios",
+  style: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "0 20px",
+    fontFamily: `-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+  },
+};
+
 export const SeedThemeDecorator: Decorator = (Story, ctx) => {
   if (ctx.name === STORY_LIGHT_THEME) {
     return (
-      <html
-        lang="ko"
-        data-seed="light-only"
-        data-seed-scale-color="light"
-        data-seed-scale-letter-spacing="ios"
-        style={{ display: "flex", flexDirection: "column", padding: "0 20px" }}
-      >
+      <html {...DEFAULT_PROPERTIES} data-seed="light-only" data-seed-scale-color="light">
         <Story />
       </html>
     );
@@ -22,13 +33,7 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
 
   if (ctx.name === STORY_DARK_THEME) {
     return (
-      <html
-        lang="ko"
-        data-seed="dark-only"
-        data-seed-scale-color="dark"
-        data-seed-scale-letter-spacing="ios"
-        style={{ display: "flex", flexDirection: "column", padding: "0 20px" }}
-      >
+      <html {...DEFAULT_PROPERTIES} data-seed="dark-only" data-seed-scale-color="dark">
         <Story />
       </html>
     );
@@ -49,16 +54,10 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
 
     return (
       <html
-        lang="ko"
+        {...DEFAULT_PROPERTIES}
         data-seed="light-only"
         data-seed-scale-color="light"
-        data-seed-scale-letter-spacing="ios"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "0 20px",
-          fontSize: fontScaleMap[fontScale],
-        }}
+        style={{ ...DEFAULT_PROPERTIES.style, fontSize: fontScaleMap[fontScale] }}
       >
         <Story />
       </html>
@@ -66,12 +65,7 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
   }
 
   return (
-    <html
-      lang="ko"
-      data-seed="light-only"
-      data-seed-scale-color="light"
-      data-seed-scale-letter-spacing="ios"
-    >
+    <html {...DEFAULT_PROPERTIES} data-seed="light-only" data-seed-scale-color="light">
       <Story />
     </html>
   );
