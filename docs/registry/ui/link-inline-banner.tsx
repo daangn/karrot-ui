@@ -1,21 +1,21 @@
 "use client";
 
-import "@seed-design/stylesheet/inlineBanner.css";
+import "@seed-design/stylesheet/linkInlineBanner.css";
 
 import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
 import {
-  inlineBanner,
-  type InlineBannerVariantProps,
-} from "@seed-design/recipe/inlineBanner";
+  linkInlineBanner,
+  type LinkInlineBannerVariantProps,
+} from "@seed-design/recipe/linkInlineBanner";
 
-export type LinkInlineBannerProps = Omit<InlineBannerVariantProps, "type"> & {
+export interface LinkInlineBannerProps extends LinkInlineBannerVariantProps {
   icon?: React.ReactNode;
   titleText?: string;
   linkLabel: string;
   onLinkLabelClick: React.MouseEventHandler<HTMLButtonElement>;
-};
+}
 
 type ReactLinkInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
   LinkInlineBannerProps;
@@ -38,7 +38,7 @@ export const LinkInlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant, type: "link" });
+    const classNames = linkInlineBanner({ variant });
 
     return (
       <div

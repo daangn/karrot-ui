@@ -1,9 +1,9 @@
 import { inlineBanner as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 
-const inlineBanner = defineRecipe({
-  name: "inlineBanner",
-  slots: ["root", "content", "icon", "title", "spacer", "label"],
+const dismissibleInlineBanner = defineRecipe({
+  name: "dismissibleInlineBanner",
+  slots: ["root", "content", "icon", "title", "spacer", "label", "dismissButton", "xIcon"],
   base: {
     root: {
       display: "flex",
@@ -16,7 +16,7 @@ const inlineBanner = defineRecipe({
       MozOsxFontSmoothing: "grayscale",
 
       paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.typeDefault.enabled.root.paddingXEnd,
+      paddingInlineEnd: vars.typeDismissible.enabled.root.paddingXEnd,
     },
     content: {
       display: "flex",
@@ -47,6 +47,26 @@ const inlineBanner = defineRecipe({
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
     },
+    dismissButton: {
+      flex: "none",
+
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+
+      width: vars.base.enabled.dismissButton.size,
+      height: vars.base.enabled.dismissButton.size,
+
+      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+      border: "none",
+      backgroundColor: "transparent",
+      padding: 0,
+      cursor: "pointer",
+    },
+    xIcon: {
+      width: vars.base.enabled.xIcon.size,
+      height: vars.base.enabled.xIcon.size,
+    },
   },
   defaultVariants: {
     variant: "neutralWeak",
@@ -66,6 +86,9 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantNeutralWeak.enabled.label.color,
         },
+        xIcon: {
+          color: vars.variantNeutralWeak.enabled.xIcon.color,
+        },
       },
       positiveWeak: {
         root: {
@@ -79,6 +102,9 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantPositiveWeak.enabled.label.color,
+        },
+        xIcon: {
+          color: vars.variantPositiveWeak.enabled.xIcon.color,
         },
       },
       informativeWeak: {
@@ -94,6 +120,9 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantInformativeWeak.enabled.label.color,
         },
+        xIcon: {
+          color: vars.variantInformativeWeak.enabled.xIcon.color,
+        },
       },
       warningWeak: {
         root: {
@@ -107,6 +136,9 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantWarningWeak.enabled.label.color,
+        },
+        xIcon: {
+          color: vars.variantWarningWeak.enabled.xIcon.color,
         },
       },
       warningSolid: {
@@ -122,43 +154,12 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantWarningSolid.enabled.label.color,
         },
-      },
-      dangerWeak: {
-        root: {
-          position: "sticky",
-          top: 0,
-
-          backgroundColor: vars.variantDangerWeak.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantDangerWeak.enabled.icon.color,
-        },
-        title: {
-          color: vars.variantDangerWeak.enabled.title.color,
-        },
-        label: {
-          color: vars.variantDangerWeak.enabled.label.color,
-        },
-      },
-      dangerSolid: {
-        root: {
-          position: "sticky",
-          top: 0,
-
-          backgroundColor: vars.variantDangerSolid.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantDangerSolid.enabled.icon.color,
-        },
-        title: {
-          color: vars.variantDangerSolid.enabled.title.color,
-        },
-        label: {
-          color: vars.variantDangerSolid.enabled.label.color,
+        xIcon: {
+          color: vars.variantWarningSolid.enabled.xIcon.color,
         },
       },
     },
   },
 });
 
-export default inlineBanner;
+export default dismissibleInlineBanner;

@@ -1,24 +1,22 @@
 "use client";
 
-import "@seed-design/stylesheet/inlineBanner.css";
+import "@seed-design/stylesheet/actionableInlineBanner.css";
 
 import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
 import {
-  inlineBanner,
-  type InlineBannerVariantProps,
-} from "@seed-design/recipe/inlineBanner";
+  actionableInlineBanner,
+  type ActionableInlineBannerVariantProps,
+} from "@seed-design/recipe/actionableInlineBanner";
 import { IconChevronRightLine } from "@daangn/react-monochrome-icon";
 
-export type ActionableInlineBannerProps = Omit<
-  InlineBannerVariantProps,
-  "type"
-> & {
+export interface ActionableInlineBannerProps
+  extends ActionableInlineBannerVariantProps {
   icon?: React.ReactNode;
   titleText?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
-};
+}
 
 type ReactActionableInlineBannerProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -43,7 +41,7 @@ export const ActionableInlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = inlineBanner({ variant, type: "actionable" });
+    const classNames = actionableInlineBanner({ variant });
 
     return (
       <button

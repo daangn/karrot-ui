@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { LinkInlineBanner } from "seed-design/ui/link-inline-banner";
 
-import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
+import { linkInlineBannerVariantMap } from "@seed-design/recipe/linkInlineBanner";
 import { VariantTable } from "./components/variant-table";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -25,7 +25,7 @@ const CommonStoryTemplate: Story = {
     onLinkLabelClick: () => {},
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />
+    <VariantTable Component={meta.component} variantMap={linkInlineBannerVariantMap} {...args} />
   ),
 };
 
