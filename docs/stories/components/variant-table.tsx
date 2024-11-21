@@ -1,17 +1,19 @@
-type VariantMap = Record<string, string[]>;
+type VariantMap = Record<string, string[] | boolean[]>;
 
 interface Props {
   variantMap: VariantMap;
   Component: React.ComponentType | React.ElementType;
 }
 
+const Bool = (value: "true" | "false") => value === "true";
+
 const generateCombinations = (variantMap: VariantMap) => {
   const keys = Object.keys(variantMap);
-  let combinations: Record<string, string>[] = [{}];
+  let combinations: Record<string, string | boolean>[] = [{}];
 
   for (const key of keys) {
     const values = variantMap[key];
-    const temp: Record<string, string>[] = [];
+    const temp: Record<string, string | boolean>[] = [];
 
     for (const combo of combinations) {
       for (const value of values) {
@@ -27,8 +29,6 @@ const generateCombinations = (variantMap: VariantMap) => {
 
   return combinations;
 };
-
-const Bool = (value: "true" | "false") => value === "true";
 
 export const VariantTable = (props: Props) => {
   const { variantMap, Component, ...rest } = props;
