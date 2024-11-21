@@ -15,7 +15,7 @@
     "@seed-design/react-tabs": "0.0.0-alpha-20241030023710",
     "@seed-design/react-text-field": "0.0.0-alpha-20241030023710",
     "@seed-design/recipe": "0.0.0-alpha-20241114011809",
-    "@seed-design/stylesheet": "3.0.0-alpha-20241114060527",
+    "@seed-design/stylesheet": "3.0.0-alpha-20241121055833",
     "@stackflow/core": "^1.1.0",
     "@stackflow/plugin-basic-ui": "^1.10.0",
     "@stackflow/plugin-history-sync": "^1.7.0",

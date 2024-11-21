@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241121055833
+
+### Patch Changes
+
+- 피그마 variable과 싱크해요
+
 ## 3.0.0-alpha-20241114060527
 
 ### Patch Changes
