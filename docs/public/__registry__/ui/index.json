@@ -47,7 +47,8 @@
   {
     "name": "checkbox",
     "dependencies": [
-      "@seed-design/react-checkbox@alpha"
+      "@seed-design/react-checkbox@alpha",
+      "@daangn/react-monochrome-icon"
     ],
     "files": [
       "ui:checkbox.tsx"
