@@ -19,11 +19,53 @@ const checkboxSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "size": "medium",
+  "variant": "sqaure",
+  "bold": false,
+  "indeterminate": false
+};
 
-const compoundVariants = [];
+const compoundVariants = [
+  {
+    "size": "small",
+    "variant": "ghost"
+  },
+  {
+    "size": "medium",
+    "variant": "ghost"
+  },
+  {
+    "size": "large",
+    "variant": "ghost"
+  },
+  {
+    "size": "small",
+    "variant": "sqaure"
+  },
+  {
+    "size": "medium",
+    "variant": "sqaure"
+  },
+  {
+    "size": "large",
+    "variant": "sqaure"
+  }
+];
 
 export const checkboxVariantMap = {
+  "bold": [
+    "true",
+    "false"
+  ],
+  "indeterminate": [
+    "true",
+    "false"
+  ],
+  "variant": [
+    "sqaure",
+    "ghost"
+  ],
   "size": [
     "large",
     "medium",

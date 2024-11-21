@@ -28,7 +28,11 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "checkbox",
-    dependencies: ["@seed-design/react-checkbox@alpha"],
+    // TODO: remove alpha
+    dependencies: [
+      "@seed-design/react-checkbox@alpha",
+      "@daangn/react-monochrome-icon",
+    ],
     files: ["ui:checkbox.tsx"],
   },
   {
@@ -52,11 +56,13 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "tabs",
+    // TODO: remove alpha
     dependencies: ["@seed-design/react-tabs@alpha"],
     files: ["ui:tabs.tsx"],
   },
   {
     name: "chip-tabs",
+    // TODO: remove alpha
     dependencies: ["@seed-design/react-tabs@alpha"],
     files: ["ui:chip-tabs.tsx"],
   },
@@ -67,6 +73,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "switch",
+    // TODO: remove alpha
     dependencies: ["@seed-design/react-switch@alpha"],
     files: ["ui:switch.tsx"],
   },

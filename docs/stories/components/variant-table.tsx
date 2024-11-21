@@ -28,6 +28,8 @@ const generateCombinations = (variantMap: VariantMap) => {
   return combinations;
 };
 
+const Bool = (value: "true" | "false") => value === "true";
+
 export const VariantTable = (props: Props) => {
   const { variantMap, Component, ...rest } = props;
 
@@ -47,6 +49,22 @@ export const VariantTable = (props: Props) => {
         </thead>
         <tbody>
           {combinations.map((combination) => {
+            const boolify = Object.entries(combination).reduce((acc, [key, value]) => {
+              if (value === "true" || value === "false") {
+                return {
+                  // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
+                  ...acc,
+                  [key]: Bool(value),
+                };
+              }
+
+              return {
+                // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
+                ...acc,
+                [key]: value,
+              };
+            }, {});
+
             const combinationKey = Object.values(combination).join("-");
             return (
               <tr key={combinationKey}>
@@ -72,7 +90,7 @@ export const VariantTable = (props: Props) => {
                     padding: 16,
                   }}
                 >
-                  <Component {...combination} {...rest} />
+                  <Component {...boolify} {...rest} />
                 </td>
               </tr>
             );

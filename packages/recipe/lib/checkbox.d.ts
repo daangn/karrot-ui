@@ -1,5 +1,20 @@
 interface CheckboxVariant {
-  size: "large" | "medium" | "small"
+  /**
+  * @default false
+  */
+  bold: true | false;
+/**
+  * @default false
+  */
+  indeterminate: true | false;
+/**
+  * @default sqaure
+  */
+  variant: "sqaure" | "ghost";
+/**
+  * @default medium
+  */
+  size: "large" | "medium" | "small";
 }
 
 type CheckboxVariantMap = {

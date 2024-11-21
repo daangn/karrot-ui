@@ -14,31 +14,12 @@ const checkbox = defineRecipe({
       verticalAlign: "top",
       isolation: "isolate",
       cursor: "pointer",
+
+      gap: vars.base.enabled.root.gap,
     },
     control: {
       position: "relative",
       boxSizing: "border-box",
-
-      borderWidth: vars.base.enabled.control.strokeWidth,
-      borderStyle: "solid",
-      borderColor: vars.base.enabled.control.strokeColor,
-
-      [pseudo(checked)]: {
-        background: vars.base.enabledSelected.control.color,
-        borderWidth: 0,
-      },
-      [pseudo(active)]: {
-        background: vars.base.pressed.control.color,
-      },
-      [pseudo(active, checked)]: {
-        background: vars.base.pressedSelected.control.color,
-      },
-      [pseudo(disabled)]: {
-        background: vars.base.disabled.control.color,
-      },
-      [pseudo(disabled, checked)]: {
-        background: "none",
-      },
     },
     icon: {
       display: "none",
@@ -51,29 +32,110 @@ const checkbox = defineRecipe({
       top: 0,
       bottom: 0,
       textAlign: "center",
-
-      [pseudo(checked)]: {
-        display: "block",
-        color: vars.base.enabledSelected.icon.color,
-      },
-      [pseudo(disabled, checked)]: {
-        display: "block",
-        color: vars.base.disabledSelected.icon.color,
-      },
+      overflow: "initial",
     },
     label: {
       color: vars.base.enabled.label.color,
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.label.color,
-      },
+
+      // TODO: tokenize
+      lineHeight: "21px",
     },
   },
   variants: {
+    bold: {
+      true: {
+        label: {
+          fontWeight: vars.base.bold.label.fontWeight,
+        },
+      },
+      false: {},
+    },
+    indeterminate: {
+      true: {},
+      false: {},
+    },
+    variant: {
+      sqaure: {
+        control: {
+          borderWidth: vars.variantSquare.enabled.control.strokeWidth,
+          borderStyle: "solid",
+          borderColor: vars.variantSquare.enabled.control.strokeColor,
+
+          [pseudo(checked)]: {
+            background: vars.variantSquare.enabledSelected.control.color,
+            borderWidth: 0,
+          },
+          [pseudo(active)]: {
+            background: vars.variantSquare.pressed.control.color,
+          },
+          [pseudo(active, checked)]: {
+            background: vars.variantSquare.pressedSelected.control.color,
+          },
+          [pseudo(disabled)]: {
+            background: vars.variantSquare.disabled.control.color,
+          },
+          [pseudo(disabled, checked)]: {
+            background: "none",
+          },
+        },
+        icon: {
+          [pseudo(checked)]: {
+            display: "block",
+            color: vars.variantSquare.enabledSelected.icon.color,
+          },
+          [pseudo(disabled, checked)]: {
+            display: "block",
+            color: vars.variantSquare.disabledSelected.icon.color,
+          },
+        },
+        label: {
+          [pseudo(disabled)]: {
+            color: vars.variantSquare.disabled.label.color,
+          },
+        },
+      },
+      ghost: {
+        control: {
+          background: "none",
+
+          [pseudo(checked)]: {
+            background: "none",
+          },
+          [pseudo(active)]: {
+            background: vars.variantGhost.pressed.control.color,
+          },
+          [pseudo(active, checked)]: {
+            background: vars.variantGhost.pressedSelected.control.color,
+          },
+          [pseudo(disabled, checked)]: {
+            background: "none",
+          },
+        },
+        icon: {
+          display: "block",
+          color: vars.variantGhost.enabled.icon.color,
+
+          [pseudo(checked)]: {
+            color: vars.variantGhost.enabledSelected.icon.color,
+          },
+          [pseudo(disabled, checked)]: {
+            color: vars.variantGhost.disabledSelected.icon.color,
+          },
+          [pseudo(disabled)]: {
+            color: vars.variantGhost.disabled.icon.color,
+          },
+        },
+        label: {
+          [pseudo(disabled)]: {
+            color: vars.variantGhost.disabled.label.color,
+          },
+        },
+      },
+    },
     size: {
       large: {
         root: {
           minHeight: vars.sizeLarge.enabled.root.minHeight,
-          gap: vars.sizeLarge.enabled.root.gap,
         },
         control: {
           borderRadius: vars.sizeLarge.enabled.control.cornerRadius,
@@ -83,17 +145,12 @@ const checkbox = defineRecipe({
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
-          marginBlockStart: "7px", // 수직 위치 보정
-        },
-        icon: {
-          width: vars.sizeLarge.enabled.icon.size,
-          height: vars.sizeLarge.enabled.icon.size,
+          marginBlockStart: "7.5px", // 수직 위치 보정
         },
       },
       medium: {
         root: {
           minHeight: vars.sizeMedium.enabled.root.minHeight,
-          gap: vars.sizeMedium.enabled.root.gap,
         },
         control: {
           borderRadius: vars.sizeMedium.enabled.control.cornerRadius,
@@ -103,17 +160,12 @@ const checkbox = defineRecipe({
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
-          marginBlockStart: "6px", // 수직 위치 보정
-        },
-        icon: {
-          width: vars.sizeMedium.enabled.icon.size,
-          height: vars.sizeMedium.enabled.icon.size,
+          marginBlockStart: "6.5px", // 수직 위치 보정
         },
       },
       small: {
         root: {
           minHeight: vars.sizeSmall.enabled.root.minHeight,
-          gap: vars.sizeSmall.enabled.root.gap,
         },
         control: {
           borderRadius: vars.sizeSmall.enabled.control.cornerRadius,
@@ -125,12 +177,76 @@ const checkbox = defineRecipe({
           fontSize: vars.sizeSmall.enabled.label.fontSize,
           marginBlockStart: "5px", // 수직 위치 보정
         },
+      },
+    },
+  },
+  compoundVariants: [
+    {
+      size: "small",
+      variant: "ghost",
+      css: {
         icon: {
-          width: vars.sizeSmall.enabled.icon.size,
-          height: vars.sizeSmall.enabled.icon.size,
+          width: vars.variantGhostSizeSmall.enabled.icon.size,
+          height: vars.variantGhostSizeSmall.enabled.icon.size,
         },
       },
     },
+    {
+      size: "medium",
+      variant: "ghost",
+      css: {
+        icon: {
+          width: vars.variantGhostSizeMedium.enabled.icon.size,
+          height: vars.variantGhostSizeMedium.enabled.icon.size,
+        },
+      },
+    },
+    {
+      size: "large",
+      variant: "ghost",
+      css: {
+        icon: {
+          width: vars.variantGhostSizeLarge.enabled.icon.size,
+          height: vars.variantGhostSizeLarge.enabled.icon.size,
+        },
+      },
+    },
+    {
+      size: "small",
+      variant: "sqaure",
+      css: {
+        icon: {
+          width: vars.variantSquareSizeSmall.enabled.icon.size,
+          height: vars.variantSquareSizeSmall.enabled.icon.size,
+        },
+      },
+    },
+    {
+      size: "medium",
+      variant: "sqaure",
+      css: {
+        icon: {
+          width: vars.variantSquareSizeMedium.enabled.icon.size,
+          height: vars.variantSquareSizeMedium.enabled.icon.size,
+        },
+      },
+    },
+    {
+      size: "large",
+      variant: "sqaure",
+      css: {
+        icon: {
+          width: vars.variantSquareSizeLarge.enabled.icon.size,
+          height: vars.variantSquareSizeLarge.enabled.icon.size,
+        },
+      },
+    },
+  ],
+  defaultVariants: {
+    size: "medium",
+    variant: "sqaure",
+    bold: false,
+    indeterminate: false,
   },
 });
 

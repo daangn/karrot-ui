@@ -35,7 +35,6 @@ export function ComponentExample(props: ComponentExampleProps) {
               style={{
                 minHeight: "300px",
                 width: "100%",
-                backgroundColor: "var(--seed-v3-color-bg-layer-default)",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
