@@ -1,15 +1,17 @@
-kind: TokenCollection
+kind: Tokens
 metadata:
   id: line-height
   name: Line Height
 data:
-  $line-height.t1: 13px
-  $line-height.t2: 16px
-  $line-height.t3: 18px
-  $line-height.t4: 19px
-  $line-height.t5: 21px
-  $line-height.t6: 24px
-  $line-height.t7: 25px
-  $line-height.t8: 30px
-  $line-height.t9: 32px
-  $line-height.t10: 34px
+  collection: global
+  tokens:
+    $line-height.t1: 13px
+    $line-height.t2: 16px
+    $line-height.t3: 18px
+    $line-height.t4: 19px
+    $line-height.t5: 21px
+    $line-height.t6: 24px
+    $line-height.t7: 25px
+    $line-height.t8: 30px
+    $line-height.t9: 32px
+    $line-height.t10: 34px

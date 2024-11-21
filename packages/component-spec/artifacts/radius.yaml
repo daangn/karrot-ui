@@ -1,16 +1,18 @@
-kind: TokenCollection
+kind: Tokens
 metadata:
   id: radius
   name: Radius
 data:
-  $radius.x0_5: 2px
-  $radius.x1: 4px
-  $radius.x1_5: 6px
-  $radius.x2: 8px
-  $radius.x2_5: 10px
-  $radius.x3: 12px
-  $radius.x3_5: 14px
-  $radius.x4: 16px
-  $radius.x5: 20px
-  $radius.x6: 24px
-  $radius.full: 9999px
+  collection: global
+  tokens:
+    $radius.x0_5: 2px
+    $radius.x1: 4px
+    $radius.x1_5: 6px
+    $radius.x2: 8px
+    $radius.x2_5: 10px
+    $radius.x3: 12px
+    $radius.x3_5: 14px
+    $radius.x4: 16px
+    $radius.x5: 20px
+    $radius.x6: 24px
+    $radius.full: 9999px
