@@ -25,11 +25,15 @@ const segmentedControl = defineRecipe({
       boxSizing: "border-box",
     },
     option: {
+      position: "relative",
+
       minWidth: vars.base.enabled.option.minWidth,
 
       zIndex: 10,
 
       borderRadius: vars.base.enabled.option.cornerRadius,
+
+      overflow: "hidden",
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.option.color,
@@ -40,10 +44,12 @@ const segmentedControl = defineRecipe({
       },
     },
     optionLabel: {
+      display: "inline-block",
+
       position: "absolute",
       inset: 0,
 
-      paddingInline: vars.base.enabled.option.paddingX,
+      paddingInline: `calc(${vars.base.enabled.option.paddingX} - 1px)`,
       paddingBlock: vars.base.enabled.option.paddingY,
 
       fontSize: vars.base.enabled.option.fontSize,
@@ -51,8 +57,10 @@ const segmentedControl = defineRecipe({
       textAlign: "center",
       fontWeight: vars.base.enabled.option.fontWeight,
 
+      whiteSpace: "nowrap",
+
       textOverflow: "ellipsis",
-      overflowX: "hidden",
+      overflow: "hidden",
 
       color: vars.base.enabled.option.color,
 
@@ -67,6 +75,9 @@ const segmentedControl = defineRecipe({
       },
     },
     optionLabelPlaceholder: {
+      display: "inline-block",
+      height: "100%",
+
       paddingInline: vars.base.enabled.option.paddingX,
       paddingBlock: vars.base.enabled.option.paddingY,
 
@@ -76,7 +87,8 @@ const segmentedControl = defineRecipe({
       fontWeight: vars.base.selected.option.fontWeight,
 
       textOverflow: "ellipsis",
-      overflowX: "hidden",
+      overflow: "hidden",
+      whiteSpace: "nowrap",
 
       opacity: 0,
     },

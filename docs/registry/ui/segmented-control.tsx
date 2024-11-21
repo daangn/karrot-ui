@@ -1,24 +1,19 @@
 "use client";
 
 import "@seed-design/stylesheet/segmentedControl.css";
-
 import {
   useTabs,
   type TriggerProps,
   type UseTabsProps,
 } from "@seed-design/react-tabs";
-
 import * as React from "react";
 import clsx from "clsx";
-
 import {
   segmentedControl,
   type SegmentedControlVariantProps,
 } from "@seed-design/recipe/segmentedControl";
-
-export interface SegmentedControlProps extends SegmentedControlVariantProps {}
-
 import type { Assign } from "../util/types";
+export interface SegmentedControlProps extends SegmentedControlVariantProps {}
 
 const TabsContext = React.createContext<{
   api: ReturnType<typeof useTabs>;
@@ -80,13 +75,13 @@ export const SegmentedControl = React.forwardRef<
 SegmentedControl.displayName = "SegmentedControl";
 
 export interface SegmentedControlOptionProps
-  extends SegmentedControlVariantProps {}
+  extends SegmentedControlVariantProps,
+    Omit<TriggerProps, "isDisabled"> {}
 
-type ReactSegmentedControlOptionProps = SegmentedControlOptionProps &
-  Assign<
-    React.HTMLAttributes<HTMLButtonElement>,
-    Omit<TriggerProps, "isDisabled">
-  >;
+type ReactSegmentedControlOptionProps = Assign<
+  React.HTMLAttributes<HTMLButtonElement>,
+  SegmentedControlOptionProps
+>;
 
 export const SegmentedControlOption = React.forwardRef<
   HTMLButtonElement,
@@ -106,9 +101,6 @@ export const SegmentedControlOption = React.forwardRef<
       className={clsx(classNames.option, className)}
       {...rootProps}
       {...otherProps}
-      style={{
-        position: "relative",
-      }}
     >
       <span className={classNames.optionLabel} {...labelProps}>
         {children}

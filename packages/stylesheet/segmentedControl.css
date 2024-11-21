@@ -10,9 +10,11 @@
     box-sizing: border-box;
 }
 .segmentedControl__option {
+    position: relative;
     min-width: 86px;
     z-index: 10;
     border-radius: var(--seed-v3-radii-full);
+    overflow: hidden;
 }
 .segmentedControl__option:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
@@ -21,16 +23,18 @@
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .segmentedControl__optionLabel {
+    display: inline-block;
     position: absolute;
     inset: 0;
-    padding-inline: var(--seed-v3-unit-4);
+    padding-inline: calc(var(--seed-v3-unit-4) - 1px);
     padding-block: 5px;
     font-size: var(--seed-v3-font-size-200);
     line-height: 1.3125rem;
     text-align: center;
     font-weight: var(--seed-v3-font-weight-medium);
+    white-space: nowrap;
     text-overflow: ellipsis;
-    overflow-x: hidden;
+    overflow: hidden;
     color: var(--seed-v3-color-fg-neutral-muted);
 }
 .segmentedControl__optionLabel:is(:selected, [data-selected]) {
@@ -41,6 +45,8 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .segmentedControl__optionLabelPlaceholder {
+    display: inline-block;
+    height: 100%;
     padding-inline: var(--seed-v3-unit-4);
     padding-block: 5px;
     font-size: var(--seed-v3-font-size-200);
@@ -48,7 +54,8 @@
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);
     text-overflow: ellipsis;
-    overflow-x: hidden;
+    overflow: hidden;
+    white-space: nowrap;
     opacity: 0;
 }
 .segmentedControl__indicator {

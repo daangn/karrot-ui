@@ -142,7 +142,7 @@
   {
     "name": "segmented-control",
     "dependencies": [
-      "@seed-design/react-radio-group@alpha"
+      "@seed-design/react-tabs@alpha"
     ],
     "files": [
       "ui:segmented-control.tsx"
