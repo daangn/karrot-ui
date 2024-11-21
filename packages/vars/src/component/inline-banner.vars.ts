@@ -152,22 +152,22 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-warning-solid)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       },
       "title": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       },
       "linkLabel": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       },
       "dismissIcon": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       },
       "actionableIcon": {
-        "color": "var(--seed-v3-color-fg-warning-contrast)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       }
     }
   },

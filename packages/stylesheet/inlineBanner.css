@@ -166,22 +166,22 @@
     background-color: var(--seed-v3-color-bg-warning-solid);
 }
 .inlineBanner__icon--variant_warningSolid {
-    color: var(--seed-v3-color-fg-warning-contrast);
+    color: var(--seed-v3-color-fg-neutral);
 }
 .inlineBanner__title--variant_warningSolid {
-    color: var(--seed-v3-color-fg-warning-contrast);
+    color: var(--seed-v3-color-fg-neutral);
 }
 .inlineBanner__label--variant_warningSolid {
-    color: var(--seed-v3-color-fg-warning-contrast);
+    color: var(--seed-v3-color-fg-neutral);
 }
 .inlineBanner__linkLabel--variant_warningSolid {
-    color: var(--seed-v3-color-fg-warning-contrast);
+    color: var(--seed-v3-color-fg-neutral);
 }
 .inlineBanner__actionableIcon--variant_warningSolid {
-    color: var(--seed-v3-color-fg-warning-contrast);
+    color: var(--seed-v3-color-fg-neutral);
 }
 .inlineBanner__dismissIcon--variant_warningSolid {
-    color: var(--seed-v3-color-fg-warning-contrast);
+    color: var(--seed-v3-color-fg-neutral);
 }
 .inlineBanner__root--variant_dangerWeak {
     position: sticky;

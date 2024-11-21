@@ -105,17 +105,17 @@ variant=warning solid:
     root:
       color: $color.bg.warning-solid
     icon:
-      color: $color.fg.warning-contrast
+      color: $color.fg.neutral
     title:
-      color: $color.fg.warning-contrast
+      color: $color.fg.neutral
     label:
-      color: $color.fg.warning-contrast
+      color: $color.fg.neutral
     linkLabel:
-      color: $color.fg.warning-contrast
+      color: $color.fg.neutral
     dismissIcon:
-      color: $color.fg.warning-contrast
+      color: $color.fg.neutral
     actionableIcon:
-      color: $color.fg.warning-contrast
+      color: $color.fg.neutral
 variant=danger weak:
   enabled:
     root:
