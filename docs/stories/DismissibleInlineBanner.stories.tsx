@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { DismissibleInlineBanner } from "seed-design/ui/dismissible-inline-banner";
 
-import { dismissibleInlineBannerVariantMap } from "@seed-design/recipe/dismissibleInlineBanner";
+import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -24,11 +24,7 @@ const CommonStoryTemplate: Story = {
     dismissAriaLabel: "닫기",
   },
   render: (args) => (
-    <VariantTable
-      Component={meta.component}
-      variantMap={dismissibleInlineBannerVariantMap}
-      {...args}
-    />
+    <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />
   ),
 };
 

@@ -1,14 +1,14 @@
 "use client";
 
-import "@seed-design/stylesheet/dismissibleInlineBanner.css";
+import "@seed-design/stylesheet/inlineBanner.css";
 
 import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
 import {
-  dismissibleInlineBanner,
-  type DismissibleInlineBannerVariantProps,
-} from "@seed-design/recipe/dismissibleInlineBanner";
+  inlineBanner,
+  type InlineBannerVariantProps,
+} from "@seed-design/recipe/inlineBanner";
 import { IconXmarkLine } from "@daangn/react-monochrome-icon";
 import {
   useDismissible,
@@ -17,7 +17,11 @@ import {
 
 export interface DismissibleInlineBannerProps
   extends DismissibleProps,
-    DismissibleInlineBannerVariantProps {
+    InlineBannerVariantProps {
+  variant?: Exclude<
+    InlineBannerVariantProps["variant"],
+    "dangerWeak" | "dangerSolid"
+  >;
   icon?: React.ReactNode;
   titleText?: string;
   dismissAriaLabel: string;
@@ -45,7 +49,7 @@ export const DismissibleInlineBanner = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = dismissibleInlineBanner({ variant });
+    const classNames = inlineBanner({ variant });
 
     const { isOpen, onDismissButtonClick } = useDismissible({
       defaultOpen,
@@ -79,7 +83,7 @@ export const DismissibleInlineBanner = React.forwardRef<
           className={classNames.dismissButton}
           onClick={onDismissButtonClick}
         >
-          <IconXmarkLine className={classNames.xIcon} />
+          <IconXmarkLine className={classNames.dismissIcon} />
         </button>
       </div>
     );

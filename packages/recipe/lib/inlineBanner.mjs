@@ -24,6 +24,22 @@ const inlineBannerSlotNames = [
   [
     "label",
     "inlineBanner__label"
+  ],
+  [
+    "linkLabel",
+    "inlineBanner__linkLabel"
+  ],
+  [
+    "actionableIcon",
+    "inlineBanner__actionableIcon"
+  ],
+  [
+    "dismissButton",
+    "inlineBanner__dismissButton"
+  ],
+  [
+    "dismissIcon",
+    "inlineBanner__dismissIcon"
   ]
 ];
 

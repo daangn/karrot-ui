@@ -11,9 +11,6 @@ import dialog from "./dialog.recipe";
 import expandButton from "./expand-button.recipe";
 import helpBubble from "./help-bubble.recipe";
 import inlineBanner from "./inline-banner.recipe";
-import actionableInlineBanner from "./actionable-inline-banner.recipe";
-import dismissibleInlineBanner from "./dismissible-inline-banner.recipe";
-import linkInlineBanner from "./link-inline-banner.recipe";
 import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
 import switchRecipe from "./switch.recipe";
@@ -34,9 +31,6 @@ const recipes = {
   switch: switchRecipe,
   helpBubble,
   inlineBanner,
-  actionableInlineBanner,
-  dismissibleInlineBanner,
-  linkInlineBanner,
   tab,
   tabs,
   chipTab,

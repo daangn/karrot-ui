@@ -4,6 +4,7 @@ base:
     root:
       gap: $unit[1]
       paddingXStart: $unit[4]
+      paddingXEnd: $unit[1]
     content:
       gap: $unit[2]
       paddingY: 10.5px
@@ -24,28 +25,16 @@ base:
       fontWeight: $font-weight.regular
     dismissButton:
       size: $unit[10]
-    xIcon:
+    dismissIcon:
       size: $unit[4]
-    chevronRightIcon:
+    actionableIcon:
       size: $unit[4]
       margin: $unit[3]
 
-type=default:
+type=contentOnly:
   enabled:
-    root:
-      paddingXEnd: $unit[4]
-type=link:
-  enabled:
-    root:
-      paddingXEnd: $unit[1]
-type=dismissible:
-  enabled:
-    root:
-      paddingXEnd: $unit[1]
-type=actionable:
-  enabled:
-    root:
-      paddingXEnd: $unit[1]
+    content:
+      paddingXEnd: $unit[3]
 
 variant=neutral weak:
   enabled:
@@ -59,9 +48,9 @@ variant=neutral weak:
       color: $color.fg.neutral
     linkLabel:
       color: $color.fg.neutral
-    xIcon:
+    dismissIcon:
       color: $color.fg.neutral
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.neutral
 variant=positive weak:
   enabled:
@@ -75,9 +64,9 @@ variant=positive weak:
       color: $color.fg.positive-contrast
     linkLabel:
       color: $color.fg.positive-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.positive-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.positive-contrast
 variant=informative weak:
   enabled:
@@ -91,9 +80,9 @@ variant=informative weak:
       color: $color.fg.informative-contrast
     linkLabel:
       color: $color.fg.informative-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.informative-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.informative-contrast
 variant=warning weak:
   enabled:
@@ -107,9 +96,9 @@ variant=warning weak:
       color: $color.fg.warning-contrast
     linkLabel:
       color: $color.fg.warning-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.warning-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.warning-contrast
 variant=warning solid:
   enabled:
@@ -123,9 +112,9 @@ variant=warning solid:
       color: $color.fg.warning-contrast
     linkLabel:
       color: $color.fg.warning-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.warning-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.warning-contrast
 variant=danger weak:
   enabled:
@@ -139,7 +128,7 @@ variant=danger weak:
       color: $color.fg.danger-contrast
     linkLabel:
       color: $color.fg.danger-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.danger-contrast
 variant=danger solid:
   enabled:
@@ -153,5 +142,5 @@ variant=danger solid:
       color: $color.fg.static-white
     linkLabel:
       color: $color.fg.static-white
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.static-white

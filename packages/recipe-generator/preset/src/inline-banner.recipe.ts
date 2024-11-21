@@ -1,9 +1,21 @@
 import { inlineBanner as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
+import { pseudo } from "./pseudo";
 
 const inlineBanner = defineRecipe({
   name: "inlineBanner",
-  slots: ["root", "content", "icon", "title", "spacer", "label"],
+  slots: [
+    "root",
+    "content",
+    "icon",
+    "title",
+    "spacer",
+    "label",
+    "linkLabel",
+    "actionableIcon",
+    "dismissButton",
+    "dismissIcon",
+  ],
   base: {
     root: {
       display: "flex",
@@ -16,7 +28,15 @@ const inlineBanner = defineRecipe({
       MozOsxFontSmoothing: "grayscale",
 
       paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.typeDefault.enabled.root.paddingXEnd,
+      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
+
+      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+      [pseudo(":is(button)")]: {
+        border: "none",
+        paddingBlock: 0,
+        font: "inherit",
+        cursor: "pointer",
+      },
     },
     content: {
       display: "flex",
@@ -29,6 +49,10 @@ const inlineBanner = defineRecipe({
       // FIXME
       lineHeight: "1.1875rem",
       textAlign: "start",
+
+      [pseudo(":only-child")]: {
+        paddingInlineEnd: vars.typeContentOnly.enabled.content.paddingXEnd,
+      },
     },
     icon: {
       flex: "none",
@@ -46,6 +70,55 @@ const inlineBanner = defineRecipe({
     },
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
+    },
+    linkLabel: {
+      flex: "none",
+
+      height: vars.base.enabled.linkLabel.size,
+      paddingInline: vars.base.enabled.linkLabel.paddingX,
+
+      fontSize: vars.base.enabled.linkLabel.fontSize,
+      fontWeight: vars.base.enabled.linkLabel.fontWeight,
+      // FIXME
+      lineHeight: "1rem",
+
+      textDecoration: "underline",
+      // XXX
+      textUnderlineOffset: "2px",
+
+      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+      border: "none",
+      backgroundColor: "transparent",
+      paddingBlock: 0,
+      cursor: "pointer",
+    },
+    actionableIcon: {
+      flex: "none",
+
+      width: vars.base.enabled.actionableIcon.size,
+      height: vars.base.enabled.actionableIcon.size,
+
+      margin: vars.base.enabled.actionableIcon.margin,
+    },
+    dismissButton: {
+      flex: "none",
+
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+
+      width: vars.base.enabled.dismissButton.size,
+      height: vars.base.enabled.dismissButton.size,
+
+      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+      border: "none",
+      backgroundColor: "transparent",
+      padding: 0,
+      cursor: "pointer",
+    },
+    dismissIcon: {
+      width: vars.base.enabled.dismissIcon.size,
+      height: vars.base.enabled.dismissIcon.size,
     },
   },
   defaultVariants: {
@@ -66,6 +139,15 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantNeutralWeak.enabled.label.color,
         },
+        linkLabel: {
+          color: vars.variantNeutralWeak.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantNeutralWeak.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantNeutralWeak.enabled.dismissIcon.color,
+        },
       },
       positiveWeak: {
         root: {
@@ -79,6 +161,15 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantPositiveWeak.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantPositiveWeak.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantPositiveWeak.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantPositiveWeak.enabled.dismissIcon.color,
         },
       },
       informativeWeak: {
@@ -94,6 +185,15 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantInformativeWeak.enabled.label.color,
         },
+        linkLabel: {
+          color: vars.variantInformativeWeak.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantInformativeWeak.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantInformativeWeak.enabled.dismissIcon.color,
+        },
       },
       warningWeak: {
         root: {
@@ -108,6 +208,15 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantWarningWeak.enabled.label.color,
         },
+        linkLabel: {
+          color: vars.variantWarningWeak.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantWarningWeak.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantWarningWeak.enabled.dismissIcon.color,
+        },
       },
       warningSolid: {
         root: {
@@ -121,6 +230,15 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantWarningSolid.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantWarningSolid.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantWarningSolid.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantWarningSolid.enabled.dismissIcon.color,
         },
       },
       dangerWeak: {
@@ -139,6 +257,12 @@ const inlineBanner = defineRecipe({
         label: {
           color: vars.variantDangerWeak.enabled.label.color,
         },
+        linkLabel: {
+          color: vars.variantDangerWeak.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantDangerWeak.enabled.actionableIcon.color,
+        },
       },
       dangerSolid: {
         root: {
@@ -155,6 +279,12 @@ const inlineBanner = defineRecipe({
         },
         label: {
           color: vars.variantDangerSolid.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantDangerSolid.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantDangerSolid.enabled.actionableIcon.color,
         },
       },
     },

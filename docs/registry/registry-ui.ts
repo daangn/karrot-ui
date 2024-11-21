@@ -51,11 +51,6 @@ export const registryUI: RegistryUI = [
     files: ["ui:actionable-inline-banner.tsx"],
   },
   {
-    name: "link-inline-banner",
-    dependencies: ["@radix-ui/react-slot"],
-    files: ["ui:link-inline-banner.tsx"],
-  },
-  {
     name: "tabs",
     dependencies: ["@seed-design/react-tabs@alpha"],
     files: ["ui:tabs.tsx"],

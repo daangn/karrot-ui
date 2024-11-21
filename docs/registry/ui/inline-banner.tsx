@@ -10,10 +10,13 @@ import {
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
 
-export interface InlineBannerProps
-  extends Omit<InlineBannerVariantProps, "type"> {
+export interface InlineBannerProps extends InlineBannerVariantProps {
   icon?: React.ReactNode;
   titleText?: string;
+  link?: {
+    label: string;
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
+  };
 }
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
@@ -30,6 +33,7 @@ export const InlineBanner = React.forwardRef<
       variant = "neutralWeak",
       icon,
       titleText,
+      link,
       ...otherProps
     },
     ref,
@@ -54,6 +58,15 @@ export const InlineBanner = React.forwardRef<
             <span className={classNames.label}>{children}</span>
           </div>
         </div>
+        {link && (
+          <button
+            type="button"
+            className={classNames.linkLabel}
+            onClick={link.onClick}
+          >
+            {link.label}
+          </button>
+        )}
       </div>
     );
   },
