@@ -84,15 +84,6 @@
     ]
   },
   {
-    "name": "link-inline-banner",
-    "dependencies": [
-      "@radix-ui/react-slot"
-    ],
-    "files": [
-      "ui:link-inline-banner.tsx"
-    ]
-  },
-  {
     "name": "tabs",
     "dependencies": [
       "@seed-design/react-tabs@alpha"
