@@ -36,16 +36,16 @@ const useTabsContext = () => {
 
 export interface SegmentedControlProps
   extends SegmentedControlVariantProps,
-    UseTabsProps {}
+    Pick<UseTabsProps, "value" | "defaultValue" | "onValueChange"> {}
 
 type ReactSegmentedControlProps = SegmentedControlProps &
-  Assign<React.HTMLAttributes<HTMLFieldSetElement>, UseTabsProps>;
+  Assign<React.HTMLAttributes<HTMLDivElement>, UseTabsProps>;
 
 export const SegmentedControl = React.forwardRef<
   // HTMLFieldSetElement,
   HTMLDivElement,
   ReactSegmentedControlProps
->(({ className, children, ...otherProps }, ref) => {
+>(({ className, children, style, ...otherProps }, ref) => {
   const api = useTabs(otherProps);
   const { tabTriggerListProps, triggerSize, tabIndicatorProps } = api;
 
@@ -56,27 +56,24 @@ export const SegmentedControl = React.forwardRef<
   const classNames = segmentedControl();
 
   return (
-    <div // TODO: fieldset으로 교체
-      ref={ref}
+    <div
+      style={{
+        ...style,
+        // XXX: tabCount 썼을 때 hydration 문제
+        gridTemplateColumns: `repeat(${React.Children.count(children)}, 1fr)`,
+      }}
       className={clsx(classNames.root, className)}
+      ref={ref}
       {...tabTriggerListProps}
       {...otherProps}
     >
-      <TabsContext.Provider value={{ api }}>
-        {children}
-        <div
-          aria-hidden
-          className={classNames.indicator}
-          {...tabIndicatorProps}
-          style={{
-            left,
-            width,
-            willChange: "left, width",
-            // XXX: 임의
-            transition: "left 0.2s, width 0.2s",
-          }}
-        />
-      </TabsContext.Provider>
+      <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>
+      <div
+        aria-hidden
+        className={classNames.indicator}
+        {...tabIndicatorProps}
+        style={{ left, width }}
+      />
     </div>
   );
 });
@@ -99,45 +96,32 @@ export const SegmentedControlOption = React.forwardRef<
     api: { getTabTriggerProps },
   } = useTabsContext();
 
-  const { rootProps } = getTabTriggerProps({ value });
+  const { rootProps, labelProps } = getTabTriggerProps({ value });
 
   const classNames = segmentedControl();
 
   return (
     <button
       ref={ref}
+      className={clsx(classNames.option, className)}
       {...rootProps}
       {...otherProps}
-      className={clsx(classNames.option, className)}
-      // style={{
-      //   ...(rootProps["data-value"] === "1"
-      //     ? {
-      //         borderStartEndRadius: 0,
-      //         borderEndEndRadius: 0,
-      //       }
-      //     : {}),
-      //   ...(rootProps["data-value"] === `${tabCount}`
-      //     ? {
-      //         borderStartStartRadius: 0,
-      //         borderEndStartRadius: 0,
-      //       }
-      //     : {}),
-      // }}
+      style={{
+        position: "relative",
+      }}
     >
-      {children}
+      <span className={classNames.optionLabel} {...labelProps}>
+        {children}
+      </span>
+      <span
+        aria-hidden
+        className={classNames.optionLabelPlaceholder}
+        {...labelProps}
+      >
+        {children}
+      </span>
     </button>
   );
-
-  // return (
-  //   <label
-  //     className={clsx(classNames.item, className)}
-  // 		{...otherProps}
-  //   >
-  //     <input ref={ref} {...hiddenInputProps} style={visuallyHidden} />
-  //     {/* TODO */}
-  //     <div {...stateProps}>{children}</div>
-  //   </label>
-  // );
 });
 
 SegmentedControlOption.displayName = "SegmentedControlOption";

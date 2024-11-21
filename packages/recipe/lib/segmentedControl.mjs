@@ -10,6 +10,14 @@ const segmentedControlSlotNames = [
     "segmentedControl__option"
   ],
   [
+    "optionLabel",
+    "segmentedControl__optionLabel"
+  ],
+  [
+    "optionLabelPlaceholder",
+    "segmentedControl__optionLabelPlaceholder"
+  ],
+  [
     "indicator",
     "segmentedControl__indicator"
   ]

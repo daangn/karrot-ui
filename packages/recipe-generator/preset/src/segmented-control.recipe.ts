@@ -4,44 +4,57 @@ import { disabled, active, pseudo, selected } from "./pseudo";
 
 const segmentedControl = defineRecipe({
   name: "segmentedControl",
-  slots: ["root", "option", "indicator"],
+  slots: ["root", "option", "optionLabel", "optionLabelPlaceholder", "indicator"],
   base: {
     root: {
-      position: "relative",
-
-      display: "flex",
+      display: "grid",
 
       height: vars.base.enabled.root.height,
-
-      borderRadius: vars.base.enabled.root.cornerRadius,
+      minWidth: "fit-content",
+      maxWidth: "100%",
 
       padding: vars.base.enabled.root.padding,
 
+      position: "relative",
+
+      borderRadius: vars.base.enabled.root.cornerRadius,
+
       backgroundColor: vars.base.enabled.root.color,
 
-      minWidth: "min-content",
+      // XXX: css reset 생기면 제거
+      boxSizing: "border-box",
     },
     option: {
-      flexGrow: "1",
-
-      borderRadius: vars.base.enabled.option.cornerRadius,
-
-      paddingInline: vars.base.enabled.option.paddingX,
-      paddingBlock: vars.base.enabled.option.paddingY,
-
       minWidth: vars.base.enabled.option.minWidth,
 
-      fontSize: vars.base.enabled.option.fontSize,
-      fontWeight: vars.base.enabled.option.fontWeight,
-      lineHeight: "1.3125rem",
+      zIndex: 10,
 
-      color: vars.base.enabled.option.color,
-
-      zIndex: "10",
+      borderRadius: vars.base.enabled.option.cornerRadius,
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.option.color,
       },
+
+      [pseudo(selected, active)]: {
+        backgroundColor: vars.base.selectedPressed.option.color,
+      },
+    },
+    optionLabel: {
+      position: "absolute",
+      inset: 0,
+
+      paddingInline: vars.base.enabled.option.paddingX,
+      paddingBlock: vars.base.enabled.option.paddingY,
+
+      fontSize: vars.base.enabled.option.fontSize,
+      lineHeight: "1.3125rem",
+      textAlign: "center",
+      fontWeight: vars.base.enabled.option.fontWeight,
+
+      textOverflow: "ellipsis",
+      overflowX: "hidden",
+
+      color: vars.base.enabled.option.color,
 
       [pseudo(selected)]: {
         color: vars.base.selected.option.color,
@@ -49,13 +62,23 @@ const segmentedControl = defineRecipe({
         fontWeight: vars.base.selected.option.fontWeight,
       },
 
-      [pseudo(selected, active)]: {
-        backgroundColor: vars.base.selectedPressed.option.color,
-      },
-
       [pseudo(disabled)]: {
         color: vars.base.disabled.option.color,
       },
+    },
+    optionLabelPlaceholder: {
+      paddingInline: vars.base.enabled.option.paddingX,
+      paddingBlock: vars.base.enabled.option.paddingY,
+
+      fontSize: vars.base.enabled.option.fontSize,
+      lineHeight: "1.3125rem",
+      textAlign: "center",
+      fontWeight: vars.base.selected.option.fontWeight,
+
+      textOverflow: "ellipsis",
+      overflowX: "hidden",
+
+      opacity: 0,
     },
     indicator: {
       position: "absolute",
@@ -66,6 +89,10 @@ const segmentedControl = defineRecipe({
       backgroundColor: vars.base.enabled.indicator.color,
 
       boxShadow: vars.base.enabled.indicator.dropShadow,
+
+      willChange: "left, width",
+      // XXX: 임의
+      transition: "left 0.2s, width 0.2s",
     },
   },
   variants: {},

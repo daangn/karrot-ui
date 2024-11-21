@@ -1,36 +1,55 @@
 .segmentedControl__root {
-    position: relative;
-    display: flex;
+    display: grid;
     height: var(--seed-v3-unit-10);
-    border-radius: var(--seed-v3-radii-full);
+    min-width: fit-content;
+    max-width: 100%;
     padding: var(--seed-v3-unit-1);
+    position: relative;
+    border-radius: var(--seed-v3-radii-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
-    min-width: min-content;
+    box-sizing: border-box;
 }
 .segmentedControl__option {
-    flex-grow: 1;
-    border-radius: var(--seed-v3-radii-full);
-    padding-inline: var(--seed-v3-unit-4);
-    padding-block: 5px;
     min-width: 86px;
-    font-size: var(--seed-v3-font-size-200);
-    font-weight: var(--seed-v3-font-weight-medium);
-    line-height: 1.3125rem;
-    color: var(--seed-v3-color-fg-neutral-muted);
     z-index: 10;
+    border-radius: var(--seed-v3-radii-full);
 }
 .segmentedControl__option:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
-.segmentedControl__option:is(:selected, [data-selected]) {
-    color: var(--seed-v3-color-fg-neutral);
-    font-weight: var(--seed-v3-font-weight-bold);
-}
 .segmentedControl__option:is(:selected, [data-selected]):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
-.segmentedControl__option:is(:disabled, [disabled], [data-disabled]) {
+.segmentedControl__optionLabel {
+    position: absolute;
+    inset: 0;
+    padding-inline: var(--seed-v3-unit-4);
+    padding-block: 5px;
+    font-size: var(--seed-v3-font-size-200);
+    line-height: 1.3125rem;
+    text-align: center;
+    font-weight: var(--seed-v3-font-weight-medium);
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    color: var(--seed-v3-color-fg-neutral-muted);
+}
+.segmentedControl__optionLabel:is(:selected, [data-selected]) {
+    color: var(--seed-v3-color-fg-neutral);
+    font-weight: var(--seed-v3-font-weight-bold);
+}
+.segmentedControl__optionLabel:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
+}
+.segmentedControl__optionLabelPlaceholder {
+    padding-inline: var(--seed-v3-unit-4);
+    padding-block: 5px;
+    font-size: var(--seed-v3-font-size-200);
+    line-height: 1.3125rem;
+    text-align: center;
+    font-weight: var(--seed-v3-font-weight-bold);
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    opacity: 0;
 }
 .segmentedControl__indicator {
     position: absolute;
@@ -38,4 +57,6 @@
     border-radius: var(--seed-v3-radii-full);
     background-color: var(--seed-v3-color-bg-layer-default);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 5%);
+    will-change: left, width;
+    transition: left 0.2s, width 0.2s;
 }

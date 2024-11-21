@@ -3,9 +3,9 @@ import { SegmentedControl, SegmentedControlOption } from "seed-design/ui/segment
 export default function SegmentedControlPreview() {
   return (
     <SegmentedControl>
-      <SegmentedControlOption value="1">라벨</SegmentedControlOption>
-      <SegmentedControlOption value="2">라벨</SegmentedControlOption>
-      <SegmentedControlOption value="3">라벨</SegmentedControlOption>
+      <SegmentedControlOption value="new">New</SegmentedControlOption>
+      <SegmentedControlOption value="top">Top</SegmentedControlOption>
+      <SegmentedControlOption value="hot">Hot</SegmentedControlOption>
     </SegmentedControl>
   );
 }
