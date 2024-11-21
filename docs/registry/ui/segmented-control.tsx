@@ -105,11 +105,7 @@ export const SegmentedControlOption = React.forwardRef<
       <span className={classNames.optionLabel} {...labelProps}>
         {children}
       </span>
-      <span
-        aria-hidden
-        className={classNames.optionLabelPlaceholder}
-        {...labelProps}
-      >
+      <span aria-hidden className={classNames.optionLabelPlaceholder}>
         {children}
       </span>
     </button>
