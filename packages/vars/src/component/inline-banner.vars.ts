@@ -3,7 +3,8 @@ export const vars = {
     "enabled": {
       "root": {
         "gap": "var(--seed-v3-unit-1)",
-        "paddingXStart": "var(--seed-v3-unit-4)"
+        "paddingXStart": "var(--seed-v3-unit-4)",
+        "paddingXEnd": "var(--seed-v3-unit-1)"
       },
       "content": {
         "gap": "var(--seed-v3-unit-2)",
@@ -29,40 +30,19 @@ export const vars = {
       "dismissButton": {
         "size": "var(--seed-v3-unit-10)"
       },
-      "xIcon": {
+      "dismissIcon": {
         "size": "var(--seed-v3-unit-4)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "size": "var(--seed-v3-unit-4)",
         "margin": "var(--seed-v3-unit-3)"
       }
     }
   },
-  "typeDefault": {
+  "typeContentOnly": {
     "enabled": {
-      "root": {
-        "paddingXEnd": "var(--seed-v3-unit-4)"
-      }
-    }
-  },
-  "typeLink": {
-    "enabled": {
-      "root": {
-        "paddingXEnd": "var(--seed-v3-unit-1)"
-      }
-    }
-  },
-  "typeDismissible": {
-    "enabled": {
-      "root": {
-        "paddingXEnd": "var(--seed-v3-unit-1)"
-      }
-    }
-  },
-  "typeActionable": {
-    "enabled": {
-      "root": {
-        "paddingXEnd": "var(--seed-v3-unit-1)"
+      "content": {
+        "paddingXEnd": "var(--seed-v3-unit-3)"
       }
     }
   },
@@ -83,10 +63,10 @@ export const vars = {
       "linkLabel": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "xIcon": {
+      "dismissIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       }
     }
@@ -108,10 +88,10 @@ export const vars = {
       "linkLabel": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
-      "xIcon": {
+      "dismissIcon": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       }
     }
@@ -133,10 +113,10 @@ export const vars = {
       "linkLabel": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "xIcon": {
+      "dismissIcon": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       }
     }
@@ -158,10 +138,10 @@ export const vars = {
       "linkLabel": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "xIcon": {
+      "dismissIcon": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       }
     }
@@ -183,10 +163,10 @@ export const vars = {
       "linkLabel": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "xIcon": {
+      "dismissIcon": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       }
     }
@@ -208,7 +188,7 @@ export const vars = {
       "linkLabel": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       }
     }
@@ -230,7 +210,7 @@ export const vars = {
       "linkLabel": {
         "color": "var(--seed-v3-color-fg-static-white)"
       },
-      "chevronRightIcon": {
+      "actionableIcon": {
         "color": "var(--seed-v3-color-fg-static-white)"
       }
     }
