@@ -5,8 +5,10 @@
     border-radius: var(--seed-v3-radii-full);
     padding: var(--seed-v3-unit-1);
     background-color: var(--seed-v3-color-bg-neutral-weak);
+    min-width: min-content;
 }
 .segmentedControl__option {
+    flex-grow: 1;
     border-radius: var(--seed-v3-radii-full);
     padding-inline: var(--seed-v3-unit-4);
     padding-block: 5px;

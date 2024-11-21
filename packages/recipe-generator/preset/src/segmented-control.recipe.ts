@@ -18,8 +18,12 @@ const segmentedControl = defineRecipe({
       padding: vars.base.enabled.root.padding,
 
       backgroundColor: vars.base.enabled.root.color,
+
+      minWidth: "min-content",
     },
     option: {
+      flexGrow: "1",
+
       borderRadius: vars.base.enabled.option.cornerRadius,
 
       paddingInline: vars.base.enabled.option.paddingX,
