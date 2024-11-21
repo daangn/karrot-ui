@@ -1,0 +1,9 @@
+kind: TokenCollections
+data:
+  - name: color
+    modes:
+      - theme-light
+      - theme-dark
+  - name: global
+    modes:
+      - default
