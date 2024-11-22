@@ -3526,10 +3526,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/icon-data@npm:^0.0.7":
-  version: 0.0.7
-  resolution: "@daangn/icon-data@npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.7%2F4d19c5f7f0903acf0ba1865e78d66173d441759d"
-  checksum: 267d8a99ac060d3c9c81dd069930b03479415693ee746cfe5fe3d39115529e3baeba024d72b9fb3a8a010571f5545dd9fc45ad9ef00963098dc7dd35e3990833
+"@daangn/icon-data@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@daangn/icon-data@npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.10%2F120d0bb7d16f04859623c31f9350b56e161f0f4a"
+  checksum: 6be72cb686014cba2bbba4fe3cf9b5dba450a42267df08dc22860d1da064fa51add06738abbc96fadc6aa834fd39f5f82fa3e43461f99b732299dc0584de6986
   languageName: node
   linkType: hard
 
@@ -3542,21 +3542,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/react-monochrome-icon@npm:^0.0.6":
-  version: 0.0.6
-  resolution: "@daangn/react-monochrome-icon@npm:0.0.6::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.6%2F664121b8f33b59ddffda2618eafa8fdcb0b3b22e"
+"@daangn/react-monochrome-icon@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@daangn/react-monochrome-icon@npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.7%2F7107c231e0a53ddd11b9d2462f10530bdbf73bc3"
   peerDependencies:
-    react: 17.x || 18.x
-  checksum: 7c51e53978909449ccf1c6aaab4e027e04c913ca5e27b2d490f87d742e2c2dfe8acfa369dc32f88df4fb07ead910470bb49f88d8a870f0327cba3b45d6ae0009
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  checksum: e3135af31b760176ddf944fccd729e647ec374f1081fad3598f590628db52ebac7d7658bad47e4b325218e5c123035c741976e98cbc3fd1e8611bae39937e555
   languageName: node
   linkType: hard
 
-"@daangn/react-multicolor-icon@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@daangn/react-multicolor-icon@npm:0.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-multicolor-icon%2F0.0.3%2Ff8be8d02c8280a9ae2723118981cc6facf6253d4"
+"@daangn/react-multicolor-icon@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@daangn/react-multicolor-icon@npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-multicolor-icon%2F0.0.4%2F4ce88acea8701eacd6966bf746bc157b300b9e7c"
   peerDependencies:
     react: 17.x || 18.x
-  checksum: fbf8e5523cb1598ea0b77c77fedfb08f8bb93f0fcafa4da1a93dcde716e0252fa6f21c40e82f91eb455cc43eb2881514fdaa578f72f65a3de4b5ae1a60f5d514
+  checksum: cf982eff370d64e65c327aa9b7554eb3b07abbd910e142e32a4608260ae201bd136f28ac02a65afea2402036ecee690d57795a85f3185ba6772917bd07f08875
   languageName: node
   linkType: hard
 
@@ -10517,9 +10518,9 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@chromatic-com/storybook": ^3.2.2
-    "@daangn/icon-data": ^0.0.7
-    "@daangn/react-monochrome-icon": ^0.0.6
-    "@daangn/react-multicolor-icon": ^0.0.3
+    "@daangn/icon-data": ^0.0.10
+    "@daangn/react-monochrome-icon": ^0.0.7
+    "@daangn/react-multicolor-icon": ^0.0.4
     "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
     "@seed-design/react-dismissible": 0.0.0
     "@seed-design/react-icon": ^0.7.3
