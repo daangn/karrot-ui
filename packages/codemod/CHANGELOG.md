@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.10
+
+### Patch Changes
+
+- icon_speaker_slash 이름 변경 반영
+
 ## 0.0.9
 
 ### Patch Changes
