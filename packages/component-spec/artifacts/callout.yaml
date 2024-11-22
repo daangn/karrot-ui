@@ -3,11 +3,12 @@ base:
   enabled:
     root:
       paddingXStart: $unit[3.5]
-      paddingY: "5px"
+      paddingXEnd: $unit[0.5]
+      paddingY: 5px
       cornerRadius: $radii[2.5]
     content:
       gap: $unit[3]
-      paddingY: "9.5px"
+      paddingY: 9.5px
       fontSize: $font-size[100]
     icon:
       # XXX: scalable 결정 x
@@ -18,24 +19,16 @@ base:
       fontWeight: $font-weight.regular
     dismissButton:
       size: $unit[10]
-    xIcon:
+    dismissIcon:
       size: $unit[4]
-    chevronRightIcon:
+    actionableIcon:
       size: $unit[4]
       margin: $unit[3]
 
-type=default:
+type=contentOnly:
   enabled:
-    root:
-      paddingXEnd: $unit[3.5]
-type=dismissible:
-  enabled:
-    root:
-      paddingXEnd: $unit[0.5]
-type=actionable:
-  enabled:
-    root:
-      paddingXEnd: $unit[0.5]
+    content:
+      paddingXEnd: $unit[3]
 
 variant=neutral:
   enabled:
@@ -49,9 +42,9 @@ variant=neutral:
       color: $color.fg.neutral
     linkLabel:
       color: $color.fg.neutral
-    xIcon:
+    dismissIcon:
       color: $color.fg.neutral
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.neutral
   pressed:
     root:
@@ -69,9 +62,9 @@ variant=informative:
       color: $color.fg.informative-contrast
     linkLabel:
       color: $color.fg.informative-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.informative-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.informative-contrast
   pressed:
     root:
@@ -89,9 +82,9 @@ variant=warning:
       color: $color.fg.warning-contrast
     linkLabel:
       color: $color.fg.warning-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.warning-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.warning-contrast
   pressed:
     root:
@@ -109,9 +102,9 @@ variant=danger:
       color: $color.fg.danger-contrast
     linkLabel:
       color: $color.fg.danger-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.danger-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.danger-contrast
   pressed:
     root:
@@ -129,9 +122,9 @@ variant=magic:
       color: $color.fg.magic-contrast
     linkLabel:
       color: $color.fg.magic-contrast
-    xIcon:
+    dismissIcon:
       color: $color.fg.magic-contrast
-    chevronRightIcon:
+    actionableIcon:
       color: $color.fg.magic-contrast
   pressed:
     root:

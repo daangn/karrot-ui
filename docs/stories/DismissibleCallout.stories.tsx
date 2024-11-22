@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { DismissibleCallout } from "seed-design/ui/dismissible-callout";
 
-import { dismissibleCalloutVariantMap } from "@seed-design/recipe/dismissibleCallout";
+import { calloutVariantMap } from "@seed-design/recipe/callout";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
 
@@ -24,7 +24,7 @@ const CommonStoryTemplate: Story = {
     dismissAriaLabel: "닫기",
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={dismissibleCalloutVariantMap} {...args} />
+    <VariantTable Component={meta.component} variantMap={calloutVariantMap} {...args} />
   ),
 };
 

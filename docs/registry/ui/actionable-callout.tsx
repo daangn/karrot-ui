@@ -1,16 +1,13 @@
 "use client";
 
-import "@seed-design/stylesheet/actionableCallout.css";
+import "@seed-design/stylesheet/callout.css";
 
 import * as React from "react";
 import clsx from "clsx";
-import {
-  actionableCallout,
-  type ActionableCalloutVariantProps,
-} from "@seed-design/recipe/actionableCallout";
+import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
 import { IconChevronRightFill } from "@daangn/react-monochrome-icon";
 
-export interface ActionableCalloutProps extends ActionableCalloutVariantProps {
+export interface ActionableCalloutProps extends CalloutVariantProps {
   titleText?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
@@ -37,7 +34,7 @@ export const ActionableCallout = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = actionableCallout({ variant });
+    const classNames = callout({ variant });
 
     return (
       <button
@@ -58,7 +55,7 @@ export const ActionableCallout = React.forwardRef<
             <span className={classNames.label}>{children}</span>
           </div>
         </div>
-        <IconChevronRightFill className={classNames.chevronRightIcon} />
+        <IconChevronRightFill className={classNames.actionableIcon} />
       </button>
     );
   },

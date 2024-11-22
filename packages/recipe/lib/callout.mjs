@@ -28,6 +28,18 @@ const calloutSlotNames = [
   [
     "linkLabel",
     "callout__linkLabel"
+  ],
+  [
+    "actionableIcon",
+    "callout__actionableIcon"
+  ],
+  [
+    "dismissButton",
+    "callout__dismissButton"
+  ],
+  [
+    "dismissIcon",
+    "callout__dismissIcon"
   ]
 ];
 

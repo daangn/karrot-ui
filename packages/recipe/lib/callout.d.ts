@@ -11,7 +11,7 @@ type CalloutVariantMap = {
 
 export type CalloutVariantProps = Partial<CalloutVariant>;
 
-export type CalloutSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label" | "linkLabel";
+export type CalloutSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
 
 export const calloutVariantMap: CalloutVariantMap;
 

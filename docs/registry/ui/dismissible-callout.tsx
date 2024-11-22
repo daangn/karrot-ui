@@ -1,13 +1,10 @@
 "use client";
 
-import "@seed-design/stylesheet/dismissibleCallout.css";
+import "@seed-design/stylesheet/callout.css";
 
 import * as React from "react";
 import clsx from "clsx";
-import {
-  dismissibleCallout,
-  type DismissibleCalloutVariantProps,
-} from "@seed-design/recipe/dismissibleCallout";
+import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
 import { IconXmarkFill } from "@daangn/react-monochrome-icon";
 import {
   useDismissible,
@@ -16,7 +13,7 @@ import {
 
 export interface DismissibleCalloutProps
   extends DismissibleProps,
-    DismissibleCalloutVariantProps {
+    CalloutVariantProps {
   titleText?: string;
   dismissAriaLabel: string;
   linkLabel?: string;
@@ -46,7 +43,7 @@ export const DismissibleCallout = React.forwardRef<
     },
     ref,
   ) => {
-    const classNames = dismissibleCallout({ variant });
+    const classNames = callout({ variant });
 
     const { isOpen, onDismissButtonClick } = useDismissible({
       defaultOpen,
@@ -91,7 +88,7 @@ export const DismissibleCallout = React.forwardRef<
           className={classNames.dismissButton}
           onClick={onDismissButtonClick}
         >
-          <IconXmarkFill className={classNames.xIcon} />
+          <IconXmarkFill className={classNames.dismissIcon} />
         </button>
       </div>
     );

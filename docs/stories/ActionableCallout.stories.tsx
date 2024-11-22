@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionableCallout } from "seed-design/ui/actionable-callout";
 
-import { actionableCalloutVariantMap } from "@seed-design/recipe/actionableCallout";
+import { calloutVariantMap } from "@seed-design/recipe/callout";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
 
@@ -22,7 +22,7 @@ const CommonStoryTemplate: Story = {
     onClick: () => {},
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={actionableCalloutVariantMap} {...args} />
+    <VariantTable Component={meta.component} variantMap={calloutVariantMap} {...args} />
   ),
 };
 
