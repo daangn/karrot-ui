@@ -5,6 +5,12 @@ metadata:
 data:
   collection: global
   tokens:
-    $font-weight.regular: 400
-    $font-weight.medium: 500
-    $font-weight.bold: 700
+    $font-weight.regular:
+      values:
+        default: 400
+    $font-weight.medium:
+      values:
+        default: 500
+    $font-weight.bold:
+      values:
+        default: 700

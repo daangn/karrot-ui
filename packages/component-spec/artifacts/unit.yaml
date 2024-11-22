@@ -5,21 +5,57 @@ metadata:
 data:
   collection: global
   tokens:
-    $unit.x0_5: 2px
-    $unit.x1: 4px
-    $unit.x1_5: 6px
-    $unit.x2: 8px
-    $unit.x2_5: 10px
-    $unit.x3: 12px
-    $unit.x3_5: 14px
-    $unit.x4: 16px
-    $unit.x5: 20px
-    $unit.x6: 24px
-    $unit.x7: 28px
-    $unit.x8: 32px
-    $unit.x9: 36px
-    $unit.x10: 40px
-    $unit.x12: 48px
-    $unit.x13: 52px
-    $unit.x14: 56px
-    $unit.x16: 64px
+    $unit.x0_5:
+      values:
+        global: 2px
+    $unit.x1:
+      values:
+        global: 4px
+    $unit.x1_5:
+      values:
+        global: 6px
+    $unit.x2:
+      values:
+        global: 8px
+    $unit.x2_5:
+      values:
+        global: 10px
+    $unit.x3:
+      values:
+        global: 12px
+    $unit.x3_5:
+      values:
+        global: 14px
+    $unit.x4:
+      values:
+        global: 16px
+    $unit.x5:
+      values:
+        global: 20px
+    $unit.x6:
+      values:
+        global: 24px
+    $unit.x7:
+      values:
+        global: 28px
+    $unit.x8:
+      values:
+        global: 32px
+    $unit.x9:
+      values:
+        global: 36px
+    $unit.x10:
+      values:
+        global: 40px
+    $unit.x12:
+      values:
+        global: 48px
+    $unit.x13:
+      values:
+        global: 52px
+    $unit.x14:
+      values:
+        global: 56px
+    $unit.x16:
+      values:
+        global: 64px

@@ -59,11 +59,11 @@
         },
         {
           "const": "$color.fg.brand-contrast",
-          "description": "theme-light: palette/carrot-700, theme-dark: palette/carrot-800"
+          "description": "theme-light: palette/carrot-700, theme-dark: palette/carrot-1000"
         },
         {
           "const": "$color.fg.danger",
-          "description": "theme-light: palette/red-700, theme-dark: palette/red-600"
+          "description": "theme-light: palette/red-600, theme-dark: palette/red-600"
         },
         {
           "const": "$color.fg.danger-contrast",
@@ -107,7 +107,7 @@
         },
         {
           "const": "$color.bg.warning-solid",
-          "description": "theme-light: palette/yellow-600, theme-dark: palette/yellow-700"
+          "description": "theme-light: palette/yellow-400, theme-dark: palette/yellow-700"
         },
         {
           "const": "$color.bg.warning-weak",
@@ -151,7 +151,7 @@
         },
         {
           "const": "$color.bg.layer-fill",
-          "description": "theme-light: palette/gray-100, theme-dark: palette/gray-00"
+          "description": "theme-light: palette/gray-100, theme-dark: palette/gray-100"
         },
         {
           "const": "$color.bg.neutral-weak",
@@ -184,10 +184,6 @@
         {
           "const": "$color.stroke.neutral",
           "description": "theme-light: palette/gray-300, theme-dark: palette/gray-300"
-        },
-        {
-          "const": "$color.stroke.on-image",
-          "description": "theme-light: palette/gray-alpha-50, theme-dark: palette/gray-alpha-50"
         },
         {
           "const": "$color.stroke.brand",
@@ -303,7 +299,7 @@
         },
         {
           "const": "$color.palette.gray-800",
-          "description": "theme-light: rgba(91, 96, 106, 1), theme-dark: rgba(220, 222, 227, 1)"
+          "description": "theme-light: rgba(88, 96, 112, 1), theme-dark: rgba(220, 222, 227, 1)"
         },
         {
           "const": "$color.palette.gray-900",
@@ -339,7 +335,7 @@
         },
         {
           "const": "$color.palette.carrot-800",
-          "description": "theme-light: rgba(185, 57, 1, 1), theme-dark: rgba(255, 185, 153, 1)"
+          "description": "theme-light: rgba(185, 57, 1, 1), theme-dark: rgba(255, 158, 101, 1)"
         },
         {
           "const": "$color.palette.carrot-900",
@@ -351,43 +347,43 @@
         },
         {
           "const": "$color.palette.blue-100",
-          "description": "theme-light: rgba(235, 247, 250, 1), theme-dark: rgba(35, 39, 44, 1)"
+          "description": "theme-light: rgba(239, 246, 255, 1), theme-dark: rgba(28, 38, 51, 1)"
         },
         {
           "const": "$color.palette.blue-200",
-          "description": "theme-light: rgba(217, 240, 252, 1), theme-dark: rgba(34, 52, 68, 1)"
+          "description": "theme-light: rgba(226, 237, 252, 1), theme-dark: rgba(34, 52, 68, 1)"
         },
         {
           "const": "$color.palette.blue-300",
-          "description": "theme-light: rgba(183, 228, 255, 1), theme-dark: rgba(24, 69, 100, 1)"
+          "description": "theme-light: rgba(203, 223, 250, 1), theme-dark: rgba(24, 69, 100, 1)"
         },
         {
           "const": "$color.palette.blue-400",
-          "description": "theme-light: rgba(146, 211, 255, 1), theme-dark: rgba(3, 90, 135, 1)"
+          "description": "theme-light: rgba(171, 206, 253, 1), theme-dark: rgba(3, 90, 135, 1)"
         },
         {
           "const": "$color.palette.blue-500",
-          "description": "theme-light: rgba(97, 189, 255, 1), theme-dark: rgba(0, 112, 168, 1)"
+          "description": "theme-light: rgba(131, 183, 253, 1), theme-dark: rgba(18, 110, 174, 1)"
         },
         {
           "const": "$color.palette.blue-600",
-          "description": "theme-light: rgba(18, 156, 249, 1), theme-dark: rgba(0, 138, 202, 1)"
+          "description": "theme-light: rgba(39, 135, 254, 1), theme-dark: rgba(24, 137, 203, 1)"
         },
         {
           "const": "$color.palette.blue-700",
-          "description": "theme-light: rgba(0, 132, 220, 1), theme-dark: rgba(13, 166, 241, 1)"
+          "description": "theme-light: rgba(26, 110, 223, 1), theme-dark: rgba(44, 165, 241, 1)"
         },
         {
           "const": "$color.palette.blue-800",
-          "description": "theme-light: rgba(0, 100, 151, 1), theme-dark: rgba(107, 192, 242, 1)"
+          "description": "theme-light: rgba(16, 86, 187, 1), theme-dark: rgba(123, 189, 249, 1)"
         },
         {
           "const": "$color.palette.blue-900",
-          "description": "theme-light: rgba(4, 69, 102, 1), theme-dark: rgba(173, 219, 242, 1)"
+          "description": "theme-light: rgba(8, 59, 129, 1), theme-dark: rgba(184, 215, 251, 1)"
         },
         {
           "const": "$color.palette.blue-1000",
-          "description": "theme-light: rgba(10, 40, 59, 1), theme-dark: rgba(217, 244, 250, 1)"
+          "description": "theme-light: rgba(2, 33, 74, 1), theme-dark: rgba(229, 240, 254, 1)"
         },
         {
           "const": "$color.palette.red-100",
@@ -395,39 +391,39 @@
         },
         {
           "const": "$color.palette.red-200",
-          "description": "theme-light: rgba(253, 232, 230, 1), theme-dark: rgba(79, 38, 36, 1)"
+          "description": "theme-light: rgba(253, 228, 228, 1), theme-dark: rgba(79, 38, 36, 1)"
         },
         {
           "const": "$color.palette.red-300",
-          "description": "theme-light: rgba(254, 211, 209, 1), theme-dark: rgba(116, 40, 38, 1)"
+          "description": "theme-light: rgba(254, 206, 204, 1), theme-dark: rgba(116, 40, 38, 1)"
         },
         {
           "const": "$color.palette.red-400",
-          "description": "theme-light: rgba(254, 187, 183, 1), theme-dark: rgba(161, 38, 33, 1)"
+          "description": "theme-light: rgba(254, 175, 170, 1), theme-dark: rgba(161, 38, 33, 1)"
         },
         {
           "const": "$color.palette.red-500",
-          "description": "theme-light: rgba(255, 153, 148, 1), theme-dark: rgba(209, 30, 19, 1)"
+          "description": "theme-light: rgba(254, 130, 123, 1), theme-dark: rgba(209, 30, 19, 1)"
         },
         {
           "const": "$color.palette.red-600",
-          "description": "theme-light: rgba(253, 103, 100, 1), theme-dark: rgba(247, 53, 38, 1)"
+          "description": "theme-light: rgba(255, 65, 45, 1), theme-dark: rgba(247, 53, 38, 1)"
         },
         {
           "const": "$color.palette.red-700",
-          "description": "theme-light: rgba(242, 30, 22, 1), theme-dark: rgba(242, 121, 109, 1)"
+          "description": "theme-light: rgba(234, 35, 14, 1), theme-dark: rgba(242, 121, 109, 1)"
         },
         {
           "const": "$color.palette.red-800",
-          "description": "theme-light: rgba(188, 23, 12, 1), theme-dark: rgba(241, 163, 155, 1)"
+          "description": "theme-light: rgba(200, 29, 19, 1), theme-dark: rgba(241, 163, 155, 1)"
         },
         {
           "const": "$color.palette.red-900",
-          "description": "theme-light: rgba(127, 26, 13, 1), theme-dark: rgba(242, 203, 201, 1)"
+          "description": "theme-light: rgba(143, 30, 16, 1), theme-dark: rgba(242, 203, 201, 1)"
         },
         {
           "const": "$color.palette.red-1000",
-          "description": "theme-light: rgba(74, 18, 9, 1), theme-dark: rgba(249, 236, 235, 1)"
+          "description": "theme-light: rgba(74, 18, 9, 1), theme-dark: rgba(243, 203, 200, 1)"
         },
         {
           "const": "$color.palette.green-100",
@@ -471,43 +467,43 @@
         },
         {
           "const": "$color.palette.yellow-100",
-          "description": "theme-light: rgba(253, 244, 226, 1), theme-dark: rgba(42, 38, 35, 1)"
+          "description": "theme-light: rgba(255, 249, 230, 1), theme-dark: rgba(42, 37, 23, 1)"
         },
         {
           "const": "$color.palette.yellow-200",
-          "description": "theme-light: rgba(254, 233, 207, 1), theme-dark: rgba(62, 47, 33, 1)"
+          "description": "theme-light: rgba(253, 243, 206, 1), theme-dark: rgba(61, 48, 22, 1)"
         },
         {
           "const": "$color.palette.yellow-300",
-          "description": "theme-light: rgba(248, 216, 181, 1), theme-dark: rgba(87, 60, 32, 1)"
+          "description": "theme-light: rgba(251, 228, 154, 1), theme-dark: rgba(81, 63, 21, 1)"
         },
         {
           "const": "$color.palette.yellow-400",
-          "description": "theme-light: rgba(247, 194, 130, 1), theme-dark: rgba(117, 76, 28, 1)"
+          "description": "theme-light: rgba(247, 210, 76, 1), theme-dark: rgba(105, 81, 21, 1)"
         },
         {
           "const": "$color.palette.yellow-500",
-          "description": "theme-light: rgba(245, 164, 55, 1), theme-dark: rgba(146, 95, 32, 1)"
+          "description": "theme-light: rgba(227, 184, 44, 1), theme-dark: rgba(131, 102, 27, 1)"
         },
         {
           "const": "$color.palette.yellow-600",
-          "description": "theme-light: rgba(210, 137, 43, 1), theme-dark: rgba(176, 118, 52, 1)"
+          "description": "theme-light: rgba(196, 151, 37, 1), theme-dark: rgba(156, 127, 37, 1)"
         },
         {
           "const": "$color.palette.yellow-700",
-          "description": "theme-light: rgba(171, 110, 35, 1), theme-dark: rgba(203, 146, 68, 1)"
+          "description": "theme-light: rgba(155, 120, 33, 1), theme-dark: rgba(181, 155, 54, 1)"
         },
         {
           "const": "$color.palette.yellow-800",
-          "description": "theme-light: rgba(126, 87, 34, 1), theme-dark: rgba(226, 173, 102, 1)"
+          "description": "theme-light: rgba(117, 91, 34, 1), theme-dark: rgba(205, 182, 86, 1)"
         },
         {
           "const": "$color.palette.yellow-900",
-          "description": "theme-light: rgba(84, 60, 31, 1), theme-dark: rgba(238, 208, 171, 1)"
+          "description": "theme-light: rgba(79, 62, 31, 1), theme-dark: rgba(227, 218, 150, 1)"
         },
         {
           "const": "$color.palette.yellow-1000",
-          "description": "theme-light: rgba(50, 35, 18, 1), theme-dark: rgba(243, 239, 230, 1)"
+          "description": "theme-light: rgba(44, 37, 18, 1), theme-dark: rgba(247, 240, 206, 1)"
         },
         {
           "const": "$color.palette.static-black",
@@ -526,20 +522,8 @@
           "description": "theme-light: rgba(0, 0, 0, 0.5), theme-dark: rgba(0, 0, 0, 0.5)"
         },
         {
-          "const": "$color.palette.static-white-alpha-50",
-          "description": "theme-light: rgba(255, 255, 255, 0.05), theme-dark: rgba(255, 255, 255, 0.05)"
-        },
-        {
-          "const": "$color.palette.static-white-alpha-200",
-          "description": "theme-light: rgba(255, 255, 255, 0.2), theme-dark: rgba(255, 255, 255, 0.2)"
-        },
-        {
           "const": "$color.palette.static-black-alpha-50",
           "description": "theme-light: rgba(0, 0, 0, 0.05), theme-dark: rgba(0, 0, 0, 0.05)"
-        },
-        {
-          "const": "$color.palette.gray-alpha-50",
-          "description": "theme-light: rgba(0, 23, 88, 0.05), theme-dark: rgba(255, 255, 255, 0.05)"
         },
         {
           "const": "$color.palette.purple-100",
@@ -591,7 +575,7 @@
         },
         {
           "const": "$color.fg.magic-contrast",
-          "description": "theme-light: palette/purple-800, theme-dark: palette/purple-900"
+          "description": "theme-light: palette/purple-900, theme-dark: palette/purple-900"
         },
         {
           "const": "$color.stroke.positive",
@@ -612,6 +596,22 @@
         {
           "const": "$color.bg.magic-weak-pressed",
           "description": "theme-light: palette/purple-200, theme-dark: palette/purple-200"
+        },
+        {
+          "const": "$color.bg.neutral-muted",
+          "description": "theme-light: palette/gray-800, theme-dark: palette/gray-400"
+        },
+        {
+          "const": "$color.bg.floating-solid",
+          "description": "theme-light: palette/gray-900, theme-dark: palette/gray-300"
+        },
+        {
+          "const": "$color.palette.static-white-alpha-800",
+          "description": "theme-light: rgba(255, 255, 255, 0.8), theme-dark: rgba(255, 255, 255, 0.8)"
+        },
+        {
+          "const": "$color.bg.neutral-muted-pressed",
+          "description": "theme-light: palette/gray-700, theme-dark: palette/gray-500"
         }
       ]
     },
@@ -620,15 +620,15 @@
       "anyOf": [
         {
           "const": "$font-weight.regular",
-          "description": "iOS: regular, iOS-xxxlarge: regular, iOS-xsmall: regular, Android: regular, iOS-jp: regular"
+          "description": "iOS: regular, iOS-xxxlarge: regular, iOS-xsmall: regular, Android: regular"
         },
         {
           "const": "$font-weight.bold",
-          "description": "iOS: bold, iOS-xxxlarge: bold, iOS-xsmall: bold, Android: bold, iOS-jp: bold"
+          "description": "iOS: bold, iOS-xxxlarge: bold, iOS-xsmall: bold, Android: bold"
         },
         {
           "const": "$font-weight.medium",
-          "description": "iOS: medium, iOS-xxxlarge: medium, iOS-xsmall: medium, Android: medium, iOS-jp: medium"
+          "description": "iOS: medium, iOS-xxxlarge: medium, iOS-xsmall: medium, Android: medium"
         }
       ]
     },
@@ -637,79 +637,79 @@
       "anyOf": [
         {
           "const": "$font-size[25]",
-          "description": "iOS: 11, iOS-xxxlarge: 17, iOS-xsmall: 8, Android: 11, iOS-jp: 11"
+          "description": "iOS: 11, iOS-xxxlarge: 17, iOS-xsmall: 8, Android: 11"
         },
         {
           "const": "$font-size[50]",
-          "description": "iOS: 12, iOS-xxxlarge: 18, iOS-xsmall: 9, Android: 12, iOS-jp: 12"
+          "description": "iOS: 12, iOS-xxxlarge: 18, iOS-xsmall: 9, Android: 12"
         },
         {
           "const": "$font-size[75]",
-          "description": "iOS: 13, iOS-xxxlarge: 19, iOS-xsmall: 10, Android: 13, iOS-jp: 13"
+          "description": "iOS: 13, iOS-xxxlarge: 19, iOS-xsmall: 10, Android: 13"
         },
         {
           "const": "$font-size[100]",
-          "description": "iOS: 14, iOS-xxxlarge: 20, iOS-xsmall: 11, Android: 14, iOS-jp: 14"
+          "description": "iOS: 14, iOS-xxxlarge: 20, iOS-xsmall: 11, Android: 14"
         },
         {
           "const": "$font-size[200]",
-          "description": "iOS: 16, iOS-xxxlarge: 22, iOS-xsmall: 13, Android: 16, iOS-jp: 16"
+          "description": "iOS: 16, iOS-xxxlarge: 22, iOS-xsmall: 13, Android: 16"
         },
         {
           "const": "$font-size[300]",
-          "description": "iOS: 18, iOS-xxxlarge: 24, iOS-xsmall: 15, Android: 18, iOS-jp: 18"
+          "description": "iOS: 18, iOS-xxxlarge: 24, iOS-xsmall: 15, Android: 18"
         },
         {
           "const": "$font-size[400]",
-          "description": "iOS: 20, iOS-xxxlarge: 26, iOS-xsmall: 17, Android: 20, iOS-jp: 20"
+          "description": "iOS: 20, iOS-xxxlarge: 26, iOS-xsmall: 17, Android: 20"
         },
         {
           "const": "$font-size[500]",
-          "description": "iOS: 22, iOS-xxxlarge: 28, iOS-xsmall: 19, Android: 22, iOS-jp: 22"
+          "description": "iOS: 22, iOS-xxxlarge: 28, iOS-xsmall: 19, Android: 22"
         },
         {
           "const": "$font-size[600]",
-          "description": "iOS: 24, iOS-xxxlarge: 30, iOS-xsmall: 21, Android: 24, iOS-jp: 24"
+          "description": "iOS: 24, iOS-xxxlarge: 30, iOS-xsmall: 21, Android: 24"
         },
         {
           "const": "$font-size.static[25]",
-          "description": "iOS: 11, iOS-xxxlarge: 11, iOS-xsmall: 11, Android: 11, iOS-jp: 11"
+          "description": "iOS: 11, iOS-xxxlarge: 11, iOS-xsmall: 11, Android: 11"
         },
         {
           "const": "$font-size.static[50]",
-          "description": "iOS: 12, iOS-xxxlarge: 12, iOS-xsmall: 12, Android: 12, iOS-jp: 12"
+          "description": "iOS: 12, iOS-xxxlarge: 12, iOS-xsmall: 12, Android: 12"
         },
         {
           "const": "$font-size.static[75]",
-          "description": "iOS: 13, iOS-xxxlarge: 13, iOS-xsmall: 13, Android: 13, iOS-jp: 13"
+          "description": "iOS: 13, iOS-xxxlarge: 13, iOS-xsmall: 13, Android: 13"
         },
         {
           "const": "$font-size.static[100]",
-          "description": "iOS: 14, iOS-xxxlarge: 14, iOS-xsmall: 14, Android: 14, iOS-jp: 14"
+          "description": "iOS: 14, iOS-xxxlarge: 14, iOS-xsmall: 14, Android: 14"
         },
         {
           "const": "$font-size.static[200]",
-          "description": "iOS: 16, iOS-xxxlarge: 16, iOS-xsmall: 16, Android: 16, iOS-jp: 16"
+          "description": "iOS: 16, iOS-xxxlarge: 16, iOS-xsmall: 16, Android: 16"
         },
         {
           "const": "$font-size.static[300]",
-          "description": "iOS: 18, iOS-xxxlarge: 18, iOS-xsmall: 18, Android: 18, iOS-jp: 18"
+          "description": "iOS: 18, iOS-xxxlarge: 18, iOS-xsmall: 18, Android: 18"
         },
         {
           "const": "$font-size.static[400]",
-          "description": "iOS: 20, iOS-xxxlarge: 20, iOS-xsmall: 20, Android: 20, iOS-jp: 20"
+          "description": "iOS: 20, iOS-xxxlarge: 20, iOS-xsmall: 20, Android: 20"
         },
         {
           "const": "$font-size.static[500]",
-          "description": "iOS: 22, iOS-xxxlarge: 22, iOS-xsmall: 22, Android: 22, iOS-jp: 22"
+          "description": "iOS: 22, iOS-xxxlarge: 22, iOS-xsmall: 22, Android: 22"
         },
         {
           "const": "$font-size.static[600]",
-          "description": "iOS: 24, iOS-xxxlarge: 24, iOS-xsmall: 24, Android: 24, iOS-jp: 24"
+          "description": "iOS: 24, iOS-xxxlarge: 24, iOS-xsmall: 24, Android: 24"
         },
         {
           "const": "$font-size[700]",
-          "description": "iOS: 26, iOS-xxxlarge: 32, iOS-xsmall: 23, Android: 26, iOS-jp: 26"
+          "description": "iOS: 26, iOS-xxxlarge: 32, iOS-xsmall: 23, Android: 26"
         }
       ]
     },
@@ -832,6 +832,10 @@
         {
           "const": "$unit[3.5]",
           "description": "value: 14"
+        },
+        {
+          "type": "string",
+          "pattern": "^\\d+(\\.\\d+)?(pt|px)$"
         }
       ]
     }
