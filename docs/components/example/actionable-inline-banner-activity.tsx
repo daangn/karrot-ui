@@ -25,7 +25,11 @@ const ActionableInlineBannerActivity: ActivityComponentType<"ActionableInlineBan
 
   return (
     <AppScreen>
-      <ActionableInlineBanner variant={variant} onClick={() => window.alert("Hello World")}>
+      <ActionableInlineBanner
+        variant={variant}
+        style={variant === "dangerSolid" ? { position: "sticky", top: 0 } : undefined}
+        onClick={() => window.alert("Hello World")}
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </ActionableInlineBanner>
       <div style={{ display: "flex", flexDirection: "column", padding: "1rem", gap: "0.75rem" }}>

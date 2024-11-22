@@ -243,9 +243,6 @@ const inlineBanner = defineRecipe({
       },
       dangerWeak: {
         root: {
-          position: "sticky",
-          top: 0,
-
           backgroundColor: vars.variantDangerWeak.enabled.root.color,
         },
         icon: {
@@ -266,9 +263,6 @@ const inlineBanner = defineRecipe({
       },
       dangerSolid: {
         root: {
-          position: "sticky",
-          top: 0,
-
           backgroundColor: vars.variantDangerSolid.enabled.root.color,
         },
         icon: {

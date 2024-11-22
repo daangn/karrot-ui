@@ -22,7 +22,10 @@ const InlineBannerActivity: ActivityComponentType<"InlineBanner"> = () => {
 
   return (
     <AppScreen>
-      <InlineBanner variant={variant}>
+      <InlineBanner
+        variant={variant}
+        style={variant === "dangerSolid" ? { position: "sticky", top: 0 } : undefined}
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </InlineBanner>
       <div style={{ display: "flex", flexDirection: "column", padding: "1rem", gap: "0.75rem" }}>

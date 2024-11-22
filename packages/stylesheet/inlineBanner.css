@@ -184,8 +184,6 @@
     color: var(--seed-v3-color-fg-neutral);
 }
 .inlineBanner__root--variant_dangerWeak {
-    position: sticky;
-    top: 0;
     background-color: var(--seed-v3-color-bg-danger-weak);
 }
 .inlineBanner__icon--variant_dangerWeak {
@@ -204,8 +202,6 @@
     color: var(--seed-v3-color-fg-danger-contrast);
 }
 .inlineBanner__root--variant_dangerSolid {
-    position: sticky;
-    top: 0;
     background-color: var(--seed-v3-color-bg-danger-solid);
 }
 .inlineBanner__icon--variant_dangerSolid {
