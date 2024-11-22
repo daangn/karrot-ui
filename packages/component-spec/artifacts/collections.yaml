@@ -1,4 +1,7 @@
 kind: TokenCollections
+metadata:
+  id: collections
+  name: collections
 data:
   - name: color
     modes:
