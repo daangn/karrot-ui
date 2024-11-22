@@ -15,6 +15,11 @@
     z-index: 10;
     border-radius: var(--seed-v3-radii-full);
     overflow: hidden;
+    user-select: none;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    font: inherit;
 }
 .segmentedControl__option:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);

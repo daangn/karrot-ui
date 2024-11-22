@@ -35,6 +35,14 @@ const segmentedControl = defineRecipe({
 
       overflow: "hidden",
 
+      userSelect: "none",
+
+      // XXX: css reset 생기면 제거
+      border: "none",
+      padding: 0,
+      backgroundColor: "transparent",
+      font: "inherit",
+
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.option.color,
       },
