@@ -10,13 +10,13 @@
     text-decoration: none;
     width: 100%;
     background-color: var(--seed-v3-color-bg-layer-default);
-    border-radius: var(--seed-v3-radii-2);
-    min-height: var(--seed-v3-unit-10);
-    gap: var(--seed-v3-unit-1);
-    padding: var(--seed-v3-unit-2\.5) var(--seed-v3-unit-5);
+    border-radius: var(--seed-v3-radius-x2);
+    min-height: var(--seed-v3-unit-x10);
+    gap: var(--seed-v3-unit-x1);
+    padding: var(--seed-v3-unit-x2_5) var(--seed-v3-unit-x5);
     border: 1px solid var(--seed-v3-color-palette-gray-400);
     color: var(--seed-v3-color-fg-neutral);
-    font-size: var(--seed-v3-font-size-100);
+    font-size: var(--seed-v3-font-size-t4);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .expandButton__root:is(:focus, [data-focus]) {
@@ -35,6 +35,6 @@
     align-items: center;
     justify-content: center;
     color: var(--seed-v3-color-fg-neutral);
-    width: var(--seed-v3-unit-3\.5);
-    height: var(--seed-v3-unit-3\.5);
+    width: var(--seed-v3-unit-x3_5);
+    height: var(--seed-v3-unit-x3_5);
 }

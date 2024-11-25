@@ -8,27 +8,27 @@
 .helpBubble__content {
     display: flex;
     flex-direction: column;
-    padding-inline: var(--seed-v3-unit-3);
-    padding-block: var(--seed-v3-unit-2);
-    border-radius: var(--seed-v3-radii-1\.5)
+    padding-inline: var(--seed-v3-unit-x3);
+    padding-block: var(--seed-v3-unit-x2);
+    border-radius: var(--seed-v3-radius-x1_5)
 }
 .helpBubble__arrow {
     width: 10px;
     height: 6px
 }
 .helpBubble__title {
-    font-size: var(--seed-v3-font-size-75);
+    font-size: var(--seed-v3-font-size-t3);
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .helpBubble__description {
-    font-size: var(--seed-v3-font-size-75);
+    font-size: var(--seed-v3-font-size-t3);
     font-weight: var(--seed-v3-font-weight-regular)
 }
 .helpBubble__content--variant_nonModal {
-    background: var(--seed-v3-color-bg-neutral-inverted)
+    background: var(--seed-v3-color-bg-neutral-solid)
 }
 .helpBubble__arrow--variant_nonModal {
-    fill: var(--seed-v3-color-bg-neutral-inverted)
+    fill: var(--seed-v3-color-bg-neutral-solid)
 }
 .helpBubble__title--variant_nonModal {
     color: var(--seed-v3-color-fg-neutral-inverted)

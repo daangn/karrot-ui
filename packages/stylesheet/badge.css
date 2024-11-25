@@ -7,19 +7,19 @@
     -moz-osx-font-smoothing: grayscale
 }
 .badge__root--size_medium {
-    min-height: var(--seed-v3-unit-5);
-    padding-inline: var(--seed-v3-unit-2);
-    padding-block: var(--seed-v3-unit-1);
-    font-size: var(--seed-v3-font-size-50)
+    min-height: var(--seed-v3-unit-x5);
+    padding-inline: var(--seed-v3-unit-x2);
+    padding-block: var(--seed-v3-unit-x1);
+    font-size: var(--seed-v3-font-size-t2)
 }
 .badge__root--size_small {
-    min-height: var(--seed-v3-unit-4);
-    padding-inline: var(--seed-v3-unit-1\.5);
-    padding-block: var(--seed-v3-unit-0\.5);
-    font-size: var(--seed-v3-font-size-25)
+    min-height: var(--seed-v3-unit-x4);
+    padding-inline: var(--seed-v3-unit-x1_5);
+    padding-block: var(--seed-v3-unit-x0_5);
+    font-size: var(--seed-v3-font-size-t1)
 }
 .badge__root--shape_pill {
-    border-radius: var(--seed-v3-radii-full)
+    border-radius: var(--seed-v3-radius-full)
 }
 .badge__label--variant_soft {
     font-weight: var(--seed-v3-font-weight-medium)
@@ -35,10 +35,10 @@
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .badge__root--shape_rectangle-size_medium {
-    border-radius: var(--seed-v3-radii-1)
+    border-radius: var(--seed-v3-radius-x1)
 }
 .badge__root--shape_rectangle-size_small {
-    border-radius: var(--seed-v3-radii-0\.5)
+    border-radius: var(--seed-v3-radius-x0_5)
 }
 .badge__root--tone_neutral-variant_soft {
     background-color: var(--seed-v3-color-bg-neutral-weak)
@@ -89,7 +89,7 @@
     color: var(--seed-v3-color-fg-static-white)
 }
 .badge__root--tone_informative-variant_outlined {
-    border-color: var(--seed-v3-color-stroke-informative)
+    border-color: var(--seed-v3-color-fg-informative)
 }
 .badge__label--tone_informative-variant_outlined {
     color: var(--seed-v3-color-fg-informative)

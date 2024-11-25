@@ -18,42 +18,42 @@
   --seed-v3-font-weight-medium: 500;
   --seed-v3-font-weight-bold: 700;
 
-  --seed-v3-unit-0\.5: 2px;
-  --seed-v3-unit-1: 4px;
-  --seed-v3-unit-1\.5: 6px;
-  --seed-v3-unit-2: 8px;
-  --seed-v3-unit-2\.5: 10px;
-  --seed-v3-unit-3: 12px;
-  --seed-v3-unit-3\.5: 14px;
-  --seed-v3-unit-4: 16px;
-  --seed-v3-unit-4\.5: 18px;
-  --seed-v3-unit-5: 20px;
-  --seed-v3-unit-6: 24px;
-  --seed-v3-unit-7: 28px;
-  --seed-v3-unit-8: 32px;
-  --seed-v3-unit-9: 36px;
-  --seed-v3-unit-10: 40px;
-  --seed-v3-unit-12: 48px;
-  --seed-v3-unit-13: 52px;
-  --seed-v3-unit-16: 64px;
-  --seed-v3-unit-20: 80px;
-  --seed-v3-unit-24: 96px;
+  --seed-v3-unit-x0_5: 2px;
+  --seed-v3-unit-x1: 4px;
+  --seed-v3-unit-x1_5: 6px;
+  --seed-v3-unit-x2: 8px;
+  --seed-v3-unit-x2_5: 10px;
+  --seed-v3-unit-x3: 12px;
+  --seed-v3-unit-x3_5: 14px;
+  --seed-v3-unit-x4: 16px;
+  --seed-v3-unit-x4_5: 18px;
+  --seed-v3-unit-x5: 20px;
+  --seed-v3-unit-x6: 24px;
+  --seed-v3-unit-x7: 28px;
+  --seed-v3-unit-x8: 32px;
+  --seed-v3-unit-x9: 36px;
+  --seed-v3-unit-x10: 40px;
+  --seed-v3-unit-x12: 48px;
+  --seed-v3-unit-x13: 52px;
+  --seed-v3-unit-x16: 64px;
+  --seed-v3-unit-x20: 80px;
+  --seed-v3-unit-x24: 96px;
 
-  --seed-v3-radii-0\.5: 2px;
-  --seed-v3-radii-1: 4px;
-  --seed-v3-radii-1\.5: 6px;
-  --seed-v3-radii-2: 8px;
-  --seed-v3-radii-2\.5: 10px;
-  --seed-v3-radii-3: 12px;
-  --seed-v3-radii-3\.5: 14px;
-  --seed-v3-radii-4: 16px;
-  --seed-v3-radii-full: 9999px;
+  --seed-v3-radius-x0_5: 2px;
+  --seed-v3-radius-x1: 4px;
+  --seed-v3-radius-x1_5: 6px;
+  --seed-v3-radius-x2: 8px;
+  --seed-v3-radius-x2_5: 10px;
+  --seed-v3-radius-x3: 12px;
+  --seed-v3-radius-x3_5: 14px;
+  --seed-v3-radius-x4: 16px;
+  --seed-v3-radius-full: 9999px;
 
-  --seed-v3-font-size-25: 0.6875rem; /* 11px */
-  --seed-v3-font-size-50: 0.75rem; /* 12px */
-  --seed-v3-font-size-75: 0.8125rem; /* 13px */
-  --seed-v3-font-size-100: 0.875rem; /* 14px */
-  --seed-v3-font-size-200: 1rem; /* 16px */
+  --seed-v3-font-size-t1: 0.6875rem; /* 11px */
+  --seed-v3-font-size-t2: 0.75rem; /* 12px */
+  --seed-v3-font-size-t3: 0.8125rem; /* 13px */
+  --seed-v3-font-size-t4: 0.875rem; /* 14px */
+  --seed-v3-font-size-t5: 1rem; /* 16px */
 }
 
 /* Light Mode */
