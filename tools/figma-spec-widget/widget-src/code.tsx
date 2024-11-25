@@ -1,17 +1,30 @@
-import { parse, type ParsedExpression } from "@seed-design/component-spec-core";
+import {
+  parseComponentSpecData,
+  stringifyPrimitiveExpression,
+  stringifyTokenExpression,
+  type ComponentSpecExpression,
+} from "@seed-design/rootage-core";
 import YAML from "yaml";
-import { stringifyConditions, stringifyToken, stringifyVariants } from "./stringify";
+import { stringifyConditions, stringifyVariants } from "./stringify";
 
 const { widget } = figma;
 const { AutoLayout, Fragment, Text, usePropertyMenu, useSyncedState } = widget;
 
-const COMPONENT_KEYS = ["avatar", "action-button", "callout", "action-chip", "checkbox", "dialog", "radio"];
+const COMPONENT_KEYS = [
+  "avatar",
+  "action-button",
+  "callout",
+  "action-chip",
+  "checkbox",
+  "dialog",
+  "radio",
+];
 const getSpecUrl = (key: string) =>
-  `https://raw.githubusercontent.com/daangn/seed-design/wip/packages/component-spec/artifacts/${key}.yaml`;
+  `https://raw.githubusercontent.com/daangn/seed-design/wip/packages/rootage/artifacts/${key}.yaml`;
 
 function Widget() {
   const [componentKey, setComponentKey] = useSyncedState<string>("componentKey", "");
-  const [spec, setSpec] = useSyncedState<ParsedExpression>("componentSpec", []);
+  const [spec, setSpec] = useSyncedState<ComponentSpecExpression>("componentSpec", []);
 
   usePropertyMenu(
     [
@@ -46,7 +59,7 @@ function Widget() {
     const response = await fetch(getSpecUrl(componentKey));
     const text = await response.text();
     console.log(spec);
-    setSpec(parse(YAML.parse(text)));
+    setSpec(parseComponentSpecData(YAML.parse(text).data));
   }
 
   if (!componentKey) {
@@ -116,7 +129,9 @@ function Widget() {
                         </AutoLayout>
                         <AutoLayout width={"fill-parent"}>
                           <Text fontSize={12}>
-                            {typeof value === "string" ? value : stringifyToken(value)}
+                            {value.type === "token"
+                              ? stringifyTokenExpression(value)
+                              : stringifyPrimitiveExpression(value)}
                           </Text>
                         </AutoLayout>
                       </AutoLayout>
