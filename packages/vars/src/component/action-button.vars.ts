@@ -179,111 +179,111 @@ export const vars = {
   "sizeXsmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-8)",
-        "cornerRadius": "var(--seed-v3-radii-full)"
+        "minHeight": "var(--seed-v3-unit-x8)",
+        "cornerRadius": "var(--seed-v3-radius-full)"
       }
     }
   },
   "sizeXsmallLayoutWithText": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-1)",
-        "paddingX": "var(--seed-v3-unit-3\\.5)",
-        "paddingY": "var(--seed-v3-unit-1\\.5)"
+        "gap": "var(--seed-v3-unit-x1)",
+        "paddingX": "var(--seed-v3-unit-x3_5)",
+        "paddingY": "var(--seed-v3-unit-x1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-3\\.5)"
+        "size": "var(--seed-v3-unit-x3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-3\\.5)"
+        "size": "var(--seed-v3-unit-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-100)"
+        "fontSize": "var(--seed-v3-font-size-t4)"
       }
     }
   },
   "sizeXsmallLayoutIconOnly": {
     "enabled": {
       "root": {
-        "minWidth": "var(--seed-v3-unit-8)",
-        "paddingX": "var(--seed-v3-unit-1\\.5)",
-        "paddingY": "var(--seed-v3-unit-1\\.5)"
+        "minWidth": "var(--seed-v3-unit-x8)",
+        "paddingX": "var(--seed-v3-unit-x1_5)",
+        "paddingY": "var(--seed-v3-unit-x1_5)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-3\\.5)"
+        "size": "var(--seed-v3-unit-x3_5)"
       }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-9)",
-        "cornerRadius": "var(--seed-v3-radii-2)"
+        "minHeight": "var(--seed-v3-unit-x9)",
+        "cornerRadius": "var(--seed-v3-radius-x2)"
       }
     }
   },
   "sizeSmallLayoutWithText": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-1)",
-        "paddingX": "var(--seed-v3-unit-3\\.5)",
-        "paddingY": "var(--seed-v3-unit-2)"
+        "gap": "var(--seed-v3-unit-x1)",
+        "paddingX": "var(--seed-v3-unit-x3_5)",
+        "paddingY": "var(--seed-v3-unit-x2)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-3\\.5)"
+        "size": "var(--seed-v3-unit-x3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-3\\.5)"
+        "size": "var(--seed-v3-unit-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-100)"
+        "fontSize": "var(--seed-v3-font-size-t4)"
       }
     }
   },
   "sizeSmallLayoutIconOnly": {
     "enabled": {
       "root": {
-        "minWidth": "var(--seed-v3-unit-9)",
-        "paddingX": "var(--seed-v3-unit-2)",
-        "paddingY": "var(--seed-v3-unit-2)"
+        "minWidth": "var(--seed-v3-unit-x9)",
+        "paddingX": "var(--seed-v3-unit-x2)",
+        "paddingY": "var(--seed-v3-unit-x2)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-4)"
+        "size": "var(--seed-v3-unit-x4)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-10)",
-        "cornerRadius": "var(--seed-v3-radii-2)"
+        "minHeight": "var(--seed-v3-unit-x10)",
+        "cornerRadius": "var(--seed-v3-radius-x2)"
       }
     }
   },
   "sizeMediumLayoutWithText": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-1)",
-        "paddingX": "var(--seed-v3-unit-4)",
-        "paddingY": "var(--seed-v3-unit-2\\.5)"
+        "gap": "var(--seed-v3-unit-x1)",
+        "paddingX": "var(--seed-v3-unit-x4)",
+        "paddingY": "var(--seed-v3-unit-x2_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-4)"
+        "size": "var(--seed-v3-unit-x4)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-4)"
+        "size": "var(--seed-v3-unit-x4)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-100)"
+        "fontSize": "var(--seed-v3-font-size-t4)"
       }
     }
   },
   "sizeMediumLayoutIconOnly": {
     "enabled": {
       "root": {
-        "minWidth": "var(--seed-v3-unit-10)",
-        "paddingX": "var(--seed-v3-unit-2\\.5)",
-        "paddingY": "var(--seed-v3-unit-2\\.5)"
+        "minWidth": "var(--seed-v3-unit-x10)",
+        "paddingX": "var(--seed-v3-unit-x2_5)",
+        "paddingY": "var(--seed-v3-unit-x2_5)"
       },
       "icon": {
         "size": "18px"
@@ -293,17 +293,17 @@ export const vars = {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-13)",
-        "cornerRadius": "var(--seed-v3-radii-3)"
+        "minHeight": "var(--seed-v3-unit-x13)",
+        "cornerRadius": "var(--seed-v3-radius-x3)"
       }
     }
   },
   "sizeLargeLayoutWithText": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-2)",
-        "paddingX": "var(--seed-v3-unit-5)",
-        "paddingY": "var(--seed-v3-unit-3\\.5)"
+        "gap": "var(--seed-v3-unit-x2)",
+        "paddingX": "var(--seed-v3-unit-x5)",
+        "paddingY": "var(--seed-v3-unit-x3_5)"
       },
       "prefixIcon": {
         "size": "22px"
@@ -312,16 +312,16 @@ export const vars = {
         "size": "22px"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-300)"
+        "fontSize": "var(--seed-v3-font-size-t6)"
       }
     }
   },
   "sizeLargeLayoutIconOnly": {
     "enabled": {
       "root": {
-        "minWidth": "var(--seed-v3-unit-13)",
-        "paddingX": "var(--seed-v3-unit-3\\.5)",
-        "paddingY": "var(--seed-v3-unit-3\\.5)"
+        "minWidth": "var(--seed-v3-unit-x13)",
+        "paddingX": "var(--seed-v3-unit-x3_5)",
+        "paddingY": "var(--seed-v3-unit-x3_5)"
       },
       "icon": {
         "size": "22px"

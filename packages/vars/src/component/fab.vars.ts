@@ -3,7 +3,7 @@ export const vars = {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-layer-floating)",
-        "borderRadius": "var(--seed-v3-radii-full)"
+        "borderRadius": "var(--seed-v3-radius-full)"
       },
       "icon": {
         "color": "var(--seed-v3-color-fg-neutral)"
@@ -18,20 +18,20 @@ export const vars = {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-10)"
+        "size": "var(--seed-v3-unit-x10)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-5)"
+        "size": "var(--seed-v3-unit-x5)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-12)"
+        "size": "var(--seed-v3-unit-x12)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-6)"
+        "size": "var(--seed-v3-unit-x6)"
       }
     }
   }

@@ -1,0 +1,350 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ComponentSpecModel",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "const": "ComponentSpec"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name"],
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "$ref": "#/definitions/variant"
+        }
+      },
+      "patternProperties": {
+        "^.*=.*$": {
+          "$ref": "#/definitions/variant"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["kind", "metadata", "data"],
+  "additionalProperties": false,
+  "definitions": {
+    "variant": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/state"
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/slot"
+      }
+    },
+    "slot": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/righthandValue"
+      }
+    },
+    "righthandValue": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/colorShorthand"
+        },
+        {
+          "$ref": "#/definitions/dimensionShorthand"
+        },
+        {
+          "$ref": "#/definitions/numberShorthand"
+        },
+        {
+          "$ref": "#/definitions/cubicBezier"
+        },
+        {
+          "$ref": "#/definitions/shadow"
+        },
+        {
+          "$ref": "#/definitions/tokenRef"
+        }
+      ]
+    },
+    "colorShorthand": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+    },
+    "dimensionShorthand": {
+      "type": "string",
+      "pattern": "^\\d+(\\.\\d+)?(px|rem)$"
+    },
+    "numberShorthand": {
+      "type": "number"
+    },
+    "cubicBezier": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "cubicBezier"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": ["type", "value"],
+      "additionalProperties": false
+    },
+    "shadow": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "shadow"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "color": {
+                "$ref": "#/definitions/colorShorthand"
+              },
+              "offsetX": {
+                "$ref": "#/definitions/dimensionShorthand"
+              },
+              "offsetY": {
+                "$ref": "#/definitions/dimensionShorthand"
+              },
+              "blur": {
+                "$ref": "#/definitions/dimensionShorthand"
+              },
+              "spread": {
+                "$ref": "#/definitions/dimensionShorthand"
+              }
+            },
+            "required": ["color", "offsetX", "offsetY", "blur", "spread"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["type", "value"],
+      "additionalProperties": false
+    },
+    "tokenRef": {
+      "type": "string",
+      "anyOf": [
+        { "const": "$color.palette.gray-00" },
+        { "const": "$color.palette.gray-100" },
+        { "const": "$color.palette.gray-200" },
+        { "const": "$color.palette.gray-300" },
+        { "const": "$color.palette.gray-400" },
+        { "const": "$color.palette.gray-500" },
+        { "const": "$color.palette.gray-600" },
+        { "const": "$color.palette.gray-700" },
+        { "const": "$color.palette.gray-800" },
+        { "const": "$color.palette.gray-900" },
+        { "const": "$color.palette.carrot-100" },
+        { "const": "$color.palette.carrot-200" },
+        { "const": "$color.palette.carrot-300" },
+        { "const": "$color.palette.carrot-400" },
+        { "const": "$color.palette.carrot-500" },
+        { "const": "$color.palette.carrot-600" },
+        { "const": "$color.palette.carrot-700" },
+        { "const": "$color.palette.carrot-800" },
+        { "const": "$color.palette.carrot-900" },
+        { "const": "$color.palette.carrot-1000" },
+        { "const": "$color.palette.blue-100" },
+        { "const": "$color.palette.blue-200" },
+        { "const": "$color.palette.blue-300" },
+        { "const": "$color.palette.blue-400" },
+        { "const": "$color.palette.blue-500" },
+        { "const": "$color.palette.blue-600" },
+        { "const": "$color.palette.blue-700" },
+        { "const": "$color.palette.blue-800" },
+        { "const": "$color.palette.blue-900" },
+        { "const": "$color.palette.blue-1000" },
+        { "const": "$color.palette.red-100" },
+        { "const": "$color.palette.red-200" },
+        { "const": "$color.palette.red-300" },
+        { "const": "$color.palette.red-400" },
+        { "const": "$color.palette.red-500" },
+        { "const": "$color.palette.red-600" },
+        { "const": "$color.palette.red-700" },
+        { "const": "$color.palette.red-800" },
+        { "const": "$color.palette.red-900" },
+        { "const": "$color.palette.red-1000" },
+        { "const": "$color.palette.green-100" },
+        { "const": "$color.palette.green-200" },
+        { "const": "$color.palette.green-300" },
+        { "const": "$color.palette.green-400" },
+        { "const": "$color.palette.green-500" },
+        { "const": "$color.palette.green-600" },
+        { "const": "$color.palette.green-700" },
+        { "const": "$color.palette.green-800" },
+        { "const": "$color.palette.green-900" },
+        { "const": "$color.palette.green-1000" },
+        { "const": "$color.palette.yellow-100" },
+        { "const": "$color.palette.yellow-200" },
+        { "const": "$color.palette.yellow-300" },
+        { "const": "$color.palette.yellow-400" },
+        { "const": "$color.palette.yellow-500" },
+        { "const": "$color.palette.yellow-600" },
+        { "const": "$color.palette.yellow-700" },
+        { "const": "$color.palette.yellow-800" },
+        { "const": "$color.palette.yellow-900" },
+        { "const": "$color.palette.yellow-1000" },
+        { "const": "$color.palette.static-black" },
+        { "const": "$color.palette.static-white" },
+        { "const": "$color.palette.static-black-alpha-200" },
+        { "const": "$color.palette.static-black-alpha-500" },
+        { "const": "$color.palette.static-black-alpha-50" },
+        { "const": "$color.palette.purple-100" },
+        { "const": "$color.palette.purple-200" },
+        { "const": "$color.palette.purple-300" },
+        { "const": "$color.palette.purple-400" },
+        { "const": "$color.palette.purple-500" },
+        { "const": "$color.palette.purple-600" },
+        { "const": "$color.palette.purple-700" },
+        { "const": "$color.palette.purple-800" },
+        { "const": "$color.palette.purple-900" },
+        { "const": "$color.palette.purple-1000" },
+        { "const": "$color.palette.static-white-alpha-800" },
+        { "const": "$color.fg.static-white" },
+        { "const": "$color.fg.neutral" },
+        { "const": "$color.fg.neutral-muted" },
+        { "const": "$color.fg.neutral-subtle" },
+        { "const": "$color.fg.neutral-inverted" },
+        { "const": "$color.fg.brand-contrast" },
+        { "const": "$color.fg.danger" },
+        { "const": "$color.fg.danger-contrast" },
+        { "const": "$color.fg.positive" },
+        { "const": "$color.fg.positive-contrast" },
+        { "const": "$color.fg.warning-contrast" },
+        { "const": "$color.fg.informative" },
+        { "const": "$color.fg.informative-contrast" },
+        { "const": "$color.fg.placeholder" },
+        { "const": "$color.fg.disabled" },
+        { "const": "$color.fg.static-black" },
+        { "const": "$color.fg.brand" },
+        { "const": "$color.fg.magic" },
+        { "const": "$color.fg.magic-contrast" },
+        { "const": "$color.bg.positive-weak" },
+        { "const": "$color.bg.positive-solid" },
+        { "const": "$color.bg.warning-solid" },
+        { "const": "$color.bg.warning-weak" },
+        { "const": "$color.bg.danger-weak" },
+        { "const": "$color.bg.danger-solid" },
+        { "const": "$color.bg.danger-solid-pressed" },
+        { "const": "$color.bg.brand-weak" },
+        { "const": "$color.bg.brand-solid" },
+        { "const": "$color.bg.brand-solid-pressed" },
+        { "const": "$color.bg.brand-weak-pressed" },
+        { "const": "$color.bg.layer-default" },
+        { "const": "$color.bg.layer-default-pressed" },
+        { "const": "$color.bg.layer-fill" },
+        { "const": "$color.bg.neutral-weak" },
+        { "const": "$color.bg.neutral-solid" },
+        { "const": "$color.bg.neutral-weak-pressed" },
+        { "const": "$color.bg.informative-weak" },
+        { "const": "$color.bg.overlay" },
+        { "const": "$color.bg.overlay-muted" },
+        { "const": "$color.bg.text-selection" },
+        { "const": "$color.bg.layer-basement" },
+        { "const": "$color.bg.layer-floating" },
+        { "const": "$color.bg.neutral-solid-pressed" },
+        { "const": "$color.bg.disabled" },
+        { "const": "$color.bg.layer-floating-pressed" },
+        { "const": "$color.bg.informative-weak-pressed" },
+        { "const": "$color.bg.static-white" },
+        { "const": "$color.bg.warning-weak-pressed" },
+        { "const": "$color.bg.danger-weak-pressed" },
+        { "const": "$color.bg.informative-solid" },
+        { "const": "$color.bg.positive-weak-pressed" },
+        { "const": "$color.bg.informative-solid-pressed" },
+        { "const": "$color.bg.positive-solid-pressed" },
+        { "const": "$color.bg.magic-solid" },
+        { "const": "$color.bg.magic-solid-pressed" },
+        { "const": "$color.bg.magic-weak" },
+        { "const": "$color.bg.magic-weak-pressed" },
+        { "const": "$color.bg.neutral-muted" },
+        { "const": "$color.bg.floating-solid" },
+        { "const": "$color.bg.neutral-muted-pressed" },
+        { "const": "$color.stroke.neutral" },
+        { "const": "$color.stroke.brand" },
+        { "const": "$color.stroke.field" },
+        { "const": "$color.stroke.field-focused" },
+        { "const": "$color.stroke.control" },
+        { "const": "$color.stroke.neutral-muted" },
+        { "const": "$color.stroke.danger" },
+        { "const": "$color.stroke.positive" },
+        { "const": "$font-size.t1" },
+        { "const": "$font-size.t2" },
+        { "const": "$font-size.t3" },
+        { "const": "$font-size.t4" },
+        { "const": "$font-size.t5" },
+        { "const": "$font-size.t6" },
+        { "const": "$font-size.t7" },
+        { "const": "$font-size.t8" },
+        { "const": "$font-size.t9" },
+        { "const": "$font-size.t10" },
+        { "const": "$font-weight.regular" },
+        { "const": "$font-weight.medium" },
+        { "const": "$font-weight.bold" },
+        { "const": "$line-height.t1" },
+        { "const": "$line-height.t2" },
+        { "const": "$line-height.t3" },
+        { "const": "$line-height.t4" },
+        { "const": "$line-height.t5" },
+        { "const": "$line-height.t6" },
+        { "const": "$line-height.t7" },
+        { "const": "$line-height.t8" },
+        { "const": "$line-height.t9" },
+        { "const": "$line-height.t10" },
+        { "const": "$radius.x0_5" },
+        { "const": "$radius.x1" },
+        { "const": "$radius.x1_5" },
+        { "const": "$radius.x2" },
+        { "const": "$radius.x2_5" },
+        { "const": "$radius.x3" },
+        { "const": "$radius.x3_5" },
+        { "const": "$radius.x4" },
+        { "const": "$radius.x5" },
+        { "const": "$radius.x6" },
+        { "const": "$radius.full" },
+        { "const": "$unit.x0_5" },
+        { "const": "$unit.x1" },
+        { "const": "$unit.x1_5" },
+        { "const": "$unit.x2" },
+        { "const": "$unit.x2_5" },
+        { "const": "$unit.x3" },
+        { "const": "$unit.x3_5" },
+        { "const": "$unit.x4" },
+        { "const": "$unit.x4_5" },
+        { "const": "$unit.x5" },
+        { "const": "$unit.x6" },
+        { "const": "$unit.x7" },
+        { "const": "$unit.x8" },
+        { "const": "$unit.x9" },
+        { "const": "$unit.x10" },
+        { "const": "$unit.x12" },
+        { "const": "$unit.x13" },
+        { "const": "$unit.x14" },
+        { "const": "$unit.x16" }
+      ]
+    }
+  }
+}

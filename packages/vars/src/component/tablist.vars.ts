@@ -15,7 +15,7 @@ export const vars = {
   "layoutHug": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-unit-4)"
+        "paddingX": "var(--seed-v3-unit-x4)"
       }
     }
   },

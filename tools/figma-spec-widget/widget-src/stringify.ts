@@ -1,4 +1,4 @@
-import type { Token } from "../../../packages/component-spec/core/lib/types";
+import type { Token } from "../../../packages/rootage/core/lib/types";
 
 export function stringifyVariants(variants: Record<string, string>) {
   const entries = Object.entries(variants);

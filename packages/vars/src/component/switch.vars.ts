@@ -3,11 +3,11 @@ export const vars = {
     "enabled": {
       "control": {
         "color": "var(--seed-v3-color-palette-gray-600)",
-        "cornerRadius": "var(--seed-v3-radii-full)"
+        "cornerRadius": "var(--seed-v3-radius-full)"
       },
       "thumb": {
         "color": "var(--seed-v3-color-fg-static-white)",
-        "cornerRadius": "var(--seed-v3-radii-full)"
+        "cornerRadius": "var(--seed-v3-radius-full)"
       }
     },
     "enabledSelected": {
@@ -22,7 +22,7 @@ export const vars = {
     },
     "disabledSelected": {
       "root": {
-        "opacity": 0.38
+        "opacity": "0.38"
       }
     }
   },
@@ -39,7 +39,7 @@ export const vars = {
       "thumb": {
         "height": "27px",
         "width": "27px",
-        "shadow": "0px 3px 8px 0px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.06)"
+        "shadow": "[object Object] [object Object] [object Object] [object Object] #00000026, [object Object] [object Object] [object Object] [object Object] #0000000f"
       }
     }
   },

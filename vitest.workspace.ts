@@ -14,8 +14,8 @@ export default defineWorkspace([
   },
   {
     test: {
-      name: "component-spec",
-      include: ["./packages/component-spec/**/*.test.(tsx|ts)"],
+      name: "rootage",
+      include: ["./packages/rootage/**/*.test.(tsx|ts)"],
       environment: "node",
     },
   },

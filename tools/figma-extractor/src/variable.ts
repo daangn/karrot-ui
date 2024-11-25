@@ -342,7 +342,7 @@ function figmaFontWeightVarToJsVar(name: string) {
 
 /**
  * @param name font-size/500
- * @returns $font-size[500]
+ * @returns $font-size.t8
  *
  * @param name font-size/static-100
  * @returns $font-size.static[100]
@@ -379,13 +379,13 @@ function figmaCornerRadiusVarToJsVar(name: string) {
 /**
  *
  * @param name unit/x1,5
- * @returns $unit[1.5]
+ * @returns $unit.x1.5
  */
 function figmaUnitVarToJsVar(name: string) {
   const [_, value] = name.split("/") as [string, string];
 
   const convertedValue = value.replace("x", "").replace(",", ".");
-  return `$unit[${convertedValue}]`;
+  return `$unit.x${convertedValue}`;
 }
 
 function toCssDeclaration(variable: Variable, modeId: string) {

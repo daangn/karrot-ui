@@ -1,0 +1,101 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: callout
+  name: Callout
+data:
+  base:
+    enabled:
+      root:
+        minHeight: $unit.x12
+        paddingX: $unit.x4
+        paddingY: $unit.x3_5
+        cornerRadius: $radius.x2_5
+      title:
+        fontSize: $font-size.t4
+        fontWeight: $font-weight.bold
+      description:
+        fontSize: $font-size.t4
+        fontWeight: $font-weight.regular
+      icon:
+        size: $unit.x4
+        marginRight: $unit.x1_5
+      actionIndicator:
+        size: $unit.x4_5
+        marginLeft: $unit.x2_5
+      closeButton:
+        size: $unit.x4_5
+        marginLeft: $unit.x2_5
+  variant=outline:
+    enabled:
+      root:
+        strokeColor: $color.stroke.neutral
+        strokeWidth: 1px
+      title:
+        color: $color.fg.neutral
+      description:
+        color: $color.fg.neutral
+      icon:
+        color: $color.fg.neutral
+      actionIndicator:
+        color: $color.fg.neutral
+      closeButton:
+        color: $color.fg.neutral
+  variant=neutral:
+    enabled:
+      root:
+        color: $color.bg.neutral-weak
+      title:
+        color: $color.fg.neutral
+      description:
+        color: $color.fg.neutral
+      icon:
+        color: $color.fg.neutral
+      actionIndicator:
+        color: $color.fg.neutral
+      closeButton:
+        color: $color.fg.neutral
+  variant=informative:
+    enabled:
+      root:
+        color: $color.bg.informative-weak
+      title:
+        color: $color.fg.informative-contrast
+      description:
+        color: $color.fg.informative-contrast
+      icon:
+        color: $color.fg.informative-contrast
+      actionIndicator:
+        color: $color.fg.informative-contrast
+      closeButton:
+        color: $color.fg.informative-contrast
+  variant=warning:
+    enabled:
+      root:
+        color: $color.bg.warning-weak
+      icon:
+        color: $color.fg.neutral
+      title:
+        color: $color.fg.neutral
+      label:
+        color: $color.fg.neutral
+      linkLabel:
+        color: $color.fg.neutral
+      dismissIcon:
+        color: $color.fg.neutral
+      actionableIcon:
+        color: $color.fg.neutral
+  variant=danger:
+    enabled:
+      root:
+        color: $color.bg.danger-weak
+      title:
+        color: $color.fg.danger-contrast
+      description:
+        color: $color.fg.danger-contrast
+      icon:
+        color: $color.fg.danger-contrast
+      actionIndicator:
+        color: $color.fg.danger-contrast
+      closeButton:
+        color: $color.fg.danger-contrast

@@ -2,13 +2,13 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-unit-3\\.5)",
-        "paddingY": "var(--seed-v3-unit-2)",
-        "cornerRadius": "var(--seed-v3-radii-full)",
+        "paddingX": "var(--seed-v3-unit-x3_5)",
+        "paddingY": "var(--seed-v3-unit-x2)",
+        "cornerRadius": "var(--seed-v3-radius-full)",
         "minHeight": "36px"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-100)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }

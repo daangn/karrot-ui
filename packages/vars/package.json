@@ -36,12 +36,12 @@
   "scripts": {
     "clean": "rm -rf lib",
     "prepack": "yarn build",
-    "generate:component": "yarn generate-vars ./src/component",
+    "generate:component": "yarn rootage component-spec ./src/component",
     "build": "yarn build:style",
     "build:style": "yarn generate:component && nanobundle build"
   },
   "devDependencies": {
-    "@seed-design/component-spec-cli": "0.0.0",
+    "@seed-design/rootage-cli": "0.0.0",
     "nanobundle": "^1.6.0"
   },
   "ultra": {

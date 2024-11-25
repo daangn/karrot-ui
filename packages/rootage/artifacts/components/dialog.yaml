@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: dialog
+  name: Dialog
+data:
+  base:
+    enabled:
+      backdrop:
+        background: $color.bg.overlay
+      content:
+        background: $color.bg.layer-default
+        borderRadius: $radius.x4
+        marginX: $unit.x8
+        paddingX: $unit.x5
+        paddingY: $unit.x5
+        maxWidth: 272px
+      header:
+        gap: $unit.x1_5
+      footer:
+        paddingTop: $unit.x4
+        gap: $unit.x2
+      title:
+        color: $color.fg.neutral
+        fontSize: $font-size.t7
+        fontWeight: $font-weight.bold
+      description:
+        color: $color.fg.neutral
+        fontSize: $font-size.t5
+        fontWeight: $font-weight.regular

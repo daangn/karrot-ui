@@ -30,7 +30,6 @@ export const avatar = defineRecipe({
         left: 0,
         pointerEvents: "none",
         borderRadius: vars.base.enabled.root.cornerRadius,
-        boxShadow: `inset 0 0 0 ${vars.base.enabled.root.strokeWidth} ${vars.base.enabled.root.strokeColor}`,
       },
     },
     image: {

@@ -1,13 +1,21 @@
-import { parse, type ParsedExpression } from "@seed-design/component-spec-core";
+import { parse, type ParsedExpression } from "@seed-design/rootage-core";
 import YAML from "yaml";
 import { stringifyConditions, stringifyToken, stringifyVariants } from "./stringify";
 
 const { widget } = figma;
 const { AutoLayout, Fragment, Text, usePropertyMenu, useSyncedState } = widget;
 
-const COMPONENT_KEYS = ["avatar", "action-button", "callout", "action-chip", "checkbox", "dialog", "radio"];
+const COMPONENT_KEYS = [
+  "avatar",
+  "action-button",
+  "callout",
+  "action-chip",
+  "checkbox",
+  "dialog",
+  "radio",
+];
 const getSpecUrl = (key: string) =>
-  `https://raw.githubusercontent.com/daangn/seed-design/wip/packages/component-spec/artifacts/${key}.yaml`;
+  `https://raw.githubusercontent.com/daangn/seed-design/wip/packages/rootage/artifacts/${key}.yaml`;
 
 function Widget() {
   const [componentKey, setComponentKey] = useSyncedState<string>("componentKey", "");

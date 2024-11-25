@@ -2,41 +2,41 @@ export const vars = {
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-5)",
-        "paddingX": "var(--seed-v3-unit-2)",
-        "paddingY": "var(--seed-v3-unit-1)",
-        "fontSize": "var(--seed-v3-font-size-50)"
+        "minHeight": "var(--seed-v3-unit-x5)",
+        "paddingX": "var(--seed-v3-unit-x2)",
+        "paddingY": "var(--seed-v3-unit-x1)",
+        "fontSize": "var(--seed-v3-font-size-t2)"
       }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-4)",
-        "paddingX": "var(--seed-v3-unit-1\\.5)",
-        "paddingY": "var(--seed-v3-unit-0\\.5)",
-        "fontSize": "var(--seed-v3-font-size-25)"
+        "minHeight": "var(--seed-v3-unit-x4)",
+        "paddingX": "var(--seed-v3-unit-x1_5)",
+        "paddingY": "var(--seed-v3-unit-x0_5)",
+        "fontSize": "var(--seed-v3-font-size-t1)"
       }
     }
   },
   "shapePill": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-v3-radii-full)"
+        "borderRadius": "var(--seed-v3-radius-full)"
       }
     }
   },
   "shapeRectangleSizeMedium": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-v3-radii-1)"
+        "borderRadius": "var(--seed-v3-radius-x1)"
       }
     }
   },
   "shapeRectangleSizeSmall": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-v3-radii-0\\.5)"
+        "borderRadius": "var(--seed-v3-radius-x0_5)"
       }
     }
   },
@@ -147,7 +147,7 @@ export const vars = {
   "toneInformativeVariantOutlined": {
     "enabled": {
       "root": {
-        "strokeColor": "var(--seed-v3-color-stroke-informative)"
+        "strokeColor": "var(--seed-v3-color-fg-informative)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-informative)"

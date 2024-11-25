@@ -1,0 +1,17 @@
+{
+  "name": "@seed-design/rootage-artifacts",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daangn/seed-design.git",
+    "directory": "packages/rootage/artifacts"
+  },
+  "main": "package.json",
+  "files": [
+    "*.yaml",
+    "components/*.yaml"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

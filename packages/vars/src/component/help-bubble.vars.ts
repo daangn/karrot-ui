@@ -2,19 +2,19 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radii-1\\.5)",
-        "paddingX": "var(--seed-v3-unit-3)",
-        "paddingY": "var(--seed-v3-unit-2)"
+        "cornerRadius": "var(--seed-v3-radius-x1_5)",
+        "paddingX": "var(--seed-v3-unit-x3)",
+        "paddingY": "var(--seed-v3-unit-x2)"
       },
       "arrow": {
-        "size": "var(--seed-v3-unit-2\\.5)"
+        "size": "var(--seed-v3-unit-x2_5)"
       },
       "title": {
-        "fontSize": "var(--seed-v3-font-size-75)",
+        "fontSize": "var(--seed-v3-font-size-t3)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "description": {
-        "fontSize": "var(--seed-v3-font-size-75)",
+        "fontSize": "var(--seed-v3-font-size-t3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -22,10 +22,10 @@ export const vars = {
   "variantNonModal": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-inverted)"
+        "color": "var(--seed-v3-color-bg-neutral-solid)"
       },
       "arrow": {
-        "color": "var(--seed-v3-color-bg-neutral-inverted)"
+        "color": "var(--seed-v3-color-bg-neutral-solid)"
       },
       "title": {
         "color": "var(--seed-v3-color-fg-neutral-inverted)"
