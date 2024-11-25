@@ -50,54 +50,54 @@ export const vars = {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-2)",
-        "minHeight": "var(--seed-v3-unit-7)"
+        "gap": "var(--seed-v3-unit-x2)",
+        "minHeight": "var(--seed-v3-unit-x7)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-75)"
+        "fontSize": "var(--seed-v3-font-size-t3)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-4)",
-        "cornerRadius": "var(--seed-v3-radii-1)"
+        "size": "var(--seed-v3-unit-x4)",
+        "cornerRadius": "var(--seed-v3-radius-x1)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-4)"
+        "size": "var(--seed-v3-unit-x4)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-2\\.5)",
-        "minHeight": "var(--seed-v3-unit-8)"
+        "gap": "var(--seed-v3-unit-x2_5)",
+        "minHeight": "var(--seed-v3-unit-x8)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-100)"
+        "fontSize": "var(--seed-v3-font-size-t4)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-5)",
-        "cornerRadius": "var(--seed-v3-radii-1)"
+        "size": "var(--seed-v3-unit-x5)",
+        "cornerRadius": "var(--seed-v3-radius-x1)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-5)"
+        "size": "var(--seed-v3-unit-x5)"
       }
     }
   },
   "sizeLarge": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-3)",
-        "minHeight": "var(--seed-v3-unit-9)"
+        "gap": "var(--seed-v3-unit-x3)",
+        "minHeight": "var(--seed-v3-unit-x9)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-200)"
+        "fontSize": "var(--seed-v3-font-size-t5)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-6)",
-        "cornerRadius": "var(--seed-v3-radii-1)"
+        "size": "var(--seed-v3-unit-x6)",
+        "cornerRadius": "var(--seed-v3-radius-x1)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-6)"
+        "size": "var(--seed-v3-unit-x6)"
       }
     }
   }
