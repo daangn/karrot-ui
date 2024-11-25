@@ -1,0 +1,37 @@
+kind: Tokens
+metadata:
+  id: line-height
+  name: Line Height
+data:
+  collection: global
+  tokens:
+    $line-height.t1:
+      values:
+        default: 13px
+    $line-height.t2:
+      values:
+        default: 16px
+    $line-height.t3:
+      values:
+        default: 18px
+    $line-height.t4:
+      values:
+        default: 19px
+    $line-height.t5:
+      values:
+        default: 21px
+    $line-height.t6:
+      values:
+        default: 24px
+    $line-height.t7:
+      values:
+        default: 25px
+    $line-height.t8:
+      values:
+        default: 30px
+    $line-height.t9:
+      values:
+        default: 32px
+    $line-height.t10:
+      values:
+        default: 34px

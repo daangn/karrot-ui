@@ -1,42 +1,58 @@
-base:
-  enabled:
-    control:
-      color: $color.palette.gray[600]
-      cornerRadius: $radii.full
-    thumb:
-      color: $color.fg.static-white
-      cornerRadius: $radii.full
-  enabled,selected:
-    control:
-      color: $color.bg.brand-solid
-  disabled:
-    control:
-      color: $color.bg.disabled
-  disabled,selected:
-    root:
-      opacity: 0.38
-size=medium:
-  enabled:
-    root:
-      height: 31px
-      width: 51px
-    control:
-      paddingX: 2px
-      paddingY: 2px
-    thumb:
-      height: 27px
-      width: 27px
-      shadow:
-        - 0px 3px 8px 0px rgba(0, 0, 0, 0.15)
-        - 0px 1px 3px 0px rgba(0, 0, 0, 0.06)
-size=small:
-  enabled:
-    root:
-      height: 16px
-      width: 26px
-    control:
-      paddingX: 2px
-      paddingY: 2px
-    thumb:
-      height: 12px
-      width: 12px
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: switch
+  name: Switch
+data:
+  base:
+    enabled:
+      control:
+        color: $color.palette.gray-600
+        cornerRadius: $radius.full
+      thumb:
+        color: $color.fg.static-white
+        cornerRadius: $radius.full
+    enabled,selected:
+      control:
+        color: $color.bg.brand-solid
+    disabled:
+      control:
+        color: $color.bg.disabled
+    disabled,selected:
+      root:
+        opacity: 0.38
+  size=medium:
+    enabled:
+      root:
+        height: 31px
+        width: 51px
+      control:
+        paddingX: 2px
+        paddingY: 2px
+      thumb:
+        height: 27px
+        width: 27px
+        shadow:
+          type: shadow
+          value:
+            - offsetX: 0px
+              offsetY: 3px
+              blur: 8px
+              spread: 0px
+              color: "#00000026"
+            - offsetX: 0px
+              offsetY: 1px
+              blur: 3px
+              spread: 0px
+              color: "#0000000f"
+  size=small:
+    enabled:
+      root:
+        height: 16px
+        width: 26px
+      control:
+        paddingX: 2px
+        paddingY: 2px
+      thumb:
+        height: 12px
+        width: 12px

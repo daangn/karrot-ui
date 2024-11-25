@@ -1,28 +1,34 @@
-base:
-  enabled:
-    root:
-      color: "$color.bg.layer-default"
-      minHeight: "$unit[10]"
-      cornerRadius: "$radii[2]"
-      gap: "$unit[1]"
-      paddingX: "$unit[5]"
-      paddingY: "$unit[2.5]"
-      strokeColor: "$color.palette.gray-400"
-      strokeWidth: "1px"
-    label:
-      color: "$color.fg.neutral"
-      fontWeight: "$font-weight.bold"
-      fontSize: "$font-size[100]"
-    suffixIcon:
-      color: "$color.fg.neutral"
-      size: "$unit[3.5]"
-  pressed:
-    root:
-      color: "$color.bg.layer-default-pressed"
-  disabled:
-    root:
-      color: "$color.bg.disabled"
-    label:
-      color: "$color.fg.disabled"
-    suffixIcon:
-      color: "$color.fg.disabled"
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: expand-button
+  name: Expand Button
+data:
+  base:
+    enabled:
+      root:
+        color: $color.bg.layer-default
+        minHeight: $unit.x10
+        cornerRadius: $radius.x2
+        gap: $unit.x1
+        paddingX: $unit.x5
+        paddingY: $unit.x2_5
+        strokeColor: $color.palette.gray-400
+        strokeWidth: 1px
+      label:
+        color: $color.fg.neutral
+        fontWeight: $font-weight.bold
+        fontSize: $font-size.t4
+      suffixIcon:
+        color: $color.fg.neutral
+        size: $unit.x3_5
+    pressed:
+      root:
+        color: $color.bg.layer-default-pressed
+    disabled:
+      root:
+        color: $color.bg.disabled
+      label:
+        color: $color.fg.disabled
+      suffixIcon:
+        color: $color.fg.disabled

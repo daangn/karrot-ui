@@ -1,17 +1,18 @@
 # yaml-language-server: $schema=./schema.json
-# parts: root, triggerList, trigger
-# states: enabled
-base:
-  enabled:
-    root:
-      paddingX: $unit[4] # global gutter
-
-variant=neutral solid:
-  enabled:
-    triggerList:
-      gap: 0px
-
-variant=brand solid:
-  enabled:
-    triggerList:
-      gap: 8px
+kind: ComponentSpec
+metadata:
+  id: chip-tablist
+  name: Chip Tablist
+data:
+  base:
+    enabled:
+      root:
+        paddingX: $unit.x4
+  variant=neutral solid:
+    enabled:
+      triggerList:
+        gap: 0px
+  variant=brand solid:
+    enabled:
+      triggerList:
+        gap: 8px
