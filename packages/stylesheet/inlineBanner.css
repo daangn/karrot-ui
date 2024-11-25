@@ -2,12 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--seed-v3-unit-1);
+    gap: var(--seed-v3-unit-x1);
     width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-inline-start: var(--seed-v3-unit-4);
-    padding-inline-end: var(--seed-v3-unit-1);
+    padding-inline-start: var(--seed-v3-unit-x4);
+    padding-inline-end: var(--seed-v3-unit-x1);
 }
 .inlineBanner__root:is(button) {
     border: none;
@@ -18,20 +18,20 @@
 .inlineBanner__content {
     display: flex;
     align-items: flex-start;
-    gap: var(--seed-v3-unit-2);
+    gap: var(--seed-v3-unit-x2);
     padding-block: 10.5px;
-    font-size: var(--seed-v3-font-size-100);
+    font-size: var(--seed-v3-font-size-t4);
     line-height: 1.1875rem;
     text-align: start;
 }
 .inlineBanner__content:only-child {
-    padding-inline-end: var(--seed-v3-unit-3);
+    padding-inline-end: var(--seed-v3-unit-x3);
 }
 .inlineBanner__icon {
     flex: none;
     margin-block: 1.5px;
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
+    width: var(--seed-v3-unit-x4);
+    height: var(--seed-v3-unit-x4);
 }
 .inlineBanner__title {
     font-weight: var(--seed-v3-font-weight-bold);
@@ -44,9 +44,9 @@
 }
 .inlineBanner__linkLabel {
     flex: none;
-    height: var(--seed-v3-unit-10);
-    padding-inline: var(--seed-v3-unit-3);
-    font-size: var(--seed-v3-font-size-50);
+    height: var(--seed-v3-unit-x10);
+    padding-inline: var(--seed-v3-unit-x3);
+    font-size: var(--seed-v3-font-size-t2);
     font-weight: var(--seed-v3-font-weight-regular);
     line-height: 1rem;
     text-decoration: underline;
@@ -58,25 +58,25 @@
 }
 .inlineBanner__actionableIcon {
     flex: none;
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
-    margin: var(--seed-v3-unit-3);
+    width: var(--seed-v3-unit-x4);
+    height: var(--seed-v3-unit-x4);
+    margin: var(--seed-v3-unit-x3);
 }
 .inlineBanner__dismissButton {
     flex: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: var(--seed-v3-unit-10);
-    height: var(--seed-v3-unit-10);
+    width: var(--seed-v3-unit-x10);
+    height: var(--seed-v3-unit-x10);
     border: none;
     background-color: transparent;
     padding: 0;
     cursor: pointer;
 }
 .inlineBanner__dismissIcon {
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
+    width: var(--seed-v3-unit-x4);
+    height: var(--seed-v3-unit-x4);
 }
 .inlineBanner__root--variant_neutralWeak {
     background-color: var(--seed-v3-color-bg-neutral-weak);

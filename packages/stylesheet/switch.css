@@ -14,7 +14,7 @@
 .switch__control {
     display: block;
     position: relative;
-    border-radius: var(--seed-v3-radii-full);
+    border-radius: var(--seed-v3-radius-full);
     background: var(--seed-v3-color-palette-gray-600);
     transition: background-color 50ms cubic-bezier(0.35, 0, 0.35, 1) 20ms;
 }
@@ -25,7 +25,7 @@
     background: var(--seed-v3-color-bg-disabled);
 }
 .switch__thumb {
-    border-radius: var(--seed-v3-radii-full);
+    border-radius: var(--seed-v3-radius-full);
     background: var(--seed-v3-color-fg-static-white);
     transition: transform 150ms cubic-bezier(0.35, 0, 0.35, 1);
 }
@@ -37,7 +37,7 @@
 .switch__thumb--size_medium {
     width: 27px;
     height: 27px;
-    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: [object Object] [object Object] [object Object] [object Object] #00000026, [object Object] [object Object] [object Object] [object Object] #0000000f;
 }
 .switch__thumb--size_medium:is(:checked, [data-checked]) {
     transform: translateX(calc(51px - 31px));
