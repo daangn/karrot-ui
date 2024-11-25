@@ -3526,10 +3526,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/icon-data@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "@daangn/icon-data@npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.10%2F120d0bb7d16f04859623c31f9350b56e161f0f4a"
-  checksum: 6be72cb686014cba2bbba4fe3cf9b5dba450a42267df08dc22860d1da064fa51add06738abbc96fadc6aa834fd39f5f82fa3e43461f99b732299dc0584de6986
+"@daangn/icon-data@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "@daangn/icon-data@npm:0.0.12::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.12%2Fba96e3279374b1ed045d362f3eb150241ad236a5"
+  checksum: 60f93670beda707490bb8903087d9ac141244aedb889857b6901ebce9a1fda0e6a8534aa317b0793df8435ae9950ecab79a13007e90162562548e26ed65b9161
+  languageName: node
+  linkType: hard
+
+"@daangn/react-monochrome-icon@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@daangn/react-monochrome-icon@npm:0.0.11::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.11%2Fb6e5085d85552ea88357976022531885630f74f8"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  checksum: f252b3a0aa0f9fe7f83dcf5ec7afbce313cc0972939821fbe9ea3f65cf42cd8e2a6b84d3df3e6ea08e9ab7c2d17b21ef53951b9e62b1c8a6949acac6c8a987b9
   languageName: node
   linkType: hard
 
@@ -3542,22 +3552,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/react-monochrome-icon@npm:^0.0.7":
+"@daangn/react-multicolor-icon@npm:^0.0.7":
   version: 0.0.7
-  resolution: "@daangn/react-monochrome-icon@npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.7%2F7107c231e0a53ddd11b9d2462f10530bdbf73bc3"
+  resolution: "@daangn/react-multicolor-icon@npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-multicolor-icon%2F0.0.7%2F41cf623834e558fa462d9ff1aebe0e059d8120b0"
   peerDependencies:
     "@types/react": "*"
     react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-  checksum: e3135af31b760176ddf944fccd729e647ec374f1081fad3598f590628db52ebac7d7658bad47e4b325218e5c123035c741976e98cbc3fd1e8611bae39937e555
-  languageName: node
-  linkType: hard
-
-"@daangn/react-multicolor-icon@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@daangn/react-multicolor-icon@npm:0.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-multicolor-icon%2F0.0.4%2F4ce88acea8701eacd6966bf746bc157b300b9e7c"
-  peerDependencies:
-    react: 17.x || 18.x
-  checksum: cf982eff370d64e65c327aa9b7554eb3b07abbd910e142e32a4608260ae201bd136f28ac02a65afea2402036ecee690d57795a85f3185ba6772917bd07f08875
+  checksum: 2c18755fa2a93b83ce0190563198f4527c27f2e94e4933b4e69bb09aa149faaca50ce5effc7c82f8e331c5e2a1a649b1634d9940c10cdeb0ca8101f9f67ff247
   languageName: node
   linkType: hard
 
@@ -10518,9 +10519,9 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@chromatic-com/storybook": ^3.2.2
-    "@daangn/icon-data": ^0.0.10
-    "@daangn/react-monochrome-icon": ^0.0.7
-    "@daangn/react-multicolor-icon": ^0.0.4
+    "@daangn/icon-data": ^0.0.12
+    "@daangn/react-monochrome-icon": ^0.0.11
+    "@daangn/react-multicolor-icon": ^0.0.7
     "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
     "@seed-design/react-dismissible": 0.0.0
     "@seed-design/react-icon": ^0.7.3
