@@ -1,5 +1,11 @@
 # @seed-design/codemod
 
+## 0.0.11
+
+### Patch Changes
+
+- icon_horizline2_vertical_chatbubble_rectangular_right 반영
+
 ## 0.0.10
 
 ### Patch Changes

@@ -156,8 +156,8 @@ icon_question_check	icon_questionmark_square	0	0
 icon_redo	icon_arrow_uturn_right	0	0
 icon_refund	icon_won_arrow_clockwise_circular	0	0
 icon_remove_circle	icon_xmark_circle	0	0
-icon_reply	icon_horizline2_vertical_chatbubble_right	0	0
-icon_reply_mission	icon_horizline2_vertical_chatbubble_right	0	0
+icon_reply	icon_horizline2_vertical_chatbubble_rectangular_right	0	0
+icon_reply_mission	icon_horizline2_vertical_chatbubble_rectangular_right	0	0
 icon_reply_re	icon_corner_down_left	0	0
 icon_report	icon_flag	0	0
 icon_reservation	icon_checkmark_calendar	0	0
@@ -198,4 +198,4 @@ icon_walk	icon_figure_walk	0	0
 icon_warning	icon_exclamationmark_circle	0	0
 icon_write	icon_pen_horizline	0	0
 icon_write_frequent_use	icon_document_plus	0	0
-icon_write_story	icon_horizline2_vertical_chatbubble_right	1	0
+icon_write_story	icon_horizline2_vertical_chatbubble_rectangular_right	1	0

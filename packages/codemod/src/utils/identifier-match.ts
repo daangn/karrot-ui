@@ -479,12 +479,21 @@ export const identifierMatchReact: MigrateIconsOptions["match"]["identifier"] = 
   { oldName: "IconRemoveCircleThin", newName: "IconXmarkCircleLine" },
   { oldName: "IconRemoveCircleRegular", newName: "IconXmarkCircleLine" },
   { oldName: "IconRemoveCircleFill", newName: "IconXmarkCircleFill" },
-  { oldName: "IconReplyThin", newName: "IconHorizline2VerticalChatbubbleRightLine" },
-  { oldName: "IconReplyRegular", newName: "IconHorizline2VerticalChatbubbleRightLine" },
-  { oldName: "IconReplyFill", newName: "IconHorizline2VerticalChatbubbleRightFill" },
-  { oldName: "IconReplyMissionThin", newName: "IconHorizline2VerticalChatbubbleRightLine" },
-  { oldName: "IconReplyMissionRegular", newName: "IconHorizline2VerticalChatbubbleRightLine" },
-  { oldName: "IconReplyMissionFill", newName: "IconHorizline2VerticalChatbubbleRightFill" },
+  { oldName: "IconReplyThin", newName: "IconHorizline2VerticalChatbubbleRectangularRightLine" },
+  { oldName: "IconReplyRegular", newName: "IconHorizline2VerticalChatbubbleRectangularRightLine" },
+  { oldName: "IconReplyFill", newName: "IconHorizline2VerticalChatbubbleRectangularRightFill" },
+  {
+    oldName: "IconReplyMissionThin",
+    newName: "IconHorizline2VerticalChatbubbleRectangularRightLine",
+  },
+  {
+    oldName: "IconReplyMissionRegular",
+    newName: "IconHorizline2VerticalChatbubbleRectangularRightLine",
+  },
+  {
+    oldName: "IconReplyMissionFill",
+    newName: "IconHorizline2VerticalChatbubbleRectangularRightFill",
+  },
   { oldName: "IconReplyReThin", newName: "IconCornerDownLeftLine" },
   { oldName: "IconReplyReRegular", newName: "IconCornerDownLeftLine" },
   { oldName: "IconReplyReFill", newName: "IconCornerDownLeftFill" },
@@ -607,17 +616,17 @@ export const identifierMatchReact: MigrateIconsOptions["match"]["identifier"] = 
   { oldName: "IconWriteFrequentUseFill", newName: "IconDocumentPlusFill" },
   {
     oldName: "IconWriteStoryThin",
-    newName: "IconHorizline2VerticalChatbubbleRightLine",
+    newName: "IconHorizline2VerticalChatbubbleRectangularRightLine",
     isActionRequired: true,
   },
   {
     oldName: "IconWriteStoryRegular",
-    newName: "IconHorizline2VerticalChatbubbleRightLine",
+    newName: "IconHorizline2VerticalChatbubbleRectangularRightLine",
     isActionRequired: true,
   },
   {
     oldName: "IconWriteStoryFill",
-    newName: "IconHorizline2VerticalChatbubbleRightFill",
+    newName: "IconHorizline2VerticalChatbubbleRectangularRightFill",
     isActionRequired: true,
   },
 ];
