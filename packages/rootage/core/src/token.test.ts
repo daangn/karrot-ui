@@ -1,10 +1,5 @@
 import { describe, expect, it, test } from "vitest";
-import {
-  isTokenExpression,
-  parseTokenExpression,
-  parseTokensData,
-  stringifyTokenCssVar,
-} from "./token";
+import { isTokenExpression, parseTokenExpression, parseTokensData } from "./token";
 import type { TokensData } from "./types";
 
 describe("isTokenExpression", () => {
@@ -74,12 +69,4 @@ test("parseTokensData should parse tokens data", () => {
       ],
     },
   ]);
-});
-
-test("stringifyTokenCssVar should stringify token expression", () => {
-  const token = { type: "token" as const, group: ["color", "bg"], key: "layer-1" };
-
-  const result = stringifyTokenCssVar(token);
-
-  expect(result).toEqual("var(--seed-v3-color-bg-layer-1)");
 });

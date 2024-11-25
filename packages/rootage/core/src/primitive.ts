@@ -1,15 +1,11 @@
 import type {
   ColorExpression,
-  ColorShorthand,
-  CubicBezier,
   CubicBezierExpression,
   DimensionExpression,
-  DimensionShorthand,
   DurationExpression,
   NumberExpression,
   Primitive,
   PrimitiveExpression,
-  Shadow,
   ShadowExpression,
   ShadowItemExpression,
 } from "./types";
@@ -161,44 +157,4 @@ export function parsePrimitiveExpression(input: Primitive): PrimitiveExpression 
   }
 
   throw new Error(`Invalid primitive expression ${JSON.stringify(input, null, 2)}`);
-}
-
-function stringifyCubicBezierExpression(expr: CubicBezierExpression): string {
-  return `cubic-bezier(${expr.value.join(", ")})`;
-}
-
-function stringifyShadowExpression(expr: ShadowExpression): string {
-  return expr.value
-    .map((item) => {
-      return `${item.offsetX} ${item.offsetY} ${item.blur} ${item.spread} ${item.color}`;
-    })
-    .join(", ");
-}
-
-export function stringifyPrimitiveExpression(expr: PrimitiveExpression): string {
-  if (expr.type === "color") {
-    return expr.value;
-  }
-
-  if (expr.type === "dimension") {
-    return `${expr.value}${expr.unit}`;
-  }
-
-  if (expr.type === "number") {
-    return expr.value.toString();
-  }
-
-  if (expr.type === "duration") {
-    return `${expr.value}${expr.unit}`;
-  }
-
-  if (expr.type === "cubicBezier") {
-    return stringifyCubicBezierExpression(expr);
-  }
-
-  if (expr.type === "shadow") {
-    return stringifyShadowExpression(expr);
-  }
-
-  throw new Error("Invalid primitive expression");
 }

@@ -2,6 +2,7 @@
 
 import {
   getJsonSchema,
+  getTokenCss,
   type Model,
   parseComponentSpecData,
   stringifyComponentSpecTs,
@@ -62,15 +63,69 @@ async function writeComponentSpec() {
   }
 }
 
+async function writeTokenCss() {
+  const filesToRead = readYAMLFilesSync(artifactsDir);
+  const fileContents: Model[] = await Promise.all(
+    filesToRead.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
+  );
+
+  const validationResult = validateModels(fileContents);
+
+  if (!validationResult.valid) {
+    console.error(validationResult.message);
+    process.exit(1);
+  }
+
+  const code = getTokenCss(fileContents, {
+    banner: `:root[data-seed] {
+  color-scheme: light dark;
+}
+
+:root[data-seed="light-only"] {
+  color-scheme: light;
+}
+
+:root[data-seed="dark-only"] {
+  color-scheme: dark;
+}
+
+`,
+    selectors: {
+      global: {
+        default: ":root[data-seed]",
+      },
+      color: {
+        "theme-light": `:root[data-seed][data-seed="light-only"][data-seed-scale-color="dark"],
+:root[data-seed][data-seed-scale-color="light"]:not([data-seed="dark-only"]),
+:root[data-seed]:not([data-seed="dark-only"]) [data-seed-scale-color="light"]`,
+        "theme-dark": `:root[data-seed][data-seed="dark-only"][data-seed-scale-color="light"],
+:root[data-seed][data-seed-scale-color="dark"]:not([data-seed="light-only"]),
+:root[data-seed]:not([data-seed="light-only"]) [data-seed-scale-color="dark"]`,
+      },
+    },
+  });
+
+  const writePath = path.join(process.cwd(), dir, "token.css");
+
+  console.log("Writing token css to", writePath);
+
+  fs.writeFileSync(writePath, code);
+}
+
 async function writeJsonSchema() {
   const filesToRead = readYAMLFilesSync(artifactsDir);
   const fileContents = await Promise.all<Model>(
     filesToRead.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
-  ).then((res) => res.filter((model) => model.kind === "Tokens"));
+  );
 
-  // FIXME: add model validation
+  const validationResult = validateModels(fileContents);
 
-  const jsonSchema = getJsonSchema(fileContents);
+  if (!validationResult.valid) {
+    console.error(validationResult.message);
+    process.exit(1);
+  }
+
+  const jsonSchema = getJsonSchema(fileContents.filter((model) => model.kind === "Tokens"));
   const writePath = path.join(artifactsDir, "components", "schema.json");
 
   console.log("Writing schema to", writePath);
@@ -80,6 +135,12 @@ async function writeJsonSchema() {
 
 if (command === "component-spec") {
   writeComponentSpec().then(() => {
+    console.log("Done");
+  });
+}
+
+if (command === "token-css") {
+  writeTokenCss().then(() => {
     console.log("Done");
   });
 }

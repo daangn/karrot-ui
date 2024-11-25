@@ -6423,6 +6423,7 @@ __metadata:
   resolution: "@seed-design/stylesheet@workspace:packages/stylesheet"
   dependencies:
     "@seed-design/recipe-generator-cli": 0.0.0
+    "@seed-design/rootage-cli": 0.0.0
   languageName: unknown
   linkType: soft
 
