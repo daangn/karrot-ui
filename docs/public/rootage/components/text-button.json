@@ -1,0 +1,99 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "text-button",
+    "name": "Text Button"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "paddingY": "$unit.x0_5",
+          "gap": "$unit.x0_5",
+          "borderWidth": "0.125rem"
+        },
+        "label": {
+          "fontWeight": "$font-weight.regular"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.palette.gray-200",
+          "borderColor": "$color.palette.gray-200"
+        }
+      },
+      "disabled": {
+        "root": {
+          "color": "$color.fg.disabled"
+        }
+      }
+    },
+    "variant=brand": {
+      "enabled": {
+        "root": {
+          "color": "$color.fg.brand"
+        }
+      }
+    },
+    "variant=neutral": {
+      "enabled": {
+        "root": {
+          "color": "$color.fg.neutral"
+        }
+      }
+    },
+    "variant=neutral subtle": {
+      "enabled": {
+        "root": {
+          "color": "$color.fg.neutral-subtle"
+        }
+      }
+    },
+    "variant=danger": {
+      "enabled": {
+        "root": {
+          "color": "$color.fg.danger"
+        }
+      }
+    },
+    "size=large": {
+      "enabled": {
+        "root": {
+          "cornerRadius": "$radius.x1_5"
+        },
+        "icon": {
+          "size": "$unit.x4"
+        },
+        "label": {
+          "fontSize": "$font-size.t6"
+        }
+      }
+    },
+    "size=medium": {
+      "enabled": {
+        "root": {
+          "cornerRadius": "$radius.x1_5"
+        },
+        "icon": {
+          "size": "$unit.x3_5"
+        },
+        "label": {
+          "fontSize": "$font-size.t5"
+        }
+      }
+    },
+    "size=small": {
+      "enabled": {
+        "root": {
+          "cornerRadius": "$radius.x1"
+        },
+        "icon": {
+          "size": "$unit.x3_5"
+        },
+        "label": {
+          "fontSize": "$font-size.t4"
+        }
+      }
+    }
+  }
+}

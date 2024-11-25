@@ -158,6 +158,38 @@ async function writeJsonSchema() {
   fs.writeFileSync(writePath, jsonSchema);
 }
 
+async function writeJson() {
+  const filesToRead = readYAMLFilesSync(artifactsDir);
+  const entries = await Promise.all(
+    filesToRead.map(async (name) => ({
+      file: name,
+      content: await fs.readFile(name, "utf-8").then((res) => YAML.parse(res) as Model),
+    })),
+  );
+
+  const validationResult = validateModels(entries.map((entry) => entry.content));
+
+  if (!validationResult.valid) {
+    console.error(validationResult.message);
+    process.exit(1);
+  }
+
+  for (const { file, content } of entries) {
+    const code = JSON.stringify(content, null, 2);
+    const relativePath = path.relative(artifactsDir, file);
+    const withoutExt = relativePath.replace(path.extname(relativePath), "");
+    const writePath = path.join(process.cwd(), dir, `${withoutExt}.json`);
+
+    console.log("Writing", withoutExt, "to", writePath);
+
+    if (!fs.existsSync(path.dirname(writePath))) {
+      fs.mkdirpSync(path.dirname(writePath));
+    }
+
+    fs.writeFileSync(writePath, code);
+  }
+}
+
 if (command === "token-ts") {
   writeTokenTs().then(() => {
     console.log("Done");
@@ -178,6 +210,12 @@ if (command === "token-css") {
 
 if (command === "json-schema") {
   writeJsonSchema().then(() => {
+    console.log("Done");
+  });
+}
+
+if (command === "json") {
+  writeJson().then(() => {
     console.log("Done");
   });
 }

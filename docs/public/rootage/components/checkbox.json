@@ -1,0 +1,111 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "checkbox",
+    "name": "Checkbox"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "label": {
+          "color": "$color.fg.neutral"
+        },
+        "control": {
+          "strokeColor": "$color.stroke.control",
+          "strokeWidth": "1px"
+        }
+      },
+      "enabled,selected": {
+        "control": {
+          "color": "$color.bg.brand-solid"
+        },
+        "icon": {
+          "color": "$color.fg.static-white"
+        }
+      },
+      "pressed": {
+        "control": {
+          "color": "$color.bg.layer-default-pressed"
+        }
+      },
+      "pressed,selected": {
+        "control": {
+          "color": "$color.bg.brand-solid-pressed"
+        },
+        "icon": {
+          "color": "$color.fg.static-white"
+        }
+      },
+      "disabled": {
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "control": {
+          "color": "$color.bg.disabled"
+        }
+      },
+      "disabled,selected": {
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
+          "color": "$color.bg.disabled"
+        }
+      }
+    },
+    "size=small": {
+      "enabled": {
+        "root": {
+          "gap": "$unit.x2",
+          "minHeight": "$unit.x7"
+        },
+        "label": {
+          "fontSize": "$font-size.t3"
+        },
+        "control": {
+          "size": "$unit.x4",
+          "cornerRadius": "$radius.x1"
+        },
+        "icon": {
+          "size": "$unit.x4"
+        }
+      }
+    },
+    "size=medium": {
+      "enabled": {
+        "root": {
+          "gap": "$unit.x2_5",
+          "minHeight": "$unit.x8"
+        },
+        "label": {
+          "fontSize": "$font-size.t4"
+        },
+        "control": {
+          "size": "$unit.x5",
+          "cornerRadius": "$radius.x1"
+        },
+        "icon": {
+          "size": "$unit.x5"
+        }
+      }
+    },
+    "size=large": {
+      "enabled": {
+        "root": {
+          "gap": "$unit.x3",
+          "minHeight": "$unit.x9"
+        },
+        "label": {
+          "fontSize": "$font-size.t5"
+        },
+        "control": {
+          "size": "$unit.x6",
+          "cornerRadius": "$radius.x1"
+        },
+        "icon": {
+          "size": "$unit.x6"
+        }
+      }
+    }
+  }
+}

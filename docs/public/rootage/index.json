@@ -7,6 +7,81 @@
     },
     {
       "path": "/color.json"
+    },
+    {
+      "path": "/components/action-button.json"
+    },
+    {
+      "path": "/components/action-chip.json"
+    },
+    {
+      "path": "/components/avatar.json"
+    },
+    {
+      "path": "/components/badge.json"
+    },
+    {
+      "path": "/components/callout.json"
+    },
+    {
+      "path": "/components/checkbox.json"
+    },
+    {
+      "path": "/components/chip-tab.json"
+    },
+    {
+      "path": "/components/chip-tablist.json"
+    },
+    {
+      "path": "/components/control-chip.json"
+    },
+    {
+      "path": "/components/dialog.json"
+    },
+    {
+      "path": "/components/expand-button.json"
+    },
+    {
+      "path": "/components/fab.json"
+    },
+    {
+      "path": "/components/help-bubble.json"
+    },
+    {
+      "path": "/components/inline-banner.json"
+    },
+    {
+      "path": "/components/progress-circle.json"
+    },
+    {
+      "path": "/components/radio.json"
+    },
+    {
+      "path": "/components/switch.json"
+    },
+    {
+      "path": "/components/tab.json"
+    },
+    {
+      "path": "/components/tablist.json"
+    },
+    {
+      "path": "/components/text-button.json"
+    },
+    {
+      "path": "/font-size.json"
+    },
+    {
+      "path": "/font-weight.json"
+    },
+    {
+      "path": "/line-height.json"
+    },
+    {
+      "path": "/radius.json"
+    },
+    {
+      "path": "/unit.json"
     }
   ]
 }
