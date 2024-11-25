@@ -7,31 +7,31 @@ data:
   tokens:
     $line-height.t1:
       values:
-        default: 13px
+        default: 0.8125rem # 13px ÷ 16
     $line-height.t2:
       values:
-        default: 16px
+        default: 1rem # 16px ÷ 16
     $line-height.t3:
       values:
-        default: 18px
+        default: 1.125rem # 18px ÷ 16
     $line-height.t4:
       values:
-        default: 19px
+        default: 1.1875rem # 19px ÷ 16
     $line-height.t5:
       values:
-        default: 21px
+        default: 1.3125rem # 21px ÷ 16
     $line-height.t6:
       values:
-        default: 24px
+        default: 1.5rem # 24px ÷ 16
     $line-height.t7:
       values:
-        default: 25px
+        default: 1.5625rem # 25px ÷ 16
     $line-height.t8:
       values:
-        default: 30px
+        default: 1.875rem # 30px ÷ 16
     $line-height.t9:
       values:
-        default: 32px
+        default: 2rem # 32px ÷ 16
     $line-height.t10:
       values:
-        default: 34px
+        default: 2.125rem # 34px ÷ 16
