@@ -73,18 +73,16 @@ data:
     enabled:
       root:
         color: $color.bg.warning-weak
-      icon:
-        color: $color.fg.neutral
       title:
-        color: $color.fg.neutral
-      label:
-        color: $color.fg.neutral
-      linkLabel:
-        color: $color.fg.neutral
-      dismissIcon:
-        color: $color.fg.neutral
-      actionableIcon:
-        color: $color.fg.neutral
+        color: $color.fg.warning-contrast
+      description:
+        color: $color.fg.warning-contrast
+      icon:
+        color: $color.fg.warning-contrast
+      actionIndicator:
+        color: $color.fg.warning-contrast
+      closeButton:
+        color: $color.fg.warning-contrast
   variant=danger:
     enabled:
       root:
