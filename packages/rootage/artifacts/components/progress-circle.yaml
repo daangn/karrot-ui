@@ -1,31 +1,29 @@
+# yaml-language-server: $schema=./schema.json
 base:
   enabled:
-    root:
+    root: null
     track:
       fill: "#0017580d"
     indicator:
       color: "#d1d3d8"
-    indicator-path:
-
+    indicator-path: null
 size=small:
   enabled:
     root:
-      size: $unit[6]
-    track:
-    indicator:
-
+      size: $unit.x6
+    track: null
+    indicator: null
 size=medium:
   enabled:
     root:
-      size: $unit[10]
-    track:
-    indicator:
- 
+      size: $unit.x10
+    track: null
+    indicator: null
 variant=indeterminate:
   enabled:
-    root:
-    track:
-    indicator:
+    root: null
+    track: null
+    indicator: null
     indicator-path:
       headDashDuration: 1.2s
       tailDashDuration: 1.2s
@@ -33,12 +31,11 @@ variant=indeterminate:
       headDashTimingFunction: cubic-bezier(0.35, 0, 0.65, 1)
       tailDashTimingFunction: cubic-bezier(0.35, 0, 0.65, 0.6)
       rotateTimingFunction: cubic-bezier(0.35, 0.25, 0.65, 0.75)
-
 variant=determinate:
   enabled:
-    root:
-    track:
-    indicator:
+    root: null
+    track: null
+    indicator: null
     indicator-path:
       transitionDuration: 0.4s
       transitionTimingFunction: cubic-bezier(0, 0, 0.15, 1)

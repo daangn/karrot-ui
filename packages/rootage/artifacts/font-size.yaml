@@ -1,0 +1,37 @@
+kind: Tokens
+metadata:
+  id: font-size
+  name: Font Size
+data:
+  collection: global
+  tokens:
+    $font-size.t1:
+      values:
+        default: 11px
+    $font-size.t2:
+      values:
+        default: 12px
+    $font-size.t3:
+      values:
+        default: 13px
+    $font-size.t4:
+      values:
+        default: 14px
+    $font-size.t5:
+      values:
+        default: 16px
+    $font-size.t6:
+      values:
+        default: 18px
+    $font-size.t7:
+      values:
+        default: 20px
+    $font-size.t8:
+      values:
+        default: 22px
+    $font-size.t9:
+      values:
+        default: 24px
+    $font-size.t10:
+      values:
+        default: 26px

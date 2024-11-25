@@ -1,18 +1,23 @@
 # yaml-language-server: $schema=./schema.json
-base:
-  enabled:
-    root:
-      color: $color.bg.layer-default
-      strokeBottomWidth: 1px
-      strokeColor: $color.stroke.neutral
-    indicator:
-      height: 2px
-      color: $color.fg.neutral
-layout=hug:
-  enabled:
-    root:
-      paddingX: $unit[4] # global gutter
-layout=fill:
-  enabled:
-    root:
-      paddingX: 0px
+kind: ComponentSpec
+metadata:
+  id: tablist
+  name: Tablist
+data:
+  base:
+    enabled:
+      root:
+        color: $color.bg.layer-default
+        strokeBottomWidth: 1px
+        strokeColor: $color.stroke.neutral
+      indicator:
+        height: 2px
+        color: $color.fg.neutral
+  layout=hug:
+    enabled:
+      root:
+        paddingX: $unit.x4
+  layout=fill:
+    enabled:
+      root:
+        paddingX: 0px
