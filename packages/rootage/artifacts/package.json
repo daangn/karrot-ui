@@ -1,14 +1,15 @@
 {
-  "name": "@seed-design/component-spec-artifacts",
+  "name": "@seed-design/rootage-artifacts",
   "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/component-spec/artifacts"
+    "directory": "packages/rootage/artifacts"
   },
   "main": "package.json",
   "files": [
-    "box-button.yaml"
+    "*.yaml",
+    "components/*.yaml"
   ],
   "publishConfig": {
     "access": "public"

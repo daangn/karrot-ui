@@ -12,7 +12,7 @@
   "author": "Asher <asher@daangn.com>",
   "license": "MIT",
   "dependencies": {
-    "@seed-design/component-spec-core": "0.0.0",
+    "@seed-design/rootage-core": "0.0.0",
     "yaml": "^2.4.2"
   },
   "devDependencies": {

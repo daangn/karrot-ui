@@ -6024,41 +6024,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/component-spec-artifacts@0.0.0, @seed-design/component-spec-artifacts@workspace:packages/component-spec/artifacts":
-  version: 0.0.0-use.local
-  resolution: "@seed-design/component-spec-artifacts@workspace:packages/component-spec/artifacts"
-  languageName: unknown
-  linkType: soft
-
-"@seed-design/component-spec-cli@0.0.0, @seed-design/component-spec-cli@workspace:packages/component-spec/cli":
-  version: 0.0.0-use.local
-  resolution: "@seed-design/component-spec-cli@workspace:packages/component-spec/cli"
-  dependencies:
-    "@seed-design/component-spec-artifacts": 0.0.0
-    "@seed-design/component-spec-core": 0.0.0
-    "@types/fs-extra": ^11.0.2
-    esbuild: ^0.19.3
-    fs-extra: ^11.1.1
-    typescript: ^5.4.5
-    ultra-runner: ^3.10.5
-    yaml: ^2.4.2
-  bin:
-    generate-vars: ./bin/index.mjs
-  languageName: unknown
-  linkType: soft
-
-"@seed-design/component-spec-core@0.0.0, @seed-design/component-spec-core@workspace:packages/component-spec/core":
-  version: 0.0.0-use.local
-  resolution: "@seed-design/component-spec-core@workspace:packages/component-spec/core"
-  dependencies:
-    change-case: ^5.4.4
-    nanobundle: ^1.6.0
-    typescript: ^5.4.5
-    ultra-runner: ^3.10.5
-    vitest: ^0.34.6
-  languageName: unknown
-  linkType: soft
-
 "@seed-design/design-token@^1.0.3, @seed-design/design-token@workspace:packages/design-token":
   version: 0.0.0-use.local
   resolution: "@seed-design/design-token@workspace:packages/design-token"
@@ -6151,7 +6116,7 @@ __metadata:
   dependencies:
     "@figma/plugin-typings": "*"
     "@figma/widget-typings": "*"
-    "@seed-design/component-spec-core": 0.0.0
+    "@seed-design/rootage-core": 0.0.0
     concurrently: ^6.3.0
     esbuild: ^0.15.13
     typescript: ^5.4.5
@@ -6368,6 +6333,42 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/rootage-artifacts@0.0.0, @seed-design/rootage-artifacts@workspace:packages/rootage/artifacts":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/rootage-artifacts@workspace:packages/rootage/artifacts"
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/rootage-cli@0.0.0, @seed-design/rootage-cli@workspace:packages/rootage/cli":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/rootage-cli@workspace:packages/rootage/cli"
+  dependencies:
+    "@seed-design/rootage-artifacts": 0.0.0
+    "@seed-design/rootage-core": 0.0.0
+    "@types/fs-extra": ^11.0.2
+    esbuild: ^0.19.3
+    fs-extra: ^11.1.1
+    typescript: ^5.4.5
+    ultra-runner: ^3.10.5
+    yaml: ^2.4.2
+  bin:
+    rootage: ./bin/index.mjs
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/rootage-core@0.0.0, @seed-design/rootage-core@workspace:packages/rootage/core":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/rootage-core@workspace:packages/rootage/core"
+  dependencies:
+    change-case: ^5.4.4
+    dedent: ^1.5.3
+    nanobundle: ^1.6.0
+    typescript: ^5.4.5
+    ultra-runner: ^3.10.5
+    vitest: ^0.34.6
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/stackflow-spa@workspace:examples/stackflow-spa":
   version: 0.0.0-use.local
   resolution: "@seed-design/stackflow-spa@workspace:examples/stackflow-spa"
@@ -6412,7 +6413,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/vars@workspace:packages/vars"
   dependencies:
-    "@seed-design/component-spec-cli": 0.0.0
+    "@seed-design/rootage-cli": 0.0.0
     nanobundle: ^1.6.0
   languageName: unknown
   linkType: soft
