@@ -5,8 +5,9 @@ import {
   getTokenCss,
   type Model,
   parseComponentSpecData,
-  stringifyComponentSpecTs,
+  getComponentSpecTs,
   validateModels,
+  getTokenTs,
 } from "@seed-design/rootage-core";
 import fs from "fs-extra";
 import path from "node:path";
@@ -38,6 +39,30 @@ function readYAMLFilesSync(dir: string, fileList: string[] = []) {
   return fileList;
 }
 
+async function writeTokenTs() {
+  const filesToRead = readYAMLFilesSync(artifactsDir);
+  const fileContents: Model[] = await Promise.all(
+    filesToRead.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
+  );
+
+  const validationResult = validateModels(fileContents);
+
+  if (!validationResult.valid) {
+    console.error(validationResult.message);
+    process.exit(1);
+  }
+
+  const results = getTokenTs(fileContents);
+
+  for (const result of results) {
+    const writePath = path.join(process.cwd(), dir, `${result.path}.vars.ts`);
+
+    console.log("Writing", result.path, "to", writePath);
+
+    fs.writeFileSync(writePath, result.code);
+  }
+}
+
 async function writeComponentSpec() {
   const filesToRead = readYAMLFilesSync(artifactsDir);
   const fileContents: Model[] = await Promise.all(
@@ -54,7 +79,7 @@ async function writeComponentSpec() {
   const componentSpecFiles = fileContents.filter((model) => model.kind === "ComponentSpec");
 
   for (const spec of componentSpecFiles) {
-    const code = stringifyComponentSpecTs(parseComponentSpecData(spec.data));
+    const code = getComponentSpecTs(parseComponentSpecData(spec.data));
     const writePath = path.join(process.cwd(), dir, `${spec.metadata.id}.vars.ts`);
 
     console.log("Writing", spec.metadata.name, "to", writePath);
@@ -131,6 +156,12 @@ async function writeJsonSchema() {
   console.log("Writing schema to", writePath);
 
   fs.writeFileSync(writePath, jsonSchema);
+}
+
+if (command === "token-ts") {
+  writeTokenTs().then(() => {
+    console.log("Done");
+  });
 }
 
 if (command === "component-spec") {

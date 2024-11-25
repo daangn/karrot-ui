@@ -1,0 +1,11 @@
+export const x0_5 = "var(--seed-v3-radius-x0_5)";
+export const x1 = "var(--seed-v3-radius-x1)";
+export const x1_5 = "var(--seed-v3-radius-x1_5)";
+export const x2 = "var(--seed-v3-radius-x2)";
+export const x2_5 = "var(--seed-v3-radius-x2_5)";
+export const x3 = "var(--seed-v3-radius-x3)";
+export const x3_5 = "var(--seed-v3-radius-x3_5)";
+export const x4 = "var(--seed-v3-radius-x4)";
+export const x5 = "var(--seed-v3-radius-x5)";
+export const x6 = "var(--seed-v3-radius-x6)";
+export const full = "var(--seed-v3-radius-full)";

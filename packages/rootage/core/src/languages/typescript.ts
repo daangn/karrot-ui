@@ -1,6 +1,18 @@
 import { camelCase } from "change-case";
-import type { ComponentSpecExpression } from "../types";
-import { stringifyCssValue } from "./css";
+import { parseTokensData } from "../token";
+import type { ComponentSpecExpression, Model, TokenExpression } from "../types";
+import { stringifyCssValue, stringifyTokenReference } from "./css";
+
+// camelCase but preserve underscore between numbers.
+// temporary workaround to avoid x1_5 -> x15
+// "color-1_5" -> "color1_5"
+function camelCasePreserveUnderscoreBetweenNumbers(input: string) {
+  return camelCase(input, {
+    mergeAmbiguousCharacters: false,
+  })
+    .replaceAll(/(\D)_(\d)/g, "$1$2")
+    .replaceAll(/(\d)_(\D)/g, "$1$2");
+}
 
 function stringifyVariantKey(variant: Record<string, string>) {
   const asKebab = Object.entries(variant)
@@ -18,7 +30,7 @@ function stringifyStateKey(state: string[]) {
   return camelCase(state.join("-"));
 }
 
-export function stringifyComponentSpecTs(expressions: ComponentSpecExpression) {
+export function getComponentSpecTs(expressions: ComponentSpecExpression) {
   const result = {};
 
   for (const expression of expressions) {
@@ -50,4 +62,38 @@ export function stringifyComponentSpecTs(expressions: ComponentSpecExpression) {
   }
 
   return `export const vars = ${JSON.stringify(result, null, 2)}`;
+}
+
+export function getTokenTs(models: Model[]) {
+  const tokenModels = models.filter((model) => model.kind === "Tokens");
+  const tokenExpressions = tokenModels
+    .flatMap((model) => parseTokensData(model.data))
+    .map((decl) => decl.token);
+
+  const groups: Record<string, TokenExpression[]> = {};
+
+  for (const expression of tokenExpressions) {
+    const group = expression.group.join("/");
+    if (!groups[group]) {
+      groups[group] = [];
+    }
+
+    groups[group].push(expression);
+  }
+
+  return Object.entries(groups).map(([group, expressions]) => {
+    const definitions = expressions
+      .map((expression) => {
+        const key = camelCasePreserveUnderscoreBetweenNumbers(expression.key);
+        const value = stringifyTokenReference(expression);
+
+        return `export const ${key} = "${value}";`;
+      })
+      .join("\n");
+
+    return {
+      path: group,
+      code: definitions,
+    };
+  });
 }

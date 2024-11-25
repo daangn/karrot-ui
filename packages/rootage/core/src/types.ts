@@ -81,6 +81,12 @@ export interface TokenCollectionDeclaration {
   modes: string[];
 }
 
+export interface RootageAST {
+  componentSpecs: ComponentSpecExpression[];
+  tokens: TokenDeclaration[];
+  tokenCollections: TokenCollectionDeclaration[];
+}
+
 // models
 export type ColorShorthand = `#${string}`;
 export type DimensionShorthand = `${number}px` | `${number}rem`;
