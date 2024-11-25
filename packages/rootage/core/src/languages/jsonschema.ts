@@ -1,5 +1,5 @@
 import dedent from "dedent";
-import type { TokensModel } from "./types";
+import type { TokensModel } from "../types";
 
 export function getJsonSchema(models: TokensModel[]): string {
   const tokenNames = models.flatMap((model) => Object.keys(model.data.tokens));

@@ -18,7 +18,7 @@ export function isTokenExpression(expression: string | number | object): express
 /**
  * @example
  * parseToken("$color.bg.layer-1") // { group: ["color", "bg"], key: "layer-1" }
- * parseToken("$unit.x1]") // { group: ["unit", key: "1" }
+ * parseToken("$unit[1]") // { group: ["unit", key: "1" }
  * parseToken("$unit.space[1]") // { group: ["unit", "space"], key: "1" }
  */
 export function parseTokenExpression(tokenExpression: string): TokenExpression {
@@ -68,21 +68,10 @@ export function parseTokensData(input: TokensData): TokenBindingStatement[] {
   return tokenBindingStatements;
 }
 
-// stringify
 export function stringifyTokenExpression(token: TokenExpression): string {
   if (token.group.length === 0) {
     return `$${token.key}`;
   }
 
   return `$${token.group.join(".")}.${token.key}`;
-}
-
-const PREFIX = "seed-v3";
-
-export function stringifyTokenCssVar(token: TokenExpression) {
-  if (token.group.length === 0) {
-    return `var(--${PREFIX}-${token.key.toString().replaceAll(".", "\\.")})`;
-  }
-
-  return `var(--${PREFIX}-${token.group.join("-")}-${token.key.toString().replaceAll(".", "\\.")})`;
 }

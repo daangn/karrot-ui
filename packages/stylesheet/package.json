@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prepack": "yarn build:style",
-    "build:style": "yarn recipegen css"
+    "build:style": "yarn rootage token-css && yarn recipegen css"
   },
   "exports": {
     "./*.css": "./*.css",
@@ -21,6 +21,7 @@
     "*.css"
   ],
   "devDependencies": {
-    "@seed-design/recipe-generator-cli": "0.0.0"
+    "@seed-design/recipe-generator-cli": "0.0.0",
+    "@seed-design/rootage-cli": "0.0.0"
   }
 }
