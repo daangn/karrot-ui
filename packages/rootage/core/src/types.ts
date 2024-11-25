@@ -67,7 +67,7 @@ export type ComponentSpecExpression = Array<{
   }>;
 }>;
 
-export interface TokenBindingStatement {
+export interface TokenDeclaration {
   collection: string;
   token: TokenExpression;
   values: Array<{
@@ -76,7 +76,7 @@ export interface TokenBindingStatement {
   }>;
 }
 
-export interface TokenCollectionBindingStatement {
+export interface TokenCollectionDeclaration {
   name: string;
   modes: string[];
 }
@@ -159,6 +159,6 @@ export interface TokenCollectionsModel {
   data: TokenCollectionsData;
 }
 
-export type TokenCollectionsData = TokenCollectionBindingStatement[];
+export type TokenCollectionsData = TokenCollectionDeclaration[];
 
 export type Model = ComponentSpecModel | TokensModel | TokenCollectionsModel;

@@ -1,5 +1,5 @@
 import { parsePrimitiveExpression } from "./primitive";
-import type { TokenBindingStatement, TokenExpression, TokensData } from "./types";
+import type { TokenDeclaration, TokenExpression, TokensData } from "./types";
 
 // guard
 export function isTokenExpression(expression: string | number | object): expression is string {
@@ -42,8 +42,8 @@ export function parseTokenExpression(tokenExpression: string): TokenExpression {
   return { type: "token", group, key };
 }
 
-export function parseTokensData(input: TokensData): TokenBindingStatement[] {
-  const tokenBindingStatements: TokenBindingStatement[] = [];
+export function parseTokensData(input: TokensData): TokenDeclaration[] {
+  const tokenBindingStatements: TokenDeclaration[] = [];
 
   for (const tokenName in input.tokens) {
     const values = [];

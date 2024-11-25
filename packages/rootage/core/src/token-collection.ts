@@ -1,7 +1,7 @@
-import type { TokenCollectionBindingStatement, TokenCollectionsData } from "./types";
+import type { TokenCollectionDeclaration, TokenCollectionsData } from "./types";
 
 export function parseTokenCollectionsData(
   input: TokenCollectionsData,
-): TokenCollectionBindingStatement[] {
+): TokenCollectionDeclaration[] {
   return input;
 }
