@@ -46,7 +46,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       label,
       bold = false,
       indeterminate = false,
-      variant = "sqaure",
+      variant = "square",
       ...otherProps
     },
     ref,

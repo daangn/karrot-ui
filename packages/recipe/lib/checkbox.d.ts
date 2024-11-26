@@ -8,9 +8,9 @@ interface CheckboxVariant {
   */
   indeterminate: true | false;
 /**
-  * @default sqaure
+  * @default square
   */
-  variant: "sqaure" | "ghost";
+  variant: "square" | "ghost";
 /**
   * @default medium
   */

@@ -21,7 +21,7 @@ const checkboxSlotNames = [
 
 const defaultVariant = {
   "size": "medium",
-  "variant": "sqaure",
+  "variant": "square",
   "bold": false,
   "indeterminate": false
 };
@@ -41,15 +41,15 @@ const compoundVariants = [
   },
   {
     "size": "small",
-    "variant": "sqaure"
+    "variant": "square"
   },
   {
     "size": "medium",
-    "variant": "sqaure"
+    "variant": "square"
   },
   {
     "size": "large",
-    "variant": "sqaure"
+    "variant": "square"
   }
 ];
 
@@ -63,7 +63,7 @@ export const checkboxVariantMap = {
     "false"
   ],
   "variant": [
-    "sqaure",
+    "square",
     "ghost"
   ],
   "size": [

@@ -53,7 +53,7 @@ const checkbox = defineRecipe({
       false: {},
     },
     variant: {
-      sqaure: {
+      square: {
         control: {
           borderWidth: vars.variantSquare.enabled.control.strokeWidth,
           borderStyle: "solid",
@@ -215,7 +215,7 @@ const checkbox = defineRecipe({
     },
     {
       size: "small",
-      variant: "sqaure",
+      variant: "square",
       css: {
         icon: {
           width: vars.variantSquareSizeSmall.enabled.icon.size,
@@ -225,7 +225,7 @@ const checkbox = defineRecipe({
     },
     {
       size: "medium",
-      variant: "sqaure",
+      variant: "square",
       css: {
         icon: {
           width: vars.variantSquareSizeMedium.enabled.icon.size,
@@ -235,7 +235,7 @@ const checkbox = defineRecipe({
     },
     {
       size: "large",
-      variant: "sqaure",
+      variant: "square",
       css: {
         icon: {
           width: vars.variantSquareSizeLarge.enabled.icon.size,
@@ -246,7 +246,7 @@ const checkbox = defineRecipe({
   ],
   defaultVariants: {
     size: "medium",
-    variant: "sqaure",
+    variant: "square",
     bold: false,
     indeterminate: false,
   },
