@@ -79,8 +79,7 @@ const textButton = defineRecipe({
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
-          // XXX
-          lineHeight: "1.5rem",
+          lineHeight: vars.sizeLarge.enabled.label.lineHeight,
         },
       },
       medium: {
@@ -94,8 +93,7 @@ const textButton = defineRecipe({
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
-          // XXX
-          lineHeight: "1.3125rem",
+          lineHeight: vars.sizeMedium.enabled.label.lineHeight,
         },
       },
       small: {
@@ -109,8 +107,7 @@ const textButton = defineRecipe({
         },
         label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
-          // XXX
-          lineHeight: "1.1875rem",
+          lineHeight: vars.sizeSmall.enabled.label.lineHeight,
         },
       },
     },

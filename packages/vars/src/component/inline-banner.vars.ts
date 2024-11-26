@@ -9,7 +9,8 @@ export const vars = {
       "content": {
         "gap": "var(--seed-v3-unit-x2)",
         "paddingY": "10.5px",
-        "fontSize": "var(--seed-v3-font-size-t4)"
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
       },
       "icon": {
         "size": "var(--seed-v3-unit-x4)",
@@ -24,8 +25,9 @@ export const vars = {
       "linkLabel": {
         "size": "var(--seed-v3-unit-x10)",
         "paddingX": "var(--seed-v3-unit-x3)",
+        "fontWeight": "var(--seed-v3-font-weight-regular)",
         "fontSize": "var(--seed-v3-font-size-t2)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
+        "lineHeight": "var(--seed-v3-line-height-t2)"
       },
       "dismissButton": {
         "size": "var(--seed-v3-unit-x10)"

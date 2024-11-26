@@ -46,7 +46,7 @@
 }
 .textButton__label--size_large {
     font-size: var(--seed-v3-font-size-t6);
-    line-height: 1.5rem;
+    line-height: var(--seed-v3-line-height-t6);
 }
 .textButton__root--size_medium {
     min-height: 1.875rem;
@@ -58,7 +58,7 @@
 }
 .textButton__label--size_medium {
     font-size: var(--seed-v3-font-size-t5);
-    line-height: 1.3125rem;
+    line-height: var(--seed-v3-line-height-t5);
 }
 .textButton__root--size_small {
     min-height: 1.75rem;
@@ -70,5 +70,5 @@
 }
 .textButton__label--size_small {
     font-size: var(--seed-v3-font-size-t4);
-    line-height: 1.1875rem;
+    line-height: var(--seed-v3-line-height-t4);
 }

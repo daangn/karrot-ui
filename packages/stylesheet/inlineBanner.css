@@ -21,7 +21,7 @@
     gap: var(--seed-v3-unit-x2);
     padding-block: 10.5px;
     font-size: var(--seed-v3-font-size-t4);
-    line-height: 1.1875rem;
+    line-height: var(--seed-v3-line-height-t4);
     text-align: start;
 }
 .inlineBanner__content:only-child {
@@ -46,9 +46,9 @@
     flex: none;
     height: var(--seed-v3-unit-x10);
     padding-inline: var(--seed-v3-unit-x3);
-    font-size: var(--seed-v3-font-size-t2);
     font-weight: var(--seed-v3-font-weight-regular);
-    line-height: 1rem;
+    font-size: var(--seed-v3-font-size-t2);
+    line-height: var(--seed-v3-line-height-t2);
     text-decoration: underline;
     text-underline-offset: 2px;
     border: none;

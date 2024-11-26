@@ -59,7 +59,8 @@ export const vars = {
         "size": "var(--seed-v3-unit-x4)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t6)"
+        "fontSize": "var(--seed-v3-font-size-t6)",
+        "lineHeight": "var(--seed-v3-line-height-t6)"
       }
     }
   },
@@ -72,7 +73,8 @@ export const vars = {
         "size": "var(--seed-v3-unit-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t5)"
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)"
       }
     }
   },
@@ -85,7 +87,8 @@ export const vars = {
         "size": "var(--seed-v3-unit-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t4)"
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
       }
     }
   }

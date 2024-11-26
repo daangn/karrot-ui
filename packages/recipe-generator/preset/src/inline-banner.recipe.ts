@@ -46,8 +46,8 @@ const inlineBanner = defineRecipe({
       paddingBlock: vars.base.enabled.content.paddingY,
 
       fontSize: vars.base.enabled.content.fontSize,
-      // FIXME
-      lineHeight: "1.1875rem",
+      lineHeight: vars.base.enabled.content.lineHeight,
+
       textAlign: "start",
 
       [pseudo(":only-child")]: {
@@ -77,10 +77,9 @@ const inlineBanner = defineRecipe({
       height: vars.base.enabled.linkLabel.size,
       paddingInline: vars.base.enabled.linkLabel.paddingX,
 
-      fontSize: vars.base.enabled.linkLabel.fontSize,
       fontWeight: vars.base.enabled.linkLabel.fontWeight,
-      // FIXME
-      lineHeight: "1rem",
+      fontSize: vars.base.enabled.linkLabel.fontSize,
+      lineHeight: vars.base.enabled.linkLabel.lineHeight,
 
       textDecoration: "underline",
       // XXX
