@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: radio-group
+  name: Radio Group
+data:
+  base:
+    enabled:
+      root:
+        gap: $unit.x2
+  orientation=vertical:
+    enabled:
+      options:
+        # XXX: 임의
+        gap: $unit.x4

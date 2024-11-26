@@ -5,10 +5,10 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-layer-default)",
         "strokeWidth": "1.25px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
-        "cornerRadius": "var(--seed-v3-radii-full)"
+        "cornerRadius": "var(--seed-v3-radius-full)"
       },
       "icon": {
-        "cornerRadius": "var(--seed-v3-radii-full)"
+        "cornerRadius": "var(--seed-v3-radius-full)"
       }
     },
     "enabledPressed": {
@@ -48,45 +48,45 @@ export const vars = {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-6)"
+        "size": "var(--seed-v3-unit-x6)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-2\\.5)"
+        "size": "var(--seed-v3-unit-x2_5)"
       }
     },
     "disabled": {
       "icon": {
-        "size": "var(--seed-v3-unit-3)"
+        "size": "var(--seed-v3-unit-x3)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-5)"
+        "size": "var(--seed-v3-unit-x5)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-2)"
+        "size": "var(--seed-v3-unit-x2)"
       }
     },
     "disabled": {
       "icon": {
-        "size": "var(--seed-v3-unit-2\\.5)"
+        "size": "var(--seed-v3-unit-x2_5)"
       }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-4\\.5)"
+        "size": "var(--seed-v3-unit-x4_5)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-2)"
+        "size": "var(--seed-v3-unit-x2)"
       }
     },
     "disabled": {
       "icon": {
-        "size": "var(--seed-v3-unit-2)"
+        "size": "var(--seed-v3-unit-x2)"
       }
     }
   }
