@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=./schema.json
+# parts: root, control, thumb
 kind: ComponentSpec
 metadata:
   id: switch
@@ -16,9 +17,6 @@ data:
       control:
         color: $color.bg.brand-solid
     disabled:
-      control:
-        color: $color.bg.disabled
-    disabled,selected:
       root:
         opacity: 0.38
   size=medium:
