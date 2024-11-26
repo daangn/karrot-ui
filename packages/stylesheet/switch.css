@@ -12,6 +12,7 @@
     opacity: 0.38;
 }
 .switch__control {
+    box-sizing: border-box;
     display: block;
     position: relative;
     border-radius: var(--seed-v3-radius-full);

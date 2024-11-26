@@ -23,6 +23,7 @@ const switchRecipe = defineRecipe({
       },
     },
     control: {
+      boxSizing: "border-box",
       display: "block",
       position: "relative",
 
