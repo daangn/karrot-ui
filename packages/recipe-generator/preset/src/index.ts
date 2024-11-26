@@ -19,6 +19,7 @@ import switchRecipe from "./switch.recipe";
 import tab from "./tab.recipe";
 import tabs from "./tabs.recipe";
 import textButton from "./text-button.recipe";
+import textField from "./text-field.recipe";
 
 const recipes = {
   avatar,
@@ -42,6 +43,7 @@ const recipes = {
   progressCircle,
   expandButton,
   textButton,
+  textField,
 };
 
 export default recipes;
