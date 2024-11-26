@@ -65,6 +65,7 @@ export function useCheckbox(props: UseCheckboxProps) {
     "data-focus": dataAttr(isFocused),
     "data-focus-visible": dataAttr(isFocusVisible),
     "data-disabled": dataAttr(props.disabled),
+    disabled,
   };
 
   const isControlled = checked != null;

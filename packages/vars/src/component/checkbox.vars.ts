@@ -44,6 +44,10 @@ export const vars = {
       }
     },
     "disabled": {
+      "control": {
+        "color": "var(--seed-v3-color-bg-disabled)",
+        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
+      },
       "label": {
         "color": "var(--seed-v3-color-fg-disabled)"
       },

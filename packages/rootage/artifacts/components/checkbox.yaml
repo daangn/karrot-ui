@@ -35,6 +35,9 @@ data:
       icon:
         color: $color.fg.static-white
     disabled:
+      control:
+        color: $color.bg.disabled
+        strokeColor: $color.stroke.neutral
       label:
         color: $color.fg.disabled
       icon:

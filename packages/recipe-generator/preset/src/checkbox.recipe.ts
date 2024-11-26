@@ -1,6 +1,6 @@
 import { checkbox as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
-import { active, checked, disabled, pseudo } from "./pseudo";
+import { active, checked, disabled, pseudo, not } from "./pseudo";
 
 const checkbox = defineRecipe({
   name: "checkbox",
@@ -16,10 +16,15 @@ const checkbox = defineRecipe({
       cursor: "pointer",
 
       gap: vars.base.enabled.root.gap,
+
+      [pseudo(disabled)]: {
+        cursor: "not-allowed",
+      },
     },
     control: {
       position: "relative",
       boxSizing: "border-box",
+      flexShrink: 0,
     },
     icon: {
       display: "none",
@@ -70,10 +75,11 @@ const checkbox = defineRecipe({
             background: vars.variantSquare.pressedSelected.control.color,
           },
           [pseudo(disabled)]: {
-            background: "none",
+            background: vars.variantSquare.disabled.control.color,
+            borderColor: vars.variantSquare.disabled.control.strokeColor,
           },
-          [pseudo(disabled, checked)]: {
-            background: "none",
+          [pseudo(disabled, active)]: {
+            background: vars.variantSquare.disabled.control.color,
           },
         },
         icon: {
@@ -84,10 +90,6 @@ const checkbox = defineRecipe({
           [pseudo(disabled, checked)]: {
             display: "block",
             color: vars.variantSquare.disabledSelected.icon.color,
-          },
-          [pseudo(disabled)]: {
-            display: "block",
-            color: vars.variantSquare.disabled.icon.color,
           },
         },
         label: {
@@ -110,6 +112,9 @@ const checkbox = defineRecipe({
             background: vars.variantGhost.pressedSelected.control.color,
           },
           [pseudo(disabled, checked)]: {
+            background: "none",
+          },
+          [pseudo(disabled, active)]: {
             background: "none",
           },
         },
