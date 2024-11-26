@@ -36,9 +36,7 @@ const checkbox = defineRecipe({
     },
     label: {
       color: vars.base.enabled.label.color,
-
-      // TODO: tokenize
-      lineHeight: "21px",
+      lineHeight: vars.base.enabled.label.lineHeight,
     },
   },
   variants: {
@@ -72,7 +70,7 @@ const checkbox = defineRecipe({
             background: vars.variantSquare.pressedSelected.control.color,
           },
           [pseudo(disabled)]: {
-            background: vars.variantSquare.disabled.control.color,
+            background: "none",
           },
           [pseudo(disabled, checked)]: {
             background: "none",
@@ -86,6 +84,10 @@ const checkbox = defineRecipe({
           [pseudo(disabled, checked)]: {
             display: "block",
             color: vars.variantSquare.disabledSelected.icon.color,
+          },
+          [pseudo(disabled)]: {
+            display: "block",
+            color: vars.variantSquare.disabled.icon.color,
           },
         },
         label: {

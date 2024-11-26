@@ -3,10 +3,10 @@ export const vars = {
     "enabled": {
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)",
-        "lineHeight": "var(--seed-v3-line-height-200)"
+        "lineHeight": "var(--seed-v3-line-height-t5)"
       },
       "root": {
-        "gap": "var(--seed-v3-unit-2)"
+        "gap": "var(--seed-v3-unit-x2)"
       }
     },
     "bold": {
@@ -19,7 +19,7 @@ export const vars = {
     "enabled": {
       "control": {
         "strokeColor": "var(--seed-v3-color-stroke-control)",
-        "strokeWidth": "1px"
+        "strokeWidth": "1.25px"
       }
     },
     "enabledSelected": {
@@ -47,8 +47,8 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-disabled)"
       },
-      "control": {
-        "color": "var(--seed-v3-color-bg-disabled)"
+      "icon": {
+        "color": "var(--seed-v3-color-fg-disabled)"
       }
     },
     "disabledSelected": {
@@ -56,7 +56,7 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-disabled)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-bg-disabled)"
+        "color": "var(--seed-v3-color-fg-disabled)"
       }
     }
   },
@@ -101,42 +101,45 @@ export const vars = {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "28px"
+        "minHeight": "var(--seed-v3-unit-x8)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-75)"
+        "fontSize": "var(--seed-v3-font-size-t3)",
+        "lineHeight": "var(--seed-v3-line-height-t3)"
       },
       "control": {
-        "size": "18px",
-        "cornerRadius": "var(--seed-v3-radii-1)"
+        "size": "var(--seed-v3-unit-x4)",
+        "cornerRadius": "var(--seed-v3-radius-x1)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "32px"
+        "minHeight": "var(--seed-v3-unit-x8)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-100)"
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
       },
       "control": {
-        "size": "20px",
-        "cornerRadius": "var(--seed-v3-radii-1\\.5)"
+        "size": "var(--seed-v3-unit-x5)",
+        "cornerRadius": "var(--seed-v3-radius-x1)"
       }
     }
   },
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "36px"
+        "minHeight": "var(--seed-v3-unit-x9)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-200)"
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)"
       },
       "control": {
-        "size": "24px",
-        "cornerRadius": "var(--seed-v3-radii-1\\.5)"
+        "size": "var(--seed-v3-unit-x6)",
+        "cornerRadius": "var(--seed-v3-radius-x1_5)"
       }
     }
   },
