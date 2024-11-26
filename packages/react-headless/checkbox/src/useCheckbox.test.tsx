@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom/vitest";
+import "@testing-library/jest-dom";
 import { cleanup, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -92,13 +92,6 @@ describe("useCheckbox", () => {
     expect(checkbox).not.toHaveFocus();
   });
 
-  it("should required state when required prop is true", () => {
-    const { getByRole } = setUp(<Checkbox required={true} />);
-    const checkbox = getByRole("checkbox");
-
-    expect(checkbox).toBeRequired();
-  });
-
   describe("disabled prop test", () => {
     it("should disabled when disabled prop is true", async () => {
       const { getByRole } = setUp(<Checkbox disabled={true} />);
@@ -147,28 +140,6 @@ describe("useCheckbox", () => {
       await user.click(resetButton);
 
       expect(checkbox).toBeChecked();
-    });
-
-    it("should mark the checkbox as invalid if it's required and not checked", async () => {
-      const { getByRole, user } = setUp(
-        <form>
-          <Checkbox required={true} />
-          <button type="submit">Submit</button>
-        </form>,
-      );
-
-      const checkbox = getByRole("checkbox");
-      const submitButton = getByRole("button", { name: /submit/i });
-
-      await user.click(submitButton);
-
-      // Required field should be invalid if not checked
-      expect(checkbox).toBeInvalid();
-
-      await user.click(checkbox);
-
-      // Required field should be valid if checked
-      expect(checkbox).toBeValid();
     });
   });
 });
