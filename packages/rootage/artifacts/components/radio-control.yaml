@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: radio-control
+  name: Radio Control
+data:
+  base:
+    enabled:
+      root:
+        color: $color.bg.layer-default
+        strokeWidth: 1.25px
+        strokeColor: $color.stroke.control
+        cornerRadius: $radius.full
+      icon:
+        cornerRadius: $radius.full
+    enabled,pressed:
+      root:
+        color: $color.bg.layer-default-pressed
+    enabled,selected:
+      root:
+        strokeWidth: 0px
+        color: $color.bg.brand-solid
+      icon:
+        color: $color.fg.static-white
+    enabled,selected,pressed:
+      root:
+        color: $color.bg.brand-solid-pressed
+    disabled:
+      root:
+        color: $color.palette.gray-300
+    disabled,selected:
+      root:
+        strokeWidth: 1.25px
+        strokeColor: $color.palette.gray-300
+      icon:
+        color: $color.palette.gray-300
+
+  size=large:
+    enabled:
+      root:
+        size: $unit.x6
+      icon:
+        size: $unit.x2_5
+    disabled:
+      icon:
+        size: $unit.x3
+  size=medium:
+    enabled:
+      root:
+        size: $unit.x5
+      icon:
+        size: $unit.x2
+    disabled:
+      icon:
+        size: $unit.x2_5
+  size=small:
+    enabled:
+      root:
+        size: $unit.x4_5
+      icon:
+        size: $unit.x2
+    disabled:
+      icon:
+        size: $unit.x2

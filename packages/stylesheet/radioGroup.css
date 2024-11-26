@@ -1,14 +1,14 @@
 .radioGroup__root {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-unit-2)
+    gap: var(--seed-v3-unit-x2)
 }
 .radioGroup__options {
     display: flex
 }
 .radioGroup__options--orientation_horizontal {
     flex-direction: row;
-    gap: var(--seed-v3-unit-4)
+    gap: var(--seed-v3-unit-x4)
 }
 .radioGroup__options--orientation_vertical {
     flex-direction: column
