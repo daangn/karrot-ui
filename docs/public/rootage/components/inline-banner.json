@@ -15,7 +15,8 @@
         "content": {
           "gap": "$unit.x2",
           "paddingY": "10.5px",
-          "fontSize": "$font-size.t4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "icon": {
           "size": "$unit.x4",
@@ -30,8 +31,9 @@
         "linkLabel": {
           "size": "$unit.x10",
           "paddingX": "$unit.x3",
+          "fontWeight": "$font-weight.regular",
           "fontSize": "$font-size.t2",
-          "fontWeight": "$font-weight.regular"
+          "lineHeight": "$line-height.t2"
         },
         "dismissButton": {
           "size": "$unit.x10"

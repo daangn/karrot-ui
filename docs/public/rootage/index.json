@@ -69,6 +69,9 @@
       "path": "/components/text-button.json"
     },
     {
+      "path": "/components/typography.json"
+    },
+    {
       "path": "/font-size.json"
     },
     {

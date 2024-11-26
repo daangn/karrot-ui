@@ -65,7 +65,8 @@
           "size": "$unit.x4"
         },
         "label": {
-          "fontSize": "$font-size.t6"
+          "fontSize": "$font-size.t6",
+          "lineHeight": "$line-height.t6"
         }
       }
     },
@@ -78,7 +79,8 @@
           "size": "$unit.x3_5"
         },
         "label": {
-          "fontSize": "$font-size.t5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         }
       }
     },
@@ -91,7 +93,8 @@
           "size": "$unit.x3_5"
         },
         "label": {
-          "fontSize": "$font-size.t4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         }
       }
     }
