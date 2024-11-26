@@ -1,6 +1,7 @@
 import { expect, test } from "vitest";
 import type { Model } from "../types";
 import { getTokenTs } from "./typescript";
+import { parse } from "../parse";
 
 test("getTokenTs should generate typescript codes", () => {
   const models: Model[] = [
@@ -53,7 +54,7 @@ test("getTokenTs should generate typescript codes", () => {
     },
   ];
 
-  const result = getTokenTs(models);
+  const result = getTokenTs(parse(models));
 
   expect(result).toMatchInlineSnapshot(`
     [

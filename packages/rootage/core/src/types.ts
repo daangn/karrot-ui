@@ -67,6 +67,12 @@ export type ComponentSpecExpression = Array<{
   }>;
 }>;
 
+export interface ComponentSpecDeclaration {
+  id: string;
+  name: string;
+  data: ComponentSpecExpression;
+}
+
 export interface TokenDeclaration {
   collection: string;
   token: TokenExpression;
@@ -82,7 +88,7 @@ export interface TokenCollectionDeclaration {
 }
 
 export interface RootageAST {
-  componentSpecs: ComponentSpecExpression[];
+  componentSpecs: ComponentSpecDeclaration[];
   tokens: TokenDeclaration[];
   tokenCollections: TokenCollectionDeclaration[];
 }

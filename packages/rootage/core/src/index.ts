@@ -2,6 +2,7 @@ export * from "./component-spec";
 export * from "./languages/css";
 export * from "./languages/jsonschema";
 export * from "./languages/typescript";
+export * from "./parse";
 export * from "./primitive";
 export * from "./token";
 export * from "./token-collection";

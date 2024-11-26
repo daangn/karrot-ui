@@ -1,8 +1,10 @@
 import dedent from "dedent";
-import type { TokensModel } from "../types";
+import { stringifyTokenExpression } from "../token";
+import type { RootageAST } from "../types";
 
-export function getJsonSchema(models: TokensModel[]): string {
-  const tokenNames = models.flatMap((model) => Object.keys(model.data.tokens));
+export function getJsonSchema(ast: RootageAST): string {
+  const { tokens } = ast;
+  const tokenNames = tokens.map((token) => stringifyTokenExpression(token.token));
 
   return dedent`{
     "$schema": "http://json-schema.org/draft-07/schema#",

@@ -1,6 +1,10 @@
 import { parsePrimitiveExpression } from "./primitive";
 import { isTokenExpression, parseTokenExpression } from "./token";
-import type { ComponentSpecData, ComponentSpecExpression } from "./types";
+import type {
+  ComponentSpecDeclaration,
+  ComponentSpecExpression,
+  ComponentSpecModel,
+} from "./types";
 
 // parse
 function parseVariant(variantExpression: string) {
@@ -22,24 +26,23 @@ function parseState(stateExpression: string) {
   return stateExpression.split(",");
 }
 
-export function parseComponentSpecData(input: ComponentSpecData): ComponentSpecExpression {
+export function parseComponentSpecModel(model: ComponentSpecModel): ComponentSpecDeclaration {
+  const { data, metadata } = model;
   const parsedExpressions: ComponentSpecExpression = [];
 
-  for (const variantExpression in input) {
+  for (const variantExpression in data) {
     const variant = parseVariant(variantExpression);
     const state = [];
 
-    for (const stateExpression in input[variantExpression]) {
+    for (const stateExpression in data[variantExpression]) {
       const slot = [];
 
-      for (const slotExpression in input[variantExpression][stateExpression]) {
+      for (const slotExpression in data[variantExpression][stateExpression]) {
         const property = [];
 
-        for (const propertyExpression in input[variantExpression][stateExpression][
-          slotExpression
-        ]) {
+        for (const propertyExpression in data[variantExpression][stateExpression][slotExpression]) {
           const righthandExpression =
-            input[variantExpression][stateExpression][slotExpression][propertyExpression];
+            data[variantExpression][stateExpression][slotExpression][propertyExpression];
 
           property.push({
             key: propertyExpression,
@@ -58,5 +61,9 @@ export function parseComponentSpecData(input: ComponentSpecData): ComponentSpecE
     parsedExpressions.push({ key: variant, state });
   }
 
-  return parsedExpressions;
+  return {
+    id: metadata.id,
+    name: metadata.name,
+    data: parsedExpressions,
+  };
 }

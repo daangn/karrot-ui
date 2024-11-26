@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 import {
+  getComponentSpecTs,
   getJsonSchema,
   getTokenCss,
-  type Model,
-  parseComponentSpecData,
-  getComponentSpecTs,
-  validateModels,
   getTokenTs,
+  parse,
+  validate,
+  type Model,
 } from "@seed-design/rootage-core";
 import fs from "fs-extra";
 import path from "node:path";
@@ -39,20 +39,31 @@ function readYAMLFilesSync(dir: string, fileList: string[] = []) {
   return fileList;
 }
 
-async function writeTokenTs() {
-  const filesToRead = readYAMLFilesSync(artifactsDir);
+async function prepare() {
+  const filePaths = readYAMLFilesSync(artifactsDir);
   const fileContents: Model[] = await Promise.all(
-    filesToRead.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
+    filePaths.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
   );
 
-  const validationResult = validateModels(fileContents);
+  const ast = parse(fileContents);
+  const validationResult = validate(ast);
 
   if (!validationResult.valid) {
     console.error(validationResult.message);
     process.exit(1);
   }
 
-  const results = getTokenTs(fileContents);
+  return {
+    ast,
+    filePaths,
+    fileContents,
+  };
+}
+
+async function writeTokenTs() {
+  const { ast } = await prepare();
+
+  const results = getTokenTs(ast);
 
   for (const result of results) {
     const writePath = path.join(process.cwd(), dir, `${result.path}.vars.ts`);
@@ -64,44 +75,22 @@ async function writeTokenTs() {
 }
 
 async function writeComponentSpec() {
-  const filesToRead = readYAMLFilesSync(artifactsDir);
-  const fileContents: Model[] = await Promise.all(
-    filesToRead.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
-  );
+  const { ast } = await prepare();
 
-  const validationResult = validateModels(fileContents);
+  for (const spec of ast.componentSpecs) {
+    const code = getComponentSpecTs(spec.data);
+    const writePath = path.join(process.cwd(), dir, `${spec.id}.vars.ts`);
 
-  if (!validationResult.valid) {
-    console.error(validationResult.message);
-    process.exit(1);
-  }
-
-  const componentSpecFiles = fileContents.filter((model) => model.kind === "ComponentSpec");
-
-  for (const spec of componentSpecFiles) {
-    const code = getComponentSpecTs(parseComponentSpecData(spec.data));
-    const writePath = path.join(process.cwd(), dir, `${spec.metadata.id}.vars.ts`);
-
-    console.log("Writing", spec.metadata.name, "to", writePath);
+    console.log("Writing", spec.name, "to", writePath);
 
     fs.writeFileSync(writePath, code);
   }
 }
 
 async function writeTokenCss() {
-  const filesToRead = readYAMLFilesSync(artifactsDir);
-  const fileContents: Model[] = await Promise.all(
-    filesToRead.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
-  );
+  const { ast } = await prepare();
 
-  const validationResult = validateModels(fileContents);
-
-  if (!validationResult.valid) {
-    console.error(validationResult.message);
-    process.exit(1);
-  }
-
-  const code = getTokenCss(fileContents, {
+  const code = getTokenCss(ast, {
     banner: `:root[data-seed] {
   color-scheme: light dark;
 }
@@ -138,19 +127,9 @@ async function writeTokenCss() {
 }
 
 async function writeJsonSchema() {
-  const filesToRead = readYAMLFilesSync(artifactsDir);
-  const fileContents = await Promise.all<Model>(
-    filesToRead.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
-  );
+  const { ast } = await prepare();
 
-  const validationResult = validateModels(fileContents);
-
-  if (!validationResult.valid) {
-    console.error(validationResult.message);
-    process.exit(1);
-  }
-
-  const jsonSchema = getJsonSchema(fileContents.filter((model) => model.kind === "Tokens"));
+  const jsonSchema = getJsonSchema(ast);
   const writePath = path.join(artifactsDir, "components", "schema.json");
 
   console.log("Writing schema to", writePath);
@@ -159,20 +138,8 @@ async function writeJsonSchema() {
 }
 
 async function writeJson() {
-  const filesToRead = readYAMLFilesSync(artifactsDir);
-  const entries = await Promise.all(
-    filesToRead.map(async (name) => ({
-      file: name,
-      content: await fs.readFile(name, "utf-8").then((res) => YAML.parse(res) as Model),
-    })),
-  );
-
-  const validationResult = validateModels(entries.map((entry) => entry.content));
-
-  if (!validationResult.valid) {
-    console.error(validationResult.message);
-    process.exit(1);
-  }
+  const { fileContents, filePaths } = await prepare();
+  const entries = filePaths.map((file, index) => ({ file, content: fileContents[index] }));
 
   for (const { file, content } of entries) {
     const code = JSON.stringify(content, null, 2);

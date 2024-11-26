@@ -1,29 +1,19 @@
-import { parseComponentSpecData } from "./component-spec";
-import { parseTokensData, stringifyTokenExpression } from "./token";
-import { parseTokenCollectionsData } from "./token-collection";
-import type { Model } from "./types";
+import { stringifyTokenExpression } from "./token";
+import type { RootageAST } from "./types";
 
 interface ValidationResult {
   valid: boolean;
   message: string;
 }
 
-export function validateModels(input: Model[]): ValidationResult {
-  const tokenCollectionBindings = input
-    .filter((model) => model.kind === "TokenCollections")
-    .flatMap((model) => parseTokenCollectionsData(model.data));
-  const tokenBindings = input
-    .filter((model) => model.kind === "Tokens")
-    .flatMap((model) => parseTokensData(model.data));
-  const componentSpecs = input
-    .filter((model) => model.kind === "ComponentSpec")
-    .map((model) => ({name: model.metadata.name, data: parseComponentSpecData(model.data)}));
+export function validate(ast: RootageAST): ValidationResult {
+  const { componentSpecs, tokens, tokenCollections } = ast;
 
   // validate collection names
-  const collectionNames = tokenCollectionBindings.map((collection) => collection.name);
+  const collectionNames = tokenCollections.map((collection) => collection.name);
   const collectionNameSet = new Set(collectionNames);
 
-  for (const tokenBinding of tokenBindings) {
+  for (const tokenBinding of tokens) {
     if (!collectionNameSet.has(tokenBinding.collection)) {
       return {
         valid: false,
@@ -33,8 +23,8 @@ export function validateModels(input: Model[]): ValidationResult {
   }
 
   // validate collection modes
-  for (const tokenBinding of tokenBindings) {
-    const collection = tokenCollectionBindings.find(
+  for (const tokenBinding of tokens) {
+    const collection = tokenCollections.find(
       (collection) => collection.name === tokenBinding.collection,
     );
     for (const { mode } of tokenBinding.values) {
@@ -48,10 +38,10 @@ export function validateModels(input: Model[]): ValidationResult {
   }
 
   // validate token references
-  const tokenNames = tokenBindings.map((binding) => stringifyTokenExpression(binding.token));
+  const tokenNames = tokens.map((binding) => stringifyTokenExpression(binding.token));
   const tokenNameSet = new Set(tokenNames);
 
-  for (const tokenBinding of tokenBindings) {
+  for (const tokenBinding of tokens) {
     for (const { value } of tokenBinding.values) {
       if (value.type === "token") {
         const tokenName = stringifyTokenExpression(value);

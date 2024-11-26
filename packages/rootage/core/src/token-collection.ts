@@ -1,7 +1,7 @@
-import type { TokenCollectionDeclaration, TokenCollectionsData } from "./types";
+import type { TokenCollectionDeclaration, TokenCollectionsModel } from "./types";
 
-export function parseTokenCollectionsData(
-  input: TokenCollectionsData,
+export function parseTokenCollectionsModel(
+  input: TokenCollectionsModel,
 ): TokenCollectionDeclaration[] {
-  return input;
+  return input.data;
 }

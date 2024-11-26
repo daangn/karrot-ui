@@ -1,6 +1,7 @@
-import { describe, expect, it, test } from "vitest";
-import { validateModels } from "./validate";
-import type { Model, TokensData } from "./types";
+import { describe, expect, it } from "vitest";
+import { parse } from "./parse";
+import type { Model } from "./types";
+import { validate } from "./validate";
 
 describe("validateModels", () => {
   it("should return true for valid models", () => {
@@ -54,7 +55,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validateModels(models);
+    const result = validate(parse(models));
 
     expect(result.valid).toEqual(true);
   });
@@ -81,7 +82,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validateModels(models);
+    const result = validate(parse(models));
 
     expect(result.valid).toEqual(false);
   });
@@ -121,7 +122,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validateModels(models);
+    const result = validate(parse(models));
 
     expect(result.valid).toEqual(false);
   });
@@ -160,7 +161,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validateModels(models);
+    const result = validate(parse(models));
 
     expect(result.valid).toEqual(false);
   });
@@ -198,7 +199,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validateModels(models);
+    const result = validate(parse(models));
 
     expect(result.valid).toEqual(false);
   });

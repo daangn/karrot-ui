@@ -1,6 +1,5 @@
 import { camelCase } from "change-case";
-import { parseTokensData } from "../token";
-import type { ComponentSpecExpression, Model, TokenExpression } from "../types";
+import type { ComponentSpecExpression, RootageAST, TokenExpression } from "../types";
 import { stringifyCssValue, stringifyTokenReference } from "./css";
 
 // camelCase but preserve underscore between numbers.
@@ -64,11 +63,9 @@ export function getComponentSpecTs(expressions: ComponentSpecExpression) {
   return `export const vars = ${JSON.stringify(result, null, 2)}`;
 }
 
-export function getTokenTs(models: Model[]) {
-  const tokenModels = models.filter((model) => model.kind === "Tokens");
-  const tokenExpressions = tokenModels
-    .flatMap((model) => parseTokensData(model.data))
-    .map((decl) => decl.token);
+export function getTokenTs(ast: RootageAST) {
+  const { tokens } = ast;
+  const tokenExpressions = tokens.map((decl) => decl.token);
 
   const groups: Record<string, TokenExpression[]> = {};
 

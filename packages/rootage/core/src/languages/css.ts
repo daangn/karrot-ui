@@ -1,9 +1,7 @@
-import { parseTokensData } from "../token";
-import { parseTokenCollectionsData } from "../token-collection";
 import type {
   CubicBezierExpression,
-  Model,
   PrimitiveExpression,
+  RootageAST,
   ShadowExpression,
   TokenExpression,
 } from "../types";
@@ -69,7 +67,7 @@ export function stringifyCssValue(value: PrimitiveExpression | TokenExpression):
 }
 
 export function getTokenCss(
-  models: Model[],
+  ast: RootageAST,
   options: {
     banner: string;
     selectors: {
@@ -79,16 +77,11 @@ export function getTokenCss(
     };
   },
 ) {
-  const tokenModels = models.filter((model) => model.kind === "Tokens");
-  const collectionModels = models.filter((model) => model.kind === "TokenCollections");
-  const tokenBindings = tokenModels.flatMap((model) => parseTokensData(model.data));
-  const collectionBindings = collectionModels.flatMap((model) =>
-    parseTokenCollectionsData(model.data),
-  );
+  const { tokens, tokenCollections } = ast;
 
-  const rules = collectionBindings
+  const rules = tokenCollections
     .flatMap((collection) => {
-      const inCollection = tokenBindings.filter((token) => token.collection === collection.name);
+      const inCollection = tokens.filter((token) => token.collection === collection.name);
       return collection.modes
         .map((mode) => {
           const decls = inCollection

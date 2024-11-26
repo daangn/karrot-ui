@@ -1,6 +1,6 @@
 import { describe, expect, it, test } from "vitest";
-import { isTokenExpression, parseTokenExpression, parseTokensData } from "./token";
-import type { TokensData } from "./types";
+import { isTokenExpression, parseTokenExpression, parseTokensModel } from "./token";
+import type { TokensModel } from "./types";
 
 describe("isTokenExpression", () => {
   it("should return true for token expression", () => {
@@ -45,19 +45,26 @@ describe("parseTokenExpression", () => {
 });
 
 test("parseTokensData should parse tokens data", () => {
-  const input: TokensData = {
-    collection: "collection",
-    tokens: {
-      "$color.bg.layer-1": {
-        values: {
-          light: "#ffffff",
-          dark: "#000000",
+  const input: TokensModel = {
+    kind: "Tokens",
+    metadata: {
+      name: "tokens",
+      id: "id",
+    },
+    data: {
+      collection: "collection",
+      tokens: {
+        "$color.bg.layer-1": {
+          values: {
+            light: "#ffffff",
+            dark: "#000000",
+          },
         },
       },
     },
   };
 
-  const result = parseTokensData(input);
+  const result = parseTokensModel(input);
 
   expect(result).toEqual([
     {
