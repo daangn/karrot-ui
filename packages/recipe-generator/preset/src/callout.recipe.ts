@@ -48,8 +48,8 @@ export const callout = defineRecipe({
       paddingBlock: vars.base.enabled.content.paddingY,
 
       fontSize: vars.base.enabled.content.fontSize,
-      // XXX
-      lineHeight: "1.3125rem",
+      lineHeight: vars.base.enabled.content.lineHeight,
+
       textAlign: "start",
 
       [pseudo(":only-child")]: {

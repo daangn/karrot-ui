@@ -5,10 +5,10 @@
     width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-inline-start: var(--seed-v3-unit-3\.5);
-    padding-inline-end: var(--seed-v3-unit-0\.5);
+    padding-inline-start: var(--seed-v3-unit-x3_5);
+    padding-inline-end: var(--seed-v3-unit-x0_5);
     padding-block: 5px;
-    border-radius: var(--seed-v3-radii-2\.5);
+    border-radius: var(--seed-v3-radius-x2_5);
 }
 .callout__root:is(button) {
     cursor: pointer;
@@ -18,19 +18,19 @@
 .callout__content {
     display: flex;
     align-items: center;
-    gap: var(--seed-v3-unit-3);
+    gap: var(--seed-v3-unit-x3);
     padding-block: 9.5px;
-    font-size: var(--seed-v3-font-size-100);
-    line-height: 1.3125rem;
+    font-size: var(--seed-v3-font-size-t4);
+    line-height: var(--seed-v3-line-height-t5);
     text-align: start;
 }
 .callout__content:only-child {
-    padding-inline-end: var(--seed-v3-unit-3);
+    padding-inline-end: var(--seed-v3-unit-x3);
 }
 .callout__icon {
     flex: none;
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
+    width: var(--seed-v3-unit-x4);
+    height: var(--seed-v3-unit-x4);
 }
 .callout__title {
     font-weight: var(--seed-v3-font-weight-bold);
@@ -53,25 +53,25 @@
 }
 .callout__actionableIcon {
     flex: none;
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
-    margin: var(--seed-v3-unit-3);
+    width: var(--seed-v3-unit-x4);
+    height: var(--seed-v3-unit-x4);
+    margin: var(--seed-v3-unit-x3);
 }
 .callout__dismissButton {
     flex: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: var(--seed-v3-unit-10);
-    height: var(--seed-v3-unit-10);
+    width: var(--seed-v3-unit-x10);
+    height: var(--seed-v3-unit-x10);
     border: none;
     background-color: transparent;
     padding: 0;
     cursor: pointer;
 }
 .callout__dismissIcon {
-    width: var(--seed-v3-unit-4);
-    height: var(--seed-v3-unit-4);
+    width: var(--seed-v3-unit-x4);
+    height: var(--seed-v3-unit-x4);
 }
 .callout__root--variant_neutral {
     background-color: var(--seed-v3-color-bg-neutral-weak);
