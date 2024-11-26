@@ -25,7 +25,8 @@ jobs:
       - name: Install dependencies
         # 👇 Install dependencies with the same package manager used in the project (replace it as needed) e.g. yarn, npm, pnpm
         run: yarn
-        # 👇 Adds Chromatic as a step in the workflow
+      - name: Build
+        run: yarn build
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         # Chromatic GitHub Action options
