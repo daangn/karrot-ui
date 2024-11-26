@@ -60,10 +60,10 @@ const segmentedControl = defineRecipe({
       paddingInline: `calc(${vars.base.enabled.option.paddingX} - 1px)`,
       paddingBlock: vars.base.enabled.option.paddingY,
 
-      fontSize: vars.base.enabled.option.fontSize,
-      lineHeight: "1.3125rem",
       textAlign: "center",
       fontWeight: vars.base.enabled.option.fontWeight,
+      fontSize: vars.base.enabled.option.fontSize,
+      lineHeight: vars.base.enabled.option.lineHeight,
 
       whiteSpace: "nowrap",
 
@@ -89,10 +89,10 @@ const segmentedControl = defineRecipe({
       paddingInline: vars.base.enabled.option.paddingX,
       paddingBlock: vars.base.enabled.option.paddingY,
 
-      fontSize: vars.base.enabled.option.fontSize,
-      lineHeight: "1.3125rem",
       textAlign: "center",
       fontWeight: vars.base.selected.option.fontWeight,
+      fontSize: vars.base.enabled.option.fontSize,
+      lineHeight: vars.base.enabled.option.lineHeight,
 
       textOverflow: "ellipsis",
       overflow: "hidden",
@@ -108,7 +108,8 @@ const segmentedControl = defineRecipe({
 
       backgroundColor: vars.base.enabled.indicator.color,
 
-      boxShadow: vars.base.enabled.indicator.dropShadow,
+      // XXX: token으로 교체
+      boxShadow: "0 1px 6px rgba(0, 0, 0, 5%)",
 
       willChange: "left, width",
       // XXX: 임의

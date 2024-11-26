@@ -1,11 +1,11 @@
 .segmentedControl__root {
     display: grid;
-    height: var(--seed-v3-unit-10);
+    height: var(--seed-v3-unit-x10);
     min-width: fit-content;
     max-width: 100%;
-    padding: var(--seed-v3-unit-1);
+    padding: var(--seed-v3-unit-x1);
     position: relative;
-    border-radius: var(--seed-v3-radii-full);
+    border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
     box-sizing: border-box;
 }
@@ -13,7 +13,7 @@
     position: relative;
     min-width: 86px;
     z-index: 10;
-    border-radius: var(--seed-v3-radii-full);
+    border-radius: var(--seed-v3-radius-full);
     overflow: hidden;
     user-select: none;
     border: none;
@@ -31,12 +31,12 @@
     display: inline-block;
     position: absolute;
     inset: 0;
-    padding-inline: calc(var(--seed-v3-unit-4) - 1px);
+    padding-inline: calc(var(--seed-v3-unit-x4) - 1px);
     padding-block: 5px;
-    font-size: var(--seed-v3-font-size-200);
-    line-height: 1.3125rem;
     text-align: center;
     font-weight: var(--seed-v3-font-weight-medium);
+    font-size: var(--seed-v3-font-size-t5);
+    line-height: var(--seed-v3-line-height-t5);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -52,12 +52,12 @@
 .segmentedControl__optionLabelPlaceholder {
     display: inline-block;
     height: 100%;
-    padding-inline: var(--seed-v3-unit-4);
+    padding-inline: var(--seed-v3-unit-x4);
     padding-block: 5px;
-    font-size: var(--seed-v3-font-size-200);
-    line-height: 1.3125rem;
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);
+    font-size: var(--seed-v3-font-size-t5);
+    line-height: var(--seed-v3-line-height-t5);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -65,8 +65,8 @@
 }
 .segmentedControl__indicator {
     position: absolute;
-    inset-block: var(--seed-v3-unit-1);
-    border-radius: var(--seed-v3-radii-full);
+    inset-block: var(--seed-v3-unit-x1);
+    border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-layer-default);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 5%);
     will-change: left, width;
