@@ -13,101 +13,122 @@ import {
   useTextField,
   type UseTextFieldProps,
 } from "@seed-design/react-text-field";
+import { Slot } from "@radix-ui/react-slot";
+import type { Assign } from "../util/types";
 
 export interface TextFieldProps
   extends UseTextFieldProps,
     TextFieldVariantProps {
+  label?: string;
   requiredIndicator?: string;
   optionalIndicator?: string;
 
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
 
-  label?: string;
   description?: string;
   errorMessage?: string;
 
-  hideCharacterCount?: boolean;
+  maxGraphemeCount?: number;
+  hideGraphemeCount?: boolean;
 }
 
-type ReactTextFieldProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "children" | "size" | "prefix" | "suffix"
-> &
-  TextFieldProps;
+type ReactTextFieldProps = Assign<
+  Omit<React.InputHTMLAttributes<HTMLInputElement>, "children" | "maxLength">,
+  TextFieldProps
+>;
 
 export const TextField = React.forwardRef<
   HTMLInputElement,
   ReactTextFieldProps
->((props, ref) => {
-  const {
-    rootProps: { className: rootClassName, ...rootProps },
-    inputProps: { className: inputClassName, ...inputProps },
-    labelProps: { className: labelClassName, ...labelProps },
-    descriptionProps,
-    errorMessageProps,
-    stateProps,
-    restProps,
-    isInvalid,
-    isRequired,
-    graphemes,
-  } = useTextField(props);
+>(
+  (
+    {
+      size = "medium",
+      label,
+      requiredIndicator,
+      optionalIndicator,
+      prefix,
+      suffix,
+      hideGraphemeCount,
+      ...restProps
+    },
+    ref,
+  ) => {
+    const {
+      rootProps: { className: rootClassName, ...rootProps },
+      inputProps: { className: inputClassName, ...inputProps },
+      labelProps: { className: labelClassName, ...labelProps },
+      descriptionProps,
+      errorMessageProps,
+      stateProps,
+      restProps: restInternalProps,
+      isInvalid,
+      isRequired,
+      graphemes,
+    } = useTextField(restProps);
 
-  const {
-    size = "medium",
-    label,
-    requiredIndicator,
-    optionalIndicator,
-    errorMessage,
-    description,
-    hideCharacterCount,
-    maxLength,
-  } = props;
+    const { description, errorMessage, maxGraphemeCount } = restProps;
 
-  const classNames = textField({ size });
+    const classNames = textField({ size });
 
-  const indicator = isRequired ? requiredIndicator : optionalIndicator;
-  const renderDescription = !isInvalid && description;
-  const renderErrorMessage = isInvalid && !!errorMessage;
-  const renderCharacterCount = !hideCharacterCount && maxLength;
+    const indicator = isRequired ? requiredIndicator : optionalIndicator;
 
-  return (
-    <div
-      className={clsx(classNames.root, rootClassName)}
-      {...rootProps}
-      {...stateProps}
-    >
-      {label && (
-        // biome-ignore lint/a11y/noLabelWithoutControl: <explanation>
-        <label {...labelProps} className={classNames.header}>
-          <span className={clsx(classNames.label, labelClassName)}>
-            {label}
-          </span>
-          {indicator && (
-            <span className={classNames.indicator}>{indicator}</span>
-          )}
-        </label>
-      )}
-      <div className={classNames.content}>
-        <input
-          ref={ref}
-          className={clsx(classNames.input, inputClassName)}
-          {...inputProps}
-          {...restProps}
-        />
+    const renderDescription = !isInvalid && description;
+    const renderErrorMessage = isInvalid && !!errorMessage;
+    const renderCharacterCount = !hideGraphemeCount && maxGraphemeCount;
+
+    return (
+      <div
+        className={clsx(classNames.root, rootClassName)}
+        {...rootProps}
+        {...stateProps}
+      >
+        {label && (
+          // XXX
+          // biome-ignore lint/a11y/noLabelWithoutControl: <explanation>
+          <label {...labelProps} className={classNames.header}>
+            <span className={clsx(classNames.label, labelClassName)}>
+              {label}
+            </span>
+            {indicator && (
+              <span className={classNames.indicator}>{indicator}</span>
+            )}
+          </label>
+        )}
+        <div {...stateProps} className={clsx(classNames.input)}>
+          {prefix &&
+            (typeof prefix === "string" ? (
+              <div className={classNames.prefixText}>{prefix}</div>
+            ) : (
+              <Slot {...stateProps} className={clsx(classNames.prefixIcon)}>
+                {prefix}
+              </Slot>
+            ))}
+          <input
+            ref={ref}
+            className={clsx(classNames.inputText, inputClassName)}
+            {...inputProps}
+            {...restInternalProps}
+          />
+          {suffix &&
+            (typeof suffix === "string" ? (
+              <div className={classNames.suffixText}>{suffix}</div>
+            ) : (
+              <Slot {...stateProps} className={clsx(classNames.suffixIcon)}>
+                {suffix}
+              </Slot>
+            ))}
+        </div>
         {(renderDescription || renderErrorMessage || renderCharacterCount) && (
-          <div>
+          <div className={classNames.footer}>
             {renderDescription && (
               <div {...descriptionProps} className={classNames.description}>
                 {description}
               </div>
             )}
             {renderErrorMessage && (
-              <div
-                {...stateProps}
-                {...errorMessageProps}
-                className={classNames.description}
-              >
+              <div {...errorMessageProps} className={classNames.errorMessage}>
                 <IconExclamationmarkCircleFill
                   className={classNames.errorIcon}
                 />
@@ -115,15 +136,22 @@ export const TextField = React.forwardRef<
               </div>
             )}
             {renderCharacterCount && (
-              <div {...stateProps}>
-                <span>{graphemes.length}</span>
-                <span>/{maxLength}</span>
+              <div className={classNames.graphemeCount}>
+                <span
+                  {...stateProps}
+                  className={classNames.currentGraphemeCount}
+                >
+                  {graphemes.length}
+                </span>
+                <span className={classNames.maxGraphemeCount}>
+                  /{maxGraphemeCount}
+                </span>
               </div>
             )}
           </div>
         )}
       </div>
-    </div>
-  );
-});
+    );
+  },
+);
 TextField.displayName = "TextField";

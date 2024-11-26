@@ -6,7 +6,7 @@ export const active = ":is(:active, [data-active])";
 
 export const disabled = ":is(:disabled, [disabled], [data-disabled])";
 
-export const readOnly = ":is(:read-only, [data-readonly])";
+export const readOnly = ":is([data-readonly])";
 
 export const checked = ":is(:checked, [data-checked])";
 

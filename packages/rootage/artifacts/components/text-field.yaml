@@ -6,37 +6,71 @@ metadata:
 data:
   base:
     enabled:
-      root:
-        gap: $unit.x3
+      header:
+        marginYEnd: $unit.x3
       label:
         color: $color.fg.neutral
         fontWeight: $font-weight.bold
       indicator:
         color: $color.fg.neutral
         fontWeight: $font-weight.regular
-      content:
-        gap: $unit.x2
       input:
         color: $color.bg.layer-default
         strokeWidth: 1px
         strokeColor: $color.stroke.field
       inputText:
         color: $color.fg.neutral
-      placeholder:
+      inputPlaceholder:
         color: $color.fg.placeholder
+      prefixText:
+        color: $color.fg.neutral
+      prefixIcon:
+        color: $color.fg.neutral
+      suffixText:
+        color: $color.fg.neutral
+      suffixIcon:
+        color: $color.fg.neutral
+      footer:
+        gap: $unit.x3_5
+        marginYStart: $unit.x2
       description:
-        gap: $unit.x1
         color: $color.fg.neutral-subtle
         fontWeight: $font-weight.regular
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      errorMessage:
+        gap: $unit.x1
+        color: $color.fg.danger
+        fontWeight: $font-weight.regular
+      graphemeCount:
+        # XXX: description의 한 줄과 높이가 같아야 함
+        height: $line-height.t4
+        lineHeight: $line-height.t2
+      currentGraphemeCount:
+        color: $color.fg.neutral
+        fontWeight: $font-weight.regular
+        fontSize: $font-size.t2
+      maxGraphemeCount:
+        color: $color.fg.neutral-subtle
+        fontWeight: $font-weight.regular
+        fontSize: $font-size.t2
     focused:
       input:
         strokeColor: $color.stroke.field-focused
     disabled:
       input:
         color: $color.bg.disabled
-      placeholder:
-        color: $color.fg.disabled
       inputText:
+        color: $color.fg.disabled
+      inputPlaceholder:
+        color: $color.fg.disabled
+      prefixText:
+        color: $color.fg.disabled
+      prefixIcon:
+        color: $color.fg.disabled
+      suffixText:
+        color: $color.fg.disabled
+      suffixIcon:
         color: $color.fg.disabled
     readOnly:
       input:
@@ -45,8 +79,6 @@ data:
       input:
         color: $color.bg.danger-weak
         strokeColor: $color.stroke.danger
-      description:
-        color: $color.fg.danger
 
   size=xlarge:
     enabled:
@@ -54,21 +86,29 @@ data:
         lineHeight: $line-height.t5
       label:
         fontSize: $font-size.t5
-      spacer:
-        fontSize: $font-size.t5
-        size: $unit.x1_5
       indicator:
         fontSize: $font-size.t5
+        marginXStart: $unit.x1_5
       input:
         size: 56px
         cornerRadius: $radius.x2_5
         gap: $unit.x2
         paddingX: $unit.x4
-        paddingY: $unit.x3
       inputText:
+        paddingY: $unit.x3
         fontSize: $font-size.t6
         lineHeight: $line-height.t6
-      description:
+      prefixText:
+        fontSize: $font-size.t6
+        lineHeight: $line-height.t6
+      prefixIcon:
+        size: $unit.x5
+      suffixText:
+        fontSize: $font-size.t6
+        lineHeight: $line-height.t6
+      suffixIcon:
+        size: $unit.x5
+      errorMessage:
         fontSize: $font-size.t4
         lineHeight: $line-height.t4
       errorIcon:
@@ -80,21 +120,29 @@ data:
         lineHeight: $line-height.t5
       label:
         fontSize: $font-size.t5
-      spacer:
-        fontSize: $font-size.t5
-        size: $unit.x1_5
       indicator:
         fontSize: $font-size.t5
+        marginXStart: $unit.x1_5
       input:
         size: 52px
         cornerRadius: $radius.x2_5
         gap: $unit.x2
         paddingX: $unit.x4
-        paddingY: $unit.x3
       inputText:
+        paddingY: $unit.x3
         fontSize: $font-size.t5
         lineHeight: $line-height.t5
-      description:
+      prefixText:
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
+      prefixIcon:
+        size: $unit.x5
+      suffixText:
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
+      suffixIcon:
+        size: $unit.x5
+      errorMessage:
         fontSize: $font-size.t4
         lineHeight: $line-height.t4
       errorIcon:
@@ -106,21 +154,29 @@ data:
         lineHeight: $line-height.t4
       label:
         fontSize: $font-size.t4
-      spacer:
-        fontSize: $font-size.t4
-        size: $unit.x1
       indicator:
         fontSize: $font-size.t4
+        marginXStart: $unit.x1
       input:
         size: 40px
         cornerRadius: $radius.x2
         gap: $unit.x1_5
         paddingX: $unit.x3_5
-        paddingY: $unit.x2_5
       inputText:
+        paddingY: $unit.x2_5
         fontSize: $font-size.t4
         lineHeight: $line-height.t4
-      description:
+      prefixText:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      prefixIcon:
+        size: $unit.x4
+      suffixText:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      suffixIcon:
+        size: $unit.x4
+      errorMessage:
         fontSize: $font-size.t2
         lineHeight: $line-height.t2
       errorIcon:

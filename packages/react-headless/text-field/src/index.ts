@@ -37,27 +37,32 @@ export function useTextFieldState(props: UseTextFieldStateProps) {
 }
 
 export interface UseTextFieldProps extends UseTextFieldStateProps {
-  disabled?: boolean;
-  readOnly?: boolean;
+  /**
+   * @default false
+   */
   required?: boolean;
-  autoFocus?: boolean;
-
-  name?: string;
-
-  minLength?: number;
-  maxGraphemeCount?: number;
-
-  onFocus?: (e: React.FocusEvent) => void;
-  onBlur?: (e: React.FocusEvent) => void;
-
+  /**
+   * @default false
+   */
+  disabled?: boolean;
+  /**
+   * @default false
+   */
+  readOnly?: boolean;
   /**
    * @default false
    */
   invalid?: boolean;
 
-  description?: string;
+  name?: string;
 
+  description?: string;
   errorMessage?: string;
+
+  maxGraphemeCount?: number;
+
+  onFocus?: (e: React.FocusEvent) => void;
+  onBlur?: (e: React.FocusEvent) => void;
 }
 
 const getSlicedGraphemes = ({

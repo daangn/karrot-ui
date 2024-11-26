@@ -14,28 +14,60 @@ const textFieldSlotNames = [
     "textField__label"
   ],
   [
-    "spacer",
-    "textField__spacer"
-  ],
-  [
     "indicator",
     "textField__indicator"
-  ],
-  [
-    "content",
-    "textField__content"
   ],
   [
     "input",
     "textField__input"
   ],
   [
+    "inputText",
+    "textField__inputText"
+  ],
+  [
+    "prefixText",
+    "textField__prefixText"
+  ],
+  [
+    "prefixIcon",
+    "textField__prefixIcon"
+  ],
+  [
+    "suffixText",
+    "textField__suffixText"
+  ],
+  [
+    "suffixIcon",
+    "textField__suffixIcon"
+  ],
+  [
+    "footer",
+    "textField__footer"
+  ],
+  [
     "description",
     "textField__description"
   ],
   [
+    "errorMessage",
+    "textField__errorMessage"
+  ],
+  [
     "errorIcon",
     "textField__errorIcon"
+  ],
+  [
+    "graphemeCount",
+    "textField__graphemeCount"
+  ],
+  [
+    "currentGraphemeCount",
+    "textField__currentGraphemeCount"
+  ],
+  [
+    "maxGraphemeCount",
+    "textField__maxGraphemeCount"
   ]
 ];
 
