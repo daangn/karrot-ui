@@ -17,41 +17,58 @@ function setUp(jsx: ReactElement) {
   };
 }
 
-function TextField(props: UseTextFieldProps) {
-  const { description, errorMessage } = props;
+type Assign<T, U> = Omit<T, keyof U> & U;
+
+const TextField = (
+  props: Assign<
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, "children" | "maxLength">,
+    UseTextFieldProps
+  >,
+) => {
   const {
     rootProps,
     inputProps,
-    restProps,
     labelProps,
     descriptionProps,
     errorMessageProps,
     stateProps,
+    restProps,
+    isInvalid,
     graphemes,
-  } = useTextField({ ...props });
+  } = useTextField(props);
+
+  const { description, errorMessage, maxGraphemeCount } = props;
+
+  const renderDescription = !isInvalid && description;
+  const renderErrorMessage = isInvalid && !!errorMessage;
 
   return (
-    <div {...stateProps} {...rootProps}>
-      <div data-part="head">
-        <label {...labelProps} />
-        <span data-part="indicator" />
-      </div>
-      <div data-part="field">
-        <div data-part="prefix" />
+    <div {...rootProps} {...stateProps}>
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
+      <label {...labelProps}>
+        <span />
+        <span />
+      </label>
+      <div {...stateProps}>
+        <div />
         <input {...inputProps} {...restProps} />
-        <div data-part="suffix" />
+        <div />
       </div>
-      <div data-part="foot">
-        {errorMessage && <span {...stateProps} {...errorMessageProps} />}
-        {description && <span {...stateProps} {...descriptionProps} />}
-        <div data-part="count-container" {...stateProps}>
-          <span data-part="character-count">{graphemes.length}</span>
-          <span data-part="max-count" />
+      <div>
+        {renderDescription && <div {...descriptionProps}>{description}</div>}
+        {renderErrorMessage && (
+          <div {...errorMessageProps}>
+            <div>{errorMessage}</div>
+          </div>
+        )}
+        <div>
+          <span {...stateProps}>{graphemes.length}</span>
+          <span>/{maxGraphemeCount}</span>
         </div>
       </div>
     </div>
   );
-}
+};
 
 function ControlledTextField(props: Omit<UseTextFieldProps, "value" | "onValueChange">) {
   const { defaultValue } = props;
