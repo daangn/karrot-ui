@@ -309,275 +309,283 @@ data:
       values:
         theme-light: "#ffffffcc"
         theme-dark: "#ffffffcc"
+    $color.palette.slate-900:
+      values:
+        theme-light: "#2a3038"
+        theme-dark: "#edf2f7"
+    $color.palette.slate-800:
+      values:
+        theme-light: "#545c6e"
+        theme-dark: "#dde3ed"
     $color.fg.static-white:
       values:
-        theme-light: "$color.palette.static-white"
-        theme-dark: "$color.palette.static-white"
+        theme-light: $color.palette.static-white
+        theme-dark: $color.palette.static-white
     $color.fg.neutral:
       values:
-        theme-light: "$color.palette.gray-900"
-        theme-dark: "$color.palette.gray-900"
+        theme-light: $color.palette.gray-900
+        theme-dark: $color.palette.gray-900
     $color.fg.neutral-muted:
       values:
-        theme-light: "$color.palette.gray-800"
-        theme-dark: "$color.palette.gray-800"
+        theme-light: $color.palette.gray-800
+        theme-dark: $color.palette.gray-800
     $color.fg.neutral-subtle:
       values:
-        theme-light: "$color.palette.gray-700"
-        theme-dark: "$color.palette.gray-700"
+        theme-light: $color.palette.gray-700
+        theme-dark: $color.palette.gray-700
     $color.fg.neutral-inverted:
       values:
-        theme-light: "$color.palette.gray-00"
-        theme-dark: "$color.palette.gray-100"
+        theme-light: $color.palette.gray-00
+        theme-dark: $color.palette.gray-100
     $color.fg.brand-contrast:
       values:
-        theme-light: "$color.palette.carrot-700"
-        theme-dark: "$color.palette.carrot-1000"
+        theme-light: $color.palette.carrot-700
+        theme-dark: $color.palette.carrot-1000
     $color.fg.danger:
       values:
-        theme-light: "$color.palette.red-600"
-        theme-dark: "$color.palette.red-600"
+        theme-light: $color.palette.red-600
+        theme-dark: $color.palette.red-600
     $color.fg.danger-contrast:
       values:
-        theme-light: "$color.palette.red-900"
-        theme-dark: "$color.palette.red-900"
+        theme-light: $color.palette.red-900
+        theme-dark: $color.palette.red-900
     $color.fg.positive:
       values:
-        theme-light: "$color.palette.green-700"
-        theme-dark: "$color.palette.green-600"
+        theme-light: $color.palette.green-700
+        theme-dark: $color.palette.green-600
     $color.fg.positive-contrast:
       values:
-        theme-light: "$color.palette.green-900"
-        theme-dark: "$color.palette.green-900"
+        theme-light: $color.palette.green-900
+        theme-dark: $color.palette.green-900
     $color.fg.warning-contrast:
       values:
-        theme-light: "$color.palette.yellow-900"
-        theme-dark: "$color.palette.yellow-900"
+        theme-light: $color.palette.yellow-900
+        theme-dark: $color.palette.yellow-900
     $color.fg.informative:
       values:
-        theme-light: "$color.palette.blue-700"
-        theme-dark: "$color.palette.blue-700"
+        theme-light: $color.palette.blue-700
+        theme-dark: $color.palette.blue-700
     $color.fg.informative-contrast:
       values:
-        theme-light: "$color.palette.blue-900"
-        theme-dark: "$color.palette.blue-900"
+        theme-light: $color.palette.blue-900
+        theme-dark: $color.palette.blue-900
     $color.fg.placeholder:
       values:
-        theme-light: "$color.palette.gray-600"
-        theme-dark: "$color.palette.gray-600"
+        theme-light: $color.palette.gray-600
+        theme-dark: $color.palette.gray-600
     $color.fg.disabled:
       values:
-        theme-light: "$color.palette.gray-500"
-        theme-dark: "$color.palette.gray-500"
+        theme-light: $color.palette.gray-500
+        theme-dark: $color.palette.gray-500
     $color.fg.static-black:
       values:
-        theme-light: "$color.palette.static-black"
-        theme-dark: "$color.palette.static-black"
+        theme-light: $color.palette.static-black
+        theme-dark: $color.palette.static-black
     $color.fg.brand:
       values:
-        theme-light: "$color.palette.carrot-600"
-        theme-dark: "$color.palette.carrot-600"
+        theme-light: $color.palette.carrot-600
+        theme-dark: $color.palette.carrot-600
     $color.fg.magic:
       values:
-        theme-light: "$color.palette.purple-700"
-        theme-dark: "$color.palette.purple-700"
+        theme-light: $color.palette.purple-700
+        theme-dark: $color.palette.purple-700
     $color.fg.magic-contrast:
       values:
-        theme-light: "$color.palette.purple-900"
-        theme-dark: "$color.palette.purple-900"
+        theme-light: $color.palette.purple-900
+        theme-dark: $color.palette.purple-900
     $color.bg.positive-weak:
       values:
-        theme-light: "$color.palette.green-100"
-        theme-dark: "$color.palette.green-100"
+        theme-light: $color.palette.green-100
+        theme-dark: $color.palette.green-100
     $color.bg.positive-solid:
       values:
-        theme-light: "$color.palette.green-600"
-        theme-dark: "$color.palette.green-600"
+        theme-light: $color.palette.green-600
+        theme-dark: $color.palette.green-600
     $color.bg.warning-solid:
       values:
-        theme-light: "$color.palette.yellow-400"
-        theme-dark: "$color.palette.yellow-700"
+        theme-light: $color.palette.yellow-400
+        theme-dark: $color.palette.yellow-700
     $color.bg.warning-weak:
       values:
-        theme-light: "$color.palette.yellow-100"
-        theme-dark: "$color.palette.yellow-100"
+        theme-light: $color.palette.yellow-100
+        theme-dark: $color.palette.yellow-100
     $color.bg.danger-weak:
       values:
-        theme-light: "$color.palette.red-100"
-        theme-dark: "$color.palette.red-100"
+        theme-light: $color.palette.red-100
+        theme-dark: $color.palette.red-100
     $color.bg.danger-solid:
       values:
-        theme-light: "$color.palette.red-700"
-        theme-dark: "$color.palette.red-600"
+        theme-light: $color.palette.red-700
+        theme-dark: $color.palette.red-600
     $color.bg.danger-solid-pressed:
       values:
-        theme-light: "$color.palette.red-800"
-        theme-dark: "$color.palette.red-700"
+        theme-light: $color.palette.red-800
+        theme-dark: $color.palette.red-700
     $color.bg.brand-weak:
       values:
-        theme-light: "$color.palette.carrot-100"
-        theme-dark: "$color.palette.carrot-200"
+        theme-light: $color.palette.carrot-100
+        theme-dark: $color.palette.carrot-200
     $color.bg.brand-solid:
       values:
-        theme-light: "$color.palette.carrot-600"
-        theme-dark: "$color.palette.carrot-700"
+        theme-light: $color.palette.carrot-600
+        theme-dark: $color.palette.carrot-700
     $color.bg.brand-solid-pressed:
       values:
-        theme-light: "$color.palette.carrot-700"
-        theme-dark: "$color.palette.carrot-800"
+        theme-light: $color.palette.carrot-700
+        theme-dark: $color.palette.carrot-800
     $color.bg.brand-weak-pressed:
       values:
-        theme-light: "$color.palette.carrot-200"
-        theme-dark: "$color.palette.carrot-300"
+        theme-light: $color.palette.carrot-200
+        theme-dark: $color.palette.carrot-300
     $color.bg.layer-default:
       values:
-        theme-light: "$color.palette.gray-00"
-        theme-dark: "$color.palette.gray-00"
+        theme-light: $color.palette.gray-00
+        theme-dark: $color.palette.gray-00
     $color.bg.layer-default-pressed:
       values:
-        theme-light: "$color.palette.gray-100"
-        theme-dark: "$color.palette.gray-200"
+        theme-light: $color.palette.gray-100
+        theme-dark: $color.palette.gray-200
     $color.bg.layer-fill:
       values:
-        theme-light: "$color.palette.gray-100"
-        theme-dark: "$color.palette.gray-100"
+        theme-light: $color.palette.gray-100
+        theme-dark: $color.palette.gray-100
     $color.bg.neutral-weak:
       values:
-        theme-light: "$color.palette.gray-200"
-        theme-dark: "$color.palette.gray-300"
+        theme-light: $color.palette.gray-200
+        theme-dark: $color.palette.gray-300
     $color.bg.neutral-solid:
       values:
-        theme-light: "$color.palette.gray-900"
-        theme-dark: "$color.palette.gray-900"
+        theme-light: $color.palette.slate-900
+        theme-dark: $color.palette.gray-900
     $color.bg.neutral-weak-pressed:
       values:
-        theme-light: "$color.palette.gray-300"
-        theme-dark: "$color.palette.gray-400"
+        theme-light: $color.palette.gray-300
+        theme-dark: $color.palette.gray-400
     $color.bg.informative-weak:
       values:
-        theme-light: "$color.palette.blue-100"
-        theme-dark: "$color.palette.blue-100"
+        theme-light: $color.palette.blue-100
+        theme-dark: $color.palette.blue-100
     $color.bg.overlay:
       values:
-        theme-light: "$color.palette.static-black-alpha-500"
-        theme-dark: "$color.palette.static-black-alpha-500"
+        theme-light: $color.palette.static-black-alpha-500
+        theme-dark: $color.palette.static-black-alpha-500
     $color.bg.overlay-muted:
       values:
-        theme-light: "$color.palette.static-black-alpha-200"
-        theme-dark: "$color.palette.static-black-alpha-200"
+        theme-light: $color.palette.static-black-alpha-200
+        theme-dark: $color.palette.static-black-alpha-200
     $color.bg.text-selection:
       values:
-        theme-light: "$color.palette.carrot-100"
-        theme-dark: "$color.palette.carrot-100"
+        theme-light: $color.palette.carrot-100
+        theme-dark: $color.palette.carrot-100
     $color.bg.layer-basement:
       values:
-        theme-light: "$color.palette.gray-200"
-        theme-dark: "$color.palette.gray-100"
+        theme-light: $color.palette.gray-200
+        theme-dark: $color.palette.gray-100
     $color.bg.layer-floating:
       values:
-        theme-light: "$color.palette.gray-00"
-        theme-dark: "$color.palette.gray-100"
+        theme-light: $color.palette.gray-00
+        theme-dark: $color.palette.gray-100
     $color.bg.neutral-solid-pressed:
       values:
-        theme-light: "$color.palette.gray-800"
-        theme-dark: "$color.palette.gray-800"
+        theme-light: $color.palette.gray-800
+        theme-dark: $color.palette.gray-800
     $color.bg.disabled:
       values:
-        theme-light: "$color.palette.gray-200"
-        theme-dark: "$color.palette.gray-200"
+        theme-light: $color.palette.gray-200
+        theme-dark: $color.palette.gray-200
     $color.bg.layer-floating-pressed:
       values:
-        theme-light: "$color.palette.gray-100"
-        theme-dark: "$color.palette.gray-300"
+        theme-light: $color.palette.gray-100
+        theme-dark: $color.palette.gray-300
     $color.bg.informative-weak-pressed:
       values:
-        theme-light: "$color.palette.blue-200"
-        theme-dark: "$color.palette.blue-200"
+        theme-light: $color.palette.blue-200
+        theme-dark: $color.palette.blue-200
     $color.bg.static-white:
       values:
-        theme-light: "$color.palette.static-white"
-        theme-dark: "$color.palette.static-white"
+        theme-light: $color.palette.static-white
+        theme-dark: $color.palette.static-white
     $color.bg.warning-weak-pressed:
       values:
-        theme-light: "$color.palette.yellow-200"
-        theme-dark: "$color.palette.yellow-200"
+        theme-light: $color.palette.yellow-200
+        theme-dark: $color.palette.yellow-200
     $color.bg.danger-weak-pressed:
       values:
-        theme-light: "$color.palette.red-200"
-        theme-dark: "$color.palette.red-200"
+        theme-light: $color.palette.red-200
+        theme-dark: $color.palette.red-200
     $color.bg.informative-solid:
       values:
-        theme-light: "$color.palette.blue-600"
-        theme-dark: "$color.palette.blue-600"
+        theme-light: $color.palette.blue-600
+        theme-dark: $color.palette.blue-600
     $color.bg.positive-weak-pressed:
       values:
-        theme-light: "$color.palette.green-200"
-        theme-dark: "$color.palette.green-200"
+        theme-light: $color.palette.green-200
+        theme-dark: $color.palette.green-200
     $color.bg.informative-solid-pressed:
       values:
-        theme-light: "$color.palette.blue-700"
-        theme-dark: "$color.palette.blue-700"
+        theme-light: $color.palette.blue-700
+        theme-dark: $color.palette.blue-700
     $color.bg.positive-solid-pressed:
       values:
-        theme-light: "$color.palette.green-700"
-        theme-dark: "$color.palette.green-500"
+        theme-light: $color.palette.green-700
+        theme-dark: $color.palette.green-500
     $color.bg.magic-solid:
       values:
-        theme-light: "$color.palette.purple-600"
-        theme-dark: "$color.palette.purple-600"
+        theme-light: $color.palette.purple-600
+        theme-dark: $color.palette.purple-600
     $color.bg.magic-solid-pressed:
       values:
-        theme-light: "$color.palette.purple-700"
-        theme-dark: "$color.palette.purple-700"
+        theme-light: $color.palette.purple-700
+        theme-dark: $color.palette.purple-700
     $color.bg.magic-weak:
       values:
-        theme-light: "$color.palette.purple-100"
-        theme-dark: "$color.palette.purple-100"
+        theme-light: $color.palette.purple-100
+        theme-dark: $color.palette.purple-100
     $color.bg.magic-weak-pressed:
       values:
-        theme-light: "$color.palette.purple-200"
-        theme-dark: "$color.palette.purple-200"
+        theme-light: $color.palette.purple-200
+        theme-dark: $color.palette.purple-200
     $color.bg.neutral-muted:
       values:
-        theme-light: "$color.palette.gray-800"
-        theme-dark: "$color.palette.gray-400"
+        theme-light: $color.palette.slate-800
+        theme-dark: $color.palette.gray-400
     $color.bg.floating-solid:
       values:
-        theme-light: "$color.palette.gray-900"
-        theme-dark: "$color.palette.gray-300"
+        theme-light: $color.palette.gray-900
+        theme-dark: $color.palette.gray-300
     $color.bg.neutral-muted-pressed:
       values:
-        theme-light: "$color.palette.gray-700"
-        theme-dark: "$color.palette.gray-500"
+        theme-light: $color.palette.slate-900
+        theme-dark: $color.palette.gray-500
     $color.stroke.neutral:
       values:
-        theme-light: "$color.palette.gray-300"
-        theme-dark: "$color.palette.gray-300"
+        theme-light: $color.palette.gray-300
+        theme-dark: $color.palette.gray-300
     $color.stroke.brand:
       values:
-        theme-light: "$color.palette.carrot-500"
-        theme-dark: "$color.palette.carrot-600"
+        theme-light: $color.palette.carrot-500
+        theme-dark: $color.palette.carrot-600
     $color.stroke.field:
       values:
-        theme-light: "$color.palette.gray-400"
-        theme-dark: "$color.palette.gray-400"
+        theme-light: $color.palette.gray-400
+        theme-dark: $color.palette.gray-400
     $color.stroke.field-focused:
       values:
-        theme-light: "$color.palette.gray-800"
-        theme-dark: "$color.palette.gray-800"
+        theme-light: $color.palette.gray-800
+        theme-dark: $color.palette.gray-800
     $color.stroke.control:
       values:
-        theme-light: "$color.palette.gray-400"
-        theme-dark: "$color.palette.gray-400"
+        theme-light: $color.palette.gray-400
+        theme-dark: $color.palette.gray-400
     $color.stroke.neutral-muted:
       values:
-        theme-light: "$color.palette.gray-200"
-        theme-dark: "$color.palette.gray-200"
+        theme-light: $color.palette.gray-200
+        theme-dark: $color.palette.gray-200
     $color.stroke.danger:
       values:
-        theme-light: "$color.palette.red-700"
-        theme-dark: "$color.palette.red-600"
+        theme-light: $color.palette.red-700
+        theme-dark: $color.palette.red-600
     $color.stroke.positive:
       values:
-        theme-light: "$color.palette.green-600"
-        theme-dark: "$color.palette.green-600"
+        theme-light: $color.palette.green-600
+        theme-dark: $color.palette.green-600
