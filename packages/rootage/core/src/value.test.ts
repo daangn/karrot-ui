@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { parsePrimitiveExpression } from "./primitive";
+import { parseValueExpression } from "./value";
 
-describe("parsePrimitiveExpression", () => {
+describe("parseValueExpression", () => {
   it("should parse 24bit hex colors", () => {
     const expression = "#ffffff";
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "color",
@@ -16,7 +16,7 @@ describe("parsePrimitiveExpression", () => {
   it("should parse 24+8bit hex colors", () => {
     const expression = "#ffffffff";
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "color",
@@ -27,13 +27,13 @@ describe("parsePrimitiveExpression", () => {
   it("should reject invalid hex colors", () => {
     const expression = "#ff";
 
-    expect(() => parsePrimitiveExpression(expression)).toThrowError();
+    expect(() => parseValueExpression(expression)).toThrowError();
   });
 
   it("should parse px unit dimension", () => {
     const expression = "16px";
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "dimension",
@@ -45,7 +45,7 @@ describe("parsePrimitiveExpression", () => {
   it("should parse rem unit dimension", () => {
     const expression = "1rem";
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "dimension",
@@ -58,13 +58,13 @@ describe("parsePrimitiveExpression", () => {
     const expression = "16em";
 
     // @ts-expect-error
-    expect(() => parsePrimitiveExpression(expression)).toThrowError();
+    expect(() => parseValueExpression(expression)).toThrowError();
   });
 
   it("should parse number", () => {
     const expression = 42;
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "number",
@@ -75,7 +75,7 @@ describe("parsePrimitiveExpression", () => {
   it("should parse ms unit duration", () => {
     const expression = "500ms";
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "duration",
@@ -87,7 +87,7 @@ describe("parsePrimitiveExpression", () => {
   it("should parse s unit duration", () => {
     const expression = "1.5s";
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "duration",
@@ -100,13 +100,13 @@ describe("parsePrimitiveExpression", () => {
     const expression = "500ns";
 
     // @ts-expect-error
-    expect(() => parsePrimitiveExpression(expression)).toThrowError();
+    expect(() => parseValueExpression(expression)).toThrowError();
   });
 
   it("should parse cubic bezier", () => {
     const expression = { type: "cubicBezier", value: [0.25, 0.1, 0.25, 1] } as const;
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual(expression);
   });
@@ -115,7 +115,7 @@ describe("parsePrimitiveExpression", () => {
     const expression = { type: "cubicBezier" } as const;
 
     // @ts-expect-error
-    expect(() => parsePrimitiveExpression(expression)).toThrowError();
+    expect(() => parseValueExpression(expression)).toThrowError();
   });
 
   it("should parse shadow", () => {
@@ -132,7 +132,7 @@ describe("parsePrimitiveExpression", () => {
       ],
     };
 
-    const result = parsePrimitiveExpression(expression);
+    const result = parseValueExpression(expression);
 
     expect(result).toEqual({
       type: "shadow",
@@ -163,6 +163,6 @@ describe("parsePrimitiveExpression", () => {
     } as const;
 
     // @ts-expect-error
-    expect(() => parsePrimitiveExpression(expression)).toThrowError();
+    expect(() => parseValueExpression(expression)).toThrowError();
   });
 });

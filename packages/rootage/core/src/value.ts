@@ -4,8 +4,8 @@ import type {
   DimensionExpression,
   DurationExpression,
   NumberExpression,
-  Primitive,
-  PrimitiveExpression,
+  Value,
+  ValueExpression,
   ShadowExpression,
   ShadowItemExpression,
 } from "./types";
@@ -143,7 +143,7 @@ function parseShadow(expr: unknown): ShadowExpression | null {
   return null;
 }
 
-export function parsePrimitiveExpression(input: Primitive): PrimitiveExpression {
+export function parseValueExpression(input: Value): ValueExpression {
   const result =
     parseColor(input) ||
     parseDimension(input) ||
@@ -156,5 +156,5 @@ export function parsePrimitiveExpression(input: Primitive): PrimitiveExpression 
     return result;
   }
 
-  throw new Error(`Invalid primitive expression ${JSON.stringify(input, null, 2)}`);
+  throw new Error(`Invalid value expression ${JSON.stringify(input, null, 2)}`);
 }

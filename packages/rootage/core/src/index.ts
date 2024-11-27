@@ -3,7 +3,7 @@ export * from "./languages/css";
 export * from "./languages/jsonschema";
 export * from "./languages/typescript";
 export * from "./parse";
-export * from "./primitive";
+export * from "./value";
 export * from "./token";
 export * from "./token-collection";
 export * from "./types";

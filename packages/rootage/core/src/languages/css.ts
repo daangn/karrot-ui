@@ -1,6 +1,6 @@
 import type {
   CubicBezierExpression,
-  PrimitiveExpression,
+  ValueExpression,
   RootageAST,
   ShadowExpression,
   TokenExpression,
@@ -20,7 +20,7 @@ function stringifyShadowExpression(expr: ShadowExpression): string {
     .join(", ");
 }
 
-export function stringifyPrimitiveExpression(expr: PrimitiveExpression): string {
+export function stringifyValueExpression(expr: ValueExpression): string {
   if (expr.type === "color") {
     return expr.value;
   }
@@ -45,7 +45,7 @@ export function stringifyPrimitiveExpression(expr: PrimitiveExpression): string 
     return stringifyShadowExpression(expr);
   }
 
-  throw new Error("Invalid primitive expression");
+  throw new Error("Invalid value expression");
 }
 
 export function stringifyTokenName(token: TokenExpression) {
@@ -60,10 +60,8 @@ export function stringifyTokenReference(token: TokenExpression) {
   return `var(${stringifyTokenName(token)})`;
 }
 
-export function stringifyCssValue(value: PrimitiveExpression | TokenExpression): string {
-  return value.type === "token"
-    ? stringifyTokenReference(value)
-    : stringifyPrimitiveExpression(value);
+export function stringifyCssValue(value: ValueExpression | TokenExpression): string {
+  return value.type === "token" ? stringifyTokenReference(value) : stringifyValueExpression(value);
 }
 
 export function getTokenCss(

@@ -39,7 +39,7 @@ export interface ShadowExpression {
   value: ShadowItemExpression[];
 }
 
-export type PrimitiveExpression =
+export type ValueExpression =
   | ColorExpression
   | DimensionExpression
   | NumberExpression
@@ -61,7 +61,7 @@ export type ComponentSpecExpression = Array<{
       key: string;
       property: Array<{
         key: string;
-        value: PrimitiveExpression | TokenExpression;
+        value: ValueExpression | TokenExpression;
       }>;
     }>;
   }>;
@@ -78,7 +78,7 @@ export interface TokenDeclaration {
   token: TokenExpression;
   values: Array<{
     mode: string;
-    value: PrimitiveExpression | TokenExpression;
+    value: ValueExpression | TokenExpression;
   }>;
 }
 
@@ -114,14 +114,14 @@ export type Shadow = {
 };
 export type TokenRef = `$${string}`;
 
-export type Primitive =
+export type Value =
   | ColorShorthand
   | DimensionShorthand
   | NumberShorthand
   | DurationShorthand
   | CubicBezier
   | Shadow;
-export type RighthandValue = Primitive | TokenRef;
+export type RighthandValue = Value | TokenRef;
 
 export interface ComponentSpecModel {
   kind: "ComponentSpec";

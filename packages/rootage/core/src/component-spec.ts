@@ -1,4 +1,4 @@
-import { parsePrimitiveExpression } from "./primitive";
+import { parseValueExpression } from "./value";
 import { isTokenExpression, parseTokenExpression } from "./token";
 import type {
   ComponentSpecDeclaration,
@@ -48,7 +48,7 @@ export function parseComponentSpecModel(model: ComponentSpecModel): ComponentSpe
             key: propertyExpression,
             value: isTokenExpression(righthandExpression)
               ? parseTokenExpression(righthandExpression)
-              : parsePrimitiveExpression(righthandExpression),
+              : parseValueExpression(righthandExpression),
           });
         }
 

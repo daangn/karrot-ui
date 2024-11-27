@@ -1,4 +1,4 @@
-import { parsePrimitiveExpression } from "./primitive";
+import { parseValueExpression } from "./value";
 import type { TokenDeclaration, TokenExpression, TokensModel } from "./types";
 
 // guard
@@ -55,7 +55,7 @@ export function parseTokensModel(model: TokensModel): TokenDeclaration[] {
         mode,
         value: isTokenExpression(righthand)
           ? parseTokenExpression(righthand)
-          : parsePrimitiveExpression(righthand),
+          : parseValueExpression(righthand),
       });
     }
 
