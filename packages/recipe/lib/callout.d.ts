@@ -1,5 +1,8 @@
 interface CalloutVariant {
-  variant: "outline" | "neutral" | "informative" | "warning" | "danger"
+  /**
+  * @default neutral
+  */
+  variant: "neutral" | "informative" | "warning" | "danger" | "magic";
 }
 
 type CalloutVariantMap = {
@@ -8,7 +11,7 @@ type CalloutVariantMap = {
 
 export type CalloutVariantProps = Partial<CalloutVariant>;
 
-export type CalloutSlotName = "root" | "icon" | "content" | "title" | "description" | "actionIndicator" | "closeButton";
+export type CalloutSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
 
 export const calloutVariantMap: CalloutVariantMap;
 

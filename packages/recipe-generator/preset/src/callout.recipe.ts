@@ -1,86 +1,256 @@
 import { callout as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
+import { active, pseudo } from "./pseudo";
 
 export const callout = defineRecipe({
   name: "callout",
-  slots: ["root", "icon", "content", "title", "description", "actionIndicator", "closeButton"],
+  slots: [
+    "root",
+    "content",
+    "icon",
+    "title",
+    "spacer",
+    "label",
+    "linkLabel",
+    "actionableIcon",
+    "dismissButton",
+    "dismissIcon",
+  ],
   base: {
     root: {
       display: "flex",
-      boxSizing: "border-box",
+      alignItems: "center",
+      justifyContent: "space-between",
 
-      border: "none",
-      textTransform: "none",
-      textAlign: "start",
+      width: "100%",
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
-      padding: `${vars.base.enabled.root.paddingY} ${vars.base.enabled.root.paddingX}`,
+      paddingInlineStart: vars.base.enabled.root.paddingXStart,
+      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
+      paddingBlock: vars.base.enabled.root.paddingY,
+
       borderRadius: vars.base.enabled.root.cornerRadius,
+
+      [pseudo(":is(button)")]: {
+        // XXX: css reset 생기면 불필요할 가능성
+        cursor: "pointer",
+        border: "none",
+        font: "inherit",
+      },
     },
     content: {
-      flex: "1 1 auto",
-    },
-    title: {
-      fontSize: vars.base.enabled.title.fontSize,
-      fontWeight: vars.base.enabled.title.fontWeight,
-    },
-    description: {
-      fontSize: vars.base.enabled.description.fontSize,
-      fontWeight: vars.base.enabled.description.fontWeight,
+      display: "flex",
+      alignItems: "center",
+
+      gap: vars.base.enabled.content.gap,
+
+      paddingBlock: vars.base.enabled.content.paddingY,
+
+      fontSize: vars.base.enabled.content.fontSize,
+      lineHeight: vars.base.enabled.content.lineHeight,
+
+      textAlign: "start",
+
+      [pseudo(":only-child")]: {
+        paddingInlineEnd: vars.typeContentOnly.enabled.content.paddingXEnd,
+      },
     },
     icon: {
-      alignSelf: "flex-start",
+      flex: "none",
+
+      width: vars.base.enabled.icon.size,
       height: vars.base.enabled.icon.size,
-      width: "auto",
-      marginRight: vars.base.enabled.icon.marginRight,
     },
-    actionIndicator: {
-      alignSelf: "center",
+    title: {
+      fontWeight: vars.base.enabled.title.fontWeight,
+    },
+    spacer: {
+      letterSpacing: "0.25em",
+    },
+    label: {
+      fontWeight: vars.base.enabled.label.fontWeight,
+    },
+    linkLabel: {
+      textDecoration: "underline",
+      // XXX
+      textUnderlineOffset: "2px",
 
-      height: vars.base.enabled.actionIndicator.size,
-      width: "auto",
-      marginLeft: vars.base.enabled.actionIndicator.marginLeft,
-    },
-    closeButton: {
-      alignSelf: "center",
+      // XXX: css reset 생기면 불필요할 가능성
+      display: "inline",
+      backgroundColor: "transparent",
+      padding: 0,
+      border: "none",
+      font: "inherit",
       cursor: "pointer",
-
-      height: vars.base.enabled.closeButton.size,
-      width: "auto",
-      marginLeft: vars.base.enabled.closeButton.marginLeft,
     },
+    actionableIcon: {
+      flex: "none",
+
+      width: vars.base.enabled.actionableIcon.size,
+      height: vars.base.enabled.actionableIcon.size,
+
+      margin: vars.base.enabled.actionableIcon.margin,
+    },
+    dismissButton: {
+      flex: "none",
+
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+
+      width: vars.base.enabled.dismissButton.size,
+      height: vars.base.enabled.dismissButton.size,
+
+      // XXX: css reset 생기면 불필요할 가능성
+      border: "none",
+      backgroundColor: "transparent",
+      padding: 0,
+      cursor: "pointer",
+    },
+    dismissIcon: {
+      width: vars.base.enabled.dismissIcon.size,
+      height: vars.base.enabled.dismissIcon.size,
+    },
+  },
+  defaultVariants: {
+    variant: "neutral",
   },
   variants: {
     variant: {
-      outline: {
-        root: {
-          boxShadow: `0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.variantOutline.enabled.root.strokeColor} inset`,
-          color: vars.variantOutline.enabled.description.color,
-        },
-      },
       neutral: {
         root: {
           backgroundColor: vars.variantNeutral.enabled.root.color,
-          color: vars.variantNeutral.enabled.description.color,
+
+          [pseudo(":is(button)", active)]: {
+            backgroundColor: vars.variantNeutral.pressed.root.color,
+          },
+        },
+        icon: {
+          color: vars.variantNeutral.enabled.icon.color,
+        },
+        title: {
+          color: vars.variantNeutral.enabled.title.color,
+        },
+        label: {
+          color: vars.variantNeutral.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantNeutral.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantNeutral.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantNeutral.enabled.dismissIcon.color,
         },
       },
       informative: {
         root: {
           backgroundColor: vars.variantInformative.enabled.root.color,
-          color: vars.variantInformative.enabled.description.color,
+
+          [pseudo(":is(button)", active)]: {
+            backgroundColor: vars.variantInformative.pressed.root.color,
+          },
+        },
+        icon: {
+          color: vars.variantInformative.enabled.icon.color,
+        },
+        title: {
+          color: vars.variantInformative.enabled.title.color,
+        },
+        label: {
+          color: vars.variantInformative.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantInformative.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantInformative.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantInformative.enabled.dismissIcon.color,
         },
       },
       warning: {
         root: {
           backgroundColor: vars.variantWarning.enabled.root.color,
-          color: vars.variantWarning.enabled.description.color,
+
+          [pseudo(":is(button)", active)]: {
+            backgroundColor: vars.variantWarning.pressed.root.color,
+          },
+        },
+        icon: {
+          color: vars.variantWarning.enabled.icon.color,
+        },
+        title: {
+          color: vars.variantWarning.enabled.title.color,
+        },
+        label: {
+          color: vars.variantWarning.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantWarning.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantWarning.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantWarning.enabled.dismissIcon.color,
         },
       },
       danger: {
         root: {
           backgroundColor: vars.variantDanger.enabled.root.color,
-          color: vars.variantDanger.enabled.description.color,
+
+          [pseudo(":is(button)", active)]: {
+            backgroundColor: vars.variantDanger.pressed.root.color,
+          },
+        },
+        icon: {
+          color: vars.variantDanger.enabled.icon.color,
+        },
+        title: {
+          color: vars.variantDanger.enabled.title.color,
+        },
+        label: {
+          color: vars.variantDanger.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantDanger.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantDanger.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantDanger.enabled.dismissIcon.color,
+        },
+      },
+      magic: {
+        root: {
+          backgroundColor: vars.variantMagic.enabled.root.color,
+
+          [pseudo(":is(button)", active)]: {
+            backgroundColor: vars.variantMagic.pressed.root.color,
+          },
+        },
+        icon: {
+          color: vars.variantMagic.enabled.icon.color,
+        },
+        title: {
+          color: vars.variantMagic.enabled.title.color,
+        },
+        label: {
+          color: vars.variantMagic.enabled.label.color,
+        },
+        linkLabel: {
+          color: vars.variantMagic.enabled.linkLabel.color,
+        },
+        actionableIcon: {
+          color: vars.variantMagic.enabled.actionableIcon.color,
+        },
+        dismissIcon: {
+          color: vars.variantMagic.enabled.dismissIcon.color,
         },
       },
     },
