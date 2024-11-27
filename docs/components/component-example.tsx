@@ -37,6 +37,7 @@ export function ComponentExample(props: ComponentExampleProps) {
                 width: "100%",
                 display: "flex",
                 flexDirection: "column",
+                backgroundColor: "var(--seed-v3-color-bg-layer-default)",
                 justifyContent: "center",
                 alignItems: "center",
                 padding: "10px",
