@@ -35,6 +35,17 @@ export default function Layout({ children }: { children: ReactNode }) {
           search={{
             options: {
               type: "static",
+              defaultTag: "design",
+              tags: [
+                {
+                  name: "Design",
+                  value: "design",
+                },
+                {
+                  name: "React",
+                  value: "react",
+                },
+              ],
             },
           }}
         >
