@@ -16,11 +16,6 @@ export const vars = {
       }
     },
     "disabled": {
-      "control": {
-        "color": "var(--seed-v3-color-bg-disabled)"
-      }
-    },
-    "disabledSelected": {
       "root": {
         "opacity": "0.38"
       }

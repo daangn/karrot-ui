@@ -17,12 +17,15 @@ const switchRecipe = defineRecipe({
       verticalAlign: "top",
       isolation: "isolate",
       opacity: 1,
+      cursor: "pointer",
 
-      [pseudo(disabled, checked)]: {
-        opacity: vars.base.disabledSelected.root.opacity,
+      [pseudo(disabled)]: {
+        opacity: vars.base.disabled.root.opacity,
+        cursor: "not-allowed",
       },
     },
     control: {
+      boxSizing: "border-box",
       display: "block",
       position: "relative",
 
@@ -33,10 +36,6 @@ const switchRecipe = defineRecipe({
 
       [pseudo(checked)]: {
         background: vars.base.enabledSelected.control.color,
-      },
-
-      [pseudo(disabled)]: {
-        background: vars.base.disabled.control.color,
       },
     },
     thumb: {

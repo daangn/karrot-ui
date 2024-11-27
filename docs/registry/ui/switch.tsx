@@ -1,5 +1,8 @@
 import { type UseSwitchProps, useSwitch } from "@seed-design/react-switch";
-import { type SwitchVariantProps, switchStyle } from "@seed-design/recipe/switch";
+import {
+  type SwitchVariantProps,
+  switchStyle,
+} from "@seed-design/recipe/switch";
 import clsx from "clsx";
 import * as React from "react";
 
@@ -8,11 +11,13 @@ import { visuallyHidden } from "../util/visuallyHidden";
 
 import "@seed-design/stylesheet/switch.css";
 
-export interface SwitchProps
-  extends Assign<React.HTMLAttributes<HTMLInputElement>, UseSwitchProps>,
-    SwitchVariantProps {}
+export interface SwitchProps extends SwitchVariantProps {}
 
-export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
+interface ReactSwitchProps
+  extends Assign<React.HTMLAttributes<HTMLInputElement>, UseSwitchProps>,
+    SwitchProps {}
+
+export const Switch = React.forwardRef<HTMLInputElement, ReactSwitchProps>(
   ({ className, size = "medium", ...otherProps }, ref) => {
     const { restProps, controlProps, hiddenInputProps, rootProps, thumbProps } =
       useSwitch(otherProps);
@@ -23,7 +28,12 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         <div {...controlProps} className={classNames.control}>
           <div {...thumbProps} className={classNames.thumb} />
         </div>
-        <input ref={ref} {...hiddenInputProps} {...restProps} style={visuallyHidden} />
+        <input
+          ref={ref}
+          {...hiddenInputProps}
+          {...restProps}
+          style={visuallyHidden}
+        />
       </label>
     );
   },

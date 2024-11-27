@@ -7,11 +7,14 @@
     vertical-align: top;
     isolation: isolate;
     opacity: 1;
+    cursor: pointer;
 }
-.switch__root:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
+.switch__root:is(:disabled, [disabled], [data-disabled]) {
     opacity: 0.38;
+    cursor: not-allowed;
 }
 .switch__control {
+    box-sizing: border-box;
     display: block;
     position: relative;
     border-radius: var(--seed-v3-radius-full);
@@ -20,9 +23,6 @@
 }
 .switch__control:is(:checked, [data-checked]) {
     background: var(--seed-v3-color-bg-brand-solid);
-}
-.switch__control:is(:disabled, [disabled], [data-disabled]) {
-    background: var(--seed-v3-color-bg-disabled);
 }
 .switch__thumb {
     border-radius: var(--seed-v3-radius-full);
