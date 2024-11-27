@@ -1,26 +1,18 @@
+"use client";
+
 import {
   ComponentSpecExpression,
   stringifyTokenExpression,
   stringifyValueExpression,
 } from "@seed-design/rootage-core";
-import { getRootage } from "./get-rootage";
-import { Fragment } from "react";
+import { useState } from "react";
 
-interface ComponentSpecTableProps {
-  id: string;
-}
+export function ComponentVariantTable(props: { variant: ComponentSpecExpression[number] }) {
+  const [hoveredRow, setHoveredRow] = useState<{
+    slotKey: string;
+    propertyKey: string;
+  } | null>(null);
 
-function stringifyVariantKey(key: Record<string, string>) {
-  const entries = Object.entries(key);
-
-  if (entries.length === 0) {
-    return "base";
-  }
-
-  return entries.map(([key, value]) => `${key}=${value}`).join(", ");
-}
-
-function VariantTable(props: { variant: ComponentSpecExpression[number] }) {
   const { variant } = props;
   const tableItems = variant.state.flatMap((state) => {
     const stateKey = state.key.join(", ");
@@ -62,7 +54,16 @@ function VariantTable(props: { variant: ComponentSpecExpression[number] }) {
           const shouldRenderSlot = shouldRenderState || slotKey !== prevItem?.slotKey;
           const shouldRenderProperty = shouldRenderSlot || propertyKey !== prevItem?.propertyKey;
           return (
-            <tr key={`${stateKey}/${slotKey}/${propertyKey}`}>
+            <tr
+              className={
+                hoveredRow?.slotKey === slotKey && hoveredRow?.propertyKey === propertyKey
+                  ? "bg-fd-muted"
+                  : ""
+              }
+              key={`${stateKey}/${slotKey}/${propertyKey}`}
+              onMouseEnter={() => setHoveredRow({ slotKey, propertyKey })}
+              onMouseLeave={() => setHoveredRow(null)}
+            >
               <td>{shouldRenderState ? stateKey : null}</td>
               <td>{shouldRenderSlot ? slotKey : null}</td>
               <td>{shouldRenderProperty ? propertyKey : null}</td>
@@ -77,23 +78,4 @@ function VariantTable(props: { variant: ComponentSpecExpression[number] }) {
       </tbody>
     </table>
   );
-}
-
-export async function ComponentSpecTable(props: ComponentSpecTableProps) {
-  const rootage = await getRootage();
-  const componentSpec = rootage.componentSpecs.find((spec) => spec.id === props.id);
-
-  if (!componentSpec) {
-    return <div>Component spec {props.id} not found</div>;
-  }
-
-  return componentSpec.data.map((variant) => {
-    const variantKey = stringifyVariantKey(variant.key);
-    return (
-      <Fragment key={variantKey}>
-        <h3>{variantKey}</h3>
-        <VariantTable variant={variant} />
-      </Fragment>
-    );
-  });
 }

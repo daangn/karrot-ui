@@ -12,7 +12,7 @@ import { AtomIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TokenTable } from "@/components/token-table";
-import { ComponentSpecTable } from "@/components/component-spec-table";
+import { ComponentSpecBlock } from "@/components/component-spec-block";
 
 const { AutoTypeTable } = createTypeTable();
 
@@ -37,7 +37,7 @@ export default async function Page({
             Installation,
             ComponentExample,
             TokenTable,
-            ComponentSpecTable,
+            ComponentSpecBlock,
             Tab,
             Tabs,
             Step,
