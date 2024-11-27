@@ -32,13 +32,18 @@ const visuallyHidden: CSSProperties = {
   width: "1px",
 };
 
-export interface CheckboxProps
-  extends Assign<React.HTMLAttributes<HTMLInputElement>, UseCheckboxProps>,
-    CheckboxVariantProps {
+export interface CheckboxProps extends CheckboxVariantProps {
   label: React.ReactNode;
 }
 
-export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
+interface ReactCheckboxProps
+  extends Omit<
+      Assign<React.InputHTMLAttributes<HTMLInputElement>, UseCheckboxProps>,
+      "size"
+    >,
+    CheckboxProps {}
+
+export const Checkbox = React.forwardRef<HTMLInputElement, ReactCheckboxProps>(
   (
     {
       className,
