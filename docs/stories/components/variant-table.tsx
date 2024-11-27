@@ -1,17 +1,19 @@
-type VariantMap = Record<string, string[]>;
+type VariantMap = Record<string, string[] | boolean[]>;
 
 interface Props {
   variantMap: VariantMap;
   Component: React.ComponentType | React.ElementType;
 }
 
+const Bool = (value: "true" | "false") => value === "true";
+
 const generateCombinations = (variantMap: VariantMap) => {
   const keys = Object.keys(variantMap);
-  let combinations: Record<string, string>[] = [{}];
+  let combinations: Record<string, string | boolean>[] = [{}];
 
   for (const key of keys) {
     const values = variantMap[key];
-    const temp: Record<string, string>[] = [];
+    const temp: Record<string, string | boolean>[] = [];
 
     for (const combo of combinations) {
       for (const value of values) {
@@ -47,6 +49,22 @@ export const VariantTable = (props: Props) => {
         </thead>
         <tbody>
           {combinations.map((combination) => {
+            const boolify = Object.entries(combination).reduce((acc, [key, value]) => {
+              if (value === "true" || value === "false") {
+                return {
+                  // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
+                  ...acc,
+                  [key]: Bool(value),
+                };
+              }
+
+              return {
+                // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
+                ...acc,
+                [key]: value,
+              };
+            }, {});
+
             const combinationKey = Object.values(combination).join("-");
             return (
               <tr key={combinationKey}>
@@ -72,7 +90,7 @@ export const VariantTable = (props: Props) => {
                     padding: 16,
                   }}
                 >
-                  <Component {...combination} {...rest} />
+                  <Component {...boolify} {...rest} />
                 </td>
               </tr>
             );

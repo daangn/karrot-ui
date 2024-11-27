@@ -1,0 +1,48 @@
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+
+    paths:
+      - "docs/**"
+      - "packages/component-spec/**"
+      - "packages/recipe/**"
+      - "packages/recipe-generator/preset/**"
+      - "packages/stylesheet/**"
+      - "packages/vars/**"
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+name: Deploy seed-design-v3 Storybook Alpha
+
+jobs:
+  deploy:
+    name: Deploy seed-design-v3 Storybook Alpha
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.11.0
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build Packages
+        run: yarn build-only-package
+
+      - name: Build Storybook
+        working-directory: ./docs
+        run: yarn build-storybook
+
+      - name: Deploy docs at Cloudflare Pages in `seed-design-v3-storybook` project (Alpha)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy ./docs/storybook-static --project-name=seed-design-v3-storybook --branch=${{ github.ref_name }}
