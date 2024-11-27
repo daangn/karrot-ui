@@ -26,7 +26,9 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
   if (ctx.name === STORY_LIGHT_THEME) {
     return (
       <html {...DEFAULT_PROPERTIES} data-seed="light-only" data-seed-scale-color="light">
-        <Story />
+        <body>
+          <Story />
+        </body>
       </html>
     );
   }
@@ -34,7 +36,9 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
   if (ctx.name === STORY_DARK_THEME) {
     return (
       <html {...DEFAULT_PROPERTIES} data-seed="dark-only" data-seed-scale-color="dark">
-        <Story />
+        <body>
+          <Story />
+        </body>
       </html>
     );
   }
@@ -59,14 +63,18 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
         data-seed-scale-color="light"
         style={{ ...DEFAULT_PROPERTIES.style, fontSize: fontScaleMap[fontScale] }}
       >
-        <Story />
+        <body>
+          <Story />
+        </body>
       </html>
     );
   }
 
   return (
     <html {...DEFAULT_PROPERTIES} data-seed="light-only" data-seed-scale-color="light">
-      <Story />
+      <body>
+        <Story />
+      </body>
     </html>
   );
 };
