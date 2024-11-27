@@ -11,6 +11,8 @@ import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page
 import { AtomIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { TokenTable } from "@/components/token-table";
+import { ComponentSpecTable } from "@/components/component-spec-table";
 
 const { AutoTypeTable } = createTypeTable();
 
@@ -34,6 +36,8 @@ export default async function Page({
             ...defaultMdxComponents,
             Installation,
             ComponentExample,
+            TokenTable,
+            ComponentSpecTable,
             Tab,
             Tabs,
             Step,
