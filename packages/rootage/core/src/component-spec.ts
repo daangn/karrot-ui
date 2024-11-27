@@ -1,5 +1,5 @@
 import { parseValueExpression } from "./value";
-import { isTokenExpression, parseTokenExpression } from "./token";
+import { isTokenRef, parseTokenExpression } from "./token";
 import type {
   ComponentSpecDeclaration,
   ComponentSpecExpression,
@@ -13,9 +13,13 @@ function parseVariant(variantExpression: string) {
   }
 
   const keyValues = variantExpression.split(",");
-  const variant = {};
+  const variant: Record<string, string> = {};
   for (const keyValue of keyValues) {
     const [key, value] = keyValue.split("=");
+    if (!key || !value) {
+      throw new Error(`Invalid variant format: ${variantExpression}`);
+    }
+
     variant[key] = value;
   }
 
@@ -44,9 +48,13 @@ export function parseComponentSpecModel(model: ComponentSpecModel): ComponentSpe
           const righthandExpression =
             data[variantExpression][stateExpression][slotExpression][propertyExpression];
 
+          if (righthandExpression == null) {
+            continue;
+          }
+
           property.push({
             key: propertyExpression,
-            value: isTokenExpression(righthandExpression)
+            value: isTokenRef(righthandExpression)
               ? parseTokenExpression(righthandExpression)
               : parseValueExpression(righthandExpression),
           });

@@ -85,11 +85,19 @@ export function getTokenCss(
           const decls = inCollection
             .map(
               (binding) =>
-                `${stringifyTokenName(binding.token)}: ${stringifyCssValue(binding.values.find((v) => v.mode === mode).value)};`,
+                `${stringifyTokenName(binding.token)}: ${stringifyCssValue(binding.values.find((v) => v.mode === mode)!.value)};`,
             )
             .join("\n  ");
 
-          return `${options.selectors[collection.name][mode]} {
+          const selector = options.selectors[collection.name]?.[mode];
+
+          if (!selector) {
+            throw new Error(
+              `Selector for collection ${collection.name} and mode ${mode} is not defined`,
+            );
+          }
+
+          return `${selector} {
   ${decls}
 }`;
         })

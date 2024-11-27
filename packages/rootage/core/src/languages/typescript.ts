@@ -30,19 +30,19 @@ function stringifyStateKey(state: string[]) {
 }
 
 export function getComponentSpecTs(expressions: ComponentSpecExpression) {
-  const result = {};
+  const result: Record<string, Record<string, Record<string, Record<string, string>>>> = {};
 
   for (const expression of expressions) {
     const variantKey = stringifyVariantKey(expression.key);
-    const variant = {};
+    const variant: Record<string, Record<string, Record<string, string>>> = {};
 
     for (const state of expression.state) {
       const stateKey = stringifyStateKey(state.key);
-      const slot = {};
+      const slot: Record<string, Record<string, string>> = {};
 
       for (const slotItem of state.slot) {
         const slotKey = slotItem.key;
-        const property = {};
+        const property: Record<string, string> = {};
 
         for (const propertyItem of slotItem.property) {
           const propertyKey = propertyItem.key;

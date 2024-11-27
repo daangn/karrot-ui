@@ -25,7 +25,7 @@ function parseDimension(expr: unknown): DimensionExpression | null {
     const regex = /^(\d+(\.\d+)?)(px|rem)$/;
     const match = expr.match(regex);
     if (match) {
-      const value = Number.parseFloat(match[1]);
+      const value = Number.parseFloat(match[1]!);
       const unit = match[3] as "px" | "rem";
       return { type: "dimension", value, unit };
     }
@@ -47,7 +47,7 @@ function parseDuration(expr: unknown): DurationExpression | null {
     const regex = /^(\d+(\.\d+)?)(ms|s)$/;
     const match = expr.match(regex);
     if (match) {
-      const value = Number.parseFloat(match[1]);
+      const value = Number.parseFloat(match[1]!);
       const unit = match[3] as "ms" | "s";
       return { type: "duration", value, unit };
     }

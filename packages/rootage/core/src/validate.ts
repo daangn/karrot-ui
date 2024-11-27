@@ -26,7 +26,7 @@ export function validate(ast: RootageAST): ValidationResult {
   for (const tokenBinding of tokens) {
     const collection = tokenCollections.find(
       (collection) => collection.name === tokenBinding.collection,
-    );
+    )!;
     for (const { mode } of tokenBinding.values) {
       if (!collection.modes.includes(mode)) {
         return {

@@ -154,7 +154,7 @@ export interface TokensModel {
 export interface TokensData {
   collection: string;
   tokens: {
-    [tokenName: string]: {
+    [tokenName: TokenRef]: {
       values: {
         [mode: string]: RighthandValue;
       };

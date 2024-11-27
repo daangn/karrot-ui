@@ -1,12 +1,12 @@
 import { describe, expect, it, test } from "vitest";
-import { isTokenExpression, parseTokenExpression, parseTokensModel } from "./token";
+import { isTokenRef, parseTokenExpression, parseTokensModel } from "./token";
 import type { TokensModel } from "./types";
 
-describe("isTokenExpression", () => {
+describe("isTokenRef", () => {
   it("should return true for token expression", () => {
     const expression = "$color.bg.layer-1";
 
-    const result = isTokenExpression(expression);
+    const result = isTokenRef(expression);
 
     expect(result).toEqual(true);
   });
@@ -14,7 +14,7 @@ describe("isTokenExpression", () => {
   it("should return false for non-token expression", () => {
     const expression = "color.bg.layer-1";
 
-    const result = isTokenExpression(expression);
+    const result = isTokenRef(expression);
 
     expect(result).toEqual(false);
   });
@@ -29,17 +29,10 @@ describe("parseTokenExpression", () => {
     expect(result).toEqual({ type: "token", group: ["color", "bg"], key: "layer-1" });
   });
 
-  it("should parse token expression with numeric index", () => {
-    const expression = "$unit[1]";
-
-    const result = parseTokenExpression(expression);
-
-    expect(result).toEqual({ type: "token", group: ["unit"], key: "1" });
-  });
-
   it("should reject invalid token expression", () => {
     const expression = "color.bg.layer-1";
 
+    // @ts-expect-error
     expect(() => parseTokenExpression(expression)).toThrowError("Invalid token format");
   });
 });

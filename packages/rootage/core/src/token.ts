@@ -1,8 +1,8 @@
+import type { TokenDeclaration, TokenExpression, TokenRef, TokensModel } from "./types";
 import { parseValueExpression } from "./value";
-import type { TokenDeclaration, TokenExpression, TokensModel } from "./types";
 
 // guard
-export function isTokenExpression(expression: string | number | object): expression is string {
+export function isTokenRef(expression: string | number | object): expression is TokenRef {
   if (typeof expression === "number") {
     return false;
   }
@@ -17,47 +17,36 @@ export function isTokenExpression(expression: string | number | object): express
 // parse
 /**
  * @example
- * parseToken("$color.bg.layer-1") // { group: ["color", "bg"], key: "layer-1" }
- * parseToken("$unit[1]") // { group: ["unit", key: "1" }
- * parseToken("$unit.space[1]") // { group: ["unit", "space"], key: "1" }
+ * parseTokenExpression("$color.bg.layer-1") // { group: ["color", "bg"], key: "layer-1" }
  */
-export function parseTokenExpression(tokenExpression: string): TokenExpression {
-  if (!isTokenExpression(tokenExpression)) {
+export function parseTokenExpression(input: TokenRef): TokenExpression {
+  if (!isTokenRef(input)) {
     throw new Error("Invalid token format");
   }
 
-  const prefixStriped = tokenExpression.slice(1);
-  const numericParts = prefixStriped.split("[");
+  const prefixStriped = input.slice(1);
 
-  if (numericParts.length === 1) {
-    const parts = prefixStriped.split(".");
-    const group = parts.slice(0, -1);
-    const last = parts[parts.length - 1];
-    return { type: "token", group, key: last };
-  }
-
-  const parts = numericParts[0].split(".");
-  const [...group] = parts;
-  const key = numericParts[1].slice(0, -1);
-  return { type: "token", group, key };
+  const parts = prefixStriped.split(".");
+  const group = parts.slice(0, -1);
+  const last = parts[parts.length - 1]!;
+  return { type: "token", group, key: last };
 }
 
 export function parseTokensModel(model: TokensModel): TokenDeclaration[] {
   const { tokens, collection } = model.data;
   const tokenDeclarations: TokenDeclaration[] = [];
 
-  for (const tokenName in tokens) {
-    const values = [];
-
-    for (const mode in tokens[tokenName].values) {
-      const righthand = tokens[tokenName].values[mode];
-      values.push({
+  const tokenNames = Object.keys(tokens) as TokenRef[];
+  for (const tokenName of tokenNames) {
+    const token = tokens[tokenName]!;
+    const values = Object.entries(token.values).map(([mode, righthand]) => {
+      return {
         mode,
-        value: isTokenExpression(righthand)
+        value: isTokenRef(righthand)
           ? parseTokenExpression(righthand)
           : parseValueExpression(righthand),
-      });
-    }
+      };
+    });
 
     tokenDeclarations.push({
       collection: collection,
