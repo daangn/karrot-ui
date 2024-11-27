@@ -1,13 +1,11 @@
 import { emit, on, showUI } from "@create-figma-plugin/utilities";
 import type {
-  RequestColorJsonHandler,
   RequestComponentKeyHandler,
   RequestComponentPropertyDefinitionsHandler,
-  RequestCssHandler,
-  RequestJsonSchemaHandler,
+  RequestRootageTokensHandler,
   ResponseHandler,
 } from "./types";
-import { generateColorJson, generateCss, generateJsonSchema } from "./variable";
+import { getColorRootageTokens } from "./rootage";
 
 export default function () {
   on<RequestComponentPropertyDefinitionsHandler>("REQUEST_COMPONENT_PROPERTY_DEFINITIONS", () => {
@@ -31,22 +29,10 @@ export default function () {
     emit<ResponseHandler>("RESPONSE", result);
   });
 
-  on<RequestCssHandler>("REQUEST_CSS", () => {
-    const result = generateCss();
-
-    emit<ResponseHandler>("RESPONSE", result);
-  });
-
-  on<RequestJsonSchemaHandler>("REQUEST_JSON_SCHEMA", () => {
-    const result = generateJsonSchema();
-
-    emit<ResponseHandler>("RESPONSE", result);
-  });
-
-  on<RequestColorJsonHandler>("REQUEST_COLOR_JSON", (colorMode) => {
-    const result = generateColorJson(colorMode);
-
-    emit<ResponseHandler>("RESPONSE", result);
+  on<RequestRootageTokensHandler>("REQUEST_ROOTAGE_TOKENS", (scope) => {
+    if (scope === "color") {
+      emit<ResponseHandler>("RESPONSE", getColorRootageTokens());
+    }
   });
 
   showUI({

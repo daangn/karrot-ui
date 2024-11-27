@@ -8,7 +8,8 @@
     "change-case": "^5.4.4",
     "color2k": "^2.0.3",
     "dedent": "^1.5.3",
-    "preact": ">=10"
+    "preact": ">=10",
+    "yaml": "^2.6.1"
   },
   "devDependencies": {
     "@create-figma-plugin/build": "^3.2.1",

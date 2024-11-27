@@ -4,11 +4,9 @@ import { h } from "preact";
 import { useCallback, useEffect, useState } from "preact/hooks";
 
 import type {
-  RequestColorJsonHandler,
   RequestComponentKeyHandler,
   RequestComponentPropertyDefinitionsHandler,
-  RequestCssHandler,
-  RequestJsonSchemaHandler,
+  RequestRootageTokensHandler,
   ResponseHandler,
 } from "./types";
 
@@ -60,29 +58,14 @@ function Plugin() {
       >
         GET ComponentKey
       </Button>
-      <Button fullWidth onClick={useCallback(() => emit<RequestCssHandler>("REQUEST_CSS"), [])}>
-        GET Global CSS
-      </Button>
       <Button
         fullWidth
         onClick={useCallback(
-          () => emit<RequestColorJsonHandler>("REQUEST_COLOR_JSON", "light"),
+          () => emit<RequestRootageTokensHandler>("REQUEST_ROOTAGE_TOKENS", "color"),
           [],
         )}
       >
-        GET Color JSON (light)
-      </Button>
-      <Button
-        fullWidth
-        onClick={useCallback(() => emit<RequestColorJsonHandler>("REQUEST_COLOR_JSON", "dark"), [])}
-      >
-        GET Color JSON (dark)
-      </Button>
-      <Button
-        fullWidth
-        onClick={useCallback(() => emit<RequestJsonSchemaHandler>("REQUEST_JSON_SCHEMA"), [])}
-      >
-        GET JSON Schema
+        GET Color Tokens
       </Button>
       <TextboxMultiline grow value={code ?? ""} />
       <Button fullWidth onClick={onCopy}>
