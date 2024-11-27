@@ -9428,6 +9428,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chromatic@npm:^11.19.0":
+  version: 11.19.0
+  resolution: "chromatic@npm:11.19.0"
+  peerDependencies:
+    "@chromatic-com/cypress": ^0.*.* || ^1.0.0
+    "@chromatic-com/playwright": ^0.*.* || ^1.0.0
+  peerDependenciesMeta:
+    "@chromatic-com/cypress":
+      optional: true
+    "@chromatic-com/playwright":
+      optional: true
+  bin:
+    chroma: dist/bin.js
+    chromatic: dist/bin.js
+    chromatic-cli: dist/bin.js
+  checksum: 6ce615e73fd713bb41e813c311dcbfd0c4427a3f48aa11e4108854a9de8157ef191a23dd4179ec5568ec612ea8dc60b026ed74f993a76e163cbb765980e9c075
+  languageName: node
+  linkType: hard
+
 "chrome-trace-event@npm:^1.0.2":
   version: 1.0.4
   resolution: "chrome-trace-event@npm:1.0.4"
@@ -10532,6 +10551,7 @@ __metadata:
     autoprefixer: ^10.4.20
     chalk: ^5.3.0
     change-case: ^5.4.4
+    chromatic: ^11.19.0
     class-variance-authority: ^0.7.0
     clsx: ^2.1.1
     fumadocs-core: ^14.4.2
