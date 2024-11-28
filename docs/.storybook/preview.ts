@@ -11,9 +11,6 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    chromatic: {
-      delay: 1000,
-    },
   },
 };
 
