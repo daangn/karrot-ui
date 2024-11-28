@@ -15,6 +15,8 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
     document.documentElement.setAttribute("data-seed", isDarkTheme ? "dark-only" : "light-only");
     document.documentElement.setAttribute("data-seed-scale-color", isDarkTheme ? "dark" : "light");
 
+    document.documentElement.style.removeProperty("--base-font-size");
+
     if (ctx.name.includes(STORY_PREFIX_FONT_SCALING)) {
       const fontScaleMap = {
         "Extra Small": "14px",
@@ -29,8 +31,6 @@ export const SeedThemeDecorator: Decorator = (Story, ctx) => {
       const fontScale = ctx.name
         .replace(STORY_PREFIX_FONT_SCALING, "")
         .trim() as keyof typeof fontScaleMap;
-
-      document.documentElement.style.fontSize = fontScaleMap[fontScale];
 
       document.documentElement.style.setProperty("--base-font-size", fontScaleMap[fontScale]);
     }
