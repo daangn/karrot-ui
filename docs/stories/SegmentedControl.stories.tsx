@@ -9,10 +9,13 @@ import {
 import { segmentedControlVariantMap } from "@seed-design/recipe/segmentedControl";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
+import { useState } from "react";
 
-const Component = (props: SegmentedControlProps) => {
+const Component = () => {
+  const [value, setValue] = useState("1");
+
   return (
-    <SegmentedControl {...props}>
+    <SegmentedControl value={value} onValueChange={setValue}>
       <SegmentedControlOption value="1">Tab 1</SegmentedControlOption>
       <SegmentedControlOption value="2">Tab 2</SegmentedControlOption>
       <SegmentedControlOption value="3">Tab 3</SegmentedControlOption>
@@ -31,7 +34,6 @@ type Story = StoryObj<typeof meta>;
 
 const CommonStoryTemplate: Story = {
   args: {
-    value: "1",
     defaultValue: "1",
   },
   render: function Render(args) {

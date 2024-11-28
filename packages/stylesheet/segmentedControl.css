@@ -10,16 +10,17 @@
     box-sizing: border-box;
 }
 .segmentedControl__option {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    font: inherit;
     position: relative;
     min-width: 86px;
     z-index: 10;
     border-radius: var(--seed-v3-radius-full);
     overflow: hidden;
     user-select: none;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    font: inherit;
+    line-height: var(--seed-v3-line-height-t5);
 }
 .segmentedControl__option:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
@@ -50,6 +51,7 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .segmentedControl__optionLabelPlaceholder {
+    box-sizing: border-box;
     display: inline-block;
     height: 100%;
     padding-inline: var(--seed-v3-unit-x4);

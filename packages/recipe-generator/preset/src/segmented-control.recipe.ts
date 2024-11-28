@@ -25,6 +25,12 @@ const segmentedControl = defineRecipe({
       boxSizing: "border-box",
     },
     option: {
+      // XXX: css reset 생기면 제거
+      border: "none",
+      padding: 0,
+      backgroundColor: "transparent",
+      font: "inherit",
+
       position: "relative",
 
       minWidth: vars.base.enabled.option.minWidth,
@@ -37,11 +43,7 @@ const segmentedControl = defineRecipe({
 
       userSelect: "none",
 
-      // XXX: css reset 생기면 제거
-      border: "none",
-      padding: 0,
-      backgroundColor: "transparent",
-      font: "inherit",
+      lineHeight: vars.base.enabled.option.lineHeight,
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.option.color,
@@ -83,6 +85,9 @@ const segmentedControl = defineRecipe({
       },
     },
     optionLabelPlaceholder: {
+      // XXX: CSS reset 생기면 제거
+      boxSizing: "border-box",
+
       display: "inline-block",
       height: "100%",
 
