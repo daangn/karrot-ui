@@ -145,6 +145,8 @@
   --seed-v3-color-palette-purple-900: #46308a;
   --seed-v3-color-palette-purple-1000: #29175d;
   --seed-v3-color-palette-static-white-alpha-800: #ffffffcc;
+  --seed-v3-color-palette-slate-900: #2a3038;
+  --seed-v3-color-palette-slate-800: #545c6e;
   --seed-v3-color-fg-static-white: var(--seed-v3-color-palette-static-white);
   --seed-v3-color-fg-neutral: var(--seed-v3-color-palette-gray-900);
   --seed-v3-color-fg-neutral-muted: var(--seed-v3-color-palette-gray-800);
@@ -179,7 +181,7 @@
   --seed-v3-color-bg-layer-default-pressed: var(--seed-v3-color-palette-gray-100);
   --seed-v3-color-bg-layer-fill: var(--seed-v3-color-palette-gray-100);
   --seed-v3-color-bg-neutral-weak: var(--seed-v3-color-palette-gray-200);
-  --seed-v3-color-bg-neutral-solid: var(--seed-v3-color-palette-gray-900);
+  --seed-v3-color-bg-neutral-solid: var(--seed-v3-color-palette-slate-900);
   --seed-v3-color-bg-neutral-weak-pressed: var(--seed-v3-color-palette-gray-300);
   --seed-v3-color-bg-informative-weak: var(--seed-v3-color-palette-blue-100);
   --seed-v3-color-bg-overlay: var(--seed-v3-color-palette-static-black-alpha-500);
@@ -202,9 +204,9 @@
   --seed-v3-color-bg-magic-solid-pressed: var(--seed-v3-color-palette-purple-700);
   --seed-v3-color-bg-magic-weak: var(--seed-v3-color-palette-purple-100);
   --seed-v3-color-bg-magic-weak-pressed: var(--seed-v3-color-palette-purple-200);
-  --seed-v3-color-bg-neutral-muted: var(--seed-v3-color-palette-gray-800);
+  --seed-v3-color-bg-neutral-muted: var(--seed-v3-color-palette-slate-800);
   --seed-v3-color-bg-floating-solid: var(--seed-v3-color-palette-gray-900);
-  --seed-v3-color-bg-neutral-muted-pressed: var(--seed-v3-color-palette-gray-700);
+  --seed-v3-color-bg-neutral-muted-pressed: var(--seed-v3-color-palette-slate-900);
   --seed-v3-color-stroke-neutral: var(--seed-v3-color-palette-gray-300);
   --seed-v3-color-stroke-brand: var(--seed-v3-color-palette-carrot-500);
   --seed-v3-color-stroke-field: var(--seed-v3-color-palette-gray-400);
@@ -294,6 +296,8 @@
   --seed-v3-color-palette-purple-900: #d9cefa;
   --seed-v3-color-palette-purple-1000: #f0edfc;
   --seed-v3-color-palette-static-white-alpha-800: #ffffffcc;
+  --seed-v3-color-palette-slate-900: #edf2f7;
+  --seed-v3-color-palette-slate-800: #dde3ed;
   --seed-v3-color-fg-static-white: var(--seed-v3-color-palette-static-white);
   --seed-v3-color-fg-neutral: var(--seed-v3-color-palette-gray-900);
   --seed-v3-color-fg-neutral-muted: var(--seed-v3-color-palette-gray-800);
