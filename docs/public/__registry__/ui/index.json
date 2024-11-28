@@ -140,6 +140,15 @@
     ]
   },
   {
+    "name": "segmented-control",
+    "dependencies": [
+      "@seed-design/react-tabs@alpha"
+    ],
+    "files": [
+      "ui:segmented-control.tsx"
+    ]
+  },
+  {
     "name": "switch",
     "dependencies": [
       "@seed-design/react-switch@alpha"
