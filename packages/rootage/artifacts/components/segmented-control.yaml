@@ -7,11 +7,11 @@ data:
   base:
     enabled:
       root:
-        height: $unit.x10
         padding: $unit.x1
         cornerRadius: $radius.full
         color: $color.bg.neutral-weak
-      option:
+      segment:
+        height: $unit.x8
         cornerRadius: $radius.full
         paddingX: $unit.x4
         minWidth: 86px
@@ -19,19 +19,19 @@ data:
         lineHeight: $line-height.t5
         fontWeight: $font-weight.medium
         color: $color.fg.neutral-muted
-      indicator:
+      selectedIndicator:
         cornerRadius: $radius.full
         color: $color.bg.layer-default
     pressed:
-      option:
+      segment:
         color: $color.bg.neutral-weak-pressed
     selected:
-      option:
+      segment:
         color: $color.fg.neutral
         fontWeight: $font-weight.bold
     selected,pressed:
-      option:
+      segment:
         color: $color.bg.layer-default-pressed
     disabled:
-      option:
+      segment:
         color: $color.fg.disabled

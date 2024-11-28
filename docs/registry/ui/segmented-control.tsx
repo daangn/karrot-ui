@@ -65,7 +65,7 @@ export const SegmentedControl = React.forwardRef<
       <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>
       <div
         aria-hidden
-        className={classNames.indicator}
+        className={classNames.selectedIndicator}
         {...tabIndicatorProps}
         style={{ left, width }}
       />
@@ -98,14 +98,14 @@ export const SegmentedControlOption = React.forwardRef<
   return (
     <button
       ref={ref}
-      className={clsx(classNames.option, className)}
+      className={clsx(classNames.segment, className)}
       {...rootProps}
       {...otherProps}
     >
-      <div className={classNames.optionLabel} {...labelProps} tabIndex={-1}>
+      <div className={classNames.segmentLabel} {...labelProps} tabIndex={-1}>
         {children}
       </div>
-      <div aria-hidden className={classNames.optionLabelPlaceholder}>
+      <div aria-hidden className={classNames.segmentLabelPlaceholder}>
         {children}
       </div>
     </button>

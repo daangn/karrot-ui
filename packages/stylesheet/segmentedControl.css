@@ -1,6 +1,5 @@
 .segmentedControl__root {
     display: grid;
-    height: var(--seed-v3-unit-x10);
     min-width: fit-content;
     max-width: 100%;
     padding: var(--seed-v3-unit-x1);
@@ -9,26 +8,28 @@
     background-color: var(--seed-v3-color-bg-neutral-weak);
     box-sizing: border-box;
 }
-.segmentedControl__option {
+.segmentedControl__segment {
     border: none;
     padding: 0;
     background-color: transparent;
     font: inherit;
+    cursor: pointer;
     position: relative;
     min-width: 86px;
+    height: var(--seed-v3-unit-x8);
     z-index: 10;
     border-radius: var(--seed-v3-radius-full);
     overflow: hidden;
     user-select: none;
     line-height: var(--seed-v3-line-height-t5);
 }
-.segmentedControl__option:is(:active, [data-active]) {
+.segmentedControl__segment:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
-.segmentedControl__option:is(:selected, [data-selected]):is(:active, [data-active]) {
+.segmentedControl__segment:is(:selected, [data-selected]):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
-.segmentedControl__optionLabel {
+.segmentedControl__segmentLabel {
     position: absolute;
     inset-inline: 0;
     transform: translateY(-50%);
@@ -42,14 +43,14 @@
     overflow: hidden;
     color: var(--seed-v3-color-fg-neutral-muted);
 }
-.segmentedControl__optionLabel:is(:selected, [data-selected]) {
+.segmentedControl__segmentLabel:is(:selected, [data-selected]) {
     color: var(--seed-v3-color-fg-neutral);
     font-weight: var(--seed-v3-font-weight-bold);
 }
-.segmentedControl__optionLabel:is(:disabled, [disabled], [data-disabled]) {
+.segmentedControl__segmentLabel:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.segmentedControl__optionLabelPlaceholder {
+.segmentedControl__segmentLabelPlaceholder {
     padding-inline: var(--seed-v3-unit-x4);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);
@@ -59,7 +60,7 @@
     white-space: nowrap;
     opacity: 0;
 }
-.segmentedControl__indicator {
+.segmentedControl__selectedIndicator {
     position: absolute;
     inset-block: var(--seed-v3-unit-x1);
     border-radius: var(--seed-v3-radius-full);

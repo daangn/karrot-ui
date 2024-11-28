@@ -6,20 +6,20 @@ const segmentedControlSlotNames = [
     "segmentedControl__root"
   ],
   [
-    "option",
-    "segmentedControl__option"
+    "segment",
+    "segmentedControl__segment"
   ],
   [
-    "optionLabel",
-    "segmentedControl__optionLabel"
+    "segmentLabel",
+    "segmentedControl__segmentLabel"
   ],
   [
-    "optionLabelPlaceholder",
-    "segmentedControl__optionLabelPlaceholder"
+    "segmentLabelPlaceholder",
+    "segmentedControl__segmentLabelPlaceholder"
   ],
   [
-    "indicator",
-    "segmentedControl__indicator"
+    "selectedIndicator",
+    "segmentedControl__selectedIndicator"
   ]
 ];
 

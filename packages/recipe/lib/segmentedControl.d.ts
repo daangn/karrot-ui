@@ -8,7 +8,7 @@ type SegmentedControlVariantMap = {
 
 export type SegmentedControlVariantProps = Partial<SegmentedControlVariant>;
 
-export type SegmentedControlSlotName = "root" | "option" | "optionLabel" | "optionLabelPlaceholder" | "indicator";
+export type SegmentedControlSlotName = "root" | "segment" | "segmentLabel" | "segmentLabelPlaceholder" | "selectedIndicator";
 
 export const segmentedControlVariantMap: SegmentedControlVariantMap;
 

@@ -2,12 +2,12 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "height": "var(--seed-v3-unit-x10)",
         "padding": "var(--seed-v3-unit-x1)",
         "cornerRadius": "var(--seed-v3-radius-full)",
         "color": "var(--seed-v3-color-bg-neutral-weak)"
       },
-      "option": {
+      "segment": {
+        "height": "var(--seed-v3-unit-x8)",
         "cornerRadius": "var(--seed-v3-radius-full)",
         "paddingX": "var(--seed-v3-unit-x4)",
         "minWidth": "86px",
@@ -16,29 +16,29 @@ export const vars = {
         "fontWeight": "var(--seed-v3-font-weight-medium)",
         "color": "var(--seed-v3-color-fg-neutral-muted)"
       },
-      "indicator": {
+      "selectedIndicator": {
         "cornerRadius": "var(--seed-v3-radius-full)",
         "color": "var(--seed-v3-color-bg-layer-default)"
       }
     },
     "pressed": {
-      "option": {
+      "segment": {
         "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
       }
     },
     "selected": {
-      "option": {
+      "segment": {
         "color": "var(--seed-v3-color-fg-neutral)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     },
     "selectedPressed": {
-      "option": {
+      "segment": {
         "color": "var(--seed-v3-color-bg-layer-default-pressed)"
       }
     },
     "disabled": {
-      "option": {
+      "segment": {
         "color": "var(--seed-v3-color-fg-disabled)"
       }
     }
