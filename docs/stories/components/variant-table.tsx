@@ -99,7 +99,8 @@ export const VariantTable = (props: Props) => {
       </table>
       <div
         style={{
-          marginTop: 16,
+          marginTop: "16px",
+          fontSize: "16px",
         }}
       >
         총 {combinations.length}개의 조합이 있습니다.
