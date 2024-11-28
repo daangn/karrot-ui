@@ -33,7 +33,7 @@
     inset-inline: 0;
     transform: translateY(-50%);
     inset-block-start: 50%;
-    padding-inline: var(--seed-v3-unit-x4);
+    padding-inline: calc(var(--seed-v3-unit-x4) - 1px);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-medium);
     font-size: var(--seed-v3-font-size-t5);

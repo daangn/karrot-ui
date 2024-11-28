@@ -59,7 +59,7 @@ const segmentedControl = defineRecipe({
       transform: "translateY(-50%)",
       insetBlockStart: "50%",
 
-      paddingInline: vars.base.enabled.option.paddingX,
+      paddingInline: `calc(${vars.base.enabled.option.paddingX} - 1px)`,
 
       textAlign: "center",
       fontWeight: vars.base.enabled.option.fontWeight,
