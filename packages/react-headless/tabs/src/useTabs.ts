@@ -6,6 +6,8 @@ import type { ContentProps, TriggerProps, UseTabsProps, UseTabsStateProps } from
 
 import { useSize } from "@radix-ui/react-use-size";
 
+const useLayoutEffect = globalThis?.document ? React.useLayoutEffect : React.useEffect;
+
 function useTabsState(props: UseTabsStateProps & { id: string }) {
   const [value, setValue] = useControllableState({
     prop: props.value,
@@ -17,7 +19,9 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
   const [focusedValue, setFocusedValue] = React.useState<string | null>(null);
   const [isFocusVisible, setIsFocusVisible] = React.useState(false);
   const triggerEl = dom.getTabTriggerEl(value, props.id);
+  const cameraEl = dom.getTabContentCameraEl(props.id);
   const triggerSize = useSize(triggerEl);
+  const cameraSize = useSize(cameraEl);
 
   const tabValues = dom.getAllValues(props.id);
   const tabEnabledValues = dom.getEnabledValues(props.id);
@@ -54,6 +58,10 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
       height: triggerSize?.height || 0,
       left: triggerEl?.offsetLeft || 0,
     },
+    cameraSize: {
+      width: cameraSize?.width || 0,
+      height: cameraSize?.height || 0,
+    },
     hoveredValue,
     activeValue,
     focusedValue,
@@ -76,6 +84,7 @@ export function useTabs(props: UseTabsProps) {
     tabValues,
     tabEnabledValues,
     triggerSize,
+    cameraSize,
     activeValue,
     focusedValue,
     hoveredValue,
@@ -87,7 +96,7 @@ export function useTabs(props: UseTabsProps) {
   const {
     value: omitValue,
     defaultValue: omitDefaultValue,
-    layout,
+    layout = "hug",
     onValueChange: omitOnValueChange,
     isSwipeable = false,
     orientation = "horizontal",
@@ -95,13 +104,62 @@ export function useTabs(props: UseTabsProps) {
     ...restProps
   } = props;
 
+  const updateIndicatorStyle = React.useCallback(() => {
+    const getLeft = () => {
+      const GUTTER = layout === "fill" ? 16 : 0;
+      return GUTTER + triggerSize.left;
+    };
+
+    const getWidth = () => {
+      const GUTTER = 16;
+
+      if (layout === "hug") return triggerSize.width;
+      return triggerSize.width - GUTTER * 2;
+    };
+
+    const rootEl = dom.getRootEl(id);
+    rootEl.style.setProperty("--seed-design-tab-indicator-left", `${getLeft()}px`);
+    rootEl.style.setProperty("--seed-design-tab-indicator-width", `${getWidth()}px`);
+  }, [layout, triggerSize, id]);
+
+  const updateCameraStyle = React.useCallback(() => {
+    const rootEl = dom.getRootEl(id);
+    rootEl.style.setProperty("--seed-design-tab-camera-width", `${cameraSize.width}`);
+  }, [cameraSize, id]);
+
+  const updateIndex = React.useCallback(() => {
+    const rootEl = dom.getRootEl(id);
+    rootEl.style.setProperty("--seed-design-tab-index", `${currentTabIndex}`);
+  }, [currentTabIndex, id]);
+
+  useLayoutEffect(() => {
+    updateIndicatorStyle();
+    window.addEventListener("resize", updateIndicatorStyle);
+    return () => {
+      window.removeEventListener("resize", updateIndicatorStyle);
+    };
+  }, [updateIndicatorStyle]);
+
+  useLayoutEffect(() => {
+    updateCameraStyle();
+    window.addEventListener("resize", updateCameraStyle);
+    return () => {
+      window.removeEventListener("resize", updateCameraStyle);
+    };
+  }, [updateCameraStyle]);
+
+  useLayoutEffect(() => {
+    updateIndex();
+  }, [updateIndex]);
+
   return {
     value,
     triggerSize,
     currentTabIndex,
     currentTabEnabledIndex,
-    tabCount: tabValues.length,
     tabEnabledCount: tabEnabledValues.length,
+
+    tabCount: tabValues.length,
 
     moveNext: events.moveNext,
     movePrev: events.movePrev,
