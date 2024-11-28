@@ -1,5 +1,5 @@
 import type { Decorator } from "@storybook/react";
-import { useEffect, type DetailedHTMLProps, type HtmlHTMLAttributes } from "react";
+import { useEffect } from "react";
 
 const STORY_NAMES_THEMES = {
   LIGHT: "Light Theme",
