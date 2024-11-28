@@ -7,14 +7,13 @@ data:
   base:
     enabled:
       root:
-        cornerRadius: $radius.full
-        padding: $unit.x1
-        color: $color.bg.neutral-weak
         height: $unit.x10
+        padding: $unit.x1
+        cornerRadius: $radius.full
+        color: $color.bg.neutral-weak
       option:
         cornerRadius: $radius.full
         paddingX: $unit.x4
-        paddingY: 5px
         minWidth: 86px
         fontSize: $font-size.t5
         lineHeight: $line-height.t5

@@ -29,15 +29,14 @@
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .segmentedControl__optionLabel {
-    display: inline-block;
     position: absolute;
-    inset: 0;
-    padding-inline: calc(var(--seed-v3-unit-x4) - 1px);
-    padding-block: 5px;
+    inset-inline: 0;
+    transform: translateY(-50%);
+    inset-block-start: 50%;
+    padding-inline: var(--seed-v3-unit-x4);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-medium);
     font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -51,15 +50,10 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .segmentedControl__optionLabelPlaceholder {
-    box-sizing: border-box;
-    display: inline-block;
-    height: 100%;
     padding-inline: var(--seed-v3-unit-x4);
-    padding-block: 5px;
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);
     font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;

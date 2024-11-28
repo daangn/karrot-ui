@@ -54,18 +54,16 @@ const segmentedControl = defineRecipe({
       },
     },
     optionLabel: {
-      display: "inline-block",
-
       position: "absolute",
-      inset: 0,
+      insetInline: 0,
+      transform: "translateY(-50%)",
+      insetBlockStart: "50%",
 
-      paddingInline: `calc(${vars.base.enabled.option.paddingX} - 1px)`,
-      paddingBlock: vars.base.enabled.option.paddingY,
+      paddingInline: vars.base.enabled.option.paddingX,
 
       textAlign: "center",
       fontWeight: vars.base.enabled.option.fontWeight,
       fontSize: vars.base.enabled.option.fontSize,
-      lineHeight: vars.base.enabled.option.lineHeight,
 
       whiteSpace: "nowrap",
 
@@ -85,19 +83,11 @@ const segmentedControl = defineRecipe({
       },
     },
     optionLabelPlaceholder: {
-      // XXX: CSS reset 생기면 제거
-      boxSizing: "border-box",
-
-      display: "inline-block",
-      height: "100%",
-
       paddingInline: vars.base.enabled.option.paddingX,
-      paddingBlock: vars.base.enabled.option.paddingY,
 
       textAlign: "center",
       fontWeight: vars.base.selected.option.fontWeight,
       fontSize: vars.base.enabled.option.fontSize,
-      lineHeight: vars.base.enabled.option.lineHeight,
 
       textOverflow: "ellipsis",
       overflow: "hidden",

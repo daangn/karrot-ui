@@ -12,13 +12,16 @@ import { VariantTable } from "./components/variant-table";
 import { useState } from "react";
 
 const Component = () => {
-  const [value, setValue] = useState("1");
+  const values = ["dolor", "magna", "sint"];
+  const [value, setValue] = useState(values[0]);
 
   return (
     <SegmentedControl value={value} onValueChange={setValue}>
-      <SegmentedControlOption value="1">Tab 1</SegmentedControlOption>
-      <SegmentedControlOption value="2">Tab 2</SegmentedControlOption>
-      <SegmentedControlOption value="3">Tab 3</SegmentedControlOption>
+      {values.map((value) => (
+        <SegmentedControlOption key={value} value={value}>
+          {value}
+        </SegmentedControlOption>
+      ))}
     </SegmentedControl>
   );
 };

@@ -2,15 +2,14 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-full)",
+        "height": "var(--seed-v3-unit-x10)",
         "padding": "var(--seed-v3-unit-x1)",
-        "color": "var(--seed-v3-color-bg-neutral-weak)",
-        "height": "var(--seed-v3-unit-x10)"
+        "cornerRadius": "var(--seed-v3-radius-full)",
+        "color": "var(--seed-v3-color-bg-neutral-weak)"
       },
       "option": {
         "cornerRadius": "var(--seed-v3-radius-full)",
         "paddingX": "var(--seed-v3-unit-x4)",
-        "paddingY": "5px",
         "minWidth": "86px",
         "fontSize": "var(--seed-v3-font-size-t5)",
         "lineHeight": "var(--seed-v3-line-height-t5)",
