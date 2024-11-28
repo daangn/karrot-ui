@@ -49,6 +49,9 @@ const textField = defineRecipe({
       borderWidth: vars.base.enabled.input.strokeWidth,
       borderColor: vars.base.enabled.input.strokeColor,
 
+      // XXX: CSS reset 들어오면 제거될 수 있음
+      borderStyle: "solid",
+
       [pseudo(not(readOnly), focus)]: {
         borderColor: vars.base.focused.input.strokeColor,
       },
@@ -107,15 +110,15 @@ const textField = defineRecipe({
       },
     },
     inputText: {
-      flexGrow: 1,
-
-      color: vars.base.enabled.inputText.color,
-
       // XXX: CSS reset 들어오면 제거될 수 있음
-      backgroundColor: "transparent",
+      all: "unset",
       [pseudo(focus)]: {
         outline: "none",
       },
+
+      flexGrow: 1,
+
+      color: vars.base.enabled.inputText.color,
 
       [pseudo("::placeholder")]: {
         color: vars.base.enabled.inputPlaceholder.color,

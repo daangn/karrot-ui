@@ -20,6 +20,7 @@
     background-color: var(--seed-v3-color-bg-layer-default);
     border-width: 1px;
     border-color: var(--seed-v3-color-stroke-field);
+    border-style: solid;
 }
 .textField__input:not(:is([data-readonly])):is(:focus, [data-focus]) {
     border-color: var(--seed-v3-color-stroke-field-focused);
@@ -68,12 +69,14 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .textField__inputText {
-    flex-grow: 1;
-    color: var(--seed-v3-color-fg-neutral);
-    background-color: transparent;
+    all: unset;
 }
 .textField__inputText:is(:focus, [data-focus]) {
     outline: none;
+}
+.textField__inputText {
+    flex-grow: 1;
+    color: var(--seed-v3-color-fg-neutral);
 }
 .textField__inputText::placeholder {
     color: var(--seed-v3-color-fg-placeholder);
