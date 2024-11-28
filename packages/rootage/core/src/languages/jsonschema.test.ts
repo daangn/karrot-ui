@@ -206,10 +206,10 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
         \\"tokenRef\\": {
           \\"type\\": \\"string\\",
           \\"anyOf\\": [
-            { \\"const\\": \\"$color.palette.gray-00\\" },
-            { \\"const\\": \\"$color.palette.gray-100\\" },
-            { \\"const\\": \\"$color.bg.layer-1\\" },
-            { \\"const\\": \\"$unit.x1_5\\" }
+            { \\"const\\": \\"$color.palette.gray-00\\", \\"title\\": \\"$color.palette.gray-00\\", \\"description\\": \\"light: #ffffff\\\\ndark: #000000\\", \\"markdownDescription\\": \\"- light: \`#ffffff\`\\\\n\\\\n- dark: \`#000000\`\\" },
+            { \\"const\\": \\"$color.palette.gray-100\\", \\"title\\": \\"$color.palette.gray-100\\", \\"description\\": \\"light: #f8f9fa\\\\ndark: #212529\\", \\"markdownDescription\\": \\"- light: \`#f8f9fa\`\\\\n\\\\n- dark: \`#212529\`\\" },
+            { \\"const\\": \\"$color.bg.layer-1\\", \\"title\\": \\"$color.bg.layer-1\\", \\"description\\": \\"light: $color.palette.gray-00\\\\ndark: $color.palette.gray-00\\", \\"markdownDescription\\": \\"- light: \`$color.palette.gray-00\`\\\\n\\\\n- dark: \`$color.palette.gray-00\`\\" },
+            { \\"const\\": \\"$unit.x1_5\\", \\"title\\": \\"$unit.x1_5\\", \\"description\\": \\"default: 6px\\", \\"markdownDescription\\": \\"- default: \`6px\`\\" }
           ]
         }
       }

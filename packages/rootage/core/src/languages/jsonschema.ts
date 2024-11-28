@@ -4,9 +4,46 @@ import type { RootageAST } from "../types";
 
 export function getJsonSchema(ast: RootageAST): string {
   const { tokens } = ast;
-  const tokenNames = tokens.map((token) => stringifyTokenExpression(token.token));
 
-  return dedent`{
+  const tokenAnnotations = tokens.map(({ token, values }) => {
+    const title = stringifyTokenExpression(token);
+
+    const readableValues = values.map(({ mode, value }) => {
+      const readableValue = (() => {
+        switch (value.type) {
+          case "token":
+            return stringifyTokenExpression(value);
+          case "dimension":
+            return `${value.value}${value.unit}`;
+          case "duration":
+            return `${value.value}${value.unit}`;
+          case "cubicBezier":
+            return value.value.join(", ");
+          case "shadow":
+            return value.value
+              .map(
+                ({ offsetX, offsetY, blur, spread, color }) =>
+                  `${offsetX.value}${offsetX.unit} ${offsetY.value}${offsetY.unit} ${blur.value}${blur.unit} ${spread.value}${spread.unit} ${color}`,
+              )
+              .join(" / ");
+          default:
+            return `${value.value}`;
+        }
+      })();
+
+      return { mode, value: readableValue };
+    });
+
+    return {
+      title,
+      description: readableValues.map(({ mode, value }) => `${mode}: ${value}`).join("\\n"),
+      markdownDescription: readableValues
+        .map(({ mode, value }) => `- ${mode}: \`${value}\``)
+        .join("\\n\\n"),
+    };
+  });
+
+  return dedent.withOptions({ escapeSpecialCharacters: false })`{
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "ComponentSpecModel",
     "type": "object",
@@ -155,7 +192,17 @@ export function getJsonSchema(ast: RootageAST): string {
       "tokenRef": {
         "type": "string",
         "anyOf": [
-          ${tokenNames.map((name) => `{ "const": "${name}" }`).join(",\n          ")}
+          ${tokenAnnotations
+            .map(
+              (annotations) =>
+                `{ ${[
+                  `"const": "${annotations.title}"`,
+                  ...Object.keys(annotations).map(
+                    (key) => `"${key}": "${annotations[key as keyof typeof annotations]}"`,
+                  ),
+                ].join(", ")} }`,
+            )
+            .join(",\n          ")}
         ]
       }
     }
