@@ -18,8 +18,8 @@ const segmentedControlSlotNames = [
     "segmentedControl__triggerLabelPlaceholder"
   ],
   [
-    "selectedIndicator",
-    "segmentedControl__selectedIndicator"
+    "indicator",
+    "segmentedControl__indicator"
   ]
 ];
 

@@ -60,7 +60,7 @@
     white-space: nowrap;
     opacity: 0;
 }
-.segmentedControl__selectedIndicator {
+.segmentedControl__indicator {
     position: absolute;
     inset-block: var(--seed-v3-unit-x1);
     border-radius: var(--seed-v3-radius-full);

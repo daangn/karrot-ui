@@ -20,7 +20,7 @@ data:
         lineHeight: $line-height.t5
         fontWeight: $font-weight.medium
         color: $color.fg.neutral-muted
-      selectedIndicator:
+      indicator:
         cornerRadius: $radius.full
         color: $color.bg.layer-default
     pressed:
