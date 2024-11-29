@@ -18,6 +18,7 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
   const [activeValue, setActiveValue] = React.useState<string | null>(null);
   const [focusedValue, setFocusedValue] = React.useState<string | null>(null);
   const [isFocusVisible, setIsFocusVisible] = React.useState(false);
+  const [rootEl, setRootEl] = React.useState<HTMLElement | null>(null);
   const triggerEl = dom.getTabTriggerEl(value, props.id);
   const cameraEl = dom.getTabContentCameraEl(props.id);
   const triggerSize = useSize(triggerEl);
@@ -27,6 +28,10 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
   const tabEnabledValues = dom.getEnabledValues(props.id);
   const currentTabIndex = dom.getTabIndex(value, props.id);
   const currentTabEnabledIndex = dom.getTabIndexOnlyEnabled(value, props.id);
+
+  useLayoutEffect(() => {
+    setRootEl(dom.getRootEl(props.id));
+  }, [props.id]);
 
   const events = {
     moveNext: () => {
@@ -53,6 +58,7 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
 
   return {
     value,
+    rootEl,
     triggerSize: {
       width: triggerSize?.width || 0,
       height: triggerSize?.height || 0,
@@ -89,6 +95,7 @@ export function useTabs(props: UseTabsProps) {
     focusedValue,
     hoveredValue,
     isFocusVisible,
+    rootEl,
   } = useTabsState({
     id,
     ...props,
@@ -102,8 +109,6 @@ export function useTabs(props: UseTabsProps) {
     swipeConfig,
     ...restProps
   } = props;
-
-  const rootEl = dom.getRootEl(id);
 
   const updateIndicatorStyle = React.useCallback(() => {
     if (rootEl) {

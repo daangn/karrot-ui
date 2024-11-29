@@ -213,7 +213,7 @@ export const TabContentList = React.forwardRef<
       currentTabEnabledIndex === tabEnabledCount - 1;
     const swipeOffset = isSide ? swipeMoveX / MODIFIER : swipeMoveX;
 
-    return `calc(var(--seed-design-tab-index) * var(--seed-design-tab-camera-width) * -1px + ${swipeOffset}px)`;
+    return `calc(var(--seed-design-current-tab-index) * var(--seed-design-tab-camera-width) * -1px + ${swipeOffset}px)`;
   };
 
   return (
