@@ -118,18 +118,24 @@ export function useTabs(props: UseTabsProps) {
     };
 
     const rootEl = dom.getRootEl(id);
-    rootEl.style.setProperty("--seed-design-tab-indicator-left", `${getLeft()}px`);
-    rootEl.style.setProperty("--seed-design-tab-indicator-width", `${getWidth()}px`);
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-tab-indicator-left", `${getLeft()}px`);
+      rootEl.style.setProperty("--seed-design-tab-indicator-width", `${getWidth()}px`);
+    }
   }, [layout, triggerSize, id]);
 
   const updateCameraStyle = React.useCallback(() => {
     const rootEl = dom.getRootEl(id);
-    rootEl.style.setProperty("--seed-design-tab-camera-width", `${cameraSize.width}`);
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-tab-camera-width", `${cameraSize.width}`);
+    }
   }, [cameraSize, id]);
 
   const updateIndex = React.useCallback(() => {
     const rootEl = dom.getRootEl(id);
-    rootEl.style.setProperty("--seed-design-tab-index", `${currentTabIndex}`);
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-tab-index", `${currentTabIndex}`);
+    }
   }, [currentTabIndex, id]);
 
   useLayoutEffect(() => {
