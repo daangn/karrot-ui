@@ -30,6 +30,11 @@
     overflow: auto;
 }
 .tabs__indicator {
+    position: absolute;
+    will-change: left, width;
+    transition: left 0.2s cubic-bezier(0.15, 0.3, 0.25, 1), width 0.2s cubic-bezier(0.15, 0.3, 0.25, 1);
+    left: var(--seed-design-tab-indicator-left, 0px);
+    width: var(--seed-design-tab-indicator-width, 0px);
     color: var(--seed-v3-color-fg-neutral);
     border-bottom: 2px solid var(--seed-v3-color-fg-neutral);
     bottom: 0;
@@ -38,7 +43,15 @@
     padding: 0px 0px;
     justify-content: space-around;
 }
+.tabs__indicator--layout_fill {
+    left: calc(var(--seed-design-tab-indicator-left, 0px) + 16px);
+    width: calc(var(--seed-design-tab-indicator-width, 0px) - 32px);
+}
 .tabs__triggerList--layout_hug {
     padding: 0px var(--seed-v3-unit-x4);
     justify-content: flex-start;
+}
+.tabs__indicator--layout_hug {
+    left: calc(var(--seed-design-tab-indicator-left, 0px));
+    width: calc(var(--seed-design-tab-indicator-width, 0px));
 }

@@ -40,6 +40,12 @@ const tabs = defineRecipe({
       overflow: "auto",
     },
     indicator: {
+      position: "absolute",
+      willChange: "left, width",
+      transition:
+        "left 0.2s cubic-bezier(0.15, 0.3, 0.25, 1), width 0.2s cubic-bezier(0.15, 0.3, 0.25, 1)",
+      left: "var(--seed-design-tab-indicator-left, 0px)",
+      width: "var(--seed-design-tab-indicator-width, 0px)",
       color: vars.base.enabled.indicator.color,
       borderBottom: `${vars.base.enabled.indicator.height} solid ${vars.base.enabled.indicator.color}`,
       bottom: 0,
@@ -52,11 +58,19 @@ const tabs = defineRecipe({
           padding: `0px ${vars.layoutFill.enabled.root.paddingX}`,
           justifyContent: "space-around",
         },
+        indicator: {
+          left: "calc(var(--seed-design-tab-indicator-left, 0px) + 16px)",
+          width: "calc(var(--seed-design-tab-indicator-width, 0px) - 32px)",
+        },
       },
       hug: {
         triggerList: {
           padding: `0px ${vars.layoutHug.enabled.root.paddingX}`,
           justifyContent: "flex-start",
+        },
+        indicator: {
+          left: "calc(var(--seed-design-tab-indicator-left, 0px))",
+          width: "calc(var(--seed-design-tab-indicator-width, 0px))",
         },
       },
     },

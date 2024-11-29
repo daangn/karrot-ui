@@ -6,6 +6,8 @@ import type { ContentProps, TriggerProps, UseTabsProps, UseTabsStateProps } from
 
 import { useSize } from "@radix-ui/react-use-size";
 
+const useLayoutEffect = globalThis?.document ? React.useLayoutEffect : React.useEffect;
+
 function useTabsState(props: UseTabsStateProps & { id: string }) {
   const [value, setValue] = useControllableState({
     prop: props.value,
@@ -16,13 +18,20 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
   const [activeValue, setActiveValue] = React.useState<string | null>(null);
   const [focusedValue, setFocusedValue] = React.useState<string | null>(null);
   const [isFocusVisible, setIsFocusVisible] = React.useState(false);
+  const [rootEl, setRootEl] = React.useState<HTMLElement | null>(null);
   const triggerEl = dom.getTabTriggerEl(value, props.id);
+  const cameraEl = dom.getTabContentCameraEl(props.id);
   const triggerSize = useSize(triggerEl);
+  const cameraSize = useSize(cameraEl);
 
   const tabValues = dom.getAllValues(props.id);
   const tabEnabledValues = dom.getEnabledValues(props.id);
   const currentTabIndex = dom.getTabIndex(value, props.id);
   const currentTabEnabledIndex = dom.getTabIndexOnlyEnabled(value, props.id);
+
+  useLayoutEffect(() => {
+    setRootEl(dom.getRootEl(props.id));
+  }, [props.id]);
 
   const events = {
     moveNext: () => {
@@ -49,10 +58,15 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
 
   return {
     value,
+    rootEl,
     triggerSize: {
       width: triggerSize?.width || 0,
       height: triggerSize?.height || 0,
       left: triggerEl?.offsetLeft || 0,
+    },
+    cameraSize: {
+      width: cameraSize?.width || 0,
+      height: cameraSize?.height || 0,
     },
     hoveredValue,
     activeValue,
@@ -76,10 +90,12 @@ export function useTabs(props: UseTabsProps) {
     tabValues,
     tabEnabledValues,
     triggerSize,
+    cameraSize,
     activeValue,
     focusedValue,
     hoveredValue,
     isFocusVisible,
+    rootEl,
   } = useTabsState({
     id,
     ...props,
@@ -87,7 +103,6 @@ export function useTabs(props: UseTabsProps) {
   const {
     value: omitValue,
     defaultValue: omitDefaultValue,
-    layout,
     onValueChange: omitOnValueChange,
     isSwipeable = false,
     orientation = "horizontal",
@@ -95,13 +110,63 @@ export function useTabs(props: UseTabsProps) {
     ...restProps
   } = props;
 
+  const updateIndicatorStyle = React.useCallback(() => {
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-tab-indicator-left", `${triggerSize.left}px`);
+      rootEl.style.setProperty("--seed-design-tab-indicator-width", `${triggerSize.width}px`);
+    }
+  }, [triggerSize, rootEl]);
+
+  const updateCameraStyle = React.useCallback(() => {
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-tab-camera-width", `${cameraSize.width}`);
+    }
+  }, [cameraSize, rootEl]);
+
+  const updateCurrentIndex = React.useCallback(() => {
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-current-tab-index", `${currentTabIndex}`);
+    }
+  }, [currentTabIndex, rootEl]);
+
+  const updateTabCount = React.useCallback(() => {
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-tab-count", `${tabValues.length}`);
+    }
+  }, [tabValues.length, rootEl]);
+
+  useLayoutEffect(() => {
+    updateIndicatorStyle();
+    window.addEventListener("resize", updateIndicatorStyle);
+    return () => {
+      window.removeEventListener("resize", updateIndicatorStyle);
+    };
+  }, [updateIndicatorStyle]);
+
+  useLayoutEffect(() => {
+    updateCameraStyle();
+    window.addEventListener("resize", updateCameraStyle);
+    return () => {
+      window.removeEventListener("resize", updateCameraStyle);
+    };
+  }, [updateCameraStyle]);
+
+  useLayoutEffect(() => {
+    updateCurrentIndex();
+  }, [updateCurrentIndex]);
+
+  useLayoutEffect(() => {
+    updateTabCount();
+  }, [updateTabCount]);
+
   return {
     value,
     triggerSize,
     currentTabIndex,
     currentTabEnabledIndex,
-    tabCount: tabValues.length,
     tabEnabledCount: tabEnabledValues.length,
+
+    tabCount: tabValues.length,
 
     moveNext: events.moveNext,
     movePrev: events.movePrev,

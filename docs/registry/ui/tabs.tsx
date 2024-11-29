@@ -208,17 +208,12 @@ export const TabContentList = React.forwardRef<
   const getCameraTranslateX = () => {
     const MODIFIER = 5;
 
-    const currentContentOffsetX = currentTabEnabledIndex * 100;
+    const isSide =
+      currentTabEnabledIndex === 0 ||
+      currentTabEnabledIndex === tabEnabledCount - 1;
+    const swipeOffset = isSide ? swipeMoveX / MODIFIER : swipeMoveX;
 
-    if (swipeMoveX > 0 && currentTabEnabledIndex === 0) {
-      return `calc(-${currentContentOffsetX}% + ${swipeMoveX / MODIFIER}px)`;
-    }
-
-    if (swipeMoveX < 0 && currentTabEnabledIndex === tabEnabledCount - 1) {
-      return `calc(-${currentContentOffsetX}% + ${swipeMoveX / MODIFIER}px)`;
-    }
-
-    return `calc(-${currentContentOffsetX}% + ${swipeMoveX}px)`;
+    return `calc(var(--seed-design-current-tab-index) * var(--seed-design-tab-camera-width) * -1px + ${swipeOffset}px)`;
   };
 
   return (
@@ -280,51 +275,9 @@ const TabIndicator = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...otherProps }, ref) => {
-  const { api, classNames, isSwipeable, layout } = useTabsContext();
-  const {
-    tabIndicatorProps,
-    triggerSize,
-    currentTabIndex,
-    swipeMoveX,
-    tabCount,
-    swipeStatus,
-  } = api;
+  const { api, classNames } = useTabsContext();
+  const { tabIndicatorProps } = api;
   const { indicator } = classNames;
-  const { left: triggerLeft, width: triggerWidth } = triggerSize;
-
-  const getLeft = () => {
-    const MODIFIER = layout === "hug" ? 10 : 5;
-    const GUTTER = layout === "fill" ? 16 : 0;
-
-    // 양끝 탭에서 스와이프로 인한 이동은 MODIFIER를 5배로 늘려서 완전 조금 이동하도록 함
-    if (
-      (swipeMoveX > 0 && currentTabIndex === 0) ||
-      (swipeMoveX < 0 && currentTabIndex === tabCount - 1)
-    ) {
-      return `calc(${GUTTER}px + ${triggerLeft}px - ${swipeMoveX / (MODIFIER * 5)}px)`;
-    }
-
-    return `calc(${GUTTER}px + ${triggerLeft}px - ${swipeMoveX / MODIFIER}px)`;
-  };
-
-  const getWidth = () => {
-    const GUTTER = 16;
-
-    if (layout === "hug") {
-      return triggerWidth;
-    }
-
-    return triggerWidth - GUTTER * 2;
-  };
-
-  const leftTransition =
-    isSwipeable && swipeStatus === "idle"
-      ? "left 0.2s cubic-bezier(0.15, 0.3, 0.25, 1)"
-      : "";
-  const widthTransition = "width 0.2s cubic-bezier(0.15, 0.3, 0.25, 1)";
-  const transitions = [leftTransition, widthTransition]
-    .filter(Boolean)
-    .join(", ");
 
   return (
     <div
@@ -332,14 +285,6 @@ const TabIndicator = React.forwardRef<
       {...tabIndicatorProps}
       className={clsx(indicator, className)}
       {...otherProps}
-      style={{
-        ...otherProps.style,
-        position: "absolute",
-        width: getWidth(),
-        left: getLeft(),
-        willChange: "left, width",
-        transition: isSwipeable ? transitions : "none",
-      }}
     />
   );
 });

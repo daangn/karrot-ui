@@ -18,18 +18,24 @@ description: 설명 # TODO
   name="SegmentedControlProps"
 />
 
-### `SegmentedControlOption`
+<Callout type="info">
+
+`value`와 `defaultValue` 중 아무것도 제공하지 않으면, 첫 번째 `SegmentControlTrigger`의 `value`를 `defaultValue`로 사용해요.
+
+</Callout>
+
+### `SegmentedControlTrigger`
 
 <AutoTypeTable
   path="./registry/ui/segmented-control.tsx"
-  name="SegmentedControlOptionProps"
+  name="SegmentedControlTriggerProps"
 />
 
 ## 예제
 
 ### 최소 너비보다 넓은 옵션 레이블
 
-Pill 형태의 `SegmentControlOption` 한 개는 86px의 최소 너비를 가져요. 제공한 옵션 중 이 너비를 초과하는 옵션이 있다면, 가장 긴 옵션의 너비에 모든 옵션의 너비가 맞춰져요.
+Pill 형태의 `SegmentControlTrigger` 한 개는 86px의 최소 너비를 가져요. 제공한 옵션 중 이 너비를 초과하는 옵션이 있다면, 가장 긴 옵션의 너비에 모든 옵션의 너비가 맞춰져요.
 
 <ComponentExample name="segmented-control-long-label" />
 

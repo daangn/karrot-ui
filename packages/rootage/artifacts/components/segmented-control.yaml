@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=./schema.json
+# parts: root, trigger, indicator
 kind: ComponentSpec
 metadata:
   id: segmented-control
@@ -10,7 +11,7 @@ data:
         padding: $unit.x1
         cornerRadius: $radius.full
         color: $color.bg.neutral-weak
-      segment:
+      trigger:
         height: $unit.x8
         cornerRadius: $radius.full
         paddingX: $unit.x4
@@ -19,19 +20,19 @@ data:
         lineHeight: $line-height.t5
         fontWeight: $font-weight.medium
         color: $color.fg.neutral-muted
-      selectedIndicator:
+      indicator:
         cornerRadius: $radius.full
         color: $color.bg.layer-default
     pressed:
-      segment:
+      trigger:
         color: $color.bg.neutral-weak-pressed
     selected:
-      segment:
+      trigger:
         color: $color.fg.neutral
         fontWeight: $font-weight.bold
     selected,pressed:
-      segment:
+      trigger:
         color: $color.bg.layer-default-pressed
     disabled:
-      segment:
+      trigger:
         color: $color.fg.disabled
