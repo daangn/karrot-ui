@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SegmentedControl, SegmentedControlOption } from "seed-design/ui/segmented-control";
+import { SegmentedControl, SegmentedControlTrigger } from "seed-design/ui/segmented-control";
 
 export default function SegmentedControlPreview() {
   const options = ["New", "Hot"];
@@ -11,9 +11,9 @@ export default function SegmentedControlPreview() {
     <div className="flex flex-col gap-3 items-center text-center">
       <SegmentedControl value={value} defaultValue="New" onValueChange={setValue}>
         {options.map((option) => (
-          <SegmentedControlOption key={option} value={option}>
+          <SegmentedControlTrigger key={option} value={option}>
             {option}
-          </SegmentedControlOption>
+          </SegmentedControlTrigger>
         ))}
       </SegmentedControl>
       <div>Selected value: {value}</div>

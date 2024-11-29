@@ -43,7 +43,15 @@
     padding: 0px 0px;
     justify-content: space-around;
 }
+.tabs__indicator--layout_fill {
+    left: calc(var(--seed-design-tab-indicator-left, 0px) + 16px);
+    width: calc(var(--seed-design-tab-indicator-width, 0px) - 32px);
+}
 .tabs__triggerList--layout_hug {
     padding: 0px var(--seed-v3-unit-x4);
     justify-content: flex-start;
+}
+.tabs__indicator--layout_hug {
+    left: calc(var(--seed-design-tab-indicator-left, 0px));
+    width: calc(var(--seed-design-tab-indicator-width, 0px));
 }

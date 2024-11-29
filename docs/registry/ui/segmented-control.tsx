@@ -42,9 +42,7 @@ export const SegmentedControl = React.forwardRef<
   ReactSegmentedControlProps
 >(({ className, children, style, ...otherProps }, ref) => {
   const api = useTabs(otherProps);
-  const { tabTriggerListProps, triggerSize, tabIndicatorProps } = api;
-
-  const { left, width } = triggerSize;
+  const { tabIndicatorProps, rootProps } = api;
 
   // TODO: value/defaultvalue 없는 경우 첫 번째 아이템으로 default (tabs 참고)
 
@@ -56,10 +54,18 @@ export const SegmentedControl = React.forwardRef<
         ...style,
         // XXX: tabCount 썼을 때 hydration 문제
         gridTemplateColumns: `repeat(${React.Children.count(children)}, 1fr)`,
+        ...{
+          "--seed-design-segmented-control-indicator-left":
+            "var(--seed-design-tab-indicator-left)",
+          "--seed-design-segmented-control-indicator-width":
+            "var(--seed-design-tab-indicator-width)",
+          "--seed-design-segmented-control-index":
+            "var(--seed-design-tab-index)",
+        },
       }}
       className={clsx(classNames.root, className)}
       ref={ref}
-      {...tabTriggerListProps}
+      {...rootProps}
       {...otherProps}
     >
       <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>
@@ -67,32 +73,30 @@ export const SegmentedControl = React.forwardRef<
         aria-hidden
         className={classNames.selectedIndicator}
         {...tabIndicatorProps}
-        style={{ left, width }}
       />
     </div>
   );
 });
 SegmentedControl.displayName = "SegmentedControl";
 
-export interface SegmentedControlOptionProps
+export interface SegmentedControlTriggerProps
   extends SegmentedControlVariantProps,
     Omit<TriggerProps, "isDisabled"> {}
 
-type ReactSegmentedControlOptionProps = Assign<
+type ReactSegmentedControlTriggerProps = Assign<
   React.HTMLAttributes<HTMLButtonElement>,
-  SegmentedControlOptionProps
+  SegmentedControlTriggerProps
 >;
 
-export const SegmentedControlOption = React.forwardRef<
+export const SegmentedControlTrigger = React.forwardRef<
   HTMLButtonElement,
-  ReactSegmentedControlOptionProps
+  ReactSegmentedControlTriggerProps
 >(({ className, children, value, ...otherProps }, ref) => {
   const {
     api: { getTabTriggerProps },
   } = useTabsContext();
 
   const { rootProps, labelProps } = getTabTriggerProps({ value });
-
   const classNames = segmentedControl();
 
   return (
@@ -102,7 +106,7 @@ export const SegmentedControlOption = React.forwardRef<
       {...rootProps}
       {...otherProps}
     >
-      <div className={classNames.triggerLabel} {...labelProps} tabIndex={-1}>
+      <div className={classNames.triggerLabel} {...labelProps}>
         {children}
       </div>
       <div aria-hidden className={classNames.triggerLabelPlaceholder}>
@@ -112,4 +116,4 @@ export const SegmentedControlOption = React.forwardRef<
   );
 });
 
-SegmentedControlOption.displayName = "SegmentedControlOption";
+SegmentedControlTrigger.displayName = "SegmentedControlOption";

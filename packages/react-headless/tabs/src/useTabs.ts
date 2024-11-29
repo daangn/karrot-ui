@@ -105,24 +105,12 @@ export function useTabs(props: UseTabsProps) {
   } = props;
 
   const updateIndicatorStyle = React.useCallback(() => {
-    const getLeft = () => {
-      const GUTTER = layout === "fill" ? 16 : 0;
-      return GUTTER + triggerSize.left;
-    };
-
-    const getWidth = () => {
-      const GUTTER = 16;
-
-      if (layout === "hug") return triggerSize.width;
-      return triggerSize.width - GUTTER * 2;
-    };
-
     const rootEl = dom.getRootEl(id);
     if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tab-indicator-left", `${getLeft()}px`);
-      rootEl.style.setProperty("--seed-design-tab-indicator-width", `${getWidth()}px`);
+      rootEl.style.setProperty("--seed-design-tab-indicator-left", `${triggerSize.left}px`);
+      rootEl.style.setProperty("--seed-design-tab-indicator-width", `${triggerSize.width}px`);
     }
-  }, [layout, triggerSize, id]);
+  }, [triggerSize, id]);
 
   const updateCameraStyle = React.useCallback(() => {
     const rootEl = dom.getRootEl(id);
