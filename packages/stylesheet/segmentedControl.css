@@ -69,8 +69,8 @@
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-layer-default);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 5%);
-    will-change: left, width;
-    transition: left 0.2s, width 0.2s;
+    will-change: left;
+    transition: left 0.2s;
     left: var(--seed-design-segmented-control-indicator-left, 0px);
     width: var(--seed-design-segmented-control-indicator-width, 0px);
 }

@@ -116,9 +116,9 @@ const segmentedControl = defineRecipe({
       // XXX: token으로 교체
       boxShadow: "0 1px 6px rgba(0, 0, 0, 5%)",
 
-      willChange: "left, width",
+      willChange: "left",
       // XXX: 임의
-      transition: "left 0.2s, width 0.2s",
+      transition: "left 0.2s",
 
       left: "var(--seed-design-segmented-control-indicator-left, 0px)",
       width: "var(--seed-design-segmented-control-indicator-width, 0px)",
