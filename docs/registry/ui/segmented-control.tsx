@@ -71,7 +71,7 @@ export const SegmentedControl = React.forwardRef<
       <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>
       <div
         aria-hidden
-        className={classNames.selectedIndicator}
+        className={classNames.indicator}
         {...tabIndicatorProps}
       />
     </div>
