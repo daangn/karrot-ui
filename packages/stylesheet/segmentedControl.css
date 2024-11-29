@@ -8,7 +8,7 @@
     background-color: var(--seed-v3-color-bg-neutral-weak);
     box-sizing: border-box;
 }
-.segmentedControl__segment {
+.segmentedControl__trigger {
     border: none;
     padding: 0;
     background-color: transparent;
@@ -23,13 +23,13 @@
     user-select: none;
     line-height: var(--seed-v3-line-height-t5);
 }
-.segmentedControl__segment:is(:active, [data-active]) {
+.segmentedControl__trigger:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
-.segmentedControl__segment:is(:selected, [data-selected]):is(:active, [data-active]) {
+.segmentedControl__trigger:is(:selected, [data-selected]):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
-.segmentedControl__segmentLabel {
+.segmentedControl__triggerLabel {
     position: absolute;
     inset-inline: 0;
     transform: translateY(-50%);
@@ -43,14 +43,14 @@
     overflow: hidden;
     color: var(--seed-v3-color-fg-neutral-muted);
 }
-.segmentedControl__segmentLabel:is(:selected, [data-selected]) {
+.segmentedControl__triggerLabel:is(:selected, [data-selected]) {
     color: var(--seed-v3-color-fg-neutral);
     font-weight: var(--seed-v3-font-weight-bold);
 }
-.segmentedControl__segmentLabel:is(:disabled, [disabled], [data-disabled]) {
+.segmentedControl__triggerLabel:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.segmentedControl__segmentLabelPlaceholder {
+.segmentedControl__triggerLabelPlaceholder {
     padding-inline: var(--seed-v3-unit-x4);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);

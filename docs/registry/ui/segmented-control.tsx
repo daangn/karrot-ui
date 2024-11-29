@@ -98,14 +98,14 @@ export const SegmentedControlOption = React.forwardRef<
   return (
     <button
       ref={ref}
-      className={clsx(classNames.segment, className)}
+      className={clsx(classNames.trigger, className)}
       {...rootProps}
       {...otherProps}
     >
-      <div className={classNames.segmentLabel} {...labelProps} tabIndex={-1}>
+      <div className={classNames.triggerLabel} {...labelProps} tabIndex={-1}>
         {children}
       </div>
-      <div aria-hidden className={classNames.segmentLabelPlaceholder}>
+      <div aria-hidden className={classNames.triggerLabelPlaceholder}>
         {children}
       </div>
     </button>
