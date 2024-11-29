@@ -8,7 +8,7 @@ type SegmentedControlVariantMap = {
 
 export type SegmentedControlVariantProps = Partial<SegmentedControlVariant>;
 
-export type SegmentedControlSlotName = "root" | "trigger" | "triggerLabel" | "triggerLabelPlaceholder" | "indicator";
+export type SegmentedControlSlotName = "root" | "rootBeforeMounted" | "trigger" | "triggerLabel" | "triggerLabelPlaceholder" | "indicator";
 
 export const segmentedControlVariantMap: SegmentedControlVariantMap;
 

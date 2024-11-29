@@ -6,10 +6,15 @@
     position: relative;
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
+    grid-template-columns: repeat(var(--seed-design-segmented-control-tab-count, 0), 1fr);
     box-sizing: border-box;
-    --seed-design-segmented-control-index: var(--seed-design-tab-index);
+    --seed-design-segmented-control-current-tab-index: var(--seed-design-current-tab-index);
     --seed-design-segmented-control-indicator-left: var(--seed-design-tab-indicator-left);
     --seed-design-segmented-control-indicator-width: var(--seed-design-tab-indicator-width);
+    --seed-design-segmented-control-tab-count: var(--seed-design-tab-count);
+}
+.segmentedControl__rootBeforeMounted {
+    display: flex;
 }
 .segmentedControl__trigger {
     border: none;

@@ -40,7 +40,7 @@ export const SegmentedControl = React.forwardRef<
   // HTMLFieldSetElement,
   HTMLDivElement,
   ReactSegmentedControlProps
->(({ className, children, style, ...otherProps }, ref) => {
+>(({ className, children, ...otherProps }, ref) => {
   const api = useTabs(otherProps);
   const { tabIndicatorProps, tabTriggerListProps, rootProps } = api;
 
@@ -48,14 +48,22 @@ export const SegmentedControl = React.forwardRef<
 
   const classNames = segmentedControl();
 
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <div
-      style={style}
-      className={clsx(classNames.root, className)}
-      ref={ref}
-      {...rootProps}
-    >
-      <div {...tabTriggerListProps}>
+    <div ref={ref} {...rootProps}>
+      <div
+        className={clsx(
+          !mounted && classNames.rootBeforeMounted,
+          classNames.root,
+          className,
+        )}
+        {...tabTriggerListProps}
+      >
         <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>
         <div
           aria-hidden
