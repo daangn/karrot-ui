@@ -18,11 +18,6 @@ export interface UseTabsProps extends UseTabsStateProps {
    */
   orientation?: "horizontal" | "vertical";
 
-  /**
-   * @default "hug"
-   */
-  layout?: "fill" | "hug";
-
   swipeConfig?: {
     /**
      * @default 0.3

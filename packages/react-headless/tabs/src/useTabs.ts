@@ -96,7 +96,6 @@ export function useTabs(props: UseTabsProps) {
   const {
     value: omitValue,
     defaultValue: omitDefaultValue,
-    layout = "hug",
     onValueChange: omitOnValueChange,
     isSwipeable = false,
     orientation = "horizontal",
