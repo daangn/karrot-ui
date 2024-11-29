@@ -4,14 +4,7 @@ import { disabled, active, pseudo, selected } from "./pseudo";
 
 const segmentedControl = defineRecipe({
   name: "segmentedControl",
-  slots: [
-    "root",
-    "rootBeforeMounted",
-    "trigger",
-    "triggerLabel",
-    "triggerLabelPlaceholder",
-    "indicator",
-  ],
+  slots: ["root", "trigger", "triggerLabel", "triggerLabelPlaceholder", "indicator"],
   base: {
     root: {
       display: "grid",
@@ -38,9 +31,6 @@ const segmentedControl = defineRecipe({
         "--seed-design-segmented-control-indicator-width": "var(--seed-design-tab-indicator-width)",
         "--seed-design-segmented-control-tab-count": "var(--seed-design-tab-count)",
       },
-    },
-    rootBeforeMounted: {
-      display: "flex",
     },
     trigger: {
       // XXX: css reset 생기면 제거

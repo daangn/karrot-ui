@@ -33,35 +33,37 @@ export interface SegmentedControlProps
   extends SegmentedControlVariantProps,
     Pick<UseTabsProps, "value" | "defaultValue" | "onValueChange"> {}
 
-type ReactSegmentedControlProps = SegmentedControlProps &
-  Assign<React.HTMLAttributes<HTMLDivElement>, UseTabsProps>;
+type ReactSegmentedControlProps = Assign<
+  React.HTMLAttributes<HTMLDivElement>,
+  SegmentedControlProps
+>;
 
 export const SegmentedControl = React.forwardRef<
-  // HTMLFieldSetElement,
   HTMLDivElement,
   ReactSegmentedControlProps
 >(({ className, children, ...otherProps }, ref) => {
-  const api = useTabs(otherProps);
-  const { tabIndicatorProps, tabTriggerListProps, rootProps } = api;
+  const api = useTabs({
+    ...otherProps,
+    ...(!otherProps.value &&
+      !otherProps.defaultValue && {
+        defaultValue: React.Children.toArray(children).find((child) =>
+          React.isValidElement(child),
+        )?.props.value,
+      }),
+  });
 
-  // TODO: value/defaultvalue 없는 경우 첫 번째 아이템으로 default (tabs 참고)
+  const { tabIndicatorProps, tabTriggerListProps, rootProps } = api;
 
   const classNames = segmentedControl();
 
   const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  React.useEffect(() => setMounted(true), []);
 
   return (
     <div ref={ref} {...rootProps}>
       <div
-        className={clsx(
-          !mounted && classNames.rootBeforeMounted,
-          classNames.root,
-          className,
-        )}
+        {...(!mounted && { style: { display: "flex" } })}
+        className={clsx(classNames.root, className)}
         {...tabTriggerListProps}
       >
         <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>

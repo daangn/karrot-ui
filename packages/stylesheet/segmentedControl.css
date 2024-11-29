@@ -13,9 +13,6 @@
     --seed-design-segmented-control-indicator-width: var(--seed-design-tab-indicator-width);
     --seed-design-segmented-control-tab-count: var(--seed-design-tab-count);
 }
-.segmentedControl__rootBeforeMounted {
-    display: flex;
-}
 .segmentedControl__trigger {
     border: none;
     padding: 0;

@@ -6,10 +6,6 @@ const segmentedControlSlotNames = [
     "segmentedControl__root"
   ],
   [
-    "rootBeforeMounted",
-    "segmentedControl__rootBeforeMounted"
-  ],
-  [
     "trigger",
     "segmentedControl__trigger"
   ],
