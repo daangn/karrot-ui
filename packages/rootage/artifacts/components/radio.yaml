@@ -58,6 +58,3 @@ data:
         size: $unit.x4_5
       icon:
         size: $unit.x2
-    disabled:
-      icon:
-        size: $unit.x2

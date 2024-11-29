@@ -82,11 +82,6 @@ export const vars = {
       "icon": {
         "size": "var(--seed-v3-unit-x2)"
       }
-    },
-    "disabled": {
-      "icon": {
-        "size": "var(--seed-v3-unit-x2)"
-      }
     }
   }
 }
