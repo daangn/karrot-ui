@@ -46,7 +46,11 @@ export const IconBottomInfomation = () => {
             {isFigmaNotPublishedIcon && (
               <div className="text-seed-fg-danger text-xs">
                 <span className="font-bold">[피그마 컴포넌트로 배포되지 않은 아이콘]</span>
-                <span> 해당 아이콘은 남용이 불가능합니다. 디자인 코어팀에 문의해주세요.</span>
+                <span>
+                  {" "}
+                  해당 아이콘은 특정 컴포넌트를 위해 특수제작된 아이콘입니다. 디자인 코어팀에
+                  문의해주세요.
+                </span>
               </div>
             )}
             {isFatIcon && (
@@ -64,7 +68,8 @@ export const IconBottomInfomation = () => {
                 <span className="font-bold">[서비스 아이콘]</span>
                 <span>
                   {" "}
-                  해당 아이콘은 서비스 아이콘입니다. 특정 서비스 이외에는 사용이 불가능합니다.
+                  해당 아이콘은 특정 서비스를 위해 특수제작된 아이콘입니다. 특정 서비스 이외에는
+                  사용이 불가능합니다.
                 </span>
               </div>
             )}
