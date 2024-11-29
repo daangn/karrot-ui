@@ -104,27 +104,32 @@ export function useTabs(props: UseTabsProps) {
     ...restProps
   } = props;
 
+  const rootEl = dom.getRootEl(id);
+
   const updateIndicatorStyle = React.useCallback(() => {
-    const rootEl = dom.getRootEl(id);
     if (rootEl) {
       rootEl.style.setProperty("--seed-design-tab-indicator-left", `${triggerSize.left}px`);
       rootEl.style.setProperty("--seed-design-tab-indicator-width", `${triggerSize.width}px`);
     }
-  }, [triggerSize, id]);
+  }, [triggerSize, rootEl]);
 
   const updateCameraStyle = React.useCallback(() => {
-    const rootEl = dom.getRootEl(id);
     if (rootEl) {
       rootEl.style.setProperty("--seed-design-tab-camera-width", `${cameraSize.width}`);
     }
-  }, [cameraSize, id]);
+  }, [cameraSize, rootEl]);
 
-  const updateIndex = React.useCallback(() => {
-    const rootEl = dom.getRootEl(id);
+  const updateCurrentIndex = React.useCallback(() => {
     if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tab-index", `${currentTabIndex}`);
+      rootEl.style.setProperty("--seed-design-current-tab-index", `${currentTabIndex}`);
     }
-  }, [currentTabIndex, id]);
+  }, [currentTabIndex, rootEl]);
+
+  const updateTabCount = React.useCallback(() => {
+    if (rootEl) {
+      rootEl.style.setProperty("--seed-design-tab-count", `${tabValues.length}`);
+    }
+  }, [tabValues.length, rootEl]);
 
   useLayoutEffect(() => {
     updateIndicatorStyle();
@@ -143,8 +148,12 @@ export function useTabs(props: UseTabsProps) {
   }, [updateCameraStyle]);
 
   useLayoutEffect(() => {
-    updateIndex();
-  }, [updateIndex]);
+    updateCurrentIndex();
+  }, [updateCurrentIndex]);
+
+  useLayoutEffect(() => {
+    updateTabCount();
+  }, [updateTabCount]);
 
   return {
     value,

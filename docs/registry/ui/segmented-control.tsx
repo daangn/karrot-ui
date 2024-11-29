@@ -42,7 +42,7 @@ export const SegmentedControl = React.forwardRef<
   ReactSegmentedControlProps
 >(({ className, children, style, ...otherProps }, ref) => {
   const api = useTabs(otherProps);
-  const { tabIndicatorProps, rootProps } = api;
+  const { tabIndicatorProps, tabTriggerListProps, rootProps } = api;
 
   // TODO: value/defaultvalue 없는 경우 첫 번째 아이템으로 default (tabs 참고)
 
@@ -50,30 +50,19 @@ export const SegmentedControl = React.forwardRef<
 
   return (
     <div
-      style={{
-        ...style,
-        // XXX: tabCount 썼을 때 hydration 문제
-        gridTemplateColumns: `repeat(${React.Children.count(children)}, 1fr)`,
-        ...{
-          "--seed-design-segmented-control-indicator-left":
-            "var(--seed-design-tab-indicator-left)",
-          "--seed-design-segmented-control-indicator-width":
-            "var(--seed-design-tab-indicator-width)",
-          "--seed-design-segmented-control-index":
-            "var(--seed-design-tab-index)",
-        },
-      }}
+      style={style}
       className={clsx(classNames.root, className)}
       ref={ref}
       {...rootProps}
-      {...otherProps}
     >
-      <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>
-      <div
-        aria-hidden
-        className={classNames.indicator}
-        {...tabIndicatorProps}
-      />
+      <div {...tabTriggerListProps}>
+        <TabsContext.Provider value={{ api }}>{children}</TabsContext.Provider>
+        <div
+          aria-hidden
+          className={classNames.indicator}
+          {...tabIndicatorProps}
+        />
+      </div>
     </div>
   );
 });

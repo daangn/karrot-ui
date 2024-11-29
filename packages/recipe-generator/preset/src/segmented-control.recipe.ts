@@ -20,8 +20,17 @@ const segmentedControl = defineRecipe({
 
       backgroundColor: vars.base.enabled.root.color,
 
+      gridTemplateColumns: "repeat(var(--seed-design-segmented-control-tab-count, 0), 1fr)",
+
       // XXX: css reset 생기면 제거
       boxSizing: "border-box",
+
+      ...{
+        "--seed-design-segmented-control-current-tab-index": "var(--seed-design-current-tab-index)",
+        "--seed-design-segmented-control-indicator-left": "var(--seed-design-tab-indicator-left)",
+        "--seed-design-segmented-control-indicator-width": "var(--seed-design-tab-indicator-width)",
+        "--seed-design-segmented-control-tab-count": "var(--seed-design-tab-count)",
+      },
     },
     trigger: {
       // XXX: css reset 생기면 제거

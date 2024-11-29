@@ -7,6 +7,9 @@
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
     box-sizing: border-box;
+    --seed-design-segmented-control-index: var(--seed-design-tab-index);
+    --seed-design-segmented-control-indicator-left: var(--seed-design-tab-indicator-left);
+    --seed-design-segmented-control-indicator-width: var(--seed-design-tab-indicator-width);
 }
 .segmentedControl__trigger {
     border: none;
