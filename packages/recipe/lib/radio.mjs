@@ -6,27 +6,16 @@ const radioSlotNames = [
     "radio__root"
   ],
   [
-    "control",
-    "radio__control"
-  ],
-  [
-    "label",
-    "radio__label"
+    "icon",
+    "radio__icon"
   ]
 ];
 
-const defaultVariant = {
-  "size": "medium",
-  "fontWeight": "regular"
-};
+const defaultVariant = {};
 
 const compoundVariants = [];
 
 export const radioVariantMap = {
-  "fontWeight": [
-    "regular",
-    "bold"
-  ],
   "size": [
     "large",
     "medium",

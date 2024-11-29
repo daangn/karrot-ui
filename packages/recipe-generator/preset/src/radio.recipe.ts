@@ -1,92 +1,100 @@
 import { radio as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
-import { disabled, pseudo } from "./pseudo";
-import { radioControl as controlVars } from "@seed-design/vars/component";
+import { checked, disabled, active, pseudo } from "./pseudo";
 
 const radio = defineRecipe({
   name: "radio",
-  slots: ["root", "control", "label"],
+  slots: ["root", "icon"],
   base: {
     root: {
       display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none",
 
-      cursor: "pointer",
+      backgroundColor: vars.base.enabled.root.color,
 
-      gap: vars.base.enabled.root.gap,
+      borderWidth: vars.base.enabled.root.strokeWidth,
+      borderColor: vars.base.enabled.root.strokeColor,
+
+      borderRadius: vars.base.enabled.root.cornerRadius,
+
+      [pseudo(active)]: {
+        backgroundColor: vars.base.enabledPressed.root.color,
+      },
+
+      [pseudo(checked)]: {
+        backgroundColor: vars.base.enabledSelected.root.color,
+        borderWidth: vars.base.enabledSelected.root.strokeWidth,
+      },
+
+      [pseudo(active, checked)]: {
+        backgroundColor: vars.base.enabledSelectedPressed.root.color,
+      },
 
       [pseudo(disabled)]: {
-        cursor: "not-allowed",
+        backgroundColor: vars.base.disabled.root.color,
       },
-    },
-    label: {
-      color: vars.base.enabled.label.color,
 
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.label.color,
+      [pseudo(disabled, checked)]: {
+        backgroundColor: "none",
+        borderColor: vars.base.disabledSelected.root.strokeColor,
       },
     },
-  },
-  defaultVariants: {
-    size: "medium",
-    fontWeight: "regular",
+    icon: {
+      display: "none",
+      borderRadius: vars.base.enabled.icon.cornerRadius,
+
+      [pseudo(checked)]: {
+        display: "block",
+        backgroundColor: vars.base.enabledSelected.icon.color,
+      },
+
+      [pseudo(disabled, checked)]: {
+        backgroundColor: vars.base.disabledSelected.icon.color,
+      },
+    },
   },
   variants: {
-    fontWeight: {
-      regular: {
-        label: {
-          fontWeight: vars.fontWeightRegular.enabled.label.fontWeight,
-        },
-      },
-      bold: {
-        label: {
-          fontWeight: vars.fontWeightBold.enabled.label.fontWeight,
-        },
-      },
-    },
     size: {
       large: {
         root: {
-          minHeight: vars.sizeLarge.enabled.root.minHeight,
+          width: vars.sizeLarge.enabled.root.size,
+          height: vars.sizeLarge.enabled.root.size,
         },
-        control: {
-          marginBlockStart: `calc((${vars.sizeLarge.enabled.root.minHeight} - ${controlVars.sizeLarge.enabled.root.size}) / 2)`,
-        },
-        label: {
-          fontSize: vars.sizeLarge.enabled.label.fontSize,
-          marginBlockStart: vars.sizeLarge.enabled.label.marginYStart,
+        icon: {
+          width: vars.sizeLarge.enabled.icon.size,
+          height: vars.sizeLarge.enabled.icon.size,
 
-          // XXX
-          lineHeight: "1.3125rem",
+          [pseudo(disabled)]: {
+            width: vars.sizeLarge.disabled.icon.size,
+            height: vars.sizeLarge.disabled.icon.size,
+          },
         },
       },
       medium: {
         root: {
-          minHeight: vars.sizeMedium.enabled.root.minHeight,
+          width: vars.sizeMedium.enabled.root.size,
+          height: vars.sizeMedium.enabled.root.size,
         },
-        control: {
-          marginBlockStart: `calc((${vars.sizeMedium.enabled.root.minHeight} - ${controlVars.sizeMedium.enabled.root.size}) / 2)`,
-        },
-        label: {
-          fontSize: vars.sizeMedium.enabled.label.fontSize,
-          marginBlockStart: vars.sizeMedium.enabled.label.marginYStart,
+        icon: {
+          width: vars.sizeMedium.enabled.icon.size,
+          height: vars.sizeMedium.enabled.icon.size,
 
-          // XXX
-          lineHeight: "1.1875rem",
+          [pseudo(disabled)]: {
+            width: vars.sizeMedium.disabled.icon.size,
+            height: vars.sizeMedium.disabled.icon.size,
+          },
         },
       },
       small: {
         root: {
-          minHeight: vars.sizeSmall.enabled.root.minHeight,
+          width: vars.sizeSmall.enabled.root.size,
+          height: vars.sizeSmall.enabled.root.size,
         },
-        control: {
-          marginBlockStart: `calc((${vars.sizeSmall.enabled.root.minHeight} - ${controlVars.sizeSmall.enabled.root.size}) / 2)`,
-        },
-        label: {
-          fontSize: vars.sizeSmall.enabled.label.fontSize,
-          marginBlockStart: vars.sizeSmall.enabled.label.marginYStart,
-
-          // XXX
-          lineHeight: "1.125rem",
+        icon: {
+          width: vars.sizeSmall.enabled.icon.size,
+          height: vars.sizeSmall.enabled.icon.size,
         },
       },
     },

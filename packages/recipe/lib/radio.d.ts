@@ -1,12 +1,5 @@
 interface RadioVariant {
-  /**
-  * @default regular
-  */
-  fontWeight: "regular" | "bold";
-/**
-  * @default medium
-  */
-  size: "large" | "medium" | "small";
+  size: "large" | "medium" | "small"
 }
 
 type RadioVariantMap = {
@@ -15,7 +8,7 @@ type RadioVariantMap = {
 
 export type RadioVariantProps = Partial<RadioVariant>;
 
-export type RadioSlotName = "root" | "control" | "label";
+export type RadioSlotName = "root" | "icon";
 
 export const radioVariantMap: RadioVariantMap;
 

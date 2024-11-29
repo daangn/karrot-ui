@@ -95,11 +95,6 @@ export const registryUI: RegistryUI = [
     files: ["ui:segmented-control.tsx"],
   },
   {
-    name: "radio-group",
-    dependencies: ["@seed-design/react-radio-group@alpha"],
-    files: ["ui:radio-group.tsx"],
-  },
-  {
     name: "switch",
     // TODO: remove alpha
     dependencies: ["@seed-design/react-switch@alpha"],
