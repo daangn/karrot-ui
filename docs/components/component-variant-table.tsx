@@ -9,7 +9,15 @@ import {
   stringifyValueExpression,
   ValueExpression,
 } from "@seed-design/rootage-core";
-import { HourglassIcon, LayersIcon, RulerIcon, SigmaIcon, SplineIcon } from "lucide-react";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  HourglassIcon,
+  LayersIcon,
+  RulerIcon,
+  SigmaIcon,
+  SplineIcon,
+} from "lucide-react";
 import { Fragment, useMemo, useState } from "react";
 
 interface ComponentVariantTableProps {
@@ -151,25 +159,34 @@ function ComponentVariantRow(props: {
       <td>{shouldRenderSlot ? slotKey : null}</td>
       <td>{shouldRenderProperty ? propertyKey : null}</td>
       <td className="align-middle">
-        <div className="flex flex-col gap-1">
-          {isExpanded ? (
-            values.map((value, index) => (
-              <Fragment key={value}>
-                <div className="flex items-center gap-2">
-                  <TypeIndicator resolvedValue={resolvedValue} /> {value}
-                </div>
-                {index < values.length - 1 ? (
-                  <div>
-                    <IconArrowDownLine className="w-3 h-3" />
+        <div className="flex justify-between" aria-expanded={isExpanded}>
+          <div className="flex flex-col gap-1">
+            {isExpanded ? (
+              values.map((value, index) => (
+                <Fragment key={value}>
+                  <div className="flex items-center gap-2">
+                    <TypeIndicator resolvedValue={resolvedValue} /> {value}
                   </div>
-                ) : null}
-              </Fragment>
-            ))
-          ) : (
-            <div className="flex items-center gap-2">
-              <TypeIndicator resolvedValue={resolvedValue} /> {values[0]}
-            </div>
-          )}
+                  {index < values.length - 1 ? (
+                    <div className="flex w-4 h-4 items-center justify-center">
+                      <IconArrowDownLine className="w-3 h-3" />
+                    </div>
+                  ) : null}
+                </Fragment>
+              ))
+            ) : (
+              <div className="flex items-center gap-2">
+                <TypeIndicator resolvedValue={resolvedValue} /> {values[0]}
+              </div>
+            )}
+          </div>
+          <div className="flex h-6 items-center">
+            {isExpanded ? (
+              <ChevronUpIcon className="w-4 h-4" />
+            ) : (
+              <ChevronDownIcon className="w-4 h-4" />
+            )}
+          </div>
         </div>
       </td>
     </tr>
