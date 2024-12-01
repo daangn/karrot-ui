@@ -29,7 +29,7 @@ export async function ComponentSpecBlock(props: ComponentSpecTableProps) {
     return (
       <Fragment key={variantKey}>
         <h3>{variantKey}</h3>
-        <ComponentVariantTable variant={variant} />
+        <ComponentVariantTable rootage={rootage} variant={variant} />
       </Fragment>
     );
   });

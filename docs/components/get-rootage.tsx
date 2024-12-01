@@ -1,4 +1,4 @@
-import { Model, parse } from "@seed-design/rootage-core";
+import { Model, buildRootage } from "@seed-design/rootage-core";
 
 export const getRootage = async () => {
   const index: { resources: { path: string }[] } = await import("@/public/rootage/index.json").then(
@@ -9,5 +9,5 @@ export const getRootage = async () => {
   const models: Model[] = await Promise.all(
     index.resources.map((resource) => import(`@/public/rootage${resource.path}`)),
   );
-  return parse(models);
+  return buildRootage(models);
 };
