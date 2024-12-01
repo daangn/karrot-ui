@@ -2,9 +2,11 @@
 
 import "@seed-design/stylesheet/dialog.css";
 
-import * as React from "react";
 import { dialog } from "@seed-design/recipe/dialog";
+import { useStyleEffect } from "@stackflow/react-ui-core";
+import * as React from "react";
 
+import { useActions, useActivity } from "@stackflow/react";
 import { ActionButton } from "./action-button";
 
 export type AlertDialogProps = {
@@ -21,8 +23,24 @@ export const AlertDialog: React.FC<AlertDialogProps> = ({
   description,
   onInteractOutside,
 }) => {
+  const activity = useActivity();
+  const { pop } = useActions();
+
   const containerRef = React.useRef<HTMLDivElement>(null);
   const backdropRef = React.useRef<HTMLDivElement>(null);
+
+  useStyleEffect({
+    styleName: "hide",
+    refs: [containerRef],
+  });
+  useStyleEffect({
+    styleName: "offset",
+    refs: [backdropRef],
+  });
+  useStyleEffect({
+    styleName: "swipe-back",
+    refs: [backdropRef],
+  });
 
   const popLock = React.useRef(false);
 
@@ -37,10 +55,15 @@ export const AlertDialog: React.FC<AlertDialogProps> = ({
       return;
     }
     popLock.current = true;
+
+    pop();
   };
   const onClickContent: React.MouseEventHandler = (e) => {
     e.stopPropagation();
   };
+
+  const zIndexBase = (activity?.zIndex ?? 0) * 5 + 3;
+  // const transitionState = activity?.transitionState ?? "enter-done";
 
   const classNames = dialog();
 
@@ -48,7 +71,11 @@ export const AlertDialog: React.FC<AlertDialogProps> = ({
     <div
       ref={containerRef}
       role="alertdialog"
+      data-stackflow-component-name="AlertDialog"
+      data-stackflow-activity-id={activity?.id}
+      data-stackflow-activity-is-active={activity?.isActive}
       className={classNames.container}
+      style={{ zIndex: zIndexBase }}
       onClick={onClickOutside}
     >
       <div ref={backdropRef} className={classNames.backdrop} />
@@ -65,4 +92,5 @@ export const AlertDialog: React.FC<AlertDialogProps> = ({
     </div>
   );
 };
+
 AlertDialog.displayName = "AlertDialog";
