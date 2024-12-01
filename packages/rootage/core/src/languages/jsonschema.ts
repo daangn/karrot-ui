@@ -1,9 +1,9 @@
 import dedent from "dedent";
 import { stringifyTokenExpression } from "../token";
-import type { RootageAST } from "../types";
+import type { RootageCtx } from "../types";
 
-export function getJsonSchema(ast: RootageAST): string {
-  const { tokens } = ast;
+export function getJsonSchema(ctx: RootageCtx): string {
+  const { tokens } = ctx;
 
   const tokenAnnotations = tokens.map(({ token, values }) => {
     const title = stringifyTokenExpression(token);

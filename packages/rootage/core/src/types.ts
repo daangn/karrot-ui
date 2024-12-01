@@ -87,10 +87,30 @@ export interface TokenCollectionDeclaration {
   modes: string[];
 }
 
-export interface RootageAST {
+// store
+
+export interface ResolvedTokenResult {
+  path: TokenDeclaration[];
+  value: ValueExpression;
+}
+
+export interface DependencyNode {
+  name: TokenRef;
+  declaration: TokenDeclaration;
+  dependencies: {
+    [mode: string]: TokenRef | undefined;
+  };
+}
+
+export interface DependencyGraph {
+  [tokenRef: TokenRef]: DependencyNode;
+}
+
+export interface RootageCtx {
   componentSpecs: ComponentSpecDeclaration[];
   tokens: TokenDeclaration[];
   tokenCollections: TokenCollectionDeclaration[];
+  dependencyGraph: DependencyGraph;
 }
 
 // models

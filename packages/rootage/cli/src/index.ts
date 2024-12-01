@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 import {
+  buildRootage,
   getComponentSpecTs,
   getJsonSchema,
   getTokenCss,
   getTokenTs,
-  parse,
   validate,
   type Model,
 } from "@seed-design/rootage-core";
@@ -45,8 +45,8 @@ async function prepare() {
     filePaths.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
   );
 
-  const ast = parse(fileContents);
-  const validationResult = validate(ast);
+  const ctx = buildRootage(fileContents);
+  const validationResult = validate(ctx);
 
   if (!validationResult.valid) {
     console.error(validationResult.message);
@@ -54,16 +54,16 @@ async function prepare() {
   }
 
   return {
-    ast,
+    ctx,
     filePaths,
     fileContents,
   };
 }
 
 async function writeTokenTs() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  const results = getTokenTs(ast);
+  const results = getTokenTs(ctx);
 
   for (const result of results) {
     const writePath = path.join(process.cwd(), dir, `${result.path}.vars.ts`);
@@ -75,9 +75,9 @@ async function writeTokenTs() {
 }
 
 async function writeComponentSpec() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  for (const spec of ast.componentSpecs) {
+  for (const spec of ctx.componentSpecs) {
     const code = getComponentSpecTs(spec.data);
     const writePath = path.join(process.cwd(), dir, `${spec.id}.vars.ts`);
 
@@ -88,9 +88,9 @@ async function writeComponentSpec() {
 }
 
 async function writeTokenCss() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  const code = getTokenCss(ast, {
+  const code = getTokenCss(ctx, {
     banner: `:root[data-seed] {
   color-scheme: light dark;
 }
@@ -127,9 +127,9 @@ async function writeTokenCss() {
 }
 
 async function writeJsonSchema() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  const jsonSchema = getJsonSchema(ast);
+  const jsonSchema = getJsonSchema(ctx);
   const writePath = path.join(artifactsDir, "components", "schema.json");
 
   console.log("Writing schema to", writePath);

@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
-import type { Model, TokensModel } from "../types";
+import { buildRootage } from "../build";
+import type { TokensModel } from "../types";
 import { getJsonSchema } from "./jsonschema";
-import { parse } from "../parse";
 
 test("getJsonSchema should generate jsonschema for component spec", () => {
   const models: TokensModel[] = [
@@ -54,7 +54,7 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
     },
   ];
 
-  const result = getJsonSchema(parse(models));
+  const result = getJsonSchema(buildRootage(models));
 
   expect(result).toMatchInlineSnapshot(`
     "{

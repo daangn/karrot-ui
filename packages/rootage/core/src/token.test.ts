@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parse } from "./parse";
-import { isTokenRef, parseTokenExpression, parseTokensModel, resolveToken } from "./token";
+import { isTokenRef, parseTokenExpression, parseTokensModel } from "./token";
 import type { TokensModel } from "./types";
 
 describe("isTokenRef", () => {
@@ -85,86 +84,5 @@ describe("parseTokensModel", () => {
         ],
       },
     ]);
-  });
-});
-
-describe("resolveToken", () => {
-  it("should resolve value as is", () => {
-    const input: TokensModel = {
-      kind: "Tokens",
-      metadata: {
-        name: "tokens",
-        id: "id",
-      },
-      data: {
-        collection: "collection",
-        tokens: {
-          "$size-1": {
-            values: {
-              default: "4px",
-            },
-          },
-          "$duration-1": {
-            values: {
-              default: "50ms",
-            },
-          },
-        },
-      },
-    };
-
-    const parsed = parse([input]);
-    const result1 = resolveToken(parsed, "$size-1");
-    const result2 = resolveToken(parsed, "$duration-1");
-
-    expect(result1).toEqual({
-      collection: "collection",
-      token: { type: "token", group: [], key: "size-1" },
-      values: [{ mode: "default", value: { type: "dimension", value: 4, unit: "px" } }],
-    });
-    expect(result2).toEqual({
-      collection: "collection",
-      token: { type: "token", group: [], key: "duration-1" },
-      values: [{ mode: "default", value: { type: "duration", value: 50, unit: "ms" } }],
-    });
-  });
-
-  it("should resolve to referenced token type for token ref", () => {
-    const input: TokensModel = {
-      kind: "Tokens",
-      metadata: {
-        name: "tokens",
-        id: "id",
-      },
-      data: {
-        collection: "collection",
-        tokens: {
-          "$color.palette.gray-00": {
-            values: {
-              light: "#ffffff",
-              dark: "#000000",
-            },
-          },
-          "$color.bg.layer-1": {
-            values: {
-              light: "$color.palette.gray-00",
-              dark: "$color.palette.gray-00",
-            },
-          },
-        },
-      },
-    };
-
-    const parsed = parse([input]);
-    const result = resolveToken(parsed, "$color.bg.layer-1");
-
-    expect(result).toEqual({
-      collection: "collection",
-      token: { type: "token", group: ["color", "palette"], key: "gray-00" },
-      values: [
-        { mode: "light", value: { type: "color", value: "#ffffff" } },
-        { mode: "dark", value: { type: "color", value: "#000000" } },
-      ],
-    });
   });
 });

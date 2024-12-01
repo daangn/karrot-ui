@@ -1,5 +1,5 @@
 import { camelCase } from "change-case";
-import type { ComponentSpecExpression, RootageAST, TokenExpression } from "../types";
+import type { ComponentSpecExpression, RootageCtx, TokenExpression } from "../types";
 import { stringifyCssValue, stringifyTokenReference } from "./css";
 
 // camelCase but preserve underscore between numbers.
@@ -63,8 +63,8 @@ export function getComponentSpecTs(expressions: ComponentSpecExpression) {
   return `export const vars = ${JSON.stringify(result, null, 2)}`;
 }
 
-export function getTokenTs(ast: RootageAST) {
-  const { tokens } = ast;
+export function getTokenTs(ctx: RootageCtx) {
+  const { tokens } = ctx;
   const tokenExpressions = tokens.map((decl) => decl.token);
 
   const groups: Record<string, TokenExpression[]> = {};

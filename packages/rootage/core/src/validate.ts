@@ -1,13 +1,14 @@
 import { stringifyTokenExpression } from "./token";
-import type { RootageAST } from "./types";
+import type { RootageCtx } from "./types";
 
 interface ValidationResult {
   valid: boolean;
   message: string;
 }
 
-export function validate(ast: RootageAST): ValidationResult {
-  const { componentSpecs, tokens, tokenCollections } = ast;
+// TODO: detect cycle in dependency graph
+export function validate(ctx: RootageCtx): ValidationResult {
+  const { componentSpecs, tokens, tokenCollections } = ctx;
 
   // validate collection names
   const collectionNames = tokenCollections.map((collection) => collection.name);

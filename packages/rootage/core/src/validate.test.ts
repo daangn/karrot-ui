@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parse } from "./parse";
+import { buildRootage } from "./build";
 import type { Model } from "./types";
 import { validate } from "./validate";
 
@@ -55,7 +55,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validate(parse(models));
+    const result = validate(buildRootage(models));
 
     expect(result.valid).toEqual(true);
   });
@@ -82,7 +82,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validate(parse(models));
+    const result = validate(buildRootage(models));
 
     expect(result.valid).toEqual(false);
   });
@@ -122,7 +122,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validate(parse(models));
+    const result = validate(buildRootage(models));
 
     expect(result.valid).toEqual(false);
   });
@@ -161,7 +161,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validate(parse(models));
+    const result = validate(buildRootage(models));
 
     expect(result.valid).toEqual(false);
   });
@@ -199,7 +199,7 @@ describe("validateModels", () => {
       },
     ];
 
-    const result = validate(parse(models));
+    const result = validate(buildRootage(models));
 
     expect(result.valid).toEqual(false);
   });

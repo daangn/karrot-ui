@@ -1,7 +1,7 @@
 import type {
   CubicBezierExpression,
   ValueExpression,
-  RootageAST,
+  RootageCtx,
   ShadowExpression,
   TokenExpression,
 } from "../types";
@@ -65,7 +65,7 @@ export function stringifyCssValue(value: ValueExpression | TokenExpression): str
 }
 
 export function getTokenCss(
-  ast: RootageAST,
+  ctx: RootageCtx,
   options: {
     banner: string;
     selectors: {
@@ -75,7 +75,7 @@ export function getTokenCss(
     };
   },
 ) {
-  const { tokens, tokenCollections } = ast;
+  const { tokens, tokenCollections } = ctx;
 
   const rules = tokenCollections
     .flatMap((collection) => {

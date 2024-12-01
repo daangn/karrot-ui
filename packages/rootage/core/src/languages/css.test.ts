@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { parse } from "../parse";
+import { buildRootage } from "../build";
 import type { Model } from "../types";
 import { getTokenCss, stringifyTokenReference } from "./css";
 
@@ -73,7 +73,7 @@ test("getTokenCss should generate css code", () => {
     },
   ];
 
-  const result = getTokenCss(parse(models), {
+  const result = getTokenCss(buildRootage(models), {
     banner: "",
     selectors: {
       global: {
