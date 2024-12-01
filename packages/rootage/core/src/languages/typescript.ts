@@ -2,9 +2,11 @@ import { camelCase } from "change-case";
 import type { ComponentSpecExpression, RootageCtx, TokenExpression } from "../types";
 import { stringifyCssValue, stringifyTokenReference } from "./css";
 
-// camelCase but preserve underscore between numbers.
-// temporary workaround to avoid x1_5 -> x15
-// "color-1_5" -> "color1_5"
+/**
+ * camelCase but preserve underscore between numbers.
+ * temporary workaround to avoid x1_5 -> x15
+ * @example "color-1_5" -> "color1_5"
+ */
 function camelCasePreserveUnderscoreBetweenNumbers(input: string) {
   return camelCase(input, {
     mergeAmbiguousCharacters: false,
