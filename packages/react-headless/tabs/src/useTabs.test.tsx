@@ -8,6 +8,16 @@ import * as React from "react";
 
 import { useTabs, type ContentProps, type TriggerProps, type UseTabsProps } from "./index";
 
+/**
+ * @see https://github.com/ZeeCoder/use-resize-observer/issues/40#issuecomment-644536259
+ * useSize에서 사용하는 ResizeObserver를 mock으로 대체합니다.
+ */
+class ResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
 function setUp(jsx: ReactElement) {
   return {
     user: userEvent.setup(),
@@ -113,6 +123,8 @@ function UncontrolledTabs({
 afterEach(cleanup);
 
 describe("useTabs", () => {
+  window.ResizeObserver = ResizeObserver;
+
   const tabItems: Record<string, TabItem> = {
     tab1: {
       value: "Tab 1",
@@ -148,6 +160,8 @@ describe("useTabs", () => {
   });
 
   describe("disabled tab test", () => {
+    window.ResizeObserver = ResizeObserver;
+
     const tabItemsWithDisabled: Record<string, TabItem> = {
       tab1: {
         value: "Tab 1",
