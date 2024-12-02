@@ -207,6 +207,7 @@ export function useTabs(props: UseTabsProps) {
 
     tabTriggerListProps: elementProps({
       id: dom.getTabTriggerListId(id),
+      role: "tablist",
       "aria-orientation": orientation,
       "data-orientation": orientation,
     }),
