@@ -6,17 +6,21 @@ import * as styles from "./ControlPanel.css";
 interface ControlPanelProps {
   variantMap: Record<string, string[]>;
   value: Record<string, string>;
-  onChange?: (variant: string, value: string) => void;
+  onValueChange?: (variant: string, value: string) => void;
+  measurements?: Record<string, DOMRect | undefined>;
+  highlightedSlot: string | null;
+  onSlotHighlight?: (slot: string | null) => void;
 }
 
 export const ControlPanel = React.forwardRef<HTMLDivElement, ControlPanelProps>((props, ref) => {
   const { preferences, updatePreferences } = usePreference();
-  const { variantMap } = props;
+  const { variantMap, value, onValueChange, measurements, highlightedSlot, onSlotHighlight } =
+    props;
 
   return (
     <div ref={ref} className={styles.root}>
       <div className={styles.item}>
-        <span className={styles.title}>Show Grid</span>
+        <span className={styles.title}>그리드 표시</span>
         <Switch
           size="medium"
           checked={preferences.showGrid}
@@ -24,10 +28,24 @@ export const ControlPanel = React.forwardRef<HTMLDivElement, ControlPanelProps>(
         />
       </div>
 
+      <div className={styles.item}>
+        <span className={styles.title}>슬롯 하이라이트</span>
+        <select value={highlightedSlot ?? ""} onChange={(e) => onSlotHighlight?.(e.target.value)}>
+          <option value="">None</option>
+          {Object.entries(measurements ?? {}).map(([slot, rect]) =>
+            rect ? (
+              <option key={slot} value={slot}>
+                {slot} ({Math.round(rect.width)} x {Math.round(rect.height)})
+              </option>
+            ) : null,
+          )}
+        </select>
+      </div>
+
       {Object.entries(variantMap).map(([variant, values]) => (
         <div key={variant} className={styles.item}>
           <span className={styles.title}>{variant}</span>
-          <select onChange={(e) => props.onChange?.(variant, e.target.value)}>
+          <select value={value[variant]} onChange={(e) => onValueChange?.(variant, e.target.value)}>
             {values.map((value) => (
               <option key={value} value={value}>
                 {value}
