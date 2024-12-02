@@ -29,25 +29,38 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
   const currentTabIndex = dom.getTabIndex(value, props.id);
   const currentTabEnabledIndex = dom.getTabIndexOnlyEnabled(value, props.id);
 
+  const isFirst = currentTabEnabledIndex === 0;
+  const isLast = currentTabEnabledIndex === tabEnabledValues.length - 1;
+
+  const prevIndex = isFirst
+    ? tabEnabledValues.length - 1
+    : (tabEnabledValues.indexOf(value) - 1 + tabEnabledValues.length) % tabEnabledValues.length;
+
+  const nextIndex = isLast ? 0 : (tabEnabledValues.indexOf(value) + 1) % tabEnabledValues.length;
+
   useLayoutEffect(() => {
     setRootEl(dom.getRootEl(props.id));
   }, [props.id]);
 
   const events = {
+    movePrev: () => {
+      setValue(tabEnabledValues[prevIndex]);
+    },
     moveNext: () => {
-      const isLast = currentTabEnabledIndex === tabEnabledValues.length - 1;
-      if (isLast) return;
-
-      const nextIndex = (tabEnabledValues.indexOf(value) + 1) % tabEnabledValues.length;
       setValue(tabEnabledValues[nextIndex]);
     },
-    movePrev: () => {
-      const isFirst = currentTabEnabledIndex === 0;
-      if (isFirst) return;
+    focusPrev: () => {
+      const prevTriggerEl = dom.getTabTriggerEl(tabEnabledValues[prevIndex], props.id);
 
-      const prevIndex =
-        (tabEnabledValues.indexOf(value) - 1 + tabEnabledValues.length) % tabEnabledValues.length;
-      setValue(tabEnabledValues[prevIndex]);
+      if (prevTriggerEl) prevTriggerEl.focus();
+    },
+    focusCurrent: () => {
+      if (triggerEl) triggerEl.focus();
+    },
+    focusNext: () => {
+      const nextTriggerEl = dom.getTabTriggerEl(tabEnabledValues[nextIndex], props.id);
+
+      if (nextTriggerEl) nextTriggerEl.focus();
     },
     setValue,
     setHoveredValue,
@@ -183,6 +196,7 @@ export function useTabs(props: UseTabsProps) {
 
     tabTriggerListProps: elementProps({
       id: dom.getTabTriggerListId(id),
+      role: "tablist",
       "aria-orientation": orientation,
       "data-orientation": orientation,
     }),
@@ -206,8 +220,6 @@ export function useTabs(props: UseTabsProps) {
         "data-disabled": dataAttr(itemState.isDisabled),
         "aria-disabled": ariaAttr(itemState.isDisabled),
         "aria-selected": ariaAttr(itemState.isSelected),
-        tabIndex: itemState.isSelected ? 0 : -1,
-        disabled: isDisabled,
       };
 
       return {
@@ -215,6 +227,8 @@ export function useTabs(props: UseTabsProps) {
           id: dom.getTabTriggerRootId(triggerValue, id),
           role: "tab",
           type: "button",
+          disabled: isDisabled,
+          tabIndex: itemState.isSelected ? 0 : -1,
           ...itemStateProps,
           "data-value": triggerValue,
           "data-orientation": orientation,
@@ -245,6 +259,64 @@ export function useTabs(props: UseTabsProps) {
           onPointerUp() {
             if (itemState.isDisabled) return;
             events.setActiveValue(null);
+          },
+          onFocus(event) {
+            events.setFocusedValue(triggerValue);
+            events.setIsFocusVisible(event.target.matches(":focus-visible"));
+          },
+          onBlur() {
+            events.setFocusedValue(null);
+            events.setIsFocusVisible(false);
+          },
+          onKeyDown({ key }) {
+            if (itemState.isDisabled) return;
+
+            switch (key) {
+              case "ArrowLeft":
+                if (orientation !== "horizontal") return;
+
+                events.movePrev();
+                events.focusPrev();
+
+                break;
+              case "ArrowRight":
+                if (orientation !== "horizontal") return;
+
+                events.moveNext();
+                events.focusNext();
+
+                break;
+              case "ArrowUp":
+                if (orientation !== "vertical") return;
+
+                events.movePrev();
+                events.focusPrev();
+
+                break;
+              case "ArrowDown":
+                if (orientation !== "vertical") return;
+
+                events.moveNext();
+                events.focusNext();
+
+                break;
+              case "Home":
+                events.setValue(tabEnabledValues[0]);
+
+                break;
+              case "End":
+                events.setValue(tabEnabledValues[tabEnabledValues.length - 1]);
+
+                break;
+              case " ":
+              case "Enter":
+                events.setValue(triggerValue);
+
+                events.focusCurrent();
+                events.setIsFocusVisible(true);
+
+                break;
+            }
           },
         }),
         labelProps: elementProps({
