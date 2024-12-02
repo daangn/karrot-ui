@@ -29,36 +29,27 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
   const currentTabIndex = dom.getTabIndex(value, props.id);
   const currentTabEnabledIndex = dom.getTabIndexOnlyEnabled(value, props.id);
 
+  const isFirst = currentTabEnabledIndex === 0;
+  const isLast = currentTabEnabledIndex === tabEnabledValues.length - 1;
+
+  const prevIndex = isFirst
+    ? tabEnabledValues.length - 1
+    : (tabEnabledValues.indexOf(value) - 1 + tabEnabledValues.length) % tabEnabledValues.length;
+
+  const nextIndex = isLast ? 0 : (tabEnabledValues.indexOf(value) + 1) % tabEnabledValues.length;
+
   useLayoutEffect(() => {
     setRootEl(dom.getRootEl(props.id));
   }, [props.id]);
 
   const events = {
     movePrev: () => {
-      const isFirst = currentTabEnabledIndex === 0;
-
-      const prevIndex = isFirst
-        ? tabEnabledValues.length - 1
-        : (tabEnabledValues.indexOf(value) - 1 + tabEnabledValues.length) % tabEnabledValues.length;
-
       setValue(tabEnabledValues[prevIndex]);
     },
     moveNext: () => {
-      const isLast = currentTabEnabledIndex === tabEnabledValues.length - 1;
-
-      const nextIndex = isLast
-        ? 0
-        : (tabEnabledValues.indexOf(value) + 1) % tabEnabledValues.length;
-
       setValue(tabEnabledValues[nextIndex]);
     },
     focusPrev: () => {
-      const isFirst = currentTabEnabledIndex === 0;
-
-      const prevIndex = isFirst
-        ? tabEnabledValues.length - 1
-        : (tabEnabledValues.indexOf(value) - 1 + tabEnabledValues.length) % tabEnabledValues.length;
-
       const prevTriggerEl = dom.getTabTriggerEl(tabEnabledValues[prevIndex], props.id);
 
       if (prevTriggerEl) prevTriggerEl.focus();
@@ -67,12 +58,6 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
       if (triggerEl) triggerEl.focus();
     },
     focusNext: () => {
-      const isLast = currentTabEnabledIndex === tabEnabledValues.length - 1;
-
-      const nextIndex = isLast
-        ? 0
-        : (tabEnabledValues.indexOf(value) + 1) % tabEnabledValues.length;
-
       const nextTriggerEl = dom.getTabTriggerEl(tabEnabledValues[nextIndex], props.id);
 
       if (nextTriggerEl) nextTriggerEl.focus();
