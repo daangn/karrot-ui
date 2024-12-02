@@ -26,13 +26,13 @@ function buildDependencyGraph(tokenDecls: TokenDeclaration[]): DependencyGraph {
 
 export function buildRootage(models: Model[]): RootageCtx {
   const tokenCollections = models
-    .filter((model) => model.kind === "TokenCollections")
+    .filter((model) => model?.kind === "TokenCollections")
     .flatMap((model) => parseTokenCollectionsModel(model));
   const tokens = models
-    .filter((model) => model.kind === "Tokens")
+    .filter((model) => model?.kind === "Tokens")
     .flatMap((model) => parseTokensModel(model));
   const componentSpecs = models
-    .filter((model) => model.kind === "ComponentSpec")
+    .filter((model) => model?.kind === "ComponentSpec")
     .map((model) => parseComponentSpecModel(model));
 
   const dependencyGraph = buildDependencyGraph(tokens);

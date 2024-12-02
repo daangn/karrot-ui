@@ -64,6 +64,8 @@
   --seed-v3-unit-x13: 52px;
   --seed-v3-unit-x14: 56px;
   --seed-v3-unit-x16: 64px;
+  --seed-v3-horizontal-spacing-between-chips: var(--seed-v3-unit-x2);
+  --seed-v3-horizontal-spacing-global-gutter: var(--seed-v3-unit-x4);
 }
 
 :root[data-seed][data-seed="light-only"][data-seed-scale-color="dark"],
