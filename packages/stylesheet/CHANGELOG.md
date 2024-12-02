@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241202034944
+
+### Patch Changes
+
+- 지금까지 개발된 것들을 한번 배포해요
+
 ## 3.0.0-alpha-20241121055833
 
 ### Patch Changes
