@@ -1,5 +1,11 @@
 # @seed-design/recipe
 
+## 0.0.0-alpha-20241202032801
+
+### Patch Changes
+
+- tabs recipe 변경
+
 ## 0.0.0-alpha-20241114011809
 
 ### Patch Changes
