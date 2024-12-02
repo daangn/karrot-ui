@@ -5,13 +5,12 @@ import { disabled, active, pseudo } from "./pseudo";
 
 const textButton = defineRecipe({
   name: "textButton",
-  slots: ["root", "icon", "label"],
+  slots: ["root", "prefixIcon", "suffixIcon", "label"],
   base: {
     root: {
       display: "inline-flex",
       alignItems: "center",
       paddingBlock: vars.base.enabled.root.paddingY,
-      gap: vars.base.enabled.root.gap,
 
       borderWidth: vars.base.enabled.root.borderWidth,
       borderColor: "transparent",
@@ -38,6 +37,12 @@ const textButton = defineRecipe({
       textAlign: "center",
 
       fontWeight: vars.base.enabled.label.fontWeight,
+    },
+    prefixIcon: {
+      marginInlineEnd: vars.base.enabled.prefixIcon.marginXEnd,
+    },
+    suffixIcon: {
+      marginInlineStart: vars.base.enabled.suffixIcon.marginXStart,
     },
   },
   defaultVariants: {
@@ -73,9 +78,13 @@ const textButton = defineRecipe({
           minHeight: "2rem",
           borderRadius: vars.sizeLarge.enabled.root.cornerRadius,
         },
-        icon: {
-          width: vars.sizeLarge.enabled.icon.size,
-          height: vars.sizeLarge.enabled.icon.size,
+        prefixIcon: {
+          width: vars.sizeLarge.enabled.prefixIcon.size,
+          height: vars.sizeLarge.enabled.prefixIcon.size,
+        },
+        suffixIcon: {
+          width: vars.sizeLarge.enabled.suffixIcon.size,
+          height: vars.sizeLarge.enabled.suffixIcon.size,
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
@@ -87,9 +96,13 @@ const textButton = defineRecipe({
           minHeight: "1.875rem",
           borderRadius: vars.sizeMedium.enabled.root.cornerRadius,
         },
-        icon: {
-          width: vars.sizeMedium.enabled.icon.size,
-          height: vars.sizeMedium.enabled.icon.size,
+        prefixIcon: {
+          width: vars.sizeMedium.enabled.prefixIcon.size,
+          height: vars.sizeMedium.enabled.prefixIcon.size,
+        },
+        suffixIcon: {
+          width: vars.sizeMedium.enabled.suffixIcon.size,
+          height: vars.sizeMedium.enabled.suffixIcon.size,
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
@@ -101,9 +114,13 @@ const textButton = defineRecipe({
           minHeight: "1.75rem",
           borderRadius: vars.sizeSmall.enabled.root.cornerRadius,
         },
-        icon: {
-          width: vars.sizeSmall.enabled.icon.size,
-          height: vars.sizeSmall.enabled.icon.size,
+        prefixIcon: {
+          width: vars.sizeSmall.enabled.prefixIcon.size,
+          height: vars.sizeSmall.enabled.prefixIcon.size,
+        },
+        suffixIcon: {
+          width: vars.sizeSmall.enabled.suffixIcon.size,
+          height: vars.sizeSmall.enabled.suffixIcon.size,
         },
         label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,

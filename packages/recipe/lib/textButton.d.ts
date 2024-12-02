@@ -15,7 +15,7 @@ type TextButtonVariantMap = {
 
 export type TextButtonVariantProps = Partial<TextButtonVariant>;
 
-export type TextButtonSlotName = "root" | "icon" | "label";
+export type TextButtonSlotName = "root" | "prefixIcon" | "suffixIcon" | "label";
 
 export const textButtonVariantMap: TextButtonVariantMap;
 

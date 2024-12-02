@@ -9,24 +9,21 @@ import {
   textButton,
   type TextButtonVariantProps,
 } from "@seed-design/recipe/textButton";
+import { IconChevronRightLine } from "@daangn/react-monochrome-icon";
 
-export interface TextButtonProps extends TextButtonVariantProps {
-  icon: React.ReactNode;
+export type TextButtonProps = TextButtonVariantProps &
+  ({
+    /**
+     * @default false
+     */
+    asChild?: boolean;
+  } & (
+    | { prefixIcon?: React.ReactNode; showSuffixChevron?: never }
+    | { prefixIcon?: never; showSuffixChevron?: boolean }
+  ));
 
-  /**
-   * @default "leading"
-   */
-  iconPosition?: "leading" | "trailing";
-
-  /**
-   * @default false
-   */
-  asChild?: boolean;
-}
-
-interface ReactTextButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    TextButtonProps {}
+type ReactTextButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  TextButtonProps & {};
 
 export const TextButton = React.forwardRef<
   HTMLButtonElement,
@@ -37,8 +34,8 @@ export const TextButton = React.forwardRef<
       className,
       variant = "brand",
       size = "medium",
-      icon,
-      iconPosition = "leading",
+      prefixIcon,
+      showSuffixChevron,
       children,
       asChild = false,
       ...otherProps
@@ -54,12 +51,12 @@ export const TextButton = React.forwardRef<
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
-        {iconPosition === "leading" && (
-          <Slot className={classNames.icon}>{icon}</Slot>
+        {prefixIcon && (
+          <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
         )}
         <span className={classNames.label}>{children}</span>
-        {iconPosition === "trailing" && (
-          <Slot className={classNames.icon}>{icon}</Slot>
+        {showSuffixChevron && (
+          <IconChevronRightLine className={classNames.suffixIcon} />
         )}
       </Comp>
     );

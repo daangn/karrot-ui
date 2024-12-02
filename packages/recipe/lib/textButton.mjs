@@ -6,8 +6,12 @@ const textButtonSlotNames = [
     "textButton__root"
   ],
   [
-    "icon",
-    "textButton__icon"
+    "prefixIcon",
+    "textButton__prefixIcon"
+  ],
+  [
+    "suffixIcon",
+    "textButton__suffixIcon"
   ],
   [
     "label",
