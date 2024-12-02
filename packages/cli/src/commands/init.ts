@@ -36,7 +36,7 @@ export const initCommand = (cli: CAC) => {
             }),
           css: () =>
             p.confirm({
-              message: `Would you like to use ${highlight("CSS Modules")}? (If true, CSS import will be added in components)`,
+              message: `Would you like to use ${highlight("CSS Loader")}? (If true, CSS import will be added in components)`,
               initialValue: true,
             }),
           path: () =>
