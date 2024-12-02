@@ -1,5 +1,17 @@
 # @seed-design/react-tabs
 
+## 0.0.0-alpha-20241202031729
+
+### Patch Changes
+
+- add --seed-design-current-tab-enabled-index css variable in root
+
+## 0.0.0-alpha-20241202030714
+
+### Patch Changes
+
+- SSR 문제를 해결해요
+
 ## 0.0.0-alpha-20241030023710
 
 ### Patch Changes

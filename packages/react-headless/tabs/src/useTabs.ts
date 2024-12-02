@@ -126,8 +126,12 @@ export function useTabs(props: UseTabsProps) {
   const updateCurrentIndex = React.useCallback(() => {
     if (rootEl) {
       rootEl.style.setProperty("--seed-design-current-tab-index", `${currentTabIndex}`);
+      rootEl.style.setProperty(
+        "--seed-design-current-tab-enabled-index",
+        `${currentTabEnabledIndex}`,
+      );
     }
-  }, [currentTabIndex, rootEl]);
+  }, [currentTabIndex, currentTabEnabledIndex, rootEl]);
 
   const updateTabCount = React.useCallback(() => {
     if (rootEl) {
