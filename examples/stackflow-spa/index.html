@@ -6,17 +6,21 @@
   data-stackflow-basic-ui-theme="cupertino"
 >
   <head>
-    <title>WebView SPA Template - Karrot</title>
+    <title>SEED Design QA app</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover"
     />
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-    <style type="text/css">:root { --sat: env(safe-area-inset-top); }</style>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+    <style type="text/css">
+      :root {
+        --sat: env(safe-area-inset-top);
+      }
+    </style>
     <script>
       (() => {
-        var h = document.head || document.getElementsByTagName('head')[0];
+        var h = document.head || document.getElementsByTagName("head")[0];
         var b = document.documentElement;
 
         var c = /iphone|ipad|ipod/i.test(
@@ -58,16 +62,19 @@
 
         if (sat) {
           const c = `#root > div { --stackflow-plugin-basic-ui-app-bar-min-safe-area-inset-top: ${sat}; }`;
-  
-          const s = document.createElement('style');
-          s.type = 'text/css';
+
+          const s = document.createElement("style");
+          s.type = "text/css";
           s.appendChild(document.createTextNode(c));
-  
+
           h.appendChild(s);
         }
 
         setTimeout(() => {
-          localStorage.setItem(k, getComputedStyle(b).getPropertyValue("--sat"));
+          localStorage.setItem(
+            k,
+            getComputedStyle(b).getPropertyValue("--sat"),
+          );
         }, t);
       })();
     </script>
