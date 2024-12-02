@@ -2,7 +2,6 @@ import * as React from "react";
 
 interface Preferences {
   showGrid: boolean;
-  zoom: number;
 }
 
 type PreferenceProviderProps = { children: React.ReactNode };
@@ -10,7 +9,6 @@ type PreferenceProviderProps = { children: React.ReactNode };
 function usePreferenceState() {
   const [preferences, setPreferences] = React.useState<Preferences>({
     showGrid: false,
-    zoom: 1,
   });
 
   function updatePreferences(preferences: Partial<Preferences>) {

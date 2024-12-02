@@ -12,7 +12,7 @@ interface ComponentShowcaseProps {
 
 export function ComponentShowcase(props: ComponentShowcaseProps) {
   const { preferences } = usePreference();
-  const { showGrid, zoom } = preferences;
+  const { showGrid } = preferences;
   const { gridColumns = 1, children } = props;
 
   return (
@@ -20,7 +20,6 @@ export function ComponentShowcase(props: ComponentShowcaseProps) {
       className={clsx(styles.root, showGrid && styles.grid)}
       style={{
         gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
-        transform: `scale(${zoom})`,
       }}
     >
       {children}
