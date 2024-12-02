@@ -1,5 +1,3 @@
-"use client";
-
 import "@seed-design/stylesheet/actionButton.css";
 
 import * as React from "react";
@@ -7,20 +5,25 @@ import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
 import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe/actionButton";
 
-export interface ActionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ActionButtonVariantProps {
+export interface ActionButtonProps extends ActionButtonVariantProps {
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
 
+  /**
+   * @default false
+   */
   asChild?: boolean;
 }
 
+interface ReactActionButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    ActionButtonProps {}
+
 /**
- * @see https://v3.seed-design.io/docs/react/components/box-button
+ * @see https://v3.seed-design.io/docs/react/components/action-button
  */
-export const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
+export const ActionButton = React.forwardRef<HTMLButtonElement, ReactActionButtonProps>(
   (
     {
       className,

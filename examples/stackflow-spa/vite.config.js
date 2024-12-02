@@ -2,6 +2,7 @@ import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 export default defineConfig({
   build: {
@@ -18,14 +19,20 @@ export default defineConfig({
     }),
 
     /**
-     * 당근마켓 웹뷰의 브라우저 최소 버전은 Android Chrome 51, iOS 13이에요.
-     * (매우 소수의 iOS 11 구버전 유저가 남아있을 수 있어요. 최신 버전 당근마켓은 iOS 13부터 지원해요)
+     * 당근 웹뷰의 브라우저 최소 버전은 Chrome 64, Safari 14이에요.
+     * (최신 버전의 당근 앱은 Android 7.0, iOS 15부터 지원하지만 구버전 앱 사용자를 위해 그 이전 브라우저까지 지원해요.)
      * 모던 브라우저의 polyfills 지원을 위해 modernPolyfills와 modernTargets를 설정해요.
      */
     legacy({
       modernPolyfills: true,
-      modernTargets: ["chrome >= 64", "ios_saf >= 13"],
-      targets: ["chrome >= 51", "ios_saf >= 13"],
+      modernTargets: ["chrome >= 64", "ios_saf >= 14"],
+      renderLegacyChunks: true,
+    }),
+
+    vanillaExtractPlugin({
+      esbuildOptions: {
+        external: ["@seed-design"],
+      },
     }),
   ],
 });

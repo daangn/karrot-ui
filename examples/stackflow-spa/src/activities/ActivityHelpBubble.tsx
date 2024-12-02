@@ -4,7 +4,7 @@ import type { ActivityComponentType } from "@stackflow/react";
 
 import { usePopover } from "@seed-design/react-popover";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
-import { ActionButton } from "../design-system/components";
+import { ActionButton } from "../design-system/ui/action-button";
 import { helpBubble } from "@seed-design/recipe/helpBubble";
 import { forwardRef } from "react";
 

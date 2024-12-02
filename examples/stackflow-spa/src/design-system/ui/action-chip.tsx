@@ -11,6 +11,8 @@ export interface ActionChipProps
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
+
+  asChild?: boolean;
 }
 
 export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
@@ -22,21 +24,23 @@ export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
       children,
       prefixIcon,
       suffixIcon,
+      asChild = false,
       ...otherProps
     },
     ref,
   ) => {
+    const Comp = asChild ? Slot : "button";
     const classNames = actionChip({ size, layout });
     return (
-      <button ref={ref} className={clsx(classNames.root, className)} {...otherProps}>
-        {prefixIcon && <Slot className={classNames.prefix}>{prefixIcon}</Slot>}
+      <Comp ref={ref} className={clsx(classNames.root, className)} {...otherProps}>
+        {prefixIcon && <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>}
         {layout === "withText" ? (
           <span className={classNames.label}>{children}</span>
         ) : (
           <Slot className={classNames.icon}>{children}</Slot>
         )}
-        {suffixIcon && <Slot className={classNames.suffix}>{suffixIcon}</Slot>}
-      </button>
+        {suffixIcon && <Slot className={classNames.suffixIcon}>{suffixIcon}</Slot>}
+      </Comp>
     );
   },
 );

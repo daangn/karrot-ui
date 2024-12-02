@@ -20,18 +20,9 @@ const theme = /iphone|ipad|ipod/i.test(window.navigator.userAgent.toLowerCase())
 const { Stack, useFlow, useStepFlow } = stackflow({
   activities: {
     ActivityHome: React.lazy(() => import("../activities/ActivityHome")),
-    ActivityAvatar: React.lazy(() => import("../activities/ActivityAvatar")),
     ActivityActionButton: React.lazy(() => import("../activities/ActivityActionButton")),
-    ActivityRadioGroup: React.lazy(() => import("../activities/ActivityRadioGroup")),
-    ActivityCheckbox: React.lazy(() => import("../activities/ActivityCheckbox")),
-    ActivityAlertDialog: React.lazy(() => import("../activities/ActivityAlertDialog")),
-    ActivityTextField: React.lazy(() => import("../activities/ActivityTextField")),
     ActivityActionChip: React.lazy(() => import("../activities/ActivityActionChip")),
-    ActivityCallout: React.lazy(() => import("../activities/ActivityCallout")),
-    ActivitySwitch: React.lazy(() => import("../activities/ActivitySwitch")),
     ActivityHelpBubble: React.lazy(() => import("../activities/ActivityHelpBubble")),
-    ActivityTabs: React.lazy(() => import("../activities/ActivityTabs")),
-    ActivityChipTabs: React.lazy(() => import("../activities/ActivityChipTabs")),
     ActivityNotFound,
   },
   plugins: [

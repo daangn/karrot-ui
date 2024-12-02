@@ -1,10 +1,13 @@
 import type React from "react";
 
 import { Stack } from "./stackflow";
+import { PreferenceProvider } from "./hooks/usePreference";
 
 const App: React.FC = () => (
   <div>
-    <Stack />
+    <PreferenceProvider>
+      <Stack />
+    </PreferenceProvider>
   </div>
 );
 
