@@ -202,8 +202,6 @@ export function useTabs(props: UseTabsProps) {
         "data-disabled": dataAttr(itemState.isDisabled),
         "aria-disabled": ariaAttr(itemState.isDisabled),
         "aria-selected": ariaAttr(itemState.isSelected),
-        tabIndex: itemState.isSelected ? 0 : -1,
-        disabled: isDisabled,
       };
 
       return {
@@ -211,6 +209,8 @@ export function useTabs(props: UseTabsProps) {
           id: dom.getTabTriggerRootId(triggerValue, id),
           role: "tab",
           type: "button",
+          disabled: isDisabled,
+          tabIndex: itemState.isSelected ? 0 : -1,
           ...itemStateProps,
           "data-value": triggerValue,
           "data-orientation": orientation,
