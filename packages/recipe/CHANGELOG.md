@@ -1,5 +1,11 @@
 # @seed-design/recipe
 
+## 0.0.0-alpha-20241202094027
+
+### Patch Changes
+
+- Tabs에 content-list에 스타일을 변경해요
+
 ## 0.0.0-alpha-20241202032801
 
 ### Patch Changes

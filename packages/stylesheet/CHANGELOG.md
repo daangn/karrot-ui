@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241202094027
+
+### Patch Changes
+
+- Tabs에 content-list에 스타일을 변경해요
+
 ## 3.0.0-alpha-20241202034944
 
 ### Patch Changes
