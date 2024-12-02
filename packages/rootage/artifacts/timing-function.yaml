@@ -1,0 +1,7 @@
+kind: Tokens
+metadata:
+  id: unit
+  name: Unit
+data:
+  collection: global
+  tokens: []
