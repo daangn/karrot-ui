@@ -242,6 +242,14 @@ export function useTabs(props: UseTabsProps) {
             if (itemState.isDisabled) return;
             events.setActiveValue(null);
           },
+          onFocus(event) {
+            events.setFocusedValue(triggerValue);
+            events.setIsFocusVisible(event.target.matches(":focus-visible"));
+          },
+          onBlur() {
+            events.setFocusedValue(null);
+            events.setIsFocusVisible(false);
+          },
         }),
         labelProps: elementProps({
           id: dom.getTabTriggerLabelId(triggerValue, id),
