@@ -6400,7 +6400,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control":
+"@seed-design/react-segmented-control@workspace:^, @seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control"
   dependencies:
@@ -10816,6 +10816,7 @@ __metadata:
     "@seed-design/react-dismissible": 0.0.0
     "@seed-design/react-icon": ^0.7.3
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
+    "@seed-design/react-segmented-control": "workspace:^"
     "@seed-design/react-tabs": 0.0.0-alpha-20241202094027
     "@seed-design/recipe": 0.0.0-alpha-20241202094027
     "@seed-design/rootage-cli": 0.0.0
