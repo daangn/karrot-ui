@@ -14,6 +14,7 @@ import inlineBanner from "./inline-banner.recipe";
 import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
 import segmentedControl from "./segmented-control.recipe";
+import selectBox from "./select-box.recipe";
 import switchRecipe from "./switch.recipe";
 import tab from "./tab.recipe";
 import tabs from "./tabs.recipe";
@@ -30,6 +31,7 @@ const recipes = {
   controlChip,
   callout,
   segmentedControl,
+  selectBox,
   switch: switchRecipe,
   helpBubble,
   inlineBanner,
