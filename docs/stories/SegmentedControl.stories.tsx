@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import {
-  SegmentedControl,
-  SegmentedControlTrigger,
-  type SegmentedControlProps,
-} from "seed-design/ui/segmented-control";
+import { SegmentedControl, Segment } from "seed-design/ui/segmented-control";
 
 import { segmentedControlVariantMap } from "@seed-design/recipe/segmentedControl";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -18,9 +14,9 @@ const Component = () => {
   return (
     <SegmentedControl value={value} onValueChange={setValue}>
       {values.map((value) => (
-        <SegmentedControlTrigger key={value} value={value}>
+        <Segment key={value} value={value}>
           {value}
-        </SegmentedControlTrigger>
+        </Segment>
       ))}
     </SegmentedControl>
   );
