@@ -2,7 +2,14 @@ import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { useId, useState } from "react";
 import { graphemeSegments } from "unicode-segmenter/grapheme";
 
-import { dataAttr, ariaAttr, elementProps, inputProps, labelProps } from "@seed-design/dom-utils";
+import {
+  dataAttr,
+  ariaAttr,
+  elementProps,
+  inputProps,
+  labelProps,
+  textareaProps,
+} from "@seed-design/dom-utils";
 import { getDescriptionId, getErrorMessageId, getInputId, getLabelId } from "./dom";
 
 export interface UseTextFieldStateProps {
@@ -54,6 +61,11 @@ export interface UseTextFieldProps extends UseTextFieldStateProps {
    */
   invalid?: boolean;
 
+  /**
+   * @default "input"
+   */
+  elementType?: "input" | "textarea";
+
   name?: string;
 
   description?: string;
@@ -76,6 +88,7 @@ const getSlicedGraphemes = ({
 export function useTextField(props: UseTextFieldProps) {
   const id = useId();
   const {
+    elementType,
     value,
     description,
     errorMessage,
@@ -173,40 +186,80 @@ export function useTextField(props: UseTextFieldProps) {
       htmlFor: getInputId(id),
     }),
 
-    inputProps: inputProps({
-      ...stateProps,
-      disabled,
-      readOnly,
-      "aria-required": ariaAttr(required),
-      "aria-invalid": ariaAttr(invalid),
-      "aria-describedby": ariaDescribedBy,
-      onChange: (e) => {
-        const givenValue = e.target.value;
+    ...(elementType === "input" && {
+      inputProps: inputProps({
+        ...stateProps,
+        disabled,
+        readOnly,
+        "aria-required": ariaAttr(required),
+        "aria-invalid": ariaAttr(invalid),
+        "aria-describedby": ariaDescribedBy,
+        onChange: (e) => {
+          const givenValue = e.target.value;
 
-        const slicedGraphemes = getSlicedGraphemes({
-          maxGraphemeCount,
-          value: givenValue,
-        });
+          const slicedGraphemes = getSlicedGraphemes({
+            maxGraphemeCount,
+            value: givenValue,
+          });
 
-        const value = slicedGraphemes.join("");
+          const value = slicedGraphemes.join("");
 
-        setValue(value);
-        setIsFocusVisible(e.target.matches(":focus-visible"));
-      },
-      onBlur(e) {
-        setIsFocused(false);
-        setIsFocusVisible(false);
-        onBlur?.(e);
-      },
-      onFocus(e) {
-        setIsFocused(true);
-        setIsFocusVisible(e.target.matches(":focus-visible"));
-        onFocus?.(e);
-      },
-      name: props.name || id,
-      id: getInputId(id),
-      value: slicedValue,
+          setValue(value);
+          setIsFocusVisible(e.target.matches(":focus-visible"));
+        },
+        onBlur(e) {
+          setIsFocused(false);
+          setIsFocusVisible(false);
+          onBlur?.(e);
+        },
+        onFocus(e) {
+          setIsFocused(true);
+          setIsFocusVisible(e.target.matches(":focus-visible"));
+          onFocus?.(e);
+        },
+        name: props.name || id,
+        id: getInputId(id),
+        value: slicedValue,
+      }),
     }),
+
+    ...(elementType === "textarea" && {
+      textareaProps: textareaProps({
+        ...stateProps,
+        disabled,
+        readOnly,
+        "aria-required": ariaAttr(required),
+        "aria-invalid": ariaAttr(invalid),
+        "aria-describedby": ariaDescribedBy,
+        onChange: (e) => {
+          const givenValue = e.target.value;
+
+          const slicedGraphemes = getSlicedGraphemes({
+            maxGraphemeCount,
+            value: givenValue,
+          });
+
+          const value = slicedGraphemes.join("");
+
+          setValue(value);
+          setIsFocusVisible(e.target.matches(":focus-visible"));
+        },
+        onBlur(e) {
+          setIsFocused(false);
+          setIsFocusVisible(false);
+          onBlur?.(e);
+        },
+        onFocus(e) {
+          setIsFocused(true);
+          setIsFocusVisible(e.target.matches(":focus-visible"));
+          onFocus?.(e);
+        },
+        name: props.name || id,
+        id: getInputId(id),
+        value: slicedValue,
+      }),
+    }),
+
     descriptionProps: elementProps({
       id: getDescriptionId(id),
       ...stateProps,

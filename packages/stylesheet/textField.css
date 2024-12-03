@@ -69,12 +69,16 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .textField__inputText {
-    all: unset;
+    font: inherit;
+    border: none;
+    padding-inline: 0;
+    background: none;
 }
 .textField__inputText:is(:focus, [data-focus]) {
     outline: none;
 }
 .textField__inputText {
+    resize: none;
     flex-grow: 1;
     color: var(--seed-v3-color-fg-neutral);
 }
@@ -139,7 +143,7 @@
     margin-inline-start: var(--seed-v3-unit-x1_5);
 }
 .textField__input--size_xlarge {
-    height: 56px;
+    min-height: 56px;
     border-radius: var(--seed-v3-radius-x2_5);
     gap: var(--seed-v3-unit-x2);
     padding-inline: var(--seed-v3-unit-x4);
@@ -184,7 +188,7 @@
     margin-inline-start: var(--seed-v3-unit-x1_5);
 }
 .textField__input--size_large {
-    height: 52px;
+    min-height: 52px;
     border-radius: var(--seed-v3-radius-x2_5);
     gap: var(--seed-v3-unit-x2);
     padding-inline: var(--seed-v3-unit-x4);
@@ -229,7 +233,7 @@
     margin-inline-start: var(--seed-v3-unit-x1);
 }
 .textField__input--size_medium {
-    height: 40px;
+    min-height: 40px;
     border-radius: var(--seed-v3-radius-x2);
     gap: var(--seed-v3-unit-x1_5);
     padding-inline: var(--seed-v3-unit-x3_5);

@@ -51,7 +51,7 @@ export const vars = {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "graphemeCount": {
-        "height": "var(--seed-v3-line-height-t4)",
+        "size": "var(--seed-v3-line-height-t4)",
         "lineHeight": "var(--seed-v3-line-height-t2)"
       },
       "currentGraphemeCount": {
@@ -118,7 +118,7 @@ export const vars = {
         "marginXStart": "var(--seed-v3-unit-x1_5)"
       },
       "input": {
-        "size": "56px",
+        "minHeight": "56px",
         "cornerRadius": "var(--seed-v3-radius-x2_5)",
         "gap": "var(--seed-v3-unit-x2)",
         "paddingX": "var(--seed-v3-unit-x4)"
@@ -164,7 +164,7 @@ export const vars = {
         "marginXStart": "var(--seed-v3-unit-x1_5)"
       },
       "input": {
-        "size": "52px",
+        "minHeight": "52px",
         "cornerRadius": "var(--seed-v3-radius-x2_5)",
         "gap": "var(--seed-v3-unit-x2)",
         "paddingX": "var(--seed-v3-unit-x4)"
@@ -210,7 +210,7 @@ export const vars = {
         "marginXStart": "var(--seed-v3-unit-x1)"
       },
       "input": {
-        "size": "40px",
+        "minHeight": "40px",
         "cornerRadius": "var(--seed-v3-radius-x2)",
         "gap": "var(--seed-v3-unit-x1_5)",
         "paddingX": "var(--seed-v3-unit-x3_5)"

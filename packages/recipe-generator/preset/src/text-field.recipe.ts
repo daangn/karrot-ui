@@ -111,10 +111,15 @@ const textField = defineRecipe({
     },
     inputText: {
       // XXX: CSS reset 들어오면 제거될 수 있음
-      all: "unset",
+      font: "inherit",
+      border: "none",
+      paddingInline: 0,
+      background: "none",
       [pseudo(focus)]: {
         outline: "none",
       },
+
+      resize: "none",
 
       flexGrow: 1,
 
@@ -161,7 +166,7 @@ const textField = defineRecipe({
     graphemeCount: {
       flex: "none",
 
-      height: vars.base.enabled.graphemeCount.height,
+      height: vars.base.enabled.graphemeCount.size,
       lineHeight: vars.base.enabled.graphemeCount.lineHeight,
     },
     currentGraphemeCount: {
@@ -196,7 +201,7 @@ const textField = defineRecipe({
           marginInlineStart: vars.sizeXlarge.enabled.indicator.marginXStart,
         },
         input: {
-          height: vars.sizeXlarge.enabled.input.size,
+          minHeight: vars.sizeXlarge.enabled.input.minHeight,
           borderRadius: vars.sizeXlarge.enabled.input.cornerRadius,
           gap: vars.sizeXlarge.enabled.input.gap,
 
@@ -245,7 +250,7 @@ const textField = defineRecipe({
           marginInlineStart: vars.sizeLarge.enabled.indicator.marginXStart,
         },
         input: {
-          height: vars.sizeLarge.enabled.input.size,
+          minHeight: vars.sizeLarge.enabled.input.minHeight,
           borderRadius: vars.sizeLarge.enabled.input.cornerRadius,
           gap: vars.sizeLarge.enabled.input.gap,
 
@@ -294,7 +299,7 @@ const textField = defineRecipe({
           marginInlineStart: vars.sizeMedium.enabled.indicator.marginXStart,
         },
         input: {
-          height: vars.sizeMedium.enabled.input.size,
+          minHeight: vars.sizeMedium.enabled.input.minHeight,
           borderRadius: vars.sizeMedium.enabled.input.cornerRadius,
           gap: vars.sizeMedium.enabled.input.gap,
 

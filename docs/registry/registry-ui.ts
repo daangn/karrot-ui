@@ -109,4 +109,12 @@ export const registryUI: RegistryUI = [
     ],
     files: ["ui:text-field.tsx"],
   },
+  {
+    name: "multiline-text-field",
+    dependencies: [
+      "@seed-design/react-text-field",
+      "@daangn/react-monochrome-icon",
+    ],
+    files: ["ui:multiline-text-field.tsx"],
+  },
 ];

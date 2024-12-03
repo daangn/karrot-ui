@@ -44,7 +44,7 @@ data:
         fontWeight: $font-weight.regular
       graphemeCount:
         # XXX: description의 한 줄과 높이가 같아야 함
-        height: $line-height.t4
+        size: $line-height.t4
         lineHeight: $line-height.t2
       currentGraphemeCount:
         color: $color.fg.neutral
@@ -90,7 +90,7 @@ data:
         fontSize: $font-size.t5
         marginXStart: $unit.x1_5
       input:
-        size: 56px
+        minHeight: 56px
         cornerRadius: $radius.x2_5
         gap: $unit.x2
         paddingX: $unit.x4
@@ -124,7 +124,7 @@ data:
         fontSize: $font-size.t5
         marginXStart: $unit.x1_5
       input:
-        size: 52px
+        minHeight: 52px
         cornerRadius: $radius.x2_5
         gap: $unit.x2
         paddingX: $unit.x4
@@ -158,7 +158,7 @@ data:
         fontSize: $font-size.t4
         marginXStart: $unit.x1
       input:
-        size: 40px
+        minHeight: 40px
         cornerRadius: $radius.x2
         gap: $unit.x1_5
         paddingX: $unit.x3_5
