@@ -37,6 +37,10 @@ type ReactMultilineTextFieldProps = Assign<
   MultilineTextFieldProps
 >;
 
+const useLayoutEffect = globalThis?.document
+  ? React.useLayoutEffect
+  : React.useEffect;
+
 export const MultilineTextField = React.forwardRef<
   HTMLTextAreaElement,
   ReactMultilineTextFieldProps
@@ -63,9 +67,10 @@ export const MultilineTextField = React.forwardRef<
       isInvalid,
       isRequired,
       graphemes,
+      value,
     } = useTextField({ elementType: "textarea", ...restProps });
 
-    const { description, errorMessage, maxGraphemeCount } = restProps;
+    const { description, errorMessage, maxGraphemeCount, style } = restProps;
 
     const classNames = textField({ size });
 
@@ -74,6 +79,43 @@ export const MultilineTextField = React.forwardRef<
     const renderDescription = !isInvalid && description;
     const renderErrorMessage = isInvalid && !!errorMessage;
     const renderCharacterCount = !hideGraphemeCount && maxGraphemeCount;
+
+    // referenced from React Spectrum
+    const inputRef = React.useRef<HTMLTextAreaElement>(null);
+    const onHeightChange = React.useCallback(() => {
+      // Quiet textareas always grow based on their text content.
+      // Standard textareas also grow by default, unless an explicit height is set.
+      if (style?.height && inputRef.current) {
+        const input = inputRef.current;
+        input.style.height = "";
+      }
+      if (!style?.height && inputRef.current) {
+        const input = inputRef.current;
+        const prevAlignment = input.style.alignSelf;
+        const prevOverflow = input.style.overflow;
+        // Firefox scroll position is lost when overflow: 'hidden' is applied so we skip applying it.
+        // The measure/applied height is also incorrect/reset if we turn on and off
+        // overflow: hidden in Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1787062
+        const isFirefox = "MozAppearance" in input.style;
+        if (!isFirefox) {
+          input.style.overflow = "hidden";
+        }
+        input.style.alignSelf = "start";
+        input.style.height = "auto";
+        // offsetHeight - clientHeight accounts for the border/padding.
+        input.style.height = `${
+          input.scrollHeight + (input.offsetHeight - input.clientHeight)
+        }px`;
+        input.style.overflow = prevOverflow;
+        input.style.alignSelf = prevAlignment;
+      }
+    }, [inputRef, style?.height]);
+
+    useLayoutEffect(() => {
+      if (inputRef.current) {
+        onHeightChange();
+      }
+    }, [onHeightChange, value, inputRef]);
 
     return (
       <div
@@ -96,7 +138,7 @@ export const MultilineTextField = React.forwardRef<
         <div className={classNames.input}>
           <textarea
             rows={3}
-            ref={ref}
+            ref={mergeRefs(ref, inputRef)}
             className={clsx(classNames.inputText, textareaClassName)}
             {...textareaProps}
             {...restInternalProps}
@@ -137,3 +179,19 @@ export const MultilineTextField = React.forwardRef<
   },
 );
 MultilineTextField.displayName = "MultilineTextField";
+
+function mergeRefs<T>(...refs: React.ForwardedRef<T>[]): React.ForwardedRef<T> {
+  if (refs.length === 1) {
+    return refs[0];
+  }
+
+  return (value: T | null) => {
+    for (const ref of refs) {
+      if (typeof ref === "function") {
+        ref(value);
+      } else if (ref != null) {
+        ref.current = value;
+      }
+    }
+  };
+}

@@ -11,6 +11,7 @@ import {
   textareaProps,
 } from "@seed-design/dom-utils";
 import { getDescriptionId, getErrorMessageId, getInputId, getLabelId } from "./dom";
+import React from "react";
 
 export interface UseTextFieldStateProps {
   value?: string;
