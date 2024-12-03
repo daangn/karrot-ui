@@ -23,7 +23,6 @@
     "clean": "rm -rf lib",
     "prepack": "yarn clean && yarn build",
     "build": "nanobundle build",
-    "recipe:build": "nanobundle build",
     "recipe:generate": "nanobundle build"
   },
   "dependencies": {
