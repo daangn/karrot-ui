@@ -1,6 +1,5 @@
 ---
 title: Segmented Control
-description: 설명 # TODO
 ---
 
 <ComponentExample name="segmented-control-preview" />
@@ -20,22 +19,25 @@ description: 설명 # TODO
 
 <Callout type="info">
 
-`value`와 `defaultValue` 중 아무것도 제공하지 않으면, 첫 번째 `SegmentControlTrigger`의 `value`를 `defaultValue`로 사용해요.
+`value`와 `defaultValue` 중 적어도 하나를 제공해야 해요.
 
 </Callout>
 
-### `SegmentedControlTrigger`
+### `Segment`
 
-<AutoTypeTable
-  path="./registry/ui/segmented-control.tsx"
-  name="SegmentedControlTriggerProps"
-/>
+<AutoTypeTable path="./registry/ui/segmented-control.tsx" name="SegmentProps" />
 
 ## 예제
 
+### Status
+
+#### Disabled
+
+<ComponentExample name="segmented-control-disabled" />
+
 ### 최소 너비보다 넓은 옵션 레이블
 
-Pill 형태의 `SegmentControlTrigger` 한 개는 86px의 최소 너비를 가져요. 제공한 옵션 중 이 너비를 초과하는 옵션이 있다면, 가장 긴 옵션의 너비에 모든 옵션의 너비가 맞춰져요.
+Pill 형태의 `Segment` 한 개는 86px의 최소 너비를 가져요. 제공한 옵션 중 이 너비를 초과하는 옵션이 있다면, 가장 긴 옵션의 너비에 모든 옵션의 너비가 맞춰져요.
 
 <ComponentExample name="segmented-control-long-label" />
 

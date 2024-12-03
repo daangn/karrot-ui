@@ -1,10 +1,10 @@
-import { SegmentedControl, SegmentedControlTrigger } from "seed-design/ui/segmented-control";
+import { SegmentedControl, Segment } from "seed-design/ui/segmented-control";
 
 export default function SegmentedControlFixedWidth() {
   return (
     <SegmentedControl defaultValue="new">
-      <SegmentedControlTrigger value="new">New</SegmentedControlTrigger>
-      <SegmentedControlTrigger value="hot">Hot</SegmentedControlTrigger>
+      <Segment value="new">New</Segment>
+      <Segment value="hot">Hot</Segment>
     </SegmentedControl>
   );
 }

@@ -12,8 +12,19 @@ export const selected = ":is(:selected, [data-selected])";
 
 export const open = ':is([data-state="open"], [data-open])';
 
+type JoinRest<Rest extends string[]> = Rest extends []
+  ? ""
+  : Rest extends [string, ...string[]]
+    ? `${Rest[0]}${Rest extends [string, ...infer R extends string[]] ? R[0] : ""}`
+    : "";
+
+type JoinSelectors<T extends string[]> = T extends [string, string, ...infer Rest extends string[]]
+  ? `&${T[0]}${T[1]}${JoinRest<Rest>}`
+  : never;
+
 export function pseudo<T extends string>(selectorA: T): `&${T}`;
 export function pseudo<T extends string, U extends string>(selectorA: T, selectorB: U): `&${T}${U}`;
+export function pseudo<T extends string[]>(...selectors: [...T]): JoinSelectors<T>;
 export function pseudo(...selectors: string[]) {
   return `&${selectors.join("")}`;
 }

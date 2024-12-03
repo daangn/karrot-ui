@@ -6,19 +6,19 @@
     position: relative;
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
-    grid-template-columns: repeat(var(--seed-design-segmented-control-tab-count, 0), 1fr);
+    grid-template-columns: repeat(var(--seed-design-segmented-control-count, 0), 1fr);
     box-sizing: border-box;
-    --seed-design-segmented-control-current-tab-index: var(--seed-design-current-tab-index);
-    --seed-design-segmented-control-indicator-left: var(--seed-design-tab-indicator-left);
-    --seed-design-segmented-control-indicator-width: var(--seed-design-tab-indicator-width);
-    --seed-design-segmented-control-tab-count: var(--seed-design-tab-count);
 }
-.segmentedControl__trigger {
+.segmentedControl__segment {
     border: none;
     padding: 0;
     background-color: transparent;
     font: inherit;
+}
+.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])) {
     cursor: pointer;
+}
+.segmentedControl__segment {
     position: relative;
     min-width: 86px;
     height: var(--seed-v3-unit-x8);
@@ -28,13 +28,13 @@
     user-select: none;
     line-height: var(--seed-v3-line-height-t5);
 }
-.segmentedControl__trigger:is(:active, [data-active]) {
+.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
-.segmentedControl__trigger:is(:selected, [data-selected]):is(:active, [data-active]) {
+.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:checked, [data-checked]):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
-.segmentedControl__triggerLabel {
+.segmentedControl__segmentLabel {
     position: absolute;
     inset-inline: 0;
     transform: translateY(-50%);
@@ -48,14 +48,14 @@
     overflow: hidden;
     color: var(--seed-v3-color-fg-neutral-muted);
 }
-.segmentedControl__triggerLabel:is(:selected, [data-selected]) {
+.segmentedControl__segmentLabel:is(:checked, [data-checked]) {
     color: var(--seed-v3-color-fg-neutral);
     font-weight: var(--seed-v3-font-weight-bold);
 }
-.segmentedControl__triggerLabel:is(:disabled, [disabled], [data-disabled]) {
+.segmentedControl__segmentLabel:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.segmentedControl__triggerLabelPlaceholder {
+.segmentedControl__segmentLabelPlaceholder {
     padding-inline: var(--seed-v3-unit-x4);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);

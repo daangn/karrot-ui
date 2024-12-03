@@ -142,7 +142,7 @@
   {
     "name": "segmented-control",
     "dependencies": [
-      "@seed-design/react-tabs@alpha"
+      "@seed-design/react-segmented-control"
     ],
     "files": [
       "ui:segmented-control.tsx"

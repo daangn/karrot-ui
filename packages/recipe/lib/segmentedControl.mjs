@@ -6,16 +6,16 @@ const segmentedControlSlotNames = [
     "segmentedControl__root"
   ],
   [
-    "trigger",
-    "segmentedControl__trigger"
+    "segment",
+    "segmentedControl__segment"
   ],
   [
-    "triggerLabel",
-    "segmentedControl__triggerLabel"
+    "segmentLabel",
+    "segmentedControl__segmentLabel"
   ],
   [
-    "triggerLabelPlaceholder",
-    "segmentedControl__triggerLabelPlaceholder"
+    "segmentLabelPlaceholder",
+    "segmentedControl__segmentLabelPlaceholder"
   ],
   [
     "indicator",

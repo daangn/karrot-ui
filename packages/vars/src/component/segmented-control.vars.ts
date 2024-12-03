@@ -6,7 +6,7 @@ export const vars = {
         "cornerRadius": "var(--seed-v3-radius-full)",
         "color": "var(--seed-v3-color-bg-neutral-weak)"
       },
-      "trigger": {
+      "segment": {
         "height": "var(--seed-v3-unit-x8)",
         "cornerRadius": "var(--seed-v3-radius-full)",
         "paddingX": "var(--seed-v3-unit-x4)",
@@ -21,24 +21,28 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-layer-default)"
       }
     },
-    "pressed": {
-      "trigger": {
+    "enabledPressed": {
+      "segment": {
         "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
       }
     },
     "selected": {
-      "trigger": {
-        "color": "var(--seed-v3-color-fg-neutral)",
+      "segment": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     },
-    "selectedPressed": {
-      "trigger": {
+    "enabledSelected": {
+      "segment": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      }
+    },
+    "enabledSelectedPressed": {
+      "indicator": {
         "color": "var(--seed-v3-color-bg-layer-default-pressed)"
       }
     },
     "disabled": {
-      "trigger": {
+      "segment": {
         "color": "var(--seed-v3-color-fg-disabled)"
       }
     }

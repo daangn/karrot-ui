@@ -6393,6 +6393,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control"
+  dependencies:
+    "@radix-ui/react-use-controllable-state": 1.0.1
+    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    nanobundle: ^1.6.0
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/react-switch@0.0.0-alpha-20241030023710, @seed-design/react-switch@workspace:packages/react-headless/switch":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-switch@workspace:packages/react-headless/switch"

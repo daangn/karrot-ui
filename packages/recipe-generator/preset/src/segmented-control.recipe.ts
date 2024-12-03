@@ -1,10 +1,10 @@
 import { segmentedControl as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
-import { disabled, active, pseudo, selected } from "./pseudo";
+import { disabled, active, pseudo, checked, not } from "./pseudo";
 
 const segmentedControl = defineRecipe({
   name: "segmentedControl",
-  slots: ["root", "trigger", "triggerLabel", "triggerLabelPlaceholder", "indicator"],
+  slots: ["root", "segment", "segmentLabel", "segmentLabelPlaceholder", "indicator"],
   base: {
     root: {
       display: "grid",
@@ -20,84 +20,79 @@ const segmentedControl = defineRecipe({
 
       backgroundColor: vars.base.enabled.root.color,
 
-      gridTemplateColumns: "repeat(var(--seed-design-segmented-control-tab-count, 0), 1fr)",
+      gridTemplateColumns: "repeat(var(--seed-design-segmented-control-count, 0), 1fr)",
 
       // XXX: css reset 생기면 제거
       boxSizing: "border-box",
-
-      ...{
-        "--seed-design-segmented-control-current-tab-index": "var(--seed-design-current-tab-index)",
-        "--seed-design-segmented-control-indicator-left": "var(--seed-design-tab-indicator-left)",
-        "--seed-design-segmented-control-indicator-width": "var(--seed-design-tab-indicator-width)",
-        "--seed-design-segmented-control-tab-count": "var(--seed-design-tab-count)",
-      },
     },
-    trigger: {
+    segment: {
       // XXX: css reset 생기면 제거
       border: "none",
       padding: 0,
       backgroundColor: "transparent",
       font: "inherit",
-      cursor: "pointer",
+      [pseudo(not(disabled))]: {
+        cursor: "pointer",
+      },
 
       position: "relative",
 
-      minWidth: vars.base.enabled.trigger.minWidth,
-      height: vars.base.enabled.trigger.height,
+      minWidth: vars.base.enabled.segment.minWidth,
+      height: vars.base.enabled.segment.height,
 
       zIndex: 10,
 
-      borderRadius: vars.base.enabled.trigger.cornerRadius,
+      borderRadius: vars.base.enabled.segment.cornerRadius,
 
       overflow: "hidden",
 
       userSelect: "none",
 
-      lineHeight: vars.base.enabled.trigger.lineHeight,
+      lineHeight: vars.base.enabled.segment.lineHeight,
 
-      [pseudo(active)]: {
-        backgroundColor: vars.base.pressed.trigger.color,
+      [pseudo(not(disabled), active)]: {
+        backgroundColor: vars.base.enabledPressed.segment.color,
       },
 
-      [pseudo(selected, active)]: {
-        backgroundColor: vars.base.selectedPressed.trigger.color,
+      [pseudo(not(disabled), checked, active)]: {
+        backgroundColor: vars.base.enabledSelectedPressed.indicator.color,
       },
     },
-    triggerLabel: {
+    segmentLabel: {
       position: "absolute",
       insetInline: 0,
       transform: "translateY(-50%)",
       insetBlockStart: "50%",
 
-      paddingInline: `calc(${vars.base.enabled.trigger.paddingX} - 1px)`,
+      paddingInline: `calc(${vars.base.enabled.segment.paddingX} - 1px)`,
 
       textAlign: "center",
-      fontWeight: vars.base.enabled.trigger.fontWeight,
-      fontSize: vars.base.enabled.trigger.fontSize,
+      fontWeight: vars.base.enabled.segment.fontWeight,
+      fontSize: vars.base.enabled.segment.fontSize,
 
       whiteSpace: "nowrap",
 
       textOverflow: "ellipsis",
       overflow: "hidden",
 
-      color: vars.base.enabled.trigger.color,
+      color: vars.base.enabled.segment.color,
 
-      [pseudo(selected)]: {
-        color: vars.base.selected.trigger.color,
+      [pseudo(checked)]: {
+        color: vars.base.enabledSelected.segment.color,
 
-        fontWeight: vars.base.selected.trigger.fontWeight,
+        fontWeight: vars.base.selected.segment.fontWeight,
       },
 
       [pseudo(disabled)]: {
-        color: vars.base.disabled.trigger.color,
+        color: vars.base.disabled.segment.color,
       },
     },
-    triggerLabelPlaceholder: {
-      paddingInline: vars.base.enabled.trigger.paddingX,
+    segmentLabelPlaceholder: {
+      paddingInline: vars.base.enabled.segment.paddingX,
 
       textAlign: "center",
-      fontWeight: vars.base.selected.trigger.fontWeight,
-      fontSize: vars.base.enabled.trigger.fontSize,
+      fontWeight: vars.base.selected.segment.fontWeight,
+      fontSize: vars.base.enabled.segment.fontSize,
 
       textOverflow: "ellipsis",
       overflow: "hidden",
