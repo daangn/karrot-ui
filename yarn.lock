@@ -10817,6 +10817,7 @@ __metadata:
     "@seed-design/react-icon": ^0.7.3
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
     "@seed-design/react-segmented-control": "workspace:^"
+    "@seed-design/react-switch": 0.0.0-alpha-20241030023710
     "@seed-design/react-tabs": 0.0.0-alpha-20241202094027
     "@seed-design/recipe": 0.0.0-alpha-20241202094027
     "@seed-design/rootage-cli": 0.0.0
