@@ -8,53 +8,42 @@
     "base": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.x12",
-          "paddingX": "$unit.x4",
-          "paddingY": "$unit.x3_5",
+          "paddingXStart": "$unit.x3_5",
+          "paddingXEnd": "$unit.x0_5",
+          "paddingY": "5px",
           "cornerRadius": "$radius.x2_5"
         },
-        "title": {
+        "content": {
+          "gap": "$unit.x3",
+          "paddingY": "9.5px",
           "fontSize": "$font-size.t4",
-          "fontWeight": "$font-weight.bold"
-        },
-        "description": {
-          "fontSize": "$font-size.t4",
-          "fontWeight": "$font-weight.regular"
+          "lineHeight": "$line-height.t5"
         },
         "icon": {
+          "size": "$unit.x4"
+        },
+        "title": {
+          "fontWeight": "$font-weight.bold"
+        },
+        "label": {
+          "fontWeight": "$font-weight.regular"
+        },
+        "dismissButton": {
+          "size": "$unit.x10"
+        },
+        "dismissIcon": {
+          "size": "$unit.x4"
+        },
+        "actionableIcon": {
           "size": "$unit.x4",
-          "marginRight": "$unit.x1_5"
-        },
-        "actionIndicator": {
-          "size": "$unit.x4_5",
-          "marginLeft": "$unit.x2_5"
-        },
-        "closeButton": {
-          "size": "$unit.x4_5",
-          "marginLeft": "$unit.x2_5"
+          "margin": "$unit.x3"
         }
       }
     },
-    "variant=outline": {
+    "type=contentOnly": {
       "enabled": {
-        "root": {
-          "strokeColor": "$color.stroke.neutral",
-          "strokeWidth": "1px"
-        },
-        "title": {
-          "color": "$color.fg.neutral"
-        },
-        "description": {
-          "color": "$color.fg.neutral"
-        },
-        "icon": {
-          "color": "$color.fg.neutral"
-        },
-        "actionIndicator": {
-          "color": "$color.fg.neutral"
-        },
-        "closeButton": {
-          "color": "$color.fg.neutral"
+        "content": {
+          "paddingXEnd": "$unit.x3"
         }
       }
     },
@@ -63,20 +52,28 @@
         "root": {
           "color": "$color.bg.neutral-weak"
         },
-        "title": {
-          "color": "$color.fg.neutral"
-        },
-        "description": {
-          "color": "$color.fg.neutral"
-        },
         "icon": {
           "color": "$color.fg.neutral"
         },
-        "actionIndicator": {
+        "title": {
           "color": "$color.fg.neutral"
         },
-        "closeButton": {
+        "label": {
           "color": "$color.fg.neutral"
+        },
+        "linkLabel": {
+          "color": "$color.fg.neutral"
+        },
+        "dismissIcon": {
+          "color": "$color.fg.neutral"
+        },
+        "actionableIcon": {
+          "color": "$color.fg.neutral"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.neutral-weak-pressed"
         }
       }
     },
@@ -85,20 +82,28 @@
         "root": {
           "color": "$color.bg.informative-weak"
         },
-        "title": {
-          "color": "$color.fg.informative-contrast"
-        },
-        "description": {
-          "color": "$color.fg.informative-contrast"
-        },
         "icon": {
           "color": "$color.fg.informative-contrast"
         },
-        "actionIndicator": {
+        "title": {
           "color": "$color.fg.informative-contrast"
         },
-        "closeButton": {
+        "label": {
           "color": "$color.fg.informative-contrast"
+        },
+        "linkLabel": {
+          "color": "$color.fg.informative-contrast"
+        },
+        "dismissIcon": {
+          "color": "$color.fg.informative-contrast"
+        },
+        "actionableIcon": {
+          "color": "$color.fg.informative-contrast"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.informative-weak-pressed"
         }
       }
     },
@@ -107,20 +112,28 @@
         "root": {
           "color": "$color.bg.warning-weak"
         },
-        "title": {
-          "color": "$color.fg.warning-contrast"
-        },
-        "description": {
-          "color": "$color.fg.warning-contrast"
-        },
         "icon": {
           "color": "$color.fg.warning-contrast"
         },
-        "actionIndicator": {
+        "title": {
           "color": "$color.fg.warning-contrast"
         },
-        "closeButton": {
+        "label": {
           "color": "$color.fg.warning-contrast"
+        },
+        "linkLabel": {
+          "color": "$color.fg.warning-contrast"
+        },
+        "dismissIcon": {
+          "color": "$color.fg.warning-contrast"
+        },
+        "actionableIcon": {
+          "color": "$color.fg.warning-contrast"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.warning-weak-pressed"
         }
       }
     },
@@ -129,20 +142,58 @@
         "root": {
           "color": "$color.bg.danger-weak"
         },
-        "title": {
-          "color": "$color.fg.danger-contrast"
-        },
-        "description": {
-          "color": "$color.fg.danger-contrast"
-        },
         "icon": {
           "color": "$color.fg.danger-contrast"
         },
-        "actionIndicator": {
+        "title": {
           "color": "$color.fg.danger-contrast"
         },
-        "closeButton": {
+        "label": {
           "color": "$color.fg.danger-contrast"
+        },
+        "linkLabel": {
+          "color": "$color.fg.danger-contrast"
+        },
+        "dismissIcon": {
+          "color": "$color.fg.danger-contrast"
+        },
+        "actionableIcon": {
+          "color": "$color.fg.danger-contrast"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.danger-weak-pressed"
+        }
+      }
+    },
+    "variant=magic": {
+      "enabled": {
+        "root": {
+          "color": "$color.bg.magic-weak"
+        },
+        "icon": {
+          "color": "$color.fg.magic-contrast"
+        },
+        "title": {
+          "color": "$color.fg.magic-contrast"
+        },
+        "label": {
+          "color": "$color.fg.magic-contrast"
+        },
+        "linkLabel": {
+          "color": "$color.fg.magic-contrast"
+        },
+        "dismissIcon": {
+          "color": "$color.fg.magic-contrast"
+        },
+        "actionableIcon": {
+          "color": "$color.fg.magic-contrast"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.magic-weak-pressed"
         }
       }
     }

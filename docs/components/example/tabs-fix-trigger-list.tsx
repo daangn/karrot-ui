@@ -1,33 +1,35 @@
 import { Tabs, TabContent, TabContentList, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
 
-export default function TabsDynamicHeightWithScroll() {
+export default function TabsFixTriggerList() {
   return (
-    <div style={{ width: "360px", height: "500px" }}>
+    // 600은 화면 높이라고 가정합니다.
+    <div style={{ width: "360px", height: "600px" }}>
       <Tabs
         defaultValue="1"
         lazyMode="keepMounted"
         isLazy={true}
+        size="medium"
         isSwipeable={false}
-        style={{ position: "relative" }}
+        fixTriggerList
+        style={{ height: "100%" }} // 탭 영역을 전체 화면으로 설정합니다.
       >
-        <TabTriggerList style={{ position: "sticky", top: 0, zIndex: 1 }}>
+        <TabTriggerList>
           <TabTrigger value="1">라벨1</TabTrigger>
           <TabTrigger value="2">라벨2</TabTrigger>
           <TabTrigger value="3">라벨3</TabTrigger>
         </TabTriggerList>
         <TabContentList>
-          <TabContent value="1" style={{ maxHeight: "500px" }}>
-            <Content height="700px">Content 1</Content>
+          <TabContent value="1">
+            <Content height="1000px">Content 1</Content>
           </TabContent>
-          <TabContent value="2" style={{ maxHeight: "500px" }}>
-            <Content height="700px">Content 2</Content>
+          <TabContent value="2">
+            <Content height="1000px">Content 2</Content>
           </TabContent>
-          <TabContent value="3" style={{ maxHeight: "500px" }}>
-            <Content height="700px">Content 3</Content>
+          <TabContent value="3">
+            <Content height="1000px">Content 3</Content>
           </TabContent>
         </TabContentList>
       </Tabs>
-      <div style={{ height: "100px", backgroundColor: "gray" }}>아래 컨텐츠</div>
     </div>
   );
 }
@@ -41,7 +43,7 @@ const Content = (props: React.PropsWithChildren<{ height: string }>) => {
         justifyContent: "center",
         alignItems: "center",
         height,
-        backgroundColor: "var(--seed-color-bg-layer-default)",
+        background: "linear-gradient(to bottom, white, gray)",
       }}
     >
       {children}

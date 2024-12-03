@@ -10,7 +10,7 @@
 
 ### Patch Changes
 
-- add --seed-design-current-tab-enabled-index css variable in root
+- add --seed-design-tabs-current-tab-enabled-index css variable in root
 
 ## 0.0.0-alpha-20241202030714
 

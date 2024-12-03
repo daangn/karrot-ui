@@ -125,22 +125,22 @@ export function useTabs(props: UseTabsProps) {
 
   const updateIndicatorStyle = React.useCallback(() => {
     if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tab-indicator-left", `${triggerSize.left}px`);
-      rootEl.style.setProperty("--seed-design-tab-indicator-width", `${triggerSize.width}px`);
+      rootEl.style.setProperty("--seed-design-tabs-indicator-left", `${triggerSize.left}px`);
+      rootEl.style.setProperty("--seed-design-tabs-indicator-width", `${triggerSize.width}px`);
     }
   }, [triggerSize, rootEl]);
 
   const updateCameraStyle = React.useCallback(() => {
     if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tab-camera-width", `${cameraSize.width}`);
+      rootEl.style.setProperty("--seed-design-tabs-tab-camera-width", `${cameraSize.width}`);
     }
   }, [cameraSize, rootEl]);
 
   const updateCurrentIndex = React.useCallback(() => {
     if (rootEl) {
-      rootEl.style.setProperty("--seed-design-current-tab-index", `${currentTabIndex}`);
+      rootEl.style.setProperty("--seed-design-tabs-current-tab-index", `${currentTabIndex}`);
       rootEl.style.setProperty(
-        "--seed-design-current-tab-enabled-index",
+        "--seed-design-tabs-current-tab-enabled-index",
         `${currentTabEnabledIndex}`,
       );
     }
@@ -148,7 +148,7 @@ export function useTabs(props: UseTabsProps) {
 
   const updateTabCount = React.useCallback(() => {
     if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tab-count", `${tabValues.length}`);
+      rootEl.style.setProperty("--seed-design-tabs-tab-count", `${tabValues.length}`);
     }
   }, [tabValues.length, rootEl]);
 
@@ -348,9 +348,10 @@ export function useTabs(props: UseTabsProps) {
     }),
     getTabContentProps: (props: ContentProps) => {
       const { value: contentValue, visibilityMode = "keep" } = props;
-      const tabContentId = dom.getTabTriggerRootId(contentValue, id);
+      const tabContentId = dom.getTabContentId(contentValue, id);
+      const tabTriggerId = dom.getTabTriggerRootId(contentValue, id);
       const isSelected = value === contentValue;
-      const isDisabled = !!dom.itemById(dom.getDisabledElements(id), tabContentId);
+      const isDisabled = !!dom.itemById(dom.getDisabledElements(id), tabTriggerId);
       const hidden = visibilityMode === "hidden" ? !isSelected || isDisabled : isDisabled;
 
       return elementProps({
@@ -359,7 +360,7 @@ export function useTabs(props: UseTabsProps) {
         "data-selected": dataAttr(isSelected),
         "data-orientation": orientation,
         "data-ownedby": dom.getTabTriggerListId(id),
-        "aria-labelledby": dom.getTabTriggerRootId(contentValue, id),
+        "aria-labelledby": tabTriggerId,
         "aria-selected": ariaAttr(isSelected),
         "aria-hidden": isDisabled ? undefined : !isSelected,
         hidden,

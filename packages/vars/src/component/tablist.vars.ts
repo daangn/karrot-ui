@@ -25,5 +25,19 @@ export const vars = {
         "paddingX": "0px"
       }
     }
+  },
+  "sizeSmall": {
+    "enabled": {
+      "root": {
+        "height": "40px"
+      }
+    }
+  },
+  "sizeMedium": {
+    "enabled": {
+      "root": {
+        "height": "44px"
+      }
+    }
   }
 }

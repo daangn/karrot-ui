@@ -55,6 +55,11 @@ export interface TabsProps
    * @default "small"
    */
   size?: "small" | "medium";
+
+  /**
+   * @default false
+   */
+  fixTriggerList?: boolean;
 }
 
 export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
@@ -66,6 +71,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       isSwipeable = false,
       layout = "hug",
       size = "small",
+      fixTriggerList = false,
     } = props;
     const useTabsProps = useTabs(props);
     const useSwipeableProps = useSwipeable({
@@ -75,6 +81,8 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     });
     const classNames = tabs({
       layout,
+      size,
+      fixTriggerList,
     });
     const { rootProps, value } = useTabsProps;
     const { shouldRender } = useLazyContents({
@@ -214,7 +222,7 @@ export const TabContentList = React.forwardRef<
       currentTabEnabledIndex === tabEnabledCount - 1;
     const swipeOffset = isSide ? swipeMoveX / MODIFIER : swipeMoveX;
 
-    return `calc(var(--seed-design-current-tab-enabled-index) * var(--seed-design-tab-camera-width) * -1px + ${swipeOffset}px)`;
+    return `calc(var(--seed-design-tabs-current-tab-enabled-index) * var(--seed-design-tabs-tab-camera-width) * -1px + ${swipeOffset}px)`;
   };
 
   return (

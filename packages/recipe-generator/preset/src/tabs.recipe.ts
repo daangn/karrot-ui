@@ -6,7 +6,7 @@ const tabs = defineRecipe({
   slots: ["root", "triggerList", "contentList", "contentCamera", "content", "indicator"],
   base: {
     root: {
-      overflowX: "hidden",
+      overflow: "hidden",
     },
     triggerList: {
       position: "relative",
@@ -29,7 +29,6 @@ const tabs = defineRecipe({
     },
     contentList: {
       width: "100%",
-      height: "100%",
     },
     contentCamera: {
       display: "flex",
@@ -40,15 +39,16 @@ const tabs = defineRecipe({
       width: "100%",
       height: "100%",
       flexShrink: 0,
-      overflow: "auto",
+      overflowY: "auto",
+      overflowX: "hidden",
     },
     indicator: {
       position: "absolute",
       willChange: "left, width",
       transition:
         "left 0.2s cubic-bezier(0.15, 0.3, 0.25, 1), width 0.2s cubic-bezier(0.15, 0.3, 0.25, 1)",
-      left: "var(--seed-design-tab-indicator-left, 0px)",
-      width: "var(--seed-design-tab-indicator-width, 0px)",
+      left: "var(--seed-design-tabs-indicator-left, 0px)",
+      width: "var(--seed-design-tabs-indicator-width, 0px)",
       color: vars.base.enabled.indicator.color,
       borderBottom: `${vars.base.enabled.indicator.height} solid ${vars.base.enabled.indicator.color}`,
       bottom: 0,
@@ -62,8 +62,8 @@ const tabs = defineRecipe({
           justifyContent: "space-around",
         },
         indicator: {
-          left: "calc(var(--seed-design-tab-indicator-left, 0px) + 16px)",
-          width: "calc(var(--seed-design-tab-indicator-width, 0px) - 32px)",
+          left: "calc(var(--seed-design-tabs-indicator-left, 0px) + 16px)",
+          width: "calc(var(--seed-design-tabs-indicator-width, 0px) - 32px)",
         },
       },
       hug: {
@@ -72,14 +72,49 @@ const tabs = defineRecipe({
           justifyContent: "flex-start",
         },
         indicator: {
-          left: "calc(var(--seed-design-tab-indicator-left, 0px))",
-          width: "calc(var(--seed-design-tab-indicator-width, 0px))",
+          left: "calc(var(--seed-design-tabs-indicator-left, 0px))",
+          width: "calc(var(--seed-design-tabs-indicator-width, 0px))",
         },
       },
+    },
+    size: {
+      small: {
+        root: {
+          "--seed-design-tabs-trigger-list-height": vars.sizeSmall.enabled.root.height,
+        },
+        triggerList: {
+          height: vars.sizeSmall.enabled.root.height,
+        },
+      },
+      medium: {
+        root: {
+          "--seed-design-tabs-trigger-list-height": vars.sizeMedium.enabled.root.height,
+        },
+        triggerList: {
+          height: vars.sizeMedium.enabled.root.height,
+        },
+      },
+    },
+    fixTriggerList: {
+      true: {
+        root: {
+          position: "relative",
+        },
+        triggerList: {
+          position: "sticky",
+          top: 0,
+        },
+        contentList: {
+          height: "calc(100% - var(--seed-design-tabs-trigger-list-height))",
+        },
+      },
+      false: {},
     },
   },
   defaultVariants: {
     layout: "hug",
+    size: "small",
+    fixTriggerList: false,
   },
 });
 

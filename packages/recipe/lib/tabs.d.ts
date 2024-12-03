@@ -3,6 +3,14 @@ interface TabsVariant {
   * @default hug
   */
   layout: "fill" | "hug";
+/**
+  * @default small
+  */
+  size: "small" | "medium";
+/**
+  * @default false
+  */
+  fixTriggerList: true | false;
 }
 
 type TabsVariantMap = {
