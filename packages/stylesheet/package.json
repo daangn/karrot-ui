@@ -10,8 +10,10 @@
     "access": "public"
   },
   "scripts": {
-    "prepack": "yarn build:style",
-    "build:style": "yarn rootage token-css && yarn recipegen css"
+    "prepack": "yarn generate",
+    "generate": "yarn recipe:generate && yarn rootage:generate",
+    "recipe:generate": "yarn recipegen css",
+    "rootage:generate": "yarn rootage token-css"
   },
   "exports": {
     "./*.css": "./*.css",
@@ -23,5 +25,11 @@
   "devDependencies": {
     "@seed-design/recipe-generator-cli": "0.0.0",
     "@seed-design/rootage-cli": "0.0.0"
+  },
+  "ultra": {
+    "concurrent": [
+      "recipe:generate",
+      "rootage:generate"
+    ]
   }
 }

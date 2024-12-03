@@ -16,8 +16,8 @@
     "src"
   ],
   "scripts": {
-    "build": "yarn build:style",
-    "build:style": "node ./build.mjs",
+    "build": "node ./build.mjs",
+    "recipe:build": "node ./build.mjs",
     "dev": "node ./dev.mjs"
   },
   "dependencies": {
@@ -37,7 +37,8 @@
   "ultra": {
     "concurrent": [
       "dev",
-      "build"
+      "build",
+      "recipe:build"
     ]
   }
 }

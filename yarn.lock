@@ -6502,7 +6502,7 @@ __metadata:
   resolution: "@seed-design/recipe-generator-preset@workspace:packages/recipe-generator/preset"
   dependencies:
     "@seed-design/recipe-generator-core": 0.0.0
-    "@seed-design/vars": "workspace:^"
+    "@seed-design/vars": 0.0.0
     nanobundle: ^1.6.0
   languageName: unknown
   linkType: soft
@@ -6596,7 +6596,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/vars@0.0.0, @seed-design/vars@workspace:^, @seed-design/vars@workspace:packages/vars":
+"@seed-design/vars@0.0.0, @seed-design/vars@workspace:packages/vars":
   version: 0.0.0-use.local
   resolution: "@seed-design/vars@workspace:packages/vars"
   dependencies:

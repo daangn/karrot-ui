@@ -17,8 +17,9 @@
     "lib"
   ],
   "scripts": {
-    "prepack": "yarn build:style",
-    "build:style": "yarn recipegen js ./lib"
+    "prepack": "yarn build",
+    "build": "yarn recipe:generate",
+    "recipe:generate": "yarn recipegen js ./lib"
   },
   "devDependencies": {
     "@seed-design/recipe-generator-cli": "0.0.0"
@@ -28,8 +29,8 @@
   },
   "ultra": {
     "concurrent": [
-      "dev",
-      "build"
+      "build",
+      "recipe:generate"
     ]
   }
 }

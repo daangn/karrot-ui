@@ -20,13 +20,14 @@
     "src"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
-    "build": "yarn build:style",
-    "build:style": "nanobundle build"
+    "clean": "rm -rf lib",
+    "prepack": "yarn clean && yarn build",
+    "build": "nanobundle build",
+    "recipe:generate": "nanobundle build"
   },
   "dependencies": {
     "@seed-design/recipe-generator-core": "0.0.0",
-    "@seed-design/vars": "workspace:^"
+    "@seed-design/vars": "0.0.0"
   },
   "devDependencies": {
     "nanobundle": "^1.6.0"
@@ -36,8 +37,8 @@
   },
   "ultra": {
     "concurrent": [
-      "dev",
-      "build"
+      "build",
+      "recipe:generate"
     ]
   }
 }

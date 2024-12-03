@@ -23,6 +23,7 @@
   "scripts": {
     "prepack": "rm -rf lib && yarn build",
     "build": "nanobundle build",
+    "rootage:build": "nanobundle build",
     "test": "vitest"
   },
   "publishConfig": {
@@ -40,8 +41,8 @@
   },
   "ultra": {
     "concurrent": [
-      "dev",
-      "build"
+      "build",
+      "rootage:build"
     ]
   }
 }
