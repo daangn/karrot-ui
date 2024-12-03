@@ -2,6 +2,9 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
+        "gap": "var(--seed-v3-unit-x3)"
+      },
+      "box": {
         "paddingX": "var(--seed-v3-unit-x4)",
         "paddingY": "19px",
         "gap": "var(--seed-v3-unit-x2_5)",
@@ -23,21 +26,24 @@ export const vars = {
         "fontWeight": "var(--seed-v3-font-weight-regular)",
         "fontSize": "var(--seed-v3-font-size-t4)",
         "lineHeight": "var(--seed-v3-line-height-t4)"
+      },
+      "control": {
+        "marginY": "0"
       }
     },
     "pressed": {
-      "root": {
+      "box": {
         "color": "var(--seed-v3-color-bg-layer-default-pressed)"
       }
     },
     "selected": {
-      "root": {
+      "box": {
         "color": "var(--seed-v3-color-bg-neutral-weak)",
         "strokeColor": "var(--seed-v3-color-stroke-control)"
       }
     },
     "selectedPressed": {
-      "root": {
+      "box": {
         "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
       }
     }

@@ -6,6 +6,10 @@ const selectBoxSlotNames = [
     "selectBox__root"
   ],
   [
+    "box",
+    "selectBox__box"
+  ],
+  [
     "content",
     "selectBox__content"
   ],

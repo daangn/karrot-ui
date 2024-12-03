@@ -140,13 +140,13 @@
     ]
   },
   {
-    "name": "select-box-check",
+    "name": "select-box-check-group",
     "dependencies": [
       "@seed-design/react-checkbox",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
-      "ui:select-box-check.tsx"
+      "ui:select-box-check-group.tsx"
     ]
   },
   {

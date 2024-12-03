@@ -2,7 +2,7 @@ import { SelectBoxRadioGroup, SelectBoxRadio } from "seed-design/ui/select-box-r
 
 export default function SelectBoxRadioGroupPreview() {
   return (
-    <SelectBoxRadioGroup className="flex flex-col gap-2 w-full">
+    <SelectBoxRadioGroup className="flex flex-col gap-2 w-full" defaultValue="culpa">
       <SelectBoxRadio value="culpa" label="Culpa" />
       <SelectBoxRadio
         value="voluptate"

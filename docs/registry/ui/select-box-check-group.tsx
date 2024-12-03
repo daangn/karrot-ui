@@ -25,6 +25,20 @@ import {
   IconMinusFatFill,
 } from "@daangn/react-monochrome-icon";
 
+export const SelectBoxCheckGroup = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, children, ...otherProps }, ref) => {
+  const classNames = selectBox();
+
+  return (
+    <div ref={ref} {...otherProps} className={clsx(classNames.root, className)}>
+      {children}
+    </div>
+  );
+});
+SelectBoxCheckGroup.displayName = "SelectBoxCheckGroup";
+
 export interface SelectBoxCheckProps
   extends SelectBoxVariantProps,
     Pick<CheckboxVariantProps, "indeterminate">,
@@ -54,7 +68,7 @@ export const SelectBoxCheck = React.forwardRef<
 
   return (
     <label
-      className={clsx(selectBoxClassNames.root, className)}
+      className={clsx(selectBoxClassNames.box, className)}
       {...rootProps}
       {...restProps}
     >

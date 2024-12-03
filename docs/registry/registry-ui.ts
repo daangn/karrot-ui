@@ -90,12 +90,12 @@ export const registryUI: RegistryUI = [
     files: ["ui:expand-button.tsx"],
   },
   {
-    name: "select-box-check",
+    name: "select-box-check-group",
     dependencies: [
       "@seed-design/react-checkbox",
       "@daangn/react-monochrome-icon",
     ],
-    files: ["ui:select-box-check.tsx"],
+    files: ["ui:select-box-check-group.tsx"],
   },
   {
     name: "select-box-radio-group",

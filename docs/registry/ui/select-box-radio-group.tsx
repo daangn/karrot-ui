@@ -51,8 +51,15 @@ export const SelectBoxRadioGroup = React.forwardRef<
     restProps,
   } = api;
 
+  const classNames = selectBox();
+
   return (
-    <div ref={ref} {...rootProps} {...restProps} className={className}>
+    <div
+      ref={ref}
+      {...rootProps}
+      {...restProps}
+      className={clsx(classNames.root, className)}
+    >
       {/* <div {...labelProps}>
         {label}
       </div> */}
@@ -90,7 +97,7 @@ export const SelectBoxRadio = React.forwardRef<
 
   return (
     <label
-      className={clsx(selectBoxClassNames.root, className)}
+      className={clsx(selectBoxClassNames.box, className)}
       {...rootProps}
       {...restProps}
     >

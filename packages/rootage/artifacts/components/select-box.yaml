@@ -7,6 +7,8 @@ data:
   base:
     enabled:
       root:
+        gap: $unit.x3
+      box:
         paddingX: $unit.x4
         paddingY: 19px
         gap: $unit.x2_5
@@ -25,13 +27,15 @@ data:
         fontWeight: $font-weight.regular
         fontSize: $font-size.t4
         lineHeight: $line-height.t4
+      control:
+        marginY: 0
     pressed:
-      root:
+      box:
         color: $color.bg.layer-default-pressed
     selected:
-      root:
+      box:
         color: $color.bg.neutral-weak
         strokeColor: $color.stroke.control
     selected,pressed:
-      root:
+      box:
         color: $color.bg.neutral-weak-pressed
