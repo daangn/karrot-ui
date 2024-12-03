@@ -122,7 +122,6 @@ function UncontrolledTabs({
 
 afterEach(cleanup);
 
-// TODO: 테스트 코드 작성 중
 describe("useTabs", () => {
   window.ResizeObserver = ResizeObserver;
 
