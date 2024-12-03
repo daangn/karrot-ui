@@ -20,8 +20,10 @@
     "src"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
+    "clean": "rm -rf lib",
+    "prepack": "yarn clean && yarn build",
     "build": "nanobundle build",
+    "recipe:build": "nanobundle build",
     "test": "vitest"
   },
   "publishConfig": {
@@ -44,7 +46,7 @@
   "ultra": {
     "concurrent": [
       "dev",
-      "build"
+      "recipe:build"
     ]
   }
 }

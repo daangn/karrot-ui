@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "build": "node ./build.mjs",
+    "rootage:build": "node ./build.mjs",
     "dev": "node ./dev.mjs",
     "generate:schema": "node ./bin/index.mjs json-schema"
   },
@@ -37,8 +38,8 @@
   },
   "ultra": {
     "concurrent": [
-      "dev",
-      "build"
+      "build",
+      "rootage:build"
     ]
   }
 }

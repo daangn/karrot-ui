@@ -21,7 +21,7 @@
   "scripts": {
     "prepack": "yarn build",
     "build": "ENV=prod node ./build.mjs",
-    "dev": "ENV=dev node ./dev.mjs",
+    "cli:dev": "ENV=dev node ./dev.mjs",
     "test": "yarn vitest"
   },
   "dependencies": {
@@ -55,7 +55,7 @@
   },
   "ultra": {
     "concurrent": [
-      "dev",
+      "cli:dev",
       "build"
     ]
   }

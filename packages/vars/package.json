@@ -30,12 +30,11 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "prepack": "yarn build",
-    "generate:all": "yarn generate:token && yarn generate:component",
-    "generate:token": "yarn rootage token-ts ./src",
-    "generate:component": "yarn rootage component-spec ./src/component",
-    "build": "yarn build:style",
-    "build:style": "yarn generate:component && nanobundle build"
+    "prepack": "yarn rootage:generate",
+    "build": "nanobundle build",
+    "rootage:generate": "yarn rootage:generate:token && yarn rootage:generate:component && yarn build",
+    "rootage:generate:token": "yarn rootage token-ts ./src",
+    "rootage:generate:component": "yarn rootage component-spec ./src/component"
   },
   "devDependencies": {
     "@seed-design/rootage-cli": "0.0.0",
@@ -43,8 +42,8 @@
   },
   "ultra": {
     "concurrent": [
-      "dev",
-      "build"
+      "build",
+      "rootage:generate"
     ]
   }
 }
