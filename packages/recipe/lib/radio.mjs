@@ -6,16 +6,8 @@ const radioSlotNames = [
     "radio__root"
   ],
   [
-    "control",
-    "radio__control"
-  ],
-  [
     "icon",
     "radio__icon"
-  ],
-  [
-    "label",
-    "radio__label"
   ]
 ];
 

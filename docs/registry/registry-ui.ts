@@ -90,6 +90,19 @@ export const registryUI: RegistryUI = [
     files: ["ui:expand-button.tsx"],
   },
   {
+    name: "select-box-check-group",
+    dependencies: [
+      "@seed-design/react-checkbox",
+      "@daangn/react-monochrome-icon",
+    ],
+    files: ["ui:select-box-check-group.tsx"],
+  },
+  {
+    name: "select-box-radio-group",
+    dependencies: ["@seed-design/react-radio-group"],
+    files: ["ui:select-box-radio-group.tsx"],
+  },
+  {
     name: "segmented-control",
     dependencies: ["@seed-design/react-segmented-control"],
     files: ["ui:segmented-control.tsx"],
