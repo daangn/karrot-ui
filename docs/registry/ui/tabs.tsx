@@ -91,6 +91,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       <div
         ref={ref}
         {...rootProps}
+        style={{ ...rootProps.style, ...props.style }}
         className={clsx(classNames.root, className)}
       >
         <TabsContext.Provider

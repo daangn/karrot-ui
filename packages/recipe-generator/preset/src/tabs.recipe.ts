@@ -27,7 +27,10 @@ const tabs = defineRecipe({
         display: "none",
       },
     },
-    contentList: {},
+    contentList: {
+      width: "100%",
+      height: "100%",
+    },
     contentCamera: {
       display: "flex",
       width: "100%",
