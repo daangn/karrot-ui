@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { TextField } from "seed-design/ui/text-field";
 
 export default function TextFieldSlicing() {
