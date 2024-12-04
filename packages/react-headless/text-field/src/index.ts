@@ -1,58 +1,48 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { splitGraphemes } from "unicode-segmenter/grapheme";
 
-import {
-  dataAttr,
-  ariaAttr,
-  elementProps,
-  inputProps,
-  labelProps,
-  useEvent,
-} from "@seed-design/react-utils";
+import { dataAttr, ariaAttr, elementProps, inputProps, labelProps } from "@seed-design/react-utils";
 import { getDescriptionId, getErrorMessageId, getInputId, getLabelId } from "./dom";
 
+import { useCallbackRef } from "@radix-ui/react-use-callback-ref";
+
 import {
-  useCallback,
   useId,
+  useMemo,
   useState,
+  useCallback,
   type InputHTMLAttributes,
   type TextareaHTMLAttributes,
   type FocusEvent,
-  useEffect,
   type ChangeEvent,
 } from "react";
-
-const getSlicedGraphemes = ({
-  value,
-  maxGraphemeCount,
-}: { value: string; maxGraphemeCount?: number }) => {
-  const graphemes = Array.from(splitGraphemes(value));
-
-  return maxGraphemeCount ? graphemes.slice(0, maxGraphemeCount) : graphemes;
-};
 
 export interface UseTextFieldStateProps {
   value?: string;
   defaultValue?: string;
-  onValueChange?: (value: string) => void;
+  onValueChange?: (values: {
+    value: string;
+    graphemes: string[];
+    slicedValue: string;
+    slicedGraphemes: string[];
+  }) => void;
   maxGraphemeCount?: number;
-  onGraphemesChange?: (graphemes: string[]) => void;
 }
 
 export function useTextFieldState({
   value: __value,
   defaultValue,
-  onValueChange,
+  onValueChange: __onValueChange,
   maxGraphemeCount,
-  onGraphemesChange: __onGraphemesChange,
 }: UseTextFieldStateProps) {
   const [value, setValue] = useControllableState({
     prop: __value,
     defaultProp: defaultValue,
-    onChange: onValueChange,
   });
-  const [graphemes, setGraphemes] = useState<string[]>(() =>
-    getSlicedGraphemes({ value: value ?? defaultValue ?? "", maxGraphemeCount }),
+
+  const graphemes = useMemo(
+    () => Array.from(splitGraphemes(value ?? defaultValue ?? "")),
+    [value, defaultValue],
   );
 
   const [isHovered, setIsHovered] = useState(false);
@@ -60,24 +50,23 @@ export function useTextFieldState({
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusVisible, setIsFocusVisible] = useState(false);
 
-  const onGraphemesChange = useEvent(__onGraphemesChange);
+  const onValueChange = useCallbackRef(__onValueChange);
 
   const handleValueChange = useCallback(
     (newValue: string) => {
-      const newGraphemes = getSlicedGraphemes({
-        value: newValue,
-        maxGraphemeCount,
-      });
+      const graphemes = Array.from(splitGraphemes(newValue));
 
-      setValue(newValue);
-      setGraphemes(newGraphemes);
+      const value = graphemes.join("");
+
+      setValue(value);
+
+      const slicedGraphemes = maxGraphemeCount ? graphemes.slice(0, maxGraphemeCount) : graphemes;
+      const slicedValue = slicedGraphemes.join("");
+
+      onValueChange({ value, graphemes, slicedValue, slicedGraphemes });
     },
-    [maxGraphemeCount, setValue],
+    [setValue, onValueChange, maxGraphemeCount],
   );
-
-  useEffect(() => {
-    onGraphemesChange(graphemes);
-  }, [graphemes, onGraphemesChange]);
 
   return {
     value,
@@ -141,7 +130,6 @@ export function useTextField(props: UseTextFieldProps) {
     onFocus,
     onChange,
     onValueChange,
-    onGraphemesChange,
     ...restProps
   } = props;
 
@@ -162,7 +150,6 @@ export function useTextField(props: UseTextFieldProps) {
     defaultValue,
     onValueChange,
     maxGraphemeCount,
-    onGraphemesChange,
   });
 
   const renderDescription = !!description;
@@ -239,10 +226,9 @@ export function useTextField(props: UseTextFieldProps) {
       id: getInputId(id),
       name: props.name || id,
       onChange: (event) => {
-        handleValueChange(event.target.value);
-
         setIsFocusVisible(event.target.matches(":focus-visible"));
 
+        handleValueChange(event.target.value);
         onChange?.(event);
       },
       onBlur(event) {
