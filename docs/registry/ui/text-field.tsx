@@ -29,7 +29,7 @@ export interface TextFieldProps
 }
 
 type ReactTextFieldProps = Assign<
-  Omit<React.InputHTMLAttributes<HTMLInputElement>, "children" | "maxLength">,
+  Omit<React.InputHTMLAttributes<HTMLInputElement>, "children">,
   TextFieldProps
 >;
 
@@ -40,13 +40,12 @@ export const TextField = React.forwardRef<
   (
     {
       size = "medium",
-      label,
       requiredIndicator,
       optionalIndicator,
       prefix,
       suffix,
       hideGraphemeCount,
-      ...restProps
+      ...otherProps
     },
     ref,
   ) => {
@@ -56,22 +55,21 @@ export const TextField = React.forwardRef<
       labelProps: { className: labelClassName, ...labelProps },
       descriptionProps,
       errorMessageProps,
+      renderDescription,
+      renderErrorMessage,
       stateProps,
-      restProps: restInternalProps,
-      isInvalid,
+      restProps,
       isRequired,
       graphemes,
-    } = useTextField(restProps);
+    } = useTextField(otherProps);
 
-    const { description, errorMessage, maxGraphemeCount } = restProps;
+    const { label, description, errorMessage, maxGraphemeCount } = otherProps;
 
     const classNames = textField({ size });
 
     const indicator = isRequired ? requiredIndicator : optionalIndicator;
 
-    const renderDescription = !isInvalid && description;
-    const renderErrorMessage = isInvalid && !!errorMessage;
-    const renderCharacterCount = !hideGraphemeCount && maxGraphemeCount;
+    const renderGraphemeCount = !hideGraphemeCount && maxGraphemeCount;
 
     return (
       <div
@@ -104,7 +102,7 @@ export const TextField = React.forwardRef<
             ref={ref}
             className={clsx(classNames.inputText, inputClassName)}
             {...inputProps}
-            {...restInternalProps}
+            {...restProps}
           />
           {suffix &&
             (typeof suffix === "string" ? (
@@ -115,7 +113,7 @@ export const TextField = React.forwardRef<
               </Slot>
             ))}
         </div>
-        {(renderDescription || renderErrorMessage || renderCharacterCount) && (
+        {(renderDescription || renderErrorMessage || renderGraphemeCount) && (
           <div className={classNames.footer}>
             {renderDescription && (
               <div {...descriptionProps} className={classNames.description}>
@@ -130,7 +128,7 @@ export const TextField = React.forwardRef<
                 <div>{errorMessage}</div>
               </div>
             )}
-            {renderCharacterCount && (
+            {renderGraphemeCount && (
               <div className={classNames.graphemeCount}>
                 <span
                   {...stateProps}

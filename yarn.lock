@@ -6450,7 +6450,7 @@ __metadata:
     "@radix-ui/react-use-controllable-state": 1.0.1
     "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
-    unicode-segmenter: ^0.7.0
+    unicode-segmenter: ^0.11.2
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
@@ -20255,10 +20255,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unicode-segmenter@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "unicode-segmenter@npm:0.7.0"
-  checksum: 0814d9768e965c81c2b9179057bf2278d2bb4a9a5d9bb228bd665f70e28e1400a82b1ef36ad91215dcd89e35532c303f5a83fd089ece29a09dcdd359ff570087
+"unicode-segmenter@npm:^0.11.2":
+  version: 0.11.2
+  resolution: "unicode-segmenter@npm:0.11.2"
+  checksum: 9f894239c8fc1056fbddec4f3098e6b6b90bc80858052e5fac29b14758607d69f3a9bb89a683d3f1524717fbaaf91b5c68c79c23422c67a37dc894ddd94075e5
   languageName: node
   linkType: hard
 
