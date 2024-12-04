@@ -1,0 +1,58 @@
+"use client";
+
+import { ActionButton } from "@/registry/ui/action-button";
+import { IconHouseLine } from "@daangn/react-monochrome-icon";
+import { useForm } from "react-hook-form";
+import { TextField } from "seed-design/ui/text-field";
+
+interface FormValues {
+  name: string;
+  address: string;
+}
+
+export default function TextFieldReactHookForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
+
+  const onValid = (data: FormValues) => {
+    window.alert(JSON.stringify(data, null, 2));
+  };
+
+  return (
+    <form className="grid grid-cols-2 gap-3 w-full" onSubmit={handleSubmit(onValid)}>
+      <TextField
+        {...register("name", { required: "필수 입력 항목입니다" })}
+        label="이름"
+        placeholder="홍길동"
+        description="이름을 써주세요"
+        invalid={!!errors.name}
+        errorMessage={errors.name?.message}
+        requiredIndicator="(필수)"
+        required
+      />
+      <TextField
+        {...register("address", {
+          required: "필수 입력 항목입니다",
+          pattern: {
+            value: /^대한민국/,
+            message: "대한민국으로 시작해주세요",
+          },
+        })}
+        label="주소"
+        placeholder="대한민국 서울특별시 은평구"
+        description="주소를 써주세요"
+        invalid={!!errors.address}
+        errorMessage={errors.address?.message}
+        prefix={<IconHouseLine />}
+        requiredIndicator="(필수)"
+        required
+      />
+      <ActionButton type="submit" className="col-span-2">
+        제출
+      </ActionButton>
+    </form>
+  );
+}
