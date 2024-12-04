@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241204032110
+
+### Patch Changes
+
+- tabs overflowX to visible
+
 ## 3.0.0-alpha-20241203133940
 
 ### Patch Changes
