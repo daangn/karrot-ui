@@ -52,7 +52,7 @@ export function useTextFieldState({
     onChange: onValueChange,
   });
   const [graphemes, setGraphemes] = useState<string[]>(() =>
-    getSlicedGraphemes({ value, maxGraphemeCount }),
+    getSlicedGraphemes({ value: value ?? defaultValue ?? "", maxGraphemeCount }),
   );
 
   const [isHovered, setIsHovered] = useState(false);
