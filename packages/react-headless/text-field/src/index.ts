@@ -51,7 +51,10 @@ export function useTextFieldState({
     defaultProp: defaultValue,
     onChange: onValueChange,
   });
-  const [graphemes, setGraphemes] = useState<string[]>([]);
+  const [graphemes, setGraphemes] = useState<string[]>(() =>
+    getSlicedGraphemes({ value, maxGraphemeCount }),
+  );
+
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
@@ -59,22 +62,22 @@ export function useTextFieldState({
 
   const onGraphemesChange = useEvent(__onGraphemesChange);
 
-  const updateValue = useCallback(
+  const handleValueChange = useCallback(
     (newValue: string) => {
-      const slicedGraphemes = getSlicedGraphemes({
-        maxGraphemeCount,
+      const newGraphemes = getSlicedGraphemes({
         value: newValue,
+        maxGraphemeCount,
       });
 
-      const value = slicedGraphemes.join("");
-
-      setValue(value);
-      setGraphemes(slicedGraphemes);
+      setValue(newValue);
+      setGraphemes(newGraphemes);
     },
-    [maxGraphemeCount, graphemes.length, setValue],
+    [maxGraphemeCount, setValue],
   );
 
-  useEffect(() => onGraphemesChange(graphemes), [graphemes, onGraphemesChange]);
+  useEffect(() => {
+    onGraphemesChange(graphemes);
+  }, [graphemes, onGraphemesChange]);
 
   return {
     value,
@@ -84,7 +87,7 @@ export function useTextFieldState({
     isFocused,
     isFocusVisible,
 
-    updateValue,
+    handleValueChange,
     setIsHovered,
     setIsPressed,
     setIsFocused,
@@ -116,9 +119,9 @@ export interface UseTextFieldProps extends UseTextFieldStateProps {
   description?: string;
   errorMessage?: string;
 
-  onChange?: (e: ChangeEvent) => void;
-  onFocus?: (e: FocusEvent) => void;
-  onBlur?: (e: FocusEvent) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onFocus?: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onBlur?: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
 export function useTextField(props: UseTextFieldProps) {
@@ -143,17 +146,17 @@ export function useTextField(props: UseTextFieldProps) {
   } = props;
 
   const {
-    updateValue,
     value: stateValue,
     graphemes,
-    setIsHovered,
     isHovered,
-    setIsPressed,
     isPressed,
-    setIsFocused,
     isFocused,
-    setIsFocusVisible,
     isFocusVisible,
+    handleValueChange,
+    setIsHovered,
+    setIsPressed,
+    setIsFocused,
+    setIsFocusVisible,
   } = useTextFieldState({
     value: propValue,
     defaultValue,
@@ -187,10 +190,11 @@ export function useTextField(props: UseTextFieldProps) {
   return {
     value: stateValue,
     graphemes,
-    updateValue,
     isFocused,
     isInvalid: invalid,
     isRequired: required,
+
+    handleValueChange,
     setIsFocused,
     setIsFocusVisible,
 
@@ -225,44 +229,46 @@ export function useTextField(props: UseTextFieldProps) {
 
     inputProps: inputProps({
       ...stateProps,
-      disabled,
-      readOnly,
+      ...(propValue && { value: stateValue }),
+      ...(label && { "aria-labelledby": getLabelId(id) }),
+      "aria-describedby": ariaDescribedBy,
       "aria-required": ariaAttr(required),
       "aria-invalid": ariaAttr(invalid),
-      "aria-describedby": ariaDescribedBy,
-      ...(label && { "aria-labelledby": getLabelId(id) }),
+      disabled,
+      readOnly,
+      id: getInputId(id),
+      name: props.name || id,
       onChange: (event) => {
-        const givenValue = event.target.value;
+        handleValueChange(event.target.value);
 
-        updateValue(givenValue);
         setIsFocusVisible(event.target.matches(":focus-visible"));
+
         onChange?.(event);
       },
       onBlur(event) {
         setIsFocused(false);
         setIsFocusVisible(false);
+
         onBlur?.(event);
       },
       onFocus(event) {
         setIsFocused(true);
         setIsFocusVisible(event.target.matches(":focus-visible"));
+
         onFocus?.(event);
       },
-      name: props.name || id,
-      id: getInputId(id),
-      ...(propValue && { value: stateValue }),
     }) as unknown as InputHTMLAttributes<HTMLInputElement> &
       TextareaHTMLAttributes<HTMLTextAreaElement>,
 
     descriptionProps: elementProps({
-      id: getDescriptionId(id),
-      ...(invalid && { style: { display: "none" } }),
       ...stateProps,
+      ...(invalid && { style: { display: "none" } }),
+      id: getDescriptionId(id),
     }),
 
     errorMessageProps: elementProps({
-      id: getErrorMessageId(id),
       ...stateProps,
+      id: getErrorMessageId(id),
     }),
   };
 }
