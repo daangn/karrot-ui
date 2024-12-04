@@ -42,15 +42,15 @@ data:
         gap: $unit.x1
         color: $color.fg.danger
         fontWeight: $font-weight.regular
-      graphemeCount:
+      characterCount:
         # XXX: description의 한 줄과 높이가 같아야 함
         size: $line-height.t4
         lineHeight: $line-height.t2
-      currentGraphemeCount:
+      currentCharacterCount:
         color: $color.fg.neutral
         fontWeight: $font-weight.regular
         fontSize: $font-size.t2
-      maxGraphemeCount:
+      maxCharacterCount:
         color: $color.fg.neutral-subtle
         fontWeight: $font-weight.regular
         fontSize: $font-size.t2

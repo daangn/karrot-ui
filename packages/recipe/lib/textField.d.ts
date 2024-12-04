@@ -11,7 +11,7 @@ type TextFieldVariantMap = {
 
 export type TextFieldVariantProps = Partial<TextFieldVariant>;
 
-export type TextFieldSlotName = "root" | "header" | "label" | "indicator" | "input" | "inputText" | "prefixText" | "prefixIcon" | "suffixText" | "suffixIcon" | "footer" | "description" | "errorMessage" | "errorIcon" | "graphemeCount" | "currentGraphemeCount" | "maxGraphemeCount";
+export type TextFieldSlotName = "root" | "header" | "label" | "indicator" | "input" | "inputText" | "prefixText" | "prefixIcon" | "suffixText" | "suffixIcon" | "footer" | "description" | "errorMessage" | "errorIcon" | "characterCount" | "currentCharacterCount" | "maxCharacterCount";
 
 export const textFieldVariantMap: TextFieldVariantMap;
 

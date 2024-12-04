@@ -50,16 +50,16 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-danger)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
-      "graphemeCount": {
+      "characterCount": {
         "size": "var(--seed-v3-line-height-t4)",
         "lineHeight": "var(--seed-v3-line-height-t2)"
       },
-      "currentGraphemeCount": {
+      "currentCharacterCount": {
         "color": "var(--seed-v3-color-fg-neutral)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
         "fontSize": "var(--seed-v3-font-size-t2)"
       },
-      "maxGraphemeCount": {
+      "maxCharacterCount": {
         "color": "var(--seed-v3-color-fg-neutral-subtle)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
         "fontSize": "var(--seed-v3-font-size-t2)"

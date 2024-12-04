@@ -58,16 +58,16 @@ const textFieldSlotNames = [
     "textField__errorIcon"
   ],
   [
-    "graphemeCount",
-    "textField__graphemeCount"
+    "characterCount",
+    "textField__characterCount"
   ],
   [
-    "currentGraphemeCount",
-    "textField__currentGraphemeCount"
+    "currentCharacterCount",
+    "textField__currentCharacterCount"
   ],
   [
-    "maxGraphemeCount",
-    "textField__maxGraphemeCount"
+    "maxCharacterCount",
+    "textField__maxCharacterCount"
   ]
 ];
 

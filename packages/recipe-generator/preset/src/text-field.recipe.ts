@@ -19,9 +19,9 @@ const textField = defineRecipe({
     "description",
     "errorMessage",
     "errorIcon",
-    "graphemeCount",
-    "currentGraphemeCount",
-    "maxGraphemeCount",
+    "characterCount",
+    "currentCharacterCount",
+    "maxCharacterCount",
   ],
   base: {
     root: {
@@ -163,25 +163,25 @@ const textField = defineRecipe({
     errorIcon: {
       flex: "none",
     },
-    graphemeCount: {
+    characterCount: {
       flex: "none",
 
-      height: vars.base.enabled.graphemeCount.size,
-      lineHeight: vars.base.enabled.graphemeCount.lineHeight,
+      height: vars.base.enabled.characterCount.size,
+      lineHeight: vars.base.enabled.characterCount.lineHeight,
     },
-    currentGraphemeCount: {
-      color: vars.base.enabled.currentGraphemeCount.color,
-      fontWeight: vars.base.enabled.currentGraphemeCount.fontWeight,
-      fontSize: vars.base.enabled.currentGraphemeCount.fontSize,
+    currentCharacterCount: {
+      color: vars.base.enabled.currentCharacterCount.color,
+      fontWeight: vars.base.enabled.currentCharacterCount.fontWeight,
+      fontSize: vars.base.enabled.currentCharacterCount.fontSize,
 
       [pseudo(`[data-grapheme-count="0"]`)]: {
-        color: vars.base.enabled.maxGraphemeCount.color,
+        color: vars.base.enabled.maxCharacterCount.color,
       },
     },
-    maxGraphemeCount: {
-      color: vars.base.enabled.maxGraphemeCount.color,
-      fontWeight: vars.base.enabled.maxGraphemeCount.fontWeight,
-      fontSize: vars.base.enabled.maxGraphemeCount.fontSize,
+    maxCharacterCount: {
+      color: vars.base.enabled.maxCharacterCount.color,
+      fontWeight: vars.base.enabled.maxCharacterCount.fontWeight,
+      fontSize: vars.base.enabled.maxCharacterCount.fontSize,
     },
   },
   defaultVariants: {

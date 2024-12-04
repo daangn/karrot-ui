@@ -114,20 +114,20 @@
 .textField__errorIcon {
     flex: none;
 }
-.textField__graphemeCount {
+.textField__characterCount {
     flex: none;
     height: var(--seed-v3-line-height-t4);
     line-height: var(--seed-v3-line-height-t2);
 }
-.textField__currentGraphemeCount {
+.textField__currentCharacterCount {
     color: var(--seed-v3-color-fg-neutral);
     font-weight: var(--seed-v3-font-weight-regular);
     font-size: var(--seed-v3-font-size-t2);
 }
-.textField__currentGraphemeCount[data-grapheme-count="0"] {
+.textField__currentCharacterCount[data-grapheme-count="0"] {
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
-.textField__maxGraphemeCount {
+.textField__maxCharacterCount {
     color: var(--seed-v3-color-fg-neutral-subtle);
     font-weight: var(--seed-v3-font-weight-regular);
     font-size: var(--seed-v3-font-size-t2);
