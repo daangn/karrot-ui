@@ -152,6 +152,8 @@ export function useTextField(props: UseTextFieldProps) {
     maxGraphemeCount,
   });
 
+  const isUncontrolled = propValue === undefined;
+
   const renderDescription = !!description;
   const renderErrorMessage = invalid && !!errorMessage;
 
@@ -216,7 +218,8 @@ export function useTextField(props: UseTextFieldProps) {
 
     inputProps: inputProps({
       ...stateProps,
-      ...(propValue !== undefined && { value: stateValue }),
+      ...(isUncontrolled && defaultValue && { defaultValue }),
+      ...(!isUncontrolled && { value: stateValue }),
       ...(label && { "aria-labelledby": getLabelId(id) }),
       "aria-describedby": ariaDescribedBy,
       "aria-required": ariaAttr(required),
