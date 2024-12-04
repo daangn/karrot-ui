@@ -3,14 +3,14 @@ import esbuild from "esbuild";
 import pkg from "./package.json" assert { type: "json" };
 
 esbuild
-  .context({
+  .build({
     entryPoints: ["./src/index.ts"],
     outfile: "./bin/index.mjs",
     bundle: true,
     write: true,
     treeShaking: true,
     sourcemap: false,
-    minify: false,
+    minify: true,
     format: "esm",
     platform: "node",
     target: ["esnext"],
@@ -19,5 +19,4 @@ esbuild
       "process.env.NODE_ENV": `"dev"`,
     },
   })
-  .then((ctx) => ctx.watch())
   .catch(() => process.exit(1));

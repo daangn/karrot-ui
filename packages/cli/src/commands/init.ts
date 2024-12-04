@@ -10,63 +10,85 @@ import type { CAC } from "cac";
 
 const initOptionsSchema = z.object({
   cwd: z.string(),
+  default: z.boolean().optional(),
 });
 
 export const initCommand = (cli: CAC) => {
   cli
-    .command("init", "initialize seed-design.json")
-    .option("-c, --cwd <cwd>", "the working directory. defaults to the current directory.", {
+    .command("init", "seed-design.json 파일 생성")
+    .option("-c, --cwd <cwd>", "작업 디렉토리. 기본값은 현재 디렉토리.", {
       default: process.cwd(),
     })
+    .option("-d, --default", "모든 질문에 대해 기본값으로 답변합니다.")
     .action(async (opts) => {
-      const options = initOptionsSchema.parse({ ...opts });
       const highlight = (text: string) => color.cyan(text);
+      p.intro(color.bgCyan("seed-design.json 파일 생성"));
 
-      const group = await p.group(
-        {
-          tsx: () =>
-            p.confirm({
-              message: `Would you like to use ${highlight("TypeScript")} (recommended)?`,
-              initialValue: true,
-            }),
-          rsc: () =>
-            p.confirm({
-              message: `Are you using ${highlight("React Server Components")}?`,
-              initialValue: false,
-            }),
-          css: () =>
-            p.confirm({
-              message: `Would you like to use ${highlight("CSS Modules")}? (If true, CSS import will be added in components)`,
-              initialValue: true,
-            }),
-          path: () =>
-            p.text({
-              message: `Enter the path to your ${highlight("seed-design directory")}`,
-              initialValue: "./seed-design",
-              defaultValue: "./seed-design",
-              placeholder: "./seed-design",
-            }),
-        },
-        {
-          onCancel: () => {
-            p.cancel("Operation cancelled.");
-            process.exit(0);
-          },
-        },
-      );
+      const options = initOptionsSchema.parse(opts);
+      const isDefaultOption = options.default;
 
-      const config: RawConfig = {
-        rsc: group.rsc,
-        tsx: group.tsx,
-        css: group.css,
-        path: group.path,
+      let config: RawConfig = {
+        rsc: false,
+        tsx: true,
+        css: true,
+        path: "./seed-design",
       };
 
-      const { start, stop } = p.spinner();
-      start("Writing seed-design.json...");
-      const targetPath = path.resolve(options.cwd, "seed-design.json");
-      await fs.writeFile(targetPath, `${JSON.stringify(config, null, 2)}\n`, "utf-8");
-      const relativePath = path.relative(process.cwd(), targetPath);
-      stop(`seed-design.json written to ${highlight(relativePath)}`);
+      if (!isDefaultOption) {
+        const group = await p.group(
+          {
+            tsx: () =>
+              p.confirm({
+                message: `${highlight("TypeScript")}를 사용중이신가요?`,
+                initialValue: true,
+              }),
+            rsc: () =>
+              p.confirm({
+                message: `${highlight("React Server Components")}를 사용중이신가요?`,
+                initialValue: false,
+              }),
+            css: () =>
+              p.confirm({
+                message: `${highlight("CSS Loader")}를 사용중이신가요? (true일 경우 컴포넌트에 CSS import가 추가됩니다.)`,
+                initialValue: true,
+              }),
+            path: () =>
+              p.text({
+                message: `${highlight("seed-design 폴더")} 경로를 입력해주세요. (기본값은 프로젝트 루트에 생성됩니다.)`,
+                initialValue: "./seed-design",
+                defaultValue: "./seed-design",
+                placeholder: "./seed-design",
+              }),
+          },
+          {
+            onCancel: () => {
+              p.cancel("작업이 취소됐어요.");
+              process.exit(0);
+            },
+          },
+        );
+
+        config = {
+          ...group,
+        };
+      }
+
+      try {
+        const { start, stop } = p.spinner();
+        start("seed-design.json 파일 생성중...");
+        const targetPath = path.resolve(options.cwd, "seed-design.json");
+        await fs.writeFile(targetPath, `${JSON.stringify(config, null, 2)}\n`, "utf-8");
+        const relativePath = path.relative(process.cwd(), targetPath);
+        stop(`seed-design.json 파일이 ${highlight(relativePath)}에 생성됐어요.`);
+        p.log.info(color.gray("seed-design add {component} 명령어로 컴포넌트를 추가해보세요!"));
+        p.log.info(
+          color.gray("seed-design add 명령어로 추가할 수 있는 모든 컴포넌트를 확인해보세요."),
+        );
+        p.outro("작업이 완료됐어요.");
+      } catch (error) {
+        p.log.error(`seed-design.json 파일 생성에 실패했어요. ${error}`);
+        p.outro(color.bgRed("작업이 취소됐어요."));
+        process.exit(1);
+      }
     });
 };

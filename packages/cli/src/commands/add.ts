@@ -11,11 +11,14 @@ import { z } from "zod";
 
 import type { CAC } from "cac";
 import { addRelativeComponents } from "../utils/add-relative-components";
+import { BASE_URL } from "../constants";
+import { highlight } from "../utils/color";
 
 const addOptionsSchema = z.object({
   components: z.array(z.string()).optional(),
   cwd: z.string(),
   all: z.boolean(),
+  baseUrl: z.string().optional(),
   // yes: z.boolean(),
   // overwrite: z.boolean(),
   // path: z.string().optional(),
@@ -30,22 +33,25 @@ export const addCommand = (cli: CAC) => {
     .option("-c, --cwd <cwd>", "the working directory. defaults to the current directory.", {
       default: process.cwd(),
     })
+    .option(
+      "-u, --baseUrl <baseUrl>",
+      "the base url of the registry. defaults to the current directory.",
+      {
+        default: BASE_URL,
+      },
+    )
     .example("seed-design add box-button")
     .example("seed-design add alert-dialog")
     .action(async (components, opts) => {
+      p.intro(color.bgCyan("컴포넌트 추가하기"));
       const options = addOptionsSchema.parse({
         components,
         ...opts,
       });
-      const highlight = (text: string) => color.cyan(text);
       const cwd = options.cwd;
-
-      if (!fs.existsSync(cwd)) {
-        p.log.error(`The path ${cwd} does not exist. Please try again.`);
-        process.exit(1);
-      }
-
-      const registryComponentIndex = await getRegistryUIIndex();
+      const baseUrl = options.baseUrl;
+      const config = await getConfig(cwd);
+      const registryComponentIndex = await getRegistryUIIndex(baseUrl);
 
       let selectedComponents: string[] = options.all
         ? registryComponentIndex.map((registry) => registry.name)
@@ -56,7 +62,7 @@ export const addCommand = (cli: CAC) => {
           { label: string; value: string; hint: string }[],
           string
         >({
-          message: "Select all components to add",
+          message: "추가할 컴포넌트를 선택해주세요 (스페이스바로 여러 개 선택 가능)",
           options: registryComponentIndex.map((metadata) => {
             return {
               label: metadata.name,
@@ -67,7 +73,7 @@ export const addCommand = (cli: CAC) => {
         });
 
         if (p.isCancel(selects)) {
-          p.log.error("Aborted.");
+          p.log.error("취소되었어요.");
           process.exit(0);
         }
 
@@ -75,20 +81,17 @@ export const addCommand = (cli: CAC) => {
       }
 
       if (!selectedComponents?.length) {
-        p.log.error("No components found.");
+        p.log.error("컴포넌트를 찾을 수 없어요.");
         process.exit(0);
       }
 
       const allComponents = addRelativeComponents(selectedComponents, registryComponentIndex);
       const addedComponents = allComponents.filter((c) => !selectedComponents.includes(c));
-      const config = await getConfig(cwd);
-      const registryComponentItems = await fetchRegistryUIItem(allComponents);
+      const registryComponentItems = await fetchRegistryUIItem(allComponents, baseUrl);
 
-      p.log.message(`Selection: ${highlight(selectedComponents.join(", "))}`);
+      p.log.message(`선택된 컴포넌트: ${highlight(selectedComponents.join(", "))}`);
       if (addedComponents.length) {
-        p.log.message(
-          `Inner Dependencies: ${highlight(addedComponents.join(", "))} will be also added.`,
-        );
+        p.log.message(`내부 의존성: ${highlight(addedComponents.join(", "))} 추가됩니다.`);
       }
 
       // 선택된 컴포넌트.json 레지스트리 파일 기반으로 컴포넌트를 추가합니다.
@@ -128,7 +131,7 @@ export const addCommand = (cli: CAC) => {
 
           await fs.writeFile(filePath, content);
           const relativePath = path.relative(cwd, filePath);
-          p.log.info(`Added ${highlight(registry.name)} to ${highlight(relativePath)}`);
+          p.log.info(`${highlight(registry.name)} 추가됨: ${highlight(relativePath)}`);
         }
 
         const packageManager = await getPackageManager(cwd);
@@ -137,7 +140,7 @@ export const addCommand = (cli: CAC) => {
 
         // Install dependencies.
         if (component.dependencies?.length) {
-          start(color.gray("Installing dependencies"));
+          start(color.gray("의존성 설치중..."));
 
           const result = await execa(
             packageManager,
@@ -154,13 +157,13 @@ export const addCommand = (cli: CAC) => {
             for (const deps of component.dependencies) {
               p.log.info(`- ${deps}`);
             }
-            stop("Dependencies installed.");
+            stop("의존성 설치 완료.");
           }
         }
 
         // Install devDependencies.
         if (component.devDependencies?.length) {
-          start(color.gray("Installing devDependencies"));
+          start(color.gray("개발 의존성 설치중..."));
 
           const result = await execa(
             packageManager,
@@ -177,11 +180,11 @@ export const addCommand = (cli: CAC) => {
             for (const deps of component.devDependencies) {
               p.log.info(`- ${deps}`);
             }
-            stop("Dependencies installed.");
+            stop("개발 의존성 설치 완료.");
           }
         }
       }
 
-      p.outro("Components added.");
+      p.outro(`${components.join(", ")} 컴포넌트를 추가했어요.`);
     });
 };

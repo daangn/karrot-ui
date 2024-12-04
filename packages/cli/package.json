@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/cli",
-  "version": "0.0.0-alpha-20241113031935",
+  "version": "0.0.0-alpha-20241204134404",
   "type": "module",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   "scripts": {
     "prepack": "yarn build",
     "build": "ENV=prod node ./build.mjs",
-    "cli:dev": "ENV=dev node ./dev.mjs",
+    "dev": "ENV=dev node ./dev.mjs",
     "test": "yarn vitest"
   },
   "dependencies": {
@@ -55,7 +55,6 @@
   },
   "ultra": {
     "concurrent": [
-      "cli:dev",
       "build"
     ]
   }

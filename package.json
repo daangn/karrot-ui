@@ -28,7 +28,7 @@
     "recipe:build": "ultra -r --build recipe:build",
     "recipe:generate": "yarn workspace @seed-design/recipe-generator-preset build && ultra -r recipe:generate",
     "recipe:generate:watch": "watchlist packages/recipe-generator/preset -- yarn recipe:generate",
-    "cli:dev": "ultra -r --build cli:dev",
+    "cli:watch": "watchlist packages/cli -- yarn workspace @seed-design/cli dev",
     "headless:build": "ultra -r --filter 'packages/react-headless/*' build",
     "headless:test": "yarn vitest run --project react-headless --reporter=verbose",
     "headless:test:watch": "vitest dev --project react-headless"
