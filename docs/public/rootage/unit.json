@@ -101,6 +101,16 @@
         "values": {
           "default": "64px"
         }
+      },
+      "$horizontal-spacing.between-chips": {
+        "values": {
+          "default": "$unit.x2"
+        }
+      },
+      "$horizontal-spacing.global-gutter": {
+        "values": {
+          "default": "$unit.x4"
+        }
       }
     }
   }

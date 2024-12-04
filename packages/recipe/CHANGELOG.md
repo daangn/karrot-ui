@@ -1,5 +1,11 @@
 # @seed-design/recipe
 
+## 0.0.0-alpha-20241203133940
+
+### Patch Changes
+
+- tabs 자잘한 스타일 수정 및 fixTriggerList prop 추가
+
 ## 0.0.0-alpha-20241202094027
 
 ### Patch Changes

@@ -22,11 +22,6 @@
         }
       },
       "disabled": {
-        "control": {
-          "color": "$color.bg.disabled"
-        }
-      },
-      "disabled,selected": {
         "root": {
           "opacity": 0.38
         }

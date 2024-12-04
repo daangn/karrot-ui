@@ -28,7 +28,9 @@ const tabsSlotNames = [
 ];
 
 const defaultVariant = {
-  "layout": "hug"
+  "layout": "hug",
+  "size": "small",
+  "fixTriggerList": false
 };
 
 const compoundVariants = [];
@@ -37,6 +39,14 @@ export const tabsVariantMap = {
   "layout": [
     "fill",
     "hug"
+  ],
+  "size": [
+    "small",
+    "medium"
+  ],
+  "fixTriggerList": [
+    "true",
+    "false"
   ]
 };
 

@@ -9,11 +9,16 @@
       "enabled": {
         "root": {
           "paddingY": "$unit.x0_5",
-          "gap": "$unit.x0_5",
           "borderWidth": "0.125rem"
         },
         "label": {
           "fontWeight": "$font-weight.regular"
+        },
+        "prefixIcon": {
+          "marginXEnd": "$unit.x1"
+        },
+        "suffixIcon": {
+          "marginXStart": "$unit.x0_5"
         }
       },
       "pressed": {
@@ -61,7 +66,10 @@
         "root": {
           "cornerRadius": "$radius.x1_5"
         },
-        "icon": {
+        "prefixIcon": {
+          "size": "$unit.x4"
+        },
+        "suffixIcon": {
           "size": "$unit.x4"
         },
         "label": {
@@ -75,7 +83,10 @@
         "root": {
           "cornerRadius": "$radius.x1_5"
         },
-        "icon": {
+        "prefixIcon": {
+          "size": "$unit.x3_5"
+        },
+        "suffixIcon": {
           "size": "$unit.x3_5"
         },
         "label": {
@@ -89,7 +100,10 @@
         "root": {
           "cornerRadius": "$radius.x1"
         },
-        "icon": {
+        "prefixIcon": {
+          "size": "$unit.x3_5"
+        },
+        "suffixIcon": {
           "size": "$unit.x3_5"
         },
         "label": {

@@ -463,6 +463,18 @@
           "theme-dark": "#ffffffcc"
         }
       },
+      "$color.palette.slate-900": {
+        "values": {
+          "theme-light": "#2a3038",
+          "theme-dark": "#edf2f7"
+        }
+      },
+      "$color.palette.slate-800": {
+        "values": {
+          "theme-light": "#545c6e",
+          "theme-dark": "#dde3ed"
+        }
+      },
       "$color.fg.static-white": {
         "values": {
           "theme-light": "$color.palette.static-white",
@@ -669,7 +681,7 @@
       },
       "$color.bg.neutral-solid": {
         "values": {
-          "theme-light": "$color.palette.gray-900",
+          "theme-light": "$color.palette.slate-900",
           "theme-dark": "$color.palette.gray-900"
         }
       },
@@ -807,7 +819,7 @@
       },
       "$color.bg.neutral-muted": {
         "values": {
-          "theme-light": "$color.palette.gray-800",
+          "theme-light": "$color.palette.slate-800",
           "theme-dark": "$color.palette.gray-400"
         }
       },
@@ -819,7 +831,7 @@
       },
       "$color.bg.neutral-muted-pressed": {
         "values": {
-          "theme-light": "$color.palette.gray-700",
+          "theme-light": "$color.palette.slate-900",
           "theme-dark": "$color.palette.gray-500"
         }
       },
