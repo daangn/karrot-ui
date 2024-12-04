@@ -1,5 +1,11 @@
 # @seed-design/recipe
 
+## 0.0.0-alpha-20241204031604
+
+### Patch Changes
+
+- tabs overflowX to visible
+
 ## 0.0.0-alpha-20241203133940
 
 ### Patch Changes
