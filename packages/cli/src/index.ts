@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import { addCommand } from "@/src/commands/add";
+import { initCommand } from "@/src/commands/init";
 import { getPackageInfo } from "@/src/utils/get-package-info";
 import { cac } from "cac";
-import { initCommand } from "./commands/init";
 
 const NAME = "seed-design";
 const CLI = cac(NAME);

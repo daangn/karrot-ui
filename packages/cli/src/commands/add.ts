@@ -11,11 +11,13 @@ import { z } from "zod";
 
 import type { CAC } from "cac";
 import { addRelativeComponents } from "../utils/add-relative-components";
+import { BASE_URL } from "../constants";
 
 const addOptionsSchema = z.object({
   components: z.array(z.string()).optional(),
   cwd: z.string(),
   all: z.boolean(),
+  baseUrl: z.string().optional(),
   // yes: z.boolean(),
   // overwrite: z.boolean(),
   // path: z.string().optional(),
@@ -30,6 +32,13 @@ export const addCommand = (cli: CAC) => {
     .option("-c, --cwd <cwd>", "the working directory. defaults to the current directory.", {
       default: process.cwd(),
     })
+    .option(
+      "-u, --baseUrl <baseUrl>",
+      "the base url of the registry. defaults to the current directory.",
+      {
+        default: BASE_URL,
+      },
+    )
     .example("seed-design add box-button")
     .example("seed-design add alert-dialog")
     .action(async (components, opts) => {
@@ -39,13 +48,14 @@ export const addCommand = (cli: CAC) => {
       });
       const highlight = (text: string) => color.cyan(text);
       const cwd = options.cwd;
+      const baseUrl = options.baseUrl;
 
       if (!fs.existsSync(cwd)) {
         p.log.error(`The path ${cwd} does not exist. Please try again.`);
         process.exit(1);
       }
 
-      const registryComponentIndex = await getRegistryUIIndex();
+      const registryComponentIndex = await getRegistryUIIndex(baseUrl);
 
       let selectedComponents: string[] = options.all
         ? registryComponentIndex.map((registry) => registry.name)
