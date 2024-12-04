@@ -1,5 +1,11 @@
 # @seed-design/react-tabs
 
+## 0.0.0-alpha-20241204061301
+
+### Patch Changes
+
+- useSwipeable dragProps
+
 ## 0.0.0-alpha-20241203133940
 
 ### Patch Changes

@@ -6426,7 +6426,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-tabs@0.0.0-alpha-20241203133940, @seed-design/react-tabs@workspace:packages/react-headless/tabs":
+"@seed-design/react-tabs@0.0.0-alpha-20241204061301, @seed-design/react-tabs@workspace:packages/react-headless/tabs":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-tabs@workspace:packages/react-headless/tabs"
   dependencies:
@@ -6568,7 +6568,7 @@ __metadata:
     "@seed-design/react-popover": 0.0.0-alpha-20241030023710
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
     "@seed-design/react-switch": 0.0.0-alpha-20241030023710
-    "@seed-design/react-tabs": 0.0.0-alpha-20241203133940
+    "@seed-design/react-tabs": 0.0.0-alpha-20241204061301
     "@seed-design/react-text-field": 0.0.0-alpha-20241030023710
     "@seed-design/recipe": 0.0.0-alpha-20241204032829
     "@seed-design/stylesheet": 3.0.0-alpha-20241204032654
@@ -10818,7 +10818,7 @@ __metadata:
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
     "@seed-design/react-segmented-control": "workspace:^"
     "@seed-design/react-switch": 0.0.0-alpha-20241030023710
-    "@seed-design/react-tabs": 0.0.0-alpha-20241203133940
+    "@seed-design/react-tabs": 0.0.0-alpha-20241204061301
     "@seed-design/recipe": 0.0.0-alpha-20241204032829
     "@seed-design/rootage-cli": 0.0.0
     "@seed-design/rootage-core": 0.0.0

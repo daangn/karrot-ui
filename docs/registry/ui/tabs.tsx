@@ -20,7 +20,7 @@ import "@seed-design/stylesheet/tab.css";
 type Assign<T, U> = Omit<T, keyof U> & U;
 
 interface TabsContextValue {
-  api: ReturnType<typeof useTabs> & ReturnType<typeof useSwipeable>;
+  api: ReturnType<typeof useTabs>;
   classNames: ReturnType<typeof tabs>;
   shouldRender: (value: string) => boolean;
 
@@ -74,11 +74,6 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       fixTriggerList = false,
     } = props;
     const useTabsProps = useTabs(props);
-    const useSwipeableProps = useSwipeable({
-      isSwipeable,
-      onSwipeLeftToRight: useTabsProps.movePrev,
-      onSwipeRightToLeft: useTabsProps.moveNext,
-    });
     const classNames = tabs({
       layout,
       size,
@@ -92,7 +87,6 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     });
     const api = {
       ...useTabsProps,
-      ...useSwipeableProps,
     };
 
     return (
@@ -205,14 +199,17 @@ export const TabContentList = React.forwardRef<
   const {
     tabContentListProps,
     tabContentCameraProps,
-    getDragProps,
     currentTabEnabledIndex,
-    swipeMoveX,
-    swipeStatus,
     tabEnabledCount,
+    moveNext,
+    movePrev,
   } = api;
   const { contentList, contentCamera } = classNames;
-  const dragProps = getDragProps();
+  const { dragProps, swipeMoveX, swipeStatus } = useSwipeable({
+    isSwipeable,
+    onSwipeLeftToRight: movePrev,
+    onSwipeRightToLeft: moveNext,
+  });
 
   const getCameraTranslateX = () => {
     const MODIFIER = 5;

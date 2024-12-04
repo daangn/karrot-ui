@@ -94,6 +94,7 @@ export const useSwipeable = (props: UseSwipeableProps) => {
     },
     {
       drag: {
+        filterTaps: false,
         preventScrollAxis: "y",
         preventDefault: true,
         swipe: {
@@ -105,9 +106,11 @@ export const useSwipeable = (props: UseSwipeableProps) => {
     },
   );
 
+  const dragProps = isSwipeable ? getDragProps() : {};
+
   return {
     swipeMoveX,
     swipeStatus,
-    getDragProps,
+    dragProps,
   };
 };
