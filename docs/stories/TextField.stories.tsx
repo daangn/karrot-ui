@@ -22,7 +22,7 @@ const CommonStoryTemplate: Story = {
     description:
       "Sint pariatur labore et elit dolore sunt velit incididunt nisi laboris cillum et dolore ad ullamco.",
     placeholder: "Placeholder",
-    prefix: <IconPaperplaneLine />,
+    prefixIcon: <IconPaperplaneLine />,
     suffix: "Suffix",
     maxGraphemeCount: 10,
   },
