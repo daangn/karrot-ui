@@ -5,7 +5,6 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "cli:dev": "yarn dev",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
     "gen": "yarn generate:all",
@@ -77,7 +76,6 @@
   },
   "ultra": {
     "concurrent": [
-      "cli:dev",
       "build"
     ]
   }
