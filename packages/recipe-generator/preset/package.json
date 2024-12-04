@@ -22,8 +22,7 @@
   "scripts": {
     "clean": "rm -rf lib",
     "prepack": "yarn clean && yarn build",
-    "build": "nanobundle build",
-    "recipe:generate": "nanobundle build"
+    "build": "nanobundle build"
   },
   "dependencies": {
     "@seed-design/recipe-generator-core": "0.0.0",
@@ -37,8 +36,7 @@
   },
   "ultra": {
     "concurrent": [
-      "build",
-      "recipe:generate"
+      "build"
     ]
   }
 }
