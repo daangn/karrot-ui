@@ -1,8 +1,10 @@
-import { cosmiconfig } from "cosmiconfig";
-import path from "path";
 import * as p from "@clack/prompts";
+import { cosmiconfig } from "cosmiconfig";
+import { execa } from "execa";
+import path from "path";
 import { z } from "zod";
-import color from "picocolors";
+import { highlight } from "./color";
+import { getPackageManager } from "./get-package-manager";
 
 const MODULE_NAME = "seed-design";
 
@@ -54,15 +56,18 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
 export async function getRawConfig(cwd: string): Promise<RawConfig | null> {
   try {
     const configResult = await explorer.search(cwd);
-
-    if (!configResult) {
-      p.log.message(color.red(`${cwd} 경로에 seed-design.json 파일이 없습니다.`));
-      return null;
-    }
-
     return rawConfigSchema.parse(configResult.config);
-  } catch (error) {
-    console.log(error);
-    throw new Error(`${cwd} 경로에 seed-design.json 파일을 읽을 수 없습니다.`);
+  } catch {
+    p.log.error("프로젝트 루트 경로에 `seed-design.json` 파일이 없어요.");
+
+    const isConfirm = await p.confirm({ message: "seed-design.json 파일을 생성하시겠어요?" });
+    if (isConfirm === true) {
+      const packageManager = await getPackageManager(cwd);
+      await execa(packageManager, ["seed-design", "init", "--default"], { cwd });
+      p.log.message("seed-design.json 파일이 생성됐어요.");
+    } else {
+      p.outro(highlight("작업이 취소됐어요."));
+      process.exit(1);
+    }
   }
 }
