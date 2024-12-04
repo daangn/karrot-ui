@@ -83,10 +83,6 @@ const textField = defineRecipe({
     prefixIcon: {
       color: vars.base.enabled.prefixIcon.color,
 
-      [pseudo(`[data-grapheme-count="0"]`)]: {
-        color: vars.base.enabled.inputPlaceholder.color,
-      },
-
       [pseudo(disabled)]: {
         color: vars.base.disabled.prefixIcon.color,
       },
@@ -100,10 +96,6 @@ const textField = defineRecipe({
     },
     suffixIcon: {
       color: vars.base.enabled.suffixIcon.color,
-
-      [pseudo(`[data-grapheme-count="0"]`)]: {
-        color: vars.base.enabled.inputPlaceholder.color,
-      },
 
       [pseudo(disabled)]: {
         color: vars.base.disabled.suffixIcon.color,
@@ -165,6 +157,8 @@ const textField = defineRecipe({
     },
     characterCount: {
       flex: "none",
+
+      marginInlineStart: "auto",
 
       height: vars.base.enabled.characterCount.size,
       lineHeight: vars.base.enabled.characterCount.lineHeight,

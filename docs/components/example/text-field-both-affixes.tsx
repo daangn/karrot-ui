@@ -15,8 +15,8 @@ export default function TextFieldSuffix() {
         label="라벨"
         placeholder="플레이스홀더"
         description="설명을 써주세요"
-        prefix={<IconPlusCircleLine />}
-        suffix={<IconWonLine />}
+        prefixIcon={<IconPlusCircleLine />}
+        suffixIcon={<IconWonLine />}
       />
     </div>
   );

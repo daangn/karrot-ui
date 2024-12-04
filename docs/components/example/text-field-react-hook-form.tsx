@@ -46,7 +46,7 @@ export default function TextFieldReactHookForm() {
         description="주소를 써주세요"
         invalid={!!errors.address}
         errorMessage={errors.address?.message}
-        prefix={<IconHouseLine />}
+        prefixIcon={<IconHouseLine />}
         requiredIndicator="(필수)"
         required
       />

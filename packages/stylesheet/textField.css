@@ -47,9 +47,6 @@
 .textField__prefixIcon {
     color: var(--seed-v3-color-fg-neutral);
 }
-.textField__prefixIcon[data-grapheme-count="0"] {
-    color: var(--seed-v3-color-fg-placeholder);
-}
 .textField__prefixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
@@ -61,9 +58,6 @@
 }
 .textField__suffixIcon {
     color: var(--seed-v3-color-fg-neutral);
-}
-.textField__suffixIcon[data-grapheme-count="0"] {
-    color: var(--seed-v3-color-fg-placeholder);
 }
 .textField__suffixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
@@ -116,6 +110,7 @@
 }
 .textField__characterCount {
     flex: none;
+    margin-inline-start: auto;
     height: var(--seed-v3-line-height-t4);
     line-height: var(--seed-v3-line-height-t2);
 }

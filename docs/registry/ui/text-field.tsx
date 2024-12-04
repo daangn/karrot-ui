@@ -22,8 +22,13 @@ export interface TextFieldProps
   requiredIndicator?: string;
   optionalIndicator?: string;
 
-  prefix?: React.ReactNode;
-  suffix?: React.ReactNode;
+  // XXX: 둘 다 받지는 못하면 좋을 것 같음
+  prefix?: string;
+  prefixIcon?: React.ReactNode;
+
+  // XXX: 둘 다 받지는 못하면 좋을 것 같음
+  suffix?: string;
+  suffixIcon?: React.ReactNode;
 
   hideGraphemeCount?: boolean;
 }
@@ -43,7 +48,9 @@ export const TextField = React.forwardRef<
       requiredIndicator,
       optionalIndicator,
       prefix,
+      prefixIcon,
       suffix,
+      suffixIcon,
       hideGraphemeCount,
       ...otherProps
     },
@@ -90,28 +97,24 @@ export const TextField = React.forwardRef<
           </label>
         )}
         <div {...stateProps} className={clsx(classNames.input)}>
-          {prefix &&
-            (typeof prefix === "string" ? (
-              <div className={classNames.prefixText}>{prefix}</div>
-            ) : (
-              <Slot {...stateProps} className={clsx(classNames.prefixIcon)}>
-                {prefix}
-              </Slot>
-            ))}
+          {prefix && <div className={classNames.prefixText}>{prefix}</div>}
+          {prefixIcon && (
+            <Slot {...stateProps} className={clsx(classNames.prefixIcon)}>
+              {prefixIcon}
+            </Slot>
+          )}
           <input
             ref={ref}
             className={clsx(classNames.inputText, inputClassName)}
             {...inputProps}
             {...restProps}
           />
-          {suffix &&
-            (typeof suffix === "string" ? (
-              <div className={classNames.suffixText}>{suffix}</div>
-            ) : (
-              <Slot {...stateProps} className={clsx(classNames.suffixIcon)}>
-                {suffix}
-              </Slot>
-            ))}
+          {suffix && <div className={classNames.suffixText}>{suffix}</div>}
+          {suffixIcon && (
+            <Slot {...stateProps} className={clsx(classNames.suffixIcon)}>
+              {suffixIcon}
+            </Slot>
+          )}
         </div>
         {(renderDescription || renderErrorMessage || renderGraphemeCount) && (
           <div className={classNames.footer}>
@@ -129,14 +132,14 @@ export const TextField = React.forwardRef<
               </div>
             )}
             {renderGraphemeCount && (
-              <div className={classNames.graphemeCount}>
+              <div className={classNames.characterCount}>
                 <span
                   {...stateProps}
-                  className={classNames.currentGraphemeCount}
+                  className={classNames.currentCharacterCount}
                 >
                   {graphemes.length}
                 </span>
-                <span className={classNames.maxGraphemeCount}>
+                <span className={classNames.maxCharacterCount}>
                   /{maxGraphemeCount}
                 </span>
               </div>
