@@ -1,5 +1,11 @@
 # @seed-design/cli
 
+## 0.0.0-alpha-20241204134404
+
+### Patch Changes
+
+- 에러메세지 보완 및 사용성 강화
+
 ## 0.0.0-alpha-20241113031935
 
 ### Patch Changes

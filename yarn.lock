@@ -6127,7 +6127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@seed-design/cli@0.0.0-alpha-20241113031935, @seed-design/cli@workspace:packages/cli":
+"@seed-design/cli@0.0.0-alpha-20241204134404, @seed-design/cli@workspace:packages/cli":
   version: 0.0.0-use.local
   resolution: "@seed-design/cli@workspace:packages/cli"
   dependencies:
@@ -6563,7 +6563,7 @@ __metadata:
   resolution: "@seed-design/stackflow-spa@workspace:examples/stackflow-spa"
   dependencies:
     "@radix-ui/react-slot": ^1.1.0
-    "@seed-design/cli": 0.0.0-alpha-20241113031935
+    "@seed-design/cli": 0.0.0-alpha-20241204134404
     "@seed-design/icon": ^0.6.1
     "@seed-design/react-popover": 0.0.0-alpha-20241030023710
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
