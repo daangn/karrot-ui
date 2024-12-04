@@ -40,6 +40,7 @@ const tabs = defineRecipe({
       height: "100%",
       flexShrink: 0,
       overflowY: "auto",
+      overflowX: "hidden",
     },
     indicator: {
       position: "absolute",

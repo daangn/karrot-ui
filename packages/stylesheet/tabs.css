@@ -30,6 +30,7 @@
     height: 100%;
     flex-shrink: 0;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .tabs__indicator {
     position: absolute;
