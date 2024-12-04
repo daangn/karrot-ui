@@ -20,7 +20,3 @@ export const buttonProps = (props: React.ButtonHTMLAttributes<HTMLButtonElement>
   props;
 
 export const imgProps = (props: React.ImgHTMLAttributes<HTMLImageElement> & DataAttr) => props;
-
-export const textareaProps = (
-  props: React.TextareaHTMLAttributes<HTMLTextAreaElement> & DataAttr,
-) => props;

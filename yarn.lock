@@ -6207,15 +6207,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/dom-utils@0.0.0-alpha-20241030023710, @seed-design/dom-utils@workspace:packages/utils/dom-utils":
-  version: 0.0.0-use.local
-  resolution: "@seed-design/dom-utils@workspace:packages/utils/dom-utils"
-  dependencies:
-    "@types/react": ^18.3.3
-    nanobundle: ^1.6.0
-  languageName: unknown
-  linkType: soft
-
 "@seed-design/figma-checklist-widget@workspace:tools/figma-checklist-widget":
   version: 0.0.0-use.local
   resolution: "@seed-design/figma-checklist-widget@workspace:tools/figma-checklist-widget"
@@ -6332,7 +6323,7 @@ __metadata:
   resolution: "@seed-design/react-avatar@workspace:packages/react-headless/avatar"
   dependencies:
     "@radix-ui/react-use-layout-effect": ^1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -6345,7 +6336,7 @@ __metadata:
   resolution: "@seed-design/react-checkbox@workspace:packages/react-headless/checkbox"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -6378,7 +6369,7 @@ __metadata:
   resolution: "@seed-design/react-popover@workspace:packages/react-headless/popover"
   dependencies:
     "@floating-ui/react": ^0.26.19
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     tshy: ^1.17.0
     typescript: ^5.4.5
   peerDependencies:
@@ -6403,7 +6394,7 @@ __metadata:
   resolution: "@seed-design/react-radio-group@workspace:packages/react-headless/radio-group"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -6416,7 +6407,7 @@ __metadata:
   resolution: "@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -6429,7 +6420,7 @@ __metadata:
   resolution: "@seed-design/react-switch@workspace:packages/react-headless/switch"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
   peerDependencies:
     react: ">=18.0.0"
@@ -6443,7 +6434,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
     "@radix-ui/react-use-size": ^1.1.0
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     "@use-gesture/react": ^10.3.1
     nanobundle: ^1.6.0
   peerDependencies:
@@ -6457,7 +6448,7 @@ __metadata:
   resolution: "@seed-design/react-text-field@workspace:packages/react-headless/text-field"
   dependencies:
     "@radix-ui/react-use-controllable-state": 1.0.1
-    "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
+    "@seed-design/react-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
     unicode-segmenter: ^0.7.0
   peerDependencies:
@@ -6479,6 +6470,18 @@ __metadata:
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
     react-dom: ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/react-utils@0.0.0-alpha-20241030023710, @seed-design/react-utils@workspace:packages/utils/react-utils":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-utils@workspace:packages/utils/react-utils"
+  dependencies:
+    "@types/react": ^18.3.3
+    nanobundle: ^1.6.0
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
   languageName: unknown
   linkType: soft
 

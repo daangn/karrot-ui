@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@radix-ui/react-use-controllable-state": "1.0.1",
-    "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
+    "@seed-design/react-utils": "0.0.0-alpha-20241030023710",
     "unicode-segmenter": "^0.7.0"
   },
   "devDependencies": {

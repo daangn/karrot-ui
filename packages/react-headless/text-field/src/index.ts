@@ -2,14 +2,7 @@ import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { useId, useState } from "react";
 import { graphemeSegments } from "unicode-segmenter/grapheme";
 
-import {
-  dataAttr,
-  ariaAttr,
-  elementProps,
-  inputProps,
-  labelProps,
-  textareaProps,
-} from "@seed-design/dom-utils";
+import { dataAttr, ariaAttr, elementProps, inputProps, labelProps } from "@seed-design/react-utils";
 import { getDescriptionId, getErrorMessageId, getInputId, getLabelId } from "./dom";
 import React from "react";
 

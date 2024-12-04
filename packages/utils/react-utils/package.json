@@ -1,10 +1,10 @@
 {
-  "name": "@seed-design/dom-utils",
+  "name": "@seed-design/react-utils",
   "version": "0.0.0-alpha-20241030023710",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/dom-utils"
+    "directory": "packages/react-utils"
   },
   "sideEffects": false,
   "exports": {
@@ -23,6 +23,10 @@
     "prepack": "yarn build",
     "clean": "rm -rf lib",
     "build": "nanobundle build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

@@ -1,5 +1,5 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { ariaAttr, buttonProps, dataAttr, elementProps } from "@seed-design/dom-utils";
+import { ariaAttr, buttonProps, dataAttr, elementProps } from "@seed-design/react-utils";
 import * as React from "react";
 import * as dom from "./dom";
 import type { ContentProps, TriggerProps, UseTabsProps, UseTabsStateProps } from "./types";
