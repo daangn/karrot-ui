@@ -229,7 +229,7 @@ export function useTextField(props: UseTextFieldProps) {
 
     inputProps: inputProps({
       ...stateProps,
-      ...(propValue && { value: stateValue }),
+      ...(propValue !== undefined && { value: stateValue }),
       ...(label && { "aria-labelledby": getLabelId(id) }),
       "aria-describedby": ariaDescribedBy,
       "aria-required": ariaAttr(required),
