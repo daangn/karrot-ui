@@ -69,6 +69,7 @@ export interface UseTextFieldProps extends UseTextFieldStateProps {
 
   name?: string;
 
+  label?: string;
   description?: string;
   errorMessage?: string;
 

@@ -19,17 +19,12 @@ import type { Assign } from "../util/types";
 export interface TextFieldProps
   extends UseTextFieldProps,
     TextFieldVariantProps {
-  label?: string;
   requiredIndicator?: string;
   optionalIndicator?: string;
 
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
 
-  description?: string;
-  errorMessage?: string;
-
-  maxGraphemeCount?: number;
   hideGraphemeCount?: boolean;
 }
 
