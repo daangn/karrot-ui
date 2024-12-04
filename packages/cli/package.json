@@ -21,6 +21,7 @@
   "scripts": {
     "prepack": "yarn build",
     "build": "ENV=prod node ./build.mjs",
+    "dev": "ENV=dev node ./dev.mjs",
     "test": "yarn vitest"
   },
   "dependencies": {

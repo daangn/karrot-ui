@@ -1,6 +1,7 @@
 import * as p from "@clack/prompts";
 import { cosmiconfig } from "cosmiconfig";
 import { execa } from "execa";
+import fs from "fs";
 import path from "path";
 import { z } from "zod";
 import { highlight } from "./color";
@@ -45,11 +46,31 @@ export type Config = z.infer<typeof configSchema>;
 export async function resolveConfigPaths(cwd: string, config: RawConfig) {
   const seedComponentRootPath = path.resolve(cwd, config.path);
 
+  if (!fs.existsSync(seedComponentRootPath)) {
+    fs.mkdirSync(seedComponentRootPath, { recursive: true });
+  }
+
+  const resolvedUIPaths = path.join(seedComponentRootPath, "ui");
+  const resolbedHookPaths = path.join(seedComponentRootPath, "hook");
+  const resolvedUtilPaths = path.join(seedComponentRootPath, "util");
+
+  if (!fs.existsSync(resolvedUIPaths)) {
+    fs.mkdirSync(resolvedUIPaths, { recursive: true });
+  }
+
+  if (!fs.existsSync(resolbedHookPaths)) {
+    fs.mkdirSync(resolbedHookPaths, { recursive: true });
+  }
+
+  if (!fs.existsSync(resolvedUtilPaths)) {
+    fs.mkdirSync(resolvedUtilPaths, { recursive: true });
+  }
+
   return configSchema.parse({
     ...config,
-    resolvedUIPaths: path.join(seedComponentRootPath, "ui"),
-    resolbedHookPaths: path.join(seedComponentRootPath, "hook"),
-    resolvedUtilPaths: path.join(seedComponentRootPath, "util"),
+    resolvedUIPaths,
+    resolbedHookPaths,
+    resolvedUtilPaths,
   });
 }
 
