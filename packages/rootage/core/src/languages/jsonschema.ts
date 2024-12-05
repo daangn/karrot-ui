@@ -120,12 +120,18 @@ export function getJsonSchema(ctx: RootageCtx): string {
           },
           {
             "$ref": "#/definitions/tokenRef"
+          },
+          {
+            "$ref": "#/definitions/stringShorthand"
           }
         ]
       },
       "colorShorthand": {
         "type": "string",
         "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+      },
+      "stringShorthand": {
+        "type": "string"
       },
       "dimensionShorthand": {
         "type": "string",
