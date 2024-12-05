@@ -1,6 +1,7 @@
 interface ProgressCircleVariant {
-  size: "small" | "medium";
-  indeterminate: true | false
+  variant: "neutral" | "brand" | "white";
+size: "small" | "medium";
+indeterminate: boolean;
 }
 
 type ProgressCircleVariantMap = {

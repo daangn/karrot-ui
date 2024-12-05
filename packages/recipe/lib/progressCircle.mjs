@@ -24,6 +24,11 @@ const defaultVariant = {};
 const compoundVariants = [];
 
 export const progressCircleVariantMap = {
+  "variant": [
+    "neutral",
+    "brand",
+    "white"
+  ],
   "size": [
     "small",
     "medium"

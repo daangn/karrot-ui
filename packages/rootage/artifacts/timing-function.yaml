@@ -4,4 +4,9 @@ metadata:
   name: Unit
 data:
   collection: global
-  tokens: []
+  tokens:
+    $timing-function.linear:
+      values:
+        default:
+          type: cubicBezier
+          value: [0, 0, 1, 1]

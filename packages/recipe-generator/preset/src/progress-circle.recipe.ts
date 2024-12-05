@@ -16,8 +16,6 @@ const progressCircle = defineRecipe({
 
       width: "100%",
       height: "100%",
-
-      fill: vars.base.enabled.track.fill,
     },
     indicator: {
       display: "inline-flex",
@@ -30,7 +28,8 @@ const progressCircle = defineRecipe({
       width: "100%",
       height: "100%",
 
-      color: vars.base.enabled.indicator.color,
+      transitionTimingFunction: vars.base.enabled.indicator.transitionTimingFunction,
+      transitionDuration: vars.base.enabled.indicator.transitionDuration,
     },
     "indicator-path": {
       stroke: "currentColor",
@@ -45,6 +44,32 @@ const progressCircle = defineRecipe({
     },
   },
   variants: {
+    variant: {
+      neutral: {
+        track: {
+          fill: vars.variantNeutral.enabled.track.fill,
+        },
+        indicator: {
+          color: vars.variantNeutral.enabled.indicator.color,
+        },
+      },
+      brand: {
+        track: {
+          fill: vars.variantBrand.enabled.track.fill,
+        },
+        indicator: {
+          color: vars.variantBrand.enabled.indicator.color,
+        },
+      },
+      white: {
+        track: {
+          fill: vars.variantWhite.enabled.track.fill,
+        },
+        indicator: {
+          color: vars.variantWhite.enabled.indicator.color,
+        },
+      },
+    },
     size: {
       small: {
         root: {
@@ -62,19 +87,19 @@ const progressCircle = defineRecipe({
     indeterminate: {
       true: {
         root: {
-          animation: `rotate ${vars.variantIndeterminate.enabled["indicator-path"].rotateDuration} ${vars.variantIndeterminate.enabled["indicator-path"].rotateTimingFunction} infinite`,
+          animation: `rotate ${vars.indeterminateTrue.enabled.indicator.rotateDuration} ${vars.indeterminateTrue.enabled.indicator.rotateTimingFunction} infinite`,
         },
         "indicator-path": {
           animation: `
-            headDash ${vars.variantIndeterminate.enabled["indicator-path"].headDashDuration} ${vars.variantIndeterminate.enabled["indicator-path"].headDashTimingFunction} infinite normal none running,
-            tailDash ${vars.variantIndeterminate.enabled["indicator-path"].tailDashDuration} ${vars.variantIndeterminate.enabled["indicator-path"].tailDashTimingFunction} infinite normal none running
+            headDash ${vars.indeterminateTrue.enabled.indicator.headDuration} ${vars.indeterminateTrue.enabled.indicator.headTimingFunction} infinite normal none running,
+            tailDash ${vars.indeterminateTrue.enabled.indicator.tailDuration} ${vars.indeterminateTrue.enabled.indicator.tailTimingFunction} infinite normal none running
           `,
         },
       },
       false: {
         "indicator-path": {
-          transitionDuration: `var(--seed-spinner-determinate-duration, ${vars.variantDeterminate.enabled["indicator-path"].transitionDuration})`,
-          transitionTimingFunction: `var(--seed-spinner-determinate-timing-function, ${vars.variantDeterminate.enabled["indicator-path"].transitionTimingFunction})`,
+          transitionDuration: `var(--seed-spinner-determinate-duration, ${vars.base.enabled.indicator.transitionDuration})`,
+          transitionTimingFunction: `var(--seed-spinner-determinate-timing-function, ${vars.base.enabled.indicator.transitionTimingFunction})`,
           transitionProperty: "stroke-dasharray",
         },
       },
@@ -113,6 +138,11 @@ const progressCircle = defineRecipe({
         strokeDashoffset: "-110",
       },
     },
+  },
+  defaultVariants: {
+    variant: "neutral",
+    size: "medium",
+    indeterminate: false,
   },
 });
 
