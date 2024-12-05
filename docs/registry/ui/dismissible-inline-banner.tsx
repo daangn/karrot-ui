@@ -23,7 +23,7 @@ const useDismissibleInlineBannerContext = () => {
   const context = React.useContext(DismissibleInlineBannerContext);
   if (!context)
     throw new Error(
-      "Parts of InlineBanner cannot be rendered outside the InlineBanner",
+      "Parts of DismissibleInlineBanner cannot be rendered outside the DismissibleInlineBanner",
     );
 
   return context;

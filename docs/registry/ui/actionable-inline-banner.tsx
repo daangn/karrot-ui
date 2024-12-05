@@ -19,7 +19,7 @@ const useActionableInlineBannerContext = () => {
   const context = React.useContext(ActionableInlineBannerContext);
   if (!context)
     throw new Error(
-      "Parts of InlineBanner cannot be rendered outside the InlineBanner",
+      "Parts of ActionableInlineBanner cannot be rendered outside the ActionableInlineBanner",
     );
 
   return context;
