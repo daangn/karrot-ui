@@ -10,14 +10,115 @@ import {
   useDismissible,
   type DismissibleProps,
 } from "@seed-design/react-dismissible";
+import { Slot } from "@radix-ui/react-slot";
+
+const DismissibleCalloutContext = React.createContext<{
+  variantProps: CalloutVariantProps;
+} | null>(null);
+
+const useDismissibleCalloutContext = () => {
+  const context = React.useContext(DismissibleCalloutContext);
+  if (!context)
+    throw new Error(
+      "Parts of DismissibleCallout cannot be rendered outside the DismissibleCallout",
+    );
+
+  return context;
+};
+
+export const DismissibleCalloutTitle = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useDismissibleCalloutContext();
+
+  const classNames = callout({ variant });
+
+  return (
+    <>
+      <span
+        ref={ref}
+        className={clsx(classNames.title, className)}
+        {...otherProps}
+      >
+        {children}
+      </span>
+      <span
+        ref={ref}
+        className={clsx(classNames.spacer, className)}
+        {...otherProps}
+      >
+        {" "}
+      </span>
+    </>
+  );
+});
+DismissibleCalloutTitle.displayName = "DismissibleCalloutTitle";
+
+export const DismissibleCalloutDescription = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useDismissibleCalloutContext();
+  const classNames = callout({ variant });
+
+  return (
+    <span
+      ref={ref}
+      className={clsx(classNames.label, className)}
+      {...otherProps}
+    >
+      {children}
+    </span>
+  );
+});
+DismissibleCalloutDescription.displayName = "DismissibleCalloutDescription";
+
+export const DismissibleCalloutLink = React.forwardRef<
+  HTMLButtonElement,
+  React.HTMLAttributes<HTMLButtonElement> & {
+    /**
+     * @default false
+     */
+    asChild?: boolean;
+  }
+>(({ asChild = false, children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useDismissibleCalloutContext();
+  const classNames = callout({ variant });
+
+  const Comp = asChild ? Slot : "button";
+
+  return (
+    <>
+      <span
+        ref={ref}
+        className={clsx(classNames.spacer, className)}
+        {...otherProps}
+      >
+        {" "}
+      </span>
+      <Comp
+        ref={ref}
+        className={clsx(classNames.linkLabel, className)}
+        {...otherProps}
+      >
+        {children}
+      </Comp>
+    </>
+  );
+});
+DismissibleCalloutLink.displayName = "DismissibleCalloutLink";
 
 export interface DismissibleCalloutProps
   extends DismissibleProps,
     CalloutVariantProps {
-  titleText?: string;
   dismissAriaLabel: string;
-  linkLabel?: string;
-  onLinkLabelClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 type ReactDismissibleCalloutProps = React.HTMLAttributes<HTMLDivElement> &
@@ -32,13 +133,10 @@ export const DismissibleCallout = React.forwardRef<
       children,
       className,
       variant = "neutral",
-      titleText,
       defaultOpen,
       isOpen: isPropOpen,
       onDismiss,
       dismissAriaLabel,
-      linkLabel,
-      onLinkLabelClick,
       ...otherProps
     },
     ref,
@@ -61,25 +159,11 @@ export const DismissibleCallout = React.forwardRef<
       >
         <div className={classNames.content}>
           <div>
-            {titleText && (
-              <>
-                <span className={classNames.title}>{titleText}</span>
-                <span className={classNames.spacer}> </span>
-              </>
-            )}
-            <span className={classNames.label}>{children}</span>{" "}
-            {linkLabel && (
-              <>
-                <span className={classNames.spacer}> </span>
-                <button
-                  type="button"
-                  className={classNames.linkLabel}
-                  onClick={onLinkLabelClick}
-                >
-                  {linkLabel}
-                </button>
-              </>
-            )}
+            <DismissibleCalloutContext.Provider
+              value={{ variantProps: { variant } }}
+            >
+              {children}
+            </DismissibleCalloutContext.Provider>
           </div>
         </div>
         <button

@@ -10,13 +10,102 @@ import {
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
 
+const InlineBannerContext = React.createContext<{
+  variantProps: InlineBannerVariantProps;
+} | null>(null);
+
+const useInlineBannerContext = () => {
+  const context = React.useContext(InlineBannerContext);
+  if (!context)
+    throw new Error(
+      "Parts of InlineBanner cannot be rendered outside the InlineBanner",
+    );
+
+  return context;
+};
+
+export const InlineBannerTitle = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useInlineBannerContext();
+  const classNames = inlineBanner({ variant });
+
+  return (
+    <>
+      <span
+        ref={ref}
+        className={clsx(classNames.title, className)}
+        {...otherProps}
+      >
+        {children}
+      </span>
+      <span
+        ref={ref}
+        className={clsx(classNames.spacer, className)}
+        {...otherProps}
+      >
+        {" "}
+      </span>
+    </>
+  );
+});
+InlineBannerTitle.displayName = "InlineBannerTitle";
+
+export const InlineBannerDescription = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useInlineBannerContext();
+  const classNames = inlineBanner({ variant });
+
+  return (
+    <span
+      ref={ref}
+      className={clsx(classNames.label, className)}
+      {...otherProps}
+    >
+      {children}
+    </span>
+  );
+});
+InlineBannerDescription.displayName = "InlineBannerDescription";
+
+export const InlineBannerLink = React.forwardRef<
+  HTMLButtonElement,
+  React.HTMLAttributes<HTMLButtonElement> & {
+    /**
+     * @default false
+     */
+    asChild?: boolean;
+  }
+>(({ asChild = false, children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useInlineBannerContext();
+  const classNames = inlineBanner({ variant });
+
+  const Comp = asChild ? Slot : "button";
+
+  return (
+    <Comp
+      ref={ref}
+      className={clsx(classNames.linkLabel, className)}
+      {...otherProps}
+    >
+      {children}
+    </Comp>
+  );
+});
+InlineBannerLink.displayName = "InlineBannerLink";
+
 export interface InlineBannerProps extends InlineBannerVariantProps {
   icon?: React.ReactNode;
-  titleText?: string;
-  link?: {
-    label: string;
-    onClick: React.MouseEventHandler<HTMLButtonElement>;
-  };
+  suffix?: React.ReactNode;
 }
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
@@ -32,8 +121,7 @@ export const InlineBanner = React.forwardRef<
       className,
       variant = "neutralWeak",
       icon,
-      titleText,
-      link,
+      suffix,
       ...otherProps
     },
     ref,
@@ -46,27 +134,13 @@ export const InlineBanner = React.forwardRef<
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
-        <div className={classNames.content}>
-          {icon && <Slot className={classNames.icon}>{icon}</Slot>}
-          <div>
-            {titleText && (
-              <>
-                <span className={classNames.title}>{titleText}</span>
-                <span className={classNames.spacer}> </span>
-              </>
-            )}
-            <span className={classNames.label}>{children}</span>
+        <InlineBannerContext.Provider value={{ variantProps: { variant } }}>
+          <div className={classNames.content}>
+            {icon && <Slot className={classNames.icon}>{icon}</Slot>}
+            <div>{children}</div>
           </div>
-        </div>
-        {link && (
-          <button
-            type="button"
-            className={classNames.linkLabel}
-            onClick={link.onClick}
-          >
-            {link.label}
-          </button>
-        )}
+          {suffix}
+        </InlineBannerContext.Provider>
       </div>
     );
   },

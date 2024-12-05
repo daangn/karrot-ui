@@ -1,6 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { DismissibleCallout } from "seed-design/ui/dismissible-callout";
+import {
+  DismissibleCallout,
+  DismissibleCalloutDescription,
+  DismissibleCalloutLink,
+  DismissibleCalloutTitle,
+} from "seed-design/ui/dismissible-callout";
 
 import { calloutVariantMap } from "@seed-design/recipe/callout";
 import { VariantTable } from "./components/variant-table";
@@ -17,10 +22,15 @@ type Story = StoryObj<typeof meta>;
 
 const CommonStoryTemplate: Story = {
   args: {
-    children: "Magna id laboris excepteur tempor duis duis voluptate voluptate non.",
-    titleText: "새로운 기능",
-    linkLabel: "자세히 보기",
-    onLinkLabelClick: () => {},
+    children: (
+      <>
+        <DismissibleCalloutTitle>새로운 기능</DismissibleCalloutTitle>
+        <DismissibleCalloutDescription>
+          Magna id laboris excepteur tempor duis duis voluptate voluptate non.
+        </DismissibleCalloutDescription>
+        <DismissibleCalloutLink onClick={() => {}}>자세히 보기</DismissibleCalloutLink>
+      </>
+    ),
     dismissAriaLabel: "닫기",
   },
   render: (args) => (

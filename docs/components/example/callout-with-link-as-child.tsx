@@ -8,7 +8,11 @@ export default function CalloutWithLink() {
       <CalloutDescription>
         Aliquip laboris excepteur enim sunt eiusmod laboris anim.
       </CalloutDescription>
-      <CalloutLink onClick={() => window.alert("Hello World")}>시도해 보기</CalloutLink>
+      <CalloutLink asChild>
+        <a href="https://www.daangn.com" target="_blank" rel="noreferrer">
+          시도해 보기
+        </a>
+      </CalloutLink>
     </Callout>
   );
 }

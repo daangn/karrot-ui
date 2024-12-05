@@ -11,9 +11,74 @@ import {
 } from "@seed-design/recipe/inlineBanner";
 import { IconChevronRightLine } from "@daangn/react-monochrome-icon";
 
+const ActionableInlineBannerContext = React.createContext<{
+  variantProps: InlineBannerVariantProps;
+} | null>(null);
+
+const useActionableInlineBannerContext = () => {
+  const context = React.useContext(ActionableInlineBannerContext);
+  if (!context)
+    throw new Error(
+      "Parts of ActionableInlineBanner cannot be rendered outside the ActionableInlineBanner",
+    );
+
+  return context;
+};
+
+export const ActionableInlineBannerTitle = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useActionableInlineBannerContext();
+  const classNames = inlineBanner({ variant });
+
+  return (
+    <>
+      <span
+        ref={ref}
+        className={clsx(classNames.title, className)}
+        {...otherProps}
+      >
+        {children}
+      </span>
+      <span
+        ref={ref}
+        className={clsx(classNames.spacer, className)}
+        {...otherProps}
+      >
+        {" "}
+      </span>
+    </>
+  );
+});
+ActionableInlineBannerTitle.displayName = "ActionableInlineBannerTitle";
+
+export const ActionableInlineBannerDescription = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useActionableInlineBannerContext();
+  const classNames = inlineBanner({ variant });
+
+  return (
+    <span
+      ref={ref}
+      className={clsx(classNames.label, className)}
+      {...otherProps}
+    >
+      {children}
+    </span>
+  );
+});
+ActionableInlineBannerDescription.displayName =
+  "ActionableInlineBannerDescription";
+
 export interface ActionableInlineBannerProps extends InlineBannerVariantProps {
   icon?: React.ReactNode;
-  titleText?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -35,13 +100,11 @@ export const ActionableInlineBanner = React.forwardRef<
       variant = "neutralWeak",
       icon,
       onClick,
-      titleText,
       ...otherProps
     },
     ref,
   ) => {
     const classNames = inlineBanner({ variant });
-
     return (
       <button
         onClick={onClick}
@@ -53,13 +116,11 @@ export const ActionableInlineBanner = React.forwardRef<
         <div className={classNames.content}>
           {icon && <Slot className={classNames.icon}>{icon}</Slot>}
           <div>
-            {titleText && (
-              <>
-                <span className={classNames.title}>{titleText}</span>
-                <span className={classNames.spacer}> </span>
-              </>
-            )}
-            <span className={classNames.label}>{children}</span>
+            <ActionableInlineBannerContext.Provider
+              value={{ variantProps: { variant } }}
+            >
+              {children}
+            </ActionableInlineBannerContext.Provider>
           </div>
         </div>
         <IconChevronRightLine className={classNames.actionableIcon} />
