@@ -93,8 +93,6 @@
     margin-block-start: var(--seed-v3-unit-x2);
 }
 .textField__description {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
     font-weight: var(--seed-v3-font-weight-regular);
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
@@ -164,6 +162,13 @@
     width: var(--seed-v3-unit-x5);
     height: var(--seed-v3-unit-x5);
 }
+.textField__footer--size_xlarge {
+    min-height: 19px;
+}
+.textField__description--size_xlarge {
+    font-size: var(--seed-v3-font-size-t4);
+    line-height: var(--seed-v3-line-height-t4);
+}
 .textField__errorMessage--size_xlarge {
     font-size: var(--seed-v3-font-size-t4);
     line-height: var(--seed-v3-line-height-t4);
@@ -209,6 +214,13 @@
     width: var(--seed-v3-unit-x5);
     height: var(--seed-v3-unit-x5);
 }
+.textField__footer--size_large {
+    min-height: 19px;
+}
+.textField__description--size_large {
+    font-size: var(--seed-v3-font-size-t4);
+    line-height: var(--seed-v3-line-height-t4);
+}
 .textField__errorMessage--size_large {
     font-size: var(--seed-v3-font-size-t4);
     line-height: var(--seed-v3-line-height-t4);
@@ -253,6 +265,13 @@
 .textField__suffixIcon--size_medium {
     width: var(--seed-v3-unit-x4);
     height: var(--seed-v3-unit-x4);
+}
+.textField__footer--size_medium {
+    min-height: var(--seed-v3-unit-x4);
+}
+.textField__description--size_medium {
+    font-size: var(--seed-v3-font-size-t2);
+    line-height: var(--seed-v3-line-height-t2);
 }
 .textField__errorMessage--size_medium {
     font-size: var(--seed-v3-font-size-t2);

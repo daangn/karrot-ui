@@ -36,8 +36,6 @@ data:
       description:
         color: $color.fg.neutral-subtle
         fontWeight: $font-weight.regular
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
       errorMessage:
         gap: $unit.x1
         color: $color.fg.danger
@@ -108,6 +106,11 @@ data:
         lineHeight: $line-height.t6
       suffixIcon:
         size: $unit.x5
+      footer:
+        minHeight: 19px
+      description:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
       errorMessage:
         fontSize: $font-size.t4
         lineHeight: $line-height.t4
@@ -142,6 +145,11 @@ data:
         lineHeight: $line-height.t5
       suffixIcon:
         size: $unit.x5
+      footer:
+        minHeight: 19px
+      description:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
       errorMessage:
         fontSize: $font-size.t4
         lineHeight: $line-height.t4
@@ -176,6 +184,11 @@ data:
         lineHeight: $line-height.t4
       suffixIcon:
         size: $unit.x4
+      footer:
+        minHeight: $unit.x4
+      description:
+        fontSize: $font-size.t2
+        lineHeight: $line-height.t2
       errorMessage:
         fontSize: $font-size.t2
         lineHeight: $line-height.t2

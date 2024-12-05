@@ -138,9 +138,6 @@ const textField = defineRecipe({
       marginBlockStart: vars.base.enabled.footer.marginYStart,
     },
     description: {
-      fontSize: vars.base.enabled.description.fontSize,
-      lineHeight: vars.base.enabled.description.lineHeight,
-
       fontWeight: vars.base.enabled.description.fontWeight,
       color: vars.base.enabled.description.color,
     },
@@ -223,6 +220,13 @@ const textField = defineRecipe({
           width: vars.sizeXlarge.enabled.suffixIcon.size,
           height: vars.sizeXlarge.enabled.suffixIcon.size,
         },
+        footer: {
+          minHeight: vars.sizeXlarge.enabled.footer.minHeight,
+        },
+        description: {
+          fontSize: vars.sizeXlarge.enabled.description.fontSize,
+          lineHeight: vars.sizeXlarge.enabled.description.lineHeight,
+        },
         errorMessage: {
           fontSize: vars.sizeXlarge.enabled.errorMessage.fontSize,
           lineHeight: vars.sizeXlarge.enabled.errorMessage.lineHeight,
@@ -272,6 +276,13 @@ const textField = defineRecipe({
           width: vars.sizeLarge.enabled.suffixIcon.size,
           height: vars.sizeLarge.enabled.suffixIcon.size,
         },
+        footer: {
+          minHeight: vars.sizeLarge.enabled.footer.minHeight,
+        },
+        description: {
+          fontSize: vars.sizeLarge.enabled.description.fontSize,
+          lineHeight: vars.sizeLarge.enabled.description.lineHeight,
+        },
         errorMessage: {
           fontSize: vars.sizeLarge.enabled.errorMessage.fontSize,
           lineHeight: vars.sizeLarge.enabled.errorMessage.lineHeight,
@@ -320,6 +331,13 @@ const textField = defineRecipe({
         suffixIcon: {
           width: vars.sizeMedium.enabled.suffixIcon.size,
           height: vars.sizeMedium.enabled.suffixIcon.size,
+        },
+        footer: {
+          minHeight: vars.sizeMedium.enabled.footer.minHeight,
+        },
+        description: {
+          fontSize: vars.sizeMedium.enabled.description.fontSize,
+          lineHeight: vars.sizeMedium.enabled.description.lineHeight,
         },
         errorMessage: {
           fontSize: vars.sizeMedium.enabled.errorMessage.fontSize,

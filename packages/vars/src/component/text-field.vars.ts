@@ -41,9 +41,7 @@ export const vars = {
       },
       "description": {
         "color": "var(--seed-v3-color-fg-neutral-subtle)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)",
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)"
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "errorMessage": {
         "gap": "var(--seed-v3-unit-x1)",
@@ -142,6 +140,13 @@ export const vars = {
       "suffixIcon": {
         "size": "var(--seed-v3-unit-x5)"
       },
+      "footer": {
+        "minHeight": "19px"
+      },
+      "description": {
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
+      },
       "errorMessage": {
         "fontSize": "var(--seed-v3-font-size-t4)",
         "lineHeight": "var(--seed-v3-line-height-t4)"
@@ -188,6 +193,13 @@ export const vars = {
       "suffixIcon": {
         "size": "var(--seed-v3-unit-x5)"
       },
+      "footer": {
+        "minHeight": "19px"
+      },
+      "description": {
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
+      },
       "errorMessage": {
         "fontSize": "var(--seed-v3-font-size-t4)",
         "lineHeight": "var(--seed-v3-line-height-t4)"
@@ -233,6 +245,13 @@ export const vars = {
       },
       "suffixIcon": {
         "size": "var(--seed-v3-unit-x4)"
+      },
+      "footer": {
+        "minHeight": "var(--seed-v3-unit-x4)"
+      },
+      "description": {
+        "fontSize": "var(--seed-v3-font-size-t2)",
+        "lineHeight": "var(--seed-v3-line-height-t2)"
       },
       "errorMessage": {
         "fontSize": "var(--seed-v3-font-size-t2)",
