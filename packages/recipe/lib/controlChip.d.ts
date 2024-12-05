@@ -1,6 +1,6 @@
 interface ControlChipVariant {
   size: "medium" | "small";
-  layout: "withText" | "iconOnly"
+layout: "withText" | "iconOnly";
 }
 
 type ControlChipVariantMap = {

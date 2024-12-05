@@ -1,5 +1,5 @@
 interface RadioVariant {
-  size: "large" | "medium" | "small"
+  size: "large" | "medium" | "small";
 }
 
 type RadioVariantMap = {

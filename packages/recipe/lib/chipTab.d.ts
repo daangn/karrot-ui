@@ -1,5 +1,5 @@
 interface ChipTabVariant {
-  variant: "neutralSolid" | "brandSolid"
+  variant: "neutralSolid" | "brandSolid";
 }
 
 type ChipTabVariantMap = {

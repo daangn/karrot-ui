@@ -1,8 +1,8 @@
 interface BadgeVariant {
   size: "medium" | "small";
-  shape: "rectangle" | "pill";
-  variant: "soft" | "solid" | "outlined";
-  tone: "neutral" | "brand" | "informative" | "positive" | "danger"
+shape: "rectangle" | "pill";
+variant: "soft" | "solid" | "outlined";
+tone: "neutral" | "brand" | "informative" | "positive" | "danger";
 }
 
 type BadgeVariantMap = {
