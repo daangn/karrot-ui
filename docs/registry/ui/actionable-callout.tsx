@@ -7,8 +7,73 @@ import clsx from "clsx";
 import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
 import { IconChevronRightFill } from "@daangn/react-monochrome-icon";
 
+const ActionableCalloutContext = React.createContext<{
+  variantProps: CalloutVariantProps;
+} | null>(null);
+
+const useActionableCalloutContext = () => {
+  const context = React.useContext(ActionableCalloutContext);
+  if (!context)
+    throw new Error(
+      "Parts of ActionableCallout cannot be rendered outside the ActionableCallout",
+    );
+
+  return context;
+};
+
+export const ActionableCalloutTitle = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useActionableCalloutContext();
+
+  const classNames = callout({ variant });
+
+  return (
+    <>
+      <span
+        ref={ref}
+        className={clsx(classNames.title, className)}
+        {...otherProps}
+      >
+        {children}
+      </span>
+      <span
+        ref={ref}
+        className={clsx(classNames.spacer, className)}
+        {...otherProps}
+      >
+        {" "}
+      </span>
+    </>
+  );
+});
+ActionableCalloutTitle.displayName = "ActionableCalloutTitle";
+
+export const ActionableCalloutLabel = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useActionableCalloutContext();
+  const classNames = callout({ variant });
+
+  return (
+    <span
+      ref={ref}
+      className={clsx(classNames.label, className)}
+      {...otherProps}
+    >
+      {children}
+    </span>
+  );
+});
+ActionableCalloutLabel.displayName = "ActionableCalloutLabel";
+
 export interface ActionableCalloutProps extends CalloutVariantProps {
-  titleText?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -28,7 +93,6 @@ export const ActionableCallout = React.forwardRef<
       className,
       type = "button",
       variant = "neutral",
-      titleText,
       onClick,
       ...otherProps
     },
@@ -46,13 +110,11 @@ export const ActionableCallout = React.forwardRef<
       >
         <div className={classNames.content}>
           <div>
-            {titleText && (
-              <>
-                <span className={classNames.title}>{titleText}</span>
-                <span className={classNames.spacer}> </span>
-              </>
-            )}
-            <span className={classNames.label}>{children}</span>
+            <ActionableCalloutContext.Provider
+              value={{ variantProps: { variant } }}
+            >
+              {children}
+            </ActionableCalloutContext.Provider>
           </div>
         </div>
         <IconChevronRightFill className={classNames.actionableIcon} />
