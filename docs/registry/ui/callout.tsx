@@ -21,7 +21,7 @@ const useCalloutContext = () => {
 
 export const CalloutTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -50,9 +50,9 @@ export const CalloutTitle = React.forwardRef<
 });
 CalloutTitle.displayName = "CalloutTitle";
 
-export const CalloutLabel = React.forwardRef<
+export const CalloutDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -69,7 +69,7 @@ export const CalloutLabel = React.forwardRef<
     </span>
   );
 });
-CalloutLabel.displayName = "CalloutLabel";
+CalloutDescription.displayName = "CalloutDescription";
 
 export const CalloutLink = React.forwardRef<
   HTMLButtonElement,

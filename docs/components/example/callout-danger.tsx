@@ -1,11 +1,11 @@
-import { Callout, CalloutLabel } from "seed-design/ui/callout";
+import { Callout, CalloutDescription } from "seed-design/ui/callout";
 
 export default function CalloutDanger() {
   return (
     <Callout variant="danger">
-      <CalloutLabel>
+      <CalloutDescription>
         Dolore ex occaecat Lorem ad eu. Consectetur consectetur magna pariatur aliquip enim non.
-      </CalloutLabel>
+      </CalloutDescription>
     </Callout>
   );
 }

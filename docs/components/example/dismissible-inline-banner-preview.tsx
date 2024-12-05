@@ -2,7 +2,7 @@
 
 import {
   DismissibleInlineBanner,
-  DismissibleInlineBannerLabel,
+  DismissibleInlineBannerDescription,
 } from "seed-design/ui/dismissible-inline-banner";
 
 export default function DismissibleInlineBannerPreview() {
@@ -11,12 +11,12 @@ export default function DismissibleInlineBannerPreview() {
   return (
     <div className="flex flex-col gap-3 w-full">
       <DismissibleInlineBanner dismissAriaLabel="닫기" onDismiss={onDismiss}>
-        <DismissibleInlineBannerLabel>ullamco</DismissibleInlineBannerLabel>
+        <DismissibleInlineBannerDescription>ullamco</DismissibleInlineBannerDescription>
       </DismissibleInlineBanner>
       <DismissibleInlineBanner dismissAriaLabel="닫기" onDismiss={onDismiss}>
-        <DismissibleInlineBannerLabel>
+        <DismissibleInlineBannerDescription>
           Ut veniam in ea ea anim laborum magna dolore ea laborum duis ut aute mollit amet.
-        </DismissibleInlineBannerLabel>
+        </DismissibleInlineBannerDescription>
       </DismissibleInlineBanner>
     </div>
   );

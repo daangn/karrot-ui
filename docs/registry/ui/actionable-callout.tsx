@@ -23,7 +23,7 @@ const useActionableCalloutContext = () => {
 
 export const ActionableCalloutTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -52,9 +52,9 @@ export const ActionableCalloutTitle = React.forwardRef<
 });
 ActionableCalloutTitle.displayName = "ActionableCalloutTitle";
 
-export const ActionableCalloutLabel = React.forwardRef<
+export const ActionableCalloutDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -71,7 +71,7 @@ export const ActionableCalloutLabel = React.forwardRef<
     </span>
   );
 });
-ActionableCalloutLabel.displayName = "ActionableCalloutLabel";
+ActionableCalloutDescription.displayName = "ActionableCalloutDescription";
 
 export interface ActionableCalloutProps extends CalloutVariantProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;

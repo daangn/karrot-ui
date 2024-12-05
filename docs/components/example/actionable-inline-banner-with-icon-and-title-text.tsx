@@ -3,7 +3,7 @@
 import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
 import {
   ActionableInlineBanner,
-  ActionableInlineBannerLabel,
+  ActionableInlineBannerDescription,
   ActionableInlineBannerTitle,
 } from "seed-design/ui/actionable-inline-banner";
 
@@ -15,7 +15,9 @@ export default function ActionableInlineBannerWithIconAndTitleText() {
       icon={<IconILowercaseSerifCircleFill />}
     >
       <ActionableInlineBannerTitle>예약</ActionableInlineBannerTitle>
-      <ActionableInlineBannerLabel>다른 사람과 예약된 물품이 있어요.</ActionableInlineBannerLabel>
+      <ActionableInlineBannerDescription>
+        다른 사람과 예약된 물품이 있어요.
+      </ActionableInlineBannerDescription>
     </ActionableInlineBanner>
   );
 }

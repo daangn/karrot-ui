@@ -27,7 +27,7 @@ const useActionableInlineBannerContext = () => {
 
 export const ActionableInlineBannerTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -55,9 +55,9 @@ export const ActionableInlineBannerTitle = React.forwardRef<
 });
 ActionableInlineBannerTitle.displayName = "ActionableInlineBannerTitle";
 
-export const ActionableInlineBannerLabel = React.forwardRef<
+export const ActionableInlineBannerDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -74,7 +74,8 @@ export const ActionableInlineBannerLabel = React.forwardRef<
     </span>
   );
 });
-ActionableInlineBannerLabel.displayName = "ActionableInlineBannerLabel";
+ActionableInlineBannerDescription.displayName =
+  "ActionableInlineBannerDescription";
 
 export interface ActionableInlineBannerProps extends InlineBannerVariantProps {
   icon?: React.ReactNode;

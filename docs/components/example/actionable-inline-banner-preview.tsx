@@ -2,7 +2,7 @@
 
 import {
   ActionableInlineBanner,
-  ActionableInlineBannerLabel,
+  ActionableInlineBannerDescription,
 } from "seed-design/ui/actionable-inline-banner";
 
 export default function ActionableInlineBannerPreview() {
@@ -11,12 +11,12 @@ export default function ActionableInlineBannerPreview() {
   return (
     <div className="flex flex-col gap-3 w-full">
       <ActionableInlineBanner onClick={onClick}>
-        <ActionableInlineBannerLabel>ullamco</ActionableInlineBannerLabel>
+        <ActionableInlineBannerDescription>ullamco</ActionableInlineBannerDescription>
       </ActionableInlineBanner>
       <ActionableInlineBanner onClick={onClick}>
-        <ActionableInlineBannerLabel>
+        <ActionableInlineBannerDescription>
           Ut veniam in ea ea anim laborum magna dolore ea laborum duis ut aute mollit amet.
-        </ActionableInlineBannerLabel>
+        </ActionableInlineBannerDescription>
       </ActionableInlineBanner>
     </div>
   );

@@ -4,7 +4,7 @@ import * as React from "react";
 
 import {
   InlineBanner,
-  InlineBannerLabel,
+  InlineBannerDescription,
   type InlineBannerProps,
 } from "seed-design/ui/inline-banner";
 import { ActionButton } from "seed-design/ui/action-button";
@@ -30,9 +30,9 @@ const InlineBannerActivity: ActivityComponentType<"InlineBanner"> = () => {
         variant={variant}
         style={variant === "dangerSolid" ? { position: "sticky", top: 0 } : undefined}
       >
-        <InlineBannerLabel>
+        <InlineBannerDescription>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </InlineBannerLabel>
+        </InlineBannerDescription>
       </InlineBanner>
       <div style={{ display: "flex", flexDirection: "column", padding: "1rem", gap: "0.75rem" }}>
         <ActionButton

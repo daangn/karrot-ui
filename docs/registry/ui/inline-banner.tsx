@@ -26,7 +26,7 @@ const useInlineBannerContext = () => {
 
 export const InlineBannerTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -54,9 +54,9 @@ export const InlineBannerTitle = React.forwardRef<
 });
 InlineBannerTitle.displayName = "InlineBannerTitle";
 
-export const InlineBannerLabel = React.forwardRef<
+export const InlineBannerDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -73,7 +73,7 @@ export const InlineBannerLabel = React.forwardRef<
     </span>
   );
 });
-InlineBannerLabel.displayName = "InlineBannerLabel";
+InlineBannerDescription.displayName = "InlineBannerDescription";
 
 export const InlineBannerLink = React.forwardRef<
   HTMLButtonElement,
@@ -105,7 +105,7 @@ InlineBannerLink.displayName = "InlineBannerLink";
 
 export interface InlineBannerProps extends InlineBannerVariantProps {
   icon?: React.ReactNode;
-  suffixElement?: React.ReactNode;
+  suffix?: React.ReactNode;
 }
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
@@ -121,7 +121,7 @@ export const InlineBanner = React.forwardRef<
       className,
       variant = "neutralWeak",
       icon,
-      suffixElement,
+      suffix,
       ...otherProps
     },
     ref,
@@ -139,7 +139,7 @@ export const InlineBanner = React.forwardRef<
             {icon && <Slot className={classNames.icon}>{icon}</Slot>}
             <div>{children}</div>
           </div>
-          {suffixElement}
+          {suffix}
         </InlineBannerContext.Provider>
       </div>
     );

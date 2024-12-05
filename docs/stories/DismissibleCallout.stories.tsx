@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import {
   DismissibleCallout,
-  DismissibleCalloutLabel,
+  DismissibleCalloutDescription,
   DismissibleCalloutLink,
   DismissibleCalloutTitle,
 } from "seed-design/ui/dismissible-callout";
@@ -25,9 +25,9 @@ const CommonStoryTemplate: Story = {
     children: (
       <>
         <DismissibleCalloutTitle>새로운 기능</DismissibleCalloutTitle>
-        <DismissibleCalloutLabel>
+        <DismissibleCalloutDescription>
           Magna id laboris excepteur tempor duis duis voluptate voluptate non.
-        </DismissibleCalloutLabel>
+        </DismissibleCalloutDescription>
         <DismissibleCalloutLink onClick={() => {}}>자세히 보기</DismissibleCalloutLink>
       </>
     ),

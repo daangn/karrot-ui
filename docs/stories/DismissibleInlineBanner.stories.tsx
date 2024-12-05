@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import {
   DismissibleInlineBanner,
-  DismissibleInlineBannerLabel,
+  DismissibleInlineBannerDescription,
 } from "seed-design/ui/dismissible-inline-banner";
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
@@ -22,10 +22,10 @@ type Story = StoryObj<typeof meta>;
 const CommonStoryTemplate: Story = {
   args: {
     children: (
-      <DismissibleInlineBannerLabel>
+      <DismissibleInlineBannerDescription>
         Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis
         exercitation.
-      </DismissibleInlineBannerLabel>
+      </DismissibleInlineBannerDescription>
     ),
     icon: <IconBellFill />,
     dismissAriaLabel: "닫기",

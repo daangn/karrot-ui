@@ -1,6 +1,6 @@
 import {
   DismissibleCallout,
-  DismissibleCalloutLabel,
+  DismissibleCalloutDescription,
   DismissibleCalloutTitle,
 } from "seed-design/ui/dismissible-callout";
 
@@ -8,9 +8,9 @@ export default function DismissibleCalloutWithTitleText() {
   return (
     <DismissibleCallout dismissAriaLabel="닫기" variant="magic">
       <DismissibleCalloutTitle>새로운 기능</DismissibleCalloutTitle>
-      <DismissibleCalloutLabel>
+      <DismissibleCalloutDescription>
         Aliquip laboris excepteur enim sunt eiusmod laboris anim.
-      </DismissibleCalloutLabel>
+      </DismissibleCalloutDescription>
     </DismissibleCallout>
   );
 }

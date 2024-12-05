@@ -28,7 +28,7 @@ const useDismissibleCalloutContext = () => {
 
 export const DismissibleCalloutTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -57,9 +57,9 @@ export const DismissibleCalloutTitle = React.forwardRef<
 });
 DismissibleCalloutTitle.displayName = "DismissibleCalloutTitle";
 
-export const DismissibleCalloutLabel = React.forwardRef<
+export const DismissibleCalloutDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -76,7 +76,7 @@ export const DismissibleCalloutLabel = React.forwardRef<
     </span>
   );
 });
-DismissibleCalloutLabel.displayName = "DismissibleCalloutLabel";
+DismissibleCalloutDescription.displayName = "DismissibleCalloutDescription";
 
 export const DismissibleCalloutLink = React.forwardRef<
   HTMLButtonElement,

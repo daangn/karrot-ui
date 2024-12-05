@@ -31,7 +31,7 @@ const useDismissibleInlineBannerContext = () => {
 
 export const DismissibleInlineBannerTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -59,9 +59,9 @@ export const DismissibleInlineBannerTitle = React.forwardRef<
 });
 DismissibleInlineBannerTitle.displayName = "DismissibleInlineBannerTitle";
 
-export const DismissibleInlineBannerLabel = React.forwardRef<
+export const DismissibleInlineBannerDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -78,7 +78,8 @@ export const DismissibleInlineBannerLabel = React.forwardRef<
     </span>
   );
 });
-DismissibleInlineBannerLabel.displayName = "DismissibleInlineBannerLabel";
+DismissibleInlineBannerDescription.displayName =
+  "DismissibleInlineBannerDescription";
 
 export interface DismissibleInlineBannerProps
   extends DismissibleProps,

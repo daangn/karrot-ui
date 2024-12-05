@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import {
   ActionableCallout,
-  ActionableCalloutLabel,
+  ActionableCalloutDescription,
   ActionableCalloutTitle,
 } from "seed-design/ui/actionable-callout";
 
@@ -24,9 +24,9 @@ const CommonStoryTemplate: Story = {
     children: (
       <>
         <ActionableCalloutTitle>새로운 기능</ActionableCalloutTitle>
-        <ActionableCalloutLabel>
+        <ActionableCalloutDescription>
           Magna id laboris excepteur tempor duis duis voluptate voluptate non.
-        </ActionableCalloutLabel>
+        </ActionableCalloutDescription>
       </>
     ),
     onClick: () => {},
