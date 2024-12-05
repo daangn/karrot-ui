@@ -47,25 +47,23 @@
         },
         "description": {
           "color": "$color.fg.neutral-subtle",
-          "fontWeight": "$font-weight.regular",
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontWeight": "$font-weight.regular"
         },
         "errorMessage": {
           "gap": "$unit.x1",
           "color": "$color.fg.danger",
           "fontWeight": "$font-weight.regular"
         },
-        "graphemeCount": {
+        "characterCount": {
           "size": "$line-height.t4",
           "lineHeight": "$line-height.t2"
         },
-        "currentGraphemeCount": {
+        "currentCharacterCount": {
           "color": "$color.fg.neutral",
           "fontWeight": "$font-weight.regular",
           "fontSize": "$font-size.t2"
         },
-        "maxGraphemeCount": {
+        "maxCharacterCount": {
           "color": "$color.fg.neutral-subtle",
           "fontWeight": "$font-weight.regular",
           "fontSize": "$font-size.t2"
@@ -148,6 +146,13 @@
         "suffixIcon": {
           "size": "$unit.x5"
         },
+        "footer": {
+          "minHeight": "19px"
+        },
+        "description": {
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
+        },
         "errorMessage": {
           "fontSize": "$font-size.t4",
           "lineHeight": "$line-height.t4"
@@ -194,6 +199,13 @@
         "suffixIcon": {
           "size": "$unit.x5"
         },
+        "footer": {
+          "minHeight": "19px"
+        },
+        "description": {
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
+        },
         "errorMessage": {
           "fontSize": "$font-size.t4",
           "lineHeight": "$line-height.t4"
@@ -239,6 +251,13 @@
         },
         "suffixIcon": {
           "size": "$unit.x4"
+        },
+        "footer": {
+          "minHeight": "$unit.x4"
+        },
+        "description": {
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         },
         "errorMessage": {
           "fontSize": "$font-size.t2",

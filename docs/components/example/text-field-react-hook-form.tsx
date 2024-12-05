@@ -14,6 +14,7 @@ export default function TextFieldReactHookForm() {
   const {
     register,
     handleSubmit,
+    clearErrors,
     formState: { errors },
   } = useForm<FormValues>();
 
@@ -50,9 +51,18 @@ export default function TextFieldReactHookForm() {
         requiredIndicator="(필수)"
         required
       />
-      <ActionButton type="submit" className="col-span-2">
-        제출
-      </ActionButton>
+      <div className="col-span-2 flex gap-2">
+        <ActionButton type="submit" className="grow">
+          제출
+        </ActionButton>
+        <ActionButton
+          type="reset"
+          onClick={() => clearErrors(["name", "address"])}
+          variant="neutralWeak"
+        >
+          초기화
+        </ActionButton>
+      </div>
     </form>
   );
 }
