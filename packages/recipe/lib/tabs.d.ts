@@ -10,7 +10,7 @@ interface TabsVariant {
 /**
   * @default false
   */
-  fixTriggerList: true | false;
+  fixTriggerList: boolean;
 }
 
 type TabsVariantMap = {

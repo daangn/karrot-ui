@@ -1,9 +1,13 @@
 import { outdent } from "outdent";
 
 import { escapeReservedWord } from "./reserved-words";
-import type { SlotRecipeDefinition, SlotRecipeVariantRecord } from "./types";
+import type { SlotRecipeDefinition, SlotRecipeVariantRecord, StyleObject } from "./types";
 
 const capitalize = (str: string) => str[0].toUpperCase() + str.slice(1);
+
+const isBoolean = (key: string) => ["true", "false"].includes(key);
+
+const stringify = (key: string) => (isBoolean(key) ? key : `"${key}"`);
 
 const generateVariantInterface = (
   variants: SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>["variants"],
@@ -12,32 +16,30 @@ const generateVariantInterface = (
     SlotRecipeVariantRecord<string>
   >["defaultVariants"],
 ) => {
-  if (!defaultVariants) {
-    return Object.entries(variants)
-      .map(([variantName, variant]) => {
-        return `${variantName}: ${Object.keys(variant)
-          .map((key) => (["true", "false"].includes(key) ? key : `"${key}"`))
-          .join(" | ")}`;
-      })
-      .join(";\n  ");
-  }
+  const generateVariantType = (
+    variantName: string,
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    variant: Record<any, Partial<Record<string, StyleObject>>>,
+  ) => {
+    const values = Object.keys(variant);
+    const booleanValues = values.filter(isBoolean);
+    const typeString = booleanValues.length > 0 ? "boolean" : values.map(stringify).join(" | ");
+    const defaultValue = defaultVariants?.[variantName];
 
-  return Object.entries(variants)
-    .map(([variantName, variant]) => {
-      const values = Object.keys(variant)
-        .map((key) => (["true", "false"].includes(key) ? key : `"${key}"`))
-        .join(" | ");
-      const defaultValue = defaultVariants[variantName];
-      if (defaultValue === undefined) {
-        return `${variantName}: ${values};`;
-      }
+    if (defaultValue !== undefined) {
       return outdent`
         /**
-          * @default ${defaultVariants[variantName]}
+          * @default ${defaultValue}
           */
-          ${variantName}: ${values};
+          ${variantName}: ${typeString};
       `;
-    })
+    }
+
+    return `${variantName}: ${typeString};`;
+  };
+
+  return Object.entries(variants)
+    .map(([variantName, variant]) => generateVariantType(variantName, variant))
     .join("\n");
 };
 

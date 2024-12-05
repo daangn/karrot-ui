@@ -1,5 +1,5 @@
 interface DialogVariant {
-  footerLayout: "horizontal" | "vertical"
+  footerLayout: "horizontal" | "vertical";
 }
 
 type DialogVariantMap = {

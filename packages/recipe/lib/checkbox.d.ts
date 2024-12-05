@@ -2,11 +2,11 @@ interface CheckboxVariant {
   /**
   * @default false
   */
-  bold: true | false;
+  bold: boolean;
 /**
   * @default false
   */
-  indeterminate: true | false;
+  indeterminate: boolean;
 /**
   * @default square
   */
