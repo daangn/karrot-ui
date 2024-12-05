@@ -1,57 +1,65 @@
 export const vars = {
   "base": {
     "enabled": {
-      "root": {},
-      "track": {
-        "fill": "#0017580d"
-      },
       "indicator": {
-        "color": "#d1d3d8"
-      },
-      "indicator-path": {}
+        "transitionDuration": "0.3s",
+        "transitionTimingFunction": "cubic-bezier(0, 0, 0.15, 1)"
+      }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-6)"
-      },
-      "track": {},
-      "indicator": {}
+        "size": "var(--seed-v3-unit-x6)"
+      }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-10)"
-      },
-      "track": {},
-      "indicator": {}
+        "size": "var(--seed-v3-unit-x10)"
+      }
     }
   },
-  "variantIndeterminate": {
+  "indeterminateTrue": {
     "enabled": {
-      "root": {},
-      "track": {},
-      "indicator": {},
-      "indicator-path": {
-        "headDashDuration": "1.2s",
-        "tailDashDuration": "1.2s",
+      "indicator": {
+        "headDuration": "1.2s",
+        "tailDuration": "1.2s",
         "rotateDuration": "1.2s",
-        "headDashTimingFunction": "cubic-bezier(0.35, 0, 0.65, 1)",
-        "tailDashTimingFunction": "cubic-bezier(0.35, 0, 0.65, 0.6)",
+        "headTimingFunction": "cubic-bezier(0.35, 0, 0.65, 1)",
+        "tailTimingFunction": "cubic-bezier(0.35, 0, 0.65, 0.6)",
         "rotateTimingFunction": "cubic-bezier(0.35, 0.25, 0.65, 0.75)"
       }
     }
   },
-  "variantDeterminate": {
+  "variantNeutral": {
     "enabled": {
-      "root": {},
-      "track": {},
-      "indicator": {},
-      "indicator-path": {
-        "transitionDuration": "0.4s",
-        "transitionTimingFunction": "cubic-bezier(0, 0, 0.15, 1)"
+      "track": {
+        "fill": "var(--seed-v3-color-palette-gray-300)"
+      },
+      "indicator": {
+        "color": "var(--seed-v3-color-palette-gray-600)"
+      }
+    }
+  },
+  "variantBrand": {
+    "enabled": {
+      "track": {
+        "fill": "var(--seed-v3-color-palette-carrot-200)"
+      },
+      "indicator": {
+        "color": "var(--seed-v3-color-bg-brand-solid)"
+      }
+    }
+  },
+  "variantWhite": {
+    "enabled": {
+      "track": {
+        "fill": "var(--seed-v3-color-palette-gray-600)"
+      },
+      "indicator": {
+        "color": "var(--seed-v3-color-bg-static-white)"
       }
     }
   }

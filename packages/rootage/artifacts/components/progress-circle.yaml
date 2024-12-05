@@ -1,41 +1,55 @@
 # yaml-language-server: $schema=./schema.json
-base:
-  enabled:
-    root: null
-    track:
-      fill: "#0017580d"
-    indicator:
-      color: "#d1d3d8"
-    indicator-path: null
-size=small:
-  enabled:
-    root:
-      size: $unit.x6
-    track: null
-    indicator: null
-size=medium:
-  enabled:
-    root:
-      size: $unit.x10
-    track: null
-    indicator: null
-variant=indeterminate:
-  enabled:
-    root: null
-    track: null
-    indicator: null
-    indicator-path:
-      headDashDuration: 1.2s
-      tailDashDuration: 1.2s
-      rotateDuration: 1.2s
-      headDashTimingFunction: cubic-bezier(0.35, 0, 0.65, 1)
-      tailDashTimingFunction: cubic-bezier(0.35, 0, 0.65, 0.6)
-      rotateTimingFunction: cubic-bezier(0.35, 0.25, 0.65, 0.75)
-variant=determinate:
-  enabled:
-    root: null
-    track: null
-    indicator: null
-    indicator-path:
-      transitionDuration: 0.4s
-      transitionTimingFunction: cubic-bezier(0, 0, 0.15, 1)
+# parts: root, track, indicator
+kind: ComponentSpec
+metadata:
+  id: progress-circle
+  name: Progress Circle
+data:
+  base:
+    enabled:
+      indicator:
+        transitionDuration: 0.3s
+        transitionTimingFunction:
+          type: cubicBezier
+          value: [0, 0, 0.15, 1]
+  size=small:
+    enabled:
+      root:
+        size: $unit.x6
+  size=medium:
+    enabled:
+      root:
+        size: $unit.x10
+  indeterminate=true:
+    enabled:
+      indicator:
+        headDuration: 1.2s
+        tailDuration: 1.2s
+        rotateDuration: 1.2s
+        headTimingFunction:
+          type: cubicBezier
+          value: [0.35, 0, 0.65, 1]
+        tailTimingFunction:
+          type: cubicBezier
+          value: [0.35, 0, 0.65, 0.6]
+        rotateTimingFunction:
+          type: cubicBezier
+          value: [0.35, 0.25, 0.65, 0.75]
+  variant=neutral:
+    enabled:
+      track:
+        fill: $color.palette.gray-300
+      indicator:
+        color: $color.palette.gray-600
+  variant=brand:
+    enabled:
+      track:
+        fill: $color.palette.carrot-200
+      indicator:
+        color: $color.bg.brand-solid
+  variant=white:
+    enabled:
+      track:
+        fill: $color.palette.gray-600
+      indicator:
+        color: $color.bg.static-white
