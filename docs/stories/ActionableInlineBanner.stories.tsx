@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ActionableInlineBanner } from "seed-design/ui/actionable-inline-banner";
+import {
+  ActionableInlineBanner,
+  ActionableInlineBannerLabel,
+} from "seed-design/ui/actionable-inline-banner";
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";
@@ -18,8 +21,12 @@ type Story = StoryObj<typeof meta>;
 
 const CommonStoryTemplate: Story = {
   args: {
-    children:
-      "Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis exercitation.",
+    children: (
+      <ActionableInlineBannerLabel>
+        Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis
+        exercitation.
+      </ActionableInlineBannerLabel>
+    ),
     icon: <IconBellFill />,
     onClick: () => {},
   },

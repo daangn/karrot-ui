@@ -1,6 +1,9 @@
 "use client";
 
-import { ActionableInlineBanner } from "seed-design/ui/actionable-inline-banner";
+import {
+  ActionableInlineBanner,
+  ActionableInlineBannerLabel,
+} from "seed-design/ui/actionable-inline-banner";
 import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
 
 export default function ActionableInlineBannerWithIcon() {
@@ -10,7 +13,7 @@ export default function ActionableInlineBannerWithIcon() {
       variant="informativeWeak"
       icon={<IconILowercaseSerifCircleFill />}
     >
-      다른 사람과 예약된 물품이 있어요.
+      <ActionableInlineBannerLabel>다른 사람과 예약된 물품이 있어요.</ActionableInlineBannerLabel>
     </ActionableInlineBanner>
   );
 }

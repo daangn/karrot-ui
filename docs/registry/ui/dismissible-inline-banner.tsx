@@ -15,6 +15,71 @@ import {
   type DismissibleProps,
 } from "@seed-design/react-dismissible";
 
+const DismissibleInlineBannerContext = React.createContext<{
+  variantProps: InlineBannerVariantProps;
+} | null>(null);
+
+const useDismissibleInlineBannerContext = () => {
+  const context = React.useContext(DismissibleInlineBannerContext);
+  if (!context)
+    throw new Error(
+      "Parts of InlineBanner cannot be rendered outside the InlineBanner",
+    );
+
+  return context;
+};
+
+export const DismissibleInlineBannerTitle = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useDismissibleInlineBannerContext();
+  const classNames = inlineBanner({ variant });
+
+  return (
+    <>
+      <span
+        ref={ref}
+        className={clsx(classNames.title, className)}
+        {...otherProps}
+      >
+        {children}
+      </span>
+      <span
+        ref={ref}
+        className={clsx(classNames.spacer, className)}
+        {...otherProps}
+      >
+        {" "}
+      </span>
+    </>
+  );
+});
+DismissibleInlineBannerTitle.displayName = "DismissibleInlineBannerTitle";
+
+export const DismissibleInlineBannerLabel = React.forwardRef<
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ children, className, ...otherProps }, ref) => {
+  const {
+    variantProps: { variant },
+  } = useDismissibleInlineBannerContext();
+  const classNames = inlineBanner({ variant });
+
+  return (
+    <span
+      ref={ref}
+      className={clsx(classNames.label, className)}
+      {...otherProps}
+    >
+      {children}
+    </span>
+  );
+});
+DismissibleInlineBannerLabel.displayName = "DismissibleInlineBannerLabel";
+
 export interface DismissibleInlineBannerProps
   extends DismissibleProps,
     InlineBannerVariantProps {
@@ -23,7 +88,6 @@ export interface DismissibleInlineBannerProps
     "dangerWeak" | "dangerSolid"
   >;
   icon?: React.ReactNode;
-  titleText?: string;
   dismissAriaLabel: string;
 }
 
@@ -40,7 +104,6 @@ export const DismissibleInlineBanner = React.forwardRef<
       className,
       variant = "neutralWeak",
       icon,
-      titleText,
       defaultOpen,
       isOpen: isPropOpen,
       onDismiss,
@@ -68,13 +131,11 @@ export const DismissibleInlineBanner = React.forwardRef<
         <div className={classNames.content}>
           {icon && <Slot className={classNames.icon}>{icon}</Slot>}
           <div>
-            {titleText && (
-              <>
-                <span className={classNames.title}>{titleText}</span>
-                <span className={classNames.spacer}> </span>
-              </>
-            )}
-            <span className={classNames.label}>{children}</span>
+            <DismissibleInlineBannerContext.Provider
+              value={{ variantProps: { variant } }}
+            >
+              {children}
+            </DismissibleInlineBannerContext.Provider>
           </div>
         </div>
         <button

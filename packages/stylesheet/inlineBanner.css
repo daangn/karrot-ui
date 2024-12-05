@@ -44,6 +44,8 @@
 }
 .inlineBanner__linkLabel {
     flex: none;
+    display: flex;
+    align-items: center;
     height: var(--seed-v3-unit-x10);
     padding-inline: var(--seed-v3-unit-x3);
     font-weight: var(--seed-v3-font-weight-regular);

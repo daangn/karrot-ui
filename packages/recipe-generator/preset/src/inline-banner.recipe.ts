@@ -74,6 +74,9 @@ const inlineBanner = defineRecipe({
     linkLabel: {
       flex: "none",
 
+      display: "flex",
+      alignItems: "center",
+
       height: vars.base.enabled.linkLabel.size,
       paddingInline: vars.base.enabled.linkLabel.paddingX,
 
