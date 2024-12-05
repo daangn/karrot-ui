@@ -19,7 +19,11 @@ const progressCircleSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "variant": "neutral",
+  "size": "medium",
+  "indeterminate": false
+};
 
 const compoundVariants = [];
 
