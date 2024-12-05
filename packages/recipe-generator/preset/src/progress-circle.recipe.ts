@@ -8,6 +8,7 @@ const progressCircle = defineRecipe({
   base: {
     root: {
       display: "inline-block",
+      boxSizing: "border-box",
       position: "relative",
     },
     track: {
