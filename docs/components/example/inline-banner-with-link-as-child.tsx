@@ -6,7 +6,7 @@ export default function InlineBannerWithLinkAsChild() {
   return (
     <InlineBanner
       variant="informativeWeak"
-      endElement={
+      suffixElement={
         <InlineBannerLink asChild>
           <a href="https://www.daangn.com" target="_blank" rel="noreferrer">
             자세히 보기

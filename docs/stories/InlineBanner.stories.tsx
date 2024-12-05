@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { InlineBanner, InlineBannerLabel, InlineBannerTitle } from "seed-design/ui/inline-banner";
+import { InlineBanner, InlineBannerLabel } from "seed-design/ui/inline-banner";
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";

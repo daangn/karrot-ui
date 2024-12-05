@@ -105,7 +105,7 @@ InlineBannerLink.displayName = "InlineBannerLink";
 
 export interface InlineBannerProps extends InlineBannerVariantProps {
   icon?: React.ReactNode;
-  endElement?: React.ReactNode;
+  suffixElement?: React.ReactNode;
 }
 
 type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
@@ -121,7 +121,7 @@ export const InlineBanner = React.forwardRef<
       className,
       variant = "neutralWeak",
       icon,
-      endElement,
+      suffixElement,
       ...otherProps
     },
     ref,
@@ -139,7 +139,7 @@ export const InlineBanner = React.forwardRef<
             {icon && <Slot className={classNames.icon}>{icon}</Slot>}
             <div>{children}</div>
           </div>
-          {endElement}
+          {suffixElement}
         </InlineBannerContext.Provider>
       </div>
     );

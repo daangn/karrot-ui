@@ -6,7 +6,7 @@ export default function InlineBannerWithLink() {
   return (
     <InlineBanner
       variant="informativeWeak"
-      endElement={<InlineBannerLink onClick={() => {}}>자세히 보기</InlineBannerLink>}
+      suffixElement={<InlineBannerLink onClick={() => {}}>자세히 보기</InlineBannerLink>}
     >
       <InlineBannerLabel>다른 사람과 예약된 물품이 있어요.</InlineBannerLabel>
     </InlineBanner>
