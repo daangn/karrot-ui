@@ -49,7 +49,7 @@ export const vars = {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "characterCount": {
-        "size": "var(--seed-v3-line-height-t4)",
+        "height": "var(--seed-v3-line-height-t4)",
         "lineHeight": "var(--seed-v3-line-height-t2)"
       },
       "currentCharacterCount": {

@@ -157,7 +157,7 @@ const textField = defineRecipe({
 
       marginInlineStart: "auto",
 
-      height: vars.base.enabled.characterCount.size,
+      height: vars.base.enabled.characterCount.height,
       lineHeight: vars.base.enabled.characterCount.lineHeight,
     },
     currentCharacterCount: {

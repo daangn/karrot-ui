@@ -41,8 +41,7 @@ data:
         color: $color.fg.danger
         fontWeight: $font-weight.regular
       characterCount:
-        # XXX: description의 한 줄과 높이가 같아야 함
-        size: $line-height.t4
+        height: $line-height.t4
         lineHeight: $line-height.t2
       currentCharacterCount:
         color: $color.fg.neutral
