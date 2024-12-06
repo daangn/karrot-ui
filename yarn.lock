@@ -12865,7 +12865,9 @@ __metadata:
     "@daangn/react-monochrome-icon": ^0.0.11
     "@daangn/react-multicolor-icon": ^0.0.7
     "@next/env": ^15.0.4
+    "@portabletext/react": ^3.1.0
     "@sanity/asset-utils": ^2.2.1
+    "@sanity/client": ^6.24.1
     "@sanity/icons": ^3.5.0
     "@sanity/image-url": ^1.1.0
     "@sanity/vision": 3
