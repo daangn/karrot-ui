@@ -1,0 +1,10 @@
+{
+  "name": "types",
+  "registries": [
+    {
+      "name": "types.ts",
+      "type": "util",
+      "content": "export type Assign<T, U> = Omit<T, keyof U> & U;\n"
+    }
+  ]
+}

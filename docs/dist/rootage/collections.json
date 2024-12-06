@@ -1,0 +1,22 @@
+{
+  "kind": "TokenCollections",
+  "metadata": {
+    "id": "collections",
+    "name": "collections"
+  },
+  "data": [
+    {
+      "name": "global",
+      "modes": [
+        "default"
+      ]
+    },
+    {
+      "name": "color",
+      "modes": [
+        "theme-light",
+        "theme-dark"
+      ]
+    }
+  ]
+}

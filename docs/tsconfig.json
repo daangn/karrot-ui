@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "ESNext",
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,7 +17,8 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"],
-      "seed-design/ui/*": ["registry/ui/*"]
+      "seed-design/ui/*": ["registry/ui/*"],
+      "sanity/*": ["./node_modules/sanity/*"]
     },
     "plugins": [
       {

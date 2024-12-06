@@ -1,0 +1,90 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "avatar",
+    "name": "Avatar"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "cornerRadius": "$radius.full"
+        },
+        "badge": {
+          "cornerRadius": "$radius.full",
+          "color": "$color.bg.layer-default"
+        }
+      }
+    },
+    "size=20": {
+      "enabled": {
+        "root": {
+          "size": "$unit.x5"
+        },
+        "badge": {
+          "size": "$unit.x2_5"
+        }
+      }
+    },
+    "size=24": {
+      "enabled": {
+        "root": {
+          "size": "$unit.x6"
+        },
+        "badge": {
+          "size": "$unit.x3"
+        }
+      }
+    },
+    "size=36": {
+      "enabled": {
+        "root": {
+          "size": "$unit.x9"
+        },
+        "badge": {
+          "size": "$unit.x4"
+        }
+      }
+    },
+    "size=48": {
+      "enabled": {
+        "root": {
+          "size": "$unit.x12"
+        },
+        "badge": {
+          "size": "$unit.x6"
+        }
+      }
+    },
+    "size=64": {
+      "enabled": {
+        "root": {
+          "size": "$unit.x16"
+        },
+        "badge": {
+          "size": "$unit.x6"
+        }
+      }
+    },
+    "size=80": {
+      "enabled": {
+        "root": {
+          "size": "80px"
+        },
+        "badge": {
+          "size": "$unit.x6"
+        }
+      }
+    },
+    "size=96": {
+      "enabled": {
+        "root": {
+          "size": "96px"
+        },
+        "badge": {
+          "size": "$unit.x8"
+        }
+      }
+    }
+  }
+}

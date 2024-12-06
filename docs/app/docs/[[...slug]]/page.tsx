@@ -13,6 +13,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TokenTable } from "@/components/token-table";
 import { ComponentSpecBlock } from "@/components/component-spec-block";
+import { SanityContent } from "@/components/sanity/sanity-content";
 
 const { AutoTypeTable } = createTypeTable();
 
@@ -38,6 +39,7 @@ export default async function Page({
             ComponentExample,
             TokenTable,
             ComponentSpecBlock,
+            SanityContent,
             Tab,
             Tabs,
             Step,
