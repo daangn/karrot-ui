@@ -1,6 +1,6 @@
 import {
-  parseComponentSpecData,
-  stringifyPrimitiveExpression,
+  parseComponentSpecModel,
+  stringifyValueExpression,
   stringifyTokenExpression,
   type ComponentSpecExpression,
 } from "@seed-design/rootage-core";
@@ -59,7 +59,7 @@ function Widget() {
     const response = await fetch(getSpecUrl(componentKey));
     const text = await response.text();
     console.log(spec);
-    setSpec(parseComponentSpecData(YAML.parse(text).data));
+    setSpec(parseComponentSpecModel(YAML.parse(text)).data);
   }
 
   if (!componentKey) {
@@ -131,7 +131,7 @@ function Widget() {
                           <Text fontSize={12}>
                             {value.type === "token"
                               ? stringifyTokenExpression(value)
-                              : stringifyPrimitiveExpression(value)}
+                              : stringifyValueExpression(value)}
                           </Text>
                         </AutoLayout>
                       </AutoLayout>
