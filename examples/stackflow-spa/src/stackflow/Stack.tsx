@@ -2,7 +2,7 @@ import { IconBack, basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { stackflow } from "@stackflow/react";
-import { $color } from "@seed-design/vars";
+import { vars } from "@seed-design/vars";
 import React from "react";
 
 import ActivityNotFound from "../activities/ActivityNotFound";
@@ -30,14 +30,14 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     basicRendererPlugin(),
     basicUIPlugin({
       appBar: {
-        borderColor: $color.stroke.neutral,
+        borderColor: vars.$color.stroke.neutral,
         closeButton: {
           renderIcon: () => <IconBack />,
         },
-        iconColor: $color.fg.neutral,
-        textColor: $color.fg.neutral,
+        iconColor: vars.$color.fg.neutral,
+        textColor: vars.$color.fg.neutral,
       },
-      backgroundColor: $color.bg.layerDefault,
+      backgroundColor: vars.$color.bg.layerDefault,
       theme,
     }),
     historySyncPlugin({
