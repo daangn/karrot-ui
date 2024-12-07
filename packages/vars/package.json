@@ -1,31 +1,24 @@
 {
   "name": "@seed-design/vars",
   "version": "0.0.0",
-  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
     "directory": "packages/vars"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "types": "./lib/index.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
-      "require": "./lib/index.cjs",
       "import": "./lib/index.mjs"
     },
     "./component": {
       "types": "./lib/component/index.d.ts",
-      "require": "./lib/component/index.cjs",
       "import": "./lib/component/index.mjs"
     },
     "./package.json": "./package.json"
   },
   "files": [
-    "src",
     "lib"
   ],
   "scripts": {
@@ -37,6 +30,9 @@
   },
   "devDependencies": {
     "@seed-design/rootage-cli": "0.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "ultra": {
     "concurrent": [
