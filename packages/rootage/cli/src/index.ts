@@ -2,10 +2,14 @@
 
 import {
   buildRootage,
-  getComponentSpecTs,
+  getComponentSpecDts,
+  getComponentSpecIndexDts,
+  getComponentSpecIndexMjs,
+  getComponentSpecMjs,
   getJsonSchema,
   getTokenCss,
-  getTokenTs,
+  getTokenDts,
+  getTokenMjs,
   validate,
   type Model,
 } from "@seed-design/rootage-core";
@@ -63,10 +67,22 @@ async function prepare() {
 async function writeTokenTs() {
   const { ctx } = await prepare();
 
-  const results = getTokenTs(ctx);
+  const mjsResults = getTokenMjs(ctx);
+  const dtsResults = getTokenDts(ctx);
 
-  for (const result of results) {
-    const writePath = path.join(process.cwd(), dir, `${result.path}.vars.ts`);
+  for (const result of mjsResults) {
+    const writePath = path.join(process.cwd(), dir, `${result.path}.mjs`);
+
+    console.log("Writing", result.path, "to", writePath);
+
+    if (!fs.existsSync(path.dirname(writePath))) {
+      fs.mkdirpSync(path.dirname(writePath));
+    }
+    fs.writeFileSync(writePath, result.code);
+  }
+
+  for (const result of dtsResults) {
+    const writePath = path.join(process.cwd(), dir, `${result.path}.d.ts`);
 
     console.log("Writing", result.path, "to", writePath);
 
@@ -78,13 +94,37 @@ async function writeComponentSpec() {
   const { ctx } = await prepare();
 
   for (const spec of ctx.componentSpecs) {
-    const code = getComponentSpecTs(spec.data);
-    const writePath = path.join(process.cwd(), dir, `${spec.id}.vars.ts`);
+    const mjsCode = getComponentSpecMjs(ctx, spec.id);
+    const mjsWritePath = path.join(process.cwd(), dir, `${spec.id}.mjs`);
 
-    console.log("Writing", spec.name, "to", writePath);
+    console.log("Writing", spec.name, "to", mjsWritePath);
 
-    fs.writeFileSync(writePath, code);
+    if (!fs.existsSync(path.dirname(mjsWritePath))) {
+      fs.mkdirpSync(path.dirname(mjsWritePath));
+    }
+    fs.writeFileSync(mjsWritePath, mjsCode);
+
+    const dtsCode = getComponentSpecDts(ctx, spec.id);
+    const dtsWritePath = path.join(process.cwd(), dir, `${spec.id}.d.ts`);
+
+    console.log("Writing", spec.name, "to", dtsWritePath);
+
+    fs.writeFileSync(dtsWritePath, dtsCode);
   }
+
+  const mjsIndexCode = getComponentSpecIndexMjs(ctx);
+  const mjsIndexWritePath = path.join(process.cwd(), dir, "index.mjs");
+
+  console.log("Writing index to", mjsIndexWritePath);
+
+  fs.writeFileSync(mjsIndexWritePath, mjsIndexCode);
+
+  const dtsIndexCode = getComponentSpecIndexDts(ctx);
+  const dtsIndexWritePath = path.join(process.cwd(), dir, "index.d.ts");
+
+  console.log("Writing index to", dtsIndexWritePath);
+
+  fs.writeFileSync(dtsIndexWritePath, dtsIndexCode);
 }
 
 async function writeTokenCss() {
