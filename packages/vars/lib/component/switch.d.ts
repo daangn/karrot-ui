@@ -1,4 +1,4 @@
-export const vars = {
+export declare const vars: {
   "base": {
     "enabled": {
       "control": {
@@ -34,7 +34,7 @@ export const vars = {
       "thumb": {
         "height": "27px",
         "width": "27px",
-        "shadow": "[object Object] [object Object] [object Object] [object Object] #00000026, [object Object] [object Object] [object Object] [object Object] #0000000f"
+        "shadow": "0px 3px 8px 0px #00000026, 0px 1px 3px 0px #0000000f"
       }
     }
   },

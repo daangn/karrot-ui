@@ -31,18 +31,15 @@
   "scripts": {
     "clean": "rm -rf lib",
     "prepack": "yarn rootage:generate",
-    "build": "nanobundle build",
-    "rootage:generate": "yarn rootage:generate:token && yarn rootage:generate:component && yarn build",
-    "rootage:generate:token": "yarn rootage token-ts ./src",
-    "rootage:generate:component": "yarn rootage component-spec ./src/component"
+    "rootage:generate": "yarn rootage:generate:token && yarn rootage:generate:component",
+    "rootage:generate:token": "yarn rootage token-ts ./lib",
+    "rootage:generate:component": "yarn rootage component-spec ./lib/component"
   },
   "devDependencies": {
-    "@seed-design/rootage-cli": "0.0.0",
-    "nanobundle": "^1.6.0"
+    "@seed-design/rootage-cli": "0.0.0"
   },
   "ultra": {
     "concurrent": [
-      "build",
       "rootage:generate"
     ]
   }
