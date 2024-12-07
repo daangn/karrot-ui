@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { buildRootage } from "../build";
-import type { Model } from "../types";
-import { getTokenCss, stringifyTokenReference } from "./css";
+import type { Model, ShadowExpression } from "../types";
+import { getTokenCss, stringifyTokenReference, stringifyValueExpression } from "./css";
 
 test("stringifyTokenReference should stringify token expression", () => {
   const token = { type: "token" as const, group: ["color", "bg"], key: "layer-1" };
@@ -9,6 +9,37 @@ test("stringifyTokenReference should stringify token expression", () => {
   const result = stringifyTokenReference(token);
 
   expect(result).toEqual("var(--seed-v3-color-bg-layer-1)");
+});
+
+test("stringifyValueExpression should stringify shadow expression", () => {
+  const shadow: ShadowExpression = {
+    type: "shadow",
+    value: [
+      {
+        offsetX: {
+          value: 2,
+          unit: "px",
+        },
+        offsetY: {
+          value: 3,
+          unit: "px",
+        },
+        blur: {
+          value: 4,
+          unit: "px",
+        },
+        spread: {
+          value: 0,
+          unit: "px",
+        },
+        color: "#000000",
+      },
+    ],
+  };
+
+  const result = stringifyValueExpression(shadow);
+
+  expect(result).toEqual("2px 3px 4px 0px #000000");
 });
 
 test("getTokenCss should generate css code", () => {

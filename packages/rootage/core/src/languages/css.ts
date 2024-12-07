@@ -15,7 +15,7 @@ function stringifyCubicBezierExpression(expr: CubicBezierExpression): string {
 function stringifyShadowExpression(expr: ShadowExpression): string {
   return expr.value
     .map((item) => {
-      return `${item.offsetX} ${item.offsetY} ${item.blur} ${item.spread} ${item.color}`;
+      return `${item.offsetX.value}${item.offsetX.unit} ${item.offsetY.value}${item.offsetY.unit} ${item.blur.value}${item.blur.unit} ${item.spread.value}${item.spread.unit} ${item.color}`;
     })
     .join(", ");
 }
