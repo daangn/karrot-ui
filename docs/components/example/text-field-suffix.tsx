@@ -1,21 +1,15 @@
 import { IconWonLine } from "@daangn/react-monochrome-icon";
-import { TextField } from "seed-design/ui/text-field";
+import { FormControl, TextField } from "seed-design/ui/text-field";
 
 export default function TextFieldSuffix() {
   return (
     <div className="flex gap-4 w-full">
-      <TextField
-        label="라벨"
-        placeholder="플레이스홀더"
-        description="설명을 써주세요"
-        suffix="cm"
-      />
-      <TextField
-        label="라벨"
-        placeholder="플레이스홀더"
-        description="설명을 써주세요"
-        suffixIcon={<IconWonLine />}
-      />
+      <FormControl label="라벨" description="설명을 써주세요">
+        <TextField placeholder="플레이스홀더" suffix="cm" />
+      </FormControl>
+      <FormControl label="라벨" description="설명을 써주세요">
+        <TextField placeholder="플레이스홀더" suffixIcon={<IconWonLine />} />
+      </FormControl>
     </div>
   );
 }

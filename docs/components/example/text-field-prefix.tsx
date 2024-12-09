@@ -1,21 +1,15 @@
 import { IconMagnifyingglassLine } from "@daangn/react-monochrome-icon";
-import { TextField } from "seed-design/ui/text-field";
+import { FormControl, TextField } from "seed-design/ui/text-field";
 
 export default function TextFieldPrefix() {
   return (
     <div className="flex gap-4 w-full">
-      <TextField
-        label="라벨"
-        placeholder="플레이스홀더"
-        description="설명을 써주세요"
-        prefix="https://"
-      />
-      <TextField
-        label="라벨"
-        placeholder="플레이스홀더"
-        description="설명을 써주세요"
-        prefixIcon={<IconMagnifyingglassLine />}
-      />
+      <FormControl label="라벨" description="설명을 써주세요">
+        <TextField placeholder="플레이스홀더" prefix="https://" />
+      </FormControl>
+      <FormControl label="라벨" description="설명을 써주세요">
+        <TextField placeholder="플레이스홀더" prefixIcon={<IconMagnifyingglassLine />} />
+      </FormControl>
     </div>
   );
 }

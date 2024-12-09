@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { TextField } from "seed-design/ui/text-field";
+import { FormControl, TextField } from "seed-design/ui/text-field";
 
 export default function TextFieldNumberFormatting() {
   const [value, setValue] = useState("1000");
@@ -16,12 +16,13 @@ export default function TextFieldNumberFormatting() {
   }, [value]);
 
   return (
-    <TextField
+    <FormControl
       label="금액"
-      placeholder="9,999,999"
       description="금액을 써주세요"
       value={formattedValue}
       onValueChange={({ value }) => setValue(value)}
-    />
+    >
+      <TextField placeholder="9,999,999" />
+    </FormControl>
   );
 }

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { TextField } from "seed-design/ui/text-field";
+import { FormControl } from "seed-design/ui/text-field";
 
 import { textFieldVariantMap } from "@seed-design/recipe/textField";
 import { VariantTable } from "./components/variant-table";
@@ -8,9 +8,9 @@ import { SeedThemeDecorator } from "./components/decorator";
 import { IconPaperplaneLine } from "@daangn/react-monochrome-icon";
 
 const meta = {
-  component: TextField,
+  component: FormControl,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof TextField>;
+} satisfies Meta<typeof FormControl>;
 
 export default meta;
 

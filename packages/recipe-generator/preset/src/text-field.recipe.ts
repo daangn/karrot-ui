@@ -104,12 +104,18 @@ const textField = defineRecipe({
     inputText: {
       // XXX: CSS reset 들어오면 제거될 수 있음
       font: "inherit",
-      border: "none",
-      paddingInline: 0,
-      background: "none",
-      [pseudo(focus)]: {
-        outline: "none",
+      [pseudo(":is(input)")]: {
+        border: "none",
+        paddingInline: 0,
+        background: "none",
       },
+
+      [pseudo(":is(textarea)")]: {
+        minHeight: "90px",
+        width: "100%",
+      },
+
+      outline: "none",
 
       resize: "none",
 

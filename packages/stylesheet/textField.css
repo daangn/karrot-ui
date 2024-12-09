@@ -64,14 +64,18 @@
 }
 .textField__inputText {
     font: inherit;
+}
+.textField__inputText:is(input) {
     border: none;
     padding-inline: 0;
     background: none;
 }
-.textField__inputText:is(:focus, [data-focus]) {
-    outline: none;
+.textField__inputText:is(textarea) {
+    min-height: 90px;
+    width: 100%;
 }
 .textField__inputText {
+    outline: none;
     resize: none;
     flex-grow: 1;
     color: var(--seed-v3-color-fg-neutral);

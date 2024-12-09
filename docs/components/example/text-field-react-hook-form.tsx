@@ -3,7 +3,7 @@
 import { ActionButton } from "@/registry/ui/action-button";
 import { IconHouseLine } from "@daangn/react-monochrome-icon";
 import { useForm } from "react-hook-form";
-import { TextField } from "seed-design/ui/text-field";
+import { FormControl, TextField } from "seed-design/ui/text-field";
 
 interface FormValues {
   name: string;
@@ -24,17 +24,18 @@ export default function TextFieldReactHookForm() {
 
   return (
     <form className="grid grid-cols-2 gap-3 w-full" onSubmit={handleSubmit(onValid)}>
-      <TextField
+      <FormControl
         {...register("name", { required: "필수 입력 항목입니다" })}
         label="이름"
-        placeholder="홍길동"
         description="이름을 써주세요"
         invalid={!!errors.name}
         errorMessage={errors.name?.message}
         requiredIndicator="(필수)"
         required
-      />
-      <TextField
+      >
+        <TextField placeholder="홍길동" />
+      </FormControl>
+      <FormControl
         {...register("address", {
           required: "필수 입력 항목입니다",
           pattern: {
@@ -43,14 +44,14 @@ export default function TextFieldReactHookForm() {
           },
         })}
         label="주소"
-        placeholder="대한민국 서울특별시 은평구"
         description="주소를 써주세요"
         invalid={!!errors.address}
         errorMessage={errors.address?.message}
-        prefixIcon={<IconHouseLine />}
         requiredIndicator="(필수)"
         required
-      />
+      >
+        <TextField placeholder="대한민국 서울특별시 은평구" prefixIcon={<IconHouseLine />} />
+      </FormControl>
       <div className="col-span-2 flex gap-2">
         <ActionButton type="submit" className="grow">
           제출

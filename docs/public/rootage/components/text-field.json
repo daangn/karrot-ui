@@ -55,7 +55,7 @@
           "fontWeight": "$font-weight.regular"
         },
         "characterCount": {
-          "size": "$line-height.t4",
+          "height": "$line-height.t4",
           "lineHeight": "$line-height.t2"
         },
         "currentCharacterCount": {
