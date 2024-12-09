@@ -8,8 +8,8 @@ export default function MultilineTextFieldPreview() {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <FormControl autoFocus value={value} onValueChange={({ value }) => setValue(value)}>
-        <MultilineTextField />
+      <FormControl value={value} onValueChange={({ value }) => setValue(value)}>
+        <MultilineTextField autoFocus />
       </FormControl>
       <p className="text-center">현재 값: {value}</p>
     </div>
