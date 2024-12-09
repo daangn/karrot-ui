@@ -3,7 +3,7 @@ import type { ActivityComponentType } from "@stackflow/react";
 
 import { actionButton, actionButtonVariantMap } from "@seed-design/recipe/actionButton";
 
-import IconAddRegular from "@seed-design/icon/IconAddRegular";
+import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ActionButton, type ActionButtonProps } from "../design-system/ui/action-button";
 
@@ -22,7 +22,7 @@ const ActivityActionButton: ActivityComponentType = () => {
         recipeFn={actionButton}
         render={(variants) => (
           <ActionButton key={JSON.stringify(variants)} {...variants}>
-            {variants.layout === "withText" ? "야옹" : <IconAddRegular />}
+            {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
           </ActionButton>
         )}
       />

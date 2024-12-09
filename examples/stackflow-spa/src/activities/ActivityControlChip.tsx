@@ -3,7 +3,7 @@ import type { ActivityComponentType } from "@stackflow/react";
 
 import { controlChip, controlChipVariantMap } from "@seed-design/recipe/controlChip";
 
-import IconAddRegular from "@seed-design/icon/IconAddRegular";
+import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ControlChip, type ControlChipToggleProps } from "../design-system/ui/control-chip";
 
@@ -21,7 +21,7 @@ const ActivityControlChip: ActivityComponentType = () => {
         recipeFn={controlChip}
         render={(variants) => (
           <ControlChip.Toggle key={JSON.stringify(variants)} {...variants}>
-            {variants.layout === "withText" ? "야옹" : <IconAddRegular />}
+            {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
           </ControlChip.Toggle>
         )}
       />
