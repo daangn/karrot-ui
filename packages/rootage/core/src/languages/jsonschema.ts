@@ -110,6 +110,9 @@ export function getJsonSchema(ctx: RootageCtx): string {
             "$ref": "#/definitions/dimensionShorthand"
           },
           {
+            "$ref": "#/definitions/durationShorthand"
+          },
+          {
             "$ref": "#/definitions/numberShorthand"
           },
           {
