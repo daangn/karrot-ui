@@ -345,7 +345,9 @@
         { "const": "$unit.x12", "title": "$unit.x12", "description": "default: 48px", "markdownDescription": "- default: `48px`" },
         { "const": "$unit.x13", "title": "$unit.x13", "description": "default: 52px", "markdownDescription": "- default: `52px`" },
         { "const": "$unit.x14", "title": "$unit.x14", "description": "default: 56px", "markdownDescription": "- default: `56px`" },
-        { "const": "$unit.x16", "title": "$unit.x16", "description": "default: 64px", "markdownDescription": "- default: `64px`" }
+        { "const": "$unit.x16", "title": "$unit.x16", "description": "default: 64px", "markdownDescription": "- default: `64px`" },
+        { "const": "$horizontal-spacing.between-chips", "title": "$horizontal-spacing.between-chips", "description": "default: $unit.x2", "markdownDescription": "- default: `$unit.x2`" },
+        { "const": "$horizontal-spacing.global-gutter", "title": "$horizontal-spacing.global-gutter", "description": "default: $unit.x4", "markdownDescription": "- default: `$unit.x4`" }
       ]
     }
   }
