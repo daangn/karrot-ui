@@ -6,7 +6,7 @@ export default function MultilineTextFieldReadOnly() {
       <FormControl label="라벨" description="설명을 써주세요" readOnly>
         <MultilineTextField placeholder="플레이스홀더" />
       </FormControl>
-      <FormControl label="라벨" description="설명을 써주세요" readOnly value="값">
+      <FormControl label="라벨" description="설명을 써주세요" readOnly defaultValue="값">
         <MultilineTextField placeholder="플레이스홀더" />
       </FormControl>
       <FormControl
@@ -24,7 +24,7 @@ export default function MultilineTextFieldReadOnly() {
         readOnly
         invalid
         errorMessage="오류가 발생한 이유를 써주세요"
-        value="값"
+        defaultValue="값"
       >
         <MultilineTextField placeholder="플레이스홀더" />
       </FormControl>
