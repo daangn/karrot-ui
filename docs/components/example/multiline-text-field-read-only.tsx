@@ -1,0 +1,33 @@
+import { FormControl, MultilineTextField } from "@/registry/ui/text-field";
+
+export default function MultilineTextFieldReadOnly() {
+  return (
+    <div className="grid grid-cols-2 gap-4 w-full">
+      <FormControl label="라벨" description="설명을 써주세요" readOnly>
+        <MultilineTextField placeholder="플레이스홀더" />
+      </FormControl>
+      <FormControl label="라벨" description="설명을 써주세요" readOnly value="값">
+        <MultilineTextField placeholder="플레이스홀더" />
+      </FormControl>
+      <FormControl
+        label="라벨"
+        description="설명을 써주세요"
+        readOnly
+        invalid
+        errorMessage="오류가 발생한 이유를 써주세요"
+      >
+        <MultilineTextField placeholder="플레이스홀더" />
+      </FormControl>
+      <FormControl
+        label="라벨"
+        description="설명을 써주세요"
+        readOnly
+        invalid
+        errorMessage="오류가 발생한 이유를 써주세요"
+        value="값"
+      >
+        <MultilineTextField placeholder="플레이스홀더" />
+      </FormControl>
+    </div>
+  );
+}

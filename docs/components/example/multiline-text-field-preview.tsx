@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { MultilineTextField } from "seed-design/ui/multiline-text-field";
+import { FormControl, MultilineTextField } from "seed-design/ui/text-field";
 
-export default function TextFieldPreview() {
+export default function MultilineTextFieldPreview() {
   const [value, setValue] = useState("");
 
   return (
     <div className="flex flex-col items-center w-full">
-      <MultilineTextField autoFocus value={value} onValueChange={setValue} />
+      <FormControl autoFocus value={value} onValueChange={({ value }) => setValue(value)}>
+        <MultilineTextField />
+      </FormControl>
       <p className="text-center">현재 값: {value}</p>
     </div>
   );
