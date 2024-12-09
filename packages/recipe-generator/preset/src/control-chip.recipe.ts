@@ -48,6 +48,7 @@ const controlChip = defineRecipe({
       fontWeight: vars.base.enabled.label.fontWeight,
       [pseudo(checked)]: {
         color: vars.base.selected.label.color,
+        fontWeight: vars.base.selected.label.fontWeight,
       },
       [pseudo(disabled)]: {
         color: vars.base.disabled.label.color,

@@ -34,7 +34,8 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-neutral-solid-muted)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-fg-static-white)",
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-static-white)"

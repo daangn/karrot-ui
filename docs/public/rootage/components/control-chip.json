@@ -40,7 +40,8 @@
           "color": "$color.bg.neutral-solid-muted"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.fg.static-white",
+          "fontWeight": "$font-weight.bold"
         },
         "prefixIcon": {
           "color": "$color.fg.static-white"

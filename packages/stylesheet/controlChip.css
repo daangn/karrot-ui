@@ -36,6 +36,7 @@
 }
 .controlChip__label:is(:checked, [data-checked]) {
     color: var(--seed-v3-color-fg-static-white);
+    font-weight: var(--seed-v3-font-weight-bold);
 }
 .controlChip__label:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
