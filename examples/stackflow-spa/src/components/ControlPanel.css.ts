@@ -1,4 +1,4 @@
-import { $color, $fontSize, $fontWeight, $lineHeight, $unit } from "@seed-design/vars";
+import { vars } from "@seed-design/vars";
 import { style } from "@vanilla-extract/css";
 
 export const root = style({
@@ -10,8 +10,8 @@ export const root = style({
   flexDirection: "column",
   zIndex: 1000,
 
-  backgroundColor: $color.bg.layerDefault,
-  borderTop: `1px solid ${$color.stroke.neutral}`,
+  backgroundColor: vars.$color.bg.layerDefault,
+  borderTop: `1px solid ${vars.$color.stroke.neutral}`,
 });
 
 export const item = style({
@@ -19,15 +19,15 @@ export const item = style({
   justifyContent: "space-between",
   alignItems: "center",
 
-  paddingInline: $unit.x4,
-  minHeight: $unit.x13,
+  paddingInline: vars.$unit.x4,
+  minHeight: vars.$unit.x13,
 
-  borderBottom: `1px solid ${$color.stroke.neutral}`,
+  borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
 });
 
 export const title = style({
-  color: $color.fg.neutral,
-  fontSize: $fontSize.t5,
-  lineHeight: $lineHeight.t5,
-  fontWeight: $fontWeight.bold,
+  color: vars.$color.fg.neutral,
+  fontSize: vars.$fontSize.t5,
+  lineHeight: vars.$lineHeight.t5,
+  fontWeight: vars.$fontWeight.bold,
 });

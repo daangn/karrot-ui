@@ -6610,7 +6610,6 @@ __metadata:
   resolution: "@seed-design/vars@workspace:packages/vars"
   dependencies:
     "@seed-design/rootage-cli": 0.0.0
-    nanobundle: ^1.6.0
   languageName: unknown
   linkType: soft
 
