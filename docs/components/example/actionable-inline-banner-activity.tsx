@@ -4,9 +4,9 @@ import * as React from "react";
 
 import {
   ActionableInlineBanner,
-  ActionableInlineBannerDescription,
+  InlineBannerDescription,
   type ActionableInlineBannerProps,
-} from "seed-design/ui/actionable-inline-banner";
+} from "seed-design/ui/inline-banner";
 import { ActionButton } from "seed-design/ui/action-button";
 
 import type { ActivityComponentType } from "@stackflow/react/future";
@@ -31,9 +31,9 @@ const ActionableInlineBannerActivity: ActivityComponentType<"ActionableInlineBan
         style={variant === "dangerSolid" ? { position: "sticky", top: 0 } : undefined}
         onClick={() => window.alert("Hello World")}
       >
-        <ActionableInlineBannerDescription>
+        <InlineBannerDescription>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </ActionableInlineBannerDescription>
+        </InlineBannerDescription>
       </ActionableInlineBanner>
       <div style={{ display: "flex", flexDirection: "column", padding: "1rem", gap: "0.75rem" }}>
         <ActionButton

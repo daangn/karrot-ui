@@ -1,9 +1,9 @@
 import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
 import {
   DismissibleInlineBanner,
-  DismissibleInlineBannerDescription,
-  DismissibleInlineBannerTitle,
-} from "seed-design/ui/dismissible-inline-banner";
+  InlineBannerDescription,
+  InlineBannerTitle,
+} from "seed-design/ui/inline-banner";
 
 export default function DismissibleInlineBannerWithIconAndTitleText() {
   return (
@@ -12,10 +12,8 @@ export default function DismissibleInlineBannerWithIconAndTitleText() {
       variant="informativeWeak"
       icon={<IconILowercaseSerifCircleFill />}
     >
-      <DismissibleInlineBannerTitle>예약</DismissibleInlineBannerTitle>
-      <DismissibleInlineBannerDescription>
-        다른 사람과 예약된 물품이 있어요.
-      </DismissibleInlineBannerDescription>
+      <InlineBannerTitle>예약</InlineBannerTitle>
+      <InlineBannerDescription>다른 사람과 예약된 물품이 있어요.</InlineBannerDescription>
     </DismissibleInlineBanner>
   );
 }

@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import {
   DismissibleCallout,
-  DismissibleCalloutDescription,
-  DismissibleCalloutLink,
-  DismissibleCalloutTitle,
-} from "seed-design/ui/dismissible-callout";
+  CalloutDescription,
+  CalloutLink,
+  CalloutTitle,
+} from "seed-design/ui/callout";
 
 import { calloutVariantMap } from "@seed-design/recipe/callout";
 import { VariantTable } from "./components/variant-table";
@@ -24,11 +24,11 @@ const CommonStoryTemplate: Story = {
   args: {
     children: (
       <>
-        <DismissibleCalloutTitle>새로운 기능</DismissibleCalloutTitle>
-        <DismissibleCalloutDescription>
+        <CalloutTitle>새로운 기능</CalloutTitle>
+        <CalloutDescription>
           Magna id laboris excepteur tempor duis duis voluptate voluptate non.
-        </DismissibleCalloutDescription>
-        <DismissibleCalloutLink onClick={() => {}}>자세히 보기</DismissibleCalloutLink>
+        </CalloutDescription>
+        <CalloutLink onClick={() => {}}>자세히 보기</CalloutLink>
       </>
     ),
     dismissAriaLabel: "닫기",

@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  ActionableInlineBanner,
-  ActionableInlineBannerDescription,
-} from "seed-design/ui/actionable-inline-banner";
+import { ActionableInlineBanner, InlineBannerDescription } from "seed-design/ui/inline-banner";
 
 export default function ActionableInlineBannerPreview() {
   const onClick = () => window.alert("Hello World");
@@ -11,12 +8,12 @@ export default function ActionableInlineBannerPreview() {
   return (
     <div className="flex flex-col gap-3 w-full">
       <ActionableInlineBanner onClick={onClick}>
-        <ActionableInlineBannerDescription>ullamco</ActionableInlineBannerDescription>
+        <InlineBannerDescription>ullamco</InlineBannerDescription>
       </ActionableInlineBanner>
       <ActionableInlineBanner onClick={onClick}>
-        <ActionableInlineBannerDescription>
+        <InlineBannerDescription>
           Ut veniam in ea ea anim laborum magna dolore ea laborum duis ut aute mollit amet.
-        </ActionableInlineBannerDescription>
+        </InlineBannerDescription>
       </ActionableInlineBanner>
     </div>
   );

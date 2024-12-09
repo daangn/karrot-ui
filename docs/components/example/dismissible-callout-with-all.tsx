@@ -2,21 +2,19 @@
 
 import {
   DismissibleCallout,
-  DismissibleCalloutDescription,
-  DismissibleCalloutLink,
-  DismissibleCalloutTitle,
-} from "seed-design/ui/dismissible-callout";
+  CalloutDescription,
+  CalloutLink,
+  CalloutTitle,
+} from "seed-design/ui/callout";
 
 export default function DismissibleCalloutWithAll() {
   return (
     <DismissibleCallout dismissAriaLabel="닫기" variant="magic">
-      <DismissibleCalloutTitle>새로운 기능</DismissibleCalloutTitle>
-      <DismissibleCalloutDescription>
+      <CalloutTitle>새로운 기능</CalloutTitle>
+      <CalloutDescription>
         Aliquip laboris excepteur enim sunt eiusmod laboris anim.
-      </DismissibleCalloutDescription>
-      <DismissibleCalloutLink onClick={() => window.alert("Hello World")}>
-        시도해 보기
-      </DismissibleCalloutLink>
+      </CalloutDescription>
+      <CalloutLink onClick={() => window.alert("Hello World")}>시도해 보기</CalloutLink>
     </DismissibleCallout>
   );
 }
