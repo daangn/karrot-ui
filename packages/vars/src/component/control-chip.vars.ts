@@ -14,7 +14,7 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "color": "var(--seed-v3-color-fg-neutral-subtle)"
       },
       "icon": {
         "color": "var(--seed-v3-color-fg-neutral)"
@@ -31,27 +31,27 @@ export const vars = {
     "selected": {
       "root": {
         "strokeWidth": "0",
-        "color": "var(--seed-v3-color-bg-brand-weak)"
+        "color": "var(--seed-v3-color-bg-neutral-solid-muted)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
       "count": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       }
     },
     "selectedPressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-brand-weak-pressed)"
+        "color": "var(--seed-v3-color-bg-neutral-solid-muted-pressed)"
       }
     },
     "disabled": {

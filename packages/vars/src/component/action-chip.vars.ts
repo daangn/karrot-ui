@@ -13,7 +13,7 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "color": "var(--seed-v3-color-fg-neutral-subtle)"
       },
       "count": {
         "color": "var(--seed-v3-color-fg-neutral-muted)"

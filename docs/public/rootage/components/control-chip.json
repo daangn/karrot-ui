@@ -20,7 +20,7 @@
           "color": "$color.fg.neutral"
         },
         "suffixIcon": {
-          "color": "$color.fg.neutral"
+          "color": "$color.fg.neutral-subtle"
         },
         "icon": {
           "color": "$color.fg.neutral"
@@ -37,27 +37,27 @@
       "selected": {
         "root": {
           "strokeWidth": 0,
-          "color": "$color.bg.brand-weak"
+          "color": "$color.bg.neutral-solid-muted"
         },
         "label": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         },
         "prefixIcon": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         },
         "suffixIcon": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         },
         "icon": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         },
         "count": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         }
       },
       "selected, pressed": {
         "root": {
-          "color": "$color.bg.brand-weak-pressed"
+          "color": "$color.bg.neutral-solid-muted-pressed"
         }
       },
       "disabled": {

@@ -41,7 +41,7 @@
 }
 .actionChip__suffixIcon {
     display: inline-flex;
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-v3-color-fg-neutral-subtle);
 }
 .actionChip__suffixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);

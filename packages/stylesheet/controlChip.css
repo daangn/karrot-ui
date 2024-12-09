@@ -19,11 +19,11 @@
     background: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .controlChip__root:is(:checked, [data-checked]) {
-    background: var(--seed-v3-color-bg-brand-weak);
+    background: var(--seed-v3-color-bg-neutral-solid-muted);
     box-shadow: none;
 }
 .controlChip__root:is(:checked, [data-checked]):is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-brand-weak-pressed);
+    background: var(--seed-v3-color-bg-neutral-solid-muted-pressed);
 }
 .controlChip__root:is(:disabled, [disabled], [data-disabled]) {
     background: var(--seed-v3-color-bg-disabled);
@@ -35,7 +35,7 @@
     font-weight: var(--seed-v3-font-weight-medium);
 }
 .controlChip__label:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-v3-color-fg-static-white);
 }
 .controlChip__label:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
@@ -45,17 +45,17 @@
     color: var(--seed-v3-color-fg-neutral);
 }
 .controlChip__prefixIcon:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-v3-color-fg-static-white);
 }
 .controlChip__prefixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
 .controlChip__suffixIcon {
     display: inline-flex;
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-v3-color-fg-neutral-subtle);
 }
 .controlChip__suffixIcon:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-v3-color-fg-static-white);
 }
 .controlChip__suffixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
@@ -65,7 +65,7 @@
     color: var(--seed-v3-color-fg-neutral);
 }
 .controlChip__icon:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-v3-color-fg-static-white);
 }
 .controlChip__icon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);

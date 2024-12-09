@@ -19,7 +19,7 @@
           "color": "$color.fg.neutral"
         },
         "suffixIcon": {
-          "color": "$color.fg.neutral"
+          "color": "$color.fg.neutral-subtle"
         },
         "count": {
           "color": "$color.fg.neutral-muted"
