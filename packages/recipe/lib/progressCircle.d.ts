@@ -1,6 +1,16 @@
 interface ProgressCircleVariant {
-  size: "small" | "medium";
-indeterminate: boolean;
+  /**
+  * @default neutral
+  */
+  tone: "neutral" | "brand" | "staticWhite";
+/**
+  * @default 40
+  */
+  size: "24" | "40";
+/**
+  * @default false
+  */
+  indeterminate: boolean;
 }
 
 type ProgressCircleVariantMap = {
@@ -9,7 +19,7 @@ type ProgressCircleVariantMap = {
 
 export type ProgressCircleVariantProps = Partial<ProgressCircleVariant>;
 
-export type ProgressCircleSlotName = "root" | "track" | "indicator" | "indicator-path";
+export type ProgressCircleSlotName = "root" | "track" | "range";
 
 export const progressCircleVariantMap: ProgressCircleVariantMap;
 

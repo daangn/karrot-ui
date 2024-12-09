@@ -45,6 +45,7 @@
   --seed-v3-radius-x5: 20px;
   --seed-v3-radius-x6: 24px;
   --seed-v3-radius-full: 9999px;
+  --seed-v3-timing-function-linear: cubic-bezier(0, 0, 1, 1);
   --seed-v3-unit-x0_5: 2px;
   --seed-v3-unit-x1: 4px;
   --seed-v3-unit-x1_5: 6px;

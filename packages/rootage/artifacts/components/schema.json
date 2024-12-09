@@ -327,6 +327,7 @@
         { "const": "$radius.x5", "title": "$radius.x5", "description": "default: 20px", "markdownDescription": "- default: `20px`" },
         { "const": "$radius.x6", "title": "$radius.x6", "description": "default: 24px", "markdownDescription": "- default: `24px`" },
         { "const": "$radius.full", "title": "$radius.full", "description": "default: 9999px", "markdownDescription": "- default: `9999px`" },
+        { "const": "$timing-function.linear", "title": "$timing-function.linear", "description": "default: 0, 0, 1, 1", "markdownDescription": "- default: `0, 0, 1, 1`" },
         { "const": "$unit.x0_5", "title": "$unit.x0_5", "description": "default: 2px", "markdownDescription": "- default: `2px`" },
         { "const": "$unit.x1", "title": "$unit.x1", "description": "default: 4px", "markdownDescription": "- default: `4px`" },
         { "const": "$unit.x1_5", "title": "$unit.x1_5", "description": "default: 6px", "markdownDescription": "- default: `6px`" },

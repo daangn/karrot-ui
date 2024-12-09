@@ -1,57 +1,66 @@
 export const vars = {
-  "base": {
-    "enabled": {
-      "root": {},
-      "track": {
-        "fill": "#0017580d"
-      },
-      "indicator": {
-        "color": "#d1d3d8"
-      },
-      "indicator-path": {}
-    }
-  },
-  "sizeSmall": {
+  "size40": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-6)"
-      },
-      "track": {},
-      "indicator": {}
+        "size": "var(--seed-v3-unit-x10)",
+        "thickness": "5px"
+      }
     }
   },
-  "sizeMedium": {
+  "size24": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-10)"
-      },
-      "track": {},
-      "indicator": {}
+        "size": "var(--seed-v3-unit-x6)",
+        "thickness": "3px"
+      }
     }
   },
-  "variantIndeterminate": {
+  "indeterminateFalse": {
     "enabled": {
-      "root": {},
-      "track": {},
-      "indicator": {},
-      "indicator-path": {
-        "headDashDuration": "1.2s",
-        "tailDashDuration": "1.2s",
+      "range": {
+        "lengthDuration": "300ms",
+        "lengthTimingFunction": "cubic-bezier(0, 0, 0.15, 1)"
+      }
+    }
+  },
+  "indeterminateTrue": {
+    "enabled": {
+      "range": {
+        "lengthDuration": "1.2s",
         "rotateDuration": "1.2s",
-        "headDashTimingFunction": "cubic-bezier(0.35, 0, 0.65, 1)",
-        "tailDashTimingFunction": "cubic-bezier(0.35, 0, 0.65, 0.6)",
+        "headTimingFunction": "cubic-bezier(0.35, 0, 0.65, 1)",
+        "tailTimingFunction": "cubic-bezier(0.35, 0, 0.65, 0.6)",
         "rotateTimingFunction": "cubic-bezier(0.35, 0.25, 0.65, 0.75)"
       }
     }
   },
-  "variantDeterminate": {
+  "toneNeutral": {
     "enabled": {
-      "root": {},
-      "track": {},
-      "indicator": {},
-      "indicator-path": {
-        "transitionDuration": "0.4s",
-        "transitionTimingFunction": "cubic-bezier(0, 0, 0.15, 1)"
+      "track": {
+        "color": "var(--seed-v3-color-palette-gray-300)"
+      },
+      "range": {
+        "color": "var(--seed-v3-color-palette-gray-600)"
+      }
+    }
+  },
+  "toneBrand": {
+    "enabled": {
+      "track": {
+        "color": "var(--seed-v3-color-palette-carrot-200)"
+      },
+      "range": {
+        "color": "var(--seed-v3-color-bg-brand-solid)"
+      }
+    }
+  },
+  "toneStaticWhite": {
+    "enabled": {
+      "track": {
+        "color": "var(--seed-v3-color-palette-gray-600)"
+      },
+      "range": {
+        "color": "var(--seed-v3-color-bg-static-white)"
       }
     }
   }

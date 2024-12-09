@@ -1,80 +1,78 @@
 import { progressCircle as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
-// import { disabled, focus, active, pseudo } from "./pseudo";
 
 const progressCircle = defineRecipe({
   name: "progressCircle",
-  slots: ["root", "track", "indicator", "indicator-path"],
+  slots: ["root", "track", "range"],
   base: {
     root: {
-      display: "inline-block",
+      display: "inline-flex",
+      boxSizing: "border-box",
       position: "relative",
     },
-    track: {
-      position: "absolute",
-      inset: 0,
-
-      width: "100%",
-      height: "100%",
-
-      fill: vars.base.enabled.track.fill,
-    },
-    indicator: {
-      display: "inline-flex",
-      justifyContent: "center",
-      alignItems: "center",
-
-      position: "absolute",
-      inset: 0,
-
-      width: "100%",
-      height: "100%",
-
-      color: vars.base.enabled.indicator.color,
-    },
-    "indicator-path": {
-      stroke: "currentColor",
-      strokeDasharray: "80, 200",
-      strokeDashoffset: "0",
+    track: {},
+    range: {
       strokeLinecap: "round",
-      strokeWidth: "5.2px",
-
-      rotate: "-90deg",
-      transformOrigin: "center",
-      transformBox: "fill-box",
+      transitionProperty: "stroke-dashoffset",
     },
   },
   variants: {
-    size: {
-      small: {
-        root: {
-          width: vars.sizeSmall.enabled.root.size,
-          height: vars.sizeSmall.enabled.root.size,
+    tone: {
+      neutral: {
+        track: {
+          stroke: vars.toneNeutral.enabled.track.color,
+        },
+        range: {
+          stroke: vars.toneNeutral.enabled.range.color,
         },
       },
-      medium: {
+      brand: {
+        track: {
+          stroke: vars.toneBrand.enabled.track.color,
+        },
+        range: {
+          stroke: vars.toneBrand.enabled.range.color,
+        },
+      },
+      staticWhite: {
+        track: {
+          stroke: vars.toneStaticWhite.enabled.track.color,
+        },
+        range: {
+          stroke: vars.toneStaticWhite.enabled.range.color,
+        },
+      },
+    },
+    size: {
+      24: {
         root: {
-          width: vars.sizeMedium.enabled.root.size,
-          height: vars.sizeMedium.enabled.root.size,
+          "--size": vars.size24.enabled.root.size,
+          "--thickness": vars.size24.enabled.root.thickness,
+        },
+      },
+      40: {
+        root: {
+          "--size": vars.size40.enabled.root.size,
+          "--thickness": vars.size40.enabled.root.thickness,
         },
       },
     },
     indeterminate: {
       true: {
         root: {
-          animation: `rotate ${vars.variantIndeterminate.enabled["indicator-path"].rotateDuration} ${vars.variantIndeterminate.enabled["indicator-path"].rotateTimingFunction} infinite`,
+          animation: `rotate ${vars.indeterminateTrue.enabled.range.rotateDuration} ${vars.indeterminateTrue.enabled.range.rotateTimingFunction} infinite`,
         },
-        "indicator-path": {
+        range: {
           animation: `
-            headDash ${vars.variantIndeterminate.enabled["indicator-path"].headDashDuration} ${vars.variantIndeterminate.enabled["indicator-path"].headDashTimingFunction} infinite normal none running,
-            tailDash ${vars.variantIndeterminate.enabled["indicator-path"].tailDashDuration} ${vars.variantIndeterminate.enabled["indicator-path"].tailDashTimingFunction} infinite normal none running
+            headDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.headTimingFunction} infinite normal none running,
+            tailDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.tailTimingFunction} infinite normal none running
           `,
         },
       },
       false: {
-        "indicator-path": {
-          transitionDuration: `var(--seed-spinner-determinate-duration, ${vars.variantDeterminate.enabled["indicator-path"].transitionDuration})`,
-          transitionTimingFunction: `var(--seed-spinner-determinate-timing-function, ${vars.variantDeterminate.enabled["indicator-path"].transitionTimingFunction})`,
+        range: {
+          transitionDuration: vars.indeterminateFalse.enabled.range.lengthDuration,
+          transitionTimingFunction: vars.indeterminateFalse.enabled.range.lengthTimingFunction,
           transitionProperty: "stroke-dasharray",
         },
       },
@@ -92,27 +90,32 @@ const progressCircle = defineRecipe({
 
     headDash: {
       "0%": {
-        strokeDasharray: "1, 200",
+        strokeDasharray: "0, 1000%",
       },
       "75%": {
-        strokeDasharray: "112, 200",
+        strokeDasharray: "var(--circumference), 1000%",
       },
       "100%": {
-        strokeDasharray: "112, 200",
+        strokeDasharray: "var(--circumference), 1000%",
       },
     },
 
     tailDash: {
       "0%": {
-        strokeDashoffset: "0",
+        strokeDashoffset: 0,
       },
-      "33.3%": {
-        strokeDashoffset: "0",
+      "33.33%": {
+        strokeDashoffset: 0,
       },
       "100%": {
-        strokeDashoffset: "-110",
+        strokeDashoffset: "calc(var(--circumference) * -1)",
       },
     },
+  },
+  defaultVariants: {
+    tone: "neutral",
+    size: 40,
+    indeterminate: false,
   },
 });
 
