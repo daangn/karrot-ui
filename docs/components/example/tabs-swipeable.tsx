@@ -1,9 +1,16 @@
+"use client";
+
 import { Tabs, TabContent, TabContentList, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
 
 export default function TabsSwipeable() {
   return (
     <div style={{ width: "360px" }}>
-      <Tabs defaultValue="2" isSwipeable>
+      <Tabs
+        defaultValue="2"
+        isSwipeable
+        onSwipeStart={() => console.log("swipe start")}
+        onSwipeEnd={() => console.log("swipe end")}
+      >
         <TabTriggerList>
           <TabTrigger value="1">라벨1</TabTrigger>
           <TabTrigger value="2">라벨2</TabTrigger>
