@@ -28,7 +28,7 @@ const SampleImageComponent = ({
     .auto("format")
     .url();
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  const alt = (value as any).alt || " ";
+  const alt = (value as any)?.alt || " ";
 
   return (
     <img
