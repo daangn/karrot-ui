@@ -1,17 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { FormControl, TextField } from "seed-design/ui/text-field";
+import { FormControl, MultilineTextField } from "seed-design/ui/text-field";
 
 import { textFieldVariantMap } from "@seed-design/recipe/textField";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
-import { IconPaperplaneLine } from "@daangn/react-monochrome-icon";
 import type { ComponentProps } from "react";
 
 const Component = (props: ComponentProps<typeof FormControl>) => {
   return (
     <FormControl {...props}>
-      <TextField placeholder="Placeholder" prefixIcon={<IconPaperplaneLine />} suffix="Suffix" />
+      <MultilineTextField placeholder="Placeholder" />
     </FormControl>
   );
 };

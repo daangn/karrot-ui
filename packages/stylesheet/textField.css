@@ -63,6 +63,7 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .textField__inputText {
+    box-sizing: border-box;
     font: inherit;
 }
 .textField__inputText:is(input) {

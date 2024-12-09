@@ -103,6 +103,7 @@ const textField = defineRecipe({
     },
     inputText: {
       // XXX: CSS reset 들어오면 제거될 수 있음
+      boxSizing: "border-box",
       font: "inherit",
       [pseudo(":is(input)")]: {
         border: "none",
