@@ -77,7 +77,7 @@
     font-weight: var(--seed-v3-font-weight-medium);
 }
 .controlChip__count:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white-alpha-800);
 }
 .controlChip__root--size_medium {
     min-height: var(--seed-v3-unit-x9);

@@ -48,7 +48,7 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-static-white)"
       },
       "count": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white-alpha-800)"
       }
     },
     "selectedPressed": {

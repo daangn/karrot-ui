@@ -39,7 +39,7 @@ data:
       icon:
         color: $color.fg.static-white
       count:
-        color: $color.fg.static-white
+        color: $color.palette.static-white-alpha-800
     selected, pressed:
       root:
         color: $color.bg.neutral-solid-muted-pressed
