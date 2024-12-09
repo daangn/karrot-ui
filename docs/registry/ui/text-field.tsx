@@ -273,3 +273,4 @@ function mergeRefs<T>(...refs: React.ForwardedRef<T>[]): React.ForwardedRef<T> {
     }
   };
 }
+MultilineTextField.displayName = "MultilineTextField";
