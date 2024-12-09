@@ -76,3 +76,4 @@ export const purple1000 = "var(--seed-v3-color-palette-purple-1000)";
 export const staticWhiteAlpha800 = "var(--seed-v3-color-palette-static-white-alpha-800)";
 export const slate900 = "var(--seed-v3-color-palette-slate-900)";
 export const slate800 = "var(--seed-v3-color-palette-slate-800)";
+export const staticWhiteAlpha200 = "var(--seed-v3-color-palette-static-white-alpha-200)";
