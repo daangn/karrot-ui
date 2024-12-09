@@ -1,31 +1,32 @@
 export const vars = {
-  "base": {
+  "size40": {
     "enabled": {
-      "indicator": {
-        "transitionDuration": "0.3s",
-        "transitionTimingFunction": "cubic-bezier(0, 0, 0.15, 1)"
+      "root": {
+        "size": "var(--seed-v3-unit-x10)",
+        "thickness": "5px"
       }
     }
   },
-  "sizeSmall": {
+  "size24": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-x6)"
+        "size": "var(--seed-v3-unit-x6)",
+        "thickness": "3px"
       }
     }
   },
-  "sizeMedium": {
+  "indeterminateFalse": {
     "enabled": {
-      "root": {
-        "size": "var(--seed-v3-unit-x10)"
+      "range": {
+        "lengthDuration": "300ms",
+        "lengthTimingFunction": "cubic-bezier(0, 0, 0.15, 1)"
       }
     }
   },
   "indeterminateTrue": {
     "enabled": {
-      "indicator": {
-        "headDuration": "1.2s",
-        "tailDuration": "1.2s",
+      "range": {
+        "lengthDuration": "1.2s",
         "rotateDuration": "1.2s",
         "headTimingFunction": "cubic-bezier(0.35, 0, 0.65, 1)",
         "tailTimingFunction": "cubic-bezier(0.35, 0, 0.65, 0.6)",
@@ -33,32 +34,32 @@ export const vars = {
       }
     }
   },
-  "variantNeutral": {
+  "toneNeutral": {
     "enabled": {
       "track": {
-        "fill": "var(--seed-v3-color-palette-gray-300)"
+        "color": "var(--seed-v3-color-palette-gray-300)"
       },
-      "indicator": {
+      "range": {
         "color": "var(--seed-v3-color-palette-gray-600)"
       }
     }
   },
-  "variantBrand": {
+  "toneBrand": {
     "enabled": {
       "track": {
-        "fill": "var(--seed-v3-color-palette-carrot-200)"
+        "color": "var(--seed-v3-color-palette-carrot-200)"
       },
-      "indicator": {
+      "range": {
         "color": "var(--seed-v3-color-bg-brand-solid)"
       }
     }
   },
-  "variantWhite": {
+  "toneStaticWhite": {
     "enabled": {
       "track": {
-        "fill": "var(--seed-v3-color-palette-gray-600)"
+        "color": "var(--seed-v3-color-palette-gray-600)"
       },
-      "indicator": {
+      "range": {
         "color": "var(--seed-v3-color-bg-static-white)"
       }
     }

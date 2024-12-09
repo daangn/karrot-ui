@@ -10,32 +10,28 @@ const progressCircleSlotNames = [
     "progressCircle__track"
   ],
   [
-    "indicator",
-    "progressCircle__indicator"
-  ],
-  [
-    "indicator-path",
-    "progressCircle__indicator-path"
+    "range",
+    "progressCircle__range"
   ]
 ];
 
 const defaultVariant = {
-  "variant": "neutral",
-  "size": "medium",
+  "tone": "neutral",
+  "size": 40,
   "indeterminate": false
 };
 
 const compoundVariants = [];
 
 export const progressCircleVariantMap = {
-  "variant": [
+  "tone": [
     "neutral",
     "brand",
-    "white"
+    "staticWhite"
   ],
   "size": [
-    "small",
-    "medium"
+    "24",
+    "40"
   ],
   "indeterminate": [
     "true",

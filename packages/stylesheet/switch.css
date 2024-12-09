@@ -37,7 +37,7 @@
 .switch__thumb--size_medium {
     width: 27px;
     height: 27px;
-    box-shadow: [object Object] [object Object] [object Object] [object Object] #00000026, [object Object] [object Object] [object Object] [object Object] #0000000f;
+    box-shadow: 0px 3px 8px 0px #00000026, 0px 1px 3px 0px #0000000f;
 }
 .switch__thumb--size_medium:is(:checked, [data-checked]) {
     transform: translateX(calc(51px - 31px));

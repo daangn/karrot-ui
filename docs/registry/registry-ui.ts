@@ -90,6 +90,11 @@ export const registryUI: RegistryUI = [
     files: ["ui:expand-button.tsx"],
   },
   {
+    name: "progress-circle",
+    dependencies: ["@seed-design/react-progress"],
+    files: ["ui:progress-circle.tsx"],
+  },
+  {
     name: "select-box-check-group",
     dependencies: [
       "@seed-design/react-checkbox",

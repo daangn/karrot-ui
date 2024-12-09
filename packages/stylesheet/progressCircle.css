@@ -1,72 +1,51 @@
 .progressCircle__root {
-    display: inline-block;
+    display: inline-flex;
+    box-sizing: border-box;
     position: relative
 }
-.progressCircle__track {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%
-}
-.progressCircle__indicator {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    transition-timing-function: cubic-bezier(0, 0, 0.15, 1);
-    transition-duration: 0.3s
-}
-.progressCircle__indicator-path {
-    stroke: currentColor;
-    stroke-dasharray: 80, 200;
-    stroke-dashoffset: 0;
+.progressCircle__track {}
+.progressCircle__range {
     stroke-linecap: round;
-    stroke-width: 5.2px;
-    rotate: -90deg;
-    transform-origin: center;
-    transform-box: fill-box
+    transition-property: stroke-dashoffset
 }
-.progressCircle__track--variant_neutral {
-    fill: var(--seed-v3-color-palette-gray-300)
+.progressCircle__track--tone_neutral {
+    stroke: var(--seed-v3-color-palette-gray-300)
 }
-.progressCircle__indicator--variant_neutral {
-    color: var(--seed-v3-color-palette-gray-600)
+.progressCircle__range--tone_neutral {
+    stroke: var(--seed-v3-color-palette-gray-600)
 }
-.progressCircle__track--variant_brand {
-    fill: var(--seed-v3-color-palette-carrot-200)
+.progressCircle__track--tone_brand {
+    stroke: var(--seed-v3-color-palette-carrot-200)
 }
-.progressCircle__indicator--variant_brand {
-    color: var(--seed-v3-color-bg-brand-solid)
+.progressCircle__range--tone_brand {
+    stroke: var(--seed-v3-color-bg-brand-solid)
 }
-.progressCircle__track--variant_white {
-    fill: var(--seed-v3-color-palette-gray-600)
+.progressCircle__track--tone_staticWhite {
+    stroke: var(--seed-v3-color-palette-gray-600)
 }
-.progressCircle__indicator--variant_white {
-    color: var(--seed-v3-color-bg-static-white)
+.progressCircle__range--tone_staticWhite {
+    stroke: var(--seed-v3-color-bg-static-white)
 }
-.progressCircle__root--size_small {
-    width: var(--seed-v3-unit-x6);
-    height: var(--seed-v3-unit-x6)
+.progressCircle__root--size_24 {
+    --size: var(--seed-v3-unit-x6);
+    --thickness: 3px
 }
-.progressCircle__root--size_medium {
-    width: var(--seed-v3-unit-x10);
-    height: var(--seed-v3-unit-x10)
+.progressCircle__root--size_40 {
+    --size: var(--seed-v3-unit-x10);
+    --thickness: 5px
 }
 .progressCircle__root--indeterminate_true {
     animation: rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite
 }
-.progressCircle__indicator-path--indeterminate_true {
+.progressCircle__range--indeterminate_true {
     animation: 
             headDash 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
             tailDash 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
           
 }
-.progressCircle__indicator-path--indeterminate_false {
-    transition-duration: var(--seed-spinner-determinate-duration, 0.3s);
-    transition-timing-function: var(--seed-spinner-determinate-timing-function, cubic-bezier(0, 0, 0.15, 1));
+.progressCircle__range--indeterminate_false {
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.15, 1);
     transition-property: stroke-dasharray
 }
 @keyframes rotate {
@@ -79,23 +58,23 @@
 }
 @keyframes headDash {
     0% {
-        stroke-dasharray: 1, 200
+        stroke-dasharray: 0, 1000%
     }
     75% {
-        stroke-dasharray: 112, 200
+        stroke-dasharray: var(--circumference), 1000%
     }
     100% {
-        stroke-dasharray: 112, 200
+        stroke-dasharray: var(--circumference), 1000%
     }
 }
 @keyframes tailDash {
     0% {
         stroke-dashoffset: 0
     }
-    33.3% {
+    33.33% {
         stroke-dashoffset: 0
     }
     100% {
-        stroke-dashoffset: -110
+        stroke-dashoffset: calc(var(--circumference) * -1)
     }
 }

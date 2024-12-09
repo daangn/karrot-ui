@@ -1,30 +1,31 @@
 # yaml-language-server: $schema=./schema.json
-# parts: root, track, indicator
+# parts: root, track, range
 kind: ComponentSpec
 metadata:
   id: progress-circle
   name: Progress Circle
 data:
-  base:
-    enabled:
-      indicator:
-        transitionDuration: 0.3s
-        transitionTimingFunction:
-          type: cubicBezier
-          value: [0, 0, 0.15, 1]
-  size=small:
-    enabled:
-      root:
-        size: $unit.x6
-  size=medium:
+  size=40:
     enabled:
       root:
         size: $unit.x10
+        thickness: 5px
+  size=24:
+    enabled:
+      root:
+        size: $unit.x6
+        thickness: 3px
+  indeterminate=false:
+    enabled:
+      range:
+        lengthDuration: 300ms
+        lengthTimingFunction:
+          type: cubicBezier
+          value: [0, 0, 0.15, 1]
   indeterminate=true:
     enabled:
-      indicator:
-        headDuration: 1.2s
-        tailDuration: 1.2s
+      range:
+        lengthDuration: 1.2s
         rotateDuration: 1.2s
         headTimingFunction:
           type: cubicBezier
@@ -35,21 +36,21 @@ data:
         rotateTimingFunction:
           type: cubicBezier
           value: [0.35, 0.25, 0.65, 0.75]
-  variant=neutral:
+  tone=neutral:
     enabled:
       track:
-        fill: $color.palette.gray-300
-      indicator:
+        color: $color.palette.gray-300
+      range:
         color: $color.palette.gray-600
-  variant=brand:
+  tone=brand:
     enabled:
       track:
-        fill: $color.palette.carrot-200
-      indicator:
+        color: $color.palette.carrot-200
+      range:
         color: $color.bg.brand-solid
-  variant=white:
+  tone=static white:
     enabled:
       track:
-        fill: $color.palette.gray-600
-      indicator:
+        color: $color.palette.gray-600
+      range:
         color: $color.bg.static-white
