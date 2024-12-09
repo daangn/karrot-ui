@@ -7307,6 +7307,47 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/visual-editing@npm:^2.10.5":
+  version: 2.10.5
+  resolution: "@sanity/visual-editing@npm:2.10.5"
+  dependencies:
+    "@sanity/comlink": 2.0.1
+    "@sanity/mutate": 0.11.0-canary.3
+    "@sanity/preview-url-secret": 2.0.5
+    "@vercel/stega": 0.1.2
+    get-random-values-esm: ^1.0.2
+    react-compiler-runtime: 19.0.0-beta-df7b47d-20241124
+    rxjs: ^7.8.1
+    scroll-into-view-if-needed: ^3.1.0
+    use-effect-event: ^1.0.2
+    valibot: 0.31.1
+    xstate: ^5.19.0
+  peerDependencies:
+    "@remix-run/react": ">= 2"
+    "@sanity/client": ^6.24.1
+    "@sveltejs/kit": ">= 2"
+    next: ">= 13 || >=14.3.0-canary.0 <14.3.0 || >=15.0.0-rc"
+    react: ^18.3 || >=19.0.0-rc
+    react-dom: ^18.3 || >=19.0.0-rc
+    react-router: ">= 7"
+    svelte: ">= 4"
+  peerDependenciesMeta:
+    "@remix-run/react":
+      optional: true
+    "@sanity/client":
+      optional: true
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react-router:
+      optional: true
+    svelte:
+      optional: true
+  checksum: 8bd11148ad7ac82c451768c46e7f300e6f66d1630e08a4d153ee4be42639ff5d9629adbbc5f731f761dce2d925228019870600cf51cab93270b328c7481a8282
+  languageName: node
+  linkType: hard
+
 "@sec-ant/readable-stream@npm:^0.4.1":
   version: 0.4.1
   resolution: "@sec-ant/readable-stream@npm:0.4.1"
@@ -12871,6 +12912,7 @@ __metadata:
     "@sanity/icons": ^3.5.0
     "@sanity/image-url": ^1.1.0
     "@sanity/vision": 3
+    "@sanity/visual-editing": ^2.10.5
     "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
     "@seed-design/react-dismissible": 0.0.0
     "@seed-design/react-icon": ^0.7.3

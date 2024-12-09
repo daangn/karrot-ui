@@ -69,6 +69,9 @@ export const SanityContent = ({ title }: SanityContentProps) => {
         types: {
           image: SampleImageComponent,
         },
+        marks: {
+          highlight: (props) => <span style={{ backgroundColor: "#0f0" }}>{props.children}</span>,
+        },
       }}
       value={data.body}
     />
