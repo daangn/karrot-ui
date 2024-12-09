@@ -71,6 +71,14 @@
 .controlChip__icon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
+.controlChip__count {
+    line-height: 1;
+    color: var(--seed-v3-color-fg-neutral-muted);
+    font-weight: var(--seed-v3-font-weight-medium);
+}
+.controlChip__count:is(:checked, [data-checked]) {
+    color: var(--seed-v3-color-fg-static-white);
+}
 .controlChip__root--size_medium {
     min-height: var(--seed-v3-unit-x9);
     padding-block: var(--seed-v3-unit-x2);
@@ -87,6 +95,9 @@
     width: var(--seed-v3-unit-x3_5);
     height: var(--seed-v3-unit-x3_5);
 }
+.controlChip__count--size_medium {
+    font-size: var(--seed-v3-font-size-t4);
+}
 .controlChip__root--size_small {
     min-height: var(--seed-v3-unit-x8);
     padding-block: var(--seed-v3-unit-x1_5);
@@ -102,6 +113,9 @@
 .controlChip__suffixIcon--size_small {
     width: var(--seed-v3-unit-x3_5);
     height: var(--seed-v3-unit-x3_5);
+}
+.controlChip__count--size_small {
+    font-size: var(--seed-v3-font-size-t4);
 }
 .controlChip__root--size_medium-layout_withText {
     padding-inline: var(--seed-v3-unit-x3_5);

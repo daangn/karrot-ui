@@ -87,6 +87,15 @@ const controlChip = defineRecipe({
         color: vars.base.disabled.icon.color,
       },
     },
+    count: {
+      lineHeight: 1,
+
+      color: vars.base.enabled.count.color,
+      fontWeight: vars.base.enabled.count.fontWeight,
+      [pseudo(checked)]: {
+        color: vars.base.selected.count.color,
+      },
+    },
   },
   variants: {
     size: {
@@ -107,6 +116,9 @@ const controlChip = defineRecipe({
           width: rem(vars.sizeMedium.enabled.suffixIcon.size),
           height: rem(vars.sizeMedium.enabled.suffixIcon.size),
         },
+        count: {
+          fontSize: vars.sizeMedium.enabled.count.fontSize,
+        },
       },
       small: {
         root: {
@@ -124,6 +136,9 @@ const controlChip = defineRecipe({
         suffixIcon: {
           width: rem(vars.sizeSmall.enabled.suffixIcon.size),
           height: rem(vars.sizeSmall.enabled.suffixIcon.size),
+        },
+        count: {
+          fontSize: vars.sizeSmall.enabled.count.fontSize,
         },
       },
     },

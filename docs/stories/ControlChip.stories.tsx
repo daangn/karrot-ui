@@ -18,10 +18,11 @@ type Story = StoryObj<typeof meta>;
 
 const variantMap = { ...controlChipVariantMap, checked: ["false", "true"] };
 
-export const LightTheme: Story = {
+const StoryTemplate: Story = {
   args: {
     prefixIcon: <IconBellFill />,
     suffixIcon: <IconChevronDownFill />,
+    count: 10,
   },
   render: (args) => (
     <VariantTable
@@ -33,47 +34,10 @@ export const LightTheme: Story = {
   ),
 };
 
-export const DarkTheme: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronDownFill />,
-  },
-  render: (args) => (
-    <VariantTable
-      Component={meta.component}
-      variantMap={variantMap}
-      render={({ layout }) => (layout === "withText" ? "Control Chip" : <IconBellFill />)}
-      {...args}
-    />
-  ),
-};
+export const LightTheme = StoryTemplate;
 
-export const FontScalingExtraSmall: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronDownFill />,
-  },
-  render: (args) => (
-    <VariantTable
-      Component={meta.component}
-      variantMap={variantMap}
-      render={({ layout }) => (layout === "withText" ? "Control Chip" : <IconBellFill />)}
-      {...args}
-    />
-  ),
-};
+export const DarkTheme = StoryTemplate;
 
-export const FontScalingExtraExtraExtraLarge: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronDownFill />,
-  },
-  render: (args) => (
-    <VariantTable
-      Component={meta.component}
-      variantMap={variantMap}
-      render={({ layout }) => (layout === "withText" ? "Control Chip" : <IconBellFill />)}
-      {...args}
-    />
-  ),
-};
+export const FontScalingExtraSmall = StoryTemplate;
+
+export const FontScalingExtraExtraExtraLarge = StoryTemplate;

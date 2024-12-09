@@ -20,6 +20,8 @@ export interface ControlChipToggleProps
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
+
+  count?: number;
 }
 
 const ControlChipToggle = React.forwardRef<
@@ -34,6 +36,7 @@ const ControlChipToggle = React.forwardRef<
       children,
       prefixIcon,
       suffixIcon,
+      count,
       ...otherProps
     },
     ref,
@@ -54,6 +57,11 @@ const ControlChipToggle = React.forwardRef<
             <span {...stateProps} className={classNames.label}>
               {children}
             </span>
+            {count && (
+              <span {...stateProps} className={classNames.count}>
+                {count}
+              </span>
+            )}
             {suffixIcon && (
               <Slot {...stateProps} className={classNames.suffixIcon}>
                 {suffixIcon}

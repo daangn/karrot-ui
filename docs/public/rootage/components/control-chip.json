@@ -26,7 +26,8 @@
           "color": "$color.fg.neutral"
         },
         "count": {
-          "color": "$color.fg.neutral-muted"
+          "color": "$color.fg.neutral-muted",
+          "fontWeight": "$font-weight.medium"
         }
       },
       "pressed": {
@@ -97,6 +98,9 @@
         },
         "suffixIcon": {
           "size": "$unit.x3_5"
+        },
+        "count": {
+          "fontSize": "$font-size.t4"
         }
       }
     },
@@ -115,6 +119,9 @@
         },
         "suffixIcon": {
           "size": "$unit.x3_5"
+        },
+        "count": {
+          "fontSize": "$font-size.t4"
         }
       }
     },

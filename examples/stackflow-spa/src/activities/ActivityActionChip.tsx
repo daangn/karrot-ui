@@ -20,7 +20,7 @@ const ActivityActionChip: ActivityComponentType = () => {
         initialVariants={initialVariants}
         recipeFn={actionChip}
         render={(variants) => (
-          <ActionChip key={JSON.stringify(variants)} {...variants}>
+          <ActionChip count={10} key={JSON.stringify(variants)} {...variants}>
             {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
           </ActionChip>
         )}

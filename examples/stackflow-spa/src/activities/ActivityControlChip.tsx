@@ -20,7 +20,7 @@ const ActivityControlChip: ActivityComponentType = () => {
         initialVariants={initialVariants}
         recipeFn={controlChip}
         render={(variants) => (
-          <ControlChip.Toggle key={JSON.stringify(variants)} {...variants}>
+          <ControlChip.Toggle count={10} key={JSON.stringify(variants)} {...variants}>
             {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
           </ControlChip.Toggle>
         )}
