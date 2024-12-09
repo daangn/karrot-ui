@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  DismissibleInlineBanner,
-  InlineBannerDescription,
-  InlineBannerLink,
-} from "seed-design/ui/inline-banner";
+import { DismissibleInlineBanner, InlineBannerDescription } from "seed-design/ui/inline-banner";
 
 export default function DismissibleInlineBannerPreview() {
   const onDismiss = () => window.alert("닫기 버튼 클릭");

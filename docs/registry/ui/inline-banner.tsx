@@ -85,30 +85,36 @@ InlineBannerDescription.displayName = "InlineBannerDescription";
 
 export const InlineBannerLink = React.forwardRef<
   HTMLButtonElement,
-  React.HTMLAttributes<HTMLButtonElement> & {
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
     /**
      * @default false
      */
     asChild?: boolean;
   }
->(({ asChild = false, children, className, ...otherProps }, ref) => {
-  const {
-    variantProps: { variant },
-  } = useInlineBannerContext();
-  const classNames = inlineBanner({ variant });
+>(
+  (
+    { asChild = false, type = "button", children, className, ...otherProps },
+    ref,
+  ) => {
+    const {
+      variantProps: { variant },
+    } = useInlineBannerContext();
+    const classNames = inlineBanner({ variant });
 
-  const Comp = asChild ? Slot : "button";
+    const Comp = asChild ? Slot : "button";
 
-  return (
-    <Comp
-      ref={ref}
-      className={clsx(classNames.linkLabel, className)}
-      {...otherProps}
-    >
-      {children}
-    </Comp>
-  );
-});
+    return (
+      <Comp
+        type={type}
+        ref={ref}
+        className={clsx(classNames.linkLabel, className)}
+        {...otherProps}
+      >
+        {children}
+      </Comp>
+    );
+  },
+);
 InlineBannerLink.displayName = "InlineBannerLink";
 
 export interface InlineBannerProps extends InlineBannerVariantProps {

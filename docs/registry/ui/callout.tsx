@@ -81,39 +81,45 @@ CalloutDescription.displayName = "CalloutDescription";
 
 export const CalloutLink = React.forwardRef<
   HTMLButtonElement,
-  React.HTMLAttributes<HTMLButtonElement> & {
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
     /**
      * @default false
      */
     asChild?: boolean;
   }
->(({ asChild = false, children, className, ...otherProps }, ref) => {
-  const {
-    variantProps: { variant },
-  } = useCalloutContext();
-  const classNames = callout({ variant });
+>(
+  (
+    { asChild = false, children, type = "button", className, ...otherProps },
+    ref,
+  ) => {
+    const {
+      variantProps: { variant },
+    } = useCalloutContext();
+    const classNames = callout({ variant });
 
-  const Comp = asChild ? Slot : "button";
+    const Comp = asChild ? Slot : "button";
 
-  return (
-    <>
-      <span
-        ref={ref}
-        className={clsx(classNames.spacer, className)}
-        {...otherProps}
-      >
-        {" "}
-      </span>
-      <Comp
-        ref={ref}
-        className={clsx(classNames.linkLabel, className)}
-        {...otherProps}
-      >
-        {children}
-      </Comp>
-    </>
-  );
-});
+    return (
+      <>
+        <span
+          ref={ref}
+          className={clsx(classNames.spacer, className)}
+          {...otherProps}
+        >
+          {" "}
+        </span>
+        <Comp
+          type={type}
+          ref={ref}
+          className={clsx(classNames.linkLabel, className)}
+          {...otherProps}
+        >
+          {children}
+        </Comp>
+      </>
+    );
+  },
+);
 CalloutLink.displayName = "CalloutLink";
 
 export interface CalloutProps extends Omit<CalloutVariantProps, "type"> {
