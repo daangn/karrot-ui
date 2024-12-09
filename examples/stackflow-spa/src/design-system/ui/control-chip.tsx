@@ -41,25 +41,28 @@ const ControlChipToggle = React.forwardRef<
     const classNames = controlChip({ size, layout });
     const { rootProps, hiddenInputProps, stateProps, restProps } =
       useCheckbox(otherProps);
+
     return (
       <label {...rootProps} className={clsx(classNames.root, className)}>
-        {prefixIcon && (
-          <Slot {...stateProps} className={classNames.prefixIcon}>
-            {prefixIcon}
-          </Slot>
-        )}
         {layout === "withText" ? (
-          <span {...stateProps} className={classNames.label}>
-            {children}
-          </span>
+          <>
+            {prefixIcon && (
+              <Slot {...stateProps} className={classNames.prefixIcon}>
+                {prefixIcon}
+              </Slot>
+            )}
+            <span {...stateProps} className={classNames.label}>
+              {children}
+            </span>
+            {suffixIcon && (
+              <Slot {...stateProps} className={classNames.suffixIcon}>
+                {suffixIcon}
+              </Slot>
+            )}
+          </>
         ) : (
           <Slot {...stateProps} className={classNames.icon}>
             {children}
-          </Slot>
-        )}
-        {suffixIcon && (
-          <Slot {...stateProps} className={classNames.suffixIcon}>
-            {suffixIcon}
           </Slot>
         )}
         <input
