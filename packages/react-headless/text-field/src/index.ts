@@ -1,7 +1,7 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { splitGraphemes } from "unicode-segmenter/grapheme";
 
-import { dataAttr, ariaAttr, elementProps, inputProps, labelProps } from "@seed-design/react-utils";
+import { dataAttr, ariaAttr, elementProps, inputProps, labelProps } from "@seed-design/dom-utils";
 import { getDescriptionId, getErrorMessageId, getInputId, getLabelId } from "./dom";
 
 import { useCallbackRef } from "@radix-ui/react-use-callback-ref";

@@ -1,10 +1,10 @@
 {
-  "name": "@seed-design/react-utils",
+  "name": "@seed-design/dom-utils",
   "version": "0.0.0-alpha-20241030023710",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/react-utils"
+    "directory": "packages/dom-utils"
   },
   "sideEffects": false,
   "exports": {

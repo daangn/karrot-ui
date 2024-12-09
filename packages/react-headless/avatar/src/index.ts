@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "@radix-ui/react-use-layout-effect";
-import { dataAttr, elementProps, imgProps } from "@seed-design/react-utils";
+import { dataAttr, elementProps, imgProps } from "@seed-design/dom-utils";
 import { useState } from "react";
 
 type LoadingStatus = "loading" | "loaded" | "error";
