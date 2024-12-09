@@ -37,10 +37,10 @@ export const vars = {
   "toneNeutral": {
     "enabled": {
       "track": {
-        "color": "var(--seed-v3-color-palette-gray-300)"
+        "color": "var(--seed-v3-color-palette-gray-200)"
       },
       "range": {
-        "color": "var(--seed-v3-color-palette-gray-600)"
+        "color": "var(--seed-v3-color-palette-gray-500)"
       }
     }
   },
@@ -57,7 +57,7 @@ export const vars = {
   "toneStaticWhite": {
     "enabled": {
       "track": {
-        "color": "var(--seed-v3-color-palette-gray-600)"
+        "color": "var(--seed-v3-color-palette-static-white-alpha-200)"
       },
       "range": {
         "color": "var(--seed-v3-color-bg-static-white)"

@@ -39,9 +39,9 @@ data:
   tone=neutral:
     enabled:
       track:
-        color: $color.palette.gray-300
+        color: $color.palette.gray-200
       range:
-        color: $color.palette.gray-600
+        color: $color.palette.gray-500
   tone=brand:
     enabled:
       track:
@@ -51,6 +51,6 @@ data:
   tone=static white:
     enabled:
       track:
-        color: $color.palette.gray-600
+        color: $color.palette.static-white-alpha-200
       range:
         color: $color.bg.static-white
