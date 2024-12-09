@@ -1,14 +1,11 @@
-import {
-  DismissibleCallout,
-  DismissibleCalloutDescription,
-} from "seed-design/ui/dismissible-callout";
+import { DismissibleCallout, CalloutDescription } from "seed-design/ui/callout";
 
 export default function DismissibleCalloutTextOnly() {
   return (
     <DismissibleCallout dismissAriaLabel="닫기" variant="magic">
-      <DismissibleCalloutDescription>
+      <CalloutDescription>
         Aliquip laboris excepteur enim sunt eiusmod laboris anim.
-      </DismissibleCalloutDescription>
+      </CalloutDescription>
     </DismissibleCallout>
   );
 }

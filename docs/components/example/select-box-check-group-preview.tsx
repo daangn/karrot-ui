@@ -1,4 +1,4 @@
-import { SelectBoxCheck, SelectBoxCheckGroup } from "@/registry/ui/select-box-check-group";
+import { SelectBoxCheck, SelectBoxCheckGroup } from "@/registry/ui/select-box-group";
 
 export default function SelectBoxCheckGroupPreview() {
   return (

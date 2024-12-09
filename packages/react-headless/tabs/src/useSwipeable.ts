@@ -2,16 +2,10 @@ import * as React from "react";
 
 import { type FullGestureState, useGesture } from "@use-gesture/react";
 
-interface UseSwipeableStateProps {
-  /**
-   * tab swipe 기능 활성화 여부
-   * @default true
-   */
-  isSwipeable?: boolean;
-}
+import type { UseSwipeableStateProps } from "./types";
 
 const useSwipeableState = (props: UseSwipeableStateProps) => {
-  const { isSwipeable } = props;
+  const { isSwipeable, onSwipeEnd, onSwipeStart } = props;
   const [swipeStatus, setSwipeStatus] = React.useState<"idle" | "dragging">("idle");
   const [swipeMoveX, setSwipeMoveX] = React.useState<number>(0);
 
@@ -30,11 +24,13 @@ const useSwipeableState = (props: UseSwipeableStateProps) => {
     onDragStart: () => {
       if (!isSwipeable) return;
 
+      onSwipeStart?.();
       setSwipeStatus("dragging");
     },
     onDragEnd: () => {
       if (!isSwipeable) return;
 
+      onSwipeEnd?.();
       setSwipeStatus("idle");
       setSwipeMoveX(0);
     },
@@ -70,15 +66,28 @@ export interface UseSwipeableProps extends UseSwipeableStateProps {
 }
 
 export const useSwipeable = (props: UseSwipeableProps) => {
-  const { isSwipeable = true, swipeConfig, onSwipeLeftToRight, onSwipeRightToLeft } = props;
+  const {
+    isSwipeable = true,
+    swipeConfig,
+    onSwipeLeftToRight,
+    onSwipeRightToLeft,
+    onSwipeEnd,
+    onSwipeStart,
+  } = props;
 
   const { onDrag, onDragEnd, onDragStart, swipeMoveX, swipeStatus } = useSwipeableState({
     isSwipeable,
+    onSwipeEnd,
+    onSwipeStart,
   });
 
   const getDragProps = useGesture(
     {
-      onDragStart,
+      onDragStart: () => {
+        if (!isSwipeable) return;
+
+        onDragStart();
+      },
 
       onDragEnd: ({ swipe: [swipeX] }) => {
         if (!isSwipeable) return;
@@ -106,7 +115,11 @@ export const useSwipeable = (props: UseSwipeableProps) => {
     },
   );
 
-  const dragProps = isSwipeable ? getDragProps() : {};
+  const dragProps = isSwipeable
+    ? {
+        ...getDragProps(),
+      }
+    : {};
 
   return {
     swipeMoveX,

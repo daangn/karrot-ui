@@ -15,6 +15,8 @@ export interface ActionChipProps
 
   suffixIcon?: React.ReactNode;
 
+  count?: number;
+
   asChild?: boolean;
 }
 
@@ -27,6 +29,7 @@ export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
       children,
       prefixIcon,
       suffixIcon,
+      count,
       asChild = false,
       ...otherProps
     },
@@ -40,16 +43,19 @@ export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
-        {prefixIcon && (
-          <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
-        )}
         {layout === "withText" ? (
-          <span className={classNames.label}>{children}</span>
+          <>
+            {prefixIcon && (
+              <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
+            )}
+            <span className={classNames.label}>{children}</span>
+            {count && <span className={classNames.count}>{count}</span>}
+            {suffixIcon && (
+              <Slot className={classNames.suffixIcon}>{suffixIcon}</Slot>
+            )}
+          </>
         ) : (
           <Slot className={classNames.icon}>{children}</Slot>
-        )}
-        {suffixIcon && (
-          <Slot className={classNames.suffixIcon}>{suffixIcon}</Slot>
         )}
       </Comp>
     );

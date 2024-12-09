@@ -110,6 +110,9 @@ export function getJsonSchema(ctx: RootageCtx): string {
             "$ref": "#/definitions/dimensionShorthand"
           },
           {
+            "$ref": "#/definitions/durationShorthand"
+          },
+          {
             "$ref": "#/definitions/numberShorthand"
           },
           {
@@ -130,6 +133,10 @@ export function getJsonSchema(ctx: RootageCtx): string {
       "dimensionShorthand": {
         "type": "string",
         "pattern": "^\\d+(\\.\\d+)?(px|rem)$"
+      },
+      "durationShorthand": {
+        "type": "string",
+        "pattern": "^\\d+(\\.\\d+)?(s|ms)$"
       },
       "numberShorthand": {
         "type": "number"

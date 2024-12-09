@@ -118,10 +118,12 @@ export function useTabs(props: UseTabsProps) {
     defaultValue: omitDefaultValue,
     onValueChange: omitOnValueChange,
     isSwipeable = false,
-    orientation = "horizontal",
     swipeConfig,
     ...restProps
   } = props;
+
+  // TODO: orientation prop 추가
+  const orientation = "horizontal" as "horizontal" | "vertical";
 
   const updateIndicatorStyle = React.useCallback(() => {
     if (rootEl) {

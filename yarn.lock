@@ -6300,15 +6300,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/icon@npm:^0.6.1":
-  version: 0.6.2
-  resolution: "@seed-design/icon@npm:0.6.2"
-  peerDependencies:
-    react: "*"
-  checksum: 54e4730ec658e7e8db6e1060985bd963b2a9643f983502204cfca8cb92e7907e96763c3f68424319cdfbac46efa03425a00e8492b9ba272042c3c0ed31c30813
-  languageName: node
-  linkType: hard
-
 "@seed-design/project@workspace:.":
   version: 0.0.0-use.local
   resolution: "@seed-design/project@workspace:."
@@ -6387,6 +6378,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/react-progress@0.0.0, @seed-design/react-progress@workspace:packages/react-headless/progress":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-progress@workspace:packages/react-headless/progress"
+  dependencies:
+    nanobundle: ^1.6.0
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/react-radio-group@0.0.0-alpha-20241030023710, @seed-design/react-radio-group@workspace:packages/react-headless/radio-group":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-radio-group@workspace:packages/react-headless/radio-group"
@@ -6426,7 +6428,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-tabs@0.0.0-alpha-20241204061301, @seed-design/react-tabs@workspace:packages/react-headless/tabs":
+"@seed-design/react-tabs@0.0.0-alpha-20241209060641, @seed-design/react-tabs@workspace:packages/react-headless/tabs":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-tabs@workspace:packages/react-headless/tabs"
   dependencies:
@@ -6562,13 +6564,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/stackflow-spa@workspace:examples/stackflow-spa"
   dependencies:
+    "@daangn/react-monochrome-icon": ^0.0.11
     "@radix-ui/react-slot": ^1.1.0
     "@seed-design/cli": 0.0.0-alpha-20241204134404
-    "@seed-design/icon": ^0.6.1
     "@seed-design/react-popover": 0.0.0-alpha-20241030023710
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
     "@seed-design/react-switch": 0.0.0-alpha-20241030023710
-    "@seed-design/react-tabs": 0.0.0-alpha-20241204061301
+    "@seed-design/react-tabs": 0.0.0-alpha-20241209060641
     "@seed-design/react-text-field": 0.0.0-alpha-20241030023710
     "@seed-design/recipe": 0.0.0-alpha-20241204032829
     "@seed-design/stylesheet": 3.0.0-alpha-20241204032654
@@ -10796,10 +10798,11 @@ __metadata:
     "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
     "@seed-design/react-dismissible": 0.0.0
     "@seed-design/react-icon": ^0.7.3
+    "@seed-design/react-progress": 0.0.0
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
     "@seed-design/react-segmented-control": "workspace:^"
     "@seed-design/react-switch": 0.0.0-alpha-20241030023710
-    "@seed-design/react-tabs": 0.0.0-alpha-20241204061301
+    "@seed-design/react-tabs": 0.0.0-alpha-20241209060641
     "@seed-design/recipe": 0.0.0-alpha-20241204032829
     "@seed-design/rootage-cli": 0.0.0
     "@seed-design/rootage-core": 0.0.0

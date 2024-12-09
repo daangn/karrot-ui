@@ -2,6 +2,8 @@ type VariantMap = Record<string, string[] | boolean[]>;
 
 interface Props {
   variantMap: VariantMap;
+  render?: (variant: Record<string, string | boolean>) => React.ReactNode;
+  children?: React.ReactNode;
   Component: React.ComponentType | React.ElementType;
 }
 
@@ -31,7 +33,7 @@ const generateCombinations = (variantMap: VariantMap) => {
 };
 
 export const VariantTable = (props: Props) => {
-  const { variantMap, Component, ...rest } = props;
+  const { variantMap, render, Component, ...rest } = props;
 
   const combinations = generateCombinations(variantMap);
   const variantKeys = Object.keys(variantMap);
@@ -49,23 +51,21 @@ export const VariantTable = (props: Props) => {
         </thead>
         <tbody>
           {combinations.map((combination) => {
-            const boolify = Object.entries(combination).reduce((acc, [key, value]) => {
-              if (value === "true" || value === "false") {
-                return {
-                  // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
-                  ...acc,
-                  [key]: Bool(value),
-                };
-              }
+            const boolify = Object.entries(combination).reduce(
+              (acc, [key, value]) => {
+                if (value === "true" || value === "false") {
+                  acc[key] = Bool(value);
+                  return acc;
+                }
 
-              return {
-                // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
-                ...acc,
-                [key]: value,
-              };
-            }, {});
+                acc[key] = value;
+                return acc;
+              },
+              {} as Record<string, React.ReactNode>,
+            );
 
             const combinationKey = Object.values(combination).join("-");
+            const child = render ? render(combination) : rest.children;
             return (
               <tr key={combinationKey}>
                 {variantKeys.map((key) => (
@@ -90,7 +90,9 @@ export const VariantTable = (props: Props) => {
                     padding: 16,
                   }}
                 >
-                  <Component {...boolify} {...rest} />
+                  <Component {...boolify} {...rest}>
+                    {child}
+                  </Component>
                 </td>
               </tr>
             );

@@ -20,13 +20,14 @@
           "color": "$color.fg.neutral"
         },
         "suffixIcon": {
-          "color": "$color.fg.neutral"
+          "color": "$color.fg.neutral-subtle"
         },
         "icon": {
           "color": "$color.fg.neutral"
         },
         "count": {
-          "color": "$color.fg.neutral-muted"
+          "color": "$color.fg.neutral-muted",
+          "fontWeight": "$font-weight.medium"
         }
       },
       "pressed": {
@@ -37,27 +38,28 @@
       "selected": {
         "root": {
           "strokeWidth": 0,
-          "color": "$color.bg.brand-weak"
+          "color": "$color.bg.neutral-solid-muted"
         },
         "label": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white",
+          "fontWeight": "$font-weight.bold"
         },
         "prefixIcon": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         },
         "suffixIcon": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         },
         "icon": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.static-white"
         },
         "count": {
-          "color": "$color.fg.brand"
+          "color": "$color.palette.static-white-alpha-800"
         }
       },
       "selected, pressed": {
         "root": {
-          "color": "$color.bg.brand-weak-pressed"
+          "color": "$color.bg.neutral-solid-muted-pressed"
         }
       },
       "disabled": {
@@ -96,6 +98,9 @@
         },
         "suffixIcon": {
           "size": "$unit.x3_5"
+        },
+        "count": {
+          "fontSize": "$font-size.t4"
         }
       }
     },
@@ -114,6 +119,9 @@
         },
         "suffixIcon": {
           "size": "$unit.x3_5"
+        },
+        "count": {
+          "fontSize": "$font-size.t4"
         }
       }
     },

@@ -21,7 +21,7 @@
     "test:all": "yarn vitest run",
     "generate:all": "yarn rootage:generate && yarn recipe:generate",
     "rootage:build": "ultra -r --build rootage:build",
-    "rootage:generate": "ultra -r rootage:generate && yarn workspace @seed-design/rootage-cli generate:schema",
+    "rootage:generate": "ultra -r --build rootage:generate && yarn workspace @seed-design/rootage-cli generate:schema && yarn workspace docs generate:rootage",
     "rootage:generate:watch": "watchlist packages/rootage/artifacts -- yarn rootage:generate",
     "rootage:test": "yarn vitest run --project rootage --reporter=verbose",
     "rootage:test:watch": "vitest dev --project rootage",

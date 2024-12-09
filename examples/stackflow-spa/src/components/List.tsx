@@ -1,4 +1,4 @@
-import IconChevronRightRegular from "@seed-design/icon/IconChevronRightRegular";
+import IconChevronRightFill from "@daangn/react-monochrome-icon/IconChevronRightFill";
 import type React from "react";
 import * as styles from "./List.css";
 
@@ -18,7 +18,7 @@ export function ListItem(props: ListItemProps) {
     <button type="button" className={styles.item} onClick={onClick}>
       <div className={styles.title}>{title}</div>
       <div>
-        <IconChevronRightRegular className={styles.icon} />
+        <IconChevronRightFill className={styles.icon} />
       </div>
     </button>
   );

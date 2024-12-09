@@ -14,13 +14,14 @@ export declare const vars: {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "color": "var(--seed-v3-color-fg-neutral-subtle)"
       },
       "icon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "count": {
-        "color": "var(--seed-v3-color-fg-neutral-muted)"
+        "color": "var(--seed-v3-color-fg-neutral-muted)",
+        "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     },
     "pressed": {
@@ -31,27 +32,28 @@ export declare const vars: {
     "selected": {
       "root": {
         "strokeWidth": "0",
-        "color": "var(--seed-v3-color-bg-brand-weak)"
+        "color": "var(--seed-v3-color-bg-neutral-solid-muted)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)",
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
       "count": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-palette-static-white-alpha-800)"
       }
     },
     "selectedPressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-brand-weak-pressed)"
+        "color": "var(--seed-v3-color-bg-neutral-solid-muted-pressed)"
       }
     },
     "disabled": {
@@ -90,6 +92,9 @@ export declare const vars: {
       },
       "suffixIcon": {
         "size": "var(--seed-v3-unit-x3_5)"
+      },
+      "count": {
+        "fontSize": "var(--seed-v3-font-size-t4)"
       }
     }
   },
@@ -108,6 +113,9 @@ export declare const vars: {
       },
       "suffixIcon": {
         "size": "var(--seed-v3-unit-x3_5)"
+      },
+      "count": {
+        "fontSize": "var(--seed-v3-font-size-t4)"
       }
     }
   },

@@ -1,5 +1,11 @@
 # @seed-design/react-tabs
 
+## 0.0.0-alpha-20241209060641
+
+### Patch Changes
+
+- tabs 스와이프 관련 이벤트 추가
+
 ## 0.0.0-alpha-20241204061301
 
 ### Patch Changes

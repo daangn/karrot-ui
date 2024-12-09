@@ -1,0 +1,1 @@
+export declare const linear = "var(--seed-v3-timing-function-linear)";

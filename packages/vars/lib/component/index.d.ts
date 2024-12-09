@@ -12,6 +12,7 @@ export { vars as expandButton } from "./expand-button";
 export { vars as fab } from "./fab";
 export { vars as helpBubble } from "./help-bubble";
 export { vars as inlineBanner } from "./inline-banner";
+export { vars as progressCircle } from "./progress-circle";
 export { vars as radio } from "./radio";
 export { vars as segmentedControl } from "./segmented-control";
 export { vars as selectBox } from "./select-box";
