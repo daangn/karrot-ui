@@ -1,23 +1,23 @@
 export type Vector2 = [number, number];
 
-export interface UseTabsStateProps {
-  value?: string;
-  defaultValue?: string;
-  onValueChange?: (value: string) => void;
-}
-
-export interface UseTabsProps extends UseTabsStateProps {
+export interface UseSwipeableStateProps {
   /**
    * tab swipe 기능 활성화 여부
    * @default false
    */
   isSwipeable?: boolean;
 
-  /**
-   * @default "horizontal"
-   */
-  orientation?: "horizontal" | "vertical";
+  onSwipeStart?: () => void;
+  onSwipeEnd?: () => void;
+}
 
+export interface UseTabsStateProps {
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+}
+
+export interface UseTabsProps extends UseTabsStateProps, UseSwipeableStateProps {
   swipeConfig?: {
     /**
      * @default 0.3

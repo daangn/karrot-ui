@@ -31,6 +31,8 @@ interface TabsContextValue {
 
   layout: "fill" | "hug";
   size: "small" | "medium";
+  onSwipeStart?: () => void;
+  onSwipeEnd?: () => void;
 }
 
 const TabsContext = React.createContext<TabsContextValue | null>(null);
@@ -44,8 +46,8 @@ const useTabsContext = () => {
 };
 
 export interface TabsProps
-  extends Assign<React.HTMLAttributes<HTMLDivElement>, UseTabsProps>,
-    Omit<UseLazyContentsProps, "currentValue"> {
+  extends Omit<UseLazyContentsProps, "currentValue">,
+    UseTabsProps {
   /**
    * @default "hug"
    */
@@ -62,7 +64,12 @@ export interface TabsProps
   fixTriggerList?: boolean;
 }
 
-export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
+interface ReactTabsProps
+  extends Assign<React.HTMLAttributes<HTMLDivElement>, UseTabsProps>,
+    Omit<UseLazyContentsProps, "currentValue">,
+    TabsProps {}
+
+export const Tabs = React.forwardRef<HTMLDivElement, ReactTabsProps>(
   (props, ref) => {
     const {
       className,
@@ -72,6 +79,8 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       layout = "hug",
       size = "small",
       fixTriggerList = false,
+      onSwipeStart,
+      onSwipeEnd,
     } = props;
     const useTabsProps = useTabs(props);
     const classNames = tabs({
@@ -104,6 +113,8 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
             shouldRender,
             isSwipeable,
             layout,
+            onSwipeStart,
+            onSwipeEnd,
           }}
         >
           {props.children}
@@ -150,15 +161,27 @@ export const TabTriggerList = React.forwardRef<
 });
 TabTriggerList.displayName = "TabTriggerList";
 
-export interface TabTriggerProps
-  extends Assign<React.HTMLAttributes<HTMLButtonElement>, TriggerProps> {
+export interface TabTriggerProps extends TriggerProps {
   /**
    * @default false
    */
   alert?: boolean;
+
+  isDisabled?: boolean;
+
+  value: string;
 }
 
-export const TabTrigger = React.forwardRef<HTMLButtonElement, TabTriggerProps>(
+interface ReactTabTriggerProps
+  extends Assign<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    TabTriggerProps
+  > {}
+
+export const TabTrigger = React.forwardRef<
+  HTMLButtonElement,
+  ReactTabTriggerProps
+>(
   (
     { className, children, value, isDisabled, alert = false, ...otherProps },
     ref,
@@ -195,7 +218,8 @@ export const TabContentList = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...otherProps }, ref) => {
-  const { api, classNames, isSwipeable } = useTabsContext();
+  const { api, classNames, isSwipeable, onSwipeStart, onSwipeEnd } =
+    useTabsContext();
   const {
     tabContentListProps,
     tabContentCameraProps,
@@ -209,6 +233,8 @@ export const TabContentList = React.forwardRef<
     isSwipeable,
     onSwipeLeftToRight: movePrev,
     onSwipeRightToLeft: moveNext,
+    onSwipeStart,
+    onSwipeEnd,
   });
 
   const getCameraTranslateX = () => {
