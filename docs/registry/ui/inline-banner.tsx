@@ -9,6 +9,14 @@ import {
   inlineBanner,
   type InlineBannerVariantProps,
 } from "@seed-design/recipe/inlineBanner";
+import {
+  useDismissible,
+  type DismissibleProps,
+} from "@seed-design/react-dismissible";
+import {
+  IconChevronRightLine,
+  IconXmarkLine,
+} from "@daangn/react-monochrome-icon";
 
 const InlineBannerContext = React.createContext<{
   variantProps: InlineBannerVariantProps;
@@ -108,12 +116,9 @@ export interface InlineBannerProps extends InlineBannerVariantProps {
   suffix?: React.ReactNode;
 }
 
-type ReactInlineBannerProps = React.HTMLAttributes<HTMLDivElement> &
-  InlineBannerProps;
-
 export const InlineBanner = React.forwardRef<
   HTMLDivElement,
-  ReactInlineBannerProps
+  React.HTMLAttributes<HTMLDivElement> & InlineBannerProps
 >(
   (
     {
@@ -146,3 +151,119 @@ export const InlineBanner = React.forwardRef<
   },
 );
 InlineBanner.displayName = "InlineBanner";
+
+export interface DismissibleInlineBannerProps
+  extends DismissibleProps,
+    InlineBannerVariantProps {
+  variant?: Exclude<
+    InlineBannerVariantProps["variant"],
+    "dangerWeak" | "dangerSolid"
+  >;
+  icon?: React.ReactNode;
+  dismissAriaLabel: string;
+}
+
+export const DismissibleInlineBanner = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & DismissibleInlineBannerProps
+>(
+  (
+    {
+      children,
+      className,
+      variant = "neutralWeak",
+      icon,
+      defaultOpen,
+      isOpen: isPropOpen,
+      onDismiss,
+      dismissAriaLabel,
+      ...otherProps
+    },
+    ref,
+  ) => {
+    const classNames = inlineBanner({ variant });
+
+    const { isOpen, onDismissButtonClick } = useDismissible({
+      defaultOpen,
+      isOpen: isPropOpen,
+      onDismiss,
+    });
+
+    if (!isOpen) return null;
+
+    return (
+      <div
+        ref={ref}
+        className={clsx(classNames.root, className)}
+        {...otherProps}
+      >
+        <div className={classNames.content}>
+          {icon && <Slot className={classNames.icon}>{icon}</Slot>}
+          <div>
+            <InlineBannerContext.Provider value={{ variantProps: { variant } }}>
+              {children}
+            </InlineBannerContext.Provider>
+          </div>
+        </div>
+        <button
+          type="button"
+          aria-label={dismissAriaLabel}
+          className={classNames.dismissButton}
+          onClick={onDismissButtonClick}
+        >
+          <IconXmarkLine className={classNames.dismissIcon} />
+        </button>
+      </div>
+    );
+  },
+);
+DismissibleInlineBanner.displayName = "DismissibleInlineBanner";
+
+export interface ActionableInlineBannerProps extends InlineBannerVariantProps {
+  icon?: React.ReactNode;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export const ActionableInlineBanner = React.forwardRef<
+  HTMLButtonElement,
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > &
+    ActionableInlineBannerProps
+>(
+  (
+    {
+      children,
+      className,
+      type = "button",
+      variant = "neutralWeak",
+      icon,
+      onClick,
+      ...otherProps
+    },
+    ref,
+  ) => {
+    const classNames = inlineBanner({ variant });
+    return (
+      <button
+        onClick={onClick}
+        ref={ref}
+        className={clsx(classNames.root, className)}
+        type={type}
+        {...otherProps}
+      >
+        <div className={classNames.content}>
+          {icon && <Slot className={classNames.icon}>{icon}</Slot>}
+          <div>
+            <InlineBannerContext.Provider value={{ variantProps: { variant } }}>
+              {children}
+            </InlineBannerContext.Provider>
+          </div>
+        </div>
+        <IconChevronRightLine className={classNames.actionableIcon} />
+      </button>
+    );
+  },
+);
+ActionableInlineBanner.displayName = "ActionableInlineBanner";

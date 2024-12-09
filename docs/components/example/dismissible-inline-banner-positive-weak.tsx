@@ -1,7 +1,4 @@
-import {
-  DismissibleInlineBanner,
-  DismissibleInlineBannerDescription,
-} from "seed-design/ui/dismissible-inline-banner";
+import { DismissibleInlineBanner, InlineBannerDescription } from "seed-design/ui/inline-banner";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
 
 export default function DismissibleInlineBannerPositiveWeak() {
@@ -11,9 +8,7 @@ export default function DismissibleInlineBannerPositiveWeak() {
       variant="positiveWeak"
       icon={<IconExclamationmarkCircleFill />}
     >
-      <DismissibleInlineBannerDescription>
-        사업자 정보를 등록해주세요.
-      </DismissibleInlineBannerDescription>
+      <InlineBannerDescription>사업자 정보를 등록해주세요.</InlineBannerDescription>
     </DismissibleInlineBanner>
   );
 }

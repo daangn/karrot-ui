@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { SelectBoxRadio, SelectBoxRadioGroup } from "seed-design/ui/select-box-radio-group";
+import { SelectBoxRadio, SelectBoxRadioGroup } from "@/registry/ui/select-box-group";
 import { selectBoxVariantMap } from "@seed-design/recipe/selectBox";
 
 import { SeedThemeDecorator } from "./components/decorator";

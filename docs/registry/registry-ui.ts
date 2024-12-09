@@ -23,21 +23,12 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "callout",
-    dependencies: ["@radix-ui/react-slot"],
-    files: ["ui:callout.tsx"],
-  },
-  {
-    name: "dismissible-callout",
     dependencies: [
+      "@radix-ui/react-slot",
       "@seed-design/react-dismissible",
       "@daangn/react-monochrome-icon",
     ],
-    files: ["ui:dismissible-callout.tsx"],
-  },
-  {
-    name: "actionable-callout",
-    dependencies: ["@daangn/react-monochrome-icon"],
-    files: ["ui:actionable-callout.tsx"],
+    files: ["ui:callout.tsx"],
   },
   {
     name: "control-chip",
@@ -55,22 +46,12 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "inline-banner",
-    dependencies: ["@radix-ui/react-slot"],
-    files: ["ui:inline-banner.tsx"],
-  },
-  {
-    name: "dismissible-inline-banner",
     dependencies: [
+      "@radix-ui/react-slot",
       "@seed-design/react-dismissible",
       "@daangn/react-monochrome-icon",
-      "@radix-ui/react-slot",
     ],
-    files: ["ui:dismissible-inline-banner.tsx"],
-  },
-  {
-    name: "actionable-inline-banner",
-    dependencies: ["@daangn/react-monochrome-icon", "@radix-ui/react-slot"],
-    files: ["ui:actionable-inline-banner.tsx"],
+    files: ["ui:inline-banner.tsx"],
   },
   {
     name: "tabs",
@@ -90,17 +71,13 @@ export const registryUI: RegistryUI = [
     files: ["ui:expand-button.tsx"],
   },
   {
-    name: "select-box-check-group",
+    name: "select-box-group",
     dependencies: [
       "@seed-design/react-checkbox",
+      "@seed-design/react-radio-group",
       "@daangn/react-monochrome-icon",
     ],
-    files: ["ui:select-box-check-group.tsx"],
-  },
-  {
-    name: "select-box-radio-group",
-    dependencies: ["@seed-design/react-radio-group"],
-    files: ["ui:select-box-radio-group.tsx"],
+    files: ["ui:select-box-group.tsx"],
   },
   {
     name: "segmented-control",

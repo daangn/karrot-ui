@@ -1,20 +1,14 @@
 "use client";
 
-import {
-  DismissibleCallout,
-  DismissibleCalloutDescription,
-  DismissibleCalloutLink,
-} from "seed-design/ui/dismissible-callout";
+import { DismissibleCallout, CalloutDescription, CalloutLink } from "seed-design/ui/callout";
 
 export default function DismissibleCalloutWithLink() {
   return (
     <DismissibleCallout dismissAriaLabel="닫기" variant="magic">
-      <DismissibleCalloutDescription>
+      <CalloutDescription>
         Aliquip laboris excepteur enim sunt eiusmod laboris anim.
-      </DismissibleCalloutDescription>
-      <DismissibleCalloutLink onClick={() => window.alert("Hello World")}>
-        시도해 보기
-      </DismissibleCalloutLink>
+      </CalloutDescription>
+      <CalloutLink onClick={() => window.alert("Hello World")}>시도해 보기</CalloutLink>
     </DismissibleCallout>
   );
 }

@@ -6,6 +6,14 @@ import * as React from "react";
 import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
 import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
+import {
+  useDismissible,
+  type DismissibleProps,
+} from "@seed-design/react-dismissible";
+import {
+  IconChevronRightFill,
+  IconXmarkFill,
+} from "@daangn/react-monochrome-icon";
 
 const CalloutContext = React.createContext<{
   variantProps: CalloutVariantProps;
@@ -112,11 +120,59 @@ export interface CalloutProps extends Omit<CalloutVariantProps, "type"> {
   icon?: React.ReactNode;
 }
 
-type ReactCalloutProps = React.HTMLAttributes<HTMLDivElement> & CalloutProps;
+export const Callout = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & CalloutProps
+>(({ children, className, variant = "neutral", icon, ...otherProps }, ref) => {
+  const classNames = callout({ variant });
 
-export const Callout = React.forwardRef<HTMLDivElement, ReactCalloutProps>(
-  ({ children, className, variant = "neutral", icon, ...otherProps }, ref) => {
+  return (
+    <div ref={ref} className={clsx(classNames.root, className)} {...otherProps}>
+      <div className={classNames.content}>
+        {icon && <Slot className={classNames.icon}>{icon}</Slot>}
+        <div>
+          <CalloutContext.Provider value={{ variantProps: { variant } }}>
+            {children}
+          </CalloutContext.Provider>
+        </div>
+      </div>
+    </div>
+  );
+});
+Callout.displayName = "Callout";
+
+export interface DismissibleCalloutProps
+  extends DismissibleProps,
+    CalloutVariantProps {
+  dismissAriaLabel: string;
+}
+
+export const DismissibleCallout = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & DismissibleCalloutProps
+>(
+  (
+    {
+      children,
+      className,
+      variant = "neutral",
+      defaultOpen,
+      isOpen: isPropOpen,
+      onDismiss,
+      dismissAriaLabel,
+      ...otherProps
+    },
+    ref,
+  ) => {
     const classNames = callout({ variant });
+
+    const { isOpen, onDismissButtonClick } = useDismissible({
+      defaultOpen,
+      isOpen: isPropOpen,
+      onDismiss,
+    });
+
+    if (!isOpen) return null;
 
     return (
       <div
@@ -125,15 +181,69 @@ export const Callout = React.forwardRef<HTMLDivElement, ReactCalloutProps>(
         {...otherProps}
       >
         <div className={classNames.content}>
-          {icon && <Slot className={classNames.icon}>{icon}</Slot>}
           <div>
             <CalloutContext.Provider value={{ variantProps: { variant } }}>
               {children}
             </CalloutContext.Provider>
           </div>
         </div>
+        <button
+          type="button"
+          aria-label={dismissAriaLabel}
+          className={classNames.dismissButton}
+          onClick={onDismissButtonClick}
+        >
+          <IconXmarkFill className={classNames.dismissIcon} />
+        </button>
       </div>
     );
   },
 );
-Callout.displayName = "Callout";
+DismissibleCallout.displayName = "DismissibleCallout";
+
+export interface ActionableCalloutProps extends CalloutVariantProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export const ActionableCallout = React.forwardRef<
+  HTMLButtonElement,
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > &
+    ActionableCalloutProps
+>(
+  (
+    {
+      children,
+      className,
+      type = "button",
+      variant = "neutral",
+      onClick,
+      ...otherProps
+    },
+    ref,
+  ) => {
+    const classNames = callout({ variant });
+
+    return (
+      <button
+        onClick={onClick}
+        ref={ref}
+        className={clsx(classNames.root, className)}
+        type={type}
+        {...otherProps}
+      >
+        <div className={classNames.content}>
+          <div>
+            <CalloutContext.Provider value={{ variantProps: { variant } }}>
+              {children}
+            </CalloutContext.Provider>
+          </div>
+        </div>
+        <IconChevronRightFill className={classNames.actionableIcon} />
+      </button>
+    );
+  },
+);
+ActionableCallout.displayName = "ActionableCallout";

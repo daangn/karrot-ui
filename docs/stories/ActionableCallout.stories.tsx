@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import {
-  ActionableCallout,
-  ActionableCalloutDescription,
-  ActionableCalloutTitle,
-} from "seed-design/ui/actionable-callout";
+import { ActionableCallout, CalloutDescription, CalloutTitle } from "seed-design/ui/callout";
 
 import { calloutVariantMap } from "@seed-design/recipe/callout";
 import { VariantTable } from "./components/variant-table";
@@ -23,10 +19,10 @@ const CommonStoryTemplate: Story = {
   args: {
     children: (
       <>
-        <ActionableCalloutTitle>새로운 기능</ActionableCalloutTitle>
-        <ActionableCalloutDescription>
+        <CalloutTitle>새로운 기능</CalloutTitle>
+        <CalloutDescription>
           Magna id laboris excepteur tempor duis duis voluptate voluptate non.
-        </ActionableCalloutDescription>
+        </CalloutDescription>
       </>
     ),
     onClick: () => {},

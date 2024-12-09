@@ -1,18 +1,14 @@
 "use client";
 
-import {
-  ActionableCallout,
-  ActionableCalloutDescription,
-  ActionableCalloutTitle,
-} from "seed-design/ui/actionable-callout";
+import { ActionableCallout, CalloutDescription, CalloutTitle } from "seed-design/ui/callout";
 
 export default function ActionableCalloutWithTitleText() {
   return (
     <ActionableCallout onClick={() => window.alert("Hello World")} variant="magic">
-      <ActionableCalloutTitle>새로운 기능</ActionableCalloutTitle>
-      <ActionableCalloutDescription>
+      <CalloutTitle>새로운 기능</CalloutTitle>
+      <CalloutDescription>
         Aliquip laboris excepteur enim sunt eiusmod laboris anim.
-      </ActionableCalloutDescription>
+      </CalloutDescription>
     </ActionableCallout>
   );
 }
