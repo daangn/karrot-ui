@@ -1,23 +1,39 @@
 [
   {
     "name": "alert-dialog",
-    "innerDependencies": ["action-button"],
-    "files": ["ui:alert-dialog.tsx"]
+    "innerDependencies": [
+      "action-button"
+    ],
+    "files": [
+      "ui:alert-dialog.tsx"
+    ]
   },
   {
     "name": "action-button",
-    "dependencies": ["@radix-ui/react-slot"],
-    "files": ["ui:action-button.tsx"]
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ],
+    "files": [
+      "ui:action-button.tsx"
+    ]
   },
   {
     "name": "action-chip",
-    "dependencies": ["@radix-ui/react-slot"],
-    "files": ["ui:action-chip.tsx"]
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ],
+    "files": [
+      "ui:action-chip.tsx"
+    ]
   },
   {
     "name": "badge",
-    "dependencies": ["@radix-ui/react-slot"],
-    "files": ["ui:badge.tsx"]
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ],
+    "files": [
+      "ui:badge.tsx"
+    ]
   },
   {
     "name": "callout",
@@ -26,17 +42,28 @@
       "@seed-design/react-dismissible",
       "@daangn/react-monochrome-icon"
     ],
-    "files": ["ui:callout.tsx"]
+    "files": [
+      "ui:callout.tsx"
+    ]
   },
   {
     "name": "control-chip",
-    "dependencies": ["@radix-ui/react-slot"],
-    "files": ["ui:control-chip.tsx"]
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ],
+    "files": [
+      "ui:control-chip.tsx"
+    ]
   },
   {
     "name": "checkbox",
-    "dependencies": ["@seed-design/react-checkbox@alpha", "@daangn/react-monochrome-icon"],
-    "files": ["ui:checkbox.tsx"]
+    "dependencies": [
+      "@seed-design/react-checkbox@alpha",
+      "@daangn/react-monochrome-icon"
+    ],
+    "files": [
+      "ui:checkbox.tsx"
+    ]
   },
   {
     "name": "inline-banner",
@@ -45,27 +72,45 @@
       "@seed-design/react-dismissible",
       "@daangn/react-monochrome-icon"
     ],
-    "files": ["ui:inline-banner.tsx"]
+    "files": [
+      "ui:inline-banner.tsx"
+    ]
   },
   {
     "name": "tabs",
-    "dependencies": ["@seed-design/react-tabs@alpha"],
-    "files": ["ui:tabs.tsx"]
+    "dependencies": [
+      "@seed-design/react-tabs@alpha"
+    ],
+    "files": [
+      "ui:tabs.tsx"
+    ]
   },
   {
     "name": "chip-tabs",
-    "dependencies": ["@seed-design/react-tabs@alpha"],
-    "files": ["ui:chip-tabs.tsx"]
+    "dependencies": [
+      "@seed-design/react-tabs@alpha"
+    ],
+    "files": [
+      "ui:chip-tabs.tsx"
+    ]
   },
   {
     "name": "expand-button",
-    "dependencies": ["@radix-ui/react-slot"],
-    "files": ["ui:expand-button.tsx"]
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ],
+    "files": [
+      "ui:expand-button.tsx"
+    ]
   },
   {
     "name": "progress-circle",
-    "dependencies": ["@seed-design/react-progress"],
-    "files": ["ui:progress-circle.tsx"]
+    "dependencies": [
+      "@seed-design/react-progress"
+    ],
+    "files": [
+      "ui:progress-circle.tsx"
+    ]
   },
   {
     "name": "select-box-group",
@@ -74,21 +119,35 @@
       "@seed-design/react-radio-group",
       "@daangn/react-monochrome-icon"
     ],
-    "files": ["ui:select-box-group.tsx"]
+    "files": [
+      "ui:select-box-group.tsx"
+    ]
   },
   {
     "name": "segmented-control",
-    "dependencies": ["@seed-design/react-segmented-control"],
-    "files": ["ui:segmented-control.tsx"]
+    "dependencies": [
+      "@seed-design/react-segmented-control"
+    ],
+    "files": [
+      "ui:segmented-control.tsx"
+    ]
   },
   {
     "name": "switch",
-    "dependencies": ["@seed-design/react-switch@alpha"],
-    "files": ["ui:switch.tsx"]
+    "dependencies": [
+      "@seed-design/react-switch@alpha"
+    ],
+    "files": [
+      "ui:switch.tsx"
+    ]
   },
   {
     "name": "text-button",
-    "dependencies": ["@radix-ui/react-slot"],
-    "files": ["ui:text-button.tsx"]
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ],
+    "files": [
+      "ui:text-button.tsx"
+    ]
   }
 ]

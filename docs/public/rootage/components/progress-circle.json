@@ -72,17 +72,17 @@
         }
       }
     },
-    "variant=neutral": {
+    "tone=neutral": {
       "enabled": {
         "track": {
-          "color": "$color.palette.gray-300"
+          "color": "$color.palette.gray-200"
         },
         "range": {
-          "color": "$color.palette.gray-600"
+          "color": "$color.palette.gray-500"
         }
       }
     },
-    "variant=brand": {
+    "tone=brand": {
       "enabled": {
         "track": {
           "color": "$color.palette.carrot-200"
@@ -92,10 +92,10 @@
         }
       }
     },
-    "variant=static white": {
+    "tone=static white": {
       "enabled": {
         "track": {
-          "color": "$color.palette.gray-600"
+          "color": "$color.palette.static-white-alpha-200"
         },
         "range": {
           "color": "$color.bg.static-white"
