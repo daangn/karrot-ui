@@ -85,6 +85,12 @@
     },
     {
       "path": "/unit.json"
+    },
+    {
+      "path": "/duration.json"
+    },
+    {
+      "path": "/timing-function.json"
     }
   ]
 }
