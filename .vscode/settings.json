@@ -19,4 +19,5 @@
   "auto-close-tag.activationOnLanguage": [
     "mdx"
   ],
+  "files.eol": "\n",
 }

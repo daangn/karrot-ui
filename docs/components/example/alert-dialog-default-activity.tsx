@@ -1,11 +1,7 @@
 import * as React from "react";
 
 import { AppScreen } from "@stackflow/plugin-basic-ui";
-import {
-  type ActivityComponentType,
-  useStepFlow,
-  useStack,
-} from "@stackflow/react/future";
+import { type ActivityComponentType, useStepFlow, useStack } from "@stackflow/react/future";
 
 import { ActionButton } from "seed-design/ui/action-button";
 import { AlertDialog as UIAlertDialog } from "seed-design/ui/alert-dialog";
@@ -18,9 +14,7 @@ declare module "@stackflow/config" {
   }
 }
 
-const AlertDialogDefaultActivity: ActivityComponentType<
-  "AlertDialogDefault"
-> = ({ params }) => {
+const AlertDialogDefaultActivity: ActivityComponentType<"AlertDialogDefault"> = ({ params }) => {
   const { alert } = params;
   const stack = useStack();
   const { pushStep, popStep } = useStepFlow("AlertDialogDefault");

@@ -12,6 +12,7 @@
     "ignore": ["package.json", "**/archive/**/*"],
     "enabled": true,
     "indentStyle": "space",
+    "lineEnding": "lf",
     "lineWidth": 100
   },
   "linter": {

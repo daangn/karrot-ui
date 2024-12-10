@@ -1,10 +1,4 @@
-import {
-  Tabs,
-  TabContent,
-  TabContentList,
-  TabTrigger,
-  TabTriggerList,
-} from "seed-design/ui/tabs";
+import { Tabs, TabContent, TabContentList, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
 
 export default function TabsLayoutFill() {
   return (
