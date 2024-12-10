@@ -11,6 +11,12 @@
 }
 
 :root[data-seed] {
+  --seed-v3-duration-s1: 50ms;
+  --seed-v3-duration-s2: 100ms;
+  --seed-v3-duration-s3: 150ms;
+  --seed-v3-duration-s4: 200ms;
+  --seed-v3-duration-s5: 250ms;
+  --seed-v3-duration-s6: 300ms;
   --seed-v3-font-size-s1: 0.6875rem;
   --seed-v3-font-size-s2: 0.75rem;
   --seed-v3-font-size-s3: 0.8125rem;
@@ -46,6 +52,11 @@
   --seed-v3-radius-s6: 24px;
   --seed-v3-radius-full: 9999px;
   --seed-v3-timing-function-linear: cubic-bezier(0, 0, 1, 1);
+  --seed-v3-timing-function-easing: cubic-bezier(0.35, 0, 0.35, 1);
+  --seed-v3-timing-function-enter: cubic-bezier(0, 0, 0.15, 1);
+  --seed-v3-timing-function-exit: cubic-bezier(0.35, 0, 1, 1);
+  --seed-v3-timing-function-enter-expressive: cubic-bezier(0.03, 0.4, 0.1, 1);
+  --seed-v3-timing-function-exit-expressive: cubic-bezier(0.35, 0, 0.95, 0.55);
   --seed-v3-unit-x0_5: 2px;
   --seed-v3-unit-s1: 4px;
   --seed-v3-unit-s1_5: 6px;
