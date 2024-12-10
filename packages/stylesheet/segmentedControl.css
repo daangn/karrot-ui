@@ -2,7 +2,7 @@
     display: grid;
     min-width: fit-content;
     max-width: 100%;
-    padding: var(--seed-v3-unit-x1);
+    padding: var(--seed-v3-unit-s1);
     position: relative;
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
@@ -21,12 +21,12 @@
 .segmentedControl__segment {
     position: relative;
     min-width: 86px;
-    height: var(--seed-v3-unit-x8);
+    height: var(--seed-v3-unit-s8);
     z-index: 10;
     border-radius: var(--seed-v3-radius-full);
     overflow: hidden;
     user-select: none;
-    line-height: var(--seed-v3-line-height-t5);
+    line-height: var(--seed-v3-line-height-s5);
 }
 .segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
@@ -39,10 +39,10 @@
     inset-inline: 0;
     transform: translateY(-50%);
     inset-block-start: 50%;
-    padding-inline: calc(var(--seed-v3-unit-x4) - 1px);
+    padding-inline: calc(var(--seed-v3-unit-s4) - 1px);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-medium);
-    font-size: var(--seed-v3-font-size-t5);
+    font-size: var(--seed-v3-font-size-s5);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -56,10 +56,10 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .segmentedControl__segmentLabelPlaceholder {
-    padding-inline: var(--seed-v3-unit-x4);
+    padding-inline: var(--seed-v3-unit-s4);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);
-    font-size: var(--seed-v3-font-size-t5);
+    font-size: var(--seed-v3-font-size-s5);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -67,7 +67,7 @@
 }
 .segmentedControl__indicator {
     position: absolute;
-    inset-block: var(--seed-v3-unit-x1);
+    inset-block: var(--seed-v3-unit-s1);
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-layer-default);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 5%);

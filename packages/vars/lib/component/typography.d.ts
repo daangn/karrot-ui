@@ -2,8 +2,8 @@ export declare const vars: {
   "typeLabelSmallDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t1)",
-        "lineHeight": "var(--seed-v3-line-height-t1)",
+        "fontSize": "var(--seed-v3-font-size-s1)",
+        "lineHeight": "var(--seed-v3-line-height-s1)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -11,8 +11,8 @@ export declare const vars: {
   "typeLabelSmallStrong": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t1)",
-        "lineHeight": "var(--seed-v3-line-height-t1)",
+        "fontSize": "var(--seed-v3-font-size-s1)",
+        "lineHeight": "var(--seed-v3-line-height-s1)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
@@ -20,8 +20,8 @@ export declare const vars: {
   "typeLabelSmallStronger": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t1)",
-        "lineHeight": "var(--seed-v3-line-height-t1)",
+        "fontSize": "var(--seed-v3-font-size-s1)",
+        "lineHeight": "var(--seed-v3-line-height-s1)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -29,8 +29,8 @@ export declare const vars: {
   "typeLabelMediumDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t2)",
-        "lineHeight": "var(--seed-v3-line-height-t2)",
+        "fontSize": "var(--seed-v3-font-size-s2)",
+        "lineHeight": "var(--seed-v3-line-height-s2)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -38,8 +38,8 @@ export declare const vars: {
   "typeLabelMediumStrong": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t2)",
-        "lineHeight": "var(--seed-v3-line-height-t2)",
+        "fontSize": "var(--seed-v3-font-size-s2)",
+        "lineHeight": "var(--seed-v3-line-height-s2)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
@@ -47,8 +47,8 @@ export declare const vars: {
   "typeLabelMediumStronger": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t2)",
-        "lineHeight": "var(--seed-v3-line-height-t2)",
+        "fontSize": "var(--seed-v3-font-size-s2)",
+        "lineHeight": "var(--seed-v3-line-height-s2)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -56,8 +56,8 @@ export declare const vars: {
   "typeLabelLargeDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t3)",
-        "lineHeight": "var(--seed-v3-line-height-t3)",
+        "fontSize": "var(--seed-v3-font-size-s3)",
+        "lineHeight": "var(--seed-v3-line-height-s3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -65,8 +65,8 @@ export declare const vars: {
   "typeLabelLargeStrong": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t3)",
-        "lineHeight": "var(--seed-v3-line-height-t3)",
+        "fontSize": "var(--seed-v3-font-size-s3)",
+        "lineHeight": "var(--seed-v3-line-height-s3)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
@@ -74,8 +74,8 @@ export declare const vars: {
   "typeLabelLargeStronger": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t3)",
-        "lineHeight": "var(--seed-v3-line-height-t3)",
+        "fontSize": "var(--seed-v3-font-size-s3)",
+        "lineHeight": "var(--seed-v3-line-height-s3)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -83,8 +83,8 @@ export declare const vars: {
   "typeBodySmallDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)",
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -92,8 +92,8 @@ export declare const vars: {
   "typeBodySmallReadingDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t5)",
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s5)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -101,8 +101,8 @@ export declare const vars: {
   "typeBodySmallStrong": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)",
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
@@ -110,8 +110,8 @@ export declare const vars: {
   "typeBodySmallStronger": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)",
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -119,8 +119,8 @@ export declare const vars: {
   "typeBodyMediumDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t5)",
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -128,8 +128,8 @@ export declare const vars: {
   "typeBodyMediumReadingDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t6)",
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s6)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
@@ -137,8 +137,8 @@ export declare const vars: {
   "typeBodyMediumStrong": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t5)",
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
@@ -146,8 +146,8 @@ export declare const vars: {
   "typeBodyMediumStronger": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t5)",
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -155,8 +155,8 @@ export declare const vars: {
   "typeTitleSmallDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t5)",
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -164,8 +164,8 @@ export declare const vars: {
   "typeTitleMediumDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t6)",
-        "lineHeight": "var(--seed-v3-line-height-t6)",
+        "fontSize": "var(--seed-v3-font-size-s6)",
+        "lineHeight": "var(--seed-v3-line-height-s6)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -173,8 +173,8 @@ export declare const vars: {
   "typeTitleLargeDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t7)",
-        "lineHeight": "var(--seed-v3-line-height-t7)",
+        "fontSize": "var(--seed-v3-font-size-s7)",
+        "lineHeight": "var(--seed-v3-line-height-s7)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -182,8 +182,8 @@ export declare const vars: {
   "typeHeadingSmallDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t8)",
-        "lineHeight": "var(--seed-v3-line-height-t8)",
+        "fontSize": "var(--seed-v3-font-size-s8)",
+        "lineHeight": "var(--seed-v3-line-height-s8)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -191,8 +191,8 @@ export declare const vars: {
   "typeHeadingMediumDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t9)",
-        "lineHeight": "var(--seed-v3-line-height-t9)",
+        "fontSize": "var(--seed-v3-font-size-s9)",
+        "lineHeight": "var(--seed-v3-line-height-s9)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -200,8 +200,8 @@ export declare const vars: {
   "typeHeadingLargeDefault": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-t10)",
-        "lineHeight": "var(--seed-v3-line-height-t10)",
+        "fontSize": "var(--seed-v3-font-size-s10)",
+        "lineHeight": "var(--seed-v3-line-height-s10)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }

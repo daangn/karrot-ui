@@ -12,47 +12,47 @@
           "default": "2px"
         }
       },
-      "$radius.x1": {
+      "$radius.s1": {
         "values": {
           "default": "4px"
         }
       },
-      "$radius.x1_5": {
+      "$radius.s1_5": {
         "values": {
           "default": "6px"
         }
       },
-      "$radius.x2": {
+      "$radius.s2": {
         "values": {
           "default": "8px"
         }
       },
-      "$radius.x2_5": {
+      "$radius.s2_5": {
         "values": {
           "default": "10px"
         }
       },
-      "$radius.x3": {
+      "$radius.s3": {
         "values": {
           "default": "12px"
         }
       },
-      "$radius.x3_5": {
+      "$radius.s3_5": {
         "values": {
           "default": "14px"
         }
       },
-      "$radius.x4": {
+      "$radius.s4": {
         "values": {
           "default": "16px"
         }
       },
-      "$radius.x5": {
+      "$radius.s5": {
         "values": {
           "default": "20px"
         }
       },
-      "$radius.x6": {
+      "$radius.s6": {
         "values": {
           "default": "24px"
         }

@@ -2,18 +2,18 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-x1)",
-        "paddingXStart": "var(--seed-v3-unit-x4)",
-        "paddingXEnd": "var(--seed-v3-unit-x1)"
+        "gap": "var(--seed-v3-unit-s1)",
+        "paddingXStart": "var(--seed-v3-unit-s4)",
+        "paddingXEnd": "var(--seed-v3-unit-s1)"
       },
       "content": {
-        "gap": "var(--seed-v3-unit-x2)",
+        "gap": "var(--seed-v3-unit-s2)",
         "paddingY": "10.5px",
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)"
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-x4)",
+        "size": "var(--seed-v3-unit-s4)",
         "marginY": "1.5px"
       },
       "title": {
@@ -23,28 +23,28 @@ export declare const vars: {
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
       "linkLabel": {
-        "size": "var(--seed-v3-unit-x10)",
-        "paddingX": "var(--seed-v3-unit-x3)",
+        "size": "var(--seed-v3-unit-s10)",
+        "paddingX": "var(--seed-v3-unit-s3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
-        "fontSize": "var(--seed-v3-font-size-t2)",
-        "lineHeight": "var(--seed-v3-line-height-t2)"
+        "fontSize": "var(--seed-v3-font-size-s2)",
+        "lineHeight": "var(--seed-v3-line-height-s2)"
       },
       "dismissButton": {
-        "size": "var(--seed-v3-unit-x10)"
+        "size": "var(--seed-v3-unit-s10)"
       },
       "dismissIcon": {
-        "size": "var(--seed-v3-unit-x4)"
+        "size": "var(--seed-v3-unit-s4)"
       },
       "actionableIcon": {
-        "size": "var(--seed-v3-unit-x4)",
-        "margin": "var(--seed-v3-unit-x3)"
+        "size": "var(--seed-v3-unit-s4)",
+        "margin": "var(--seed-v3-unit-s3)"
       }
     }
   },
   "typeContentOnly": {
     "enabled": {
       "content": {
-        "paddingXEnd": "var(--seed-v3-unit-x3)"
+        "paddingXEnd": "var(--seed-v3-unit-s3)"
       }
     }
   },

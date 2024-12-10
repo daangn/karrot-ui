@@ -2,15 +2,15 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-x3)"
+        "gap": "var(--seed-v3-unit-s3)"
       },
       "box": {
-        "paddingX": "var(--seed-v3-unit-x4)",
+        "paddingX": "var(--seed-v3-unit-s4)",
         "paddingY": "19px",
-        "gap": "var(--seed-v3-unit-x2_5)",
+        "gap": "var(--seed-v3-unit-s2_5)",
         "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-neutral)",
-        "cornerRadius": "var(--seed-v3-radius-x3)"
+        "cornerRadius": "var(--seed-v3-radius-s3)"
       },
       "content": {
         "gap": "var(--seed-v3-unit-x0_5)"
@@ -18,14 +18,14 @@ export declare const vars: {
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)",
         "fontWeight": "var(--seed-v3-font-weight-bold)",
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t5)"
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)"
       },
       "description": {
         "color": "var(--seed-v3-color-fg-neutral-muted)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)"
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "control": {
         "marginY": "0"

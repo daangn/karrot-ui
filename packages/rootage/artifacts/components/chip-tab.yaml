@@ -7,12 +7,12 @@ data:
   base:
     enabled:
       root:
-        paddingX: $unit.x3_5
-        paddingY: $unit.x2
+        paddingX: $unit.s3_5
+        paddingY: $unit.s2
         cornerRadius: $radius.full
         minHeight: 36px
       label:
-        fontSize: $font-size.t4
+        fontSize: $font-size.s4
         fontWeight: $font-weight.bold
   variant=neutral solid:
     enabled:

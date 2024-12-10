@@ -8,63 +8,63 @@ data:
     $unit.x0_5:
       values:
         default: 2px
-    $unit.x1:
+    $unit.s1:
       values:
         default: 4px
-    $unit.x1_5:
+    $unit.s1_5:
       values:
         default: 6px
-    $unit.x2:
+    $unit.s2:
       values:
         default: 8px
-    $unit.x2_5:
+    $unit.s2_5:
       values:
         default: 10px
-    $unit.x3:
+    $unit.s3:
       values:
         default: 12px
-    $unit.x3_5:
+    $unit.s3_5:
       values:
         default: 14px
-    $unit.x4:
+    $unit.s4:
       values:
         default: 16px
-    $unit.x4_5:
+    $unit.s4_5:
       values:
         default: 18px
-    $unit.x5:
+    $unit.s5:
       values:
         default: 20px
-    $unit.x6:
+    $unit.s6:
       values:
         default: 24px
-    $unit.x7:
+    $unit.s7:
       values:
         default: 28px
-    $unit.x8:
+    $unit.s8:
       values:
         default: 32px
-    $unit.x9:
+    $unit.s9:
       values:
         default: 36px
-    $unit.x10:
+    $unit.s10:
       values:
         default: 40px
-    $unit.x12:
+    $unit.s12:
       values:
         default: 48px
-    $unit.x13:
+    $unit.s13:
       values:
         default: 52px
-    $unit.x14:
+    $unit.s14:
       values:
         default: 56px
-    $unit.x16:
+    $unit.s16:
       values:
         default: 64px
     $horizontal-spacing.between-chips:
       values:
-        default: $unit.x2
+        default: $unit.s2
     $horizontal-spacing.global-gutter:
       values:
-        default: $unit.x4
+        default: $unit.s4

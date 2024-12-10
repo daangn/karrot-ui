@@ -17,12 +17,12 @@ data:
   size=small:
     enabled:
       root:
-        size: $unit.x10
+        size: $unit.s10
       icon:
-        size: $unit.x5
+        size: $unit.s5
   size=medium:
     enabled:
       root:
-        size: $unit.x12
+        size: $unit.s12
       icon:
-        size: $unit.x6
+        size: $unit.s6

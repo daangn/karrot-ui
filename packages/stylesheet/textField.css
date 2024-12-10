@@ -4,7 +4,7 @@
     width: 100%;
 }
 .textField__header {
-    margin-block-end: var(--seed-v3-unit-x3);
+    margin-block-end: var(--seed-v3-unit-s3);
 }
 .textField__label {
     color: var(--seed-v3-color-fg-neutral);
@@ -92,10 +92,10 @@
 }
 .textField__footer {
     display: flex;
-    gap: var(--seed-v3-unit-x3_5);
+    gap: var(--seed-v3-unit-s3_5);
     align-items: flex-start;
     justify-content: space-between;
-    margin-block-start: var(--seed-v3-unit-x2);
+    margin-block-start: var(--seed-v3-unit-s2);
 }
 .textField__description {
     font-weight: var(--seed-v3-font-weight-regular);
@@ -105,7 +105,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--seed-v3-unit-x1);
+    gap: var(--seed-v3-unit-s1);
     color: var(--seed-v3-color-fg-danger);
 }
 .textField__errorIcon {
@@ -114,13 +114,13 @@
 .textField__characterCount {
     flex: none;
     margin-inline-start: auto;
-    height: var(--seed-v3-line-height-t4);
-    line-height: var(--seed-v3-line-height-t2);
+    height: var(--seed-v3-line-height-s4);
+    line-height: var(--seed-v3-line-height-s2);
 }
 .textField__currentCharacterCount {
     color: var(--seed-v3-color-fg-neutral);
     font-weight: var(--seed-v3-font-weight-regular);
-    font-size: var(--seed-v3-font-size-t2);
+    font-size: var(--seed-v3-font-size-s2);
 }
 .textField__currentCharacterCount[data-grapheme-count="0"] {
     color: var(--seed-v3-color-fg-neutral-subtle);
@@ -128,161 +128,161 @@
 .textField__maxCharacterCount {
     color: var(--seed-v3-color-fg-neutral-subtle);
     font-weight: var(--seed-v3-font-weight-regular);
-    font-size: var(--seed-v3-font-size-t2);
+    font-size: var(--seed-v3-font-size-s2);
 }
 .textField__header--size_xlarge {
-    line-height: var(--seed-v3-line-height-t5);
+    line-height: var(--seed-v3-line-height-s5);
 }
 .textField__label--size_xlarge {
-    font-size: var(--seed-v3-font-size-t5);
+    font-size: var(--seed-v3-font-size-s5);
 }
 .textField__indicator--size_xlarge {
-    font-size: var(--seed-v3-font-size-t5);
-    margin-inline-start: var(--seed-v3-unit-x1_5);
+    font-size: var(--seed-v3-font-size-s5);
+    margin-inline-start: var(--seed-v3-unit-s1_5);
 }
 .textField__input--size_xlarge {
     min-height: 56px;
-    border-radius: var(--seed-v3-radius-x2_5);
-    gap: var(--seed-v3-unit-x2);
-    padding-inline: var(--seed-v3-unit-x4);
+    border-radius: var(--seed-v3-radius-s2_5);
+    gap: var(--seed-v3-unit-s2);
+    padding-inline: var(--seed-v3-unit-s4);
 }
 .textField__inputText--size_xlarge {
-    padding-block: var(--seed-v3-unit-x3);
-    font-size: var(--seed-v3-font-size-t6);
-    line-height: var(--seed-v3-line-height-t6);
+    padding-block: var(--seed-v3-unit-s3);
+    font-size: var(--seed-v3-font-size-s6);
+    line-height: var(--seed-v3-line-height-s6);
 }
 .textField__prefixText--size_xlarge {
-    font-size: var(--seed-v3-font-size-t6);
-    line-height: var(--seed-v3-line-height-t6);
+    font-size: var(--seed-v3-font-size-s6);
+    line-height: var(--seed-v3-line-height-s6);
 }
 .textField__prefixIcon--size_xlarge {
-    width: var(--seed-v3-unit-x5);
-    height: var(--seed-v3-unit-x5);
+    width: var(--seed-v3-unit-s5);
+    height: var(--seed-v3-unit-s5);
 }
 .textField__suffixText--size_xlarge {
-    font-size: var(--seed-v3-font-size-t6);
-    line-height: var(--seed-v3-line-height-t6);
+    font-size: var(--seed-v3-font-size-s6);
+    line-height: var(--seed-v3-line-height-s6);
 }
 .textField__suffixIcon--size_xlarge {
-    width: var(--seed-v3-unit-x5);
-    height: var(--seed-v3-unit-x5);
+    width: var(--seed-v3-unit-s5);
+    height: var(--seed-v3-unit-s5);
 }
 .textField__footer--size_xlarge {
     min-height: 19px;
 }
 .textField__description--size_xlarge {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__errorMessage--size_xlarge {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__errorIcon--size_xlarge {
-    width: var(--seed-v3-unit-x4);
-    height: var(--seed-v3-unit-x4);
+    width: var(--seed-v3-unit-s4);
+    height: var(--seed-v3-unit-s4);
 }
 .textField__header--size_large {
-    line-height: var(--seed-v3-line-height-t5);
+    line-height: var(--seed-v3-line-height-s5);
 }
 .textField__label--size_large {
-    font-size: var(--seed-v3-font-size-t5);
+    font-size: var(--seed-v3-font-size-s5);
 }
 .textField__indicator--size_large {
-    font-size: var(--seed-v3-font-size-t5);
-    margin-inline-start: var(--seed-v3-unit-x1_5);
+    font-size: var(--seed-v3-font-size-s5);
+    margin-inline-start: var(--seed-v3-unit-s1_5);
 }
 .textField__input--size_large {
     min-height: 52px;
-    border-radius: var(--seed-v3-radius-x2_5);
-    gap: var(--seed-v3-unit-x2);
-    padding-inline: var(--seed-v3-unit-x4);
+    border-radius: var(--seed-v3-radius-s2_5);
+    gap: var(--seed-v3-unit-s2);
+    padding-inline: var(--seed-v3-unit-s4);
 }
 .textField__inputText--size_large {
-    padding-block: var(--seed-v3-unit-x3);
-    font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
+    padding-block: var(--seed-v3-unit-s3);
+    font-size: var(--seed-v3-font-size-s5);
+    line-height: var(--seed-v3-line-height-s5);
 }
 .textField__prefixText--size_large {
-    font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
+    font-size: var(--seed-v3-font-size-s5);
+    line-height: var(--seed-v3-line-height-s5);
 }
 .textField__prefixIcon--size_large {
-    width: var(--seed-v3-unit-x5);
-    height: var(--seed-v3-unit-x5);
+    width: var(--seed-v3-unit-s5);
+    height: var(--seed-v3-unit-s5);
 }
 .textField__suffixText--size_large {
-    font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
+    font-size: var(--seed-v3-font-size-s5);
+    line-height: var(--seed-v3-line-height-s5);
 }
 .textField__suffixIcon--size_large {
-    width: var(--seed-v3-unit-x5);
-    height: var(--seed-v3-unit-x5);
+    width: var(--seed-v3-unit-s5);
+    height: var(--seed-v3-unit-s5);
 }
 .textField__footer--size_large {
     min-height: 19px;
 }
 .textField__description--size_large {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__errorMessage--size_large {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__errorIcon--size_large {
-    width: var(--seed-v3-unit-x4);
-    height: var(--seed-v3-unit-x4);
+    width: var(--seed-v3-unit-s4);
+    height: var(--seed-v3-unit-s4);
 }
 .textField__header--size_medium {
-    line-height: var(--seed-v3-line-height-t4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__label--size_medium {
-    font-size: var(--seed-v3-font-size-t4);
+    font-size: var(--seed-v3-font-size-s4);
 }
 .textField__indicator--size_medium {
-    font-size: var(--seed-v3-font-size-t4);
-    margin-inline-start: var(--seed-v3-unit-x1);
+    font-size: var(--seed-v3-font-size-s4);
+    margin-inline-start: var(--seed-v3-unit-s1);
 }
 .textField__input--size_medium {
     min-height: 40px;
-    border-radius: var(--seed-v3-radius-x2);
-    gap: var(--seed-v3-unit-x1_5);
-    padding-inline: var(--seed-v3-unit-x3_5);
+    border-radius: var(--seed-v3-radius-s2);
+    gap: var(--seed-v3-unit-s1_5);
+    padding-inline: var(--seed-v3-unit-s3_5);
 }
 .textField__inputText--size_medium {
-    padding-block: var(--seed-v3-unit-x2_5);
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    padding-block: var(--seed-v3-unit-s2_5);
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__prefixText--size_medium {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__prefixIcon--size_medium {
-    width: var(--seed-v3-unit-x4);
-    height: var(--seed-v3-unit-x4);
+    width: var(--seed-v3-unit-s4);
+    height: var(--seed-v3-unit-s4);
 }
 .textField__suffixText--size_medium {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
 }
 .textField__suffixIcon--size_medium {
-    width: var(--seed-v3-unit-x4);
-    height: var(--seed-v3-unit-x4);
+    width: var(--seed-v3-unit-s4);
+    height: var(--seed-v3-unit-s4);
 }
 .textField__footer--size_medium {
-    min-height: var(--seed-v3-unit-x4);
+    min-height: var(--seed-v3-unit-s4);
 }
 .textField__description--size_medium {
-    font-size: var(--seed-v3-font-size-t2);
-    line-height: var(--seed-v3-line-height-t2);
+    font-size: var(--seed-v3-font-size-s2);
+    line-height: var(--seed-v3-line-height-s2);
 }
 .textField__errorMessage--size_medium {
-    font-size: var(--seed-v3-font-size-t2);
-    line-height: var(--seed-v3-line-height-t2);
+    font-size: var(--seed-v3-font-size-s2);
+    line-height: var(--seed-v3-line-height-s2);
 }
 .textField__errorIcon--size_medium {
-    width: var(--seed-v3-unit-x3_5);
-    height: var(--seed-v3-unit-x3_5);
+    width: var(--seed-v3-unit-s3_5);
+    height: var(--seed-v3-unit-s3_5);
 }

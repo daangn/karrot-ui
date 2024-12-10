@@ -8,7 +8,7 @@
     "size=40": {
       "enabled": {
         "root": {
-          "size": "$unit.x10",
+          "size": "$unit.s10",
           "thickness": "5px"
         }
       }
@@ -16,7 +16,7 @@
     "size=24": {
       "enabled": {
         "root": {
-          "size": "$unit.x6",
+          "size": "$unit.s6",
           "thickness": "3px"
         }
       }

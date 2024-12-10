@@ -18,20 +18,20 @@ export declare const vars: {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-x10)"
+        "size": "var(--seed-v3-unit-s10)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-x5)"
+        "size": "var(--seed-v3-unit-s5)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-x12)"
+        "size": "var(--seed-v3-unit-s12)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-x6)"
+        "size": "var(--seed-v3-unit-s6)"
       }
     }
   }

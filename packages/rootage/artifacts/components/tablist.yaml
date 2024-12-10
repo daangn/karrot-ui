@@ -16,7 +16,7 @@ data:
   layout=hug:
     enabled:
       root:
-        paddingX: $unit.x4
+        paddingX: $unit.s4
   layout=fill:
     enabled:
       root:

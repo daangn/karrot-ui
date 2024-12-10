@@ -2,19 +2,19 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-x3)",
-        "paddingX": "var(--seed-v3-unit-x3)",
-        "paddingY": "var(--seed-v3-unit-x3)"
+        "cornerRadius": "var(--seed-v3-radius-s3)",
+        "paddingX": "var(--seed-v3-unit-s3)",
+        "paddingY": "var(--seed-v3-unit-s3)"
       },
       "arrow": {
-        "size": "var(--seed-v3-unit-x2_5)"
+        "size": "var(--seed-v3-unit-s2_5)"
       },
       "title": {
-        "fontSize": "var(--seed-v3-font-size-t3)",
+        "fontSize": "var(--seed-v3-font-size-s3)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "description": {
-        "fontSize": "var(--seed-v3-font-size-t3)",
+        "fontSize": "var(--seed-v3-font-size-s3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }

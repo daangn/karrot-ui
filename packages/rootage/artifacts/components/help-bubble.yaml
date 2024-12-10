@@ -7,16 +7,16 @@ data:
   base:
     enabled:
       root:
-        cornerRadius: $radius.x3
-        paddingX: $unit.x3
-        paddingY: $unit.x3
+        cornerRadius: $radius.s3
+        paddingX: $unit.s3
+        paddingY: $unit.s3
       arrow:
-        size: $unit.x2_5
+        size: $unit.s2_5
       title:
-        fontSize: $font-size.t3
+        fontSize: $font-size.s3
         fontWeight: $font-weight.bold
       description:
-        fontSize: $font-size.t3
+        fontSize: $font-size.s3
         fontWeight: $font-weight.regular
   variant=non-modal:
     enabled:

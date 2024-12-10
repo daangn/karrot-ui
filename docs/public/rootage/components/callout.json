@@ -8,19 +8,19 @@
     "base": {
       "enabled": {
         "root": {
-          "paddingXStart": "$unit.x3_5",
+          "paddingXStart": "$unit.s3_5",
           "paddingXEnd": "$unit.x0_5",
           "paddingY": "5px",
-          "cornerRadius": "$radius.x2_5"
+          "cornerRadius": "$radius.s2_5"
         },
         "content": {
-          "gap": "$unit.x3",
+          "gap": "$unit.s3",
           "paddingY": "9.5px",
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t5"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s5"
         },
         "icon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         },
         "title": {
           "fontWeight": "$font-weight.bold"
@@ -29,21 +29,21 @@
           "fontWeight": "$font-weight.regular"
         },
         "dismissButton": {
-          "size": "$unit.x10"
+          "size": "$unit.s10"
         },
         "dismissIcon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         },
         "actionableIcon": {
-          "size": "$unit.x4",
-          "margin": "$unit.x3"
+          "size": "$unit.s4",
+          "margin": "$unit.s3"
         }
       }
     },
     "type=contentOnly": {
       "enabled": {
         "content": {
-          "paddingXEnd": "$unit.x3"
+          "paddingXEnd": "$unit.s3"
         }
       }
     },

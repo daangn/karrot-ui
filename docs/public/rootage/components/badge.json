@@ -8,20 +8,20 @@
     "size=medium": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.x5",
-          "paddingX": "$unit.x2",
-          "paddingY": "$unit.x1",
-          "fontSize": "$font-size.t2"
+          "minHeight": "$unit.s5",
+          "paddingX": "$unit.s2",
+          "paddingY": "$unit.s1",
+          "fontSize": "$font-size.s2"
         }
       }
     },
     "size=small": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.x4",
-          "paddingX": "$unit.x1_5",
+          "minHeight": "$unit.s4",
+          "paddingX": "$unit.s1_5",
           "paddingY": "$unit.x0_5",
-          "fontSize": "$font-size.t1"
+          "fontSize": "$font-size.s1"
         }
       }
     },
@@ -35,7 +35,7 @@
     "shape=rectangle, size=medium": {
       "enabled": {
         "root": {
-          "borderRadius": "$radius.x1"
+          "borderRadius": "$radius.s1"
         }
       }
     },

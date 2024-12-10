@@ -8,20 +8,20 @@ data:
     enabled:
       root:
         color: $color.bg.layer-default
-        minHeight: $unit.x10
-        cornerRadius: $radius.x2
-        gap: $unit.x1
-        paddingX: $unit.x5
-        paddingY: $unit.x2_5
+        minHeight: $unit.s10
+        cornerRadius: $radius.s2
+        gap: $unit.s1
+        paddingX: $unit.s5
+        paddingY: $unit.s2_5
         strokeColor: $color.palette.gray-400
         strokeWidth: 1px
       label:
         color: $color.fg.neutral
         fontWeight: $font-weight.bold
-        fontSize: $font-size.t4
+        fontSize: $font-size.s4
       suffixIcon:
         color: $color.fg.neutral
-        size: $unit.x3_5
+        size: $unit.s3_5
     pressed:
       root:
         color: $color.bg.layer-default-pressed

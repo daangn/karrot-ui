@@ -2,7 +2,7 @@ export const vars = {
   "size40": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-x10)",
+        "size": "var(--seed-v3-unit-s10)",
         "thickness": "5px"
       }
     }
@@ -10,7 +10,7 @@ export const vars = {
   "size24": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-x6)",
+        "size": "var(--seed-v3-unit-s6)",
         "thickness": "3px"
       }
     }

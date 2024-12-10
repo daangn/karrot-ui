@@ -11,8 +11,8 @@ export const item = style({
   justifyContent: "space-between",
   alignItems: "center",
 
-  paddingInline: vars.$unit.x4,
-  minHeight: vars.$unit.x13,
+  paddingInline: vars.$unit.s4,
+  minHeight: vars.$unit.s13,
 
   borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
   ":last-child": {
@@ -27,8 +27,8 @@ export const item = style({
 
 export const title = style({
   color: vars.$color.fg.neutral,
-  fontSize: vars.$fontSize.t5,
-  lineHeight: vars.$lineHeight.t5,
+  fontSize: vars.$fontSize.s5,
+  lineHeight: vars.$lineHeight.s5,
   fontWeight: vars.$fontWeight.medium,
 });
 
@@ -38,6 +38,6 @@ export const icon = style({
   justifyContent: "center",
 
   color: vars.$color.fg.neutralMuted,
-  width: vars.$unit.x4,
-  height: vars.$unit.x4,
+  width: vars.$unit.s4,
+  height: vars.$unit.s4,
 });

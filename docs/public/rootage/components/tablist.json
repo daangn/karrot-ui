@@ -21,7 +21,7 @@
     "layout=hug": {
       "enabled": {
         "root": {
-          "paddingX": "$unit.x4"
+          "paddingX": "$unit.s4"
         }
       }
     },

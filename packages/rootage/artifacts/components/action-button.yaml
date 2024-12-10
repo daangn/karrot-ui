@@ -116,100 +116,100 @@ data:
   size=xsmall:
     enabled:
       root:
-        minHeight: "$unit.x8"
+        minHeight: "$unit.s8"
         cornerRadius: "$radius.full"
   size=xsmall, layout=with text:
     enabled:
       root:
-        gap: "$unit.x1"
-        paddingX: "$unit.x3_5"
-        paddingY: "$unit.x1_5"
+        gap: "$unit.s1"
+        paddingX: "$unit.s3_5"
+        paddingY: "$unit.s1_5"
       prefixIcon:
-        size: "$unit.x3_5"
+        size: "$unit.s3_5"
       suffixIcon:
-        size: "$unit.x3_5"
+        size: "$unit.s3_5"
       label:
-        fontSize: "$font-size.t4"
+        fontSize: "$font-size.s4"
   size=xsmall, layout=icon only:
     enabled:
       root:
-        minWidth: "$unit.x8"
-        paddingX: "$unit.x1_5"
-        paddingY: "$unit.x1_5"
+        minWidth: "$unit.s8"
+        paddingX: "$unit.s1_5"
+        paddingY: "$unit.s1_5"
       icon:
-        size: "$unit.x3_5"
+        size: "$unit.s3_5"
   size=small:
     enabled:
       root:
-        minHeight: "$unit.x9"
-        cornerRadius: "$radius.x2"
+        minHeight: "$unit.s9"
+        cornerRadius: "$radius.s2"
   size=small, layout=with text:
     enabled:
       root:
-        gap: "$unit.x1"
-        paddingX: "$unit.x3_5"
-        paddingY: "$unit.x2"
+        gap: "$unit.s1"
+        paddingX: "$unit.s3_5"
+        paddingY: "$unit.s2"
       prefixIcon:
-        size: "$unit.x3_5"
+        size: "$unit.s3_5"
       suffixIcon:
-        size: "$unit.x3_5"
+        size: "$unit.s3_5"
       label:
-        fontSize: "$font-size.t4"
+        fontSize: "$font-size.s4"
   size=small, layout=icon only:
     enabled:
       root:
-        minWidth: "$unit.x9"
-        paddingX: "$unit.x2"
-        paddingY: "$unit.x2"
+        minWidth: "$unit.s9"
+        paddingX: "$unit.s2"
+        paddingY: "$unit.s2"
       icon:
-        size: "$unit.x4"
+        size: "$unit.s4"
   size=medium:
     enabled:
       root:
-        minHeight: "$unit.x10"
-        cornerRadius: "$radius.x2"
+        minHeight: "$unit.s10"
+        cornerRadius: "$radius.s2"
   size=medium, layout=with text:
     enabled:
       root:
-        gap: "$unit.x1"
-        paddingX: "$unit.x4"
-        paddingY: "$unit.x2_5"
+        gap: "$unit.s1"
+        paddingX: "$unit.s4"
+        paddingY: "$unit.s2_5"
       prefixIcon:
-        size: "$unit.x4"
+        size: "$unit.s4"
       suffixIcon:
-        size: "$unit.x4"
+        size: "$unit.s4"
       label:
-        fontSize: "$font-size.t4"
+        fontSize: "$font-size.s4"
   size=medium, layout=icon only:
     enabled:
       root:
-        minWidth: "$unit.x10"
-        paddingX: "$unit.x2_5"
-        paddingY: "$unit.x2_5"
+        minWidth: "$unit.s10"
+        paddingX: "$unit.s2_5"
+        paddingY: "$unit.s2_5"
       icon:
         size: "18px"
   size=large:
     enabled:
       root:
-        minHeight: "$unit.x13"
-        cornerRadius: "$radius.x3"
+        minHeight: "$unit.s13"
+        cornerRadius: "$radius.s3"
   size=large, layout=with text:
     enabled:
       root:
-        gap: "$unit.x2"
-        paddingX: "$unit.x5"
-        paddingY: "$unit.x3_5"
+        gap: "$unit.s2"
+        paddingX: "$unit.s5"
+        paddingY: "$unit.s3_5"
       prefixIcon:
         size: "22px"
       suffixIcon:
         size: "22px"
       label:
-        fontSize: "$font-size.t6"
+        fontSize: "$font-size.s6"
   size=large, layout=icon only:
     enabled:
       root:
-        minWidth: "$unit.x13"
-        paddingX: "$unit.x3_5"
-        paddingY: "$unit.x3_5"
+        minWidth: "$unit.s13"
+        paddingX: "$unit.s3_5"
+        paddingY: "$unit.s3_5"
       icon:
         size: "22px"

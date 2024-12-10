@@ -8,15 +8,15 @@
     "base": {
       "enabled": {
         "root": {
-          "gap": "$unit.x3"
+          "gap": "$unit.s3"
         },
         "box": {
-          "paddingX": "$unit.x4",
+          "paddingX": "$unit.s4",
           "paddingY": "19px",
-          "gap": "$unit.x2_5",
+          "gap": "$unit.s2_5",
           "strokeWidth": "1px",
           "strokeColor": "$color.stroke.neutral",
-          "cornerRadius": "$radius.x3"
+          "cornerRadius": "$radius.s3"
         },
         "content": {
           "gap": "$unit.x0_5"
@@ -24,14 +24,14 @@
         "label": {
           "color": "$color.fg.neutral",
           "fontWeight": "$font-weight.bold",
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5"
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5"
         },
         "description": {
           "color": "$color.fg.neutral-muted",
           "fontWeight": "$font-weight.regular",
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "control": {
           "marginY": 0

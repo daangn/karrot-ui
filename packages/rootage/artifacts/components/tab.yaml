@@ -9,7 +9,7 @@ data:
       label:
         color: $color.fg.neutral-subtle
       notification:
-        size: $unit.x1
+        size: $unit.s1
         cornerRadius: $radius.full
         color: $color.bg.brand-solid
         marginLeft: $unit.x0_5
@@ -23,17 +23,17 @@ data:
     enabled:
       root:
         minHeight: 44px
-        paddingX: $unit.x2_5
-        paddingY: $unit.x2_5
+        paddingX: $unit.s2_5
+        paddingY: $unit.s2_5
       label:
-        fontSize: $font-size.t5
+        fontSize: $font-size.s5
         fontWeight: $font-weight.bold
   size=small:
     enabled:
       root:
         minHeight: 40px
-        paddingX: $unit.x2_5
-        paddingY: $unit.x2_5
+        paddingX: $unit.s2_5
+        paddingY: $unit.s2_5
       label:
-        fontSize: $font-size.t4
+        fontSize: $font-size.s4
         fontWeight: $font-weight.bold

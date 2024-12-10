@@ -8,7 +8,7 @@
     "base": {
       "enabled": {
         "header": {
-          "marginYEnd": "$unit.x3"
+          "marginYEnd": "$unit.s3"
         },
         "label": {
           "color": "$color.fg.neutral",
@@ -42,31 +42,31 @@
           "color": "$color.fg.neutral"
         },
         "footer": {
-          "gap": "$unit.x3_5",
-          "marginYStart": "$unit.x2"
+          "gap": "$unit.s3_5",
+          "marginYStart": "$unit.s2"
         },
         "description": {
           "color": "$color.fg.neutral-subtle",
           "fontWeight": "$font-weight.regular"
         },
         "errorMessage": {
-          "gap": "$unit.x1",
+          "gap": "$unit.s1",
           "color": "$color.fg.danger",
           "fontWeight": "$font-weight.regular"
         },
         "characterCount": {
-          "height": "$line-height.t4",
-          "lineHeight": "$line-height.t2"
+          "height": "$line-height.s4",
+          "lineHeight": "$line-height.s2"
         },
         "currentCharacterCount": {
           "color": "$color.fg.neutral",
           "fontWeight": "$font-weight.regular",
-          "fontSize": "$font-size.t2"
+          "fontSize": "$font-size.s2"
         },
         "maxCharacterCount": {
           "color": "$color.fg.neutral-subtle",
           "fontWeight": "$font-weight.regular",
-          "fontSize": "$font-size.t2"
+          "fontSize": "$font-size.s2"
         }
       },
       "focused": {
@@ -112,159 +112,159 @@
     "size=xlarge": {
       "enabled": {
         "header": {
-          "lineHeight": "$line-height.t5"
+          "lineHeight": "$line-height.s5"
         },
         "label": {
-          "fontSize": "$font-size.t5"
+          "fontSize": "$font-size.s5"
         },
         "indicator": {
-          "fontSize": "$font-size.t5",
-          "marginXStart": "$unit.x1_5"
+          "fontSize": "$font-size.s5",
+          "marginXStart": "$unit.s1_5"
         },
         "input": {
           "minHeight": "56px",
-          "cornerRadius": "$radius.x2_5",
-          "gap": "$unit.x2",
-          "paddingX": "$unit.x4"
+          "cornerRadius": "$radius.s2_5",
+          "gap": "$unit.s2",
+          "paddingX": "$unit.s4"
         },
         "inputText": {
-          "paddingY": "$unit.x3",
-          "fontSize": "$font-size.t6",
-          "lineHeight": "$line-height.t6"
+          "paddingY": "$unit.s3",
+          "fontSize": "$font-size.s6",
+          "lineHeight": "$line-height.s6"
         },
         "prefixText": {
-          "fontSize": "$font-size.t6",
-          "lineHeight": "$line-height.t6"
+          "fontSize": "$font-size.s6",
+          "lineHeight": "$line-height.s6"
         },
         "prefixIcon": {
-          "size": "$unit.x5"
+          "size": "$unit.s5"
         },
         "suffixText": {
-          "fontSize": "$font-size.t6",
-          "lineHeight": "$line-height.t6"
+          "fontSize": "$font-size.s6",
+          "lineHeight": "$line-height.s6"
         },
         "suffixIcon": {
-          "size": "$unit.x5"
+          "size": "$unit.s5"
         },
         "footer": {
           "minHeight": "19px"
         },
         "description": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "errorMessage": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "errorIcon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         }
       }
     },
     "size=large": {
       "enabled": {
         "header": {
-          "lineHeight": "$line-height.t5"
+          "lineHeight": "$line-height.s5"
         },
         "label": {
-          "fontSize": "$font-size.t5"
+          "fontSize": "$font-size.s5"
         },
         "indicator": {
-          "fontSize": "$font-size.t5",
-          "marginXStart": "$unit.x1_5"
+          "fontSize": "$font-size.s5",
+          "marginXStart": "$unit.s1_5"
         },
         "input": {
           "minHeight": "52px",
-          "cornerRadius": "$radius.x2_5",
-          "gap": "$unit.x2",
-          "paddingX": "$unit.x4"
+          "cornerRadius": "$radius.s2_5",
+          "gap": "$unit.s2",
+          "paddingX": "$unit.s4"
         },
         "inputText": {
-          "paddingY": "$unit.x3",
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5"
+          "paddingY": "$unit.s3",
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5"
         },
         "prefixText": {
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5"
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5"
         },
         "prefixIcon": {
-          "size": "$unit.x5"
+          "size": "$unit.s5"
         },
         "suffixText": {
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5"
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5"
         },
         "suffixIcon": {
-          "size": "$unit.x5"
+          "size": "$unit.s5"
         },
         "footer": {
           "minHeight": "19px"
         },
         "description": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "errorMessage": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "errorIcon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         }
       }
     },
     "size=medium": {
       "enabled": {
         "header": {
-          "lineHeight": "$line-height.t4"
+          "lineHeight": "$line-height.s4"
         },
         "label": {
-          "fontSize": "$font-size.t4"
+          "fontSize": "$font-size.s4"
         },
         "indicator": {
-          "fontSize": "$font-size.t4",
-          "marginXStart": "$unit.x1"
+          "fontSize": "$font-size.s4",
+          "marginXStart": "$unit.s1"
         },
         "input": {
           "minHeight": "40px",
-          "cornerRadius": "$radius.x2",
-          "gap": "$unit.x1_5",
-          "paddingX": "$unit.x3_5"
+          "cornerRadius": "$radius.s2",
+          "gap": "$unit.s1_5",
+          "paddingX": "$unit.s3_5"
         },
         "inputText": {
-          "paddingY": "$unit.x2_5",
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "paddingY": "$unit.s2_5",
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "prefixText": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "prefixIcon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         },
         "suffixText": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         },
         "suffixIcon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         },
         "footer": {
-          "minHeight": "$unit.x4"
+          "minHeight": "$unit.s4"
         },
         "description": {
-          "fontSize": "$font-size.t2",
-          "lineHeight": "$line-height.t2"
+          "fontSize": "$font-size.s2",
+          "lineHeight": "$line-height.s2"
         },
         "errorMessage": {
-          "fontSize": "$font-size.t2",
-          "lineHeight": "$line-height.t2"
+          "fontSize": "$font-size.s2",
+          "lineHeight": "$line-height.s2"
         },
         "errorIcon": {
-          "size": "$unit.x3_5"
+          "size": "$unit.s3_5"
         }
       }
     }

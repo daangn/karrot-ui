@@ -15,7 +15,7 @@
           "fontWeight": "$font-weight.regular"
         },
         "prefixIcon": {
-          "marginXEnd": "$unit.x1"
+          "marginXEnd": "$unit.s1"
         },
         "suffixIcon": {
           "marginXStart": "$unit.x0_5"
@@ -64,51 +64,51 @@
     "size=large": {
       "enabled": {
         "root": {
-          "cornerRadius": "$radius.x1_5"
+          "cornerRadius": "$radius.s1_5"
         },
         "prefixIcon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         },
         "suffixIcon": {
-          "size": "$unit.x4"
+          "size": "$unit.s4"
         },
         "label": {
-          "fontSize": "$font-size.t6",
-          "lineHeight": "$line-height.t6"
+          "fontSize": "$font-size.s6",
+          "lineHeight": "$line-height.s6"
         }
       }
     },
     "size=medium": {
       "enabled": {
         "root": {
-          "cornerRadius": "$radius.x1_5"
+          "cornerRadius": "$radius.s1_5"
         },
         "prefixIcon": {
-          "size": "$unit.x3_5"
+          "size": "$unit.s3_5"
         },
         "suffixIcon": {
-          "size": "$unit.x3_5"
+          "size": "$unit.s3_5"
         },
         "label": {
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5"
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5"
         }
       }
     },
     "size=small": {
       "enabled": {
         "root": {
-          "cornerRadius": "$radius.x1"
+          "cornerRadius": "$radius.s1"
         },
         "prefixIcon": {
-          "size": "$unit.x3_5"
+          "size": "$unit.s3_5"
         },
         "suffixIcon": {
-          "size": "$unit.x3_5"
+          "size": "$unit.s3_5"
         },
         "label": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         }
       }
     }

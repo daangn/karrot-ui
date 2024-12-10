@@ -45,7 +45,7 @@ test("getTokenMjs should generate esm definitions", () => {
       data: {
         collection: "global",
         tokens: {
-          "$unit.x1_5": {
+          "$unit.s1_5": {
             values: {
               default: "6px",
             },
@@ -117,7 +117,7 @@ test("getTokenDts should generate typescript definitions", () => {
       data: {
         collection: "global",
         tokens: {
-          "$unit.x1_5": {
+          "$unit.s1_5": {
             values: {
               default: "6px",
             },

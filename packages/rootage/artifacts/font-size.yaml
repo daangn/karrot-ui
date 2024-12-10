@@ -5,33 +5,33 @@ metadata:
 data:
   collection: global
   tokens:
-    $font-size.t1:
+    $font-size.s1:
       values:
         default: 0.6875rem # 11px ÷ 16
-    $font-size.t2:
+    $font-size.s2:
       values:
         default: 0.75rem # 12px ÷ 16
-    $font-size.t3:
+    $font-size.s3:
       values:
         default: 0.8125rem # 13px ÷ 16
-    $font-size.t4:
+    $font-size.s4:
       values:
         default: 0.875rem # 14px ÷ 16
-    $font-size.t5:
+    $font-size.s5:
       values:
         default: 1rem # 16px ÷ 16
-    $font-size.t6:
+    $font-size.s6:
       values:
         default: 1.125rem # 18px ÷ 16
-    $font-size.t7:
+    $font-size.s7:
       values:
         default: 1.25rem # 20px ÷ 16
-    $font-size.t8:
+    $font-size.s8:
       values:
         default: 1.375rem # 22px ÷ 16
-    $font-size.t9:
+    $font-size.s9:
       values:
         default: 1.5rem # 24px ÷ 16
-    $font-size.t10:
+    $font-size.s10:
       values:
         default: 1.625rem # 26px ÷ 16

@@ -2,20 +2,20 @@ export const vars = {
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-x5)",
-        "paddingX": "var(--seed-v3-unit-x2)",
-        "paddingY": "var(--seed-v3-unit-x1)",
-        "fontSize": "var(--seed-v3-font-size-t2)"
+        "minHeight": "var(--seed-v3-unit-s5)",
+        "paddingX": "var(--seed-v3-unit-s2)",
+        "paddingY": "var(--seed-v3-unit-s1)",
+        "fontSize": "var(--seed-v3-font-size-s2)"
       }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-x4)",
-        "paddingX": "var(--seed-v3-unit-x1_5)",
+        "minHeight": "var(--seed-v3-unit-s4)",
+        "paddingX": "var(--seed-v3-unit-s1_5)",
         "paddingY": "var(--seed-v3-unit-x0_5)",
-        "fontSize": "var(--seed-v3-font-size-t1)"
+        "fontSize": "var(--seed-v3-font-size-s1)"
       }
     }
   },
@@ -29,7 +29,7 @@ export const vars = {
   "shapeRectangleSizeMedium": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-v3-radius-x1)"
+        "borderRadius": "var(--seed-v3-radius-s1)"
       }
     }
   },

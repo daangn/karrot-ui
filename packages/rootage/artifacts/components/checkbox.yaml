@@ -9,9 +9,9 @@ data:
     enabled:
       label:
         color: $color.fg.neutral
-        lineHeight: $line-height.t5
+        lineHeight: $line-height.s5
       root:
-        gap: $unit.x2
+        gap: $unit.s2
     bold:
       label:
         fontWeight: $font-weight.bold
@@ -47,7 +47,7 @@ data:
         color: $color.fg.disabled
       icon:
         color: $color.fg.disabled
-  
+
   variant=ghost:
     enabled:
       icon:
@@ -75,35 +75,35 @@ data:
   size=small:
     enabled:
       root:
-        minHeight: $unit.x8
+        minHeight: $unit.s8
       label:
-        fontSize: $font-size.t3
-        lineHeight: $line-height.t3
+        fontSize: $font-size.s3
+        lineHeight: $line-height.s3
       control:
-        size: $unit.x4
-        cornerRadius: $radius.x1
+        size: $unit.s4
+        cornerRadius: $radius.s1
 
   size=medium:
     enabled:
       root:
-        minHeight: $unit.x8
+        minHeight: $unit.s8
       label:
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
+        fontSize: $font-size.s4
+        lineHeight: $line-height.s4
       control:
-        size: $unit.x5
-        cornerRadius: $radius.x1
+        size: $unit.s5
+        cornerRadius: $radius.s1
 
   size=large:
     enabled:
       root:
-        minHeight: $unit.x9
+        minHeight: $unit.s9
       label:
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t5
+        fontSize: $font-size.s5
+        lineHeight: $line-height.s5
       control:
-        size: $unit.x6
-        cornerRadius: $radius.x1_5
+        size: $unit.s6
+        cornerRadius: $radius.s1_5
 
   variant=ghost,size=small:
     enabled:

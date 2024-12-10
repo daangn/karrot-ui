@@ -9,7 +9,7 @@ export declare const vars: {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "prefixIcon": {
-        "marginXEnd": "var(--seed-v3-unit-x1)"
+        "marginXEnd": "var(--seed-v3-unit-s1)"
       },
       "suffixIcon": {
         "marginXStart": "var(--seed-v3-unit-x0_5)"
@@ -58,51 +58,51 @@ export declare const vars: {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-x1_5)"
+        "cornerRadius": "var(--seed-v3-radius-s1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-x4)"
+        "size": "var(--seed-v3-unit-s4)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-x4)"
+        "size": "var(--seed-v3-unit-s4)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t6)",
-        "lineHeight": "var(--seed-v3-line-height-t6)"
+        "fontSize": "var(--seed-v3-font-size-s6)",
+        "lineHeight": "var(--seed-v3-line-height-s6)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-x1_5)"
+        "cornerRadius": "var(--seed-v3-radius-s1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-x3_5)"
+        "size": "var(--seed-v3-unit-s3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-x3_5)"
+        "size": "var(--seed-v3-unit-s3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t5)"
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)"
       }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-x1)"
+        "cornerRadius": "var(--seed-v3-radius-s1)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-x3_5)"
+        "size": "var(--seed-v3-unit-s3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-x3_5)"
+        "size": "var(--seed-v3-unit-s3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)"
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)"
       }
     }
   }

@@ -3,10 +3,10 @@ export const vars = {
     "enabled": {
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)",
-        "lineHeight": "var(--seed-v3-line-height-t5)"
+        "lineHeight": "var(--seed-v3-line-height-s5)"
       },
       "root": {
-        "gap": "var(--seed-v3-unit-x2)"
+        "gap": "var(--seed-v3-unit-s2)"
       }
     },
     "bold": {
@@ -105,45 +105,45 @@ export const vars = {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-x8)"
+        "minHeight": "var(--seed-v3-unit-s8)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t3)",
-        "lineHeight": "var(--seed-v3-line-height-t3)"
+        "fontSize": "var(--seed-v3-font-size-s3)",
+        "lineHeight": "var(--seed-v3-line-height-s3)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-x4)",
-        "cornerRadius": "var(--seed-v3-radius-x1)"
+        "size": "var(--seed-v3-unit-s4)",
+        "cornerRadius": "var(--seed-v3-radius-s1)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-x8)"
+        "minHeight": "var(--seed-v3-unit-s8)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)"
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-x5)",
-        "cornerRadius": "var(--seed-v3-radius-x1)"
+        "size": "var(--seed-v3-unit-s5)",
+        "cornerRadius": "var(--seed-v3-radius-s1)"
       }
     }
   },
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-x9)"
+        "minHeight": "var(--seed-v3-unit-s9)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t5)",
-        "lineHeight": "var(--seed-v3-line-height-t5)"
+        "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-x6)",
-        "cornerRadius": "var(--seed-v3-radius-x1_5)"
+        "size": "var(--seed-v3-unit-s6)",
+        "cornerRadius": "var(--seed-v3-radius-s1_5)"
       }
     }
   },

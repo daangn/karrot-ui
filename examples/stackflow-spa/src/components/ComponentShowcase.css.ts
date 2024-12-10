@@ -7,9 +7,9 @@ export const root = style({
   justifyContent: "center",
   justifyItems: "start",
 
-  paddingBlock: vars.$unit.x4,
-  paddingInline: vars.$unit.x4,
-  gap: vars.$unit.x4,
+  paddingBlock: vars.$unit.s4,
+  paddingInline: vars.$unit.s4,
+  gap: vars.$unit.s4,
 
   transformOrigin: "top left",
 });
