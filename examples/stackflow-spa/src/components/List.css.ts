@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { $color, $fontSize, $fontWeight, $lineHeight, $unit } from "@seed-design/vars";
+import { vars } from "@seed-design/vars";
 
 export const root = style({
   display: "flex",
@@ -11,25 +11,25 @@ export const item = style({
   justifyContent: "space-between",
   alignItems: "center",
 
-  paddingInline: $unit.x4,
-  minHeight: $unit.x13,
+  paddingInline: vars.$unit.x4,
+  minHeight: vars.$unit.x13,
 
-  borderBottom: `1px solid ${$color.stroke.neutral}`,
+  borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
   ":last-child": {
     borderBottom: "none",
   },
 
-  backgroundColor: $color.bg.layerDefault,
+  backgroundColor: vars.$color.bg.layerDefault,
   ":active": {
-    backgroundColor: $color.bg.layerDefaultPressed,
+    backgroundColor: vars.$color.bg.layerDefaultPressed,
   },
 });
 
 export const title = style({
-  color: $color.fg.neutral,
-  fontSize: $fontSize.t5,
-  lineHeight: $lineHeight.t5,
-  fontWeight: $fontWeight.medium,
+  color: vars.$color.fg.neutral,
+  fontSize: vars.$fontSize.t5,
+  lineHeight: vars.$lineHeight.t5,
+  fontWeight: vars.$fontWeight.medium,
 });
 
 export const icon = style({
@@ -37,7 +37,7 @@ export const icon = style({
   alignItems: "center",
   justifyContent: "center",
 
-  color: $color.fg.neutralMuted,
-  width: $unit.x4,
-  height: $unit.x4,
+  color: vars.$color.fg.neutralMuted,
+  width: vars.$unit.x4,
+  height: vars.$unit.x4,
 });

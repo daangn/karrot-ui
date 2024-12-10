@@ -6303,15 +6303,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/icon@npm:^0.6.1":
-  version: 0.6.2
-  resolution: "@seed-design/icon@npm:0.6.2"
-  peerDependencies:
-    react: "*"
-  checksum: 54e4730ec658e7e8db6e1060985bd963b2a9643f983502204cfca8cb92e7907e96763c3f68424319cdfbac46efa03425a00e8492b9ba272042c3c0ed31c30813
-  languageName: node
-  linkType: hard
-
 "@seed-design/project@workspace:.":
   version: 0.0.0-use.local
   resolution: "@seed-design/project@workspace:."
@@ -6577,9 +6568,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/stackflow-spa@workspace:examples/stackflow-spa"
   dependencies:
+    "@daangn/react-monochrome-icon": ^0.0.11
     "@radix-ui/react-slot": ^1.1.0
     "@seed-design/cli": 0.0.0-alpha-20241204134404
-    "@seed-design/icon": ^0.6.1
     "@seed-design/react-popover": 0.0.0-alpha-20241030023710
     "@seed-design/react-radio-group": 0.0.0-alpha-20241030023710
     "@seed-design/react-switch": 0.0.0-alpha-20241030023710
@@ -6623,7 +6614,6 @@ __metadata:
   resolution: "@seed-design/vars@workspace:packages/vars"
   dependencies:
     "@seed-design/rootage-cli": 0.0.0
-    nanobundle: ^1.6.0
   languageName: unknown
   linkType: soft
 

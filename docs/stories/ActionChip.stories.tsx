@@ -16,9 +16,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const LightTheme: Story = {
+const StoryTemplate: Story = {
   args: {
     children: "Action Chip",
+    count: 10,
     prefixIcon: <IconBellFill />,
   },
   render: (args) => (
@@ -26,32 +27,10 @@ export const LightTheme: Story = {
   ),
 };
 
-export const DarkTheme: Story = {
-  args: {
-    children: "Action Chip",
-    prefixIcon: <IconBellFill />,
-  },
-  render: (args) => (
-    <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
-  ),
-};
+export const LightTheme = StoryTemplate;
 
-export const FontScalingExtraSmall: Story = {
-  args: {
-    children: "Action Chip",
-    prefixIcon: <IconBellFill />,
-  },
-  render: (args) => (
-    <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
-  ),
-};
+export const DarkTheme = StoryTemplate;
 
-export const FontScalingExtraExtraExtraLarge: Story = {
-  args: {
-    children: "Action Chip",
-    prefixIcon: <IconBellFill />,
-  },
-  render: (args) => (
-    <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
-  ),
-};
+export const FontScalingExtraSmall = StoryTemplate;
+
+export const FontScalingExtraExtraExtraLarge = StoryTemplate;

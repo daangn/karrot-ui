@@ -219,13 +219,13 @@
       },
       "$color.palette.red-600": {
         "values": {
-          "theme-light": "#ff412d",
+          "theme-light": "#ff3b2d",
           "theme-dark": "#f73526"
         }
       },
       "$color.palette.red-700": {
         "values": {
-          "theme-light": "#ea230e",
+          "theme-light": "#ef1f10",
           "theme-dark": "#f2796d"
         }
       },
@@ -475,6 +475,12 @@
           "theme-dark": "#dde3ed"
         }
       },
+      "$color.palette.static-white-alpha-200": {
+        "values": {
+          "theme-light": "#ffffff33",
+          "theme-dark": "#ffffff33"
+        }
+      },
       "$color.fg.static-white": {
         "values": {
           "theme-light": "$color.palette.static-white",
@@ -621,13 +627,13 @@
       },
       "$color.bg.danger-solid": {
         "values": {
-          "theme-light": "$color.palette.red-700",
+          "theme-light": "$color.palette.red-600",
           "theme-dark": "$color.palette.red-600"
         }
       },
       "$color.bg.danger-solid-pressed": {
         "values": {
-          "theme-light": "$color.palette.red-800",
+          "theme-light": "$color.palette.red-700",
           "theme-dark": "$color.palette.red-700"
         }
       },
@@ -817,7 +823,7 @@
           "theme-dark": "$color.palette.purple-200"
         }
       },
-      "$color.bg.neutral-muted": {
+      "$color.bg.neutral-solid-muted": {
         "values": {
           "theme-light": "$color.palette.slate-800",
           "theme-dark": "$color.palette.gray-400"
@@ -829,7 +835,7 @@
           "theme-dark": "$color.palette.gray-300"
         }
       },
-      "$color.bg.neutral-muted-pressed": {
+      "$color.bg.neutral-solid-muted-pressed": {
         "values": {
           "theme-light": "$color.palette.slate-900",
           "theme-dark": "$color.palette.gray-500"

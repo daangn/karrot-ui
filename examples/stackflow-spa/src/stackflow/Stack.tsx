@@ -2,7 +2,7 @@ import { IconBack, basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { stackflow } from "@stackflow/react";
-import { $color } from "@seed-design/vars";
+import { vars } from "@seed-design/vars";
 import React from "react";
 
 import ActivityNotFound from "../activities/ActivityNotFound";
@@ -23,6 +23,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityHome: React.lazy(() => import("../activities/ActivityHome")),
     ActivityActionButton: React.lazy(() => import("../activities/ActivityActionButton")),
     ActivityActionChip: React.lazy(() => import("../activities/ActivityActionChip")),
+    ActivityControlChip: React.lazy(() => import("../activities/ActivityControlChip")),
     ActivityHelpBubble: React.lazy(() => import("../activities/ActivityHelpBubble")),
     ActivityNotFound,
   },
@@ -30,33 +31,25 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     basicRendererPlugin(),
     basicUIPlugin({
       appBar: {
-        borderColor: $color.stroke.neutral,
+        borderColor: vars.$color.stroke.neutral,
         closeButton: {
           renderIcon: () => <IconBack />,
         },
-        iconColor: $color.fg.neutral,
-        textColor: $color.fg.neutral,
+        iconColor: vars.$color.fg.neutral,
+        textColor: vars.$color.fg.neutral,
       },
-      backgroundColor: $color.bg.layerDefault,
+      backgroundColor: vars.$color.bg.layerDefault,
       theme,
     }),
     historySyncPlugin({
       fallbackActivity: () => "ActivityNotFound",
       routes: {
         ActivityHome: "/",
-        ActivityAvatar: "/avatar",
         ActivityActionButton: "/action-button",
-        ActivityRadioGroup: "/radio-group",
-        ActivityCheckbox: "/checkbox",
-        ActivityAlertDialog: "/alert",
         ActivityActionChip: "/action-chip",
-        ActivityCallout: "/callout",
-        ActivitySwitch: "/switch",
-        ActivityTabs: "/tabs",
-        ActivityChipTabs: "/chipTabs",
-        ActivityNotFound: "/404",
-        ActivityTextField: "/text-field",
+        ActivityControlChip: "/control-chip",
         ActivityHelpBubble: "/help-bubble",
+        ActivityNotFound: "/404",
       },
     }),
   ],

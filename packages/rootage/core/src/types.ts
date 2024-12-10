@@ -106,6 +106,7 @@ export interface DependencyGraph {
   [tokenRef: TokenRef]: DependencyNode;
 }
 
+// TODO: use record instead of array
 export interface RootageCtx {
   componentSpecs: ComponentSpecDeclaration[];
   tokens: TokenDeclaration[];

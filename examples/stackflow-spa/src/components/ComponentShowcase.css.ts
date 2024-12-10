@@ -1,4 +1,4 @@
-import { $unit } from "@seed-design/vars";
+import { vars } from "@seed-design/vars";
 import { style } from "@vanilla-extract/css";
 
 export const root = style({
@@ -7,9 +7,9 @@ export const root = style({
   justifyContent: "center",
   justifyItems: "start",
 
-  paddingBlock: $unit.x4,
-  paddingInline: $unit.x4,
-  gap: $unit.x4,
+  paddingBlock: vars.$unit.x4,
+  paddingInline: vars.$unit.x4,
+  gap: vars.$unit.x4,
 
   transformOrigin: "top left",
 });

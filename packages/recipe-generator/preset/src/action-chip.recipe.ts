@@ -59,6 +59,12 @@ const actionChip = defineRecipe({
         color: vars.base.disabled.suffixIcon.color,
       },
     },
+    count: {
+      lineHeight: 1,
+
+      color: vars.base.enabled.count.color,
+      fontWeight: vars.base.enabled.count.fontWeight,
+    },
   },
   variants: {
     size: {
@@ -79,6 +85,9 @@ const actionChip = defineRecipe({
           width: rem(vars.sizeMedium.enabled.suffixIcon.size),
           height: rem(vars.sizeMedium.enabled.suffixIcon.size),
         },
+        count: {
+          fontSize: vars.sizeMedium.enabled.count.fontSize,
+        },
       },
       small: {
         root: {
@@ -96,6 +105,9 @@ const actionChip = defineRecipe({
         suffixIcon: {
           width: rem(vars.sizeSmall.enabled.suffixIcon.size),
           height: rem(vars.sizeSmall.enabled.suffixIcon.size),
+        },
+        count: {
+          fontSize: vars.sizeSmall.enabled.count.fontSize,
         },
       },
     },

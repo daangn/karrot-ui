@@ -11,7 +11,6 @@ import dialog from "./dialog.recipe";
 import expandButton from "./expand-button.recipe";
 import helpBubble from "./help-bubble.recipe";
 import inlineBanner from "./inline-banner.recipe";
-import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
 import segmentedControl from "./segmented-control.recipe";
 import selectBox from "./select-box.recipe";
@@ -40,7 +39,6 @@ const recipes = {
   tabs,
   chipTab,
   chipTabs,
-  progressCircle,
   expandButton,
   textButton,
   textField,

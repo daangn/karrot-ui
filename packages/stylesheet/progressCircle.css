@@ -9,10 +9,10 @@
     transition-property: stroke-dashoffset
 }
 .progressCircle__track--tone_neutral {
-    stroke: var(--seed-v3-color-palette-gray-300)
+    stroke: var(--seed-v3-color-palette-gray-200)
 }
 .progressCircle__range--tone_neutral {
-    stroke: var(--seed-v3-color-palette-gray-600)
+    stroke: var(--seed-v3-color-palette-gray-500)
 }
 .progressCircle__track--tone_brand {
     stroke: var(--seed-v3-color-palette-carrot-200)
@@ -21,7 +21,7 @@
     stroke: var(--seed-v3-color-bg-brand-solid)
 }
 .progressCircle__track--tone_staticWhite {
-    stroke: var(--seed-v3-color-palette-gray-600)
+    stroke: var(--seed-v3-color-palette-static-white-alpha-200)
 }
 .progressCircle__range--tone_staticWhite {
     stroke: var(--seed-v3-color-bg-static-white)

@@ -15,9 +15,10 @@ data:
       prefixIcon:
         color: $color.fg.neutral
       suffixIcon:
-        color: $color.fg.neutral
+        color: $color.fg.neutral-subtle
       count:
         color: $color.fg.neutral-muted
+        fontWeight: $font-weight.medium
     pressed:
       root:
         color: $color.bg.neutral-weak-pressed
@@ -44,6 +45,8 @@ data:
         size: $unit.x4
       suffixIcon:
         size: $unit.x3_5
+      count:
+        fontSize: $font-size.t4
   size=medium:
     enabled:
       root:
@@ -56,6 +59,8 @@ data:
         size: $unit.x4
       suffixIcon:
         size: $unit.x3_5
+      count:
+        fontSize: $font-size.t4
   size=small,layout=with text:
     enabled:
       root:
