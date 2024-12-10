@@ -54,6 +54,11 @@ export const registryUI: RegistryUI = [
     files: ["ui:inline-banner.tsx"],
   },
   {
+    name: "help-bubble",
+    dependencies: ["@seed-design/react-popover", "@radix-ui/react-slot"],
+    files: ["ui:help-bubble.tsx"],
+  },
+  {
     name: "tabs",
     // TODO: remove alpha
     dependencies: ["@seed-design/react-tabs@alpha"],

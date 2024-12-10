@@ -2,9 +2,9 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-x1_5)",
+        "cornerRadius": "var(--seed-v3-radius-x3)",
         "paddingX": "var(--seed-v3-unit-x3)",
-        "paddingY": "var(--seed-v3-unit-x2)"
+        "paddingY": "var(--seed-v3-unit-x3)"
       },
       "arrow": {
         "size": "var(--seed-v3-unit-x2_5)"
@@ -22,10 +22,10 @@ export declare const vars: {
   "variantNonModal": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid)"
+        "color": "var(--seed-v3-color-bg-floating-solid)"
       },
       "arrow": {
-        "color": "var(--seed-v3-color-bg-neutral-solid)"
+        "color": "var(--seed-v3-color-bg-floating-solid)"
       },
       "title": {
         "color": "var(--seed-v3-color-fg-neutral-inverted)"

@@ -8,34 +8,28 @@
   },
   "sideEffects": false,
   "exports": {
-    "./package.json": "./package.json",
     ".": {
-      "import": {
-        "source": "./src/index.ts",
-        "default": "./dist/esm/index.ts"
-      },
-      "require": {
-        "source": "./src/index.ts",
-        "default": "./dist/commonjs/index.ts"
-      }
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
     }
   },
+  "main": "./lib/index.js",
   "files": [
-    "dist",
+    "lib",
     "src"
   ],
   "scripts": {
-    "clean": "rm -rf dist",
     "prepack": "yarn build",
-    "build": "tshy"
+    "clean": "rm -rf lib",
+    "build": "nanobundle build"
   },
   "dependencies": {
     "@floating-ui/react": "^0.26.19",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710"
   },
   "devDependencies": {
-    "tshy": "^1.17.0",
-    "typescript": "^5.4.5"
+    "nanobundle": "^1.6.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -44,20 +38,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "tshy": {
-    "liveDev": true,
-    "exports": {
-      "./package.json": "./package.json",
-      ".": "./src/index.ts"
-    }
-  },
   "ultra": {
     "concurrent": [
       "dev",
       "build"
     ]
-  },
-  "type": "module",
-  "module": "./dist/esm/index.ts",
-  "main": "./dist/commonjs/index.ts"
+  }
 }

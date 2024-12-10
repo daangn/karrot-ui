@@ -1,5 +1,5 @@
 import { useClick, useDismiss, useInteractions, useRole } from "@floating-ui/react";
-import { usePositionedFloating, type UsePositionedFloatingProps } from "./floating.js";
+import { usePositionedFloating, type UsePositionedFloatingProps } from "./floating";
 
 // TODO: useRole이 임의로 id를 생성하는 문제가 있음. 동작만 참고하고 role="dialog"에 맞게 aria attribute 설정을 직접 해야 함.
 

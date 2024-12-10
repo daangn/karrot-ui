@@ -8,9 +8,9 @@
     "base": {
       "enabled": {
         "root": {
-          "cornerRadius": "$radius.x1_5",
+          "cornerRadius": "$radius.x3",
           "paddingX": "$unit.x3",
-          "paddingY": "$unit.x2"
+          "paddingY": "$unit.x3"
         },
         "arrow": {
           "size": "$unit.x2_5"
@@ -28,10 +28,10 @@
     "variant=non-modal": {
       "enabled": {
         "root": {
-          "color": "$color.bg.neutral-solid"
+          "color": "$color.bg.floating-solid"
         },
         "arrow": {
-          "color": "$color.bg.neutral-solid"
+          "color": "$color.bg.floating-solid"
         },
         "title": {
           "color": "$color.fg.neutral-inverted"
