@@ -27,11 +27,11 @@
     stroke: var(--seed-v3-color-bg-static-white)
 }
 .progressCircle__root--size_24 {
-    --size: var(--seed-v3-unit-x6);
+    --size: var(--seed-v3-unit-s6);
     --thickness: 3px
 }
 .progressCircle__root--size_40 {
-    --size: var(--seed-v3-unit-x10);
+    --size: var(--seed-v3-unit-s10);
     --thickness: 5px
 }
 .progressCircle__root--indeterminate_true {
