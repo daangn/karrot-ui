@@ -5867,7 +5867,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-use-callback-ref@npm:1.1.0":
+"@radix-ui/react-use-callback-ref@npm:1.1.0, @radix-ui/react-use-callback-ref@npm:^1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-use-callback-ref@npm:1.1.0"
   peerDependencies:
@@ -6213,6 +6213,9 @@ __metadata:
   dependencies:
     "@types/react": ^18.3.3
     nanobundle: ^1.6.0
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -6447,10 +6450,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-text-field@workspace:packages/react-headless/text-field"
   dependencies:
+    "@radix-ui/react-use-callback-ref": ^1.1.0
     "@radix-ui/react-use-controllable-state": 1.0.1
     "@seed-design/dom-utils": 0.0.0-alpha-20241030023710
     nanobundle: ^1.6.0
-    unicode-segmenter: ^0.7.0
+    unicode-segmenter: ^0.11.2
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
@@ -10839,6 +10843,7 @@ __metadata:
     react: ^18.3.1
     react-dom: ^18.3.1
     react-error-boundary: ^4.1.2
+    react-hook-form: ^7.53.2
     shiki: ^1.22.2
     simple-reveal: ^0.8.0
     storybook: ^8.4.4
@@ -17720,6 +17725,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.53.2":
+  version: 7.53.2
+  resolution: "react-hook-form@npm:7.53.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  checksum: 37e2dd0e79cd8d3376a7a2cb72ad7b59f0594be499daa898d2c6bec896fc30c2f86e62e8b41bc9d325f77220bd8d76cb31e917f77f1c92ad5740adb1a4cc69e2
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^17.0.1":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
@@ -20242,10 +20256,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unicode-segmenter@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "unicode-segmenter@npm:0.7.0"
-  checksum: 0814d9768e965c81c2b9179057bf2278d2bb4a9a5d9bb228bd665f70e28e1400a82b1ef36ad91215dcd89e35532c303f5a83fd089ece29a09dcdd359ff570087
+"unicode-segmenter@npm:^0.11.2":
+  version: 0.11.2
+  resolution: "unicode-segmenter@npm:0.11.2"
+  checksum: 9f894239c8fc1056fbddec4f3098e6b6b90bc80858052e5fac29b14758607d69f3a9bb89a683d3f1524717fbaaf91b5c68c79c23422c67a37dc894ddd94075e5
   languageName: node
   linkType: hard
 

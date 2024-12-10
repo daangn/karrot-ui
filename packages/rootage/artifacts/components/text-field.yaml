@@ -1,0 +1,195 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: text-field
+  name: Text Field
+data:
+  base:
+    enabled:
+      header:
+        marginYEnd: $unit.x3
+      label:
+        color: $color.fg.neutral
+        fontWeight: $font-weight.bold
+      indicator:
+        color: $color.fg.neutral
+        fontWeight: $font-weight.regular
+      input:
+        color: $color.bg.layer-default
+        strokeWidth: 1px
+        strokeColor: $color.stroke.field
+      inputText:
+        color: $color.fg.neutral
+      inputPlaceholder:
+        color: $color.fg.placeholder
+      prefixText:
+        color: $color.fg.neutral
+      prefixIcon:
+        color: $color.fg.neutral
+      suffixText:
+        color: $color.fg.neutral
+      suffixIcon:
+        color: $color.fg.neutral
+      footer:
+        gap: $unit.x3_5
+        marginYStart: $unit.x2
+      description:
+        color: $color.fg.neutral-subtle
+        fontWeight: $font-weight.regular
+      errorMessage:
+        gap: $unit.x1
+        color: $color.fg.danger
+        fontWeight: $font-weight.regular
+      characterCount:
+        height: $line-height.t4
+        lineHeight: $line-height.t2
+      currentCharacterCount:
+        color: $color.fg.neutral
+        fontWeight: $font-weight.regular
+        fontSize: $font-size.t2
+      maxCharacterCount:
+        color: $color.fg.neutral-subtle
+        fontWeight: $font-weight.regular
+        fontSize: $font-size.t2
+    focused:
+      input:
+        strokeColor: $color.stroke.field-focused
+    disabled:
+      input:
+        color: $color.bg.disabled
+      inputText:
+        color: $color.fg.disabled
+      inputPlaceholder:
+        color: $color.fg.disabled
+      prefixText:
+        color: $color.fg.disabled
+      prefixIcon:
+        color: $color.fg.disabled
+      suffixText:
+        color: $color.fg.disabled
+      suffixIcon:
+        color: $color.fg.disabled
+    readOnly:
+      input:
+        color: $color.bg.disabled
+    invalid:
+      input:
+        color: $color.bg.danger-weak
+        strokeColor: $color.stroke.danger
+
+  size=xlarge:
+    enabled:
+      header:
+        lineHeight: $line-height.t5
+      label:
+        fontSize: $font-size.t5
+      indicator:
+        fontSize: $font-size.t5
+        marginXStart: $unit.x1_5
+      input:
+        minHeight: 56px
+        cornerRadius: $radius.x2_5
+        gap: $unit.x2
+        paddingX: $unit.x4
+      inputText:
+        paddingY: $unit.x3
+        fontSize: $font-size.t6
+        lineHeight: $line-height.t6
+      prefixText:
+        fontSize: $font-size.t6
+        lineHeight: $line-height.t6
+      prefixIcon:
+        size: $unit.x5
+      suffixText:
+        fontSize: $font-size.t6
+        lineHeight: $line-height.t6
+      suffixIcon:
+        size: $unit.x5
+      footer:
+        minHeight: 19px
+      description:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      errorMessage:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      errorIcon:
+        size: $unit.x4
+
+  size=large:
+    enabled:
+      header:
+        lineHeight: $line-height.t5
+      label:
+        fontSize: $font-size.t5
+      indicator:
+        fontSize: $font-size.t5
+        marginXStart: $unit.x1_5
+      input:
+        minHeight: 52px
+        cornerRadius: $radius.x2_5
+        gap: $unit.x2
+        paddingX: $unit.x4
+      inputText:
+        paddingY: $unit.x3
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
+      prefixText:
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
+      prefixIcon:
+        size: $unit.x5
+      suffixText:
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
+      suffixIcon:
+        size: $unit.x5
+      footer:
+        minHeight: 19px
+      description:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      errorMessage:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      errorIcon:
+        size: $unit.x4
+
+  size=medium:
+    enabled:
+      header:
+        lineHeight: $line-height.t4
+      label:
+        fontSize: $font-size.t4
+      indicator:
+        fontSize: $font-size.t4
+        marginXStart: $unit.x1
+      input:
+        minHeight: 40px
+        cornerRadius: $radius.x2
+        gap: $unit.x1_5
+        paddingX: $unit.x3_5
+      inputText:
+        paddingY: $unit.x2_5
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      prefixText:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      prefixIcon:
+        size: $unit.x4
+      suffixText:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
+      suffixIcon:
+        size: $unit.x4
+      footer:
+        minHeight: $unit.x4
+      description:
+        fontSize: $font-size.t2
+        lineHeight: $line-height.t2
+      errorMessage:
+        fontSize: $font-size.t2
+        lineHeight: $line-height.t2
+      errorIcon:
+        size: $unit.x3_5

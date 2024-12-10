@@ -6,11 +6,15 @@ export const active = ":is(:active, [data-active])";
 
 export const disabled = ":is(:disabled, [disabled], [data-disabled])";
 
+export const readOnly = ":is([data-readonly])";
+
 export const checked = ":is(:checked, [data-checked])";
 
 export const selected = ":is(:selected, [data-selected])";
 
 export const open = ':is([data-state="open"], [data-open])';
+
+export const invalid = ":is(:invalid, [data-invalid])";
 
 type JoinRest<Rest extends string[]> = Rest extends []
   ? ""

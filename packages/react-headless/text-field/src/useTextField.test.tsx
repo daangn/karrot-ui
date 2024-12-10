@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { ReactElement } from "react";
-import React from "react";
+import React, { useMemo } from "react";
 
 import { useTextField, type UseTextFieldProps } from "./index";
 
@@ -17,48 +17,70 @@ function setUp(jsx: ReactElement) {
   };
 }
 
-function TextField(props: UseTextFieldProps) {
-  const { description, errorMessage } = props;
+type Assign<T, U> = Omit<T, keyof U> & U;
+
+const TextField = (
+  props: Assign<
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, "children" | "maxLength">,
+    UseTextFieldProps
+  >,
+) => {
   const {
     rootProps,
     inputProps,
-    restProps,
     labelProps,
     descriptionProps,
     errorMessageProps,
     stateProps,
+    restProps,
     graphemes,
-  } = useTextField({ ...props });
+    renderDescription,
+    renderErrorMessage,
+  } = useTextField(props);
+
+  const { description, errorMessage, maxGraphemeCount } = props;
 
   return (
-    <div {...stateProps} {...rootProps}>
-      <div data-part="head">
-        <label {...labelProps} />
-        <span data-part="indicator" />
-      </div>
-      <div data-part="field">
-        <div data-part="prefix" />
+    <div {...rootProps} {...stateProps}>
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
+      <label {...labelProps} data-testid="label" />
+      <div {...stateProps}>
         <input {...inputProps} {...restProps} />
-        <div data-part="suffix" />
       </div>
-      <div data-part="foot">
-        {errorMessage && <span {...stateProps} {...errorMessageProps} />}
-        {description && <span {...stateProps} {...descriptionProps} />}
-        <div data-part="count-container" {...stateProps}>
-          <span data-part="character-count">{graphemes.length}</span>
-          <span data-part="max-count" />
+      <div>
+        {renderDescription && (
+          <div {...descriptionProps} data-testid="description">
+            {description}
+          </div>
+        )}
+        {renderErrorMessage && (
+          <div {...errorMessageProps} data-testid="error-message">
+            <div>{errorMessage}</div>
+          </div>
+        )}
+        <div data-testid="grapheme-count">
+          <span {...stateProps}>{graphemes.length}</span>
+          <span>/{maxGraphemeCount}</span>
         </div>
       </div>
     </div>
   );
-}
+};
 
 function ControlledTextField(props: Omit<UseTextFieldProps, "value" | "onValueChange">) {
   const { defaultValue } = props;
   const [value, setValue] = React.useState(defaultValue);
-  const mockSetValue = vi.fn((value) => setValue(value));
+  const mockSetValue = vi.fn(({ value }) => setValue(value));
 
   return <TextField value={value} onValueChange={mockSetValue} {...props} />;
+}
+
+function SlicingControlledTextField(props: Omit<UseTextFieldProps, "value" | "onValueChange">) {
+  const { defaultValue } = props;
+  const [value, setValue] = React.useState(defaultValue);
+  const mockSliceSetValue = vi.fn(({ slicedValue }) => setValue(slicedValue));
+
+  return <TextField value={value} onValueChange={mockSliceSetValue} {...props} />;
 }
 
 describe("useTextField", () => {
@@ -107,14 +129,17 @@ describe("useTextField", () => {
       expect(ariaDescribedBy).toContain("description");
     });
 
-    it("should render the input with error's aria-describedby when errorMessage and description and invalid are provided", () => {
-      const { getByRole } = setUp(
+    it("should render the input with error and description's id as aria-describedby when errorMessage and description and invalid are provided, while hiding the description from the interface", () => {
+      const { getByRole, getByTestId } = setUp(
         <TextField errorMessage="error" description="description" invalid />,
       );
       const input = getByRole("textbox");
+      const description = getByTestId("description");
       const ariaDescribedBy = input.getAttribute("aria-describedby");
 
+      expect(description.style.display).toBe("none");
       expect(ariaDescribedBy).toContain("error");
+      expect(ariaDescribedBy).toContain("description");
     });
   });
 
@@ -158,191 +183,177 @@ describe("useTextField", () => {
 
     await user.type(input, "a");
     expect(input).toHaveValue("a");
-    expect(handleValueChange).toHaveBeenCalledWith("a");
+    expect(handleValueChange).toHaveBeenCalledWith({
+      value: "a",
+      graphemes: ["a"],
+      slicedValue: "a",
+      slicedGraphemes: ["a"],
+    });
   });
 
-  it("should not called onValueChange when maxGraphemeCount is reached", async () => {
+  it("should onValueChange be called with proper values on maxGraphemeCount set", async () => {
     const handleValueChange = vi.fn();
 
-    const maxGraphemeCount = 5;
-    const defaultFulledValue = "a".repeat(maxGraphemeCount);
+    const timesToType = 10;
+    const maxGrahemeCount = 5;
+
+    const expectedValue = "a".repeat(timesToType);
+    const expectedSlicedValue = "a".repeat(maxGrahemeCount);
+
     const { getByRole, user } = setUp(
-      <TextField
-        defaultValue={defaultFulledValue}
-        maxGraphemeCount={maxGraphemeCount}
-        onValueChange={handleValueChange}
-      />,
+      <TextField onValueChange={handleValueChange} maxGraphemeCount={maxGrahemeCount} />,
     );
     const input = getByRole("textbox");
 
-    await user.type(input, "a");
-    expect(input).toHaveValue(defaultFulledValue);
-    expect(handleValueChange).not.toHaveBeenCalled();
+    await user.type(input, "a".repeat(timesToType));
+    // uncontrollable하므로 slicedValue로 set하지 않음. 10글자가 입력됨
+    expect(input).toHaveValue("a".repeat(timesToType));
+    expect(handleValueChange).toHaveBeenCalledWith({
+      value: expectedValue,
+      graphemes: expectedValue.split(""),
+      slicedValue: expectedSlicedValue,
+      slicedGraphemes: expectedSlicedValue.split(""),
+    });
+  });
+
+  it("should set value from outside correctly (number formatting)", async () => {
+    function NumberFormattedInput() {
+      const [value, setValue] = React.useState("");
+
+      const formattedValue = useMemo(() => {
+        if (value === "") return value;
+
+        const number = Number(value.replace(/,/g, ""));
+        if (Number.isNaN(number)) return "";
+
+        return number.toLocaleString();
+      }, [value]);
+
+      return (
+        <TextField
+          label="금액"
+          placeholder="9,999,999"
+          description="금액을 써주세요"
+          value={formattedValue}
+          onValueChange={({ value }) => setValue(value)}
+        />
+      );
+    }
+
+    const { getByRole, user } = setUp(<NumberFormattedInput />);
+    const input = getByRole("textbox");
+
+    await user.type(input, "11111111");
+    expect(input).toHaveValue("11,111,111");
   });
 
   describe("graphemes test", () => {
-    it("should grapheme count 5 when type 5 text", async () => {
-      const { getByRole, user } = setUp(<TextField />);
-      const input = getByRole("textbox");
+    describe("graphemes test with uncontrolled", () => {
+      it("should grapheme count 5 when type 5 text", async () => {
+        const { getByRole, user } = setUp(<TextField />);
+        const input = getByRole("textbox");
 
-      input.focus();
+        input.focus();
 
-      await user.type(input, "a".repeat(5));
+        await user.type(input, "a".repeat(5));
 
-      expect(input).toHaveAttribute("data-grapheme-count", "5");
+        expect(input).toHaveAttribute("data-grapheme-count", "5");
+      });
+
+      it("should grapheme count 5 when type 5 emoji", async () => {
+        const { getByRole, user } = setUp(<TextField />);
+        const input = getByRole("textbox");
+
+        input.focus();
+
+        await user.type(input, "🥕".repeat(5));
+
+        expect(input).toHaveAttribute("data-grapheme-count", "5");
+      });
     });
 
-    it("should grapheme count 5 when type 5 emoji", async () => {
-      const { getByRole, user } = setUp(<TextField />);
-      const input = getByRole("textbox");
+    describe("graphemes test with controlled", () => {
+      it("should grapheme count 5 when type 5 text", async () => {
+        const { getByRole, user } = setUp(<ControlledTextField />);
+        const input = getByRole("textbox");
 
-      input.focus();
+        input.focus();
 
-      await user.type(input, "🥕".repeat(5));
+        await user.type(input, "a".repeat(5));
 
-      expect(input).toHaveAttribute("data-grapheme-count", "5");
-    });
+        expect(input).toHaveAttribute("data-grapheme-count", "5");
+      });
 
-    it("should grapheme count 10 when maxGraphemeCount is 10, type 15 text", async () => {
-      const { getByRole, user } = setUp(<TextField maxGraphemeCount={10} />);
-      const input = getByRole("textbox");
+      it("should grapheme count 5 when type 5 emoji", async () => {
+        const { getByRole, user } = setUp(<ControlledTextField />);
+        const input = getByRole("textbox");
 
-      input.focus();
+        input.focus();
 
-      await user.type(input, "a".repeat(15));
+        await user.type(input, "🥕".repeat(5));
 
-      expect(input).toHaveAttribute("data-grapheme-count", "10");
-    });
+        expect(input).toHaveAttribute("data-grapheme-count", "5");
+      });
 
-    it("should grapheme count 10 when maxGraphemeCount is 10, type 15 emoji", async () => {
-      const { getByRole, user } = setUp(<TextField maxGraphemeCount={10} />);
-      const input = getByRole("textbox");
+      it("should grapheme count 10 when maxGraphemeCount is 10, type 15 text", async () => {
+        const { getByRole, user } = setUp(<SlicingControlledTextField maxGraphemeCount={10} />);
+        const input = getByRole("textbox");
 
-      input.focus();
+        input.focus();
 
-      await user.type(input, "🥕".repeat(15));
+        await user.type(input, "a".repeat(15));
 
-      expect(input).toHaveAttribute("data-grapheme-count", "10");
-    });
+        expect(input).toHaveAttribute("data-grapheme-count", "10");
+      });
 
-    it("should grapheme count 10 when maxGraphemeCount is 10, type 15 emoji and text", async () => {
-      const { getByRole, user } = setUp(<TextField maxGraphemeCount={10} />);
-      const input = getByRole("textbox");
+      it("should grapheme count 10 when maxGraphemeCount is 10, type 15 emoji", async () => {
+        const { getByRole, user } = setUp(<SlicingControlledTextField maxGraphemeCount={10} />);
+        const input = getByRole("textbox");
 
-      input.focus();
+        input.focus();
 
-      await user.type(input, "a🥕a".repeat(5));
+        await user.type(input, "🥕".repeat(15));
 
-      expect(input).toHaveAttribute("data-grapheme-count", "10");
-    });
+        expect(input).toHaveAttribute("data-grapheme-count", "10");
+      });
 
-    it("should slice correctly when paste over maxGraphemeCount", async () => {
-      const { getByRole, user } = setUp(<TextField maxGraphemeCount={12} />);
-      const input = getByRole("textbox");
+      it("should grapheme count 10 when maxGraphemeCount is 10, type 15 emoji and text", async () => {
+        const { getByRole, user } = setUp(<SlicingControlledTextField maxGraphemeCount={10} />);
+        const input = getByRole("textbox");
 
-      const value = "a".repeat(10);
-      await user.type(input, value);
-      expect(input).toHaveValue(value);
+        input.focus();
 
-      await user.paste("aaaaa");
-      expect(input).toHaveValue(`${value}${"a".repeat(2)}`);
-    });
+        await user.type(input, "a🥕a".repeat(5));
 
-    it("should slice correctly when paste over maxGraphemeCount with emoji", async () => {
-      const maxGraphemeCount = 5;
-      const { getByRole, user } = setUp(<TextField maxGraphemeCount={maxGraphemeCount} />);
-      const input = getByRole("textbox");
+        expect(input).toHaveAttribute("data-grapheme-count", "10");
+      });
 
-      input.focus();
+      it("should slice correctly when paste over maxGraphemeCount", async () => {
+        const { getByRole, user } = setUp(<SlicingControlledTextField maxGraphemeCount={12} />);
+        const input = getByRole("textbox");
 
-      await user.paste("🥕".repeat(4));
-      await user.paste("🥕".repeat(4));
+        const value = "a".repeat(10);
+        await user.type(input, value);
+        expect(input).toHaveValue(value);
 
-      expect(input).toHaveValue("🥕".repeat(maxGraphemeCount));
-    });
-  });
+        await user.paste("aaaaa");
+        expect(input).toHaveValue(`${value}${"a".repeat(2)}`);
+      });
 
-  describe("graphemes test with controlled", () => {
-    it("should grapheme count 5 when type 5 text", async () => {
-      const { getByRole, user } = setUp(<ControlledTextField />);
-      const input = getByRole("textbox");
+      it("should slice correctly when paste over maxGraphemeCount with emoji", async () => {
+        const maxGraphemeCount = 5;
+        const { getByRole, user } = setUp(
+          <SlicingControlledTextField maxGraphemeCount={maxGraphemeCount} />,
+        );
+        const input = getByRole("textbox");
 
-      input.focus();
+        input.focus();
 
-      await user.type(input, "a".repeat(5));
+        await user.paste("🥕".repeat(4));
+        await user.paste("🥕".repeat(4));
 
-      expect(input).toHaveAttribute("data-grapheme-count", "5");
-    });
-
-    it("should grapheme count 5 when type 5 emoji", async () => {
-      const { getByRole, user } = setUp(<ControlledTextField />);
-      const input = getByRole("textbox");
-
-      input.focus();
-
-      await user.type(input, "🥕".repeat(5));
-
-      expect(input).toHaveAttribute("data-grapheme-count", "5");
-    });
-
-    it("should grapheme count 10 when maxGraphemeCount is 10, type 15 text", async () => {
-      const { getByRole, user } = setUp(<ControlledTextField maxGraphemeCount={10} />);
-      const input = getByRole("textbox");
-
-      input.focus();
-
-      await user.type(input, "a".repeat(15));
-
-      expect(input).toHaveAttribute("data-grapheme-count", "10");
-    });
-
-    it("should grapheme count 10 when maxGraphemeCount is 10, type 15 emoji", async () => {
-      const { getByRole, user } = setUp(<ControlledTextField maxGraphemeCount={10} />);
-      const input = getByRole("textbox");
-
-      input.focus();
-
-      await user.type(input, "🥕".repeat(15));
-
-      expect(input).toHaveAttribute("data-grapheme-count", "10");
-    });
-
-    it("should grapheme count 10 when maxGraphemeCount is 10, type 15 emoji and text", async () => {
-      const { getByRole, user } = setUp(<ControlledTextField maxGraphemeCount={10} />);
-      const input = getByRole("textbox");
-
-      input.focus();
-
-      await user.type(input, "a🥕a".repeat(5));
-
-      expect(input).toHaveAttribute("data-grapheme-count", "10");
-    });
-
-    it("should slice correctly when paste over maxGraphemeCount", async () => {
-      const { getByRole, user } = setUp(<ControlledTextField maxGraphemeCount={12} />);
-      const input = getByRole("textbox");
-
-      const value = "a".repeat(10);
-      await user.type(input, value);
-      expect(input).toHaveValue(value);
-
-      await user.paste("aaaaa");
-      expect(input).toHaveValue(`${value}${"a".repeat(2)}`);
-    });
-
-    it("should slice correctly when paste over maxGraphemeCount with emoji", async () => {
-      const maxGraphemeCount = 5;
-      const { getByRole, user } = setUp(
-        <ControlledTextField maxGraphemeCount={maxGraphemeCount} />,
-      );
-      const input = getByRole("textbox");
-
-      input.focus();
-
-      await user.paste("🥕".repeat(4));
-      await user.paste("🥕".repeat(4));
-
-      expect(input).toHaveValue("🥕".repeat(maxGraphemeCount));
+        expect(input).toHaveValue("🥕".repeat(maxGraphemeCount));
+      });
     });
   });
 });

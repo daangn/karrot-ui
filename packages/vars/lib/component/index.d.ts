@@ -20,4 +20,5 @@ export { vars as switch } from "./switch";
 export { vars as tab } from "./tab";
 export { vars as tablist } from "./tablist";
 export { vars as textButton } from "./text-button";
+export { vars as textField } from "./text-field";
 export { vars as typography } from "./typography";
