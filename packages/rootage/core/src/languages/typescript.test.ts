@@ -69,7 +69,7 @@ test("getTokenMjs should generate esm definitions", () => {
         "path": "color/bg",
       },
       {
-        "code": "export const x1_5 = \\"var(--seed-v3-unit-x1_5)\\";",
+        "code": "export const s1_5 = \\"var(--seed-v3-unit-s1_5)\\";",
         "path": "unit",
       },
     ]
@@ -141,7 +141,7 @@ test("getTokenDts should generate typescript definitions", () => {
         "path": "color/bg",
       },
       {
-        "code": "export declare const x1_5 = \\"var(--seed-v3-unit-x1_5)\\";",
+        "code": "export declare const s1_5 = \\"var(--seed-v3-unit-s1_5)\\";",
         "path": "unit",
       },
     ]
