@@ -1,5 +1,5 @@
-import { defineType, defineArrayMember } from "sanity";
 import { BulbOutlineIcon, ImageIcon } from "@sanity/icons";
+import { defineArrayMember, defineType } from "sanity";
 
 /**
  * This is the schema type for block content used in the post document type
@@ -24,6 +24,21 @@ export const imageType = defineArrayMember({
       name: "alt",
       type: "string",
       title: "Alternative Text",
+    },
+  ],
+});
+
+export const tableType = defineArrayMember({
+  name: "tabelContainer",
+  title: "Table",
+  type: "document",
+  fields: [
+    {
+      // Include the table as a field
+      // Giving it a semantic title
+      name: "table",
+      title: "Table",
+      type: "table",
     },
   ],
 });
@@ -55,12 +70,6 @@ export const blockContentType = defineType({
         decorators: [
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
-          {
-            title: "Highlight",
-            value: "highlight",
-            icon: BulbOutlineIcon,
-            component: (props) => <span style={{ backgroundColor: "#0f0" }}>{props.children}</span>,
-          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -80,5 +89,6 @@ export const blockContentType = defineType({
       },
     }),
     imageType,
+    tableType,
   ],
 });

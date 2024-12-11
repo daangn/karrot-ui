@@ -5241,6 +5241,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/dom@npm:^1.2.7":
+  version: 1.6.12
+  resolution: "@floating-ui/dom@npm:1.6.12"
+  dependencies:
+    "@floating-ui/core": ^1.6.0
+    "@floating-ui/utils": ^0.2.8
+  checksum: 956514ed100c0c853e73ace9e3c877b7e535444d7c31326f687a7690d49cb1e59ef457e9c93b76141aea0d280e83ed5a983bb852718b62eea581f755454660f6
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@floating-ui/react-dom@npm:2.0.0"
+  dependencies:
+    "@floating-ui/dom": ^1.2.7
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: c5dd02b7babf9c26d5e11b8ebe58411131b37844f7d6362a767cd1eedfb506ca6db3228fb192e0a5822c9289a5b500e2ef31e069dce28a0fbec4722f22bcdd95
+  languageName: node
+  linkType: hard
+
 "@floating-ui/react-dom@npm:^2.0.0, @floating-ui/react-dom@npm:^2.1.1, @floating-ui/react-dom@npm:^2.1.2":
   version: 2.1.2
   resolution: "@floating-ui/react-dom@npm:2.1.2"
@@ -5271,6 +5293,13 @@ __metadata:
   version: 0.2.4
   resolution: "@floating-ui/utils@npm:0.2.4"
   checksum: af44cdb3f394fbee6abc933fc3c25bf22f3f0bac58150eee8cc1dcc7e9be56a19b13e438820160614a90712e5a43f84b091afa6689318a10504042930ae9cf44
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.8":
+  version: 0.2.8
+  resolution: "@floating-ui/utils@npm:0.2.8"
+  checksum: deb98bba017c4e073c7ad5740d4dec33a4d3e0942d412e677ac0504f3dade15a68fc6fd164d43c93c0bb0bcc5dc5015c1f4080dfb1a6161140fe660624f7c875
   languageName: node
   linkType: hard
 
@@ -6840,6 +6869,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/color@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@sanity/color@npm:2.2.5"
+  checksum: a4d6cdb1035e2dc5077e54dff422b99c1ad4aa00a33c1700fd1f8da3b201d6ac54fda2154fa719e8adce9ab2a5ca3ed4de95aff96e9cd1ed212355a362672625
+  languageName: node
+  linkType: hard
+
 "@sanity/color@npm:^3.0.0, @sanity/color@npm:^3.0.6":
   version: 3.0.6
   resolution: "@sanity/color@npm:3.0.6"
@@ -6913,6 +6949,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/icons@npm:^1.3":
+  version: 1.3.10
+  resolution: "@sanity/icons@npm:1.3.10"
+  peerDependencies:
+    react: ^16.9 || ^17 || ^18
+  checksum: 9c606bc60d4edd3873996b34871cb7480b2f8af4175a6828a9ec02b08d75bc9d38eff3678f969a4363c068bd35258b554fb340425eccbc41d1046490a2fadfa6
+  languageName: node
+  linkType: hard
+
+"@sanity/icons@npm:^2.0.0, @sanity/icons@npm:^2.4.1":
+  version: 2.11.8
+  resolution: "@sanity/icons@npm:2.11.8"
+  peerDependencies:
+    react: ^18
+  checksum: 3f517de6539dfacbecbbb2970e8a385aabcc73505ac607b2e08408d30bd832fec0001a25e465cb2bfd6453b355502962a2dc5f10f8d1a2b4527ac6d5cdc15114
+  languageName: node
+  linkType: hard
+
 "@sanity/icons@npm:^3.4.0, @sanity/icons@npm:^3.5.0":
   version: 3.5.0
   resolution: "@sanity/icons@npm:3.5.0"
@@ -6957,6 +7011,19 @@ __metadata:
   bin:
     sanity-import: src/cli.js
   checksum: 51aaaacbd00f08c81c36c1f9472ce3855f7bae8cdcd0de494632bbeba87998a975a4023dddd59041b4242427b677787c9298cc7d81a247a859c0e60db277ffb7
+  languageName: node
+  linkType: hard
+
+"@sanity/incompatible-plugin@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@sanity/incompatible-plugin@npm:1.0.4"
+  dependencies:
+    "@sanity/icons": ^1.3
+    react-copy-to-clipboard: ^5.1.0
+  peerDependencies:
+    react: ^16.9 || ^17 || ^18
+    react-dom: ^16.9 || ^17 || ^18
+  checksum: 3ca24c2c570a6d9a787eb5314081250481583f286e45a76c03b17b2c2d18caf3fa138bde293d295bf97c561cba30ac931cc00e3fa80bf07a20262a1cddac5730
   languageName: node
   linkType: hard
 
@@ -7144,6 +7211,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/table@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@sanity/table@npm:1.1.2"
+  dependencies:
+    "@sanity/icons": ^2.0.0
+    "@sanity/incompatible-plugin": ^1.0.4
+    "@sanity/ui": ^1.0.0
+  peerDependencies:
+    react: ^18
+    react-dom: ^18
+    sanity: ^3.0.0
+  checksum: 535a8965260fc1e526d16d16d1411d94a32e7205608f4c1d809b2d1302c76ab090bb89b24287d144e730df2848f35645552e581fd45cf67b9210039966a13ecf
+  languageName: node
+  linkType: hard
+
 "@sanity/telemetry@npm:^0.7.7":
   version: 0.7.9
   resolution: "@sanity/telemetry@npm:0.7.9"
@@ -7174,6 +7256,25 @@ __metadata:
     "@sanity/client": ^6.24.1
     "@types/react": ^18.3.5
   checksum: afe0f92faac6cc88d40f55310b8bd621685a71542252549bb68b2391e2f64a997c74eec928f8b3cc8902493bfdbdeafa9d1d38358ec692ae7fc2596eceeb4fbc
+  languageName: node
+  linkType: hard
+
+"@sanity/ui@npm:^1.0.0":
+  version: 1.9.3
+  resolution: "@sanity/ui@npm:1.9.3"
+  dependencies:
+    "@floating-ui/react-dom": 2.0.0
+    "@sanity/color": ^2.2.5
+    "@sanity/icons": ^2.4.1
+    csstype: ^3.1.2
+    framer-motion: ^10.16.2
+    react-refractor: ^2.1.7
+  peerDependencies:
+    react: ^18
+    react-dom: ^18
+    react-is: ^18
+    styled-components: ^5.2 || ^6
+  checksum: 34d5359dba49ae4440bb268d2a2a7119fa967dd0b2294226c34863a996d0711980e04ab2b2ee073ce4b294117181de5e417368fbc5d4511434bd52c325c2ea84
   languageName: node
   linkType: hard
 
@@ -12915,6 +13016,7 @@ __metadata:
     "@sanity/client": ^6.24.1
     "@sanity/icons": ^3.5.0
     "@sanity/image-url": ^1.1.0
+    "@sanity/table": ^1.1.2
     "@sanity/vision": 3
     "@sanity/visual-editing": ^2.10.5
     "@seed-design/react-checkbox": 0.0.0-alpha-20241030023710
@@ -14955,6 +15057,27 @@ __metadata:
     react-dom:
       optional: true
   checksum: 5009b748045c3bd4e123925de493cee0e754269f5fc43fe1a6cba7e53f4024f286cbfba78b85b024bfcbbd3b87a777e70d09e7cafcefd8ada80743037e429c30
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^10.16.2":
+  version: 10.18.0
+  resolution: "framer-motion@npm:10.18.0"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    tslib: ^2.4.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: b43f1edcfc8c2226e3325517612d2abb7455455c4d2232d62499d70a603a51ffdd6a810aa7b5e783a25860856ec6c6e5b3bcf749846facedc54a063f9a548f0b
   languageName: node
   linkType: hard
 
@@ -21102,7 +21225,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-copy-to-clipboard@npm:^5.0.4":
+"react-copy-to-clipboard@npm:^5.0.4, react-copy-to-clipboard@npm:^5.1.0":
   version: 5.1.0
   resolution: "react-copy-to-clipboard@npm:5.1.0"
   dependencies:
@@ -21256,7 +21379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-refractor@npm:^2.1.6, react-refractor@npm:^2.2.0":
+"react-refractor@npm:^2.1.6, react-refractor@npm:^2.1.7, react-refractor@npm:^2.2.0":
   version: 2.2.0
   resolution: "react-refractor@npm:2.2.0"
   dependencies:
