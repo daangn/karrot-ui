@@ -34,12 +34,17 @@ export const Image = async ({ value, title }: ImageProps) => {
   const src = builder.image(value).width(1500).fit("max").quality(100).auto("format").url();
 
   const assetsFolder = path.join(process.cwd(), "public", "assets", title);
-  const filePath = path.join(assetsFolder, `${value._key}.${extension}`);
+  const fileName = `${value._key}.${extension}`;
+  const filePath = path.join(assetsFolder, fileName);
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const alt = (value as any)?.alt || " ";
 
-  if (!fs.existsSync(`/assets/${title}/${value._key}.${extension}`)) {
+  const isImageExists = fs.existsSync(filePath);
+
+  if (isImageExists) {
+    console.log("이미 존재하는 이미지입니다.");
+  } else {
     const response = await fetch(src);
     const buffer = await response.arrayBuffer();
     const file = new Uint8Array(buffer);
@@ -50,23 +55,13 @@ export const Image = async ({ value, title }: ImageProps) => {
 
     fs.writeFileSync(filePath, file);
     console.log(`Image saved to ${filePath}`);
-
-    return (
-      <img
-        src={`/assets/${title}/${value._key}.${extension}`}
-        alt={alt}
-        loading="lazy"
-        style={{
-          display: "block",
-          aspectRatio,
-        }}
-      />
-    );
   }
+
+  const imageUrl = `/assets/${title}/${fileName}`;
 
   return (
     <img
-      src={src}
+      src={imageUrl}
       alt={alt}
       loading="lazy"
       style={{
