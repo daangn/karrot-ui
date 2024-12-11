@@ -22,8 +22,6 @@ interface ImageProps extends PortableTextTypeComponentProps<SanityImage> {
 }
 
 export const Image = async ({ value, title }: ImageProps) => {
-  console.log("title", title);
-
   if (!value || !value?.asset) {
     return null;
   }
@@ -41,7 +39,7 @@ export const Image = async ({ value, title }: ImageProps) => {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const alt = (value as any)?.alt || " ";
 
-  if (!fs.existsSync(filePath)) {
+  if (!fs.existsSync(`/assets/${title}/${value._key}.${extension}`)) {
     const response = await fetch(src);
     const buffer = await response.arrayBuffer();
     const file = new Uint8Array(buffer);
