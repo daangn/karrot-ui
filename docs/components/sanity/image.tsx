@@ -27,7 +27,21 @@ export const Image = ({ value }: PortableTextTypeComponentProps<SanityImage>) =>
   const builder = imageUrlBuilder({ projectId: projectId!, dataset: dataset! });
 
   // Sanity CDN URL 생성
-  const cdnUrl = builder.image(value).width(1400).fit("max").quality(90).auto("format").url();
+  const cdnUrl = builder
+    .image(value)
+    .width(800)
+    .fit("max")
+    .quality(90)
+    .auto("format")
+    .format("webp")
+    .url();
+
+  const srcSet = [400, 600, 800, 1200]
+    .map(
+      (width) =>
+        `${builder.image(value).width(width).quality(75).fit("max").auto("format").format("webp").url()} ${width}w`,
+    )
+    .join(", ");
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const alt = (value as any)?.alt || " ";
@@ -36,10 +50,14 @@ export const Image = ({ value }: PortableTextTypeComponentProps<SanityImage>) =>
     <img
       src={cdnUrl}
       alt={alt}
+      sizes="(max-width: 800px) 100vw, 800px"
+      srcSet={srcSet}
       loading="lazy"
       style={{
         display: "block",
         aspectRatio,
+        width: "100%",
+        height: "auto",
       }}
     />
   );
