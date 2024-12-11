@@ -19,7 +19,7 @@ const POST_QUERY = `*[_type == "contents" && title == $title][0] {
   publishedAt
 }`;
 
-export const SanityContent = async ({ title }: SanityContentProps) => {
+export const SanityContent = ({ title }: SanityContentProps) => {
   const [data, setData] = useState<SanityDocument | null>(null);
 
   useEffect(() => {

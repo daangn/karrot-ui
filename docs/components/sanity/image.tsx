@@ -17,7 +17,7 @@ interface SanityImage {
   };
 }
 
-export const Image = async ({ value }: PortableTextTypeComponentProps<SanityImage>) => {
+export const Image = ({ value }: PortableTextTypeComponentProps<SanityImage>) => {
   if (!value || !value?.asset) {
     return null;
   }
