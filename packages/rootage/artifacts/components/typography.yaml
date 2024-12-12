@@ -70,7 +70,6 @@ data:
         fontSize: $font-size.s4
         lineHeight: $line-height.s5
         fontWeight: $font-weight.regular
-        iosLineSpacing: 2px
   type=body-small-strong:
     enabled:
       root:
@@ -95,7 +94,6 @@ data:
         fontSize: $font-size.s5
         lineHeight: $line-height.s6
         fontWeight: $font-weight.regular
-        iosLineSpacing: 2px
   type=body-medium-strong:
     enabled:
       root:
