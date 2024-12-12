@@ -1,5 +1,14 @@
 import type { RegistryUI } from "./schema";
 
+import checkboxPkg from "@seed-design/react-checkbox/package.json";
+import switchPkg from "@seed-design/react-switch/package.json";
+import segmentedControlPkg from "@seed-design/react-segmented-control/package.json";
+import textFieldPkg from "@seed-design/react-text-field/package.json";
+import dismissiblePkg from "@seed-design/react-dismissible/package.json";
+import radioGroupPkg from "@seed-design/react-radio-group/package.json";
+import tabsPkg from "@seed-design/react-tabs/package.json";
+import popoverPkg from "@seed-design/react-popover/package.json";
+
 export const registryUI: RegistryUI = [
   {
     name: "alert-dialog",
@@ -25,7 +34,7 @@ export const registryUI: RegistryUI = [
     name: "callout",
     dependencies: [
       "@radix-ui/react-slot",
-      "@seed-design/react-dismissible",
+      `@seed-design/react-dismissible@${dismissiblePkg.version}`,
       "@daangn/react-monochrome-icon",
     ],
     files: ["ui:callout.tsx"],
@@ -37,9 +46,8 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "checkbox",
-    // TODO: remove alpha
     dependencies: [
-      "@seed-design/react-checkbox@alpha",
+      `@seed-design/react-checkbox@${checkboxPkg.version}`,
       "@daangn/react-monochrome-icon",
     ],
     files: ["ui:checkbox.tsx"],
@@ -48,26 +56,27 @@ export const registryUI: RegistryUI = [
     name: "inline-banner",
     dependencies: [
       "@radix-ui/react-slot",
-      "@seed-design/react-dismissible",
+      `@seed-design/react-dismissible@${dismissiblePkg.version}`,
       "@daangn/react-monochrome-icon",
     ],
     files: ["ui:inline-banner.tsx"],
   },
   {
     name: "help-bubble",
-    dependencies: ["@seed-design/react-popover", "@radix-ui/react-slot"],
+    dependencies: [
+      `@seed-design/react-popover@${popoverPkg.version}`,
+      "@radix-ui/react-slot",
+    ],
     files: ["ui:help-bubble.tsx"],
   },
   {
     name: "tabs",
-    // TODO: remove alpha
-    dependencies: ["@seed-design/react-tabs@alpha"],
+    dependencies: [`@seed-design/react-tabs@${tabsPkg.version}`],
     files: ["ui:tabs.tsx"],
   },
   {
     name: "chip-tabs",
-    // TODO: remove alpha
-    dependencies: ["@seed-design/react-tabs@alpha"],
+    dependencies: [`@seed-design/react-tabs@${tabsPkg.version}`],
     files: ["ui:chip-tabs.tsx"],
   },
   {
@@ -83,21 +92,22 @@ export const registryUI: RegistryUI = [
   {
     name: "select-box-group",
     dependencies: [
-      "@seed-design/react-checkbox",
-      "@seed-design/react-radio-group",
+      `@seed-design/react-checkbox@${checkboxPkg.version}`,
+      `@seed-design/react-radio-group@${radioGroupPkg.version}`,
       "@daangn/react-monochrome-icon",
     ],
     files: ["ui:select-box-group.tsx"],
   },
   {
     name: "segmented-control",
-    dependencies: ["@seed-design/react-segmented-control"],
+    dependencies: [
+      `@seed-design/react-segmented-control@${segmentedControlPkg.version}`,
+    ],
     files: ["ui:segmented-control.tsx"],
   },
   {
     name: "switch",
-    // TODO: remove alpha
-    dependencies: ["@seed-design/react-switch@alpha"],
+    dependencies: [`@seed-design/react-switch@${switchPkg.version}`],
     files: ["ui:switch.tsx"],
   },
   {
@@ -108,7 +118,7 @@ export const registryUI: RegistryUI = [
   {
     name: "text-field",
     dependencies: [
-      "@seed-design/react-text-field",
+      `@seed-design/react-text-field@${textFieldPkg.version}`,
       "@daangn/react-monochrome-icon",
       "@radix-ui/react-slot",
     ],
