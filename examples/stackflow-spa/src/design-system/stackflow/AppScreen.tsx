@@ -15,8 +15,8 @@ import {
 } from "@stackflow/react-ui-core";
 import type { ActivityTransitionState } from "@stackflow/core";
 
-export const OFFSET_PX_ANDROID = 32;
-export const OFFSET_PX_CUPERTINO = 80;
+const OFFSET_PX_ANDROID = 32;
+const OFFSET_PX_CUPERTINO = 80;
 
 function getZIndexStyle(props: {
   base: number;
@@ -129,6 +129,19 @@ function useAppScreen(props: {
     },
   });
 
+  const zIndexBase = useZIndexBase();
+  const zIndexStyle = useMemo(
+    () =>
+      getZIndexStyle({
+        base: zIndexBase,
+        theme,
+        hasAppBar,
+        modalPresentationStyle,
+        activityEnterStyle,
+      }),
+    [zIndexBase, theme, hasAppBar, modalPresentationStyle, activityEnterStyle],
+  );
+
   const dataProps = useMemo(
     () => ({
       "data-transition-state":
@@ -139,64 +152,63 @@ function useAppScreen(props: {
     [transitionState, lazyTransitionState],
   );
 
-  return {
-    theme,
-    activity,
-    scroll: ({ top }: { top: number }) => {
-      layerRef.current?.scroll({
-        top,
-        behavior: "smooth",
-      });
-    },
-    refs: {
-      appScreen: appScreenRef,
-      dim: dimRef,
-      layer: layerRef,
-      edge: edgeRef,
-      appBar: appBarRef,
-    },
-    dataProps,
-    rootProps: {
-      ...dataProps,
-      "data-stackflow-component-name": "AppScreen",
-      "data-stackflow-activity-id": mounted ? activity?.id : undefined,
-      "data-stackflow-activity-is-active": mounted ? activity?.isActive : undefined,
-      style: getZIndexStyle({
-        base: useZIndexBase(),
-        theme,
-        hasAppBar,
-        modalPresentationStyle,
-        activityEnterStyle,
-      }),
-    } as React.HTMLAttributes<HTMLDivElement>,
-    dimProps: {
-      ...dataProps,
-      style: {
-        display: activityEnterStyle !== "slideInLeft" ? undefined : "none",
+  return useMemo(
+    () => ({
+      theme,
+      activity,
+      scroll: ({ top }: { top: number }) => {
+        layerRef.current?.scroll({
+          top,
+          behavior: "smooth",
+        });
       },
-    } as React.HTMLAttributes<HTMLDivElement>,
-    layerProps: {
-      ...dataProps,
-    } as React.HTMLAttributes<HTMLDivElement>,
-    edgeProps: {
-      ...dataProps,
-      style: {
-        display:
-          !activity?.isRoot && theme === "cupertino" && !isSwipeBackPrevented ? undefined : "none",
+      refs: {
+        appScreen: appScreenRef,
+        dim: dimRef,
+        layer: layerRef,
+        edge: edgeRef,
+        appBar: appBarRef,
       },
-    } as React.HTMLAttributes<HTMLDivElement>,
-    appBarEdgeProps: {
-      ...dataProps,
-      onClick: (e) => {
-        if (!e.defaultPrevented) {
-          layerRef.current?.scroll({
-            top: 0,
-            behavior: "smooth",
-          });
-        }
-      },
-    } as React.HTMLAttributes<HTMLButtonElement>,
-  };
+      dataProps,
+      rootProps: {
+        ...dataProps,
+        "data-stackflow-component-name": "AppScreen",
+        "data-stackflow-activity-id": mounted ? activity?.id : undefined,
+        "data-stackflow-activity-is-active": mounted ? activity?.isActive : undefined,
+        style: zIndexStyle,
+      } as React.HTMLAttributes<HTMLDivElement>,
+      dimProps: {
+        ...dataProps,
+        style: {
+          display: activityEnterStyle !== "slideInLeft" ? undefined : "none",
+        },
+      } as React.HTMLAttributes<HTMLDivElement>,
+      layerProps: {
+        ...dataProps,
+      } as React.HTMLAttributes<HTMLDivElement>,
+      edgeProps: {
+        ...dataProps,
+        style: {
+          display:
+            !activity?.isRoot && theme === "cupertino" && !isSwipeBackPrevented
+              ? undefined
+              : "none",
+        },
+      } as React.HTMLAttributes<HTMLDivElement>,
+      appBarEdgeProps: {
+        ...dataProps,
+        onClick: (e) => {
+          if (!e.defaultPrevented) {
+            layerRef.current?.scroll({
+              top: 0,
+              behavior: "smooth",
+            });
+          }
+        },
+      } as React.HTMLAttributes<HTMLButtonElement>,
+    }),
+    [theme, activity, mounted, zIndexStyle, isSwipeBackPrevented, activityEnterStyle, dataProps],
+  );
 }
 
 const AppScreenContext = createContext<ReturnType<typeof useAppScreen> | null>(null);
