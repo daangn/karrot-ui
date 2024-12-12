@@ -7,6 +7,7 @@ import React from "react";
 
 import { IconChevronLeftLine } from "@daangn/react-monochrome-icon";
 import ActivityNotFound from "../activities/ActivityNotFound";
+import { theme } from "./theme";
 
 /**
  * Stackflow는 웹뷰 내에서 Stack Navigation UI를 도와주는 도구에요.
@@ -14,10 +15,6 @@ import ActivityNotFound from "../activities/ActivityNotFound";
  * 웹사이트: https://stackflow.so
  * GitHub: https://github.com/daangn/stackflow
  */
-
-const theme = /iphone|ipad|ipod/i.test(window.navigator.userAgent.toLowerCase())
-  ? "cupertino"
-  : "android";
 
 const { Stack, useFlow, useStepFlow } = stackflow({
   activities: {

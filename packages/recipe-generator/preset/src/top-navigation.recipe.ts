@@ -1,5 +1,4 @@
 import { topNavigation as vars } from "@seed-design/vars/component";
-import { vars as vars2 } from "@seed-design/vars";
 import { defineRecipe } from "./helper";
 
 const MIN_SAFE_AREA_INSET_TOP = "0px"; // TODO: turn into public interface
@@ -66,7 +65,6 @@ const topNavigation = defineRecipe({
       height: "100%",
     },
     titleMain: {
-      height: "100%",
       // width is calculated in js
       // TODO: add heightTransitionDuration
       transition: `color ${COLOR_TRANSITION_DURATION}`,
@@ -80,7 +78,7 @@ const topNavigation = defineRecipe({
       top: 0,
       cursor: "pointer",
       left: "50%",
-      height: "1.25rem",
+      height: "20px",
       transform: "translate(-50%)",
       maxWidth: "5rem",
       display: "none",
@@ -120,6 +118,7 @@ const topNavigation = defineRecipe({
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
+          height: "100%",
           left: "50%",
           transform: "translate(-50%)",
           top: `max(${MIN_SAFE_AREA_INSET_TOP}, env(safe-area-inset-top))`,
@@ -135,8 +134,8 @@ const topNavigation = defineRecipe({
       android: {
         root: {
           opacity: 0,
-          transform: "translate3d(0, 10rem, 0)",
-          transition: `background-color ${COLOR_TRANSITION_DURATION}, box-shadow ${COLOR_TRANSITION_DURATION}, transform ${vars2.$duration.s6}`,
+          transform: "translate3d(0, 160px, 0)",
+          transition: `background-color ${COLOR_TRANSITION_DURATION}, box-shadow ${COLOR_TRANSITION_DURATION}, transform 300ms`, // TODO: define duration in rootage
 
           "&:is([data-transition-state=enter-active], [data-transition-state=enter-done])": {
             opacity: 1,
@@ -165,7 +164,7 @@ const topNavigation = defineRecipe({
         titleMain: {
           width: "100%",
           justifyContent: "flex-start",
-          paddingLeft: "1rem",
+          paddingLeft: "16px",
           boxSizing: "border-box",
         },
         titleText: {

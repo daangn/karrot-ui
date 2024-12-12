@@ -10,7 +10,7 @@ import clsx from "clsx";
 import { createContext, forwardRef, useCallback, useContext, useRef } from "react";
 
 import { mergeRefs } from "../util/mergeRefs";
-import { useAppScreenContext } from "./AppScreen";
+import { useAppScreenContext } from "./useAppScreen";
 
 const StyleContext = createContext<ReturnType<typeof topNavigation> | null>(null);
 

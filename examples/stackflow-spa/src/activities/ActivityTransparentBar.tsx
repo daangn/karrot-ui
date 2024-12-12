@@ -1,5 +1,4 @@
 import type { ActivityComponentType } from "@stackflow/react";
-import { AppScreen } from "../design-system/stackflow/AppScreen";
 import {
   AppBar,
   BackButton,
@@ -8,9 +7,11 @@ import {
   Right,
   Title,
 } from "../design-system/stackflow/AppBar";
+import { AppScreen } from "../design-system/stackflow/AppScreen";
 
-import img from "../assets/peng.jpeg";
 import { IconBellLine } from "@daangn/react-monochrome-icon";
+import img from "../assets/peng.jpeg";
+import { theme } from "../stackflow/theme";
 
 const ActivityTransparentBar: ActivityComponentType = () => {
   return (
@@ -37,7 +38,7 @@ const ActivityTransparentBar: ActivityComponentType = () => {
           </Right>
         </AppBar>
       }
-      theme="cupertino"
+      theme={theme}
     >
       <img src={img} alt="penguin" />
       <div style={{ height: 800 }} />

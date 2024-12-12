@@ -16,10 +16,6 @@ const screenSlotNames = [
   [
     "edge",
     "screen__edge"
-  ],
-  [
-    "spacer",
-    "screen__spacer"
   ]
 ];
 

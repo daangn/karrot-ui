@@ -38,7 +38,6 @@
     height: 100%;
 }
 .topNavigation__titleMain {
-    height: 100%;
     transition: color 0s;
 }
 .topNavigation__titleEdge {
@@ -50,7 +49,7 @@
     top: 0;
     cursor: pointer;
     left: 50%;
-    height: 1.25rem;
+    height: 20px;
     transform: translate(-50%);
     max-width: 5rem;
     display: none;
@@ -85,6 +84,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    height: 100%;
     left: 50%;
     transform: translate(-50%);
     top: max(0px, env(safe-area-inset-top));
@@ -98,8 +98,8 @@
 }
 .topNavigation__root--theme_android {
     opacity: 0;
-    transform: translate3d(0, 10rem, 0);
-    transition: background-color 0s, box-shadow 0s, transform var(--seed-v3-duration-s6);
+    transform: translate3d(0, 160px, 0);
+    transition: background-color 0s, box-shadow 0s, transform 300ms;
 }
 .topNavigation__root--theme_android:is([data-transition-state=enter-active], [data-transition-state=enter-done]) {
     opacity: 1;
@@ -126,7 +126,7 @@
 .topNavigation__titleMain--theme_android {
     width: 100%;
     justify-content: flex-start;
-    padding-left: 1rem;
+    padding-left: 16px;
     box-sizing: border-box;
 }
 .topNavigation__titleText--theme_android {

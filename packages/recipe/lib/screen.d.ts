@@ -9,7 +9,7 @@ type ScreenVariantMap = {
 
 export type ScreenVariantProps = Partial<ScreenVariant>;
 
-export type ScreenSlotName = "root" | "layer" | "dim" | "edge" | "spacer";
+export type ScreenSlotName = "root" | "layer" | "dim" | "edge";
 
 export const screenVariantMap: ScreenVariantMap;
 

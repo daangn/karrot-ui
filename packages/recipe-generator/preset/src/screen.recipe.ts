@@ -90,8 +90,10 @@ const screen = defineRecipe({
           background: `linear-gradient(${vars.$color.bg.overlay}, rgba(0, 0, 0, 0))`,
         },
         layer: {
+          opacity: 0,
           transform: "translate3d(0, 10rem, 0)",
           "&:is([data-transition-state=enter-active], [data-transition-state=enter-done])": {
+            opacity: 1,
             transform: "translate3d(0, 0, 0)",
           },
         },

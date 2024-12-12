@@ -48,10 +48,6 @@
     left: 0;
     right: 0;
 }
-.screen__spacer {
-    width: 100%;
-    height: var(--app-bar-margin);
-}
 .screen__root--theme_cupertino {
     --app-bar-height: 44px;
 }
@@ -73,9 +69,11 @@
     background: linear-gradient(var(--seed-v3-color-bg-overlay), rgba(0, 0, 0, 0));
 }
 .screen__layer--theme_android {
+    opacity: 0;
     transform: translate3d(0, 10rem, 0);
 }
 .screen__layer--theme_android:is([data-transition-state=enter-active], [data-transition-state=enter-done]) {
+    opacity: 1;
     transform: translate3d(0, 0, 0);
 }
 .screen__root--hasAppBar_true {
