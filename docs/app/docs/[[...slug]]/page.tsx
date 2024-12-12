@@ -1,20 +1,8 @@
 import { source } from "@/app/source";
-import { ComponentExample } from "@/components/component-example";
-import { Installation } from "@/components/installation";
-import { StackflowExample } from "@/components/stackflow-example";
-import { File, Files, Folder } from "fumadocs-ui/components/files";
-import { Step, Steps } from "fumadocs-ui/components/steps";
-import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import { createTypeTable } from "fumadocs-typescript/ui";
-import defaultMdxComponents from "fumadocs-ui/mdx";
+import { mdxComponents } from "@/components/mdx/mdx-components";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
-import { AtomIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { TokenTable } from "@/components/token-table";
-import { ComponentSpecBlock } from "@/components/component-spec-block";
-
-const { AutoTypeTable } = createTypeTable();
 
 export default async function Page({
   params,
@@ -31,25 +19,7 @@ export default async function Page({
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDX
-          components={{
-            ...defaultMdxComponents,
-            Installation,
-            ComponentExample,
-            TokenTable,
-            ComponentSpecBlock,
-            Tab,
-            Tabs,
-            Step,
-            Steps,
-            File,
-            Folder,
-            Files,
-            AtomIcon,
-            StackflowExample,
-            AutoTypeTable,
-          }}
-        />
+        <MDX components={mdxComponents} />
       </DocsBody>
     </DocsPage>
   );

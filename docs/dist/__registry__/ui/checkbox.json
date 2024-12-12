@@ -1,0 +1,14 @@
+{
+  "name": "checkbox",
+  "dependencies": [
+    "@seed-design/react-checkbox@alpha",
+    "@daangn/react-monochrome-icon"
+  ],
+  "registries": [
+    {
+      "name": "checkbox.tsx",
+      "type": "ui",
+      "content": "\"use client\";\n\nimport {\n  type UseCheckboxProps,\n  useCheckbox,\n} from \"@seed-design/react-checkbox\";\nimport {\n  type CheckboxVariantProps,\n  checkbox,\n} from \"@seed-design/recipe/checkbox\";\nimport clsx from \"clsx\";\nimport * as React from \"react\";\nimport type { CSSProperties } from \"react\";\nimport {\n  IconCheckmarkFatFill,\n  IconMinusFatFill,\n} from \"@daangn/react-monochrome-icon\";\n\nimport \"@seed-design/stylesheet/checkbox.css\";\n\ntype Assign<T, U> = Omit<T, keyof U> & U;\n\nconst visuallyHidden: CSSProperties = {\n  border: 0,\n  clip: \"rect(0 0 0 0)\",\n  height: \"1px\",\n  margin: \"-1px\",\n  overflow: \"hidden\",\n  padding: 0,\n  position: \"absolute\",\n  whiteSpace: \"nowrap\",\n  width: \"1px\",\n};\n\nexport interface CheckboxProps extends CheckboxVariantProps {\n  label: React.ReactNode;\n}\n\ninterface ReactCheckboxProps\n  extends Omit<\n      Assign<React.InputHTMLAttributes<HTMLInputElement>, UseCheckboxProps>,\n      \"size\"\n    >,\n    CheckboxProps {}\n\nexport const Checkbox = React.forwardRef<HTMLInputElement, ReactCheckboxProps>(\n  (\n    {\n      className,\n      size = \"medium\",\n      label,\n      bold = false,\n      indeterminate = false,\n      variant = \"square\",\n      ...otherProps\n    },\n    ref,\n  ) => {\n    const { stateProps, restProps, controlProps, hiddenInputProps, rootProps } =\n      useCheckbox(otherProps);\n\n    const classNames = checkbox({ size, bold, indeterminate, variant });\n\n    return (\n      <label className={clsx(classNames.root, className)} {...rootProps}>\n        <div {...controlProps} className={classNames.control}>\n          {!indeterminate ? (\n            <IconCheckmarkFatFill\n              aria-hidden\n              {...stateProps}\n              className={classNames.icon}\n            />\n          ) : (\n            <IconMinusFatFill\n              aria-hidden\n              {...stateProps}\n              className={classNames.icon}\n            />\n          )}\n        </div>\n        <input\n          ref={ref}\n          {...hiddenInputProps}\n          {...restProps}\n          style={visuallyHidden}\n        />\n        <span {...stateProps} className={classNames.label}>\n          {label}\n        </span>\n      </label>\n    );\n  },\n);\nCheckbox.displayName = \"Checkbox\";\n"
+    }
+  ]
+}

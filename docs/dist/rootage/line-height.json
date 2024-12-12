@@ -1,0 +1,62 @@
+{
+  "kind": "Tokens",
+  "metadata": {
+    "id": "line-height",
+    "name": "Line Height"
+  },
+  "data": {
+    "collection": "global",
+    "tokens": {
+      "$line-height.t1": {
+        "values": {
+          "default": "0.8125rem"
+        }
+      },
+      "$line-height.t2": {
+        "values": {
+          "default": "1rem"
+        }
+      },
+      "$line-height.t3": {
+        "values": {
+          "default": "1.125rem"
+        }
+      },
+      "$line-height.t4": {
+        "values": {
+          "default": "1.1875rem"
+        }
+      },
+      "$line-height.t5": {
+        "values": {
+          "default": "1.3125rem"
+        }
+      },
+      "$line-height.t6": {
+        "values": {
+          "default": "1.5rem"
+        }
+      },
+      "$line-height.t7": {
+        "values": {
+          "default": "1.5625rem"
+        }
+      },
+      "$line-height.t8": {
+        "values": {
+          "default": "1.875rem"
+        }
+      },
+      "$line-height.t9": {
+        "values": {
+          "default": "2rem"
+        }
+      },
+      "$line-height.t10": {
+        "values": {
+          "default": "2.125rem"
+        }
+      }
+    }
+  }
+}
