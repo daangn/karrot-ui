@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=./schema.json
+# slot=
+kind: ComponentSpec
+metadata:
+  id: top-navigation
+  name: Top Navigation
+data:
+  theme=cupertino:
+    enabled:
+      root:
+        minHeight: 44px
+        paddingX: $unit.s4
+      title:
+        fontSize: $font-size.s6-static
+        fontWeight: $font-weight.bold
+      actionIcon:
+        size: 24px
+        targetSize: 40px
+  theme=android:
+    enabled:
+      root:
+        minHeight: 56px
+        paddingX: $unit.s4
+      title:
+        fontSize: $font-size.s6-static
+        fontWeight: $font-weight.bold
+      actionIcon:
+        size: 24px
+        targetSize: 40px
+  tone=layer:
+    enabled:
+      root:
+        color: $color.bg.layer-default
+      title:
+        color: $color.fg.neutral
+      actionIcon:
+        color: $color.fg.neutral
+  tone=transparent:
+    enabled:
+      root:
+        color: "#00000000"
+      title:
+        color: $color.fg.static-white
+      actionIcon:
+        color: $color.fg.static-white
+  divider=true:
+    enabled:
+      root:
+        strokeColor: $color.stroke.neutral-muted
+        strokeWidth: 1px

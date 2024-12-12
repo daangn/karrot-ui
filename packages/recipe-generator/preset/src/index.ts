@@ -16,6 +16,7 @@ import identityPlaceholder from "./identity-placeholder";
 import inlineBanner from "./inline-banner.recipe";
 import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
+import screen from "./screen.recipe";
 import segmentedControl from "./segmented-control.recipe";
 import selectBoxGroup from "./select-box-group.recipe";
 import skeleton from "./skeleton";
@@ -25,6 +26,7 @@ import tabs from "./tabs.recipe";
 import textButton from "./text-button.recipe";
 import textField from "./text-field.recipe";
 import toggleButton from "./toggle-button";
+import topNavigation from "./top-navigation.recipe";
 
 const recipes = {
   avatar,
@@ -43,6 +45,7 @@ const recipes = {
   segmentedControl,
   selectBoxGroup,
   switch: switchRecipe,
+  screen,
   helpBubble,
   identityPlaceholder,
   inlineBanner,
@@ -54,6 +57,7 @@ const recipes = {
   skeleton,
   textButton,
   textField,
+  topNavigation,
 };
 
 export default recipes;

@@ -1,0 +1,102 @@
+.screen__root {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+.screen__root[data-transition-state=exit-done] {
+    transform: translate3d(100%, 0, 0);
+}
+.screen__dim {
+    z-index: var(--z-index-dim);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: transform var(--seed-v3-duration-s6), opacity var(--seed-v3-duration-s6);
+}
+.screen__dim:is([data-transition-state=enter-active], [data-transition-state=enter-done]) {
+    opacity: 1;
+}
+.screen__dim:is([data-transition-state=exit-active], [data-transition-state=exit-done]) {
+    opacity: 0;
+}
+.screen__layer {
+    z-index: var(--z-index-layer);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.screen__layer::-webkit-scrollbar {
+    display: none;
+}
+.screen__layer {
+    background-color: var(--seed-v3-color-bg-layer-default);
+    transition: transform var(--seed-v3-duration-s6), opacity var(--seed-v3-duration-s6);
+}
+.screen__edge {
+    z-index: var(--z-index-edge);
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+.screen__spacer {
+    width: 100%;
+    height: var(--app-bar-margin);
+}
+.screen__root--theme_cupertino {
+    --app-bar-height: 44px;
+}
+.screen__dim--theme_cupertino {
+    height: 100%;
+    background: var(--seed-v3-color-bg-overlay);
+}
+.screen__layer--theme_cupertino {
+    transform: translate3d(100%, 0, 0);
+}
+.screen__layer--theme_cupertino:is([data-transition-state=enter-active], [data-transition-state=enter-done]) {
+    transform: translate3d(0, 0, 0);
+}
+.screen__root--theme_android {
+    --app-bar-height: 56px;
+}
+.screen__dim--theme_android {
+    height: 10rem;
+    background: linear-gradient(var(--seed-v3-color-bg-overlay), rgba(0, 0, 0, 0));
+}
+.screen__layer--theme_android {
+    transform: translate3d(0, 10rem, 0);
+}
+.screen__layer--theme_android:is([data-transition-state=enter-active], [data-transition-state=enter-done]) {
+    transform: translate3d(0, 0, 0);
+}
+.screen__root--hasAppBar_true {
+    --app-bar-margin: var(--app-bar-height);
+}
+@supports (padding: max(0px)) and (padding: constant(safe-area-inset-top)) {
+    .screen__root--hasAppBar_true {
+        --app-bar-margin: calc(var(--app-bar-height) + max(0px, constant(safe-area-inset-top)));
+    }
+}
+@supports (padding: max(0px)) and (padding: env(safe-area-inset-top)) {
+    .screen__root--hasAppBar_true {
+        --app-bar-margin: calc(var(--app-bar-height) + max(0px, env(safe-area-inset-top)));
+    }
+}
+.screen__layer--hasAppBar_true {
+    box-sizing: border-box;
+    transition: transform var(--seed-v3-duration-s6), opacity var(--seed-v3-duration-s6);
+    height: 100%;
+}
+.screen__edge--hasAppBar_true {
+    top: var(--app-bar-height);
+    height: calc(100% - var(--app-bar-height));
+}

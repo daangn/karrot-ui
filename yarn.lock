@@ -7938,6 +7938,7 @@ __metadata:
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@vanilla-extract/css": "npm:^1.16.1"
+    "@vanilla-extract/recipes": "npm:^0.5.5"
     "@vanilla-extract/vite-plugin": "npm:^4.0.18"
     "@vitejs/plugin-legacy": "npm:^5.3.1"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
@@ -9846,7 +9847,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/recipes@npm:^0.5.3":
+"@vanilla-extract/recipes@npm:^0.5.3, @vanilla-extract/recipes@npm:^0.5.5":
   version: 0.5.5
   resolution: "@vanilla-extract/recipes@npm:0.5.5"
   peerDependencies:

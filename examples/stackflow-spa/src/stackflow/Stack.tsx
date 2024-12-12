@@ -1,8 +1,8 @@
+import { vars } from "@seed-design/vars";
 import { IconBack, basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { stackflow } from "@stackflow/react";
-import { vars } from "@seed-design/vars";
 import React from "react";
 
 import ActivityNotFound from "../activities/ActivityNotFound";
@@ -25,6 +25,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityActionChip: React.lazy(() => import("../activities/ActivityActionChip")),
     ActivityControlChip: React.lazy(() => import("../activities/ActivityControlChip")),
     ActivityHelpBubble: React.lazy(() => import("../activities/ActivityHelpBubble")),
+    ActivityTransparentBar: React.lazy(() => import("../activities/ActivityTransparentBar")),
     ActivityNotFound,
   },
   plugins: [
@@ -49,6 +50,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityActionChip: "/action-chip",
         ActivityControlChip: "/control-chip",
         ActivityHelpBubble: "/help-bubble",
+        ActivityTransparentBar: "/transparent-bar",
         ActivityNotFound: "/404",
       },
     }),
