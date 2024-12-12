@@ -7848,7 +7848,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/recipe@0.0.0-alpha-20241204032829, @seed-design/recipe@workspace:packages/recipe":
+"@seed-design/recipe@0.0.0-alpha-20241212122822, @seed-design/recipe@workspace:packages/recipe":
   version: 0.0.0-use.local
   resolution: "@seed-design/recipe@workspace:packages/recipe"
   dependencies:
@@ -7904,8 +7904,8 @@ __metadata:
     "@seed-design/react-switch": 0.0.0-alpha-20241030023710
     "@seed-design/react-tabs": 0.0.0-alpha-20241209060641
     "@seed-design/react-text-field": 0.0.0-alpha-20241030023710
-    "@seed-design/recipe": 0.0.0-alpha-20241204032829
-    "@seed-design/stylesheet": 3.0.0-alpha-20241204032654
+    "@seed-design/recipe": 0.0.0-alpha-20241212122822
+    "@seed-design/stylesheet": 3.0.0-alpha-20241212122822
     "@seed-design/vars": 0.0.0
     "@stackflow/core": ^1.1.0
     "@stackflow/plugin-basic-ui": ^1.10.1
@@ -7928,7 +7928,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/stylesheet@3.0.0-alpha-20241204032654, @seed-design/stylesheet@workspace:packages/stylesheet":
+"@seed-design/stylesheet@3.0.0-alpha-20241212122822, @seed-design/stylesheet@workspace:packages/stylesheet":
   version: 0.0.0-use.local
   resolution: "@seed-design/stylesheet@workspace:packages/stylesheet"
   dependencies:
@@ -13029,10 +13029,10 @@ __metadata:
     "@seed-design/react-switch": 0.0.0-alpha-20241030023710
     "@seed-design/react-tabs": 0.0.0-alpha-20241209060641
     "@seed-design/react-text-field": 0.0.0-alpha-20241030023710
-    "@seed-design/recipe": 0.0.0-alpha-20241204032829
+    "@seed-design/recipe": 0.0.0-alpha-20241212122822
     "@seed-design/rootage-cli": 0.0.0
     "@seed-design/rootage-core": 0.0.0
-    "@seed-design/stylesheet": 3.0.0-alpha-20241204032654
+    "@seed-design/stylesheet": 3.0.0-alpha-20241212122822
     "@stackflow/config": ^1.2.0
     "@stackflow/core": ^1.1.0
     "@stackflow/plugin-basic-ui": ^1.10.0

@@ -1,5 +1,11 @@
 # @seed-design/stylesheet
 
+## 3.0.0-alpha-20241212122822
+
+### Patch Changes
+
+- rollout alpha updates
+
 ## 3.0.0-alpha-20241204032654
 
 ### Patch Changes

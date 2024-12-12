@@ -1,5 +1,11 @@
 # @seed-design/recipe
 
+## 0.0.0-alpha-20241212122822
+
+### Patch Changes
+
+- rollout alpha updates
+
 ## 0.0.0-alpha-20241204032829
 
 ### Patch Changes
