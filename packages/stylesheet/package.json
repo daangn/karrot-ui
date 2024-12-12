@@ -25,11 +25,5 @@
   "devDependencies": {
     "@seed-design/recipe-generator-cli": "0.0.0",
     "@seed-design/rootage-cli": "0.0.0"
-  },
-  "ultra": {
-    "concurrent": [
-      "recipe:generate",
-      "rootage:generate"
-    ]
   }
 }

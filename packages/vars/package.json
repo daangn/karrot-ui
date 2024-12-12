@@ -33,10 +33,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "ultra": {
-    "concurrent": [
-      "rootage:generate"
-    ]
   }
 }
