@@ -39,7 +39,7 @@ export default defineConfig({
               locations: [
                 {
                   title: doc?.title || "Untitled",
-                  href: `/docs/react/components/${doc?.title}`,
+                  href: `/docs/design/components/${doc?.title}`,
                 },
               ],
             }),
