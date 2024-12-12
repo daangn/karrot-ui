@@ -9,7 +9,7 @@ export declare const vars: {
         "fontSize": "var(--seed-v3-font-size-s6-static)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
-      "actionIcon": {
+      "icon": {
         "size": "24px",
         "targetSize": "40px"
       }
@@ -25,7 +25,7 @@ export declare const vars: {
         "fontSize": "var(--seed-v3-font-size-s6-static)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
-      "actionIcon": {
+      "icon": {
         "size": "24px",
         "targetSize": "40px"
       }
@@ -39,7 +39,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "actionIcon": {
+      "icon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       }
     }
@@ -50,10 +50,10 @@ export declare const vars: {
         "color": "#00000000"
       },
       "title": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "color": "var(--seed-v3-color-fg-static-white)"
       },
-      "actionIcon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+      "icon": {
+        "color": "var(--seed-v3-color-fg-static-white)"
       }
     }
   },

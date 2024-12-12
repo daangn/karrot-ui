@@ -1,8 +1,16 @@
 import type { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "../design-system/stackflow/AppScreen";
-import { AppBar, BackButton, Left, Right, Title } from "../design-system/stackflow/AppBar";
+import {
+  AppBar,
+  BackButton,
+  IconButton,
+  Left,
+  Right,
+  Title,
+} from "../design-system/stackflow/AppBar";
 
 import img from "../assets/peng.jpeg";
+import { IconBellLine } from "@daangn/react-monochrome-icon";
 
 const ActivityTransparentBar: ActivityComponentType = () => {
   return (
@@ -12,7 +20,21 @@ const ActivityTransparentBar: ActivityComponentType = () => {
           <Left>
             <BackButton />
           </Left>
-          <Right>Hello</Right>
+          <Title>야옹</Title>
+          <Right>
+            <IconButton>
+              <IconBellLine />
+            </IconButton>
+            <IconButton>
+              <IconBellLine />
+            </IconButton>
+            <IconButton>
+              <IconBellLine />
+            </IconButton>
+            <IconButton>
+              <IconBellLine />
+            </IconButton>
+          </Right>
         </AppBar>
       }
       theme="cupertino"

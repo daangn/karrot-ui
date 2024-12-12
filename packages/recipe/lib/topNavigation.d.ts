@@ -10,7 +10,7 @@ type TopNavigationVariantMap = {
 
 export type TopNavigationVariantProps = Partial<TopNavigationVariant>;
 
-export type TopNavigationSlotName = "root" | "safeArea" | "container" | "left" | "right" | "title" | "titleMain" | "titleEdge" | "titleText" | "icon";
+export type TopNavigationSlotName = "root" | "safeArea" | "container" | "left" | "right" | "title" | "titleMain" | "titleEdge" | "titleText" | "iconButton" | "icon";
 
 export const topNavigationVariantMap: TopNavigationVariantMap;
 

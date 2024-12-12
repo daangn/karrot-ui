@@ -38,6 +38,10 @@ const topNavigationSlotNames = [
     "topNavigation__titleText"
   ],
   [
+    "iconButton",
+    "topNavigation__iconButton"
+  ],
+  [
     "icon",
     "topNavigation__icon"
   ]

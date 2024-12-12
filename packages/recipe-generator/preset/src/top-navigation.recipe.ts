@@ -17,6 +17,7 @@ const topNavigation = defineRecipe({
     "titleMain",
     "titleEdge",
     "titleText",
+    "iconButton",
     "icon",
   ],
   base: {
@@ -52,6 +53,11 @@ const topNavigation = defineRecipe({
       alignItems: "center",
       height: "100%",
       marginLeft: "auto",
+    },
+    iconButton: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
     },
     title: {
       display: "flex",
@@ -93,9 +99,20 @@ const topNavigation = defineRecipe({
           height: vars.themeCupertino.enabled.root.minHeight,
           paddingInline: vars.themeCupertino.enabled.root.paddingX,
         },
+        iconButton: {
+          width: vars.themeCupertino.enabled.icon.targetSize,
+          height: vars.themeCupertino.enabled.icon.targetSize,
+
+          "&:first-child": {
+            marginLeft: `calc(-1 * (${vars.themeCupertino.enabled.icon.targetSize} - ${vars.themeCupertino.enabled.icon.size}) / 2)`,
+          },
+          "&:last-child": {
+            marginRight: `calc(-1 * (${vars.themeCupertino.enabled.icon.targetSize} - ${vars.themeCupertino.enabled.icon.size}) / 2)`,
+          },
+        },
         icon: {
-          width: vars.themeCupertino.enabled.actionIcon.size,
-          height: vars.themeCupertino.enabled.actionIcon.size,
+          width: vars.themeCupertino.enabled.icon.size,
+          height: vars.themeCupertino.enabled.icon.size,
         },
         titleMain: {
           position: "absolute",
@@ -130,9 +147,20 @@ const topNavigation = defineRecipe({
           height: vars.themeAndroid.enabled.root.minHeight,
           paddingInline: vars.themeAndroid.enabled.root.paddingX,
         },
+        iconButton: {
+          width: vars.themeAndroid.enabled.icon.targetSize,
+          height: vars.themeAndroid.enabled.icon.targetSize,
+
+          "&:first-child": {
+            marginLeft: `calc(-1 * (${vars.themeAndroid.enabled.icon.targetSize} - ${vars.themeAndroid.enabled.icon.size}) / 2)`,
+          },
+          "&:last-child": {
+            marginRight: `calc(-1 * (${vars.themeAndroid.enabled.icon.targetSize} - ${vars.themeAndroid.enabled.icon.size}) / 2)`,
+          },
+        },
         icon: {
-          width: vars.themeAndroid.enabled.actionIcon.size,
-          height: vars.themeAndroid.enabled.actionIcon.size,
+          width: vars.themeAndroid.enabled.icon.size,
+          height: vars.themeAndroid.enabled.icon.size,
         },
         titleMain: {
           width: "100%",
@@ -152,7 +180,7 @@ const topNavigation = defineRecipe({
           backgroundColor: vars.toneLayer.enabled.root.color,
         },
         icon: {
-          color: vars.toneLayer.enabled.actionIcon.color,
+          color: vars.toneLayer.enabled.icon.color,
         },
         titleMain: {
           color: vars.toneLayer.enabled.title.color,
@@ -163,7 +191,7 @@ const topNavigation = defineRecipe({
           backgroundColor: vars.toneTransparent.enabled.root.color,
         },
         icon: {
-          color: vars.toneTransparent.enabled.actionIcon.color,
+          color: vars.toneTransparent.enabled.icon.color,
         },
         titleMain: {
           color: vars.toneTransparent.enabled.title.color,

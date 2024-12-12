@@ -13,7 +13,7 @@ data:
       title:
         fontSize: $font-size.s6-static
         fontWeight: $font-weight.bold
-      actionIcon:
+      icon:
         size: 24px
         targetSize: 40px
   theme=android:
@@ -24,7 +24,7 @@ data:
       title:
         fontSize: $font-size.s6-static
         fontWeight: $font-weight.bold
-      actionIcon:
+      icon:
         size: 24px
         targetSize: 40px
   tone=layer:
@@ -33,7 +33,7 @@ data:
         color: $color.bg.layer-default
       title:
         color: $color.fg.neutral
-      actionIcon:
+      icon:
         color: $color.fg.neutral
   tone=transparent:
     enabled:
@@ -41,7 +41,7 @@ data:
         color: "#00000000"
       title:
         color: $color.fg.static-white
-      actionIcon:
+      icon:
         color: $color.fg.static-white
   divider=true:
     enabled:

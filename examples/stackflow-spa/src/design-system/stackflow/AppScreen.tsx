@@ -30,7 +30,7 @@ function getZIndexStyle(props: {
   if (theme === "cupertino") {
     return {
       "--z-index-dim": base + (modalPresentationStyle === "fullScreen" ? 2 : 0),
-      "--z-index-layer": base + (hasAppBar && modalPresentationStyle !== "fullScreen" ? 2 : 3),
+      "--z-index-layer": base + (hasAppBar && modalPresentationStyle !== "fullScreen" ? 2 : 3), // FIXME: transparent backswipe에서 appBar 순서로 인해 2로 설정. 1로 되돌려야 함.
       "--z-index-edge": base + 4,
       "--z-index-app-bar": base + 7,
     } as React.CSSProperties;
@@ -109,8 +109,8 @@ function useAppScreen(props: {
     transitionDuration: transitionDuration,
     preventSwipeBack: isSwipeBackPrevented || theme !== "cupertino",
     getActivityTransitionState() {
-      const $paper = layerRef.current;
-      const $appScreen = $paper?.parentElement;
+      const $layer = layerRef.current;
+      const $appScreen = $layer?.parentElement;
 
       if (!$appScreen) {
         return null;
@@ -151,7 +151,7 @@ function useAppScreen(props: {
     refs: {
       appScreen: appScreenRef,
       dim: dimRef,
-      paper: layerRef,
+      layer: layerRef,
       edge: edgeRef,
       appBar: appBarRef,
     },
@@ -226,7 +226,7 @@ export const AppScreen: React.FC<AppScreenProps> = ({
   const api = useAppScreen({
     theme,
     preventSwipeBack,
-    activityEnterStyle: undefined, // TODO: Implement modalPresentationStyle
+    activityEnterStyle: undefined, // TODO: Implement activityEnterStyle
     modalPresentationStyle: undefined, // TODO: Implement modalPresentationStyle
     hasAppBar,
   });
@@ -238,7 +238,7 @@ export const AppScreen: React.FC<AppScreenProps> = ({
       <div ref={refs.appScreen} className={classNames.root} {...rootProps}>
         <div className={classNames.dim} ref={refs.dim} {...dimProps} />
         {appBar}
-        <div ref={refs.paper} key={activity?.id} className={classNames.layer} {...layerProps}>
+        <div ref={refs.layer} key={activity?.id} className={classNames.layer} {...layerProps}>
           {children}
         </div>
         <div ref={refs.edge} className={classNames.edge} {...edgeProps} />

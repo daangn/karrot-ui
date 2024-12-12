@@ -1,10 +1,11 @@
 import { vars } from "@seed-design/vars";
-import { IconBack, basicUIPlugin } from "@stackflow/plugin-basic-ui";
+import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { stackflow } from "@stackflow/react";
 import React from "react";
 
+import { IconChevronLeftLine } from "@daangn/react-monochrome-icon";
 import ActivityNotFound from "../activities/ActivityNotFound";
 
 /**
@@ -34,7 +35,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
       appBar: {
         borderColor: vars.$color.stroke.neutral,
         closeButton: {
-          renderIcon: () => <IconBack />,
+          renderIcon: () => <IconChevronLeftLine />,
         },
         iconColor: vars.$color.fg.neutral,
         textColor: vars.$color.fg.neutral,

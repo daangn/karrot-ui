@@ -15,7 +15,7 @@
           "fontSize": "$font-size.s6-static",
           "fontWeight": "$font-weight.bold"
         },
-        "actionIcon": {
+        "icon": {
           "size": "24px",
           "targetSize": "40px"
         }
@@ -31,7 +31,7 @@
           "fontSize": "$font-size.s6-static",
           "fontWeight": "$font-weight.bold"
         },
-        "actionIcon": {
+        "icon": {
           "size": "24px",
           "targetSize": "40px"
         }
@@ -45,7 +45,7 @@
         "title": {
           "color": "$color.fg.neutral"
         },
-        "actionIcon": {
+        "icon": {
           "color": "$color.fg.neutral"
         }
       }
@@ -58,7 +58,7 @@
         "title": {
           "color": "$color.fg.static-white"
         },
-        "actionIcon": {
+        "icon": {
           "color": "$color.fg.static-white"
         }
       }
