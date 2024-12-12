@@ -38,45 +38,23 @@
       "disabled": {
         "root": {
           "color": "$color.bg.disabled"
+        },
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
+          "color": "$color.fg.disabled"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.disabled"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.disabled"
         }
       },
       "loading": {
         "root": {
           "color": "$color.bg.brand-solid-pressed"
-        }
-      }
-    },
-    "variant=brand weak": {
-      "enabled": {
-        "root": {
-          "color": "$color.bg.brand-weak"
-        },
-        "label": {
-          "color": "$color.fg.brand"
-        },
-        "icon": {
-          "color": "$color.fg.brand"
-        },
-        "prefixIcon": {
-          "color": "$color.fg.brand"
-        },
-        "suffixIcon": {
-          "color": "$color.fg.brand"
-        }
-      },
-      "pressed": {
-        "root": {
-          "color": "$color.bg.brand-weak-pressed"
-        }
-      },
-      "disabled": {
-        "root": {
-          "color": "$color.bg.disabled"
-        }
-      },
-      "loading": {
-        "root": {
-          "color": "$color.bg.brand-weak-pressed"
         }
       }
     },
@@ -106,6 +84,18 @@
       "disabled": {
         "root": {
           "color": "$color.bg.disabled"
+        },
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
+          "color": "$color.fg.disabled"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.disabled"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.disabled"
         }
       },
       "loading": {
@@ -140,6 +130,18 @@
       "disabled": {
         "root": {
           "color": "$color.bg.disabled"
+        },
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
+          "color": "$color.fg.disabled"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.disabled"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.disabled"
         }
       },
       "loading": {
@@ -174,11 +176,121 @@
       "disabled": {
         "root": {
           "color": "$color.bg.disabled"
+        },
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
+          "color": "$color.fg.disabled"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.disabled"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.disabled"
         }
       },
       "loading": {
         "root": {
           "color": "$color.bg.danger-solid-pressed"
+        }
+      }
+    },
+    "variant=neutral outline": {
+      "enabled": {
+        "root": {
+          "color": "$color.bg.layer-default",
+          "strokeColor": "$color.stroke.neutral",
+          "strokeWidth": "1px"
+        },
+        "label": {
+          "color": "$color.fg.neutral"
+        },
+        "icon": {
+          "color": "$color.fg.neutral"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.neutral"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.neutral"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.layer-default"
+        }
+      },
+      "disabled": {
+        "root": {
+          "color": "$color.bg.layer-default",
+          "strokeColor": "$color.stroke.neutral"
+        },
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
+          "color": "$color.fg.disabled"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.disabled"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.disabled"
+        }
+      },
+      "loading": {
+        "root": {
+          "color": "$color.bg.layer-default"
+        }
+      }
+    },
+    "variant=brand outline": {
+      "enabled": {
+        "root": {
+          "color": "$color.bg.layer-default",
+          "strokeColor": "$color.stroke.neutral",
+          "strokeWidth": "1px"
+        },
+        "label": {
+          "color": "$color.fg.brand"
+        },
+        "icon": {
+          "color": "$color.fg.brand"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.brand"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.brand"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.layer-default"
+        }
+      },
+      "disabled": {
+        "root": {
+          "color": "$color.bg.layer-default",
+          "strokeColor": "$color.stroke.neutral"
+        },
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
+          "color": "$color.fg.disabled"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.disabled"
+        },
+        "suffixIcon": {
+          "color": "$color.fg.disabled"
+        }
+      },
+      "loading": {
+        "root": {
+          "color": "$color.bg.layer-default"
         }
       }
     },

@@ -54,16 +54,18 @@ export const ActionButton = React.forwardRef<
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
-        {prefixIcon && (
-          <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
-        )}
         {layout === "withText" ? (
-          <span className={classNames.label}>{children}</span>
+          <>
+            {prefixIcon && (
+              <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
+            )}
+            <span className={classNames.label}>{children}</span>
+            {suffixIcon && (
+              <Slot className={classNames.suffixIcon}>{suffixIcon}</Slot>
+            )}
+          </>
         ) : (
           <Slot className={classNames.icon}>{children}</Slot>
-        )}
-        {suffixIcon && (
-          <Slot className={classNames.suffixIcon}>{suffixIcon}</Slot>
         )}
       </Comp>
     );

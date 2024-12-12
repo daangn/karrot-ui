@@ -52,38 +52,27 @@ const actionButton = defineRecipe({
         },
         label: {
           color: vars.variantBrandSolid.enabled.label.color,
+          [pseudo(disabled)]: {
+            color: vars.variantBrandSolid.disabled.label.color,
+          },
         },
         icon: {
           color: vars.variantBrandSolid.enabled.icon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantBrandSolid.disabled.icon.color,
+          },
         },
         prefixIcon: {
           color: vars.variantBrandSolid.enabled.prefixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantBrandSolid.disabled.prefixIcon.color,
+          },
         },
         suffixIcon: {
           color: vars.variantBrandSolid.enabled.suffixIcon.color,
-        },
-      },
-      brandWeak: {
-        root: {
-          background: vars.variantBrandWeak.enabled.root.color,
-          [pseudo(active)]: {
-            background: vars.variantBrandWeak.pressed.root.color,
-          },
           [pseudo(disabled)]: {
-            background: vars.variantBrandWeak.disabled.root.color,
+            color: vars.variantBrandSolid.disabled.suffixIcon.color,
           },
-        },
-        label: {
-          color: vars.variantBrandWeak.enabled.label.color,
-        },
-        icon: {
-          color: vars.variantBrandWeak.enabled.icon.color,
-        },
-        prefixIcon: {
-          color: vars.variantBrandWeak.enabled.prefixIcon.color,
-        },
-        suffixIcon: {
-          color: vars.variantBrandWeak.enabled.suffixIcon.color,
         },
       },
       neutralSolid: {
@@ -98,15 +87,27 @@ const actionButton = defineRecipe({
         },
         label: {
           color: vars.variantNeutralSolid.enabled.label.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralSolid.disabled.label.color,
+          },
         },
         icon: {
           color: vars.variantNeutralSolid.enabled.icon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralSolid.disabled.icon.color,
+          },
         },
         prefixIcon: {
           color: vars.variantNeutralSolid.enabled.prefixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralSolid.disabled.prefixIcon.color,
+          },
         },
         suffixIcon: {
           color: vars.variantNeutralSolid.enabled.suffixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralSolid.disabled.suffixIcon.color,
+          },
         },
       },
       neutralWeak: {
@@ -121,15 +122,27 @@ const actionButton = defineRecipe({
         },
         label: {
           color: vars.variantNeutralWeak.enabled.label.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralWeak.disabled.label.color,
+          },
         },
         icon: {
           color: vars.variantNeutralWeak.enabled.icon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralWeak.disabled.icon.color,
+          },
         },
         prefixIcon: {
           color: vars.variantNeutralWeak.enabled.prefixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralWeak.disabled.prefixIcon.color,
+          },
         },
         suffixIcon: {
           color: vars.variantNeutralWeak.enabled.suffixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralWeak.disabled.suffixIcon.color,
+          },
         },
       },
       dangerSolid: {
@@ -144,15 +157,105 @@ const actionButton = defineRecipe({
         },
         label: {
           color: vars.variantDangerSolid.enabled.label.color,
+          [pseudo(disabled)]: {
+            color: vars.variantDangerSolid.disabled.label.color,
+          },
         },
         icon: {
           color: vars.variantDangerSolid.enabled.icon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantDangerSolid.disabled.icon.color,
+          },
         },
         prefixIcon: {
           color: vars.variantDangerSolid.enabled.prefixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantDangerSolid.disabled.prefixIcon.color,
+          },
         },
         suffixIcon: {
           color: vars.variantDangerSolid.enabled.suffixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantDangerSolid.disabled.suffixIcon.color,
+          },
+        },
+      },
+      brandOutline: {
+        root: {
+          borderStyle: "solid",
+          background: vars.variantBrandOutline.enabled.root.color,
+          borderWidth: vars.variantBrandOutline.enabled.root.strokeWidth,
+          borderColor: vars.variantBrandOutline.enabled.root.strokeColor,
+          [pseudo(active)]: {
+            background: vars.variantBrandOutline.pressed.root.color,
+          },
+          [pseudo(disabled)]: {
+            background: vars.variantBrandOutline.disabled.root.color,
+            borderColor: vars.variantBrandOutline.disabled.root.strokeColor,
+          },
+        },
+        label: {
+          color: vars.variantBrandOutline.enabled.label.color,
+          [pseudo(disabled)]: {
+            color: vars.variantBrandOutline.disabled.label.color,
+          },
+        },
+        icon: {
+          color: vars.variantBrandOutline.enabled.icon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantBrandOutline.disabled.icon.color,
+          },
+        },
+        prefixIcon: {
+          color: vars.variantBrandOutline.enabled.prefixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantBrandOutline.disabled.prefixIcon.color,
+          },
+        },
+        suffixIcon: {
+          color: vars.variantBrandOutline.enabled.suffixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantBrandOutline.disabled.suffixIcon.color,
+          },
+        },
+      },
+      neutralOutline: {
+        root: {
+          borderStyle: "solid",
+          background: vars.variantNeutralOutline.enabled.root.color,
+          borderWidth: vars.variantNeutralOutline.enabled.root.strokeWidth,
+          borderColor: vars.variantNeutralOutline.enabled.root.strokeColor,
+          [pseudo(active)]: {
+            background: vars.variantNeutralOutline.pressed.root.color,
+          },
+          [pseudo(disabled)]: {
+            background: vars.variantNeutralOutline.disabled.root.color,
+            borderColor: vars.variantNeutralOutline.disabled.root.strokeColor,
+          },
+        },
+        label: {
+          color: vars.variantNeutralOutline.enabled.label.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralOutline.disabled.label.color,
+          },
+        },
+        icon: {
+          color: vars.variantNeutralOutline.enabled.icon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralOutline.disabled.icon.color,
+          },
+        },
+        prefixIcon: {
+          color: vars.variantNeutralOutline.enabled.prefixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralOutline.disabled.prefixIcon.color,
+          },
+        },
+        suffixIcon: {
+          color: vars.variantNeutralOutline.enabled.suffixIcon.color,
+          [pseudo(disabled)]: {
+            color: vars.variantNeutralOutline.disabled.suffixIcon.color,
+          },
         },
       },
     },

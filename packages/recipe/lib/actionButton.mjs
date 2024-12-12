@@ -67,10 +67,11 @@ const compoundVariants = [
 export const actionButtonVariantMap = {
   "variant": [
     "brandSolid",
-    "brandWeak",
     "neutralSolid",
     "neutralWeak",
-    "dangerSolid"
+    "dangerSolid",
+    "brandOutline",
+    "neutralOutline"
   ],
   "size": [
     "xsmall",

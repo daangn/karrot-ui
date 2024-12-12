@@ -2,7 +2,7 @@ interface ActionButtonVariant {
   /**
   * @default brandSolid
   */
-  variant: "brandSolid" | "brandWeak" | "neutralSolid" | "neutralWeak" | "dangerSolid";
+  variant: "brandSolid" | "neutralSolid" | "neutralWeak" | "dangerSolid" | "brandOutline" | "neutralOutline";
 /**
   * @default medium
   */
