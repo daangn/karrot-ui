@@ -12,7 +12,8 @@
       "types": "./lib/index.d.ts",
       "require": "./lib/index.js",
       "import": "./lib/index.mjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "main": "./lib/index.js",
   "files": [

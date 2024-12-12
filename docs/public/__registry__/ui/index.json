@@ -39,7 +39,7 @@
     "name": "callout",
     "dependencies": [
       "@radix-ui/react-slot",
-      "@seed-design/react-dismissible",
+      "@seed-design/react-dismissible@0.0.0",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
@@ -58,7 +58,7 @@
   {
     "name": "checkbox",
     "dependencies": [
-      "@seed-design/react-checkbox@alpha",
+      "@seed-design/react-checkbox@0.0.0-alpha-20241030023710",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
@@ -69,7 +69,7 @@
     "name": "inline-banner",
     "dependencies": [
       "@radix-ui/react-slot",
-      "@seed-design/react-dismissible",
+      "@seed-design/react-dismissible@0.0.0",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
@@ -79,7 +79,7 @@
   {
     "name": "help-bubble",
     "dependencies": [
-      "@seed-design/react-popover",
+      "@seed-design/react-popover@0.0.0-alpha-20241030023710",
       "@radix-ui/react-slot"
     ],
     "files": [
@@ -89,7 +89,7 @@
   {
     "name": "tabs",
     "dependencies": [
-      "@seed-design/react-tabs@alpha"
+      "@seed-design/react-tabs@0.0.0-alpha-20241209060641"
     ],
     "files": [
       "ui:tabs.tsx"
@@ -98,7 +98,7 @@
   {
     "name": "chip-tabs",
     "dependencies": [
-      "@seed-design/react-tabs@alpha"
+      "@seed-design/react-tabs@0.0.0-alpha-20241209060641"
     ],
     "files": [
       "ui:chip-tabs.tsx"
@@ -125,8 +125,8 @@
   {
     "name": "select-box-group",
     "dependencies": [
-      "@seed-design/react-checkbox",
-      "@seed-design/react-radio-group",
+      "@seed-design/react-checkbox@0.0.0-alpha-20241030023710",
+      "@seed-design/react-radio-group@0.0.0-alpha-20241030023710",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
@@ -136,7 +136,7 @@
   {
     "name": "segmented-control",
     "dependencies": [
-      "@seed-design/react-segmented-control"
+      "@seed-design/react-segmented-control@0.0.0"
     ],
     "files": [
       "ui:segmented-control.tsx"
@@ -145,7 +145,7 @@
   {
     "name": "switch",
     "dependencies": [
-      "@seed-design/react-switch@alpha"
+      "@seed-design/react-switch@0.0.0-alpha-20241030023710"
     ],
     "files": [
       "ui:switch.tsx"
@@ -163,7 +163,7 @@
   {
     "name": "text-field",
     "dependencies": [
-      "@seed-design/react-text-field",
+      "@seed-design/react-text-field@0.0.0-alpha-20241030023710",
       "@daangn/react-monochrome-icon",
       "@radix-ui/react-slot"
     ],

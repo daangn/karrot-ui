@@ -1,7 +1,7 @@
 {
   "name": "switch",
   "dependencies": [
-    "@seed-design/react-switch@alpha"
+    "@seed-design/react-switch@0.0.0-alpha-20241030023710"
   ],
   "registries": [
     {

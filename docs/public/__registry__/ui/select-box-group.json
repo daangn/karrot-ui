@@ -1,8 +1,8 @@
 {
   "name": "select-box-group",
   "dependencies": [
-    "@seed-design/react-checkbox",
-    "@seed-design/react-radio-group",
+    "@seed-design/react-checkbox@0.0.0-alpha-20241030023710",
+    "@seed-design/react-radio-group@0.0.0-alpha-20241030023710",
     "@daangn/react-monochrome-icon"
   ],
   "registries": [

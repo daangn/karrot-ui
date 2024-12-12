@@ -1,7 +1,7 @@
 {
   "name": "segmented-control",
   "dependencies": [
-    "@seed-design/react-segmented-control"
+    "@seed-design/react-segmented-control@0.0.0"
   ],
   "registries": [
     {

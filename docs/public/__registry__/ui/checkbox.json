@@ -1,7 +1,7 @@
 {
   "name": "checkbox",
   "dependencies": [
-    "@seed-design/react-checkbox@alpha",
+    "@seed-design/react-checkbox@0.0.0-alpha-20241030023710",
     "@daangn/react-monochrome-icon"
   ],
   "registries": [
