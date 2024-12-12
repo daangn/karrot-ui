@@ -6,7 +6,7 @@ const MIN_SAFE_AREA_INSET_TOP = "0px"; // TODO: turn into public interface
 
 const screen = defineRecipe({
   name: "screen",
-  slots: ["root", "layer", "dim", "edge", "spacer"],
+  slots: ["root", "layer", "dim", "edge"],
   base: {
     root: {
       position: "absolute",
@@ -62,10 +62,6 @@ const screen = defineRecipe({
       height: "100%",
       left: 0,
       right: 0,
-    },
-    spacer: {
-      width: "100%",
-      height: "var(--app-bar-margin)",
     },
   },
   variants: {
