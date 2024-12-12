@@ -1,7 +1,6 @@
 import { useActions, useStack } from "@stackflow/react";
 import { createContext, useContext, useMemo, useRef } from "react";
 
-import type { ScreenVariantProps } from "@seed-design/recipe/screen";
 import type { ActivityTransitionState } from "@stackflow/core";
 import {
   useLazy,
@@ -42,7 +41,7 @@ function getZIndexStyle(props: {
 }
 
 export function useAppScreen(props: {
-  theme: ScreenVariantProps["theme"];
+  theme?: "android" | "cupertino";
   modalPresentationStyle?: "fullScreen" | undefined;
   activityEnterStyle?: "slideInLeft" | undefined;
   preventSwipeBack?: boolean;
