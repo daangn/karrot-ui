@@ -13076,7 +13076,6 @@ __metadata:
     ts-pattern: ^5.5.0
     typescript: ^5.5.4
     vite-node: ^2.1.2
-    zustand: ^5.0.0
   languageName: unknown
   linkType: soft
 
@@ -25994,27 +25993,6 @@ __metadata:
   version: 3.23.8
   resolution: "zod@npm:3.23.8"
   checksum: 15949ff82118f59c893dacd9d3c766d02b6fa2e71cf474d5aa888570c469dbf5446ac5ad562bb035bf7ac9650da94f290655c194f4a6de3e766f43febd432c5c
-  languageName: node
-  linkType: hard
-
-"zustand@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "zustand@npm:5.0.0"
-  peerDependencies:
-    "@types/react": ">=18.0.0"
-    immer: ">=9.0.6"
-    react: ">=18.0.0"
-    use-sync-external-store: ">=1.2.0"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    immer:
-      optional: true
-    react:
-      optional: true
-    use-sync-external-store:
-      optional: true
-  checksum: dc7414de234f9d2c0afad472d6971e9ac32281292faa8ee0910521cad063f84eeeb6f792efab068d6750dab5854fb1a33ac6e9294b796925eb680a59fc1b42f9
   languageName: node
   linkType: hard
 
