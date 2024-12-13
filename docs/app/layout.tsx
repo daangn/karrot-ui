@@ -1,5 +1,6 @@
 "use client";
 
+import "@seed-design/stylesheet/base.css";
 import "@seed-design/stylesheet/global.css";
 import "@seed-design/stylesheet/token.css";
 import "@stackflow/plugin-basic-ui/index.css";

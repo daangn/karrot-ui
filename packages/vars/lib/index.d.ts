@@ -1,1 +1,4 @@
-export * as vars from "./vars";
+import * as vars from "./vars";
+export { vars };
+
+export type TokenObject = typeof vars;

@@ -1,0 +1,39 @@
+.skeleton__root {
+    display: inline-block;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: var(--seed-v3-color-palette-gray-100);
+}
+.skeleton__root::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, #f3f4f5 0%, #f7f8f9 23%, #f7f8f9 27%, #f3f4f5 50%, #f3f4f5 75%, #f3f4f5 100%);
+    background-size: 200% 100%;
+    animation-fill-mode: forwards;
+    animation-name: wave;
+    animation-duration: 1.5s;
+    animation-timing-function: var(--seed-v3-timing-function-easing);
+    animation-iteration-count: infinite;
+}
+.skeleton__root--shape_rounded {
+    border-radius: var(--seed-v3-radius-s1);
+}
+.skeleton__root--shape_circular {
+    border-radius: var(--seed-v3-radius-full);
+}
+.skeleton__root--shape_rectangular {
+    border-radius: 0;
+}
+@keyframes wave {
+    0% {
+        background-position-x: 100%;
+    }
+    50% {
+        background-position-x: 100%;
+    }
+    100% {
+        background-position-x: -100%;
+    }
+}

@@ -154,6 +154,13 @@
     ]
   },
   {
+    "name": "skeleton",
+    "dependencies": [],
+    "files": [
+      "ui:skeleton.tsx"
+    ]
+  },
+  {
     "name": "text-button",
     "dependencies": [
       "@radix-ui/react-slot"

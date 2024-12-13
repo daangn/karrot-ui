@@ -15,6 +15,7 @@ import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
 import segmentedControl from "./segmented-control.recipe";
 import selectBoxGroup from "./select-box-group.recipe";
+import skeleton from "./skeleton";
 import switchRecipe from "./switch.recipe";
 import tab from "./tab.recipe";
 import tabs from "./tabs.recipe";
@@ -42,6 +43,7 @@ const recipes = {
   chipTab,
   chipTabs,
   expandButton,
+  skeleton,
   textButton,
   textField,
 };

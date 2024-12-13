@@ -1,30 +1,35 @@
 "use client";
 
+import "@seed-design/stylesheet/skeleton.css";
+
+import {
+  skeleton,
+  type SkeletonVariantProps,
+} from "@seed-design/recipe/skeleton";
+import clsx from "clsx";
 import * as React from "react";
+import { styleProps, type StyleProps } from "../util/styleProps";
 
-interface SkeletonProps {
-  width: number | string;
-  height: number | string;
-  borderRadius: "circle" | "rounded" | "square";
-  type?: "wave";
-}
+interface SkeletonProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    SkeletonVariantProps,
+    StyleProps {}
 
-// TODO: Spec
-// TODO: Recipe
 export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
   (props, ref) => {
-    const { width, height, borderRadius, type = "wave" } = props;
+    const { className, shape, ...otherProps } = props;
+    const classNames = skeleton({
+      shape,
+    });
+    const { style } = styleProps(otherProps);
+
     return (
-      <div className="root">
-        <div
-          ref={ref}
-          style={{
-            width,
-            height,
-          }}
-          className={`skeleton ${borderRadius} ${type}`}
-        />
-      </div>
+      <div
+        ref={ref}
+        {...otherProps}
+        className={clsx("seed-box", classNames.root, className)}
+        style={style}
+      />
     );
   },
 );

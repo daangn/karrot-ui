@@ -60,6 +60,9 @@
       "path": "/components/switch.json"
     },
     {
+      "path": "/components/skeleton.json"
+    },
+    {
       "path": "/components/tab.json"
     },
     {
