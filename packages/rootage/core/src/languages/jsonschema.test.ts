@@ -124,6 +124,9 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
               \\"$ref\\": \\"#/definitions/dimensionShorthand\\"
             },
             {
+              \\"$ref\\": \\"#/definitions/durationShorthand\\"
+            },
+            {
               \\"$ref\\": \\"#/definitions/numberShorthand\\"
             },
             {
@@ -144,6 +147,10 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
         \\"dimensionShorthand\\": {
           \\"type\\": \\"string\\",
           \\"pattern\\": \\"^\\\\\\\\d+(\\\\\\\\.\\\\\\\\d+)?(px|rem)$\\"
+        },
+        \\"durationShorthand\\": {
+          \\"type\\": \\"string\\",
+          \\"pattern\\": \\"^\\\\\\\\d+(\\\\\\\\.\\\\\\\\d+)?(s|ms)$\\"
         },
         \\"numberShorthand\\": {
           \\"type\\": \\"number\\"
