@@ -7,16 +7,16 @@
     -moz-osx-font-smoothing: grayscale
 }
 .badge__root--size_medium {
-    min-height: var(--seed-v3-unit-s5);
-    padding-inline: var(--seed-v3-unit-s2);
-    padding-block: var(--seed-v3-unit-s1);
-    font-size: var(--seed-v3-font-size-s2)
-}
-.badge__root--size_small {
     min-height: var(--seed-v3-unit-s4);
     padding-inline: var(--seed-v3-unit-s1_5);
     padding-block: var(--seed-v3-unit-s0_5);
     font-size: var(--seed-v3-font-size-s1)
+}
+.badge__root--size_large {
+    min-height: var(--seed-v3-unit-s5);
+    padding-inline: var(--seed-v3-unit-s2);
+    padding-block: var(--seed-v3-unit-s1);
+    font-size: var(--seed-v3-font-size-s2)
 }
 .badge__root--shape_pill {
     border-radius: var(--seed-v3-radius-full)
@@ -35,10 +35,10 @@
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .badge__root--shape_rectangle-size_medium {
-    border-radius: var(--seed-v3-radius-s1_5)
-}
-.badge__root--shape_rectangle-size_small {
     border-radius: var(--seed-v3-radius-s1)
+}
+.badge__root--shape_rectangle-size_large {
+    border-radius: var(--seed-v3-radius-s1_5)
 }
 .badge__root--tone_neutral-variant_soft {
     background-color: var(--seed-v3-color-bg-neutral-weak)

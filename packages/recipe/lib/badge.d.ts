@@ -1,5 +1,5 @@
 interface BadgeVariant {
-  size: "medium" | "small";
+  size: "medium" | "large";
 shape: "rectangle" | "pill";
 variant: "soft" | "solid" | "outlined";
 tone: "neutral" | "brand" | "informative" | "positive" | "danger";

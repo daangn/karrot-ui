@@ -25,12 +25,12 @@ export const badge = defineRecipe({
           fontSize: vars.sizeMedium.enabled.root.fontSize,
         },
       },
-      small: {
+      large: {
         root: {
-          minHeight: vars.sizeSmall.enabled.root.minHeight,
-          paddingInline: vars.sizeSmall.enabled.root.paddingX,
-          paddingBlock: vars.sizeSmall.enabled.root.paddingY,
-          fontSize: vars.sizeSmall.enabled.root.fontSize,
+          minHeight: vars.sizeLarge.enabled.root.minHeight,
+          paddingInline: vars.sizeLarge.enabled.root.paddingX,
+          paddingBlock: vars.sizeLarge.enabled.root.paddingY,
+          fontSize: vars.sizeLarge.enabled.root.fontSize,
         },
       },
     },
@@ -83,10 +83,10 @@ export const badge = defineRecipe({
     },
     {
       shape: "rectangle",
-      size: "small",
+      size: "large",
       css: {
         root: {
-          borderRadius: vars.shapeRectangleSizeSmall.enabled.root.borderRadius,
+          borderRadius: vars.shapeRectangleSizeLarge.enabled.root.borderRadius,
         },
       },
     },

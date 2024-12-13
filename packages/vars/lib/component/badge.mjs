@@ -1,5 +1,5 @@
 export const vars = {
-  "sizeMedium": {
+  "sizeLarge": {
     "enabled": {
       "root": {
         "minHeight": "var(--seed-v3-unit-s5)",
@@ -9,7 +9,7 @@ export const vars = {
       }
     }
   },
-  "sizeSmall": {
+  "sizeMedium": {
     "enabled": {
       "root": {
         "minHeight": "var(--seed-v3-unit-s4)",
@@ -26,14 +26,14 @@ export const vars = {
       }
     }
   },
-  "shapeRectangleSizeMedium": {
+  "shapeRectangleSizeLarge": {
     "enabled": {
       "root": {
         "borderRadius": "var(--seed-v3-radius-s1_5)"
       }
     }
   },
-  "shapeRectangleSizeSmall": {
+  "shapeRectangleSizeMedium": {
     "enabled": {
       "root": {
         "borderRadius": "var(--seed-v3-radius-s1)"

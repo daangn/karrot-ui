@@ -20,7 +20,7 @@ const compoundVariants = [
   },
   {
     "shape": "rectangle",
-    "size": "small"
+    "size": "large"
   },
   {
     "tone": "neutral",
@@ -87,7 +87,7 @@ const compoundVariants = [
 export const badgeVariantMap = {
   "size": [
     "medium",
-    "small"
+    "large"
   ],
   "shape": [
     "rectangle",

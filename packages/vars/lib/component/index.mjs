@@ -16,6 +16,7 @@ export { vars as progressCircle } from "./progress-circle.mjs";
 export { vars as radio } from "./radio.mjs";
 export { vars as segmentedControl } from "./segmented-control.mjs";
 export { vars as selectBoxGroup } from "./select-box-group.mjs";
+export { vars as skeleton } from "./skeleton.mjs";
 export { vars as switch } from "./switch.mjs";
 export { vars as tab } from "./tab.mjs";
 export { vars as tablist } from "./tablist.mjs";

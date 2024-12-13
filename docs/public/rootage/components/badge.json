@@ -5,7 +5,7 @@
     "name": "Badge"
   },
   "data": {
-    "size=medium": {
+    "size=large": {
       "enabled": {
         "root": {
           "minHeight": "$unit.s5",
@@ -15,7 +15,7 @@
         }
       }
     },
-    "size=small": {
+    "size=medium": {
       "enabled": {
         "root": {
           "minHeight": "$unit.s4",
@@ -32,14 +32,14 @@
         }
       }
     },
-    "shape=rectangle, size=medium": {
+    "shape=rectangle, size=large": {
       "enabled": {
         "root": {
           "borderRadius": "$radius.s1_5"
         }
       }
     },
-    "shape=rectangle, size=small": {
+    "shape=rectangle, size=medium": {
       "enabled": {
         "root": {
           "borderRadius": "$radius.s1"
