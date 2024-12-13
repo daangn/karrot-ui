@@ -185,13 +185,18 @@ interface AppBarProps
     Omit<TopNavigationVariantProps, "theme"> {}
 
 export const AppBar = forwardRef<HTMLDivElement, AppBarProps>(
-  ({ border = true, tone = "layer", children }, ref) => {
+  ({ border = true, tone = "layer", children, ...otherProps }, ref) => {
     const { theme, refs, dataProps } = useAppScreenContext();
 
     const classNames = topNavigation({ theme, border, tone });
 
     return (
-      <div ref={mergeRefs(ref, refs.appBar)} className={classNames.root} {...dataProps}>
+      <div
+        ref={mergeRefs(ref, refs.appBar)}
+        className={classNames.root}
+        {...dataProps}
+        {...otherProps}
+      >
         <div className={classNames.safeArea} {...dataProps} />
         <div className={classNames.container} {...dataProps}>
           <StyleContext.Provider value={classNames}>{children}</StyleContext.Provider>
