@@ -1,7 +1,7 @@
 .textButton__root {
     display: inline-flex;
     align-items: center;
-    padding-block: var(--seed-v3-unit-x0_5);
+    padding-block: var(--seed-v3-unit-s0_5);
     border-width: 0.125rem;
     border-color: transparent;
     -webkit-font-smoothing: antialiased;
@@ -27,7 +27,7 @@
     margin-inline-end: var(--seed-v3-unit-s1);
 }
 .textButton__suffixIcon {
-    margin-inline-start: var(--seed-v3-unit-x0_5);
+    margin-inline-start: var(--seed-v3-unit-s0_5);
 }
 .textButton__root--variant_brand {
     color: var(--seed-v3-color-fg-brand);

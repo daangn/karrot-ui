@@ -6,7 +6,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding-inline-start: var(--seed-v3-unit-s3_5);
-    padding-inline-end: var(--seed-v3-unit-x0_5);
+    padding-inline-end: var(--seed-v3-unit-s0_5);
     padding-block: 5px;
     border-radius: var(--seed-v3-radius-s2_5);
 }

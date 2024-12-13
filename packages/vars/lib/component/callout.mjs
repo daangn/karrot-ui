@@ -3,7 +3,7 @@ export const vars = {
     "enabled": {
       "root": {
         "paddingXStart": "var(--seed-v3-unit-s3_5)",
-        "paddingXEnd": "var(--seed-v3-unit-x0_5)",
+        "paddingXEnd": "var(--seed-v3-unit-s0_5)",
         "paddingY": "5px",
         "cornerRadius": "var(--seed-v3-radius-s2_5)"
       },

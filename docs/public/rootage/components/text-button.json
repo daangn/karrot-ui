@@ -8,7 +8,7 @@
     "base": {
       "enabled": {
         "root": {
-          "paddingY": "$unit.x0_5",
+          "paddingY": "$unit.s0_5",
           "borderWidth": "0.125rem"
         },
         "label": {
@@ -18,7 +18,7 @@
           "marginXEnd": "$unit.s1"
         },
         "suffixIcon": {
-          "marginXStart": "$unit.x0_5"
+          "marginXStart": "$unit.s0_5"
         }
       },
       "pressed": {

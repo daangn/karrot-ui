@@ -14,7 +14,7 @@
           "size": "$unit.s1",
           "cornerRadius": "$radius.full",
           "color": "$color.bg.brand-solid",
-          "marginLeft": "$unit.x0_5"
+          "marginLeft": "$unit.s0_5"
         }
       },
       "selected": {

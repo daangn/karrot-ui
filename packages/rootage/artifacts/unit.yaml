@@ -5,7 +5,7 @@ metadata:
 data:
   collection: global
   tokens:
-    $unit.x0_5:
+    $unit.s0_5:
       values:
         default: 2px
     $unit.s1:

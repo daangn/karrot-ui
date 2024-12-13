@@ -5,7 +5,7 @@ metadata:
 data:
   collection: global
   tokens:
-    $radius.x0_5:
+    $radius.s0_5:
       values:
         default: 2px
     $radius.s1:

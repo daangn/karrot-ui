@@ -16,7 +16,7 @@ data:
         strokeColor: $color.stroke.neutral
         cornerRadius: $radius.s3
       content:
-        gap: $unit.x0_5
+        gap: $unit.s0_5
       label:
         color: $color.fg.neutral
         fontWeight: $font-weight.bold

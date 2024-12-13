@@ -16,6 +16,7 @@ export { vars as progressCircle } from "./progress-circle";
 export { vars as radio } from "./radio";
 export { vars as segmentedControl } from "./segmented-control";
 export { vars as selectBox } from "./select-box";
+export { vars as skeleton } from "./skeleton";
 export { vars as switch } from "./switch";
 export { vars as tab } from "./tab";
 export { vars as tablist } from "./tablist";

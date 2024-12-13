@@ -14,7 +14,7 @@ export declare const vars: {
       "root": {
         "minHeight": "var(--seed-v3-unit-s4)",
         "paddingX": "var(--seed-v3-unit-s1_5)",
-        "paddingY": "var(--seed-v3-unit-x0_5)",
+        "paddingY": "var(--seed-v3-unit-s0_5)",
         "fontSize": "var(--seed-v3-font-size-s1)"
       }
     }
@@ -36,7 +36,7 @@ export declare const vars: {
   "shapeRectangleSizeSmall": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-v3-radius-x0_5)"
+        "borderRadius": "var(--seed-v3-radius-s0_5)"
       }
     }
   },

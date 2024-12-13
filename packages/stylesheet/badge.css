@@ -15,7 +15,7 @@
 .badge__root--size_small {
     min-height: var(--seed-v3-unit-s4);
     padding-inline: var(--seed-v3-unit-s1_5);
-    padding-block: var(--seed-v3-unit-x0_5);
+    padding-block: var(--seed-v3-unit-s0_5);
     font-size: var(--seed-v3-font-size-s1)
 }
 .badge__root--shape_pill {
@@ -38,7 +38,7 @@
     border-radius: var(--seed-v3-radius-s1)
 }
 .badge__root--shape_rectangle-size_small {
-    border-radius: var(--seed-v3-radius-x0_5)
+    border-radius: var(--seed-v3-radius-s0_5)
 }
 .badge__root--tone_neutral-variant_soft {
     background-color: var(--seed-v3-color-bg-neutral-weak)

@@ -2,7 +2,7 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "paddingY": "var(--seed-v3-unit-x0_5)",
+        "paddingY": "var(--seed-v3-unit-s0_5)",
         "borderWidth": "0.125rem"
       },
       "label": {
@@ -12,7 +12,7 @@ export const vars = {
         "marginXEnd": "var(--seed-v3-unit-s1)"
       },
       "suffixIcon": {
-        "marginXStart": "var(--seed-v3-unit-x0_5)"
+        "marginXStart": "var(--seed-v3-unit-s0_5)"
       }
     },
     "pressed": {

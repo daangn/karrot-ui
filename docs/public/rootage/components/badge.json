@@ -20,7 +20,7 @@
         "root": {
           "minHeight": "$unit.s4",
           "paddingX": "$unit.s1_5",
-          "paddingY": "$unit.x0_5",
+          "paddingY": "$unit.s0_5",
           "fontSize": "$font-size.s1"
         }
       }
@@ -42,7 +42,7 @@
     "shape=rectangle, size=small": {
       "enabled": {
         "root": {
-          "borderRadius": "$radius.x0_5"
+          "borderRadius": "$radius.s0_5"
         }
       }
     },

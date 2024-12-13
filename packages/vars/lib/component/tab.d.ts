@@ -8,7 +8,7 @@ export declare const vars: {
         "size": "var(--seed-v3-unit-s1)",
         "cornerRadius": "var(--seed-v3-radius-full)",
         "color": "var(--seed-v3-color-bg-brand-solid)",
-        "marginLeft": "var(--seed-v3-unit-x0_5)"
+        "marginLeft": "var(--seed-v3-unit-s0_5)"
       }
     },
     "selected": {

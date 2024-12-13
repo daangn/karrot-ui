@@ -1,4 +1,4 @@
-export declare const x0_5 = "var(--seed-v3-unit-x0_5)";
+export declare const s0_5 = "var(--seed-v3-unit-s0_5)";
 export declare const s1 = "var(--seed-v3-unit-s1)";
 export declare const s1_5 = "var(--seed-v3-unit-s1_5)";
 export declare const s2 = "var(--seed-v3-unit-s2)";

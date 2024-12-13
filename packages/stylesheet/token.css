@@ -40,7 +40,7 @@
   --seed-v3-line-height-s8: 1.875rem;
   --seed-v3-line-height-s9: 2rem;
   --seed-v3-line-height-s10: 2.125rem;
-  --seed-v3-radius-x0_5: 2px;
+  --seed-v3-radius-s0_5: 2px;
   --seed-v3-radius-s1: 4px;
   --seed-v3-radius-s1_5: 6px;
   --seed-v3-radius-s2: 8px;
@@ -57,7 +57,7 @@
   --seed-v3-timing-function-exit: cubic-bezier(0.35, 0, 1, 1);
   --seed-v3-timing-function-enter-expressive: cubic-bezier(0.03, 0.4, 0.1, 1);
   --seed-v3-timing-function-exit-expressive: cubic-bezier(0.35, 0, 0.95, 0.55);
-  --seed-v3-unit-x0_5: 2px;
+  --seed-v3-unit-s0_5: 2px;
   --seed-v3-unit-s1: 4px;
   --seed-v3-unit-s1_5: 6px;
   --seed-v3-unit-s2: 8px;

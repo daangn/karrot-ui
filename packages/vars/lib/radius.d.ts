@@ -1,4 +1,4 @@
-export declare const x0_5 = "var(--seed-v3-radius-x0_5)";
+export declare const s0_5 = "var(--seed-v3-radius-s0_5)";
 export declare const s1 = "var(--seed-v3-radius-s1)";
 export declare const s1_5 = "var(--seed-v3-radius-s1_5)";
 export declare const s2 = "var(--seed-v3-radius-s2)";

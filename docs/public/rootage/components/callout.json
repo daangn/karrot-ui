@@ -9,7 +9,7 @@
       "enabled": {
         "root": {
           "paddingXStart": "$unit.s3_5",
-          "paddingXEnd": "$unit.x0_5",
+          "paddingXEnd": "$unit.s0_5",
           "paddingY": "5px",
           "cornerRadius": "$radius.s2_5"
         },

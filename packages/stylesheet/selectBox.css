@@ -30,7 +30,7 @@
 .selectBox__content {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-unit-x0_5);
+    gap: var(--seed-v3-unit-s0_5);
 }
 .selectBox__control {
     flex: none;

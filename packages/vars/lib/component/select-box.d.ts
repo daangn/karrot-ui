@@ -13,7 +13,7 @@ export declare const vars: {
         "cornerRadius": "var(--seed-v3-radius-s3)"
       },
       "content": {
-        "gap": "var(--seed-v3-unit-x0_5)"
+        "gap": "var(--seed-v3-unit-s0_5)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)",
