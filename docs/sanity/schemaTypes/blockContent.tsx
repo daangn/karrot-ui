@@ -43,7 +43,7 @@ export const tableType = defineArrayMember({
   ],
 });
 
-export const blockContentType = defineType({
+export default defineType({
   title: "Block Content",
   name: "blockContent",
   type: "array",

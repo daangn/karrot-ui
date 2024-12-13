@@ -41,6 +41,20 @@ export default defineConfig({
               ],
             }),
           }),
+          blog: defineLocations({
+            select: {
+              slug: "slug",
+              title: "title",
+            },
+            resolve: (doc) => ({
+              locations: [
+                {
+                  title: doc?.title || "Untitled",
+                  href: `/blog?slug=${doc?.slug.current}`,
+                },
+              ],
+            }),
+          }),
         },
       },
     }),

@@ -4,11 +4,11 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "./client";
 
 import type { PortableTextTypeComponentProps } from "@portabletext/react";
-import { getImageDimensions } from "@sanity/asset-utils";
+import { getImageDimensions, SanityImageAsset } from "@sanity/asset-utils";
 
 const { projectId, dataset } = client.config();
 
-interface SanityImage {
+export interface SanityImage {
   _type: "image";
   _key: string;
   asset: {
@@ -17,7 +17,30 @@ interface SanityImage {
   };
 }
 
-export const Image = ({ value }: PortableTextTypeComponentProps<SanityImage>) => {
+interface ImageProps {
+  value: SanityImageAsset;
+  className?: string;
+}
+
+export const Image = ({ value, className }: ImageProps) => {
+  if (!value) {
+    return <div className={`${className} bg-gray-200`} />;
+  }
+
+  const builder = imageUrlBuilder({ projectId: projectId!, dataset: dataset! });
+  const cdnUrl = builder
+    .image(value)
+    .width(800)
+    .fit("max")
+    .quality(90)
+    .auto("format")
+    .format("webp")
+    .url();
+
+  return <img src={cdnUrl} alt={value.originalFilename} className={className} draggable={false} />;
+};
+
+export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityImage>) => {
   if (!value || !value?.asset) {
     return null;
   }
@@ -51,6 +74,7 @@ export const Image = ({ value }: PortableTextTypeComponentProps<SanityImage>) =>
       src={cdnUrl}
       alt={alt}
       sizes="(max-width: 800px) 100vw, 800px"
+      draggable={false}
       srcSet={srcSet}
       loading="lazy"
       style={{

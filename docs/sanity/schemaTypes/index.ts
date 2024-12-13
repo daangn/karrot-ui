@@ -1,8 +1,9 @@
 import { type SchemaTypeDefinition } from "sanity";
 
-import { blockContentType } from "./blockContentType";
-import { contentsType } from "./contentsType";
+import blockContentType from "./blockContent";
+import guidelineType from "./guideline";
+import blogType from "./blog";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, contentsType],
+  types: [blockContentType, guidelineType, blogType],
 };

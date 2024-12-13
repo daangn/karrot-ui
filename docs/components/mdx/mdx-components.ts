@@ -1,7 +1,7 @@
 import { ComponentExample } from "@/components/component-example";
 import { ComponentSpecBlock } from "@/components/component-spec-block";
 import { Installation } from "@/components/installation";
-import { SanityContent } from "@/components/sanity/sanity-content";
+import { SanityGuideline } from "@/components/sanity/sanity-content";
 import { StackflowExample } from "@/components/stackflow-example";
 import { TokenTable } from "@/components/token-table";
 import { createTypeTable } from "fumadocs-typescript/ui";
@@ -19,7 +19,7 @@ export const mdxComponents = {
   ComponentExample,
   TokenTable,
   ComponentSpecBlock,
-  SanityContent,
+  SanityGuideline: SanityGuideline,
   Tab,
   Tabs,
   Step,
