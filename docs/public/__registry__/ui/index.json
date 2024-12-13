@@ -130,7 +130,9 @@
       "@daangn/react-monochrome-icon"
     ],
     "files": [
-      "ui:select-box-group.tsx"
+      "ui:select-box-group.tsx",
+      "util:types.ts",
+      "util:visuallyHidden.ts"
     ]
   },
   {
