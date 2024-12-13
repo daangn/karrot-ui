@@ -1,7 +1,7 @@
 "use client";
 
 import { PortableText } from "@portabletext/react";
-import { type SanityDocument } from "next-sanity";
+import type { SanityDocument } from "next-sanity";
 import { client } from "./client";
 
 import { useEffect, useState } from "react";

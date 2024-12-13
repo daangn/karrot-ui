@@ -5,7 +5,7 @@ import { Image } from "@/components/sanity/image";
 import { PortableContent } from "@/components/sanity/sanity-content";
 import { SanityImageAsset } from "@sanity/asset-utils";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
-import { SanityDocument } from "next-sanity";
+import type { SanityDocument } from "next-sanity";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
