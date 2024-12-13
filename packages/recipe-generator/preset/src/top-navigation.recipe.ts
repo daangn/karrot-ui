@@ -58,6 +58,10 @@ const topNavigation = defineRecipe({
       alignItems: "center",
       justifyContent: "center",
     },
+    icon: {
+      display: "inline-block",
+      flexShrink: 0,
+    },
     title: {
       display: "flex",
       alignItems: "center",

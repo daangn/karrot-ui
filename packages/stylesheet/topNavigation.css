@@ -31,6 +31,10 @@
     align-items: center;
     justify-content: center;
 }
+.topNavigation__icon {
+    display: inline-block;
+    flex-shrink: 0;
+}
 .topNavigation__title {
     display: flex;
     align-items: center;
