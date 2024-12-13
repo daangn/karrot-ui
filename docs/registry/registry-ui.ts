@@ -96,7 +96,11 @@ export const registryUI: RegistryUI = [
       `@seed-design/react-radio-group@${radioGroupPkg.version}`,
       "@daangn/react-monochrome-icon",
     ],
-    files: ["ui:select-box-group.tsx"],
+    files: [
+      "ui:select-box-group.tsx",
+      "util:types.ts",
+      "util:visuallyHidden.ts",
+    ],
   },
   {
     name: "segmented-control",
