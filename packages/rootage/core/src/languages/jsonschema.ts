@@ -122,6 +122,9 @@ export function getJsonSchema(ctx: RootageCtx): string {
             "$ref": "#/definitions/shadow"
           },
           {
+            "$ref": "#/definitions/gradient"
+          }
+          {
             "$ref": "#/definitions/tokenRef"
           }
         ]
@@ -189,6 +192,33 @@ export function getJsonSchema(ctx: RootageCtx): string {
                 }
               },
               "required": ["color", "offsetX", "offsetY", "blur", "spread"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["type", "value"],
+        "additionalProperties": false
+      },
+      "gradient": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "gradient"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "$ref": "#/definitions/colorShorthand"
+                },
+                "position": {
+                  "type": "number"
+                },
+              },
+              "required": ["color", "position"],
               "additionalProperties": false
             }
           }

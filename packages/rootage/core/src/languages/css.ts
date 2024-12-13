@@ -4,6 +4,7 @@ import type {
   RootageCtx,
   ShadowExpression,
   TokenExpression,
+  GradientExpression,
 } from "../types";
 
 const PREFIX = "seed-v3";
@@ -18,6 +19,10 @@ function stringifyShadowExpression(expr: ShadowExpression): string {
       return `${item.offsetX.value}${item.offsetX.unit} ${item.offsetY.value}${item.offsetY.unit} ${item.blur.value}${item.blur.unit} ${item.spread.value}${item.spread.unit} ${item.color}`;
     })
     .join(", ");
+}
+
+function stringifyGradientExpression(expr: GradientExpression): string {
+  return expr.value.map((item) => `${item.color} ${item.position * 100}%`).join(", ");
 }
 
 export function stringifyValueExpression(expr: ValueExpression): string {
@@ -43,6 +48,10 @@ export function stringifyValueExpression(expr: ValueExpression): string {
 
   if (expr.type === "shadow") {
     return stringifyShadowExpression(expr);
+  }
+
+  if (expr.type === "gradient") {
+    return stringifyGradientExpression(expr);
   }
 
   throw new Error("Invalid value expression");

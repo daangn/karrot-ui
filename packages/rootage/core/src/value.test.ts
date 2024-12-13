@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import type { Gradient } from "./types";
 import { parseValueExpression } from "./value";
 
 describe("parseValueExpression", () => {
@@ -158,6 +159,57 @@ describe("parseValueExpression", () => {
           offsetY: 0,
           blur: 0,
           spread: 0,
+        },
+      ],
+    } as const;
+
+    // @ts-expect-error
+    expect(() => parseValueExpression(expression)).toThrowError();
+  });
+
+  it("should parse gradient", () => {
+    const expression = {
+      type: "gradient",
+      value: [
+        {
+          color: "#000000",
+          position: 0,
+        },
+        {
+          color: "#ffffff",
+          position: 1,
+        },
+      ],
+    } satisfies Gradient;
+
+    const result = parseValueExpression(expression);
+
+    expect(result).toEqual({
+      type: "gradient",
+      value: [
+        {
+          color: "#000000",
+          position: 0,
+        },
+        {
+          color: "#ffffff",
+          position: 1,
+        },
+      ],
+    });
+  });
+
+  it("should reject invalid gradient", () => {
+    const expression = {
+      type: "gradient",
+      value: [
+        {
+          color: "#00",
+          position: 0,
+        },
+        {
+          color: "#ff",
+          position: 1,
         },
       ],
     } as const;

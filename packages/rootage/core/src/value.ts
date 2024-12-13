@@ -3,11 +3,13 @@ import type {
   CubicBezierExpression,
   DimensionExpression,
   DurationExpression,
+  GradientExpression,
+  GradientItemExpression,
   NumberExpression,
-  Value,
-  ValueExpression,
   ShadowExpression,
   ShadowItemExpression,
+  Value,
+  ValueExpression,
 } from "./types";
 
 function parseColor(expr: unknown): ColorExpression | null {
@@ -143,6 +145,49 @@ function parseShadow(expr: unknown): ShadowExpression | null {
   return null;
 }
 
+function parseGradientItem(expr: unknown): GradientItemExpression | null {
+  if (typeof expr === "object" && expr !== null && "color" in expr && "position" in expr) {
+    const color = parseColor(expr.color);
+    const position = parseNumber(expr.position);
+
+    if (color && position) {
+      return {
+        color: color.value,
+        position: position.value,
+      };
+    }
+  }
+  return null;
+}
+
+function parseGradient(expr: unknown): GradientExpression | null {
+  if (
+    typeof expr === "object" &&
+    expr !== null &&
+    "type" in expr &&
+    "value" in expr &&
+    expr.type === "gradient" &&
+    Array.isArray(expr.value)
+  ) {
+    const parsedGradients: GradientExpression["value"] = [];
+
+    for (const gradientItem of expr.value) {
+      const parsedGradient = parseGradientItem(gradientItem);
+      if (parsedGradient) {
+        parsedGradients.push(parsedGradient);
+      } else {
+        return null; // If any shadow value fails to parse, return null
+      }
+    }
+
+    return {
+      type: "gradient",
+      value: parsedGradients,
+    };
+  }
+  return null;
+}
+
 export function parseValueExpression(input: Value): ValueExpression {
   const result =
     parseColor(input) ||
@@ -150,7 +195,8 @@ export function parseValueExpression(input: Value): ValueExpression {
     parseNumber(input) ||
     parseDuration(input) ||
     parseCubicBezier(input) ||
-    parseShadow(input);
+    parseShadow(input) ||
+    parseGradient(input);
 
   if (result) {
     return result;

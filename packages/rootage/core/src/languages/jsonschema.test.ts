@@ -136,6 +136,9 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
               \\"$ref\\": \\"#/definitions/shadow\\"
             },
             {
+              \\"$ref\\": \\"#/definitions/gradient\\"
+            }
+            {
               \\"$ref\\": \\"#/definitions/tokenRef\\"
             }
           ]
@@ -203,6 +206,33 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
                   }
                 },
                 \\"required\\": [\\"color\\", \\"offsetX\\", \\"offsetY\\", \\"blur\\", \\"spread\\"],
+                \\"additionalProperties\\": false
+              }
+            }
+          },
+          \\"required\\": [\\"type\\", \\"value\\"],
+          \\"additionalProperties\\": false
+        },
+        \\"gradient\\": {
+          \\"type\\": \\"object\\",
+          \\"properties\\": {
+            \\"type\\": {
+              \\"type\\": \\"string\\",
+              \\"const\\": \\"gradient\\"
+            },
+            \\"value\\": {
+              \\"type\\": \\"array\\",
+              \\"items\\": {
+                \\"type\\": \\"object\\",
+                \\"properties\\": {
+                  \\"color\\": {
+                    \\"$ref\\": \\"#/definitions/colorShorthand\\"
+                  },
+                  \\"position\\": {
+                    \\"type\\": \\"number\\"
+                  },
+                },
+                \\"required\\": [\\"color\\", \\"position\\"],
                 \\"additionalProperties\\": false
               }
             }

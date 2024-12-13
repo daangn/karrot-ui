@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { buildRootage } from "../build";
-import type { Model, ShadowExpression } from "../types";
+import type { GradientExpression, Model, ShadowExpression } from "../types";
 import { getTokenCss, stringifyTokenReference, stringifyValueExpression } from "./css";
 
 test("stringifyTokenReference should stringify token expression", () => {
@@ -40,6 +40,26 @@ test("stringifyValueExpression should stringify shadow expression", () => {
   const result = stringifyValueExpression(shadow);
 
   expect(result).toEqual("2px 3px 4px 0px #000000");
+});
+
+test("stringifyValueExpression should stringify gradient expression", () => {
+  const gradient: GradientExpression = {
+    type: "gradient",
+    value: [
+      {
+        color: "#000000",
+        position: 0,
+      },
+      {
+        color: "#ffffff",
+        position: 1,
+      },
+    ],
+  };
+
+  const result = stringifyValueExpression(gradient);
+
+  expect(result).toEqual("#000000 0%, #ffffff 100%");
 });
 
 test("getTokenCss should generate css code", () => {

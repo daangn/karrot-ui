@@ -39,13 +39,24 @@ export interface ShadowExpression {
   value: ShadowItemExpression[];
 }
 
+export interface GradientItemExpression {
+  color: string;
+  position: number;
+}
+
+export interface GradientExpression {
+  type: "gradient";
+  value: GradientItemExpression[];
+}
+
 export type ValueExpression =
   | ColorExpression
   | DimensionExpression
   | NumberExpression
   | DurationExpression
   | CubicBezierExpression
-  | ShadowExpression;
+  | ShadowExpression
+  | GradientExpression;
 
 export interface TokenExpression {
   type: "token";
@@ -133,6 +144,13 @@ export type Shadow = {
     spread: DimensionShorthand;
   }>;
 };
+export type Gradient = {
+  type: "gradient";
+  value: Array<{
+    color: ColorShorthand;
+    position: number;
+  }>;
+};
 export type TokenRef = `$${string}`;
 
 export type Value =
@@ -141,7 +159,8 @@ export type Value =
   | NumberShorthand
   | DurationShorthand
   | CubicBezier
-  | Shadow;
+  | Shadow
+  | Gradient;
 export type RighthandValue = Value | TokenRef;
 
 export interface ComponentSpecModel {
