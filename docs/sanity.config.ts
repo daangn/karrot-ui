@@ -9,6 +9,7 @@ import { defineConfig } from "sanity";
 import { structure } from "./sanity/structure";
 import { structureTool } from "sanity/structure";
 import { presentationTool, defineLocations } from "sanity/presentation";
+import * as changeCase from "change-case";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from "./sanity/env";
@@ -23,15 +24,11 @@ export default defineConfig({
   // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
   plugins: [
-    table(),
     structureTool({ structure }),
-    // Vision is for querying with GROQ from inside the Studio
-    // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({ defaultApiVersion: apiVersion }),
     presentationTool({
       resolve: {
         locations: {
-          post: defineLocations({
+          contents: defineLocations({
             select: {
               title: "title",
             },
@@ -39,7 +36,7 @@ export default defineConfig({
               locations: [
                 {
                   title: doc?.title || "Untitled",
-                  href: `/docs/design/components/${doc?.title}`,
+                  href: `/docs/design/components/${changeCase.kebabCase(doc?.title)}`,
                 },
               ],
             }),
@@ -47,5 +44,9 @@ export default defineConfig({
         },
       },
     }),
+    table(),
+    // Vision is for querying with GROQ from inside the Studio
+    // https://www.sanity.io/docs/the-vision-plugin
+    visionTool({ defaultApiVersion: apiVersion }),
   ],
 });

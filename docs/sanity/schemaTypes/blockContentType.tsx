@@ -1,4 +1,4 @@
-import { BulbOutlineIcon, ImageIcon } from "@sanity/icons";
+import { ImageIcon } from "@sanity/icons";
 import { defineArrayMember, defineType } from "sanity";
 
 /**
