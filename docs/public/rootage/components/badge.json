@@ -35,14 +35,14 @@
     "shape=rectangle, size=medium": {
       "enabled": {
         "root": {
-          "borderRadius": "$radius.s1"
+          "borderRadius": "$radius.s1_5"
         }
       }
     },
     "shape=rectangle, size=small": {
       "enabled": {
         "root": {
-          "borderRadius": "$radius.s0_5"
+          "borderRadius": "$radius.s1"
         }
       }
     },

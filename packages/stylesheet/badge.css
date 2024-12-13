@@ -35,10 +35,10 @@
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .badge__root--shape_rectangle-size_medium {
-    border-radius: var(--seed-v3-radius-s1)
+    border-radius: var(--seed-v3-radius-s1_5)
 }
 .badge__root--shape_rectangle-size_small {
-    border-radius: var(--seed-v3-radius-s0_5)
+    border-radius: var(--seed-v3-radius-s1)
 }
 .badge__root--tone_neutral-variant_soft {
     background-color: var(--seed-v3-color-bg-neutral-weak)

@@ -29,14 +29,14 @@ export const vars = {
   "shapeRectangleSizeMedium": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-v3-radius-s1)"
+        "borderRadius": "var(--seed-v3-radius-s1_5)"
       }
     }
   },
   "shapeRectangleSizeSmall": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-v3-radius-s0_5)"
+        "borderRadius": "var(--seed-v3-radius-s1)"
       }
     }
   },
