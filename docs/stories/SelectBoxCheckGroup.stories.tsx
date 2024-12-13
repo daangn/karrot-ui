@@ -10,14 +10,7 @@ const Component = () => {
   return (
     <SelectBoxCheckGroup>
       <SelectBoxCheck key="dolor" value="dolor" label="dolor" description="dolor" defaultChecked />
-      <SelectBoxCheck
-        key="magna"
-        value="magna"
-        label="magna"
-        description="magna"
-        defaultChecked
-        indeterminate
-      />
+      <SelectBoxCheck key="magna" value="magna" label="magna" description="magna" defaultChecked />
       <SelectBoxCheck key="sint" value="sint" label="sint" description="sint" />
     </SelectBoxCheckGroup>
   );
