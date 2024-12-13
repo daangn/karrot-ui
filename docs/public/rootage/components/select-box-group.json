@@ -1,0 +1,103 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "select-box-group",
+    "name": "Select Box Group"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "gap": "$unit.s3"
+        },
+        "box": {
+          "paddingX": "$unit.s4",
+          "paddingY": "19px",
+          "gap": "$unit.s2_5",
+          "strokeWidth": "1px",
+          "strokeColor": "$color.stroke.neutral",
+          "cornerRadius": "$radius.s3"
+        },
+        "content": {
+          "gap": "$unit.s0_5"
+        },
+        "label": {
+          "color": "$color.fg.neutral",
+          "fontWeight": "$font-weight.bold",
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5"
+        },
+        "description": {
+          "color": "$color.fg.neutral-muted",
+          "fontWeight": "$font-weight.regular",
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
+        },
+        "checkboxControl": {
+          "size": "22px",
+          "margin": "1px",
+          "color": "$color.bg.layer-default",
+          "strokeWidth": "1.25px",
+          "strokeColor": "$color.stroke.control",
+          "cornerRadius": "$radius.s1"
+        },
+        "checkboxIcon": {
+          "size": "$unit.s3_5"
+        },
+        "radioControl": {
+          "size": "$unit.s6",
+          "color": "$color.bg.layer-default",
+          "strokeWidth": "1.25px",
+          "strokeColor": "$color.stroke.control",
+          "cornerRadius": "$radius.full"
+        },
+        "radioIcon": {
+          "size": "$unit.s2_5",
+          "cornerRadius": "$radius.full"
+        }
+      },
+      "enabled,pressed": {
+        "box": {
+          "color": "$color.bg.layer-default-pressed"
+        },
+        "checkboxControl": {
+          "color": "$color.bg.layer-default-pressed"
+        },
+        "radioControl": {
+          "color": "$color.bg.layer-default-pressed"
+        }
+      },
+      "enabled,selected": {
+        "box": {
+          "color": "$color.bg.neutral-weak",
+          "strokeColor": "$color.stroke.control"
+        },
+        "checkboxControl": {
+          "color": "$color.bg.brand-solid",
+          "strokeWidth": 0
+        },
+        "checkboxIcon": {
+          "color": "$color.fg.static-white"
+        },
+        "radioControl": {
+          "color": "$color.bg.brand-solid",
+          "strokeWidth": 0
+        },
+        "radioIcon": {
+          "color": "$color.fg.static-white"
+        }
+      },
+      "enabled,selected,pressed": {
+        "box": {
+          "color": "$color.bg.neutral-weak-pressed"
+        },
+        "checkboxControl": {
+          "color": "$color.bg.brand-solid-pressed"
+        },
+        "radioControl": {
+          "color": "$color.bg.brand-solid-pressed"
+        }
+      }
+    }
+  }
+}

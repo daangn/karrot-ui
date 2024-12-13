@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SelectBoxCheck, SelectBoxCheckGroup } from "seed-design/ui/select-box-group";
-import { selectBoxVariantMap } from "@seed-design/recipe/selectBox";
+import { selectBoxGroupVariantMap } from "@seed-design/recipe/selectBoxGroup";
 
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
@@ -37,7 +37,7 @@ const CommonStoryTemplate: Story = {
     defaultValue: "dolor",
   },
   render: function Render(args) {
-    return <VariantTable Component={Component} variantMap={selectBoxVariantMap} {...args} />;
+    return <VariantTable Component={Component} variantMap={selectBoxGroupVariantMap} {...args} />;
   },
 };
 
