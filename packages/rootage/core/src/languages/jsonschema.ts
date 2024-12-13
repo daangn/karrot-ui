@@ -123,7 +123,7 @@ export function getJsonSchema(ctx: RootageCtx): string {
           },
           {
             "$ref": "#/definitions/gradient"
-          }
+          },
           {
             "$ref": "#/definitions/tokenRef"
           }
@@ -216,7 +216,7 @@ export function getJsonSchema(ctx: RootageCtx): string {
                 },
                 "position": {
                   "type": "number"
-                },
+                }
               },
               "required": ["color", "position"],
               "additionalProperties": false

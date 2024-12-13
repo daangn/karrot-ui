@@ -137,7 +137,7 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
             },
             {
               \\"$ref\\": \\"#/definitions/gradient\\"
-            }
+            },
             {
               \\"$ref\\": \\"#/definitions/tokenRef\\"
             }
@@ -230,7 +230,7 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
                   },
                   \\"position\\": {
                     \\"type\\": \\"number\\"
-                  },
+                  }
                 },
                 \\"required\\": [\\"color\\", \\"position\\"],
                 \\"additionalProperties\\": false
@@ -252,4 +252,60 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
       }
     }"
   `);
+});
+
+test("getJsonSchema should generate valid json", () => {
+  const models: TokensModel[] = [
+    {
+      kind: "Tokens",
+      metadata: {
+        id: "2",
+        name: "color",
+      },
+      data: {
+        collection: "color",
+        tokens: {
+          "$color.palette.gray-00": {
+            values: {
+              light: "#ffffff",
+              dark: "#000000",
+            },
+          },
+          "$color.palette.gray-100": {
+            values: {
+              light: "#f8f9fa",
+              dark: "#212529",
+            },
+          },
+          "$color.bg.layer-1": {
+            values: {
+              light: "$color.palette.gray-00",
+              dark: "$color.palette.gray-00",
+            },
+          },
+        },
+      },
+    },
+    {
+      kind: "Tokens",
+      metadata: {
+        id: "3",
+        name: "unit",
+      },
+      data: {
+        collection: "global",
+        tokens: {
+          "$unit.s1_5": {
+            values: {
+              default: "6px",
+            },
+          },
+        },
+      },
+    },
+  ];
+
+  const result = getJsonSchema(buildRootage(models));
+
+  expect(() => JSON.parse(result)).not.toThrow();
 });
