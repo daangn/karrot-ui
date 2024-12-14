@@ -12,8 +12,8 @@
   "scripts": {
     "prepack": "yarn generate",
     "generate": "yarn recipe:generate && yarn rootage:generate",
-    "recipe:generate": "yarn recipegen css",
-    "rootage:generate": "yarn rootage token-css"
+    "recipe:generate": "recipegen css",
+    "rootage:generate": "rootage token-css"
   },
   "exports": {
     "./*.css": "./*.css",

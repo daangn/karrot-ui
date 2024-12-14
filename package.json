@@ -46,5 +46,10 @@
     "vitest": "^1.6.0",
     "watchlist": "^0.3.1"
   },
-  "packageManager": "yarn@4.5.3"
+  "packageManager": "yarn@4.5.3",
+  "ultra": {
+    "concurrent": [
+      "rootage:generate"
+    ]
+  }
 }
