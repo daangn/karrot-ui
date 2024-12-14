@@ -45,11 +45,13 @@ function readYAMLFilesSync(dir: string, fileList: string[] = []) {
 
 async function prepare() {
   const filePaths = readYAMLFilesSync(artifactsDir);
-  const fileContents: Model[] = await Promise.all(
-    filePaths.map((name) => fs.readFile(name, "utf-8").then((res) => YAML.parse(res))),
-  );
 
-  const ctx = buildRootage(fileContents);
+  const fileContents = await Promise.all(filePaths.map((name) => fs.readFile(name, "utf-8")));
+
+  const models = fileContents.map((content) => YAML.parse(content) as Model);
+
+  const ctx = buildRootage(models);
+
   const validationResult = validate(ctx);
 
   if (!validationResult.valid) {
@@ -60,7 +62,7 @@ async function prepare() {
   return {
     ctx,
     filePaths,
-    fileContents,
+    models,
   };
 }
 
@@ -178,8 +180,8 @@ async function writeJsonSchema() {
 }
 
 async function writeJson() {
-  const { fileContents, filePaths } = await prepare();
-  const entries = filePaths.map((file, index) => ({ file, content: fileContents[index] }));
+  const { models, filePaths } = await prepare();
+  const entries = filePaths.map((file, index) => ({ file, content: models[index] }));
 
   for (const { file, content } of entries) {
     const code = JSON.stringify(content, null, 2);
@@ -198,31 +200,41 @@ async function writeJson() {
 }
 
 if (command === "token-ts") {
+  console.log("Start");
   writeTokenTs().then(() => {
     console.log("Done");
+    process.exit(0);
   });
 }
 
 if (command === "component-spec") {
+  console.log("Start");
   writeComponentSpec().then(() => {
     console.log("Done");
+    process.exit(0);
   });
 }
 
 if (command === "token-css") {
+  console.log("Start");
   writeTokenCss().then(() => {
     console.log("Done");
+    process.exit(0);
   });
 }
 
 if (command === "json-schema") {
+  console.log("Start");
   writeJsonSchema().then(() => {
     console.log("Done");
+    process.exit(0);
   });
 }
 
 if (command === "json") {
+  console.log("Start");
   writeJson().then(() => {
     console.log("Done");
+    process.exit(0);
   });
 }
