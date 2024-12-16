@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { InlineBanner, InlineBannerDescription } from "seed-design/ui/inline-banner";
+import {
+  InlineBanner,
+  InlineBannerDescription,
+  InlineBannerLink,
+} from "seed-design/ui/inline-banner";
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";
@@ -24,6 +28,7 @@ const CommonStoryTemplate: Story = {
         exercitation.
       </InlineBannerDescription>
     ),
+    suffix: <InlineBannerLink>Do something</InlineBannerLink>,
     icon: <IconBellFill />,
   },
   render: (args) => (

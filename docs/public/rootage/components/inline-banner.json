@@ -8,15 +8,15 @@
     "base": {
       "enabled": {
         "root": {
-          "gap": "$unit.s1",
-          "paddingXStart": "$unit.s4",
-          "paddingXEnd": "$unit.s1"
+          "gap": "$unit.s4",
+          "paddingX": "$unit.s4"
         },
         "content": {
           "gap": "$unit.s2",
-          "paddingY": "10.5px",
+          "paddingY": "$unit.s2_5",
           "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "lineHeight": "$line-height.s4",
+          "minHeight": "$unit.s10"
         },
         "icon": {
           "size": "$unit.s4",
@@ -29,8 +29,7 @@
           "fontWeight": "$font-weight.medium"
         },
         "linkLabel": {
-          "size": "$unit.s10",
-          "paddingX": "$unit.s3",
+          "height": "$unit.s10",
           "fontWeight": "$font-weight.regular",
           "fontSize": "$font-size.s2",
           "lineHeight": "$line-height.s2"
@@ -42,15 +41,7 @@
           "size": "$unit.s4"
         },
         "actionableIcon": {
-          "size": "$unit.s4",
-          "margin": "$unit.s3"
-        }
-      }
-    },
-    "type=contentOnly": {
-      "enabled": {
-        "content": {
-          "paddingXEnd": "$unit.s3"
+          "size": "$unit.s4"
         }
       }
     },

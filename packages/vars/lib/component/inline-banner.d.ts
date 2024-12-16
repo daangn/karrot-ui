@@ -2,15 +2,15 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-s1)",
-        "paddingXStart": "var(--seed-v3-unit-s4)",
-        "paddingXEnd": "var(--seed-v3-unit-s1)"
+        "gap": "var(--seed-v3-unit-s4)",
+        "paddingX": "var(--seed-v3-unit-s4)"
       },
       "content": {
         "gap": "var(--seed-v3-unit-s2)",
-        "paddingY": "10.5px",
+        "paddingY": "var(--seed-v3-unit-s2_5)",
         "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)"
+        "lineHeight": "var(--seed-v3-line-height-s4)",
+        "minHeight": "var(--seed-v3-unit-s10)"
       },
       "icon": {
         "size": "var(--seed-v3-unit-s4)",
@@ -23,8 +23,7 @@ export declare const vars: {
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
       "linkLabel": {
-        "size": "var(--seed-v3-unit-s10)",
-        "paddingX": "var(--seed-v3-unit-s3)",
+        "height": "var(--seed-v3-unit-s10)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
         "fontSize": "var(--seed-v3-font-size-s2)",
         "lineHeight": "var(--seed-v3-line-height-s2)"
@@ -36,15 +35,7 @@ export declare const vars: {
         "size": "var(--seed-v3-unit-s4)"
       },
       "actionableIcon": {
-        "size": "var(--seed-v3-unit-s4)",
-        "margin": "var(--seed-v3-unit-s3)"
-      }
-    }
-  },
-  "typeContentOnly": {
-    "enabled": {
-      "content": {
-        "paddingXEnd": "var(--seed-v3-unit-s3)"
+        "size": "var(--seed-v3-unit-s4)"
       }
     }
   },
