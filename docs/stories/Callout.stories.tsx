@@ -4,7 +4,7 @@ import { Callout, CalloutDescription, CalloutLink, CalloutTitle } from "seed-des
 
 import { calloutVariantMap } from "@seed-design/recipe/callout";
 import { VariantTable } from "./components/variant-table";
-import { IconBellLine } from "@daangn/react-monochrome-icon";
+import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
@@ -27,7 +27,7 @@ const CommonStoryTemplate: Story = {
         <CalloutLink onClick={() => {}}>자세히 보기</CalloutLink>
       </>
     ),
-    icon: <IconBellLine />,
+    icon: <IconBellFill />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={calloutVariantMap} {...args} />
