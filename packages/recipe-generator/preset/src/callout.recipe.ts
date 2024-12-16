@@ -6,7 +6,6 @@ export const callout = defineRecipe({
   name: "callout",
   slots: [
     "root",
-    "content",
     "icon",
     "title",
     "spacer",
@@ -18,43 +17,29 @@ export const callout = defineRecipe({
   ],
   base: {
     root: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-
-      width: "100%",
-      WebkitFontSmoothing: "antialiased",
-      MozOsxFontSmoothing: "grayscale",
-
-      paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
-      paddingBlock: vars.base.enabled.root.paddingY,
-
-      borderRadius: vars.base.enabled.root.cornerRadius,
-
       [pseudo(":is(button)")]: {
         // XXX: css reset 생기면 불필요할 가능성
         cursor: "pointer",
         border: "none",
-        font: "inherit",
       },
-    },
-    content: {
+
       display: "flex",
       alignItems: "center",
 
-      gap: vars.base.enabled.content.gap,
+      width: "100%",
+      minHeight: vars.base.enabled.root.minHeight,
+      boxSizing: "border-box",
 
-      paddingBlock: vars.base.enabled.content.paddingY,
+      padding: vars.base.enabled.root.padding,
+      gap: vars.base.enabled.root.gap,
 
-      fontSize: vars.base.enabled.content.fontSize,
-      lineHeight: vars.base.enabled.content.lineHeight,
+      borderRadius: vars.base.enabled.root.cornerRadius,
 
       textAlign: "start",
-
-      [pseudo(":only-child")]: {
-        paddingInlineEnd: vars.typeContentOnly.enabled.content.paddingXEnd,
-      },
+      fontSize: vars.base.enabled.root.fontSize,
+      lineHeight: vars.base.enabled.root.lineHeight,
+      WebkitFontSmoothing: "antialiased",
+      MozOsxFontSmoothing: "grayscale",
     },
     icon: {
       flex: "none",
@@ -90,7 +75,7 @@ export const callout = defineRecipe({
       width: vars.base.enabled.actionableIcon.size,
       height: vars.base.enabled.actionableIcon.size,
 
-      margin: vars.base.enabled.actionableIcon.margin,
+      marginInlineStart: "auto",
     },
     dismissButton: {
       flex: "none",
@@ -102,7 +87,9 @@ export const callout = defineRecipe({
       width: vars.base.enabled.dismissButton.size,
       height: vars.base.enabled.dismissButton.size,
 
-      // XXX: css reset 생기면 불필요할 가능성
+      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.root.padding} * 2) * -1)`,
+      marginInlineStart: "auto",
+
       border: "none",
       backgroundColor: "transparent",
       padding: 0,

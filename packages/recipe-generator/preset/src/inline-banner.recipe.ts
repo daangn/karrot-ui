@@ -27,8 +27,7 @@ const inlineBanner = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
-      paddingInlineStart: vars.base.enabled.root.paddingXStart,
-      paddingInlineEnd: vars.base.enabled.root.paddingXEnd,
+      paddingInline: vars.base.enabled.root.paddingX,
 
       // XXX: 추후 reset.css 추가되면 쳐내질 가능성
       [pseudo(":is(button)")]: {
@@ -42,17 +41,16 @@ const inlineBanner = defineRecipe({
       display: "flex",
       alignItems: "flex-start",
       gap: vars.base.enabled.content.gap,
+      boxSizing: "border-box",
 
       paddingBlock: vars.base.enabled.content.paddingY,
 
       fontSize: vars.base.enabled.content.fontSize,
       lineHeight: vars.base.enabled.content.lineHeight,
 
-      textAlign: "start",
+      minHeight: vars.base.enabled.content.minHeight,
 
-      [pseudo(":only-child")]: {
-        paddingInlineEnd: vars.typeContentOnly.enabled.content.paddingXEnd,
-      },
+      textAlign: "start",
     },
     icon: {
       flex: "none",
@@ -77,8 +75,7 @@ const inlineBanner = defineRecipe({
       display: "flex",
       alignItems: "center",
 
-      height: vars.base.enabled.linkLabel.size,
-      paddingInline: vars.base.enabled.linkLabel.paddingX,
+      height: vars.base.enabled.linkLabel.height,
 
       fontWeight: vars.base.enabled.linkLabel.fontWeight,
       fontSize: vars.base.enabled.linkLabel.fontSize,
@@ -91,7 +88,7 @@ const inlineBanner = defineRecipe({
       // XXX: 추후 reset.css 추가되면 쳐내질 가능성
       border: "none",
       backgroundColor: "transparent",
-      paddingBlock: 0,
+      padding: 0,
       cursor: "pointer",
     },
     actionableIcon: {
@@ -99,8 +96,6 @@ const inlineBanner = defineRecipe({
 
       width: vars.base.enabled.actionableIcon.size,
       height: vars.base.enabled.actionableIcon.size,
-
-      margin: vars.base.enabled.actionableIcon.margin,
     },
     dismissButton: {
       flex: "none",
@@ -111,6 +106,8 @@ const inlineBanner = defineRecipe({
 
       width: vars.base.enabled.dismissButton.size,
       height: vars.base.enabled.dismissButton.size,
+
+      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.root.paddingX} * 2) * -1)`,
 
       // XXX: 추후 reset.css 추가되면 쳐내질 가능성
       border: "none",

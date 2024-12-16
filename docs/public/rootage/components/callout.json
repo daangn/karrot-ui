@@ -8,16 +8,12 @@
     "base": {
       "enabled": {
         "root": {
-          "paddingXStart": "$unit.s3_5",
-          "paddingXEnd": "$unit.s0_5",
-          "paddingY": "5px",
-          "cornerRadius": "$radius.s2_5"
-        },
-        "content": {
+          "padding": "$unit.s3_5",
           "gap": "$unit.s3",
-          "paddingY": "9.5px",
+          "cornerRadius": "$radius.s2_5",
           "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s5"
+          "lineHeight": "$line-height.s5",
+          "minHeight": "50px"
         },
         "icon": {
           "size": "$unit.s4"
@@ -35,15 +31,7 @@
           "size": "$unit.s4"
         },
         "actionableIcon": {
-          "size": "$unit.s4",
-          "margin": "$unit.s3"
-        }
-      }
-    },
-    "type=contentOnly": {
-      "enabled": {
-        "content": {
-          "paddingXEnd": "$unit.s3"
+          "size": "$unit.s4"
         }
       }
     },

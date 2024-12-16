@@ -1,31 +1,21 @@
-.callout__root {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-inline-start: var(--seed-v3-unit-s3_5);
-    padding-inline-end: var(--seed-v3-unit-s0_5);
-    padding-block: 5px;
-    border-radius: var(--seed-v3-radius-s2_5);
-}
 .callout__root:is(button) {
     cursor: pointer;
     border: none;
-    font: inherit;
 }
-.callout__content {
+.callout__root {
     display: flex;
     align-items: center;
+    width: 100%;
+    min-height: 50px;
+    box-sizing: border-box;
+    padding: var(--seed-v3-unit-s3_5);
     gap: var(--seed-v3-unit-s3);
-    padding-block: 9.5px;
+    border-radius: var(--seed-v3-radius-s2_5);
+    text-align: start;
     font-size: var(--seed-v3-font-size-s4);
     line-height: var(--seed-v3-line-height-s5);
-    text-align: start;
-}
-.callout__content:only-child {
-    padding-inline-end: var(--seed-v3-unit-s3);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .callout__icon {
     flex: none;
@@ -55,7 +45,7 @@
     flex: none;
     width: var(--seed-v3-unit-s4);
     height: var(--seed-v3-unit-s4);
-    margin: var(--seed-v3-unit-s3);
+    margin-inline-start: auto;
 }
 .callout__dismissButton {
     flex: none;
@@ -64,6 +54,8 @@
     align-items: center;
     width: var(--seed-v3-unit-s10);
     height: var(--seed-v3-unit-s10);
+    margin: calc((var(--seed-v3-unit-s10) - var(--seed-v3-unit-s3_5) * 2) * -1);
+    margin-inline-start: auto;
     border: none;
     background-color: transparent;
     padding: 0;

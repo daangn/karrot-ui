@@ -2,16 +2,12 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "paddingXStart": "var(--seed-v3-unit-s3_5)",
-        "paddingXEnd": "var(--seed-v3-unit-s0_5)",
-        "paddingY": "5px",
-        "cornerRadius": "var(--seed-v3-radius-s2_5)"
-      },
-      "content": {
+        "padding": "var(--seed-v3-unit-s3_5)",
         "gap": "var(--seed-v3-unit-s3)",
-        "paddingY": "9.5px",
+        "cornerRadius": "var(--seed-v3-radius-s2_5)",
         "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s5)"
+        "lineHeight": "var(--seed-v3-line-height-s5)",
+        "minHeight": "50px"
       },
       "icon": {
         "size": "var(--seed-v3-unit-s4)"
@@ -29,15 +25,7 @@ export declare const vars: {
         "size": "var(--seed-v3-unit-s4)"
       },
       "actionableIcon": {
-        "size": "var(--seed-v3-unit-s4)",
-        "margin": "var(--seed-v3-unit-s3)"
-      }
-    }
-  },
-  "typeContentOnly": {
-    "enabled": {
-      "content": {
-        "paddingXEnd": "var(--seed-v3-unit-s3)"
+        "size": "var(--seed-v3-unit-s4)"
       }
     }
   },
