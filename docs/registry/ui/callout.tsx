@@ -134,13 +134,11 @@ export const Callout = React.forwardRef<
 
   return (
     <div ref={ref} className={clsx(classNames.root, className)} {...otherProps}>
+      {icon && <Slot className={classNames.icon}>{icon}</Slot>}
       <div className={classNames.content}>
-        {icon && <Slot className={classNames.icon}>{icon}</Slot>}
-        <div>
-          <CalloutContext.Provider value={{ variantProps: { variant } }}>
-            {children}
-          </CalloutContext.Provider>
-        </div>
+        <CalloutContext.Provider value={{ variantProps: { variant } }}>
+          {children}
+        </CalloutContext.Provider>
       </div>
     </div>
   );
@@ -187,11 +185,9 @@ export const DismissibleCallout = React.forwardRef<
         {...otherProps}
       >
         <div className={classNames.content}>
-          <div>
-            <CalloutContext.Provider value={{ variantProps: { variant } }}>
-              {children}
-            </CalloutContext.Provider>
-          </div>
+          <CalloutContext.Provider value={{ variantProps: { variant } }}>
+            {children}
+          </CalloutContext.Provider>
         </div>
         <button
           type="button"
@@ -241,11 +237,9 @@ export const ActionableCallout = React.forwardRef<
         {...otherProps}
       >
         <div className={classNames.content}>
-          <div>
-            <CalloutContext.Provider value={{ variantProps: { variant } }}>
-              {children}
-            </CalloutContext.Provider>
-          </div>
+          <CalloutContext.Provider value={{ variantProps: { variant } }}>
+            {children}
+          </CalloutContext.Provider>
         </div>
         <IconChevronRightFill className={classNames.actionableIcon} />
       </button>
