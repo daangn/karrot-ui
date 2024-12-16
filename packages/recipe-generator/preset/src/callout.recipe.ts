@@ -27,6 +27,8 @@ export const callout = defineRecipe({
       alignItems: "center",
 
       width: "100%",
+      minHeight: vars.base.enabled.root.minHeight,
+      boxSizing: "border-box",
 
       padding: vars.base.enabled.root.padding,
       gap: vars.base.enabled.root.gap,

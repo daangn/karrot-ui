@@ -12,7 +12,8 @@
           "gap": "$unit.s3",
           "cornerRadius": "$radius.s2_5",
           "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s5"
+          "lineHeight": "$line-height.s5",
+          "minHeight": "50px"
         },
         "icon": {
           "size": "$unit.s4"

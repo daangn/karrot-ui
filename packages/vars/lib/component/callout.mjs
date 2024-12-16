@@ -6,7 +6,8 @@ export const vars = {
         "gap": "var(--seed-v3-unit-s3)",
         "cornerRadius": "var(--seed-v3-radius-s2_5)",
         "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s5)"
+        "lineHeight": "var(--seed-v3-line-height-s5)",
+        "minHeight": "50px"
       },
       "icon": {
         "size": "var(--seed-v3-unit-s4)"

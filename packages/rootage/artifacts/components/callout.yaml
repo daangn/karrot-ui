@@ -12,6 +12,7 @@ data:
         cornerRadius: $radius.s2_5
         fontSize: $font-size.s4
         lineHeight: $line-height.s5
+        minHeight: 50px
       icon:
         # XXX: scalable 결정 x
         size: $unit.s4
