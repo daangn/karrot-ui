@@ -14,6 +14,7 @@ import {
   ChevronUpIcon,
   HourglassIcon,
   LayersIcon,
+  PaintbrushIcon,
   RulerIcon,
   SigmaIcon,
   SplineIcon,
@@ -241,6 +242,14 @@ function TypeIndicator(props: { resolvedValue: ValueExpression }) {
     return (
       <div>
         <SplineIcon className="w-4 h-4" />
+      </div>
+    );
+  }
+
+  if (resolvedValue.type === "gradient") {
+    return (
+      <div>
+        <PaintbrushIcon className="w-4 h-4" />
       </div>
     );
   }

@@ -11,17 +11,7 @@ data:
       shimmer:
         duration: 1.5s
         timingFunction: $timing-function.easing
-        color:
-          type: "gradient"
-          value:
-            - color: "#ffffff00"
-              position: 0
-            - color: "#ffffff66"
-              position: 0.46
-            - color: "#ffffff66"
-              position: 0.54
-            - color: "#ffffff00"
-              position: 1
+        color: $gradient.shimmer
   shape=rounded:
     enabled:
       root:

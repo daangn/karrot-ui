@@ -230,6 +230,7 @@
   --seed-v3-color-stroke-neutral-muted: var(--seed-v3-color-palette-gray-200);
   --seed-v3-color-stroke-danger: var(--seed-v3-color-palette-red-700);
   --seed-v3-color-stroke-positive: var(--seed-v3-color-palette-green-600);
+  --seed-v3-gradient-shimmer: #ffffff00 0%, #ffffff66 46%, #ffffff66 54%, #ffffff00 100%;
 }
 
 :root[data-seed][data-seed="dark-only"][data-seed-scale-color="light"],
@@ -382,4 +383,5 @@
   --seed-v3-color-stroke-neutral-muted: var(--seed-v3-color-palette-gray-200);
   --seed-v3-color-stroke-danger: var(--seed-v3-color-palette-red-600);
   --seed-v3-color-stroke-positive: var(--seed-v3-color-palette-green-600);
+  --seed-v3-gradient-shimmer: #ffffff00 0%, #ffffff1a 46%, #ffffff1a 54%, #ffffff00 100%;
 }

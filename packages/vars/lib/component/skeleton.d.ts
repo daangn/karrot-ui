@@ -7,7 +7,7 @@ export declare const vars: {
       "shimmer": {
         "duration": "1.5s",
         "timingFunction": "var(--seed-v3-timing-function-easing)",
-        "color": "#ffffff00 0%, #ffffff66 46%, #ffffff66 54%, #ffffff00 100%"
+        "color": "var(--seed-v3-gradient-shimmer)"
       }
     }
   },
