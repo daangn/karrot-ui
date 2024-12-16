@@ -140,7 +140,7 @@ data:
         color: $color.fg.neutral
     pressed:
       root:
-        color: $color.bg.layer-default
+        color: $color.bg.layer-default-pressed
     disabled:
       root:
         color: $color.bg.layer-default
@@ -172,7 +172,7 @@ data:
         color: $color.fg.brand
     pressed:
       root:
-        color: $color.bg.layer-default
+        color: $color.bg.layer-default-pressed
     disabled:
       root:
         color: $color.bg.layer-default

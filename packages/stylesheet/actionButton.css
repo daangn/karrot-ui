@@ -168,7 +168,7 @@
     border-color: var(--seed-v3-color-stroke-neutral);
 }
 .actionButton__root--variant_brandOutline:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-layer-default);
+    background: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .actionButton__root--variant_brandOutline:is(:disabled, [disabled], [data-disabled]) {
     background: var(--seed-v3-color-bg-layer-default);
@@ -205,7 +205,7 @@
     border-color: var(--seed-v3-color-stroke-neutral);
 }
 .actionButton__root--variant_neutralOutline:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-layer-default);
+    background: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .actionButton__root--variant_neutralOutline:is(:disabled, [disabled], [data-disabled]) {
     background: var(--seed-v3-color-bg-layer-default);

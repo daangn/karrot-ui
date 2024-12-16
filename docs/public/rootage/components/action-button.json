@@ -218,7 +218,7 @@
       },
       "pressed": {
         "root": {
-          "color": "$color.bg.layer-default"
+          "color": "$color.bg.layer-default-pressed"
         }
       },
       "disabled": {
@@ -267,7 +267,7 @@
       },
       "pressed": {
         "root": {
-          "color": "$color.bg.layer-default"
+          "color": "$color.bg.layer-default-pressed"
         }
       },
       "disabled": {

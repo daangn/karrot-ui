@@ -212,7 +212,7 @@ export declare const vars: {
     },
     "pressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-layer-default)"
+        "color": "var(--seed-v3-color-bg-layer-default-pressed)"
       }
     },
     "disabled": {
@@ -261,7 +261,7 @@ export declare const vars: {
     },
     "pressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-layer-default)"
+        "color": "var(--seed-v3-color-bg-layer-default-pressed)"
       }
     },
     "disabled": {
