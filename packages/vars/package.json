@@ -24,7 +24,7 @@
   "scripts": {
     "clean": "rm -rf lib",
     "prepack": "yarn rootage:generate",
-    "rootage:generate": "rootage token-ts ./lib && rootage component-spec ./lib/component"
+    "rootage:generate": "yarn rootage token-ts ./lib && rootage component-spec ./lib/component"
   },
   "devDependencies": {
     "@seed-design/rootage-cli": "0.0.0"
