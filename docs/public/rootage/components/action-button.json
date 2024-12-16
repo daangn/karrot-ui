@@ -7,6 +7,10 @@
   "data": {
     "base": {
       "enabled": {
+        "root": {
+          "colorDuration": "$duration.s4",
+          "colorTimingFunction": "$timing-function.easing"
+        },
         "label": {
           "fontWeight": "$font-weight.bold"
         }

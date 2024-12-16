@@ -17,6 +17,7 @@
     cursor: not-allowed;
 }
 .actionButton__root {
+    transition: background-color var(--seed-v3-duration-s4) var(--seed-v3-timing-function-easing);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .actionButton__label[data-loading] {

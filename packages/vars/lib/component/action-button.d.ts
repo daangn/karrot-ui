@@ -1,6 +1,10 @@
 export declare const vars: {
   "base": {
     "enabled": {
+      "root": {
+        "colorDuration": "var(--seed-v3-duration-s4)",
+        "colorTimingFunction": "var(--seed-v3-timing-function-easing)"
+      },
       "label": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }

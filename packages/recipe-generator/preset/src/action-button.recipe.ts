@@ -25,7 +25,7 @@ const actionButton = defineRecipe({
         cursor: "not-allowed",
       },
 
-      transition: "background-color 0.2s",
+      transition: `background-color ${vars.base.enabled.root.colorDuration} ${vars.base.enabled.root.colorTimingFunction}`,
 
       fontWeight: vars.base.enabled.label.fontWeight,
     },
