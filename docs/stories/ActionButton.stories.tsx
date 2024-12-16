@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionButton } from "seed-design/ui/action-button";
 
+import { IconBellFill, IconChevronRightFill } from "@daangn/react-monochrome-icon";
 import { actionButtonVariantMap } from "@seed-design/recipe/actionButton";
-import { VariantTable } from "./components/variant-table";
-import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
+import { VariantTable } from "./components/variant-table";
 
 const meta = {
   component: ActionButton,
@@ -16,13 +16,24 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const variantMap = {
+  ...actionButtonVariantMap,
+  disabled: ["false", "true"],
+  loading: ["false", "true"],
+};
+
 const CommonStoryTemplate: Story = {
   args: {
-    children: "Action Chip",
     prefixIcon: <IconBellFill />,
+    suffixIcon: <IconChevronRightFill />,
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={actionButtonVariantMap} {...args} />
+    <VariantTable
+      Component={meta.component}
+      variantMap={variantMap}
+      render={({ layout }) => (layout === "withText" ? "Action Button" : <IconBellFill />)}
+      {...args}
+    />
   ),
 };
 
