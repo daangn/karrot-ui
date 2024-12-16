@@ -4,7 +4,7 @@ import { ActionChip } from "seed-design/ui/action-chip";
 
 import { actionChipVariantMap } from "@seed-design/recipe/actionChip";
 import { VariantTable } from "./components/variant-table";
-import { IconBellFill } from "@daangn/react-monochrome-icon";
+import { IconBellFill, IconChevronDownFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 
 const meta = {
@@ -18,12 +18,17 @@ type Story = StoryObj<typeof meta>;
 
 const StoryTemplate: Story = {
   args: {
-    children: "Action Chip",
-    count: 10,
     prefixIcon: <IconBellFill />,
+    suffixIcon: <IconChevronDownFill />,
+    count: 10,
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={actionChipVariantMap} {...args} />
+    <VariantTable
+      Component={meta.component}
+      variantMap={actionChipVariantMap}
+      render={({ layout }) => (layout === "withText" ? "Control Chip" : <IconBellFill />)}
+      {...args}
+    />
   ),
 };
 
