@@ -8,7 +8,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@daangn/react-monochrome-icon": "^0.0.11",
+    "@daangn/react-monochrome-icon": "^0.0.13",
     "@radix-ui/react-slot": "^1.1.0",
     "@seed-design/react-popover": "0.0.0-alpha-20241030023710",
     "@seed-design/react-radio-group": "0.0.0-alpha-20241030023710",
