@@ -3,28 +3,25 @@
     box-sizing: border-box;
     position: relative
 }
-.progressCircle__track {}
+.progressCircle__track {
+    stroke: var(--track-color)
+}
 .progressCircle__range {
+    stroke: var(--range-color);
     stroke-linecap: round;
     transition-property: stroke-dashoffset
 }
-.progressCircle__track--tone_neutral {
-    stroke: var(--seed-v3-color-palette-gray-200)
+.progressCircle__root--tone_neutral {
+    --track-color: var(--seed-v3-color-palette-gray-200);
+    --range-color: var(--seed-v3-color-palette-gray-500)
 }
-.progressCircle__range--tone_neutral {
-    stroke: var(--seed-v3-color-palette-gray-500)
+.progressCircle__root--tone_brand {
+    --track-color: var(--seed-v3-color-palette-carrot-200);
+    --range-color: var(--seed-v3-color-bg-brand-solid)
 }
-.progressCircle__track--tone_brand {
-    stroke: var(--seed-v3-color-palette-carrot-200)
-}
-.progressCircle__range--tone_brand {
-    stroke: var(--seed-v3-color-bg-brand-solid)
-}
-.progressCircle__track--tone_staticWhite {
-    stroke: var(--seed-v3-color-palette-static-white-alpha-200)
-}
-.progressCircle__range--tone_staticWhite {
-    stroke: var(--seed-v3-color-bg-static-white)
+.progressCircle__root--tone_staticWhite {
+    --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
+    --range-color: var(--seed-v3-color-bg-static-white)
 }
 .progressCircle__root--size_24 {
     --size: var(--seed-v3-unit-s6);

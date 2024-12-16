@@ -10,8 +10,11 @@ const progressCircle = defineRecipe({
       boxSizing: "border-box",
       position: "relative",
     },
-    track: {},
+    track: {
+      stroke: "var(--track-color)",
+    },
     range: {
+      stroke: "var(--range-color)",
       strokeLinecap: "round",
       transitionProperty: "stroke-dashoffset",
     },
@@ -19,27 +22,21 @@ const progressCircle = defineRecipe({
   variants: {
     tone: {
       neutral: {
-        track: {
-          stroke: vars.toneNeutral.enabled.track.color,
-        },
-        range: {
-          stroke: vars.toneNeutral.enabled.range.color,
+        root: {
+          "--track-color": vars.toneNeutral.enabled.track.color,
+          "--range-color": vars.toneNeutral.enabled.range.color,
         },
       },
       brand: {
-        track: {
-          stroke: vars.toneBrand.enabled.track.color,
-        },
-        range: {
-          stroke: vars.toneBrand.enabled.range.color,
+        root: {
+          "--track-color": vars.toneBrand.enabled.track.color,
+          "--range-color": vars.toneBrand.enabled.range.color,
         },
       },
       staticWhite: {
-        track: {
-          stroke: vars.toneStaticWhite.enabled.track.color,
-        },
-        range: {
-          stroke: vars.toneStaticWhite.enabled.range.color,
+        root: {
+          "--track-color": vars.toneStaticWhite.enabled.track.color,
+          "--range-color": vars.toneStaticWhite.enabled.range.color,
         },
       },
     },

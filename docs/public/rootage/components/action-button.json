@@ -28,6 +28,10 @@
         },
         "suffixIcon": {
           "color": "$color.fg.static-white"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.static-white-alpha-200",
+          "rangeColor": "$color.palette.static-white"
         }
       },
       "pressed": {
@@ -74,6 +78,10 @@
         },
         "suffixIcon": {
           "color": "$color.fg.neutral-inverted"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.static-white-alpha-200",
+          "rangeColor": "$color.palette.static-white"
         }
       },
       "pressed": {
@@ -120,6 +128,10 @@
         },
         "suffixIcon": {
           "color": "$color.fg.neutral"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.gray-500",
+          "rangeColor": "$color.fg.neutral"
         }
       },
       "pressed": {
@@ -166,6 +178,10 @@
         },
         "suffixIcon": {
           "color": "$color.fg.static-white"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.static-white-alpha-200",
+          "rangeColor": "$color.palette.static-white"
         }
       },
       "pressed": {
@@ -214,6 +230,10 @@
         },
         "suffixIcon": {
           "color": "$color.fg.neutral"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.gray-500",
+          "rangeColor": "$color.fg.neutral"
         }
       },
       "pressed": {
@@ -263,6 +283,10 @@
         },
         "suffixIcon": {
           "color": "$color.fg.brand"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.carrot-200",
+          "rangeColor": "$color.bg.brand-solid"
         }
       },
       "pressed": {
@@ -299,6 +323,10 @@
         "root": {
           "minHeight": "$unit.s8",
           "cornerRadius": "$radius.full"
+        },
+        "progressCircle": {
+          "size": "14px",
+          "thickness": "2px"
         }
       }
     },
@@ -337,6 +365,10 @@
         "root": {
           "minHeight": "$unit.s9",
           "cornerRadius": "$radius.s2"
+        },
+        "progressCircle": {
+          "size": "14px",
+          "thickness": "2px"
         }
       }
     },
@@ -375,6 +407,10 @@
         "root": {
           "minHeight": "$unit.s10",
           "cornerRadius": "$radius.s2"
+        },
+        "progressCircle": {
+          "size": "16px",
+          "thickness": "2px"
         }
       }
     },
@@ -413,6 +449,10 @@
         "root": {
           "minHeight": "$unit.s13",
           "cornerRadius": "$radius.s3"
+        },
+        "progressCircle": {
+          "size": "18px",
+          "thickness": "2px"
         }
       }
     },

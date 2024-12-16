@@ -16,6 +16,8 @@ export const open = ':is([data-state="open"], [data-open])';
 
 export const invalid = ":is(:invalid, [data-invalid])";
 
+export const loading = "[data-loading]";
+
 type JoinRest<Rest extends string[]> = Rest extends []
   ? ""
   : Rest extends [string, ...string[]]

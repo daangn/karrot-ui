@@ -20,6 +20,9 @@ data:
         color: $color.fg.static-white
       suffixIcon:
         color: $color.fg.static-white
+      progressCircle:
+        trackColor: $color.palette.static-white-alpha-200
+        rangeColor: $color.palette.static-white
     pressed:
       root:
         color: $color.bg.brand-solid-pressed
@@ -49,6 +52,9 @@ data:
         color: $color.fg.neutral-inverted
       suffixIcon:
         color: $color.fg.neutral-inverted
+      progressCircle:
+        trackColor: $color.palette.static-white-alpha-200
+        rangeColor: $color.palette.static-white
     pressed:
       root:
         color: $color.bg.neutral-solid-pressed
@@ -78,6 +84,9 @@ data:
         color: $color.fg.neutral
       suffixIcon:
         color: $color.fg.neutral
+      progressCircle:
+        trackColor: $color.palette.gray-500
+        rangeColor: $color.fg.neutral
     pressed:
       root:
         color: $color.bg.neutral-weak-pressed
@@ -107,6 +116,9 @@ data:
         color: $color.fg.static-white
       suffixIcon:
         color: $color.fg.static-white
+      progressCircle:
+        trackColor: $color.palette.static-white-alpha-200
+        rangeColor: $color.palette.static-white
     pressed:
       root:
         color: $color.bg.danger-solid-pressed
@@ -138,6 +150,9 @@ data:
         color: $color.fg.neutral
       suffixIcon:
         color: $color.fg.neutral
+      progressCircle:
+        trackColor: $color.palette.gray-500
+        rangeColor: $color.fg.neutral
     pressed:
       root:
         color: $color.bg.layer-default-pressed
@@ -170,6 +185,9 @@ data:
         color: $color.fg.brand
       suffixIcon:
         color: $color.fg.brand
+      progressCircle:
+        trackColor: $color.palette.carrot-200
+        rangeColor: $color.bg.brand-solid
     pressed:
       root:
         color: $color.bg.layer-default-pressed
@@ -193,6 +211,9 @@ data:
       root:
         minHeight: $unit.s8
         cornerRadius: $radius.full
+      progressCircle:
+        size: 14px
+        thickness: 2px
   size=xsmall, layout=with text:
     enabled:
       root:
@@ -218,6 +239,9 @@ data:
       root:
         minHeight: $unit.s9
         cornerRadius: $radius.s2
+      progressCircle:
+        size: 14px
+        thickness: 2px
   size=small, layout=with text:
     enabled:
       root:
@@ -243,6 +267,9 @@ data:
       root:
         minHeight: $unit.s10
         cornerRadius: $radius.s2
+      progressCircle:
+        size: 16px
+        thickness: 2px
   size=medium, layout=with text:
     enabled:
       root:
@@ -268,6 +295,9 @@ data:
       root:
         minHeight: $unit.s13
         cornerRadius: $radius.s3
+      progressCircle:
+        size: 18px
+        thickness: 2px
   size=large, layout=with text:
     enabled:
       root:

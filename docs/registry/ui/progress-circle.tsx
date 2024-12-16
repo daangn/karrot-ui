@@ -50,6 +50,7 @@ export const ProgressCircle = React.forwardRef<
   return (
     <svg
       ref={ref}
+      {...otherProps}
       {...progressProps}
       aria-label={ariaLabel}
       className={clsx(classNames.root, className)}

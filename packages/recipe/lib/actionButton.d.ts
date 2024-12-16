@@ -19,7 +19,7 @@ type ActionButtonVariantMap = {
 
 export type ActionButtonVariantProps = Partial<ActionButtonVariant>;
 
-export type ActionButtonSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon";
+export type ActionButtonSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "progressCircle";
 
 export const actionButtonVariantMap: ActionButtonVariantMap;
 

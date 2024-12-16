@@ -1,11 +1,11 @@
 import { actionButton as vars } from "@seed-design/vars/component";
 
 import { defineRecipe } from "./helper";
-import { disabled, focus, active, pseudo } from "./pseudo";
+import { disabled, focus, active, pseudo, loading } from "./pseudo";
 
 const actionButton = defineRecipe({
   name: "actionButton",
-  slots: ["root", "label", "icon", "prefixIcon", "suffixIcon"],
+  slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "progressCircle"],
   base: {
     root: {
       display: "inline-flex",
@@ -25,17 +25,49 @@ const actionButton = defineRecipe({
         cursor: "not-allowed",
       },
 
+      transition: "background-color 0.2s",
+
       fontWeight: vars.base.enabled.label.fontWeight,
+    },
+    label: {
+      [pseudo(loading)]: {
+        opacity: 0,
+      },
+    },
+    icon: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+
+      [pseudo(loading)]: {
+        opacity: 0,
+      },
     },
     prefixIcon: {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+
+      [pseudo(loading)]: {
+        opacity: 0,
+      },
     },
     suffixIcon: {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+
+      [pseudo(loading)]: {
+        opacity: 0,
+      },
+    },
+    progressCircle: {
+      position: "absolute",
+      display: "none",
+
+      [pseudo(loading)]: {
+        display: "flex",
+      },
     },
   },
   variants: {
@@ -48,6 +80,9 @@ const actionButton = defineRecipe({
           },
           [pseudo(disabled)]: {
             background: vars.variantBrandSolid.disabled.root.color,
+          },
+          [pseudo(loading)]: {
+            background: vars.variantBrandSolid.loading.root.color,
           },
         },
         label: {
@@ -74,6 +109,10 @@ const actionButton = defineRecipe({
             color: vars.variantBrandSolid.disabled.suffixIcon.color,
           },
         },
+        progressCircle: {
+          "--track-color": vars.variantBrandSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantBrandSolid.enabled.progressCircle.rangeColor,
+        },
       },
       neutralSolid: {
         root: {
@@ -83,6 +122,9 @@ const actionButton = defineRecipe({
           },
           [pseudo(disabled)]: {
             background: vars.variantNeutralSolid.disabled.root.color,
+          },
+          [pseudo(loading)]: {
+            background: vars.variantNeutralSolid.loading.root.color,
           },
         },
         label: {
@@ -109,6 +151,10 @@ const actionButton = defineRecipe({
             color: vars.variantNeutralSolid.disabled.suffixIcon.color,
           },
         },
+        progressCircle: {
+          "--track-color": vars.variantNeutralSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantNeutralSolid.enabled.progressCircle.rangeColor,
+        },
       },
       neutralWeak: {
         root: {
@@ -118,6 +164,9 @@ const actionButton = defineRecipe({
           },
           [pseudo(disabled)]: {
             background: vars.variantNeutralWeak.disabled.root.color,
+          },
+          [pseudo(loading)]: {
+            background: vars.variantNeutralWeak.loading.root.color,
           },
         },
         label: {
@@ -144,6 +193,10 @@ const actionButton = defineRecipe({
             color: vars.variantNeutralWeak.disabled.suffixIcon.color,
           },
         },
+        progressCircle: {
+          "--track-color": vars.variantNeutralWeak.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
+        },
       },
       dangerSolid: {
         root: {
@@ -153,6 +206,9 @@ const actionButton = defineRecipe({
           },
           [pseudo(disabled)]: {
             background: vars.variantDangerSolid.disabled.root.color,
+          },
+          [pseudo(loading)]: {
+            background: vars.variantDangerSolid.loading.root.color,
           },
         },
         label: {
@@ -179,6 +235,10 @@ const actionButton = defineRecipe({
             color: vars.variantDangerSolid.disabled.suffixIcon.color,
           },
         },
+        progressCircle: {
+          "--track-color": vars.variantDangerSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantDangerSolid.enabled.progressCircle.rangeColor,
+        },
       },
       brandOutline: {
         root: {
@@ -192,6 +252,9 @@ const actionButton = defineRecipe({
           [pseudo(disabled)]: {
             background: vars.variantBrandOutline.disabled.root.color,
             borderColor: vars.variantBrandOutline.disabled.root.strokeColor,
+          },
+          [pseudo(loading)]: {
+            background: vars.variantBrandOutline.loading.root.color,
           },
         },
         label: {
@@ -218,6 +281,10 @@ const actionButton = defineRecipe({
             color: vars.variantBrandOutline.disabled.suffixIcon.color,
           },
         },
+        progressCircle: {
+          "--track-color": vars.variantBrandOutline.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantBrandOutline.enabled.progressCircle.rangeColor,
+        },
       },
       neutralOutline: {
         root: {
@@ -231,6 +298,9 @@ const actionButton = defineRecipe({
           [pseudo(disabled)]: {
             background: vars.variantNeutralOutline.disabled.root.color,
             borderColor: vars.variantNeutralOutline.disabled.root.strokeColor,
+          },
+          [pseudo(loading)]: {
+            background: vars.variantNeutralOutline.loading.root.color,
           },
         },
         label: {
@@ -257,6 +327,10 @@ const actionButton = defineRecipe({
             color: vars.variantNeutralOutline.disabled.suffixIcon.color,
           },
         },
+        progressCircle: {
+          "--track-color": vars.variantNeutralOutline.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantNeutralOutline.enabled.progressCircle.rangeColor,
+        },
       },
     },
     size: {
@@ -265,11 +339,19 @@ const actionButton = defineRecipe({
           height: vars.sizeXsmall.enabled.root.minHeight,
           borderRadius: vars.sizeXsmall.enabled.root.cornerRadius,
         },
+        progressCircle: {
+          "--size": vars.sizeXsmall.enabled.progressCircle.size,
+          "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
+        },
       },
       small: {
         root: {
           height: vars.sizeSmall.enabled.root.minHeight,
           borderRadius: vars.sizeSmall.enabled.root.cornerRadius,
+        },
+        progressCircle: {
+          "--size": vars.sizeSmall.enabled.progressCircle.size,
+          "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
         },
       },
       medium: {
@@ -277,11 +359,19 @@ const actionButton = defineRecipe({
           height: vars.sizeMedium.enabled.root.minHeight,
           borderRadius: vars.sizeMedium.enabled.root.cornerRadius,
         },
+        progressCircle: {
+          "--size": vars.sizeMedium.enabled.progressCircle.size,
+          "--thickness": vars.sizeMedium.enabled.progressCircle.thickness,
+        },
       },
       large: {
         root: {
           height: vars.sizeLarge.enabled.root.minHeight,
           borderRadius: vars.sizeLarge.enabled.root.cornerRadius,
+        },
+        progressCircle: {
+          "--size": vars.sizeLarge.enabled.progressCircle.size,
+          "--thickness": vars.sizeLarge.enabled.progressCircle.thickness,
         },
       },
     },

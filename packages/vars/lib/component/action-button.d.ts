@@ -22,6 +22,10 @@ export declare const vars: {
       },
       "suffixIcon": {
         "color": "var(--seed-v3-color-fg-static-white)"
+      },
+      "progressCircle": {
+        "trackColor": "var(--seed-v3-color-palette-static-white-alpha-200)",
+        "rangeColor": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "pressed": {
@@ -68,6 +72,10 @@ export declare const vars: {
       },
       "suffixIcon": {
         "color": "var(--seed-v3-color-fg-neutral-inverted)"
+      },
+      "progressCircle": {
+        "trackColor": "var(--seed-v3-color-palette-static-white-alpha-200)",
+        "rangeColor": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "pressed": {
@@ -114,6 +122,10 @@ export declare const vars: {
       },
       "suffixIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "progressCircle": {
+        "trackColor": "var(--seed-v3-color-palette-gray-500)",
+        "rangeColor": "var(--seed-v3-color-fg-neutral)"
       }
     },
     "pressed": {
@@ -160,6 +172,10 @@ export declare const vars: {
       },
       "suffixIcon": {
         "color": "var(--seed-v3-color-fg-static-white)"
+      },
+      "progressCircle": {
+        "trackColor": "var(--seed-v3-color-palette-static-white-alpha-200)",
+        "rangeColor": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "pressed": {
@@ -208,6 +224,10 @@ export declare const vars: {
       },
       "suffixIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "progressCircle": {
+        "trackColor": "var(--seed-v3-color-palette-gray-500)",
+        "rangeColor": "var(--seed-v3-color-fg-neutral)"
       }
     },
     "pressed": {
@@ -257,6 +277,10 @@ export declare const vars: {
       },
       "suffixIcon": {
         "color": "var(--seed-v3-color-fg-brand)"
+      },
+      "progressCircle": {
+        "trackColor": "var(--seed-v3-color-palette-carrot-200)",
+        "rangeColor": "var(--seed-v3-color-bg-brand-solid)"
       }
     },
     "pressed": {
@@ -293,6 +317,10 @@ export declare const vars: {
       "root": {
         "minHeight": "var(--seed-v3-unit-s8)",
         "cornerRadius": "var(--seed-v3-radius-full)"
+      },
+      "progressCircle": {
+        "size": "14px",
+        "thickness": "2px"
       }
     }
   },
@@ -331,6 +359,10 @@ export declare const vars: {
       "root": {
         "minHeight": "var(--seed-v3-unit-s9)",
         "cornerRadius": "var(--seed-v3-radius-s2)"
+      },
+      "progressCircle": {
+        "size": "14px",
+        "thickness": "2px"
       }
     }
   },
@@ -369,6 +401,10 @@ export declare const vars: {
       "root": {
         "minHeight": "var(--seed-v3-unit-s10)",
         "cornerRadius": "var(--seed-v3-radius-s2)"
+      },
+      "progressCircle": {
+        "size": "16px",
+        "thickness": "2px"
       }
     }
   },
@@ -407,6 +443,10 @@ export declare const vars: {
       "root": {
         "minHeight": "var(--seed-v3-unit-s13)",
         "cornerRadius": "var(--seed-v3-radius-s3)"
+      },
+      "progressCircle": {
+        "size": "18px",
+        "thickness": "2px"
       }
     }
   },
