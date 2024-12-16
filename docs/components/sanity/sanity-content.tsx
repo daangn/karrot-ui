@@ -50,6 +50,9 @@ export const PortableContent = ({ content }: { content: any }) => {
           image: (props) => <PortableImage {...props} />,
           tabelContainer: Table,
         },
+        block: {
+          normal: (props) => <p className="min-h-4 m-0" {...props} />,
+        },
       }}
       value={content}
     />
