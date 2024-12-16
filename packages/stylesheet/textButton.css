@@ -2,8 +2,12 @@
     display: inline-flex;
     align-items: center;
     padding-block: var(--seed-v3-unit-s0_5);
+    padding-inline: 0;
+    background-color: transparent;
+    box-sizing: border-box;
     border-width: 0.125rem;
     border-color: transparent;
+    border-style: solid;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
