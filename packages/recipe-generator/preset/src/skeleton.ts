@@ -17,13 +17,13 @@ export const skeleton = defineRecipe({
         width: "100%",
         height: "100%",
 
-        backgroundImage: `linear-gradient(90deg, ${vars.base.enabled.wave.color})`,
-        backgroundSize: "200% 100%",
+        backgroundImage: `linear-gradient(90deg, ${vars.base.enabled.shimmer.color})`,
+        backgroundRepeat: "no-repeat",
         animationFillMode: "forwards",
 
-        animationName: "wave",
-        animationDuration: vars.base.enabled.wave.duration,
-        animationTimingFunction: vars.base.enabled.wave.timingFunction,
+        animationName: "shimmer",
+        animationDuration: vars.base.enabled.shimmer.duration,
+        animationTimingFunction: vars.base.enabled.shimmer.timingFunction,
         animationIterationCount: "infinite",
       },
     },
@@ -48,15 +48,12 @@ export const skeleton = defineRecipe({
     },
   },
   keyframes: {
-    wave: {
+    shimmer: {
       "0%": {
-        backgroundPositionX: "100%",
-      },
-      "50%": {
-        backgroundPositionX: "100%",
+        transform: "translateX(-100%)",
       },
       "100%": {
-        backgroundPositionX: "-100%",
+        transform: "translateX(100%)",
       },
     },
   },

@@ -7,24 +7,20 @@ data:
   base:
     enabled:
       root:
-        color: $color.palette.gray-100
-      wave:
+        color: $color.palette.gray-200
+      shimmer:
         duration: 1.5s
         timingFunction: $timing-function.easing
         color:
           type: "gradient"
           value:
-            - color: "#f3f4f5"
+            - color: "#ffffff00"
               position: 0
-            - color: "#f7f8f9"
-              position: 0.23
-            - color: "#f7f8f9"
-              position: 0.27
-            - color: "#f3f4f5"
-              position: 0.5
-            - color: "#f3f4f5"
-              position: 0.75
-            - color: "#f3f4f5"
+            - color: "#ffffff66"
+              position: 0.46
+            - color: "#ffffff66"
+              position: 0.54
+            - color: "#ffffff00"
               position: 1
   shape=rounded:
     enabled:
