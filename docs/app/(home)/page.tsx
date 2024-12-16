@@ -44,7 +44,7 @@ export default function HomePage() {
       <div className="flex flex-col w-[80%] my-[60px]">
         <h1 className="text-2xl sm:text-3xl font-bold text-left">Design system updates</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-[20px] gap-[20px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 mt-[20px] gap-[20px]">
           {data?.map((item) => (
             <Link href={`/blog?slug=${item.slug.current}`} key={item.slug.current}>
               <BlogCard {...item} />
@@ -58,13 +58,10 @@ export default function HomePage() {
 
 function BlogCard({ title, description, thumbnail }: Blog) {
   return (
-    <div className="flex flex-col items-start h-full max-h-[300px] text-left">
-      <Image
-        value={thumbnail}
-        className="rounded-[26px] aspect-[16/9] w-full min-h-[200px] object-cover"
-      />
+    <div className="flex flex-col items-start h-full text-left">
+      <Image value={thumbnail} className="rounded-[26px] w-full min-h-[200px] object-cover" />
 
-      <div className="flex flex-col gap-2 p-6">
+      <div className="flex flex-col gap-2 px-[10px] py-[24px]">
         <h3 className="font-bold text-lg sm:text-xl">{title}</h3>
         <p className="text-gray-500 text-sm sm:text-base">{description}</p>
       </div>
