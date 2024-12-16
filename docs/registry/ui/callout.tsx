@@ -135,7 +135,7 @@ export const Callout = React.forwardRef<
   return (
     <div ref={ref} className={clsx(classNames.root, className)} {...otherProps}>
       {icon && <Slot className={classNames.icon}>{icon}</Slot>}
-      <div className={classNames.content}>
+      <div>
         <CalloutContext.Provider value={{ variantProps: { variant } }}>
           {children}
         </CalloutContext.Provider>
@@ -184,7 +184,7 @@ export const DismissibleCallout = React.forwardRef<
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
-        <div className={classNames.content}>
+        <div>
           <CalloutContext.Provider value={{ variantProps: { variant } }}>
             {children}
           </CalloutContext.Provider>
@@ -236,7 +236,7 @@ export const ActionableCallout = React.forwardRef<
         type={type}
         {...otherProps}
       >
-        <div className={classNames.content}>
+        <div>
           <CalloutContext.Provider value={{ variantProps: { variant } }}>
             {children}
           </CalloutContext.Provider>
