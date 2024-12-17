@@ -32,9 +32,12 @@ const useInlineBannerContext = () => {
   return context;
 };
 
+export interface InlineBannerTitleProps
+  extends React.HTMLAttributes<HTMLSpanElement> {}
+
 export const InlineBannerTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLSpanElement>
+  InlineBannerTitleProps
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -62,9 +65,12 @@ export const InlineBannerTitle = React.forwardRef<
 });
 InlineBannerTitle.displayName = "InlineBannerTitle";
 
+export interface InlineBannerDescriptionProps
+  extends React.HTMLAttributes<HTMLSpanElement> {}
+
 export const InlineBannerDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLSpanElement>
+  InlineBannerDescriptionProps
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -83,14 +89,17 @@ export const InlineBannerDescription = React.forwardRef<
 });
 InlineBannerDescription.displayName = "InlineBannerDescription";
 
+export interface InlineBannerLinkProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * @default false
+   */
+  asChild?: boolean;
+}
+
 export const InlineBannerLink = React.forwardRef<
   HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    /**
-     * @default false
-     */
-    asChild?: boolean;
-  }
+  InlineBannerLinkProps
 >(
   (
     { asChild = false, type = "button", children, className, ...otherProps },
@@ -117,15 +126,14 @@ export const InlineBannerLink = React.forwardRef<
 );
 InlineBannerLink.displayName = "InlineBannerLink";
 
-export interface InlineBannerProps extends InlineBannerVariantProps {
+export interface InlineBannerProps
+  extends InlineBannerVariantProps,
+    React.HTMLAttributes<HTMLDivElement> {
   icon?: React.ReactNode;
   suffix?: React.ReactNode;
 }
 
-export const InlineBanner = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & InlineBannerProps
->(
+export const InlineBanner = React.forwardRef<HTMLDivElement, InlineBannerProps>(
   (
     {
       children,
@@ -160,7 +168,8 @@ InlineBanner.displayName = "InlineBanner";
 
 export interface DismissibleInlineBannerProps
   extends DismissibleProps,
-    InlineBannerVariantProps {
+    InlineBannerVariantProps,
+    React.HTMLAttributes<HTMLDivElement> {
   variant?: Exclude<
     InlineBannerVariantProps["variant"],
     "dangerWeak" | "dangerSolid"
@@ -171,7 +180,7 @@ export interface DismissibleInlineBannerProps
 
 export const DismissibleInlineBanner = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & DismissibleInlineBannerProps
+  DismissibleInlineBannerProps
 >(
   (
     {
@@ -225,18 +234,18 @@ export const DismissibleInlineBanner = React.forwardRef<
 );
 DismissibleInlineBanner.displayName = "DismissibleInlineBanner";
 
-export interface ActionableInlineBannerProps extends InlineBannerVariantProps {
+export interface ActionableInlineBannerProps
+  extends InlineBannerVariantProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: NonNullable<
+    React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"]
+  >;
 }
 
 export const ActionableInlineBanner = React.forwardRef<
   HTMLButtonElement,
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > &
-    ActionableInlineBannerProps
+  ActionableInlineBannerProps
 >(
   (
     {

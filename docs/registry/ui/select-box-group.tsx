@@ -37,11 +37,14 @@ const useSelectBoxContext = () => {
 };
 
 export interface SelectBoxRadioGroupProps
-  extends Omit<UseRadioGroupProps, "disabled"> {}
+  extends Assign<
+    React.HTMLAttributes<HTMLDivElement>,
+    Omit<UseRadioGroupProps, "disabled">
+  > {}
 
 export const SelectBoxRadioGroup = React.forwardRef<
   HTMLDivElement,
-  Assign<React.HTMLAttributes<HTMLDivElement>, SelectBoxRadioGroupProps>
+  SelectBoxRadioGroupProps
 >(({ className, children, ...otherProps }, ref) => {
   const api = useRadioGroup(otherProps);
   const {
@@ -71,19 +74,17 @@ SelectBoxRadioGroup.displayName = "SelectBoxRadioGroup";
 
 export interface SelectBoxRadioProps
   extends SelectBoxGroupVariantProps,
-    Omit<RadioItemProps, "disabled" | "invalid"> {
+    Assign<
+      Omit<React.HTMLAttributes<HTMLInputElement>, "children">,
+      Omit<RadioItemProps, "disabled" | "invalid">
+    > {
   label: string;
   description?: string;
 }
 
-type ReactSelectBoxRadio = Assign<
-  Omit<React.HTMLAttributes<HTMLInputElement>, "children">,
-  SelectBoxRadioProps
->;
-
 export const SelectBoxRadio = React.forwardRef<
   HTMLInputElement,
-  ReactSelectBoxRadio
+  SelectBoxRadioProps
 >(({ className, label, description, ...otherProps }, ref) => {
   const { api } = useSelectBoxContext();
   const { getItemProps } = api;
@@ -113,9 +114,12 @@ export const SelectBoxRadio = React.forwardRef<
 });
 SelectBoxRadio.displayName = "SelectBoxRadio";
 
+export interface SelectBoxCheckGroupProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+
 export const SelectBoxCheckGroup = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  SelectBoxCheckGroupProps
 >(({ className, children, ...otherProps }, ref) => {
   const classNames = selectBoxGroup();
 
@@ -129,17 +133,17 @@ SelectBoxCheckGroup.displayName = "SelectBoxCheckGroup";
 
 export interface SelectBoxCheckProps
   extends SelectBoxGroupVariantProps,
-    Omit<UseCheckboxProps, "disabled" | "invalid"> {
+    Assign<
+      Omit<React.InputHTMLAttributes<HTMLInputElement>, "children">,
+      Omit<UseCheckboxProps, "disabled" | "invalid">
+    > {
   label: string;
   description?: string;
 }
 
 export const SelectBoxCheck = React.forwardRef<
   HTMLInputElement,
-  Assign<
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, "children">,
-    SelectBoxCheckProps
-  >
+  SelectBoxCheckProps
 >(({ className, label, description, ...otherProps }, ref) => {
   const { rootProps, restProps, hiddenInputProps, controlProps, stateProps } =
     useCheckbox(otherProps);

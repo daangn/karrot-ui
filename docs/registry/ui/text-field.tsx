@@ -36,18 +36,15 @@ const useFormControlContext = () => {
 };
 
 export interface FormControlProps
-  extends UseTextFieldProps,
-    TextFieldVariantProps {
+  extends TextFieldVariantProps,
+    Assign<React.HTMLAttributes<HTMLDivElement>, UseTextFieldProps> {
   requiredIndicator?: string;
   optionalIndicator?: string;
 
   hideGraphemeCount?: boolean;
 }
 
-export const FormControl = React.forwardRef<
-  HTMLDivElement,
-  Assign<React.HTMLAttributes<HTMLDivElement>, FormControlProps>
->(
+export const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
   (
     {
       children,
@@ -137,23 +134,17 @@ export const FormControl = React.forwardRef<
 );
 FormControl.displayName = "FormControl";
 
-export interface TextFieldProps {
-  // XXX: 둘 다 받지는 못하면 좋을 것 같음
-  prefix?: string;
-  prefixIcon?: React.ReactNode;
+export type TextFieldProps = Assign<
+  Omit<React.InputHTMLAttributes<HTMLInputElement>, "children">,
+  {
+    prefix?: string;
+    prefixIcon?: React.ReactNode;
+    suffix?: string;
+    suffixIcon?: React.ReactNode;
+  }
+>;
 
-  // XXX: 둘 다 받지는 못하면 좋을 것 같음
-  suffix?: string;
-  suffixIcon?: React.ReactNode;
-}
-
-export const TextField = React.forwardRef<
-  HTMLInputElement,
-  Assign<
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, "children">,
-    TextFieldProps
-  >
->(
+export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
   (
     { className, prefix, prefixIcon, suffix, suffixIcon, ...otherProps },
     ref,
@@ -191,14 +182,14 @@ export const TextField = React.forwardRef<
 );
 TextField.displayName = "TextField";
 
-export type MultilineTextFieldProps = {};
+export type MultilineTextFieldProps = Omit<
+  React.InputHTMLAttributes<HTMLTextAreaElement>,
+  "children"
+>;
 
 export const MultilineTextField = React.forwardRef<
   HTMLTextAreaElement,
-  Assign<
-    Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "children">,
-    MultilineTextFieldProps
-  >
+  MultilineTextFieldProps
 >(({ className, ...otherProps }, ref) => {
   const { api, variantProps } = useFormControlContext();
 
@@ -247,7 +238,6 @@ export const MultilineTextField = React.forwardRef<
 
   return (
     <textarea
-      rows={1}
       ref={mergeRefs(inputRef, ref)}
       className={clsx(className, classNames.input, classNames.inputText)}
       {...inputProps}
@@ -256,6 +246,7 @@ export const MultilineTextField = React.forwardRef<
     />
   );
 });
+MultilineTextField.displayName = "MultilineTextField";
 
 // TODO: migrate
 function mergeRefs<T>(...refs: React.ForwardedRef<T>[]): React.ForwardedRef<T> {
@@ -273,4 +264,3 @@ function mergeRefs<T>(...refs: React.ForwardedRef<T>[]): React.ForwardedRef<T> {
     }
   };
 }
-MultilineTextField.displayName = "MultilineTextField";

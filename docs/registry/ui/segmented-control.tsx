@@ -27,17 +27,15 @@ const useSegmentedControlContext = () => {
   return context;
 };
 
-export type SegmentedControlProps = SegmentedControlVariantProps &
-  UseSegmentedControlProps & {};
-
-type ReactSegmentedControlProps = Assign<
+export type SegmentedControlProps = Assign<
   React.HTMLAttributes<HTMLDivElement>,
-  SegmentedControlProps
->;
+  UseSegmentedControlProps
+> &
+  SegmentedControlVariantProps & {};
 
 export const SegmentedControl = React.forwardRef<
   HTMLDivElement,
-  ReactSegmentedControlProps
+  SegmentedControlProps
 >(({ className, children, ...otherProps }, ref) => {
   const api = useSegmentedControl(otherProps);
 
@@ -67,14 +65,10 @@ export const SegmentedControl = React.forwardRef<
 });
 SegmentedControl.displayName = "SegmentedControl";
 
-export interface SegmentProps extends SegmentItemProps {}
+export interface SegmentProps
+  extends Assign<React.HTMLAttributes<HTMLLabelElement>, SegmentItemProps> {}
 
-type ReactSegmentProps = Assign<
-  React.HTMLAttributes<HTMLLabelElement>,
-  SegmentProps
->;
-
-export const Segment = React.forwardRef<HTMLLabelElement, ReactSegmentProps>(
+export const Segment = React.forwardRef<HTMLLabelElement, SegmentProps>(
   ({ className, children, value, ...otherProps }, ref) => {
     const {
       api: { getSegmentProps },

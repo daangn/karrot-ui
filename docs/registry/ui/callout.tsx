@@ -27,9 +27,12 @@ const useCalloutContext = () => {
   return context;
 };
 
+export interface CalloutTitleProps
+  extends React.HTMLAttributes<HTMLSpanElement> {}
+
 export const CalloutTitle = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLSpanElement>
+  CalloutTitleProps
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -58,9 +61,12 @@ export const CalloutTitle = React.forwardRef<
 });
 CalloutTitle.displayName = "CalloutTitle";
 
+export interface CalloutDescriptionProps
+  extends React.HTMLAttributes<HTMLSpanElement> {}
+
 export const CalloutDescription = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLSpanElement>
+  CalloutDescriptionProps
 >(({ children, className, ...otherProps }, ref) => {
   const {
     variantProps: { variant },
@@ -79,14 +85,17 @@ export const CalloutDescription = React.forwardRef<
 });
 CalloutDescription.displayName = "CalloutDescription";
 
+export interface CalloutLinkProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * @default false
+   */
+  asChild?: boolean;
+}
+
 export const CalloutLink = React.forwardRef<
   HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    /**
-     * @default false
-     */
-    asChild?: boolean;
-  }
+  CalloutLinkProps
 >(
   (
     { asChild = false, children, type = "button", className, ...otherProps },
@@ -122,38 +131,44 @@ export const CalloutLink = React.forwardRef<
 );
 CalloutLink.displayName = "CalloutLink";
 
-export interface CalloutProps extends Omit<CalloutVariantProps, "type"> {
+export interface CalloutProps
+  extends CalloutVariantProps,
+    React.HTMLAttributes<HTMLDivElement> {
   icon?: React.ReactNode;
 }
 
-export const Callout = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & CalloutProps
->(({ children, className, variant = "neutral", icon, ...otherProps }, ref) => {
-  const classNames = callout({ variant });
+export const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
+  ({ children, className, variant = "neutral", icon, ...otherProps }, ref) => {
+    const classNames = callout({ variant });
 
-  return (
-    <div ref={ref} className={clsx(classNames.root, className)} {...otherProps}>
-      {icon && <Slot className={classNames.icon}>{icon}</Slot>}
-      <div>
-        <CalloutContext.Provider value={{ variantProps: { variant } }}>
-          {children}
-        </CalloutContext.Provider>
+    return (
+      <div
+        ref={ref}
+        className={clsx(classNames.root, className)}
+        {...otherProps}
+      >
+        {icon && <Slot className={classNames.icon}>{icon}</Slot>}
+        <div>
+          <CalloutContext.Provider value={{ variantProps: { variant } }}>
+            {children}
+          </CalloutContext.Provider>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  },
+);
 Callout.displayName = "Callout";
 
 export interface DismissibleCalloutProps
   extends DismissibleProps,
-    CalloutVariantProps {
+    CalloutVariantProps,
+    React.HTMLAttributes<HTMLDivElement> {
   dismissAriaLabel: string;
 }
 
 export const DismissibleCallout = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & DismissibleCalloutProps
+  DismissibleCalloutProps
 >(
   (
     {
@@ -203,17 +218,17 @@ export const DismissibleCallout = React.forwardRef<
 );
 DismissibleCallout.displayName = "DismissibleCallout";
 
-export interface ActionableCalloutProps extends CalloutVariantProps {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+export interface ActionableCalloutProps
+  extends CalloutVariantProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
+  onClick: NonNullable<
+    React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"]
+  >;
 }
 
 export const ActionableCallout = React.forwardRef<
   HTMLButtonElement,
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > &
-    ActionableCalloutProps
+  ActionableCalloutProps
 >(
   (
     {

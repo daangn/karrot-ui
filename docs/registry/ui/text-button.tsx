@@ -12,6 +12,7 @@ import {
 import { IconChevronRightLine } from "@daangn/react-monochrome-icon";
 
 export type TextButtonProps = TextButtonVariantProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
   ({
     /**
      * @default false
@@ -22,32 +23,26 @@ export type TextButtonProps = TextButtonVariantProps &
     | { prefixIcon?: never; showSuffixChevron?: boolean }
   ));
 
-type ReactTextButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  TextButtonProps & {};
-
-export const TextButton = React.forwardRef<
-  HTMLButtonElement,
-  ReactTextButtonProps
->(
+export const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
   (
     {
       className,
       variant = "brand",
       size = "medium",
+      type = "button",
       prefixIcon,
       showSuffixChevron,
       children,
-      asChild = false,
       ...otherProps
     },
     ref,
   ) => {
-    const Comp = asChild ? Slot : "button";
     const classNames = textButton({ variant, size });
 
     return (
-      <Comp
+      <button
         ref={ref}
+        type={type}
         className={clsx(classNames.root, className)}
         {...otherProps}
       >
@@ -58,7 +53,7 @@ export const TextButton = React.forwardRef<
         {showSuffixChevron && (
           <IconChevronRightLine className={classNames.suffixIcon} />
         )}
-      </Comp>
+      </button>
     );
   },
 );
