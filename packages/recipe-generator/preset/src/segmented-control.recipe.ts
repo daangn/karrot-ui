@@ -108,8 +108,7 @@ const segmentedControl = defineRecipe({
 
       backgroundColor: vars.base.enabled.indicator.color,
 
-      // XXX: token으로 교체
-      boxShadow: "0 1px 6px rgba(0, 0, 0, 5%)",
+      boxShadow: vars.base.enabled.indicator.shadow,
 
       willChange: "left",
       // XXX: 임의

@@ -23,6 +23,14 @@ data:
       indicator:
         cornerRadius: $radius.full
         color: $color.bg.layer-default
+        shadow:
+          type: shadow
+          value:
+            - offsetX: 0px
+              offsetY: 1px
+              blur: 6px
+              spread: 0px
+              color: "#0000000d"
     enabled,pressed:
       segment:
         color: $color.bg.neutral-weak-pressed
