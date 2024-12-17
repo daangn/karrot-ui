@@ -32,6 +32,7 @@ export function ComponentExample(props: ComponentExampleProps) {
         <Tab value="미리보기">
           <React.Suspense fallback={null}>
             <div
+              className="not-prose"
               style={{
                 minHeight: "300px",
                 width: "100%",
