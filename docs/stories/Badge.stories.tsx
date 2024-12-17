@@ -15,38 +15,19 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const LightTheme: Story = {
+const StoryTemplate: Story = {
   args: {
-    children: "Badge",
+    children: "뱃지",
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
   ),
 };
 
-export const DarkTheme: Story = {
-  args: {
-    children: "Badge",
-  },
-  render: (args) => (
-    <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
-  ),
-};
+export const LightTheme = StoryTemplate;
 
-export const FontScalingExtraSmall: Story = {
-  args: {
-    children: "Badge",
-  },
-  render: (args) => (
-    <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
-  ),
-};
+export const DarkTheme = StoryTemplate;
 
-export const FontScalingExtraExtraExtraLarge: Story = {
-  args: {
-    children: "Badge",
-  },
-  render: (args) => (
-    <VariantTable Component={meta.component} variantMap={badgeVariantMap} {...args} />
-  ),
-};
+export const FontScalingExtraSmall = StoryTemplate;
+
+export const FontScalingExtraExtraExtraLarge = StoryTemplate;
