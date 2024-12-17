@@ -4,7 +4,6 @@ import { Installation } from "@/components/installation";
 import { SanityGuideline } from "@/components/sanity/sanity-content";
 import { StackflowExample } from "@/components/stackflow-example";
 import { TokenTable } from "@/components/token-table";
-import { createTypeTable } from "fumadocs-typescript/ui";
 import { File, Files, Folder } from "fumadocs-ui/components/files";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
@@ -12,7 +11,6 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { AtomIcon } from "lucide-react";
 import { createReactTypeTable } from "../react-type-table";
 
-const { AutoTypeTable } = createTypeTable();
 const { ReactTypeTable } = createReactTypeTable();
 
 export const mdxComponents = {
@@ -31,6 +29,5 @@ export const mdxComponents = {
   Files,
   AtomIcon,
   StackflowExample,
-  AutoTypeTable,
   ReactTypeTable,
 };
