@@ -2,6 +2,7 @@
 
 import "@seed-design/stylesheet/helpBubble.css";
 
+import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
 import { Slot } from "@radix-ui/react-slot";
 import { usePopover, type UsePopoverProps } from "@seed-design/react-popover";
 import { helpBubble } from "@seed-design/recipe/helpBubble";
@@ -49,6 +50,8 @@ export interface HelpBubbleTriggerProps extends UsePopoverProps {
 
   description?: string;
 
+  showCloseButton?: boolean;
+
   children?: React.ReactNode;
 }
 
@@ -64,9 +67,10 @@ export const HelpBubbleTrigger = forwardRef<
     gutter = 4,
     overflowPadding = 16,
     arrowPadding = 14,
-    flip,
-    slide,
-    strategy,
+    flip = true,
+    slide = true,
+    strategy = "absolute",
+    showCloseButton = false,
     title,
     description,
     ...otherProps
@@ -101,6 +105,15 @@ export const HelpBubbleTrigger = forwardRef<
           {...api.positionerProps}
           className={classNames.positioner}
         >
+          {showCloseButton ? (
+            <button
+              type="button"
+              className={classNames.closeButton}
+              {...api.closeButtonProps}
+            >
+              <IconXmarkLine className={classNames.closeIcon} />
+            </button>
+          ) : null}
           <div className={classNames.content}>
             <div
               ref={api.refs.arrow}

@@ -1,8 +1,5 @@
 interface HelpBubbleVariant {
-  /**
-  * @default nonModal
-  */
-  variant: "nonModal" | "modal";
+  
 }
 
 type HelpBubbleVariantMap = {
@@ -11,7 +8,7 @@ type HelpBubbleVariantMap = {
 
 export type HelpBubbleVariantProps = Partial<HelpBubbleVariant>;
 
-export type HelpBubbleSlotName = "positioner" | "backdrop" | "content" | "arrow" | "title" | "description";
+export type HelpBubbleSlotName = "positioner" | "backdrop" | "content" | "arrow" | "title" | "description" | "closeButton" | "closeIcon";
 
 export const helpBubbleVariantMap: HelpBubbleVariantMap;
 

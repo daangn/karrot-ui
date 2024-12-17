@@ -3,51 +3,44 @@
     inset: 0;
     z-index: 1000;
     width: 100vw;
-    height: 100vh
+    height: 100vh;
+    background: var(--seed-v3-color-bg-overlay)
 }
 .helpBubble__content {
     display: flex;
     flex-direction: column;
+    background: var(--seed-v3-color-bg-floating-solid);
     padding-inline: var(--seed-v3-unit-s3);
     padding-block: var(--seed-v3-unit-s3);
     border-radius: var(--seed-v3-radius-s3)
 }
 .helpBubble__arrow {
+    fill: var(--seed-v3-color-bg-floating-solid);
     width: 10px;
     height: 6px
 }
 .helpBubble__title {
+    color: var(--seed-v3-color-palette-static-white);
     font-size: var(--seed-v3-font-size-s3);
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .helpBubble__description {
+    color: var(--seed-v3-color-palette-static-white);
     font-size: var(--seed-v3-font-size-s3);
     font-weight: var(--seed-v3-font-weight-regular)
 }
-.helpBubble__content--variant_nonModal {
-    background: var(--seed-v3-color-bg-floating-solid)
+.helpBubble__closeButton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 4px;
+    right: 4px;
+    color: var(--seed-v3-color-palette-static-white);
+    width: 32px;
+    height: 32px
 }
-.helpBubble__arrow--variant_nonModal {
-    fill: var(--seed-v3-color-bg-floating-solid)
-}
-.helpBubble__title--variant_nonModal {
-    color: var(--seed-v3-color-fg-neutral-inverted)
-}
-.helpBubble__description--variant_nonModal {
-    color: var(--seed-v3-color-fg-neutral-inverted)
-}
-.helpBubble__backdrop--variant_modal {
-    background: var(--seed-v3-color-bg-overlay)
-}
-.helpBubble__content--variant_modal {
-    background: var(--seed-v3-color-bg-static-white)
-}
-.helpBubble__arrow--variant_modal {
-    fill: var(--seed-v3-color-bg-static-white)
-}
-.helpBubble__title--variant_modal {
-    color: var(--seed-v3-color-fg-static-black)
-}
-.helpBubble__description--variant_modal {
-    color: var(--seed-v3-color-fg-static-black)
+.helpBubble__closeIcon {
+    width: 14px;
+    height: 14px
 }

@@ -24,21 +24,22 @@ const helpBubbleSlotNames = [
   [
     "description",
     "helpBubble__description"
+  ],
+  [
+    "closeButton",
+    "helpBubble__closeButton"
+  ],
+  [
+    "closeIcon",
+    "helpBubble__closeIcon"
   ]
 ];
 
-const defaultVariant = {
-  "variant": "nonModal"
-};
+const defaultVariant = {};
 
 const compoundVariants = [];
 
-export const helpBubbleVariantMap = {
-  "variant": [
-    "nonModal",
-    "modal"
-  ]
-};
+export const helpBubbleVariantMap = {};
 
 export const helpBubbleVariantKeys = Object.keys(helpBubbleVariantMap);
 

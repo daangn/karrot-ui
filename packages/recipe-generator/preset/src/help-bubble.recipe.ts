@@ -3,7 +3,16 @@ import { defineRecipe } from "./helper";
 
 const helpBubble = defineRecipe({
   name: "helpBubble",
-  slots: ["positioner", "backdrop", "content", "arrow", "title", "description"],
+  slots: [
+    "positioner",
+    "backdrop",
+    "content",
+    "arrow",
+    "title",
+    "description",
+    "closeButton",
+    "closeIcon",
+  ],
   base: {
     backdrop: {
       position: "fixed",
@@ -12,65 +21,50 @@ const helpBubble = defineRecipe({
 
       width: "100vw",
       height: "100vh",
+
+      background: vars.base.enabled.backdrop.color,
     },
     content: {
       display: "flex",
       flexDirection: "column",
+      background: vars.base.enabled.root.color,
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
       borderRadius: vars.base.enabled.root.cornerRadius,
     },
     arrow: {
+      fill: vars.base.enabled.arrow.color,
       width: "10px",
       height: "6px",
     },
     title: {
+      color: vars.base.enabled.title.color,
       fontSize: vars.base.enabled.title.fontSize,
       fontWeight: vars.base.enabled.title.fontWeight,
     },
     description: {
+      color: vars.base.enabled.description.color,
       fontSize: vars.base.enabled.description.fontSize,
       fontWeight: vars.base.enabled.description.fontWeight,
     },
-  },
-  variants: {
-    variant: {
-      nonModal: {
-        content: {
-          background: vars.variantNonModal.enabled.root.color,
-        },
-        arrow: {
-          fill: vars.variantNonModal.enabled.arrow.color,
-        },
-        title: {
-          color: vars.variantNonModal.enabled.title.color,
-        },
-        description: {
-          color: vars.variantNonModal.enabled.description.color,
-        },
-      },
-      modal: {
-        backdrop: {
-          background: vars.variantModal.enabled.backdrop.color,
-        },
-        content: {
-          background: vars.variantModal.enabled.root.color,
-        },
-        arrow: {
-          fill: vars.variantModal.enabled.arrow.color,
-        },
-        title: {
-          color: vars.variantModal.enabled.title.color,
-        },
-        description: {
-          color: vars.variantModal.enabled.description.color,
-        },
-      },
+    closeButton: {
+      position: "absolute",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+
+      top: vars.base.enabled.closeButton.fromTop,
+      right: vars.base.enabled.closeButton.fromRight,
+      color: vars.base.enabled.closeButton.color,
+      width: vars.base.enabled.closeButton.targetSize,
+      height: vars.base.enabled.closeButton.targetSize,
+    },
+    closeIcon: {
+      width: vars.base.enabled.closeButton.size,
+      height: vars.base.enabled.closeButton.size,
     },
   },
-  defaultVariants: {
-    variant: "nonModal",
-  },
+  variants: {},
 });
 
 export default helpBubble;

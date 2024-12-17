@@ -2,52 +2,31 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
+        "color": "var(--seed-v3-color-bg-floating-solid)",
         "cornerRadius": "var(--seed-v3-radius-s3)",
         "paddingX": "var(--seed-v3-unit-s3)",
         "paddingY": "var(--seed-v3-unit-s3)"
       },
       "arrow": {
+        "color": "var(--seed-v3-color-bg-floating-solid)",
         "size": "var(--seed-v3-unit-s2_5)"
       },
       "title": {
+        "color": "var(--seed-v3-color-palette-static-white)",
         "fontSize": "var(--seed-v3-font-size-s3)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "description": {
+        "color": "var(--seed-v3-color-palette-static-white)",
         "fontSize": "var(--seed-v3-font-size-s3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
-      }
-    }
-  },
-  "variantNonModal": {
-    "enabled": {
-      "root": {
-        "color": "var(--seed-v3-color-bg-floating-solid)"
       },
-      "arrow": {
-        "color": "var(--seed-v3-color-bg-floating-solid)"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-neutral-inverted)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-neutral-inverted)"
-      }
-    }
-  },
-  "variantModal": {
-    "enabled": {
-      "root": {
-        "color": "var(--seed-v3-color-bg-static-white)"
-      },
-      "arrow": {
-        "color": "var(--seed-v3-color-bg-static-white)"
-      },
-      "title": {
-        "color": "var(--seed-v3-color-fg-static-black)"
-      },
-      "description": {
-        "color": "var(--seed-v3-color-fg-static-black)"
+      "closeButton": {
+        "color": "var(--seed-v3-color-palette-static-white)",
+        "fromRight": "4px",
+        "fromTop": "4px",
+        "size": "14px",
+        "targetSize": "32px"
       },
       "backdrop": {
         "color": "var(--seed-v3-color-bg-overlay)"

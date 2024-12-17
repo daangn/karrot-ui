@@ -1,13 +1,13 @@
 import { ActionButton } from "@/registry/ui/action-button";
 import { HelpBubbleTrigger } from "seed-design/ui/help-bubble";
 
-export default function HelpBubblePreview() {
+export default function HelpBubbleFlip() {
   return (
     <HelpBubbleTrigger
-      defaultOpen
-      flip={true}
-      title="타이틀"
-      description="설명을 추가할 수 있어요."
+      open
+      flip={false}
+      title="Flip"
+      description="Flip을 끄면 화면 경계에서 방향이 바뀌지 않아요."
     >
       <ActionButton>열기</ActionButton>
     </HelpBubbleTrigger>

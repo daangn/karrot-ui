@@ -149,27 +149,35 @@ export function usePositionedFloating(props: UsePositionedFloatingProps) {
 
   const side = context.placement.split("-")[0] as "top" | "bottom" | "left" | "right";
 
-  const arrowStyles = {
-    position: "absolute",
-    left: middlewareData.arrow?.x,
-    top: middlewareData.arrow?.y,
-    [side]: "100%",
-    transform: ARROW_FLOATING_STYLE[side],
-  } as const;
+  const arrowStyles = useMemo(
+    () =>
+      ({
+        position: "absolute",
+        left: middlewareData.arrow?.x,
+        top: middlewareData.arrow?.y,
+        [side]: "100%",
+        transform: ARROW_FLOATING_STYLE[side],
+      }) as const,
+    [middlewareData.arrow, side],
+  );
 
-  return {
-    open,
-    refs: {
-      ...refs,
-      arrow: arrowEl,
-      setArrow: setArrowEl,
-    },
-    rects: {
-      ...(middlewareData.rects as ElementRects),
-      arrow: arrowRect,
-    },
-    context,
-    floatingStyles,
-    arrowStyles,
-  };
+  return useMemo(
+    () => ({
+      open,
+      onOpenChange,
+      refs: {
+        ...refs,
+        arrow: arrowEl,
+        setArrow: setArrowEl,
+      },
+      rects: {
+        ...(middlewareData.rects as ElementRects),
+        arrow: arrowRect,
+      },
+      context,
+      floatingStyles,
+      arrowStyles,
+    }),
+    [open, refs, arrowEl, arrowRect, middlewareData, context, floatingStyles, arrowStyles],
+  );
 }
