@@ -31,6 +31,7 @@ const helpBubble = defineRecipe({
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
       borderRadius: vars.base.enabled.root.cornerRadius,
+      wordBreak: "keep-all",
     },
     arrow: {
       fill: vars.base.enabled.arrow.color,
