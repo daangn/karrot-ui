@@ -53,6 +53,7 @@ export const ActionButton = React.forwardRef<
     const classNames = actionButton({ variant, layout, size });
     const dataProps = {
       "data-loading": loading ? "" : undefined,
+      "data-disabled": otherProps.disabled ? "" : undefined,
     };
 
     if (
