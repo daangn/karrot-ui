@@ -39,9 +39,13 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col justify-center items-center text-center">
-      <img src="/cover.png" alt="SEED Design" className="mt-[60px] rounded-[26px] w-[80%]" />
+      <img
+        src="/cover.png"
+        alt="SEED Design"
+        className="mt-[60px] rounded-[26px] w-[80%] xl:w-[70%]"
+      />
 
-      <div className="flex flex-col w-[80%] my-[60px]">
+      <div className="flex flex-col w-[80%] xl:w-[70%] my-[60px]">
         <h1 className="text-2xl sm:text-3xl font-bold text-left">Design system updates</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mt-[20px] gap-[20px]">
