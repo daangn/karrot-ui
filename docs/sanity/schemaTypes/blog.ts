@@ -9,17 +9,17 @@ export default defineType({
   fields: [
     defineField({
       name: "title",
-      title: "블로그 제목",
+      title: "컨텐츠 제목",
       type: "string",
     }),
     defineField({
       name: "description",
-      title: "블로그 설명",
+      title: "컨텐츠 설명",
       type: "string",
     }),
     defineField({
       name: "slug",
-      title: "블로그 url",
+      title: "컨텐츠 url",
       type: "slug",
       options: {
         source: "title",
@@ -28,18 +28,19 @@ export default defineType({
     }),
     defineField({
       name: "thumbnail",
-      title: "블로그 썸네일",
+      title: "컨텐츠 썸네일",
+      description: "썸네일은 16:9 비율의 이미지를 사용해주세요. 안그러면 짤려요.",
       type: "image",
     }),
     defineField({
       name: "content",
-      title: "블로그 내용",
-      description: "블로그 내용을 입력해주세요.",
+      title: "컨텐츠 내용",
+      description: "컨텐츠 내용을 입력해주세요.",
       type: "blockContent",
     }),
     defineField({
       name: "publishedAt",
-      title: "블로그 출시일",
+      title: "컨텐츠 출시일",
       type: "datetime",
     }),
   ],
