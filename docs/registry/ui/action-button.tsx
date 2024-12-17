@@ -12,7 +12,9 @@ import {
 } from "@seed-design/recipe/actionButton";
 import { ProgressCircle } from "./progress-circle";
 
-export interface ActionButtonProps extends ActionButtonVariantProps {
+export interface ActionButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    ActionButtonVariantProps {
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
@@ -25,16 +27,12 @@ export interface ActionButtonProps extends ActionButtonVariantProps {
   asChild?: boolean;
 }
 
-interface ReactActionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ActionButtonProps {}
-
 /**
  * @see https://v3.seed-design.io/docs/react/components/action-button
  */
 export const ActionButton = React.forwardRef<
   HTMLButtonElement,
-  ReactActionButtonProps
+  ActionButtonProps
 >(
   (
     {

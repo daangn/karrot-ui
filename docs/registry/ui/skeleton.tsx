@@ -10,7 +10,7 @@ import clsx from "clsx";
 import * as React from "react";
 import { styleProps, type StyleProps } from "../util/styleProps";
 
-interface SkeletonProps
+export interface SkeletonProps
   extends React.HTMLAttributes<HTMLDivElement>,
     SkeletonVariantProps,
     StyleProps {}

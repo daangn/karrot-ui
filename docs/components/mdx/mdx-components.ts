@@ -10,8 +10,10 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { AtomIcon } from "lucide-react";
+import { createReactTypeTable } from "../react-type-table";
 
 const { AutoTypeTable } = createTypeTable();
+const { ReactTypeTable } = createReactTypeTable();
 
 export const mdxComponents = {
   ...defaultMdxComponents,
@@ -30,4 +32,5 @@ export const mdxComponents = {
   AtomIcon,
   StackflowExample,
   AutoTypeTable,
+  ReactTypeTable,
 };
