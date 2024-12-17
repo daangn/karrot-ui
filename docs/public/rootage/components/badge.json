@@ -8,20 +8,26 @@
     "size=large": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s5",
+          "minHeight": "$unit.s6",
           "paddingX": "$unit.s2",
-          "paddingY": "$unit.s1",
-          "fontSize": "$font-size.s2"
+          "paddingY": "$unit.s1"
+        },
+        "label": {
+          "fontSize": "$font-size.s2",
+          "lineHeight": "$line-height.s2"
         }
       }
     },
     "size=medium": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s4",
+          "minHeight": "$unit.s5",
           "paddingX": "$unit.s1_5",
-          "paddingY": "$unit.s0_5",
-          "fontSize": "$font-size.s1"
+          "paddingY": "$unit.s0_5"
+        },
+        "label": {
+          "fontSize": "$font-size.s1",
+          "lineHeight": "$line-height.s1"
         }
       }
     },

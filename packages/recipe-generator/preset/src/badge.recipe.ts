@@ -8,11 +8,14 @@ export const badge = defineRecipe({
     root: {
       display: "inline-flex",
       boxSizing: "border-box",
+      alignItems: "center",
+      justifyContent: "center",
 
       textTransform: "none",
       textAlign: "start",
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+      textDecoration: "none",
     },
   },
   variants: {
@@ -22,7 +25,10 @@ export const badge = defineRecipe({
           minHeight: vars.sizeMedium.enabled.root.minHeight,
           paddingInline: vars.sizeMedium.enabled.root.paddingX,
           paddingBlock: vars.sizeMedium.enabled.root.paddingY,
-          fontSize: vars.sizeMedium.enabled.root.fontSize,
+        },
+        label: {
+          fontSize: vars.sizeMedium.enabled.label.fontSize,
+          lineHeight: vars.sizeMedium.enabled.label.lineHeight,
         },
       },
       large: {
@@ -30,7 +36,10 @@ export const badge = defineRecipe({
           minHeight: vars.sizeLarge.enabled.root.minHeight,
           paddingInline: vars.sizeLarge.enabled.root.paddingX,
           paddingBlock: vars.sizeLarge.enabled.root.paddingY,
-          fontSize: vars.sizeLarge.enabled.root.fontSize,
+        },
+        label: {
+          fontSize: vars.sizeLarge.enabled.label.fontSize,
+          lineHeight: vars.sizeLarge.enabled.label.lineHeight,
         },
       },
     },

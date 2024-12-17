@@ -2,20 +2,26 @@ export const vars = {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s5)",
+        "minHeight": "var(--seed-v3-unit-s6)",
         "paddingX": "var(--seed-v3-unit-s2)",
-        "paddingY": "var(--seed-v3-unit-s1)",
-        "fontSize": "var(--seed-v3-font-size-s2)"
+        "paddingY": "var(--seed-v3-unit-s1)"
+      },
+      "label": {
+        "fontSize": "var(--seed-v3-font-size-s2)",
+        "lineHeight": "var(--seed-v3-line-height-s2)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s4)",
+        "minHeight": "var(--seed-v3-unit-s5)",
         "paddingX": "var(--seed-v3-unit-s1_5)",
-        "paddingY": "var(--seed-v3-unit-s0_5)",
-        "fontSize": "var(--seed-v3-font-size-s1)"
+        "paddingY": "var(--seed-v3-unit-s0_5)"
+      },
+      "label": {
+        "fontSize": "var(--seed-v3-font-size-s1)",
+        "lineHeight": "var(--seed-v3-line-height-s1)"
       }
     }
   },
