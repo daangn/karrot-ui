@@ -24,7 +24,7 @@ const compoundVariants = [
   },
   {
     "tone": "neutral",
-    "variant": "soft"
+    "variant": "weak"
   },
   {
     "tone": "neutral",
@@ -36,7 +36,7 @@ const compoundVariants = [
   },
   {
     "tone": "brand",
-    "variant": "soft"
+    "variant": "weak"
   },
   {
     "tone": "brand",
@@ -48,7 +48,7 @@ const compoundVariants = [
   },
   {
     "tone": "informative",
-    "variant": "soft"
+    "variant": "weak"
   },
   {
     "tone": "informative",
@@ -60,7 +60,7 @@ const compoundVariants = [
   },
   {
     "tone": "positive",
-    "variant": "soft"
+    "variant": "weak"
   },
   {
     "tone": "positive",
@@ -72,7 +72,7 @@ const compoundVariants = [
   },
   {
     "tone": "danger",
-    "variant": "soft"
+    "variant": "weak"
   },
   {
     "tone": "danger",
@@ -94,7 +94,7 @@ export const badgeVariantMap = {
     "pill"
   ],
   "variant": [
-    "soft",
+    "weak",
     "solid",
     "outlined"
   ],

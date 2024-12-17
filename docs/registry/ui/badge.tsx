@@ -17,7 +17,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       className,
       size = "medium",
       shape = "rectangle",
-      variant = "soft",
+      variant = "weak",
       tone = "neutral",
       children,
       asChild = false,

@@ -46,7 +46,7 @@ export const vars = {
       }
     }
   },
-  "variantSoft": {
+  "variantWeak": {
     "enabled": {
       "label": {
         "fontWeight": "var(--seed-v3-font-weight-medium)"
@@ -70,7 +70,7 @@ export const vars = {
       }
     }
   },
-  "toneNeutralVariantSoft": {
+  "toneNeutralVariantWeak": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak)"
@@ -100,7 +100,7 @@ export const vars = {
       }
     }
   },
-  "toneBrandVariantSoft": {
+  "toneBrandVariantWeak": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-brand-weak)"
@@ -130,7 +130,7 @@ export const vars = {
       }
     }
   },
-  "toneInformativeVariantSoft": {
+  "toneInformativeVariantWeak": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-informative-weak)"
@@ -160,7 +160,7 @@ export const vars = {
       }
     }
   },
-  "tonePositiveVariantSoft": {
+  "tonePositiveVariantWeak": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-positive-weak)"
@@ -190,7 +190,7 @@ export const vars = {
       }
     }
   },
-  "toneDangerVariantSoft": {
+  "toneDangerVariantWeak": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-danger-weak)"

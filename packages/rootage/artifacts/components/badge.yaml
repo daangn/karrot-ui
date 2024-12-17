@@ -34,7 +34,7 @@ data:
     enabled:
       root:
         borderRadius: $radius.s1
-  variant=soft:
+  variant=weak:
     enabled:
       label:
         fontWeight: $font-weight.medium
@@ -48,7 +48,7 @@ data:
         borderWidth: 1px
       label:
         fontWeight: $font-weight.bold
-  tone=neutral, variant=soft:
+  tone=neutral, variant=weak:
     enabled:
       root:
         color: $color.bg.neutral-weak
@@ -66,7 +66,7 @@ data:
         strokeColor: $color.stroke.neutral
       label:
         color: $color.fg.neutral
-  tone=brand, variant=soft:
+  tone=brand, variant=weak:
     enabled:
       root:
         color: $color.bg.brand-weak
@@ -84,7 +84,7 @@ data:
         strokeColor: $color.stroke.brand
       label:
         color: $color.fg.brand
-  tone=informative, variant=soft:
+  tone=informative, variant=weak:
     enabled:
       root:
         color: $color.bg.informative-weak
@@ -102,7 +102,7 @@ data:
         strokeColor: $color.fg.informative
       label:
         color: $color.fg.informative
-  tone=positive, variant=soft:
+  tone=positive, variant=weak:
     enabled:
       root:
         color: $color.bg.positive-weak
@@ -120,7 +120,7 @@ data:
         strokeColor: $color.stroke.positive
       label:
         color: $color.fg.positive
-  tone=danger, variant=soft:
+  tone=danger, variant=weak:
     enabled:
       root:
         color: $color.bg.danger-weak

@@ -30,7 +30,7 @@
 .badge__root--shape_pill {
     border-radius: var(--seed-v3-radius-full)
 }
-.badge__label--variant_soft {
+.badge__label--variant_weak {
     font-weight: var(--seed-v3-font-weight-medium)
 }
 .badge__label--variant_solid {
@@ -49,10 +49,10 @@
 .badge__root--shape_rectangle-size_large {
     border-radius: var(--seed-v3-radius-s1_5)
 }
-.badge__root--tone_neutral-variant_soft {
+.badge__root--tone_neutral-variant_weak {
     background-color: var(--seed-v3-color-bg-neutral-weak)
 }
-.badge__label--tone_neutral-variant_soft {
+.badge__label--tone_neutral-variant_weak {
     color: var(--seed-v3-color-fg-neutral)
 }
 .badge__root--tone_neutral-variant_solid {
@@ -67,10 +67,10 @@
 .badge__label--tone_neutral-variant_outlined {
     color: var(--seed-v3-color-fg-neutral)
 }
-.badge__root--tone_brand-variant_soft {
+.badge__root--tone_brand-variant_weak {
     background-color: var(--seed-v3-color-bg-brand-weak)
 }
-.badge__label--tone_brand-variant_soft {
+.badge__label--tone_brand-variant_weak {
     color: var(--seed-v3-color-fg-brand)
 }
 .badge__root--tone_brand-variant_solid {
@@ -85,10 +85,10 @@
 .badge__label--tone_brand-variant_outlined {
     color: var(--seed-v3-color-fg-brand)
 }
-.badge__root--tone_informative-variant_soft {
+.badge__root--tone_informative-variant_weak {
     background-color: var(--seed-v3-color-bg-informative-weak)
 }
-.badge__label--tone_informative-variant_soft {
+.badge__label--tone_informative-variant_weak {
     color: var(--seed-v3-color-fg-informative)
 }
 .badge__root--tone_informative-variant_solid {
@@ -103,10 +103,10 @@
 .badge__label--tone_informative-variant_outlined {
     color: var(--seed-v3-color-fg-informative)
 }
-.badge__root--tone_positive-variant_soft {
+.badge__root--tone_positive-variant_weak {
     background-color: var(--seed-v3-color-bg-positive-weak)
 }
-.badge__label--tone_positive-variant_soft {
+.badge__label--tone_positive-variant_weak {
     color: var(--seed-v3-color-fg-positive)
 }
 .badge__root--tone_positive-variant_solid {
@@ -121,10 +121,10 @@
 .badge__label--tone_positive-variant_outlined {
     color: var(--seed-v3-color-fg-positive)
 }
-.badge__root--tone_danger-variant_soft {
+.badge__root--tone_danger-variant_weak {
     background-color: var(--seed-v3-color-bg-danger-weak)
 }
-.badge__label--tone_danger-variant_soft {
+.badge__label--tone_danger-variant_weak {
     color: var(--seed-v3-color-fg-danger)
 }
 .badge__root--tone_danger-variant_solid {

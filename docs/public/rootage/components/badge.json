@@ -52,7 +52,7 @@
         }
       }
     },
-    "variant=soft": {
+    "variant=weak": {
       "enabled": {
         "label": {
           "fontWeight": "$font-weight.medium"
@@ -76,7 +76,7 @@
         }
       }
     },
-    "tone=neutral, variant=soft": {
+    "tone=neutral, variant=weak": {
       "enabled": {
         "root": {
           "color": "$color.bg.neutral-weak"
@@ -106,7 +106,7 @@
         }
       }
     },
-    "tone=brand, variant=soft": {
+    "tone=brand, variant=weak": {
       "enabled": {
         "root": {
           "color": "$color.bg.brand-weak"
@@ -136,7 +136,7 @@
         }
       }
     },
-    "tone=informative, variant=soft": {
+    "tone=informative, variant=weak": {
       "enabled": {
         "root": {
           "color": "$color.bg.informative-weak"
@@ -166,7 +166,7 @@
         }
       }
     },
-    "tone=positive, variant=soft": {
+    "tone=positive, variant=weak": {
       "enabled": {
         "root": {
           "color": "$color.bg.positive-weak"
@@ -196,7 +196,7 @@
         }
       }
     },
-    "tone=danger, variant=soft": {
+    "tone=danger, variant=weak": {
       "enabled": {
         "root": {
           "color": "$color.bg.danger-weak"

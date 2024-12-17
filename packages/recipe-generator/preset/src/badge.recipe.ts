@@ -52,9 +52,9 @@ export const badge = defineRecipe({
       },
     },
     variant: {
-      soft: {
+      weak: {
         label: {
-          fontWeight: vars.variantSoft.enabled.label.fontWeight,
+          fontWeight: vars.variantWeak.enabled.label.fontWeight,
         },
       },
       solid: {
@@ -101,13 +101,13 @@ export const badge = defineRecipe({
     },
     {
       tone: "neutral",
-      variant: "soft",
+      variant: "weak",
       css: {
         root: {
-          backgroundColor: vars.toneNeutralVariantSoft.enabled.root.color,
+          backgroundColor: vars.toneNeutralVariantWeak.enabled.root.color,
         },
         label: {
-          color: vars.toneNeutralVariantSoft.enabled.label.color,
+          color: vars.toneNeutralVariantWeak.enabled.label.color,
         },
       },
     },
@@ -137,13 +137,13 @@ export const badge = defineRecipe({
     },
     {
       tone: "brand",
-      variant: "soft",
+      variant: "weak",
       css: {
         root: {
-          backgroundColor: vars.toneBrandVariantSoft.enabled.root.color,
+          backgroundColor: vars.toneBrandVariantWeak.enabled.root.color,
         },
         label: {
-          color: vars.toneBrandVariantSoft.enabled.label.color,
+          color: vars.toneBrandVariantWeak.enabled.label.color,
         },
       },
     },
@@ -173,13 +173,13 @@ export const badge = defineRecipe({
     },
     {
       tone: "informative",
-      variant: "soft",
+      variant: "weak",
       css: {
         root: {
-          backgroundColor: vars.toneInformativeVariantSoft.enabled.root.color,
+          backgroundColor: vars.toneInformativeVariantWeak.enabled.root.color,
         },
         label: {
-          color: vars.toneInformativeVariantSoft.enabled.label.color,
+          color: vars.toneInformativeVariantWeak.enabled.label.color,
         },
       },
     },
@@ -209,13 +209,13 @@ export const badge = defineRecipe({
     },
     {
       tone: "positive",
-      variant: "soft",
+      variant: "weak",
       css: {
         root: {
-          backgroundColor: vars.tonePositiveVariantSoft.enabled.root.color,
+          backgroundColor: vars.tonePositiveVariantWeak.enabled.root.color,
         },
         label: {
-          color: vars.tonePositiveVariantSoft.enabled.label.color,
+          color: vars.tonePositiveVariantWeak.enabled.label.color,
         },
       },
     },
@@ -245,13 +245,13 @@ export const badge = defineRecipe({
     },
     {
       tone: "danger",
-      variant: "soft",
+      variant: "weak",
       css: {
         root: {
-          backgroundColor: vars.toneDangerVariantSoft.enabled.root.color,
+          backgroundColor: vars.toneDangerVariantWeak.enabled.root.color,
         },
         label: {
-          color: vars.toneDangerVariantSoft.enabled.label.color,
+          color: vars.toneDangerVariantWeak.enabled.label.color,
         },
       },
     },
