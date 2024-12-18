@@ -62,17 +62,9 @@ export const docsOptions: DocsLayoutProps = {
 
         return {
           ...option,
-          icon: (
-            <Slot
-              className="bg-gradient-to-t from-fd-background/80 p-1 [&_svg]:size-5"
-              style={{
-                color: `hsl(var(--${meta.file.dirname}-color))`,
-                backgroundColor: `hsl(var(--${meta.file.dirname}-color)/.3)`,
-              }}
-            >
-              {node.icon}
-            </Slot>
-          ),
+          icon: null,
+          title: <div className="text-[16px] font-semibold">{meta.data.title}</div>,
+          description: <div className="text-[12px] mt-[4px]">{meta.data.description}</div>,
         };
       },
     },

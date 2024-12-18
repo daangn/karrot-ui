@@ -30,14 +30,22 @@ export const Image = ({ value, className }: ImageProps) => {
   const builder = imageUrlBuilder({ projectId: projectId!, dataset: dataset! });
   const cdnUrl = builder
     .image(value)
-    .width(800)
+    .width(1000)
     .fit("max")
-    .quality(90)
+    .quality(95)
     .auto("format")
     .format("webp")
     .url();
 
-  return <img src={cdnUrl} alt={value.originalFilename} className={className} draggable={false} />;
+  return (
+    <img
+      src={cdnUrl}
+      alt={value.originalFilename}
+      className={className}
+      loading="lazy"
+      draggable={false}
+    />
+  );
 };
 
 export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityImage>) => {
@@ -52,14 +60,14 @@ export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityIm
   // Sanity CDN URL 생성
   const cdnUrl = builder
     .image(value)
-    .width(800)
+    .width(1200)
     .fit("max")
     .quality(90)
     .auto("format")
     .format("webp")
     .url();
 
-  const srcSet = [400, 600, 800, 1200]
+  const srcSet = [800, 1200, 1600]
     .map(
       (width) =>
         `${builder.image(value).width(width).quality(75).fit("max").auto("format").format("webp").url()} ${width}w`,
@@ -73,7 +81,7 @@ export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityIm
     <img
       src={cdnUrl}
       alt={alt}
-      sizes="(max-width: 800px) 100vw, 800px"
+      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
       draggable={false}
       srcSet={srcSet}
       loading="lazy"
