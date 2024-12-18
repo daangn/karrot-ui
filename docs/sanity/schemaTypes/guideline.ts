@@ -14,6 +14,12 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "category",
+      title: "카테고리",
+      type: "reference",
+      to: [{ type: "category" }],
+    }),
+    defineField({
       name: "content",
       title: "가이드라인",
       description: "가이드라인을 입력해주세요.",
@@ -25,4 +31,10 @@ export default defineType({
       type: "datetime",
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "category.title",
+    },
+  },
 });

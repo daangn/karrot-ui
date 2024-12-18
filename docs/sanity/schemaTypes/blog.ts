@@ -13,6 +13,12 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "category",
+      title: "카테고리",
+      type: "reference",
+      to: [{ type: "category" }],
+    }),
+    defineField({
       name: "description",
       title: "컨텐츠 설명",
       type: "string",
@@ -44,4 +50,10 @@ export default defineType({
       type: "datetime",
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "category.title",
+    },
+  },
 });
