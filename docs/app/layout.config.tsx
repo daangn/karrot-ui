@@ -1,5 +1,4 @@
 import { source } from "@/app/source";
-import { Slot } from "@radix-ui/react-slot";
 import type { DocsLayoutProps } from "fumadocs-ui/layouts/docs";
 import type { HomeLayoutProps } from "fumadocs-ui/layouts/home";
 
@@ -63,8 +62,8 @@ export const docsOptions: DocsLayoutProps = {
         return {
           ...option,
           icon: null,
-          title: <div className="text-[16px] font-semibold">{meta.data.title}</div>,
-          description: <div className="text-[12px] mt-[4px]">{meta.data.description}</div>,
+          title: <span className="text-base font-semibold">{meta.data.title}</span>,
+          description: <span className="text-sm mt-1">{meta.data.description}</span>,
         };
       },
     },
