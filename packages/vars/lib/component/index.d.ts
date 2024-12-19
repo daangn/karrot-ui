@@ -8,7 +8,6 @@ export { vars as chipTab } from "./chip-tab";
 export { vars as chipTablist } from "./chip-tablist";
 export { vars as controlChip } from "./control-chip";
 export { vars as dialog } from "./dialog";
-export { vars as expandButton } from "./expand-button";
 export { vars as fab } from "./fab";
 export { vars as helpBubble } from "./help-bubble";
 export { vars as inlineBanner } from "./inline-banner";

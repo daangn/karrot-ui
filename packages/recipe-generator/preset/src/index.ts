@@ -8,7 +8,6 @@ import chipTab from "./chip-tab.recipe";
 import chipTabs from "./chip-tabs.recipe";
 import controlChip from "./control-chip.recipe";
 import dialog from "./dialog.recipe";
-import expandButton from "./expand-button.recipe";
 import helpBubble from "./help-bubble.recipe";
 import inlineBanner from "./inline-banner.recipe";
 import progressCircle from "./progress-circle.recipe";
@@ -42,7 +41,6 @@ const recipes = {
   tabs,
   chipTab,
   chipTabs,
-  expandButton,
   skeleton,
   textButton,
   textField,

@@ -80,11 +80,6 @@ export const registryUI: RegistryUI = [
     files: ["ui:chip-tabs.tsx"],
   },
   {
-    name: "expand-button",
-    dependencies: ["@radix-ui/react-slot"],
-    files: ["ui:expand-button.tsx"],
-  },
-  {
     name: "progress-circle",
     dependencies: ["@seed-design/react-progress"],
     files: ["ui:progress-circle.tsx"],
