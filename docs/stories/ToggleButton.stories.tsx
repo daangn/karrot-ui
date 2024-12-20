@@ -31,7 +31,7 @@ const CommonStoryTemplate: Story = {
     <VariantTable
       Component={meta.component}
       variantMap={variantMap}
-      render={({ disabled }) => (disabled ? "Disabled" : "Toggle Button")}
+      render={({ disabled }) => (disabled === "true" ? "Disabled" : "Toggle Button")}
       {...args}
     />
   ),
