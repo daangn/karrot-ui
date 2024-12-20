@@ -1,5 +1,6 @@
 export { vars as actionButton } from "./action-button";
 export { vars as actionChip } from "./action-chip";
+export { vars as avatarStack } from "./avatar-stack";
 export { vars as avatar } from "./avatar";
 export { vars as badge } from "./badge";
 export { vars as callout } from "./callout";
@@ -10,6 +11,7 @@ export { vars as controlChip } from "./control-chip";
 export { vars as dialog } from "./dialog";
 export { vars as fab } from "./fab";
 export { vars as helpBubble } from "./help-bubble";
+export { vars as identityPlaceholder } from "./identity-placeholder";
 export { vars as inlineBanner } from "./inline-banner";
 export { vars as progressCircle } from "./progress-circle";
 export { vars as radio } from "./radio";

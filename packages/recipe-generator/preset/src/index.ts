@@ -1,5 +1,6 @@
 import actionButton from "./action-button.recipe";
 import actionChip from "./action-chip.recipe";
+import avatarStack from "./avatar-stack.recipe";
 import avatar from "./avatar.recipe";
 import badge from "./badge.recipe";
 import callout from "./callout.recipe";
@@ -9,6 +10,7 @@ import chipTabs from "./chip-tabs.recipe";
 import controlChip from "./control-chip.recipe";
 import dialog from "./dialog.recipe";
 import helpBubble from "./help-bubble.recipe";
+import identityPlaceholder from "./identity-placeholder";
 import inlineBanner from "./inline-banner.recipe";
 import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
@@ -23,6 +25,7 @@ import textField from "./text-field.recipe";
 
 const recipes = {
   avatar,
+  avatarStack,
   actionButton,
   badge,
   radio,
@@ -35,6 +38,7 @@ const recipes = {
   selectBoxGroup,
   switch: switchRecipe,
   helpBubble,
+  identityPlaceholder,
   inlineBanner,
   progressCircle,
   tab,

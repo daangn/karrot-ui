@@ -19,50 +19,50 @@
     "size=20": {
       "enabled": {
         "root": {
-          "size": "$unit.s5"
+          "size": "20px"
         },
         "badge": {
-          "size": "$unit.s2_5"
+          "size": "10px"
         }
       }
     },
     "size=24": {
       "enabled": {
         "root": {
-          "size": "$unit.s6"
+          "size": "24px"
         },
         "badge": {
-          "size": "$unit.s3"
+          "size": "12px"
         }
       }
     },
     "size=36": {
       "enabled": {
         "root": {
-          "size": "$unit.s9"
+          "size": "36px"
         },
         "badge": {
-          "size": "$unit.s4"
+          "size": "16px"
         }
       }
     },
     "size=48": {
       "enabled": {
         "root": {
-          "size": "$unit.s12"
+          "size": "48px"
         },
         "badge": {
-          "size": "$unit.s6"
+          "size": "24px"
         }
       }
     },
     "size=64": {
       "enabled": {
         "root": {
-          "size": "$unit.s16"
+          "size": "64px"
         },
         "badge": {
-          "size": "$unit.s6"
+          "size": "24px"
         }
       }
     },
@@ -72,7 +72,7 @@
           "size": "80px"
         },
         "badge": {
-          "size": "$unit.s6"
+          "size": "24px"
         }
       }
     },
@@ -82,7 +82,7 @@
           "size": "96px"
         },
         "badge": {
-          "size": "$unit.s8"
+          "size": "32px"
         }
       }
     }

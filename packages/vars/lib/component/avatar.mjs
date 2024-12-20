@@ -13,50 +13,50 @@ export const vars = {
   "size20": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s5)"
+        "size": "20px"
       },
       "badge": {
-        "size": "var(--seed-v3-unit-s2_5)"
+        "size": "10px"
       }
     }
   },
   "size24": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s6)"
+        "size": "24px"
       },
       "badge": {
-        "size": "var(--seed-v3-unit-s3)"
+        "size": "12px"
       }
     }
   },
   "size36": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s9)"
+        "size": "36px"
       },
       "badge": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "16px"
       }
     }
   },
   "size48": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s12)"
+        "size": "48px"
       },
       "badge": {
-        "size": "var(--seed-v3-unit-s6)"
+        "size": "24px"
       }
     }
   },
   "size64": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s16)"
+        "size": "64px"
       },
       "badge": {
-        "size": "var(--seed-v3-unit-s6)"
+        "size": "24px"
       }
     }
   },
@@ -66,7 +66,7 @@ export const vars = {
         "size": "80px"
       },
       "badge": {
-        "size": "var(--seed-v3-unit-s6)"
+        "size": "24px"
       }
     }
   },
@@ -76,7 +76,7 @@ export const vars = {
         "size": "96px"
       },
       "badge": {
-        "size": "var(--seed-v3-unit-s8)"
+        "size": "32px"
       }
     }
   }

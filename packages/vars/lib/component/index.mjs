@@ -1,5 +1,6 @@
 export { vars as actionButton } from "./action-button.mjs";
 export { vars as actionChip } from "./action-chip.mjs";
+export { vars as avatarStack } from "./avatar-stack.mjs";
 export { vars as avatar } from "./avatar.mjs";
 export { vars as badge } from "./badge.mjs";
 export { vars as callout } from "./callout.mjs";
@@ -10,6 +11,7 @@ export { vars as controlChip } from "./control-chip.mjs";
 export { vars as dialog } from "./dialog.mjs";
 export { vars as fab } from "./fab.mjs";
 export { vars as helpBubble } from "./help-bubble.mjs";
+export { vars as identityPlaceholder } from "./identity-placeholder.mjs";
 export { vars as inlineBanner } from "./inline-banner.mjs";
 export { vars as progressCircle } from "./progress-circle.mjs";
 export { vars as radio } from "./radio.mjs";

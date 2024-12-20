@@ -18,6 +18,9 @@
       "path": "/components/avatar.json"
     },
     {
+      "path": "/components/avatar-stack.json"
+    },
+    {
       "path": "/components/badge.json"
     },
     {
@@ -43,6 +46,9 @@
     },
     {
       "path": "/components/help-bubble.json"
+    },
+    {
+      "path": "/components/identity-placeholder.json"
     },
     {
       "path": "/components/inline-banner.json"
