@@ -1,5 +1,5 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { useId, useState } from "react";
+import { useState } from "react";
 
 import { dataAttr, elementProps, inputProps } from "@seed-design/dom-utils";
 
@@ -39,31 +39,11 @@ export function useSwitchState(props: UseSwitchStateProps) {
 export interface UseSwitchProps extends UseSwitchStateProps {
   disabled?: boolean;
 
-  required?: boolean;
-
   invalid?: boolean;
-
-  name?: string;
-
-  form?: string;
-
-  value?: string;
 }
 
 export function useSwitch(props: UseSwitchProps) {
-  const id = useId();
-  const {
-    checked,
-    defaultChecked,
-    disabled,
-    form,
-    invalid,
-    name,
-    onCheckedChange,
-    required,
-    value,
-    ...restProps
-  } = props;
+  const { checked, defaultChecked, disabled, invalid, onCheckedChange, ...restProps } = props;
   const {
     setIsChecked,
     isChecked,
@@ -129,11 +109,7 @@ export function useSwitch(props: UseSwitchProps) {
       role: "switch",
       checked: isControlled ? isChecked : undefined,
       disabled: props.disabled,
-      required: props.required,
       "aria-invalid": props.invalid,
-      name: props.name || id,
-      form: props.form,
-      value: props.value,
       ...stateProps,
       onChange(event) {
         setIsChecked(event.currentTarget.checked);
