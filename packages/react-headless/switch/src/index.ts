@@ -18,7 +18,7 @@ export function useSwitchState(props: UseSwitchStateProps) {
     onChange: props.onCheckedChange,
   });
   const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusVisible, setIsFocusVisible] = useState(false);
 
@@ -27,8 +27,8 @@ export function useSwitchState(props: UseSwitchStateProps) {
     setIsChecked,
     isHovered,
     setIsHovered,
-    isPressed,
-    setIsPressed,
+    isActive,
+    setIsActive,
     isFocused,
     setIsFocused,
     isFocusVisible,
@@ -49,8 +49,8 @@ export function useSwitch(props: UseSwitchProps) {
     isChecked,
     setIsHovered,
     isHovered,
-    setIsPressed,
-    isPressed,
+    setIsActive,
+    isActive,
     setIsFocused,
     isFocused,
     setIsFocusVisible,
@@ -60,7 +60,7 @@ export function useSwitch(props: UseSwitchProps) {
   const stateProps = {
     "data-checked": dataAttr(isChecked),
     "data-hover": dataAttr(isHovered),
-    "data-active": dataAttr(isPressed),
+    "data-active": dataAttr(isActive),
     "data-focus": dataAttr(isFocused),
     "data-focus-visible": dataAttr(isFocusVisible),
     "data-disabled": dataAttr(props.disabled),
@@ -83,14 +83,14 @@ export function useSwitch(props: UseSwitchProps) {
         setIsHovered(true);
       },
       onPointerDown() {
-        setIsPressed(true);
+        setIsActive(true);
       },
       onPointerUp() {
-        setIsPressed(false);
+        setIsActive(false);
       },
       onPointerLeave() {
         setIsHovered(false);
-        setIsPressed(false);
+        setIsActive(false);
       },
     }),
 
@@ -125,12 +125,12 @@ export function useSwitch(props: UseSwitchProps) {
       },
       onKeyDown(event) {
         if (event.key === " ") {
-          setIsPressed(true);
+          setIsActive(true);
         }
       },
       onKeyUp(event) {
         if (event.key === " ") {
-          setIsPressed(false);
+          setIsActive(false);
         }
       },
     }),

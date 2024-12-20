@@ -75,6 +75,9 @@
       "path": "/components/text-button.json"
     },
     {
+      "path": "/components/toggle-button.json"
+    },
+    {
       "path": "/components/typography.json"
     },
     {

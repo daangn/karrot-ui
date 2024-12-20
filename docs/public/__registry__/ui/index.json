@@ -31,6 +31,16 @@
     ]
   },
   {
+    "name": "toggle-button",
+    "dependencies": [
+      "@radix-ui/react-slot",
+      "@seed-design/react-toggle"
+    ],
+    "files": [
+      "ui:toggle-button.tsx"
+    ]
+  },
+  {
     "name": "action-chip",
     "dependencies": [
       "@radix-ui/react-slot"

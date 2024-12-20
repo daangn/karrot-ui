@@ -7815,6 +7815,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/react-toggle@npm:0.0.0, @seed-design/react-toggle@workspace:packages/react-headless/toggle":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-toggle@workspace:packages/react-headless/toggle"
+  dependencies:
+    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    nanobundle: "npm:^1.6.0"
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/recipe-generator-cli@npm:0.0.0, @seed-design/recipe-generator-cli@workspace:packages/recipe-generator/cli":
   version: 0.0.0-use.local
   resolution: "@seed-design/recipe-generator-cli@workspace:packages/recipe-generator/cli"
@@ -13040,6 +13053,7 @@ __metadata:
     "@seed-design/react-switch": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-tabs": "npm:0.0.0-alpha-20241209060641"
     "@seed-design/react-text-field": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-toggle": "npm:0.0.0"
     "@seed-design/recipe": "npm:0.0.0-alpha-20241212122822"
     "@seed-design/rootage-cli": "npm:0.0.0"
     "@seed-design/rootage-core": "npm:0.0.0"

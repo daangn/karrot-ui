@@ -18,7 +18,7 @@ export function useCheckboxState(props: UseCheckboxStateProps) {
     onChange: props.onCheckedChange,
   });
   const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusVisible, setIsFocusVisible] = useState(false);
 
@@ -27,8 +27,8 @@ export function useCheckboxState(props: UseCheckboxStateProps) {
     setIsChecked,
     isHovered,
     setIsHovered,
-    isPressed,
-    setIsPressed,
+    isActive,
+    setIsActive,
     isFocused,
     setIsFocused,
     isFocusVisible,
@@ -50,8 +50,8 @@ export function useCheckbox(props: UseCheckboxProps) {
     isChecked,
     setIsHovered,
     isHovered,
-    setIsPressed,
-    isPressed,
+    setIsActive,
+    isActive,
     setIsFocused,
     isFocused,
     setIsFocusVisible,
@@ -61,7 +61,7 @@ export function useCheckbox(props: UseCheckboxProps) {
   const stateProps = {
     "data-checked": dataAttr(isChecked),
     "data-hover": dataAttr(isHovered),
-    "data-active": dataAttr(isPressed),
+    "data-active": dataAttr(isActive),
     "data-focus": dataAttr(isFocused),
     "data-focus-visible": dataAttr(isFocusVisible),
     "data-disabled": dataAttr(props.disabled),
@@ -85,14 +85,14 @@ export function useCheckbox(props: UseCheckboxProps) {
         setIsHovered(true);
       },
       onPointerDown() {
-        setIsPressed(true);
+        setIsActive(true);
       },
       onPointerUp() {
-        setIsPressed(false);
+        setIsActive(false);
       },
       onPointerLeave() {
         setIsHovered(false);
-        setIsPressed(false);
+        setIsActive(false);
       },
     }),
 
@@ -121,12 +121,12 @@ export function useCheckbox(props: UseCheckboxProps) {
       },
       onKeyDown(event) {
         if (event.key === " ") {
-          setIsPressed(true);
+          setIsActive(true);
         }
       },
       onKeyUp(event) {
         if (event.key === " ") {
-          setIsPressed(false);
+          setIsActive(false);
         }
       },
     }),

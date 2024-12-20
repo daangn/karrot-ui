@@ -22,11 +22,13 @@ import tab from "./tab.recipe";
 import tabs from "./tabs.recipe";
 import textButton from "./text-button.recipe";
 import textField from "./text-field.recipe";
+import toggleButton from "./toggle-button";
 
 const recipes = {
   avatar,
   avatarStack,
   actionButton,
+  toggleButton,
   badge,
   radio,
   dialog,

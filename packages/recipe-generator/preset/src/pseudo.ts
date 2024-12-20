@@ -10,6 +10,8 @@ export const readOnly = ":is([data-readonly])";
 
 export const checked = ":is(:checked, [data-checked])";
 
+export const pressed = ":is([aria-pressed=true], [data-pressed])";
+
 export const selected = ":is(:selected, [data-selected])";
 
 export const open = ':is([data-state="open"], [data-open])';
