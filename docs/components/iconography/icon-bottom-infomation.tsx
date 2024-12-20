@@ -30,12 +30,19 @@ export const IconBottomInfomation = () => {
   const isFatIcon = selectedIcon.metadatas.includes(Tag.fat);
   const isServiceIcon = selectedIcon.metadatas.includes(Tag.service);
   const serviceName = getServiceName(selectedIcon.metadatas);
+  const highLightedName = selectedIcon.name.replace(
+    search,
+    `<span class="text-seed-fg-brand">${search}</span>`,
+  );
 
   return (
     <div className="flex justify-between fixed bottom-0 min-h-28 left-0 right-0 bg-seed-bg-layer-default border-t border-gray-200 p-4 z-30">
       <div className="flex flex-col justify-center gap-2">
         <div className="flex gap-4 items-end">
-          <div className="text-xl font-bold">{selectedIcon.name}</div>
+          <div
+            className="text-xl font-bold"
+            dangerouslySetInnerHTML={{ __html: highLightedName }}
+          />
           <div className="text-sm">{pascalCaseIconName}</div>
           <div className="flex flex-col gap-1">
             {serviceName && (
