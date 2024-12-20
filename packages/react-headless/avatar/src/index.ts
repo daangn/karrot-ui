@@ -1,21 +1,21 @@
-import { useLayoutEffect } from "@radix-ui/react-use-layout-effect";
 import { dataAttr, elementProps, imgProps } from "@seed-design/dom-utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type LoadingStatus = "loading" | "loaded" | "error";
 
 export interface UseAvatarStateProps {
-  src?: string;
-
   onLoadingStatusChange?: (status: LoadingStatus) => void;
 }
 
 export function useAvatarState(props: UseAvatarStateProps) {
-  const { src, onLoadingStatusChange } = props;
+  const [src, setSrc] = useState<string | null>(null);
+  const { onLoadingStatusChange } = props;
   const [loadingStatus, setLoadingStatus] = useState<LoadingStatus>("loading");
 
   const events = {
-    srcChange: () => {
+    setSrc: (payload: { src: string }) => {
+      if (src === payload.src) return;
+      setSrc(payload.src);
       setLoadingStatus("loading");
       onLoadingStatusChange?.("loading");
     },
@@ -29,32 +29,6 @@ export function useAvatarState(props: UseAvatarStateProps) {
     },
   };
 
-  useLayoutEffect(() => {
-    if (!src) {
-      events.loadError();
-      return;
-    }
-
-    let isMounted = true;
-    const image = new window.Image();
-
-    events.srcChange();
-
-    image.onload = () => {
-      if (!isMounted) return;
-      events.loadSuccess();
-    };
-    image.onerror = () => {
-      if (!isMounted) return;
-      events.loadError();
-    };
-    image.src = src;
-
-    return () => {
-      isMounted = false;
-    };
-  }, [src]);
-
   return {
     loadingStatus,
     events,
@@ -65,7 +39,7 @@ export interface UseAvatarProps extends UseAvatarStateProps {}
 
 export function useAvatar(props: UseAvatarProps) {
   const { ...restProps } = props;
-  const { loadingStatus } = useAvatarState(props);
+  const { loadingStatus, events } = useAvatarState(props);
   const isLoaded = loadingStatus === "loaded";
 
   const stateProps = {
@@ -79,12 +53,34 @@ export function useAvatar(props: UseAvatarProps) {
     rootProps: elementProps({
       ...stateProps,
     }),
-    imageProps: imgProps({
-      hidden: !isLoaded,
-      "data-visible": dataAttr(isLoaded),
-      src: props.src,
-      ...stateProps,
-    }),
+    getImageProps: ({
+      src,
+      onLoad,
+      onError,
+    }: {
+      src?: string;
+      onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
+      onError?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
+    }) => {
+      useEffect(() => {
+        events.setSrc({ src });
+      }, [src]);
+
+      return imgProps({
+        hidden: !isLoaded,
+        "data-visible": dataAttr(isLoaded),
+        src,
+        onLoad: (e) => {
+          events.loadSuccess();
+          onLoad?.(e);
+        },
+        onError: (e) => {
+          events.loadError();
+          onError?.(e);
+        },
+        ...stateProps,
+      });
+    },
     fallbackProps: elementProps({
       hidden: isLoaded,
       "data-visible": dataAttr(!isLoaded),

@@ -16,6 +16,11 @@ export const registryUI: RegistryUI = [
     files: ["ui:alert-dialog.tsx"],
   },
   {
+    name: "avatar",
+    dependencies: ["@radix-ui/react-slot", "@seed-design/react-avatar"],
+    files: ["ui:avatar.tsx"],
+  },
+  {
     name: "action-button",
     dependencies: ["@radix-ui/react-slot"],
     files: ["ui:action-button.tsx"],

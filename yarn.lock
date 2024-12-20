@@ -7660,7 +7660,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-avatar@workspace:packages/react-headless/avatar":
+"@seed-design/react-avatar@npm:0.0.0-alpha-20241030023710, @seed-design/react-avatar@workspace:packages/react-headless/avatar":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-avatar@workspace:packages/react-headless/avatar"
   dependencies:
@@ -13029,6 +13029,7 @@ __metadata:
     "@sanity/table": "npm:^1.1.2"
     "@sanity/vision": "npm:3"
     "@sanity/visual-editing": "npm:^2.10.5"
+    "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-checkbox": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-dismissible": "npm:0.0.0"
     "@seed-design/react-icon": "npm:^0.7.3"
