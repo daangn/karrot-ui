@@ -1,5 +1,5 @@
 import { dataAttr, elementProps, imgProps } from "@seed-design/dom-utils";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 type LoadingStatus = "loading" | "loaded" | "error";
 
@@ -62,7 +62,7 @@ export function useAvatar(props: UseAvatarProps) {
       onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
       onError?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
     }) => {
-      useEffect(() => {
+      useLayoutEffect(() => {
         events.setSrc({ src });
       }, [src]);
 
