@@ -17,6 +17,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "avatar",
+    innerDependencies: ["identity-placeholder"],
     dependencies: ["@radix-ui/react-slot", "@seed-design/react-avatar"],
     files: ["ui:avatar.tsx"],
   },

@@ -10,6 +10,9 @@
   },
   {
     "name": "avatar",
+    "innerDependencies": [
+      "identity-placeholder"
+    ],
     "dependencies": [
       "@radix-ui/react-slot",
       "@seed-design/react-avatar"
