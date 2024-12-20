@@ -135,7 +135,7 @@ export function getJsonSchema(ctx: RootageCtx): string {
       },
       "dimensionShorthand": {
         "type": "string",
-        "pattern": "^\\d+(\\.\\d+)?(px|rem)$"
+        "pattern": "^-?\\d+(\\.\\d+)?(px|rem)$"
       },
       "durationShorthand": {
         "type": "string",

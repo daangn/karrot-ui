@@ -24,7 +24,7 @@ function parseColor(expr: unknown): ColorExpression | null {
 
 function parseDimension(expr: unknown): DimensionExpression | null {
   if (typeof expr === "string") {
-    const regex = /^(\d+(\.\d+)?)(px|rem)$/;
+    const regex = /^(-?\d+(\.\d+)?)(px|rem)$/;
     const match = expr.match(regex);
     if (match) {
       const value = Number.parseFloat(match[1]!);

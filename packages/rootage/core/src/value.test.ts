@@ -55,6 +55,18 @@ describe("parseValueExpression", () => {
     });
   });
 
+  it("should parse dimension with negative value", () => {
+    const expression = "-16px";
+
+    const result = parseValueExpression(expression);
+
+    expect(result).toEqual({
+      type: "dimension",
+      value: -16,
+      unit: "px",
+    });
+  });
+
   it("should reject invalid dimension", () => {
     const expression = "16em";
 

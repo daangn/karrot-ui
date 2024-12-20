@@ -149,7 +149,7 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
         },
         \\"dimensionShorthand\\": {
           \\"type\\": \\"string\\",
-          \\"pattern\\": \\"^\\\\\\\\d+(\\\\\\\\.\\\\\\\\d+)?(px|rem)$\\"
+          \\"pattern\\": \\"^-?\\\\\\\\d+(\\\\\\\\.\\\\\\\\d+)?(px|rem)$\\"
         },
         \\"durationShorthand\\": {
           \\"type\\": \\"string\\",
