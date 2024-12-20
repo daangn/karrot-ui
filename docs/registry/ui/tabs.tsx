@@ -200,9 +200,14 @@ export const TabTrigger = React.forwardRef<
     return (
       <button
         ref={ref}
-        {...rootProps}
         className={clsx(root, className)}
+        {...rootProps}
         {...otherProps}
+        // FIXME: temporal fix for event merging, should be replaced with `mergeProps`.
+        onClick={(e) => {
+          rootProps.onClick?.(e);
+          otherProps.onClick?.(e);
+        }}
       >
         <span className={label} {...labelProps}>
           {children}
