@@ -33,16 +33,16 @@
 .textButton__suffixIcon {
     margin-inline-start: var(--seed-v3-unit-s0_5);
 }
-.textButton__root--variant_brand {
+.textButton__root--tone_brand {
     color: var(--seed-v3-color-fg-brand);
 }
-.textButton__root--variant_neutral {
+.textButton__root--tone_neutral {
     color: var(--seed-v3-color-fg-neutral);
 }
-.textButton__root--variant_neutralSubtle {
+.textButton__root--tone_neutralSubtle {
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
-.textButton__root--variant_danger {
+.textButton__root--tone_danger {
     color: var(--seed-v3-color-fg-danger);
 }
 .textButton__root--size_large {

@@ -3,7 +3,7 @@ import { TextButton } from "seed-design/ui/text-button";
 
 export default function TextButtonNeutral() {
   return (
-    <TextButton variant="neutral" prefixIcon={<IconPlusCircleLine />}>
+    <TextButton tone="neutral" prefixIcon={<IconPlusCircleLine />}>
       추가
     </TextButton>
   );

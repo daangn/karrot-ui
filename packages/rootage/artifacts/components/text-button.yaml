@@ -22,19 +22,19 @@ data:
     disabled:
       root:
         color: $color.fg.disabled
-  variant=brand:
+  tone=brand:
     enabled:
       root:
         color: $color.fg.brand
-  variant=neutral:
+  tone=neutral:
     enabled:
       root:
         color: $color.fg.neutral
-  variant=neutral subtle:
+  tone=neutral subtle:
     enabled:
       root:
         color: $color.fg.neutral-subtle
-  variant=danger:
+  tone=danger:
     enabled:
       root:
         color: $color.fg.danger

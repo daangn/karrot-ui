@@ -51,29 +51,29 @@ const textButton = defineRecipe({
     },
   },
   defaultVariants: {
-    variant: "brand",
+    tone: "brand",
     size: "medium",
   },
   variants: {
-    variant: {
+    tone: {
       brand: {
         root: {
-          color: vars.variantBrand.enabled.root.color,
+          color: vars.toneBrand.enabled.root.color,
         },
       },
       neutral: {
         root: {
-          color: vars.variantNeutral.enabled.root.color,
+          color: vars.toneNeutral.enabled.root.color,
         },
       },
       neutralSubtle: {
         root: {
-          color: vars.variantNeutralSubtle.enabled.root.color,
+          color: vars.toneNeutralSubtle.enabled.root.color,
         },
       },
       danger: {
         root: {
-          color: vars.variantDanger.enabled.root.color,
+          color: vars.toneDanger.enabled.root.color,
         },
       },
     },

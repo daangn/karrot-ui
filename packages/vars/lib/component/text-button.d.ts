@@ -27,28 +27,28 @@ export declare const vars: {
       }
     }
   },
-  "variantBrand": {
+  "toneBrand": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-fg-brand)"
       }
     }
   },
-  "variantNeutral": {
+  "toneNeutral": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-fg-neutral)"
       }
     }
   },
-  "variantNeutralSubtle": {
+  "toneNeutralSubtle": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-fg-neutral-subtle)"
       }
     }
   },
-  "variantDanger": {
+  "toneDanger": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-fg-danger)"

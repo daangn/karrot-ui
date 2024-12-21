@@ -20,14 +20,14 @@ const textButtonSlotNames = [
 ];
 
 const defaultVariant = {
-  "variant": "brand",
+  "tone": "brand",
   "size": "medium"
 };
 
 const compoundVariants = [];
 
 export const textButtonVariantMap = {
-  "variant": [
+  "tone": [
     "brand",
     "neutral",
     "neutralSubtle",
