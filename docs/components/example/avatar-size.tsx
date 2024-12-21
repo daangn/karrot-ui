@@ -1,4 +1,4 @@
-import { Flex } from "@/registry/ui/flex";
+import { Flex } from "seed-design/ui/layout";
 import { Avatar, AvatarFallback, AvatarImage } from "seed-design/ui/avatar";
 
 export default function AvatarSize() {

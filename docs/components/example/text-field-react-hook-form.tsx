@@ -1,6 +1,6 @@
 "use client";
 
-import { ActionButton } from "@/registry/ui/action-button";
+import { ActionButton } from "seed-design/ui/action-button";
 import { IconHouseLine } from "@daangn/react-monochrome-icon";
 import { useForm } from "react-hook-form";
 import { FormControl, TextField } from "seed-design/ui/text-field";

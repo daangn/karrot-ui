@@ -1,4 +1,4 @@
-import { IdentityPlaceholder } from "@/registry/ui/identity-placeholder";
+import { IdentityPlaceholder } from "seed-design/ui/identity-placeholder";
 import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from "seed-design/ui/avatar";
 
 export default function AvatarWithBadge() {

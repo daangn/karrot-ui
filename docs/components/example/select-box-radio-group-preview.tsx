@@ -1,4 +1,4 @@
-import { SelectBoxRadioGroup, SelectBoxRadio } from "@/registry/ui/select-box-group";
+import { SelectBoxRadioGroup, SelectBoxRadio } from "seed-design/ui/select-box-group";
 
 export default function SelectBoxRadioGroupPreview() {
   return (

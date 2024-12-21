@@ -1,4 +1,4 @@
-import { FormControl, MultilineTextField } from "@/registry/ui/text-field";
+import { FormControl, MultilineTextField } from "seed-design/ui/text-field";
 
 export default function MultilineTextFieldEnabled() {
   return (

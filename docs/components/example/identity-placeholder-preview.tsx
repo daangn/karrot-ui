@@ -1,5 +1,5 @@
-import { Flex } from "@/registry/ui/flex";
-import { IdentityPlaceholder } from "@/registry/ui/identity-placeholder";
+import { Flex } from "seed-design/ui/layout";
+import { IdentityPlaceholder } from "seed-design/ui/identity-placeholder";
 
 export default function IdentityPlaceholderPreview() {
   return (
