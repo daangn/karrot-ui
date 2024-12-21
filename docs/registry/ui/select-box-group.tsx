@@ -37,10 +37,7 @@ const useSelectBoxContext = () => {
 };
 
 export interface SelectBoxRadioGroupProps
-  extends Assign<
-    React.HTMLAttributes<HTMLDivElement>,
-    Omit<UseRadioGroupProps, "disabled">
-  > {}
+  extends Assign<React.HTMLAttributes<HTMLDivElement>, UseRadioGroupProps> {}
 
 export const SelectBoxRadioGroup = React.forwardRef<
   HTMLDivElement,
@@ -76,7 +73,7 @@ export interface SelectBoxRadioProps
   extends SelectBoxGroupVariantProps,
     Assign<
       Omit<React.HTMLAttributes<HTMLInputElement>, "children">,
-      Omit<RadioItemProps, "disabled" | "invalid">
+      RadioItemProps
     > {
   label: string;
   description?: string;
@@ -135,7 +132,7 @@ export interface SelectBoxCheckProps
   extends SelectBoxGroupVariantProps,
     Assign<
       Omit<React.InputHTMLAttributes<HTMLInputElement>, "children">,
-      Omit<UseCheckboxProps, "disabled" | "invalid">
+      UseCheckboxProps
     > {
   label: string;
   description?: string;
