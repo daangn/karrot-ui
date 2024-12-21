@@ -6,4 +6,5 @@ export * as $gradient from "./gradient";
 export * as $horizontalSpacing from "./horizontal-spacing";
 export * as $lineHeight from "./line-height";
 export * as $radius from "./radius";
+export * as $timingFunction from "./timing-function";
 export * as $unit from "./unit";
