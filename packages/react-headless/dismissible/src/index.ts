@@ -1,37 +1,37 @@
 import * as React from "react";
 
-export interface DismissibleProps {
+export interface UseDismissibleProps {
   /**
    * @default true
    */
   defaultOpen?: boolean;
-  isOpen?: boolean;
+  open?: boolean;
   onDismiss?: () => void;
 }
 
 export function useDismissible({
   defaultOpen = true,
-  isOpen: isPropOpen,
+  open: propOpen,
   onDismiss,
-}: DismissibleProps) {
-  const [isStateOpen, setIsStateOpen] = React.useState(isPropOpen ?? defaultOpen);
+}: UseDismissibleProps) {
+  const [stateOpen, setStateOpen] = React.useState(propOpen ?? defaultOpen);
 
   function onDismissButtonClick() {
     onDismiss?.();
 
-    if (isPropOpen === undefined) {
-      setIsStateOpen(false);
+    if (propOpen === undefined) {
+      setStateOpen(false);
     }
   }
 
   React.useEffect(() => {
-    if (isPropOpen !== undefined && isPropOpen !== isStateOpen) {
-      setIsStateOpen(isPropOpen);
+    if (propOpen !== undefined && propOpen !== stateOpen) {
+      setStateOpen(propOpen);
     }
-  }, [isPropOpen, isStateOpen]);
+  }, [propOpen, stateOpen]);
 
   return {
-    isOpen: isStateOpen,
+    open: stateOpen,
     onDismissButtonClick,
   };
 }

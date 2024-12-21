@@ -11,7 +11,7 @@ import {
 } from "@seed-design/recipe/inlineBanner";
 import {
   useDismissible,
-  type DismissibleProps,
+  type UseDismissibleProps,
 } from "@seed-design/react-dismissible";
 import {
   IconChevronRightLine,
@@ -167,7 +167,7 @@ export const InlineBanner = React.forwardRef<HTMLDivElement, InlineBannerProps>(
 InlineBanner.displayName = "InlineBanner";
 
 export interface DismissibleInlineBannerProps
-  extends DismissibleProps,
+  extends UseDismissibleProps,
     InlineBannerVariantProps,
     React.HTMLAttributes<HTMLDivElement> {
   variant?: Exclude<
@@ -189,7 +189,7 @@ export const DismissibleInlineBanner = React.forwardRef<
       variant = "neutralWeak",
       icon,
       defaultOpen,
-      isOpen: isPropOpen,
+      open: propOpen,
       onDismiss,
       dismissAriaLabel,
       ...otherProps
@@ -198,13 +198,13 @@ export const DismissibleInlineBanner = React.forwardRef<
   ) => {
     const classNames = inlineBanner({ variant });
 
-    const { isOpen, onDismissButtonClick } = useDismissible({
+    const { open, onDismissButtonClick } = useDismissible({
       defaultOpen,
-      isOpen: isPropOpen,
+      open: propOpen,
       onDismiss,
     });
 
-    if (!isOpen) return null;
+    if (!open) return null;
 
     return (
       <div
@@ -238,9 +238,6 @@ export interface ActionableInlineBannerProps
   extends InlineBannerVariantProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
-  onClick: NonNullable<
-    React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"]
-  >;
 }
 
 export const ActionableInlineBanner = React.forwardRef<
@@ -254,7 +251,6 @@ export const ActionableInlineBanner = React.forwardRef<
       type = "button",
       variant = "neutralWeak",
       icon,
-      onClick,
       ...otherProps
     },
     ref,
@@ -262,7 +258,6 @@ export const ActionableInlineBanner = React.forwardRef<
     const classNames = inlineBanner({ variant });
     return (
       <button
-        onClick={onClick}
         ref={ref}
         className={clsx(classNames.root, className)}
         type={type}

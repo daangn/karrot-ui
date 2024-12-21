@@ -8,7 +8,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
 import {
   useDismissible,
-  type DismissibleProps,
+  type UseDismissibleProps,
 } from "@seed-design/react-dismissible";
 import {
   IconChevronRightFill,
@@ -160,7 +160,7 @@ export const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
 Callout.displayName = "Callout";
 
 export interface DismissibleCalloutProps
-  extends DismissibleProps,
+  extends UseDismissibleProps,
     CalloutVariantProps,
     React.HTMLAttributes<HTMLDivElement> {
   dismissAriaLabel: string;
@@ -176,7 +176,7 @@ export const DismissibleCallout = React.forwardRef<
       className,
       variant = "neutral",
       defaultOpen,
-      isOpen: isPropOpen,
+      open: propOpen,
       onDismiss,
       dismissAriaLabel,
       ...otherProps
@@ -185,13 +185,13 @@ export const DismissibleCallout = React.forwardRef<
   ) => {
     const classNames = callout({ variant });
 
-    const { isOpen, onDismissButtonClick } = useDismissible({
+    const { open, onDismissButtonClick } = useDismissible({
       defaultOpen,
-      isOpen: isPropOpen,
+      open: propOpen,
       onDismiss,
     });
 
-    if (!isOpen) return null;
+    if (!open) return null;
 
     return (
       <div
