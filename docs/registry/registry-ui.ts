@@ -32,6 +32,11 @@ export const registryUI: RegistryUI = [
     files: ["ui:toggle-button.tsx"],
   },
   {
+    name: "fab",
+    dependencies: ["@radix-ui/react-slot"],
+    files: ["ui:fab.tsx"],
+  },
+  {
     name: "action-chip",
     dependencies: ["@radix-ui/react-slot"],
     files: ["ui:action-chip.tsx"],

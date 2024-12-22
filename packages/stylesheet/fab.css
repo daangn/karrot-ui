@@ -1,0 +1,35 @@
+.fab__root {
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none;
+}
+.fab__root:is(:focus, [data-focus]) {
+    outline: none;
+}
+.fab__root:is(:disabled, [disabled], [data-disabled]) {
+    cursor: not-allowed;
+}
+.fab__root {
+    background: var(--seed-v3-color-bg-layer-floating);
+    border-radius: var(--seed-v3-radius-full);
+}
+.fab__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.fab__root--size_small {
+    width: 40px;
+    height: 40px;
+}
+.fab__root--size_medium {
+    width: 48px;
+    height: 48px;
+}

@@ -9,6 +9,7 @@ export { vars as chipTab } from "./chip-tab";
 export { vars as chipTablist } from "./chip-tablist";
 export { vars as controlChip } from "./control-chip";
 export { vars as dialog } from "./dialog";
+export { vars as extendedFab } from "./extended-fab";
 export { vars as fab } from "./fab";
 export { vars as helpBubble } from "./help-bubble";
 export { vars as identityPlaceholder } from "./identity-placeholder";

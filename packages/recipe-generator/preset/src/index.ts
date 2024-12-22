@@ -9,6 +9,7 @@ import chipTab from "./chip-tab.recipe";
 import chipTabs from "./chip-tabs.recipe";
 import controlChip from "./control-chip.recipe";
 import dialog from "./dialog.recipe";
+import fab from "./fab.recipe";
 import helpBubble from "./help-bubble.recipe";
 import identityPlaceholder from "./identity-placeholder";
 import inlineBanner from "./inline-banner.recipe";
@@ -29,6 +30,7 @@ const recipes = {
   avatarStack,
   actionButton,
   toggleButton,
+  fab,
   badge,
   radio,
   dialog,

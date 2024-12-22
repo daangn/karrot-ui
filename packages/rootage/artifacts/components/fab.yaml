@@ -8,7 +8,15 @@ data:
     enabled:
       root:
         color: $color.bg.layer-floating
-        borderRadius: $radius.full
+        cornerRadius: $radius.full
+        shadow:
+          type: shadow
+          value:
+            - offsetX: 0px
+              offsetY: 2px
+              blur: 6px
+              spread: 0px
+              color: "#00000026"
       icon:
         color: $color.fg.neutral
     pressed:
@@ -17,12 +25,12 @@ data:
   size=small:
     enabled:
       root:
-        size: $unit.s10
+        size: 40px
       icon:
-        size: $unit.s5
+        size: 20px
   size=medium:
     enabled:
       root:
-        size: $unit.s12
+        size: 48px
       icon:
-        size: $unit.s6
+        size: 22px
