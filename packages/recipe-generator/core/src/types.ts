@@ -10,9 +10,13 @@ type SVGExtraProperties = {
 
 export type StyleObject = CSS.Properties &
   SVGExtraProperties & {
-    [P in CSS.SimplePseudos as `&${P}`]?: CSS.Properties;
+    [P in CSS.SimplePseudos as `&${P}`]?: CSS.Properties & {
+      [K in string as `--${K}`]?: string;
+    };
   } & {
-    [K in string as `&${K}`]?: CSS.Properties;
+    [K in string as `&${K}`]?: CSS.Properties & {
+      [K in string as `--${K}`]?: string;
+    };
   } & {
     [K in string as `--${K}`]?: string;
   };
