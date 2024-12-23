@@ -9,7 +9,6 @@ data:
     enabled:
       label:
         color: $color.fg.neutral
-        lineHeight: $line-height.s5
       root:
         gap: $unit.s2
     bold:

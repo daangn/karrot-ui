@@ -31,7 +31,6 @@
 }
 .checkbox__label {
     color: var(--seed-v3-color-fg-neutral);
-    line-height: var(--seed-v3-line-height-s5);
 }
 .checkbox__label--bold_true {
     font-weight: var(--seed-v3-font-weight-bold);
@@ -114,7 +113,8 @@
 }
 .checkbox__label--size_large {
     font-size: var(--seed-v3-font-size-s5);
-    margin-block-start: 7px;
+    line-height: var(--seed-v3-line-height-s5);
+    margin-block-start: calc(18px - 0.65625rem);
 }
 .checkbox__root--size_medium {
     min-height: var(--seed-v3-unit-s8);
@@ -127,7 +127,8 @@
 }
 .checkbox__label--size_medium {
     font-size: var(--seed-v3-font-size-s4);
-    margin-block-start: 6px;
+    line-height: var(--seed-v3-line-height-s4);
+    margin-block-start: calc(16px - 0.59375rem);
 }
 .checkbox__root--size_small {
     min-height: var(--seed-v3-unit-s8);
@@ -140,7 +141,8 @@
 }
 .checkbox__label--size_small {
     font-size: var(--seed-v3-font-size-s3);
-    margin-block-start: 5px;
+    line-height: var(--seed-v3-line-height-s3);
+    margin-block-start: calc(14px - 0.5625rem);
 }
 .checkbox__icon--size_small-variant_ghost {
     width: 13.5px;
