@@ -43,11 +43,9 @@ export const Fab = React.forwardRef<HTMLButtonElement, FabProps>(
         {...dataProps}
         {...otherProps}
       >
-        (
         <Slot aria-hidden {...dataProps} className={classNames.icon}>
           {children}
         </Slot>
-        )
       </Comp>
     );
   },
