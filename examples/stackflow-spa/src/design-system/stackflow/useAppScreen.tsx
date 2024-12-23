@@ -119,8 +119,10 @@ export function useAppScreen(props: {
 
       return null;
     },
-    onSwiped() {
-      pop();
+    onSwipeEnd({ swiped }) {
+      if (swiped) {
+        pop();
+      }
     },
   });
 

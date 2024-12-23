@@ -38,6 +38,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         textColor: vars.$color.fg.neutral,
       },
       backgroundColor: vars.$color.bg.layerDefault,
+      dimBackgroundColor: vars.$color.bg.overlay,
       theme,
     }),
     historySyncPlugin({

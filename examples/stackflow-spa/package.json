@@ -19,7 +19,7 @@
     "@seed-design/stylesheet": "3.0.0-alpha-20241212122822",
     "@seed-design/vars": "0.0.0",
     "@stackflow/core": "^1.1.0",
-    "@stackflow/plugin-basic-ui": "^1.10.1",
+    "@stackflow/plugin-basic-ui": "^1.11.1",
     "@stackflow/plugin-history-sync": "^1.7.0",
     "@stackflow/plugin-renderer-basic": "^1.1.13",
     "@stackflow/react": "^1.4.1",
