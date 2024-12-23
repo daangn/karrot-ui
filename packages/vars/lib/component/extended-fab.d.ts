@@ -12,7 +12,10 @@ export declare const vars: {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-solid)"
       },
-      "icon": {
+      "label": {
+        "color": "var(--seed-v3-color-fg-neutral-inverted)"
+      },
+      "prefixIcon": {
         "color": "var(--seed-v3-color-fg-neutral-inverted)"
       }
     },
@@ -27,7 +30,10 @@ export declare const vars: {
       "root": {
         "color": "var(--seed-v3-color-bg-layer-floating)"
       },
-      "icon": {
+      "label": {
+        "color": "var(--seed-v3-color-fg-neutral)"
+      },
+      "prefixIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       }
     },
@@ -45,7 +51,7 @@ export declare const vars: {
         "paddingX": "var(--seed-v3-unit-s3_5)",
         "paddingY": "var(--seed-v3-unit-s2_5)"
       },
-      "icon": {
+      "prefixIcon": {
         "size": "16px"
       },
       "label": {
@@ -63,7 +69,7 @@ export declare const vars: {
         "paddingX": "var(--seed-v3-unit-s4)",
         "paddingY": "var(--seed-v3-unit-s3)"
       },
-      "icon": {
+      "prefixIcon": {
         "size": "16px"
       },
       "label": {

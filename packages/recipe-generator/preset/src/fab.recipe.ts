@@ -1,7 +1,7 @@
 import { fab as vars } from "@seed-design/vars/component";
 
 import { defineRecipe } from "./helper";
-import { disabled, focus, pseudo } from "./pseudo";
+import { active, disabled, focus, pseudo } from "./pseudo";
 
 const fab = defineRecipe({
   name: "fab",
@@ -27,6 +27,11 @@ const fab = defineRecipe({
 
       background: vars.base.enabled.root.color,
       borderRadius: vars.base.enabled.root.cornerRadius,
+      boxShadow: vars.base.enabled.root.shadow,
+
+      [pseudo(active)]: {
+        background: vars.base.pressed.root.color,
+      },
     },
     icon: {
       display: "inline-flex",

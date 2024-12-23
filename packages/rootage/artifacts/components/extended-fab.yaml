@@ -20,7 +20,9 @@ data:
     enabled:
       root:
         color: $color.bg.neutral-solid
-      icon:
+      label:
+        color: $color.fg.neutral-inverted
+      prefixIcon:
         color: $color.fg.neutral-inverted
     pressed:
       root:
@@ -29,7 +31,9 @@ data:
     enabled:
       root:
         color: $color.bg.layer-floating
-      icon:
+      label:
+        color: $color.fg.neutral
+      prefixIcon:
         color: $color.fg.neutral
     pressed:
       root:
@@ -41,7 +45,7 @@ data:
         gap: $unit.s1
         paddingX: $unit.s3_5
         paddingY: $unit.s2_5
-      icon:
+      prefixIcon:
         size: 16px
       label:
         fontSize: $font-size.s4
@@ -54,7 +58,7 @@ data:
         gap: $unit.s1
         paddingX: $unit.s4
         paddingY: $unit.s3
-      icon:
+      prefixIcon:
         size: 16px
       label:
         fontSize: $font-size.s5

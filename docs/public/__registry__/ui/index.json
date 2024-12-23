@@ -50,6 +50,15 @@
     ]
   },
   {
+    "name": "extended-fab",
+    "dependencies": [
+      "@radix-ui/react-slot"
+    ],
+    "files": [
+      "ui:extended-fab.tsx"
+    ]
+  },
+  {
     "name": "action-chip",
     "dependencies": [
       "@radix-ui/react-slot"

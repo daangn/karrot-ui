@@ -1,0 +1,13 @@
+{
+  "name": "extended-fab",
+  "dependencies": [
+    "@radix-ui/react-slot"
+  ],
+  "registries": [
+    {
+      "name": "extended-fab.tsx",
+      "type": "ui",
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/extendedFab.css\";\n\nimport { Slot } from \"@radix-ui/react-slot\";\nimport {\n  extendedFab,\n  type ExtendedFabVariantProps,\n} from \"@seed-design/recipe/extendedFab\";\nimport clsx from \"clsx\";\nimport * as React from \"react\";\n\nexport interface ExtendedFabProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    ExtendedFabVariantProps {\n  prefixIcon?: React.ReactNode;\n\n  /**\n   * @default false\n   */\n  asChild?: boolean;\n}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/action-button\n */\nexport const ExtendedFab = React.forwardRef<\n  HTMLButtonElement,\n  ExtendedFabProps\n>(\n  (\n    {\n      className,\n      variant = \"neutralSolid\",\n      size = \"medium\",\n      children,\n      prefixIcon,\n      asChild = false,\n      ...otherProps\n    },\n    ref,\n  ) => {\n    const Comp = asChild ? Slot : \"button\";\n    const classNames = extendedFab({ variant, size });\n    const dataProps = {\n      \"data-disabled\": otherProps.disabled ? \"\" : undefined,\n    };\n\n    return (\n      <Comp\n        ref={ref}\n        className={clsx(classNames.root, className)}\n        {...dataProps}\n        {...otherProps}\n      >\n        {prefixIcon && (\n          <Slot aria-hidden {...dataProps} className={classNames.prefixIcon}>\n            {prefixIcon}\n          </Slot>\n        )}\n        <span {...dataProps} className={classNames.label}>\n          {children}\n        </span>\n      </Comp>\n    );\n  },\n);\nExtendedFab.displayName = \"ExtendedFab\";\n"
+    }
+  ]
+}

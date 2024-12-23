@@ -29,7 +29,10 @@
         "root": {
           "color": "$color.bg.neutral-solid"
         },
-        "icon": {
+        "label": {
+          "color": "$color.fg.neutral-inverted"
+        },
+        "prefixIcon": {
           "color": "$color.fg.neutral-inverted"
         }
       },
@@ -44,7 +47,10 @@
         "root": {
           "color": "$color.bg.layer-floating"
         },
-        "icon": {
+        "label": {
+          "color": "$color.fg.neutral"
+        },
+        "prefixIcon": {
           "color": "$color.fg.neutral"
         }
       },
@@ -62,7 +68,7 @@
           "paddingX": "$unit.s3_5",
           "paddingY": "$unit.s2_5"
         },
-        "icon": {
+        "prefixIcon": {
           "size": "16px"
         },
         "label": {
@@ -80,7 +86,7 @@
           "paddingX": "$unit.s4",
           "paddingY": "$unit.s3"
         },
-        "icon": {
+        "prefixIcon": {
           "size": "16px"
         },
         "label": {
