@@ -20,6 +20,7 @@ const variantMap = {
   ...reactionButtonVariantMap,
   disabled: ["false", "true"],
   loading: ["false", "true"],
+  pressed: ["false", "true"],
 };
 
 const CommonStoryTemplate: Story = {
@@ -31,7 +32,7 @@ const CommonStoryTemplate: Story = {
     <VariantTable
       Component={meta.component}
       variantMap={variantMap}
-      render={({ disabled }) => (disabled === "true" ? "Disabled" : "Reaction Button")}
+      render={({ pressed }) => (pressed === "true" ? "선택됨" : "미선택")}
       {...args}
     />
   ),
