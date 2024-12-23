@@ -1,0 +1,139 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "reaction-button",
+    "name": "Reaction Button"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "color": "$color.bg.neutral-weak",
+          "colorDuration": "$duration.s4",
+          "colorTimingFunction": "$timing-function.easing"
+        },
+        "label": {
+          "color": "$color.fg.neutral",
+          "fontWeight": "$font-weight.medium"
+        },
+        "count": {
+          "color": "$color.fg.neutral",
+          "fontWeight": "$font-weight.bold"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.neutral"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.gray-500",
+          "rangeColor": "$color.fg.neutral"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.neutral-weak-pressed"
+        }
+      },
+      "selected": {
+        "root": {
+          "color": "$color.bg.layer-default",
+          "strokeColor": "$color.stroke.brand",
+          "strokeWidth": "1px"
+        },
+        "label": {
+          "color": "$color.fg.brand"
+        },
+        "count": {
+          "color": "$color.fg.brand"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.brand"
+        },
+        "progressCircle": {
+          "trackColor": "$color.palette.carrot-200",
+          "rangeColor": "$color.fg.brand"
+        }
+      },
+      "selected,pressed": {
+        "root": {
+          "color": "$color.bg.layer-default-pressed"
+        }
+      },
+      "disabled": {
+        "root": {
+          "color": "$color.bg.disabled"
+        },
+        "label": {
+          "color": "$color.fg.disabled"
+        },
+        "count": {
+          "color": "$color.fg.disabled"
+        },
+        "prefixIcon": {
+          "color": "$color.fg.disabled"
+        }
+      },
+      "loading": {
+        "root": {
+          "color": "$color.bg.neutral-weak-pressed"
+        }
+      },
+      "selected,loading": {
+        "root": {
+          "color": "$color.bg.layer-default-pressed"
+        }
+      }
+    },
+    "size=xsmall": {
+      "enabled": {
+        "root": {
+          "minHeight": "$unit.s8",
+          "cornerRadius": "$radius.full",
+          "gap": "$unit.s1",
+          "paddingX": "$unit.s3",
+          "paddingY": "$unit.s1_5"
+        },
+        "prefixIcon": {
+          "size": "18px"
+        },
+        "label": {
+          "fontSize": "$font-size.s3",
+          "lineHeight": "$line-height.s3"
+        },
+        "count": {
+          "fontSize": "$font-size.s3",
+          "lineHeight": "$line-height.s3"
+        },
+        "progressCircle": {
+          "size": "14px",
+          "thickness": "2px"
+        }
+      }
+    },
+    "size=small": {
+      "enabled": {
+        "root": {
+          "minHeight": "$unit.s9",
+          "cornerRadius": "$radius.full",
+          "gap": "$unit.s1",
+          "paddingX": "$unit.s3_5",
+          "paddingY": "$unit.s2"
+        },
+        "prefixIcon": {
+          "size": "18px"
+        },
+        "label": {
+          "fontSize": "$font-size.s3",
+          "lineHeight": "$line-height.s3"
+        },
+        "count": {
+          "fontSize": "$font-size.s3",
+          "lineHeight": "$line-height.s3"
+        },
+        "progressCircle": {
+          "size": "14px",
+          "thickness": "2px"
+        }
+      }
+    }
+  }
+}

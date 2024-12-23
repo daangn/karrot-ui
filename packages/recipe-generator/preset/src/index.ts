@@ -16,6 +16,7 @@ import identityPlaceholder from "./identity-placeholder";
 import inlineBanner from "./inline-banner.recipe";
 import progressCircle from "./progress-circle.recipe";
 import radio from "./radio.recipe";
+import reactionButton from "./reaction-button.recipe";
 import segmentedControl from "./segmented-control.recipe";
 import selectBoxGroup from "./select-box-group.recipe";
 import skeleton from "./skeleton";
@@ -31,6 +32,7 @@ const recipes = {
   avatarStack,
   actionButton,
   toggleButton,
+  reactionButton,
   fab,
   extendedFab,
   badge,
