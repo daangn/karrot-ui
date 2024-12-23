@@ -2,8 +2,7 @@ export const vars = {
   "base": {
     "enabled": {
       "label": {
-        "color": "var(--seed-v3-color-fg-neutral)",
-        "lineHeight": "var(--seed-v3-line-height-s5)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       },
       "root": {
         "gap": "var(--seed-v3-unit-s2)"

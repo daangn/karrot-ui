@@ -24,7 +24,7 @@ import tab from "./tab.recipe";
 import tabs from "./tabs.recipe";
 import textButton from "./text-button.recipe";
 import textField from "./text-field.recipe";
-import toggleButton from "./toggle-button";
+import toggleButton from "./toggle-button.recipe";
 
 const recipes = {
   avatar,

@@ -17,8 +17,6 @@ data:
         color: $color.bg.brand-solid
       label:
         color: $color.fg.static-white
-      icon:
-        color: $color.fg.static-white
       prefixIcon:
         color: $color.fg.static-white
       suffixIcon:
@@ -34,8 +32,6 @@ data:
         color: $color.bg.neutral-weak
       label:
         color: $color.fg.neutral
-      icon:
-        color: $color.fg.neutral
       prefixIcon:
         color: $color.fg.neutral
       suffixIcon:
@@ -50,8 +46,6 @@ data:
       root:
         color: $color.bg.disabled
       label:
-        color: $color.fg.disabled
-      icon:
         color: $color.fg.disabled
       prefixIcon:
         color: $color.fg.disabled
@@ -69,8 +63,6 @@ data:
         color: $color.bg.neutral-weak
       label:
         color: $color.fg.neutral
-      icon:
-        color: $color.fg.neutral
       prefixIcon:
         color: $color.fg.neutral
       suffixIcon:
@@ -86,8 +78,6 @@ data:
         color: $color.bg.neutral-weak
       label:
         color: $color.fg.neutral
-      icon:
-        color: $color.fg.neutral
       prefixIcon:
         color: $color.fg.neutral
       suffixIcon:
@@ -102,8 +92,6 @@ data:
       root:
         color: $color.bg.disabled
       label:
-        color: $color.fg.disabled
-      icon:
         color: $color.fg.disabled
       prefixIcon:
         color: $color.fg.disabled
@@ -138,7 +126,7 @@ data:
         minHeight: $unit.s9
         cornerRadius: $radius.full
         gap: $unit.s1
-        paddingX: $unit.s3_5
+        paddingX: $unit.s4
         paddingY: $unit.s2
       prefixIcon:
         size: $unit.s3_5

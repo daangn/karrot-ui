@@ -5,7 +5,7 @@ import { active, pressed, disabled, focus, loading, pseudo } from "./pseudo";
 
 const toggleButton = defineRecipe({
   name: "toggleButton",
-  slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "progressCircle"],
+  slots: ["root", "label", "prefixIcon", "suffixIcon", "progressCircle"],
   base: {
     root: {
       display: "inline-flex",
@@ -26,18 +26,9 @@ const toggleButton = defineRecipe({
       },
 
       transition: `background-color ${vars.base.enabled.root.colorDuration} ${vars.base.enabled.root.colorTimingFunction}`,
-
-      fontWeight: vars.base.enabled.label.fontWeight,
     },
     label: {
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    icon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
+      fontWeight: vars.base.enabled.label.fontWeight,
 
       [pseudo(loading)]: {
         opacity: 0,
@@ -103,15 +94,6 @@ const toggleButton = defineRecipe({
             color: vars.variantBrandSolid.disabled.label.color,
           },
         },
-        icon: {
-          color: vars.variantBrandSolid.enabled.icon.color,
-          [pseudo(pressed)]: {
-            color: vars.variantBrandSolid.selected.icon.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.icon.color,
-          },
-        },
         prefixIcon: {
           color: vars.variantBrandSolid.enabled.prefixIcon.color,
           [pseudo(pressed)]: {
@@ -168,15 +150,6 @@ const toggleButton = defineRecipe({
           },
           [pseudo(disabled)]: {
             color: vars.variantNeutralWeak.disabled.label.color,
-          },
-        },
-        icon: {
-          color: vars.variantNeutralWeak.enabled.icon.color,
-          [pseudo(pressed)]: {
-            color: vars.variantNeutralWeak.selected.icon.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.icon.color,
           },
         },
         prefixIcon: {

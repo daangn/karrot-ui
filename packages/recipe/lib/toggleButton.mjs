@@ -10,10 +10,6 @@ const toggleButtonSlotNames = [
     "toggleButton__label"
   ],
   [
-    "icon",
-    "toggleButton__icon"
-  ],
-  [
     "prefixIcon",
     "toggleButton__prefixIcon"
   ],
