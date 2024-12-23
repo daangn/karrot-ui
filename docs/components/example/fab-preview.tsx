@@ -3,7 +3,7 @@ import { Fab } from "seed-design/ui/fab";
 
 export default function FabPreview() {
   return (
-    <Fab>
+    <Fab aria-label="Example FAB">
       <IconPlusLine />
     </Fab>
   );
