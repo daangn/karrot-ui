@@ -37,6 +37,7 @@ const reactionButton = defineRecipe({
       [pseudo(disabled)]: {
         cursor: "not-allowed",
         background: vars.base.disabled.root.color,
+        boxShadow: `inset 0 0 0 ${vars.base.disabled.root.strokeWidth} ${vars.base.selected.root.strokeColor}`,
       },
       [pseudo(loading)]: {
         background: vars.base.loading.root.color,
@@ -91,6 +92,12 @@ const reactionButton = defineRecipe({
       position: "absolute",
       display: "none",
 
+      "--track-color": vars.base.enabled.progressCircle.trackColor,
+      "--range-color": vars.base.enabled.progressCircle.rangeColor,
+      [pseudo(pressed)]: {
+        "--track-color": vars.base.selected.progressCircle.trackColor,
+        "--range-color": vars.base.selected.progressCircle.rangeColor,
+      },
       [pseudo(loading)]: {
         display: "flex",
       },

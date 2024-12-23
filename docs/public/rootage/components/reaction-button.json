@@ -60,7 +60,8 @@
       },
       "disabled": {
         "root": {
-          "color": "$color.bg.disabled"
+          "color": "$color.bg.disabled",
+          "strokeWidth": "0px"
         },
         "label": {
           "color": "$color.fg.disabled"

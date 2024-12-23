@@ -54,7 +54,8 @@ export const vars = {
     },
     "disabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-disabled)"
+        "color": "var(--seed-v3-color-bg-disabled)",
+        "strokeWidth": "0px"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-disabled)"

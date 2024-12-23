@@ -30,6 +30,7 @@
 .reactionButton__root:is(:disabled, [disabled], [data-disabled]) {
     cursor: not-allowed;
     background: var(--seed-v3-color-bg-disabled);
+    box-shadow: inset 0 0 0 0px var(--seed-v3-color-stroke-brand);
 }
 .reactionButton__root[data-loading] {
     background: var(--seed-v3-color-bg-neutral-weak-pressed);
@@ -81,6 +82,12 @@
 .reactionButton__progressCircle {
     position: absolute;
     display: none;
+    --track-color: var(--seed-v3-color-palette-gray-500);
+    --range-color: var(--seed-v3-color-fg-neutral);
+}
+.reactionButton__progressCircle:is([aria-pressed=true], [data-pressed]) {
+    --track-color: var(--seed-v3-color-palette-carrot-200);
+    --range-color: var(--seed-v3-color-fg-brand);
 }
 .reactionButton__progressCircle[data-loading] {
     display: flex;
