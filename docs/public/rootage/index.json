@@ -45,6 +45,9 @@
       "path": "/components/fab.json"
     },
     {
+      "path": "/components/extended-fab.json"
+    },
+    {
       "path": "/components/help-bubble.json"
     },
     {

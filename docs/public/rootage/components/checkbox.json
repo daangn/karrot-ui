@@ -8,8 +8,7 @@
     "base": {
       "enabled": {
         "label": {
-          "color": "$color.fg.neutral",
-          "lineHeight": "$line-height.s5"
+          "color": "$color.fg.neutral"
         },
         "root": {
           "gap": "$unit.s2"
