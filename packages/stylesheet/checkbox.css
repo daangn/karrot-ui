@@ -114,7 +114,7 @@
 }
 .checkbox__label--size_large {
     font-size: var(--seed-v3-font-size-s5);
-    margin-block-start: 7.5px;
+    margin-block-start: 7px;
 }
 .checkbox__root--size_medium {
     min-height: var(--seed-v3-unit-s8);
@@ -127,7 +127,7 @@
 }
 .checkbox__label--size_medium {
     font-size: var(--seed-v3-font-size-s4);
-    margin-block-start: 6.5px;
+    margin-block-start: 6px;
 }
 .checkbox__root--size_small {
     min-height: var(--seed-v3-unit-s8);

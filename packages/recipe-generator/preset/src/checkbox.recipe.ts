@@ -152,7 +152,7 @@ const checkbox = defineRecipe({
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
-          marginBlockStart: "7.5px", // 수직 위치 보정
+          marginBlockStart: "7px", // 수직 위치 보정
         },
       },
       medium: {
@@ -167,7 +167,7 @@ const checkbox = defineRecipe({
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
-          marginBlockStart: "6.5px", // 수직 위치 보정
+          marginBlockStart: "6px", // 수직 위치 보정
         },
       },
       small: {
