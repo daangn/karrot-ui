@@ -29,9 +29,7 @@ const reactionButton = defineRecipe({
       },
       [pseudo(pressed)]: {
         background: vars.base.selected.root.color,
-        borderStyle: "solid",
-        borderWidth: vars.base.selected.root.strokeWidth,
-        borderColor: vars.base.selected.root.strokeColor,
+        boxShadow: `inset 0 0 0 ${vars.base.selected.root.strokeWidth} ${vars.base.selected.root.strokeColor}`,
       },
       [pseudo(pressed, active)]: {
         background: vars.base.selectedPressed.root.color,
@@ -49,12 +47,26 @@ const reactionButton = defineRecipe({
     },
     label: {
       fontWeight: vars.base.enabled.label.fontWeight,
+      color: vars.base.enabled.label.color,
+      [pseudo(pressed)]: {
+        color: vars.base.selected.label.color,
+      },
+      [pseudo(disabled)]: {
+        color: vars.base.disabled.label.color,
+      },
       [pseudo(loading)]: {
         opacity: 0,
       },
     },
     count: {
       fontWeight: vars.base.enabled.count.fontWeight,
+      color: vars.base.enabled.count.color,
+      [pseudo(pressed)]: {
+        color: vars.base.selected.count.color,
+      },
+      [pseudo(disabled)]: {
+        color: vars.base.disabled.count.color,
+      },
       [pseudo(loading)]: {
         opacity: 0,
       },
@@ -64,6 +76,13 @@ const reactionButton = defineRecipe({
       alignItems: "center",
       justifyContent: "center",
 
+      color: vars.base.enabled.prefixIcon.color,
+      [pseudo(pressed)]: {
+        color: vars.base.selected.prefixIcon.color,
+      },
+      [pseudo(disabled)]: {
+        color: vars.base.disabled.prefixIcon.color,
+      },
       [pseudo(loading)]: {
         opacity: 0,
       },

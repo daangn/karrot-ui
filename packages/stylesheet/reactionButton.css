@@ -22,9 +22,7 @@
 }
 .reactionButton__root:is([aria-pressed=true], [data-pressed]) {
     background: var(--seed-v3-color-bg-layer-default);
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--seed-v3-color-stroke-brand);
+    box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-brand);
 }
 .reactionButton__root:is([aria-pressed=true], [data-pressed]):is(:active, [data-active]) {
     background: var(--seed-v3-color-bg-layer-default-pressed);
@@ -41,12 +39,26 @@
 }
 .reactionButton__label {
     font-weight: var(--seed-v3-font-weight-medium);
+    color: var(--seed-v3-color-fg-neutral);
+}
+.reactionButton__label:is([aria-pressed=true], [data-pressed]) {
+    color: var(--seed-v3-color-fg-brand);
+}
+.reactionButton__label:is(:disabled, [disabled], [data-disabled]) {
+    color: var(--seed-v3-color-fg-disabled);
 }
 .reactionButton__label[data-loading] {
     opacity: 0;
 }
 .reactionButton__count {
     font-weight: var(--seed-v3-font-weight-bold);
+    color: var(--seed-v3-color-fg-neutral);
+}
+.reactionButton__count:is([aria-pressed=true], [data-pressed]) {
+    color: var(--seed-v3-color-fg-brand);
+}
+.reactionButton__count:is(:disabled, [disabled], [data-disabled]) {
+    color: var(--seed-v3-color-fg-disabled);
 }
 .reactionButton__count[data-loading] {
     opacity: 0;
@@ -55,6 +67,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: var(--seed-v3-color-fg-neutral);
+}
+.reactionButton__prefixIcon:is([aria-pressed=true], [data-pressed]) {
+    color: var(--seed-v3-color-fg-brand);
+}
+.reactionButton__prefixIcon:is(:disabled, [disabled], [data-disabled]) {
+    color: var(--seed-v3-color-fg-disabled);
 }
 .reactionButton__prefixIcon[data-loading] {
     opacity: 0;
