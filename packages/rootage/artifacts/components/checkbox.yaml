@@ -74,7 +74,7 @@ data:
   size=small:
     enabled:
       root:
-        minHeight: $unit.s8
+        minHeight: $unit.s7
       label:
         fontSize: $font-size.s3
         lineHeight: $line-height.s3
