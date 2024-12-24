@@ -28,6 +28,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: var(--seed-v3-color-fg-neutral);
 }
 .fab__root--size_small {
     width: 40px;
