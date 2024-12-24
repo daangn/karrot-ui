@@ -19,8 +19,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@daangn/icon-data": "^0.0.18",
-    "@daangn/react-monochrome-icon": "^0.0.13",
+    "@daangn/icon-data": "^0.0.19",
+    "@daangn/react-monochrome-icon": "^0.0.14",
     "@daangn/react-multicolor-icon": "^0.0.12",
     "@next/env": "^15.0.4",
     "@portabletext/react": "^3.1.0",
