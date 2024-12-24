@@ -74,7 +74,8 @@ export declare const vars: {
     },
     "selectedLoading": {
       "root": {
-        "color": "var(--seed-v3-color-bg-layer-default-pressed)"
+        "color": "var(--seed-v3-color-bg-layer-default-pressed)",
+        "strokeWidth": "1px"
       }
     }
   },

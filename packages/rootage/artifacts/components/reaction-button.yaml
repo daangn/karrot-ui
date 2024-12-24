@@ -57,6 +57,7 @@ data:
     selected,loading:
       root:
         color: $color.bg.layer-default-pressed
+        strokeWidth: 1px
   size=xsmall:
     enabled:
       root:

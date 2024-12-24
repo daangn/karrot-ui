@@ -44,6 +44,7 @@ const reactionButton = defineRecipe({
       },
       [pseudo(pressed, loading)]: {
         background: vars.base.selectedLoading.root.color,
+        boxShadow: `inset 0 0 0 ${vars.base.selectedLoading.root.strokeWidth} ${vars.base.selected.root.strokeColor}`,
       },
     },
     label: {

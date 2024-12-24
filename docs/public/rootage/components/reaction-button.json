@@ -80,7 +80,8 @@
       },
       "selected,loading": {
         "root": {
-          "color": "$color.bg.layer-default-pressed"
+          "color": "$color.bg.layer-default-pressed",
+          "strokeWidth": "1px"
         }
       }
     },
