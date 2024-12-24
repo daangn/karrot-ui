@@ -6,7 +6,7 @@ export declare const vars: {
       },
       "content": {
         "background": "var(--seed-v3-color-bg-layer-default)",
-        "borderRadius": "var(--seed-v3-radius-s4)",
+        "borderRadius": "var(--seed-v3-radius-s5)",
         "marginX": "var(--seed-v3-unit-s8)",
         "paddingX": "var(--seed-v3-unit-s5)",
         "paddingY": "var(--seed-v3-unit-s5)",
@@ -22,11 +22,13 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)",
         "fontSize": "var(--seed-v3-font-size-s7)",
+        "lineHeight": "var(--seed-v3-line-height-s7)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "description": {
         "color": "var(--seed-v3-color-fg-neutral)",
         "fontSize": "var(--seed-v3-font-size-s5)",
+        "lineHeight": "var(--seed-v3-line-height-s5)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }

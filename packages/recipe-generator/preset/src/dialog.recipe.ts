@@ -1,5 +1,6 @@
 import { dialog as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
+import { pseudo } from "./pseudo";
 
 const dialog = defineRecipe({
   name: "dialog",
@@ -9,6 +10,32 @@ const dialog = defineRecipe({
       position: "fixed",
       inset: 0,
       background: vars.base.enabled.backdrop.background,
+
+      // TODO: move to rootage
+      [pseudo("[data-transition-state='exit-active']")]: {
+        animation: "seed-exit",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-exit-opacity": "0",
+      },
+      [pseudo("[data-transition-state='exit-done']")]: {
+        animation: "seed-exit",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-exit-opacity": "0",
+      },
+      [pseudo("[data-transition-state='enter-active']")]: {
+        animation: "seed-enter",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-enter-opacity": "0",
+      },
+      [pseudo("[data-transition-state='enter-done']")]: {
+        animation: "seed-enter",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-enter-opacity": "0",
+      },
     },
     container: {
       position: "fixed",
@@ -16,8 +43,32 @@ const dialog = defineRecipe({
       justifyContent: "center",
       alignItems: "center",
       inset: 0,
-      width: "100vw",
-      height: "100vh",
+
+      // TODO: move to rootage
+      [pseudo("[data-transition-state='exit-active']")]: {
+        animation: "seed-exit",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-exit-opacity": "0",
+      },
+      [pseudo("[data-transition-state='exit-done']")]: {
+        animation: "seed-exit",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-exit-opacity": "0",
+      },
+      [pseudo("[data-transition-state='enter-active']")]: {
+        animation: "seed-enter",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-enter-opacity": "0",
+      },
+      [pseudo("[data-transition-state='enter-done']")]: {
+        animation: "seed-enter",
+        animationTimingFunction: "ease",
+        animationDuration: "0.3s",
+        "--seed-enter-opacity": "0",
+      },
     },
     content: {
       position: "relative",
@@ -42,6 +93,7 @@ const dialog = defineRecipe({
     title: {
       color: vars.base.enabled.title.color,
       fontSize: vars.base.enabled.title.fontSize,
+      lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,
 
       margin: 0,
@@ -49,6 +101,7 @@ const dialog = defineRecipe({
     description: {
       color: vars.base.enabled.description.color,
       fontSize: vars.base.enabled.description.fontSize,
+      lineHeight: vars.base.enabled.description.lineHeight,
       fontWeight: vars.base.enabled.description.fontWeight,
 
       margin: 0,
@@ -61,6 +114,7 @@ const dialog = defineRecipe({
       alignItems: "stretch",
 
       paddingTop: vars.base.enabled.footer.paddingTop,
+      gap: vars.base.enabled.footer.gap,
     },
     action: {
       width: "initial",

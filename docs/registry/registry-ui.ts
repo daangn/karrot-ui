@@ -18,6 +18,7 @@ export const registryUI: RegistryUI = [
   {
     name: "alert-dialog",
     innerDependencies: ["action-button"],
+    dependencies: ["@seed-design/stackflow"],
     files: ["ui:alert-dialog.tsx"],
   },
   {

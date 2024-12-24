@@ -10,7 +10,7 @@ data:
         background: $color.bg.overlay
       content:
         background: $color.bg.layer-default
-        borderRadius: $radius.s4
+        borderRadius: $radius.s5
         marginX: $unit.s8
         paddingX: $unit.s5
         paddingY: $unit.s5
@@ -23,8 +23,10 @@ data:
       title:
         color: $color.fg.neutral
         fontSize: $font-size.s7
+        lineHeight: $line-height.s7
         fontWeight: $font-weight.bold
       description:
         color: $color.fg.neutral
         fontSize: $font-size.s5
+        lineHeight: $line-height.s5
         fontWeight: $font-weight.regular

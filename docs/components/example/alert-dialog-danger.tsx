@@ -3,9 +3,9 @@
 import { ActionButton } from "seed-design/ui/action-button";
 import { AlertDialog, AlertDialogAction } from "seed-design/ui/alert-dialog";
 
-const AlertDialogPreviewActivity = () => {
+const AlertDialogDangerActivity = () => {
   return (
-    <AlertDialog title="주의" description="이 작업은 되돌릴 수 없습니다.">
+    <AlertDialog title="제목" description="파괴적, 비가역적 작업을 경고">
       <AlertDialogAction asChild>
         <ActionButton variant="neutralWeak">취소</ActionButton>
       </AlertDialogAction>
@@ -16,4 +16,4 @@ const AlertDialogPreviewActivity = () => {
   );
 };
 
-export default AlertDialogPreviewActivity;
+export default AlertDialogDangerActivity;

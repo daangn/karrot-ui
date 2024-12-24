@@ -25,6 +25,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityHelpBubble: React.lazy(() => import("../activities/ActivityHelpBubble")),
     ActivityLayerBar: React.lazy(() => import("../activities/ActivityLayerBar")),
     ActivityTransparentBar: React.lazy(() => import("../activities/ActivityTransparentBar")),
+    ActivityAlertDialog: React.lazy(() => import("../activities/ActivityAlertDialog")),
     ActivityNotFound,
   },
   plugins: [
@@ -52,6 +53,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityHelpBubble: "/help-bubble",
         ActivityLayerBar: "/layer-bar",
         ActivityTransparentBar: "/transparent-bar",
+        ActivityAlertDialog: "/alert-dialog",
         ActivityNotFound: "/404",
       },
     }),

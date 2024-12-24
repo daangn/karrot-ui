@@ -1,7 +1,31 @@
 .dialog__backdrop {
     position: fixed;
     inset: 0;
-    background: var(--seed-v3-color-bg-overlay)
+    background: var(--seed-v3-color-bg-overlay);
+}
+.dialog__backdrop[data-transition-state='exit-active'] {
+    animation: seed-exit;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-exit-opacity: 0;
+}
+.dialog__backdrop[data-transition-state='exit-done'] {
+    animation: seed-exit;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-exit-opacity: 0;
+}
+.dialog__backdrop[data-transition-state='enter-active'] {
+    animation: seed-enter;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-enter-opacity: 0;
+}
+.dialog__backdrop[data-transition-state='enter-done'] {
+    animation: seed-enter;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-enter-opacity: 0;
 }
 .dialog__container {
     position: fixed;
@@ -9,8 +33,30 @@
     justify-content: center;
     align-items: center;
     inset: 0;
-    width: 100vw;
-    height: 100vh
+}
+.dialog__container[data-transition-state='exit-active'] {
+    animation: seed-exit;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-exit-opacity: 0;
+}
+.dialog__container[data-transition-state='exit-done'] {
+    animation: seed-exit;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-exit-opacity: 0;
+}
+.dialog__container[data-transition-state='enter-active'] {
+    animation: seed-enter;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-enter-opacity: 0;
+}
+.dialog__container[data-transition-state='enter-done'] {
+    animation: seed-enter;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    --seed-enter-opacity: 0;
 }
 .dialog__content {
     position: relative;
@@ -23,40 +69,43 @@
     max-width: 272px;
     margin: auto var(--seed-v3-unit-s8);
     padding: var(--seed-v3-unit-s5) var(--seed-v3-unit-s5);
-    border-radius: var(--seed-v3-radius-s4)
+    border-radius: var(--seed-v3-radius-s5);
 }
 .dialog__header {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-unit-s1_5)
+    gap: var(--seed-v3-unit-s1_5);
 }
 .dialog__title {
     color: var(--seed-v3-color-fg-neutral);
     font-size: var(--seed-v3-font-size-s7);
+    line-height: var(--seed-v3-line-height-s7);
     font-weight: var(--seed-v3-font-weight-bold);
-    margin: 0
+    margin: 0;
 }
 .dialog__description {
     color: var(--seed-v3-color-fg-neutral);
     font-size: var(--seed-v3-font-size-s5);
+    line-height: var(--seed-v3-line-height-s5);
     font-weight: var(--seed-v3-font-weight-regular);
     margin: 0;
-    white-space: pre-wrap
+    white-space: pre-wrap;
 }
 .dialog__footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
-    padding-top: var(--seed-v3-unit-s4)
+    padding-top: var(--seed-v3-unit-s4);
+    gap: var(--seed-v3-unit-s2);
 }
 .dialog__action {
     width: initial;
-    min-width: calc(50% - var(--seed-v3-unit-s2) / 2)
+    min-width: calc(50% - var(--seed-v3-unit-s2) / 2);
 }
 .dialog__footer--footerLayout_horizontal {
-    flex-direction: row-reverse
+    flex-direction: row-reverse;
 }
 .dialog__footer--footerLayout_vertical {
-    flex-direction: column
+    flex-direction: column;
 }

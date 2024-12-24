@@ -28,5 +28,28 @@ export type {
   AppScreenProps,
 } from "./AppScreen";
 
+export {
+  DialogRoot,
+  DialogBackdrop,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogAction,
+  DialogTitle,
+  DialogDescription,
+} from "./Dialog";
+
+export type {
+  DialogRootProps,
+  DialogBackdropProps,
+  DialogContentProps,
+  DialogFooterProps,
+  DialogHeaderProps,
+  DialogActionProps,
+  DialogTitleProps,
+  DialogDescriptionProps,
+} from "./Dialog";
+
 export * as AppBar from "./AppBar.namespace";
 export * as AppScreen from "./AppScreen.namespace";
+export * as Dialog from "./Dialog.namespace";
