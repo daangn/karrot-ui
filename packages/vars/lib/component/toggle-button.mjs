@@ -18,9 +18,6 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-static-white)"
       },
-      "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
-      },
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-static-white)"
       },
@@ -44,9 +41,6 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "icon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
@@ -68,9 +62,6 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-disabled)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-disabled)"
-      },
-      "icon": {
         "color": "var(--seed-v3-color-fg-disabled)"
       },
       "prefixIcon": {
@@ -99,9 +90,6 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "icon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
@@ -125,9 +113,6 @@ export const vars = {
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "icon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
       "prefixIcon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
@@ -149,9 +134,6 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-disabled)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-disabled)"
-      },
-      "icon": {
         "color": "var(--seed-v3-color-fg-disabled)"
       },
       "prefixIcon": {
@@ -202,7 +184,7 @@ export const vars = {
         "minHeight": "var(--seed-v3-unit-s9)",
         "cornerRadius": "var(--seed-v3-radius-full)",
         "gap": "var(--seed-v3-unit-s1)",
-        "paddingX": "var(--seed-v3-unit-s3_5)",
+        "paddingX": "var(--seed-v3-unit-s4)",
         "paddingY": "var(--seed-v3-unit-s2)"
       },
       "prefixIcon": {

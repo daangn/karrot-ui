@@ -3749,10 +3749,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@daangn/icon-data@npm:^0.0.18":
-  version: 0.0.18
-  resolution: "@daangn/icon-data@npm:0.0.18::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.18%2Fe9234508b50f290fa011c90b2d0caebc1dff5960"
-  checksum: 10/b5e61aa033e18104e6b071b3578fd74885ce6b4eec302c9f238627ea2431bd6fb4ea6e3984b627729df5afe137129b6d8adc306ef6599eda984a8ae26b29990f
+"@daangn/icon-data@npm:^0.0.19":
+  version: 0.0.19
+  resolution: "@daangn/icon-data@npm:0.0.19::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Ficon-data%2F0.0.19%2F19a067ad52b44ce9b930bd408c3572d3e4e8d5d4"
+  checksum: 10/0bac33a47da297c75d27353b425e42f26a93f7bb1139bdd36fc7dce1856d52fc761770518b1457c950ef895d49c38459c0d41f80c9bc16318afdbe0e085e3f9e
   languageName: node
   linkType: hard
 
@@ -3763,6 +3763,16 @@ __metadata:
     "@types/react": "*"
     react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
   checksum: 10/cadf629fcc894dc6372bf7db285bc15960ed50c402a0b6d8293c6c9f9c138f6b0a43200ab41ecedbc05244b8f9d6c5d72cae644a48e7b64b79eec722fa75db1f
+  languageName: node
+  linkType: hard
+
+"@daangn/react-monochrome-icon@npm:^0.0.14":
+  version: 0.0.14
+  resolution: "@daangn/react-monochrome-icon@npm:0.0.14::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40daangn%2Freact-monochrome-icon%2F0.0.14%2F3f3426bb4125879dfd5bb1c7863dcd0bf0770784"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  checksum: 10/c02ca32122885fa7f452045d57aa9562aeb26f6b593f2a55fc84a581d19adf40c2fc02bce0f12df7198f0c6395385571d38ef54d186146fb0b2789f79c3a4a40
   languageName: node
   linkType: hard
 
@@ -13089,8 +13099,8 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@chromatic-com/storybook": "npm:^3.2.2"
-    "@daangn/icon-data": "npm:^0.0.18"
-    "@daangn/react-monochrome-icon": "npm:^0.0.13"
+    "@daangn/icon-data": "npm:^0.0.19"
+    "@daangn/react-monochrome-icon": "npm:^0.0.14"
     "@daangn/react-multicolor-icon": "npm:^0.0.12"
     "@next/env": "npm:^15.0.4"
     "@portabletext/react": "npm:^3.1.0"

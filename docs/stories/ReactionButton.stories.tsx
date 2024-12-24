@@ -1,23 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ToggleButton } from "seed-design/ui/toggle-button";
+import { ReactionButton } from "seed-design/ui/reaction-button";
 
 import { IconBellFill, IconChevronRightFill } from "@daangn/react-monochrome-icon";
-import { toggleButtonVariantMap } from "@seed-design/recipe/toggleButton";
+import { reactionButtonVariantMap } from "@seed-design/recipe/reactionButton";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 
 const meta = {
-  component: ToggleButton,
+  component: ReactionButton,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof ToggleButton>;
+} satisfies Meta<typeof ReactionButton>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 const variantMap = {
-  ...toggleButtonVariantMap,
+  ...reactionButtonVariantMap,
   disabled: ["false", "true"],
   loading: ["false", "true"],
   pressed: ["false", "true"],
@@ -26,7 +26,7 @@ const variantMap = {
 const CommonStoryTemplate: Story = {
   args: {
     prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronRightFill />,
+    count: 1,
   },
   render: (args) => (
     <VariantTable

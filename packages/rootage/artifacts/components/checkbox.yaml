@@ -9,7 +9,6 @@ data:
     enabled:
       label:
         color: $color.fg.neutral
-        lineHeight: $line-height.s5
       root:
         gap: $unit.s2
     bold:
@@ -75,7 +74,7 @@ data:
   size=small:
     enabled:
       root:
-        minHeight: $unit.s8
+        minHeight: $unit.s7
       label:
         fontSize: $font-size.s3
         lineHeight: $line-height.s3

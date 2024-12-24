@@ -1,0 +1,14 @@
+{
+  "name": "reaction-button",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "@seed-design/react-toggle"
+  ],
+  "registries": [
+    {
+      "name": "reaction-button.tsx",
+      "type": "ui",
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/progressCircle.css\";\nimport \"@seed-design/stylesheet/reactionButton.css\";\n\nimport { Slot } from \"@radix-ui/react-slot\";\nimport { useToggle, type UseToggleProps } from \"@seed-design/react-toggle\";\nimport {\n  reactionButton,\n  type ReactionButtonVariantProps,\n} from \"@seed-design/recipe/reactionButton\";\nimport clsx from \"clsx\";\nimport * as React from \"react\";\nimport { ProgressCircle } from \"./progress-circle\";\n\nexport interface ReactionButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    UseToggleProps,\n    ReactionButtonVariantProps {\n  prefixIcon?: React.ReactNode;\n\n  count?: number;\n\n  loading?: boolean;\n\n  /**\n   * @default false\n   */\n  asChild?: boolean;\n}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/reaction-button\n */\nexport const ReactionButton = React.forwardRef<\n  HTMLButtonElement,\n  ReactionButtonProps\n>(\n  (\n    {\n      className,\n      size = \"small\",\n      children,\n      prefixIcon,\n      count,\n      loading = false,\n      asChild = false,\n      ...otherProps\n    },\n    ref,\n  ) => {\n    const Comp = asChild ? Slot : \"button\";\n    const { rootProps, stateProps, restProps } = useToggle(otherProps);\n    const classNames = reactionButton({ size });\n    const dataProps = {\n      ...stateProps,\n      \"data-loading\": loading ? \"\" : undefined,\n    };\n\n    return (\n      <Comp\n        ref={ref}\n        className={clsx(classNames.root, className)}\n        {...dataProps}\n        {...rootProps}\n        {...restProps}\n      >\n        {prefixIcon && (\n          <Slot aria-hidden {...dataProps} className={classNames.prefixIcon}>\n            {prefixIcon}\n          </Slot>\n        )}\n        <span {...dataProps} className={classNames.label}>\n          {children}\n        </span>\n        <span {...dataProps} className={classNames.count}>\n          {count}\n        </span>\n        {loading ? (\n          <ProgressCircle\n            {...dataProps}\n            className={classNames.progressCircle}\n          />\n        ) : null}\n      </Comp>\n    );\n  },\n);\nReactionButton.displayName = \"ReactionButton\";\n"
+    }
+  ]
+}

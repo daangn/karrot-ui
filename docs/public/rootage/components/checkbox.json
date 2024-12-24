@@ -8,8 +8,7 @@
     "base": {
       "enabled": {
         "label": {
-          "color": "$color.fg.neutral",
-          "lineHeight": "$line-height.s5"
+          "color": "$color.fg.neutral"
         },
         "root": {
           "gap": "$unit.s2"
@@ -111,7 +110,7 @@
     "size=small": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s8"
+          "minHeight": "$unit.s7"
         },
         "label": {
           "fontSize": "$font-size.s3",

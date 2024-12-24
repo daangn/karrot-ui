@@ -37,6 +37,8 @@ const fab = defineRecipe({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+
+      color: vars.base.enabled.icon.color,
     },
   },
   variants: {

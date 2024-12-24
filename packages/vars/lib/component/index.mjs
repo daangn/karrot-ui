@@ -16,6 +16,7 @@ export { vars as identityPlaceholder } from "./identity-placeholder.mjs";
 export { vars as inlineBanner } from "./inline-banner.mjs";
 export { vars as progressCircle } from "./progress-circle.mjs";
 export { vars as radio } from "./radio.mjs";
+export { vars as reactionButton } from "./reaction-button.mjs";
 export { vars as segmentedControl } from "./segmented-control.mjs";
 export { vars as selectBoxGroup } from "./select-box-group.mjs";
 export { vars as skeleton } from "./skeleton.mjs";

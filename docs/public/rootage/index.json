@@ -45,6 +45,9 @@
       "path": "/components/fab.json"
     },
     {
+      "path": "/components/extended-fab.json"
+    },
+    {
       "path": "/components/help-bubble.json"
     },
     {
@@ -58,6 +61,9 @@
     },
     {
       "path": "/components/radio.json"
+    },
+    {
+      "path": "/components/reaction-button.json"
     },
     {
       "path": "/components/switch.json"

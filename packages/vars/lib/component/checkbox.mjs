@@ -2,8 +2,7 @@ export const vars = {
   "base": {
     "enabled": {
       "label": {
-        "color": "var(--seed-v3-color-fg-neutral)",
-        "lineHeight": "var(--seed-v3-line-height-s5)"
+        "color": "var(--seed-v3-color-fg-neutral)"
       },
       "root": {
         "gap": "var(--seed-v3-unit-s2)"
@@ -105,7 +104,7 @@ export const vars = {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s8)"
+        "minHeight": "var(--seed-v3-unit-s7)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s3)",
