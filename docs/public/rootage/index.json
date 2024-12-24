@@ -84,6 +84,9 @@
       "path": "/components/toggle-button.json"
     },
     {
+      "path": "/components/top-navigation.json"
+    },
+    {
       "path": "/components/typography.json"
     },
     {
