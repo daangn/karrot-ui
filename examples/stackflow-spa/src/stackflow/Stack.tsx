@@ -1,11 +1,13 @@
-import { IconBack, basicUIPlugin } from "@stackflow/plugin-basic-ui";
+import { vars } from "@seed-design/vars";
+import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { stackflow } from "@stackflow/react";
-import { vars } from "@seed-design/vars";
 import React from "react";
 
+import { IconChevronLeftLine } from "@daangn/react-monochrome-icon";
 import ActivityNotFound from "../activities/ActivityNotFound";
+import { theme } from "./theme";
 
 /**
  * Stackflow는 웹뷰 내에서 Stack Navigation UI를 도와주는 도구에요.
@@ -14,10 +16,6 @@ import ActivityNotFound from "../activities/ActivityNotFound";
  * GitHub: https://github.com/daangn/stackflow
  */
 
-const theme = /iphone|ipad|ipod/i.test(window.navigator.userAgent.toLowerCase())
-  ? "cupertino"
-  : "android";
-
 const { Stack, useFlow, useStepFlow } = stackflow({
   activities: {
     ActivityHome: React.lazy(() => import("../activities/ActivityHome")),
@@ -25,6 +23,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityActionChip: React.lazy(() => import("../activities/ActivityActionChip")),
     ActivityControlChip: React.lazy(() => import("../activities/ActivityControlChip")),
     ActivityHelpBubble: React.lazy(() => import("../activities/ActivityHelpBubble")),
+    ActivityTransparentBar: React.lazy(() => import("../activities/ActivityTransparentBar")),
     ActivityNotFound,
   },
   plugins: [
@@ -33,12 +32,13 @@ const { Stack, useFlow, useStepFlow } = stackflow({
       appBar: {
         borderColor: vars.$color.stroke.neutral,
         closeButton: {
-          renderIcon: () => <IconBack />,
+          renderIcon: () => <IconChevronLeftLine />,
         },
         iconColor: vars.$color.fg.neutral,
         textColor: vars.$color.fg.neutral,
       },
       backgroundColor: vars.$color.bg.layerDefault,
+      dimBackgroundColor: vars.$color.bg.overlay,
       theme,
     }),
     historySyncPlugin({
@@ -49,6 +49,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityActionChip: "/action-chip",
         ActivityControlChip: "/control-chip",
         ActivityHelpBubble: "/help-bubble",
+        ActivityTransparentBar: "/transparent-bar",
         ActivityNotFound: "/404",
       },
     }),

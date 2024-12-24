@@ -1,7 +1,6 @@
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 
 import {
-  IconChevronDownFill,
   IconChevronDownLine,
   IconDot3HorizontalChatbubbleLeftLine,
   IconGearLine,

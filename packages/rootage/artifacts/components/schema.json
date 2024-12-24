@@ -347,6 +347,7 @@
         { "const": "$font-size.s8", "title": "$font-size.s8", "description": "default: 1.375rem", "markdownDescription": "- default: `1.375rem`" },
         { "const": "$font-size.s9", "title": "$font-size.s9", "description": "default: 1.5rem", "markdownDescription": "- default: `1.5rem`" },
         { "const": "$font-size.s10", "title": "$font-size.s10", "description": "default: 1.625rem", "markdownDescription": "- default: `1.625rem`" },
+        { "const": "$font-size.s6-static", "title": "$font-size.s6-static", "description": "default: 18px", "markdownDescription": "- default: `18px`" },
         { "const": "$font-weight.regular", "title": "$font-weight.regular", "description": "default: 400", "markdownDescription": "- default: `400`" },
         { "const": "$font-weight.medium", "title": "$font-weight.medium", "description": "default: 500", "markdownDescription": "- default: `500`" },
         { "const": "$font-weight.bold", "title": "$font-weight.bold", "description": "default: 700", "markdownDescription": "- default: `700`" },

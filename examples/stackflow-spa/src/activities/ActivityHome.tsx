@@ -21,6 +21,7 @@ const ActivityHome: ActivityComponentType = () => {
           <ListItem onClick={() => push("ActivityActionChip", {})} title="ActionChip" />
           <ListItem onClick={() => push("ActivityControlChip", {})} title="ControlChip" />
           <ListItem onClick={() => push("ActivityHelpBubble", {})} title="HelpBubble" />
+          <ListItem onClick={() => push("ActivityTransparentBar", {})} title="TransparentBar" />
         </List>
       </div>
     </AppScreen>

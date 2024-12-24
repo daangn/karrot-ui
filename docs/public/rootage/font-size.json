@@ -56,6 +56,11 @@
         "values": {
           "default": "1.625rem"
         }
+      },
+      "$font-size.s6-static": {
+        "values": {
+          "default": "18px"
+        }
       }
     }
   }

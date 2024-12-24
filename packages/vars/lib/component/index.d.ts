@@ -26,4 +26,5 @@ export { vars as tablist } from "./tablist";
 export { vars as textButton } from "./text-button";
 export { vars as textField } from "./text-field";
 export { vars as toggleButton } from "./toggle-button";
+export { vars as topNavigation } from "./top-navigation";
 export { vars as typography } from "./typography";

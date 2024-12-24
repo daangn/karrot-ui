@@ -6113,6 +6113,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-compose-refs@npm:1.1.1, @radix-ui/react-compose-refs@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-compose-refs@npm:1.1.1"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/1be82f9f7fab96cc10f167a2e4f976e0135a63d473334f664c06f02af13bc5ea1994cb0505f89ed190d756cb65d57506721c030908af07e49b9e3cfd36044f33
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-context@npm:1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-context@npm:1.1.0"
@@ -6474,6 +6487,21 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10/95e190868418b1c83adf6627256f6b664b0dcbea95d7215de9c64ac2c31102fc09155565d9ca27be6abd20fc63d0b0bacfe1b67d78b2de1d198244c848e1a54e
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-slot@npm:1.1.1"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:1.1.1"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/5b1ee5100da356c8f9f56cd7ca273838a373fa3808f0f909b1e132c4f734282571cb666e86a548831ee82a62240e126d43379994285a9b030fd34ea43538b5e2
   languageName: node
   linkType: hard
 
@@ -7938,10 +7966,11 @@ __metadata:
     "@seed-design/react-tabs": "npm:0.0.0-alpha-20241209060641"
     "@seed-design/react-text-field": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/recipe": "npm:0.0.0-alpha-20241212122822"
+    "@seed-design/stackflow": "npm:0.0.0"
     "@seed-design/stylesheet": "npm:3.0.0-alpha-20241212122822"
     "@seed-design/vars": "npm:0.0.0"
     "@stackflow/core": "npm:^1.1.0"
-    "@stackflow/plugin-basic-ui": "npm:^1.10.1"
+    "@stackflow/plugin-basic-ui": "npm:^1.11.1"
     "@stackflow/plugin-history-sync": "npm:^1.7.0"
     "@stackflow/plugin-renderer-basic": "npm:^1.1.13"
     "@stackflow/react": "npm:^1.4.1"
@@ -7958,6 +7987,24 @@ __metadata:
     typescript: "npm:^5.4.5"
     vite: "npm:^5.1.4"
     vite-plugin-checker: "npm:^0.6.2"
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/stackflow@npm:0.0.0, @seed-design/stackflow@workspace:packages/stackflow":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/stackflow@workspace:packages/stackflow"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:^1.1.1"
+    "@radix-ui/react-slot": "npm:^1.1.1"
+    "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    clsx: "npm:^2.1.1"
+    nanobundle: "npm:^1.6.0"
+  peerDependencies:
+    "@seed-design/recipe": "*"
+    "@stackflow/react": ">=1.4.1"
+    "@stackflow/react-ui-core": ">=1.2.1"
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -8276,11 +8323,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stackflow/plugin-basic-ui@npm:^1.10.1":
-  version: 1.10.1
-  resolution: "@stackflow/plugin-basic-ui@npm:1.10.1"
+"@stackflow/plugin-basic-ui@npm:^1.11.1":
+  version: 1.11.1
+  resolution: "@stackflow/plugin-basic-ui@npm:1.11.1"
   dependencies:
-    "@stackflow/react-ui-core": "npm:^1.1.2"
+    "@stackflow/react-ui-core": "npm:^1.2.1"
     "@vanilla-extract/css": "npm:^1.15.3"
     "@vanilla-extract/dynamic": "npm:^2.1.1"
     "@vanilla-extract/private": "npm:^1.0.5"
@@ -8290,7 +8337,7 @@ __metadata:
     "@stackflow/react": ^1.3.2-canary.0
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
-  checksum: 10/82a73aae9b0f57183118d702f0dedccf47c2746ef21de79803abbf084479cc08415bdfec8f305a38f133404a15263bde2a76287908a649130894811a47cc747e
+  checksum: 10/cad8cf26ae0d4c7262f65c7e772b0a80e36567c8b6bb717cce1650955b096504d0e43b0d7b5d87339f6f081282a7860d5e99ada433311a76a604f675c779d746
   languageName: node
   linkType: hard
 
@@ -8332,6 +8379,18 @@ __metadata:
     "@types/react": ">=16.8.0"
     react: ">=16.8.0"
   checksum: 10/028836b6ed6a8b028b06170fc9c218fc739e52a9f67dbcc49fcfe5215825b574aef2228e209ed06cc6bc0cd9e52a2c671b3580785904351fd548b77398223c3a
+  languageName: node
+  linkType: hard
+
+"@stackflow/react-ui-core@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@stackflow/react-ui-core@npm:1.2.1"
+  peerDependencies:
+    "@stackflow/core": ^1.1.0-canary.0
+    "@stackflow/react": ^1.3.2-canary.0
+    "@types/react": ">=16.8.0"
+    react: ">=16.8.0"
+  checksum: 10/24a487267225b58e23eeef5d213df6a4778d3e3139e3608c5ee7434750ae64da0f7ad788697db455630037c4629588c4f42f775d4cf903aa16c7a5e2cfb169ee
   languageName: node
   linkType: hard
 
