@@ -22,7 +22,7 @@ export const Stackflow: React.FC<StackflowProps> = ({ Activity }) => {
   return (
     <div
       ref={ref}
-      className={cn()}
+      className={cn("not-prose")}
       style={{
         position: "relative",
         width: "100%",

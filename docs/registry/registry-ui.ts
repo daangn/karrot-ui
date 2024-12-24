@@ -11,6 +11,11 @@ import popoverPkg from "@seed-design/react-popover/package.json";
 
 export const registryUI: RegistryUI = [
   {
+    name: "app-screen",
+    files: ["ui:app-screen.tsx"],
+    dependencies: ["@seed-design/stackflow"],
+  },
+  {
     name: "alert-dialog",
     innerDependencies: ["action-button"],
     files: ["ui:alert-dialog.tsx"],

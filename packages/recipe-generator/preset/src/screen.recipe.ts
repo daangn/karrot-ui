@@ -14,6 +14,7 @@ const screen = defineRecipe({
       height: "100%",
       left: 0,
       right: 0,
+      overflow: "hidden",
 
       "&[data-transition-state=exit-done]": {
         transform: "translate3d(100%, 0, 0)",

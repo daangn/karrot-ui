@@ -4,6 +4,7 @@ import { createContext, useContext, useMemo, useRef } from "react";
 import type { ActivityTransitionState } from "@stackflow/core";
 import {
   useLazy,
+  useMounted,
   useNullableActivity,
   useStyleEffectHide,
   useStyleEffectOffset,
@@ -51,6 +52,7 @@ export function useAppScreen(props: {
 
   const stack = useStack();
   const activity = useNullableActivity();
+  const mounted = useMounted();
 
   const { pop } = useActions();
 
@@ -66,9 +68,9 @@ export function useAppScreen(props: {
 
   const transitionState = activity?.transitionState ?? "enter-done";
   const lazyTransitionState = useLazy(transitionState);
-  const transitionDuration = `${stack.transitionDuration}ms`;
+  const transitionDuration = stack ? `${stack.transitionDuration}ms` : "0ms";
   const computedTransitionDuration =
-    stack.globalTransitionState === "loading" ? `${stack.transitionDuration}ms` : "0ms";
+    stack?.globalTransitionState === "loading" ? transitionDuration : "0ms";
 
   useStyleEffectHide({
     refs: [appScreenRef],
@@ -146,8 +148,9 @@ export function useAppScreen(props: {
         transitionState === "enter-done" || transitionState === "exit-done"
           ? transitionState
           : lazyTransitionState,
+      "data-stackflow-activity-is-active": mounted ? activity?.isActive : undefined,
     }),
-    [transitionState, lazyTransitionState],
+    [transitionState, lazyTransitionState, mounted, activity?.isActive],
   );
 
   return useMemo(
@@ -170,6 +173,7 @@ export function useAppScreen(props: {
       dataProps,
       rootProps: {
         ...dataProps,
+        "data-stackflow-activity-id": mounted ? activity?.id : undefined,
         style: zIndexStyle,
       } as React.HTMLAttributes<HTMLDivElement>,
       dimProps: {
@@ -202,7 +206,7 @@ export function useAppScreen(props: {
         },
       } as React.HTMLAttributes<HTMLButtonElement>,
     }),
-    [theme, activity, zIndexStyle, isSwipeBackPrevented, activityEnterStyle, dataProps],
+    [theme, activity, zIndexStyle, isSwipeBackPrevented, activityEnterStyle, dataProps, mounted],
   );
 }
 

@@ -6103,6 +6103,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-compose-refs@npm:1.1.1, @radix-ui/react-compose-refs@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-compose-refs@npm:1.1.1"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/1be82f9f7fab96cc10f167a2e4f976e0135a63d473334f664c06f02af13bc5ea1994cb0505f89ed190d756cb65d57506721c030908af07e49b9e3cfd36044f33
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-context@npm:1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-context@npm:1.1.0"
@@ -6464,6 +6477,21 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10/95e190868418b1c83adf6627256f6b664b0dcbea95d7215de9c64ac2c31102fc09155565d9ca27be6abd20fc63d0b0bacfe1b67d78b2de1d198244c848e1a54e
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-slot@npm:1.1.1"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:1.1.1"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/5b1ee5100da356c8f9f56cd7ca273838a373fa3808f0f909b1e132c4f734282571cb666e86a548831ee82a62240e126d43379994285a9b030fd34ea43538b5e2
   languageName: node
   linkType: hard
 
@@ -7928,6 +7956,7 @@ __metadata:
     "@seed-design/react-tabs": "npm:0.0.0-alpha-20241209060641"
     "@seed-design/react-text-field": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/recipe": "npm:0.0.0-alpha-20241212122822"
+    "@seed-design/stackflow": "npm:0.0.0"
     "@seed-design/stylesheet": "npm:3.0.0-alpha-20241212122822"
     "@seed-design/vars": "npm:0.0.0"
     "@stackflow/core": "npm:^1.1.0"
@@ -7948,6 +7977,24 @@ __metadata:
     typescript: "npm:^5.4.5"
     vite: "npm:^5.1.4"
     vite-plugin-checker: "npm:^0.6.2"
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/stackflow@npm:0.0.0, @seed-design/stackflow@workspace:packages/stackflow":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/stackflow@workspace:packages/stackflow"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:^1.1.1"
+    "@radix-ui/react-slot": "npm:^1.1.1"
+    "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    clsx: "npm:^2.1.1"
+    nanobundle: "npm:^1.6.0"
+  peerDependencies:
+    "@seed-design/recipe": "*"
+    "@stackflow/react": ">=1.4.1"
+    "@stackflow/react-ui-core": ">=1.2.1"
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
   languageName: unknown
   linkType: soft
 

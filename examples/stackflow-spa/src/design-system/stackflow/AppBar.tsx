@@ -1,209 +1,87 @@
 import "@seed-design/stylesheet/topNavigation.css";
 
-import IconChevronLeftLine from "@daangn/react-monochrome-icon/IconChevronLeftLine";
-import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
-import { Slot } from "@radix-ui/react-slot";
-import { topNavigation, type TopNavigationVariantProps } from "@seed-design/recipe/topNavigation";
-import { useActions } from "@stackflow/react";
-import { useAppBarTitleMaxWidth, useNullableActivity } from "@stackflow/react-ui-core";
-import clsx from "clsx";
-import { createContext, forwardRef, useCallback, useContext, useRef } from "react";
+import { IconChevronLeftLine, IconXmarkLine } from "@daangn/react-monochrome-icon";
+import { AppBar as SeedAppBar, type AppBarIconButtonProps } from "@seed-design/stackflow";
+import { useActions, useActivity } from "@stackflow/react";
+import { forwardRef, useCallback } from "react";
 
-import { mergeRefs } from "../util/mergeRefs";
-import { useAppScreenContext } from "./useAppScreen";
+export const AppBar = SeedAppBar.Root;
 
-const StyleContext = createContext<ReturnType<typeof topNavigation> | null>(null);
+export const Left = SeedAppBar.Left;
 
-function useStyleContext() {
-  const context = useContext(StyleContext);
-  if (!context) {
-    throw new Error("useStyleContext must be used within a AppBar");
-  }
+export const Right = SeedAppBar.Right;
 
-  return context;
-}
+export const Title = SeedAppBar.Title;
 
-export const IconButton = forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ children = <IconXmarkLine />, className, ...props }, ref) => {
-  const { dataProps } = useAppScreenContext();
-  const classNames = useStyleContext();
+export const IconButton = SeedAppBar.IconButton;
 
-  return (
-    <button
-      ref={ref}
-      type="button"
-      className={clsx(classNames.iconButton, className)}
-      {...dataProps}
-      {...props}
-    >
-      <Slot className={classNames.icon} {...dataProps}>
+export const BackButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
+  ({ children = <IconChevronLeftLine />, onClick, ...otherProps }, ref) => {
+    const activity = useActivity();
+    const actions = useActions();
+
+    const handleOnClick = useCallback(
+      (e: React.MouseEvent<HTMLButtonElement>) => {
+        onClick?.(e);
+
+        if (!e.defaultPrevented) {
+          actions.pop();
+        }
+      },
+      [actions],
+    );
+
+    if (!activity) {
+      return null;
+    }
+    if (activity.isRoot) {
+      return null;
+    }
+
+    return (
+      <SeedAppBar.IconButton
+        ref={ref}
+        aria-label="Go Back"
+        type="button"
+        onClick={handleOnClick}
+        {...otherProps}
+      >
         {children}
-      </Slot>
-    </button>
-  );
-});
+      </SeedAppBar.IconButton>
+    );
+  },
+);
+BackButton.displayName = "BackButton";
 
-IconButton.displayName = "IconButton";
+export const CloseButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
+  ({ children = <IconXmarkLine />, onClick, ...otherProps }, ref) => {
+    const activity = useActivity();
 
-export const BackButton = forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ children = <IconChevronLeftLine />, onClick, ...otherProps }, ref) => {
-  const activity = useNullableActivity();
-  const actions = useActions();
-
-  const handleOnClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleOnClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
       onClick?.(e);
 
       if (!e.defaultPrevented) {
-        actions.pop();
+        // you can do something here
       }
-    },
-    [actions],
-  );
+    }, []);
 
-  if (!activity) {
-    return null;
-  }
-  if (activity.isRoot) {
-    return null;
-  }
+    const isRoot = !activity || activity.isRoot;
 
-  return (
-    <IconButton
-      ref={ref}
-      aria-label="Go Back"
-      type="button"
-      onClick={handleOnClick}
-      {...otherProps}
-    >
-      {children}
-    </IconButton>
-  );
-});
-
-BackButton.displayName = "BackButton";
-
-export const CloseButton = forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ children = <IconXmarkLine />, ...props }, ref) => {
-  const activity = useNullableActivity();
-
-  const isRoot = !activity || activity.isRoot;
-
-  if (!isRoot) {
-    return null;
-  }
-
-  return (
-    <IconButton ref={ref} aria-label="Close" type="button" {...props}>
-      {children}
-    </IconButton>
-  );
-});
-
-CloseButton.displayName = "CloseButton";
-
-export const Left = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ children, className, ...otherProps }, ref) => {
-    const classNames = useStyleContext();
-    const { dataProps } = useAppScreenContext();
+    if (!isRoot) {
+      return null;
+    }
 
     return (
-      <div ref={ref} className={clsx(classNames.left, className)} {...dataProps} {...otherProps}>
-        {children}
-      </div>
-    );
-  },
-);
-
-export const Right = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ children, className, ...otherProps }, ref) => {
-    const classNames = useStyleContext();
-    const { dataProps } = useAppScreenContext();
-
-    return (
-      <div ref={ref} className={clsx(classNames.right, className)} {...dataProps} {...otherProps}>
-        {children}
-      </div>
-    );
-  },
-);
-
-export const Title = forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & {
-    onTopClick?: (e: React.MouseEvent) => void;
-  }
->(({ children, onTopClick, className, ...otherProps }, ref) => {
-  const { theme, dataProps, appBarEdgeProps, refs } = useAppScreenContext();
-  const innerRef = useRef<HTMLDivElement>(null);
-  const { maxWidth } = useAppBarTitleMaxWidth({
-    outerRef: refs.appBar,
-    innerRef: innerRef,
-    enable: theme === "cupertino",
-  });
-  const classNames = useStyleContext();
-
-  return (
-    <div
-      ref={mergeRefs(ref, innerRef)}
-      className={clsx(classNames.title, className)}
-      {...dataProps}
-      {...otherProps}
-    >
-      <div
-        className={classNames.titleMain}
-        style={{ width: maxWidth ? `${maxWidth}px` : undefined }}
-        {...dataProps}
-      >
-        {typeof children === "string" ? (
-          <div className={classNames.titleText} {...dataProps}>
-            {children}
-          </div>
-        ) : (
-          children
-        )}
-        <button
-          type="button"
-          onClick={onTopClick}
-          className={classNames.titleEdge}
-          style={{ width: maxWidth ? `${maxWidth}px` : undefined }}
-          {...appBarEdgeProps}
-        />
-      </div>
-    </div>
-  );
-});
-
-interface AppBarProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    Omit<TopNavigationVariantProps, "theme"> {}
-
-export const AppBar = forwardRef<HTMLDivElement, AppBarProps>(
-  ({ border = true, tone = "layer", children, ...otherProps }, ref) => {
-    const { theme, refs, dataProps } = useAppScreenContext();
-
-    const classNames = topNavigation({ theme, border, tone });
-
-    return (
-      <div
-        ref={mergeRefs(ref, refs.appBar)}
-        className={classNames.root}
-        {...dataProps}
+      <IconButton
+        ref={ref}
+        aria-label="Close"
+        type="button"
+        onClick={handleOnClick}
         {...otherProps}
       >
-        <div className={classNames.safeArea} {...dataProps} />
-        <div className={classNames.container} {...dataProps}>
-          <StyleContext.Provider value={classNames}>{children}</StyleContext.Provider>
-        </div>
-      </div>
+        {children}
+      </IconButton>
     );
   },
 );
-
-AppBar.displayName = "AppBar";
+CloseButton.displayName = "CloseButton";
