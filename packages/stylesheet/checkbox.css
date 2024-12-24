@@ -142,7 +142,7 @@
 .checkbox__label--size_small {
     font-size: var(--seed-v3-font-size-s3);
     line-height: var(--seed-v3-line-height-s3);
-    margin-block-start: calc(14px - 0.5625rem);
+    margin-block-start: calc(16px - 0.5625rem);
 }
 .checkbox__icon--size_small-variant_ghost {
     width: 13.5px;
