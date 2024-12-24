@@ -68,6 +68,12 @@
     height: 44px;
     padding-inline: var(--seed-v3-unit-s4);
 }
+[data-stackflow-activity-is-active="false"] .topNavigation__container--theme_cupertino {
+    opacity: calc(pow(var(--stackflow-swipe-back-ratio, 1), 2));
+}
+[data-stackflow-activity-is-active="true"] .topNavigation__container--theme_cupertino {
+    opacity: calc(1 - pow(var(--stackflow-swipe-back-ratio, 0), 2));
+}
 .topNavigation__iconButton--theme_cupertino {
     width: 40px;
     height: 40px;
@@ -81,6 +87,12 @@
 .topNavigation__icon--theme_cupertino {
     width: 24px;
     height: 24px;
+}
+[data-stackflow-activity-is-active="true"] .topNavigation__icon--theme_cupertino[data-transition-state="enter-active"] {
+    opacity: 1;
+}
+[data-stackflow-activity-is-active="true"] .topNavigation__icon--theme_cupertino[data-transition-state="enter-done"] {
+    opacity: 1;
 }
 .topNavigation__titleMain--theme_cupertino {
     position: absolute;

@@ -100,6 +100,12 @@ const topNavigation = defineRecipe({
         container: {
           height: vars.themeCupertino.enabled.root.minHeight,
           paddingInline: vars.themeCupertino.enabled.root.paddingX,
+          '[data-stackflow-activity-is-active="false"] &': {
+            opacity: "calc(pow(var(--stackflow-swipe-back-ratio, 1), 2))",
+          },
+          '[data-stackflow-activity-is-active="true"] &': {
+            opacity: "calc(1 - pow(var(--stackflow-swipe-back-ratio, 0), 2))",
+          },
         },
         iconButton: {
           width: vars.themeCupertino.enabled.icon.targetSize,
@@ -115,6 +121,12 @@ const topNavigation = defineRecipe({
         icon: {
           width: vars.themeCupertino.enabled.icon.size,
           height: vars.themeCupertino.enabled.icon.size,
+          '[data-stackflow-activity-is-active="true"] &[data-transition-state="enter-active"]': {
+            opacity: 1,
+          },
+          '[data-stackflow-activity-is-active="true"] &[data-transition-state="enter-done"]': {
+            opacity: 1,
+          },
         },
         titleMain: {
           position: "absolute",

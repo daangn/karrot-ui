@@ -100,6 +100,7 @@ export function useAppScreen(props: {
     dimRef,
     edgeRef,
     paperRef: layerRef,
+    appBarRef,
     offset: OFFSET_PX_CUPERTINO,
     transitionDuration: transitionDuration,
     preventSwipeBack: isSwipeBackPrevented || theme !== "cupertino",
