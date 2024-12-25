@@ -3,6 +3,7 @@ import actionChip from "./action-chip.recipe";
 import avatarStack from "./avatar-stack.recipe";
 import avatar from "./avatar.recipe";
 import badge from "./badge.recipe";
+import bottomSheet from "./bottom-sheet";
 import callout from "./callout.recipe";
 import checkbox from "./checkbox.recipe";
 import chipTab from "./chip-tab.recipe";
@@ -35,6 +36,7 @@ const recipes = {
   actionButton,
   toggleButton,
   reactionButton,
+  bottomSheet,
   fab,
   extendedFab,
   badge,

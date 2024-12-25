@@ -1,10 +1,20 @@
-import { dialog as vars } from "@seed-design/vars/component";
+import { bottomSheet as vars } from "@seed-design/vars/component";
 import { defineRecipe, enterAnimation, exitAnimation } from "./helper";
 import { pseudo } from "./pseudo";
 
-const dialog = defineRecipe({
-  name: "dialog",
-  slots: ["backdrop", "container", "content", "header", "footer", "action", "title", "description"],
+const bottomSheet = defineRecipe({
+  name: "bottomSheet",
+  slots: [
+    "backdrop",
+    "container",
+    "content",
+    "header",
+    "footer",
+    "title",
+    "description",
+    "closeButton",
+    "closeIcon",
+  ],
   base: {
     backdrop: {
       position: "fixed",
@@ -28,7 +38,7 @@ const dialog = defineRecipe({
       position: "fixed",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "flex-end",
       inset: 0,
     },
     content: {
@@ -40,23 +50,20 @@ const dialog = defineRecipe({
       wordBreak: "break-all",
 
       background: vars.base.enabled.content.background,
-      maxWidth: vars.base.enabled.content.maxWidth,
-      margin: `auto ${vars.base.enabled.content.marginX}`,
-      padding: `${vars.base.enabled.content.paddingY} ${vars.base.enabled.content.paddingX}`,
-      borderRadius: vars.base.enabled.content.cornerRadius,
+      borderTopLeftRadius: vars.base.enabled.content.cornerTopRadius,
+      borderTopRightRadius: vars.base.enabled.content.cornerTopRadius,
 
       [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
         exitAnimation({
           timingFunction: vars.base.enabled.content.exitTimingFunction,
           duration: vars.base.enabled.content.exitDuration,
-          opacity: vars.base.enabled.content.exitOpacity,
+          translateY: "100%",
         }),
       [pseudo(":is([data-transition-state='enter-active'],[data-transition-state='enter-done'])")]:
         enterAnimation({
           timingFunction: vars.base.enabled.content.enterTimingFunction,
           duration: vars.base.enabled.content.enterDuration,
-          opacity: vars.base.enabled.content.enterOpacity,
-          scale: vars.base.enabled.content.enterScale,
+          translateY: "100%",
         }),
     },
     header: {
@@ -64,6 +71,9 @@ const dialog = defineRecipe({
       flexDirection: "column",
 
       gap: vars.base.enabled.header.gap,
+      paddingInline: vars.base.enabled.header.paddingX,
+      paddingTop: vars.base.enabled.header.paddingTop,
+      paddingBottom: vars.base.enabled.header.paddingBottom,
     },
     title: {
       color: vars.base.enabled.title.color,
@@ -84,32 +94,40 @@ const dialog = defineRecipe({
     },
     footer: {
       display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
-      alignItems: "stretch",
+      flexDirection: "column",
 
+      paddingInline: vars.base.enabled.footer.paddingX,
       paddingTop: vars.base.enabled.footer.paddingTop,
-      gap: vars.base.enabled.footer.gap,
+      paddingBottom: vars.base.enabled.footer.paddingBottom,
     },
-    action: {
-      width: "initial",
-      minWidth: `calc(50% - ${vars.base.enabled.footer.gap} / 2)`,
+    closeButton: {
+      position: "absolute",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+
+      top: vars.base.enabled.closeButton.fromTop,
+      right: vars.base.enabled.closeButton.fromRight,
+      borderRadius: vars.base.enabled.closeButton.cornerRadius,
+      background: vars.base.enabled.closeButton.color,
+      width: vars.base.enabled.closeButton.size,
+      height: vars.base.enabled.closeButton.size,
+
+      "&:after": {
+        content: '""',
+        position: "absolute",
+        inset: `calc((${vars.base.enabled.closeButton.size} - ${vars.base.enabled.closeButton.targetSize}) / 2)`,
+      },
+    },
+    closeIcon: {
+      flexShrink: 0,
+
+      color: vars.base.enabled.closeIcon.color,
+      width: vars.base.enabled.closeIcon.size,
+      height: vars.base.enabled.closeIcon.size,
     },
   },
-  variants: {
-    footerLayout: {
-      horizontal: {
-        footer: {
-          flexDirection: "row-reverse",
-        },
-      },
-      vertical: {
-        footer: {
-          flexDirection: "column",
-        },
-      },
-    },
-  },
+  variants: {},
 });
 
-export default dialog;
+export default bottomSheet;

@@ -3,6 +3,7 @@ export { vars as actionChip } from "./action-chip";
 export { vars as avatarStack } from "./avatar-stack";
 export { vars as avatar } from "./avatar";
 export { vars as badge } from "./badge";
+export { vars as bottomSheet } from "./bottom-sheet";
 export { vars as callout } from "./callout";
 export { vars as checkbox } from "./checkbox";
 export { vars as chipTab } from "./chip-tab";

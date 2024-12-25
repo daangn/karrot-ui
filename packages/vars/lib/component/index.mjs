@@ -3,6 +3,7 @@ export { vars as actionChip } from "./action-chip.mjs";
 export { vars as avatarStack } from "./avatar-stack.mjs";
 export { vars as avatar } from "./avatar.mjs";
 export { vars as badge } from "./badge.mjs";
+export { vars as bottomSheet } from "./bottom-sheet.mjs";
 export { vars as callout } from "./callout.mjs";
 export { vars as checkbox } from "./checkbox.mjs";
 export { vars as chipTab } from "./chip-tab.mjs";

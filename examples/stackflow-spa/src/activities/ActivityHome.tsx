@@ -24,6 +24,7 @@ const ActivityHome: ActivityComponentType = () => {
           <ListItem onClick={() => push("ActivityLayerBar", {})} title="LayerBar" />
           <ListItem onClick={() => push("ActivityTransparentBar", {})} title="TransparentBar" />
           <ListItem onClick={() => push("ActivityAlertDialog", {})} title="AlertDialog" />
+          <ListItem onClick={() => push("ActivityBottomSheet", {})} title="BottomSheet" />
         </List>
       </div>
     </AppScreen>

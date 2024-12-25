@@ -16,7 +16,7 @@ data:
         exitOpacity: 0
       content:
         background: $color.bg.layer-default
-        borderRadius: $radius.s5
+        cornerRadius: $radius.s5
         marginX: $unit.s8
         paddingX: $unit.s5
         paddingY: $unit.s5

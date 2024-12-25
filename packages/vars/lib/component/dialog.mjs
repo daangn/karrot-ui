@@ -12,7 +12,7 @@ export const vars = {
       },
       "content": {
         "background": "var(--seed-v3-color-bg-layer-default)",
-        "borderRadius": "var(--seed-v3-radius-s5)",
+        "cornerRadius": "var(--seed-v3-radius-s5)",
         "marginX": "var(--seed-v3-unit-s8)",
         "paddingX": "var(--seed-v3-unit-s5)",
         "paddingY": "var(--seed-v3-unit-s5)",

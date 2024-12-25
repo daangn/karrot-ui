@@ -1,5 +1,5 @@
 import { useActions, useActivity } from "@stackflow/react";
-import { useStyleEffect } from "@stackflow/react-ui-core";
+import { useStyleEffect, useZIndexBase } from "@stackflow/react-ui-core";
 import * as React from "react";
 import { createContext, useCallback, useContext, useMemo } from "react";
 
@@ -28,25 +28,25 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
     refs: [backdropRef],
   });
 
-  const onClickOutside: React.MouseEventHandler = useCallback(
-    (e) => {
-      onInteractOutside?.(e);
+  const handleClose = useCallback(() => {
+    if (popLock.current) {
+      return;
+    }
+    popLock.current = true;
 
-      if (e.defaultPrevented) {
-        return;
-      }
+    pop();
+  }, [pop]);
 
-      if (popLock.current) {
-        return;
-      }
-      popLock.current = true;
+  const onClickOutside: React.MouseEventHandler = useCallback((e) => {
+    onInteractOutside?.(e);
+  }, []);
 
-      pop();
-    },
-    [pop],
-  );
+  const onClickCloseButton: React.MouseEventHandler = useCallback(() => {
+    handleClose();
+  }, [handleClose]);
 
-  const zIndexBase = (activity?.zIndex ?? 0) * 5 + 3;
+  const zIndexBase = useZIndexBase() + 3;
+  const zIndexLayer = useZIndexBase() + 4;
   const transitionState = activity?.transitionState ?? "enter-done";
 
   const dataProps = useMemo(
@@ -72,8 +72,18 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
           zIndex: zIndexBase,
         },
       },
+      layerProps: {
+        ...dataProps,
+        style: {
+          zIndex: zIndexLayer,
+        },
+      },
+      closeButtonProps: {
+        ...dataProps,
+        onClick: onClickCloseButton,
+      },
     }),
-    [dataProps],
+    [dataProps, onClickOutside, onClickCloseButton, zIndexBase, zIndexLayer],
   );
 }
 

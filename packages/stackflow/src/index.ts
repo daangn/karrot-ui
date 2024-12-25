@@ -1,8 +1,8 @@
 export {
-  AppBarRoot,
   AppBarIconButton,
   AppBarLeft,
   AppBarRight,
+  AppBarRoot,
   AppBarTitle,
 } from "./AppBar";
 
@@ -15,10 +15,10 @@ export type {
 } from "./AppBar";
 
 export {
-  AppScreenRoot,
   AppScreenDim,
   AppScreenEdge,
   AppScreenLayer,
+  AppScreenRoot,
 } from "./AppScreen";
 
 export type {
@@ -29,27 +29,52 @@ export type {
 } from "./AppScreen";
 
 export {
-  DialogRoot,
+  DialogAction,
   DialogBackdrop,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogAction,
+  DialogRoot,
   DialogTitle,
-  DialogDescription,
 } from "./Dialog";
 
 export type {
-  DialogRootProps,
+  DialogActionProps,
   DialogBackdropProps,
   DialogContentProps,
+  DialogDescriptionProps,
   DialogFooterProps,
   DialogHeaderProps,
-  DialogActionProps,
+  DialogRootProps,
   DialogTitleProps,
-  DialogDescriptionProps,
 } from "./Dialog";
+
+export {
+  BottomSheetBackdrop,
+  BottomSheetContent,
+  BottomSheetDescription,
+  BottomSheetFooter,
+  BottomSheetHeader,
+  BottomSheetRoot,
+  BottomSheetTitle,
+  BottomSheetCloseButton,
+  BottomSheetCloseIcon,
+} from "./BottomSheet";
+
+export type {
+  BottomSheetBackdropProps,
+  BottomSheetContentProps,
+  BottomSheetDescriptionProps,
+  BottomSheetFooterProps,
+  BottomSheetHeaderProps,
+  BottomSheetRootProps,
+  BottomSheetTitleProps,
+  BottomSheetCloseButtonProps,
+  BottomSheetCloseIconProps,
+} from "./BottomSheet";
 
 export * as AppBar from "./AppBar.namespace";
 export * as AppScreen from "./AppScreen.namespace";
+export * as BottomSheet from "./BottomSheet.namespace";
 export * as Dialog from "./Dialog.namespace";

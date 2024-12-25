@@ -8,7 +8,7 @@ const ActivityAlertDialog: ActivityComponentType = () => {
   const { pop } = useFlow();
 
   return (
-    <AlertDialog title="제목" description="다람쥐 헌 쳇바퀴에 타고파">
+    <AlertDialog title="제목" description="다람쥐 헌 쳇바퀴에 타고파" onInteractOutside={pop}>
       <AlertDialogAction asChild>
         <ActionButton
           onClick={() => {

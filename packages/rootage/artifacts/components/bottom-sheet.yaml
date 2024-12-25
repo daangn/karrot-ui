@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: bottom-sheet
+  name: Bottom Sheet
+data:
+  base:
+    enabled:
+      backdrop:
+        background: $color.bg.overlay
+        enterDuration: $duration.s2
+        enterTimingFunction: $timing-function.enter
+        enterOpacity: 0
+        exitDuration: $duration.s2
+        exitTimingFunction: $timing-function.exit
+        exitOpacity: 0
+      content:
+        background: $color.bg.layer-default
+        cornerTopRadius: $radius.s6
+        enterDuration: $duration.s6
+        enterTimingFunction: $timing-function.enter-expressive
+        # Do we need translateY definition here?
+        exitDuration: $duration.s4
+        exitTimingFunction: $timing-function.exit
+      header:
+        gap: $unit.s2
+        paddingX: $unit.s4
+        paddingTop: $unit.s6
+        paddingBottom: $unit.s4
+      footer:
+        paddingX: $unit.s4
+        paddingTop: $unit.s3
+        paddingBottom: $unit.s4
+      title:
+        color: $color.fg.neutral
+        fontSize: $font-size.s8
+        lineHeight: $line-height.s8
+        fontWeight: $font-weight.bold
+      description:
+        color: $color.fg.neutral-muted
+        fontSize: $font-size.s6
+        lineHeight: $line-height.s6
+        fontWeight: $font-weight.regular
+      closeButton:
+        color: $color.palette.gray-300
+        cornerRadius: $radius.full
+        targetSize: 44px
+        size: 28px
+        fromTop: $unit.s5
+        fromRight: $unit.s5
+      closeIcon:
+        color: $color.fg.neutral
+        size: 14px
