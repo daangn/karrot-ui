@@ -23,7 +23,10 @@ async function writeCssInJs() {
       const jsCode = generateJs(definition);
       const dtsCode = generateDts(definition);
 
+      console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.mjs`));
       fs.writeFileSync(path.join(dir, `${name}.mjs`), jsCode);
+
+      console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.d.ts`));
       fs.writeFileSync(path.join(dir, `${name}.d.ts`), dtsCode);
     }),
   );

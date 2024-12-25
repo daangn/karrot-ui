@@ -8,6 +8,12 @@ data:
     enabled:
       backdrop:
         background: $color.bg.overlay
+        enterDuration: $duration.s2
+        enterTimingFunction: $timing-function.enter
+        enterOpacity: 0
+        exitDuration: $duration.s2
+        exitTimingFunction: $timing-function.exit
+        exitOpacity: 0
       content:
         background: $color.bg.layer-default
         borderRadius: $radius.s5
@@ -15,6 +21,13 @@ data:
         paddingX: $unit.s5
         paddingY: $unit.s5
         maxWidth: 272px
+        enterDuration: $duration.s4
+        enterTimingFunction: $timing-function.enter-expressive
+        enterOpacity: 0
+        enterScale: 1.3
+        exitDuration: $duration.s2
+        exitTimingFunction: $timing-function.exit
+        exitOpacity: 0
       header:
         gap: $unit.s1_5
       footer:

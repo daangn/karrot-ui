@@ -1,5 +1,5 @@
 import { dialog as vars } from "@seed-design/vars/component";
-import { defineRecipe } from "./helper";
+import { defineRecipe, enterAnimation, exitAnimation } from "./helper";
 import { pseudo } from "./pseudo";
 
 const dialog = defineRecipe({
@@ -11,31 +11,18 @@ const dialog = defineRecipe({
       inset: 0,
       background: vars.base.enabled.backdrop.background,
 
-      // TODO: move to rootage
-      [pseudo("[data-transition-state='exit-active']")]: {
-        animation: "seed-exit",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-exit-opacity": "0",
-      },
-      [pseudo("[data-transition-state='exit-done']")]: {
-        animation: "seed-exit",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-exit-opacity": "0",
-      },
-      [pseudo("[data-transition-state='enter-active']")]: {
-        animation: "seed-enter",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-enter-opacity": "0",
-      },
-      [pseudo("[data-transition-state='enter-done']")]: {
-        animation: "seed-enter",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-enter-opacity": "0",
-      },
+      [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
+        exitAnimation({
+          timingFunction: vars.base.enabled.backdrop.exitTimingFunction,
+          duration: vars.base.enabled.backdrop.exitDuration,
+          opacity: vars.base.enabled.backdrop.exitOpacity,
+        }),
+      [pseudo(":is([data-transition-state='enter-active'],[data-transition-state='enter-done'])")]:
+        enterAnimation({
+          timingFunction: vars.base.enabled.backdrop.enterTimingFunction,
+          duration: vars.base.enabled.backdrop.enterDuration,
+          opacity: vars.base.enabled.backdrop.enterOpacity,
+        }),
     },
     container: {
       position: "fixed",
@@ -43,32 +30,6 @@ const dialog = defineRecipe({
       justifyContent: "center",
       alignItems: "center",
       inset: 0,
-
-      // TODO: move to rootage
-      [pseudo("[data-transition-state='exit-active']")]: {
-        animation: "seed-exit",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-exit-opacity": "0",
-      },
-      [pseudo("[data-transition-state='exit-done']")]: {
-        animation: "seed-exit",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-exit-opacity": "0",
-      },
-      [pseudo("[data-transition-state='enter-active']")]: {
-        animation: "seed-enter",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-enter-opacity": "0",
-      },
-      [pseudo("[data-transition-state='enter-done']")]: {
-        animation: "seed-enter",
-        animationTimingFunction: "ease",
-        animationDuration: "0.3s",
-        "--seed-enter-opacity": "0",
-      },
     },
     content: {
       position: "relative",
@@ -83,6 +44,20 @@ const dialog = defineRecipe({
       margin: `auto ${vars.base.enabled.content.marginX}`,
       padding: `${vars.base.enabled.content.paddingY} ${vars.base.enabled.content.paddingX}`,
       borderRadius: vars.base.enabled.content.borderRadius,
+
+      [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
+        exitAnimation({
+          timingFunction: vars.base.enabled.content.exitTimingFunction,
+          duration: vars.base.enabled.content.exitDuration,
+          opacity: vars.base.enabled.content.exitOpacity,
+        }),
+      [pseudo(":is([data-transition-state='enter-active'],[data-transition-state='enter-done'])")]:
+        enterAnimation({
+          timingFunction: vars.base.enabled.content.enterTimingFunction,
+          duration: vars.base.enabled.content.enterDuration,
+          opacity: vars.base.enabled.content.enterOpacity,
+          scale: vars.base.enabled.content.enterScale,
+        }),
     },
     header: {
       display: "flex",
