@@ -42,6 +42,9 @@
       "path": "/components/dialog.json"
     },
     {
+      "path": "/components/bottom-sheet.json"
+    },
+    {
       "path": "/components/fab.json"
     },
     {

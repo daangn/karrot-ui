@@ -21,6 +21,15 @@
     ]
   },
   {
+    "name": "bottom-sheet",
+    "dependencies": [
+      "@seed-design/stackflow"
+    ],
+    "files": [
+      "ui:bottom-sheet.tsx"
+    ]
+  },
+  {
     "name": "avatar",
     "innerDependencies": [
       "identity-placeholder"

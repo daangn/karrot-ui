@@ -1,0 +1,13 @@
+{
+  "name": "bottom-sheet",
+  "dependencies": [
+    "@seed-design/stackflow"
+  ],
+  "registries": [
+    {
+      "name": "bottom-sheet.tsx",
+      "type": "ui",
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/bottomSheet.css\";\n\nimport IconXmarkFill from \"@daangn/react-monochrome-icon/IconXmarkFill\";\nimport { BottomSheet as SeedBottomSheet } from \"@seed-design/stackflow\";\nimport { forwardRef } from \"react\";\n\nexport interface BottomSheetProps extends SeedBottomSheet.RootProps {\n  title: string;\n  description: string;\n}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/stackflow/bottom-sheet\n */\nexport const BottomSheet = forwardRef<HTMLDivElement, BottomSheetProps>(\n  ({ title, description, children, ...otherProps }, ref) => {\n    // FIXME: Footer 안의 action 배열을 다룰 쓸만한 인터페이스가 생각이 안남. 인터페이스 다시 생각할 것.\n    return (\n      <SeedBottomSheet.Root ref={ref} {...otherProps}>\n        <SeedBottomSheet.Backdrop />\n        <SeedBottomSheet.Content>\n          <SeedBottomSheet.CloseButton>\n            <SeedBottomSheet.CloseIcon svg={<IconXmarkFill />} />\n          </SeedBottomSheet.CloseButton>\n          <SeedBottomSheet.Header>\n            <SeedBottomSheet.Title>{title}</SeedBottomSheet.Title>\n            <SeedBottomSheet.Description>\n              {description}\n            </SeedBottomSheet.Description>\n          </SeedBottomSheet.Header>\n          {children}\n        </SeedBottomSheet.Content>\n      </SeedBottomSheet.Root>\n    );\n  },\n);\n\nBottomSheet.displayName = \"BottomSheet\";\n\nexport const BottomSheetFooter = SeedBottomSheet.Footer;\n"
+    }
+  ]
+}
