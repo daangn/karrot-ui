@@ -5,12 +5,12 @@ import pkg from "./package.json" assert { type: "json" };
 esbuild
   .build({
     entryPoints: ["./src/index.ts"],
-    outfile: "./bin/index.mjs",
+    outfile: "./lib/index.mjs",
     bundle: true,
     write: true,
     treeShaking: true,
     sourcemap: false,
-    minify: true,
+    minify: false,
     format: "esm",
     platform: "node",
     target: ["node16"],

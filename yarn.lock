@@ -7905,7 +7905,7 @@ __metadata:
   dependencies:
     "@seed-design/recipe-generator-core": "npm:0.0.0"
     "@seed-design/vars": "npm:0.0.0"
-    nanobundle: "npm:^1.6.0"
+    esbuild: "npm:^0.19.3"
   languageName: unknown
   linkType: soft
 
