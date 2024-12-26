@@ -34,7 +34,15 @@
     width: 40px;
     height: 40px;
 }
+.fab__icon--size_small {
+    width: 20px;
+    height: 20px;
+}
 .fab__root--size_medium {
     width: 48px;
     height: 48px;
+}
+.fab__icon--size_medium {
+    width: 22px;
+    height: 22px;
 }

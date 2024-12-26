@@ -48,11 +48,19 @@ const fab = defineRecipe({
           width: vars.sizeSmall.enabled.root.size,
           height: vars.sizeSmall.enabled.root.size,
         },
+        icon: {
+          width: vars.sizeSmall.enabled.icon.size,
+          height: vars.sizeSmall.enabled.icon.size,
+        },
       },
       medium: {
         root: {
           width: vars.sizeMedium.enabled.root.size,
           height: vars.sizeMedium.enabled.root.size,
+        },
+        icon: {
+          width: vars.sizeMedium.enabled.icon.size,
+          height: vars.sizeMedium.enabled.icon.size,
         },
       },
     },
