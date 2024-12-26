@@ -18,6 +18,8 @@ function useStyleContext() {
   return context;
 }
 
+////////////////////////////////////////////////////////////////////////////////////
+
 export interface BottomSheetBackdropProps extends Primitive.BackdropProps {}
 
 export const BottomSheetBackdrop = forwardRef<HTMLDivElement, BottomSheetBackdropProps>(
@@ -37,6 +39,8 @@ export const BottomSheetBackdrop = forwardRef<HTMLDivElement, BottomSheetBackdro
 );
 
 BottomSheetBackdrop.displayName = "BottomSheetBackdrop";
+
+////////////////////////////////////////////////////////////////////////////////////
 
 export interface BottomSheetContentProps extends Primitive.ContentProps {}
 
@@ -58,6 +62,8 @@ export const BottomSheetContent = forwardRef<HTMLDivElement, BottomSheetContentP
 
 BottomSheetContent.displayName = "BottomSheetContent";
 
+////////////////////////////////////////////////////////////////////////////////////
+
 export interface BottomSheetHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const BottomSheetHeader = forwardRef<HTMLDivElement, BottomSheetHeaderProps>(
@@ -71,6 +77,8 @@ export const BottomSheetHeader = forwardRef<HTMLDivElement, BottomSheetHeaderPro
 );
 
 BottomSheetHeader.displayName = "BottomSheetHeader";
+
+////////////////////////////////////////////////////////////////////////////////////
 
 export interface BottomSheetFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -86,6 +94,8 @@ export const BottomSheetFooter = forwardRef<HTMLDivElement, BottomSheetFooterPro
 
 BottomSheetFooter.displayName = "BottomSheetFooter";
 
+////////////////////////////////////////////////////////////////////////////////////
+
 export interface BottomSheetTitleProps extends Primitive.TitleProps {}
 
 export const BottomSheetTitle = forwardRef<HTMLDivElement, BottomSheetTitleProps>((props, ref) => {
@@ -99,6 +109,8 @@ export const BottomSheetTitle = forwardRef<HTMLDivElement, BottomSheetTitleProps
 });
 
 BottomSheetTitle.displayName = "BottomSheetTitle";
+
+////////////////////////////////////////////////////////////////////////////////////
 
 export interface BottomSheetDescriptionProps extends Primitive.DescriptionProps {}
 
@@ -120,6 +132,8 @@ export const BottomSheetDescription = forwardRef<HTMLDivElement, BottomSheetDesc
 
 BottomSheetDescription.displayName = "BottomSheetDescription";
 
+////////////////////////////////////////////////////////////////////////////////////
+
 export interface BottomSheetCloseButtonProps extends Primitive.CloseButtonProps {}
 
 export const BottomSheetCloseButton = forwardRef<HTMLButtonElement, BottomSheetCloseButtonProps>(
@@ -140,6 +154,8 @@ export const BottomSheetCloseButton = forwardRef<HTMLButtonElement, BottomSheetC
 
 BottomSheetCloseButton.displayName = "BottomSheetCloseButton";
 
+////////////////////////////////////////////////////////////////////////////////////
+
 export interface BottomSheetCloseIconProps {
   svg: React.ReactNode;
 }
@@ -154,9 +170,9 @@ export const BottomSheetCloseIcon = (props: BottomSheetCloseIconProps) => {
 
 BottomSheetCloseIcon.displayName = "BottomSheetCloseIcon";
 
-export interface BottomSheetRootProps extends React.HTMLAttributes<HTMLDivElement> {
-  onInteractOutside?: React.MouseEventHandler;
-}
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface BottomSheetRootProps extends Primitive.RootProps {}
 
 export const BottomSheetRoot = forwardRef<HTMLDivElement, BottomSheetRootProps>((props, ref) => {
   const { children, className, ...otherProps } = props;
