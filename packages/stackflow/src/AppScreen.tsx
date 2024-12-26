@@ -1,7 +1,7 @@
 import { composeRefs } from "@radix-ui/react-compose-refs";
 import { type ScreenVariantProps, screen } from "@seed-design/recipe/screen";
 import { createContext, forwardRef, useContext, useMemo } from "react";
-import { AppScreenProvider, useAppScreen, useAppScreenContext } from "./useAppScreen";
+import { AppScreenProvider, useAppScreen, useAppScreenContext } from "./primitive/useAppScreen";
 
 const StyleContext = createContext<ReturnType<typeof screen> | null>(null);
 

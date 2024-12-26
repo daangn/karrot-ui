@@ -4,7 +4,7 @@ import { type TopNavigationVariantProps, topNavigation } from "@seed-design/reci
 import { useAppBarTitleMaxWidth } from "@stackflow/react-ui-core";
 import clsx from "clsx";
 import { createContext, forwardRef, useContext, useMemo, useRef } from "react";
-import { useAppScreenContext } from "./useAppScreen";
+import { useAppScreenContext } from "./primitive/useAppScreen";
 
 const StyleContext = createContext<ReturnType<typeof topNavigation> | null>(null);
 

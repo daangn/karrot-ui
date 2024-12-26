@@ -1,10 +1,9 @@
-import { composeRefs } from "@radix-ui/react-compose-refs";
 import { Slot } from "@radix-ui/react-slot";
 import { bottomSheet } from "@seed-design/recipe/bottomSheet";
 import clsx from "clsx";
 import type * as React from "react";
-import { createContext, forwardRef, useCallback, useContext } from "react";
-import { DialogProvider, useDialog, useDialogContext } from "./useDialog";
+import { createContext, forwardRef, useContext } from "react";
+import { Dialog as Primitive } from "./primitive";
 
 const StyleContext = createContext<ReturnType<typeof bottomSheet> | null>(null);
 
@@ -19,20 +18,18 @@ function useStyleContext() {
   return context;
 }
 
-export interface BottomSheetBackdropProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface BottomSheetBackdropProps extends Primitive.BackdropProps {}
 
 export const BottomSheetBackdrop = forwardRef<HTMLDivElement, BottomSheetBackdropProps>(
   (props, ref) => {
     const { className, ...otherProps } = props;
 
     const classNames = useStyleContext();
-    const api = useDialogContext();
 
     return (
-      <div
+      <Primitive.Backdrop
         ref={ref}
         className={clsx(classNames.backdrop, className)}
-        {...api.dataProps}
         {...otherProps}
       />
     );
@@ -41,24 +38,18 @@ export const BottomSheetBackdrop = forwardRef<HTMLDivElement, BottomSheetBackdro
 
 BottomSheetBackdrop.displayName = "BottomSheetBackdrop";
 
-export interface BottomSheetContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface BottomSheetContentProps extends Primitive.ContentProps {}
 
 export const BottomSheetContent = forwardRef<HTMLDivElement, BottomSheetContentProps>(
   (props, ref) => {
-    const { className, onClick, ...otherProps } = props;
+    const { className, ...otherProps } = props;
 
     const classNames = useStyleContext();
-    const api = useDialogContext();
 
     return (
-      <div
+      <Primitive.Content
         ref={ref}
         className={clsx(classNames.content, className)}
-        onClick={useCallback((e) => {
-          e.stopPropagation();
-          onClick?.(e);
-        }, [])}
-        {...api.dataProps}
         {...otherProps}
       />
     );
@@ -74,16 +65,8 @@ export const BottomSheetHeader = forwardRef<HTMLDivElement, BottomSheetHeaderPro
     const { className, ...otherProps } = props;
 
     const classNames = useStyleContext();
-    const api = useDialogContext();
 
-    return (
-      <div
-        ref={ref}
-        className={clsx(classNames.header, className)}
-        {...api.dataProps}
-        {...otherProps}
-      />
-    );
+    return <div ref={ref} className={clsx(classNames.header, className)} {...otherProps} />;
   },
 );
 
@@ -96,55 +79,39 @@ export const BottomSheetFooter = forwardRef<HTMLDivElement, BottomSheetFooterPro
     const { className, ...otherProps } = props;
 
     const classNames = useStyleContext();
-    const api = useDialogContext();
 
-    return (
-      <div
-        ref={ref}
-        className={clsx(classNames.footer, className)}
-        {...api.dataProps}
-        {...otherProps}
-      />
-    );
+    return <div ref={ref} className={clsx(classNames.footer, className)} {...otherProps} />;
   },
 );
 
 BottomSheetFooter.displayName = "BottomSheetFooter";
 
-export interface BottomSheetTitleProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface BottomSheetTitleProps extends Primitive.TitleProps {}
 
 export const BottomSheetTitle = forwardRef<HTMLDivElement, BottomSheetTitleProps>((props, ref) => {
   const { className, ...otherProps } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
 
   return (
-    <div
-      ref={ref}
-      className={clsx(classNames.title, className)}
-      {...api.dataProps}
-      {...otherProps}
-    />
+    <Primitive.Title ref={ref} className={clsx(classNames.title, className)} {...otherProps} />
   );
 });
 
 BottomSheetTitle.displayName = "BottomSheetTitle";
 
-export interface BottomSheetDescriptionProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface BottomSheetDescriptionProps extends Primitive.DescriptionProps {}
 
 export const BottomSheetDescription = forwardRef<HTMLDivElement, BottomSheetDescriptionProps>(
   (props, ref) => {
     const { className, ...otherProps } = props;
 
     const classNames = useStyleContext();
-    const api = useDialogContext();
 
     return (
-      <div
+      <Primitive.Description
         ref={ref}
         className={clsx(classNames.description, className)}
-        {...api.dataProps}
         {...otherProps}
       />
     );
@@ -153,22 +120,18 @@ export const BottomSheetDescription = forwardRef<HTMLDivElement, BottomSheetDesc
 
 BottomSheetDescription.displayName = "BottomSheetDescription";
 
-export interface BottomSheetCloseButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface BottomSheetCloseButtonProps extends Primitive.CloseButtonProps {}
 
 export const BottomSheetCloseButton = forwardRef<HTMLButtonElement, BottomSheetCloseButtonProps>(
   (props, ref) => {
     const { className, ...otherProps } = props;
 
     const classNames = useStyleContext();
-    const api = useDialogContext();
 
     return (
-      <button
-        aria-label="Close"
+      <Primitive.CloseButton
         ref={ref}
         className={clsx(classNames.closeButton, className)}
-        {...api.closeButtonProps}
         {...otherProps}
       />
     );
@@ -185,13 +148,8 @@ export const BottomSheetCloseIcon = (props: BottomSheetCloseIconProps) => {
   const { svg } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
 
-  return (
-    <Slot className={classNames.closeIcon} {...api.dataProps}>
-      {svg}
-    </Slot>
-  );
+  return <Slot className={classNames.closeIcon}>{svg}</Slot>;
 };
 
 BottomSheetCloseIcon.displayName = "BottomSheetCloseIcon";
@@ -201,28 +159,19 @@ export interface BottomSheetRootProps extends React.HTMLAttributes<HTMLDivElemen
 }
 
 export const BottomSheetRoot = forwardRef<HTMLDivElement, BottomSheetRootProps>((props, ref) => {
-  const { onInteractOutside, onClick, children, role = "dialog", ...otherProps } = props;
+  const { children, className, ...otherProps } = props;
 
-  const api = useDialog({ onInteractOutside });
   const classNames = bottomSheet();
 
   return (
-    <div
-      ref={composeRefs(ref, api.refs.root)}
-      role={role}
+    <Primitive.Root
+      ref={ref}
       data-stackflow-component-name="BottomSheet"
-      className={classNames.container}
-      onClick={useCallback((e) => {
-        e.stopPropagation();
-        onClick?.(e);
-      }, [])}
-      {...api.rootProps}
+      className={clsx(classNames.container, className)}
       {...otherProps}
     >
-      <DialogProvider value={api}>
-        <StyleProvider value={classNames}>{children}</StyleProvider>
-      </DialogProvider>
-    </div>
+      <StyleProvider value={classNames}>{children}</StyleProvider>
+    </Primitive.Root>
   );
 });
 

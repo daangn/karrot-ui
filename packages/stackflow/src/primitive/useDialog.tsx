@@ -1,7 +1,7 @@
 import { useActions, useActivity } from "@stackflow/react";
 import { useStyleEffect, useZIndexBase } from "@stackflow/react-ui-core";
 import * as React from "react";
-import { createContext, useCallback, useContext, useMemo } from "react";
+import { createContext, useCallback, useContext, useId, useMemo } from "react";
 
 export interface UseDialogProps {
   onInteractOutside?: React.MouseEventHandler;
@@ -46,7 +46,7 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
   }, [handleClose]);
 
   const zIndexBase = useZIndexBase() + 3;
-  const zIndexLayer = useZIndexBase() + 4;
+  const zIndexContent = useZIndexBase() + 4;
   const transitionState = activity?.transitionState ?? "enter-done";
 
   const dataProps = useMemo(
@@ -57,6 +57,10 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
     }),
     [activity?.id, activity?.isActive, transitionState],
   );
+
+  const id = useId();
+  const titleId = `${id}-title`;
+  const descriptionId = `${id}-description`;
 
   return useMemo(
     () => ({
@@ -72,18 +76,37 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
           zIndex: zIndexBase,
         },
       },
-      layerProps: {
+      contentProps: {
         ...dataProps,
+        "aria-modal": true,
+        "aria-labelledby": titleId,
+        "aria-describedby": descriptionId,
         style: {
-          zIndex: zIndexLayer,
+          zIndex: zIndexContent,
         },
       },
       closeButtonProps: {
         ...dataProps,
         onClick: onClickCloseButton,
       },
+      titleProps: {
+        id: titleId,
+        ...dataProps,
+      },
+      descriptionProps: {
+        id: descriptionId,
+        ...dataProps,
+      },
     }),
-    [dataProps, onClickOutside, onClickCloseButton, zIndexBase, zIndexLayer],
+    [
+      dataProps,
+      onClickOutside,
+      onClickCloseButton,
+      zIndexBase,
+      zIndexContent,
+      titleId,
+      descriptionId,
+    ],
   );
 }
 

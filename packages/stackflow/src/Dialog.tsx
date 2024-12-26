@@ -1,10 +1,9 @@
-import { composeRefs } from "@radix-ui/react-compose-refs";
 import { Slot } from "@radix-ui/react-slot";
 import { dialog } from "@seed-design/recipe/dialog";
 import clsx from "clsx";
 import type * as React from "react";
-import { createContext, forwardRef, useCallback, useContext } from "react";
-import { DialogProvider, useDialog, useDialogContext } from "./useDialog";
+import { createContext, forwardRef, useContext } from "react";
+import { Dialog as Primitive } from "./primitive";
 
 const StyleContext = createContext<ReturnType<typeof dialog> | null>(null);
 
@@ -19,19 +18,19 @@ function useStyleContext() {
   return context;
 }
 
-export interface DialogBackdropProps extends React.HTMLAttributes<HTMLDivElement> {}
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface DialogBackdropProps extends Primitive.BackdropProps {}
 
 export const DialogBackdrop = forwardRef<HTMLDivElement, DialogBackdropProps>((props, ref) => {
   const { className, ...otherProps } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
 
   return (
-    <div
+    <Primitive.Backdrop
       ref={ref}
       className={clsx(classNames.backdrop, className)}
-      {...api.dataProps}
       {...otherProps}
     />
   );
@@ -39,29 +38,23 @@ export const DialogBackdrop = forwardRef<HTMLDivElement, DialogBackdropProps>((p
 
 DialogBackdrop.displayName = "DialogBackdrop";
 
-export interface DialogContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface DialogContentProps extends Primitive.ContentProps {}
 
 export const DialogContent = forwardRef<HTMLDivElement, DialogContentProps>((props, ref) => {
-  const { className, onClick, ...otherProps } = props;
+  const { className, ...otherProps } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
 
   return (
-    <div
-      ref={ref}
-      className={clsx(classNames.content, className)}
-      onClick={useCallback((e) => {
-        e.stopPropagation();
-        onClick?.(e);
-      }, [])}
-      {...api.dataProps}
-      {...otherProps}
-    />
+    <Primitive.Content ref={ref} className={clsx(classNames.content, className)} {...otherProps} />
   );
 });
 
 DialogContent.displayName = "DialogContent";
+
+////////////////////////////////////////////////////////////////////////////////////
 
 export interface DialogHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -69,19 +62,13 @@ export const DialogHeader = forwardRef<HTMLDivElement, DialogHeaderProps>((props
   const { className, ...otherProps } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
 
-  return (
-    <div
-      ref={ref}
-      className={clsx(classNames.header, className)}
-      {...api.dataProps}
-      {...otherProps}
-    />
-  );
+  return <div ref={ref} className={clsx(classNames.header, className)} {...otherProps} />;
 });
 
 DialogHeader.displayName = "DialogHeader";
+
+////////////////////////////////////////////////////////////////////////////////////
 
 export interface DialogFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -89,61 +76,43 @@ export const DialogFooter = forwardRef<HTMLDivElement, DialogFooterProps>((props
   const { className, ...otherProps } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
 
-  return (
-    <div
-      ref={ref}
-      className={clsx(classNames.footer, className)}
-      {...api.dataProps}
-      {...otherProps}
-    />
-  );
+  return <div ref={ref} className={clsx(classNames.footer, className)} {...otherProps} />;
 });
 
 DialogFooter.displayName = "DialogFooter";
 
-export interface DialogTitleProps extends React.HTMLAttributes<HTMLDivElement> {}
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface DialogTitleProps extends Primitive.TitleProps {}
 
 export const DialogTitle = forwardRef<HTMLDivElement, DialogTitleProps>((props, ref) => {
   const { className, ...otherProps } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
 
-  return (
-    <div
-      ref={ref}
-      className={clsx(classNames.title, className)}
-      {...api.dataProps}
-      {...otherProps}
-    />
-  );
+  return <div ref={ref} className={clsx(classNames.title, className)} {...otherProps} />;
 });
 
 DialogTitle.displayName = "DialogTitle";
 
-export interface DialogDescriptionProps extends React.HTMLAttributes<HTMLDivElement> {}
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface DialogDescriptionProps extends Primitive.DescriptionProps {}
 
 export const DialogDescription = forwardRef<HTMLDivElement, DialogDescriptionProps>(
   (props, ref) => {
     const { className, ...otherProps } = props;
 
     const classNames = useStyleContext();
-    const api = useDialogContext();
 
-    return (
-      <div
-        ref={ref}
-        className={clsx(classNames.description, className)}
-        {...api.dataProps}
-        {...otherProps}
-      />
-    );
+    return <div ref={ref} className={clsx(classNames.description, className)} {...otherProps} />;
   },
 );
 
 DialogDescription.displayName = "DialogDescription";
+
+////////////////////////////////////////////////////////////////////////////////////
 
 export interface DialogActionProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
@@ -153,46 +122,32 @@ export const DialogAction = forwardRef<HTMLDivElement, DialogActionProps>((props
   const { className, asChild, ...otherProps } = props;
 
   const classNames = useStyleContext();
-  const api = useDialogContext();
   const Comp = asChild ? Slot : "div";
 
-  return (
-    <Comp
-      ref={ref}
-      className={clsx(classNames.action, className)}
-      {...api.dataProps}
-      {...otherProps}
-    />
-  );
+  return <Comp ref={ref} className={clsx(classNames.action, className)} {...otherProps} />;
 });
 
-export interface DialogRootProps extends React.HTMLAttributes<HTMLDivElement> {
-  onInteractOutside?: React.MouseEventHandler;
-}
+DialogAction.displayName = "DialogAction";
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface DialogRootProps extends Primitive.RootProps {}
 
 export const DialogRoot = forwardRef<HTMLDivElement, DialogRootProps>((props, ref) => {
-  const { onInteractOutside, onClick, children, role = "dialog", ...otherProps } = props;
+  const { children, role = "dialog", className, ...otherProps } = props;
 
-  const api = useDialog({ onInteractOutside });
   const classNames = dialog();
 
   return (
-    <div
-      ref={composeRefs(ref, api.refs.root)}
+    <Primitive.Root
+      ref={ref}
       role={role}
       data-stackflow-component-name="Dialog"
-      className={classNames.container}
-      onClick={useCallback((e) => {
-        e.stopPropagation();
-        onClick?.(e);
-      }, [])}
-      {...api.rootProps}
+      className={clsx(classNames.container, className)}
       {...otherProps}
     >
-      <DialogProvider value={api}>
-        <StyleProvider value={classNames}>{children}</StyleProvider>
-      </DialogProvider>
-    </div>
+      <StyleProvider value={classNames}>{children}</StyleProvider>
+    </Primitive.Root>
   );
 });
 
