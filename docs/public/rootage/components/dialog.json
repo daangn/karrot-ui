@@ -8,7 +8,7 @@
     "base": {
       "enabled": {
         "backdrop": {
-          "background": "$color.bg.overlay",
+          "color": "$color.bg.overlay",
           "enterDuration": "$duration.s2",
           "enterTimingFunction": "$timing-function.enter",
           "enterOpacity": 0,
@@ -17,7 +17,7 @@
           "exitOpacity": 0
         },
         "content": {
-          "background": "$color.bg.layer-default",
+          "color": "$color.bg.layer-default",
           "cornerRadius": "$radius.s5",
           "marginX": "$unit.s8",
           "paddingX": "$unit.s5",

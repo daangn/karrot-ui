@@ -2,7 +2,7 @@ export declare const vars: {
   "base": {
     "enabled": {
       "backdrop": {
-        "background": "var(--seed-v3-color-bg-overlay)",
+        "color": "var(--seed-v3-color-bg-overlay)",
         "enterDuration": "var(--seed-v3-duration-s2)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter)",
         "enterOpacity": "0",
@@ -11,7 +11,7 @@ export declare const vars: {
         "exitOpacity": "0"
       },
       "content": {
-        "background": "var(--seed-v3-color-bg-layer-default)",
+        "color": "var(--seed-v3-color-bg-layer-default)",
         "cornerTopRadius": "var(--seed-v3-radius-s6)",
         "enterDuration": "var(--seed-v3-duration-s6)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter-expressive)",
@@ -20,12 +20,12 @@ export declare const vars: {
       },
       "header": {
         "gap": "var(--seed-v3-unit-s2)",
-        "paddingX": "var(--seed-v3-unit-s4)",
+        "paddingX": "var(--seed-v3-horizontal-spacing-global-gutter)",
         "paddingTop": "var(--seed-v3-unit-s6)",
         "paddingBottom": "var(--seed-v3-unit-s4)"
       },
       "footer": {
-        "paddingX": "var(--seed-v3-unit-s4)",
+        "paddingX": "var(--seed-v3-horizontal-spacing-global-gutter)",
         "paddingTop": "var(--seed-v3-unit-s3)",
         "paddingBottom": "var(--seed-v3-unit-s4)"
       },

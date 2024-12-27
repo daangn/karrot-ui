@@ -2,7 +2,7 @@ export const vars = {
   "base": {
     "enabled": {
       "backdrop": {
-        "background": "var(--seed-v3-color-bg-overlay)",
+        "color": "var(--seed-v3-color-bg-overlay)",
         "enterDuration": "var(--seed-v3-duration-s2)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter)",
         "enterOpacity": "0",
@@ -11,7 +11,7 @@ export const vars = {
         "exitOpacity": "0"
       },
       "content": {
-        "background": "var(--seed-v3-color-bg-layer-default)",
+        "color": "var(--seed-v3-color-bg-layer-default)",
         "cornerRadius": "var(--seed-v3-radius-s5)",
         "marginX": "var(--seed-v3-unit-s8)",
         "paddingX": "var(--seed-v3-unit-s5)",

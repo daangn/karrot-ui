@@ -8,7 +8,7 @@
     "base": {
       "enabled": {
         "backdrop": {
-          "background": "$color.bg.overlay",
+          "color": "$color.bg.overlay",
           "enterDuration": "$duration.s2",
           "enterTimingFunction": "$timing-function.enter",
           "enterOpacity": 0,
@@ -17,7 +17,7 @@
           "exitOpacity": 0
         },
         "content": {
-          "background": "$color.bg.layer-default",
+          "color": "$color.bg.layer-default",
           "cornerTopRadius": "$radius.s6",
           "enterDuration": "$duration.s6",
           "enterTimingFunction": "$timing-function.enter-expressive",
@@ -26,12 +26,12 @@
         },
         "header": {
           "gap": "$unit.s2",
-          "paddingX": "$unit.s4",
+          "paddingX": "$horizontal-spacing.global-gutter",
           "paddingTop": "$unit.s6",
           "paddingBottom": "$unit.s4"
         },
         "footer": {
-          "paddingX": "$unit.s4",
+          "paddingX": "$horizontal-spacing.global-gutter",
           "paddingTop": "$unit.s3",
           "paddingBottom": "$unit.s4"
         },

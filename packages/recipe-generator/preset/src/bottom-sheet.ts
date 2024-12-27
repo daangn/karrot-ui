@@ -19,7 +19,7 @@ const bottomSheet = defineRecipe({
     backdrop: {
       position: "fixed",
       inset: 0,
-      background: vars.base.enabled.backdrop.background,
+      background: vars.base.enabled.backdrop.color,
 
       [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
         exitAnimation({
@@ -49,7 +49,7 @@ const bottomSheet = defineRecipe({
       boxSizing: "border-box",
       wordBreak: "break-all",
 
-      background: vars.base.enabled.content.background,
+      background: vars.base.enabled.content.color,
       borderTopLeftRadius: vars.base.enabled.content.cornerTopRadius,
       borderTopRightRadius: vars.base.enabled.content.cornerTopRadius,
 
