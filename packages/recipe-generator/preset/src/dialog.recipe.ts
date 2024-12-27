@@ -9,7 +9,7 @@ const dialog = defineRecipe({
     backdrop: {
       position: "fixed",
       inset: 0,
-      background: vars.base.enabled.backdrop.background,
+      background: vars.base.enabled.backdrop.color,
 
       [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
         exitAnimation({
@@ -39,7 +39,7 @@ const dialog = defineRecipe({
       boxSizing: "border-box",
       wordBreak: "break-all",
 
-      background: vars.base.enabled.content.background,
+      background: vars.base.enabled.content.color,
       maxWidth: vars.base.enabled.content.maxWidth,
       margin: `auto ${vars.base.enabled.content.marginX}`,
       padding: `${vars.base.enabled.content.paddingY} ${vars.base.enabled.content.paddingX}`,
