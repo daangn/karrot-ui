@@ -30,6 +30,15 @@
     ]
   },
   {
+    "name": "action-sheet",
+    "dependencies": [
+      "@seed-design/stackflow"
+    ],
+    "files": [
+      "ui:action-sheet.tsx"
+    ]
+  },
+  {
     "name": "avatar",
     "innerDependencies": [
       "identity-placeholder"

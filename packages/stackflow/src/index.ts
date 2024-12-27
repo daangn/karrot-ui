@@ -52,28 +52,55 @@ export type {
 
 export {
   BottomSheetBackdrop,
+  BottomSheetCloseButton,
+  BottomSheetCloseIcon,
   BottomSheetContent,
   BottomSheetDescription,
   BottomSheetFooter,
   BottomSheetHeader,
   BottomSheetRoot,
   BottomSheetTitle,
-  BottomSheetCloseButton,
-  BottomSheetCloseIcon,
 } from "./BottomSheet";
 
 export type {
   BottomSheetBackdropProps,
+  BottomSheetCloseButtonProps,
+  BottomSheetCloseIconProps,
   BottomSheetContentProps,
   BottomSheetDescriptionProps,
   BottomSheetFooterProps,
   BottomSheetHeaderProps,
   BottomSheetRootProps,
   BottomSheetTitleProps,
-  BottomSheetCloseButtonProps,
-  BottomSheetCloseIconProps,
 } from "./BottomSheet";
 
+export {
+  ActionSheetBackdrop,
+  ActionSheetCloseButton,
+  ActionSheetContent,
+  ActionSheetFooter,
+  ActionSheetGroup,
+  ActionSheetItem,
+  ActionSheetItemLabel,
+  ActionSheetItemPrefixIcon,
+  ActionSheetList,
+  ActionSheetRoot,
+} from "./ActionSheet";
+
+export type {
+  ActionSheetBackdropProps,
+  ActionSheetCloseButtonProps,
+  ActionSheetContentProps,
+  ActionSheetFooterProps,
+  ActionSheetGroupProps,
+  ActionSheetItemLabelProps,
+  ActionSheetItemPrefixIconProps,
+  ActionSheetItemProps,
+  ActionSheetListProps,
+  ActionSheetRootProps,
+} from "./ActionSheet";
+
+export * as ActionSheet from "./ActionSheet.namespace";
 export * as AppBar from "./AppBar.namespace";
 export * as AppScreen from "./AppScreen.namespace";
 export * as BottomSheet from "./BottomSheet.namespace";

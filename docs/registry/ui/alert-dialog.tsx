@@ -17,9 +17,9 @@ export const AlertDialog = forwardRef<HTMLDivElement, AlertDialogProps>(
   ({ title, description, children, ...otherProps }, ref) => {
     // FIXME: Footer 안의 action 배열을 다룰 쓸만한 인터페이스가 생각이 안남. 인터페이스 다시 생각할 것.
     return (
-      <Dialog.Root ref={ref} role="alertdialog" {...otherProps}>
+      <Dialog.Root ref={ref} {...otherProps}>
         <Dialog.Backdrop />
-        <Dialog.Content>
+        <Dialog.Content role="alertdialog">
           <Dialog.Header>
             <Dialog.Title>{title}</Dialog.Title>
             <Dialog.Description>{description}</Dialog.Description>

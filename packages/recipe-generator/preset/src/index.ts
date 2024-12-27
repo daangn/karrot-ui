@@ -1,5 +1,8 @@
 import actionButton from "./action-button.recipe";
 import actionChip from "./action-chip.recipe";
+import actionSheet from "./action-sheet";
+import actionSheetCloseButton from "./action-sheet-close-button";
+import actionSheetItem from "./action-sheet-item";
 import avatarStack from "./avatar-stack.recipe";
 import avatar from "./avatar.recipe";
 import badge from "./badge.recipe";
@@ -37,6 +40,9 @@ const recipes = {
   toggleButton,
   reactionButton,
   bottomSheet,
+  actionSheet,
+  actionSheetItem,
+  actionSheetCloseButton,
   fab,
   extendedFab,
   badge,

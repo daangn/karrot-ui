@@ -1,5 +1,8 @@
 export { vars as actionButton } from "./action-button";
 export { vars as actionChip } from "./action-chip";
+export { vars as actionSheetCloseButton } from "./action-sheet-close-button";
+export { vars as actionSheetItem } from "./action-sheet-item";
+export { vars as actionSheet } from "./action-sheet";
 export { vars as avatarStack } from "./avatar-stack";
 export { vars as avatar } from "./avatar";
 export { vars as badge } from "./badge";

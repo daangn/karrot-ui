@@ -1,0 +1,32 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "action-sheet-close-button",
+    "name": "Action Sheet Close Button"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "color": "$color.bg.neutral-weak",
+          "minHeight": "52px",
+          "cornerRadius": "$radius.s3",
+          "paddingX": "$unit.s5",
+          "paddingY": "$unit.s3_5",
+          "gap": "$unit.s3"
+        },
+        "label": {
+          "color": "$color.fg.neutral",
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5",
+          "fontWeight": "$font-weight.medium"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.neutral-weak-pressed"
+        }
+      }
+    }
+  }
+}

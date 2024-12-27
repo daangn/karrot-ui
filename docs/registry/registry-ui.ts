@@ -27,6 +27,11 @@ export const registryUI: RegistryUI = [
     files: ["ui:bottom-sheet.tsx"],
   },
   {
+    name: "action-sheet",
+    dependencies: ["@seed-design/stackflow"],
+    files: ["ui:action-sheet.tsx"],
+  },
+  {
     name: "avatar",
     innerDependencies: ["identity-placeholder"],
     dependencies: ["@radix-ui/react-slot", "@seed-design/react-avatar"],

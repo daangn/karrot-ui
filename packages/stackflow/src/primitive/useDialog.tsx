@@ -78,6 +78,7 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
       },
       contentProps: {
         ...dataProps,
+        role: "dialog",
         "aria-modal": true,
         "aria-labelledby": titleId,
         "aria-describedby": descriptionId,

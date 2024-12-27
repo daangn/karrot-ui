@@ -1,0 +1,55 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "action-sheet-item",
+    "name": "Action Sheet Item"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "color": "$color.bg.neutral-weak",
+          "minHeight": "52px",
+          "paddingX": "$unit.s3_5",
+          "paddingY": "$unit.s4",
+          "strokeBottomWidth": "1px",
+          "strokeColor": "$color.stroke.neutral",
+          "gap": "$unit.s3"
+        },
+        "prefixIcon": {
+          "size": "22px"
+        },
+        "label": {
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5",
+          "fontWeight": "$font-weight.regular"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.neutral-weak-pressed"
+        }
+      }
+    },
+    "tone=neutral": {
+      "enabled": {
+        "prefixIcon": {
+          "color": "$color.fg.neutral"
+        },
+        "label": {
+          "color": "$color.fg.neutral"
+        }
+      }
+    },
+    "tone=danger": {
+      "enabled": {
+        "prefixIcon": {
+          "color": "$color.fg.danger"
+        },
+        "label": {
+          "color": "$color.fg.danger"
+        }
+      }
+    }
+  }
+}

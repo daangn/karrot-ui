@@ -1,3 +1,4 @@
+import { Slot } from "@radix-ui/react-slot";
 import { composeRefs } from "@radix-ui/react-compose-refs";
 import type * as React from "react";
 import { forwardRef, useCallback } from "react";
@@ -63,15 +64,18 @@ export const DialogDescription = forwardRef<HTMLDivElement, DialogDescriptionPro
 
 DialogDescription.displayName = "DialogDescription";
 
-export interface DialogCloseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface DialogCloseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  asChild?: boolean;
+}
 
 export const DialogCloseButton = forwardRef<HTMLButtonElement, DialogCloseButtonProps>(
   (props, ref) => {
-    const { ...otherProps } = props;
+    const { asChild, ...otherProps } = props;
 
+    const Comp = asChild ? Slot : "button";
     const api = useDialogContext();
 
-    return <button aria-label="Close" ref={ref} {...api.closeButtonProps} {...otherProps} />;
+    return <Comp aria-label="Close" ref={ref} {...api.closeButtonProps} {...otherProps} />;
   },
 );
 
@@ -82,15 +86,13 @@ export interface DialogRootProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const DialogRoot = forwardRef<HTMLDivElement, DialogRootProps>((props, ref) => {
-  const { onInteractOutside, onClick, children, role = "dialog", ...otherProps } = props;
+  const { onInteractOutside, onClick, children, ...otherProps } = props;
 
   const api = useDialog({ onInteractOutside });
 
   return (
     <div
       ref={composeRefs(ref, api.refs.root)}
-      role={role}
-      data-stackflow-component-name="Dialog"
       onClick={useCallback((e) => {
         e.stopPropagation();
         onClick?.(e);
