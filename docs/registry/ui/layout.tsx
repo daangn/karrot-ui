@@ -3,6 +3,7 @@ import type {
   ColorFg,
   ColorPalette,
   ColorStroke,
+  HorizontalSpacing,
   Radius,
   Unit,
 } from "@seed-design/vars";
@@ -17,6 +18,14 @@ function handleColor(color: string | undefined) {
   const [type, value] = color.split(".");
   // @ts-ignore
   return vars.$color[type][value] ?? undefined;
+}
+
+function handleSpacing(spacing: string | undefined) {
+  if (!spacing) {
+    return undefined;
+  }
+  // @ts-ignore
+  return vars.$unit[spacing] ?? vars.$horizontalSpacing[spacing] ?? undefined;
 }
 
 function handleSize(size: string | undefined) {
@@ -79,17 +88,17 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   padding?: Unit;
 
-  paddingX?: Unit;
+  paddingX?: Unit | HorizontalSpacing;
 
   paddingY?: Unit;
 
   paddingTop?: Unit;
 
-  paddingRight?: Unit;
+  paddingRight?: Unit | HorizontalSpacing;
 
   paddingBottom?: Unit;
 
-  paddingLeft?: Unit;
+  paddingLeft?: Unit | HorizontalSpacing;
 
   display?: "block" | "flex" | "inline" | "inlineBlock" | "none";
 
@@ -164,6 +173,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
     alignContent,
     gap,
     className,
+    style,
     ...nativeProps
   } = props;
 
@@ -211,27 +221,13 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-height": handleSize(height),
           "--seed-box-min-height": handleSize(minHeight),
           "--seed-box-max-height": handleSize(maxHeight),
-          "--seed-box-padding": padding
-            ? `var(--seed-v3-unit-${padding})`
-            : undefined,
-          "--seed-box-padding-x": paddingX
-            ? `var(--seed-v3-unit-${paddingX})`
-            : undefined,
-          "--seed-box-padding-y": paddingY
-            ? `var(--seed-v3-unit-${paddingY})`
-            : undefined,
-          "--seed-box-padding-top": paddingTop
-            ? `var(--seed-v3-unit-${paddingTop})`
-            : undefined,
-          "--seed-box-padding-right": paddingRight
-            ? `var(--seed-v3-unit-${paddingRight})`
-            : undefined,
-          "--seed-box-padding-bottom": paddingBottom
-            ? `var(--seed-v3-unit-${paddingBottom})`
-            : undefined,
-          "--seed-box-padding-left": paddingLeft
-            ? `var(--seed-v3-unit-${paddingLeft})`
-            : undefined,
+          "--seed-box-padding": handleSpacing(padding),
+          "--seed-box-padding-x": handleSpacing(paddingX),
+          "--seed-box-padding-y": handleSpacing(paddingY),
+          "--seed-box-padding-top": handleSpacing(paddingTop),
+          "--seed-box-padding-right": handleSpacing(paddingRight),
+          "--seed-box-padding-bottom": handleSpacing(paddingBottom),
+          "--seed-box-padding-left": handleSpacing(paddingLeft),
           "--seed-box-display": display,
           "--seed-box-position": position,
           "--seed-box-overflow-x": overflowX,
@@ -244,7 +240,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-align-items": alignItems,
           "--seed-box-align-content": alignContent,
           "--seed-box-gap": gap ? `var(--seed-v3-unit-${gap})` : undefined,
-          ...props.style,
+          ...style,
         } as React.CSSProperties
       }
       {...nativeProps}
