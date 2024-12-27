@@ -19,6 +19,7 @@ const actionChip = defineRecipe({
       textAlign: "start",
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+      flexShrink: 0,
 
       borderRadius: vars.base.enabled.root.cornerRadius,
       [pseudo(focus)]: {
@@ -45,6 +46,7 @@ const actionChip = defineRecipe({
     },
     prefixIcon: {
       display: "inline-flex",
+      flexShrink: 0,
 
       color: vars.base.enabled.prefixIcon.color,
       [pseudo(disabled)]: {
@@ -53,6 +55,7 @@ const actionChip = defineRecipe({
     },
     suffixIcon: {
       display: "inline-flex",
+      flexShrink: 0,
 
       color: vars.base.enabled.suffixIcon.color,
       [pseudo(disabled)]: {

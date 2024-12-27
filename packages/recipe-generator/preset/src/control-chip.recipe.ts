@@ -19,6 +19,7 @@ const controlChip = defineRecipe({
       textAlign: "start",
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+      flexShrink: 0,
 
       borderRadius: vars.base.enabled.root.cornerRadius,
       boxShadow: `inset 0 0 0 ${vars.base.enabled.root.strokeWidth} ${vars.base.enabled.root.strokeColor}`,
@@ -56,6 +57,7 @@ const controlChip = defineRecipe({
     },
     prefixIcon: {
       display: "inline-flex",
+      flexShrink: 0,
 
       color: vars.base.enabled.prefixIcon.color,
       [pseudo(checked)]: {
@@ -67,6 +69,7 @@ const controlChip = defineRecipe({
     },
     suffixIcon: {
       display: "inline-flex",
+      flexShrink: 0,
 
       color: vars.base.enabled.suffixIcon.color,
       [pseudo(checked)]: {
@@ -78,6 +81,7 @@ const controlChip = defineRecipe({
     },
     icon: {
       display: "inline-flex",
+      flexShrink: 0,
 
       color: vars.base.enabled.icon.color,
       [pseudo(checked)]: {

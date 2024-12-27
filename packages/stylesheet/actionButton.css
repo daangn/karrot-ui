@@ -9,6 +9,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
+    flex-shrink: 0;
 }
 .actionButton__root:is(:focus, [data-focus]) {
     outline: none;
@@ -27,6 +28,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 .actionButton__icon[data-loading] {
     opacity: 0;
@@ -35,6 +37,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 .actionButton__prefixIcon[data-loading] {
     opacity: 0;
@@ -43,6 +46,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 .actionButton__suffixIcon[data-loading] {
     opacity: 0;

@@ -18,6 +18,8 @@ const actionButton = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       textDecoration: "none",
+      flexShrink: 0,
+
       [pseudo(focus)]: {
         outline: "none",
       },
@@ -38,6 +40,7 @@ const actionButton = defineRecipe({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+      flexShrink: 0,
 
       [pseudo(loading)]: {
         opacity: 0,
@@ -47,6 +50,7 @@ const actionButton = defineRecipe({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+      flexShrink: 0,
 
       [pseudo(loading)]: {
         opacity: 0,
@@ -56,6 +60,7 @@ const actionButton = defineRecipe({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+      flexShrink: 0,
 
       [pseudo(loading)]: {
         opacity: 0,

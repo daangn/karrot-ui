@@ -18,6 +18,8 @@ const reactionButton = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       textDecoration: "none",
+      flexShrink: 0,
+
       [pseudo(focus)]: {
         outline: "none",
       },
@@ -77,6 +79,7 @@ const reactionButton = defineRecipe({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+      flexShrink: 0,
 
       color: vars.base.enabled.prefixIcon.color,
       [pseudo(pressed)]: {

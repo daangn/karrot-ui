@@ -9,6 +9,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
+    flex-shrink: 0;
 }
 .extendedFab__root:is(:focus, [data-focus]) {
     outline: none;
@@ -24,6 +25,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 .extendedFab__root--variant_neutralSolid {
     background: var(--seed-v3-color-bg-neutral-solid);

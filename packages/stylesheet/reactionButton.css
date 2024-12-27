@@ -9,6 +9,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
+    flex-shrink: 0;
 }
 .reactionButton__root:is(:focus, [data-focus]) {
     outline: none;
@@ -69,6 +70,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     color: var(--seed-v3-color-fg-neutral);
 }
 .reactionButton__prefixIcon:is([aria-pressed=true], [data-pressed]) {

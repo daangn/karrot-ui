@@ -18,6 +18,8 @@ const extendedFab = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       textDecoration: "none",
+      flexShrink: 0,
+
       [pseudo(focus)]: {
         outline: "none",
       },
@@ -32,6 +34,7 @@ const extendedFab = defineRecipe({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
+      flexShrink: 0,
     },
   },
   variants: {

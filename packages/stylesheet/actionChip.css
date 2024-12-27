@@ -9,6 +9,7 @@
     text-align: start;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    flex-shrink: 0;
     border-radius: var(--seed-v3-radius-full);
 }
 .actionChip__root:is(:focus, [data-focus]) {
@@ -34,6 +35,7 @@
 }
 .actionChip__prefixIcon {
     display: inline-flex;
+    flex-shrink: 0;
     color: var(--seed-v3-color-fg-neutral);
 }
 .actionChip__prefixIcon:is(:disabled, [disabled], [data-disabled]) {
@@ -41,6 +43,7 @@
 }
 .actionChip__suffixIcon {
     display: inline-flex;
+    flex-shrink: 0;
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
 .actionChip__suffixIcon:is(:disabled, [disabled], [data-disabled]) {
