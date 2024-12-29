@@ -11,8 +11,8 @@
   },
   "scripts": {
     "prepack": "yarn generate",
-    "generate": "yarn recipe:generate && yarn rootage:generate",
-    "recipe:generate": "yarn recipegen css",
+    "generate": "yarn qvism:generate && yarn rootage:generate",
+    "qvism:generate": "yarn qvism css",
     "rootage:generate": "yarn rootage token-css"
   },
   "exports": {
@@ -23,7 +23,7 @@
     "*.css"
   ],
   "devDependencies": {
-    "@seed-design/recipe-generator-cli": "0.0.0",
+    "@seed-design/qvism-cli": "0.0.0",
     "@seed-design/rootage-cli": "0.0.0"
   }
 }

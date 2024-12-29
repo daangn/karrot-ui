@@ -7698,6 +7698,49 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/qvism-cli@npm:0.0.0, @seed-design/qvism-cli@workspace:tools/qvism/cli":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/qvism-cli@workspace:tools/qvism/cli"
+  dependencies:
+    "@seed-design/qvism-core": "npm:0.0.0"
+    "@seed-design/qvism-preset": "npm:0.0.0"
+    "@types/fs-extra": "npm:^11.0.2"
+    esbuild: "npm:^0.19.3"
+    fs-extra: "npm:^11.1.1"
+    typescript: "npm:^5.4.5"
+    ultra-runner: "npm:^3.10.5"
+  bin:
+    qvism: ./bin/index.mjs
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/qvism-core@npm:0.0.0, @seed-design/qvism-core@workspace:tools/qvism/core":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/qvism-core@workspace:tools/qvism/core"
+  dependencies:
+    "@types/postcss-js": "npm:^4.0.2"
+    csstype: "npm:^3.1.2"
+    nanobundle: "npm:^1.6.0"
+    outdent: "npm:^0.8.0"
+    postcss: "npm:^8.4.30"
+    postcss-js: "npm:^4.0.1"
+    postcss-nested: "npm:^6.0.1"
+    typescript: "npm:^5.4.5"
+    ultra-runner: "npm:^3.10.5"
+    vitest: "npm:^0.34.6"
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/qvism-preset@npm:0.0.0, @seed-design/qvism-preset@workspace:packages/qvism-preset":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/qvism-preset@workspace:packages/qvism-preset"
+  dependencies:
+    "@seed-design/qvism-core": "npm:0.0.0"
+    "@seed-design/vars": "npm:0.0.0"
+    esbuild: "npm:^0.19.3"
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/react-avatar@npm:0.0.0-alpha-20241030023710, @seed-design/react-avatar@workspace:packages/react-headless/avatar":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-avatar@workspace:packages/react-headless/avatar"
@@ -7866,66 +7909,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/recipe-generator-cli@npm:0.0.0, @seed-design/recipe-generator-cli@workspace:packages/recipe-generator/cli":
-  version: 0.0.0-use.local
-  resolution: "@seed-design/recipe-generator-cli@workspace:packages/recipe-generator/cli"
-  dependencies:
-    "@seed-design/recipe-generator-core": "npm:0.0.0"
-    "@seed-design/recipe-generator-preset": "npm:0.0.0"
-    "@types/fs-extra": "npm:^11.0.2"
-    esbuild: "npm:^0.19.3"
-    fs-extra: "npm:^11.1.1"
-    typescript: "npm:^5.4.5"
-    ultra-runner: "npm:^3.10.5"
-  bin:
-    recipegen: ./bin/index.mjs
-  languageName: unknown
-  linkType: soft
-
-"@seed-design/recipe-generator-core@npm:0.0.0, @seed-design/recipe-generator-core@workspace:packages/recipe-generator/core":
-  version: 0.0.0-use.local
-  resolution: "@seed-design/recipe-generator-core@workspace:packages/recipe-generator/core"
-  dependencies:
-    "@types/postcss-js": "npm:^4.0.2"
-    csstype: "npm:^3.1.2"
-    nanobundle: "npm:^1.6.0"
-    outdent: "npm:^0.8.0"
-    postcss: "npm:^8.4.30"
-    postcss-js: "npm:^4.0.1"
-    postcss-nested: "npm:^6.0.1"
-    typescript: "npm:^5.4.5"
-    ultra-runner: "npm:^3.10.5"
-    vitest: "npm:^0.34.6"
-  languageName: unknown
-  linkType: soft
-
-"@seed-design/recipe-generator-preset@npm:0.0.0, @seed-design/recipe-generator-preset@workspace:packages/recipe-generator/preset":
-  version: 0.0.0-use.local
-  resolution: "@seed-design/recipe-generator-preset@workspace:packages/recipe-generator/preset"
-  dependencies:
-    "@seed-design/recipe-generator-core": "npm:0.0.0"
-    "@seed-design/vars": "npm:0.0.0"
-    esbuild: "npm:^0.19.3"
-  languageName: unknown
-  linkType: soft
-
 "@seed-design/recipe@npm:0.0.0-alpha-20241212122822, @seed-design/recipe@workspace:packages/recipe":
   version: 0.0.0-use.local
   resolution: "@seed-design/recipe@workspace:packages/recipe"
   dependencies:
-    "@seed-design/recipe-generator-cli": "npm:0.0.0"
+    "@seed-design/qvism-cli": "npm:0.0.0"
   languageName: unknown
   linkType: soft
 
-"@seed-design/rootage-artifacts@npm:0.0.0, @seed-design/rootage-artifacts@workspace:packages/rootage/artifacts":
+"@seed-design/rootage-artifacts@npm:0.0.0, @seed-design/rootage-artifacts@workspace:packages/rootage":
   version: 0.0.0-use.local
-  resolution: "@seed-design/rootage-artifacts@workspace:packages/rootage/artifacts"
+  resolution: "@seed-design/rootage-artifacts@workspace:packages/rootage"
   languageName: unknown
   linkType: soft
 
-"@seed-design/rootage-cli@npm:0.0.0, @seed-design/rootage-cli@workspace:packages/rootage/cli":
+"@seed-design/rootage-cli@npm:0.0.0, @seed-design/rootage-cli@workspace:tools/rootage/cli":
   version: 0.0.0-use.local
-  resolution: "@seed-design/rootage-cli@workspace:packages/rootage/cli"
+  resolution: "@seed-design/rootage-cli@workspace:tools/rootage/cli"
   dependencies:
     "@seed-design/rootage-artifacts": "npm:0.0.0"
     "@seed-design/rootage-core": "npm:0.0.0"
@@ -7940,9 +7940,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/rootage-core@npm:0.0.0, @seed-design/rootage-core@workspace:packages/rootage/core":
+"@seed-design/rootage-core@npm:0.0.0, @seed-design/rootage-core@workspace:tools/rootage/core":
   version: 0.0.0-use.local
-  resolution: "@seed-design/rootage-core@workspace:packages/rootage/core"
+  resolution: "@seed-design/rootage-core@workspace:tools/rootage/core"
   dependencies:
     change-case: "npm:^5.4.4"
     dedent: "npm:^1.5.3"
@@ -8012,7 +8012,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/stylesheet@workspace:packages/stylesheet"
   dependencies:
-    "@seed-design/recipe-generator-cli": "npm:0.0.0"
+    "@seed-design/qvism-cli": "npm:0.0.0"
     "@seed-design/rootage-cli": "npm:0.0.0"
   languageName: unknown
   linkType: soft

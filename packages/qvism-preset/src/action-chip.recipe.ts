@@ -1,11 +1,11 @@
-import { controlChip as vars } from "@seed-design/vars/component";
-import { rem } from "@seed-design/recipe-generator-core";
+import { actionChip as vars } from "@seed-design/vars/component";
+import { rem } from "@seed-design/qvism-core";
 
 import { defineRecipe } from "./helper";
-import { active, checked, disabled, focus, pseudo } from "./pseudo";
+import { active, disabled, focus, pseudo } from "./pseudo";
 
-const controlChip = defineRecipe({
-  name: "controlChip",
+const actionChip = defineRecipe({
+  name: "actionChip",
   slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "count"],
   base: {
     root: {
@@ -22,20 +22,13 @@ const controlChip = defineRecipe({
       flexShrink: 0,
 
       borderRadius: vars.base.enabled.root.cornerRadius,
-      boxShadow: `inset 0 0 0 ${vars.base.enabled.root.strokeWidth} ${vars.base.enabled.root.strokeColor}`,
-
       [pseudo(focus)]: {
         outline: "none",
       },
+
+      background: vars.base.enabled.root.color,
       [pseudo(active)]: {
         background: vars.base.pressed.root.color,
-      },
-      [pseudo(checked)]: {
-        background: vars.base.selected.root.color,
-        boxShadow: "none",
-      },
-      [pseudo(checked, active)]: {
-        background: vars.base.selectedPressed.root.color,
       },
       [pseudo(disabled)]: {
         background: vars.base.disabled.root.color,
@@ -47,10 +40,6 @@ const controlChip = defineRecipe({
 
       color: vars.base.enabled.label.color,
       fontWeight: vars.base.enabled.label.fontWeight,
-      [pseudo(checked)]: {
-        color: vars.base.selected.label.color,
-        fontWeight: vars.base.selected.label.fontWeight,
-      },
       [pseudo(disabled)]: {
         color: vars.base.disabled.label.color,
       },
@@ -60,9 +49,6 @@ const controlChip = defineRecipe({
       flexShrink: 0,
 
       color: vars.base.enabled.prefixIcon.color,
-      [pseudo(checked)]: {
-        color: vars.base.selected.prefixIcon.color,
-      },
       [pseudo(disabled)]: {
         color: vars.base.disabled.prefixIcon.color,
       },
@@ -72,23 +58,8 @@ const controlChip = defineRecipe({
       flexShrink: 0,
 
       color: vars.base.enabled.suffixIcon.color,
-      [pseudo(checked)]: {
-        color: vars.base.selected.suffixIcon.color,
-      },
       [pseudo(disabled)]: {
         color: vars.base.disabled.suffixIcon.color,
-      },
-    },
-    icon: {
-      display: "inline-flex",
-      flexShrink: 0,
-
-      color: vars.base.enabled.icon.color,
-      [pseudo(checked)]: {
-        color: vars.base.selected.icon.color,
-      },
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.icon.color,
       },
     },
     count: {
@@ -96,9 +67,6 @@ const controlChip = defineRecipe({
 
       color: vars.base.enabled.count.color,
       fontWeight: vars.base.enabled.count.fontWeight,
-      [pseudo(checked)]: {
-        color: vars.base.selected.count.color,
-      },
     },
   },
   variants: {
@@ -199,4 +167,4 @@ const controlChip = defineRecipe({
   ],
 });
 
-export default controlChip;
+export default actionChip;

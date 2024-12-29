@@ -1,10 +1,10 @@
 {
-  "name": "@seed-design/recipe-generator-preset",
+  "name": "@seed-design/qvism-preset",
   "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/recipe-generator/preset"
+    "directory": "packages/qvism-preset"
   },
   "sideEffects": false,
   "exports": {
@@ -25,7 +25,7 @@
     "build": "node ./build.mjs"
   },
   "dependencies": {
-    "@seed-design/recipe-generator-core": "0.0.0",
+    "@seed-design/qvism-core": "0.0.0",
     "@seed-design/vars": "0.0.0"
   },
   "devDependencies": {

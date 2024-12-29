@@ -1,10 +1,10 @@
 {
-  "name": "@seed-design/recipe-generator-core",
+  "name": "@seed-design/qvism-core",
   "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/recipe-generator/core"
+    "directory": "tools/qvism/core"
   },
   "sideEffects": false,
   "exports": {
@@ -23,7 +23,7 @@
     "clean": "rm -rf lib",
     "prepack": "yarn clean && yarn build",
     "build": "nanobundle build",
-    "recipe:build": "nanobundle build",
+    "qvism:build": "nanobundle build",
     "test": "vitest"
   },
   "publishConfig": {
@@ -46,7 +46,7 @@
   "ultra": {
     "concurrent": [
       "dev",
-      "recipe:build"
+      "qvism:build"
     ]
   }
 }

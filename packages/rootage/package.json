@@ -4,7 +4,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/rootage/artifacts"
+    "directory": "packages/rootage"
   },
   "main": "package.json",
   "files": [

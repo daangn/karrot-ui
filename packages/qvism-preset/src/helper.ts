@@ -2,7 +2,7 @@ import type {
   SlotRecipeDefinition,
   SlotRecipeVariantRecord,
   StyleObject,
-} from "@seed-design/recipe-generator-core";
+} from "@seed-design/qvism-core";
 
 export function defineRecipe<S extends string, V extends SlotRecipeVariantRecord<S>>(
   definition: SlotRecipeDefinition<S, V>,

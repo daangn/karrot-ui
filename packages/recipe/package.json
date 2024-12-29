@@ -18,11 +18,11 @@
   ],
   "scripts": {
     "prepack": "yarn build",
-    "build": "yarn recipe:generate",
-    "recipe:generate": "yarn recipegen js ./lib"
+    "build": "yarn qvism js ./lib",
+    "qvism:generate": "yarn qvism js ./lib"
   },
   "devDependencies": {
-    "@seed-design/recipe-generator-cli": "0.0.0"
+    "@seed-design/qvism-cli": "0.0.0"
   },
   "publishConfig": {
     "access": "public"

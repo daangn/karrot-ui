@@ -1,15 +1,15 @@
 {
-  "name": "@seed-design/recipe-generator-cli",
+  "name": "@seed-design/qvism-cli",
   "version": "0.0.0",
   "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/daangn/seed-design",
-    "directory": "packages/recipe-generator/cli"
+    "directory": "tools/qvism/cli"
   },
   "license": "MIT",
   "bin": {
-    "recipegen": "./bin/index.mjs"
+    "qvism": "./bin/index.mjs"
   },
   "files": [
     "dist",
@@ -17,12 +17,12 @@
   ],
   "scripts": {
     "build": "node ./build.mjs",
-    "recipe:build": "node ./build.mjs",
+    "qvism:build": "node ./build.mjs",
     "dev": "node ./dev.mjs"
   },
   "dependencies": {
-    "@seed-design/recipe-generator-core": "0.0.0",
-    "@seed-design/recipe-generator-preset": "0.0.0",
+    "@seed-design/qvism-core": "0.0.0",
+    "@seed-design/qvism-preset": "0.0.0",
     "fs-extra": "^11.1.1"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "concurrent": [
       "dev",
       "build",
-      "recipe:build"
+      "qvism:build"
     ]
   }
 }

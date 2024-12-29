@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { generateCss, generateDts, generateJs } from "@seed-design/recipe-generator-core";
-import preset from "@seed-design/recipe-generator-preset";
+import { generateCss, generateDts, generateJs } from "@seed-design/qvism-core";
+import preset from "@seed-design/qvism-preset";
 import fs from "fs-extra";
 import path from "node:path";
 
