@@ -48,11 +48,13 @@ export function parseTokensModel(model: TokensModel): TokenDeclaration[] {
           : parseValueExpression(righthand),
       };
     });
+    const description = token.description;
 
     tokenDeclarations.push({
       collection: collection,
       token: parseTokenExpression(tokenName),
       values,
+      description,
     });
   }
 

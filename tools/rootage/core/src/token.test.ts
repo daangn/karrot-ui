@@ -85,4 +85,56 @@ describe("parseTokensModel", () => {
       },
     ]);
   });
+
+  it("should parse token model with description", () => {
+    const input: TokensModel = {
+      kind: "Tokens",
+      metadata: {
+        name: "tokens",
+        id: "id",
+      },
+      data: {
+        collection: "collection",
+        tokens: {
+          "$color.palette.gray-00": {
+            description: "Gray color 0",
+            values: {
+              light: "#ffffff",
+              dark: "#000000",
+            },
+          },
+          "$color.bg.layer-1": {
+            description: "Default background color",
+            values: {
+              light: "$color.palette.gray-00",
+              dark: "$color.palette.gray-00",
+            },
+          },
+        },
+      },
+    };
+
+    const result = parseTokensModel(input);
+
+    expect(result).toEqual([
+      {
+        collection: "collection",
+        token: { type: "token", group: ["color", "palette"], key: "gray-00" },
+        values: [
+          { mode: "light", value: { type: "color", value: "#ffffff" } },
+          { mode: "dark", value: { type: "color", value: "#000000" } },
+        ],
+        description: "Gray color 0",
+      },
+      {
+        collection: "collection",
+        token: { type: "token", group: ["color", "bg"], key: "layer-1" },
+        values: [
+          { mode: "light", value: { type: "token", group: ["color", "palette"], key: "gray-00" } },
+          { mode: "dark", value: { type: "token", group: ["color", "palette"], key: "gray-00" } },
+        ],
+        description: "Default background color",
+      },
+    ]);
+  });
 });

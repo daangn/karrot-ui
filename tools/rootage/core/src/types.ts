@@ -91,6 +91,7 @@ export interface TokenDeclaration {
     mode: string;
     value: ValueExpression | TokenExpression;
   }>;
+  description?: string;
 }
 
 export interface TokenCollectionDeclaration {
@@ -198,6 +199,7 @@ export interface TokensData {
       values: {
         [mode: string]: RighthandValue;
       };
+      description?: string;
     };
   };
 }
