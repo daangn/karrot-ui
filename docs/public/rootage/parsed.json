@@ -24144,7 +24144,8 @@
             ]
           }
         }
-      ]
+      ],
+      "description": "Shimmer effect, used for loading states"
     },
     {
       "collection": "global",
@@ -30993,7 +30994,8 @@
               ]
             }
           }
-        ]
+        ],
+        "description": "Shimmer effect, used for loading states"
       },
       "dependencies": {}
     },
