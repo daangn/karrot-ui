@@ -7,6 +7,7 @@ on:
       - "docs/**"
       - "packages/recipe/**"
       - "packages/stylesheet/**"
+  workflow_dispatch:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
