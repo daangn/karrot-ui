@@ -17,7 +17,7 @@
     "lib"
   ],
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "yarn qvism js ./lib",
     "qvism:generate": "yarn qvism js ./lib"
   },
   "devDependencies": {
