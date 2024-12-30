@@ -1,9 +1,15 @@
 import { stringifyTokenExpression } from "./token";
-import type { ResolvedTokenResult, RootageCtx, TokenExpression, TokenRef } from "./types";
+import type {
+  ComponentSpecRef,
+  ResolvedTokenResult,
+  RootageCtx,
+  TokenExpression,
+  TokenRef,
+} from "./types";
 
 export function resolveToken(
   rootage: RootageCtx,
-  token: TokenExpression,
+  tokenId: TokenRef,
   modes: Record<string, string>,
 ): ResolvedTokenResult {
   const { dependencyGraph } = rootage;
@@ -30,7 +36,7 @@ export function resolveToken(
     return [node.name];
   }
 
-  const path = rec(stringifyTokenExpression(token));
+  const path = rec(tokenId);
   const last = path.at(-1)!;
   const resolvedToken = rootage.tokenEntities[last];
 
@@ -51,4 +57,30 @@ export function resolveToken(
   }
 
   return { path, value };
+}
+
+export function resolveReferences(
+  rootage: RootageCtx,
+  tokenId: TokenRef,
+  modes: Record<string, string>,
+): (TokenRef | ComponentSpecRef)[] {
+  const { referenceGraph } = rootage;
+
+  function rec(name: TokenRef): (TokenRef | ComponentSpecRef)[] {
+    const node = referenceGraph[name];
+
+    if (!node) {
+      return [];
+    }
+
+    const mode = modes[node.collection];
+
+    if (!mode) {
+      throw new Error(`${node.collection} does not exist in modes`);
+    }
+
+    return node.references[mode]!.flatMap((ref) => [ref, ...rec(ref as TokenRef)]);
+  }
+
+  return rec(tokenId);
 }

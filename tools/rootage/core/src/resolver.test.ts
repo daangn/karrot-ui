@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { buildContext } from "./context";
 import { parse } from "./parse";
-import { resolveToken } from "./resolver";
-import type { ResolvedTokenResult, TokensModel } from "./types";
+import { resolveReferences, resolveToken } from "./resolver";
+import type { Model, ResolvedTokenResult, TokensModel } from "./types";
 
-const buildRootage = (models: TokensModel[]) => {
+const buildRootage = (models: Model[]) => {
   const parsed = parse(models);
   return buildContext(parsed);
 };
@@ -35,16 +35,8 @@ describe("resolveToken", () => {
     };
 
     const parsed = buildRootage([input]);
-    const result1 = resolveToken(
-      parsed,
-      { type: "token", group: [], key: "size-1" },
-      { global: "default" },
-    );
-    const result2 = resolveToken(
-      parsed,
-      { type: "token", group: [], key: "duration-1" },
-      { global: "default" },
-    );
+    const result1 = resolveToken(parsed, "$size-1", { global: "default" });
+    const result2 = resolveToken(parsed, "$duration-1", { global: "default" });
 
     expect(result1).toEqual({
       path: ["$size-1"],
@@ -83,16 +75,8 @@ describe("resolveToken", () => {
     };
 
     const parsed = buildRootage([input]);
-    const resultLight = resolveToken(
-      parsed,
-      { type: "token", group: ["color", "bg"], key: "layer-1" },
-      { color: "light" },
-    );
-    const resultDark = resolveToken(
-      parsed,
-      { type: "token", group: ["color", "bg"], key: "layer-1" },
-      { color: "dark" },
-    );
+    const resultLight = resolveToken(parsed, "$color.bg.layer-1", { color: "light" });
+    const resultDark = resolveToken(parsed, "$color.bg.layer-1", { color: "dark" });
 
     expect(resultLight).toEqual({
       path: ["$color.bg.layer-1", "$color.palette.gray-00"],
@@ -137,16 +121,8 @@ describe("resolveToken", () => {
     };
 
     const parsed = buildRootage([input]);
-    const resultLight = resolveToken(
-      parsed,
-      { type: "token", group: ["color", "bg"], key: "layer-default" },
-      { color: "light" },
-    );
-    const resultDark = resolveToken(
-      parsed,
-      { type: "token", group: ["color", "bg"], key: "layer-default" },
-      { color: "dark" },
-    );
+    const resultLight = resolveToken(parsed, "$color.bg.layer-default", { color: "light" });
+    const resultDark = resolveToken(parsed, "$color.bg.layer-default", { color: "dark" });
 
     expect(resultLight).toEqual({
       path: ["$color.bg.layer-default", "$color.bg.layer-1", "$color.palette.gray-00"],
@@ -156,5 +132,142 @@ describe("resolveToken", () => {
       path: ["$color.bg.layer-default", "$color.bg.layer-1", "$color.palette.gray-00"],
       value: { type: "color", value: "#000000" },
     } satisfies ResolvedTokenResult);
+  });
+});
+
+describe("resolveReferences", () => {
+  it("should resolve references", () => {
+    const input: TokensModel[] = [
+      {
+        kind: "Tokens",
+        metadata: {
+          name: "tokens",
+          id: "id",
+        },
+        data: {
+          collection: "color",
+          tokens: {
+            "$color.palette.gray-00": {
+              values: {
+                light: "#ffffff",
+                dark: "#000000",
+              },
+            },
+            "$color.bg.layer-1": {
+              values: {
+                light: "$color.palette.gray-00",
+                dark: "$color.palette.gray-00",
+              },
+            },
+          },
+        },
+      },
+    ];
+
+    const parsed = buildRootage(input);
+    const result = resolveReferences(parsed, "$color.palette.gray-00", { color: "light" });
+
+    expect(result).toEqual(["$color.bg.layer-1"]);
+  });
+
+  it("should resolve multiple references", () => {
+    const input: TokensModel[] = [
+      {
+        kind: "Tokens",
+        metadata: {
+          name: "tokens",
+          id: "id",
+        },
+        data: {
+          collection: "color",
+          tokens: {
+            "$color.palette.gray-00": {
+              values: {
+                light: "#ffffff",
+                dark: "#000000",
+              },
+            },
+            "$color.bg.layer-1": {
+              values: {
+                light: "$color.palette.gray-00",
+                dark: "$color.palette.gray-00",
+              },
+            },
+            "$color.bg.layer-default": {
+              values: {
+                light: "$color.bg.layer-1",
+                dark: "$color.bg.layer-1",
+              },
+            },
+          },
+        },
+      },
+    ];
+
+    const parsed = buildRootage(input);
+    const result = resolveReferences(parsed, "$color.palette.gray-00", { color: "light" });
+
+    expect(result).toEqual(["$color.bg.layer-1", "$color.bg.layer-default"]);
+  });
+
+  it("should resolve component spec references", () => {
+    const input: Model[] = [
+      {
+        kind: "Tokens",
+        metadata: {
+          name: "tokens",
+          id: "id",
+        },
+        data: {
+          collection: "color",
+          tokens: {
+            "$color.palette.gray-00": {
+              values: {
+                light: "#ffffff",
+                dark: "#000000",
+              },
+            },
+            "$color.bg.layer-default": {
+              values: {
+                light: "$color.palette.gray-00",
+                dark: "$color.palette.gray-00",
+              },
+            },
+          },
+        },
+      },
+      {
+        kind: "ComponentSpec",
+        metadata: {
+          name: "Test",
+          id: "testid",
+        },
+        data: {
+          base: {
+            enabled: {
+              root: {
+                color: "$color.bg.layer-default",
+              },
+            },
+          },
+          "tone=layer": {
+            enabled: {
+              root: {
+                color: "$color.bg.layer-default",
+              },
+            },
+          },
+        },
+      },
+    ];
+
+    const parsed = buildRootage(input);
+    const result = resolveReferences(parsed, "$color.palette.gray-00", { color: "light" });
+
+    expect(result).toEqual([
+      "$color.bg.layer-default",
+      "testid/base/enabled/root/color",
+      "testid/tone=layer/enabled/root/color",
+    ]);
   });
 });

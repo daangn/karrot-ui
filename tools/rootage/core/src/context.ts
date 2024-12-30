@@ -73,7 +73,7 @@ function buildReferenceGraph(
           for (const { key: propertyKey, value } of property) {
             if (value.type === "token") {
               const tokenName = stringifyTokenExpression(value);
-              const componentRef = `${id}.${stringifyVariantExpression(variantKey)}.${stringifyStateExpression(stateKey)}.${slotKey}.${propertyKey}`;
+              const componentRef = `${id}/${stringifyVariantExpression(variantKey)}/${stringifyStateExpression(stateKey)}/${slotKey}/${propertyKey}`;
               for (const mode in graph[tokenName]?.references) {
                 graph[tokenName]?.references[mode]?.push(componentRef);
               }

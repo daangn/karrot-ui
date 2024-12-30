@@ -1,24 +1,15 @@
 "use client";
 
-import { IconArrowDownLine } from "@daangn/react-monochrome-icon";
 import {
   ComponentSpecExpression,
   resolveToken,
   RootageCtx,
+  stringifyTokenExpression,
   stringifyValueExpression,
   ValueExpression,
 } from "@seed-design/rootage-core";
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  HourglassIcon,
-  LayersIcon,
-  PaintbrushIcon,
-  RulerIcon,
-  SigmaIcon,
-  SplineIcon,
-} from "lucide-react";
-import { Fragment, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { TokenCell } from "./token-cell";
 
 interface ComponentVariantTableProps {
   rootage: RootageCtx;
@@ -51,10 +42,14 @@ export function ComponentVariantTable(props: ComponentVariantTableProps) {
             const propertyKey = property.key;
 
             if (property.value.type === "token") {
-              const { path, value } = resolveToken(rootage, property.value, {
-                global: "default",
-                color: "theme-light",
-              });
+              const { path, value } = resolveToken(
+                rootage,
+                stringifyTokenExpression(property.value),
+                {
+                  global: "default",
+                  color: "theme-light",
+                },
+              );
               return {
                 id: `${stateKey}/${slotKey}/${propertyKey}`,
                 stateKey,
@@ -156,99 +151,8 @@ function ComponentVariantRow(props: {
       <td>{shouldRenderSlot ? slotKey : null}</td>
       <td>{shouldRenderProperty ? propertyKey : null}</td>
       <td className="align-middle">
-        <div className="flex justify-between" aria-expanded={isExpanded}>
-          <div className="flex flex-col gap-1">
-            {isExpanded ? (
-              values.map((value, index) => (
-                <Fragment key={value}>
-                  <div className="flex items-center gap-2">
-                    <TypeIndicator resolvedValue={resolvedValue} /> {value}
-                  </div>
-                  {index < values.length - 1 ? (
-                    <div className="flex w-4 h-4 items-center justify-center">
-                      <IconArrowDownLine className="w-3 h-3" />
-                    </div>
-                  ) : null}
-                </Fragment>
-              ))
-            ) : (
-              <div className="flex items-center gap-2">
-                <TypeIndicator resolvedValue={resolvedValue} /> {values[0]}
-              </div>
-            )}
-          </div>
-          <div className="flex h-6 items-center">
-            {isExpanded ? (
-              <ChevronUpIcon className="w-4 h-4" />
-            ) : (
-              <ChevronDownIcon className="w-4 h-4" />
-            )}
-          </div>
-        </div>
+        <TokenCell isExpanded={isExpanded} values={values} resolvedValue={resolvedValue} />
       </td>
     </tr>
   );
-}
-
-function TypeIndicator(props: { resolvedValue: ValueExpression }) {
-  const { resolvedValue } = props;
-
-  if (resolvedValue.type === "color") {
-    return (
-      <div
-        className="w-4 h-4 rounded-full border"
-        style={{ backgroundColor: resolvedValue.value }}
-      />
-    );
-  }
-
-  if (resolvedValue.type === "dimension") {
-    return (
-      <div>
-        <RulerIcon className="w-4 h-4" />
-      </div>
-    );
-  }
-
-  if (resolvedValue.type === "duration") {
-    return (
-      <div>
-        <HourglassIcon className="w-4 h-4" />
-      </div>
-    );
-  }
-
-  if (resolvedValue.type === "number") {
-    return (
-      <div>
-        <SigmaIcon className="w-4 h-4" />
-      </div>
-    );
-  }
-
-  if (resolvedValue.type === "shadow") {
-    return (
-      <div>
-        <LayersIcon className="w-4 h-4" />
-      </div>
-    );
-  }
-
-  if (resolvedValue.type === "cubicBezier") {
-    return (
-      <div>
-        <SplineIcon className="w-4 h-4" />
-      </div>
-    );
-  }
-
-  if (resolvedValue.type === "gradient") {
-    return (
-      <div>
-        <PaintbrushIcon className="w-4 h-4" />
-      </div>
-    );
-  }
-
-  return null;
 }

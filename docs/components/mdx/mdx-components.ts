@@ -3,13 +3,13 @@ import { ComponentSpecBlock } from "@/components/component-spec-block";
 import { Installation } from "@/components/installation";
 import { SanityGuideline } from "@/components/sanity/sanity-content";
 import { StackflowExample } from "@/components/stackflow-example";
-import { TokenTable } from "@/components/token-table";
 import { File, Files, Folder } from "fumadocs-ui/components/files";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { AtomIcon } from "lucide-react";
 import { createReactTypeTable } from "../react-type-table";
+import { TokenReference } from "../token-reference";
 
 const { ReactTypeTable } = createReactTypeTable();
 
@@ -17,7 +17,7 @@ export const mdxComponents = {
   ...defaultMdxComponents,
   Installation,
   ComponentExample,
-  TokenTable,
+  TokenReference,
   ComponentSpecBlock,
   SanityGuideline: SanityGuideline,
   Tab,
