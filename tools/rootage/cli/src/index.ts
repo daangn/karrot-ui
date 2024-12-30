@@ -180,7 +180,7 @@ async function writeJsonSchema() {
 }
 
 async function writeJson() {
-  const { models, filePaths } = await prepare();
+  const { ctx, models, filePaths } = await prepare();
   const entries = filePaths.map((file, index) => ({ file, content: models[index] }));
 
   for (const { file, content } of entries) {
@@ -197,6 +197,17 @@ async function writeJson() {
 
     fs.writeFileSync(writePath, code);
   }
+
+  const code = JSON.stringify(ctx, null, 2);
+  const writePath = path.join(process.cwd(), dir, "parsed.json");
+
+  console.log("Writing parsed.json to", writePath);
+
+  if (!fs.existsSync(path.dirname(writePath))) {
+    fs.mkdirpSync(path.dirname(writePath));
+  }
+
+  fs.writeFileSync(writePath, code);
 }
 
 if (command === "token-ts") {
