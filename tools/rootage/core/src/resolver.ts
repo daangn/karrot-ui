@@ -5,7 +5,6 @@ import type {
   TokenDeclaration,
   TokenExpression,
   TokenRef,
-  ValueExpression,
 } from "./types";
 
 export function resolveToken(
