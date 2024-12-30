@@ -27,7 +27,7 @@
           "strokeWidth": "1.25px"
         }
       },
-      "enabledSelected": {
+      "enabled,selected": {
         "control": {
           "color": "$color.bg.brand-solid"
         },
@@ -40,7 +40,7 @@
           "color": "$color.bg.layer-default-pressed"
         }
       },
-      "pressedSelected": {
+      "pressed,selected": {
         "control": {
           "color": "$color.bg.brand-solid-pressed"
         },
@@ -75,7 +75,7 @@
           "color": "$color.fg.placeholder"
         }
       },
-      "enabledSelected": {
+      "enabled,selected": {
         "icon": {
           "color": "$color.fg.brand"
         }
@@ -85,7 +85,7 @@
           "color": "$color.bg.layer-default-pressed"
         }
       },
-      "pressedSelected": {
+      "pressed,selected": {
         "control": {
           "color": "$color.bg.brand-weak-pressed"
         }
@@ -98,7 +98,7 @@
           "color": "$color.fg.disabled"
         }
       },
-      "disabledSelected": {
+      "disabled,selected": {
         "label": {
           "color": "$color.fg.disabled"
         },

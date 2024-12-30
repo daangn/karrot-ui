@@ -12786,7 +12786,8 @@
             },
             {
               "key": [
-                "enabledSelected"
+                "enabled",
+                "selected"
               ],
               "slot": [
                 {
@@ -12848,7 +12849,8 @@
             },
             {
               "key": [
-                "pressedSelected"
+                "pressed",
+                "selected"
               ],
               "slot": [
                 {
@@ -13022,7 +13024,8 @@
             },
             {
               "key": [
-                "enabledSelected"
+                "enabled",
+                "selected"
               ],
               "slot": [
                 {
@@ -13068,7 +13071,8 @@
             },
             {
               "key": [
-                "pressedSelected"
+                "pressed",
+                "selected"
               ],
               "slot": [
                 {
@@ -13130,7 +13134,8 @@
             },
             {
               "key": [
-                "disabledSelected"
+                "disabled",
+                "selected"
               ],
               "slot": [
                 {
