@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { buildRootage } from "../build";
+import { parse } from "../parse";
 import type { TokensModel } from "../types";
 import { getJsonSchema } from "./jsonschema";
 
@@ -54,7 +54,7 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
     },
   ];
 
-  const result = getJsonSchema(buildRootage(models));
+  const result = getJsonSchema(parse(models));
 
   expect(result).toMatchInlineSnapshot(`
     "{
@@ -305,7 +305,7 @@ test("getJsonSchema should generate valid json", () => {
     },
   ];
 
-  const result = getJsonSchema(buildRootage(models));
+  const result = getJsonSchema(parse(models));
 
   expect(() => JSON.parse(result)).not.toThrow();
 });

@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import YAML from "yaml";
-import { buildRootage } from "../build";
+import { parse } from "../parse";
 import type { Model } from "../types";
 import { getComponentSpecDts, getComponentSpecMjs, getTokenDts, getTokenMjs } from "./typescript";
 
@@ -55,7 +55,7 @@ test("getTokenMjs should generate esm definitions", () => {
     },
   ];
 
-  const result = getTokenMjs(buildRootage(models));
+  const result = getTokenMjs(parse(models));
 
   expect(result).toMatchInlineSnapshot(`
     [
@@ -127,7 +127,7 @@ test("getTokenDts should generate typescript definitions", () => {
     },
   ];
 
-  const result = getTokenDts(buildRootage(models));
+  const result = getTokenDts(parse(models));
 
   expect(result).toMatchInlineSnapshot(`
     [
@@ -166,7 +166,7 @@ data:
 `;
   const models = [YAML.parse(yaml)];
 
-  const result = getComponentSpecMjs(buildRootage(models), "test");
+  const result = getComponentSpecMjs(parse(models), "test");
 
   expect(result).toMatchInlineSnapshot(`
     "export const vars = {
@@ -206,7 +206,7 @@ data:
 `;
   const models = [YAML.parse(yaml)];
 
-  const result = getComponentSpecDts(buildRootage(models), "test");
+  const result = getComponentSpecDts(parse(models), "test");
 
   expect(result).toMatchInlineSnapshot(`
     "export declare const vars: {

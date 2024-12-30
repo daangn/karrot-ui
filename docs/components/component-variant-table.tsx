@@ -5,7 +5,6 @@ import {
   ComponentSpecExpression,
   resolveToken,
   RootageCtx,
-  stringifyTokenExpression,
   stringifyValueExpression,
   ValueExpression,
 } from "@seed-design/rootage-core";
@@ -61,10 +60,7 @@ export function ComponentVariantTable(props: ComponentVariantTableProps) {
                 stateKey,
                 slotKey,
                 propertyKey,
-                values: [
-                  ...path.map((node) => stringifyTokenExpression(node.token)),
-                  stringifyValueExpression(value),
-                ],
+                values: [...path, stringifyValueExpression(value)],
                 resolvedValue: value,
               };
             }

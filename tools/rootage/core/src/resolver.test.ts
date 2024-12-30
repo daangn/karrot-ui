@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { buildRootage } from "./build";
+import { buildContext } from "./context";
+import { parse } from "./parse";
 import { resolveToken } from "./resolver";
 import type { ResolvedTokenResult, TokensModel } from "./types";
+
+const buildRootage = (models: TokensModel[]) => {
+  const parsed = parse(models);
+  return buildContext(parsed);
+};
 
 describe("resolveToken", () => {
   it("should resolve value as is", () => {
@@ -41,23 +47,11 @@ describe("resolveToken", () => {
     );
 
     expect(result1).toEqual({
-      path: [
-        {
-          token: { type: "token", group: [], key: "size-1" },
-          collection: "global",
-          values: [{ mode: "default", value: { type: "dimension", value: 4, unit: "px" } }],
-        },
-      ],
+      path: ["$size-1"],
       value: { type: "dimension", value: 4, unit: "px" },
     } satisfies ResolvedTokenResult);
     expect(result2).toEqual({
-      path: [
-        {
-          token: { type: "token", group: [], key: "duration-1" },
-          collection: "global",
-          values: [{ mode: "default", value: { type: "duration", value: 50, unit: "ms" } }],
-        },
-      ],
+      path: ["$duration-1"],
       value: { type: "duration", value: 50, unit: "ms" },
     });
   });
@@ -101,51 +95,11 @@ describe("resolveToken", () => {
     );
 
     expect(resultLight).toEqual({
-      path: [
-        {
-          token: { type: "token", group: ["color", "bg"], key: "layer-1" },
-          collection: "color",
-          values: [
-            {
-              mode: "light",
-              value: { type: "token", group: ["color", "palette"], key: "gray-00" },
-            },
-            { mode: "dark", value: { type: "token", group: ["color", "palette"], key: "gray-00" } },
-          ],
-        },
-        {
-          token: { type: "token", group: ["color", "palette"], key: "gray-00" },
-          collection: "color",
-          values: [
-            { mode: "light", value: { type: "color", value: "#ffffff" } },
-            { mode: "dark", value: { type: "color", value: "#000000" } },
-          ],
-        },
-      ],
+      path: ["$color.bg.layer-1", "$color.palette.gray-00"],
       value: { type: "color", value: "#ffffff" },
     } satisfies ResolvedTokenResult);
     expect(resultDark).toEqual({
-      path: [
-        {
-          token: { type: "token", group: ["color", "bg"], key: "layer-1" },
-          collection: "color",
-          values: [
-            {
-              mode: "light",
-              value: { type: "token", group: ["color", "palette"], key: "gray-00" },
-            },
-            { mode: "dark", value: { type: "token", group: ["color", "palette"], key: "gray-00" } },
-          ],
-        },
-        {
-          token: { type: "token", group: ["color", "palette"], key: "gray-00" },
-          collection: "color",
-          values: [
-            { mode: "light", value: { type: "color", value: "#ffffff" } },
-            { mode: "dark", value: { type: "color", value: "#000000" } },
-          ],
-        },
-      ],
+      path: ["$color.bg.layer-1", "$color.palette.gray-00"],
       value: { type: "color", value: "#000000" },
     } satisfies ResolvedTokenResult);
   });
@@ -195,73 +149,11 @@ describe("resolveToken", () => {
     );
 
     expect(resultLight).toEqual({
-      path: [
-        {
-          token: { type: "token", group: ["color", "bg"], key: "layer-default" },
-          collection: "color",
-          values: [
-            {
-              mode: "light",
-              value: { type: "token", group: ["color", "bg"], key: "layer-1" },
-            },
-            { mode: "dark", value: { type: "token", group: ["color", "bg"], key: "layer-1" } },
-          ],
-        },
-        {
-          token: { type: "token", group: ["color", "bg"], key: "layer-1" },
-          collection: "color",
-          values: [
-            {
-              mode: "light",
-              value: { type: "token", group: ["color", "palette"], key: "gray-00" },
-            },
-            { mode: "dark", value: { type: "token", group: ["color", "palette"], key: "gray-00" } },
-          ],
-        },
-        {
-          token: { type: "token", group: ["color", "palette"], key: "gray-00" },
-          collection: "color",
-          values: [
-            { mode: "light", value: { type: "color", value: "#ffffff" } },
-            { mode: "dark", value: { type: "color", value: "#000000" } },
-          ],
-        },
-      ],
+      path: ["$color.bg.layer-default", "$color.bg.layer-1", "$color.palette.gray-00"],
       value: { type: "color", value: "#ffffff" },
     } satisfies ResolvedTokenResult);
     expect(resultDark).toEqual({
-      path: [
-        {
-          token: { type: "token", group: ["color", "bg"], key: "layer-default" },
-          collection: "color",
-          values: [
-            {
-              mode: "light",
-              value: { type: "token", group: ["color", "bg"], key: "layer-1" },
-            },
-            { mode: "dark", value: { type: "token", group: ["color", "bg"], key: "layer-1" } },
-          ],
-        },
-        {
-          token: { type: "token", group: ["color", "bg"], key: "layer-1" },
-          collection: "color",
-          values: [
-            {
-              mode: "light",
-              value: { type: "token", group: ["color", "palette"], key: "gray-00" },
-            },
-            { mode: "dark", value: { type: "token", group: ["color", "palette"], key: "gray-00" } },
-          ],
-        },
-        {
-          token: { type: "token", group: ["color", "palette"], key: "gray-00" },
-          collection: "color",
-          values: [
-            { mode: "light", value: { type: "color", value: "#ffffff" } },
-            { mode: "dark", value: { type: "color", value: "#000000" } },
-          ],
-        },
-      ],
+      path: ["$color.bg.layer-default", "$color.bg.layer-1", "$color.palette.gray-00"],
       value: { type: "color", value: "#000000" },
     } satisfies ResolvedTokenResult);
   });

@@ -99,16 +99,22 @@ export interface TokenCollectionDeclaration {
   modes: string[];
 }
 
-// store
+export interface RootageAST {
+  componentSpecs: ComponentSpecDeclaration[];
+  tokens: TokenDeclaration[];
+  tokenCollections: TokenCollectionDeclaration[];
+}
 
+// resolver
 export interface ResolvedTokenResult {
-  path: TokenDeclaration[];
+  path: TokenRef[];
   value: ValueExpression;
 }
 
+// ctx
 export interface DependencyNode {
   name: TokenRef;
-  declaration: TokenDeclaration;
+  collection: string;
   dependencies: {
     [mode: string]: TokenRef | undefined;
   };
@@ -118,12 +124,28 @@ export interface DependencyGraph {
   [tokenRef: TokenRef]: DependencyNode;
 }
 
-// TODO: use record instead of array
+export type ComponentSpecRef = string; // {ComponentSpecId}.{VariantExpression}.{State}.{Slot}.{Property}
+export interface ReferenceNode {
+  name: TokenRef;
+  collection: string;
+  references: {
+    [collection: string]: (TokenRef | ComponentSpecRef)[];
+  };
+}
+
+export interface ReferenceGraph {
+  [tokenRef: TokenRef]: ReferenceNode;
+}
+
 export interface RootageCtx {
-  componentSpecs: ComponentSpecDeclaration[];
-  tokens: TokenDeclaration[];
-  tokenCollections: TokenCollectionDeclaration[];
+  tokenIds: TokenRef[];
+  tokenEntities: Record<TokenRef, TokenDeclaration>;
+  tokenCollectionIds: string[];
+  tokenCollectionEntities: Record<string, TokenCollectionDeclaration>;
+  componentSpecIds: string[];
+  componentSpecEntities: Record<string, ComponentSpecDeclaration>;
   dependencyGraph: DependencyGraph;
+  referenceGraph: ReferenceGraph;
 }
 
 // models

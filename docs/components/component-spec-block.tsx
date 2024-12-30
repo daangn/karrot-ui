@@ -18,7 +18,7 @@ interface ComponentSpecTableProps {
 
 export async function ComponentSpecBlock(props: ComponentSpecTableProps) {
   const rootage = await getRootage();
-  const componentSpec = rootage.componentSpecs.find((spec) => spec.id === props.id);
+  const componentSpec = rootage.componentSpecEntities[props.id];
 
   if (!componentSpec) {
     return <div>Component spec {props.id} not found</div>;

@@ -1,5 +1,5 @@
 import { camelCase } from "change-case";
-import type { RootageCtx, TokenExpression } from "../types";
+import type { RootageAST, TokenExpression } from "../types";
 import { stringifyCssValue, stringifyTokenReference } from "./css";
 
 /**
@@ -31,8 +31,8 @@ function stringifyStateKey(state: string[]) {
   return camelCase(state.join("-"));
 }
 
-function getComponentSpec(ctx: RootageCtx, componentId: string) {
-  const expressions = ctx.componentSpecs.find((spec) => spec.id === componentId)?.data;
+function getComponentSpec(ast: RootageAST, componentId: string) {
+  const expressions = ast.componentSpecs.find((spec) => spec.id === componentId)?.data;
   if (!expressions) {
     throw new Error(`Component spec not found: ${componentId}`);
   }
@@ -70,26 +70,26 @@ function getComponentSpec(ctx: RootageCtx, componentId: string) {
   return result;
 }
 
-export function getComponentSpecMjs(ctx: RootageCtx, componentId: string) {
-  const result = getComponentSpec(ctx, componentId);
+export function getComponentSpecMjs(ast: RootageAST, componentId: string) {
+  const result = getComponentSpec(ast, componentId);
   return `export const vars = ${JSON.stringify(result, null, 2)}`;
 }
 
-export function getComponentSpecDts(ctx: RootageCtx, componentId: string) {
-  const result = getComponentSpec(ctx, componentId);
+export function getComponentSpecDts(ast: RootageAST, componentId: string) {
+  const result = getComponentSpec(ast, componentId);
   return `export declare const vars: ${JSON.stringify(result, null, 2)}`;
 }
 
-export function getComponentSpecIndexMjs(ctx: RootageCtx) {
-  const result = ctx.componentSpecs.map((spec) => {
+export function getComponentSpecIndexMjs(ast: RootageAST) {
+  const result = ast.componentSpecs.map((spec) => {
     return `export { vars as ${camelCase(spec.id, { mergeAmbiguousCharacters: true })} } from "./${spec.id}.mjs";`;
   });
 
   return result.join("\n");
 }
 
-export function getComponentSpecIndexDts(ctx: RootageCtx) {
-  const result = ctx.componentSpecs.map((spec) => {
+export function getComponentSpecIndexDts(ast: RootageAST) {
+  const result = ast.componentSpecs.map((spec) => {
     return `export { vars as ${camelCase(spec.id, { mergeAmbiguousCharacters: true })} } from "./${spec.id}";`;
   });
 
@@ -106,8 +106,8 @@ interface TokenGroup {
   code: TokenDefinition[];
 }
 
-function getTokenGroups(ctx: RootageCtx): TokenGroup[] {
-  const { tokens } = ctx;
+function getTokenGroups(ast: RootageAST): TokenGroup[] {
+  const { tokens } = ast;
   const tokenExpressions = tokens.map((decl) => decl.token);
 
   const groups: Record<string, TokenExpression[]> = {};
@@ -153,12 +153,12 @@ function generateTokenCode(
   });
 }
 
-export function getTokenMjs(ctx: RootageCtx): { path: string; code: string }[] {
-  const groups = getTokenGroups(ctx);
+export function getTokenMjs(ast: RootageAST): { path: string; code: string }[] {
+  const groups = getTokenGroups(ast);
   return generateTokenCode(groups, false);
 }
 
-export function getTokenDts(ctx: RootageCtx): { path: string; code: string }[] {
-  const groups = getTokenGroups(ctx);
+export function getTokenDts(ast: RootageAST): { path: string; code: string }[] {
+  const groups = getTokenGroups(ast);
   return generateTokenCode(groups, true);
 }

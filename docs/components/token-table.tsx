@@ -7,13 +7,11 @@ interface TokenTableProps {
 
 export async function TokenTable(props: TokenTableProps) {
   const rootage = await getRootage();
-  const tokenDeclsToRender = rootage.tokens.filter((tokenDecl) =>
-    props.groups.every((group, index) => tokenDecl.token.group[index] === group),
-  );
+  const tokenDeclsToRender = rootage.tokenIds
+    .filter((id) => id.startsWith(`$${props.groups.join(".")}`))
+    .map((id) => rootage.tokenEntities[id]);
   const collectionName = tokenDeclsToRender[0].collection;
-  const collection = rootage.tokenCollections.find(
-    (collection) => collection.name === collectionName,
-  );
+  const collection = rootage.tokenCollectionEntities[collectionName];
   const modes = collection?.modes ?? [];
   const tableItems = tokenDeclsToRender.map((decl) => ({
     name: stringifyTokenExpression(decl.token),

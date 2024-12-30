@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { buildRootage } from "./build";
+import { buildContext } from "./context";
+import { parse } from "./parse";
 import type { Model } from "./types";
 import { validate } from "./validate";
+
+const buildRootage = (models: Model[]) => {
+  const parsed = parse(models);
+  return buildContext(parsed);
+};
 
 describe("validateModels", () => {
   it("should return true for valid models", () => {

@@ -1,11 +1,5 @@
 import { stringifyTokenExpression } from "./token";
-import type {
-  ResolvedTokenResult,
-  RootageCtx,
-  TokenDeclaration,
-  TokenExpression,
-  TokenRef,
-} from "./types";
+import type { ResolvedTokenResult, RootageCtx, TokenExpression, TokenRef } from "./types";
 
 export function resolveToken(
   rootage: RootageCtx,
@@ -14,35 +8,41 @@ export function resolveToken(
 ): ResolvedTokenResult {
   const { dependencyGraph } = rootage;
 
-  function rec(name: TokenRef): TokenDeclaration[] {
+  function rec(name: TokenRef): TokenRef[] {
     const node = dependencyGraph[name];
 
     if (!node) {
       throw new Error(`Token not found: ${name}`);
     }
 
-    const mode = modes[node.declaration.collection];
+    const mode = modes[node.collection];
 
     if (!mode) {
-      throw new Error(`${node.declaration.collection} does not exist in modes`);
+      throw new Error(`${node.collection} does not exist in modes`);
     }
 
     const nextNode = node.dependencies[mode];
 
     if (nextNode) {
-      return [node.declaration, ...rec(nextNode)];
+      return [node.name, ...rec(nextNode)];
     }
 
-    return [node.declaration];
+    return [node.name];
   }
 
   const path = rec(stringifyTokenExpression(token));
   const last = path.at(-1)!;
-  const value = last.values.find((v) => v.mode === modes[last.collection])?.value;
+  const resolvedToken = rootage.tokenEntities[last];
+
+  if (!resolvedToken) {
+    throw new Error(`Token not found: ${last}`);
+  }
+
+  const value = resolvedToken.values.find((v) => v.mode === modes[resolvedToken.collection])?.value;
 
   if (!value) {
     throw new Error(
-      `Value not found for ${last.collection}=${modes[last.collection]} in ${JSON.stringify(last.values, null, 2)}`,
+      `Value not found for ${resolvedToken.collection}=${modes[resolvedToken.collection]} in ${JSON.stringify(resolvedToken.values, null, 2)}`,
     );
   }
 

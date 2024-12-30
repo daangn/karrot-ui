@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { buildRootage } from "../build";
+import { parse } from "../parse";
 import type { GradientExpression, Model, ShadowExpression } from "../types";
 import { getTokenCss, stringifyTokenReference, stringifyValueExpression } from "./css";
 
@@ -124,7 +124,7 @@ test("getTokenCss should generate css code", () => {
     },
   ];
 
-  const result = getTokenCss(buildRootage(models), {
+  const result = getTokenCss(parse(models), {
     banner: "",
     selectors: {
       global: {

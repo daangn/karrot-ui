@@ -8,7 +8,17 @@ interface ValidationResult {
 
 // TODO: detect cycle in dependency graph
 export function validate(ctx: RootageCtx): ValidationResult {
-  const { componentSpecs, tokens, tokenCollections } = ctx;
+  const {
+    componentSpecIds,
+    componentSpecEntities,
+    tokenIds,
+    tokenEntities,
+    tokenCollectionIds,
+    tokenCollectionEntities,
+  } = ctx;
+  const componentSpecs = componentSpecIds.map((id) => componentSpecEntities[id]!);
+  const tokens = tokenIds.map((id) => tokenEntities[id]!);
+  const tokenCollections = tokenCollectionIds.map((id) => tokenCollectionEntities[id]!);
 
   // validate collection names
   const collectionNames = tokenCollections.map((collection) => collection.name);

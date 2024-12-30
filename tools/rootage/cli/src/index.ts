@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {
-  buildRootage,
+  buildContext,
   getComponentSpecDts,
   getComponentSpecIndexDts,
   getComponentSpecIndexMjs,
@@ -10,6 +10,7 @@ import {
   getTokenCss,
   getTokenDts,
   getTokenMjs,
+  parse,
   validate,
   type Model,
 } from "@seed-design/rootage-core";
@@ -50,7 +51,8 @@ async function prepare() {
 
   const models = fileContents.map((content) => YAML.parse(content) as Model);
 
-  const ctx = buildRootage(models);
+  const ast = parse(models);
+  const ctx = buildContext(ast);
 
   const validationResult = validate(ctx);
 
@@ -60,6 +62,7 @@ async function prepare() {
   }
 
   return {
+    ast,
     ctx,
     filePaths,
     models,
@@ -67,10 +70,10 @@ async function prepare() {
 }
 
 async function writeTokenTs() {
-  const { ctx } = await prepare();
+  const { ast } = await prepare();
 
-  const mjsResults = getTokenMjs(ctx);
-  const dtsResults = getTokenDts(ctx);
+  const mjsResults = getTokenMjs(ast);
+  const dtsResults = getTokenDts(ast);
 
   for (const result of mjsResults) {
     const writePath = path.join(process.cwd(), dir, `${result.path}.mjs`);
@@ -93,10 +96,10 @@ async function writeTokenTs() {
 }
 
 async function writeComponentSpec() {
-  const { ctx } = await prepare();
+  const { ast } = await prepare();
 
-  for (const spec of ctx.componentSpecs) {
-    const mjsCode = getComponentSpecMjs(ctx, spec.id);
+  for (const spec of ast.componentSpecs) {
+    const mjsCode = getComponentSpecMjs(ast, spec.id);
     const mjsWritePath = path.join(process.cwd(), dir, `${spec.id}.mjs`);
 
     console.log("Writing", spec.name, "to", mjsWritePath);
@@ -106,7 +109,7 @@ async function writeComponentSpec() {
     }
     fs.writeFileSync(mjsWritePath, mjsCode);
 
-    const dtsCode = getComponentSpecDts(ctx, spec.id);
+    const dtsCode = getComponentSpecDts(ast, spec.id);
     const dtsWritePath = path.join(process.cwd(), dir, `${spec.id}.d.ts`);
 
     console.log("Writing", spec.name, "to", dtsWritePath);
@@ -114,14 +117,14 @@ async function writeComponentSpec() {
     fs.writeFileSync(dtsWritePath, dtsCode);
   }
 
-  const mjsIndexCode = getComponentSpecIndexMjs(ctx);
+  const mjsIndexCode = getComponentSpecIndexMjs(ast);
   const mjsIndexWritePath = path.join(process.cwd(), dir, "index.mjs");
 
   console.log("Writing index to", mjsIndexWritePath);
 
   fs.writeFileSync(mjsIndexWritePath, mjsIndexCode);
 
-  const dtsIndexCode = getComponentSpecIndexDts(ctx);
+  const dtsIndexCode = getComponentSpecIndexDts(ast);
   const dtsIndexWritePath = path.join(process.cwd(), dir, "index.d.ts");
 
   console.log("Writing index to", dtsIndexWritePath);
@@ -130,9 +133,9 @@ async function writeComponentSpec() {
 }
 
 async function writeTokenCss() {
-  const { ctx } = await prepare();
+  const { ast } = await prepare();
 
-  const code = getTokenCss(ctx, {
+  const code = getTokenCss(ast, {
     banner: `:root[data-seed] {
   color-scheme: light dark;
 }
@@ -169,9 +172,9 @@ async function writeTokenCss() {
 }
 
 async function writeJsonSchema() {
-  const { ctx } = await prepare();
+  const { ast } = await prepare();
 
-  const jsonSchema = getJsonSchema(ctx);
+  const jsonSchema = getJsonSchema(ast);
   const writePath = path.join(artifactsDir, "components", "schema.json");
 
   console.log("Writing schema to", writePath);
@@ -180,7 +183,7 @@ async function writeJsonSchema() {
 }
 
 async function writeJson() {
-  const { ctx, models, filePaths } = await prepare();
+  const { ast, models, filePaths } = await prepare();
   const entries = filePaths.map((file, index) => ({ file, content: models[index] }));
 
   for (const { file, content } of entries) {
@@ -198,7 +201,7 @@ async function writeJson() {
     fs.writeFileSync(writePath, code);
   }
 
-  const code = JSON.stringify(ctx, null, 2);
+  const code = JSON.stringify(ast, null, 2);
   const writePath = path.join(process.cwd(), dir, "parsed.json");
 
   console.log("Writing parsed.json to", writePath);

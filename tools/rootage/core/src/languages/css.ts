@@ -1,10 +1,10 @@
 import type {
   CubicBezierExpression,
-  ValueExpression,
-  RootageCtx,
+  GradientExpression,
+  RootageAST,
   ShadowExpression,
   TokenExpression,
-  GradientExpression,
+  ValueExpression,
 } from "../types";
 
 const PREFIX = "seed-v3";
@@ -74,7 +74,7 @@ export function stringifyCssValue(value: ValueExpression | TokenExpression): str
 }
 
 export function getTokenCss(
-  ctx: RootageCtx,
+  ast: RootageAST,
   options: {
     banner: string;
     selectors: {
@@ -84,7 +84,7 @@ export function getTokenCss(
     };
   },
 ) {
-  const { tokens, tokenCollections } = ctx;
+  const { tokens, tokenCollections } = ast;
 
   const rules = tokenCollections
     .flatMap((collection) => {
