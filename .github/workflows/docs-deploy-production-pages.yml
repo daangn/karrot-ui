@@ -5,6 +5,8 @@ on:
       - wip # V3
     paths:
       - "docs/**"
+      - "packages/recipe/**"
+      - "packages/stylesheet/**"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

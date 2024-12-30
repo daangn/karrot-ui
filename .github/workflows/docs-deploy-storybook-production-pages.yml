@@ -5,6 +5,7 @@ on:
       - wip # V3
     paths:
       - "docs/**"
+      - "packages/recipe/**"
       - "packages/stylesheet/**"
 
 env:

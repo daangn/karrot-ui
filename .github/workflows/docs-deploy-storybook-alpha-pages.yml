@@ -6,11 +6,8 @@ on:
 
     paths:
       - "docs/**"
-      - "packages/component-spec/**"
       - "packages/recipe/**"
-      - "packages/recipe-generator/preset/**"
       - "packages/stylesheet/**"
-      - "packages/vars/**"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
