@@ -5,7 +5,7 @@ import * as React from "react";
 import { createStyleContext } from "../utils/createStyleContext";
 import { ProgressCircle, type ProgressCircleProps } from "./ProgressCircle";
 
-const { rootSlot, childSlot } = createStyleContext(actionButton);
+const { ClassNamesProvider, useClassNames } = createStyleContext(actionButton);
 
 interface UseButtonProps {
   /**
@@ -70,7 +70,7 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
     ref,
   ) => {
     const Comp = asChild ? Slot : "button";
-    const { classNames, StyleProvider } = rootSlot({ variant, layout, size });
+    const classNames = actionButton({ variant, layout, size });
     const api = useButton({ loading, disabled: otherProps.disabled });
 
     if (layout === "iconOnly" && !(otherProps["aria-label"] || otherProps["aria-labelledby"])) {
@@ -80,7 +80,7 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
     }
 
     return (
-      <StyleProvider>
+      <ClassNamesProvider value={classNames}>
         <ButtonContext.Provider value={api}>
           <Comp
             ref={ref}
@@ -89,7 +89,7 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
             {...otherProps}
           />
         </ButtonContext.Provider>
-      </StyleProvider>
+      </ClassNamesProvider>
     );
   },
 );
@@ -100,7 +100,7 @@ export interface ActionButtonLabelProps extends React.HTMLAttributes<HTMLSpanEle
 export const ActionButtonLabel = React.forwardRef<HTMLSpanElement, ActionButtonLabelProps>(
   (props, ref) => {
     const { className, ...otherProps } = props;
-    const { classNames } = childSlot();
+    const classNames = useClassNames();
     const { dataProps } = useButtonContext();
 
     return (
@@ -120,7 +120,7 @@ export interface ActionButtonPrefixIconProps {
 
 export const ActionButtonPrefixIcon = (props: ActionButtonPrefixIconProps) => {
   const { svg } = props;
-  const { classNames } = childSlot();
+  const classNames = useClassNames();
 
   return (
     <Slot aria-hidden className={classNames.prefixIcon}>
@@ -135,7 +135,7 @@ export interface ActionButtonSuffixIconProps {
 
 export const ActionButtonSuffixIcon = (props: ActionButtonSuffixIconProps) => {
   const { svg } = props;
-  const { classNames } = childSlot();
+  const classNames = useClassNames();
 
   return (
     <Slot aria-hidden className={classNames.suffixIcon}>
@@ -149,7 +149,7 @@ export interface ActionButtonIconProps {
 }
 
 export const ActionButtonIcon = ({ svg }: ActionButtonIconProps) => {
-  const { classNames } = childSlot();
+  const classNames = useClassNames();
 
   return (
     <Slot aria-hidden className={classNames.icon}>
@@ -165,7 +165,7 @@ export const ActionButtonProgressCircle = React.forwardRef<
   ActionButtonProgressCircleProps
 >((props, ref) => {
   const { className, ...otherProps } = props;
-  const { classNames } = childSlot();
+  const classNames = useClassNames();
   const { dataProps } = useButtonContext();
 
   return (

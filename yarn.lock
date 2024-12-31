@@ -7747,6 +7747,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-use-layout-effect": "npm:^1.0.1"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
     react: ">=18.0.0"
@@ -7793,6 +7794,18 @@ __metadata:
   dependencies:
     "@floating-ui/react": "npm:^0.26.19"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    nanobundle: "npm:^1.6.0"
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@seed-design/react-primitive@npm:0.0.0, @seed-design/react-primitive@workspace:packages/react-headless/primitive":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-primitive@workspace:packages/react-headless/primitive"
+  dependencies:
+    "@types/react": "npm:^18.3.3"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
     react: ">=18.0.0"
@@ -7909,12 +7922,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react@workspace:packages/react":
+"@seed-design/react@npm:0.0.0, @seed-design/react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@seed-design/react@workspace:packages/react"
   dependencies:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-slot": "npm:^1.1.1"
+    "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-primitive": "npm:0.0.0"
     "@seed-design/react-progress": "npm:0.0.0"
     "@seed-design/vars": "npm:0.0.0"
     clsx: "npm:^2.1.1"
@@ -13130,6 +13145,7 @@ __metadata:
     "@sanity/table": "npm:^1.1.2"
     "@sanity/vision": "npm:3"
     "@sanity/visual-editing": "npm:^2.10.5"
+    "@seed-design/react": "npm:0.0.0"
     "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-checkbox": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-dismissible": "npm:0.0.0"
@@ -13145,6 +13161,7 @@ __metadata:
     "@seed-design/recipe": "npm:0.0.0-alpha-20241212122822"
     "@seed-design/rootage-cli": "npm:0.0.0"
     "@seed-design/rootage-core": "npm:0.0.0"
+    "@seed-design/stackflow": "npm:0.0.0"
     "@seed-design/stylesheet": "npm:3.0.0-alpha-20241212122822"
     "@stackflow/config": "npm:^1.2.0"
     "@stackflow/core": "npm:^1.1.0"

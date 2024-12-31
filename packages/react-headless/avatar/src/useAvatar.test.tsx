@@ -6,7 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ReactElement } from "react";
 import * as React from "react";
 
-import { useAvatar, type UseAvatarProps } from "./index";
+import { useAvatar, type UseAvatarProps } from "./useAvatar";
 
 afterEach(cleanup);
 

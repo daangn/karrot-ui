@@ -1,10 +1,10 @@
 {
-  "name": "@seed-design/react",
+  "name": "@seed-design/react-primitive",
   "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/react"
+    "directory": "packages/react-primitive"
   },
   "sideEffects": false,
   "exports": {
@@ -12,8 +12,7 @@
       "types": "./lib/index.d.ts",
       "require": "./lib/index.js",
       "import": "./lib/index.mjs"
-    },
-    "./package.json": "./package.json"
+    }
   },
   "main": "./lib/index.js",
   "files": [
@@ -25,31 +24,19 @@
     "clean": "rm -rf lib",
     "build": "nanobundle build"
   },
-  "dependencies": {
-    "@radix-ui/react-compose-refs": "^1.1.1",
-    "@radix-ui/react-slot": "^1.1.1",
-    "@seed-design/react-avatar": "0.0.0-alpha-20241030023710",
-    "@seed-design/react-primitive": "0.0.0",
-    "@seed-design/react-progress": "0.0.0",
-    "@seed-design/vars": "0.0.0",
-    "clsx": "^2.1.1"
-  },
-  "devDependencies": {
-    "nanobundle": "^1.6.0"
-  },
   "peerDependencies": {
-    "@seed-design/recipe": "*",
-    "@stackflow/react": ">=1.4.1",
-    "@stackflow/react-ui-core": ">=1.2.1",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "nanobundle": "^1.6.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "ultra": {
     "concurrent": [
-      "dev",
       "build"
     ]
   }

@@ -5,13 +5,10 @@ export {
   ActionButtonProgressCircle as ProgressCircle,
   ActionButtonRoot as Root,
   ActionButtonSuffixIcon as SuffixIcon,
-} from "./ActionButton";
-
-export type {
-  ActionButtonIconProps as IconProps,
-  ActionButtonLabelProps as LabelProps,
-  ActionButtonPrefixIconProps as PrefixIconProps,
-  ActionButtonProgressCircleProps as ProgressCircleProps,
-  ActionButtonRootProps as RootProps,
-  ActionButtonSuffixIconProps as SuffixIconProps,
+  type ActionButtonIconProps as IconProps,
+  type ActionButtonLabelProps as LabelProps,
+  type ActionButtonPrefixIconProps as PrefixIconProps,
+  type ActionButtonProgressCircleProps as ProgressCircleProps,
+  type ActionButtonRootProps as RootProps,
+  type ActionButtonSuffixIconProps as SuffixIconProps,
 } from "./ActionButton";

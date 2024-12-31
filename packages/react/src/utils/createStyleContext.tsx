@@ -1,41 +1,79 @@
-import { createContext, useContext, useMemo } from "react";
+import { Primitive } from "@seed-design/react-primitive";
+import clsx from "clsx";
+import { createContext, forwardRef, useContext } from "react";
 
 type Recipe<
   Props extends Record<string, string | undefined>,
   Classnames extends Record<string, string>,
-> = (props: Props) => Classnames;
+> = (props?: Props) => Classnames;
 
 export function createStyleContext<
   Props extends Record<string, string | undefined>,
   Classnames extends Record<string, string>,
 >(recipe: Recipe<Props, Classnames>) {
-  const StyleContext = createContext<{ classNames: Classnames; props: Props } | null>(null);
+  const ClassNamesContext = createContext<Classnames | null>(null);
+  const PropsContext = createContext<Props | null>(null);
 
-  function rootSlot(props: Props) {
-    const classNames = useMemo(() => recipe(props), [recipe, props]);
-    const StyleProvider = ({ children }: { children: React.ReactNode }) => {
-      return (
-        <StyleContext.Provider value={{ classNames, props }}>{children}</StyleContext.Provider>
-      );
-    };
+  const ClassNamesProvider = ({
+    children,
+    value,
+  }: { children: React.ReactNode; value: Classnames }) => {
+    return <ClassNamesContext.Provider value={value}>{children}</ClassNamesContext.Provider>;
+  };
 
-    return {
-      classNames,
-      StyleProvider,
-    };
-  }
+  const PropsProvider = ({ children, value }: { children: React.ReactNode; value: Props }) => {
+    return <PropsContext.Provider value={value}>{children}</PropsContext.Provider>;
+  };
 
-  function childSlot() {
-    const context = useContext(StyleContext);
+  function useClassNames() {
+    const context = useContext(ClassNamesContext);
     if (context === null) {
-      throw new Error("StyleProvider is missing");
+      throw new Error(
+        "useClassNames must be used within a ClassNamesProvider. Did you forget to wrap your component in a ClassNamesProvider?",
+      );
     }
 
-    return { classNames: context.classNames, props: context.props };
+    return context;
   }
 
+  function useProps() {
+    return useContext(PropsContext);
+  }
+
+  const withProvider = <T, P>(
+    Component: React.ElementType<any>,
+    slot: keyof Classnames,
+    options?: {
+      defaultProps?: Partial<P>;
+    },
+  ): React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>> => {
+    const { defaultProps } = options ?? {};
+
+    const StyledComponent = forwardRef<any, any>((innerProps, ref) => {
+      const props = { ...(defaultProps ?? {}), ...useProps(), ...innerProps } as any; // TODO: use Props type instead of any after implementing splitRecipeProps()
+      const classNames = recipe(props);
+      const className = classNames[slot as keyof typeof classNames];
+
+      return (
+        <ClassNamesProvider value={classNames}>
+          {/* TODO: implement splitRecipeProps() method and spread splitted props */}
+          {/* @ts-ignore */}
+          <Primitive ref={ref} {...props} className={clsx(className, props.className)} />
+        </ClassNamesProvider>
+      );
+    });
+
+    // @ts-ignore
+    StyledComponent.displayName = Component.displayName || Component.name;
+
+    return StyledComponent as any;
+  };
+
   return {
-    rootSlot,
-    childSlot,
+    ClassNamesProvider,
+    PropsProvider,
+    useClassNames,
+    useProps,
+    withProvider,
   };
 }
