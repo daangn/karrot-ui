@@ -1,114 +1,60 @@
 "use client";
 
-import "@seed-design/stylesheet/progressCircle.css";
 import "@seed-design/stylesheet/actionButton.css";
+import "@seed-design/stylesheet/progressCircle.css";
 
+import { ActionButton as SeedActionButton } from "@seed-design/react";
 import * as React from "react";
-import clsx from "clsx";
-import { Slot } from "@radix-ui/react-slot";
-import {
-  actionButton,
-  type ActionButtonVariantProps,
-} from "@seed-design/recipe/actionButton";
-import { ProgressCircle } from "./progress-circle";
 
-export interface ActionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ActionButtonVariantProps {
+export interface ActionButtonProps extends SeedActionButton.RootProps {
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
-
-  loading?: boolean;
-
-  /**
-   * @default false
-   */
-  asChild?: boolean;
 }
 
 /**
  * @see https://v3.seed-design.io/docs/react/components/action-button
  */
 export const ActionButton = React.forwardRef<
-  HTMLButtonElement,
+  React.ElementRef<typeof SeedActionButton.Root>,
   ActionButtonProps
 >(
   (
     {
       className,
-      variant = "brandSolid",
-      size = "medium",
-      children,
-      prefixIcon,
-      suffixIcon,
       loading = false,
       layout = "withText",
-      asChild = false,
+      prefixIcon,
+      suffixIcon,
+      children,
       ...otherProps
     },
     ref,
   ) => {
-    const Comp = asChild ? Slot : "button";
-    const classNames = actionButton({ variant, layout, size });
-    const dataProps = {
-      "data-loading": loading ? "" : undefined,
-      "data-disabled": otherProps.disabled ? "" : undefined,
-    };
-
-    if (
-      layout === "iconOnly" &&
-      !(otherProps["aria-label"] || otherProps["aria-labelledby"])
-    ) {
-      console.warn(
-        "When layout is 'iconOnly', 'aria-label' or 'aria-labelledby' should be provided.",
-      );
-    }
-
     return (
-      <Comp
+      <SeedActionButton.Root
         ref={ref}
-        className={clsx(classNames.root, className)}
-        {...dataProps}
+        loading={loading}
+        layout={layout}
         {...otherProps}
       >
         {layout === "withText" ? (
           <>
-            {prefixIcon && (
-              <Slot
-                aria-hidden
-                {...dataProps}
-                className={classNames.prefixIcon}
-              >
-                {prefixIcon}
-              </Slot>
-            )}
-            <span {...dataProps} className={classNames.label}>
-              {children}
-            </span>
-            {suffixIcon && (
-              <Slot
-                aria-hidden
-                {...dataProps}
-                className={classNames.suffixIcon}
-              >
-                {suffixIcon}
-              </Slot>
-            )}
+            {prefixIcon && <SeedActionButton.PrefixIcon svg={prefixIcon} />}
+            <SeedActionButton.Label>{children}</SeedActionButton.Label>
+            {suffixIcon && <SeedActionButton.SuffixIcon svg={suffixIcon} />}
           </>
         ) : (
-          <Slot aria-hidden {...dataProps} className={classNames.icon}>
-            {children}
-          </Slot>
+          <SeedActionButton.Icon svg={children} />
         )}
-        {loading ? (
-          <ProgressCircle
-            {...dataProps}
-            className={classNames.progressCircle}
-          />
-        ) : null}
-      </Comp>
+        {loading ? <SeedActionButton.ProgressCircle /> : null}
+      </SeedActionButton.Root>
     );
   },
 );
 ActionButton.displayName = "ActionButton";
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

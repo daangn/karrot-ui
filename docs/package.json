@@ -47,6 +47,8 @@
     "@seed-design/rootage-cli": "0.0.0",
     "@seed-design/rootage-core": "0.0.0",
     "@seed-design/stylesheet": "3.0.0-alpha-20241212122822",
+    "@seed-design/stackflow": "0.0.0",
+    "@seed-design/react": "0.0.0",
     "@stackflow/config": "^1.2.0",
     "@stackflow/core": "^1.1.0",
     "@stackflow/plugin-basic-ui": "^1.10.0",
