@@ -1,4 +1,3 @@
-import { Primitive } from "@seed-design/react-primitive";
 import clsx from "clsx";
 import { createContext, forwardRef, useContext } from "react";
 
@@ -51,14 +50,14 @@ export function createStyleContext<
 
     const StyledComponent = forwardRef<any, any>((innerProps, ref) => {
       const props = { ...(defaultProps ?? {}), ...useProps(), ...innerProps } as any; // TODO: use Props type instead of any after implementing splitRecipeProps()
-      const classNames = recipe(props);
+      const classNames = recipe(props); // TODO: classNames are generated on all props; we have to split recipeProps and others. should be resolved in qvism.
       const className = classNames[slot as keyof typeof classNames];
 
       return (
         <ClassNamesProvider value={classNames}>
           {/* TODO: implement splitRecipeProps() method and spread splitted props */}
           {/* @ts-ignore */}
-          <Primitive ref={ref} {...props} className={clsx(className, props.className)} />
+          <Component ref={ref} {...props} className={clsx(className, props.className)} />
         </ClassNamesProvider>
       );
     });
@@ -69,11 +68,28 @@ export function createStyleContext<
     return StyledComponent as any;
   };
 
+  const withContext = <T, P>(
+    Component: React.ElementType<any>,
+    slot?: keyof Classnames,
+  ): React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>> => {
+    const StyledComponent = forwardRef<any, React.HTMLAttributes<HTMLElement>>((props, ref) => {
+      const classNames = useClassNames();
+      const className = classNames?.[slot as keyof typeof classNames];
+
+      return <Component ref={ref} {...props} className={clsx(className, props.className)} />;
+    });
+
+    // @ts-expect-error
+    StyledComponent.displayName = Component.displayName || Component.name;
+    return StyledComponent as any;
+  };
+
   return {
     ClassNamesProvider,
     PropsProvider,
     useClassNames,
     useProps,
     withProvider,
+    withContext,
   };
 }

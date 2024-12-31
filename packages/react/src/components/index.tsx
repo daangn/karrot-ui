@@ -26,10 +26,17 @@ export {
   type AvatarStackProps,
 } from "./Avatar";
 
-export { ProgressCircle, type ProgressCircleProps } from "./ProgressCircle";
+export {
+  BadgeLabel,
+  BadgeRoot,
+  type BadgeLabelProps,
+  type BadgeRootProps,
+} from "./Badge";
 
-export { Box } from "./Box";
-export { Flex } from "./Flex";
+export { ProgressCircle, type ProgressCircleProps } from "./ProgressCircle";
+export { Box, type BoxProps } from "./Box";
+export { Flex, type FlexProps } from "./Flex";
 
 export * as ActionButton from "./ActionButton.namespace";
 export * as Avatar from "./Avatar.namespace";
+export * as Badge from "./Badge.namespace";

@@ -1,40 +1,18 @@
-import { Slot } from "@radix-ui/react-slot";
-import { badge, type BadgeVariantProps } from "@seed-design/recipe/badge";
-import clsx from "clsx";
+"use client";
+
+import { Badge as SeedBadge } from "@seed-design/react";
 import * as React from "react";
 
 import "@seed-design/stylesheet/badge.css";
 
-export interface BadgeProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    BadgeVariantProps {
-  asChild?: boolean;
-}
+export interface BadgeProps extends SeedBadge.RootProps {}
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  (
-    {
-      className,
-      size = "medium",
-      shape = "rectangle",
-      variant = "weak",
-      tone = "neutral",
-      children,
-      asChild = false,
-      ...otherProps
-    },
-    ref,
-  ) => {
-    const Comp = asChild ? Slot : "span";
-    const classNames = badge({ size, shape, variant, tone });
+  ({ children, ...otherProps }, ref) => {
     return (
-      <Comp
-        ref={ref}
-        className={clsx(classNames.root, className)}
-        {...otherProps}
-      >
-        <span className={classNames.label}>{children}</span>
-      </Comp>
+      <SeedBadge.Root ref={ref} {...otherProps}>
+        <SeedBadge.Label>{children}</SeedBadge.Label>
+      </SeedBadge.Root>
     );
   },
 );
