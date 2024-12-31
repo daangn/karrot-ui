@@ -7745,6 +7745,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-avatar@workspace:packages/react-headless/avatar"
   dependencies:
+    "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-use-layout-effect": "npm:^1.0.1"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
