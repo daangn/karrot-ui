@@ -16,11 +16,19 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const variantMap = {
-  ...reactionButtonVariantMap,
-  disabled: ["false", "true"],
-  loading: ["false", "true"],
-  pressed: ["false", "true"],
+const conditionMap = {
+  disabled: {
+    false: { disabled: false },
+    true: { disabled: true },
+  },
+  loading: {
+    false: { loading: false },
+    true: { loading: true },
+  },
+  pressed: {
+    false: { pressed: false, children: "미선택" },
+    true: { pressed: true, children: "선택됨" },
+  },
 };
 
 const CommonStoryTemplate: Story = {
@@ -31,8 +39,8 @@ const CommonStoryTemplate: Story = {
   render: (args) => (
     <VariantTable
       Component={meta.component}
-      variantMap={variantMap}
-      render={({ pressed }) => (pressed === "true" ? "선택됨" : "미선택")}
+      variantMap={reactionButtonVariantMap}
+      conditionMap={conditionMap}
       {...args}
     />
   ),

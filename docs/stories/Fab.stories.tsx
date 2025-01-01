@@ -16,15 +16,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const variantMap = {
-  ...fabVariantMap,
-};
-
 const CommonStoryTemplate: Story = {
   args: {
     children: <IconBellFill />,
   },
-  render: (args) => <VariantTable Component={meta.component} variantMap={variantMap} {...args} />,
+  render: (args) => (
+    <VariantTable Component={meta.component} variantMap={fabVariantMap} {...args} />
+  ),
 };
 
 export const LightTheme = CommonStoryTemplate;

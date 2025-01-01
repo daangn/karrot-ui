@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ControlChip } from "seed-design/ui/control-chip";
 
-import { controlChipVariantMap } from "@seed-design/recipe/controlChip";
-import { VariantTable } from "./components/variant-table";
 import { IconBellFill, IconChevronDownFill } from "@daangn/react-monochrome-icon";
+import { controlChipVariantMap } from "@seed-design/recipe/controlChip";
 import { SeedThemeDecorator } from "./components/decorator";
+import { VariantTable } from "./components/variant-table";
 
 const meta = {
   component: ControlChip.Toggle,
@@ -16,7 +16,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const variantMap = { ...controlChipVariantMap, checked: ["false", "true"] };
+const conditionMap = {
+  checked: {
+    false: { disabled: false },
+    true: { disabled: true },
+  },
+  layout: {
+    withText: { layout: "withText", children: "Control Chip" },
+    iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
+  },
+};
 
 const StoryTemplate: Story = {
   args: {
@@ -27,8 +36,8 @@ const StoryTemplate: Story = {
   render: (args) => (
     <VariantTable
       Component={meta.component}
-      variantMap={variantMap}
-      render={({ layout }) => (layout === "withText" ? "Control Chip" : <IconBellFill />)}
+      variantMap={controlChipVariantMap}
+      conditionMap={conditionMap}
       {...args}
     />
   ),

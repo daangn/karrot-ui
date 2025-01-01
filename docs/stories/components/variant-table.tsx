@@ -1,20 +1,30 @@
 type VariantMap = Record<string, string[] | boolean[]>;
+type ConditionMap = Record<string, Record<string, Record<string, unknown>>>;
 
 interface Props {
   variantMap: VariantMap;
-  render?: (variant: Record<string, string | boolean>) => React.ReactNode;
-  children?: React.ReactNode;
+  conditionMap?: ConditionMap;
   Component: React.ComponentType | React.ElementType;
+  children?: React.ReactNode;
 }
 
-const Bool = (value: "true" | "false") => value === "true";
+const Boolish = {
+  asString: (value: string | boolean) =>
+    value === true ? "true" : value === false ? "false" : value,
+  asUnion: (value: string | boolean) =>
+    value === "true" ? true : value === "false" ? false : value,
+};
 
-const generateCombinations = (variantMap: VariantMap) => {
-  const keys = Object.keys(variantMap);
+const generateCombinations = (variantMap: VariantMap, conditionMap: ConditionMap) => {
+  const keys = [...new Set([...Object.keys(variantMap), ...Object.keys(conditionMap)])];
   let combinations: Record<string, string | boolean>[] = [{}];
 
   for (const key of keys) {
-    const values = variantMap[key];
+    const values = [
+      ...new Set(
+        [...(variantMap[key] ?? []), ...Object.keys(conditionMap[key] ?? {})].map(Boolish.asUnion),
+      ),
+    ];
     const temp: Record<string, string | boolean>[] = [];
 
     for (const combo of combinations) {
@@ -33,17 +43,17 @@ const generateCombinations = (variantMap: VariantMap) => {
 };
 
 export const VariantTable = (props: Props) => {
-  const { variantMap, render, Component, ...rest } = props;
+  const { variantMap, conditionMap = {}, Component, ...rest } = props;
 
-  const combinations = generateCombinations(variantMap);
-  const variantKeys = Object.keys(variantMap);
+  const combinations = generateCombinations(variantMap, conditionMap);
+  const keys = [...new Set([...Object.keys(variantMap), ...Object.keys(conditionMap)])];
 
   return (
     <div>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr style={{ fontSize: "14px" }}>
-            {variantKeys.map((key) => (
+            {keys.map((key) => (
               <th key={key}>{key}</th>
             ))}
             <th>Component</th>
@@ -51,24 +61,34 @@ export const VariantTable = (props: Props) => {
         </thead>
         <tbody>
           {combinations.map((combination) => {
-            const boolify = Object.entries(combination).reduce(
+            const conditionedProps = Object.entries(combination).reduce(
               (acc, [key, value]) => {
-                if (value === "true" || value === "false") {
-                  acc[key] = Bool(value);
+                acc[key] = Boolish.asUnion(value);
+
+                const condition = conditionMap[key];
+                if (!condition) {
                   return acc;
                 }
 
-                acc[key] = value;
+                const conditionValue = condition[Boolish.asString(value)];
+                if (!conditionValue) {
+                  return acc;
+                }
+
+                for (const [key, value] of Object.entries(conditionValue)) {
+                  acc[key] = value;
+                }
+
                 return acc;
               },
-              {} as Record<string, React.ReactNode>,
+              {} as Record<string, unknown>,
             );
+            const props = { ...conditionedProps, ...rest };
 
             const combinationKey = Object.values(combination).join("-");
-            const child = render ? render(combination) : rest.children;
             return (
               <tr key={combinationKey}>
-                {variantKeys.map((key) => (
+                {keys.map((key) => (
                   <td key={key} style={{ width: "10%" }}>
                     <div style={{ display: "flex", flexDirection: "column" }}>
                       <span
@@ -90,9 +110,7 @@ export const VariantTable = (props: Props) => {
                     padding: 16,
                   }}
                 >
-                  <Component {...boolify} {...rest}>
-                    {child}
-                  </Component>
+                  <Component {...props} />
                 </td>
               </tr>
             );

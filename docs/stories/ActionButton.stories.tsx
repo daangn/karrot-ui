@@ -16,10 +16,19 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const variantMap = {
-  ...actionButtonVariantMap,
-  disabled: ["false", "true"],
-  loading: ["false", "true"],
+const conditionMap = {
+  disabled: {
+    false: { disabled: false },
+    true: { disabled: true },
+  },
+  loading: {
+    false: { loading: false },
+    true: { loading: true },
+  },
+  layout: {
+    withText: { layout: "withText", children: "Action Button" },
+    iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
+  },
 };
 
 const CommonStoryTemplate: Story = {
@@ -30,8 +39,8 @@ const CommonStoryTemplate: Story = {
   render: (args) => (
     <VariantTable
       Component={meta.component}
-      variantMap={variantMap}
-      render={({ layout }) => (layout === "withText" ? "Action Button" : <IconBellFill />)}
+      variantMap={actionButtonVariantMap}
+      conditionMap={conditionMap}
       {...args}
     />
   ),

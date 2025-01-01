@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "seed-design/ui/avatar";
+import { Avatar } from "seed-design/ui/avatar";
 
+import { IdentityPlaceholder } from "@/registry/ui/identity-placeholder";
 import { avatarVariantMap } from "@seed-design/recipe/avatar";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
-import { IdentityPlaceholder } from "@/registry/ui/identity-placeholder";
 
 const meta = {
   component: Avatar,
@@ -19,26 +19,23 @@ const ENCODED_IMAGE =
 
 type Story = StoryObj<typeof meta>;
 
-const variantMap = {
-  ...avatarVariantMap,
-  state: ["loaded", "fallback"],
+const conditionMap = {
+  state: {
+    loaded: { src: ENCODED_IMAGE },
+    fallback: { src: undefined },
+  },
 };
 
 const StoryTemplate: Story = {
-  args: {},
+  args: {
+    src: ENCODED_IMAGE,
+    fallback: <IdentityPlaceholder />,
+  },
   render: (args) => (
     <VariantTable
       Component={meta.component}
-      variantMap={variantMap}
-      render={({ state }) =>
-        state === "loaded" ? (
-          <AvatarImage src={ENCODED_IMAGE} />
-        ) : (
-          <AvatarFallback>
-            <IdentityPlaceholder />
-          </AvatarFallback>
-        )
-      }
+      variantMap={avatarVariantMap}
+      conditionMap={conditionMap}
       {...args}
     />
   ),

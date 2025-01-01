@@ -16,6 +16,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const conditionMap = {
+  layout: {
+    withText: { layout: "withText", children: "Control Chip" },
+    iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
+  },
+};
+
 const StoryTemplate: Story = {
   args: {
     prefixIcon: <IconBellFill />,
@@ -26,7 +33,7 @@ const StoryTemplate: Story = {
     <VariantTable
       Component={meta.component}
       variantMap={actionChipVariantMap}
-      render={({ layout }) => (layout === "withText" ? "Control Chip" : <IconBellFill />)}
+      conditionMap={conditionMap}
       {...args}
     />
   ),

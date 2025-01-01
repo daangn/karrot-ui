@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Avatar, AvatarImage, AvatarStack } from "seed-design/ui/avatar";
+import { Avatar, AvatarStack } from "seed-design/ui/avatar";
 
 import { avatarStackVariantMap } from "@seed-design/recipe/avatarStack";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -18,26 +18,14 @@ const ENCODED_IMAGE =
 
 type Story = StoryObj<typeof meta>;
 
-const variantMap = {
-  ...avatarStackVariantMap,
-};
-
 const StoryTemplate: Story = {
   args: {},
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={variantMap} {...args}>
-      <Avatar>
-        <AvatarImage src={ENCODED_IMAGE} />
-      </Avatar>
-      <Avatar>
-        <AvatarImage src={ENCODED_IMAGE} />
-      </Avatar>
-      <Avatar>
-        <AvatarImage src={ENCODED_IMAGE} />
-      </Avatar>
-      <Avatar>
-        <AvatarImage src={ENCODED_IMAGE} />
-      </Avatar>
+    <VariantTable Component={meta.component} variantMap={avatarStackVariantMap} {...args}>
+      <Avatar src={ENCODED_IMAGE} />
+      <Avatar src={ENCODED_IMAGE} />
+      <Avatar src={ENCODED_IMAGE} />
+      <Avatar src={ENCODED_IMAGE} />
     </VariantTable>
   ),
 };
