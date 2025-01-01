@@ -3,33 +3,18 @@
 import "@seed-design/stylesheet/skeleton.css";
 
 import {
-  skeleton,
-  type SkeletonVariantProps,
-} from "@seed-design/recipe/skeleton";
-import clsx from "clsx";
-import * as React from "react";
-import { styleProps, type StyleProps } from "../util/styleProps";
+  Skeleton as SeedSkeleton,
+  type SkeletonProps as SeedSkeletonProps,
+} from "@seed-design/react";
 
-export interface SkeletonProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    SkeletonVariantProps,
-    StyleProps {}
+export interface SkeletonProps extends SeedSkeletonProps {}
 
-export const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
-  (props, ref) => {
-    const { className, shape, ...otherProps } = props;
-    const classNames = skeleton({
-      shape,
-    });
-    const { style } = styleProps(otherProps);
+/**
+ * @see https://v3.seed-design.io/docs/react/components/skeleton
+ */
+export const Skeleton = SeedSkeleton;
 
-    return (
-      <div
-        ref={ref}
-        {...otherProps}
-        className={clsx("seed-box", classNames.root, className)}
-        style={style}
-      />
-    );
-  },
-);
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

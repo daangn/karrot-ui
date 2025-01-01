@@ -6,3 +6,4 @@ export * from "./ExtendedFab";
 export * from "./Fab";
 export * from "./Flex";
 export * from "./ProgressCircle";
+export * from "./Skeleton";
