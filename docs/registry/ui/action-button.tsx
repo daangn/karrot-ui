@@ -1,7 +1,8 @@
 "use client";
 
-import "@seed-design/stylesheet/actionButton.css";
 import "@seed-design/stylesheet/progressCircle.css";
+// TODO: we have to ensure load order between actionButton.css and progressCircle.css. should we bundle them together?
+import "@seed-design/stylesheet/actionButton.css";
 
 import { ActionButton as SeedActionButton } from "@seed-design/react";
 import * as React from "react";
