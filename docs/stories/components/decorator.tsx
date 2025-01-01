@@ -10,7 +10,7 @@ const STORY_PREFIX_FONT_SCALING = "Font Scaling";
 
 export const SeedThemeDecorator: Decorator = (Story, ctx) => {
   useEffect(() => {
-    const isDarkTheme = ctx.name === STORY_NAMES_THEMES.DARK;
+    const isDarkTheme = ctx.name.endsWith(STORY_NAMES_THEMES.DARK);
 
     document.documentElement.setAttribute("data-seed", isDarkTheme ? "dark-only" : "light-only");
     document.documentElement.setAttribute("data-seed-scale-color", isDarkTheme ? "dark" : "light");
