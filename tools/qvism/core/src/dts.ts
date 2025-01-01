@@ -1,13 +1,12 @@
 import { outdent } from "outdent";
 
+import { isBooleanString, not } from "./logic";
 import { escapeReservedWord } from "./reserved-words";
 import type { SlotRecipeDefinition, SlotRecipeVariantRecord, StyleObject } from "./types";
 
 const capitalize = (str: string) => str[0].toUpperCase() + str.slice(1);
 
-const isBoolean = (key: string) => ["true", "false"].includes(key);
-
-const stringify = (key: string) => (isBoolean(key) ? key : `"${key}"`);
+const stringLiteralType = (key: string) => `"${key}"`;
 
 const generateVariantInterface = (
   variants: SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>["variants"],
@@ -18,12 +17,15 @@ const generateVariantInterface = (
 ) => {
   const generateVariantType = (
     variantName: string,
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    variant: Record<any, Partial<Record<string, StyleObject>>>,
+    variant: Record<string, Partial<Record<string, StyleObject>>>,
   ) => {
     const values = Object.keys(variant);
-    const booleanValues = values.filter(isBoolean);
-    const typeString = booleanValues.length > 0 ? "boolean" : values.map(stringify).join(" | ");
+    const booleanValues = values.filter(isBooleanString);
+    const hasBoolean = booleanValues.length > 0;
+    const stringLiterals = values.filter(not(isBooleanString)).map(stringLiteralType);
+    const typeString = [hasBoolean ? "boolean" : undefined, ...stringLiterals]
+      .filter(Boolean)
+      .join(" | ");
     const defaultValue = defaultVariants?.[variantName];
 
     if (defaultValue !== undefined) {

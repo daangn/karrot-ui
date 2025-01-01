@@ -45,8 +45,8 @@ export const tabsVariantMap = {
     "medium"
   ],
   "fixTriggerList": [
-    "true",
-    "false"
+    true,
+    false
   ]
 };
 

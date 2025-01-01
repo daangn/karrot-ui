@@ -61,7 +61,7 @@ export const topNavigationVariantMap = {
     "transparent"
   ],
   "border": [
-    "true"
+    true
   ]
 };
 

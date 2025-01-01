@@ -29,7 +29,7 @@ export const screenVariantMap = {
     "android"
   ],
   "hasAppBar": [
-    "true"
+    true
   ]
 };
 

@@ -55,12 +55,12 @@ const compoundVariants = [
 
 export const checkboxVariantMap = {
   "bold": [
-    "true",
-    "false"
+    true,
+    false
   ],
   "indeterminate": [
-    "true",
-    "false"
+    true,
+    false
   ],
   "variant": [
     "square",

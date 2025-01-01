@@ -34,8 +34,8 @@ export const progressCircleVariantMap = {
     "40"
   ],
   "indeterminate": [
-    "true",
-    "false"
+    true,
+    false
   ]
 };
 

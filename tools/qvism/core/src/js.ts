@@ -2,6 +2,7 @@ import { outdent } from "outdent";
 
 import { escapeReservedWord } from "./reserved-words";
 import type { SlotRecipeDefinition, SlotRecipeVariantRecord } from "./types";
+import { booleanStringToBoolean, isBooleanString } from "./logic";
 
 export function generateJs(
   definition: SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>,
@@ -11,7 +12,7 @@ export function generateJs(
   const variantMap = Object.fromEntries(
     Object.entries(definition.variants).map(([variantName, variant]) => [
       variantName,
-      Object.keys(variant),
+      Object.keys(variant).map((key) => (isBooleanString(key) ? booleanStringToBoolean(key) : key)),
     ]),
   );
 
