@@ -79,7 +79,7 @@ export function createStyleContext<
       return <Component ref={ref} {...props} className={clsx(className, props.className)} />;
     });
 
-    // @ts-expect-error
+    // @ts-ignore
     StyledComponent.displayName = Component.displayName || Component.name;
     return StyledComponent as any;
   };
