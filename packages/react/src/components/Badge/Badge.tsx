@@ -1,7 +1,7 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { badge, type BadgeVariantProps } from "@seed-design/recipe/badge";
 import type * as React from "react";
-import { createStyleContext } from "../utils/createStyleContext";
+import { createStyleContext } from "../../utils/createStyleContext";
 
 const { withProvider, withContext } = createStyleContext(badge);
 

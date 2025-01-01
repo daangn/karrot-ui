@@ -2,53 +2,20 @@ import { Slot } from "@radix-ui/react-slot";
 import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe/actionButton";
 import clsx from "clsx";
 import * as React from "react";
-import { createStyleContext } from "../utils/createStyleContext";
-import { ProgressCircle, type ProgressCircleProps } from "./ProgressCircle";
+import { createStyleContext } from "../../utils/createStyleContext";
+import { ProgressCircle, type ProgressCircleProps } from "../ProgressCircle";
+import {
+  PendingButtonProvider,
+  usePendingButton,
+  usePendingButtonContext,
+  type UsePendingButtonProps,
+} from "./usePendingButton";
 
 const { ClassNamesProvider, useClassNames } = createStyleContext(actionButton);
 
-interface UseButtonProps {
-  /**
-   * 버튼에 등록된 비동기 작업이 진행 중임을 사용자에게 알립니다.
-   * @default false
-   */
-  loading?: boolean;
-
-  /**
-   * 버튼의 비활성화 여부를 나타냅니다.
-   * @default false
-   */
-  disabled?: boolean;
-}
-
-function useButton(props: UseButtonProps) {
-  const { loading, disabled } = props;
-  const dataProps = {
-    "data-loading": loading ? "" : undefined,
-    "data-disabled": disabled ? "" : undefined,
-  };
-
-  return {
-    loading,
-    disabled,
-    dataProps,
-  };
-}
-
-const ButtonContext = React.createContext<ReturnType<typeof useButton> | null>(null);
-
-const useButtonContext = () => {
-  const context = React.useContext(ButtonContext);
-  if (context === null) {
-    throw new Error("useButtonContext should be used within UseButtonProvider");
-  }
-
-  return context;
-};
-
 export interface ActionButtonRootProps
   extends ActionButtonVariantProps,
-    UseButtonProps,
+    UsePendingButtonProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * @default false
@@ -71,7 +38,7 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
   ) => {
     const Comp = asChild ? Slot : "button";
     const classNames = actionButton({ variant, layout, size });
-    const api = useButton({ loading, disabled: otherProps.disabled });
+    const api = usePendingButton({ loading, disabled: otherProps.disabled });
 
     if (layout === "iconOnly" && !(otherProps["aria-label"] || otherProps["aria-labelledby"])) {
       console.warn(
@@ -81,14 +48,14 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
 
     return (
       <ClassNamesProvider value={classNames}>
-        <ButtonContext.Provider value={api}>
+        <PendingButtonProvider value={api}>
           <Comp
             ref={ref}
             className={clsx(classNames.root, className)}
             {...api.dataProps}
             {...otherProps}
           />
-        </ButtonContext.Provider>
+        </PendingButtonProvider>
       </ClassNamesProvider>
     );
   },
@@ -101,7 +68,7 @@ export const ActionButtonLabel = React.forwardRef<HTMLSpanElement, ActionButtonL
   (props, ref) => {
     const { className, ...otherProps } = props;
     const classNames = useClassNames();
-    const { dataProps } = useButtonContext();
+    const { dataProps } = usePendingButtonContext();
 
     return (
       <span
@@ -121,9 +88,10 @@ export interface ActionButtonPrefixIconProps {
 export const ActionButtonPrefixIcon = (props: ActionButtonPrefixIconProps) => {
   const { svg } = props;
   const classNames = useClassNames();
+  const { dataProps } = usePendingButtonContext();
 
   return (
-    <Slot aria-hidden className={classNames.prefixIcon}>
+    <Slot aria-hidden {...dataProps} className={classNames.prefixIcon}>
       {svg}
     </Slot>
   );
@@ -136,9 +104,10 @@ export interface ActionButtonSuffixIconProps {
 export const ActionButtonSuffixIcon = (props: ActionButtonSuffixIconProps) => {
   const { svg } = props;
   const classNames = useClassNames();
+  const { dataProps } = usePendingButtonContext();
 
   return (
-    <Slot aria-hidden className={classNames.suffixIcon}>
+    <Slot aria-hidden {...dataProps} className={classNames.suffixIcon}>
       {svg}
     </Slot>
   );
@@ -150,9 +119,10 @@ export interface ActionButtonIconProps {
 
 export const ActionButtonIcon = ({ svg }: ActionButtonIconProps) => {
   const classNames = useClassNames();
+  const { dataProps } = usePendingButtonContext();
 
   return (
-    <Slot aria-hidden className={classNames.icon}>
+    <Slot aria-hidden {...dataProps} className={classNames.icon}>
       {svg}
     </Slot>
   );
@@ -166,7 +136,7 @@ export const ActionButtonProgressCircle = React.forwardRef<
 >((props, ref) => {
   const { className, ...otherProps } = props;
   const classNames = useClassNames();
-  const { dataProps } = useButtonContext();
+  const { dataProps } = usePendingButtonContext();
 
   return (
     <ProgressCircle

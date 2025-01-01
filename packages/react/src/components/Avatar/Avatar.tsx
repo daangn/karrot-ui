@@ -5,7 +5,7 @@ import { avatarStack, type AvatarStackVariantProps } from "@seed-design/recipe/a
 import clsx from "clsx";
 import * as React from "react";
 import { useMemo } from "react";
-import { createStyleContext } from "../utils/createStyleContext";
+import { createStyleContext } from "../../utils/createStyleContext";
 
 const { PropsProvider, withProvider, withContext } = createStyleContext(avatar);
 
