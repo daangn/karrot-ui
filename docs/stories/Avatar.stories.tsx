@@ -28,7 +28,6 @@ const conditionMap = {
 
 const StoryTemplate: Story = {
   args: {
-    src: ENCODED_IMAGE,
     fallback: <IdentityPlaceholder />,
   },
   render: (args) => (
