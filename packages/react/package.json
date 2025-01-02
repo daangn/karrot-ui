@@ -29,6 +29,7 @@
     "@radix-ui/react-compose-refs": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "@seed-design/react-avatar": "0.0.0-alpha-20241030023710",
+    "@seed-design/react-switch": "0.0.0-alpha-20241030023710",
     "@seed-design/react-primitive": "0.0.0",
     "@seed-design/react-progress": "0.0.0",
     "@seed-design/vars": "0.0.0",

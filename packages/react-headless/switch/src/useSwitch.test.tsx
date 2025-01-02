@@ -6,7 +6,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ReactElement } from "react";
 import * as React from "react";
 
-import { useSwitch, type UseSwitchProps } from "./index";
+import {
+  SwitchControl,
+  SwitchHiddenInput,
+  SwitchRoot,
+  SwitchThumb,
+  type SwitchRootProps,
+} from "./Switch";
 
 afterEach(cleanup);
 
@@ -17,18 +23,15 @@ function setUp(jsx: ReactElement) {
   };
 }
 
-function Switch(props: UseSwitchProps) {
-  const { stateProps, restProps, controlProps, hiddenInputProps, rootProps, thumbProps } =
-    useSwitch(props);
+const Switch = React.forwardRef<HTMLInputElement, SwitchRootProps>((props, ref) => {
   return (
-    <label {...rootProps}>
-      <div {...controlProps}>
-        <div {...stateProps} {...thumbProps} />
-      </div>
-      <input {...hiddenInputProps} {...restProps} />
-    </label>
+    <SwitchRoot {...props}>
+      <SwitchControl />
+      <SwitchThumb />
+      <SwitchHiddenInput ref={ref} />
+    </SwitchRoot>
   );
-}
+});
 
 describe("useSwitch", () => {
   it("should render the switch correctly", () => {

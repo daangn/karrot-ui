@@ -7,3 +7,4 @@ export * from "./Fab";
 export * from "./Flex";
 export * from "./ProgressCircle";
 export * from "./Skeleton";
+export * from "./Switch";

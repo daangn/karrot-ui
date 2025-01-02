@@ -1,14 +1,12 @@
 export {
-  SwitchRoot,
   SwitchControl,
-  SwitchThumb,
   SwitchHiddenInput,
-  type SwitchRootProps,
+  SwitchRoot,
+  SwitchThumb,
   type SwitchControlProps,
-  type SwitchThumbProps,
   type SwitchHiddenInputProps,
+  type SwitchRootProps,
+  type SwitchThumbProps,
 } from "./Switch";
-
-export { useSwitchContext, type UseSwitchContext } from "./useSwitchContext";
 
 export * as Switch from "./Switch.namespace";
