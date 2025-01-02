@@ -10,16 +10,14 @@ export interface AvatarRootProps
     PrimitiveProps,
     React.HTMLAttributes<HTMLDivElement> {}
 
-export const AvatarRoot = forwardRef<HTMLDivElement, AvatarRootProps>(
-  ({ asChild = false, ...otherProps }, ref) => {
-    const api = useAvatar({ ...otherProps });
-    return (
-      <AvatarProvider value={api}>
-        <Primitive.div ref={ref} {...api.rootProps} {...api.restProps} />
-      </AvatarProvider>
-    );
-  },
-);
+export const AvatarRoot = forwardRef<HTMLDivElement, AvatarRootProps>((props, ref) => {
+  const api = useAvatar(props);
+  return (
+    <AvatarProvider value={api}>
+      <Primitive.div ref={ref} {...api.rootProps} {...api.restProps} />
+    </AvatarProvider>
+  );
+});
 AvatarRoot.displayName = "AvatarRoot";
 
 export interface AvatarImageProps
