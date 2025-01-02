@@ -36,7 +36,7 @@ function handleSize(size: string | undefined) {
     return "100%";
   }
   // @ts-ignore
-  return vars.$unit[size] ?? undefined;
+  return vars.$unit[size] ?? size;
 }
 
 function handleRadius(radius: string | undefined) {
@@ -74,17 +74,17 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   borderBottomLeftRadius?: Radius;
 
-  width?: Unit | "full";
+  width?: Unit | "full" | (string & {});
 
-  minWidth?: Unit | "full";
+  minWidth?: Unit | "full" | (string & {});
 
-  maxWidth?: Unit | "full";
+  maxWidth?: Unit | "full" | (string & {});
 
-  height?: Unit | "full";
+  height?: Unit | "full" | (string & {});
 
-  minHeight?: Unit | "full";
+  minHeight?: Unit | "full" | (string & {});
 
-  maxHeight?: Unit | "full";
+  maxHeight?: Unit | "full" | (string & {});
 
   top?: 0;
 
