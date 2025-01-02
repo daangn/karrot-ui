@@ -1,16 +1,71 @@
 import { ImageIcon } from "@sanity/icons";
 import { defineArrayMember, defineType } from "sanity";
 
-/**
- * This is the schema type for block content used in the post document type
- * Importing this type into the studio configuration's `schema` property
- * lets you reuse it in other document types with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
+// imageWithText를 defineArrayMember로 정의
+export const imageWithTextType = defineArrayMember({
+  name: "imageWithText",
+  title: "이미지 텍스트 조합",
+  type: "object",
+  fields: [
+    {
+      name: "image",
+      title: "이미지",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: "text",
+      title: "텍스트",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "본문", value: "normal" },
+            { title: "제목", value: "h3" },
+            { title: "부제목", value: "h4" },
+          ],
+          marks: {
+            decorators: [
+              { title: "굵게", value: "strong" },
+              { title: "기울임", value: "em" },
+              { title: "밑줄", value: "underline" },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      name: "imagePosition",
+      title: "이미지 위치",
+      type: "string",
+      options: {
+        list: [
+          { title: "왼쪽", value: "left" },
+          { title: "오른쪽", value: "right" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "left",
+    },
+  ],
+  preview: {
+    select: {
+      title: "text",
+      media: "image",
+      imagePosition: "imagePosition",
+    },
+    prepare({ title, media, imagePosition }) {
+      return {
+        title: title?.[0]?.children?.[0]?.text || "이미지 텍스트 블록",
+        subtitle: `이미지 위치: ${imagePosition === "left" ? "왼쪽" : "오른쪽"}`,
+        media,
+      };
+    },
+  },
+});
 
 // You can add additional types here. Note that you can't use
 // primitive types such as 'string' and 'number' in the same array
@@ -90,5 +145,6 @@ export default defineType({
     }),
     imageType,
     tableType,
+    imageWithTextType,
   ],
 });

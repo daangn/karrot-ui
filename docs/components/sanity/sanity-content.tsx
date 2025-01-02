@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import ErrorBoundary from "../error-boundary";
 import { PortableImage } from "./image";
 import { Table } from "./table";
+import { ImageWithTextPreview } from "@/sanity/components/ImageWithTextPreview";
 
 interface SanityGuidelineProps {
   title: string;
@@ -49,6 +50,7 @@ export const PortableContent = ({ content }: { content: any }) => {
         types: {
           image: (props) => <PortableImage {...props} />,
           tabelContainer: Table,
+          imageWithText: ImageWithTextPreview,
         },
         block: {
           normal: (props) => <p className="min-h-4 m-0" {...props} />,
