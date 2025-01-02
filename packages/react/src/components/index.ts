@@ -1,4 +1,5 @@
 export * from "./ActionButton";
+export * from "./ActionChip";
 export * from "./Avatar";
 export * from "./Badge";
 export * from "./Box";
