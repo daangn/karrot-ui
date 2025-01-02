@@ -1,8 +1,10 @@
-import { Slot } from "@radix-ui/react-slot";
+import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe/actionButton";
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
+import { withDataProps } from "../../utils/withDataProps";
+import { Icon, type IconProps } from "../private/Icon";
 import { ProgressCircle, type ProgressCircleProps } from "../ProgressCircle";
 import {
   PendingButtonProvider,
@@ -11,17 +13,13 @@ import {
   type UsePendingButtonProps,
 } from "./usePendingButton";
 
-const { ClassNamesProvider, useClassNames } = createStyleContext(actionButton);
+const { ClassNamesProvider, withContext } = createStyleContext(actionButton);
 
 export interface ActionButtonRootProps
   extends ActionButtonVariantProps,
     UsePendingButtonProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * @default false
-   */
-  asChild?: boolean;
-}
+    PrimitiveProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButtonRootProps>(
   (
@@ -30,13 +28,11 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
       size = "medium",
       loading = false,
       layout = "withText",
-      asChild = false,
       className,
       ...otherProps
     },
     ref,
   ) => {
-    const Comp = asChild ? Slot : "button";
     const classNames = actionButton({ variant, layout, size });
     const api = usePendingButton({ loading, disabled: otherProps.disabled });
 
@@ -49,7 +45,7 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
     return (
       <ClassNamesProvider value={classNames}>
         <PendingButtonProvider value={api}>
-          <Comp
+          <Primitive.button
             ref={ref}
             className={clsx(classNames.root, className)}
             {...api.dataProps}
@@ -64,86 +60,35 @@ ActionButtonRoot.displayName = "ActionButton";
 
 export interface ActionButtonLabelProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
-export const ActionButtonLabel = React.forwardRef<HTMLSpanElement, ActionButtonLabelProps>(
-  (props, ref) => {
-    const { className, ...otherProps } = props;
-    const classNames = useClassNames();
-    const { dataProps } = usePendingButtonContext();
-
-    return (
-      <span
-        ref={ref}
-        className={clsx(classNames.label, className)}
-        {...dataProps}
-        {...otherProps}
-      />
-    );
-  },
+export const ActionButtonLabel = withContext<HTMLSpanElement, ActionButtonLabelProps>(
+  withDataProps(Primitive.span, usePendingButtonContext),
+  "label",
 );
 
-export interface ActionButtonPrefixIconProps {
-  svg: React.ReactNode;
-}
+export interface ActionButtonPrefixIconProps extends IconProps {}
 
-export const ActionButtonPrefixIcon = (props: ActionButtonPrefixIconProps) => {
-  const { svg } = props;
-  const classNames = useClassNames();
-  const { dataProps } = usePendingButtonContext();
+export const ActionButtonPrefixIcon = withContext<SVGSVGElement, ActionButtonPrefixIconProps>(
+  withDataProps(Icon, usePendingButtonContext),
+  "prefixIcon",
+);
 
-  return (
-    <Slot aria-hidden {...dataProps} className={classNames.prefixIcon}>
-      {svg}
-    </Slot>
-  );
-};
+export interface ActionButtonSuffixIconProps extends IconProps {}
 
-export interface ActionButtonSuffixIconProps {
-  svg: React.ReactNode;
-}
+export const ActionButtonSuffixIcon = withContext<SVGSVGElement, ActionButtonSuffixIconProps>(
+  withDataProps(Icon, usePendingButtonContext),
+  "suffixIcon",
+);
 
-export const ActionButtonSuffixIcon = (props: ActionButtonSuffixIconProps) => {
-  const { svg } = props;
-  const classNames = useClassNames();
-  const { dataProps } = usePendingButtonContext();
+export interface ActionButtonIconProps extends IconProps {}
 
-  return (
-    <Slot aria-hidden {...dataProps} className={classNames.suffixIcon}>
-      {svg}
-    </Slot>
-  );
-};
-
-export interface ActionButtonIconProps {
-  svg: React.ReactNode;
-}
-
-export const ActionButtonIcon = ({ svg }: ActionButtonIconProps) => {
-  const classNames = useClassNames();
-  const { dataProps } = usePendingButtonContext();
-
-  return (
-    <Slot aria-hidden {...dataProps} className={classNames.icon}>
-      {svg}
-    </Slot>
-  );
-};
+export const ActionButtonIcon = withContext<SVGSVGElement, ActionButtonIconProps>(
+  withDataProps(Icon, usePendingButtonContext),
+  "icon",
+);
 
 export interface ActionButtonProgressCircleProps extends ProgressCircleProps {}
 
-export const ActionButtonProgressCircle = React.forwardRef<
-  React.ElementRef<typeof ProgressCircle>,
+export const ActionButtonProgressCircle = withContext<
+  SVGSVGElement,
   ActionButtonProgressCircleProps
->((props, ref) => {
-  const { className, ...otherProps } = props;
-  const classNames = useClassNames();
-  const { dataProps } = usePendingButtonContext();
-
-  return (
-    <ProgressCircle
-      ref={ref}
-      className={clsx(classNames.progressCircle, className)}
-      {...dataProps}
-      {...otherProps}
-    />
-  );
-});
+>(withDataProps(ProgressCircle, usePendingButtonContext), "progressCircle");
