@@ -32,6 +32,7 @@
     "@seed-design/react-switch": "0.0.0-alpha-20241030023710",
     "@seed-design/react-primitive": "0.0.0",
     "@seed-design/react-progress": "0.0.0",
+    "@seed-design/react-toggle": "0.0.0",
     "@seed-design/vars": "0.0.0",
     "clsx": "^2.1.1"
   },

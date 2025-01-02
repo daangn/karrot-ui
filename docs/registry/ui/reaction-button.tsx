@@ -1,89 +1,39 @@
 "use client";
 
 import "@seed-design/stylesheet/progressCircle.css";
+// TODO: we have to ensure load order between reactionButton.css and progressCircle.css. should we bundle them together?
 import "@seed-design/stylesheet/reactionButton.css";
 
-import { Slot } from "@radix-ui/react-slot";
-import { useToggle, type UseToggleProps } from "@seed-design/react-toggle";
-import {
-  reactionButton,
-  type ReactionButtonVariantProps,
-} from "@seed-design/recipe/reactionButton";
-import clsx from "clsx";
+import { ReactionButton as SeedReactionButton } from "@seed-design/react";
 import * as React from "react";
-import { ProgressCircle } from "./progress-circle";
 
-export interface ReactionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    UseToggleProps,
-    ReactionButtonVariantProps {
+export interface ReactionButtonProps extends SeedReactionButton.RootProps {
   prefixIcon?: React.ReactNode;
-
-  count?: number;
-
-  loading?: boolean;
-
-  /**
-   * @default false
-   */
-  asChild?: boolean;
 }
 
 /**
- * @see https://v3.seed-design.io/docs/react/components/reaction-button
+ * @see https://v3.seed-design.io/docs/react/components/toggle-button
  */
 export const ReactionButton = React.forwardRef<
-  HTMLButtonElement,
+  React.ElementRef<typeof SeedReactionButton.Root>,
   ReactionButtonProps
 >(
   (
-    {
-      className,
-      size = "small",
-      children,
-      prefixIcon,
-      count,
-      loading = false,
-      asChild = false,
-      ...otherProps
-    },
+    { className, loading = false, prefixIcon, children, ...otherProps },
     ref,
   ) => {
-    const Comp = asChild ? Slot : "button";
-    const { rootProps, stateProps, restProps } = useToggle(otherProps);
-    const classNames = reactionButton({ size });
-    const dataProps = {
-      ...stateProps,
-      "data-loading": loading ? "" : undefined,
-    };
-
     return (
-      <Comp
-        ref={ref}
-        className={clsx(classNames.root, className)}
-        {...dataProps}
-        {...rootProps}
-        {...restProps}
-      >
-        {prefixIcon && (
-          <Slot aria-hidden {...dataProps} className={classNames.prefixIcon}>
-            {prefixIcon}
-          </Slot>
-        )}
-        <span {...dataProps} className={classNames.label}>
-          {children}
-        </span>
-        <span {...dataProps} className={classNames.count}>
-          {count}
-        </span>
-        {loading ? (
-          <ProgressCircle
-            {...dataProps}
-            className={classNames.progressCircle}
-          />
-        ) : null}
-      </Comp>
+      <SeedReactionButton.Root ref={ref} loading={loading} {...otherProps}>
+        {prefixIcon && <SeedReactionButton.PrefixIcon svg={prefixIcon} />}
+        <SeedReactionButton.Label>{children}</SeedReactionButton.Label>
+        {loading ? <SeedReactionButton.ProgressCircle /> : null}
+      </SeedReactionButton.Root>
     );
   },
 );
 ReactionButton.displayName = "ReactionButton";
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

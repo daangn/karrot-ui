@@ -5,13 +5,13 @@ import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { withDataProps } from "../../utils/withDataProps";
 import { Icon, type IconProps } from "../private/Icon";
-import { ProgressCircle, type ProgressCircleProps } from "../ProgressCircle";
 import {
   PendingButtonProvider,
   usePendingButton,
   usePendingButtonContext,
   type UsePendingButtonProps,
-} from "./usePendingButton";
+} from "../private/usePendingButton";
+import { ProgressCircle, type ProgressCircleProps } from "../ProgressCircle";
 
 const { ClassNamesProvider, withContext } = createStyleContext(actionButton);
 
@@ -58,7 +58,9 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
 );
 ActionButtonRoot.displayName = "ActionButton";
 
-export interface ActionButtonLabelProps extends React.HTMLAttributes<HTMLSpanElement> {}
+export interface ActionButtonLabelProps
+  extends PrimitiveProps,
+    React.HTMLAttributes<HTMLSpanElement> {}
 
 export const ActionButtonLabel = withContext<HTMLSpanElement, ActionButtonLabelProps>(
   withDataProps(Primitive.span, usePendingButtonContext),
