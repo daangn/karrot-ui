@@ -6,8 +6,8 @@ export default function SkeletonPreview() {
     <Flex gap="s4" alignItems="center">
       <Skeleton shape="circular" width="s12" height="s12" />
       <Flex flexDirection="column" gap="s2">
-        <Skeleton shape="rounded" height="s4" width="250px" />
-        <Skeleton shape="rounded" height="s4" width="250px" />
+        <Skeleton shape="rounded" height="s4" width="s12" />
+        <Skeleton shape="rounded" height="s4" width="s12" />
       </Flex>
     </Flex>
   );
