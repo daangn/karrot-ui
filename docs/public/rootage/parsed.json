@@ -5950,7 +5950,8 @@
             "key": "s2"
           }
         }
-      ]
+      ],
+      "description": "Chip 사이의 수평 간격에 사용합니다."
     },
     {
       "collection": "global",
@@ -5972,7 +5973,8 @@
             "key": "s4"
           }
         }
-      ]
+      ],
+      "description": "화면 전체에 적용되는 기본 수평 padding 값입니다."
     }
   ],
   "componentSpecs": [
@@ -12723,10 +12725,46 @@
                   ]
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "key": {
+            "weight": "default"
+          },
+          "state": [
             {
               "key": [
-                "bold"
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "weight": "stronger"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
               ],
               "slot": [
                 {
@@ -19118,9 +19156,27 @@
                       }
                     }
                   ]
-                },
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select-box",
+      "name": "Select Box",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
                 {
-                  "key": "box",
+                  "key": "root",
                   "property": [
                     {
                       "key": "paddingX",
@@ -19453,7 +19509,7 @@
               ],
               "slot": [
                 {
-                  "key": "box",
+                  "key": "root",
                   "property": [
                     {
                       "key": "color",
@@ -19509,7 +19565,7 @@
               ],
               "slot": [
                 {
-                  "key": "box",
+                  "key": "root",
                   "property": [
                     {
                       "key": "color",
@@ -19623,7 +19679,7 @@
               ],
               "slot": [
                 {
-                  "key": "box",
+                  "key": "root",
                   "property": [
                     {
                       "key": "color",

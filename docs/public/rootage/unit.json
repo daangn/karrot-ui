@@ -103,11 +103,13 @@
         }
       },
       "$horizontal-spacing.between-chips": {
+        "description": "Chip 사이의 수평 간격에 사용합니다.",
         "values": {
           "default": "$unit.s2"
         }
       },
       "$horizontal-spacing.global-gutter": {
+        "description": "화면 전체에 적용되는 기본 수평 padding 값입니다.",
         "values": {
           "default": "$unit.s4"
         }
