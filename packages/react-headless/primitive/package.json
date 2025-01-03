@@ -24,6 +24,9 @@
     "clean": "rm -rf lib",
     "build": "nanobundle build"
   },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1"
+  },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
