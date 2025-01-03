@@ -1,6 +1,7 @@
+import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import type * as React from "react";
-import { forwardRef } from "react";
+import { forwardRef, useMemo } from "react";
 import { useSwitch, type UseSwitchProps } from "./useSwitch";
 import { SwitchProvider, useSwitchContext } from "./useSwitchContext";
 
@@ -10,10 +11,26 @@ export interface SwitchRootProps
     React.HTMLAttributes<HTMLLabelElement> {}
 
 export const SwitchRoot = forwardRef<HTMLLabelElement, SwitchRootProps>((props, ref) => {
-  const api = useSwitch(props);
+  const { checked, defaultChecked, disabled, invalid, onCheckedChange, required, ...otherProps } =
+    props;
+
+  const api = useMemo(
+    () =>
+      useSwitch({
+        checked,
+        defaultChecked,
+        disabled,
+        invalid,
+        onCheckedChange,
+        required,
+      }),
+    [checked, defaultChecked, disabled, invalid, required],
+  );
+  const mergedProps = mergeProps(api.rootProps, otherProps);
+
   return (
     <SwitchProvider value={api}>
-      <Primitive.label ref={ref} {...api.rootProps} {...api.restProps} />
+      <Primitive.label ref={ref} {...mergedProps} />
     </SwitchProvider>
   );
 });
@@ -23,7 +40,8 @@ export interface SwitchControlProps extends PrimitiveProps, React.HTMLAttributes
 
 export const SwitchControl = forwardRef<HTMLDivElement, SwitchControlProps>((props, ref) => {
   const { controlProps } = useSwitchContext();
-  return <Primitive.div ref={ref} {...controlProps} {...props} />;
+  const mergedProps = mergeProps(controlProps, props);
+  return <Primitive.div ref={ref} {...mergedProps} />;
 });
 SwitchControl.displayName = "SwitchControl";
 
@@ -31,7 +49,8 @@ export interface SwitchThumbProps extends PrimitiveProps, React.HTMLAttributes<H
 
 export const SwitchThumb = forwardRef<HTMLDivElement, SwitchThumbProps>((props, ref) => {
   const { thumbProps } = useSwitchContext();
-  return <Primitive.div ref={ref} {...thumbProps} {...props} />;
+  const mergedProps = mergeProps(thumbProps, props);
+  return <Primitive.div ref={ref} {...mergedProps} />;
 });
 SwitchThumb.displayName = "SwitchThumb";
 
@@ -40,15 +59,10 @@ export interface SwitchHiddenInputProps
     React.InputHTMLAttributes<HTMLInputElement> {}
 
 export const SwitchHiddenInput = forwardRef<HTMLInputElement, SwitchHiddenInputProps>(
-  ({ onBlur, onChange, onFocus, onKeyDown, onKeyUp, ...otherProps }, ref) => {
-    const { getHiddenInputProps } = useSwitchContext();
-    return (
-      <Primitive.input
-        ref={ref}
-        {...getHiddenInputProps({ onBlur, onChange, onFocus, onKeyDown, onKeyUp })}
-        {...otherProps}
-      />
-    );
+  (props, ref) => {
+    const { hiddenInputProps } = useSwitchContext();
+    const mergedProps = mergeProps(hiddenInputProps, props);
+    return <Primitive.input ref={ref} {...mergedProps} />;
   },
 );
 SwitchHiddenInput.displayName = "SwitchHiddenInput";

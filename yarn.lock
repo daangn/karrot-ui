@@ -7589,6 +7589,7 @@ __metadata:
   resolution: "@seed-design/dom-utils@workspace:packages/utils/dom-utils"
   dependencies:
     "@types/react": "npm:^18.3.3"
+    clsx: "npm:^2.1.1"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
     react: ">=18.0.0"
@@ -7762,6 +7763,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-use-controllable-state": "npm:1.0.1"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
     react: ">=18.0.0"
@@ -7917,6 +7919,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-use-controllable-state": "npm:1.0.1"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
     react: ">=18.0.0"
@@ -7931,8 +7934,11 @@ __metadata:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-slot": "npm:^1.1.1"
     "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-checkbox": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     "@seed-design/react-progress": "npm:0.0.0"
+    "@seed-design/react-switch": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-toggle": "npm:0.0.0"
     "@seed-design/vars": "npm:0.0.0"
     clsx: "npm:^2.1.1"
     nanobundle: "npm:^1.6.0"

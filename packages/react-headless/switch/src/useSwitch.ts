@@ -89,7 +89,7 @@ export function useSwitch(props: UseSwitchProps) {
 
     restProps,
     stateProps,
-    rootProps: elementProps({
+    rootProps: labelProps({
       ...stateProps,
       onPointerMove() {
         setIsHovered(true);
@@ -116,52 +116,37 @@ export function useSwitch(props: UseSwitchProps) {
       "aria-hidden": true,
     }),
 
-    getHiddenInputProps: ({
-      onChange,
-      onFocus,
-      onBlur,
-      onKeyDown,
-      onKeyUp,
-    }: Pick<
-      React.InputHTMLAttributes<HTMLInputElement>,
-      "onChange" | "onFocus" | "onBlur" | "onKeyDown" | "onKeyUp"
-    >) =>
-      inputProps({
-        type: "checkbox",
-        role: "switch",
-        checked: isControlled ? isChecked : undefined,
-        disabled: props.disabled,
-        required: props.required,
-        "aria-invalid": props.invalid,
-        style: visuallyHidden,
-        ...stateProps,
-        onChange(event) {
-          setIsChecked(event.currentTarget.checked);
-          setIsFocusVisible(event.target.matches(":focus-visible"));
-          onChange?.(event);
-        },
-        onFocus(event) {
-          setIsFocused(true);
-          setIsFocusVisible(event.target.matches(":focus-visible"));
-          onFocus?.(event);
-        },
-        onBlur(event) {
-          setIsFocused(false);
-          setIsFocusVisible(false);
-          onBlur?.(event);
-        },
-        onKeyDown(event) {
-          if (event.key === " ") {
-            setIsActive(true);
-          }
-          onKeyDown?.(event);
-        },
-        onKeyUp(event) {
-          if (event.key === " ") {
-            setIsActive(false);
-          }
-          onKeyUp?.(event);
-        },
-      }),
+    hiddenInputProps: inputProps({
+      type: "checkbox",
+      role: "switch",
+      checked: isControlled ? isChecked : undefined,
+      disabled: props.disabled,
+      required: props.required,
+      "aria-invalid": props.invalid,
+      style: visuallyHidden,
+      ...stateProps,
+      onChange(event) {
+        setIsChecked(event.currentTarget.checked);
+        setIsFocusVisible(event.target.matches(":focus-visible"));
+      },
+      onFocus(event) {
+        setIsFocused(true);
+        setIsFocusVisible(event.target.matches(":focus-visible"));
+      },
+      onBlur() {
+        setIsFocused(false);
+        setIsFocusVisible(false);
+      },
+      onKeyDown(event) {
+        if (event.key === " ") {
+          setIsActive(true);
+        }
+      },
+      onKeyUp(event) {
+        if (event.key === " ") {
+          setIsActive(false);
+        }
+      },
+    }),
   };
 }
