@@ -9,6 +9,15 @@
     ]
   },
   {
+    "name": "text",
+    "files": [
+      "ui:text.tsx"
+    ],
+    "dependencies": [
+      "@seed-design/react"
+    ]
+  },
+  {
     "name": "alert-dialog",
     "innerDependencies": [
       "action-button"

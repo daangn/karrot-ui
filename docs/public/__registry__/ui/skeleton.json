@@ -5,7 +5,7 @@
     {
       "name": "skeleton.tsx",
       "type": "ui",
-      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/skeleton.css\";\n\nimport {\n  skeleton,\n  type SkeletonVariantProps,\n} from \"@seed-design/recipe/skeleton\";\nimport clsx from \"clsx\";\nimport * as React from \"react\";\nimport { styleProps, type StyleProps } from \"../util/styleProps\";\n\nexport interface SkeletonProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    SkeletonVariantProps,\n    StyleProps {}\n\nexport const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(\n  (props, ref) => {\n    const { className, shape, ...otherProps } = props;\n    const classNames = skeleton({\n      shape,\n    });\n    const { style } = styleProps(otherProps);\n\n    return (\n      <div\n        ref={ref}\n        {...otherProps}\n        className={clsx(\"seed-box\", classNames.root, className)}\n        style={style}\n      />\n    );\n  },\n);\n"
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/skeleton.css\";\n\nimport {\n  Skeleton as SeedSkeleton,\n  type SkeletonProps as SeedSkeletonProps,\n} from \"@seed-design/react\";\n\nexport interface SkeletonProps extends SeedSkeletonProps {}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/skeleton\n */\nexport const Skeleton = SeedSkeleton;\n\n/**\n * This file is generated snippet from the Seed Design.\n * You can extend the functionality from this snippet if needed.\n */\n"
     }
   ]
 }
