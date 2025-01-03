@@ -33,9 +33,6 @@ interface ImageWithTextPreviewProps {
 
 export function ImageWithTextPreview({ value }: ImageWithTextPreviewProps) {
   const { image, text, imagePosition } = value;
-
-  console.log("value", value);
-
   const imageUrl = useCallback(() => builder.image(image).width(800).url(), [image]);
 
   return (

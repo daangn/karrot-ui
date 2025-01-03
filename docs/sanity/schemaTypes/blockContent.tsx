@@ -1,5 +1,45 @@
 import { ImageIcon } from "@sanity/icons";
 import { defineArrayMember, defineType } from "sanity";
+// 외부 이미지 링크 타입 정의
+export const externalImageLinkType = defineArrayMember({
+  name: "externalImageLink",
+  title: "외부 이미지 링크",
+  type: "object",
+  fields: [
+    {
+      name: "imageUrl",
+      title: "이미지 URL",
+      type: "url",
+      validation: (Rule) =>
+        Rule.required().uri({
+          scheme: ["http", "https"],
+        }),
+    },
+    {
+      name: "alt",
+      title: "대체 텍스트",
+      type: "string",
+    },
+  ],
+  preview: {
+    select: {
+      imageUrl: "imageUrl",
+      title: "alt",
+    },
+    prepare({ imageUrl, title }) {
+      return {
+        title: title || "외부 이미지 링크",
+        media: () => (
+          <img
+            src={imageUrl}
+            alt={title || "미리보기 이미지"}
+            style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          />
+        ),
+      };
+    },
+  },
+});
 
 // imageWithText를 defineArrayMember로 정의
 export const imageWithTextType = defineArrayMember({
@@ -146,5 +186,6 @@ export default defineType({
     imageType,
     tableType,
     imageWithTextType,
+    externalImageLinkType,
   ],
 });
