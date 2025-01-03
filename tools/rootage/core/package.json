@@ -37,8 +37,8 @@
     "nanobundle": "^1.6.0",
     "typescript": "^5.4.5",
     "ultra-runner": "^3.10.5",
-    "yaml": "^2.4.2",
-    "vitest": "^0.34.6"
+    "vitest": "^0.34.6",
+    "yaml": "^2.4.2"
   },
   "ultra": {
     "concurrent": [
