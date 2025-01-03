@@ -10,8 +10,12 @@ env:
 on:
   push:
     paths:
+      - "docs/registry/**"
       - "docs/stories/**"
       - "docs/.storybook/**"
+      - "packages/react/**"
+      - "packages/stylesheet/**"
+      - "packages/recipe/**"
       - ".github/workflows/chromatic.yml"
 
 # List of jobs
