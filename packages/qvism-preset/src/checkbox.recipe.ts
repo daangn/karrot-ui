@@ -44,13 +44,17 @@ const checkbox = defineRecipe({
     },
   },
   variants: {
-    bold: {
-      true: {
+    weight: {
+      default: {
         label: {
-          fontWeight: vars.base.bold.label.fontWeight,
+          fontWeight: vars.weightDefault.enabled.label.fontWeight,
         },
       },
-      false: {},
+      stronger: {
+        label: {
+          fontWeight: vars.weightStronger.enabled.label.fontWeight,
+        },
+      },
     },
     indeterminate: {
       true: {},
@@ -254,7 +258,7 @@ const checkbox = defineRecipe({
   defaultVariants: {
     size: "medium",
     variant: "square",
-    bold: false,
+    weight: "default",
     indeterminate: false,
   },
 });

@@ -124,6 +124,10 @@ const screen = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    theme: "cupertino",
+    hasAppBar: false,
+  },
 });
 
 export default screen;
