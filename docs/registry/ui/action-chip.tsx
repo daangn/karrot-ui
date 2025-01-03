@@ -15,21 +15,12 @@ export interface ActionChipProps extends SeedActionChip.RootProps {
 
 export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
   (
-    {
-      className,
-      size = "medium",
-      layout = "withText",
-      children,
-      prefixIcon,
-      suffixIcon,
-      count,
-      ...otherProps
-    },
+    { className, children, prefixIcon, suffixIcon, count, ...otherProps },
     ref,
   ) => {
     return (
       <SeedActionChip.Root ref={ref} {...otherProps}>
-        {layout === "withText" ? (
+        {otherProps.layout === "withText" ? (
           <>
             {prefixIcon && <SeedActionChip.PrefixIcon svg={prefixIcon} />}
             <SeedActionChip.Label>{children}</SeedActionChip.Label>
