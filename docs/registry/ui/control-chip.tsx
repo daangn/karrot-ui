@@ -5,7 +5,7 @@ import * as React from "react";
 
 import "@seed-design/stylesheet/controlChip.css";
 
-export interface ControlChipProps extends SeedControlChip.RootProps {
+export interface ControlChipToggleProps extends SeedControlChip.RootProps {
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
@@ -13,7 +13,10 @@ export interface ControlChipProps extends SeedControlChip.RootProps {
   count?: number;
 }
 
-export const ControlChip = React.forwardRef<HTMLLabelElement, ControlChipProps>(
+export const ControlChipToggle = React.forwardRef<
+  HTMLLabelElement,
+  ControlChipToggleProps
+>(
   (
     { className, children, prefixIcon, suffixIcon, count, ...otherProps },
     ref,
@@ -34,7 +37,18 @@ export const ControlChip = React.forwardRef<HTMLLabelElement, ControlChipProps>(
     );
   },
 );
-ControlChip.displayName = "ControlChip";
+ControlChipToggle.displayName = "ControlChip.Toggle";
+
+export const ControlChip = Object.assign(
+  () => {
+    console.warn(
+      "ControlChip is a base component and should not be rendered. Use ControlChip.Toggle or ControlChip.Radio instead.",
+    );
+  },
+  {
+    Toggle: ControlChipToggle,
+  },
+);
 
 /**
  * This file is generated snippet from the Seed Design.
