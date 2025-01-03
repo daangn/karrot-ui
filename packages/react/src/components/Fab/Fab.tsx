@@ -18,6 +18,7 @@ export const FabRoot = withProvider<HTMLButtonElement, FabRootProps>(Primitive.b
     size: "medium",
   },
 });
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface FabIconProps extends IconProps {}
