@@ -10,13 +10,22 @@ export const ariaAttr = (guard: boolean | undefined) => {
 
 type DataAttr = Record<`data-${string}`, string | undefined>;
 
-export const elementProps = (props: React.HTMLAttributes<HTMLElement> & DataAttr) => props;
+export const elementProps = (
+  props: React.HTMLAttributes<HTMLElement> & DataAttr,
+): React.HTMLAttributes<HTMLElement> => props;
 
-export const inputProps = (props: React.InputHTMLAttributes<HTMLInputElement> & DataAttr) => props;
+export const inputProps = (
+  props: React.InputHTMLAttributes<HTMLInputElement> & DataAttr,
+): React.InputHTMLAttributes<HTMLInputElement> => props;
 
-export const labelProps = (props: React.LabelHTMLAttributes<HTMLLabelElement> & DataAttr) => props;
+export const labelProps = (
+  props: React.LabelHTMLAttributes<HTMLLabelElement> & DataAttr,
+): React.LabelHTMLAttributes<HTMLLabelElement> => props;
 
-export const buttonProps = (props: React.ButtonHTMLAttributes<HTMLButtonElement> & DataAttr) =>
-  props;
+export const buttonProps = (
+  props: React.ButtonHTMLAttributes<HTMLButtonElement> & DataAttr,
+): React.ButtonHTMLAttributes<HTMLButtonElement> => props;
 
-export const imgProps = (props: React.ImgHTMLAttributes<HTMLImageElement> & DataAttr) => props;
+export const imgProps = (
+  props: React.ImgHTMLAttributes<HTMLImageElement> & DataAttr,
+): React.ImgHTMLAttributes<HTMLImageElement> => props;
