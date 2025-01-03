@@ -1,8 +1,8 @@
 interface CheckboxVariant {
   /**
-  * @default false
+  * @default default
   */
-  bold: boolean;
+  weight: "default" | "stronger";
 /**
   * @default false
   */

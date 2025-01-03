@@ -7,8 +7,17 @@ export const vars = {
       "root": {
         "gap": "var(--seed-v3-unit-s2)"
       }
-    },
-    "bold": {
+    }
+  },
+  "weightDefault": {
+    "enabled": {
+      "label": {
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
+      }
+    }
+  },
+  "weightStronger": {
+    "enabled": {
       "label": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }

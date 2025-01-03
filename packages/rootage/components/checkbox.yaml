@@ -11,7 +11,13 @@ data:
         color: $color.fg.neutral
       root:
         gap: $unit.s2
-    bold:
+
+  weight=default:
+    enabled:
+      label:
+        fontWeight: $font-weight.regular
+  weight=stronger:
+    enabled:
       label:
         fontWeight: $font-weight.bold
 

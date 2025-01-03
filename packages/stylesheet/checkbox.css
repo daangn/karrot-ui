@@ -32,7 +32,10 @@
 .checkbox__label {
     color: var(--seed-v3-color-fg-neutral);
 }
-.checkbox__label--bold_true {
+.checkbox__label--weight_default {
+    font-weight: var(--seed-v3-font-weight-regular);
+}
+.checkbox__label--weight_stronger {
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .checkbox__control--variant_square {
