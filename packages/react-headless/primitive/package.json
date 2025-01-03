@@ -4,7 +4,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/react-primitive"
+    "directory": "packages/react-headless/primitive"
   },
   "sideEffects": false,
   "exports": {
