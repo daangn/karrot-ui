@@ -10,7 +10,7 @@ export interface ExtendedFabProps extends SeedExtendedFab.RootProps {
 }
 
 /**
- * @see https://v3.seed-design.io/docs/react/components/action-button
+ * @see https://v3.seed-design.io/docs/react/components/extended-fab
  */
 export const ExtendedFab = React.forwardRef<
   HTMLButtonElement,
