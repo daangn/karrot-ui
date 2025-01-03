@@ -165,7 +165,7 @@ export function useTextField(props: UseTextFieldProps) {
       .filter(Boolean)
       .join(" ") || undefined;
 
-  const stateProps = {
+  const stateProps = elementProps({
     "data-hover": dataAttr(isHovered),
     "data-active": dataAttr(isPressed),
     "data-focus": dataAttr(isFocused),
@@ -174,7 +174,7 @@ export function useTextField(props: UseTextFieldProps) {
     "data-grapheme-count": `${graphemes.length}`,
     "data-focus-visible": dataAttr(isFocusVisible),
     "data-disabled": dataAttr(props.disabled),
-  };
+  });
 
   return {
     value: stateValue,

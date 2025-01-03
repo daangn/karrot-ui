@@ -1,3 +1,4 @@
+import { elementProps } from "@seed-design/dom-utils";
 import * as React from "react";
 
 export interface UsePendingButtonProps {
@@ -18,15 +19,15 @@ export type UsePendingButtonReturn = ReturnType<typeof usePendingButton>;
 
 export function usePendingButton(props: UsePendingButtonProps) {
   const { loading, disabled } = props;
-  const dataProps = {
+  const stateProps = elementProps({
     "data-loading": loading ? "" : undefined,
     "data-disabled": disabled ? "" : undefined,
-  };
+  });
 
   return {
     loading,
     disabled,
-    dataProps,
+    stateProps,
   };
 }
 

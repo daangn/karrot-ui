@@ -11,7 +11,7 @@ export const DialogBackdrop = forwardRef<HTMLDivElement, DialogBackdropProps>((p
 
   const api = useDialogContext();
 
-  return <div ref={composeRefs(ref, api.refs.backdrop)} {...api.dataProps} {...otherProps} />;
+  return <div ref={composeRefs(ref, api.refs.backdrop)} {...api.stateProps} {...otherProps} />;
 });
 
 DialogBackdrop.displayName = "DialogBackdrop";

@@ -7,7 +7,7 @@ import {
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { withDataProps } from "../../utils/withDataProps";
+import { withStateProps } from "../../utils/withStateProps";
 import { Icon, type IconProps } from "../private/Icon";
 import {
   PendingButtonProvider,
@@ -35,7 +35,7 @@ export const ReactionButtonRoot = React.forwardRef<HTMLButtonElement, ReactionBu
           <TogglePrimitive.Root
             ref={ref}
             className={clsx(classNames.root, className)}
-            {...api.dataProps}
+            {...api.stateProps}
             {...otherProps}
           />
         </PendingButtonProvider>
@@ -50,14 +50,14 @@ export interface ReactionButtonLabelProps
     React.HTMLAttributes<HTMLSpanElement> {}
 
 export const ReactionButtonLabel = withContext<HTMLSpanElement, ReactionButtonLabelProps>(
-  withDataProps(Primitive.span, usePendingButtonContext, useToggleContext),
+  withStateProps(Primitive.span, usePendingButtonContext, useToggleContext),
   "label",
 );
 
 export interface ReactionButtonPrefixIconProps extends IconProps {}
 
 export const ReactionButtonPrefixIcon = withContext<SVGSVGElement, ReactionButtonPrefixIconProps>(
-  withDataProps(Icon, usePendingButtonContext, useToggleContext),
+  withStateProps(Icon, usePendingButtonContext, useToggleContext),
   "prefixIcon",
 );
 
@@ -66,4 +66,4 @@ export interface ReactionButtonProgressCircleProps extends ProgressCircleProps {
 export const ReactionButtonProgressCircle = withContext<
   SVGSVGElement,
   ReactionButtonProgressCircleProps
->(withDataProps(ProgressCircle, usePendingButtonContext, useToggleContext), "progressCircle");
+>(withStateProps(ProgressCircle, usePendingButtonContext, useToggleContext), "progressCircle");

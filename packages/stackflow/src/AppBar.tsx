@@ -21,7 +21,7 @@ export interface AppBarIconButtonProps extends React.ButtonHTMLAttributes<HTMLBu
 
 export const AppBarIconButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
   ({ children, className, ...props }, ref) => {
-    const { dataProps } = useAppScreenContext();
+    const { stateProps } = useAppScreenContext();
     const classNames = useStyleContext();
 
     return (
@@ -29,10 +29,10 @@ export const AppBarIconButton = forwardRef<HTMLButtonElement, AppBarIconButtonPr
         ref={ref}
         type="button"
         className={clsx(classNames.iconButton, className)}
-        {...dataProps}
+        {...stateProps}
         {...props}
       >
-        <Slot className={classNames.icon} {...dataProps}>
+        <Slot className={classNames.icon} {...stateProps}>
           {children}
         </Slot>
       </button>
@@ -46,10 +46,10 @@ export interface AppBarLeftProps extends React.HTMLAttributes<HTMLDivElement> {}
 export const AppBarLeft = forwardRef<HTMLDivElement, AppBarLeftProps>(
   ({ children, className, ...otherProps }, ref) => {
     const classNames = useStyleContext();
-    const { dataProps } = useAppScreenContext();
+    const { stateProps } = useAppScreenContext();
 
     return (
-      <div ref={ref} className={clsx(classNames.left, className)} {...dataProps} {...otherProps}>
+      <div ref={ref} className={clsx(classNames.left, className)} {...stateProps} {...otherProps}>
         {children}
       </div>
     );
@@ -62,10 +62,10 @@ export interface AppBarRightProps extends React.HTMLAttributes<HTMLDivElement> {
 export const AppBarRight = forwardRef<HTMLDivElement, AppBarRightProps>(
   ({ children, className, ...otherProps }, ref) => {
     const classNames = useStyleContext();
-    const { dataProps } = useAppScreenContext();
+    const { stateProps } = useAppScreenContext();
 
     return (
-      <div ref={ref} className={clsx(classNames.right, className)} {...dataProps} {...otherProps}>
+      <div ref={ref} className={clsx(classNames.right, className)} {...stateProps} {...otherProps}>
         {children}
       </div>
     );
@@ -77,7 +77,7 @@ export interface AppBarTitleProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>(
   ({ children, className, ...otherProps }, ref) => {
-    const { theme, dataProps, appBarEdgeProps, refs } = useAppScreenContext();
+    const { theme, stateProps, appBarEdgeProps, refs } = useAppScreenContext();
     const innerRef = useRef<HTMLDivElement>(null);
     const { maxWidth } = useAppBarTitleMaxWidth({
       outerRef: refs.appBar,
@@ -90,20 +90,20 @@ export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>(
       <div
         ref={composeRefs(ref, innerRef)}
         className={clsx(classNames.title, className)}
-        {...dataProps}
+        {...stateProps}
         {...otherProps}
       >
         <div
           className={classNames.titleMain}
           style={{ width: maxWidth ? `${maxWidth}px` : undefined }}
-          {...dataProps}
+          {...stateProps}
         >
           {typeof children === "string" ? (
-            <div className={classNames.titleText} {...dataProps}>
+            <div className={classNames.titleText} {...stateProps}>
               {children}
             </div>
           ) : (
-            <Slot className={classNames.titleText} {...dataProps}>
+            <Slot className={classNames.titleText} {...stateProps}>
               {children}
             </Slot>
           )}
@@ -126,7 +126,7 @@ export interface AppBarProps
 
 export const AppBarRoot = forwardRef<HTMLDivElement, AppBarProps>(
   ({ border = true, tone = "layer", children, ...otherProps }, ref) => {
-    const { theme, refs, dataProps } = useAppScreenContext();
+    const { theme, refs, stateProps } = useAppScreenContext();
 
     const classNames = useMemo(() => topNavigation({ theme, border, tone }), [theme, border, tone]);
 
@@ -134,11 +134,11 @@ export const AppBarRoot = forwardRef<HTMLDivElement, AppBarProps>(
       <div
         ref={composeRefs(ref, refs.appBar)}
         className={classNames.root}
-        {...dataProps}
+        {...stateProps}
         {...otherProps}
       >
-        <div className={classNames.safeArea} {...dataProps} />
-        <div className={classNames.container} {...dataProps}>
+        <div className={classNames.safeArea} {...stateProps} />
+        <div className={classNames.container} {...stateProps}>
           <StyleContext.Provider value={classNames}>{children}</StyleContext.Provider>
         </div>
       </div>

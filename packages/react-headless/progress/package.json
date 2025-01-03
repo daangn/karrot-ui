@@ -25,6 +25,9 @@
     "clean": "rm -rf lib",
     "build": "nanobundle build"
   },
+  "dependencies": {
+    "@seed-design/dom-utils": "0.0.0-alpha-20241030023710"
+  },
   "devDependencies": {
     "nanobundle": "^1.6.0"
   },

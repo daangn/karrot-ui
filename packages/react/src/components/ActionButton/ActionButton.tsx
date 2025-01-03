@@ -3,7 +3,7 @@ import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { withDataProps } from "../../utils/withDataProps";
+import { withStateProps } from "../../utils/withStateProps";
 import { Icon, type IconProps } from "../private/Icon";
 import {
   PendingButtonProvider,
@@ -48,7 +48,7 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
           <Primitive.button
             ref={ref}
             className={clsx(classNames.root, className)}
-            {...api.dataProps}
+            {...api.stateProps}
             {...otherProps}
           />
         </PendingButtonProvider>
@@ -63,28 +63,28 @@ export interface ActionButtonLabelProps
     React.HTMLAttributes<HTMLSpanElement> {}
 
 export const ActionButtonLabel = withContext<HTMLSpanElement, ActionButtonLabelProps>(
-  withDataProps(Primitive.span, usePendingButtonContext),
+  withStateProps(Primitive.span, usePendingButtonContext),
   "label",
 );
 
 export interface ActionButtonPrefixIconProps extends IconProps {}
 
 export const ActionButtonPrefixIcon = withContext<SVGSVGElement, ActionButtonPrefixIconProps>(
-  withDataProps(Icon, usePendingButtonContext),
+  withStateProps(Icon, usePendingButtonContext),
   "prefixIcon",
 );
 
 export interface ActionButtonSuffixIconProps extends IconProps {}
 
 export const ActionButtonSuffixIcon = withContext<SVGSVGElement, ActionButtonSuffixIconProps>(
-  withDataProps(Icon, usePendingButtonContext),
+  withStateProps(Icon, usePendingButtonContext),
   "suffixIcon",
 );
 
 export interface ActionButtonIconProps extends IconProps {}
 
 export const ActionButtonIcon = withContext<SVGSVGElement, ActionButtonIconProps>(
-  withDataProps(Icon, usePendingButtonContext),
+  withStateProps(Icon, usePendingButtonContext),
   "icon",
 );
 
@@ -93,4 +93,4 @@ export interface ActionButtonProgressCircleProps extends ProgressCircleProps {}
 export const ActionButtonProgressCircle = withContext<
   SVGSVGElement,
   ActionButtonProgressCircleProps
->(withDataProps(ProgressCircle, usePendingButtonContext), "progressCircle");
+>(withStateProps(ProgressCircle, usePendingButtonContext), "progressCircle");

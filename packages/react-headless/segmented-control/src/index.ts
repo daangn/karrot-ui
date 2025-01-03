@@ -136,9 +136,9 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
     updateSegmentCount();
   }, [updateSegmentCount]);
 
-  const stateProps = {
+  const stateProps = elementProps({
     "data-disabled": dataAttr(disabled),
-  };
+  });
 
   return {
     value,

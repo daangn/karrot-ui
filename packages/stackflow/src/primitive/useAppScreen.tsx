@@ -142,7 +142,7 @@ export function useAppScreen(props: {
     [zIndexBase, theme, hasAppBar, modalPresentationStyle, activityEnterStyle],
   );
 
-  const dataProps = useMemo(
+  const stateProps = useMemo(
     () => ({
       "data-transition-state":
         transitionState === "enter-done" || transitionState === "exit-done"
@@ -170,23 +170,23 @@ export function useAppScreen(props: {
         edge: edgeRef,
         appBar: appBarRef,
       },
-      dataProps,
+      stateProps,
       rootProps: {
-        ...dataProps,
+        ...stateProps,
         "data-stackflow-activity-id": mounted ? activity?.id : undefined,
         style: zIndexStyle,
       } as React.HTMLAttributes<HTMLDivElement>,
       dimProps: {
-        ...dataProps,
+        ...stateProps,
         style: {
           display: activityEnterStyle !== "slideInLeft" ? undefined : "none",
         },
       } as React.HTMLAttributes<HTMLDivElement>,
       layerProps: {
-        ...dataProps,
+        ...stateProps,
       } as React.HTMLAttributes<HTMLDivElement>,
       edgeProps: {
-        ...dataProps,
+        ...stateProps,
         style: {
           display:
             !activity?.isRoot && theme === "cupertino" && !isSwipeBackPrevented
@@ -195,7 +195,7 @@ export function useAppScreen(props: {
         },
       } as React.HTMLAttributes<HTMLDivElement>,
       appBarEdgeProps: {
-        ...dataProps,
+        ...stateProps,
         onClick: (e) => {
           if (!e.defaultPrevented) {
             layerRef.current?.scroll({
@@ -206,7 +206,7 @@ export function useAppScreen(props: {
         },
       } as React.HTMLAttributes<HTMLButtonElement>,
     }),
-    [theme, activity, zIndexStyle, isSwipeBackPrevented, activityEnterStyle, dataProps, mounted],
+    [theme, activity, zIndexStyle, isSwipeBackPrevented, activityEnterStyle, stateProps, mounted],
   );
 }
 

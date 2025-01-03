@@ -1,17 +1,17 @@
 import { forwardRef } from "react";
 
-export function withDataProps<P, R>(
+export function withStateProps<P, R>(
   Component: React.ComponentType<P & React.RefAttributes<R>>,
-  ...useContexts: (() => { dataProps: Record<string, unknown> })[]
+  ...useContexts: (() => { stateProps: React.HTMLAttributes<HTMLElement> })[]
 ) {
   const Node = forwardRef<R, P>((props, ref) => {
-    const dataProps = {};
+    const stateProps = {};
     for (const useContext of useContexts) {
-      Object.assign(dataProps, useContext().dataProps);
+      Object.assign(stateProps, useContext().stateProps);
     }
 
     // @ts-ignore
-    return <Component ref={ref} {...dataProps} {...props} />;
+    return <Component ref={ref} {...stateProps} {...props} />;
   });
 
   Node.displayName = Component.displayName || Component.name;

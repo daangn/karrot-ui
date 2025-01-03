@@ -1,3 +1,5 @@
+import { elementProps } from "@seed-design/dom-utils";
+
 export interface UseProgressProps {
   /**
    * The current value of the progress. if undefined, it will be indeterminate.
@@ -19,15 +21,17 @@ export function useProgress(props: UseProgressProps) {
   const { value, minValue = 0, maxValue = 100 } = props;
   const indeterminate = typeof value !== "number";
 
-  const dataProps = {
-    "data-state": value === maxValue ? "complete" : indeterminate ? "indeterminate" : "loading",
-  };
+  const stateProps = elementProps({
+    "data-progress-state":
+      value === maxValue ? "complete" : indeterminate ? "indeterminate" : "loading",
+  });
 
   return {
     value,
     indeterminate,
     percent: indeterminate ? -1 : ((value - minValue) / (maxValue - minValue)) * 100,
-    dataProps,
+    stateProps,
+    // TODO: we might wrap this with svgProps(), however, it's not clear if it's guaranteed to be an SVGElement.
     progressProps: {
       role: "progressbar",
       "aria-valuenow": indeterminate ? undefined : value,

@@ -1,7 +1,7 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { useCallback, useMemo } from "react";
 
-import { buttonProps, dataAttr } from "@seed-design/dom-utils";
+import { buttonProps, dataAttr, elementProps } from "@seed-design/dom-utils";
 
 export interface UseToggleStateProps {
   pressed?: boolean;
@@ -43,10 +43,10 @@ export function useToggle(props: UseToggleProps) {
   const { pressed, defaultPressed, disabled, onPressedChange, onClick, ...restProps } = props;
   const { toggle, isPressed } = useToggleState(props);
 
-  const stateProps = {
+  const stateProps = elementProps({
     "data-pressed": dataAttr(isPressed),
     "data-disabled": dataAttr(props.disabled),
-  };
+  });
 
   return {
     isPressed,
@@ -54,8 +54,6 @@ export function useToggle(props: UseToggleProps) {
 
     restProps,
     stateProps,
-    // TODO: we have to unify "dataProps" / "stateProps" naming.
-    dataProps: stateProps,
     rootProps: buttonProps({
       ...stateProps,
       "aria-pressed": isPressed,

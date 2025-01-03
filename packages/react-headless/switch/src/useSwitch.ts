@@ -1,7 +1,13 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { useState } from "react";
 
-import { dataAttr, elementProps, inputProps, visuallyHidden } from "@seed-design/dom-utils";
+import {
+  dataAttr,
+  elementProps,
+  inputProps,
+  labelProps,
+  visuallyHidden,
+} from "@seed-design/dom-utils";
 
 interface UseSwitchStateProps {
   checked?: boolean;
@@ -61,7 +67,7 @@ export function useSwitch(props: UseSwitchProps) {
     isFocusVisible,
   } = useSwitchState(props);
 
-  const stateProps = {
+  const stateProps = elementProps({
     "data-checked": dataAttr(isChecked),
     "data-hover": dataAttr(isHovered),
     "data-active": dataAttr(isActive),
@@ -70,7 +76,7 @@ export function useSwitch(props: UseSwitchProps) {
     "data-disabled": dataAttr(props.disabled),
     "data-invalid": dataAttr(props.invalid),
     "data-required": dataAttr(props.required),
-  };
+  });
 
   const isControlled = checked != null;
 

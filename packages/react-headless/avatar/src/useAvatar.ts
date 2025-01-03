@@ -68,9 +68,9 @@ export function useAvatar(props: UseAvatarProps) {
   }, [events]);
 
   const isLoaded = loadingStatus === "loaded";
-  const stateProps = {
+  const stateProps = elementProps({
     "data-loading-status": loadingStatus,
-  };
+  });
 
   return {
     refs: {

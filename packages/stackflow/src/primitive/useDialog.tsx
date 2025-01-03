@@ -49,7 +49,7 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
   const zIndexContent = useZIndexBase() + 4;
   const transitionState = activity?.transitionState ?? "enter-done";
 
-  const dataProps = useMemo(
+  const stateProps = useMemo(
     () => ({
       "data-stackflow-activity-id": activity?.id,
       "data-stackflow-activity-is-active": activity?.isActive,
@@ -68,16 +68,16 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
         root: rootRef,
         backdrop: backdropRef,
       },
-      dataProps,
+      stateProps,
       rootProps: {
-        ...dataProps,
+        ...stateProps,
         onClick: onClickOutside,
         style: {
           zIndex: zIndexBase,
         },
       },
       contentProps: {
-        ...dataProps,
+        ...stateProps,
         role: "dialog",
         "aria-modal": true,
         "aria-labelledby": titleId,
@@ -87,20 +87,20 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
         },
       },
       closeButtonProps: {
-        ...dataProps,
+        ...stateProps,
         onClick: onClickCloseButton,
       },
       titleProps: {
         id: titleId,
-        ...dataProps,
+        ...stateProps,
       },
       descriptionProps: {
         id: descriptionId,
-        ...dataProps,
+        ...stateProps,
       },
     }),
     [
-      dataProps,
+      stateProps,
       onClickOutside,
       onClickCloseButton,
       zIndexBase,

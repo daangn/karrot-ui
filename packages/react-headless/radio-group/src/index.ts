@@ -79,9 +79,9 @@ export function useRadioGroup(props: UseRadioGroupProps) {
     ...restProps
   } = props;
 
-  const stateProps = {
+  const stateProps = elementProps({
     "data-disabled": dataAttr(disabled),
-  };
+  });
 
   return {
     value,

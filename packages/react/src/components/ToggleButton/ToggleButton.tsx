@@ -4,7 +4,7 @@ import { toggleButton, type ToggleButtonVariantProps } from "@seed-design/recipe
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { withDataProps } from "../../utils/withDataProps";
+import { withStateProps } from "../../utils/withStateProps";
 import { Icon, type IconProps } from "../private/Icon";
 import {
   PendingButtonProvider,
@@ -32,7 +32,7 @@ export const ToggleButtonRoot = React.forwardRef<HTMLButtonElement, ToggleButton
           <TogglePrimitive.Root
             ref={ref}
             className={clsx(classNames.root, className)}
-            {...api.dataProps}
+            {...api.stateProps}
             {...otherProps}
           />
         </PendingButtonProvider>
@@ -47,21 +47,21 @@ export interface ToggleButtonLabelProps
     React.HTMLAttributes<HTMLSpanElement> {}
 
 export const ToggleButtonLabel = withContext<HTMLSpanElement, ToggleButtonLabelProps>(
-  withDataProps(Primitive.span, usePendingButtonContext, useToggleContext),
+  withStateProps(Primitive.span, usePendingButtonContext, useToggleContext),
   "label",
 );
 
 export interface ToggleButtonPrefixIconProps extends IconProps {}
 
 export const ToggleButtonPrefixIcon = withContext<SVGSVGElement, ToggleButtonPrefixIconProps>(
-  withDataProps(Icon, usePendingButtonContext, useToggleContext),
+  withStateProps(Icon, usePendingButtonContext, useToggleContext),
   "prefixIcon",
 );
 
 export interface ToggleButtonSuffixIconProps extends IconProps {}
 
 export const ToggleButtonSuffixIcon = withContext<SVGSVGElement, ToggleButtonSuffixIconProps>(
-  withDataProps(Icon, usePendingButtonContext, useToggleContext),
+  withStateProps(Icon, usePendingButtonContext, useToggleContext),
   "suffixIcon",
 );
 
@@ -70,4 +70,4 @@ export interface ToggleButtonProgressCircleProps extends ProgressCircleProps {}
 export const ToggleButtonProgressCircle = withContext<
   SVGSVGElement,
   ToggleButtonProgressCircleProps
->(withDataProps(ProgressCircle, usePendingButtonContext, useToggleContext), "progressCircle");
+>(withStateProps(ProgressCircle, usePendingButtonContext, useToggleContext), "progressCircle");
