@@ -7,11 +7,13 @@ const AvatarContext = createContext<UseAvatarContext | null>(null);
 
 export const AvatarProvider = AvatarContext.Provider;
 
-export function useAvatarContext() {
+export function useAvatarContext<T extends boolean | undefined = true>({
+  strict = true,
+}: { strict?: T } = {}): T extends false ? UseAvatarContext | null : UseAvatarContext {
   const context = useContext(AvatarContext);
-  if (!context) {
+  if (!context && strict) {
     throw new Error("useAvatarContext must be used within a Avatar");
   }
 
-  return context;
+  return context as UseAvatarContext;
 }
