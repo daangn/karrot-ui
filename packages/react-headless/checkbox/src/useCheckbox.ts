@@ -113,7 +113,7 @@ export function useCheckbox(props: UseCheckboxProps) {
 
     hiddenInputProps: inputProps({
       type: "checkbox",
-      role: "switch",
+      role: "checkbox",
       checked: isControlled ? isChecked : undefined,
       defaultChecked: !isControlled ? isChecked : undefined,
       disabled: disabled,
