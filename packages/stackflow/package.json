@@ -32,7 +32,8 @@
     "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "nanobundle": "^1.6.0"
+    "nanobundle": "^1.6.0",
+    "@stackflow/core": "^1.1.0"
   },
   "peerDependencies": {
     "@seed-design/recipe": "*",
