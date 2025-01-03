@@ -1,7 +1,7 @@
 import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import type * as React from "react";
-import { forwardRef, useMemo } from "react";
+import { forwardRef } from "react";
 import { useCheckbox, type UseCheckboxProps } from "./useCheckbox";
 import { CheckboxProvider, useCheckboxContext } from "./useCheckboxContext";
 
@@ -14,18 +14,14 @@ export const CheckboxRoot = forwardRef<HTMLLabelElement, CheckboxRootProps>((pro
   const { checked, defaultChecked, disabled, invalid, onCheckedChange, required, ...otherProps } =
     props;
 
-  const api = useMemo(
-    () =>
-      useCheckbox({
-        checked,
-        defaultChecked,
-        disabled,
-        invalid,
-        onCheckedChange,
-        required,
-      }),
-    [checked, defaultChecked, disabled, invalid, required],
-  );
+  const api = useCheckbox({
+    checked,
+    defaultChecked,
+    disabled,
+    invalid,
+    onCheckedChange,
+    required,
+  });
   const mergedProps = mergeProps(api.rootProps, otherProps);
 
   return (

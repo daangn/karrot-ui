@@ -1,7 +1,7 @@
 import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import type * as React from "react";
-import { forwardRef, useMemo } from "react";
+import { forwardRef } from "react";
 import { useSwitch, type UseSwitchProps } from "./useSwitch";
 import { SwitchProvider, useSwitchContext } from "./useSwitchContext";
 
@@ -14,18 +14,14 @@ export const SwitchRoot = forwardRef<HTMLLabelElement, SwitchRootProps>((props, 
   const { checked, defaultChecked, disabled, invalid, onCheckedChange, required, ...otherProps } =
     props;
 
-  const api = useMemo(
-    () =>
-      useSwitch({
-        checked,
-        defaultChecked,
-        disabled,
-        invalid,
-        onCheckedChange,
-        required,
-      }),
-    [checked, defaultChecked, disabled, invalid, required],
-  );
+  const api = useSwitch({
+    checked,
+    defaultChecked,
+    disabled,
+    invalid,
+    onCheckedChange,
+    required,
+  });
   const mergedProps = mergeProps(api.rootProps, otherProps);
 
   return (
