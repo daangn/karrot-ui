@@ -1,56 +1,56 @@
+"use client";
+
+import "@seed-design/stylesheet/progressCircle.css";
+// TODO: we have to ensure load order between actionButton.css and progressCircle.css. should we bundle them together?
 import "@seed-design/stylesheet/actionButton.css";
 
+import { ActionButton as SeedActionButton } from "@seed-design/react";
 import * as React from "react";
-import clsx from "clsx";
-import { Slot } from "@radix-ui/react-slot";
-import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe/actionButton";
 
-export interface ActionButtonProps extends ActionButtonVariantProps {
+export interface ActionButtonProps extends SeedActionButton.RootProps {
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
-
-  /**
-   * @default false
-   */
-  asChild?: boolean;
 }
-
-interface ReactActionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ActionButtonProps {}
 
 /**
  * @see https://v3.seed-design.io/docs/react/components/action-button
  */
-export const ActionButton = React.forwardRef<HTMLButtonElement, ReactActionButtonProps>(
+export const ActionButton = React.forwardRef<
+  React.ElementRef<typeof SeedActionButton.Root>,
+  ActionButtonProps
+>(
   (
     {
       className,
-      variant = "brandSolid",
-      size = "medium",
-      children,
+      loading = false,
+      layout = "withText",
       prefixIcon,
       suffixIcon,
-      layout = "withText",
-      asChild = false,
+      children,
       ...otherProps
     },
     ref,
   ) => {
-    const Comp = asChild ? Slot : "button";
-    const classNames = actionButton({ variant, layout, size });
     return (
-      <Comp ref={ref} className={clsx(classNames.root, className)} {...otherProps}>
-        {prefixIcon && <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>}
+      <SeedActionButton.Root ref={ref} loading={loading} layout={layout} {...otherProps}>
         {layout === "withText" ? (
-          <span className={classNames.label}>{children}</span>
+          <>
+            {prefixIcon && <SeedActionButton.PrefixIcon svg={prefixIcon} />}
+            <SeedActionButton.Label>{children}</SeedActionButton.Label>
+            {suffixIcon && <SeedActionButton.SuffixIcon svg={suffixIcon} />}
+          </>
         ) : (
-          <Slot className={classNames.icon}>{children}</Slot>
+          <SeedActionButton.Icon svg={children} />
         )}
-        {suffixIcon && <Slot className={classNames.suffixIcon}>{suffixIcon}</Slot>}
-      </Comp>
+        {loading ? <SeedActionButton.ProgressCircle /> : null}
+      </SeedActionButton.Root>
     );
   },
 );
 ActionButton.displayName = "ActionButton";
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

@@ -1,64 +1,39 @@
-import { Slot } from "@radix-ui/react-slot";
-import {
-  actionChip,
-  type ActionChipVariantProps,
-} from "@seed-design/recipe/actionChip";
-import clsx from "clsx";
+"use client";
+
+import { ActionChip as SeedActionChip } from "@seed-design/react";
 import * as React from "react";
 
 import "@seed-design/stylesheet/actionChip.css";
 
-export interface ActionChipProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ActionChipVariantProps {
+export interface ActionChipProps extends SeedActionChip.RootProps {
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
 
   count?: number;
-
-  asChild?: boolean;
 }
 
 export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
-  (
-    {
-      className,
-      size = "medium",
-      layout = "withText",
-      children,
-      prefixIcon,
-      suffixIcon,
-      count,
-      asChild = false,
-      ...otherProps
-    },
-    ref,
-  ) => {
-    const Comp = asChild ? Slot : "button";
-    const classNames = actionChip({ size, layout });
+  ({ className, children, prefixIcon, suffixIcon, count, ...otherProps }, ref) => {
     return (
-      <Comp
-        ref={ref}
-        className={clsx(classNames.root, className)}
-        {...otherProps}
-      >
-        {layout === "withText" ? (
+      <SeedActionChip.Root ref={ref} {...otherProps}>
+        {otherProps.layout === "withText" ? (
           <>
-            {prefixIcon && (
-              <Slot className={classNames.prefixIcon}>{prefixIcon}</Slot>
-            )}
-            <span className={classNames.label}>{children}</span>
-            {count && <span className={classNames.count}>{count}</span>}
-            {suffixIcon && (
-              <Slot className={classNames.suffixIcon}>{suffixIcon}</Slot>
-            )}
+            {prefixIcon && <SeedActionChip.PrefixIcon svg={prefixIcon} />}
+            <SeedActionChip.Label>{children}</SeedActionChip.Label>
+            {count && <SeedActionChip.Count>{count}</SeedActionChip.Count>}
+            {suffixIcon && <SeedActionChip.SuffixIcon svg={suffixIcon} />}
           </>
         ) : (
-          <Slot className={classNames.icon}>{children}</Slot>
+          <SeedActionChip.Icon svg={children} />
         )}
-      </Comp>
+      </SeedActionChip.Root>
     );
   },
 );
 ActionChip.displayName = "ActionChip";
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

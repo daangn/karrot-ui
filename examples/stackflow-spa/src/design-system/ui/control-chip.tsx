@@ -1,22 +1,11 @@
-import { Slot } from "@radix-ui/react-slot";
-import {
-  controlChip,
-  type ControlChipVariantProps,
-} from "@seed-design/recipe/controlChip";
-import clsx from "clsx";
+"use client";
+
+import { ControlChip as SeedControlChip } from "@seed-design/react";
 import * as React from "react";
 
 import "@seed-design/stylesheet/controlChip.css";
-import {
-  type UseCheckboxProps,
-  useCheckbox,
-} from "@seed-design/react-checkbox";
-import { visuallyHidden } from "../util/visuallyHidden";
 
-export interface ControlChipToggleProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
-    UseCheckboxProps,
-    ControlChipVariantProps {
+export interface ControlChipToggleProps extends SeedControlChip.RootProps {
   prefixIcon?: React.ReactNode;
 
   suffixIcon?: React.ReactNode;
@@ -24,62 +13,21 @@ export interface ControlChipToggleProps
   count?: number;
 }
 
-const ControlChipToggle = React.forwardRef<
-  HTMLInputElement,
-  ControlChipToggleProps
->(
-  (
-    {
-      className,
-      size = "medium",
-      layout = "withText",
-      children,
-      prefixIcon,
-      suffixIcon,
-      count,
-      ...otherProps
-    },
-    ref,
-  ) => {
-    const classNames = controlChip({ size, layout });
-    const { rootProps, hiddenInputProps, stateProps, restProps } =
-      useCheckbox(otherProps);
-
+export const ControlChipToggle = React.forwardRef<HTMLLabelElement, ControlChipToggleProps>(
+  ({ className, children, prefixIcon, suffixIcon, count, ...otherProps }, ref) => {
     return (
-      <label {...rootProps} className={clsx(classNames.root, className)}>
-        {layout === "withText" ? (
+      <SeedControlChip.Root ref={ref} {...otherProps}>
+        {otherProps.layout === "withText" ? (
           <>
-            {prefixIcon && (
-              <Slot {...stateProps} className={classNames.prefixIcon}>
-                {prefixIcon}
-              </Slot>
-            )}
-            <span {...stateProps} className={classNames.label}>
-              {children}
-            </span>
-            {count && (
-              <span {...stateProps} className={classNames.count}>
-                {count}
-              </span>
-            )}
-            {suffixIcon && (
-              <Slot {...stateProps} className={classNames.suffixIcon}>
-                {suffixIcon}
-              </Slot>
-            )}
+            {prefixIcon && <SeedControlChip.PrefixIcon svg={prefixIcon} />}
+            <SeedControlChip.Label>{children}</SeedControlChip.Label>
+            {count && <SeedControlChip.Count>{count}</SeedControlChip.Count>}
+            {suffixIcon && <SeedControlChip.SuffixIcon svg={suffixIcon} />}
           </>
         ) : (
-          <Slot {...stateProps} className={classNames.icon}>
-            {children}
-          </Slot>
+          <SeedControlChip.Icon svg={children} />
         )}
-        <input
-          ref={ref}
-          {...hiddenInputProps}
-          {...restProps}
-          style={visuallyHidden}
-        />
-      </label>
+      </SeedControlChip.Root>
     );
   },
 );
@@ -95,3 +43,8 @@ export const ControlChip = Object.assign(
     Toggle: ControlChipToggle,
   },
 );
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

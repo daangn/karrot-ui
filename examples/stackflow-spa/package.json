@@ -10,9 +10,8 @@
   "dependencies": {
     "@daangn/react-monochrome-icon": "^0.0.13",
     "@radix-ui/react-slot": "^1.1.0",
+    "@seed-design/react": "0.0.0",
     "@seed-design/react-popover": "0.0.0-alpha-20241030023710",
-    "@seed-design/react-radio-group": "0.0.0-alpha-20241030023710",
-    "@seed-design/react-switch": "0.0.0-alpha-20241030023710",
     "@seed-design/react-tabs": "0.0.0-alpha-20241209060641",
     "@seed-design/react-text-field": "0.0.0-alpha-20241030023710",
     "@seed-design/recipe": "0.0.0-alpha-20241212122822",
