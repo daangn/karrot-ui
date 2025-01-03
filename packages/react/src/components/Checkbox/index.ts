@@ -1,12 +1,14 @@
 export {
-  CheckboxRoot,
   CheckboxControl,
   CheckboxHiddenInput,
-  type CheckboxRootProps,
+  CheckboxCheckedIcon,
+  CheckboxLabel,
+  CheckboxRoot,
   type CheckboxControlProps,
   type CheckboxHiddenInputProps,
+  type CheckboxCheckedIconProps,
+  type CheckboxLabelProps,
+  type CheckboxRootProps,
 } from "./Checkbox";
-
-export { useCheckboxContext, type UseCheckboxContext } from "./useCheckboxContext";
 
 export * as Checkbox from "./Checkbox.namespace";

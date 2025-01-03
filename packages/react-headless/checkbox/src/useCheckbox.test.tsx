@@ -3,10 +3,15 @@ import { cleanup, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import type * as React from "react";
 import type { ReactElement } from "react";
-import * as React from "react";
 
-import { useCheckbox, type UseCheckboxProps } from "./index";
+import {
+  CheckboxControl,
+  CheckboxHiddenInput,
+  CheckboxRoot,
+  type CheckboxRootProps,
+} from "./Checkbox";
 
 afterEach(cleanup);
 
@@ -17,16 +22,12 @@ function setUp(jsx: ReactElement) {
   };
 }
 
-function Checkbox(props: UseCheckboxProps) {
-  const { controlProps, hiddenInputProps, restProps, rootProps, stateProps } = useCheckbox(props);
+function Checkbox(props: CheckboxRootProps) {
   return (
-    <label {...rootProps}>
-      <div {...controlProps}>
-        <svg {...stateProps} />
-      </div>
-      <input {...hiddenInputProps} {...restProps} />
-      <span {...stateProps} />
-    </label>
+    <CheckboxRoot {...props}>
+      <CheckboxControl />
+      <CheckboxHiddenInput />
+    </CheckboxRoot>
   );
 }
 
