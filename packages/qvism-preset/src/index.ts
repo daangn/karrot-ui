@@ -30,6 +30,7 @@ import tab from "./tab.recipe";
 import tabs from "./tabs.recipe";
 import textButton from "./text-button.recipe";
 import textField from "./text-field.recipe";
+import text from "./text.recipe";
 import toggleButton from "./toggle-button.recipe";
 import topNavigation from "./top-navigation.recipe";
 
@@ -65,6 +66,7 @@ const recipes = {
   chipTab,
   chipTabs,
   skeleton,
+  text,
   textButton,
   textField,
   topNavigation,
