@@ -1,11 +1,8 @@
 import type { RegistryUI } from "./schema";
 
-import checkboxPkg from "@seed-design/react-checkbox/package.json";
-import switchPkg from "@seed-design/react-switch/package.json";
 import segmentedControlPkg from "@seed-design/react-segmented-control/package.json";
 import textFieldPkg from "@seed-design/react-text-field/package.json";
 import dismissiblePkg from "@seed-design/react-dismissible/package.json";
-import radioGroupPkg from "@seed-design/react-radio-group/package.json";
 import tabsPkg from "@seed-design/react-tabs/package.json";
 import popoverPkg from "@seed-design/react-popover/package.json";
 
@@ -93,10 +90,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "checkbox",
-    dependencies: [
-      `@seed-design/react-checkbox@${checkboxPkg.version}`,
-      "@daangn/react-monochrome-icon",
-    ],
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
     files: ["ui:checkbox.tsx"],
   },
   {
@@ -137,17 +131,9 @@ export const registryUI: RegistryUI = [
     files: ["ui:progress-circle.tsx"],
   },
   {
-    name: "select-box-group",
-    dependencies: [
-      `@seed-design/react-checkbox@${checkboxPkg.version}`,
-      `@seed-design/react-radio-group@${radioGroupPkg.version}`,
-      "@daangn/react-monochrome-icon",
-    ],
-    files: [
-      "ui:select-box-group.tsx",
-      "util:types.ts",
-      "util:visuallyHidden.ts",
-    ],
+    name: "select-box",
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
+    files: ["ui:select-box.tsx"],
   },
   {
     name: "segmented-control",
@@ -158,7 +144,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "switch",
-    dependencies: [`@seed-design/react-switch@${switchPkg.version}`],
+    dependencies: ["@seed-design/react"],
     files: ["ui:switch.tsx"],
   },
   {
