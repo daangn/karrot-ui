@@ -1,7 +1,7 @@
 import { badge as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 
-export const badge = defineRecipe({
+const badge = defineRecipe({
   name: "badge",
   slots: ["root", "label"],
   base: {

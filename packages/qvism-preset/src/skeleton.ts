@@ -1,7 +1,7 @@
 import { skeleton as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 
-export const skeleton = defineRecipe({
+const skeleton = defineRecipe({
   name: "skeleton",
   slots: ["root"],
   base: {

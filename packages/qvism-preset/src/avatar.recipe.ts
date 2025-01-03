@@ -9,7 +9,7 @@ function calculateBadgePosition(avatarSize: string, badgeSize: string) {
   };
 }
 
-export const avatar = defineRecipe({
+const avatar = defineRecipe({
   name: "avatar",
   slots: ["root", "image", "fallback", "badge"],
   base: {

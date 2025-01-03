@@ -2,7 +2,7 @@ import { avatarStack as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 import { not, pseudo } from "./pseudo";
 
-export const avatarStack = defineRecipe({
+const avatarStack = defineRecipe({
   name: "avatarStack",
   slots: ["root", "item"],
   base: {

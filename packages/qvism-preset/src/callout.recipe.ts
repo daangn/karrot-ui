@@ -2,7 +2,7 @@ import { callout as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
 import { active, pseudo } from "./pseudo";
 
-export const callout = defineRecipe({
+const callout = defineRecipe({
   name: "callout",
   slots: [
     "root",

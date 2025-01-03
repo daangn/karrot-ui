@@ -12,7 +12,7 @@ interface ControlPanelProps {
   onSlotHighlight?: (slot: string | null) => void;
 }
 
-export const ControlPanel = React.forwardRef<HTMLDivElement, ControlPanelProps>((props, ref) => {
+const ControlPanel = React.forwardRef<HTMLDivElement, ControlPanelProps>((props, ref) => {
   const { preferences, updatePreferences } = usePreference();
   const { variantMap, value, onValueChange, measurements, highlightedSlot, onSlotHighlight } =
     props;
