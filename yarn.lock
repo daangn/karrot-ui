@@ -7820,6 +7820,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-progress@workspace:packages/react-headless/progress"
   dependencies:
+    "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
     react: ">=18.0.0"
@@ -7933,6 +7934,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-slot": "npm:^1.1.1"
+    "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-checkbox": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
