@@ -1,7 +1,7 @@
 {
   "name": "action-chip",
   "dependencies": [
-    "@radix-ui/react-slot"
+    "@seed-design/react"
   ],
   "registries": [
     {

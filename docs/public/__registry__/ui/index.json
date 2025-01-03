@@ -53,8 +53,7 @@
       "identity-placeholder"
     ],
     "dependencies": [
-      "@radix-ui/react-slot",
-      "@seed-design/react-avatar"
+      "@seed-design/react"
     ],
     "files": [
       "ui:avatar.tsx"
@@ -72,8 +71,7 @@
   {
     "name": "toggle-button",
     "dependencies": [
-      "@radix-ui/react-slot",
-      "@seed-design/react-toggle"
+      "@seed-design/react"
     ],
     "files": [
       "ui:toggle-button.tsx"
@@ -82,8 +80,7 @@
   {
     "name": "reaction-button",
     "dependencies": [
-      "@radix-ui/react-slot",
-      "@seed-design/react-toggle"
+      "@seed-design/react"
     ],
     "files": [
       "ui:reaction-button.tsx"
@@ -92,7 +89,7 @@
   {
     "name": "fab",
     "dependencies": [
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "files": [
       "ui:fab.tsx"
@@ -101,7 +98,7 @@
   {
     "name": "extended-fab",
     "dependencies": [
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "files": [
       "ui:extended-fab.tsx"
@@ -110,7 +107,7 @@
   {
     "name": "action-chip",
     "dependencies": [
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "files": [
       "ui:action-chip.tsx"
@@ -119,7 +116,7 @@
   {
     "name": "badge",
     "dependencies": [
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "files": [
       "ui:badge.tsx"
@@ -139,7 +136,7 @@
   {
     "name": "control-chip",
     "dependencies": [
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "files": [
       "ui:control-chip.tsx"
@@ -204,7 +201,7 @@
   {
     "name": "progress-circle",
     "dependencies": [
-      "@seed-design/react-progress"
+      "@seed-design/react"
     ],
     "files": [
       "ui:progress-circle.tsx"
@@ -240,7 +237,9 @@
   },
   {
     "name": "skeleton",
-    "dependencies": [],
+    "dependencies": [
+      "@seed-design/react"
+    ],
     "files": [
       "ui:skeleton.tsx"
     ]

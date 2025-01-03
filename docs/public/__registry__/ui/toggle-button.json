@@ -1,8 +1,7 @@
 {
   "name": "toggle-button",
   "dependencies": [
-    "@radix-ui/react-slot",
-    "@seed-design/react-toggle"
+    "@seed-design/react"
   ],
   "registries": [
     {

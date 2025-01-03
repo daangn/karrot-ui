@@ -1,8 +1,7 @@
 {
   "name": "avatar",
   "dependencies": [
-    "@radix-ui/react-slot",
-    "@seed-design/react-avatar"
+    "@seed-design/react"
   ],
   "innerDependencies": [
     "identity-placeholder"

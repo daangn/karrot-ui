@@ -1,13 +1,13 @@
 {
   "name": "extended-fab",
   "dependencies": [
-    "@radix-ui/react-slot"
+    "@seed-design/react"
   ],
   "registries": [
     {
       "name": "extended-fab.tsx",
       "type": "ui",
-      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/extendedFab.css\";\n\nimport { ExtendedFab as SeedExtendedFab } from \"@seed-design/react\";\nimport * as React from \"react\";\n\nexport interface ExtendedFabProps extends SeedExtendedFab.RootProps {\n  prefixIcon?: React.ReactNode;\n}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/action-button\n */\nexport const ExtendedFab = React.forwardRef<\n  HTMLButtonElement,\n  ExtendedFabProps\n>(({ className, children, prefixIcon, ...otherProps }, ref) => {\n  return (\n    <SeedExtendedFab.Root ref={ref} {...otherProps}>\n      {prefixIcon && <SeedExtendedFab.PrefixIcon svg={prefixIcon} />}\n      <SeedExtendedFab.Label>{children}</SeedExtendedFab.Label>\n    </SeedExtendedFab.Root>\n  );\n});\nExtendedFab.displayName = \"ExtendedFab\";\n"
+      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/extendedFab.css\";\n\nimport { ExtendedFab as SeedExtendedFab } from \"@seed-design/react\";\nimport * as React from \"react\";\n\nexport interface ExtendedFabProps extends SeedExtendedFab.RootProps {\n  prefixIcon?: React.ReactNode;\n}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/extended-fab\n */\nexport const ExtendedFab = React.forwardRef<\n  HTMLButtonElement,\n  ExtendedFabProps\n>(({ className, children, prefixIcon, ...otherProps }, ref) => {\n  return (\n    <SeedExtendedFab.Root ref={ref} {...otherProps}>\n      {prefixIcon && <SeedExtendedFab.PrefixIcon svg={prefixIcon} />}\n      <SeedExtendedFab.Label>{children}</SeedExtendedFab.Label>\n    </SeedExtendedFab.Root>\n  );\n});\nExtendedFab.displayName = \"ExtendedFab\";\n"
     }
   ]
 }

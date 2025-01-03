@@ -36,7 +36,7 @@ export const registryUI: RegistryUI = [
   {
     name: "avatar",
     innerDependencies: ["identity-placeholder"],
-    dependencies: ["@radix-ui/react-slot", "@seed-design/react-avatar"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:avatar.tsx"],
   },
   {
@@ -46,32 +46,32 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "toggle-button",
-    dependencies: ["@radix-ui/react-slot", "@seed-design/react-toggle"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:toggle-button.tsx"],
   },
   {
     name: "reaction-button",
-    dependencies: ["@radix-ui/react-slot", "@seed-design/react-toggle"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:reaction-button.tsx"],
   },
   {
     name: "fab",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:fab.tsx"],
   },
   {
     name: "extended-fab",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:extended-fab.tsx"],
   },
   {
     name: "action-chip",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:action-chip.tsx"],
   },
   {
     name: "badge",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:badge.tsx"],
   },
   {
@@ -85,7 +85,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "control-chip",
-    dependencies: ["@radix-ui/react-slot"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:control-chip.tsx"],
   },
   {
@@ -127,7 +127,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "progress-circle",
-    dependencies: ["@seed-design/react-progress"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:progress-circle.tsx"],
   },
   {
@@ -149,7 +149,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "skeleton",
-    dependencies: [],
+    dependencies: ["@seed-design/react"],
     files: ["ui:skeleton.tsx"],
   },
   {
