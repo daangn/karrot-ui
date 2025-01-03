@@ -1,8 +1,10 @@
 export {
+  ReactionButtonCount,
   ReactionButtonLabel,
   ReactionButtonPrefixIcon,
   ReactionButtonProgressCircle,
   ReactionButtonRoot,
+  type ReactionButtonCountProps,
   type ReactionButtonLabelProps,
   type ReactionButtonPrefixIconProps,
   type ReactionButtonProgressCircleProps,

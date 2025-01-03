@@ -55,6 +55,15 @@ export const ReactionButtonLabel = withContext<HTMLSpanElement, ReactionButtonLa
   "label",
 );
 
+export interface ReactionButtonCountProps
+  extends PrimitiveProps,
+    React.HTMLAttributes<HTMLSpanElement> {}
+
+export const ReactionButtonCount = withContext<HTMLSpanElement, ReactionButtonCountProps>(
+  withStateProps(Primitive.span),
+  "count",
+);
+
 export interface ReactionButtonPrefixIconProps extends IconProps {}
 
 export const ReactionButtonPrefixIcon = withContext<SVGSVGElement, ReactionButtonPrefixIconProps>(
