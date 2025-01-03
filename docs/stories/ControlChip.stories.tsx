@@ -18,8 +18,8 @@ type Story = StoryObj<typeof meta>;
 
 const conditionMap = {
   checked: {
-    false: { disabled: false },
-    true: { disabled: true },
+    false: { checked: false },
+    true: { checked: true },
   },
   layout: {
     withText: { layout: "withText", children: "Control Chip" },
