@@ -4,10 +4,11 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { checkbox, type CheckboxVariantProps } from "@seed-design/recipe/checkbox";
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { withStateProps } from "../../utils/withStateProps";
+import { createWithStateProps } from "../../utils/createWithStateProps";
 import { Icon, type IconProps } from "../private/Icon";
 
 const { withProvider, withContext, useClassNames } = createStyleContext(checkbox);
+const withStateProps = createWithStateProps([useCheckboxContext]);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -49,7 +50,7 @@ export const CheckboxCheckedIcon = forwardRef<SVGSVGElement, CheckboxCheckedIcon
 export interface CheckboxLabelProps extends PrimitiveProps, React.HTMLAttributes<HTMLSpanElement> {}
 
 export const CheckboxLabel = withContext<HTMLDivElement, CheckboxLabelProps>(
-  withStateProps(Primitive.span, useCheckboxContext),
+  withStateProps(Primitive.span),
   "label",
 );
 

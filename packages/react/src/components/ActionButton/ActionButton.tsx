@@ -3,7 +3,7 @@ import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { withStateProps } from "../../utils/withStateProps";
+import { createWithStateProps } from "../../utils/createWithStateProps";
 import { Icon, type IconProps } from "../private/Icon";
 import {
   PendingButtonProvider,
@@ -14,6 +14,7 @@ import {
 import { ProgressCircle, type ProgressCircleProps } from "../ProgressCircle";
 
 const { ClassNamesProvider, withContext } = createStyleContext(actionButton);
+const withStateProps = createWithStateProps([usePendingButtonContext]);
 
 export interface ActionButtonRootProps
   extends ActionButtonVariantProps,
@@ -63,28 +64,28 @@ export interface ActionButtonLabelProps
     React.HTMLAttributes<HTMLSpanElement> {}
 
 export const ActionButtonLabel = withContext<HTMLSpanElement, ActionButtonLabelProps>(
-  withStateProps(Primitive.span, usePendingButtonContext),
+  withStateProps(Primitive.span),
   "label",
 );
 
 export interface ActionButtonPrefixIconProps extends IconProps {}
 
 export const ActionButtonPrefixIcon = withContext<SVGSVGElement, ActionButtonPrefixIconProps>(
-  withStateProps(Icon, usePendingButtonContext),
+  withStateProps(Icon),
   "prefixIcon",
 );
 
 export interface ActionButtonSuffixIconProps extends IconProps {}
 
 export const ActionButtonSuffixIcon = withContext<SVGSVGElement, ActionButtonSuffixIconProps>(
-  withStateProps(Icon, usePendingButtonContext),
+  withStateProps(Icon),
   "suffixIcon",
 );
 
 export interface ActionButtonIconProps extends IconProps {}
 
 export const ActionButtonIcon = withContext<SVGSVGElement, ActionButtonIconProps>(
-  withStateProps(Icon, usePendingButtonContext),
+  withStateProps(Icon),
   "icon",
 );
 
@@ -93,4 +94,4 @@ export interface ActionButtonProgressCircleProps extends ProgressCircleProps {}
 export const ActionButtonProgressCircle = withContext<
   SVGSVGElement,
   ActionButtonProgressCircleProps
->(withStateProps(ProgressCircle, usePendingButtonContext), "progressCircle");
+>(withStateProps(ProgressCircle), "progressCircle");
