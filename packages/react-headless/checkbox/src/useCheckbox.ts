@@ -115,6 +115,7 @@ export function useCheckbox(props: UseCheckboxProps) {
       type: "checkbox",
       role: "switch",
       checked: isControlled ? isChecked : undefined,
+      defaultChecked: !isControlled ? isChecked : undefined,
       disabled: disabled,
       required: required,
       "aria-invalid": invalid,

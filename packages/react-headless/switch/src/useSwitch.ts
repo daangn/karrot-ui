@@ -120,6 +120,7 @@ export function useSwitch(props: UseSwitchProps) {
       type: "checkbox",
       role: "switch",
       checked: isControlled ? isChecked : undefined,
+      defaultChecked: !isControlled ? isChecked : undefined,
       disabled: props.disabled,
       required: props.required,
       "aria-invalid": props.invalid,
