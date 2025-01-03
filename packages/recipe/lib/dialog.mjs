@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const dialogSlotNames = [
   [
@@ -61,3 +62,5 @@ export function dialog(props) {
     }),
   );
 }
+
+Object.assign(dialog, { splitVariantProps: (props) => splitVariantProps(props, dialogVariantMap) });

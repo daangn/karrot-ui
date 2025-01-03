@@ -1,4 +1,4 @@
-interface ActionChipVariant {
+declare interface ActionChipVariant {
   /**
   * @default medium
   */
@@ -9,16 +9,20 @@ interface ActionChipVariant {
   layout: "withText" | "iconOnly";
 }
 
-type ActionChipVariantMap = {
+declare type ActionChipVariantMap = {
   [key in keyof ActionChipVariant]: Array<ActionChipVariant[key]>;
 };
 
-export type ActionChipVariantProps = Partial<ActionChipVariant>;
+export declare type ActionChipVariantProps = Partial<ActionChipVariant>;
 
-export type ActionChipSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "count";
+export declare type ActionChipSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "count";
 
-export const actionChipVariantMap: ActionChipVariantMap;
+export declare const actionChipVariantMap: ActionChipVariantMap;
 
-export function actionChip(
+export declare const actionChip: ((
   props?: ActionChipVariantProps,
-): Record<ActionChipSlotName, string>;
+) => Record<ActionChipSlotName, string>) & {
+  splitVariantProps: <T extends ActionChipVariantProps>(
+    props: T,
+  ) => [ActionChipVariantProps, Omit<T, keyof ActionChipVariantProps>];
+}

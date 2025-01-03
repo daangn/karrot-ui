@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const toggleButtonSlotNames = [
   [
@@ -54,3 +55,5 @@ export function toggleButton(props) {
     }),
   );
 }
+
+Object.assign(toggleButton, { splitVariantProps: (props) => splitVariantProps(props, toggleButtonVariantMap) });

@@ -1,20 +1,24 @@
-interface AvatarVariant {
+declare interface AvatarVariant {
   /**
   * @default 48
   */
   size: "20" | "24" | "36" | "48" | "64" | "80" | "96";
 }
 
-type AvatarVariantMap = {
+declare type AvatarVariantMap = {
   [key in keyof AvatarVariant]: Array<AvatarVariant[key]>;
 };
 
-export type AvatarVariantProps = Partial<AvatarVariant>;
+export declare type AvatarVariantProps = Partial<AvatarVariant>;
 
-export type AvatarSlotName = "root" | "image" | "fallback" | "badge";
+export declare type AvatarSlotName = "root" | "image" | "fallback" | "badge";
 
-export const avatarVariantMap: AvatarVariantMap;
+export declare const avatarVariantMap: AvatarVariantMap;
 
-export function avatar(
+export declare const avatar: ((
   props?: AvatarVariantProps,
-): Record<AvatarSlotName, string>;
+) => Record<AvatarSlotName, string>) & {
+  splitVariantProps: <T extends AvatarVariantProps>(
+    props: T,
+  ) => [AvatarVariantProps, Omit<T, keyof AvatarVariantProps>];
+}

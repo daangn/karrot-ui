@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const chipTabSlotNames = [
   [
@@ -37,3 +38,5 @@ export function chipTab(props) {
     }),
   );
 }
+
+Object.assign(chipTab, { splitVariantProps: (props) => splitVariantProps(props, chipTabVariantMap) });

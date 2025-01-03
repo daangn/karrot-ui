@@ -1,20 +1,24 @@
-interface InlineBannerVariant {
+declare interface InlineBannerVariant {
   /**
   * @default neutralWeak
   */
   variant: "neutralWeak" | "positiveWeak" | "informativeWeak" | "warningWeak" | "warningSolid" | "dangerWeak" | "dangerSolid";
 }
 
-type InlineBannerVariantMap = {
+declare type InlineBannerVariantMap = {
   [key in keyof InlineBannerVariant]: Array<InlineBannerVariant[key]>;
 };
 
-export type InlineBannerVariantProps = Partial<InlineBannerVariant>;
+export declare type InlineBannerVariantProps = Partial<InlineBannerVariant>;
 
-export type InlineBannerSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
+export declare type InlineBannerSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
 
-export const inlineBannerVariantMap: InlineBannerVariantMap;
+export declare const inlineBannerVariantMap: InlineBannerVariantMap;
 
-export function inlineBanner(
+export declare const inlineBanner: ((
   props?: InlineBannerVariantProps,
-): Record<InlineBannerSlotName, string>;
+) => Record<InlineBannerSlotName, string>) & {
+  splitVariantProps: <T extends InlineBannerVariantProps>(
+    props: T,
+  ) => [InlineBannerVariantProps, Omit<T, keyof InlineBannerVariantProps>];
+}

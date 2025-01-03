@@ -1,20 +1,24 @@
-interface ChipTabVariant {
+declare interface ChipTabVariant {
   /**
   * @default neutralSolid
   */
   variant: "neutralSolid" | "brandSolid";
 }
 
-type ChipTabVariantMap = {
+declare type ChipTabVariantMap = {
   [key in keyof ChipTabVariant]: Array<ChipTabVariant[key]>;
 };
 
-export type ChipTabVariantProps = Partial<ChipTabVariant>;
+export declare type ChipTabVariantProps = Partial<ChipTabVariant>;
 
-export type ChipTabSlotName = "root" | "label";
+export declare type ChipTabSlotName = "root" | "label";
 
-export const chipTabVariantMap: ChipTabVariantMap;
+export declare const chipTabVariantMap: ChipTabVariantMap;
 
-export function chipTab(
+export declare const chipTab: ((
   props?: ChipTabVariantProps,
-): Record<ChipTabSlotName, string>;
+) => Record<ChipTabSlotName, string>) & {
+  splitVariantProps: <T extends ChipTabVariantProps>(
+    props: T,
+  ) => [ChipTabVariantProps, Omit<T, keyof ChipTabVariantProps>];
+}

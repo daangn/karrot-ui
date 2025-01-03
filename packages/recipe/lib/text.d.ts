@@ -1,4 +1,4 @@
-interface TextVariant {
+declare interface TextVariant {
   /**
   * @default bodyMediumDefault
   */
@@ -9,16 +9,20 @@ interface TextVariant {
   maxLines: "none" | "single" | "multi";
 }
 
-type TextVariantMap = {
+declare type TextVariantMap = {
   [key in keyof TextVariant]: Array<TextVariant[key]>;
 };
 
-export type TextVariantProps = Partial<TextVariant>;
+export declare type TextVariantProps = Partial<TextVariant>;
 
-export type TextSlotName = "root";
+export declare type TextSlotName = "root";
 
-export const textVariantMap: TextVariantMap;
+export declare const textVariantMap: TextVariantMap;
 
-export function text(
+export declare const text: ((
   props?: TextVariantProps,
-): Record<TextSlotName, string>;
+) => Record<TextSlotName, string>) & {
+  splitVariantProps: <T extends TextVariantProps>(
+    props: T,
+  ) => [TextVariantProps, Omit<T, keyof TextVariantProps>];
+}

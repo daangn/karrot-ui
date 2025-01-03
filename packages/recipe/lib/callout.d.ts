@@ -1,20 +1,24 @@
-interface CalloutVariant {
+declare interface CalloutVariant {
   /**
   * @default neutral
   */
   variant: "neutral" | "informative" | "warning" | "danger" | "magic";
 }
 
-type CalloutVariantMap = {
+declare type CalloutVariantMap = {
   [key in keyof CalloutVariant]: Array<CalloutVariant[key]>;
 };
 
-export type CalloutVariantProps = Partial<CalloutVariant>;
+export declare type CalloutVariantProps = Partial<CalloutVariant>;
 
-export type CalloutSlotName = "root" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
+export declare type CalloutSlotName = "root" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
 
-export const calloutVariantMap: CalloutVariantMap;
+export declare const calloutVariantMap: CalloutVariantMap;
 
-export function callout(
+export declare const callout: ((
   props?: CalloutVariantProps,
-): Record<CalloutSlotName, string>;
+) => Record<CalloutSlotName, string>) & {
+  splitVariantProps: <T extends CalloutVariantProps>(
+    props: T,
+  ) => [CalloutVariantProps, Omit<T, keyof CalloutVariantProps>];
+}

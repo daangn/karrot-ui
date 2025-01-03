@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const badgeSlotNames = [
   [
@@ -125,3 +126,5 @@ export function badge(props) {
     }),
   );
 }
+
+Object.assign(badge, { splitVariantProps: (props) => splitVariantProps(props, badgeVariantMap) });

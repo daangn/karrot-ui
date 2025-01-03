@@ -1,4 +1,4 @@
-interface ScreenVariant {
+declare interface ScreenVariant {
   /**
   * @default cupertino
   */
@@ -9,16 +9,20 @@ interface ScreenVariant {
   hasAppBar: boolean;
 }
 
-type ScreenVariantMap = {
+declare type ScreenVariantMap = {
   [key in keyof ScreenVariant]: Array<ScreenVariant[key]>;
 };
 
-export type ScreenVariantProps = Partial<ScreenVariant>;
+export declare type ScreenVariantProps = Partial<ScreenVariant>;
 
-export type ScreenSlotName = "root" | "layer" | "dim" | "edge";
+export declare type ScreenSlotName = "root" | "layer" | "dim" | "edge";
 
-export const screenVariantMap: ScreenVariantMap;
+export declare const screenVariantMap: ScreenVariantMap;
 
-export function screen(
+export declare const screen: ((
   props?: ScreenVariantProps,
-): Record<ScreenSlotName, string>;
+) => Record<ScreenSlotName, string>) & {
+  splitVariantProps: <T extends ScreenVariantProps>(
+    props: T,
+  ) => [ScreenVariantProps, Omit<T, keyof ScreenVariantProps>];
+}

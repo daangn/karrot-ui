@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const extendedFabSlotNames = [
   [
@@ -46,3 +47,5 @@ export function extendedFab(props) {
     }),
   );
 }
+
+Object.assign(extendedFab, { splitVariantProps: (props) => splitVariantProps(props, extendedFabVariantMap) });

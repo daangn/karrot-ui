@@ -1,4 +1,4 @@
-interface TextButtonVariant {
+declare interface TextButtonVariant {
   /**
   * @default brand
   */
@@ -9,16 +9,20 @@ interface TextButtonVariant {
   size: "large" | "medium" | "small";
 }
 
-type TextButtonVariantMap = {
+declare type TextButtonVariantMap = {
   [key in keyof TextButtonVariant]: Array<TextButtonVariant[key]>;
 };
 
-export type TextButtonVariantProps = Partial<TextButtonVariant>;
+export declare type TextButtonVariantProps = Partial<TextButtonVariant>;
 
-export type TextButtonSlotName = "root" | "prefixIcon" | "suffixIcon" | "label";
+export declare type TextButtonSlotName = "root" | "prefixIcon" | "suffixIcon" | "label";
 
-export const textButtonVariantMap: TextButtonVariantMap;
+export declare const textButtonVariantMap: TextButtonVariantMap;
 
-export function textButton(
+export declare const textButton: ((
   props?: TextButtonVariantProps,
-): Record<TextButtonSlotName, string>;
+) => Record<TextButtonSlotName, string>) & {
+  splitVariantProps: <T extends TextButtonVariantProps>(
+    props: T,
+  ) => [TextButtonVariantProps, Omit<T, keyof TextButtonVariantProps>];
+}

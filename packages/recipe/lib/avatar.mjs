@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const avatarSlotNames = [
   [
@@ -50,3 +51,5 @@ export function avatar(props) {
     }),
   );
 }
+
+Object.assign(avatar, { splitVariantProps: (props) => splitVariantProps(props, avatarVariantMap) });

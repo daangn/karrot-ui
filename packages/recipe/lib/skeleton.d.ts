@@ -1,20 +1,24 @@
-interface SkeletonVariant {
+declare interface SkeletonVariant {
   /**
   * @default rounded
   */
   shape: "rounded" | "circular" | "rectangular";
 }
 
-type SkeletonVariantMap = {
+declare type SkeletonVariantMap = {
   [key in keyof SkeletonVariant]: Array<SkeletonVariant[key]>;
 };
 
-export type SkeletonVariantProps = Partial<SkeletonVariant>;
+export declare type SkeletonVariantProps = Partial<SkeletonVariant>;
 
-export type SkeletonSlotName = "root";
+export declare type SkeletonSlotName = "root";
 
-export const skeletonVariantMap: SkeletonVariantMap;
+export declare const skeletonVariantMap: SkeletonVariantMap;
 
-export function skeleton(
+export declare const skeleton: ((
   props?: SkeletonVariantProps,
-): Record<SkeletonSlotName, string>;
+) => Record<SkeletonSlotName, string>) & {
+  splitVariantProps: <T extends SkeletonVariantProps>(
+    props: T,
+  ) => [SkeletonVariantProps, Omit<T, keyof SkeletonVariantProps>];
+}

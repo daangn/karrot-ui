@@ -21,6 +21,7 @@ export function generateJs(
   return outdent`
   import { createClassName } from "./className.mjs";
   import { mergeVariants } from "./mergeVariants.mjs";
+  import { splitVariantProps } from "./splitVariantProps.mjs";
 
   const ${definition.name}SlotNames = ${JSON.stringify(slotNames, null, 2)};
   
@@ -41,5 +42,8 @@ export function generateJs(
         ];
       }),
     );
-  }`;
+  }
+  
+  Object.assign(${escapeReservedWord(definition.name)}, { splitVariantProps: (props) => splitVariantProps(props, ${definition.name}VariantMap) });
+  `;
 }

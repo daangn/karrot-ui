@@ -1,20 +1,24 @@
-interface ActionSheetItemVariant {
+declare interface ActionSheetItemVariant {
   /**
   * @default neutral
   */
   tone: "neutral" | "danger";
 }
 
-type ActionSheetItemVariantMap = {
+declare type ActionSheetItemVariantMap = {
   [key in keyof ActionSheetItemVariant]: Array<ActionSheetItemVariant[key]>;
 };
 
-export type ActionSheetItemVariantProps = Partial<ActionSheetItemVariant>;
+export declare type ActionSheetItemVariantProps = Partial<ActionSheetItemVariant>;
 
-export type ActionSheetItemSlotName = "root" | "prefixIcon" | "label";
+export declare type ActionSheetItemSlotName = "root" | "prefixIcon" | "label";
 
-export const actionSheetItemVariantMap: ActionSheetItemVariantMap;
+export declare const actionSheetItemVariantMap: ActionSheetItemVariantMap;
 
-export function actionSheetItem(
+export declare const actionSheetItem: ((
   props?: ActionSheetItemVariantProps,
-): Record<ActionSheetItemSlotName, string>;
+) => Record<ActionSheetItemSlotName, string>) & {
+  splitVariantProps: <T extends ActionSheetItemVariantProps>(
+    props: T,
+  ) => [ActionSheetItemVariantProps, Omit<T, keyof ActionSheetItemVariantProps>];
+}

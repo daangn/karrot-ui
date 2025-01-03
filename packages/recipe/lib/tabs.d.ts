@@ -1,4 +1,4 @@
-interface TabsVariant {
+declare interface TabsVariant {
   /**
   * @default hug
   */
@@ -13,16 +13,20 @@ interface TabsVariant {
   fixTriggerList: boolean;
 }
 
-type TabsVariantMap = {
+declare type TabsVariantMap = {
   [key in keyof TabsVariant]: Array<TabsVariant[key]>;
 };
 
-export type TabsVariantProps = Partial<TabsVariant>;
+export declare type TabsVariantProps = Partial<TabsVariant>;
 
-export type TabsSlotName = "root" | "triggerList" | "contentList" | "contentCamera" | "content" | "indicator";
+export declare type TabsSlotName = "root" | "triggerList" | "contentList" | "contentCamera" | "content" | "indicator";
 
-export const tabsVariantMap: TabsVariantMap;
+export declare const tabsVariantMap: TabsVariantMap;
 
-export function tabs(
+export declare const tabs: ((
   props?: TabsVariantProps,
-): Record<TabsSlotName, string>;
+) => Record<TabsSlotName, string>) & {
+  splitVariantProps: <T extends TabsVariantProps>(
+    props: T,
+  ) => [TabsVariantProps, Omit<T, keyof TabsVariantProps>];
+}

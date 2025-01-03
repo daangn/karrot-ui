@@ -1,4 +1,4 @@
-interface TopNavigationVariant {
+declare interface TopNavigationVariant {
   /**
   * @default cupertino
   */
@@ -13,16 +13,20 @@ interface TopNavigationVariant {
   border: boolean;
 }
 
-type TopNavigationVariantMap = {
+declare type TopNavigationVariantMap = {
   [key in keyof TopNavigationVariant]: Array<TopNavigationVariant[key]>;
 };
 
-export type TopNavigationVariantProps = Partial<TopNavigationVariant>;
+export declare type TopNavigationVariantProps = Partial<TopNavigationVariant>;
 
-export type TopNavigationSlotName = "root" | "safeArea" | "container" | "left" | "right" | "title" | "titleMain" | "titleEdge" | "titleText" | "iconButton" | "icon";
+export declare type TopNavigationSlotName = "root" | "safeArea" | "container" | "left" | "right" | "title" | "titleMain" | "titleEdge" | "titleText" | "iconButton" | "icon";
 
-export const topNavigationVariantMap: TopNavigationVariantMap;
+export declare const topNavigationVariantMap: TopNavigationVariantMap;
 
-export function topNavigation(
+export declare const topNavigation: ((
   props?: TopNavigationVariantProps,
-): Record<TopNavigationSlotName, string>;
+) => Record<TopNavigationSlotName, string>) & {
+  splitVariantProps: <T extends TopNavigationVariantProps>(
+    props: T,
+  ) => [TopNavigationVariantProps, Omit<T, keyof TopNavigationVariantProps>];
+}

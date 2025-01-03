@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const bottomSheetSlotNames = [
   [
@@ -58,3 +59,5 @@ export function bottomSheet(props) {
     }),
   );
 }
+
+Object.assign(bottomSheet, { splitVariantProps: (props) => splitVariantProps(props, bottomSheetVariantMap) });

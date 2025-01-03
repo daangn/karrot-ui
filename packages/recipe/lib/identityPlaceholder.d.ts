@@ -1,20 +1,24 @@
-interface IdentityPlaceholderVariant {
+declare interface IdentityPlaceholderVariant {
   /**
   * @default person
   */
   identity: "person";
 }
 
-type IdentityPlaceholderVariantMap = {
+declare type IdentityPlaceholderVariantMap = {
   [key in keyof IdentityPlaceholderVariant]: Array<IdentityPlaceholderVariant[key]>;
 };
 
-export type IdentityPlaceholderVariantProps = Partial<IdentityPlaceholderVariant>;
+export declare type IdentityPlaceholderVariantProps = Partial<IdentityPlaceholderVariant>;
 
-export type IdentityPlaceholderSlotName = "root" | "image";
+export declare type IdentityPlaceholderSlotName = "root" | "image";
 
-export const identityPlaceholderVariantMap: IdentityPlaceholderVariantMap;
+export declare const identityPlaceholderVariantMap: IdentityPlaceholderVariantMap;
 
-export function identityPlaceholder(
+export declare const identityPlaceholder: ((
   props?: IdentityPlaceholderVariantProps,
-): Record<IdentityPlaceholderSlotName, string>;
+) => Record<IdentityPlaceholderSlotName, string>) & {
+  splitVariantProps: <T extends IdentityPlaceholderVariantProps>(
+    props: T,
+  ) => [IdentityPlaceholderVariantProps, Omit<T, keyof IdentityPlaceholderVariantProps>];
+}

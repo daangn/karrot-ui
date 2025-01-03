@@ -1,17 +1,21 @@
-interface SelectBoxGroupVariant {
+declare interface SelectBoxGroupVariant {
   
 }
 
-type SelectBoxGroupVariantMap = {
+declare type SelectBoxGroupVariantMap = {
   [key in keyof SelectBoxGroupVariant]: Array<SelectBoxGroupVariant[key]>;
 };
 
-export type SelectBoxGroupVariantProps = Partial<SelectBoxGroupVariant>;
+export declare type SelectBoxGroupVariantProps = Partial<SelectBoxGroupVariant>;
 
-export type SelectBoxGroupSlotName = "root";
+export declare type SelectBoxGroupSlotName = "root";
 
-export const selectBoxGroupVariantMap: SelectBoxGroupVariantMap;
+export declare const selectBoxGroupVariantMap: SelectBoxGroupVariantMap;
 
-export function selectBoxGroup(
+export declare const selectBoxGroup: ((
   props?: SelectBoxGroupVariantProps,
-): Record<SelectBoxGroupSlotName, string>;
+) => Record<SelectBoxGroupSlotName, string>) & {
+  splitVariantProps: <T extends SelectBoxGroupVariantProps>(
+    props: T,
+  ) => [SelectBoxGroupVariantProps, Omit<T, keyof SelectBoxGroupVariantProps>];
+}

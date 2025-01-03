@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const tabSlotNames = [
   [
@@ -46,3 +47,5 @@ export function tab(props) {
     }),
   );
 }
+
+Object.assign(tab, { splitVariantProps: (props) => splitVariantProps(props, tabVariantMap) });

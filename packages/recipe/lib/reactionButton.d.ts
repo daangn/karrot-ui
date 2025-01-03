@@ -1,20 +1,24 @@
-interface ReactionButtonVariant {
+declare interface ReactionButtonVariant {
   /**
   * @default small
   */
   size: "xsmall" | "small";
 }
 
-type ReactionButtonVariantMap = {
+declare type ReactionButtonVariantMap = {
   [key in keyof ReactionButtonVariant]: Array<ReactionButtonVariant[key]>;
 };
 
-export type ReactionButtonVariantProps = Partial<ReactionButtonVariant>;
+export declare type ReactionButtonVariantProps = Partial<ReactionButtonVariant>;
 
-export type ReactionButtonSlotName = "root" | "label" | "count" | "prefixIcon" | "progressCircle";
+export declare type ReactionButtonSlotName = "root" | "label" | "count" | "prefixIcon" | "progressCircle";
 
-export const reactionButtonVariantMap: ReactionButtonVariantMap;
+export declare const reactionButtonVariantMap: ReactionButtonVariantMap;
 
-export function reactionButton(
+export declare const reactionButton: ((
   props?: ReactionButtonVariantProps,
-): Record<ReactionButtonSlotName, string>;
+) => Record<ReactionButtonSlotName, string>) & {
+  splitVariantProps: <T extends ReactionButtonVariantProps>(
+    props: T,
+  ) => [ReactionButtonVariantProps, Omit<T, keyof ReactionButtonVariantProps>];
+}

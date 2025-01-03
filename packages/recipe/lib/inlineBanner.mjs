@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const inlineBannerSlotNames = [
   [
@@ -74,3 +75,5 @@ export function inlineBanner(props) {
     }),
   );
 }
+
+Object.assign(inlineBanner, { splitVariantProps: (props) => splitVariantProps(props, inlineBannerVariantMap) });

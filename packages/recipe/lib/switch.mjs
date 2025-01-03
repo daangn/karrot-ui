@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const switchSlotNames = [
   [
@@ -41,3 +42,5 @@ export function switchStyle(props) {
     }),
   );
 }
+
+Object.assign(switchStyle, { splitVariantProps: (props) => splitVariantProps(props, switchVariantMap) });

@@ -1,20 +1,24 @@
-interface DialogVariant {
+declare interface DialogVariant {
   /**
   * @default horizontal
   */
   footerLayout: "horizontal" | "vertical";
 }
 
-type DialogVariantMap = {
+declare type DialogVariantMap = {
   [key in keyof DialogVariant]: Array<DialogVariant[key]>;
 };
 
-export type DialogVariantProps = Partial<DialogVariant>;
+export declare type DialogVariantProps = Partial<DialogVariant>;
 
-export type DialogSlotName = "backdrop" | "container" | "content" | "header" | "footer" | "action" | "title" | "description";
+export declare type DialogSlotName = "backdrop" | "container" | "content" | "header" | "footer" | "action" | "title" | "description";
 
-export const dialogVariantMap: DialogVariantMap;
+export declare const dialogVariantMap: DialogVariantMap;
 
-export function dialog(
+export declare const dialog: ((
   props?: DialogVariantProps,
-): Record<DialogSlotName, string>;
+) => Record<DialogSlotName, string>) & {
+  splitVariantProps: <T extends DialogVariantProps>(
+    props: T,
+  ) => [DialogVariantProps, Omit<T, keyof DialogVariantProps>];
+}

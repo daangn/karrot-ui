@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const selectBoxGroupSlotNames = [
   [
@@ -26,3 +27,5 @@ export function selectBoxGroup(props) {
     }),
   );
 }
+
+Object.assign(selectBoxGroup, { splitVariantProps: (props) => splitVariantProps(props, selectBoxGroupVariantMap) });

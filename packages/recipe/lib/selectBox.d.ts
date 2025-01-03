@@ -1,17 +1,21 @@
-interface SelectBoxVariant {
+declare interface SelectBoxVariant {
   
 }
 
-type SelectBoxVariantMap = {
+declare type SelectBoxVariantMap = {
   [key in keyof SelectBoxVariant]: Array<SelectBoxVariant[key]>;
 };
 
-export type SelectBoxVariantProps = Partial<SelectBoxVariant>;
+export declare type SelectBoxVariantProps = Partial<SelectBoxVariant>;
 
-export type SelectBoxSlotName = "root" | "content" | "label" | "description" | "checkboxControl" | "checkboxIcon" | "radioControl" | "radioIcon";
+export declare type SelectBoxSlotName = "root" | "content" | "label" | "description" | "checkboxControl" | "checkboxIcon" | "radioControl" | "radioIcon";
 
-export const selectBoxVariantMap: SelectBoxVariantMap;
+export declare const selectBoxVariantMap: SelectBoxVariantMap;
 
-export function selectBox(
+export declare const selectBox: ((
   props?: SelectBoxVariantProps,
-): Record<SelectBoxSlotName, string>;
+) => Record<SelectBoxSlotName, string>) & {
+  splitVariantProps: <T extends SelectBoxVariantProps>(
+    props: T,
+  ) => [SelectBoxVariantProps, Omit<T, keyof SelectBoxVariantProps>];
+}

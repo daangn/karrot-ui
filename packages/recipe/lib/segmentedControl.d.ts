@@ -1,17 +1,21 @@
-interface SegmentedControlVariant {
+declare interface SegmentedControlVariant {
   
 }
 
-type SegmentedControlVariantMap = {
+declare type SegmentedControlVariantMap = {
   [key in keyof SegmentedControlVariant]: Array<SegmentedControlVariant[key]>;
 };
 
-export type SegmentedControlVariantProps = Partial<SegmentedControlVariant>;
+export declare type SegmentedControlVariantProps = Partial<SegmentedControlVariant>;
 
-export type SegmentedControlSlotName = "root" | "segment" | "segmentLabel" | "segmentLabelPlaceholder" | "indicator";
+export declare type SegmentedControlSlotName = "root" | "segment" | "segmentLabel" | "segmentLabelPlaceholder" | "indicator";
 
-export const segmentedControlVariantMap: SegmentedControlVariantMap;
+export declare const segmentedControlVariantMap: SegmentedControlVariantMap;
 
-export function segmentedControl(
+export declare const segmentedControl: ((
   props?: SegmentedControlVariantProps,
-): Record<SegmentedControlSlotName, string>;
+) => Record<SegmentedControlSlotName, string>) & {
+  splitVariantProps: <T extends SegmentedControlVariantProps>(
+    props: T,
+  ) => [SegmentedControlVariantProps, Omit<T, keyof SegmentedControlVariantProps>];
+}

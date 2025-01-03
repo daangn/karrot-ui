@@ -56,22 +56,26 @@ export function generateDts(
   const slotNameType = definition.slots.map((slot) => `"${slot}"`).join(" | ");
 
   return outdent`
-  interface ${capitalizedName}Variant {
+  declare interface ${capitalizedName}Variant {
     ${variantInterface}
   }
   
-  type ${capitalizedName}VariantMap = {
+  declare type ${capitalizedName}VariantMap = {
     [key in keyof ${capitalizedName}Variant]: Array<${capitalizedName}Variant[key]>;
   };
   
-  export type ${capitalizedName}VariantProps = Partial<${capitalizedName}Variant>;
+  export declare type ${capitalizedName}VariantProps = Partial<${capitalizedName}Variant>;
   
-  export type ${capitalizedName}SlotName = ${slotNameType};
+  export declare type ${capitalizedName}SlotName = ${slotNameType};
   
-  export const ${definition.name}VariantMap: ${capitalizedName}VariantMap;
+  export declare const ${definition.name}VariantMap: ${capitalizedName}VariantMap;
   
-  export function ${escapeReservedWord(definition.name)}(
+  export declare const ${escapeReservedWord(definition.name)}: ((
     props?: ${capitalizedName}VariantProps,
-  ): Record<${capitalizedName}SlotName, string>;
+  ) => Record<${capitalizedName}SlotName, string>) & {
+    splitVariantProps: <T extends ${capitalizedName}VariantProps>(
+      props: T,
+    ) => [${capitalizedName}VariantProps, Omit<T, keyof ${capitalizedName}VariantProps>];
+  }
   `;
 }

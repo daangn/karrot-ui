@@ -1,17 +1,21 @@
-interface ActionSheetCloseButtonVariant {
+declare interface ActionSheetCloseButtonVariant {
   
 }
 
-type ActionSheetCloseButtonVariantMap = {
+declare type ActionSheetCloseButtonVariantMap = {
   [key in keyof ActionSheetCloseButtonVariant]: Array<ActionSheetCloseButtonVariant[key]>;
 };
 
-export type ActionSheetCloseButtonVariantProps = Partial<ActionSheetCloseButtonVariant>;
+export declare type ActionSheetCloseButtonVariantProps = Partial<ActionSheetCloseButtonVariant>;
 
-export type ActionSheetCloseButtonSlotName = "root" | "label";
+export declare type ActionSheetCloseButtonSlotName = "root" | "label";
 
-export const actionSheetCloseButtonVariantMap: ActionSheetCloseButtonVariantMap;
+export declare const actionSheetCloseButtonVariantMap: ActionSheetCloseButtonVariantMap;
 
-export function actionSheetCloseButton(
+export declare const actionSheetCloseButton: ((
   props?: ActionSheetCloseButtonVariantProps,
-): Record<ActionSheetCloseButtonSlotName, string>;
+) => Record<ActionSheetCloseButtonSlotName, string>) & {
+  splitVariantProps: <T extends ActionSheetCloseButtonVariantProps>(
+    props: T,
+  ) => [ActionSheetCloseButtonVariantProps, Omit<T, keyof ActionSheetCloseButtonVariantProps>];
+}

@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const screenSlotNames = [
   [
@@ -49,3 +50,5 @@ export function screen(props) {
     }),
   );
 }
+
+Object.assign(screen, { splitVariantProps: (props) => splitVariantProps(props, screenVariantMap) });

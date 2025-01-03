@@ -1,4 +1,4 @@
-interface ControlChipVariant {
+declare interface ControlChipVariant {
   /**
   * @default medium
   */
@@ -9,16 +9,20 @@ interface ControlChipVariant {
   layout: "withText" | "iconOnly";
 }
 
-type ControlChipVariantMap = {
+declare type ControlChipVariantMap = {
   [key in keyof ControlChipVariant]: Array<ControlChipVariant[key]>;
 };
 
-export type ControlChipVariantProps = Partial<ControlChipVariant>;
+export declare type ControlChipVariantProps = Partial<ControlChipVariant>;
 
-export type ControlChipSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "count";
+export declare type ControlChipSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "count";
 
-export const controlChipVariantMap: ControlChipVariantMap;
+export declare const controlChipVariantMap: ControlChipVariantMap;
 
-export function controlChip(
+export declare const controlChip: ((
   props?: ControlChipVariantProps,
-): Record<ControlChipSlotName, string>;
+) => Record<ControlChipSlotName, string>) & {
+  splitVariantProps: <T extends ControlChipVariantProps>(
+    props: T,
+  ) => [ControlChipVariantProps, Omit<T, keyof ControlChipVariantProps>];
+}

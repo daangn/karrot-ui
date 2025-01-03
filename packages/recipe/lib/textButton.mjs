@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const textButtonSlotNames = [
   [
@@ -53,3 +54,5 @@ export function textButton(props) {
     }),
   );
 }
+
+Object.assign(textButton, { splitVariantProps: (props) => splitVariantProps(props, textButtonVariantMap) });

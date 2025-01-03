@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const textSlotNames = [
   [
@@ -60,3 +61,5 @@ export function text(props) {
     }),
   );
 }
+
+Object.assign(text, { splitVariantProps: (props) => splitVariantProps(props, textVariantMap) });

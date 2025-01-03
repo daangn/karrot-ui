@@ -1,4 +1,4 @@
-interface TabVariant {
+declare interface TabVariant {
   /**
   * @default hug
   */
@@ -9,16 +9,20 @@ interface TabVariant {
   size: "medium" | "small";
 }
 
-type TabVariantMap = {
+declare type TabVariantMap = {
   [key in keyof TabVariant]: Array<TabVariant[key]>;
 };
 
-export type TabVariantProps = Partial<TabVariant>;
+export declare type TabVariantProps = Partial<TabVariant>;
 
-export type TabSlotName = "root" | "label" | "notification";
+export declare type TabSlotName = "root" | "label" | "notification";
 
-export const tabVariantMap: TabVariantMap;
+export declare const tabVariantMap: TabVariantMap;
 
-export function tab(
+export declare const tab: ((
   props?: TabVariantProps,
-): Record<TabSlotName, string>;
+) => Record<TabSlotName, string>) & {
+  splitVariantProps: <T extends TabVariantProps>(
+    props: T,
+  ) => [TabVariantProps, Omit<T, keyof TabVariantProps>];
+}

@@ -1,4 +1,4 @@
-interface ProgressCircleVariant {
+declare interface ProgressCircleVariant {
   /**
   * @default neutral
   */
@@ -13,16 +13,20 @@ interface ProgressCircleVariant {
   indeterminate: boolean;
 }
 
-type ProgressCircleVariantMap = {
+declare type ProgressCircleVariantMap = {
   [key in keyof ProgressCircleVariant]: Array<ProgressCircleVariant[key]>;
 };
 
-export type ProgressCircleVariantProps = Partial<ProgressCircleVariant>;
+export declare type ProgressCircleVariantProps = Partial<ProgressCircleVariant>;
 
-export type ProgressCircleSlotName = "root" | "track" | "range";
+export declare type ProgressCircleSlotName = "root" | "track" | "range";
 
-export const progressCircleVariantMap: ProgressCircleVariantMap;
+export declare const progressCircleVariantMap: ProgressCircleVariantMap;
 
-export function progressCircle(
+export declare const progressCircle: ((
   props?: ProgressCircleVariantProps,
-): Record<ProgressCircleSlotName, string>;
+) => Record<ProgressCircleSlotName, string>) & {
+  splitVariantProps: <T extends ProgressCircleVariantProps>(
+    props: T,
+  ) => [ProgressCircleVariantProps, Omit<T, keyof ProgressCircleVariantProps>];
+}

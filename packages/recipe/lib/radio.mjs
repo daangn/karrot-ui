@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const radioSlotNames = [
   [
@@ -38,3 +39,5 @@ export function radio(props) {
     }),
   );
 }
+
+Object.assign(radio, { splitVariantProps: (props) => splitVariantProps(props, radioVariantMap) });

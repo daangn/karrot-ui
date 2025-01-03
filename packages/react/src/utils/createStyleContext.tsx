@@ -2,12 +2,14 @@ import clsx from "clsx";
 import { createContext, forwardRef, useContext } from "react";
 
 type Recipe<
-  Props extends Record<string, string | undefined>,
+  Props extends Record<string, string | boolean | undefined>,
   Classnames extends Record<string, string>,
-> = (props?: Props) => Classnames;
+> = ((props?: Props) => Classnames) & {
+  splitVariantProps: <T extends Props>(props: T) => [Props, Omit<T, keyof Props>];
+};
 
 export function createStyleContext<
-  Props extends Record<string, string | undefined>,
+  Props extends Record<string, string | boolean | undefined>,
   Classnames extends Record<string, string>,
 >(recipe: Recipe<Props, Classnames>) {
   const ClassNamesContext = createContext<Classnames | null>(null);
@@ -50,14 +52,15 @@ export function createStyleContext<
 
     const StyledComponent = forwardRef<any, any>((innerProps, ref) => {
       const props = { ...(defaultProps ?? {}), ...useProps(), ...innerProps } as any; // TODO: use Props type instead of any after implementing splitRecipeProps()
-      const classNames = recipe(props); // TODO: classNames are generated on all props; we have to split recipeProps and others. should be resolved in qvism.
+      const [variantProps, otherProps] = recipe.splitVariantProps(props);
+      const classNames = recipe(variantProps); // TODO: classNames are generated on all props; we have to split recipeProps and others. should be resolved in qvism.
       const className = classNames[slot as keyof typeof classNames];
 
       return (
         <ClassNamesProvider value={classNames}>
           {/* TODO: implement splitRecipeProps() method and spread splitted props */}
           {/* @ts-ignore */}
-          <Component ref={ref} {...props} className={clsx(className, props.className)} />
+          <Component ref={ref} {...otherProps} className={clsx(className, props.className)} />
         </ClassNamesProvider>
       );
     });

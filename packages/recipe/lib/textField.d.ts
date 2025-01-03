@@ -1,20 +1,24 @@
-interface TextFieldVariant {
+declare interface TextFieldVariant {
   /**
   * @default medium
   */
   size: "xlarge" | "large" | "medium";
 }
 
-type TextFieldVariantMap = {
+declare type TextFieldVariantMap = {
   [key in keyof TextFieldVariant]: Array<TextFieldVariant[key]>;
 };
 
-export type TextFieldVariantProps = Partial<TextFieldVariant>;
+export declare type TextFieldVariantProps = Partial<TextFieldVariant>;
 
-export type TextFieldSlotName = "root" | "header" | "label" | "indicator" | "input" | "inputText" | "prefixText" | "prefixIcon" | "suffixText" | "suffixIcon" | "footer" | "description" | "errorMessage" | "errorIcon" | "characterCount" | "currentCharacterCount" | "maxCharacterCount";
+export declare type TextFieldSlotName = "root" | "header" | "label" | "indicator" | "input" | "inputText" | "prefixText" | "prefixIcon" | "suffixText" | "suffixIcon" | "footer" | "description" | "errorMessage" | "errorIcon" | "characterCount" | "currentCharacterCount" | "maxCharacterCount";
 
-export const textFieldVariantMap: TextFieldVariantMap;
+export declare const textFieldVariantMap: TextFieldVariantMap;
 
-export function textField(
+export declare const textField: ((
   props?: TextFieldVariantProps,
-): Record<TextFieldSlotName, string>;
+) => Record<TextFieldSlotName, string>) & {
+  splitVariantProps: <T extends TextFieldVariantProps>(
+    props: T,
+  ) => [TextFieldVariantProps, Omit<T, keyof TextFieldVariantProps>];
+}

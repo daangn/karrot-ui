@@ -1,4 +1,4 @@
-interface BadgeVariant {
+declare interface BadgeVariant {
   /**
   * @default medium
   */
@@ -17,16 +17,20 @@ interface BadgeVariant {
   tone: "neutral" | "brand" | "informative" | "positive" | "danger";
 }
 
-type BadgeVariantMap = {
+declare type BadgeVariantMap = {
   [key in keyof BadgeVariant]: Array<BadgeVariant[key]>;
 };
 
-export type BadgeVariantProps = Partial<BadgeVariant>;
+export declare type BadgeVariantProps = Partial<BadgeVariant>;
 
-export type BadgeSlotName = "root" | "label";
+export declare type BadgeSlotName = "root" | "label";
 
-export const badgeVariantMap: BadgeVariantMap;
+export declare const badgeVariantMap: BadgeVariantMap;
 
-export function badge(
+export declare const badge: ((
   props?: BadgeVariantProps,
-): Record<BadgeSlotName, string>;
+) => Record<BadgeSlotName, string>) & {
+  splitVariantProps: <T extends BadgeVariantProps>(
+    props: T,
+  ) => [BadgeVariantProps, Omit<T, keyof BadgeVariantProps>];
+}

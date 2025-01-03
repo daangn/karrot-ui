@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const identityPlaceholderSlotNames = [
   [
@@ -36,3 +37,5 @@ export function identityPlaceholder(props) {
     }),
   );
 }
+
+Object.assign(identityPlaceholder, { splitVariantProps: (props) => splitVariantProps(props, identityPlaceholderVariantMap) });

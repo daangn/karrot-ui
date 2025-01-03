@@ -1,17 +1,21 @@
-interface ActionSheetVariant {
+declare interface ActionSheetVariant {
   
 }
 
-type ActionSheetVariantMap = {
+declare type ActionSheetVariantMap = {
   [key in keyof ActionSheetVariant]: Array<ActionSheetVariant[key]>;
 };
 
-export type ActionSheetVariantProps = Partial<ActionSheetVariant>;
+export declare type ActionSheetVariantProps = Partial<ActionSheetVariant>;
 
-export type ActionSheetSlotName = "backdrop" | "container" | "content" | "list" | "group" | "footer";
+export declare type ActionSheetSlotName = "backdrop" | "container" | "content" | "list" | "group" | "footer";
 
-export const actionSheetVariantMap: ActionSheetVariantMap;
+export declare const actionSheetVariantMap: ActionSheetVariantMap;
 
-export function actionSheet(
+export declare const actionSheet: ((
   props?: ActionSheetVariantProps,
-): Record<ActionSheetSlotName, string>;
+) => Record<ActionSheetSlotName, string>) & {
+  splitVariantProps: <T extends ActionSheetVariantProps>(
+    props: T,
+  ) => [ActionSheetVariantProps, Omit<T, keyof ActionSheetVariantProps>];
+}

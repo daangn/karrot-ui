@@ -1,4 +1,4 @@
-interface ToggleButtonVariant {
+declare interface ToggleButtonVariant {
   /**
   * @default brandSolid
   */
@@ -9,16 +9,20 @@ interface ToggleButtonVariant {
   size: "xsmall" | "small";
 }
 
-type ToggleButtonVariantMap = {
+declare type ToggleButtonVariantMap = {
   [key in keyof ToggleButtonVariant]: Array<ToggleButtonVariant[key]>;
 };
 
-export type ToggleButtonVariantProps = Partial<ToggleButtonVariant>;
+export declare type ToggleButtonVariantProps = Partial<ToggleButtonVariant>;
 
-export type ToggleButtonSlotName = "root" | "label" | "prefixIcon" | "suffixIcon" | "progressCircle";
+export declare type ToggleButtonSlotName = "root" | "label" | "prefixIcon" | "suffixIcon" | "progressCircle";
 
-export const toggleButtonVariantMap: ToggleButtonVariantMap;
+export declare const toggleButtonVariantMap: ToggleButtonVariantMap;
 
-export function toggleButton(
+export declare const toggleButton: ((
   props?: ToggleButtonVariantProps,
-): Record<ToggleButtonSlotName, string>;
+) => Record<ToggleButtonSlotName, string>) & {
+  splitVariantProps: <T extends ToggleButtonVariantProps>(
+    props: T,
+  ) => [ToggleButtonVariantProps, Omit<T, keyof ToggleButtonVariantProps>];
+}

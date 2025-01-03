@@ -1,17 +1,21 @@
-interface BottomSheetVariant {
+declare interface BottomSheetVariant {
   
 }
 
-type BottomSheetVariantMap = {
+declare type BottomSheetVariantMap = {
   [key in keyof BottomSheetVariant]: Array<BottomSheetVariant[key]>;
 };
 
-export type BottomSheetVariantProps = Partial<BottomSheetVariant>;
+export declare type BottomSheetVariantProps = Partial<BottomSheetVariant>;
 
-export type BottomSheetSlotName = "backdrop" | "container" | "content" | "header" | "footer" | "title" | "description" | "closeButton" | "closeIcon";
+export declare type BottomSheetSlotName = "backdrop" | "container" | "content" | "header" | "footer" | "title" | "description" | "closeButton" | "closeIcon";
 
-export const bottomSheetVariantMap: BottomSheetVariantMap;
+export declare const bottomSheetVariantMap: BottomSheetVariantMap;
 
-export function bottomSheet(
+export declare const bottomSheet: ((
   props?: BottomSheetVariantProps,
-): Record<BottomSheetSlotName, string>;
+) => Record<BottomSheetSlotName, string>) & {
+  splitVariantProps: <T extends BottomSheetVariantProps>(
+    props: T,
+  ) => [BottomSheetVariantProps, Omit<T, keyof BottomSheetVariantProps>];
+}

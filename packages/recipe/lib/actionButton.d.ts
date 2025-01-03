@@ -1,4 +1,4 @@
-interface ActionButtonVariant {
+declare interface ActionButtonVariant {
   /**
   * @default brandSolid
   */
@@ -13,16 +13,20 @@ interface ActionButtonVariant {
   layout: "withText" | "iconOnly";
 }
 
-type ActionButtonVariantMap = {
+declare type ActionButtonVariantMap = {
   [key in keyof ActionButtonVariant]: Array<ActionButtonVariant[key]>;
 };
 
-export type ActionButtonVariantProps = Partial<ActionButtonVariant>;
+export declare type ActionButtonVariantProps = Partial<ActionButtonVariant>;
 
-export type ActionButtonSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "progressCircle";
+export declare type ActionButtonSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "progressCircle";
 
-export const actionButtonVariantMap: ActionButtonVariantMap;
+export declare const actionButtonVariantMap: ActionButtonVariantMap;
 
-export function actionButton(
+export declare const actionButton: ((
   props?: ActionButtonVariantProps,
-): Record<ActionButtonSlotName, string>;
+) => Record<ActionButtonSlotName, string>) & {
+  splitVariantProps: <T extends ActionButtonVariantProps>(
+    props: T,
+  ) => [ActionButtonVariantProps, Omit<T, keyof ActionButtonVariantProps>];
+}

@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const topNavigationSlotNames = [
   [
@@ -82,3 +83,5 @@ export function topNavigation(props) {
     }),
   );
 }
+
+Object.assign(topNavigation, { splitVariantProps: (props) => splitVariantProps(props, topNavigationVariantMap) });

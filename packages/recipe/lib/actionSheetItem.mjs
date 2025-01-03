@@ -1,5 +1,6 @@
 import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
+import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const actionSheetItemSlotNames = [
   [
@@ -41,3 +42,5 @@ export function actionSheetItem(props) {
     }),
   );
 }
+
+Object.assign(actionSheetItem, { splitVariantProps: (props) => splitVariantProps(props, actionSheetItemVariantMap) });
