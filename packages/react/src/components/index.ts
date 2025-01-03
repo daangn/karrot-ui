@@ -9,6 +9,7 @@ export * from "./Fab";
 export * from "./Flex";
 export * from "./ProgressCircle";
 export * from "./ReactionButton";
+export * from "./SelectBox";
 export * from "./Skeleton";
 export * from "./Switch";
 export * from "./Text";

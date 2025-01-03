@@ -155,6 +155,7 @@ export const selectBox = defineRecipe({
         display: "block",
 
         backgroundColor: vars.base.enabledSelected.radioIcon.color,
+        color: vars.base.enabledSelected.radioIcon.color,
       },
     },
     label: {

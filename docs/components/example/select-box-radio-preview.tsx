@@ -1,9 +1,9 @@
-import { SelectBoxRadioGroup, SelectBoxRadio } from "seed-design/ui/select-box-group";
+import { SelectBoxRadioGroup, SelectBoxRadio } from "seed-design/ui/select-box";
 
-export default function SelectBoxRadioGroupPreview() {
+export default function SelectBoxRadioPreview() {
   return (
-    <SelectBoxRadioGroup defaultValue="culpa">
-      <SelectBoxRadio value="culpa" label="Culpa" />
+    <SelectBoxRadioGroup defaultValue="apple" aria-label="과일">
+      <SelectBoxRadio value="apple" label="Culpa" />
       <SelectBoxRadio
         value="voluptate"
         label="Voluptate"

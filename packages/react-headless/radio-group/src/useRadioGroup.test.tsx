@@ -6,7 +6,14 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ReactElement } from "react";
 import * as React from "react";
 
-import { useRadioGroup, type RadioItemProps, type UseRadioGroupProps } from "./index";
+import {
+  RadioGroupItem,
+  RadioGroupItemControl,
+  RadioGroupItemHiddenInput,
+  RadioGroupRoot,
+  type RadioGroupItemProps,
+  type RadioGroupRootProps,
+} from "./RadioGroup";
 
 afterEach(cleanup);
 
@@ -17,47 +24,21 @@ function setUp(jsx: ReactElement) {
   };
 }
 
-const RadioContext = React.createContext<ReturnType<typeof useRadioGroup> | null>(null);
-
-const useRadioContext = () => {
-  const context = React.useContext(RadioContext);
-  if (!context) {
-    throw new Error("Radio cannot be rendered outside the RadioGroup");
-  }
-  return context;
-};
-
-function RadioGroup(props: React.PropsWithChildren<UseRadioGroupProps>) {
-  const { children, ...radioGroupProps } = props;
-  const api = useRadioGroup(radioGroupProps);
-  const { rootProps } = api;
-
-  return (
-    <div {...rootProps}>
-      <RadioContext.Provider value={api}>{children}</RadioContext.Provider>
-    </div>
-  );
+function RadioGroup(props: RadioGroupRootProps) {
+  return <RadioGroupRoot {...props} />;
 }
 
-function Radio(props: RadioItemProps) {
-  const { value } = props;
-  const api = useRadioContext();
-  const { getItemProps } = api;
-  const { stateProps, restProps, controlProps, hiddenInputProps, rootProps } = getItemProps(props);
-
+function Radio(props: RadioGroupItemProps) {
   return (
-    <label {...rootProps} {...restProps}>
-      <div {...controlProps} data-testid={value}>
-        <div {...stateProps} />
-      </div>
-      <input {...hiddenInputProps} />
-      <span {...stateProps} />
-    </label>
+    <RadioGroupItem {...props}>
+      <RadioGroupItemControl data-testid={props.value} />
+      <RadioGroupItemHiddenInput />
+    </RadioGroupItem>
   );
 }
 
 function ControlledRadioGroup(
-  props: React.PropsWithChildren<Omit<UseRadioGroupProps, "value" | "onValueChange">>,
+  props: React.PropsWithChildren<Omit<RadioGroupRootProps, "value" | "onValueChange">>,
 ) {
   const { defaultValue } = props;
   const [value, setValue] = React.useState(defaultValue);

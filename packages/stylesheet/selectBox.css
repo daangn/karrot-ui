@@ -93,6 +93,7 @@
 .selectBox__radioIcon:is(:checked, [data-checked]) {
     display: block;
     background-color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-fg-static-white);
 }
 .selectBox__label {
     color: var(--seed-v3-color-fg-neutral);

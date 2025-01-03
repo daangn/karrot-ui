@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "@radix-ui/react-use-controllable-state": "1.0.1",
-    "@seed-design/dom-utils": "0.0.0-alpha-20241030023710"
+    "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
+    "@seed-design/react-primitive": "0.0.0"
   },
   "devDependencies": {
     "nanobundle": "^1.6.0"

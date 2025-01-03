@@ -1,25 +1,29 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { SelectBoxCheck, SelectBoxCheckGroup } from "seed-design/ui/select-box-group";
+import { SelectBoxRadio, SelectBoxRadioGroup } from "@/registry/ui/select-box";
 import { selectBoxGroupVariantMap } from "@seed-design/recipe/selectBoxGroup";
 
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
+import { useState } from "react";
 
 const Component = () => {
+  const values = ["dolor", "magna", "sint"];
+  const [value, setValue] = useState(values[0]);
+
   return (
-    <SelectBoxCheckGroup>
-      <SelectBoxCheck key="dolor" value="dolor" label="dolor" description="dolor" defaultChecked />
-      <SelectBoxCheck key="magna" value="magna" label="magna" description="magna" defaultChecked />
-      <SelectBoxCheck key="sint" value="sint" label="sint" description="sint" />
-    </SelectBoxCheckGroup>
+    <SelectBoxRadioGroup value={value} onValueChange={setValue}>
+      {values.map((value) => (
+        <SelectBoxRadio key={value} value={value} label={value} description={value} />
+      ))}
+    </SelectBoxRadioGroup>
   );
 };
 
 const meta = {
-  component: SelectBoxCheckGroup,
+  component: SelectBoxRadioGroup,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof SelectBoxCheckGroup>;
+} satisfies Meta<typeof SelectBoxRadioGroup>;
 
 export default meta;
 
