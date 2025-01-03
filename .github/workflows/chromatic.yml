@@ -30,7 +30,7 @@ jobs:
         # 👇 Install dependencies with the same package manager used in the project (replace it as needed) e.g. yarn, npm, pnpm
         run: yarn
       - name: Build
-        run: yarn build
+        run: yarn build-only-package
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         # Chromatic GitHub Action options
