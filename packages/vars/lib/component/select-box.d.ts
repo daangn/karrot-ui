@@ -2,9 +2,6 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-s3)"
-      },
-      "box": {
         "paddingX": "var(--seed-v3-unit-s4)",
         "paddingY": "19px",
         "gap": "var(--seed-v3-unit-s2_5)",
@@ -27,24 +24,69 @@ export declare const vars: {
         "fontSize": "var(--seed-v3-font-size-s4)",
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
-      "control": {
-        "marginY": "0"
+      "checkboxControl": {
+        "size": "22px",
+        "margin": "1px",
+        "color": "var(--seed-v3-color-bg-layer-default)",
+        "strokeWidth": "1.25px",
+        "strokeColor": "var(--seed-v3-color-stroke-control)",
+        "cornerRadius": "var(--seed-v3-radius-s1)"
+      },
+      "checkboxIcon": {
+        "size": "var(--seed-v3-unit-s3_5)"
+      },
+      "radioControl": {
+        "size": "var(--seed-v3-unit-s6)",
+        "color": "var(--seed-v3-color-bg-layer-default)",
+        "strokeWidth": "1.25px",
+        "strokeColor": "var(--seed-v3-color-stroke-control)",
+        "cornerRadius": "var(--seed-v3-radius-full)"
+      },
+      "radioIcon": {
+        "size": "var(--seed-v3-unit-s2_5)",
+        "cornerRadius": "var(--seed-v3-radius-full)"
       }
     },
-    "pressed": {
-      "box": {
+    "enabledPressed": {
+      "root": {
+        "color": "var(--seed-v3-color-bg-layer-default-pressed)"
+      },
+      "checkboxControl": {
+        "color": "var(--seed-v3-color-bg-layer-default-pressed)"
+      },
+      "radioControl": {
         "color": "var(--seed-v3-color-bg-layer-default-pressed)"
       }
     },
-    "selected": {
-      "box": {
+    "enabledSelected": {
+      "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak)",
         "strokeColor": "var(--seed-v3-color-stroke-control)"
+      },
+      "checkboxControl": {
+        "color": "var(--seed-v3-color-bg-brand-solid)",
+        "strokeWidth": "0"
+      },
+      "checkboxIcon": {
+        "color": "var(--seed-v3-color-fg-static-white)"
+      },
+      "radioControl": {
+        "color": "var(--seed-v3-color-bg-brand-solid)",
+        "strokeWidth": "0"
+      },
+      "radioIcon": {
+        "color": "var(--seed-v3-color-fg-static-white)"
       }
     },
-    "selectedPressed": {
-      "box": {
+    "enabledSelectedPressed": {
+      "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
+      },
+      "checkboxControl": {
+        "color": "var(--seed-v3-color-bg-brand-solid-pressed)"
+      },
+      "radioControl": {
+        "color": "var(--seed-v3-color-bg-brand-solid-pressed)"
       }
     }
   }

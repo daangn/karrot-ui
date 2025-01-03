@@ -23,6 +23,7 @@ export { vars as radio } from "./radio.mjs";
 export { vars as reactionButton } from "./reaction-button.mjs";
 export { vars as segmentedControl } from "./segmented-control.mjs";
 export { vars as selectBoxGroup } from "./select-box-group.mjs";
+export { vars as selectBox } from "./select-box.mjs";
 export { vars as skeleton } from "./skeleton.mjs";
 export { vars as switch } from "./switch.mjs";
 export { vars as tab } from "./tab.mjs";

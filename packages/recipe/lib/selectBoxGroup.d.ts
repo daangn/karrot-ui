@@ -8,7 +8,7 @@ type SelectBoxGroupVariantMap = {
 
 export type SelectBoxGroupVariantProps = Partial<SelectBoxGroupVariant>;
 
-export type SelectBoxGroupSlotName = "root" | "box" | "content" | "label" | "description" | "checkboxControl" | "checkboxIcon" | "radioControl" | "radioIcon";
+export type SelectBoxGroupSlotName = "root";
 
 export const selectBoxGroupVariantMap: SelectBoxGroupVariantMap;
 

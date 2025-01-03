@@ -4,38 +4,6 @@ const selectBoxGroupSlotNames = [
   [
     "root",
     "selectBoxGroup__root"
-  ],
-  [
-    "box",
-    "selectBoxGroup__box"
-  ],
-  [
-    "content",
-    "selectBoxGroup__content"
-  ],
-  [
-    "label",
-    "selectBoxGroup__label"
-  ],
-  [
-    "description",
-    "selectBoxGroup__description"
-  ],
-  [
-    "checkboxControl",
-    "selectBoxGroup__checkboxControl"
-  ],
-  [
-    "checkboxIcon",
-    "selectBoxGroup__checkboxIcon"
-  ],
-  [
-    "radioControl",
-    "selectBoxGroup__radioControl"
-  ],
-  [
-    "radioIcon",
-    "selectBoxGroup__radioIcon"
   ]
 ];
 
