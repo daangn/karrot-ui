@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const textButtonSlotNames = [
   [
@@ -47,7 +48,7 @@ export function textButton(props) {
     textButtonSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

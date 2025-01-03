@@ -1,7 +1,16 @@
 interface TopNavigationVariant {
+  /**
+  * @default cupertino
+  */
   theme: "cupertino" | "android";
-tone: "layer" | "transparent";
-border: boolean;
+/**
+  * @default layer
+  */
+  tone: "layer" | "transparent";
+/**
+  * @default false
+  */
+  border: boolean;
 }
 
 type TopNavigationVariantMap = {

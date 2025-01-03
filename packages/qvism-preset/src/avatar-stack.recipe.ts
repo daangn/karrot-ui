@@ -66,7 +66,9 @@ export const avatarStack = defineRecipe({
       },
     },
   },
-  defaultVariants: {},
+  defaultVariants: {
+    size: 48,
+  },
 });
 
 export default avatarStack;

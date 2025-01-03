@@ -280,6 +280,12 @@ export const badge = defineRecipe({
       },
     },
   ],
+  defaultVariants: {
+    size: "medium",
+    shape: "rectangle",
+    variant: "solid",
+    tone: "neutral",
+  },
 });
 
 export default badge;

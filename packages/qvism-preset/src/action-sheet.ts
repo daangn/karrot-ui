@@ -82,6 +82,7 @@ const actionSheet = defineRecipe({
     },
   },
   variants: {},
+  defaultVariants: {},
 });
 
 export default actionSheet;

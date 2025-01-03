@@ -119,6 +119,7 @@ const segmentedControl = defineRecipe({
     },
   },
   variants: {},
+  defaultVariants: {},
 });
 
 export default segmentedControl;

@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const avatarStackSlotNames = [
   [
@@ -11,7 +12,9 @@ const avatarStackSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "size": 48
+};
 
 const compoundVariants = [];
 
@@ -32,7 +35,7 @@ export function avatarStack(props) {
     avatarStackSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

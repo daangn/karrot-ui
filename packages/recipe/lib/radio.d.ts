@@ -1,4 +1,7 @@
 interface RadioVariant {
+  /**
+  * @default medium
+  */
   size: "large" | "medium" | "small";
 }
 

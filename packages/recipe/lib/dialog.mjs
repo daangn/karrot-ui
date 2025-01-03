@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const dialogSlotNames = [
   [
@@ -35,7 +36,9 @@ const dialogSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "footerLayout": "horizontal"
+};
 
 const compoundVariants = [];
 
@@ -53,7 +56,7 @@ export function dialog(props) {
     dialogSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const actionSheetItemSlotNames = [
   [
@@ -15,7 +16,9 @@ const actionSheetItemSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "tone": "neutral"
+};
 
 const compoundVariants = [];
 
@@ -33,7 +36,7 @@ export function actionSheetItem(props) {
     actionSheetItemSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

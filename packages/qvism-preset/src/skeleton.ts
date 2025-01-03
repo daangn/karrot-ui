@@ -57,6 +57,9 @@ export const skeleton = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    shape: "rounded",
+  },
 });
 
 export default skeleton;

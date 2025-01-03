@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const badgeSlotNames = [
   [
@@ -11,7 +12,12 @@ const badgeSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "size": "medium",
+  "shape": "rectangle",
+  "variant": "solid",
+  "tone": "neutral"
+};
 
 const compoundVariants = [
   {
@@ -114,7 +120,7 @@ export function badge(props) {
     badgeSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

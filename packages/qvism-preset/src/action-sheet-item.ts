@@ -55,6 +55,9 @@ const actionSheetItem = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    tone: "neutral",
+  },
 });
 
 export default actionSheetItem;

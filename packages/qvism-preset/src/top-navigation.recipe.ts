@@ -221,6 +221,11 @@ const topNavigation = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    theme: "cupertino",
+    tone: "layer",
+    border: false,
+  },
 });
 
 export default topNavigation;

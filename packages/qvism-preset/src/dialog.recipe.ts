@@ -110,6 +110,9 @@ const dialog = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    footerLayout: "horizontal",
+  },
 });
 
 export default dialog;

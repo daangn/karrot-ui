@@ -107,7 +107,6 @@ const extendedFab = defineRecipe({
       },
     },
   },
-
   defaultVariants: {
     variant: "neutralSolid",
     size: "medium",

@@ -141,7 +141,9 @@ export const avatar = defineRecipe({
       },
     },
   },
-  defaultVariants: {},
+  defaultVariants: {
+    size: 48,
+  },
 });
 
 export default avatar;

@@ -197,6 +197,10 @@ const controlChip = defineRecipe({
       },
     },
   ],
+  defaultVariants: {
+    size: "medium",
+    layout: "withText",
+  },
 });
 
 export default controlChip;

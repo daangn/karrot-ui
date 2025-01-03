@@ -1,4 +1,7 @@
 interface DialogVariant {
+  /**
+  * @default horizontal
+  */
   footerLayout: "horizontal" | "vertical";
 }
 

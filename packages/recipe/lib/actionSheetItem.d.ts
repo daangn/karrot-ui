@@ -1,4 +1,7 @@
 interface ActionSheetItemVariant {
+  /**
+  * @default neutral
+  */
   tone: "neutral" | "danger";
 }
 

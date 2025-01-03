@@ -66,6 +66,7 @@ const helpBubble = defineRecipe({
     },
   },
   variants: {},
+  defaultVariants: {},
 });
 
 export default helpBubble;

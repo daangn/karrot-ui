@@ -66,7 +66,6 @@ const fab = defineRecipe({
       },
     },
   },
-
   defaultVariants: {
     size: "medium",
   },

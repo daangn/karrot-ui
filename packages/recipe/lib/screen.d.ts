@@ -1,6 +1,12 @@
 interface ScreenVariant {
+  /**
+  * @default cupertino
+  */
   theme: "cupertino" | "android";
-hasAppBar: boolean;
+/**
+  * @default false
+  */
+  hasAppBar: boolean;
 }
 
 type ScreenVariantMap = {

@@ -29,6 +29,7 @@ const actionSheetCloseButton = defineRecipe({
     },
   },
   variants: {},
+  defaultVariants: {},
 });
 
 export default actionSheetCloseButton;

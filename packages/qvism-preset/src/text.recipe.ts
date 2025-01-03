@@ -4,6 +4,8 @@ import { defineRecipe } from "./helper";
 
 const uncapitalize = (str: string) => str.charAt(0).toLowerCase() + str.slice(1);
 
+type OmitTypePrefix<T> = T extends `type${infer U}` ? U : never;
+
 const text = defineRecipe({
   name: "text",
   slots: ["root"],
@@ -28,7 +30,7 @@ const text = defineRecipe({
         uncapitalize(key.split("type")[1]),
         { root: value.enabled.root },
       ]),
-    ),
+    ) as Record<Uncapitalize<OmitTypePrefix<keyof typeof vars>>, unknown>,
     maxLines: {
       none: {
         root: {
@@ -62,6 +64,10 @@ const text = defineRecipe({
         },
       },
     },
+  },
+  defaultVariants: {
+    variant: "bodyMediumDefault",
+    maxLines: "none",
   },
 });
 

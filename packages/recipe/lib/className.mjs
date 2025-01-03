@@ -1,5 +1,5 @@
 export const createClassName = (className, variants, compoundVariants = []) => {
-  const variantKeys = Object.keys(variants);
+  const variantKeys = Object.keys(variants)
 
   const variantValues = variantKeys.map((key) => variants[key]);
 

@@ -103,6 +103,9 @@ const radio = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    size: "medium",
+  },
 });
 
 export default radio;

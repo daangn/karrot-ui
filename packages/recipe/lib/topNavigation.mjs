@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const topNavigationSlotNames = [
   [
@@ -47,7 +48,11 @@ const topNavigationSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "theme": "cupertino",
+  "tone": "layer",
+  "border": false
+};
 
 const compoundVariants = [];
 
@@ -72,7 +77,7 @@ export function topNavigation(props) {
     topNavigationSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

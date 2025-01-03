@@ -53,6 +53,9 @@ const chipTabs = defineRecipe({
       },
     },
   },
+  defaultVariants: {
+    variant: "neutralSolid",
+  },
 });
 
 export default chipTabs;

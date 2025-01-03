@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const textSlotNames = [
   [
@@ -7,7 +8,10 @@ const textSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "variant": "bodyMediumDefault",
+  "maxLines": "none"
+};
 
 const compoundVariants = [];
 
@@ -51,7 +55,7 @@ export function text(props) {
     textSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

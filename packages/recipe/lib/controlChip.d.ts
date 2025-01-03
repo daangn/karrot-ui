@@ -1,6 +1,12 @@
 interface ControlChipVariant {
+  /**
+  * @default medium
+  */
   size: "medium" | "small";
-layout: "withText" | "iconOnly";
+/**
+  * @default withText
+  */
+  layout: "withText" | "iconOnly";
 }
 
 type ControlChipVariantMap = {

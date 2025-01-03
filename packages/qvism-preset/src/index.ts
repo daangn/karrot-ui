@@ -23,7 +23,7 @@ import radio from "./radio.recipe";
 import reactionButton from "./reaction-button.recipe";
 import screen from "./screen.recipe";
 import segmentedControl from "./segmented-control.recipe";
-import selectBoxGroup from "./select-box-group.recipe";
+import { selectBoxGroup, selectBox } from "./select-box.recipe";
 import skeleton from "./skeleton";
 import switchRecipe from "./switch.recipe";
 import tab from "./tab.recipe";
@@ -55,6 +55,7 @@ const recipes = {
   callout,
   segmentedControl,
   selectBoxGroup,
+  selectBox,
   switch: switchRecipe,
   screen,
   helpBubble,

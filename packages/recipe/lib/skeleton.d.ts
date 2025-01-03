@@ -1,4 +1,7 @@
 interface SkeletonVariant {
+  /**
+  * @default rounded
+  */
   shape: "rounded" | "circular" | "rectangular";
 }
 

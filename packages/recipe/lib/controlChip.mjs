@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const controlChipSlotNames = [
   [
@@ -27,7 +28,10 @@ const controlChipSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "size": "medium",
+  "layout": "withText"
+};
 
 const compoundVariants = [
   {
@@ -66,7 +70,7 @@ export function controlChip(props) {
     controlChipSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

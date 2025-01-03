@@ -1,4 +1,7 @@
 interface AvatarVariant {
+  /**
+  * @default 48
+  */
   size: "20" | "24" | "36" | "48" | "64" | "80" | "96";
 }
 

@@ -20,6 +20,7 @@ export function generateJs(
 
   return outdent`
   import { createClassName } from "./className.mjs";
+  import { mergeVariants } from "./mergeVariants.mjs";
 
   const ${definition.name}SlotNames = ${JSON.stringify(slotNames, null, 2)};
   
@@ -36,7 +37,7 @@ export function generateJs(
       ${definition.name}SlotNames.map(([slot, className]) => {
         return [
           slot,
-          createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+          createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
         ];
       }),
     );

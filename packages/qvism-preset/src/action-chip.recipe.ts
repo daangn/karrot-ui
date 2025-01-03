@@ -165,6 +165,10 @@ const actionChip = defineRecipe({
       },
     },
   ],
+  defaultVariants: {
+    size: "medium",
+    layout: "withText",
+  },
 });
 
 export default actionChip;

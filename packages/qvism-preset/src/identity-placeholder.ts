@@ -33,6 +33,9 @@ export const identityPlaceholder = defineRecipe({
       // business: {},
     },
   },
+  defaultVariants: {
+    identity: "person",
+  },
 });
 
 export default identityPlaceholder;

@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const screenSlotNames = [
   [
@@ -19,7 +20,10 @@ const screenSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "theme": "cupertino",
+  "hasAppBar": false
+};
 
 const compoundVariants = [];
 
@@ -40,7 +44,7 @@ export function screen(props) {
     screenSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

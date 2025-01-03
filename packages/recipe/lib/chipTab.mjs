@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const chipTabSlotNames = [
   [
@@ -11,7 +12,9 @@ const chipTabSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "variant": "neutralSolid"
+};
 
 const compoundVariants = [];
 
@@ -29,7 +32,7 @@ export function chipTab(props) {
     chipTabSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

@@ -1,4 +1,5 @@
 import { createClassName } from "./className.mjs";
+import { mergeVariants } from "./mergeVariants.mjs";
 
 const skeletonSlotNames = [
   [
@@ -7,7 +8,9 @@ const skeletonSlotNames = [
   ]
 ];
 
-const defaultVariant = {};
+const defaultVariant = {
+  "shape": "rounded"
+};
 
 const compoundVariants = [];
 
@@ -26,7 +29,7 @@ export function skeleton(props) {
     skeletonSlotNames.map(([slot, className]) => {
       return [
         slot,
-        createClassName(className, { ...defaultVariant, ...props }, compoundVariants),
+        createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
       ];
     }),
   );

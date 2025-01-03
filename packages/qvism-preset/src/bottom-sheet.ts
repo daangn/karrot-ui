@@ -128,6 +128,7 @@ const bottomSheet = defineRecipe({
     },
   },
   variants: {},
+  defaultVariants: {},
 });
 
 export default bottomSheet;

@@ -46,6 +46,6 @@ export interface SlotRecipeDefinition<S extends string, T extends SlotRecipeVari
       css: SlotRecord<S, StyleObject>;
     }
   >;
-  defaultVariants?: RecipeSelection<T>;
+  defaultVariants: Required<RecipeSelection<T>>;
   keyframes?: Record<string, Partial<Record<"from" | "to" | `${string}%`, StyleObject>>>;
 }

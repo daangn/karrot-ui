@@ -1,4 +1,7 @@
 interface ChipTabVariant {
+  /**
+  * @default neutralSolid
+  */
   variant: "neutralSolid" | "brandSolid";
 }
 
