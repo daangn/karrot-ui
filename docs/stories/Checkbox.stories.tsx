@@ -15,13 +15,36 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const conditionMap = {
+  indeterminate: {
+    false: {
+      indeterminate: false,
+    },
+    true: {
+      indeterminate: true,
+    },
+  },
+  checked: {
+    false: {
+      checked: false,
+    },
+    true: {
+      checked: true,
+    },
+  },
+};
+
 const CommonStoryTemplate: Story = {
   args: {
     label: "Checkbox",
-    checked: true,
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={checkboxVariantMap} {...args} />
+    <VariantTable
+      Component={meta.component}
+      variantMap={checkboxVariantMap}
+      conditionMap={conditionMap}
+      {...args}
+    />
   ),
 };
 

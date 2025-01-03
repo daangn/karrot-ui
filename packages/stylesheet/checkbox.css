@@ -43,14 +43,14 @@
     border-style: solid;
     border-color: var(--seed-v3-color-stroke-control);
 }
-.checkbox__control--variant_square:is(:checked, [data-checked]) {
+.checkbox__control--variant_square:is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     background: var(--seed-v3-color-bg-brand-solid);
     border-width: 0;
 }
 .checkbox__control--variant_square:is(:active, [data-active]) {
     background: var(--seed-v3-color-bg-layer-default-pressed);
 }
-.checkbox__control--variant_square:is(:active, [data-active]):is(:checked, [data-checked]) {
+.checkbox__control--variant_square:is(:active, [data-active]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     background: var(--seed-v3-color-bg-brand-solid-pressed);
 }
 .checkbox__control--variant_square:is(:disabled, [disabled], [data-disabled]) {
@@ -60,11 +60,11 @@
 .checkbox__control--variant_square:is(:disabled, [disabled], [data-disabled]):is(:active, [data-active]) {
     background: var(--seed-v3-color-bg-disabled);
 }
-.checkbox__icon--variant_square:is(:checked, [data-checked]) {
+.checkbox__icon--variant_square:is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     display: block;
     color: var(--seed-v3-color-fg-static-white);
 }
-.checkbox__icon--variant_square:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
+.checkbox__icon--variant_square:is(:disabled, [disabled], [data-disabled]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     display: block;
     color: var(--seed-v3-color-fg-disabled);
 }
@@ -74,16 +74,16 @@
 .checkbox__control--variant_ghost {
     background: none;
 }
-.checkbox__control--variant_ghost:is(:checked, [data-checked]) {
+.checkbox__control--variant_ghost:is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     background: none;
 }
 .checkbox__control--variant_ghost:is(:active, [data-active]) {
     background: var(--seed-v3-color-bg-layer-default-pressed);
 }
-.checkbox__control--variant_ghost:is(:active, [data-active]):is(:checked, [data-checked]) {
+.checkbox__control--variant_ghost:is(:active, [data-active]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     background: var(--seed-v3-color-bg-brand-weak-pressed);
 }
-.checkbox__control--variant_ghost:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
+.checkbox__control--variant_ghost:is(:disabled, [disabled], [data-disabled]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     background: none;
 }
 .checkbox__control--variant_ghost:is(:disabled, [disabled], [data-disabled]):is(:active, [data-active]) {
@@ -93,10 +93,10 @@
     display: block;
     color: var(--seed-v3-color-fg-placeholder);
 }
-.checkbox__icon--variant_ghost:is(:checked, [data-checked]) {
+.checkbox__icon--variant_ghost:is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     color: var(--seed-v3-color-fg-brand);
 }
-.checkbox__icon--variant_ghost:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
+.checkbox__icon--variant_ghost:is(:disabled, [disabled], [data-disabled]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     color: var(--seed-v3-color-fg-disabled);
 }
 .checkbox__icon--variant_ghost:is(:disabled, [disabled], [data-disabled]) {

@@ -4,10 +4,6 @@ declare interface CheckboxVariant {
   */
   weight: "default" | "stronger";
 /**
-  * @default false
-  */
-  indeterminate: boolean;
-/**
   * @default square
   */
   variant: "square" | "ghost";

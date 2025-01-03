@@ -1,6 +1,6 @@
 import { checkbox as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
-import { active, checked, disabled, pseudo, not } from "./pseudo";
+import { active, checkedOrIndeterminate, disabled, pseudo } from "./pseudo";
 
 const checkbox = defineRecipe({
   name: "checkbox",
@@ -56,10 +56,6 @@ const checkbox = defineRecipe({
         },
       },
     },
-    indeterminate: {
-      true: {},
-      false: {},
-    },
     variant: {
       square: {
         control: {
@@ -67,14 +63,14 @@ const checkbox = defineRecipe({
           borderStyle: "solid",
           borderColor: vars.variantSquare.enabled.control.strokeColor,
 
-          [pseudo(checked)]: {
+          [pseudo(checkedOrIndeterminate)]: {
             background: vars.variantSquare.enabledSelected.control.color,
             borderWidth: 0,
           },
           [pseudo(active)]: {
             background: vars.variantSquare.pressed.control.color,
           },
-          [pseudo(active, checked)]: {
+          [pseudo(active, checkedOrIndeterminate)]: {
             background: vars.variantSquare.pressedSelected.control.color,
           },
           [pseudo(disabled)]: {
@@ -86,11 +82,11 @@ const checkbox = defineRecipe({
           },
         },
         icon: {
-          [pseudo(checked)]: {
+          [pseudo(checkedOrIndeterminate)]: {
             display: "block",
             color: vars.variantSquare.enabledSelected.icon.color,
           },
-          [pseudo(disabled, checked)]: {
+          [pseudo(disabled, checkedOrIndeterminate)]: {
             display: "block",
             color: vars.variantSquare.disabledSelected.icon.color,
           },
@@ -105,16 +101,16 @@ const checkbox = defineRecipe({
         control: {
           background: "none",
 
-          [pseudo(checked)]: {
+          [pseudo(checkedOrIndeterminate)]: {
             background: "none",
           },
           [pseudo(active)]: {
             background: vars.variantGhost.pressed.control.color,
           },
-          [pseudo(active, checked)]: {
+          [pseudo(active, checkedOrIndeterminate)]: {
             background: vars.variantGhost.pressedSelected.control.color,
           },
-          [pseudo(disabled, checked)]: {
+          [pseudo(disabled, checkedOrIndeterminate)]: {
             background: "none",
           },
           [pseudo(disabled, active)]: {
@@ -125,10 +121,10 @@ const checkbox = defineRecipe({
           display: "block",
           color: vars.variantGhost.enabled.icon.color,
 
-          [pseudo(checked)]: {
+          [pseudo(checkedOrIndeterminate)]: {
             color: vars.variantGhost.enabledSelected.icon.color,
           },
-          [pseudo(disabled, checked)]: {
+          [pseudo(disabled, checkedOrIndeterminate)]: {
             color: vars.variantGhost.disabledSelected.icon.color,
           },
           [pseudo(disabled)]: {
@@ -259,7 +255,6 @@ const checkbox = defineRecipe({
     size: "medium",
     variant: "square",
     weight: "default",
-    indeterminate: false,
   },
 });
 

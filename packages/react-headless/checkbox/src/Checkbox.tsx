@@ -4,6 +4,7 @@ import type * as React from "react";
 import { forwardRef } from "react";
 import { useCheckbox, type UseCheckboxProps } from "./useCheckbox";
 import { CheckboxProvider, useCheckboxContext } from "./useCheckboxContext";
+import { composeRefs } from "@radix-ui/react-compose-refs";
 
 export interface CheckboxRootProps
   extends UseCheckboxProps,
@@ -11,15 +12,24 @@ export interface CheckboxRootProps
     React.HTMLAttributes<HTMLLabelElement> {}
 
 export const CheckboxRoot = forwardRef<HTMLLabelElement, CheckboxRootProps>((props, ref) => {
-  const { checked, defaultChecked, disabled, invalid, onCheckedChange, required, ...otherProps } =
-    props;
+  const {
+    checked,
+    defaultChecked,
+    onCheckedChange,
+    indeterminate,
+    disabled,
+    invalid,
+    required,
+    ...otherProps
+  } = props;
 
   const api = useCheckbox({
     checked,
     defaultChecked,
+    onCheckedChange,
+    indeterminate,
     disabled,
     invalid,
-    onCheckedChange,
     required,
   });
   const mergedProps = mergeProps(api.rootProps, otherProps);
@@ -49,9 +59,9 @@ export interface CheckboxHiddenInputProps
 
 export const CheckboxHiddenInput = forwardRef<HTMLInputElement, CheckboxHiddenInputProps>(
   (props, ref) => {
-    const { hiddenInputProps } = useCheckboxContext();
+    const { refs, hiddenInputProps } = useCheckboxContext();
     const mergedProps = mergeProps(hiddenInputProps, props);
-    return <Primitive.input ref={ref} {...mergedProps} />;
+    return <Primitive.input ref={composeRefs(refs.input, ref)} {...mergedProps} />;
   },
 );
 CheckboxHiddenInput.displayName = "CheckboxHiddenInput";

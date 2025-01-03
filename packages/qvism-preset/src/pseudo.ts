@@ -10,6 +10,9 @@ export const readOnly = ":is([data-readonly])";
 
 export const checked = ":is(:checked, [data-checked])";
 
+export const checkedOrIndeterminate =
+  ":is(:checked, :indeterminate, [data-checked], [data-indeterminate])";
+
 export const pressed = ":is([aria-pressed=true], [data-pressed])";
 
 export const selected = ":is(:selected, [data-selected])";
@@ -20,19 +23,16 @@ export const invalid = ":is(:invalid, [data-invalid])";
 
 export const loading = "[data-loading]";
 
-type JoinRest<Rest extends string[]> = Rest extends []
-  ? ""
-  : Rest extends [string, ...string[]]
-    ? `${Rest[0]}${Rest extends [string, ...infer R extends string[]] ? R[0] : ""}`
-    : "";
-
-type JoinSelectors<T extends string[]> = T extends [string, string, ...infer Rest extends string[]]
-  ? `&${T[0]}${T[1]}${JoinRest<Rest>}`
-  : never;
+type ConcatStrings<T extends string[]> = T extends [
+  infer First extends string,
+  ...infer Rest extends string[],
+]
+  ? `${First}${ConcatStrings<Rest>}`
+  : "";
 
 export function pseudo<T extends string>(selectorA: T): `&${T}`;
 export function pseudo<T extends string, U extends string>(selectorA: T, selectorB: U): `&${T}${U}`;
-export function pseudo<T extends string[]>(...selectors: [...T]): JoinSelectors<T>;
+export function pseudo<T extends string[]>(...selectors: [...T]): `&${ConcatStrings<T>}`;
 export function pseudo(...selectors: string[]) {
   return `&${selectors.join("")}`;
 }

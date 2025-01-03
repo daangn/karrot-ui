@@ -1,5 +1,5 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   dataAttr,
@@ -15,10 +15,12 @@ interface UseCheckboxStateProps {
   defaultChecked?: boolean;
 
   onCheckedChange?: (checked: boolean) => void;
+
+  indeterminate?: boolean;
 }
 
 function useCheckboxState(props: UseCheckboxStateProps) {
-  const [isChecked, setIsChecked] = useControllableState({
+  const [isChecked = false, setIsChecked] = useControllableState({
     prop: props.checked,
     defaultProp: props.defaultChecked,
     onChange: props.onCheckedChange,
@@ -28,7 +30,26 @@ function useCheckboxState(props: UseCheckboxStateProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusVisible, setIsFocusVisible] = useState(false);
 
+  const inputRef = useRef<HTMLInputElement>(null);
+  const initialCheckedRef = useRef(isChecked);
+
+  useEffect(() => {
+    const form = inputRef.current?.form;
+    if (form) {
+      const reset = () => setIsChecked(initialCheckedRef.current);
+      form.addEventListener("reset", reset);
+      return () => form.removeEventListener("reset", reset);
+    }
+  }, [setIsChecked]);
+
+  useEffect(() => {
+    if (!inputRef.current) return;
+    inputRef.current.indeterminate = props.indeterminate ?? false;
+  }, [props.indeterminate]);
+
   return {
+    refs: { input: inputRef },
+    isIndeterminate: props.indeterminate ?? false,
     isChecked,
     setIsChecked,
     isHovered,
@@ -56,6 +77,8 @@ export function useCheckbox(props: UseCheckboxProps) {
   const { checked, disabled, invalid, required } = props;
 
   const {
+    refs,
+    isIndeterminate,
     setIsChecked,
     isChecked,
     setIsHovered,
@@ -70,6 +93,7 @@ export function useCheckbox(props: UseCheckboxProps) {
 
   const stateProps = elementProps({
     "data-checked": dataAttr(isChecked),
+    "data-indeterminate": dataAttr(isIndeterminate),
     "data-hover": dataAttr(isHovered),
     "data-active": dataAttr(isActive),
     "data-focus": dataAttr(isFocused),
@@ -82,12 +106,15 @@ export function useCheckbox(props: UseCheckboxProps) {
   const isControlled = checked != null;
 
   return {
+    isIndeterminate,
     isChecked,
     setIsChecked,
     isFocused,
     setIsFocused,
+    isFocusVisible,
     setIsFocusVisible,
 
+    refs,
     stateProps,
     rootProps: labelProps({
       ...stateProps,
