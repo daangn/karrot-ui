@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "packages/react-headless/**/*"
+      - ".github/workflows/react-headless-test.yml"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -23,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build `@seed-design/dom-utils` package
-        run: yarn workspace @seed-design/dom-utils build
+      - name: Build headless common dependencies
+        run: yarn workspace @seed-design/dom-utils build && yarn workspace @seed-design/react-primitive build
 
       - name: Run tests
         run: yarn headless:test
