@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { Switch as SeedSwitch } from "@seed-design/react";
 
