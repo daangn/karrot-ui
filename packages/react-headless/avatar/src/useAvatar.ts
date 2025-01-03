@@ -4,11 +4,11 @@ import { useMemo, useRef, useState } from "react";
 
 type LoadingStatus = "loading" | "loaded" | "error";
 
-export interface UseAvatarStateProps {
+interface UseAvatarStateProps {
   onLoadingStatusChange?: (status: LoadingStatus) => void;
 }
 
-export function useAvatarState(props: UseAvatarStateProps) {
+function useAvatarState(props: UseAvatarStateProps) {
   const [src, setSrc] = useState<string | undefined>(undefined);
   const { onLoadingStatusChange } = props;
   const [loadingStatus, setLoadingStatus] = useState<LoadingStatus>("loading");

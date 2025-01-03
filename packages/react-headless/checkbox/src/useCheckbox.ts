@@ -9,7 +9,7 @@ import {
   visuallyHidden,
 } from "@seed-design/dom-utils";
 
-export interface UseCheckboxStateProps {
+interface UseCheckboxStateProps {
   checked?: boolean;
 
   defaultChecked?: boolean;
@@ -17,7 +17,7 @@ export interface UseCheckboxStateProps {
   onCheckedChange?: (checked: boolean) => void;
 }
 
-export function useCheckboxState(props: UseCheckboxStateProps) {
+function useCheckboxState(props: UseCheckboxStateProps) {
   const [isChecked, setIsChecked] = useControllableState({
     prop: props.checked,
     defaultProp: props.defaultChecked,

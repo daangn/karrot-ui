@@ -11,7 +11,7 @@ interface UseRadioGroupStateProps {
   onValueChange?: (value: string) => void;
 }
 
-export function useRadioGroupState(props: UseRadioGroupStateProps) {
+function useRadioGroupState(props: UseRadioGroupStateProps) {
   const [value, setValue] = useControllableState({
     prop: props.value,
     defaultProp: props.defaultValue,
