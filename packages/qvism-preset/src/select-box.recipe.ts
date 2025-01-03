@@ -10,6 +10,7 @@ export const selectBoxGroup = defineRecipe({
       display: "flex",
       flexDirection: "column",
       gap: groupVars.base.enabled.root.gap,
+      width: "100%",
     },
   },
   variants: {},

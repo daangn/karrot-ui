@@ -1,5 +1,6 @@
 .selectBoxGroup__root {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-unit-s3)
+    gap: var(--seed-v3-unit-s3);
+    width: 100%
 }
