@@ -37,6 +37,9 @@
       "security": {
         "noDangerouslySetInnerHtml": "warn"
       },
+      "suspicious": {
+        "noExplicitAny": "info"
+      },
       "a11y": {
         "useKeyWithClickEvents": "off"
       }
