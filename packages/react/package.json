@@ -26,8 +26,6 @@
     "build": "nanobundle build"
   },
   "dependencies": {
-    "@radix-ui/react-compose-refs": "^1.1.1",
-    "@radix-ui/react-slot": "^1.1.1",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
     "@seed-design/react-avatar": "0.0.0-alpha-20241030023710",
     "@seed-design/react-checkbox": "0.0.0-alpha-20241030023710",
