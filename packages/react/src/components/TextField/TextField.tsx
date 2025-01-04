@@ -113,12 +113,19 @@ export const TextFieldInput = withContext<HTMLInputElement, TextFieldInputProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface TextFieldTextareaProps extends TextField.TextareaProps {}
+export interface TextFieldTextareaProps extends TextField.TextareaProps {
+  /**
+   * If true, the textarea will automatically resize based on its content.
+   * @default true
+   */
+  autoresize?: boolean;
+}
 
 export const TextFieldTextarea = forwardRef<HTMLTextAreaElement, TextFieldTextareaProps>(
   (props, ref) => {
-    const { className, ...otherProps } = props;
+    const { className, autoresize = true, ...otherProps } = props;
     const classNames = useClassNames();
+    const { value } = useTextFieldContext();
 
     // referenced from React Spectrum
     const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -126,6 +133,7 @@ export const TextFieldTextarea = forwardRef<HTMLTextAreaElement, TextFieldTextar
     const onHeightChange = useCallback(() => {
       if (!inputRef.current) return;
       if (otherProps.style?.height) return;
+      if (!autoresize) return;
 
       // Quiet textareas always grow based on their text content.
       // Standard textareas also grow by default, unless an explicit height is set.
@@ -149,13 +157,13 @@ export const TextFieldTextarea = forwardRef<HTMLTextAreaElement, TextFieldTextar
 
       input.style.overflow = prevOverflow;
       input.style.alignSelf = prevAlignment;
-    }, [inputRef, otherProps.style?.height]);
+    }, [inputRef, otherProps.style?.height, autoresize]);
 
     useLayoutEffect(() => {
       if (inputRef.current) {
         onHeightChange();
       }
-    }, [onHeightChange, otherProps.value, inputRef]);
+    }, [onHeightChange, value, inputRef]);
 
     return (
       <TextField.Textarea
