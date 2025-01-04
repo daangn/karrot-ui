@@ -33,6 +33,7 @@ import textField from "./text-field.recipe";
 import text from "./text.recipe";
 import toggleButton from "./toggle-button.recipe";
 import topNavigation from "./top-navigation.recipe";
+import visuallyHidden from "./visually-hidden";
 
 const recipes = {
   avatar,
@@ -71,6 +72,7 @@ const recipes = {
   textButton,
   textField,
   topNavigation,
+  visuallyHidden,
 };
 
 export default recipes;

@@ -16,3 +16,4 @@ export * from "./Switch";
 export * from "./Text";
 export * from "./TextField";
 export * from "./ToggleButton";
+export * from "./VisuallyHidden";
