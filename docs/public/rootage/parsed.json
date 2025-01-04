@@ -19799,7 +19799,7 @@
         },
         {
           "key": {
-            "shape": "rounded"
+            "radius": "0"
           },
           "state": [
             {
@@ -19813,11 +19813,9 @@
                     {
                       "key": "cornerRadius",
                       "value": {
-                        "type": "token",
-                        "group": [
-                          "radius"
-                        ],
-                        "key": "s1"
+                        "type": "dimension",
+                        "value": 0,
+                        "unit": "px"
                       }
                     }
                   ]
@@ -19828,7 +19826,61 @@
         },
         {
           "key": {
-            "shape": "circular"
+            "radius": "8"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "dimension",
+                        "value": 8,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "radius": "16"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "dimension",
+                        "value": 16,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "radius": "full"
           },
           "state": [
             {
@@ -19847,32 +19899,6 @@
                           "radius"
                         ],
                         "key": "full"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "shape": "rectangular"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "cornerRadius",
-                      "value": {
-                        "type": "number",
-                        "value": 0
                       }
                     }
                   ]

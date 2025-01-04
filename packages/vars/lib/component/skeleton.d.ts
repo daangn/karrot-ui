@@ -11,24 +11,31 @@ export declare const vars: {
       }
     }
   },
-  "shapeRounded": {
+  "radius0": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-s1)"
+        "cornerRadius": "0px"
       }
     }
   },
-  "shapeCircular": {
+  "radius8": {
+    "enabled": {
+      "root": {
+        "cornerRadius": "8px"
+      }
+    }
+  },
+  "radius16": {
+    "enabled": {
+      "root": {
+        "cornerRadius": "16px"
+      }
+    }
+  },
+  "radiusFull": {
     "enabled": {
       "root": {
         "cornerRadius": "var(--seed-v3-radius-full)"
-      }
-    }
-  },
-  "shapeRectangular": {
-    "enabled": {
-      "root": {
-        "cornerRadius": "0"
       }
     }
   }

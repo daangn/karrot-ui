@@ -29,20 +29,25 @@ const skeleton = defineRecipe({
     },
   },
   variants: {
-    shape: {
-      rounded: {
+    radius: {
+      0: {
         root: {
-          borderRadius: vars.shapeRounded.enabled.root.cornerRadius,
+          borderRadius: vars.radius0.enabled.root.cornerRadius,
         },
       },
-      circular: {
+      8: {
         root: {
-          borderRadius: vars.shapeCircular.enabled.root.cornerRadius,
+          borderRadius: vars.radius8.enabled.root.cornerRadius,
         },
       },
-      rectangular: {
+      16: {
         root: {
-          borderRadius: vars.shapeRectangular.enabled.root.cornerRadius,
+          borderRadius: vars.radius16.enabled.root.cornerRadius,
+        },
+      },
+      full: {
+        root: {
+          borderRadius: vars.radiusFull.enabled.root.cornerRadius,
         },
       },
     },
@@ -58,7 +63,7 @@ const skeleton = defineRecipe({
     },
   },
   defaultVariants: {
-    shape: "rounded",
+    radius: 8,
   },
 });
 

@@ -10,16 +10,17 @@ const skeletonSlotNames = [
 ];
 
 const defaultVariant = {
-  "shape": "rounded"
+  "radius": 8
 };
 
 const compoundVariants = [];
 
 export const skeletonVariantMap = {
-  "shape": [
-    "rounded",
-    "circular",
-    "rectangular"
+  "radius": [
+    "0",
+    "8",
+    "16",
+    "full"
   ]
 };
 

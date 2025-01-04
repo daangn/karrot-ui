@@ -1,8 +1,8 @@
 declare interface SkeletonVariant {
   /**
-  * @default rounded
+  * @default 8
   */
-  shape: "rounded" | "circular" | "rectangular";
+  radius: "0" | "8" | "16" | "full";
 }
 
 declare type SkeletonVariantMap = {

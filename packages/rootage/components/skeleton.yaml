@@ -12,15 +12,19 @@ data:
         duration: 1.5s
         timingFunction: $timing-function.easing
         color: $gradient.shimmer
-  shape=rounded:
+  radius=0:
     enabled:
       root:
-        cornerRadius: $radius.s1
-  shape=circular:
+        cornerRadius: 0px
+  radius=8:
+    enabled:
+      root:
+        cornerRadius: 8px
+  radius=16:
+    enabled:
+      root:
+        cornerRadius: 16px
+  radius=full:
     enabled:
       root:
         cornerRadius: $radius.full
-  shape=rectangular:
-    enabled:
-      root:
-        cornerRadius: 0
