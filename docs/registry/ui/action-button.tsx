@@ -22,7 +22,6 @@ export const ActionButton = React.forwardRef<
 >(
   (
     {
-      className,
       loading = false,
       layout = "withText",
       prefixIcon,

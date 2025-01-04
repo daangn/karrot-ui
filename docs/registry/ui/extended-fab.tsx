@@ -15,7 +15,7 @@ export interface ExtendedFabProps extends SeedExtendedFab.RootProps {
 export const ExtendedFab = React.forwardRef<
   HTMLButtonElement,
   ExtendedFabProps
->(({ className, children, prefixIcon, ...otherProps }, ref) => {
+>(({ children, prefixIcon, ...otherProps }, ref) => {
   return (
     <SeedExtendedFab.Root ref={ref} {...otherProps}>
       {prefixIcon && <SeedExtendedFab.PrefixIcon svg={prefixIcon} />}

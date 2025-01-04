@@ -19,21 +19,16 @@ export interface ReactionButtonProps extends SeedReactionButton.RootProps {
 export const ReactionButton = React.forwardRef<
   React.ElementRef<typeof SeedReactionButton.Root>,
   ReactionButtonProps
->(
-  (
-    { className, loading = false, prefixIcon, count, children, ...otherProps },
-    ref,
-  ) => {
-    return (
-      <SeedReactionButton.Root ref={ref} loading={loading} {...otherProps}>
-        {prefixIcon && <SeedReactionButton.PrefixIcon svg={prefixIcon} />}
-        <SeedReactionButton.Label>{children}</SeedReactionButton.Label>
-        <SeedReactionButton.Count>{count}</SeedReactionButton.Count>
-        {loading ? <SeedReactionButton.ProgressCircle /> : null}
-      </SeedReactionButton.Root>
-    );
-  },
-);
+>(({ loading = false, prefixIcon, count, children, ...otherProps }, ref) => {
+  return (
+    <SeedReactionButton.Root ref={ref} loading={loading} {...otherProps}>
+      {prefixIcon && <SeedReactionButton.PrefixIcon svg={prefixIcon} />}
+      <SeedReactionButton.Label>{children}</SeedReactionButton.Label>
+      <SeedReactionButton.Count>{count}</SeedReactionButton.Count>
+      {loading ? <SeedReactionButton.ProgressCircle /> : null}
+    </SeedReactionButton.Root>
+  );
+});
 ReactionButton.displayName = "ReactionButton";
 
 /**

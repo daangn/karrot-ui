@@ -21,14 +21,7 @@ export const ToggleButton = React.forwardRef<
   ToggleButtonProps
 >(
   (
-    {
-      className,
-      loading = false,
-      prefixIcon,
-      suffixIcon,
-      children,
-      ...otherProps
-    },
+    { loading = false, prefixIcon, suffixIcon, children, ...otherProps },
     ref,
   ) => {
     return (

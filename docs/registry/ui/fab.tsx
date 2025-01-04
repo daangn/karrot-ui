@@ -11,7 +11,7 @@ export interface FabProps extends SeedFab.RootProps {}
  * @see https://v3.seed-design.io/docs/react/components/fab
  */
 export const Fab = React.forwardRef<HTMLButtonElement, FabProps>(
-  ({ className, children, ...otherProps }, ref) => {
+  ({ children, ...otherProps }, ref) => {
     if (!(otherProps["aria-label"] || otherProps["aria-labelledby"])) {
       console.warn(
         "'aria-label' or 'aria-labelledby' should be provided in <Fab />.",

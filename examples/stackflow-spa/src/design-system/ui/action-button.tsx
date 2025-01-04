@@ -21,15 +21,7 @@ export const ActionButton = React.forwardRef<
   ActionButtonProps
 >(
   (
-    {
-      className,
-      loading = false,
-      layout = "withText",
-      prefixIcon,
-      suffixIcon,
-      children,
-      ...otherProps
-    },
+    { loading = false, layout = "withText", prefixIcon, suffixIcon, children, ...otherProps },
     ref,
   ) => {
     return (
