@@ -3,7 +3,7 @@
 import { ActionButton } from "seed-design/ui/action-button";
 import { IconHouseLine } from "@daangn/react-monochrome-icon";
 import { useForm } from "react-hook-form";
-import { FormControl, MultilineTextField } from "seed-design/ui/text-field";
+import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 
 interface FormValues {
   bio: string;
@@ -24,18 +24,18 @@ export default function MultilineTextFieldReactHookForm() {
 
   return (
     <form className="grid grid-cols-2 gap-3 w-full" onSubmit={handleSubmit(onValid)}>
-      <FormControl
+      <TextField
         {...register("bio", { required: "필수 입력 항목입니다" })}
         label="자기소개"
         description="자기소개를 써주세요"
         invalid={!!errors.bio}
         errorMessage={errors.bio?.message}
-        requiredIndicator="(필수)"
+        indicator="(필수)"
         required
       >
-        <MultilineTextField placeholder="저는…" />
-      </FormControl>
-      <FormControl
+        <TextFieldTextarea placeholder="저는…" />
+      </TextField>
+      <TextField
         {...register("address", {
           required: "필수 입력 항목입니다",
           pattern: {
@@ -47,11 +47,11 @@ export default function MultilineTextFieldReactHookForm() {
         description="주소를 써주세요"
         invalid={!!errors.address}
         errorMessage={errors.address?.message}
-        requiredIndicator="(필수)"
+        indicator="(필수)"
         required
       >
-        <MultilineTextField placeholder="대한민국 서울특별시 은평구" />
-      </FormControl>
+        <TextFieldTextarea placeholder="대한민국 서울특별시 은평구" />
+      </TextField>
       <div className="col-span-2 flex gap-2">
         <ActionButton type="submit" className="grow">
           제출

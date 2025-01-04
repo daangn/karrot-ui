@@ -3,264 +3,101 @@
 import "@seed-design/stylesheet/textField.css";
 
 import * as React from "react";
-import clsx from "clsx";
-import {
-  textField,
-  type TextFieldVariantProps,
-} from "@seed-design/recipe/textField";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
-import {
-  useTextField,
-  type UseTextFieldProps,
-} from "@seed-design/react-text-field";
-import { Slot } from "@radix-ui/react-slot";
-import type { Assign } from "../util/types";
+import { TextField as SeedTextField } from "@seed-design/react";
 
-const useLayoutEffect = globalThis?.document
-  ? React.useLayoutEffect
-  : React.useEffect;
+export interface TextFieldProps
+  extends Omit<SeedTextField.RootProps, "prefix"> {
+  label?: React.ReactNode;
 
-const FormControlContext = React.createContext<{
-  api: ReturnType<typeof useTextField>;
-  variantProps: TextFieldVariantProps;
-} | null>(null);
+  indicator?: React.ReactNode;
 
-const useFormControlContext = () => {
-  const context = React.useContext(FormControlContext);
-  if (!context)
-    throw new Error(
-      "Parts of FormControl cannot be rendered outside the FormControl",
-    );
+  prefixIcon?: React.ReactNode;
 
-  return context;
-};
+  prefix?: React.ReactNode;
 
-export interface FormControlProps
-  extends TextFieldVariantProps,
-    Assign<React.HTMLAttributes<HTMLDivElement>, UseTextFieldProps> {
-  requiredIndicator?: string;
-  optionalIndicator?: string;
+  suffixIcon?: React.ReactNode;
 
-  hideGraphemeCount?: boolean;
+  suffix?: React.ReactNode;
+
+  description?: React.ReactNode;
+
+  errorMessage?: React.ReactNode;
+
+  hideCharacterCount?: boolean;
 }
 
-export const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
+export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
   (
     {
+      description,
+      errorMessage,
+      prefix,
+      prefixIcon,
+      suffix,
+      suffixIcon,
+      indicator,
+      label,
       children,
-      className,
-      size = "medium",
-      requiredIndicator,
-      optionalIndicator,
-      hideGraphemeCount,
+      hideCharacterCount,
       ...otherProps
     },
     ref,
   ) => {
-    const api = useTextField(otherProps);
-    const {
-      rootProps,
-      labelProps,
-      descriptionProps,
-      errorMessageProps,
-      renderDescription,
-      renderErrorMessage,
-      stateProps,
-      isRequired,
-      graphemes,
-    } = api;
-
-    const { label, description, errorMessage, maxGraphemeCount } = otherProps;
-
-    const classNames = textField({ size });
-
-    const indicator = isRequired ? requiredIndicator : optionalIndicator;
-
-    const renderGraphemeCount = !hideGraphemeCount && maxGraphemeCount;
+    const renderCharacterCount =
+      !hideCharacterCount && otherProps.maxGraphemeCount;
 
     return (
-      <div
-        ref={ref}
-        className={clsx(className, classNames.root)}
-        {...rootProps}
-        {...stateProps}
-      >
-        {label && (
-          // XXX
-          // biome-ignore lint/a11y/noLabelWithoutControl: <explanation>
-          <label {...labelProps} className={classNames.header}>
-            <span className={classNames.label}>{label}</span>
-            {indicator && (
-              <span className={classNames.indicator}>{indicator}</span>
-            )}
-          </label>
-        )}
-        <FormControlContext.Provider value={{ api, variantProps: { size } }}>
+      <SeedTextField.Root ref={ref} {...otherProps}>
+        <SeedTextField.Header>
+          <SeedTextField.Label>{label}</SeedTextField.Label>
+          <SeedTextField.Indicator>{indicator}</SeedTextField.Indicator>
+        </SeedTextField.Header>
+        <SeedTextField.Field>
+          {prefixIcon && <SeedTextField.PrefixIcon svg={prefixIcon} />}
+          {prefix && (
+            <SeedTextField.PrefixText>{prefix}</SeedTextField.PrefixText>
+          )}
           {children}
-        </FormControlContext.Provider>
-        {(renderDescription || renderErrorMessage || renderGraphemeCount) && (
-          <div className={classNames.footer}>
-            {renderDescription && (
-              <div {...descriptionProps} className={classNames.description}>
-                {description}
-              </div>
-            )}
-            {renderErrorMessage && (
-              <div {...errorMessageProps} className={classNames.errorMessage}>
-                <IconExclamationmarkCircleFill
-                  className={classNames.errorIcon}
-                />
-                <div>{errorMessage}</div>
-              </div>
-            )}
-            {renderGraphemeCount && (
-              <div className={classNames.characterCount}>
-                <span
-                  {...stateProps}
-                  className={classNames.currentCharacterCount}
-                >
-                  {graphemes.length}
-                </span>
-                <span className={classNames.maxCharacterCount}>
-                  /{maxGraphemeCount}
-                </span>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    );
-  },
-);
-FormControl.displayName = "FormControl";
-
-export type TextFieldProps = Assign<
-  Omit<React.InputHTMLAttributes<HTMLInputElement>, "children">,
-  {
-    prefix?: string;
-    prefixIcon?: React.ReactNode;
-    suffix?: string;
-    suffixIcon?: React.ReactNode;
-  }
->;
-
-export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  (
-    { className, prefix, prefixIcon, suffix, suffixIcon, ...otherProps },
-    ref,
-  ) => {
-    const { api, variantProps } = useFormControlContext();
-
-    const { inputProps, restProps, stateProps } = api;
-
-    const classNames = textField(variantProps);
-
-    return (
-      <div {...stateProps} className={clsx(className, classNames.input)}>
-        {prefix && <div className={classNames.prefixText}>{prefix}</div>}
-        {prefixIcon && (
-          <Slot {...stateProps} className={clsx(classNames.prefixIcon)}>
-            {prefixIcon}
-          </Slot>
-        )}
-        <input
-          ref={ref}
-          className={clsx(classNames.inputText)}
-          {...inputProps}
-          {...restProps}
-          {...otherProps}
-        />
-        {suffix && <div className={classNames.suffixText}>{suffix}</div>}
-        {suffixIcon && (
-          <Slot {...stateProps} className={clsx(classNames.suffixIcon)}>
-            {suffixIcon}
-          </Slot>
-        )}
-      </div>
+          {suffix && (
+            <SeedTextField.SuffixText>{suffix}</SeedTextField.SuffixText>
+          )}
+          {suffixIcon && <SeedTextField.SuffixIcon svg={suffixIcon} />}
+          {indicator && (
+            <SeedTextField.Indicator>{indicator}</SeedTextField.Indicator>
+          )}
+        </SeedTextField.Field>
+        <SeedTextField.Footer>
+          {description && (
+            <SeedTextField.Description>{description}</SeedTextField.Description>
+          )}
+          {errorMessage && (
+            <SeedTextField.ErrorMessage>
+              <SeedTextField.ErrorIcon
+                svg={<IconExclamationmarkCircleFill />}
+              />
+              {errorMessage}
+            </SeedTextField.ErrorMessage>
+          )}
+          {renderCharacterCount && (
+            <SeedTextField.CharacterCountArea>
+              <SeedTextField.CharacterCount />
+              <SeedTextField.MaxCharacterCount>
+                /{otherProps.maxGraphemeCount}
+              </SeedTextField.MaxCharacterCount>
+            </SeedTextField.CharacterCountArea>
+          )}
+        </SeedTextField.Footer>
+      </SeedTextField.Root>
     );
   },
 );
 TextField.displayName = "TextField";
 
-export type MultilineTextFieldProps = Omit<
-  React.InputHTMLAttributes<HTMLTextAreaElement>,
-  "children"
->;
+export interface TextFieldInputProps extends SeedTextField.InputProps {}
 
-export const MultilineTextField = React.forwardRef<
-  HTMLTextAreaElement,
-  MultilineTextFieldProps
->(({ className, ...otherProps }, ref) => {
-  const { api, variantProps } = useFormControlContext();
+export const TextFieldInput = SeedTextField.Input;
 
-  const { inputProps, restProps, value } = api;
+export interface TextFieldTextareaProps extends SeedTextField.TextareaProps {}
 
-  const classNames = textField(variantProps);
-
-  // referenced from React Spectrum
-  const inputRef = React.useRef<HTMLTextAreaElement>(null);
-  // biome-ignore lint/correctness/useExhaustiveDependencies: intended
-  const onHeightChange = React.useCallback(() => {
-    if (!inputRef.current) return;
-    if (otherProps.style?.height) return;
-
-    // Quiet textareas always grow based on their text content.
-    // Standard textareas also grow by default, unless an explicit height is set.
-
-    const input = inputRef.current;
-    const prevAlignment = input.style.alignSelf;
-    const prevOverflow = input.style.overflow;
-    // Firefox scroll position is lost when overflow: 'hidden' is applied so we skip applying it.
-    // The measure/applied height is also incorrect/reset if we turn on and off
-    // overflow: hidden in Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1787062
-    const isFirefox = "MozAppearance" in input.style;
-    if (!isFirefox) {
-      input.style.overflow = "hidden";
-    }
-
-    input.style.alignSelf = "start";
-    input.style.height = "auto";
-
-    // offsetHeight - clientHeight accounts for the border/padding.
-    input.style.height = `${
-      input.scrollHeight + (input.offsetHeight - input.clientHeight)
-    }px`;
-
-    input.style.overflow = prevOverflow;
-    input.style.alignSelf = prevAlignment;
-  }, [inputRef, otherProps.style?.height]);
-
-  useLayoutEffect(() => {
-    if (inputRef.current) {
-      onHeightChange();
-    }
-  }, [onHeightChange, value, inputRef]);
-
-  return (
-    <textarea
-      ref={mergeRefs(inputRef, ref)}
-      className={clsx(className, classNames.input, classNames.inputText)}
-      {...inputProps}
-      {...restProps}
-      {...otherProps}
-    />
-  );
-});
-MultilineTextField.displayName = "MultilineTextField";
-
-// TODO: migrate
-function mergeRefs<T>(...refs: React.ForwardedRef<T>[]): React.ForwardedRef<T> {
-  if (refs.length === 1) {
-    return refs[0];
-  }
-
-  return (value: T | null) => {
-    for (const ref of refs) {
-      if (typeof ref === "function") {
-        ref(value);
-      } else if (ref != null) {
-        ref.current = value;
-      }
-    }
-  };
-}
+export const TextFieldTextarea = SeedTextField.Textarea;

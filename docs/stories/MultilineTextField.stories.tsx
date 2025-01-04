@@ -1,24 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { FormControl, MultilineTextField } from "seed-design/ui/text-field";
+import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 
 import { textFieldVariantMap } from "@seed-design/recipe/textField";
-import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
-import type { ComponentProps } from "react";
-
-const Component = (props: ComponentProps<typeof FormControl>) => {
-  return (
-    <FormControl {...props}>
-      <MultilineTextField placeholder="Placeholder" />
-    </FormControl>
-  );
-};
+import { VariantTable } from "./components/variant-table";
 
 const meta = {
-  component: Component,
+  component: TextField,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof Component>;
+} satisfies Meta<typeof TextField>;
 
 export default meta;
 
@@ -29,7 +20,9 @@ const CommonStoryTemplate: Story = {
     label: "Label",
     description:
       "Sint pariatur labore et elit dolore sunt velit incididunt nisi laboris cillum et dolore ad ullamco.",
+    errorMessage: "Error message",
     maxGraphemeCount: 10,
+    children: <TextFieldTextarea placeholder="Placeholder" />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={textFieldVariantMap} {...args} />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { FormControl, MultilineTextField } from "seed-design/ui/text-field";
+import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 
 export default function MultilineTextFieldFormatting() {
   const [value, setValue] = useState("");
@@ -16,13 +16,13 @@ export default function MultilineTextFieldFormatting() {
   );
 
   return (
-    <FormControl
+    <TextField
       label="레이블"
       description="공백을 입력할 수 없어요"
       value={formattedValue}
       onValueChange={({ value }) => setValue(value)}
     >
-      <MultilineTextField placeholder="공백을 입력해보세요" />
-    </FormControl>
+      <TextFieldTextarea placeholder="공백을 입력해보세요" />
+    </TextField>
   );
 }

@@ -32,6 +32,7 @@ export const Primitive = {
   button: createPrimitive("button"),
   label: createPrimitive("label"),
   input: createPrimitive("input"),
+  textarea: createPrimitive("textarea"),
   a: createPrimitive("a"),
   p: createPrimitive("p"),
   svg: createPrimitive("svg"),

@@ -1,24 +1,24 @@
-import { FormControl, TextField } from "seed-design/ui/text-field";
+import { TextField, TextFieldInput } from "seed-design/ui/text-field";
 
 export default function TextFieldReadOnly() {
   return (
     <div className="grid grid-cols-2 gap-4 w-full">
-      <FormControl label="라벨" description="설명을 써주세요" readOnly>
-        <TextField placeholder="플레이스홀더" />
-      </FormControl>
-      <FormControl label="라벨" description="설명을 써주세요" readOnly defaultValue="값">
-        <TextField placeholder="플레이스홀더" />
-      </FormControl>
-      <FormControl
+      <TextField label="라벨" description="설명을 써주세요" readOnly>
+        <TextFieldInput placeholder="플레이스홀더" />
+      </TextField>
+      <TextField label="라벨" description="설명을 써주세요" readOnly defaultValue="값">
+        <TextFieldInput placeholder="플레이스홀더" />
+      </TextField>
+      <TextField
         label="라벨"
         description="설명을 써주세요"
         readOnly
         invalid
         errorMessage="오류가 발생한 이유를 써주세요"
       >
-        <TextField placeholder="플레이스홀더" />
-      </FormControl>
-      <FormControl
+        <TextFieldInput placeholder="플레이스홀더" />
+      </TextField>
+      <TextField
         label="라벨"
         description="설명을 써주세요"
         readOnly
@@ -26,8 +26,8 @@ export default function TextFieldReadOnly() {
         errorMessage="오류가 발생한 이유를 써주세요"
         defaultValue="값"
       >
-        <TextField placeholder="플레이스홀더" />
-      </FormControl>
+        <TextFieldInput placeholder="플레이스홀더" />
+      </TextField>
     </div>
   );
 }

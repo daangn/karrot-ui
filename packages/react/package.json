@@ -26,6 +26,8 @@
     "build": "nanobundle build"
   },
   "dependencies": {
+    "@radix-ui/react-compose-refs": "^1.1.1",
+    "@radix-ui/react-use-layout-effect": "^1.0.1",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
     "@seed-design/react-avatar": "0.0.0-alpha-20241030023710",
     "@seed-design/react-checkbox": "0.0.0-alpha-20241030023710",
@@ -33,6 +35,7 @@
     "@seed-design/react-progress": "0.0.0",
     "@seed-design/react-radio-group": "0.0.0-alpha-20241030023710",
     "@seed-design/react-switch": "0.0.0-alpha-20241030023710",
+    "@seed-design/react-text-field": "0.0.0-alpha-20241030023710",
     "@seed-design/react-toggle": "0.0.0",
     "@seed-design/vars": "0.0.0",
     "clsx": "^2.1.1"

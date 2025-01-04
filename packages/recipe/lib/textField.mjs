@@ -20,12 +20,12 @@ const textFieldSlotNames = [
     "textField__indicator"
   ],
   [
-    "input",
-    "textField__input"
+    "field",
+    "textField__field"
   ],
   [
-    "inputText",
-    "textField__inputText"
+    "value",
+    "textField__value"
   ],
   [
     "prefixText",
@@ -60,12 +60,12 @@ const textFieldSlotNames = [
     "textField__errorIcon"
   ],
   [
-    "characterCount",
-    "textField__characterCount"
+    "characterCountArea",
+    "textField__characterCountArea"
   ],
   [
-    "currentCharacterCount",
-    "textField__currentCharacterCount"
+    "characterCount",
+    "textField__characterCount"
   ],
   [
     "maxCharacterCount",

@@ -21181,21 +21181,6 @@
               ],
               "slot": [
                 {
-                  "key": "header",
-                  "property": [
-                    {
-                      "key": "marginYEnd",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s3"
-                      }
-                    }
-                  ]
-                },
-                {
                   "key": "label",
                   "property": [
                     {
@@ -21248,7 +21233,7 @@
                   ]
                 },
                 {
-                  "key": "input",
+                  "key": "field",
                   "property": [
                     {
                       "key": "color",
@@ -21283,7 +21268,7 @@
                   ]
                 },
                 {
-                  "key": "inputText",
+                  "key": "value",
                   "property": [
                     {
                       "key": "color",
@@ -21299,7 +21284,7 @@
                   ]
                 },
                 {
-                  "key": "inputPlaceholder",
+                  "key": "placeholder",
                   "property": [
                     {
                       "key": "color",
@@ -21379,31 +21364,6 @@
                   ]
                 },
                 {
-                  "key": "footer",
-                  "property": [
-                    {
-                      "key": "gap",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s3_5"
-                      }
-                    },
-                    {
-                      "key": "marginYStart",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s2"
-                      }
-                    }
-                  ]
-                },
-                {
                   "key": "description",
                   "property": [
                     {
@@ -21433,16 +21393,6 @@
                   "key": "errorMessage",
                   "property": [
                     {
-                      "key": "gap",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s1"
-                      }
-                    },
-                    {
                       "key": "color",
                       "value": {
                         "type": "token",
@@ -21469,31 +21419,6 @@
                   "key": "characterCount",
                   "property": [
                     {
-                      "key": "height",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s2"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "currentCharacterCount",
-                  "property": [
-                    {
                       "key": "color",
                       "value": {
                         "type": "token",
@@ -21512,16 +21437,6 @@
                           "font-weight"
                         ],
                         "key": "regular"
-                      }
-                    },
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s2"
                       }
                     }
                   ]
@@ -21549,16 +21464,6 @@
                         ],
                         "key": "regular"
                       }
-                    },
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s2"
-                      }
                     }
                   ]
                 }
@@ -21570,7 +21475,7 @@
               ],
               "slot": [
                 {
-                  "key": "input",
+                  "key": "field",
                   "property": [
                     {
                       "key": "strokeColor",
@@ -21589,11 +21494,103 @@
             },
             {
               "key": [
+                "invalid"
+              ],
+              "slot": [
+                {
+                  "key": "field",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "danger-weak"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "danger"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": [
+                "invalid",
+                "focused"
+              ],
+              "slot": [
+                {
+                  "key": "field",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "layer-default"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "field"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": [
+                "readonly"
+              ],
+              "slot": [
+                {
+                  "key": "field",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "disabled"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": [
                 "disabled"
               ],
               "slot": [
                 {
-                  "key": "input",
+                  "key": "field",
                   "property": [
                     {
                       "key": "color",
@@ -21609,7 +21606,7 @@
                   ]
                 },
                 {
-                  "key": "inputText",
+                  "key": "value",
                   "property": [
                     {
                       "key": "color",
@@ -21625,7 +21622,7 @@
                   ]
                 },
                 {
-                  "key": "inputPlaceholder",
+                  "key": "placeholder",
                   "property": [
                     {
                       "key": "color",
@@ -21705,63 +21702,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "key": [
-                "readOnly"
-              ],
-              "slot": [
-                {
-                  "key": "input",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "bg"
-                        ],
-                        "key": "disabled"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "key": [
-                "invalid"
-              ],
-              "slot": [
-                {
-                  "key": "input",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "bg"
-                        ],
-                        "key": "danger-weak"
-                      }
-                    },
-                    {
-                      "key": "strokeColor",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "stroke"
-                        ],
-                        "key": "danger"
-                      }
-                    }
-                  ]
-                }
-              ]
             }
           ]
         },
@@ -21779,13 +21719,23 @@
                   "key": "header",
                   "property": [
                     {
-                      "key": "lineHeight",
+                      "key": "paddingBottom",
                       "value": {
                         "type": "token",
                         "group": [
-                          "line-height"
+                          "unit"
                         ],
-                        "key": "s5"
+                        "key": "s3"
+                      }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s1_5"
                       }
                     }
                   ]
@@ -21799,6 +21749,16 @@
                         "type": "token",
                         "group": [
                           "font-size"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
                         ],
                         "key": "s5"
                       }
@@ -21819,19 +21779,19 @@
                       }
                     },
                     {
-                      "key": "marginXStart",
+                      "key": "lineHeight",
                       "value": {
                         "type": "token",
                         "group": [
-                          "unit"
+                          "line-height"
                         ],
-                        "key": "s1_5"
+                        "key": "s5"
                       }
                     }
                   ]
                 },
                 {
-                  "key": "input",
+                  "key": "field",
                   "property": [
                     {
                       "key": "minHeight",
@@ -21870,12 +21830,7 @@
                         ],
                         "key": "s4"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "inputText",
-                  "property": [
+                    },
                     {
                       "key": "paddingY",
                       "value": {
@@ -21885,7 +21840,12 @@
                         ],
                         "key": "s3"
                       }
-                    },
+                    }
+                  ]
+                },
+                {
+                  "key": "value",
+                  "property": [
                     {
                       "key": "fontSize",
                       "value": {
@@ -21992,10 +21952,30 @@
                   "key": "footer",
                   "property": [
                     {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s3_5"
+                      }
+                    },
+                    {
+                      "key": "paddingTop",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
                       "key": "minHeight",
                       "value": {
                         "type": "dimension",
-                        "value": 19,
+                        "value": 20,
                         "unit": "px"
                       }
                     }
@@ -22063,6 +22043,66 @@
                         ],
                         "key": "s4"
                       }
+                    },
+                    {
+                      "key": "marginRight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "characterCount",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "maxCharacterCount",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s2"
+                      }
                     }
                   ]
                 }
@@ -22084,13 +22124,23 @@
                   "key": "header",
                   "property": [
                     {
-                      "key": "lineHeight",
+                      "key": "paddingBottom",
                       "value": {
                         "type": "token",
                         "group": [
-                          "line-height"
+                          "unit"
                         ],
-                        "key": "s5"
+                        "key": "s3"
+                      }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s1_5"
                       }
                     }
                   ]
@@ -22104,6 +22154,16 @@
                         "type": "token",
                         "group": [
                           "font-size"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
                         ],
                         "key": "s5"
                       }
@@ -22124,19 +22184,19 @@
                       }
                     },
                     {
-                      "key": "marginXStart",
+                      "key": "lineHeight",
                       "value": {
                         "type": "token",
                         "group": [
-                          "unit"
+                          "line-height"
                         ],
-                        "key": "s1_5"
+                        "key": "s5"
                       }
                     }
                   ]
                 },
                 {
-                  "key": "input",
+                  "key": "field",
                   "property": [
                     {
                       "key": "minHeight",
@@ -22175,12 +22235,7 @@
                         ],
                         "key": "s4"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "inputText",
-                  "property": [
+                    },
                     {
                       "key": "paddingY",
                       "value": {
@@ -22190,7 +22245,12 @@
                         ],
                         "key": "s3"
                       }
-                    },
+                    }
+                  ]
+                },
+                {
+                  "key": "value",
+                  "property": [
                     {
                       "key": "fontSize",
                       "value": {
@@ -22297,10 +22357,30 @@
                   "key": "footer",
                   "property": [
                     {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s3_5"
+                      }
+                    },
+                    {
+                      "key": "paddingTop",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
                       "key": "minHeight",
                       "value": {
                         "type": "dimension",
-                        "value": 19,
+                        "value": 20,
                         "unit": "px"
                       }
                     }
@@ -22368,6 +22448,66 @@
                         ],
                         "key": "s4"
                       }
+                    },
+                    {
+                      "key": "marginRight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "characterCount",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "maxCharacterCount",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s2"
+                      }
                     }
                   ]
                 }
@@ -22389,13 +22529,13 @@
                   "key": "header",
                   "property": [
                     {
-                      "key": "lineHeight",
+                      "key": "paddingBottom",
                       "value": {
                         "type": "token",
                         "group": [
-                          "line-height"
+                          "unit"
                         ],
-                        "key": "s4"
+                        "key": "s3"
                       }
                     }
                   ]
@@ -22409,6 +22549,16 @@
                         "type": "token",
                         "group": [
                           "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
                         ],
                         "key": "s4"
                       }
@@ -22429,19 +22579,19 @@
                       }
                     },
                     {
-                      "key": "marginXStart",
+                      "key": "lineHeight",
                       "value": {
                         "type": "token",
                         "group": [
-                          "unit"
+                          "line-height"
                         ],
-                        "key": "s1"
+                        "key": "s4"
                       }
                     }
                   ]
                 },
                 {
-                  "key": "input",
+                  "key": "field",
                   "property": [
                     {
                       "key": "minHeight",
@@ -22480,12 +22630,7 @@
                         ],
                         "key": "s3_5"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "inputText",
-                  "property": [
+                    },
                     {
                       "key": "paddingY",
                       "value": {
@@ -22495,7 +22640,12 @@
                         ],
                         "key": "s2_5"
                       }
-                    },
+                    }
+                  ]
+                },
+                {
+                  "key": "value",
+                  "property": [
                     {
                       "key": "fontSize",
                       "value": {
@@ -22602,6 +22752,26 @@
                   "key": "footer",
                   "property": [
                     {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s3_5"
+                      }
+                    },
+                    {
+                      "key": "paddingTop",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
                       "key": "minHeight",
                       "value": {
                         "type": "token",
@@ -22674,6 +22844,66 @@
                           "unit"
                         ],
                         "key": "s3_5"
+                      }
+                    },
+                    {
+                      "key": "marginRight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "characterCount",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "maxCharacterCount",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s2"
                       }
                     }
                   ]

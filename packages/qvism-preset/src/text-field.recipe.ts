@@ -9,8 +9,8 @@ const textField = defineRecipe({
     "header",
     "label",
     "indicator",
-    "input",
-    "inputText",
+    "field",
+    "value",
     "prefixText",
     "prefixIcon",
     "suffixText",
@@ -19,8 +19,8 @@ const textField = defineRecipe({
     "description",
     "errorMessage",
     "errorIcon",
+    "characterCountArea",
     "characterCount",
-    "currentCharacterCount",
     "maxCharacterCount",
   ],
   base: {
@@ -30,9 +30,7 @@ const textField = defineRecipe({
 
       width: "100%",
     },
-    header: {
-      marginBlockEnd: vars.base.enabled.header.marginYEnd,
-    },
+    header: {},
     label: {
       color: vars.base.enabled.label.color,
       fontWeight: vars.base.enabled.label.fontWeight,
@@ -41,36 +39,34 @@ const textField = defineRecipe({
       color: vars.base.enabled.indicator.color,
       fontWeight: vars.base.enabled.indicator.fontWeight,
     },
-    input: {
+    field: {
       display: "flex",
       alignItems: "center",
 
-      backgroundColor: vars.base.enabled.input.color,
-      borderWidth: vars.base.enabled.input.strokeWidth,
-      borderColor: vars.base.enabled.input.strokeColor,
-
-      // XXX: CSS reset 들어오면 제거될 수 있음
+      backgroundColor: vars.base.enabled.field.color,
       borderStyle: "solid",
+      borderWidth: vars.base.enabled.field.strokeWidth,
+      borderColor: vars.base.enabled.field.strokeColor,
 
       [pseudo(not(readOnly), focus)]: {
-        borderColor: vars.base.focused.input.strokeColor,
-      },
-
-      [pseudo(disabled)]: {
-        backgroundColor: vars.base.disabled.input.color,
-      },
-
-      [pseudo(readOnly)]: {
-        backgroundColor: vars.base.readOnly.input.color,
+        borderColor: vars.base.focused.field.strokeColor,
       },
 
       [pseudo(invalid)]: {
-        backgroundColor: vars.base.invalid.input.color,
-        borderColor: vars.base.invalid.input.strokeColor,
+        backgroundColor: vars.base.invalid.field.color,
+        borderColor: vars.base.invalid.field.strokeColor,
       },
 
       [pseudo(invalid, focus)]: {
-        backgroundColor: vars.base.enabled.input.color,
+        backgroundColor: vars.base.invalidFocused.field.color,
+      },
+
+      [pseudo(disabled)]: {
+        backgroundColor: vars.base.disabled.field.color,
+      },
+
+      [pseudo(readOnly)]: {
+        backgroundColor: vars.base.readonly.field.color,
       },
     },
     prefixText: {
@@ -82,6 +78,7 @@ const textField = defineRecipe({
     },
     prefixIcon: {
       color: vars.base.enabled.prefixIcon.color,
+      flexShrink: 0,
 
       [pseudo(disabled)]: {
         color: vars.base.disabled.prefixIcon.color,
@@ -96,15 +93,16 @@ const textField = defineRecipe({
     },
     suffixIcon: {
       color: vars.base.enabled.suffixIcon.color,
+      flexShrink: 0,
 
       [pseudo(disabled)]: {
         color: vars.base.disabled.suffixIcon.color,
       },
     },
-    inputText: {
-      // XXX: CSS reset 들어오면 제거될 수 있음
+    value: {
       boxSizing: "border-box",
       font: "inherit",
+
       [pseudo(":is(input)")]: {
         border: "none",
         paddingInline: 0,
@@ -112,37 +110,34 @@ const textField = defineRecipe({
       },
 
       [pseudo(":is(textarea)")]: {
+        border: "none",
         minHeight: "90px",
         width: "100%",
       },
 
       outline: "none",
-
       resize: "none",
-
       flexGrow: 1,
+      height: "100%",
 
-      color: vars.base.enabled.inputText.color,
+      color: vars.base.enabled.value.color,
 
       [pseudo("::placeholder")]: {
-        color: vars.base.enabled.inputPlaceholder.color,
+        color: vars.base.enabled.placeholder.color,
       },
 
       [pseudo(disabled)]: {
-        color: vars.base.disabled.inputText.color,
+        color: vars.base.disabled.value.color,
       },
 
       [pseudo(disabled, "::placeholder")]: {
-        color: vars.base.disabled.inputPlaceholder.color,
+        color: vars.base.disabled.placeholder.color,
       },
     },
     footer: {
       display: "flex",
-      gap: vars.base.enabled.footer.gap,
       alignItems: "flex-start",
       justifyContent: "space-between",
-
-      marginBlockStart: vars.base.enabled.footer.marginYStart,
     },
     description: {
       fontWeight: vars.base.enabled.description.fontWeight,
@@ -152,34 +147,28 @@ const textField = defineRecipe({
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
-      gap: vars.base.enabled.errorMessage.gap,
 
       color: vars.base.enabled.errorMessage.color,
     },
     errorIcon: {
       flex: "none",
+      flexShrink: 0,
+    },
+    characterCountArea: {
+      display: "flex",
+      flex: "none",
+      marginInlineStart: "auto",
     },
     characterCount: {
-      flex: "none",
-
-      marginInlineStart: "auto",
-
-      height: vars.base.enabled.characterCount.height,
-      lineHeight: vars.base.enabled.characterCount.lineHeight,
-    },
-    currentCharacterCount: {
-      color: vars.base.enabled.currentCharacterCount.color,
-      fontWeight: vars.base.enabled.currentCharacterCount.fontWeight,
-      fontSize: vars.base.enabled.currentCharacterCount.fontSize,
-
-      [pseudo(`[data-grapheme-count="0"]`)]: {
+      color: vars.base.enabled.characterCount.color,
+      fontWeight: vars.base.enabled.characterCount.fontWeight,
+      [pseudo("[data-empty]")]: {
         color: vars.base.enabled.maxCharacterCount.color,
       },
     },
     maxCharacterCount: {
       color: vars.base.enabled.maxCharacterCount.color,
       fontWeight: vars.base.enabled.maxCharacterCount.fontWeight,
-      fontSize: vars.base.enabled.maxCharacterCount.fontSize,
     },
   },
   defaultVariants: {
@@ -189,27 +178,30 @@ const textField = defineRecipe({
     size: {
       xlarge: {
         header: {
-          lineHeight: vars.sizeXlarge.enabled.header.lineHeight,
+          paddingBottom: vars.sizeXlarge.enabled.header.paddingBottom,
+          gap: vars.sizeXlarge.enabled.header.gap,
         },
         label: {
           fontSize: vars.sizeXlarge.enabled.label.fontSize,
+          lineHeight: vars.sizeXlarge.enabled.label.lineHeight,
         },
         indicator: {
           fontSize: vars.sizeXlarge.enabled.indicator.fontSize,
-          marginInlineStart: vars.sizeXlarge.enabled.indicator.marginXStart,
+          lineHeight: vars.sizeXlarge.enabled.indicator.lineHeight,
         },
-        input: {
-          minHeight: vars.sizeXlarge.enabled.input.minHeight,
-          borderRadius: vars.sizeXlarge.enabled.input.cornerRadius,
-          gap: vars.sizeXlarge.enabled.input.gap,
+        field: {
+          minHeight: vars.sizeXlarge.enabled.field.minHeight,
+          borderRadius: vars.sizeXlarge.enabled.field.cornerRadius,
+          gap: vars.sizeXlarge.enabled.field.gap,
 
-          paddingInline: vars.sizeXlarge.enabled.input.paddingX,
+          paddingInline: vars.sizeXlarge.enabled.field.paddingX,
         },
-        inputText: {
-          paddingBlock: vars.sizeXlarge.enabled.inputText.paddingY,
+        value: {
+          // We intentionally apply field's paddingY to value for input touch area.
+          paddingBlock: vars.sizeXlarge.enabled.field.paddingY,
 
-          fontSize: vars.sizeXlarge.enabled.inputText.fontSize,
-          lineHeight: vars.sizeXlarge.enabled.inputText.lineHeight,
+          fontSize: vars.sizeXlarge.enabled.value.fontSize,
+          lineHeight: vars.sizeXlarge.enabled.value.lineHeight,
         },
         prefixText: {
           fontSize: vars.sizeXlarge.enabled.prefixText.fontSize,
@@ -228,6 +220,8 @@ const textField = defineRecipe({
           height: vars.sizeXlarge.enabled.suffixIcon.size,
         },
         footer: {
+          gap: vars.sizeXlarge.enabled.footer.gap,
+          paddingTop: vars.sizeXlarge.enabled.footer.paddingTop,
           minHeight: vars.sizeXlarge.enabled.footer.minHeight,
         },
         description: {
@@ -241,31 +235,43 @@ const textField = defineRecipe({
         errorIcon: {
           width: vars.sizeXlarge.enabled.errorIcon.size,
           height: vars.sizeXlarge.enabled.errorIcon.size,
+          marginRight: vars.sizeXlarge.enabled.errorIcon.marginRight,
+        },
+        characterCount: {
+          fontSize: vars.sizeXlarge.enabled.characterCount.fontSize,
+          lineHeight: vars.sizeXlarge.enabled.characterCount.lineHeight,
+        },
+        maxCharacterCount: {
+          fontSize: vars.sizeXlarge.enabled.maxCharacterCount.fontSize,
+          lineHeight: vars.sizeXlarge.enabled.maxCharacterCount.lineHeight,
         },
       },
       large: {
         header: {
-          lineHeight: vars.sizeLarge.enabled.header.lineHeight,
+          paddingBottom: vars.sizeLarge.enabled.header.paddingBottom,
+          gap: vars.sizeLarge.enabled.header.gap,
         },
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
+          lineHeight: vars.sizeLarge.enabled.label.lineHeight,
         },
         indicator: {
           fontSize: vars.sizeLarge.enabled.indicator.fontSize,
-          marginInlineStart: vars.sizeLarge.enabled.indicator.marginXStart,
+          lineHeight: vars.sizeLarge.enabled.indicator.lineHeight,
         },
-        input: {
-          minHeight: vars.sizeLarge.enabled.input.minHeight,
-          borderRadius: vars.sizeLarge.enabled.input.cornerRadius,
-          gap: vars.sizeLarge.enabled.input.gap,
+        field: {
+          minHeight: vars.sizeLarge.enabled.field.minHeight,
+          borderRadius: vars.sizeLarge.enabled.field.cornerRadius,
+          gap: vars.sizeLarge.enabled.field.gap,
 
-          paddingInline: vars.sizeLarge.enabled.input.paddingX,
+          paddingInline: vars.sizeLarge.enabled.field.paddingX,
         },
-        inputText: {
-          paddingBlock: vars.sizeLarge.enabled.inputText.paddingY,
+        value: {
+          // We intentionally apply field's paddingY to value for input touch area.
+          paddingBlock: vars.sizeLarge.enabled.field.paddingY,
 
-          fontSize: vars.sizeLarge.enabled.inputText.fontSize,
-          lineHeight: vars.sizeLarge.enabled.inputText.lineHeight,
+          fontSize: vars.sizeLarge.enabled.value.fontSize,
+          lineHeight: vars.sizeLarge.enabled.value.lineHeight,
         },
         prefixText: {
           fontSize: vars.sizeLarge.enabled.prefixText.fontSize,
@@ -284,6 +290,8 @@ const textField = defineRecipe({
           height: vars.sizeLarge.enabled.suffixIcon.size,
         },
         footer: {
+          gap: vars.sizeLarge.enabled.footer.gap,
+          paddingTop: vars.sizeLarge.enabled.footer.paddingTop,
           minHeight: vars.sizeLarge.enabled.footer.minHeight,
         },
         description: {
@@ -297,31 +305,42 @@ const textField = defineRecipe({
         errorIcon: {
           width: vars.sizeLarge.enabled.errorIcon.size,
           height: vars.sizeLarge.enabled.errorIcon.size,
+          marginRight: vars.sizeLarge.enabled.errorIcon.marginRight,
+        },
+        characterCount: {
+          fontSize: vars.sizeLarge.enabled.characterCount.fontSize,
+          lineHeight: vars.sizeLarge.enabled.characterCount.lineHeight,
+        },
+        maxCharacterCount: {
+          fontSize: vars.sizeLarge.enabled.maxCharacterCount.fontSize,
+          lineHeight: vars.sizeLarge.enabled.maxCharacterCount.lineHeight,
         },
       },
       medium: {
         header: {
-          lineHeight: vars.sizeMedium.enabled.header.lineHeight,
+          paddingBottom: vars.sizeMedium.enabled.header.paddingBottom,
         },
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
+          lineHeight: vars.sizeMedium.enabled.label.lineHeight,
         },
         indicator: {
           fontSize: vars.sizeMedium.enabled.indicator.fontSize,
-          marginInlineStart: vars.sizeMedium.enabled.indicator.marginXStart,
+          lineHeight: vars.sizeMedium.enabled.indicator.lineHeight,
         },
-        input: {
-          minHeight: vars.sizeMedium.enabled.input.minHeight,
-          borderRadius: vars.sizeMedium.enabled.input.cornerRadius,
-          gap: vars.sizeMedium.enabled.input.gap,
+        field: {
+          minHeight: vars.sizeMedium.enabled.field.minHeight,
+          borderRadius: vars.sizeMedium.enabled.field.cornerRadius,
+          gap: vars.sizeMedium.enabled.field.gap,
 
-          paddingInline: vars.sizeMedium.enabled.input.paddingX,
+          paddingInline: vars.sizeMedium.enabled.field.paddingX,
         },
-        inputText: {
-          paddingBlock: vars.sizeMedium.enabled.inputText.paddingY,
+        value: {
+          // We intentionally apply field's paddingY to value for input touch area.
+          paddingBlock: vars.sizeMedium.enabled.field.paddingY,
 
-          fontSize: vars.sizeMedium.enabled.inputText.fontSize,
-          lineHeight: vars.sizeMedium.enabled.inputText.lineHeight,
+          fontSize: vars.sizeMedium.enabled.value.fontSize,
+          lineHeight: vars.sizeMedium.enabled.value.lineHeight,
         },
         prefixText: {
           fontSize: vars.sizeMedium.enabled.prefixText.fontSize,
@@ -340,6 +359,8 @@ const textField = defineRecipe({
           height: vars.sizeMedium.enabled.suffixIcon.size,
         },
         footer: {
+          gap: vars.sizeMedium.enabled.footer.gap,
+          paddingTop: vars.sizeMedium.enabled.footer.paddingTop,
           minHeight: vars.sizeMedium.enabled.footer.minHeight,
         },
         description: {
@@ -353,6 +374,15 @@ const textField = defineRecipe({
         errorIcon: {
           width: vars.sizeMedium.enabled.errorIcon.size,
           height: vars.sizeMedium.enabled.errorIcon.size,
+          marginRight: vars.sizeMedium.enabled.errorIcon.marginRight,
+        },
+        characterCount: {
+          fontSize: vars.sizeMedium.enabled.characterCount.fontSize,
+          lineHeight: vars.sizeMedium.enabled.characterCount.lineHeight,
+        },
+        maxCharacterCount: {
+          fontSize: vars.sizeMedium.enabled.maxCharacterCount.fontSize,
+          lineHeight: vars.sizeMedium.enabled.maxCharacterCount.lineHeight,
         },
       },
     },
