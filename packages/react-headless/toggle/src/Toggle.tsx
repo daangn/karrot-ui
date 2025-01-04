@@ -1,3 +1,4 @@
+import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import type * as React from "react";
 import { forwardRef } from "react";
@@ -10,10 +11,17 @@ export interface ToggleRootProps
     React.HTMLAttributes<HTMLButtonElement> {}
 
 export const ToggleRoot = forwardRef<HTMLButtonElement, ToggleRootProps>((props, ref) => {
-  const api = useToggle(props);
+  const { pressed, defaultPressed, onPressedChange, disabled, ...otherProps } = props;
+  const api = useToggle({
+    pressed,
+    defaultPressed,
+    onPressedChange,
+    disabled,
+  });
+  const mergedProps = mergeProps(api.rootProps, otherProps);
   return (
     <ToggleProvider value={api}>
-      <Primitive.button ref={ref} {...api.rootProps} {...api.restProps} />
+      <Primitive.button ref={ref} {...mergedProps} />
     </ToggleProvider>
   );
 });

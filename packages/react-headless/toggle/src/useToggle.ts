@@ -33,14 +33,11 @@ export function useToggleState(props: UseToggleStateProps) {
 
 export interface UseToggleProps extends UseToggleStateProps {
   disabled?: boolean;
-
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export type UseToggleReturn = ReturnType<typeof useToggle>;
 
 export function useToggle(props: UseToggleProps) {
-  const { pressed, defaultPressed, disabled, onPressedChange, onClick, ...restProps } = props;
   const { toggle, isPressed } = useToggleState(props);
 
   const stateProps = elementProps({
@@ -52,16 +49,13 @@ export function useToggle(props: UseToggleProps) {
     isPressed,
     toggle,
 
-    restProps,
     stateProps,
     rootProps: buttonProps({
       ...stateProps,
       "aria-pressed": isPressed,
-      onClick(event) {
+      onClick() {
         if (props.disabled) return;
         toggle();
-        // FIXME: temporal workaround, should be replaced with `mergeProps()` or getRootProps() pattern.
-        onClick?.(event);
       },
     }),
   };
