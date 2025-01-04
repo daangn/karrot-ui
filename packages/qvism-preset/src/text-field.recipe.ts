@@ -104,17 +104,16 @@ const textField = defineRecipe({
       font: "inherit",
 
       [pseudo(":is(input)")]: {
-        border: "none",
         paddingInline: 0,
-        background: "none",
       },
 
       [pseudo(":is(textarea)")]: {
-        border: "none",
         minHeight: "90px",
         width: "100%",
       },
 
+      background: "none",
+      border: "none",
       outline: "none",
       resize: "none",
       flexGrow: 1,

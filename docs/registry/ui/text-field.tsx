@@ -46,13 +46,20 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
   ) => {
     const renderCharacterCount =
       !hideCharacterCount && otherProps.maxGraphemeCount;
+    const renderDescription = description && !otherProps.invalid;
+    const renderErrorMessage = errorMessage && otherProps.invalid;
+    const renderFooter =
+      renderDescription || renderErrorMessage || renderCharacterCount;
+    const renderHeader = label || indicator;
 
     return (
       <SeedTextField.Root ref={ref} {...otherProps}>
-        <SeedTextField.Header>
-          <SeedTextField.Label>{label}</SeedTextField.Label>
-          <SeedTextField.Indicator>{indicator}</SeedTextField.Indicator>
-        </SeedTextField.Header>
+        {renderHeader && (
+          <SeedTextField.Header>
+            <SeedTextField.Label>{label}</SeedTextField.Label>
+            <SeedTextField.Indicator>{indicator}</SeedTextField.Indicator>
+          </SeedTextField.Header>
+        )}
         <SeedTextField.Field>
           {prefixIcon && <SeedTextField.PrefixIcon svg={prefixIcon} />}
           {prefix && (
@@ -67,27 +74,31 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             <SeedTextField.Indicator>{indicator}</SeedTextField.Indicator>
           )}
         </SeedTextField.Field>
-        <SeedTextField.Footer>
-          {description && (
-            <SeedTextField.Description>{description}</SeedTextField.Description>
-          )}
-          {errorMessage && (
-            <SeedTextField.ErrorMessage>
-              <SeedTextField.ErrorIcon
-                svg={<IconExclamationmarkCircleFill />}
-              />
-              {errorMessage}
-            </SeedTextField.ErrorMessage>
-          )}
-          {renderCharacterCount && (
-            <SeedTextField.CharacterCountArea>
-              <SeedTextField.CharacterCount />
-              <SeedTextField.MaxCharacterCount>
-                /{otherProps.maxGraphemeCount}
-              </SeedTextField.MaxCharacterCount>
-            </SeedTextField.CharacterCountArea>
-          )}
-        </SeedTextField.Footer>
+        {renderFooter && (
+          <SeedTextField.Footer>
+            {renderDescription && (
+              <SeedTextField.Description>
+                {description}
+              </SeedTextField.Description>
+            )}
+            {renderErrorMessage && (
+              <SeedTextField.ErrorMessage>
+                <SeedTextField.ErrorIcon
+                  svg={<IconExclamationmarkCircleFill />}
+                />
+                {errorMessage}
+              </SeedTextField.ErrorMessage>
+            )}
+            {renderCharacterCount && (
+              <SeedTextField.CharacterCountArea>
+                <SeedTextField.CharacterCount />
+                <SeedTextField.MaxCharacterCount>
+                  /{otherProps.maxGraphemeCount}
+                </SeedTextField.MaxCharacterCount>
+              </SeedTextField.CharacterCountArea>
+            )}
+          </SeedTextField.Footer>
+        )}
       </SeedTextField.Root>
     );
   },
