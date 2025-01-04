@@ -51,15 +51,14 @@ export function createStyleContext<
     const { defaultProps } = options ?? {};
 
     const StyledComponent = forwardRef<any, any>((innerProps, ref) => {
-      const props = { ...(defaultProps ?? {}), ...useProps(), ...innerProps } as any; // TODO: use Props type instead of any after implementing splitRecipeProps()
+      const props = { ...(defaultProps ?? {}), ...useProps(), ...innerProps } as Props &
+        React.HTMLAttributes<HTMLElement>;
       const [variantProps, otherProps] = recipe.splitVariantProps(props);
-      const classNames = recipe(variantProps); // TODO: classNames are generated on all props; we have to split recipeProps and others. should be resolved in qvism.
+      const classNames = recipe(variantProps); // TODO: should we memoize this?
       const className = classNames[slot as keyof typeof classNames];
 
       return (
         <ClassNamesProvider value={classNames}>
-          {/* TODO: implement splitRecipeProps() method and spread splitted props */}
-          {/* @ts-ignore */}
           <Component ref={ref} {...otherProps} className={clsx(className, props.className)} />
         </ClassNamesProvider>
       );
