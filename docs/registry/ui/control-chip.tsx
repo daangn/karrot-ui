@@ -16,22 +16,34 @@ export interface ControlChipToggleProps extends SeedControlChip.RootProps {
 export const ControlChipToggle = React.forwardRef<
   HTMLLabelElement,
   ControlChipToggleProps
->(({ children, prefixIcon, suffixIcon, count, ...otherProps }, ref) => {
-  return (
-    <SeedControlChip.Root ref={ref} {...otherProps}>
-      {otherProps.layout === "withText" ? (
-        <>
-          {prefixIcon && <SeedControlChip.PrefixIcon svg={prefixIcon} />}
-          <SeedControlChip.Label>{children}</SeedControlChip.Label>
-          {count && <SeedControlChip.Count>{count}</SeedControlChip.Count>}
-          {suffixIcon && <SeedControlChip.SuffixIcon svg={suffixIcon} />}
-        </>
-      ) : (
-        <SeedControlChip.Icon svg={children} />
-      )}
-    </SeedControlChip.Root>
-  );
-});
+>(
+  (
+    {
+      children,
+      prefixIcon,
+      suffixIcon,
+      count,
+      layout = "withText",
+      ...otherProps
+    },
+    ref,
+  ) => {
+    return (
+      <SeedControlChip.Root ref={ref} layout={layout} {...otherProps}>
+        {layout === "withText" ? (
+          <>
+            {prefixIcon && <SeedControlChip.PrefixIcon svg={prefixIcon} />}
+            <SeedControlChip.Label>{children}</SeedControlChip.Label>
+            {count && <SeedControlChip.Count>{count}</SeedControlChip.Count>}
+            {suffixIcon && <SeedControlChip.SuffixIcon svg={suffixIcon} />}
+          </>
+        ) : (
+          <SeedControlChip.Icon svg={children} />
+        )}
+      </SeedControlChip.Root>
+    );
+  },
+);
 ControlChipToggle.displayName = "ControlChip.Toggle";
 
 export const ControlChip = Object.assign(

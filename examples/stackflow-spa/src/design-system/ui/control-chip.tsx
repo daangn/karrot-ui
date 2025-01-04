@@ -14,10 +14,10 @@ export interface ControlChipToggleProps extends SeedControlChip.RootProps {
 }
 
 export const ControlChipToggle = React.forwardRef<HTMLLabelElement, ControlChipToggleProps>(
-  ({ className, children, prefixIcon, suffixIcon, count, ...otherProps }, ref) => {
+  ({ children, prefixIcon, suffixIcon, count, layout = "withText", ...otherProps }, ref) => {
     return (
-      <SeedControlChip.Root ref={ref} {...otherProps}>
-        {otherProps.layout === "withText" ? (
+      <SeedControlChip.Root ref={ref} layout={layout} {...otherProps}>
+        {layout === "withText" ? (
           <>
             {prefixIcon && <SeedControlChip.PrefixIcon svg={prefixIcon} />}
             <SeedControlChip.Label>{children}</SeedControlChip.Label>
