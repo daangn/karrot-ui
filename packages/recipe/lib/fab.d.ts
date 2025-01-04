@@ -1,8 +1,5 @@
 declare interface FabVariant {
-  /**
-  * @default medium
-  */
-  size: "small" | "medium";
+  
 }
 
 declare type FabVariantMap = {

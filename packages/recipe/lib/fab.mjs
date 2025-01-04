@@ -13,18 +13,11 @@ const fabSlotNames = [
   ]
 ];
 
-const defaultVariant = {
-  "size": "medium"
-};
+const defaultVariant = {};
 
 const compoundVariants = [];
 
-export const fabVariantMap = {
-  "size": [
-    "small",
-    "medium"
-  ]
-};
+export const fabVariantMap = {};
 
 export const fabVariantKeys = Object.keys(fabVariantMap);
 

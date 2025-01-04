@@ -15810,6 +15810,14 @@
                       }
                     },
                     {
+                      "key": "size",
+                      "value": {
+                        "type": "dimension",
+                        "value": 44,
+                        "unit": "px"
+                      }
+                    },
+                    {
                       "key": "shadow",
                       "value": {
                         "type": "shadow",
@@ -15851,6 +15859,14 @@
                         ],
                         "key": "neutral"
                       }
+                    },
+                    {
+                      "key": "size",
+                      "value": {
+                        "type": "dimension",
+                        "value": 22,
+                        "unit": "px"
+                      }
                     }
                   ]
                 }
@@ -15873,86 +15889,6 @@
                           "bg"
                         ],
                         "key": "layer-floating-pressed"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "size": "small"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 40,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 20,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "size": "medium"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 48,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 22,
-                        "unit": "px"
                       }
                     }
                   ]

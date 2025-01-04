@@ -13,11 +13,7 @@ export interface FabRootProps
     PrimitiveProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const FabRoot = withProvider<HTMLButtonElement, FabRootProps>(Primitive.button, "root", {
-  defaultProps: {
-    size: "medium",
-  },
-});
+export const FabRoot = withProvider<HTMLButtonElement, FabRootProps>(Primitive.button, "root");
 
 ////////////////////////////////////////////////////////////////////////////////////
 

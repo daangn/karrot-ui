@@ -4,35 +4,17 @@ export const vars = {
       "root": {
         "color": "var(--seed-v3-color-bg-layer-floating)",
         "cornerRadius": "var(--seed-v3-radius-full)",
+        "size": "44px",
         "shadow": "0px 2px 6px 0px #00000026"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "color": "var(--seed-v3-color-fg-neutral)",
+        "size": "22px"
       }
     },
     "pressed": {
       "root": {
         "color": "var(--seed-v3-color-bg-layer-floating-pressed)"
-      }
-    }
-  },
-  "sizeSmall": {
-    "enabled": {
-      "root": {
-        "size": "40px"
-      },
-      "icon": {
-        "size": "20px"
-      }
-    }
-  },
-  "sizeMedium": {
-    "enabled": {
-      "root": {
-        "size": "48px"
-      },
-      "icon": {
-        "size": "22px"
       }
     }
   }

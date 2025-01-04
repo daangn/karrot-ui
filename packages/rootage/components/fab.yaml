@@ -9,6 +9,7 @@ data:
       root:
         color: $color.bg.layer-floating
         cornerRadius: $radius.full
+        size: 44px
         shadow:
           type: shadow
           value:
@@ -19,18 +20,7 @@ data:
               color: "#00000026"
       icon:
         color: $color.fg.neutral
+        size: 22px
     pressed:
       root:
         color: $color.bg.layer-floating-pressed
-  size=small:
-    enabled:
-      root:
-        size: 40px
-      icon:
-        size: 20px
-  size=medium:
-    enabled:
-      root:
-        size: 48px
-      icon:
-        size: 22px

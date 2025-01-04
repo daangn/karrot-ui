@@ -28,6 +28,8 @@ const fab = defineRecipe({
       background: vars.base.enabled.root.color,
       borderRadius: vars.base.enabled.root.cornerRadius,
       boxShadow: vars.base.enabled.root.shadow,
+      width: vars.base.enabled.root.size,
+      height: vars.base.enabled.root.size,
 
       [pseudo(active)]: {
         background: vars.base.pressed.root.color,
@@ -40,35 +42,12 @@ const fab = defineRecipe({
       flexShrink: 0,
 
       color: vars.base.enabled.icon.color,
+      width: vars.base.enabled.icon.size,
+      height: vars.base.enabled.icon.size,
     },
   },
-  variants: {
-    size: {
-      small: {
-        root: {
-          width: vars.sizeSmall.enabled.root.size,
-          height: vars.sizeSmall.enabled.root.size,
-        },
-        icon: {
-          width: vars.sizeSmall.enabled.icon.size,
-          height: vars.sizeSmall.enabled.icon.size,
-        },
-      },
-      medium: {
-        root: {
-          width: vars.sizeMedium.enabled.root.size,
-          height: vars.sizeMedium.enabled.root.size,
-        },
-        icon: {
-          width: vars.sizeMedium.enabled.icon.size,
-          height: vars.sizeMedium.enabled.icon.size,
-        },
-      },
-    },
-  },
-  defaultVariants: {
-    size: "medium",
-  },
+  variants: {},
+  defaultVariants: {},
 });
 
 export default fab;
