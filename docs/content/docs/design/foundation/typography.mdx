@@ -3,6 +3,8 @@ title: 타이포그래피
 description: 타이포그래피는 콘텐츠를 명확하고 효율적으로 표현하기 위한 디자인 요소입니다.
 ---
 
+<ComponentExample name="text-preview" previewOnly />
+
 ## 폰트 크기
 
 TBD
@@ -24,7 +26,7 @@ SEED 디자인 시스템은 regular, medium, bold 세 가지의 폰트 굵기를
 
 ### Regular
 
-TBD
+일반적인 텍스트에 사용되는 기본 폰트 굵기입니다.
 
 ### Medium
 
@@ -32,10 +34,29 @@ TBD
 
 ### Bold
 
-TBD
+강조하거나 중요한 내용을 표현할 때 사용되는 폰트 굵기입니다.
 
 ### 토큰
 
 ### Font Weight Tokens
 
 <TokenReference groups={["font-weight"]} />
+
+## Text Styles
+
+SEED 디자인 시스템은 위 토큰들을 조합해 사전 정의된 텍스트 스타일을 제공합니다.
+
+각 텍스트 스타일은 의도에 맞게 폰트 크기, 굵기, 줄 간격이 사전 정의되어 있습니다.
+
+<ComponentSpecBlock id="typography" />
+
+## 링크
+
+<Cards>
+  <Card
+    icon={<AtomIcon />}
+    title="React"
+    description="타이포그래피 컴포넌트를 React로 사용하는 방법을 설명합니다."
+    href="/docs/react/components/text"
+  />
+</Cards>

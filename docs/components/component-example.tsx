@@ -7,6 +7,8 @@ import { CodeBlock } from "./code-block";
 
 interface ComponentExampleProps {
   name: string;
+
+  previewOnly?: boolean;
 }
 
 export function ComponentExample(props: ComponentExampleProps) {
@@ -25,6 +27,30 @@ export function ComponentExample(props: ComponentExampleProps) {
   const Code = React.useMemo(() => {
     return (Index as Record<string, string>)[name];
   }, [name]);
+
+  if (props.previewOnly) {
+    return (
+      <React.Suspense fallback={null}>
+        <div
+          className="not-prose example-reset"
+          style={{
+            minHeight: "300px",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "var(--seed-v3-color-bg-layer-default)",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "10px",
+            borderRadius: ".75rem",
+            border: "1px solid var(--seed-v3-color-stroke-neutral)",
+          }}
+        >
+          {Preview}
+        </div>
+      </React.Suspense>
+    );
+  }
 
   return (
     <ErrorBoundary>
