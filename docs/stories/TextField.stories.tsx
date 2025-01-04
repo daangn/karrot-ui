@@ -41,6 +41,14 @@ const conditionMap = {
       invalid: true,
     },
   },
+  hasValue: {
+    false: {
+      value: "",
+    },
+    true: {
+      value: "Value",
+    },
+  },
 };
 
 const CommonStoryTemplate: Story = {
