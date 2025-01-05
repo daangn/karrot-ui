@@ -9,7 +9,7 @@
     "enabled": false
   },
   "formatter": {
-    "ignore": ["package.json", "**/archive/**/*"],
+    "ignore": ["package.json", "**/archive/**/*", "**/.next/**/*"],
     "enabled": true,
     "indentStyle": "space",
     "lineEnding": "lf",
@@ -17,7 +17,20 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["public", "node_modules", ".cache", "lib", "dist", "**/archive/**/*"],
+    "ignore": [
+      "public",
+      "node_modules",
+      ".cache",
+      "lib",
+      "dist",
+      "**/archive/**/*",
+      "**/tools/**/build/**/*",
+      ".next",
+      ".source",
+      ".vscode",
+      "out",
+      "bin"
+    ],
     "rules": {
       "recommended": true,
       "style": {
@@ -47,6 +60,16 @@
     }
   },
   "overrides": [
+    {
+      "include": ["tools/**/*"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noNonNullAssertion": "off"
+          }
+        }
+      }
+    },
     {
       "include": ["docs/**/*"],
       "ignore": ["public", "node_modules", ".cache", "lib", "dist"],
