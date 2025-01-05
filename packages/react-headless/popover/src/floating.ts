@@ -11,6 +11,7 @@ import {
   type Placement,
   type Rect,
 } from "@floating-ui/react";
+import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { useMemo, useState } from "react";
 
 export interface PositioningOptions {
@@ -124,13 +125,14 @@ const ARROW_FLOATING_STYLE = {
 export function usePositionedFloating(props: UsePositionedFloatingProps) {
   const options = { ...defaultPositioningOptions, ...props };
 
-  const [uncontrolledOpen, setUncontrolledOpen] = useState(props.defaultOpen);
+  const [open, onOpenChange] = useControllableState({
+    prop: props.open,
+    defaultProp: props.defaultOpen,
+    onChange: props.onOpenChange,
+  });
   const [arrowEl, setArrowEl] = useState<HTMLElement | null>(null);
   const arrowRect = useMemo(() => getArrowRect(arrowEl), [arrowEl]);
   const arrowOffset = arrowRect?.height ?? 0;
-
-  const open = props.open ?? uncontrolledOpen;
-  const onOpenChange = props.onOpenChange ?? setUncontrolledOpen;
 
   const { refs, context, floatingStyles, middlewareData } = useFloating({
     strategy: options.strategy,
@@ -178,6 +180,16 @@ export function usePositionedFloating(props: UsePositionedFloatingProps) {
       floatingStyles,
       arrowStyles,
     }),
-    [open, refs, arrowEl, arrowRect, middlewareData, context, floatingStyles, arrowStyles],
+    [
+      open,
+      onOpenChange,
+      refs,
+      arrowEl,
+      arrowRect,
+      middlewareData,
+      context,
+      floatingStyles,
+      arrowStyles,
+    ],
   );
 }

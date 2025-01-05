@@ -1,3 +1,4 @@
+import { useCallbackRef } from "@radix-ui/react-use-callback-ref";
 import { useLayoutEffect } from "@radix-ui/react-use-layout-effect";
 import { dataAttr, elementProps, imgProps } from "@seed-design/dom-utils";
 import { useMemo, useRef, useState } from "react";
@@ -10,7 +11,7 @@ interface UseAvatarStateProps {
 
 function useAvatarState(props: UseAvatarStateProps) {
   const [src, setSrc] = useState<string | undefined>(undefined);
-  const { onLoadingStatusChange } = props;
+  const onLoadingStatusChange = useCallbackRef(props.onLoadingStatusChange);
   const [loadingStatus, setLoadingStatus] = useState<LoadingStatus>("loading");
 
   const events = useMemo(
@@ -35,7 +36,7 @@ function useAvatarState(props: UseAvatarStateProps) {
         onLoadingStatusChange?.("error");
       },
     }),
-    [],
+    [src, onLoadingStatusChange],
   );
 
   return {

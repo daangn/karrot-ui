@@ -48,6 +48,15 @@ export function usePopover(props: UsePopoverProps = {}) {
         },
       },
     }),
-    [open, refs, triggerInteractions, anchorInteractions, floatingStyles, arrowStyles, rects],
+    [
+      open,
+      onOpenChange,
+      refs,
+      triggerInteractions,
+      anchorInteractions,
+      floatingStyles,
+      arrowStyles,
+      rects,
+    ],
   );
 }
