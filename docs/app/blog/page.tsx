@@ -1,5 +1,6 @@
 "use client";
 
+import { withAuth } from "@/components/auth/with-auth";
 import { client } from "@/components/sanity/client";
 import { Image } from "@/components/sanity/image";
 import { PortableContent } from "@/components/sanity/sanity-content";
@@ -28,7 +29,7 @@ const BLOG_QUERY = `*[_type == "blog" && slug.current == $slug][0] {
   content
 }`;
 
-export default function BlogPage() {
+function BlogPage() {
   const [data, setData] = useState<SanityDocument<Blog> | null>(null);
   const searchParams = useSearchParams();
   const slug = searchParams.get("slug") || "";
@@ -60,3 +61,5 @@ export default function BlogPage() {
     </DocsPage>
   );
 }
+
+export default withAuth(BlogPage);
