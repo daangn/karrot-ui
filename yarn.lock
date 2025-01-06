@@ -7854,7 +7854,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-segmented-control@workspace:^, @seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control":
+"@seed-design/react-segmented-control@npm:0.0.0, @seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control"
   dependencies:
@@ -13192,7 +13192,7 @@ __metadata:
     "@seed-design/react-dismissible": "npm:0.0.0"
     "@seed-design/react-icon": "npm:^0.7.3"
     "@seed-design/react-popover": "npm:0.0.0-alpha-20241030023710"
-    "@seed-design/react-segmented-control": "workspace:^"
+    "@seed-design/react-segmented-control": "npm:0.0.0"
     "@seed-design/react-tabs": "npm:0.0.0-alpha-20241209060641"
     "@seed-design/recipe": "npm:0.0.0-alpha-20241212122822"
     "@seed-design/rootage-cli": "npm:0.0.0"
