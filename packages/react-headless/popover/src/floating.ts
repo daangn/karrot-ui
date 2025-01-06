@@ -6,13 +6,20 @@ import {
   offset,
   shift,
   useFloating,
+  type Alignment,
   type ElementRects,
   type Middleware,
   type Placement,
-  type Rect,
+  type Side,
 } from "@floating-ui/react";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { useMemo, useState } from "react";
+
+declare module "@floating-ui/core" {
+  interface MiddlewareData {
+    rects?: ElementRects;
+  }
+}
 
 export interface PositioningOptions {
   /**
@@ -59,10 +66,6 @@ const defaultPositioningOptions: PositioningOptions = {
   overflowPadding: 8,
   arrowPadding: 4,
 };
-
-function getArrowRect(arrowElement: HTMLElement | null): Rect | null {
-  return arrowElement?.getClientRects().item(0) ?? null;
-}
 
 function getArrowMiddleware(arrowElement: HTMLElement | null, opts: PositioningOptions) {
   if (!arrowElement) return;
@@ -131,10 +134,11 @@ export function usePositionedFloating(props: UsePositionedFloatingProps) {
     onChange: props.onOpenChange,
   });
   const [arrowEl, setArrowEl] = useState<HTMLElement | null>(null);
-  const arrowRect = useMemo(() => getArrowRect(arrowEl), [arrowEl]);
-  const arrowOffset = arrowRect?.height ?? 0;
+  const arrowWidth = arrowEl?.clientWidth ?? 0;
+  const arrowHeight = arrowEl?.clientHeight ?? 0;
+  const arrowOffset = arrowHeight;
 
-  const { refs, context, floatingStyles, middlewareData } = useFloating({
+  const { refs, context, floatingStyles, middlewareData, isPositioned } = useFloating({
     strategy: options.strategy,
     open,
     placement: options.placement,
@@ -149,7 +153,7 @@ export function usePositionedFloating(props: UsePositionedFloatingProps) {
     ],
   });
 
-  const side = context.placement.split("-")[0] as "top" | "bottom" | "left" | "right";
+  const [side, alignment] = context.placement.split("-") as [Side, Alignment | undefined];
 
   const arrowStyles = useMemo(
     () =>
@@ -173,9 +177,15 @@ export function usePositionedFloating(props: UsePositionedFloatingProps) {
         setArrow: setArrowEl,
       },
       rects: {
-        ...(middlewareData.rects as ElementRects),
-        arrow: arrowRect,
+        ...middlewareData.rects,
+        arrow: {
+          width: arrowWidth,
+          height: arrowHeight,
+        },
       },
+      isPositioned,
+      side,
+      alignment,
       context,
       floatingStyles,
       arrowStyles,
@@ -185,11 +195,15 @@ export function usePositionedFloating(props: UsePositionedFloatingProps) {
       onOpenChange,
       refs,
       arrowEl,
-      arrowRect,
-      middlewareData,
+      middlewareData.rects,
       context,
+      side,
+      alignment,
       floatingStyles,
       arrowStyles,
+      isPositioned,
+      arrowWidth,
+      arrowHeight,
     ],
   );
 }

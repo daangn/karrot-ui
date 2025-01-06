@@ -4,7 +4,10 @@
     z-index: 1000;
     width: 100vw;
     height: 100vh;
-    background: var(--seed-v3-color-bg-overlay)
+    background: var(--seed-v3-color-bg-overlay);
+}
+.helpBubble__backdrop:is(:hidden, [hidden], [data-hidden]) {
+    display: none !important;
 }
 .helpBubble__content {
     display: flex;
@@ -13,22 +16,25 @@
     padding-inline: var(--seed-v3-unit-s3);
     padding-block: var(--seed-v3-unit-s3);
     border-radius: var(--seed-v3-radius-s3);
-    word-break: keep-all
+    word-break: keep-all;
+}
+.helpBubble__content:is(:hidden, [hidden], [data-hidden]) {
+    display: none !important;
 }
 .helpBubble__arrow {
     fill: var(--seed-v3-color-bg-floating-solid);
     width: 10px;
-    height: 6px
+    height: 6px;
 }
 .helpBubble__title {
     color: var(--seed-v3-color-palette-static-white);
     font-size: var(--seed-v3-font-size-s3);
-    font-weight: var(--seed-v3-font-weight-bold)
+    font-weight: var(--seed-v3-font-weight-bold);
 }
 .helpBubble__description {
     color: var(--seed-v3-color-palette-static-white);
     font-size: var(--seed-v3-font-size-s3);
-    font-weight: var(--seed-v3-font-weight-regular)
+    font-weight: var(--seed-v3-font-weight-regular);
 }
 .helpBubble__closeButton {
     position: absolute;
@@ -39,9 +45,9 @@
     right: 4px;
     color: var(--seed-v3-color-palette-static-white);
     width: 32px;
-    height: 32px
+    height: 32px;
 }
 .helpBubble__closeIcon {
     width: 14px;
-    height: 14px
+    height: 14px;
 }

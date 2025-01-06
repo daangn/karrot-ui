@@ -1,62 +1,18 @@
-import { useClick, useDismiss, useInteractions, useRole } from "@floating-ui/react";
-import { usePositionedFloating, type UsePositionedFloatingProps } from "./floating";
-import { useMemo } from "react";
+export {
+  PopoverRoot,
+  PopoverAnchor,
+  PopoverTrigger,
+  PopoverPositioner,
+  PopoverArrow,
+  PopoverCloseButton,
+  type PopoverRootProps,
+  type PopoverAnchorProps,
+  type PopoverTriggerProps,
+  type PopoverPositionerProps,
+  type PopoverArrowProps,
+  type PopoverCloseButtonProps,
+} from "./Popover";
 
-// TODO: useRole이 임의로 id를 생성하는 문제가 있음. 동작만 참고하고 role="dialog"에 맞게 aria attribute 설정을 직접 해야 함.
+export { usePopoverContext, type UsePopoverContext } from "./usePopoverContext";
 
-export interface UsePopoverProps extends UsePositionedFloatingProps {}
-
-export function usePopover(props: UsePopoverProps = {}) {
-  const { open, onOpenChange, refs, context, floatingStyles, arrowStyles, rects } =
-    usePositionedFloating(props);
-
-  const role = useRole(context);
-  const click = useClick(context);
-  const dismiss = useDismiss(context);
-
-  const triggerInteractions = useInteractions([role, click, dismiss]);
-  const anchorInteractions = useInteractions([role, dismiss]);
-
-  return useMemo(
-    () => ({
-      open,
-      refs: {
-        anchor: refs.setReference as (instance: HTMLElement | null) => void,
-        trigger: refs.setReference as (instance: HTMLElement | null) => void,
-        positioner: refs.setFloating as (instance: HTMLElement | null) => void,
-        arrow: refs.setArrow as (instance: HTMLElement | null) => void,
-      },
-      rects,
-      anchorProps: {
-        ...anchorInteractions.getReferenceProps(),
-      },
-      triggerProps: {
-        "aria-haspopup": "dialog",
-        "aria-expanded": open,
-        ...triggerInteractions.getReferenceProps(),
-      } as const,
-      positionerProps: {
-        ...triggerInteractions.getFloatingProps(),
-        style: floatingStyles,
-      },
-      arrowProps: {
-        style: arrowStyles,
-      },
-      closeButtonProps: {
-        onClick: () => {
-          onOpenChange(false);
-        },
-      },
-    }),
-    [
-      open,
-      onOpenChange,
-      refs,
-      triggerInteractions,
-      anchorInteractions,
-      floatingStyles,
-      arrowStyles,
-      rects,
-    ],
-  );
-}
+export * as Popover from "./Popover.namespace";

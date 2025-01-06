@@ -41,6 +41,33 @@ export function createStyleContext<
     return useContext(PropsContext);
   }
 
+  const withRootProvider = <T, P>(
+    Component: React.ElementType<any>,
+    options?: {
+      defaultProps?: Partial<P>;
+    },
+  ): React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>> => {
+    const { defaultProps } = options ?? {};
+
+    const StyledComponent = forwardRef<any, any>((innerProps, ref) => {
+      const props = { ...(defaultProps ?? {}), ...useProps(), ...innerProps } as Props &
+        React.HTMLAttributes<HTMLElement>;
+      const [variantProps, otherProps] = recipe.splitVariantProps(props);
+      const classNames = recipe(variantProps); // TODO: should we memoize this?
+
+      return (
+        <ClassNamesProvider value={classNames}>
+          <Component ref={ref} {...otherProps} />
+        </ClassNamesProvider>
+      );
+    });
+
+    // @ts-ignore
+    StyledComponent.displayName = Component.displayName || Component.name;
+
+    return StyledComponent as any;
+  };
+
   const withProvider = <T, P>(
     Component: React.ElementType<any>,
     slot: keyof Classnames,
@@ -91,6 +118,7 @@ export function createStyleContext<
     PropsProvider,
     useClassNames,
     useProps,
+    withRootProvider,
     withProvider,
     withContext,
   };

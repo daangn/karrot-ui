@@ -24,7 +24,7 @@ const ActivityHelpBubble: ActivityComponentType = () => {
           <HelpBubbleTrigger
             title="Slide 테스트"
             description={"어흥어흥어흥어흥어흥 야옹야옹야옹야옹야옹야옹"}
-            maxWidth={200}
+            contentProps={{ maxWidth: "200px" }}
           >
             <ActionButton>Slide 테스트</ActionButton>
           </HelpBubbleTrigger>
@@ -34,7 +34,7 @@ const ActivityHelpBubble: ActivityComponentType = () => {
             title="Close Button 테스트"
             description={"어흥어흥어흥어흥어흥 야옹야옹야옹야옹야옹야옹"}
             showCloseButton
-            maxWidth={200}
+            contentProps={{ maxWidth: "200px" }}
           >
             <ActionButton>Close Button 테스트</ActionButton>
           </HelpBubbleTrigger>

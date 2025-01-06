@@ -31,6 +31,7 @@
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
     "@seed-design/react-avatar": "0.0.0-alpha-20241030023710",
     "@seed-design/react-checkbox": "0.0.0-alpha-20241030023710",
+    "@seed-design/react-popover": "0.0.0-alpha-20241030023710",
     "@seed-design/react-primitive": "0.0.0",
     "@seed-design/react-progress": "0.0.0",
     "@seed-design/react-radio-group": "0.0.0-alpha-20241030023710",

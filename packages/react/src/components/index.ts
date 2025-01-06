@@ -8,6 +8,7 @@ export * from "./ControlChip";
 export * from "./ExtendedFab";
 export * from "./Fab";
 export * from "./Flex";
+export * from "./HelpBubble";
 export * from "./ProgressCircle";
 export * from "./ReactionButton";
 export * from "./SelectBox";

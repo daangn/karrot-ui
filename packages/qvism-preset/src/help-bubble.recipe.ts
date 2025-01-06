@@ -1,5 +1,6 @@
 import { helpBubble as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "./helper";
+import { hidden, pseudo } from "./pseudo";
 
 const helpBubble = defineRecipe({
   name: "helpBubble",
@@ -23,6 +24,10 @@ const helpBubble = defineRecipe({
       height: "100vh",
 
       background: vars.base.enabled.backdrop.color,
+
+      [pseudo(hidden)]: {
+        display: "none !important",
+      },
     },
     content: {
       display: "flex",
@@ -32,6 +37,10 @@ const helpBubble = defineRecipe({
       paddingBlock: vars.base.enabled.root.paddingY,
       borderRadius: vars.base.enabled.root.cornerRadius,
       wordBreak: "keep-all",
+
+      [pseudo(hidden)]: {
+        display: "none !important",
+      },
     },
     arrow: {
       fill: vars.base.enabled.arrow.color,

@@ -19,6 +19,8 @@ export const selected = ":is(:selected, [data-selected])";
 
 export const open = ':is([data-state="open"], [data-open])';
 
+export const hidden = ":is(:hidden, [hidden], [data-hidden])";
+
 export const invalid = ":is(:invalid, [data-invalid])";
 
 export const loading = "[data-loading]";
