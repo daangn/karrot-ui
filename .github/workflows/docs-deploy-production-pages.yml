@@ -43,4 +43,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ./docs/out --project-name=seed-design-v3 --branch=main
+          workingDirectory: ./docs
+          command: pages deploy ./out --project-name=seed-design-v3 --branch=main
