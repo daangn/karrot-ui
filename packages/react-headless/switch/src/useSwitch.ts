@@ -53,7 +53,6 @@ export interface UseSwitchProps extends UseSwitchStateProps {
 export type UseSwitchReturn = ReturnType<typeof useSwitch>;
 
 export function useSwitch(props: UseSwitchProps) {
-  const { checked, defaultChecked, disabled, invalid, onCheckedChange, ...restProps } = props;
   const {
     setIsChecked,
     isChecked,
@@ -78,16 +77,16 @@ export function useSwitch(props: UseSwitchProps) {
     "data-required": dataAttr(props.required),
   });
 
-  const isControlled = checked != null;
+  const isControlled = props.checked != null;
 
   return {
-    isChecked,
-    setIsChecked,
-    isFocused,
-    setIsFocused,
-    setIsFocusVisible,
+    checked: isChecked,
+    setChecked: setIsChecked,
+    focused: isFocused,
+    setFocused: setIsFocused,
+    focusVisible: isFocusVisible,
+    setFocusVisible: setIsFocusVisible,
 
-    restProps,
     stateProps,
     rootProps: labelProps({
       ...stateProps,

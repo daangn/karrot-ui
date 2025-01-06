@@ -103,26 +103,26 @@ export function useRadioGroup(props: UseRadioGroupProps) {
       const { value: itemValue, disabled: itemDisabled, invalid: itemInvalid } = itemProps;
 
       const itemState = {
-        isInvalid: !!itemInvalid,
-        isDisabled: !!itemDisabled || disabled,
-        isChecked: value === itemValue,
-        isFocused: focusedValue === itemValue,
-        isHovered: hoveredValue === itemValue,
-        isActive: activeValue === itemValue,
+        invalid: !!itemInvalid,
+        disabled: !!itemDisabled || disabled,
+        checked: value === itemValue,
+        focused: focusedValue === itemValue,
+        hovered: hoveredValue === itemValue,
+        active: activeValue === itemValue,
       };
 
       const itemStateProps = elementProps({
-        "data-focus": dataAttr(itemState.isFocused),
-        "data-focus-visible": dataAttr(itemState.isFocused && isFocusVisible),
-        "data-disabled": dataAttr(itemState.isDisabled),
-        "data-checked": dataAttr(itemState.isChecked),
-        "data-active": dataAttr(itemState.isActive),
-        "data-hover": dataAttr(itemState.isHovered),
-        "data-invalid": dataAttr(itemState.isInvalid),
+        "data-focus": dataAttr(itemState.focused),
+        "data-focus-visible": dataAttr(itemState.focused && isFocusVisible),
+        "data-disabled": dataAttr(itemState.disabled),
+        "data-checked": dataAttr(itemState.checked),
+        "data-active": dataAttr(itemState.active),
+        "data-hover": dataAttr(itemState.hovered),
+        "data-invalid": dataAttr(itemState.invalid),
       });
 
       return {
-        itemState,
+        ...itemState,
 
         setFocusedValue,
         setIsFocusVisible,
@@ -132,25 +132,25 @@ export function useRadioGroup(props: UseRadioGroupProps) {
         rootProps: elementProps({
           ...itemStateProps,
           onPointerMove() {
-            if (itemState.isDisabled) return;
+            if (itemState.disabled) return;
             setHoveredValue(itemProps.value);
           },
           onPointerLeave() {
-            if (itemState.isDisabled) return;
+            if (itemState.disabled) return;
             setHoveredValue(null);
             setActiveValue(null);
           },
           onPointerDown(event) {
-            if (itemState.isDisabled) return;
+            if (itemState.disabled) return;
             // On pointerdown, the input blurs and returns focus to the `body`,
             // we need to prevent this.
-            if (itemState.isFocused && event.pointerType === "mouse") {
+            if (itemState.focused && event.pointerType === "mouse") {
               event.preventDefault();
             }
             setActiveValue(itemProps.value);
           },
           onPointerUp() {
-            if (itemState.isDisabled) return;
+            if (itemState.disabled) return;
             setActiveValue(null);
           },
         }),
@@ -166,7 +166,7 @@ export function useRadioGroup(props: UseRadioGroupProps) {
           form: form,
           value: itemProps.value,
           onChange(event) {
-            if (itemState.isDisabled) return;
+            if (itemState.disabled) return;
 
             if (event.target.checked) {
               setValue(itemProps.value);
@@ -191,9 +191,9 @@ export function useRadioGroup(props: UseRadioGroupProps) {
               setActiveValue(null);
             }
           },
-          disabled: itemState.isDisabled,
-          defaultChecked: itemState.isChecked,
-          checked: isControlled ? itemState.isChecked : undefined,
+          disabled: itemState.disabled,
+          defaultChecked: itemState.checked,
+          checked: isControlled ? itemState.checked : undefined,
           style: visuallyHidden,
         }),
       };

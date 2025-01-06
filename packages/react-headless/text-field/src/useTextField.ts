@@ -26,6 +26,7 @@ export function useTextFieldState({
   const [value, setValue] = useControllableState({
     prop: __value,
     defaultProp: defaultValue,
+    // TODO: Why onValueChange is not passed here?
   });
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -40,6 +41,7 @@ export function useTextFieldState({
 
   const onValueChange = useCallbackRef(__onValueChange);
 
+  // TODO: handleValueChange is not preferred name. keep private for now.
   const handleValueChange = useCallback(
     (newValue: string) => {
       const graphemes = Array.from(splitGraphemes(newValue));
@@ -82,9 +84,11 @@ export function useTextFieldState({
     isActive,
     isFocused,
     isFocusVisible,
-    isLabelRendered,
-    isDescriptionRendered,
-    isErrorMessageRendered,
+    renderedElements: {
+      label: isLabelRendered,
+      description: isDescriptionRendered,
+      errorMessage: isErrorMessageRendered,
+    },
 
     handleValueChange,
     setIsHovered,
@@ -132,9 +136,7 @@ export function useTextField(props: UseTextFieldProps) {
 
   const {
     refs,
-    isLabelRendered,
-    isDescriptionRendered,
-    isErrorMessageRendered,
+    renderedElements,
     value: stateValue,
     graphemes,
     isHovered,
@@ -157,8 +159,8 @@ export function useTextField(props: UseTextFieldProps) {
 
   const ariaDescribedBy =
     [
-      isDescriptionRendered ? getDescriptionId(id) : false,
-      isErrorMessageRendered ? getErrorMessageId(id) : false,
+      renderedElements.description ? getDescriptionId(id) : false,
+      renderedElements.errorMessage ? getErrorMessageId(id) : false,
     ]
       .filter(Boolean)
       .join(" ") || undefined;
@@ -182,17 +184,13 @@ export function useTextField(props: UseTextFieldProps) {
 
     value: stateValue,
     graphemes,
-    isFocused,
-    isInvalid: invalid,
-    isRequired: required,
+    active: isActive,
+    focused: isFocused,
+    invalid,
+    required,
 
-    handleValueChange,
     setIsFocused,
     setIsFocusVisible,
-
-    isLabelRendered,
-    isDescriptionRendered,
-    isErrorMessageRendered,
 
     stateProps,
 
@@ -223,7 +221,7 @@ export function useTextField(props: UseTextFieldProps) {
       ...stateProps,
       ...(isUncontrolled && defaultValue && { defaultValue }),
       ...(!isUncontrolled && { value: stateValue }),
-      ...(isLabelRendered && { "aria-labelledby": getLabelId(id) }),
+      ...(renderedElements.label && { "aria-labelledby": getLabelId(id) }),
       "aria-describedby": ariaDescribedBy,
       "aria-required": ariaAttr(required),
       "aria-invalid": ariaAttr(invalid),

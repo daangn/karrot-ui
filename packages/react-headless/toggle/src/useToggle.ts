@@ -46,7 +46,7 @@ export function useToggle(props: UseToggleProps) {
   });
 
   return {
-    isPressed,
+    pressed: isPressed,
     toggle,
 
     stateProps,

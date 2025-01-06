@@ -74,8 +74,6 @@ export interface UseCheckboxProps extends UseCheckboxStateProps {
 export type UseCheckboxReturn = ReturnType<typeof useCheckbox>;
 
 export function useCheckbox(props: UseCheckboxProps) {
-  const { checked, disabled, invalid, required } = props;
-
   const {
     refs,
     isIndeterminate,
@@ -98,21 +96,21 @@ export function useCheckbox(props: UseCheckboxProps) {
     "data-active": dataAttr(isActive),
     "data-focus": dataAttr(isFocused),
     "data-focus-visible": dataAttr(isFocusVisible),
-    "data-disabled": dataAttr(disabled),
-    "data-invalid": dataAttr(invalid),
-    "data-required": dataAttr(required),
+    "data-disabled": dataAttr(props.disabled),
+    "data-invalid": dataAttr(props.invalid),
+    "data-required": dataAttr(props.required),
   });
 
-  const isControlled = checked != null;
+  const isControlled = props.checked != null;
 
   return {
-    isIndeterminate,
-    isChecked,
-    setIsChecked,
-    isFocused,
-    setIsFocused,
-    isFocusVisible,
-    setIsFocusVisible,
+    indeterminate: isIndeterminate,
+    checked: isChecked,
+    setChecked: setIsChecked,
+    focused: isFocused,
+    setFocused: setIsFocused,
+    focusVisible: isFocusVisible,
+    setFocusVisible: setIsFocusVisible,
 
     refs,
     stateProps,
@@ -143,9 +141,9 @@ export function useCheckbox(props: UseCheckboxProps) {
       role: "checkbox",
       checked: isControlled ? isChecked : undefined,
       defaultChecked: !isControlled ? isChecked : undefined,
-      disabled: disabled,
-      required: required,
-      "aria-invalid": invalid,
+      disabled: props.disabled,
+      required: props.required,
+      "aria-invalid": props.invalid,
       style: visuallyHidden,
       ...stateProps,
       onChange(event) {

@@ -34,10 +34,10 @@ export interface CheckboxCheckedIconProps extends IconProps {}
 
 export const CheckboxCheckedIcon = forwardRef<SVGSVGElement, CheckboxCheckedIconProps>(
   ({ svg }, ref) => {
-    const { stateProps, isChecked, isIndeterminate } = useCheckboxContext();
+    const { stateProps, checked, indeterminate } = useCheckboxContext();
     const classNames = useClassNames();
 
-    if (!isChecked || isIndeterminate) return null;
+    if (!checked || indeterminate) return null;
 
     const mergedProps = mergeProps(stateProps, { className: classNames.icon });
 
@@ -51,10 +51,10 @@ export interface CheckboxIndeterminateIconProps extends IconProps {}
 
 export const CheckboxIndeterminateIcon = forwardRef<SVGSVGElement, CheckboxIndeterminateIconProps>(
   ({ svg }, ref) => {
-    const { stateProps, isIndeterminate } = useCheckboxContext();
+    const { stateProps, indeterminate } = useCheckboxContext();
     const classNames = useClassNames();
 
-    if (!isIndeterminate) return null;
+    if (!indeterminate) return null;
 
     const mergedProps = mergeProps(stateProps, { className: classNames.icon });
 
