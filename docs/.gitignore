@@ -31,3 +31,5 @@ next-env.d.ts
 storybook-static
 
 dist
+
+.wrangler
