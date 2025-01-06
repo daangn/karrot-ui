@@ -34,8 +34,6 @@ function useSegmentedControlState(props: UseSegmentedControlStateProps & { id: s
 
   const segmentedControlValues = dom.getAllValues(props.id);
 
-  console.log(segmentedControlValues);
-
   useLayoutEffect(() => {
     setRootEl(dom.getRootEl(props.id));
   }, [props.id]);
