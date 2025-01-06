@@ -7806,6 +7806,7 @@ __metadata:
   resolution: "@seed-design/react-popover@workspace:packages/react-headless/popover"
   dependencies:
     "@floating-ui/react": "npm:^0.26.19"
+    "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-use-controllable-state": "npm:1.0.1"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     nanobundle: "npm:^1.6.0"
@@ -7953,6 +7954,7 @@ __metadata:
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-checkbox": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-popover": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     "@seed-design/react-progress": "npm:0.0.0"
     "@seed-design/react-radio-group": "npm:0.0.0-alpha-20241030023710"
