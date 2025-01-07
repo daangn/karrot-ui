@@ -162,8 +162,6 @@
   {
     "name": "inline-banner",
     "dependencies": [
-      "@radix-ui/react-slot",
-      "@seed-design/react-dismissible@0.0.0",
       "@daangn/react-monochrome-icon"
     ],
     "files": [

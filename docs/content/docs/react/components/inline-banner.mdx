@@ -18,11 +18,25 @@ description: 사용자가 꼭 알아야 하는 경고 메시지나 현재 상태
   name="InlineBannerProps"
 />
 
-### `InlineBannerLink`
+### `LinkInlineBanner`
 
 <ReactTypeTable
   path="./registry/ui/inline-banner.tsx"
-  name="InlineBannerLinkProps"
+  name="LinkInlineBannerProps"
+/>
+
+### `ActionableInlineBanner`
+
+<ReactTypeTable
+  path="./registry/ui/inline-banner.tsx"
+  name="ActionableInlineBannerProps"
+/>
+
+### `DismissibleInlineBanner`
+
+<ReactTypeTable
+  path="./registry/ui/inline-banner.tsx"
+  name="DismissibleInlineBannerProps"
 />
 
 ## 예제
@@ -41,17 +55,15 @@ description: 사용자가 꼭 알아야 하는 경고 메시지나 현재 상태
 
 <ComponentExample name="inline-banner-with-title-text" />
 
-#### With Link
-
-<ComponentExample name="inline-banner-with-link" />
-
-#### With Link, as Child
-
-<ComponentExample name="inline-banner-with-link-as-child" />
-
 #### With All
 
 <ComponentExample name="inline-banner-with-all" />
+
+### Customizable Parts
+
+#### Rendering `LinkInlineBanner`’s Link Label as Child
+
+<ComponentExample name="inline-banner-link-label-as-child" />
 
 ### Variants
 
@@ -83,9 +95,15 @@ description: 사용자가 꼭 알아야 하는 경고 메시지나 현재 상태
 
 <ComponentExample name="inline-banner-danger-solid" />
 
-<Callout type="warn" title={`variant="dangerWeak" 혹은 variant="dangerSolid"인 경우`}>
+<Callout type="warn">
 
-`position: sticky` 등을 활용하여 화면을 스크롤했을 때도 인라인 배너가 상단에 고정되도록 해 주세요.
+`DismissibleInlineBanner`는 `dangerWeak`과 `dangerSolid` variant를 제공하지 않아요.
+
+</Callout>
+
+<Callout type="warn">
+
+variant가 `dangerWeak`이나 `dangerSolid`인 경우 `position: sticky` 등을 활용하여 화면을 스크롤했을 때도 인라인 배너가 상단에 고정되도록 해 주세요.
 
 </Callout>
 

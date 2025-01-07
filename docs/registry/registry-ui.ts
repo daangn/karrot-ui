@@ -100,11 +100,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "inline-banner",
-    dependencies: [
-      "@radix-ui/react-slot",
-      `@seed-design/react-dismissible@${dismissiblePkg.version}`,
-      "@daangn/react-monochrome-icon",
-    ],
+    dependencies: ["@daangn/react-monochrome-icon"],
     files: ["ui:inline-banner.tsx"],
   },
   {
