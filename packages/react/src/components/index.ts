@@ -9,6 +9,7 @@ export * from "./ExtendedFab";
 export * from "./Fab";
 export * from "./Flex";
 export * from "./HelpBubble";
+export * from "./InlineBanner";
 export * from "./ProgressCircle";
 export * from "./ReactionButton";
 export * from "./SelectBox";
