@@ -2,7 +2,6 @@ import type { RegistryUI } from "./schema";
 
 import segmentedControlPkg from "@seed-design/react-segmented-control/package.json";
 import textFieldPkg from "@seed-design/react-text-field/package.json";
-import dismissiblePkg from "@seed-design/react-dismissible/package.json";
 import tabsPkg from "@seed-design/react-tabs/package.json";
 import popoverPkg from "@seed-design/react-popover/package.json";
 
