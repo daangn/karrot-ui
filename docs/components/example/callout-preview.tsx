@@ -1,17 +1,11 @@
-import { Callout, CalloutDescription } from "seed-design/ui/callout";
+import { ActionableCallout, Callout, DismissibleCallout } from "seed-design/ui/callout";
 
 export default function CalloutPreview() {
   return (
     <div className="flex flex-col gap-3 w-full">
-      <Callout>
-        <CalloutDescription>veniam</CalloutDescription>
-      </Callout>
-      <Callout>
-        <CalloutDescription>
-          기능에 대한 안내 또는 유익한 내용을 전달해요. 콜아웃은 꼭 필요한 경우에만 절제하여
-          사용해요.
-        </CalloutDescription>
-      </Callout>
+      <Callout description="Aute nulla proident tempor minim eiusmod. In nostrud officia irure laborum." />
+      <ActionableCallout description="Aute nulla proident tempor minim eiusmod. In nostrud officia irure laborum." />
+      <DismissibleCallout description="Aute nulla proident tempor minim eiusmod. In nostrud officia irure laborum." />
     </div>
   );
 }

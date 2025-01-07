@@ -15,15 +15,25 @@ description: 사용자의 주목을 끌어 중요한 정보를 강조하는 컴�
 
 <ReactTypeTable path="./registry/ui/callout.tsx" name="CalloutProps" />
 
-### `CalloutLink`
+### `ActionableCallout`
 
-<ReactTypeTable path="./registry/ui/callout.tsx" name="CalloutLinkProps" />
+<ReactTypeTable
+  path="./registry/ui/callout.tsx"
+  name="ActionableCalloutProps"
+/>
+
+### `DismissibleCallout`
+
+<ReactTypeTable
+  path="./registry/ui/callout.tsx"
+  name="DismissibleCalloutProps"
+/>
 
 ## 예제
 
 ### Content Layout
 
-#### Text Only (Default)
+#### Text Only
 
 <ComponentExample name="callout-text-only" />
 
@@ -31,23 +41,37 @@ description: 사용자의 주목을 끌어 중요한 정보를 강조하는 컴�
 
 <ComponentExample name="callout-with-icon" />
 
+<Callout type="warn">
+
+`icon` prop은 `Callout`에서만 제공돼요.
+
+</Callout>
+
 #### With Title Text
 
 <ComponentExample name="callout-with-title-text" />
 
-#### With Link
+#### With Link Label
 
-<ComponentExample name="callout-with-link" />
+<ComponentExample name="callout-with-link-label" />
 
-#### With Link, as Child
+<Callout type="warn">
 
-<ComponentExample name="callout-with-link-as-child" />
+`linkLabel`과 `linkProps` prop은 `Callout`과 `DismissibleCallout`에서만 제공돼요.
+
+</Callout>
 
 #### With All
 
 <ComponentExample name="callout-with-all" />
 
-### Variants
+### Customizable Parts
+
+#### Rendering Link Label as Child
+
+<ComponentExample name="callout-link-label-as-child" />
+
+### Tones
 
 #### Neutral (Default)
 

@@ -1,11 +1,20 @@
-import { Callout, CalloutDescription } from "seed-design/ui/callout";
+import { ActionableCallout, Callout, DismissibleCallout } from "seed-design/ui/callout";
 
 export default function CalloutWarning() {
   return (
-    <Callout variant="warning">
-      <CalloutDescription>
-        Dolore ex occaecat Lorem ad eu. Consectetur consectetur magna pariatur aliquip enim non.
-      </CalloutDescription>
-    </Callout>
+    <div className="flex flex-col gap-3 w-full">
+      <Callout
+        tone="warning"
+        description="기능에 대한 안내 또는 유익한 내용을 전달해요. 콜아웃은 꼭 필요한 경우에만 절제하여 사용해요."
+      />
+      <ActionableCallout
+        tone="warning"
+        description="기능에 대한 안내 또는 유익한 내용을 전달해요. 콜아웃은 꼭 필요한 경우에만 절제하여 사용해요."
+      />
+      <DismissibleCallout
+        tone="warning"
+        description="기능에 대한 안내 또는 유익한 내용을 전달해요. 콜아웃은 꼭 필요한 경우에만 절제하여 사용해요."
+      />
+    </div>
   );
 }
