@@ -1,7 +1,11 @@
 "use client";
 
+import { DocsPage } from "fumadocs-ui/page";
 import { useEffect, useState } from "react";
-// import { useRouter } from "next/navigation";
+
+import { ActionButton } from "seed-design/ui/action-button";
+import { ProgressCircle } from "seed-design/ui/progress-circle";
+import { TextField, TextFieldInput } from "seed-design/ui/text-field";
 
 interface AuthState {
   isAuthenticated: boolean;
@@ -86,56 +90,47 @@ export function withAuth<P extends object>(WrappedComponent: React.ComponentType
       }
     };
 
-    // 인증 오버레이 스타일
-    const overlayStyle: React.CSSProperties = {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      zIndex: 9999,
-      backgroundColor: "white",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    };
-
     // 로딩 중 표시
     if (authState.isLoading) {
       return (
-        <div style={overlayStyle}>
-          <div className="text-center">
-            <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
-            <p>인증 확인 중...</p>
+        <DocsPage>
+          <div className="flex h-full w-full flex-col items-center justify-center">
+            <ProgressCircle value={undefined} />
           </div>
-        </div>
+        </DocsPage>
       );
     }
 
     // 인증되지 않은 경우 비밀번호 입력 폼 표시
     if (!authState.isAuthenticated) {
       return (
-        <div style={overlayStyle}>
-          <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4 p-4">
-            <h1 className="text-2xl font-bold text-center">비밀번호 입력</h1>
-            <div className="space-y-2">
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded border p-2"
-                placeholder="비밀번호를 입력하세요"
-              />
-              {authState.error && <p className="text-sm text-red-500">{authState.error}</p>}
+        <DocsPage>
+          <form
+            onSubmit={handleSubmit}
+            className="flex h-full w-full flex-col items-center justify-center space-y-4 p-4"
+          >
+            <div className="flex w-full max-w-[320px] flex-col items-center justify-center space-y-4">
+              <TextField
+                label="비밀번호"
+                description="해당 컨텐츠는 내부 구성원에게만 공개되어 있어요."
+                invalid={!!authState.error}
+                errorMessage={authState.error}
+                onValueChange={({ value }) => setPassword(value)}
+                className="w-full"
+              >
+                <TextFieldInput autoFocus type="password" className="w-full" value={password} />
+              </TextField>
+              <ActionButton
+                disabled={!password || authState.isLoading}
+                loading={authState.isLoading}
+                type="submit"
+                className="w-full"
+              >
+                확인
+              </ActionButton>
             </div>
-            <button
-              type="submit"
-              className="w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              확인
-            </button>
           </form>
-        </div>
+        </DocsPage>
       );
     }
 
