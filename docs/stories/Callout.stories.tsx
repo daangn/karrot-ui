@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Callout, CalloutDescription, CalloutLink, CalloutTitle } from "seed-design/ui/callout";
+import { Callout } from "seed-design/ui/callout";
 
 import { calloutVariantMap } from "@seed-design/recipe/callout";
 import { VariantTable } from "./components/variant-table";
@@ -18,15 +18,9 @@ type Story = StoryObj<typeof meta>;
 
 const CommonStoryTemplate: Story = {
   args: {
-    children: (
-      <>
-        <CalloutTitle>새로운 기능</CalloutTitle>
-        <CalloutDescription>
-          Magna id laboris excepteur tempor duis duis voluptate voluptate non.
-        </CalloutDescription>
-        <CalloutLink onClick={() => {}}>자세히 보기</CalloutLink>
-      </>
-    ),
+    title: "새로운 기능",
+    description: "Magna id laboris excepteur tempor duis duis voluptate voluptate non.",
+    linkLabel: "자세히 보기",
     icon: <IconBellFill />,
   },
   render: (args) => (
