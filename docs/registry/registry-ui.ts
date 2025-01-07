@@ -76,11 +76,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "callout",
-    dependencies: [
-      "@radix-ui/react-slot",
-      `@seed-design/react-dismissible@${dismissiblePkg.version}`,
-      "@daangn/react-monochrome-icon",
-    ],
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
     files: ["ui:callout.tsx"],
   },
   {
@@ -100,7 +96,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "inline-banner",
-    dependencies: ["@daangn/react-monochrome-icon"],
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
     files: ["ui:inline-banner.tsx"],
   },
   {

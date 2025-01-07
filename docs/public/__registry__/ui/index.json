@@ -125,8 +125,7 @@
   {
     "name": "callout",
     "dependencies": [
-      "@radix-ui/react-slot",
-      "@seed-design/react-dismissible@0.0.0",
+      "@seed-design/react",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
@@ -162,6 +161,7 @@
   {
     "name": "inline-banner",
     "dependencies": [
+      "@seed-design/react",
       "@daangn/react-monochrome-icon"
     ],
     "files": [

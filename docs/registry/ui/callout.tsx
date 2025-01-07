@@ -3,8 +3,8 @@
 import "@seed-design/stylesheet/callout.css";
 
 import {
-  DismissibleProvider,
   Callout as SeedCallout,
+  DismissibleProvider,
   useDismissible,
   type UseDismissibleProps,
 } from "@seed-design/react";
