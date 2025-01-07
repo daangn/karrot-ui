@@ -11871,7 +11871,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "fontWeight",
@@ -11936,7 +11936,7 @@
         },
         {
           "key": {
-            "variant": "neutral"
+            "tone": "neutral"
           },
           "state": [
             {
@@ -11993,7 +11993,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -12085,7 +12085,7 @@
         },
         {
           "key": {
-            "variant": "informative"
+            "tone": "informative"
           },
           "state": [
             {
@@ -12142,7 +12142,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -12234,7 +12234,7 @@
         },
         {
           "key": {
-            "variant": "warning"
+            "tone": "warning"
           },
           "state": [
             {
@@ -12291,7 +12291,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -12383,7 +12383,7 @@
         },
         {
           "key": {
-            "variant": "danger"
+            "tone": "danger"
           },
           "state": [
             {
@@ -12440,7 +12440,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -12532,7 +12532,7 @@
         },
         {
           "key": {
-            "variant": "magic"
+            "tone": "magic"
           },
           "state": [
             {
