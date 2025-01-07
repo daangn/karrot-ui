@@ -1,5 +1,3 @@
-"use client";
-
 import { IconCalendarFill } from "@daangn/react-monochrome-icon";
 import { Callout } from "seed-design/ui/callout";
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { Callout, DismissibleCallout } from "seed-design/ui/callout";
 
 export default function CalloutLinkLabelAsChild() {
