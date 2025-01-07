@@ -12589,7 +12589,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -16302,7 +16302,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "fontWeight",
@@ -16469,7 +16469,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -16595,7 +16595,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -16721,7 +16721,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -16847,7 +16847,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -16973,7 +16973,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -17099,7 +17099,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",
@@ -17209,7 +17209,7 @@
                   ]
                 },
                 {
-                  "key": "label",
+                  "key": "description",
                   "property": [
                     {
                       "key": "color",

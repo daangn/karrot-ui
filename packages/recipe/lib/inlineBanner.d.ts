@@ -11,7 +11,7 @@ declare type InlineBannerVariantMap = {
 
 export declare type InlineBannerVariantProps = Partial<InlineBannerVariant>;
 
-export declare type InlineBannerSlotName = "root" | "content" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
+export declare type InlineBannerSlotName = "root" | "content" | "icon" | "title" | "spacer" | "description" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
 
 export declare const inlineBannerVariantMap: InlineBannerVariantMap;
 

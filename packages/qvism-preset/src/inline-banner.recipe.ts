@@ -10,7 +10,7 @@ const inlineBanner = defineRecipe({
     "icon",
     "title",
     "spacer",
-    "label",
+    "description",
     "linkLabel",
     "actionableIcon",
     "dismissButton",
@@ -29,11 +29,11 @@ const inlineBanner = defineRecipe({
 
       paddingInline: vars.base.enabled.root.paddingX,
 
-      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
+      border: "none",
+      paddingBlock: 0,
+      font: "inherit",
+
       [pseudo(":is(button)")]: {
-        border: "none",
-        paddingBlock: 0,
-        font: "inherit",
         cursor: "pointer",
       },
     },
@@ -66,8 +66,8 @@ const inlineBanner = defineRecipe({
     spacer: {
       letterSpacing: "0.25em",
     },
-    label: {
-      fontWeight: vars.base.enabled.label.fontWeight,
+    description: {
+      fontWeight: vars.base.enabled.description.fontWeight,
     },
     linkLabel: {
       flex: "none",
@@ -82,10 +82,8 @@ const inlineBanner = defineRecipe({
       lineHeight: vars.base.enabled.linkLabel.lineHeight,
 
       textDecoration: "underline",
-      // XXX
       textUnderlineOffset: "2px",
 
-      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
       border: "none",
       backgroundColor: "transparent",
       padding: 0,
@@ -107,9 +105,8 @@ const inlineBanner = defineRecipe({
       width: vars.base.enabled.dismissButton.size,
       height: vars.base.enabled.dismissButton.size,
 
-      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.root.paddingX} * 2) * -1)`,
+      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.root.paddingX}) * -0.5)`,
 
-      // XXX: 추후 reset.css 추가되면 쳐내질 가능성
       border: "none",
       backgroundColor: "transparent",
       padding: 0,
@@ -135,8 +132,8 @@ const inlineBanner = defineRecipe({
         title: {
           color: vars.variantNeutralWeak.enabled.title.color,
         },
-        label: {
-          color: vars.variantNeutralWeak.enabled.label.color,
+        description: {
+          color: vars.variantNeutralWeak.enabled.description.color,
         },
         linkLabel: {
           color: vars.variantNeutralWeak.enabled.linkLabel.color,
@@ -158,8 +155,8 @@ const inlineBanner = defineRecipe({
         title: {
           color: vars.variantPositiveWeak.enabled.title.color,
         },
-        label: {
-          color: vars.variantPositiveWeak.enabled.label.color,
+        description: {
+          color: vars.variantPositiveWeak.enabled.description.color,
         },
         linkLabel: {
           color: vars.variantPositiveWeak.enabled.linkLabel.color,
@@ -181,8 +178,8 @@ const inlineBanner = defineRecipe({
         title: {
           color: vars.variantInformativeWeak.enabled.title.color,
         },
-        label: {
-          color: vars.variantInformativeWeak.enabled.label.color,
+        description: {
+          color: vars.variantInformativeWeak.enabled.description.color,
         },
         linkLabel: {
           color: vars.variantInformativeWeak.enabled.linkLabel.color,
@@ -204,8 +201,8 @@ const inlineBanner = defineRecipe({
         title: {
           color: vars.variantWarningWeak.enabled.title.color,
         },
-        label: {
-          color: vars.variantWarningWeak.enabled.label.color,
+        description: {
+          color: vars.variantWarningWeak.enabled.description.color,
         },
         linkLabel: {
           color: vars.variantWarningWeak.enabled.linkLabel.color,
@@ -227,8 +224,8 @@ const inlineBanner = defineRecipe({
         title: {
           color: vars.variantWarningSolid.enabled.title.color,
         },
-        label: {
-          color: vars.variantWarningSolid.enabled.label.color,
+        description: {
+          color: vars.variantWarningSolid.enabled.description.color,
         },
         linkLabel: {
           color: vars.variantWarningSolid.enabled.linkLabel.color,
@@ -250,8 +247,8 @@ const inlineBanner = defineRecipe({
         title: {
           color: vars.variantDangerWeak.enabled.title.color,
         },
-        label: {
-          color: vars.variantDangerWeak.enabled.label.color,
+        description: {
+          color: vars.variantDangerWeak.enabled.description.color,
         },
         linkLabel: {
           color: vars.variantDangerWeak.enabled.linkLabel.color,
@@ -270,8 +267,8 @@ const inlineBanner = defineRecipe({
         title: {
           color: vars.variantDangerSolid.enabled.title.color,
         },
-        label: {
-          color: vars.variantDangerSolid.enabled.label.color,
+        description: {
+          color: vars.variantDangerSolid.enabled.description.color,
         },
         linkLabel: {
           color: vars.variantDangerSolid.enabled.linkLabel.color,
