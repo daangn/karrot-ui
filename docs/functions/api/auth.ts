@@ -11,9 +11,9 @@ const createToken = async (secret: string) => {
     typ: "JWT",
   };
 
-  // 페이로드 (24시간 유효)
+  // 페이로드 (2주 유효)
   const payload = {
-    exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60,
+    exp: Math.floor(Date.now() / 1000) + 2 * 7 * 24 * 60 * 60,
     iat: Math.floor(Date.now() / 1000),
   };
 
