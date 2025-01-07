@@ -105,7 +105,7 @@ const inlineBanner = defineRecipe({
       width: vars.base.enabled.dismissButton.size,
       height: vars.base.enabled.dismissButton.size,
 
-      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.root.paddingX}) * -0.5)`,
+      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.dismissIcon.size}) * -0.5)`,
 
       border: "none",
       backgroundColor: "transparent",
