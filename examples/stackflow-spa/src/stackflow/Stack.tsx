@@ -6,6 +6,7 @@ import { stackflow } from "@stackflow/react";
 import React from "react";
 
 import { IconChevronLeftLine } from "@daangn/react-monochrome-icon";
+import { GlobalInteractionProvider, useGlobalInteraction } from "@seed-design/stackflow";
 import ActivityNotFound from "../activities/ActivityNotFound";
 import { theme } from "./theme";
 
@@ -44,6 +45,25 @@ const { Stack, useFlow, useStepFlow } = stackflow({
       backgroundColor: vars.$color.bg.layerDefault,
       dimBackgroundColor: vars.$color.bg.overlay,
       theme,
+    }),
+    () => ({
+      key: "test",
+      wrapStack: ({ stack }) => {
+        const api = useGlobalInteraction();
+        const topActivity = stack.activities.find((activity) => activity.isTop);
+        const globalTransitionState = topActivity?.transitionState ?? "enter-done";
+        return (
+          <GlobalInteractionProvider value={api}>
+            <div
+              ref={api.stackRef}
+              {...api.stackProps}
+              data-global-transition-state={globalTransitionState}
+            >
+              {stack.render()}
+            </div>
+          </GlobalInteractionProvider>
+        );
+      },
     }),
     historySyncPlugin({
       fallbackActivity: () => "ActivityNotFound",

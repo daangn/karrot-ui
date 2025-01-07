@@ -1,5 +1,7 @@
+import { useCallbackRef } from "@radix-ui/react-use-callback-ref";
+import { buttonProps, dataAttr, elementProps } from "@seed-design/dom-utils";
 import { useActions, useActivity } from "@stackflow/react";
-import { useStyleEffect, useZIndexBase } from "@stackflow/react-ui-core";
+import { useZIndexBase } from "@stackflow/react-ui-core";
 import * as React from "react";
 import { createContext, useCallback, useContext, useId, useMemo } from "react";
 
@@ -7,26 +9,13 @@ export interface UseDialogProps {
   onInteractOutside?: React.MouseEventHandler;
 }
 
-export function useDialog({ onInteractOutside }: UseDialogProps) {
+export function useDialog(props: UseDialogProps) {
   const activity = useActivity();
   const { pop } = useActions();
   const popLock = React.useRef(false);
 
   const rootRef = React.useRef<HTMLDivElement>(null);
   const backdropRef = React.useRef<HTMLDivElement>(null);
-
-  useStyleEffect({
-    styleName: "hide",
-    refs: [rootRef],
-  });
-  useStyleEffect({
-    styleName: "offset",
-    refs: [backdropRef],
-  });
-  useStyleEffect({
-    styleName: "swipe-back",
-    refs: [backdropRef],
-  });
 
   const handleClose = useCallback(() => {
     if (popLock.current) {
@@ -37,8 +26,16 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
     pop();
   }, [pop]);
 
-  const onClickOutside: React.MouseEventHandler = useCallback((e) => {
-    onInteractOutside?.(e);
+  const onInteractOutside = useCallbackRef(props.onInteractOutside);
+  const onClickOutside: React.MouseEventHandler = useCallback(
+    (e) => {
+      onInteractOutside?.(e);
+      e.stopPropagation();
+    },
+    [onInteractOutside],
+  );
+  const onClickContent: React.MouseEventHandler = useCallback((e) => {
+    e.stopPropagation();
   }, []);
 
   const onClickCloseButton: React.MouseEventHandler = useCallback(() => {
@@ -51,11 +48,12 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
 
   const stateProps = useMemo(
     () => ({
-      "data-stackflow-activity-id": activity?.id,
-      "data-stackflow-activity-is-active": activity?.isActive,
+      "data-activity-id": activity?.id,
+      "data-activity-is-top": dataAttr(activity?.isTop),
+      "data-activity-is-active": dataAttr(activity?.isActive),
       "data-transition-state": transitionState,
     }),
-    [activity?.id, activity?.isActive, transitionState],
+    [activity?.id, activity?.isActive, activity?.isTop, transitionState],
   );
 
   const id = useId();
@@ -69,39 +67,41 @@ export function useDialog({ onInteractOutside }: UseDialogProps) {
         backdrop: backdropRef,
       },
       stateProps,
-      rootProps: {
+      rootProps: elementProps({
         ...stateProps,
         onClick: onClickOutside,
         style: {
           zIndex: zIndexBase,
         },
-      },
-      contentProps: {
+      }),
+      contentProps: elementProps({
         ...stateProps,
         role: "dialog",
         "aria-modal": true,
         "aria-labelledby": titleId,
         "aria-describedby": descriptionId,
+        onClick: onClickContent,
         style: {
           zIndex: zIndexContent,
         },
-      },
-      closeButtonProps: {
+      }),
+      closeButtonProps: buttonProps({
         ...stateProps,
         onClick: onClickCloseButton,
-      },
-      titleProps: {
+      }),
+      titleProps: elementProps({
         id: titleId,
         ...stateProps,
-      },
-      descriptionProps: {
+      }),
+      descriptionProps: elementProps({
         id: descriptionId,
         ...stateProps,
-      },
+      }),
     }),
     [
       stateProps,
       onClickOutside,
+      onClickContent,
       onClickCloseButton,
       zIndexBase,
       zIndexContent,

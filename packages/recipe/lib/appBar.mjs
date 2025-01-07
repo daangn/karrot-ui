@@ -2,50 +2,50 @@ import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
 import { splitVariantProps } from "./splitVariantProps.mjs";
 
-const topNavigationSlotNames = [
+const appBarSlotNames = [
   [
     "root",
-    "topNavigation__root"
+    "appBar__root"
   ],
   [
     "safeArea",
-    "topNavigation__safeArea"
+    "appBar__safeArea"
   ],
   [
     "container",
-    "topNavigation__container"
+    "appBar__container"
   ],
   [
     "left",
-    "topNavigation__left"
+    "appBar__left"
   ],
   [
     "right",
-    "topNavigation__right"
+    "appBar__right"
   ],
   [
     "title",
-    "topNavigation__title"
+    "appBar__title"
   ],
   [
     "titleMain",
-    "topNavigation__titleMain"
+    "appBar__titleMain"
   ],
   [
     "titleEdge",
-    "topNavigation__titleEdge"
+    "appBar__titleEdge"
   ],
   [
     "titleText",
-    "topNavigation__titleText"
+    "appBar__titleText"
   ],
   [
     "iconButton",
-    "topNavigation__iconButton"
+    "appBar__iconButton"
   ],
   [
     "icon",
-    "topNavigation__icon"
+    "appBar__icon"
   ]
 ];
 
@@ -57,7 +57,7 @@ const defaultVariant = {
 
 const compoundVariants = [];
 
-export const topNavigationVariantMap = {
+export const appBarVariantMap = {
   "theme": [
     "cupertino",
     "android"
@@ -71,11 +71,11 @@ export const topNavigationVariantMap = {
   ]
 };
 
-export const topNavigationVariantKeys = Object.keys(topNavigationVariantMap);
+export const appBarVariantKeys = Object.keys(appBarVariantMap);
 
-export function topNavigation(props) {
+export function appBar(props) {
   return Object.fromEntries(
-    topNavigationSlotNames.map(([slot, className]) => {
+    appBarSlotNames.map(([slot, className]) => {
       return [
         slot,
         createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
@@ -84,4 +84,4 @@ export function topNavigation(props) {
   );
 }
 
-Object.assign(topNavigation, { splitVariantProps: (props) => splitVariantProps(props, topNavigationVariantMap) });
+Object.assign(appBar, { splitVariantProps: (props) => splitVariantProps(props, appBarVariantMap) });

@@ -2,47 +2,52 @@ import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
 import { splitVariantProps } from "./splitVariantProps.mjs";
 
-const screenSlotNames = [
+const appScreenSlotNames = [
   [
     "root",
-    "screen__root"
+    "appScreen__root"
   ],
   [
     "layer",
-    "screen__layer"
+    "appScreen__layer"
   ],
   [
     "dim",
-    "screen__dim"
+    "appScreen__dim"
   ],
   [
     "edge",
-    "screen__edge"
+    "appScreen__edge"
   ]
 ];
 
 const defaultVariant = {
   "theme": "cupertino",
+  "transitionStyle": "slideFromRightIOS",
   "hasAppBar": false
 };
 
 const compoundVariants = [];
 
-export const screenVariantMap = {
+export const appScreenVariantMap = {
   "theme": [
     "cupertino",
     "android"
+  ],
+  "transitionStyle": [
+    "slideFromRightIOS",
+    "fadeFromBottomAndroid"
   ],
   "hasAppBar": [
     true
   ]
 };
 
-export const screenVariantKeys = Object.keys(screenVariantMap);
+export const appScreenVariantKeys = Object.keys(appScreenVariantMap);
 
-export function screen(props) {
+export function appScreen(props) {
   return Object.fromEntries(
-    screenSlotNames.map(([slot, className]) => {
+    appScreenSlotNames.map(([slot, className]) => {
       return [
         slot,
         createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
@@ -51,4 +56,4 @@ export function screen(props) {
   );
 }
 
-Object.assign(screen, { splitVariantProps: (props) => splitVariantProps(props, screenVariantMap) });
+Object.assign(appScreen, { splitVariantProps: (props) => splitVariantProps(props, appScreenVariantMap) });

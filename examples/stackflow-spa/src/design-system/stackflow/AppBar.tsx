@@ -1,9 +1,9 @@
-import "@seed-design/stylesheet/topNavigation.css";
+import "@seed-design/stylesheet/appBar.css";
 
 import { IconChevronLeftLine, IconXmarkLine } from "@daangn/react-monochrome-icon";
 import { AppBar as SeedAppBar, type AppBarIconButtonProps } from "@seed-design/stackflow";
 import { useActions, useActivity } from "@stackflow/react";
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 
 export const AppBar = SeedAppBar.Root;
 
@@ -20,16 +20,13 @@ export const BackButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
     const activity = useActivity();
     const actions = useActions();
 
-    const handleOnClick = useCallback(
-      (e: React.MouseEvent<HTMLButtonElement>) => {
-        onClick?.(e);
+    const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      onClick?.(e);
 
-        if (!e.defaultPrevented) {
-          actions.pop();
-        }
-      },
-      [actions],
-    );
+      if (!e.defaultPrevented) {
+        actions.pop();
+      }
+    };
 
     if (!activity) {
       return null;
@@ -57,13 +54,13 @@ export const CloseButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
   ({ children = <IconXmarkLine />, onClick, ...otherProps }, ref) => {
     const activity = useActivity();
 
-    const handleOnClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       onClick?.(e);
 
       if (!e.defaultPrevented) {
         // you can do something here
       }
-    }, []);
+    };
 
     const isRoot = !activity || activity.isRoot;
 

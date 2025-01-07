@@ -1,5 +1,6 @@
-import { AppScreen } from "@stackflow/plugin-basic-ui";
 import type { ActivityComponentType } from "@stackflow/react";
+import { AppBar, BackButton, Left, Title } from "../design-system/stackflow/AppBar";
+import { AppScreen } from "../design-system/stackflow/AppScreen";
 
 import { actionButton, actionButtonVariantMap } from "@seed-design/recipe/actionButton";
 
@@ -15,7 +16,16 @@ const initialVariants = {
 
 const ActivityActionButton: ActivityComponentType = () => {
   return (
-    <AppScreen appBar={{ title: "ActionButton" }}>
+    <AppScreen
+      appBar={
+        <AppBar>
+          <Left>
+            <BackButton />
+          </Left>
+          <Title>Action Button</Title>
+        </AppBar>
+      }
+    >
       <ComponentAnalyzer
         variantsMap={actionButtonVariantMap}
         initialVariants={initialVariants}

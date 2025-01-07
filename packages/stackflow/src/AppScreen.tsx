@@ -1,9 +1,15 @@
 import { composeRefs } from "@radix-ui/react-compose-refs";
-import { type ScreenVariantProps, screen } from "@seed-design/recipe/screen";
+import { appScreen, type AppScreenVariantProps } from "@seed-design/recipe/appScreen";
 import { createContext, forwardRef, useContext, useMemo } from "react";
-import { AppScreenProvider, useAppScreen, useAppScreenContext } from "./primitive/useAppScreen";
+import { PropsProvider } from "./AppBar";
+import {
+  AppScreenProvider,
+  useAppScreen,
+  useAppScreenContext,
+  type UseAppScreenProps,
+} from "./primitive/useAppScreen";
 
-const StyleContext = createContext<ReturnType<typeof screen> | null>(null);
+const StyleContext = createContext<ReturnType<typeof appScreen> | null>(null);
 
 function useStyleContext() {
   const context = useContext(StyleContext);
@@ -18,17 +24,10 @@ export interface AppScreenDimProps extends React.HTMLAttributes<HTMLDivElement> 
 
 export const AppScreenDim = forwardRef<HTMLDivElement, AppScreenDimProps>(
   ({ className, ...otherProps }, ref) => {
-    const { refs, dimProps } = useAppScreenContext();
+    const { dimProps } = useAppScreenContext();
     const classNames = useStyleContext();
 
-    return (
-      <div
-        ref={composeRefs(ref, refs.dim)}
-        className={classNames.dim}
-        {...dimProps}
-        {...otherProps}
-      />
-    );
+    return <div ref={ref} className={classNames.dim} {...dimProps} {...otherProps} />;
   },
 );
 AppScreenDim.displayName = "AppScreenDim";
@@ -37,17 +36,10 @@ export interface AppScreenEdgeProps extends React.HTMLAttributes<HTMLDivElement>
 
 export const AppScreenEdge = forwardRef<HTMLDivElement, AppScreenEdgeProps>(
   ({ className, ...otherProps }, ref) => {
-    const { refs, edgeProps } = useAppScreenContext();
+    const { edgeProps } = useAppScreenContext();
     const classNames = useStyleContext();
 
-    return (
-      <div
-        ref={composeRefs(ref, refs.edge)}
-        className={classNames.edge}
-        {...edgeProps}
-        {...otherProps}
-      />
-    );
+    return <div aria-hidden ref={ref} className={classNames.edge} {...edgeProps} {...otherProps} />;
   },
 );
 AppScreenEdge.displayName = "AppScreenEdge";
@@ -72,35 +64,28 @@ export const AppScreenLayer = forwardRef<HTMLDivElement, AppScreenLayerProps>(
 AppScreenLayer.displayName = "AppScreenLayer";
 
 export interface AppScreenProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    Omit<ScreenVariantProps, "hasAppBar"> {
-  preventSwipeBack?: boolean;
+  extends Omit<AppScreenVariantProps, "hasAppBar">,
+    UseAppScreenProps,
+    React.HTMLAttributes<HTMLDivElement> {
   appBar?: React.ReactNode;
 }
 
 export const AppScreenRoot = forwardRef<HTMLDivElement, AppScreenProps>(
-  ({ preventSwipeBack, appBar, theme, children }, ref) => {
+  ({ appBar, theme, children, ...otherProps }, ref) => {
     const hasAppBar = !!appBar;
-    const api = useAppScreen({
-      theme,
-      preventSwipeBack,
-      activityEnterStyle: undefined, // TODO: Implement activityEnterStyle
-      modalPresentationStyle: undefined, // TODO: Implement modalPresentationStyle
-      hasAppBar,
-    });
-    const { refs, rootProps } = api;
-    const classNames = useMemo(() => screen({ theme, hasAppBar }), [theme, hasAppBar]);
+    const api = useAppScreen(otherProps);
+    const classNames = useMemo(() => appScreen({ theme, hasAppBar }), [theme, hasAppBar]);
 
     return (
       <div
-        ref={composeRefs(ref, refs.appScreen)}
+        ref={ref}
         className={classNames.root}
         data-stackflow-component-name="AppScreen"
-        {...rootProps}
+        {...api.activityProps}
       >
         <AppScreenProvider value={api}>
           <StyleContext.Provider value={classNames}>
-            {appBar}
+            <PropsProvider value={useMemo(() => ({ theme }), [theme])}>{appBar}</PropsProvider>
             {children}
           </StyleContext.Provider>
         </AppScreenProvider>

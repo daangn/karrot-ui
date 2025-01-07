@@ -1,5 +1,6 @@
-import { AppScreen } from "@stackflow/plugin-basic-ui";
 import type { ActivityComponentType } from "@stackflow/react";
+import { AppBar, BackButton, Left, Title } from "../design-system/stackflow/AppBar";
+import { AppScreen } from "../design-system/stackflow/AppScreen";
 
 import { controlChip, controlChipVariantMap } from "@seed-design/recipe/controlChip";
 
@@ -14,7 +15,16 @@ const initialVariants = {
 
 const ActivityControlChip: ActivityComponentType = () => {
   return (
-    <AppScreen appBar={{ title: "ControlChip" }}>
+    <AppScreen
+      appBar={
+        <AppBar>
+          <Left>
+            <BackButton />
+          </Left>
+          <Title>Control Chip</Title>
+        </AppBar>
+      }
+    >
       <ComponentAnalyzer
         variantsMap={controlChipVariantMap}
         initialVariants={initialVariants}

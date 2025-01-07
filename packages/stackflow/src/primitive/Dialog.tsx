@@ -1,7 +1,8 @@
-import { Slot } from "@radix-ui/react-slot";
 import { composeRefs } from "@radix-ui/react-compose-refs";
+import { Slot } from "@radix-ui/react-slot";
+import { mergeProps } from "@seed-design/dom-utils";
 import type * as React from "react";
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 import { DialogProvider, useDialog, useDialogContext } from "./useDialog";
 
 export interface DialogBackdropProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -23,17 +24,7 @@ export const DialogContent = forwardRef<HTMLDivElement, DialogContentProps>((pro
 
   const api = useDialogContext();
 
-  return (
-    <div
-      ref={ref}
-      onClick={useCallback((e) => {
-        e.stopPropagation();
-        onClick?.(e);
-      }, [])}
-      {...api.contentProps}
-      {...otherProps}
-    />
-  );
+  return <div ref={ref} {...mergeProps(api.contentProps, otherProps)} />;
 });
 
 DialogContent.displayName = "DialogContent";
@@ -45,7 +36,7 @@ export const DialogTitle = forwardRef<HTMLDivElement, DialogTitleProps>((props, 
 
   const api = useDialogContext();
 
-  return <div ref={ref} {...api.titleProps} {...otherProps} />;
+  return <div ref={ref} {...mergeProps(api.titleProps, otherProps)} />;
 });
 
 DialogTitle.displayName = "DialogTitle";
@@ -58,7 +49,7 @@ export const DialogDescription = forwardRef<HTMLDivElement, DialogDescriptionPro
 
     const api = useDialogContext();
 
-    return <div ref={ref} {...api.descriptionProps} {...otherProps} />;
+    return <div ref={ref} {...mergeProps(api.descriptionProps, otherProps)} />;
   },
 );
 
@@ -75,7 +66,7 @@ export const DialogCloseButton = forwardRef<HTMLButtonElement, DialogCloseButton
     const Comp = asChild ? Slot : "button";
     const api = useDialogContext();
 
-    return <Comp aria-label="Close" ref={ref} {...api.closeButtonProps} {...otherProps} />;
+    return <Comp aria-label="Close" ref={ref} {...mergeProps(api.closeButtonProps, otherProps)} />;
   },
 );
 
@@ -91,15 +82,7 @@ export const DialogRoot = forwardRef<HTMLDivElement, DialogRootProps>((props, re
   const api = useDialog({ onInteractOutside });
 
   return (
-    <div
-      ref={composeRefs(ref, api.refs.root)}
-      onClick={useCallback((e) => {
-        e.stopPropagation();
-        onClick?.(e);
-      }, [])}
-      {...api.rootProps}
-      {...otherProps}
-    >
+    <div ref={composeRefs(ref, api.refs.root)} {...mergeProps(api.rootProps, otherProps)}>
       <DialogProvider value={api}>{children}</DialogProvider>
     </div>
   );

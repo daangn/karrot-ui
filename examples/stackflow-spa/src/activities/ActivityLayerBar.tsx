@@ -10,7 +10,6 @@ import {
 import { AppScreen } from "../design-system/stackflow/AppScreen";
 
 import { IconBellLine } from "@daangn/react-monochrome-icon";
-import img from "../assets/peng.jpeg";
 import { theme } from "../stackflow/theme";
 
 const ActivityLayerBar: ActivityComponentType = () => {

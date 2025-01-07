@@ -1,12 +1,25 @@
 import { composeRefs } from "@radix-ui/react-compose-refs";
 import { Slot } from "@radix-ui/react-slot";
-import { type TopNavigationVariantProps, topNavigation } from "@seed-design/recipe/topNavigation";
+import { type AppBarVariantProps, appBar } from "@seed-design/recipe/appBar";
 import { useAppBarTitleMaxWidth } from "@stackflow/react-ui-core";
 import clsx from "clsx";
 import { createContext, forwardRef, useContext, useMemo, useRef } from "react";
 import { useAppScreenContext } from "./primitive/useAppScreen";
 
-const StyleContext = createContext<ReturnType<typeof topNavigation> | null>(null);
+export const PropsContext = createContext<Partial<AppBarProps> | null>(null);
+
+export const PropsProvider = PropsContext.Provider;
+
+function usePropsContext() {
+  const context = useContext(PropsContext);
+  if (!context) {
+    throw new Error("usePropsContext must be used within a AppBar");
+  }
+
+  return context;
+}
+
+const StyleContext = createContext<ReturnType<typeof appBar> | null>(null);
 
 function useStyleContext() {
   const context = useContext(StyleContext);
@@ -77,12 +90,12 @@ export interface AppBarTitleProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>(
   ({ children, className, ...otherProps }, ref) => {
-    const { theme, stateProps, appBarEdgeProps, refs } = useAppScreenContext();
+    const { stateProps, appBarEdgeProps, refs } = useAppScreenContext();
     const innerRef = useRef<HTMLDivElement>(null);
     const { maxWidth } = useAppBarTitleMaxWidth({
       outerRef: refs.appBar,
       innerRef: innerRef,
-      enable: theme === "cupertino",
+      enable: true,
     });
     const classNames = useStyleContext();
 
@@ -120,15 +133,22 @@ export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>(
 );
 AppBarTitle.displayName = "AppBarTitle";
 
-export interface AppBarProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    Omit<TopNavigationVariantProps, "theme"> {}
+export interface AppBarProps extends React.HTMLAttributes<HTMLDivElement>, AppBarVariantProps {}
 
 export const AppBarRoot = forwardRef<HTMLDivElement, AppBarProps>(
-  ({ border = true, tone = "layer", children, ...otherProps }, ref) => {
-    const { theme, refs, stateProps } = useAppScreenContext();
+  ({ theme, border, tone, children, ...otherProps }, ref) => {
+    const props = usePropsContext();
+    const { refs, stateProps } = useAppScreenContext();
 
-    const classNames = useMemo(() => topNavigation({ theme, border, tone }), [theme, border, tone]);
+    const classNames = useMemo(
+      () =>
+        appBar({
+          theme: theme ?? props.theme,
+          border: border ?? props.border,
+          tone: tone ?? props.tone,
+        }),
+      [theme, border, tone, props],
+    );
 
     return (
       <div

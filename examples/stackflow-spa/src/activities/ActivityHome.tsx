@@ -1,15 +1,20 @@
 import type { ActivityComponentType } from "@stackflow/react";
-
-import { AppScreen } from "@stackflow/plugin-basic-ui";
-
 import { List, ListItem } from "../components/List";
+import { AppBar, Title } from "../design-system/stackflow/AppBar";
+import { AppScreen } from "../design-system/stackflow/AppScreen";
 import { useFlow } from "../stackflow";
 
 const ActivityHome: ActivityComponentType = () => {
   const { push } = useFlow();
 
   return (
-    <AppScreen appBar={{ title: "Home" }}>
+    <AppScreen
+      appBar={
+        <AppBar>
+          <Title>Home</Title>
+        </AppBar>
+      }
+    >
       <div
         style={{
           overflow: "auto",

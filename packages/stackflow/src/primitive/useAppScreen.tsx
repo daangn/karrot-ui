@@ -1,161 +1,44 @@
-import { useActions, useStack } from "@stackflow/react";
+import { dataAttr } from "@seed-design/dom-utils";
+import { useMounted, useNullableActivity, useZIndexBase } from "@stackflow/react-ui-core";
 import { createContext, useContext, useMemo, useRef } from "react";
+import { type UseSwipeBackProps, useSwipeBack } from "./useSwipeBack";
 
-import type { ActivityTransitionState } from "@stackflow/core";
-import {
-  useLazy,
-  useMounted,
-  useNullableActivity,
-  useStyleEffectHide,
-  useStyleEffectOffset,
-  useStyleEffectSwipeBack,
-  useZIndexBase,
-} from "@stackflow/react-ui-core";
+export interface UseAppScreenProps extends UseSwipeBackProps {}
 
-const OFFSET_PX_ANDROID = 32;
-const OFFSET_PX_CUPERTINO = 80;
+export type UseAppScreenReturn = ReturnType<typeof useAppScreen>;
 
-function getZIndexStyle(props: {
-  base: number;
-  theme?: "android" | "cupertino";
-  hasAppBar: boolean;
-  modalPresentationStyle?: "fullScreen" | undefined;
-  activityEnterStyle?: "slideInLeft" | undefined;
-}) {
-  const { base, theme, hasAppBar, modalPresentationStyle, activityEnterStyle } = props;
-
-  if (theme === "cupertino") {
-    return {
-      "--z-index-dim": base + (modalPresentationStyle === "fullScreen" ? 2 : 0),
-      "--z-index-layer": base + (hasAppBar && modalPresentationStyle !== "fullScreen" ? 2 : 3), // FIXME: transparent backswipe에서 appBar 순서로 인해 2로 설정. 1로 되돌려야 함.
-      "--z-index-edge": base + 4,
-      "--z-index-app-bar": base + 7,
-    } as React.CSSProperties;
-  }
-
-  return {
-    "--z-index-dim": base,
-    "--z-index-layer": base + (activityEnterStyle === "slideInLeft" ? 1 : 3),
-    "--z-index-edge": base + 4,
-    "--z-index-app-bar": base + (activityEnterStyle === "slideInLeft" ? 7 : 4),
-  } as React.CSSProperties;
-}
-
-export function useAppScreen(props: {
-  theme?: "android" | "cupertino";
-  modalPresentationStyle?: "fullScreen" | undefined;
-  activityEnterStyle?: "slideInLeft" | undefined;
-  preventSwipeBack?: boolean;
-  hasAppBar: boolean;
-}) {
-  const { theme, preventSwipeBack, hasAppBar } = props;
-
-  const stack = useStack();
+export function useAppScreen(props: UseAppScreenProps) {
   const activity = useNullableActivity();
   const mounted = useMounted();
 
-  const { pop } = useActions();
-
-  const appScreenRef = useRef<HTMLDivElement>(null);
-  const dimRef = useRef<HTMLDivElement>(null);
   const layerRef = useRef<HTMLDivElement>(null);
-  const edgeRef = useRef<HTMLDivElement>(null);
   const appBarRef = useRef<HTMLDivElement>(null);
 
-  const modalPresentationStyle = theme === "cupertino" ? props.modalPresentationStyle : undefined;
-  const activityEnterStyle = theme === "android" ? props.activityEnterStyle : undefined;
-  const isSwipeBackPrevented = preventSwipeBack || modalPresentationStyle === "fullScreen";
-
   const transitionState = activity?.transitionState ?? "enter-done";
-  const lazyTransitionState = useLazy(transitionState);
-  const transitionDuration = stack ? `${stack.transitionDuration}ms` : "0ms";
-  const computedTransitionDuration =
-    stack?.globalTransitionState === "loading" ? transitionDuration : "0ms";
 
-  useStyleEffectHide({
-    refs: [appScreenRef],
-  });
-  useStyleEffectOffset({
-    refs:
-      theme === "cupertino" || activityEnterStyle === "slideInLeft"
-        ? [layerRef]
-        : [layerRef, appBarRef],
-    offsetStyles:
-      theme === "cupertino"
-        ? {
-            transform: `translate3d(-${OFFSET_PX_CUPERTINO}px, 0, 0)`,
-            opacity: "1",
-          }
-        : activityEnterStyle === "slideInLeft"
-          ? {
-              transform: "translate3d(-50%, 0, 0)",
-              opacity: "0",
-            }
-          : {
-              transform: `translate3d(0, -${OFFSET_PX_ANDROID}px, 0)`,
-              opacity: "1",
-            },
-    transitionDuration: computedTransitionDuration,
-    hasEffect: modalPresentationStyle !== "fullScreen",
-  });
-  useStyleEffectSwipeBack({
-    dimRef,
-    edgeRef,
-    paperRef: layerRef,
-    appBarRef,
-    offset: OFFSET_PX_CUPERTINO,
-    transitionDuration: transitionDuration,
-    preventSwipeBack: isSwipeBackPrevented || theme !== "cupertino",
-    getActivityTransitionState() {
-      const $layer = layerRef.current;
-      const $appScreen = $layer?.parentElement;
-
-      if (!$appScreen) {
-        return null;
-      }
-
-      const transitionState = $appScreen.dataset["transition-state"];
-
-      if (transitionState) {
-        return transitionState as ActivityTransitionState;
-      }
-
-      return null;
-    },
-    onSwipeEnd({ swiped }) {
-      if (swiped) {
-        pop();
-      }
-    },
-  });
+  const { activityProps, layerProps, edgeProps } = useSwipeBack(props);
 
   const zIndexBase = useZIndexBase();
   const zIndexStyle = useMemo(
-    () =>
-      getZIndexStyle({
-        base: zIndexBase,
-        theme,
-        hasAppBar,
-        modalPresentationStyle,
-        activityEnterStyle,
-      }),
-    [zIndexBase, theme, hasAppBar, modalPresentationStyle, activityEnterStyle],
+    () => ({
+      "--z-index-base": zIndexBase.toString(),
+    }),
+    [zIndexBase],
   );
 
   const stateProps = useMemo(
     () => ({
-      "data-transition-state":
-        transitionState === "enter-done" || transitionState === "exit-done"
-          ? transitionState
-          : lazyTransitionState,
-      "data-stackflow-activity-is-active": mounted ? activity?.isActive : undefined,
+      "data-activity-id": activity?.id,
+      "data-activity-is-top": dataAttr(activity?.isTop),
+      "data-activity-is-active": dataAttr(activity?.isActive),
+      "data-is-mounted": mounted,
+      "data-transition-state": transitionState,
     }),
-    [transitionState, lazyTransitionState, mounted, activity?.isActive],
+    [transitionState, mounted, activity?.id, activity?.isActive, activity?.isTop],
   );
 
   return useMemo(
     () => ({
-      theme,
       activity,
       scroll: ({ top }: { top: number }) => {
         layerRef.current?.scroll({
@@ -164,35 +47,30 @@ export function useAppScreen(props: {
         });
       },
       refs: {
-        appScreen: appScreenRef,
-        dim: dimRef,
         layer: layerRef,
-        edge: edgeRef,
         appBar: appBarRef,
       },
       stateProps,
-      rootProps: {
+      activityProps: {
+        "data-part": "activity",
+        ...activityProps,
         ...stateProps,
-        "data-stackflow-activity-id": mounted ? activity?.id : undefined,
+        "data-activity-id": activity?.id,
         style: zIndexStyle,
       } as React.HTMLAttributes<HTMLDivElement>,
       dimProps: {
+        "data-part": "dim",
         ...stateProps,
-        style: {
-          display: activityEnterStyle !== "slideInLeft" ? undefined : "none",
-        },
       } as React.HTMLAttributes<HTMLDivElement>,
       layerProps: {
+        "data-part": "layer",
         ...stateProps,
+        ...layerProps,
       } as React.HTMLAttributes<HTMLDivElement>,
       edgeProps: {
+        "data-part": "edge",
+        ...edgeProps,
         ...stateProps,
-        style: {
-          display:
-            !activity?.isRoot && theme === "cupertino" && !isSwipeBackPrevented
-              ? undefined
-              : "none",
-        },
       } as React.HTMLAttributes<HTMLDivElement>,
       appBarEdgeProps: {
         ...stateProps,
@@ -206,7 +84,7 @@ export function useAppScreen(props: {
         },
       } as React.HTMLAttributes<HTMLButtonElement>,
     }),
-    [theme, activity, zIndexStyle, isSwipeBackPrevented, activityEnterStyle, stateProps, mounted],
+    [activity, zIndexStyle, stateProps, activityProps, edgeProps, layerProps],
   );
 }
 

@@ -1,14 +1,22 @@
-import "@seed-design/stylesheet/helpBubble.css";
-
 import type { ActivityComponentType } from "@stackflow/react";
 
-import { AppScreen } from "@stackflow/plugin-basic-ui";
+import { AppBar, BackButton, Left, Title } from "../design-system/stackflow/AppBar";
+import { AppScreen } from "../design-system/stackflow/AppScreen";
 import { ActionButton } from "../design-system/ui/action-button";
 import { HelpBubbleTrigger } from "../design-system/ui/help-bubble";
 
 const ActivityHelpBubble: ActivityComponentType = () => {
   return (
-    <AppScreen appBar={{ title: "HelpBubble" }}>
+    <AppScreen
+      appBar={
+        <AppBar>
+          <Left>
+            <BackButton />
+          </Left>
+          <Title>Help Bubble</Title>
+        </AppBar>
+      }
+    >
       <div style={{ overflowY: "auto", height: "200vh" }}>
         <div style={{ display: "flex", paddingTop: "20vh", justifyContent: "center" }}>
           <HelpBubbleTrigger title="Flip 테스트">

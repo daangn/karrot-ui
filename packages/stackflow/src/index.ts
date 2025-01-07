@@ -105,3 +105,14 @@ export * as AppBar from "./AppBar.namespace";
 export * as AppScreen from "./AppScreen.namespace";
 export * as BottomSheet from "./BottomSheet.namespace";
 export * as Dialog from "./Dialog.namespace";
+
+export {
+  useGlobalInteraction,
+  type UseGlobalInteractionReturn,
+} from "./primitive/useGlobalInteraction";
+
+export {
+  GlobalInteractionProvider,
+  useGlobalInteractionContext,
+  type UseGlobalInteractionContext,
+} from "./primitive/useGlobalInteractionContext";
