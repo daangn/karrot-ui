@@ -20,7 +20,7 @@ data:
         marginY: 1.5px
       title:
         fontWeight: $font-weight.bold
-      label:
+      description:
         fontWeight: $font-weight.medium
       linkLabel:
         height: $unit.s10
@@ -41,7 +41,7 @@ data:
         color: $color.fg.neutral
       title:
         color: $color.fg.neutral
-      label:
+      description:
         color: $color.fg.neutral
       linkLabel:
         color: $color.fg.neutral
@@ -57,7 +57,7 @@ data:
         color: $color.fg.positive-contrast
       title:
         color: $color.fg.positive-contrast
-      label:
+      description:
         color: $color.fg.positive-contrast
       linkLabel:
         color: $color.fg.positive-contrast
@@ -73,7 +73,7 @@ data:
         color: $color.fg.informative-contrast
       title:
         color: $color.fg.informative-contrast
-      label:
+      description:
         color: $color.fg.informative-contrast
       linkLabel:
         color: $color.fg.informative-contrast
@@ -89,7 +89,7 @@ data:
         color: $color.fg.warning-contrast
       title:
         color: $color.fg.warning-contrast
-      label:
+      description:
         color: $color.fg.warning-contrast
       linkLabel:
         color: $color.fg.warning-contrast
@@ -105,7 +105,7 @@ data:
         color: $color.fg.neutral
       title:
         color: $color.fg.neutral
-      label:
+      description:
         color: $color.fg.neutral
       linkLabel:
         color: $color.fg.neutral
@@ -121,7 +121,7 @@ data:
         color: $color.fg.danger-contrast
       title:
         color: $color.fg.danger-contrast
-      label:
+      description:
         color: $color.fg.danger-contrast
       linkLabel:
         color: $color.fg.danger-contrast
@@ -135,7 +135,7 @@ data:
         color: $color.fg.static-white
       title:
         color: $color.fg.static-white
-      label:
+      description:
         color: $color.fg.static-white
       linkLabel:
         color: $color.fg.static-white

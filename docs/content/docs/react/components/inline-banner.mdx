@@ -1,0 +1,110 @@
+---
+title: Inline Banner
+description: 사용자가 꼭 알아야 하는 경고 메시지나 현재 상태를 전달하는 컴포넌트에요.
+---
+
+<ComponentExample name="inline-banner-preview" />
+
+## 설치
+
+<Installation name="inline-banner" />
+
+## Props
+
+### `InlineBanner`
+
+<ReactTypeTable
+  path="./registry/ui/inline-banner.tsx"
+  name="InlineBannerProps"
+/>
+
+### `LinkInlineBanner`
+
+<ReactTypeTable
+  path="./registry/ui/inline-banner.tsx"
+  name="LinkInlineBannerProps"
+/>
+
+### `ActionableInlineBanner`
+
+<ReactTypeTable
+  path="./registry/ui/inline-banner.tsx"
+  name="ActionableInlineBannerProps"
+/>
+
+### `DismissibleInlineBanner`
+
+<ReactTypeTable
+  path="./registry/ui/inline-banner.tsx"
+  name="DismissibleInlineBannerProps"
+/>
+
+## 예제
+
+### Content Layout
+
+#### Text Only
+
+<ComponentExample name="inline-banner-text-only" />
+
+#### With Icon
+
+<ComponentExample name="inline-banner-with-icon" />
+
+#### With Title Text
+
+<ComponentExample name="inline-banner-with-title-text" />
+
+#### With All
+
+<ComponentExample name="inline-banner-with-all" />
+
+### Customizable Parts
+
+#### Rendering `LinkInlineBanner`’s Link Label as Child
+
+<ComponentExample name="inline-banner-link-label-as-child" />
+
+### Variants
+
+#### Neutral Weak (Default)
+
+<ComponentExample name="inline-banner-neutral-weak" />
+
+#### Positive Weak
+
+<ComponentExample name="inline-banner-positive-weak" />
+
+#### Informative Weak
+
+<ComponentExample name="inline-banner-informative-weak" />
+
+#### Warning Weak
+
+<ComponentExample name="inline-banner-warning-weak" />
+
+#### Warning Solid
+
+<ComponentExample name="inline-banner-warning-solid" />
+
+#### Danger Weak
+
+<ComponentExample name="inline-banner-danger-weak" />
+
+#### Danger Solid
+
+<ComponentExample name="inline-banner-danger-solid" />
+
+<Callout type="warn">
+
+`dangerWeak`과 `dangerSolid` variant는 `InlineBanner`와 `ActionableInlineBanner`에서만 제공돼요.
+
+</Callout>
+
+<Callout type="warn">
+
+variant가 `dangerWeak`이나 `dangerSolid`인 경우 `position: sticky` 등을 활용하여 화면을 스크롤했을 때도 인라인 배너가 상단에 고정되도록 해 주세요.
+
+</Callout>
+
+<StackflowExample name="inline-banner-activity" />

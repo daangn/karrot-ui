@@ -25,7 +25,7 @@
         "title": {
           "fontWeight": "$font-weight.bold"
         },
-        "label": {
+        "description": {
           "fontWeight": "$font-weight.medium"
         },
         "linkLabel": {
@@ -56,7 +56,7 @@
         "title": {
           "color": "$color.fg.neutral"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.neutral"
         },
         "linkLabel": {
@@ -81,7 +81,7 @@
         "title": {
           "color": "$color.fg.positive-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.positive-contrast"
         },
         "linkLabel": {
@@ -106,7 +106,7 @@
         "title": {
           "color": "$color.fg.informative-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.informative-contrast"
         },
         "linkLabel": {
@@ -131,7 +131,7 @@
         "title": {
           "color": "$color.fg.warning-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.warning-contrast"
         },
         "linkLabel": {
@@ -156,7 +156,7 @@
         "title": {
           "color": "$color.fg.neutral"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.neutral"
         },
         "linkLabel": {
@@ -181,7 +181,7 @@
         "title": {
           "color": "$color.fg.danger-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.danger-contrast"
         },
         "linkLabel": {
@@ -203,7 +203,7 @@
         "title": {
           "color": "$color.fg.static-white"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.static-white"
         },
         "linkLabel": {

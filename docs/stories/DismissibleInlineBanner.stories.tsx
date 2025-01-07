@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { DismissibleInlineBanner, InlineBannerDescription } from "seed-design/ui/inline-banner";
+import { DismissibleInlineBanner } from "seed-design/ui/inline-banner";
 
 import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
 import { VariantTable } from "./components/variant-table";
@@ -18,14 +18,9 @@ type Story = StoryObj<typeof meta>;
 
 const CommonStoryTemplate: Story = {
   args: {
-    children: (
-      <InlineBannerDescription>
-        Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis
-        exercitation.
-      </InlineBannerDescription>
-    ),
+    description:
+      "Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis exercitation.",
     icon: <IconBellFill />,
-    dismissAriaLabel: "닫기",
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />

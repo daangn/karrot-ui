@@ -15,7 +15,7 @@ export declare const vars: {
       "title": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
-      "label": {
+      "description": {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "dismissButton": {
@@ -29,7 +29,7 @@ export declare const vars: {
       }
     }
   },
-  "variantNeutral": {
+  "toneNeutral": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak)"
@@ -40,7 +40,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "linkLabel": {
@@ -59,7 +59,7 @@ export declare const vars: {
       }
     }
   },
-  "variantInformative": {
+  "toneInformative": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-informative-weak)"
@@ -70,7 +70,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
       "linkLabel": {
@@ -89,7 +89,7 @@ export declare const vars: {
       }
     }
   },
-  "variantWarning": {
+  "toneWarning": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-warning-weak)"
@@ -100,7 +100,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
       "linkLabel": {
@@ -119,7 +119,7 @@ export declare const vars: {
       }
     }
   },
-  "variantDanger": {
+  "toneDanger": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-danger-weak)"
@@ -130,7 +130,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
       "linkLabel": {
@@ -149,7 +149,7 @@ export declare const vars: {
       }
     }
   },
-  "variantMagic": {
+  "toneMagic": {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-magic-weak)"
@@ -160,7 +160,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-magic-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-magic-contrast)"
       },
       "linkLabel": {

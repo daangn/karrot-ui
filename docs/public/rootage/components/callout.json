@@ -21,7 +21,7 @@
         "title": {
           "fontWeight": "$font-weight.bold"
         },
-        "label": {
+        "description": {
           "fontWeight": "$font-weight.regular"
         },
         "dismissButton": {
@@ -35,7 +35,7 @@
         }
       }
     },
-    "variant=neutral": {
+    "tone=neutral": {
       "enabled": {
         "root": {
           "color": "$color.bg.neutral-weak"
@@ -46,7 +46,7 @@
         "title": {
           "color": "$color.fg.neutral"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.neutral"
         },
         "linkLabel": {
@@ -65,7 +65,7 @@
         }
       }
     },
-    "variant=informative": {
+    "tone=informative": {
       "enabled": {
         "root": {
           "color": "$color.bg.informative-weak"
@@ -76,7 +76,7 @@
         "title": {
           "color": "$color.fg.informative-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.informative-contrast"
         },
         "linkLabel": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "variant=warning": {
+    "tone=warning": {
       "enabled": {
         "root": {
           "color": "$color.bg.warning-weak"
@@ -106,7 +106,7 @@
         "title": {
           "color": "$color.fg.warning-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.warning-contrast"
         },
         "linkLabel": {
@@ -125,7 +125,7 @@
         }
       }
     },
-    "variant=danger": {
+    "tone=danger": {
       "enabled": {
         "root": {
           "color": "$color.bg.danger-weak"
@@ -136,7 +136,7 @@
         "title": {
           "color": "$color.fg.danger-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.danger-contrast"
         },
         "linkLabel": {
@@ -155,7 +155,7 @@
         }
       }
     },
-    "variant=magic": {
+    "tone=magic": {
       "enabled": {
         "root": {
           "color": "$color.bg.magic-weak"
@@ -166,7 +166,7 @@
         "title": {
           "color": "$color.fg.magic-contrast"
         },
-        "label": {
+        "description": {
           "color": "$color.fg.magic-contrast"
         },
         "linkLabel": {

@@ -9,7 +9,7 @@ const callout = defineRecipe({
     "icon",
     "title",
     "spacer",
-    "label",
+    "description",
     "linkLabel",
     "actionableIcon",
     "dismissButton",
@@ -17,12 +17,6 @@ const callout = defineRecipe({
   ],
   base: {
     root: {
-      [pseudo(":is(button)")]: {
-        // XXX: css reset 생기면 불필요할 가능성
-        cursor: "pointer",
-        border: "none",
-      },
-
       display: "flex",
       alignItems: "center",
 
@@ -34,12 +28,17 @@ const callout = defineRecipe({
       gap: vars.base.enabled.root.gap,
 
       borderRadius: vars.base.enabled.root.cornerRadius,
+      border: "none",
 
       textAlign: "start",
       fontSize: vars.base.enabled.root.fontSize,
       lineHeight: vars.base.enabled.root.lineHeight,
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+
+      [pseudo(":is(button)")]: {
+        cursor: "pointer",
+      },
     },
     icon: {
       flex: "none",
@@ -53,16 +52,14 @@ const callout = defineRecipe({
     spacer: {
       letterSpacing: "0.25em",
     },
-    label: {
-      fontWeight: vars.base.enabled.label.fontWeight,
+    description: {
+      fontWeight: vars.base.enabled.description.fontWeight,
     },
     linkLabel: {
       textDecoration: "underline",
-      // XXX
       textUnderlineOffset: "2px",
 
-      // XXX: css reset 생기면 불필요할 가능성
-      display: "inline",
+      display: "inline-block",
       backgroundColor: "transparent",
       padding: 0,
       border: "none",
@@ -87,7 +84,7 @@ const callout = defineRecipe({
       width: vars.base.enabled.dismissButton.size,
       height: vars.base.enabled.dismissButton.size,
 
-      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.root.padding} * 2) * -1)`,
+      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.dismissIcon.size}) * -0.5)`,
       marginInlineStart: "auto",
 
       border: "none",
@@ -101,143 +98,143 @@ const callout = defineRecipe({
     },
   },
   defaultVariants: {
-    variant: "neutral",
+    tone: "neutral",
   },
   variants: {
-    variant: {
+    tone: {
       neutral: {
         root: {
-          backgroundColor: vars.variantNeutral.enabled.root.color,
+          backgroundColor: vars.toneNeutral.enabled.root.color,
 
           [pseudo(":is(button)", active)]: {
-            backgroundColor: vars.variantNeutral.pressed.root.color,
+            backgroundColor: vars.toneNeutral.pressed.root.color,
           },
         },
         icon: {
-          color: vars.variantNeutral.enabled.icon.color,
+          color: vars.toneNeutral.enabled.icon.color,
         },
         title: {
-          color: vars.variantNeutral.enabled.title.color,
+          color: vars.toneNeutral.enabled.title.color,
         },
-        label: {
-          color: vars.variantNeutral.enabled.label.color,
+        description: {
+          color: vars.toneNeutral.enabled.description.color,
         },
         linkLabel: {
-          color: vars.variantNeutral.enabled.linkLabel.color,
+          color: vars.toneNeutral.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.variantNeutral.enabled.actionableIcon.color,
+          color: vars.toneNeutral.enabled.actionableIcon.color,
         },
         dismissIcon: {
-          color: vars.variantNeutral.enabled.dismissIcon.color,
+          color: vars.toneNeutral.enabled.dismissIcon.color,
         },
       },
       informative: {
         root: {
-          backgroundColor: vars.variantInformative.enabled.root.color,
+          backgroundColor: vars.toneInformative.enabled.root.color,
 
           [pseudo(":is(button)", active)]: {
-            backgroundColor: vars.variantInformative.pressed.root.color,
+            backgroundColor: vars.toneInformative.pressed.root.color,
           },
         },
         icon: {
-          color: vars.variantInformative.enabled.icon.color,
+          color: vars.toneInformative.enabled.icon.color,
         },
         title: {
-          color: vars.variantInformative.enabled.title.color,
+          color: vars.toneInformative.enabled.title.color,
         },
-        label: {
-          color: vars.variantInformative.enabled.label.color,
+        description: {
+          color: vars.toneInformative.enabled.description.color,
         },
         linkLabel: {
-          color: vars.variantInformative.enabled.linkLabel.color,
+          color: vars.toneInformative.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.variantInformative.enabled.actionableIcon.color,
+          color: vars.toneInformative.enabled.actionableIcon.color,
         },
         dismissIcon: {
-          color: vars.variantInformative.enabled.dismissIcon.color,
+          color: vars.toneInformative.enabled.dismissIcon.color,
         },
       },
       warning: {
         root: {
-          backgroundColor: vars.variantWarning.enabled.root.color,
+          backgroundColor: vars.toneWarning.enabled.root.color,
 
           [pseudo(":is(button)", active)]: {
-            backgroundColor: vars.variantWarning.pressed.root.color,
+            backgroundColor: vars.toneWarning.pressed.root.color,
           },
         },
         icon: {
-          color: vars.variantWarning.enabled.icon.color,
+          color: vars.toneWarning.enabled.icon.color,
         },
         title: {
-          color: vars.variantWarning.enabled.title.color,
+          color: vars.toneWarning.enabled.title.color,
         },
-        label: {
-          color: vars.variantWarning.enabled.label.color,
+        description: {
+          color: vars.toneWarning.enabled.description.color,
         },
         linkLabel: {
-          color: vars.variantWarning.enabled.linkLabel.color,
+          color: vars.toneWarning.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.variantWarning.enabled.actionableIcon.color,
+          color: vars.toneWarning.enabled.actionableIcon.color,
         },
         dismissIcon: {
-          color: vars.variantWarning.enabled.dismissIcon.color,
+          color: vars.toneWarning.enabled.dismissIcon.color,
         },
       },
       danger: {
         root: {
-          backgroundColor: vars.variantDanger.enabled.root.color,
+          backgroundColor: vars.toneDanger.enabled.root.color,
 
           [pseudo(":is(button)", active)]: {
-            backgroundColor: vars.variantDanger.pressed.root.color,
+            backgroundColor: vars.toneDanger.pressed.root.color,
           },
         },
         icon: {
-          color: vars.variantDanger.enabled.icon.color,
+          color: vars.toneDanger.enabled.icon.color,
         },
         title: {
-          color: vars.variantDanger.enabled.title.color,
+          color: vars.toneDanger.enabled.title.color,
         },
-        label: {
-          color: vars.variantDanger.enabled.label.color,
+        description: {
+          color: vars.toneDanger.enabled.description.color,
         },
         linkLabel: {
-          color: vars.variantDanger.enabled.linkLabel.color,
+          color: vars.toneDanger.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.variantDanger.enabled.actionableIcon.color,
+          color: vars.toneDanger.enabled.actionableIcon.color,
         },
         dismissIcon: {
-          color: vars.variantDanger.enabled.dismissIcon.color,
+          color: vars.toneDanger.enabled.dismissIcon.color,
         },
       },
       magic: {
         root: {
-          backgroundColor: vars.variantMagic.enabled.root.color,
+          backgroundColor: vars.toneMagic.enabled.root.color,
 
           [pseudo(":is(button)", active)]: {
-            backgroundColor: vars.variantMagic.pressed.root.color,
+            backgroundColor: vars.toneMagic.pressed.root.color,
           },
         },
         icon: {
-          color: vars.variantMagic.enabled.icon.color,
+          color: vars.toneMagic.enabled.icon.color,
         },
         title: {
-          color: vars.variantMagic.enabled.title.color,
+          color: vars.toneMagic.enabled.title.color,
         },
-        label: {
-          color: vars.variantMagic.enabled.label.color,
+        description: {
+          color: vars.toneMagic.enabled.description.color,
         },
         linkLabel: {
-          color: vars.variantMagic.enabled.linkLabel.color,
+          color: vars.toneMagic.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.variantMagic.enabled.actionableIcon.color,
+          color: vars.toneMagic.enabled.actionableIcon.color,
         },
         dismissIcon: {
-          color: vars.variantMagic.enabled.dismissIcon.color,
+          color: vars.toneMagic.enabled.dismissIcon.color,
         },
       },
     },
