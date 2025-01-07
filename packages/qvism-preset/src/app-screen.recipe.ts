@@ -19,14 +19,6 @@ const FadeOutToBottomAndroid = {
   timingFunction: "linear",
 };
 
-const transform = ({
-  translateX = "0",
-  translateY = "0",
-}: {
-  translateX?: string;
-  translateY?: string;
-}) => `translate3d(${translateX}, ${translateY}, 0)`;
-
 const push = "[data-global-transition-state=enter-active] &[data-activity-is-top]";
 const pop = "[data-global-transition-state=exit-active] &[data-activity-is-top]";
 const idle = "[data-global-transition-state=enter-done] &[data-activity-is-top]";
@@ -36,12 +28,107 @@ const idleBehind = "[data-global-transition-state=enter-done] &:not([data-activi
 const swipeBackSwiping = "[data-swipe-back-state=swiping] &[data-activity-is-top]";
 const swipeBackSwipingBehind = "[data-swipe-back-state=swiping] &:not([data-activity-is-top])";
 
-const slideFromRightIOS = {
-  outsideOffsetX: "100%",
-  behindOffsetX: "-30%",
-  swipeBackDisplacement: "var(--swipe-back-displacement, 0)",
-  swipeBackDisplacementBehind: "calc((var(--swipe-back-displacement, 0) - 1) * 0.3)",
-  swipeBackDisplacementRatio: "var(--swipe-back-displacement-ratio, 0)",
+interface TransformProps {
+  translateX?: string;
+  translateY?: string;
+  opacity?: string;
+}
+
+function translate3d({ translateX = "0", translateY = "0" }: TransformProps) {
+  return `translate3d(${translateX}, ${translateY}, 0)`;
+}
+
+function transform({ translateX, translateY, opacity }: TransformProps) {
+  return {
+    transform: translateX || translateY ? translate3d({ translateX, translateY }) : undefined,
+    opacity,
+  };
+}
+
+function createPresence(config: { duration: string; timingFunction: string }) {
+  function enter(from: TransformProps, to: TransformProps) {
+    return {
+      ...enterAnimation({ ...config, ...from }),
+      ...transform(to),
+    };
+  }
+
+  function exit(from: TransformProps, to: TransformProps) {
+    return {
+      ...transform(from),
+      ...exitAnimation({ ...config, ...to }),
+    };
+  }
+
+  return { enter, exit };
+}
+
+const iOSPresence = createPresence(TransitionIOS);
+
+function getIOSAnimations(props: {
+  in: TransformProps;
+  swipe: TransformProps;
+  out: TransformProps;
+  gravity?: "in" | "out";
+}) {
+  const gravity = props.gravity || "in";
+  const animations =
+    gravity === "in"
+      ? {
+          push: iOSPresence.enter(props.out, props.in),
+          idle: iOSPresence.enter(props.swipe, props.in),
+          pop: iOSPresence.exit(props.swipe, props.out),
+        }
+      : {
+          push: iOSPresence.exit(props.in, props.out),
+          idle: iOSPresence.exit(props.swipe, props.out),
+          pop: iOSPresence.enter(props.swipe, props.in),
+        };
+
+  return {
+    ...animations,
+    swipeBackSwiping: {
+      animation: "none", // remove animation while swiping, so that animation re-run on idle or pop
+      ...transform(props.swipe), // while swiping back, set swiping position
+    },
+  };
+}
+
+const iOSAnimations = {
+  translate: getIOSAnimations({
+    in: {
+      translateX: "0",
+    },
+    swipe: {
+      translateX: "var(--swipe-back-displacement, 0)",
+    },
+    out: {
+      translateX: "100%",
+    },
+  }),
+  translateBehind: getIOSAnimations({
+    in: {
+      translateX: "0",
+    },
+    swipe: {
+      translateX: "calc(-30% + var(--swipe-back-displacement, 0) * 0.3)",
+    },
+    out: {
+      translateX: "-30%",
+    },
+    gravity: "out",
+  }),
+  opacity: getIOSAnimations({
+    in: {
+      opacity: "1",
+    },
+    swipe: {
+      opacity: "calc(1 - var(--swipe-back-displacement-ratio, 0))",
+    },
+    out: {
+      opacity: "0",
+    },
+  }),
 };
 
 export const appScreen = defineRecipe({
@@ -124,76 +211,23 @@ export const appScreen = defineRecipe({
         layer: {
           transform: "translate3d(0, 0, 0)",
           // top
-          [push]: enterAnimation({
-            ...TransitionIOS,
-            translateX: "100%",
-          }),
-          [pop]: {
-            transform: transform({
-              translateX: "var(--swipe-back-displacement, 0)",
-            }),
-            ...exitAnimation({
-              ...TransitionIOS,
-              translateX: "100%",
-            }),
-          },
-          [idle]: enterAnimation({
-            ...TransitionIOS,
-            translateX: "var(--swipe-back-displacement, 0)",
-          }),
-          [swipeBackSwiping]: {
-            animation: "none",
-            transform: transform({
-              translateX: "var(--swipe-back-displacement, 0)",
-            }),
-          },
+          [push]: iOSAnimations.translate.push,
+          [pop]: iOSAnimations.translate.pop,
+          [idle]: iOSAnimations.translate.idle,
+          [swipeBackSwiping]: iOSAnimations.translate.swipeBackSwiping,
 
           // behind
-          [popBehind]: enterAnimation({
-            ...TransitionIOS,
-            translateX: "calc(-30% + var(--swipe-back-displacement, 0) * 0.3)",
-          }),
-          [pushBehind]: exitAnimation({
-            ...TransitionIOS,
-            translateX: "-30%",
-          }),
-          [idleBehind]: {
-            transform: transform({
-              translateX: "calc(-30% + var(--swipe-back-displacement, 0) * 0.3)",
-            }),
-            ...exitAnimation({
-              ...TransitionIOS,
-              translateX: "-30%",
-            }),
-          },
-          [swipeBackSwipingBehind]: {
-            animation: "none",
-            transform: transform({
-              translateX: "calc(-30% + var(--swipe-back-displacement, 0) * 0.3)",
-            }),
-          },
+          [pushBehind]: iOSAnimations.translateBehind.push,
+          [popBehind]: iOSAnimations.translateBehind.pop,
+          [idleBehind]: iOSAnimations.translateBehind.idle,
+          [swipeBackSwipingBehind]: iOSAnimations.translateBehind.swipeBackSwiping,
         },
         dim: {
           opacity: 1,
-          [push]: enterAnimation({
-            ...TransitionIOS,
-            opacity: "0",
-          }),
-          [pop]: {
-            opacity: "calc(1 - var(--swipe-back-displacement-ratio, 0))",
-            ...exitAnimation({
-              ...TransitionIOS,
-              opacity: "0",
-            }),
-          },
-          [idle]: enterAnimation({
-            ...TransitionIOS,
-            opacity: "calc(1 - var(--swipe-back-displacement-ratio, 0))",
-          }),
-          [swipeBackSwiping]: {
-            animation: "none",
-            opacity: "calc(1 - var(--swipe-back-displacement-ratio, 0))",
-          },
+          [push]: iOSAnimations.opacity.push,
+          [pop]: iOSAnimations.opacity.pop,
+          [idle]: iOSAnimations.opacity.idle,
+          [swipeBackSwiping]: iOSAnimations.opacity.swipeBackSwiping,
         },
       },
       fadeFromBottomAndroid: {
