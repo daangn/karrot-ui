@@ -73,6 +73,8 @@ export const LinkInlineBanner = React.forwardRef<
     </SeedInlineBanner.Root>
   );
 });
+LinkInlineBanner.displayName = "LinkInlineBanner";
+
 export interface ActionableInlineBannerProps
   extends Omit<SeedInlineBanner.RootProps, "children" | "title" | "asChild"> {
   icon?: React.ReactNode;
