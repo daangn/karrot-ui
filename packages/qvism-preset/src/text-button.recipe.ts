@@ -23,6 +23,8 @@ const textButton = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
+      cursor: "pointer",
+
       [pseudo(disabled)]: {
         color: vars.base.disabled.root.color,
         cursor: "not-allowed",
