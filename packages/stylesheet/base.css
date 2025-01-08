@@ -19,15 +19,15 @@
   border-left-width: var(--seed-box-border-left-width);
   border-right-width: var(--seed-box-border-right-width);
 
-  --seed-box-padding: initial;
+  --seed-box-padding: 0;
   --seed-box-padding-y: var(--seed-box-padding);
   --seed-box-padding-x: var(--seed-box-padding);
   --seed-box-padding-bottom: var(--seed-box-padding-y);
   --seed-box-padding-top: var(--seed-box-padding-y);
   --seed-box-padding-left: var(--seed-box-padding-x);
   --seed-box-padding-right: var(--seed-box-padding-x);
-  padding-bottom: var(--seed-box-padding-bottom);
   padding-top: var(--seed-box-padding-top);
+  padding-bottom: var(--seed-box-padding-bottom);
   padding-left: var(--seed-box-padding-left);
   padding-right: var(--seed-box-padding-right);
 
