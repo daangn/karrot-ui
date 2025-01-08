@@ -5,7 +5,7 @@ import { TabContent, TabContentList, Tabs, TabTrigger, TabTriggerList } from "se
 
 export default function TabsScrollTop() {
   const [currentTab, setCurrentTab] = useState("1");
-  const contentRefs: Record<string, RefObject<HTMLDivElement | null>> = {
+  const contentRefs: Record<string, RefObject<HTMLDivElement>> = {
     "1": useRef(null),
     "2": useRef(null),
   };
