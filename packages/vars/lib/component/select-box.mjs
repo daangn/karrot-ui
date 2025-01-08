@@ -3,7 +3,7 @@ export const vars = {
     "enabled": {
       "root": {
         "paddingX": "var(--seed-v3-unit-s4)",
-        "paddingY": "19px",
+        "paddingY": "var(--seed-v3-unit-s5)",
         "gap": "var(--seed-v3-unit-s2_5)",
         "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-neutral)",
@@ -25,8 +25,7 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "checkboxControl": {
-        "size": "22px",
-        "margin": "1px",
+        "size": "var(--seed-v3-unit-s6)",
         "color": "var(--seed-v3-color-bg-layer-default)",
         "strokeWidth": "1.25px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",

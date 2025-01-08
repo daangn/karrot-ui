@@ -32,8 +32,6 @@ export const selectBox = defineRecipe({
   base: {
     root: {
       cursor: "pointer",
-      borderStyle: "solid",
-      boxSizing: "border-box",
 
       display: "flex",
       alignItems: "center",
@@ -43,10 +41,9 @@ export const selectBox = defineRecipe({
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
 
-      borderWidth: vars.base.enabled.root.strokeWidth,
-      borderColor: vars.base.enabled.root.strokeColor,
-
       borderRadius: vars.base.enabled.root.cornerRadius,
+
+      boxShadow: `inset 0 0 0 ${vars.base.enabled.root.strokeWidth} ${vars.base.enabled.root.strokeColor}`,
 
       [pseudo(active)]: {
         backgroundColor: vars.base.enabledPressed.root.color,
@@ -54,6 +51,8 @@ export const selectBox = defineRecipe({
 
       [pseudo(checked)]: {
         backgroundColor: vars.base.enabledSelected.root.color,
+
+        boxShadow: `inset 0 0 0 ${vars.base.enabled.root.strokeWidth} ${vars.base.enabledSelected.root.strokeColor}`,
       },
 
       [pseudo(checked, active)]: {
@@ -75,8 +74,6 @@ export const selectBox = defineRecipe({
 
       width: vars.base.enabled.checkboxControl.size,
       height: vars.base.enabled.checkboxControl.size,
-
-      margin: vars.base.enabled.checkboxControl.margin,
 
       backgroundColor: vars.base.enabled.checkboxControl.color,
 

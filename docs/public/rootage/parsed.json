@@ -19127,9 +19127,11 @@
                     {
                       "key": "paddingY",
                       "value": {
-                        "type": "dimension",
-                        "value": 19,
-                        "unit": "px"
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s5"
                       }
                     },
                     {
@@ -19286,17 +19288,11 @@
                     {
                       "key": "size",
                       "value": {
-                        "type": "dimension",
-                        "value": 22,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "margin",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1,
-                        "unit": "px"
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s6"
                       }
                     },
                     {

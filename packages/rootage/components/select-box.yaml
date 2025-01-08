@@ -8,7 +8,7 @@ data:
     enabled:
       root:
         paddingX: $unit.s4
-        paddingY: 19px
+        paddingY: $unit.s5
         gap: $unit.s2_5
         strokeWidth: 1px
         strokeColor: $color.stroke.neutral
@@ -26,8 +26,7 @@ data:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
       checkboxControl:
-        size: 22px
-        margin: 1px
+        size: $unit.s6
         color: $color.bg.layer-default
         strokeWidth: 1.25px
         strokeColor: $color.stroke.control
