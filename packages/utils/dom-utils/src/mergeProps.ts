@@ -17,7 +17,7 @@ type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
 export function mergeProps<T>(...args: T[]): UnionToIntersection<TupleTypes<T[]>> {
   // Start with a base clone of the first argument. This is a lot faster than starting
   // with an empty object and adding properties as we go.
-  const result: Props = { ...args[0] };
+  const result = { ...args[0] } as Props;
   for (let i = 1; i < args.length; i++) {
     const props = args[i];
     for (const key in props) {
