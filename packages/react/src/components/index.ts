@@ -17,6 +17,7 @@ export * from "./SelectBox";
 export * from "./Skeleton";
 export * from "./Switch";
 export * from "./Text";
+export * from "./TextButton";
 export * from "./TextField";
 export * from "./ToggleButton";
 export * from "./VisuallyHidden";
