@@ -5,7 +5,7 @@ import { disabled, focus, active, pseudo, loading } from "../utils/pseudo";
 
 const actionButton = defineRecipe({
   name: "actionButton",
-  slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "progressCircle"],
+  slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "progressIndicator"],
   base: {
     root: {
       display: "inline-flex",
@@ -66,7 +66,7 @@ const actionButton = defineRecipe({
         opacity: 0,
       },
     },
-    progressCircle: {
+    progressIndicator: {
       position: "absolute",
       display: "none",
 
@@ -114,7 +114,7 @@ const actionButton = defineRecipe({
             color: vars.variantBrandSolid.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantBrandSolid.enabled.progressCircle.trackColor,
           "--range-color": vars.variantBrandSolid.enabled.progressCircle.rangeColor,
         },
@@ -156,7 +156,7 @@ const actionButton = defineRecipe({
             color: vars.variantNeutralSolid.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantNeutralSolid.enabled.progressCircle.trackColor,
           "--range-color": vars.variantNeutralSolid.enabled.progressCircle.rangeColor,
         },
@@ -198,7 +198,7 @@ const actionButton = defineRecipe({
             color: vars.variantNeutralWeak.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantNeutralWeak.enabled.progressCircle.trackColor,
           "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
         },
@@ -240,7 +240,7 @@ const actionButton = defineRecipe({
             color: vars.variantDangerSolid.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantDangerSolid.enabled.progressCircle.trackColor,
           "--range-color": vars.variantDangerSolid.enabled.progressCircle.rangeColor,
         },
@@ -286,7 +286,7 @@ const actionButton = defineRecipe({
             color: vars.variantBrandOutline.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantBrandOutline.enabled.progressCircle.trackColor,
           "--range-color": vars.variantBrandOutline.enabled.progressCircle.rangeColor,
         },
@@ -332,7 +332,7 @@ const actionButton = defineRecipe({
             color: vars.variantNeutralOutline.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantNeutralOutline.enabled.progressCircle.trackColor,
           "--range-color": vars.variantNeutralOutline.enabled.progressCircle.rangeColor,
         },
@@ -344,7 +344,7 @@ const actionButton = defineRecipe({
           height: vars.sizeXsmall.enabled.root.minHeight,
           borderRadius: vars.sizeXsmall.enabled.root.cornerRadius,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeXsmall.enabled.progressCircle.size,
           "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
         },
@@ -354,7 +354,7 @@ const actionButton = defineRecipe({
           height: vars.sizeSmall.enabled.root.minHeight,
           borderRadius: vars.sizeSmall.enabled.root.cornerRadius,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeSmall.enabled.progressCircle.size,
           "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
         },
@@ -364,7 +364,7 @@ const actionButton = defineRecipe({
           height: vars.sizeMedium.enabled.root.minHeight,
           borderRadius: vars.sizeMedium.enabled.root.cornerRadius,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeMedium.enabled.progressCircle.size,
           "--thickness": vars.sizeMedium.enabled.progressCircle.thickness,
         },
@@ -374,7 +374,7 @@ const actionButton = defineRecipe({
           height: vars.sizeLarge.enabled.root.minHeight,
           borderRadius: vars.sizeLarge.enabled.root.cornerRadius,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeLarge.enabled.progressCircle.size,
           "--thickness": vars.sizeLarge.enabled.progressCircle.thickness,
         },

@@ -9,6 +9,10 @@ const progressCircle = defineRecipe({
       display: "inline-flex",
       boxSizing: "border-box",
       position: "relative",
+
+      "&[data-progress-state=indeterminate]": {
+        animation: `rotate ${vars.indeterminateTrue.enabled.range.rotateDuration} ${vars.indeterminateTrue.enabled.range.rotateTimingFunction} infinite`,
+      },
     },
     track: {
       stroke: "var(--track-color)",
@@ -16,7 +20,19 @@ const progressCircle = defineRecipe({
     range: {
       stroke: "var(--range-color)",
       strokeLinecap: "round",
-      transitionProperty: "stroke-dashoffset",
+
+      // determinate
+      transitionDuration: vars.indeterminateFalse.enabled.range.lengthDuration,
+      transitionTimingFunction: vars.indeterminateFalse.enabled.range.lengthTimingFunction,
+      transitionProperty: "stroke-dasharray",
+
+      // indeterminate
+      "&[data-progress-state=indeterminate]": {
+        animation: `
+          headDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.headTimingFunction} infinite normal none running,
+          tailDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.tailTimingFunction} infinite normal none running
+        `,
+      },
     },
   },
   variants: {
@@ -39,6 +55,9 @@ const progressCircle = defineRecipe({
           "--range-color": vars.toneStaticWhite.enabled.range.color,
         },
       },
+      inherit: {
+        root: {},
+      },
     },
     size: {
       24: {
@@ -53,25 +72,8 @@ const progressCircle = defineRecipe({
           "--thickness": vars.size40.enabled.root.thickness,
         },
       },
-    },
-    indeterminate: {
-      true: {
-        root: {
-          animation: `rotate ${vars.indeterminateTrue.enabled.range.rotateDuration} ${vars.indeterminateTrue.enabled.range.rotateTimingFunction} infinite`,
-        },
-        range: {
-          animation: `
-            headDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.headTimingFunction} infinite normal none running,
-            tailDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.tailTimingFunction} infinite normal none running
-          `,
-        },
-      },
-      false: {
-        range: {
-          transitionDuration: vars.indeterminateFalse.enabled.range.lengthDuration,
-          transitionTimingFunction: vars.indeterminateFalse.enabled.range.lengthTimingFunction,
-          transitionProperty: "stroke-dasharray",
-        },
+      inherit: {
+        root: {},
       },
     },
   },
@@ -112,7 +114,6 @@ const progressCircle = defineRecipe({
   defaultVariants: {
     tone: "neutral",
     size: 40,
-    indeterminate: false,
   },
 });
 

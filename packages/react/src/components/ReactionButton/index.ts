@@ -2,12 +2,12 @@ export {
   ReactionButtonCount,
   ReactionButtonLabel,
   ReactionButtonPrefixIcon,
-  ReactionButtonProgressCircle,
+  ReactionButtonProgressIndicator,
   ReactionButtonRoot,
   type ReactionButtonCountProps,
   type ReactionButtonLabelProps,
   type ReactionButtonPrefixIconProps,
-  type ReactionButtonProgressCircleProps,
+  type ReactionButtonProgressIndicatorProps,
   type ReactionButtonRootProps,
 } from "./ReactionButton";
 

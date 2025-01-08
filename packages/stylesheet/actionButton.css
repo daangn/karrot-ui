@@ -51,11 +51,11 @@
 .actionButton__suffixIcon[data-loading] {
     opacity: 0;
 }
-.actionButton__progressCircle {
+.actionButton__progressIndicator {
     position: absolute;
     display: none;
 }
-.actionButton__progressCircle[data-loading] {
+.actionButton__progressIndicator[data-loading] {
     display: flex;
 }
 .actionButton__root--variant_brandSolid {
@@ -94,7 +94,7 @@
 .actionButton__suffixIcon--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__progressCircle--variant_brandSolid {
+.actionButton__progressIndicator--variant_brandSolid {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
     --range-color: var(--seed-v3-color-palette-static-white);
 }
@@ -134,7 +134,7 @@
 .actionButton__suffixIcon--variant_neutralSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__progressCircle--variant_neutralSolid {
+.actionButton__progressIndicator--variant_neutralSolid {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
     --range-color: var(--seed-v3-color-palette-static-white);
 }
@@ -174,7 +174,7 @@
 .actionButton__suffixIcon--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__progressCircle--variant_neutralWeak {
+.actionButton__progressIndicator--variant_neutralWeak {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
@@ -214,7 +214,7 @@
 .actionButton__suffixIcon--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__progressCircle--variant_dangerSolid {
+.actionButton__progressIndicator--variant_dangerSolid {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
     --range-color: var(--seed-v3-color-palette-static-white);
 }
@@ -258,7 +258,7 @@
 .actionButton__suffixIcon--variant_brandOutline:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__progressCircle--variant_brandOutline {
+.actionButton__progressIndicator--variant_brandOutline {
     --track-color: var(--seed-v3-color-palette-carrot-200);
     --range-color: var(--seed-v3-color-bg-brand-solid);
 }
@@ -302,7 +302,7 @@
 .actionButton__suffixIcon--variant_neutralOutline:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__progressCircle--variant_neutralOutline {
+.actionButton__progressIndicator--variant_neutralOutline {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
@@ -310,7 +310,7 @@
     height: var(--seed-v3-unit-s8);
     border-radius: var(--seed-v3-radius-full);
 }
-.actionButton__progressCircle--size_xsmall {
+.actionButton__progressIndicator--size_xsmall {
     --size: 14px;
     --thickness: 2px;
 }
@@ -318,7 +318,7 @@
     height: var(--seed-v3-unit-s9);
     border-radius: var(--seed-v3-radius-s2);
 }
-.actionButton__progressCircle--size_small {
+.actionButton__progressIndicator--size_small {
     --size: 14px;
     --thickness: 2px;
 }
@@ -326,7 +326,7 @@
     height: var(--seed-v3-unit-s10);
     border-radius: var(--seed-v3-radius-s2);
 }
-.actionButton__progressCircle--size_medium {
+.actionButton__progressIndicator--size_medium {
     --size: 16px;
     --thickness: 2px;
 }
@@ -334,7 +334,7 @@
     height: var(--seed-v3-unit-s13);
     border-radius: var(--seed-v3-radius-s3);
 }
-.actionButton__progressCircle--size_large {
+.actionButton__progressIndicator--size_large {
     --size: 18px;
     --thickness: 2px;
 }

@@ -36,4 +36,5 @@ export const Primitive = {
   a: createPrimitive("a"),
   p: createPrimitive("p"),
   svg: createPrimitive("svg"),
+  circle: createPrimitive("circle"),
 };

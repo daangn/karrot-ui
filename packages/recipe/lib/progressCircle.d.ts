@@ -2,15 +2,11 @@ declare interface ProgressCircleVariant {
   /**
   * @default neutral
   */
-  tone: "neutral" | "brand" | "staticWhite";
+  tone: "neutral" | "brand" | "staticWhite" | "inherit";
 /**
   * @default 40
   */
-  size: "24" | "40";
-/**
-  * @default false
-  */
-  indeterminate: boolean;
+  size: "24" | "40" | "inherit";
 }
 
 declare type ProgressCircleVariantMap = {

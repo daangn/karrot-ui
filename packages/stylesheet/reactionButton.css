@@ -82,17 +82,17 @@
 .reactionButton__prefixIcon[data-loading] {
     opacity: 0;
 }
-.reactionButton__progressCircle {
+.reactionButton__progressIndicator {
     position: absolute;
     display: none;
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
-.reactionButton__progressCircle:is([aria-pressed=true], [data-pressed]) {
+.reactionButton__progressIndicator:is([aria-pressed=true], [data-pressed]) {
     --track-color: var(--seed-v3-color-palette-carrot-200);
     --range-color: var(--seed-v3-color-fg-brand);
 }
-.reactionButton__progressCircle[data-loading] {
+.reactionButton__progressIndicator[data-loading] {
     display: flex;
 }
 .reactionButton__root--size_xsmall {
@@ -114,7 +114,7 @@
     width: 18px;
     height: 18px;
 }
-.reactionButton__progressCircle--size_xsmall {
+.reactionButton__progressIndicator--size_xsmall {
     --size: 14px;
     --thickness: 2px;
 }
@@ -137,7 +137,7 @@
     width: 18px;
     height: 18px;
 }
-.reactionButton__progressCircle--size_small {
+.reactionButton__progressIndicator--size_small {
     --size: 14px;
     --thickness: 2px;
 }

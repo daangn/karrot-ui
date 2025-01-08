@@ -1,77 +1,76 @@
 .progressCircle__root {
     display: inline-flex;
     box-sizing: border-box;
-    position: relative
+    position: relative;
+}
+.progressCircle__root[data-progress-state=indeterminate] {
+    animation: rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite;
 }
 .progressCircle__track {
-    stroke: var(--track-color)
+    stroke: var(--track-color);
 }
 .progressCircle__range {
     stroke: var(--range-color);
     stroke-linecap: round;
-    transition-property: stroke-dashoffset
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.15, 1);
+    transition-property: stroke-dasharray;
+}
+.progressCircle__range[data-progress-state=indeterminate] {
+    animation: 
+          headDash 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
+          tailDash 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
+        ;
 }
 .progressCircle__root--tone_neutral {
     --track-color: var(--seed-v3-color-palette-gray-200);
-    --range-color: var(--seed-v3-color-palette-gray-500)
+    --range-color: var(--seed-v3-color-palette-gray-500);
 }
 .progressCircle__root--tone_brand {
     --track-color: var(--seed-v3-color-palette-carrot-200);
-    --range-color: var(--seed-v3-color-bg-brand-solid)
+    --range-color: var(--seed-v3-color-bg-brand-solid);
 }
 .progressCircle__root--tone_staticWhite {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
-    --range-color: var(--seed-v3-color-bg-static-white)
+    --range-color: var(--seed-v3-color-bg-static-white);
 }
+.progressCircle__root--tone_inherit {}
 .progressCircle__root--size_24 {
     --size: var(--seed-v3-unit-s6);
-    --thickness: 3px
+    --thickness: 3px;
 }
 .progressCircle__root--size_40 {
     --size: var(--seed-v3-unit-s10);
-    --thickness: 5px
+    --thickness: 5px;
 }
-.progressCircle__root--indeterminate_true {
-    animation: rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite
-}
-.progressCircle__range--indeterminate_true {
-    animation: 
-            headDash 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
-            tailDash 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
-          
-}
-.progressCircle__range--indeterminate_false {
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0, 0, 0.15, 1);
-    transition-property: stroke-dasharray
-}
+.progressCircle__root--size_inherit {}
 @keyframes rotate {
     from {
-        transform: rotate(0deg)
+        transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg)
+        transform: rotate(360deg);
     }
 }
 @keyframes headDash {
     0% {
-        stroke-dasharray: 0, 1000%
+        stroke-dasharray: 0, 1000%;
     }
     75% {
-        stroke-dasharray: var(--circumference), 1000%
+        stroke-dasharray: var(--circumference), 1000%;
     }
     100% {
-        stroke-dasharray: var(--circumference), 1000%
+        stroke-dasharray: var(--circumference), 1000%;
     }
 }
 @keyframes tailDash {
     0% {
-        stroke-dashoffset: 0
+        stroke-dashoffset: 0;
     }
     33.33% {
-        stroke-dashoffset: 0
+        stroke-dashoffset: 0;
     }
     100% {
-        stroke-dashoffset: calc(var(--circumference) * -1)
+        stroke-dashoffset: calc(var(--circumference) * -1);
     }
 }

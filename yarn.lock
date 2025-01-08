@@ -7816,6 +7816,7 @@ __metadata:
   resolution: "@seed-design/react-progress@workspace:packages/react-headless/progress"
   dependencies:
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
     react: ">=18.0.0"

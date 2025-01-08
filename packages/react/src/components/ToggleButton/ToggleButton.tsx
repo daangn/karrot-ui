@@ -12,7 +12,6 @@ import {
   usePendingButtonContext,
   type UsePendingButtonProps,
 } from "../private/usePendingButton";
-import { ProgressCircle, type ProgressCircleProps } from "../ProgressCircle";
 
 const { ClassNamesProvider, withContext } = createStyleContext(toggleButton);
 const withStateProps = createWithStateProps([usePendingButtonContext, useToggleContext]);
@@ -66,9 +65,11 @@ export const ToggleButtonSuffixIcon = withContext<SVGSVGElement, ToggleButtonSuf
   "suffixIcon",
 );
 
-export interface ToggleButtonProgressCircleProps extends ProgressCircleProps {}
+export interface ToggleButtonProgressIndicatorProps
+  extends PrimitiveProps,
+    React.HTMLAttributes<HTMLDivElement> {}
 
-export const ToggleButtonProgressCircle = withContext<
-  SVGSVGElement,
-  ToggleButtonProgressCircleProps
->(withStateProps(ProgressCircle), "progressCircle");
+export const ToggleButtonProgressIndicator = withContext<
+  HTMLDivElement,
+  ToggleButtonProgressIndicatorProps
+>(withStateProps(Primitive.div), "progressIndicator");

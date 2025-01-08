@@ -5,7 +5,7 @@ import { active, pressed, disabled, focus, loading, pseudo } from "../utils/pseu
 
 const toggleButton = defineRecipe({
   name: "toggleButton",
-  slots: ["root", "label", "prefixIcon", "suffixIcon", "progressCircle"],
+  slots: ["root", "label", "prefixIcon", "suffixIcon", "progressIndicator"],
   base: {
     root: {
       display: "inline-flex",
@@ -56,7 +56,7 @@ const toggleButton = defineRecipe({
         opacity: 0,
       },
     },
-    progressCircle: {
+    progressIndicator: {
       position: "absolute",
       display: "none",
 
@@ -116,7 +116,7 @@ const toggleButton = defineRecipe({
             color: vars.variantBrandSolid.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantBrandSolid.enabled.progressCircle.trackColor,
           "--range-color": vars.variantBrandSolid.enabled.progressCircle.rangeColor,
           [pseudo(pressed)]: {
@@ -174,7 +174,7 @@ const toggleButton = defineRecipe({
             color: vars.variantNeutralWeak.disabled.suffixIcon.color,
           },
         },
-        progressCircle: {
+        progressIndicator: {
           "--track-color": vars.variantNeutralWeak.enabled.progressCircle.trackColor,
           "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
           [pseudo(pressed)]: {
@@ -204,7 +204,7 @@ const toggleButton = defineRecipe({
           width: vars.sizeXsmall.enabled.suffixIcon.size,
           height: vars.sizeXsmall.enabled.suffixIcon.size,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeXsmall.enabled.progressCircle.size,
           "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
         },
@@ -228,7 +228,7 @@ const toggleButton = defineRecipe({
           width: vars.sizeSmall.enabled.suffixIcon.size,
           height: vars.sizeSmall.enabled.suffixIcon.size,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeSmall.enabled.progressCircle.size,
           "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
         },

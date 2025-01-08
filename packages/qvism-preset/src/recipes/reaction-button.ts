@@ -5,7 +5,7 @@ import { active, pressed, disabled, focus, loading, pseudo } from "../utils/pseu
 
 const reactionButton = defineRecipe({
   name: "reactionButton",
-  slots: ["root", "label", "count", "prefixIcon", "progressCircle"],
+  slots: ["root", "label", "count", "prefixIcon", "progressIndicator"],
   base: {
     root: {
       display: "inline-flex",
@@ -92,7 +92,7 @@ const reactionButton = defineRecipe({
         opacity: 0,
       },
     },
-    progressCircle: {
+    progressIndicator: {
       position: "absolute",
       display: "none",
 
@@ -129,7 +129,7 @@ const reactionButton = defineRecipe({
           width: vars.sizeXsmall.enabled.prefixIcon.size,
           height: vars.sizeXsmall.enabled.prefixIcon.size,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeXsmall.enabled.progressCircle.size,
           "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
         },
@@ -154,7 +154,7 @@ const reactionButton = defineRecipe({
           width: vars.sizeSmall.enabled.prefixIcon.size,
           height: vars.sizeSmall.enabled.prefixIcon.size,
         },
-        progressCircle: {
+        progressIndicator: {
           "--size": vars.sizeSmall.enabled.progressCircle.size,
           "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
         },

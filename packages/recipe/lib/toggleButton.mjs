@@ -20,8 +20,8 @@ const toggleButtonSlotNames = [
     "toggleButton__suffixIcon"
   ],
   [
-    "progressCircle",
-    "toggleButton__progressCircle"
+    "progressIndicator",
+    "toggleButton__progressIndicator"
   ]
 ];
 

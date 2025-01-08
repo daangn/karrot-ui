@@ -44,11 +44,11 @@
 .toggleButton__suffixIcon[data-loading] {
     opacity: 0;
 }
-.toggleButton__progressCircle {
+.toggleButton__progressIndicator {
     position: absolute;
     display: none;
 }
-.toggleButton__progressCircle[data-loading] {
+.toggleButton__progressIndicator[data-loading] {
     display: flex;
 }
 .toggleButton__root--variant_brandSolid {
@@ -99,11 +99,11 @@
 .toggleButton__suffixIcon--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.toggleButton__progressCircle--variant_brandSolid {
+.toggleButton__progressIndicator--variant_brandSolid {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
     --range-color: var(--seed-v3-color-palette-static-white);
 }
-.toggleButton__progressCircle--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
+.toggleButton__progressIndicator--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
@@ -155,11 +155,11 @@
 .toggleButton__suffixIcon--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.toggleButton__progressCircle--variant_neutralWeak {
+.toggleButton__progressIndicator--variant_neutralWeak {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
-.toggleButton__progressCircle--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
+.toggleButton__progressIndicator--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
@@ -181,7 +181,7 @@
     width: var(--seed-v3-unit-s3_5);
     height: var(--seed-v3-unit-s3_5);
 }
-.toggleButton__progressCircle--size_xsmall {
+.toggleButton__progressIndicator--size_xsmall {
     --size: 14px;
     --thickness: 2px;
 }
@@ -203,7 +203,7 @@
     width: var(--seed-v3-unit-s3_5);
     height: var(--seed-v3-unit-s3_5);
 }
-.toggleButton__progressCircle--size_small {
+.toggleButton__progressIndicator--size_small {
     --size: 14px;
     --thickness: 2px;
 }
