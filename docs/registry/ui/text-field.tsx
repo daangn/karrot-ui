@@ -70,9 +70,6 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             <SeedTextField.SuffixText>{suffix}</SeedTextField.SuffixText>
           )}
           {suffixIcon && <SeedTextField.SuffixIcon svg={suffixIcon} />}
-          {indicator && (
-            <SeedTextField.Indicator>{indicator}</SeedTextField.Indicator>
-          )}
         </SeedTextField.Field>
         {renderFooter && (
           <SeedTextField.Footer>
