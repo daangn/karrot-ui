@@ -1,7 +1,7 @@
 export {
   CalloutActionableIcon,
-  CalloutDismissButton,
   CalloutDescription,
+  CalloutDismissButton,
   CalloutDismissIcon,
   CalloutIcon,
   CalloutLink,
@@ -9,8 +9,8 @@ export {
   CalloutTextContent,
   CalloutTitle,
   type CalloutActionableIconProps,
-  type CalloutDismissButtonProps,
   type CalloutDescriptionProps,
+  type CalloutDismissButtonProps,
   type CalloutDismissIconProps,
   type CalloutIconProps,
   type CalloutLinkProps,
