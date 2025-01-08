@@ -16,13 +16,25 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const conditionMap = {
+  disabled: {
+    false: { disabled: false },
+    true: { disabled: true },
+  },
+};
+
 const CommonStoryTemplate: Story = {
   args: {
     children: "새 글",
     prefixIcon: <IconPlusCircleLine />,
   },
   render: (args) => (
-    <VariantTable Component={meta.component} variantMap={textButtonVariantMap} {...args} />
+    <VariantTable
+      Component={meta.component}
+      variantMap={textButtonVariantMap}
+      conditionMap={conditionMap}
+      {...args}
+    />
   ),
 };
 
