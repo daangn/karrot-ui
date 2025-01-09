@@ -13,6 +13,7 @@ export * from "./HelpBubble";
 export * from "./InlineBanner";
 export * from "./ProgressCircle";
 export * from "./ReactionButton";
+export * from "./SegmentedControl";
 export * from "./SelectBox";
 export * from "./Skeleton";
 export * from "./Switch";

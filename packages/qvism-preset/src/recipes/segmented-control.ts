@@ -8,39 +8,30 @@ const segmentedControl = defineRecipe({
   base: {
     root: {
       display: "grid",
-
+      boxSizing: "border-box",
       minWidth: "fit-content",
       maxWidth: "100%",
 
-      padding: vars.base.enabled.root.padding,
-
       position: "relative",
+
+      padding: vars.base.enabled.root.padding,
 
       borderRadius: vars.base.enabled.root.cornerRadius,
 
       backgroundColor: vars.base.enabled.root.color,
 
-      gridTemplateColumns: "repeat(var(--seed-design-segmented-control-count, 0), 1fr)",
+      gridAutoFlow: "column",
+      gridAutoColumns: "1fr",
 
-      // XXX: css reset 생기면 제거
-      boxSizing: "border-box",
+      alignItems: "center",
+
+      isolation: "isolate",
     },
     segment: {
-      // XXX: css reset 생기면 제거
-      border: "none",
-      padding: 0,
-      backgroundColor: "transparent",
-      font: "inherit",
-      [pseudo(not(disabled))]: {
-        cursor: "pointer",
-      },
-
-      position: "relative",
+      display: "grid",
 
       minWidth: vars.base.enabled.segment.minWidth,
       height: vars.base.enabled.segment.height,
-
-      zIndex: 10,
 
       borderRadius: vars.base.enabled.segment.cornerRadius,
 
@@ -49,6 +40,10 @@ const segmentedControl = defineRecipe({
       userSelect: "none",
 
       lineHeight: vars.base.enabled.segment.lineHeight,
+
+      [pseudo(not(disabled))]: {
+        cursor: "pointer",
+      },
 
       [pseudo(not(disabled), active)]: {
         backgroundColor: vars.base.enabledPressed.segment.color,
@@ -59,12 +54,10 @@ const segmentedControl = defineRecipe({
       },
     },
     segmentLabel: {
-      position: "absolute",
-      insetInline: 0,
-      transform: "translateY(-50%)",
-      insetBlockStart: "50%",
+      gridArea: "1 / 1 / 1 / 1",
 
       paddingInline: `calc(${vars.base.enabled.segment.paddingX} - 1px)`,
+      marginBlock: "auto",
 
       textAlign: "center",
       fontWeight: vars.base.enabled.segment.fontWeight,
@@ -88,6 +81,8 @@ const segmentedControl = defineRecipe({
       },
     },
     segmentLabelPlaceholder: {
+      gridArea: "1 / 1 / 1 / 1",
+
       paddingInline: vars.base.enabled.segment.paddingX,
 
       textAlign: "center",
@@ -103,6 +98,13 @@ const segmentedControl = defineRecipe({
     indicator: {
       position: "absolute",
       insetBlock: vars.base.enabled.root.padding,
+      insetInlineStart: vars.base.enabled.root.padding,
+
+      width: `calc((100% - ${vars.base.enabled.root.padding} * 2) / var(--seed-design-segmented-control-segment-count))`,
+      transform:
+        "translateX(calc(var(--seed-design-segmented-control-current-segment-index) * 100%))",
+
+      zIndex: -1,
 
       borderRadius: vars.base.enabled.indicator.cornerRadius,
 

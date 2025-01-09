@@ -1,10 +1,10 @@
-import { SegmentedControl, Segment } from "seed-design/ui/segmented-control";
+import { SegmentedControl, SegmentedControlSegment } from "seed-design/ui/segmented-control";
 
 export default function SegmentedControlPreview() {
   return (
-    <SegmentedControl defaultValue="Hot" disabled>
-      <Segment value="Hot">Hot</Segment>
-      <Segment value="New">New</Segment>
+    <SegmentedControl defaultValue="Hot" disabled aria-label="Sort by">
+      <SegmentedControlSegment value="Hot">Hot</SegmentedControlSegment>
+      <SegmentedControlSegment value="New">New</SegmentedControlSegment>
     </SegmentedControl>
   );
 }
