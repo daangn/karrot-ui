@@ -110,12 +110,8 @@ const segmentedControl = defineRecipe({
 
       boxShadow: vars.base.enabled.indicator.shadow,
 
-      willChange: "left",
-      // XXX: 임의
-      transition: "left 0.2s",
-
-      left: "var(--seed-design-segmented-control-indicator-left, 0px)",
-      width: "var(--seed-design-segmented-control-indicator-width, 0px)",
+      willChange: "transform",
+      transition: `transform ${vars.base.enabled.indicator.transformDuration} ${vars.base.enabled.indicator.transformTimingFunction}`,
     },
   },
   variants: {},

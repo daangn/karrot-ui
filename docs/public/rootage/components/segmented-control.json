@@ -36,7 +36,9 @@
                 "color": "#0000000d"
               }
             ]
-          }
+          },
+          "transformDuration": "$duration.s4",
+          "transformTimingFunction": "$timing-function.easing"
         }
       },
       "enabled,pressed": {

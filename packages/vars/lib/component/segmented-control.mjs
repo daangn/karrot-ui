@@ -19,7 +19,9 @@ export const vars = {
       "indicator": {
         "cornerRadius": "var(--seed-v3-radius-full)",
         "color": "var(--seed-v3-color-bg-layer-default)",
-        "shadow": "0px 1px 6px 0px #0000000d"
+        "shadow": "0px 1px 6px 0px #0000000d",
+        "transformDuration": "var(--seed-v3-duration-s4)",
+        "transformTimingFunction": "var(--seed-v3-timing-function-easing)"
       }
     },
     "enabledPressed": {

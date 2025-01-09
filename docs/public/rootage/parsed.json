@@ -18939,6 +18939,26 @@
                           }
                         ]
                       }
+                    },
+                    {
+                      "key": "transformDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "transformTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "easing"
+                      }
                     }
                   ]
                 }
