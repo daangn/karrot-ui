@@ -82,6 +82,7 @@ export const TextFieldErrorMessage = forwardRef<HTMLSpanElement, TextFieldErrorM
     return <Primitive.span ref={composeRefs(refs.errorMessage, ref)} {...mergedProps} />;
   },
 );
+TextFieldErrorMessage.displayName = "TextFieldErrorMessage";
 
 export interface TextFieldInputProps
   extends PrimitiveProps,
@@ -122,3 +123,4 @@ export const TextFieldGraphemeCount = forwardRef<HTMLSpanElement, TextFieldGraph
     );
   },
 );
+TextFieldGraphemeCount.displayName = "TextFieldGraphemeCount";
