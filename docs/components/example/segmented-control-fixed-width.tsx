@@ -1,10 +1,10 @@
-import { SegmentedControl, Segment } from "seed-design/ui/segmented-control";
+import { SegmentedControl, SegmentedControlSegment } from "seed-design/ui/segmented-control";
 
 export default function SegmentedControlFixedWidth() {
   return (
-    <SegmentedControl defaultValue="new">
-      <Segment value="new">New</Segment>
-      <Segment value="hot">Hot</Segment>
+    <SegmentedControl defaultValue="new" style={{ width: "600px" }} aria-label="Sort by">
+      <SegmentedControlSegment value="new">New</SegmentedControlSegment>
+      <SegmentedControlSegment value="hot">Hot</SegmentedControlSegment>
     </SegmentedControl>
   );
 }

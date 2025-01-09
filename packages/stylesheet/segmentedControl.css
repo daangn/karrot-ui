@@ -1,32 +1,28 @@
 .segmentedControl__root {
     display: grid;
+    box-sizing: border-box;
     min-width: fit-content;
     max-width: 100%;
-    padding: var(--seed-v3-unit-s1);
     position: relative;
+    padding: var(--seed-v3-unit-s1);
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
-    grid-template-columns: repeat(var(--seed-design-segmented-control-count, 0), 1fr);
-    box-sizing: border-box;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: center;
+    isolation: isolate;
 }
 .segmentedControl__segment {
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    font: inherit;
-}
-.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])) {
-    cursor: pointer;
-}
-.segmentedControl__segment {
-    position: relative;
+    display: grid;
     min-width: 86px;
     height: var(--seed-v3-unit-s8);
-    z-index: 10;
     border-radius: var(--seed-v3-radius-full);
     overflow: hidden;
     user-select: none;
     line-height: var(--seed-v3-line-height-s5);
+}
+.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])) {
+    cursor: pointer;
 }
 .segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
@@ -35,11 +31,9 @@
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .segmentedControl__segmentLabel {
-    position: absolute;
-    inset-inline: 0;
-    transform: translateY(-50%);
-    inset-block-start: 50%;
+    grid-area: 1 / 1 / 1 / 1;
     padding-inline: calc(var(--seed-v3-unit-s4) - 1px);
+    margin-block: auto;
     text-align: center;
     font-weight: var(--seed-v3-font-weight-medium);
     font-size: var(--seed-v3-font-size-s5);
@@ -56,6 +50,7 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .segmentedControl__segmentLabelPlaceholder {
+    grid-area: 1 / 1 / 1 / 1;
     padding-inline: var(--seed-v3-unit-s4);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);
@@ -68,11 +63,13 @@
 .segmentedControl__indicator {
     position: absolute;
     inset-block: var(--seed-v3-unit-s1);
+    inset-inline-start: var(--seed-v3-unit-s1);
+    width: calc((100% - var(--seed-v3-unit-s1) * 2) / var(--seed-design-segmented-control-segment-count));
+    transform: translateX(calc(var(--seed-design-segmented-control-current-segment-index) * 100%));
+    z-index: -1;
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-layer-default);
     box-shadow: 0px 1px 6px 0px #0000000d;
-    will-change: left;
-    transition: left 0.2s;
-    left: var(--seed-design-segmented-control-indicator-left, 0px);
-    width: var(--seed-design-segmented-control-indicator-width, 0px);
+    will-change: transform;
+    transition: transform var(--seed-v3-duration-s4) var(--seed-v3-timing-function-easing);
 }

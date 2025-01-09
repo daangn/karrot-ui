@@ -7838,12 +7838,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/react-segmented-control@workspace:^, @seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control":
+"@seed-design/react-segmented-control@npm:0.0.0, @seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control"
   dependencies:
     "@radix-ui/react-use-controllable-state": "npm:1.0.1"
-    "@radix-ui/react-use-size": "npm:^1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
@@ -7942,7 +7941,6 @@ __metadata:
     "@seed-design/react-primitive": "npm:0.0.0"
     "@seed-design/react-progress": "npm:0.0.0"
     "@seed-design/react-radio-group": "npm:0.0.0-alpha-20241030023710"
-    "@seed-design/react-segmented-control": "workspace:^"
     "@seed-design/react-switch": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-text-field": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-toggle": "npm:0.0.0"
@@ -13177,7 +13175,7 @@ __metadata:
     "@seed-design/react": "npm:0.0.0"
     "@seed-design/react-icon": "npm:^0.7.3"
     "@seed-design/react-popover": "npm:0.0.0-alpha-20241030023710"
-    "@seed-design/react-segmented-control": "workspace:^"
+    "@seed-design/react-segmented-control": "npm:0.0.0"
     "@seed-design/react-tabs": "npm:0.0.0-alpha-20241209060641"
     "@seed-design/recipe": "npm:0.0.0-alpha-20241212122822"
     "@seed-design/rootage-cli": "npm:0.0.0"
