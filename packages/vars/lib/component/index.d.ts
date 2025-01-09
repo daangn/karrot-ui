@@ -25,6 +25,7 @@ export { vars as segmentedControl } from "./segmented-control";
 export { vars as selectBoxGroup } from "./select-box-group";
 export { vars as selectBox } from "./select-box";
 export { vars as skeleton } from "./skeleton";
+export { vars as snackbar } from "./snackbar";
 export { vars as switch } from "./switch";
 export { vars as tab } from "./tab";
 export { vars as tablist } from "./tablist";

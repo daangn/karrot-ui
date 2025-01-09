@@ -16,6 +16,7 @@ export * from "./ReactionButton";
 export * from "./SegmentedControl";
 export * from "./SelectBox";
 export * from "./Skeleton";
+export * from "./Snackbar";
 export * from "./Switch";
 export * from "./Text";
 export * from "./TextButton";
