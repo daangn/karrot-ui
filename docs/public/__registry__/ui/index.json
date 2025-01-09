@@ -169,6 +169,16 @@
     ]
   },
   {
+    "name": "snackbar",
+    "dependencies": [
+      "@seed-design/react",
+      "@daangn/react-monochrome-icon"
+    ],
+    "files": [
+      "ui:snackbar.tsx"
+    ]
+  },
+  {
     "name": "help-bubble",
     "dependencies": [
       "@seed-design/react-popover@0.0.0-alpha-20241030023710",

@@ -19862,6 +19862,376 @@
       ]
     },
     {
+      "id": "snackbar",
+      "name": "Snackbar",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "region",
+                  "property": [
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "offsetDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "offsetTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "easing"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "floating-solid"
+                      }
+                    },
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "minHeight",
+                      "value": {
+                        "type": "dimension",
+                        "value": 44,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2_5"
+                      }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "enterOpacity",
+                      "value": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "key": "enterDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "enterTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "enter"
+                      }
+                    },
+                    {
+                      "key": "exitOpacity",
+                      "value": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "key": "exitDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "exitTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "exit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "message",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "palette"
+                        ],
+                        "key": "static-white"
+                      }
+                    },
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "size",
+                      "value": {
+                        "type": "dimension",
+                        "value": 24,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "actionButton",
+                  "property": [
+                    {
+                      "key": "targetPaddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "targetMinHeight",
+                      "value": {
+                        "type": "dimension",
+                        "value": 44,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "brand"
+                      }
+                    },
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "variant": "default"
+          },
+          "state": []
+        },
+        {
+          "key": {
+            "variant": "positive"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "positive"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "variant": "danger"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "danger"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "switch",
       "name": "Switch",
       "data": [

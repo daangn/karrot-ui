@@ -7855,6 +7855,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-snackbar@workspace:packages/react-headless/snackbar"
   dependencies:
+    "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-use-callback-ref": "npm:^1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
