@@ -1,17 +1,3 @@
-.snackbar__region {
-    z-index: 2147483647;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    left: calc(env(safe-area-inset-left, 0px));
-    right: calc(env(safe-area-inset-right, 0px));
-    bottom: calc(env(safe-area-inset-bottom, 0px) + var(--snackbar-region-offset, 0px));
-    padding-inline: var(--seed-v3-unit-s2);
-    padding-block: var(--seed-v3-unit-s2);
-    transition-property: bottom;
-    transition-duration: var(--seed-v3-duration-s4);
-    transition-timing-function: var(--seed-v3-timing-function-easing);
-}
 .snackbar__root {
     box-sizing: border-box;
     display: flex;
@@ -23,6 +9,7 @@
     padding-inline: var(--seed-v3-unit-s4);
     padding-block: var(--seed-v3-unit-s2_5);
     min-height: 44px;
+    gap: var(--seed-v3-unit-s2);
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter);
     animation-duration: var(--seed-v3-duration-s4);

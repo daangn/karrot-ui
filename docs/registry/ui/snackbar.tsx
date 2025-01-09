@@ -1,6 +1,7 @@
 "use client";
 
 import "@seed-design/stylesheet/snackbar.css";
+import "@seed-design/stylesheet/snackbarRegion.css";
 
 import {
   Snackbar as SeedSnackbar,

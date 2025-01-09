@@ -4,10 +4,6 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const snackbarSlotNames = [
   [
-    "region",
-    "snackbar__region"
-  ],
-  [
     "root",
     "snackbar__root"
   ],

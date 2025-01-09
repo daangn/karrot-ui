@@ -1,41 +1,36 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { Snackbar as SnackbarPrimitive } from "@seed-design/react-snackbar";
 import { snackbar, type SnackbarVariantProps } from "@seed-design/recipe/snackbar";
+import { snackbarRegion } from "@seed-design/recipe/snackbarRegion";
 import { visuallyHidden } from "@seed-design/recipe/visuallyHidden";
 import clsx from "clsx";
 import { forwardRef, useMemo } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";
 
-const { withRootProvider, withContext } = createStyleContext(snackbar);
+const { withProvider: withRegionProvider } = createStyleContext(snackbarRegion);
+const { withProvider, withContext } = createStyleContext(snackbar);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface SnackbarRootProviderProps extends SnackbarPrimitive.RootProviderProps {}
 
-export const SnackbarRootProvider = withRootProvider<HTMLDivElement, SnackbarRootProviderProps>(
-  SnackbarPrimitive.RootProvider,
-  {
-    defaultProps: {
-      pauseOnInteraction: false,
-    },
-  },
-);
+export const SnackbarRootProvider = SnackbarPrimitive.RootProvider;
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface SnackbarRegionProps extends SnackbarVariantProps, SnackbarPrimitive.RegionProps {}
 
-export const SnackbarRegion = withContext<HTMLDivElement, SnackbarRegionProps>(
+export const SnackbarRegion = withRegionProvider<HTMLDivElement, SnackbarRegionProps>(
   SnackbarPrimitive.Region,
-  "region",
+  "root",
 );
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface SnackbarRootProps extends SnackbarVariantProps, SnackbarPrimitive.RootProps {}
 
-export const SnackbarRoot = withContext<HTMLDivElement, SnackbarRootProps>(
+export const SnackbarRoot = withProvider<HTMLDivElement, SnackbarRootProps>(
   SnackbarPrimitive.Root,
   "root",
 );

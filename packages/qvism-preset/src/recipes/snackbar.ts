@@ -4,11 +4,11 @@ import { enterAnimation, exitAnimation } from "../utils/animation";
 
 const MAX_Z_INDEX = 2147483647;
 
-const snackbar = defineRecipe({
-  name: "snackbar",
-  slots: ["region", "root", "message", "prefixIcon", "actionButton"],
+export const snackbarRegion = defineRecipe({
+  name: "snackbarRegion",
+  slots: ["root"],
   base: {
-    region: {
+    root: {
       zIndex: MAX_Z_INDEX,
       display: "flex",
       flexDirection: "column",
@@ -23,6 +23,15 @@ const snackbar = defineRecipe({
       transitionDuration: vars.base.enabled.region.offsetDuration,
       transitionTimingFunction: vars.base.enabled.region.offsetTimingFunction,
     },
+  },
+  variants: {},
+  defaultVariants: {},
+});
+
+export const snackbar = defineRecipe({
+  name: "snackbar",
+  slots: ["root", "message", "prefixIcon", "actionButton"],
+  base: {
     root: {
       boxSizing: "border-box",
       display: "flex",
@@ -36,6 +45,7 @@ const snackbar = defineRecipe({
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
       minHeight: vars.base.enabled.root.minHeight,
+      gap: vars.base.enabled.root.gap,
 
       ...enterAnimation({
         timingFunction: vars.base.enabled.root.enterTimingFunction,
@@ -124,5 +134,3 @@ const snackbar = defineRecipe({
     variant: "default",
   },
 });
-
-export default snackbar;

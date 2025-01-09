@@ -25,7 +25,7 @@ import screen from "./recipes/screen";
 import segmentedControl from "./recipes/segmented-control";
 import { selectBox, selectBoxGroup } from "./recipes/select-box";
 import skeleton from "./recipes/skeleton";
-import snackbar from "./recipes/snackbar";
+import { snackbar, snackbarRegion } from "./recipes/snackbar";
 import switchRecipe from "./recipes/switch";
 import tab from "./recipes/tab";
 import tabs from "./recipes/tabs";
@@ -70,6 +70,7 @@ const recipes = {
   chipTabs,
   skeleton,
   snackbar,
+  snackbarRegion,
   text,
   textButton,
   textField,

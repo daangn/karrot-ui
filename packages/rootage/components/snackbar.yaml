@@ -6,6 +6,7 @@ metadata:
 data:
   base:
     enabled:
+      # TODO: we might split region out to a separate component
       region:
         paddingX: $unit.s2
         paddingY: $unit.s2
