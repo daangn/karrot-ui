@@ -50,7 +50,6 @@ export interface UseAvatarProps extends UseAvatarStateProps {}
 export type UseAvatarReturn = ReturnType<typeof useAvatar>;
 
 export function useAvatar(props: UseAvatarProps) {
-  const { ...restProps } = props;
   const { loadingStatus, events } = useAvatarState(props);
 
   const imageRef = useRef<HTMLImageElement>(null);
@@ -78,7 +77,6 @@ export function useAvatar(props: UseAvatarProps) {
       image: imageRef,
     },
     loadingStatus,
-    restProps,
     stateProps,
     rootProps: elementProps({
       ...stateProps,
