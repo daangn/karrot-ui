@@ -2,12 +2,7 @@
 
 import "@seed-design/stylesheet/inlineBanner.css";
 
-import {
-  InlineBanner as SeedInlineBanner,
-  DismissibleProvider,
-  useDismissible,
-  type UseDismissibleProps,
-} from "@seed-design/react";
+import { InlineBanner as SeedInlineBanner } from "@seed-design/react";
 import * as React from "react";
 
 import {
@@ -16,7 +11,10 @@ import {
 } from "@daangn/react-monochrome-icon";
 
 export interface InlineBannerProps
-  extends Omit<SeedInlineBanner.RootProps, "children" | "title" | "asChild"> {
+  extends Omit<
+    SeedInlineBanner.RootProps,
+    "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
+  > {
   icon?: React.ReactNode;
   title?: React.ReactNode;
   description: React.ReactNode;
@@ -46,7 +44,10 @@ export const InlineBanner = React.forwardRef<
 InlineBanner.displayName = "InlineBanner";
 
 export interface LinkInlineBannerProps
-  extends Omit<SeedInlineBanner.RootProps, "children" | "title" | "asChild"> {
+  extends Omit<
+    SeedInlineBanner.RootProps,
+    "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
+  > {
   icon?: React.ReactNode;
   title?: React.ReactNode;
   description: React.ReactNode;
@@ -76,7 +77,10 @@ export const LinkInlineBanner = React.forwardRef<
 LinkInlineBanner.displayName = "LinkInlineBanner";
 
 export interface ActionableInlineBannerProps
-  extends Omit<SeedInlineBanner.RootProps, "children" | "title" | "asChild"> {
+  extends Omit<
+    SeedInlineBanner.RootProps,
+    "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
+  > {
   icon?: React.ReactNode;
   title?: React.ReactNode;
   description: React.ReactNode;
@@ -110,10 +114,9 @@ ActionableInlineBanner.displayName = "ActionableInlineBanner";
 
 export interface DismissibleInlineBannerProps
   extends Omit<
-      SeedInlineBanner.RootProps,
-      "variant" | "children" | "title" | "asChild"
-    >,
-    UseDismissibleProps {
+    SeedInlineBanner.RootProps,
+    "variant" | "children" | "title" | "asChild"
+  > {
   icon?: React.ReactNode;
   title?: React.ReactNode;
   description: React.ReactNode;
@@ -129,36 +132,23 @@ export interface DismissibleInlineBannerProps
 export const DismissibleInlineBanner = React.forwardRef<
   React.ElementRef<typeof SeedInlineBanner.Root>,
   DismissibleInlineBannerProps
->(
-  (
-    { icon, title, description, defaultOpen, open, onDismiss, ...otherProps },
-    ref,
-  ) => {
-    const api = useDismissible({ defaultOpen, open, onDismiss });
-
-    if (!api.open) return null;
-
-    return (
-      <DismissibleProvider value={api}>
-        <SeedInlineBanner.Root ref={ref} {...otherProps}>
-          <SeedInlineBanner.Content>
-            {icon && <SeedInlineBanner.Icon svg={icon} />}
-            <SeedInlineBanner.TextContent>
-              {title && (
-                <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>
-              )}
-              <SeedInlineBanner.Description>
-                {description}
-              </SeedInlineBanner.Description>
-            </SeedInlineBanner.TextContent>
-          </SeedInlineBanner.Content>
-          {/* You may implement your own i18n for dismiss label */}
-          <SeedInlineBanner.DismissButton aria-label="닫기">
-            <SeedInlineBanner.DismissIcon svg={<IconXmarkLine />} />
-          </SeedInlineBanner.DismissButton>
-        </SeedInlineBanner.Root>
-      </DismissibleProvider>
-    );
-  },
-);
+>(({ icon, title, description, ...otherProps }, ref) => {
+  return (
+    <SeedInlineBanner.Root ref={ref} {...otherProps}>
+      <SeedInlineBanner.Content>
+        {icon && <SeedInlineBanner.Icon svg={icon} />}
+        <SeedInlineBanner.TextContent>
+          {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
+          <SeedInlineBanner.Description>
+            {description}
+          </SeedInlineBanner.Description>
+        </SeedInlineBanner.TextContent>
+      </SeedInlineBanner.Content>
+      {/* You may implement your own i18n for dismiss label */}
+      <SeedInlineBanner.DismissButton aria-label="닫기">
+        <SeedInlineBanner.DismissIcon svg={<IconXmarkLine />} />
+      </SeedInlineBanner.DismissButton>
+    </SeedInlineBanner.Root>
+  );
+});
 DismissibleInlineBanner.displayName = "DismissibleInlineBanner";

@@ -128,9 +128,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "segmented-control",
-    dependencies: [
-      `@seed-design/react-segmented-control@${segmentedControlPkg.version}`,
-    ],
+    dependencies: ["@seed-design/react"],
     files: ["ui:segmented-control.tsx"],
   },
   {

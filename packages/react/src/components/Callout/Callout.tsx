@@ -5,16 +5,17 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";
-import { useDismissibleContext } from "../../hooks/useDismissible";
+import {
+  DismissibleDismissButton,
+  DismissibleRoot,
+  type DismissibleRootProps,
+} from "../private/useDismissible";
 
 const { withContext, withProvider, useClassNames } = createStyleContext(callout);
 
-export interface CalloutRootProps
-  extends CalloutVariantProps,
-    PrimitiveProps,
-    React.HTMLAttributes<HTMLDivElement> {}
+export interface CalloutRootProps extends CalloutVariantProps, DismissibleRootProps {}
 
-export const CalloutRoot = withProvider<HTMLDivElement, CalloutRootProps>(Primitive.div, "root");
+export const CalloutRoot = withProvider<HTMLDivElement, CalloutRootProps>(DismissibleRoot, "root");
 
 export interface CalloutIconProps extends IconProps {}
 
@@ -29,6 +30,7 @@ export const CalloutTextContent = React.forwardRef<HTMLDivElement, CalloutTextCo
     return <Primitive.div ref={ref} {...props} />;
   },
 );
+CalloutTextContent.displayName = "CalloutTextContent";
 
 export interface CalloutTitleProps extends PrimitiveProps, React.HTMLAttributes<HTMLSpanElement> {}
 
@@ -81,30 +83,10 @@ export interface CalloutDismissButtonProps
   extends PrimitiveProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const CalloutDismissButton = React.forwardRef<HTMLButtonElement, CalloutDismissButtonProps>(
-  ({ className, onClick, ...otherProps }, ref) => {
-    const classNames = useClassNames();
-    const { handleDismiss } = useDismissibleContext();
-
-    const handleClick: React.MouseEventHandler<HTMLButtonElement> = React.useCallback(
-      (event) => {
-        onClick?.(event);
-        handleDismiss();
-      },
-      [handleDismiss, onClick],
-    );
-
-    return (
-      <Primitive.button
-        ref={ref}
-        className={clsx(classNames.dismissButton, className)}
-        onClick={handleClick}
-        {...otherProps}
-      />
-    );
-  },
+export const CalloutDismissButton = withContext<HTMLButtonElement, CalloutDismissButtonProps>(
+  DismissibleDismissButton,
+  "dismissButton",
 );
-CalloutDismissButton.displayName = "CalloutDismissButton";
 
 export interface CalloutDismissIconProps extends IconProps {}
 

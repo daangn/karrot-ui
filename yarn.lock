@@ -7933,6 +7933,7 @@ __metadata:
   resolution: "@seed-design/react@workspace:packages/react"
   dependencies:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
     "@radix-ui/react-use-layout-effect": "npm:^1.0.1"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
@@ -7941,6 +7942,7 @@ __metadata:
     "@seed-design/react-primitive": "npm:0.0.0"
     "@seed-design/react-progress": "npm:0.0.0"
     "@seed-design/react-radio-group": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-segmented-control": "workspace:^"
     "@seed-design/react-switch": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-text-field": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-toggle": "npm:0.0.0"

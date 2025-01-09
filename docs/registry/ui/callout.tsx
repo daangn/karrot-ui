@@ -2,12 +2,7 @@
 
 import "@seed-design/stylesheet/callout.css";
 
-import {
-  Callout as SeedCallout,
-  DismissibleProvider,
-  useDismissible,
-  type UseDismissibleProps,
-} from "@seed-design/react";
+import { Callout as SeedCallout } from "@seed-design/react";
 import * as React from "react";
 
 import {
@@ -16,7 +11,10 @@ import {
 } from "@daangn/react-monochrome-icon";
 
 export interface CalloutProps
-  extends Omit<SeedCallout.RootProps, "children" | "title" | "asChild"> {
+  extends Omit<
+    SeedCallout.RootProps,
+    "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
+  > {
   icon?: React.ReactNode;
   title?: React.ReactNode;
   description: React.ReactNode;
@@ -49,7 +47,10 @@ export const Callout = React.forwardRef<
 Callout.displayName = "Callout";
 
 export interface ActionableCalloutProps
-  extends Omit<SeedCallout.RootProps, "children" | "title" | "asChild"> {
+  extends Omit<
+    SeedCallout.RootProps,
+    "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
+  > {
   title?: React.ReactNode;
   description: React.ReactNode;
 }
@@ -78,8 +79,7 @@ export const ActionableCallout = React.forwardRef<
 ActionableCallout.displayName = "ActionableCallout";
 
 export interface DismissibleCalloutProps
-  extends Omit<SeedCallout.RootProps, "children" | "title" | "asChild">,
-    UseDismissibleProps {
+  extends Omit<SeedCallout.RootProps, "children" | "title" | "asChild"> {
   title?: React.ReactNode;
   description: React.ReactNode;
   linkLabel?: React.ReactNode;
@@ -106,28 +106,22 @@ export const DismissibleCallout = React.forwardRef<
     },
     ref,
   ) => {
-    const api = useDismissible({ defaultOpen, open, onDismiss });
-
-    if (!api.open) return null;
-
     return (
-      <DismissibleProvider value={api}>
-        <SeedCallout.Root ref={ref} {...otherProps}>
-          <SeedCallout.TextContent>
-            <SeedCallout.Title>{title}</SeedCallout.Title>
-            {description && (
-              <SeedCallout.Description>{description}</SeedCallout.Description>
-            )}
-            {linkLabel && (
-              <SeedCallout.Link {...linkProps}>{linkLabel}</SeedCallout.Link>
-            )}
-          </SeedCallout.TextContent>
-          {/* You may implement your own i18n for dismiss label */}
-          <SeedCallout.DismissButton aria-label="닫기">
-            <SeedCallout.DismissIcon svg={<IconXmarkLine />} />
-          </SeedCallout.DismissButton>
-        </SeedCallout.Root>
-      </DismissibleProvider>
+      <SeedCallout.Root ref={ref} {...otherProps}>
+        <SeedCallout.TextContent>
+          <SeedCallout.Title>{title}</SeedCallout.Title>
+          {description && (
+            <SeedCallout.Description>{description}</SeedCallout.Description>
+          )}
+          {linkLabel && (
+            <SeedCallout.Link {...linkProps}>{linkLabel}</SeedCallout.Link>
+          )}
+        </SeedCallout.TextContent>
+        {/* You may implement your own i18n for dismiss label */}
+        <SeedCallout.DismissButton aria-label="닫기">
+          <SeedCallout.DismissIcon svg={<IconXmarkLine />} />
+        </SeedCallout.DismissButton>
+      </SeedCallout.Root>
     );
   },
 );

@@ -5,17 +5,18 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { inlineBanner, type InlineBannerVariantProps } from "@seed-design/recipe/inlineBanner";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";
-import { useDismissibleContext } from "../../hooks/useDismissible";
+import {
+  DismissibleDismissButton,
+  DismissibleRoot,
+  type DismissibleRootProps,
+} from "../private/useDismissible";
 
 const { withContext, withProvider, useClassNames } = createStyleContext(inlineBanner);
 
-export interface InlineBannerRootProps
-  extends InlineBannerVariantProps,
-    PrimitiveProps,
-    React.HTMLAttributes<HTMLDivElement> {}
+export interface InlineBannerRootProps extends InlineBannerVariantProps, DismissibleRootProps {}
 
 export const InlineBannerRoot = withProvider<HTMLDivElement, InlineBannerRootProps>(
-  Primitive.div,
+  DismissibleRoot,
   "root",
 );
 
@@ -42,6 +43,7 @@ export const InlineBannerTextContent = React.forwardRef<
 >((props, ref) => {
   return <Primitive.div ref={ref} {...props} />;
 });
+InlineBannerTextContent.displayName = "InlineBannerTextContent";
 
 export interface InlineBannerTitleProps
   extends PrimitiveProps,
@@ -83,31 +85,10 @@ export interface InlineBannerDismissButtonProps
   extends PrimitiveProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const InlineBannerDismissButton = React.forwardRef<
+export const InlineBannerDismissButton = withContext<
   HTMLButtonElement,
   InlineBannerDismissButtonProps
->(({ className, onClick, ...otherProps }, ref) => {
-  const classNames = useClassNames();
-  const { handleDismiss } = useDismissibleContext();
-
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = React.useCallback(
-    (event) => {
-      onClick?.(event);
-      handleDismiss();
-    },
-    [handleDismiss, onClick],
-  );
-
-  return (
-    <Primitive.button
-      ref={ref}
-      className={clsx(classNames.dismissButton, className)}
-      onClick={handleClick}
-      {...otherProps}
-    />
-  );
-});
-InlineBannerDismissButton.displayName = "InlineBannerDismissButton";
+>(DismissibleDismissButton, "dismissButton");
 
 export interface InlineBannerDismissIconProps extends IconProps {}
 
