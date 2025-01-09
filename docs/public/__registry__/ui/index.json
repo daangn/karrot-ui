@@ -228,7 +228,7 @@
   {
     "name": "segmented-control",
     "dependencies": [
-      "@seed-design/react-segmented-control@0.0.0"
+      "@seed-design/react"
     ],
     "files": [
       "ui:segmented-control.tsx"
