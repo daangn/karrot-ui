@@ -32,18 +32,30 @@ const ActivityHome: ActivityComponentType = () => {
           <ListItem
             onClick={() =>
               snackbarAdapter.create({
-                timeout: 5000,
-                removeDelay: 200,
-                render: () => (
-                  <Snackbar
-                    message="Disco Party!"
-                    actionLabel="Dance"
-                    onAction={() => snackbarAdapter.dismiss()}
-                  />
-                ),
+                render: () => <Snackbar message="Disco Party!" actionLabel="Dance" />,
               })
             }
             title="Snackbar"
+          />
+          <ListItem
+            onClick={() =>
+              snackbarAdapter.create({
+                render: () => (
+                  <Snackbar variant="positive" message="Disco Party!" actionLabel="Dance" />
+                ),
+              })
+            }
+            title="Snackbar (positive)"
+          />
+          <ListItem
+            onClick={() =>
+              snackbarAdapter.create({
+                render: () => (
+                  <Snackbar variant="danger" message="Disco Party!" actionLabel="Dance" />
+                ),
+              })
+            }
+            title="Snackbar (danger)"
           />
         </List>
       </div>

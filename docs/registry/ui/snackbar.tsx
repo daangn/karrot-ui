@@ -29,13 +29,23 @@ export const SnackbarProvider = (props: SnackbarProviderProps) => {
 };
 
 export interface SnackbarProps extends SeedSnackbar.RootProps {
+  /**
+   * 스낵바에 표시할 메시지
+   */
   message: string;
 
-  actionLabel: string;
-
-  onAction: () => void;
+  /**
+   * 스낵바에 표시할 액션 버튼의 라벨
+   */
+  actionLabel?: string;
 
   /**
+   * 액션 버튼 클릭 시 호출되는 콜백
+   */
+  onAction?: () => void;
+
+  /**
+   * 액션 버튼 클릭 시 스낵바를 닫을지 여부
    * @default true
    */
   shouldCloseOnAction?: boolean;
@@ -58,7 +68,7 @@ export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
 
     const handleAction: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       e.stopPropagation();
-      onAction();
+      onAction?.();
       if (shouldCloseOnAction) {
         e.currentTarget.blur();
         api.dismiss();

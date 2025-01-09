@@ -1,15 +1,18 @@
 "use client";
 
+import "@seed-design/stylesheet/snackbar.css";
+import "@seed-design/stylesheet/snackbarRegion.css";
+
 import {
   Snackbar as SeedSnackbar,
   useSnackbarAdapter as useSeedSnackbarAdapter,
   useSnackbarContext,
+  type CreateSnackbarOptions as SeedCreateSnackbarOptions,
 } from "@seed-design/react";
 import * as React from "react";
 
 import IconCheckmarkCircleFill from "@daangn/react-monochrome-icon/IconCheckmarkCircleFill";
 import IconExclamationmarkCircleFill from "@daangn/react-monochrome-icon/IconExclamationmarkCircleFill";
-import "@seed-design/stylesheet/snackbar.css";
 
 export interface SnackbarProviderProps extends SeedSnackbar.RootProviderProps {}
 
@@ -21,25 +24,28 @@ export const SnackbarProvider = (props: SnackbarProviderProps) => {
       <SeedSnackbar.Region>
         <SeedSnackbar.Renderer />
       </SeedSnackbar.Region>
-      <Debug />
     </SeedSnackbar.RootProvider>
   );
 };
 
-const Debug = () => {
-  const api = useSnackbarContext();
-  console.log(api);
-  return null;
-};
-
 export interface SnackbarProps extends SeedSnackbar.RootProps {
+  /**
+   * 스낵바에 표시할 메시지
+   */
   message: string;
 
-  actionLabel: string;
-
-  onAction: () => void;
+  /**
+   * 스낵바에 표시할 액션 버튼의 라벨
+   */
+  actionLabel?: string;
 
   /**
+   * 액션 버튼 클릭 시 호출되는 콜백
+   */
+  onAction?: () => void;
+
+  /**
+   * 액션 버튼 클릭 시 스낵바를 닫을지 여부
    * @default true
    */
   shouldCloseOnAction?: boolean;
@@ -59,11 +65,10 @@ export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
     ref,
   ) => {
     const api = useSnackbarContext();
-    if (!api.currentSnackbar) return;
 
     const handleAction: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       e.stopPropagation();
-      onAction();
+      onAction?.();
       if (shouldCloseOnAction) {
         e.currentTarget.blur();
         api.dismiss();
@@ -89,6 +94,9 @@ export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
   },
 );
 Snackbar.displayName = "Snackbar";
+
+// TODO: re-export is ugly; should we namespace CreateSnackbarOptions into Snackbar?
+export interface CreateSnackbarOptions extends SeedCreateSnackbarOptions {}
 
 export const useSnackbarAdapter = useSeedSnackbarAdapter;
 
