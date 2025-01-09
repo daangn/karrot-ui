@@ -99,6 +99,11 @@ export const registryUI: RegistryUI = [
     files: ["ui:inline-banner.tsx"],
   },
   {
+    name: "snackbar",
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
+    files: ["ui:snackbar.tsx"],
+  },
+  {
     name: "help-bubble",
     dependencies: [
       `@seed-design/react-popover@${popoverPkg.version}`,

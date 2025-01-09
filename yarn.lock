@@ -7851,6 +7851,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/react-snackbar@npm:0.0.0, @seed-design/react-snackbar@workspace:packages/react-headless/snackbar":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-snackbar@workspace:packages/react-headless/snackbar"
+  dependencies:
+    "@radix-ui/react-use-callback-ref": "npm:^1.1.0"
+    "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-primitive": "npm:0.0.0"
+    nanobundle: "npm:^1.6.0"
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/react-switch@npm:0.0.0-alpha-20241030023710, @seed-design/react-switch@workspace:packages/react-headless/switch":
   version: 0.0.0-use.local
   resolution: "@seed-design/react-switch@workspace:packages/react-headless/switch"
@@ -7941,6 +7955,7 @@ __metadata:
     "@seed-design/react-primitive": "npm:0.0.0"
     "@seed-design/react-progress": "npm:0.0.0"
     "@seed-design/react-radio-group": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-snackbar": "npm:0.0.0"
     "@seed-design/react-switch": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-text-field": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-toggle": "npm:0.0.0"

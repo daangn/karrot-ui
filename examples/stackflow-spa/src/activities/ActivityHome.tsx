@@ -4,9 +4,12 @@ import { AppScreen } from "@stackflow/plugin-basic-ui";
 
 import { List, ListItem } from "../components/List";
 import { useFlow } from "../stackflow";
+import { useSnackbarAdapter } from "@seed-design/react";
+import { Snackbar } from "../design-system/ui/snackbar";
 
 const ActivityHome: ActivityComponentType = () => {
   const { push } = useFlow();
+  const snackbarAdapter = useSnackbarAdapter();
 
   return (
     <AppScreen appBar={{ title: "Home" }}>
@@ -26,6 +29,22 @@ const ActivityHome: ActivityComponentType = () => {
           <ListItem onClick={() => push("ActivityAlertDialog", {})} title="AlertDialog" />
           <ListItem onClick={() => push("ActivityBottomSheet", {})} title="BottomSheet" />
           <ListItem onClick={() => push("ActivityActionSheet", {})} title="ActionSheet" />
+          <ListItem
+            onClick={() =>
+              snackbarAdapter.create({
+                timeout: 5000,
+                removeDelay: 200,
+                render: () => (
+                  <Snackbar
+                    message="Disco Party!"
+                    actionLabel="Dance"
+                    onAction={() => snackbarAdapter.dismiss()}
+                  />
+                ),
+              })
+            }
+            title="Snackbar"
+          />
         </List>
       </div>
     </AppScreen>
