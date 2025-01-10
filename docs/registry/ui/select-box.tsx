@@ -13,7 +13,18 @@ import "@seed-design/stylesheet/selectBoxGroup.css";
 export interface SelectBoxRadioGroupProps
   extends SeedSelectBoxRadio.GroupProps {}
 
-export const SelectBoxRadioGroup = SeedSelectBoxRadio.Group;
+export const SelectBoxRadioGroup = React.forwardRef<
+  HTMLDivElement,
+  SelectBoxRadioGroupProps
+>((props, ref) => {
+  if (!props["aria-label"] && !props["aria-labelledby"]) {
+    console.warn(
+      "SelectBoxRadioGroup component requires either an `aria-label` or `aria-labelledby` attribute.",
+    );
+  }
+
+  return <SeedSelectBoxRadio.Group ref={ref} {...props} />;
+});
 
 export interface SelectBoxRadioProps extends SeedSelectBoxRadio.RootProps {
   label: string;
@@ -29,12 +40,6 @@ export const SelectBoxRadio = React.forwardRef<
   HTMLInputElement,
   SelectBoxRadioProps
 >(({ label, description, inputProps, rootRef, ...otherProps }, ref) => {
-  if (!otherProps["aria-label"] && !otherProps["aria-labelledby"]) {
-    console.warn(
-      "SelectBoxRadio component requires either an `aria-label` or `aria-labelledby` attribute.",
-    );
-  }
-
   return (
     <SeedSelectBoxRadio.Root ref={rootRef} {...otherProps}>
       <SeedSelectBoxRadio.HiddenInput ref={ref} {...inputProps} />
