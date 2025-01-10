@@ -1,4 +1,7 @@
-import { segmentedControl as vars } from "@seed-design/vars/component";
+import {
+  segmentedControl as segmentedControlVars,
+  segment as segmentVars,
+} from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { disabled, active, pseudo, checked, not } from "../utils/pseudo";
 
@@ -14,11 +17,11 @@ const segmentedControl = defineRecipe({
 
       position: "relative",
 
-      padding: vars.base.enabled.root.padding,
+      padding: segmentedControlVars.base.enabled.root.padding,
 
-      borderRadius: vars.base.enabled.root.cornerRadius,
+      borderRadius: segmentedControlVars.base.enabled.root.cornerRadius,
 
-      backgroundColor: vars.base.enabled.root.color,
+      backgroundColor: segmentedControlVars.base.enabled.root.color,
 
       gridAutoFlow: "column",
       gridAutoColumns: "1fr",
@@ -30,64 +33,64 @@ const segmentedControl = defineRecipe({
     segment: {
       display: "grid",
 
-      minWidth: vars.base.enabled.segment.minWidth,
-      height: vars.base.enabled.segment.height,
+      minWidth: segmentVars.base.enabled.root.minWidth,
+      height: segmentVars.base.enabled.root.height,
 
-      borderRadius: vars.base.enabled.segment.cornerRadius,
+      borderRadius: segmentVars.base.enabled.root.cornerRadius,
 
       overflow: "hidden",
 
       userSelect: "none",
 
-      lineHeight: vars.base.enabled.segment.lineHeight,
+      lineHeight: segmentVars.base.enabled.label.lineHeight,
 
       [pseudo(not(disabled))]: {
         cursor: "pointer",
       },
 
       [pseudo(not(disabled), active)]: {
-        backgroundColor: vars.base.enabledPressed.segment.color,
+        backgroundColor: segmentVars.base.enabledPressed.root.color,
       },
 
       [pseudo(not(disabled), checked, active)]: {
-        backgroundColor: vars.base.enabledSelectedPressed.indicator.color,
+        backgroundColor: segmentVars.base.enabledSelectedPressed.root.color,
       },
     },
     segmentLabel: {
       gridArea: "1 / 1 / 1 / 1",
 
-      paddingInline: `calc(${vars.base.enabled.segment.paddingX} - 1px)`,
+      paddingInline: `calc(${segmentVars.base.enabled.root.paddingX} - 1px)`,
       marginBlock: "auto",
 
       textAlign: "center",
-      fontWeight: vars.base.enabled.segment.fontWeight,
-      fontSize: vars.base.enabled.segment.fontSize,
+      fontWeight: segmentVars.base.enabled.label.fontWeight,
+      fontSize: segmentVars.base.enabled.label.fontSize,
 
       whiteSpace: "nowrap",
 
       textOverflow: "ellipsis",
       overflow: "hidden",
 
-      color: vars.base.enabled.segment.color,
+      color: segmentVars.base.enabled.label.color,
 
       [pseudo(checked)]: {
-        color: vars.base.enabledSelected.segment.color,
+        color: segmentVars.base.enabledSelected.label.color,
 
-        fontWeight: vars.base.selected.segment.fontWeight,
+        fontWeight: segmentVars.base.enabledSelected.label.fontWeight,
       },
 
       [pseudo(disabled)]: {
-        color: vars.base.disabled.segment.color,
+        color: segmentVars.base.disabled.label.color,
       },
     },
     segmentLabelPlaceholder: {
       gridArea: "1 / 1 / 1 / 1",
 
-      paddingInline: vars.base.enabled.segment.paddingX,
+      paddingInline: segmentVars.base.enabled.root.paddingX,
 
       textAlign: "center",
-      fontWeight: vars.base.selected.segment.fontWeight,
-      fontSize: vars.base.enabled.segment.fontSize,
+      fontWeight: segmentVars.base.enabledSelected.label.fontWeight,
+      fontSize: segmentVars.base.enabled.label.fontSize,
 
       textOverflow: "ellipsis",
       overflow: "hidden",
@@ -97,23 +100,23 @@ const segmentedControl = defineRecipe({
     },
     indicator: {
       position: "absolute",
-      insetBlock: vars.base.enabled.root.padding,
-      insetInlineStart: vars.base.enabled.root.padding,
+      insetBlock: segmentedControlVars.base.enabled.root.padding,
+      insetInlineStart: segmentedControlVars.base.enabled.root.padding,
 
-      width: `calc((100% - ${vars.base.enabled.root.padding} * 2) / var(--seed-design-segmented-control-segment-count))`,
+      width: `calc((100% - ${segmentedControlVars.base.enabled.root.padding} * 2) / var(--seed-design-segmented-control-segment-count))`,
       transform:
         "translateX(calc(var(--seed-design-segmented-control-current-segment-index) * 100%))",
 
       zIndex: -1,
 
-      borderRadius: vars.base.enabled.indicator.cornerRadius,
+      borderRadius: segmentVars.base.enabled.root.cornerRadius,
 
-      backgroundColor: vars.base.enabled.indicator.color,
+      backgroundColor: segmentVars.base.enabledSelected.root.color,
 
-      boxShadow: vars.base.enabled.indicator.shadow,
+      boxShadow: segmentVars.base.enabledSelected.root.shadow,
 
       willChange: "transform",
-      transition: `transform ${vars.base.enabled.indicator.transformDuration} ${vars.base.enabled.indicator.transformTimingFunction}`,
+      transition: `transform ${segmentVars.base.enabledSelected.root.transformDuration} ${segmentVars.base.enabledSelected.root.transformTimingFunction}`,
     },
   },
   variants: {},

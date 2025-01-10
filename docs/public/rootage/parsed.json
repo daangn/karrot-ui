@@ -18758,8 +18758,8 @@
       ]
     },
     {
-      "id": "segmented-control",
-      "name": "Segmented Control",
+      "id": "segment",
+      "name": "Segment",
       "data": [
         {
           "key": {},
@@ -18771,42 +18771,6 @@
               "slot": [
                 {
                   "key": "root",
-                  "property": [
-                    {
-                      "key": "padding",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s1"
-                      }
-                    },
-                    {
-                      "key": "cornerRadius",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "radius"
-                        ],
-                        "key": "full"
-                      }
-                    },
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "bg"
-                        ],
-                        "key": "neutral-weak"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "segment",
                   "property": [
                     {
                       "key": "height",
@@ -18845,7 +18809,12 @@
                         "value": 86,
                         "unit": "px"
                       }
-                    },
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
                     {
                       "key": "fontSize",
                       "value": {
@@ -18888,20 +18857,42 @@
                       }
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "key": [
+                "enabled",
+                "pressed"
+              ],
+              "slot": [
                 {
-                  "key": "indicator",
+                  "key": "root",
                   "property": [
                     {
-                      "key": "cornerRadius",
+                      "key": "color",
                       "value": {
                         "type": "token",
                         "group": [
-                          "radius"
+                          "color",
+                          "bg"
                         ],
-                        "key": "full"
+                        "key": "neutral-weak-pressed"
                       }
-                    },
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": [
+                "enabled",
+                "selected"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
                     {
                       "key": "color",
                       "value": {
@@ -18961,40 +18952,9 @@
                       }
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "key": [
-                "enabled",
-                "pressed"
-              ],
-              "slot": [
+                },
                 {
-                  "key": "segment",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "bg"
-                        ],
-                        "key": "neutral-weak-pressed"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "key": [
-                "selected"
-              ],
-              "slot": [
-                {
-                  "key": "segment",
+                  "key": "label",
                   "property": [
                     {
                       "key": "fontWeight",
@@ -19005,20 +18965,7 @@
                         ],
                         "key": "bold"
                       }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "key": [
-                "enabled",
-                "selected"
-              ],
-              "slot": [
-                {
-                  "key": "segment",
-                  "property": [
+                    },
                     {
                       "key": "color",
                       "value": {
@@ -19042,7 +18989,7 @@
               ],
               "slot": [
                 {
-                  "key": "indicator",
+                  "key": "root",
                   "property": [
                     {
                       "key": "color",
@@ -19065,7 +19012,7 @@
               ],
               "slot": [
                 {
-                  "key": "segment",
+                  "key": "label",
                   "property": [
                     {
                       "key": "color",
@@ -19076,6 +19023,60 @@
                           "fg"
                         ],
                         "key": "disabled"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "segmented-control",
+      "name": "Segmented Control",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "padding",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "unit"
+                        ],
+                        "key": "s1"
+                      }
+                    },
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "full"
+                      }
+                    },
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "neutral-weak"
                       }
                     }
                   ]
