@@ -1,0 +1,681 @@
+---
+title: V3 색상으로 마이그레이션하기
+description: SEED V2 색상에서 마이그레이션하는 방법을 안내합니다.
+---
+
+import { TokenMappingTable } from "@/components/token-mapping-table";
+
+## 개요
+
+V2 색상 토큰을 사용 중인 경우, V3 색상 토큰 맵핑을 활용하여 신규 토큰으로 마이그레이션할 수 있습니다.
+
+## 색상 토큰 맵핑
+
+### Semantic Tokens
+
+<TokenMappingTable
+  mappings={[
+    {
+      previousTokenId: "$semantic.color.on-primary",
+      newTokenIds: ["$color.palette.static-white"],
+    },
+    {
+      previousTokenId: "$semantic.color.primary",
+      newTokenIds: ["$color.bg.brand-solid", "$color.fg.brand"],
+    },
+    {
+      previousTokenId: "$semantic.color.primary-low",
+      newTokenIds: ["$color.bg.brand-weak"],
+    },
+    {
+      previousTokenId: "$semantic.color.secondary",
+      newTokenIds: ["$color.palette.gray-900"],
+      note: "Deprecated",
+    },
+    {
+      previousTokenId: "$semantic.color.secondary-low",
+      newTokenIds: ["$color.bg.neutral-weak"],
+    },
+    {
+      previousTokenId: "$semantic.color.success",
+      newTokenIds: ["$color.bg.positive-solid", "$color.fg.positive"],
+    },
+    {
+      previousTokenId: "$semantic.color.success-low",
+      newTokenIds: ["$color.bg.positive-weak"],
+    },
+    {
+      previousTokenId: "$semantic.color.warning",
+      newTokenIds: ["$color.bg.warning-solid"],
+    },
+    {
+      previousTokenId: "$semantic.color.warning-low",
+      newTokenIds: ["$color.bg.warning-weak"],
+    },
+    {
+      previousTokenId: "$semantic.color.danger",
+      newTokenIds: ["$color.bg.danger-solid", "$color.fg.danger"],
+    },
+    {
+      previousTokenId: "$semantic.color.danger-low",
+      newTokenIds: ["$color.bg.danger-weak"],
+    },
+    {
+      previousTokenId: "$semantic.color.overlay-dim",
+      newTokenIds: ["$color.bg.overlay"],
+    },
+    {
+      previousTokenId: "$semantic.color.overlay-low",
+      newTokenIds: ["$color.bg.overlay-muted"],
+    },
+    {
+      previousTokenId: "$semantic.color.paper-sheet",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.paper-dialog",
+      newTokenIds: ["$color.bg.layer-floating"],
+    },
+    {
+      previousTokenId: "$semantic.color.paper-floating",
+      newTokenIds: ["$color.bg.layer-floating"],
+    },
+    {
+      previousTokenId: "$semantic.color.paper-contents",
+      newTokenIds: ["$color.bg.layer-fill"],
+    },
+    {
+      previousTokenId: "$semantic.color.paper-default",
+      newTokenIds: ["$color.bg.layer-default"],
+    },
+    {
+      previousTokenId: "$semantic.color.paper-background",
+      newTokenIds: ["$color.bg.layer-basement"],
+    },
+    {
+      previousTokenId: "$semantic.color.paper-accent",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.primary-hover",
+      newTokenIds: ["$color.bg.brand-solid-pressed"],
+    },
+    {
+      previousTokenId: "$semantic.color.primary-pressed",
+      newTokenIds: ["$color.bg.brand-solid-pressed"],
+    },
+    {
+      previousTokenId: "$semantic.color.primary-low-hover",
+      newTokenIds: ["$color.bg.brand-weak-pressed"],
+    },
+    {
+      previousTokenId: "$semantic.color.primary-low-active",
+      newTokenIds: ["$color.bg.brand-weak-pressed"],
+    },
+    {
+      previousTokenId: "$semantic.color.primary-low-pressed",
+      newTokenIds: ["$color.bg.brand-weak-pressed"],
+    },
+    {
+      previousTokenId: "$semantic.color.gray-hover",
+      newTokenIds: ["$color.bg.layer-default-pressed"],
+    },
+    {
+      previousTokenId: "$semantic.color.gray-pressed",
+      newTokenIds: ["$color.bg.layer-default-pressed"],
+    },
+    {
+      previousTokenId: "$semantic.color.on-primary-overlay-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.on-primary-overlay-200",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.on-primary-low-overlay-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.on-primary-low-overlay-100",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.on-primary-low-overlay-200",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.on-gray-overlay-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.on-gray-overlay-100",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$semantic.color.divider-1",
+      newTokenIds: [],
+      note: "Deprecated",
+    },
+    {
+      previousTokenId: "$semantic.color.divider-2",
+      newTokenIds: ["$color.stroke.neutral-muted"],
+    },
+    {
+      previousTokenId: "$semantic.color.divider-3",
+      newTokenIds: ["$color.stroke.neutral"],
+    },
+    {
+      previousTokenId: "$semantic.color.accent",
+      newTokenIds: ["$color.bg.informative-solid"],
+    },
+    {
+      previousTokenId: "$semantic.color.ink-text",
+      newTokenIds: ["$color.fg.neutral"],
+    },
+    {
+      previousTokenId: "$semantic.color.ink-text-low",
+      newTokenIds: ["$color.fg.neutral-subtle"],
+    },
+    {
+      previousTokenId: "$semantic.color.gray-active",
+      newTokenIds: [],
+      note: "TBD",
+    },
+  ]}
+/>
+
+### Scale Tokens
+
+<TokenMappingTable
+  mappings={[
+    {
+      previousTokenId: "$scale.color.gray-00",
+      newTokenIds: ["$color.palette.gray-00"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-50",
+      newTokenIds: ["$color.palette.gray-100"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-100",
+      newTokenIds: ["$color.palette.gray-200"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-200",
+      newTokenIds: ["$color.palette.gray-300"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-300",
+      newTokenIds: ["$color.palette.gray-400"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-400",
+      newTokenIds: ["$color.palette.gray-500"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-500",
+      newTokenIds: ["$color.palette.gray-600"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-600",
+      newTokenIds: ["$color.palette.gray-700"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-700",
+      newTokenIds: ["$color.palette.gray-800"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-800",
+      newTokenIds: ["$color.palette.gray-900"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-900",
+      newTokenIds: ["$color.palette.gray-900"],
+    },
+    {
+      previousTokenId: "$scale.color.gray-alpha-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.gray-alpha-100",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.gray-alpha-200",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.gray-alpha-500",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.carrot-50",
+      newTokenIds: ["$color.palette.carrot-100"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-100",
+      newTokenIds: ["$color.palette.carrot-200"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-200",
+      newTokenIds: ["$color.palette.carrot-300"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-300",
+      newTokenIds: ["$color.palette.carrot-400"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-400",
+      newTokenIds: ["$color.palette.carrot-500"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-500",
+      newTokenIds: ["$color.palette.carrot-600"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-600",
+      newTokenIds: ["$color.palette.carrot-600"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-700",
+      newTokenIds: ["$color.palette.carrot-700"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-800",
+      newTokenIds: ["$color.palette.carrot-700"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-900",
+      newTokenIds: ["$color.palette.carrot-800"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-950",
+      newTokenIds: ["$color.palette.carrot-800"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-alpha-50",
+      newTokenIds: ["$color.palette.carrot-100"],
+    },
+    {
+      previousTokenId: "$scale.color.carrot-alpha-100",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.carrot-alpha-200",
+      newTokenIds: ["$color.palette.carrot-200"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-50",
+      newTokenIds: ["$color.palette.blue-100"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-100",
+      newTokenIds: ["$color.palette.blue-200"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-200",
+      newTokenIds: ["$color.palette.blue-300"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-300",
+      newTokenIds: ["$color.palette.blue-400"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-400",
+      newTokenIds: ["$color.palette.blue-400"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-500",
+      newTokenIds: ["$color.palette.blue-500"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-600",
+      newTokenIds: ["$color.palette.blue-600"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-700",
+      newTokenIds: ["$color.palette.blue-700"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-800",
+      newTokenIds: ["$color.palette.blue-800"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-900",
+      newTokenIds: ["$color.palette.blue-900"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-950",
+      newTokenIds: ["$color.palette.blue-1000"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-alpha-50",
+      newTokenIds: ["$color.palette.blue-100"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-alpha-100",
+      newTokenIds: ["$color.palette.blue-100"],
+    },
+    {
+      previousTokenId: "$scale.color.blue-alpha-200",
+      newTokenIds: ["$color.palette.blue-200"],
+    },
+    {
+      previousTokenId: "$scale.color.red-50",
+      newTokenIds: ["$color.palette.red-100"],
+    },
+    {
+      previousTokenId: "$scale.color.red-100",
+      newTokenIds: ["$color.palette.red-200"],
+    },
+    {
+      previousTokenId: "$scale.color.red-200",
+      newTokenIds: ["$color.palette.red-300"],
+    },
+    {
+      previousTokenId: "$scale.color.red-300",
+      newTokenIds: ["$color.palette.red-400"],
+    },
+    {
+      previousTokenId: "$scale.color.red-400",
+      newTokenIds: ["$color.palette.red-500"],
+    },
+    {
+      previousTokenId: "$scale.color.red-500",
+      newTokenIds: ["$color.palette.red-600"],
+    },
+    {
+      previousTokenId: "$scale.color.red-600",
+      newTokenIds: ["$color.palette.red-700"],
+    },
+    {
+      previousTokenId: "$scale.color.red-700",
+      newTokenIds: ["$color.palette.red-700"],
+    },
+    {
+      previousTokenId: "$scale.color.red-800",
+      newTokenIds: ["$color.palette.red-800"],
+    },
+    {
+      previousTokenId: "$scale.color.red-900",
+      newTokenIds: ["$color.palette.red-900"],
+    },
+    {
+      previousTokenId: "$scale.color.red-950",
+      newTokenIds: ["$color.palette.red-900"],
+    },
+    {
+      previousTokenId: "$scale.color.red-alpha-50",
+      newTokenIds: ["$color.palette.red-100"],
+    },
+    {
+      previousTokenId: "$scale.color.red-alpha-100",
+      newTokenIds: ["$color.palette.red-100"],
+    },
+    {
+      previousTokenId: "$scale.color.red-alpha-200",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.green-50",
+      newTokenIds: ["$color.palette.green-100"],
+    },
+    {
+      previousTokenId: "$scale.color.green-100",
+      newTokenIds: ["$color.palette.green-200"],
+    },
+    {
+      previousTokenId: "$scale.color.green-200",
+      newTokenIds: ["$color.palette.green-300"],
+    },
+    {
+      previousTokenId: "$scale.color.green-300",
+      newTokenIds: ["$color.palette.green-400"],
+    },
+    {
+      previousTokenId: "$scale.color.green-400",
+      newTokenIds: ["$color.palette.green-500"],
+    },
+    {
+      previousTokenId: "$scale.color.green-500",
+      newTokenIds: ["$color.palette.green-600"],
+    },
+    {
+      previousTokenId: "$scale.color.green-600",
+      newTokenIds: ["$color.palette.green-700"],
+    },
+    {
+      previousTokenId: "$scale.color.green-700",
+      newTokenIds: ["$color.palette.green-800"],
+    },
+    {
+      previousTokenId: "$scale.color.green-800",
+      newTokenIds: ["$color.palette.green-800"],
+    },
+    {
+      previousTokenId: "$scale.color.green-900",
+      newTokenIds: ["$color.palette.green-900"],
+    },
+    {
+      previousTokenId: "$scale.color.green-950",
+      newTokenIds: ["$color.palette.green-900"],
+    },
+    {
+      previousTokenId: "$scale.color.green-alpha-50",
+      newTokenIds: ["$color.palette.green-100"],
+    },
+    {
+      previousTokenId: "$scale.color.green-alpha-100",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.green-alpha-200",
+      newTokenIds: ["$color.palette.green-200"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-50",
+      newTokenIds: ["$color.palette.yellow-100"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-100",
+      newTokenIds: ["$color.palette.yellow-200"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-200",
+      newTokenIds: ["$color.palette.yellow-300"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-300",
+      newTokenIds: ["$color.palette.yellow-500"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-400",
+      newTokenIds: ["$color.palette.yellow-600"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-500",
+      newTokenIds: ["$color.palette.yellow-700"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-600",
+      newTokenIds: ["$color.palette.yellow-700"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-700",
+      newTokenIds: ["$color.palette.yellow-800"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-800",
+      newTokenIds: ["$color.palette.yellow-800"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-900",
+      newTokenIds: ["$color.palette.yellow-900"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-950",
+      newTokenIds: ["$color.palette.yellow-900"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-alpha-50",
+      newTokenIds: ["$color.palette.yellow-100"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-alpha-100",
+      newTokenIds: ["$color.palette.yellow-100"],
+    },
+    {
+      previousTokenId: "$scale.color.yellow-alpha-200",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$scale.color.purple-50",
+      newTokenIds: ["$color.palette.purple-100"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-100",
+      newTokenIds: ["$color.palette.purple-300"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-200",
+      newTokenIds: ["$color.palette.purple-400"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-300",
+      newTokenIds: ["$color.palette.purple-400"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-400",
+      newTokenIds: ["$color.palette.purple-500"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-500",
+      newTokenIds: ["$color.palette.purple-600"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-600",
+      newTokenIds: ["$color.palette.purple-700"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-700",
+      newTokenIds: ["$color.palette.purple-800"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-800",
+      newTokenIds: ["$color.palette.purple-900"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-900",
+      newTokenIds: ["$color.palette.purple-900"],
+    },
+    {
+      previousTokenId: "$scale.color.purple-950",
+      newTokenIds: ["$color.palette.purple-1000"],
+    },
+  ]}
+/>
+
+### Static Tokens
+
+<TokenMappingTable
+  mappings={[
+    {
+      previousTokenId: "$static.color.static-black",
+      newTokenIds: ["$color.palette.static-black"],
+    },
+    {
+      previousTokenId: "$static.color.static-white",
+      newTokenIds: ["$color.palette.static-white"],
+    },
+    {
+      previousTokenId: "$static.color.static-gray-900",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-carrot-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-carrot-800",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-green-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-green-800",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-yellow-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-yellow-800",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-red-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-red-800",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-blue-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-blue-800",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-black-alpha-200",
+      newTokenIds: ["$color.palette.static-black-alpha-200"],
+    },
+    {
+      previousTokenId: "$static.color.static-black-alpha-500",
+      newTokenIds: ["$color.palette.static-black-alpha-500"],
+    },
+    {
+      previousTokenId: "$static.color.static-white-alpha-50",
+      newTokenIds: [],
+      note: "TBD",
+    },
+    {
+      previousTokenId: "$static.color.static-white-alpha-200",
+      newTokenIds: ["$color.palette.static-white-alpha-200"],
+    },
+  ]}
+/>
