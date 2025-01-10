@@ -1,0 +1,169 @@
+---
+title: V3 텍스트 스타일로 마이그레이션하기
+description: SEED V2 타이포그래피 토큰에서 마이그레이션하는 방법을 안내합니다.
+---
+
+import { TypographyMappingTable } from "@/components/typography-mapping-table";
+
+## 개요
+
+V2 Semantic 타이포그래피 토큰을 사용 중인 경우, V3 텍스트 스타일 맵핑을 활용하여 신규 텍스트 스타일로 마이그레이션할 수 있습니다.
+
+## Semantic 타이포그래피 토큰 맵핑
+
+<TypographyMappingTable
+  mappings={[
+    {
+      previousTokenId: "$semantic.typography.h1",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.h2",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.h3",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.h4",
+      newTextStyleIds: ["heading-large-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.title1Bold",
+      newTextStyleIds: ["heading-medium-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.title1Regular",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.title2Bold",
+      newTextStyleIds: ["title-large-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.title2Regular",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.title3Bold",
+      newTextStyleIds: ["title-medium-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.title3Regular",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.subtitle1Bold",
+      newTextStyleIds: ["body-medium-stronger", "title-small-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.subtitle1Regular",
+      newTextStyleIds: ["body-medium-default", "body-medium-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.subtitle2Bold",
+      newTextStyleIds: ["body-small-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.subtitle2Regular",
+      newTextStyleIds: ["body-small-default", "body-small-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyL1Bold",
+      newTextStyleIds: ["body-medium-stronger", "title-small-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyL1Regular",
+      newTextStyleIds: ["body-medium-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyL2Bold",
+      newTextStyleIds: ["body-small-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyL2Regular",
+      newTextStyleIds: ["body-small-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyM1Bold",
+      newTextStyleIds: ["body-medium-stronger", "title-small-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyM1Regular",
+      newTextStyleIds: ["body-medium-default", "body-medium-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyM2Bold",
+      newTextStyleIds: ["body-small-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.bodyM2Regular",
+      newTextStyleIds: ["body-small-default", "body-small-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.caption1Bold",
+      newTextStyleIds: ["label-large-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.caption1Regular",
+      newTextStyleIds: ["label-large-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.caption2Bold",
+      newTextStyleIds: ["label-medium-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.caption2Regular",
+      newTextStyleIds: ["label-medium-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label1Bold",
+      newTextStyleIds: ["title-medium-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label1Regular",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.label2Bold",
+      newTextStyleIds: ["body-medium-stronger", "title-small-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label2Regular",
+      newTextStyleIds: ["body-medium-default", "body-medium-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label3Bold",
+      newTextStyleIds: ["body-small-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label3Regular",
+      newTextStyleIds: ["body-small-default", "body-small-reading-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label4Bold",
+      newTextStyleIds: ["label-medium-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label4Regular",
+      newTextStyleIds: ["label-medium-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label5Bold",
+      newTextStyleIds: ["label-small-stronger"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label5Regular",
+      newTextStyleIds: ["label-small-default"],
+    },
+    {
+      previousTokenId: "$semantic.typography.label6Bold",
+      newTextStyleIds: [],
+    },
+    {
+      previousTokenId: "$semantic.typography.label6Regular",
+      newTextStyleIds: [],
+    },
+  ]}
+/>
