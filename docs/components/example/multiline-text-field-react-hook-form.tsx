@@ -1,9 +1,9 @@
 "use client";
 
 import { ActionButton } from "seed-design/ui/action-button";
-import { IconHouseLine } from "@daangn/react-monochrome-icon";
-import { useForm } from "react-hook-form";
+import { useController, useForm } from "react-hook-form";
 import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
+import { useCallback, type FormEvent, type KeyboardEvent } from "react";
 
 interface FormValues {
   bio: string;
@@ -11,56 +11,90 @@ interface FormValues {
 }
 
 export default function MultilineTextFieldReactHookForm() {
-  const {
-    register,
-    handleSubmit,
-    clearErrors,
-    formState: { errors },
-  } = useForm<FormValues>();
+  const { handleSubmit, reset, control } = useForm<FormValues>({
+    defaultValues: {
+      bio: "",
+      address: "",
+    },
+    shouldFocusError: true,
+  });
 
-  const onValid = (data: FormValues) => {
+  const { field: bioField, fieldState: bioFieldState } = useController({
+    name: "bio",
+    control,
+    rules: {
+      required: "필수 입력 항목입니다",
+    },
+  });
+  const {
+    field: { onChange: addressOnChange, ...addressField },
+    fieldState: addressFieldState,
+  } = useController({
+    name: "address",
+    control,
+    rules: {
+      required: "필수 입력 항목입니다",
+      pattern: { value: /^대한민국/, message: "대한민국으로 시작해주세요" },
+    },
+  });
+
+  const onValid = useCallback((data: FormValues) => {
     window.alert(JSON.stringify(data, null, 2));
-  };
+  }, []);
+
+  const onReset = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
+      reset();
+    },
+    [reset],
+  );
+
+  const onMetaReturn = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        handleSubmit(onValid)();
+      }
+    },
+    [handleSubmit, onValid],
+  );
 
   return (
-    <form className="grid grid-cols-2 gap-3 w-full" onSubmit={handleSubmit(onValid)}>
+    <form
+      className="grid grid-cols-2 gap-3 w-full"
+      onSubmit={handleSubmit(onValid)}
+      onReset={onReset}
+    >
       <TextField
-        {...register("bio", { required: "필수 입력 항목입니다" })}
         label="자기소개"
-        description="자기소개를 써주세요"
-        invalid={!!errors.bio}
-        errorMessage={errors.bio?.message}
         indicator="(필수)"
+        description="자기소개를 써주세요"
+        invalid={bioFieldState.invalid}
+        errorMessage={bioFieldState.error?.message}
         required
+        {...bioField}
       >
-        <TextFieldTextarea placeholder="저는…" />
+        <TextFieldTextarea placeholder="저는…" onKeyDown={onMetaReturn} />
       </TextField>
       <TextField
-        {...register("address", {
-          required: "필수 입력 항목입니다",
-          pattern: {
-            value: /^대한민국/,
-            message: "대한민국으로 시작해주세요",
-          },
-        })}
         label="주소"
-        description="주소를 써주세요"
-        invalid={!!errors.address}
-        errorMessage={errors.address?.message}
         indicator="(필수)"
+        description="주소를 써주세요"
+        invalid={addressFieldState.invalid}
+        errorMessage={addressFieldState.error?.message}
+        maxGraphemeCount={30}
+        onValueChange={({ slicedValue }) => addressOnChange(slicedValue)}
         required
+        {...addressField}
       >
-        <TextFieldTextarea placeholder="대한민국 서울특별시 은평구" />
+        <TextFieldTextarea placeholder="대한민국" onKeyDown={onMetaReturn} />
       </TextField>
       <div className="col-span-2 flex gap-2">
         <ActionButton type="submit" className="grow">
           제출
         </ActionButton>
-        <ActionButton
-          type="reset"
-          onClick={() => clearErrors(["bio", "address"])}
-          variant="neutralWeak"
-        >
+        <ActionButton type="reset" variant="neutralWeak">
           초기화
         </ActionButton>
       </div>
