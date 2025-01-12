@@ -48,6 +48,8 @@ function handleRadius(radius: string | undefined) {
 }
 
 export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
+  as?: React.ElementType;
+
   background?: `bg.${ColorBg}` | `palette.${ColorPalette}`;
 
   color?: `fg.${ColorFg}` | `palette.${ColorPalette}`;
@@ -108,7 +110,7 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   paddingLeft?: Unit | HorizontalSpacing;
 
-  display?: "block" | "flex" | "inline" | "inlineBlock" | "none";
+  display?: "block" | "flex" | "inline-flex" | "inline" | "inline-block" | "none";
 
   position?: "relative" | "absolute" | "fixed" | "sticky";
 
@@ -132,11 +134,12 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   alignContent?: "flex-start" | "flex-end" | "center" | "stretch";
 
-  gap?: Unit;
+  gap?: Unit | HorizontalSpacing;
 }
 
 export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   const {
+    as: Comp = "div",
     background,
     color,
     borderColor,
@@ -181,7 +184,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   } = props;
 
   return (
-    <div
+    <Comp
       ref={ref}
       className={clsx("seed-box", className)}
       style={
@@ -216,6 +219,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-padding-right": handleSpacing(paddingRight),
           "--seed-box-padding-bottom": handleSpacing(paddingBottom),
           "--seed-box-padding-left": handleSpacing(paddingLeft),
+          "--seed-box-gap": handleSpacing(gap),
           "--seed-box-display": display,
           "--seed-box-position": position,
           "--seed-box-overflow-x": overflowX,
@@ -227,7 +231,6 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-justify-content": justifyContent,
           "--seed-box-align-items": alignItems,
           "--seed-box-align-content": alignContent,
-          "--seed-box-gap": gap ? `var(--seed-v3-unit-${gap})` : undefined,
           ...style,
         } as React.CSSProperties
       }
