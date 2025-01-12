@@ -1,5 +1,4 @@
 import { controlChip as vars } from "@seed-design/vars/component";
-import { rem } from "@seed-design/qvism-core";
 
 import { defineRecipe } from "../utils/define-recipe";
 import { active, checked, disabled, focus, pseudo } from "../utils/pseudo";
@@ -113,12 +112,12 @@ const controlChip = defineRecipe({
           fontSize: vars.sizeMedium.enabled.label.fontSize,
         },
         prefixIcon: {
-          width: rem(vars.sizeMedium.enabled.prefixIcon.size),
-          height: rem(vars.sizeMedium.enabled.prefixIcon.size),
+          width: vars.sizeMedium.enabled.prefixIcon.size,
+          height: vars.sizeMedium.enabled.prefixIcon.size,
         },
         suffixIcon: {
-          width: rem(vars.sizeMedium.enabled.suffixIcon.size),
-          height: rem(vars.sizeMedium.enabled.suffixIcon.size),
+          width: vars.sizeMedium.enabled.suffixIcon.size,
+          height: vars.sizeMedium.enabled.suffixIcon.size,
         },
         count: {
           fontSize: vars.sizeMedium.enabled.count.fontSize,
@@ -134,12 +133,12 @@ const controlChip = defineRecipe({
           fontSize: vars.sizeSmall.enabled.label.fontSize,
         },
         prefixIcon: {
-          width: rem(vars.sizeSmall.enabled.prefixIcon.size),
-          height: rem(vars.sizeSmall.enabled.prefixIcon.size),
+          width: vars.sizeSmall.enabled.prefixIcon.size,
+          height: vars.sizeSmall.enabled.prefixIcon.size,
         },
         suffixIcon: {
-          width: rem(vars.sizeSmall.enabled.suffixIcon.size),
-          height: rem(vars.sizeSmall.enabled.suffixIcon.size),
+          width: vars.sizeSmall.enabled.suffixIcon.size,
+          height: vars.sizeSmall.enabled.suffixIcon.size,
         },
         count: {
           fontSize: vars.sizeSmall.enabled.count.fontSize,
