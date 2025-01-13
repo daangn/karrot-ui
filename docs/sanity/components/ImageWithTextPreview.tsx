@@ -40,7 +40,7 @@ export function ImageWithTextPreview({ value }: ImageWithTextPreviewProps) {
       style={{
         display: "flex",
         flexDirection: imagePosition === "right" ? "row-reverse" : "row",
-        gap: 8,
+        gap: 24,
       }}
     >
       <div style={{ flex: 1, maxWidth: "50%" }}>
