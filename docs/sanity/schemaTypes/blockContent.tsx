@@ -138,6 +138,10 @@ export const tableType = defineArrayMember({
   ],
 });
 
+const DescriptionStyle = (props: any) => (
+  <span style={{ fontSize: "14px" }}>{props.children} </span>
+);
+
 export default defineType({
   title: "Block Content",
   name: "blockContent",
@@ -151,6 +155,7 @@ export default defineType({
       // use your content.
       styles: [
         { title: "Normal", value: "normal" },
+        { title: "Description", value: "description", component: DescriptionStyle },
         { title: "H1", value: "h1" },
         { title: "H2", value: "h2" },
         { title: "H3", value: "h3" },

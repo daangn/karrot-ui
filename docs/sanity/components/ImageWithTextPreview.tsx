@@ -34,7 +34,12 @@ interface ImageWithTextPreviewProps {
 
 export function ImageWithTextPreview({ value }: ImageWithTextPreviewProps) {
   const { image, text, imagePosition } = value;
-  const imageUrl = useCallback(() => builder.image(image).width(800).url(), [image]);
+  const imageUrl = useCallback(() => {
+    if (!image) {
+      return null;
+    }
+    return builder.image(image).width(800).url();
+  }, [image]);
 
   return (
     <div
@@ -45,7 +50,7 @@ export function ImageWithTextPreview({ value }: ImageWithTextPreviewProps) {
     >
       <div className="flex-1 w-full sm:max-w-[50%]">
         <img
-          src={imageUrl()}
+          src={imageUrl() ?? undefined}
           alt=""
           style={{
             width: "100%",
