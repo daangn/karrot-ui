@@ -56,6 +56,7 @@ export const PortableContent = ({ content }: { content: any }) => {
         },
         block: {
           normal: (props) => <p className="min-h-4 m-0" {...props} />,
+          h3: (props) => <h3 className="mt-2 mb-1" {...props} />,
         },
       }}
       value={content}

@@ -1,4 +1,5 @@
-import { PortableText, PortableTextBlock } from "@portabletext/react";
+import { PortableContent } from "@/components/sanity/sanity-content";
+import { PortableTextBlock } from "@portabletext/react";
 import { SanityImageAsset } from "@sanity/asset-utils";
 import imageUrlBuilder from "@sanity/image-url";
 import { useCallback } from "react";
@@ -38,12 +39,11 @@ export function ImageWithTextPreview({ value }: ImageWithTextPreviewProps) {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: imagePosition === "right" ? "row-reverse" : "row",
-        gap: 24,
+        marginTop: "24px",
       }}
+      className={`flex flex-col gap-6 ${imagePosition === "right" ? "sm:flex-row-reverse" : "sm:flex-row"}`}
     >
-      <div style={{ flex: 1, maxWidth: "50%" }}>
+      <div className="flex-1 w-full sm:max-w-[50%]">
         <img
           src={imageUrl()}
           alt=""
@@ -51,12 +51,13 @@ export function ImageWithTextPreview({ value }: ImageWithTextPreviewProps) {
             width: "100%",
             height: "auto",
             objectFit: "cover",
+            margin: 0,
           }}
         />
       </div>
 
       <div style={{ flex: 1, padding: 4 }}>
-        <PortableText value={text} />
+        <PortableContent content={text} />
       </div>
     </div>
   );
