@@ -80,28 +80,38 @@ export type ChipProperties = InferFromDefinition<{
 }>;
 
 export type CalloutProperties = InferFromDefinition<{
-  "Icon#70258:5": {
+  "Prefix Icon#12598:229": {
     type: "BOOLEAN";
     defaultValue: true;
   };
-  Variant: {
-    type: "VARIANT";
-    defaultValue: "Outline";
-    variantOptions: ["Outline", "Neutral", "Info", "Warning", "Danger"];
-  };
-  Layout: {
-    type: "VARIANT";
-    defaultValue: "Description Only";
-    variantOptions: ["Description Only", "Title + Description", "Title + Description + Link"];
+  "Icon#12598:210": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4221";
+    preferredValues: [{ type: "COMPONENT_SET"; key: "f2c04b68b0bec4ec9145d832de45947030d3b653" }];
   };
   Interaction: {
     type: "VARIANT";
     defaultValue: "Default";
-    variantOptions: ["Default", "Dismissable", "Actionable"];
+    variantOptions: ["Default", "Actionable", "Dismissible"];
+  };
+  Tone: {
+    type: "VARIANT";
+    defaultValue: "Neutral";
+    variantOptions: ["Neutral", "Informative", "Warning", "Danger", "Magic"];
   };
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
     variantOptions: ["Enabled", "Pressed"];
+  };
+  Title: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["True", "False"];
+  };
+  Link: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["True", "False"];
   };
 }>;

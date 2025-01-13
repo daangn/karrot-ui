@@ -50,39 +50,76 @@ const chipHandler: ComponentHandler<ChipProperties> = {
 };
 
 const calloutHandler: ComponentHandler<CalloutProperties> = {
-  key: "edc3d56308d32b0a52428d800c7989b04c4dbe8b",
+  key: "ec46d38baac3c367c4a5ffa47a2110d51ba0a4fe",
   codegen: ({ componentProperties: props, children }) => {
+    const tag = (() => {
+      switch (props.Interaction.value) {
+        case "Actionable":
+          return "ActionableCallout";
+        case "Dismissible":
+          return "DismissibleCallout";
+        case "Default":
+          return "Callout";
+        default:
+          return "Callout";
+      }
+    })();
+
     const textNode = children.find((child) => child.type === "TEXT") as TextNode;
     const slices = textNode.getStyledTextSegments(["fontWeight", "textDecoration"]);
-    const { title, description, link } = match(props.Layout.value)
-      .with("Description Only", () => ({
-        title: undefined,
-        description: slices[0]?.characters.trim(),
-        link: undefined,
-      }))
-      .with("Title + Description", () => ({
-        title: slices[0]?.characters.trim(),
-        description: slices[1]?.characters.trim(),
-        link: undefined,
-      }))
-      .with("Title + Description + Link", () => ({
-        title: slices[0]?.characters.trim(),
-        description: slices[1]?.characters.trim(),
-        link: slices[2]?.characters.trim(),
-      }))
-      .exhaustive();
+
+    let title: string | undefined;
+    let description: string | undefined;
+    let linkLabel: string | undefined;
+
+    switch (slices.length) {
+      case 1: {
+        description = slices[0]?.characters.trim();
+
+        break;
+      }
+      case 2: {
+        const firstSlice = slices[0];
+        const secondSlice = slices[1];
+
+        if (firstSlice?.fontWeight === 700) {
+          title = firstSlice?.characters.trim();
+          description = secondSlice?.characters.trim();
+          break;
+        }
+
+        description = firstSlice?.characters.trim();
+
+        if (tag !== "ActionableCallout") {
+          linkLabel = secondSlice?.characters.trim();
+        }
+
+        break;
+      }
+      case 3: {
+        title = slices[0]?.characters.trim();
+        description = slices[1]?.characters.trim();
+
+        if (tag !== "ActionableCallout") {
+          linkLabel = slices[2]?.characters.trim();
+        }
+
+        break;
+      }
+    }
 
     const commonProps = {
-      variant: camelCase(props.Variant.value),
+      tone: camelCase(props.Tone.value),
       title,
       description,
-      link,
-      icon: props["Icon#70258:5"].value
-        ? createElement(createIconTagNameFromKey("36b3f37b9ff41c2c39ec14c58aefdf273a22544e"))
+      linkLabel,
+      ...(linkLabel && { linkProps: {} }),
+      icon: props["Prefix Icon#12598:229"].value
+        ? createElement(createIconTagNameFromId(props["Icon#12598:210"].value))
         : undefined,
     };
 
-    return createElement("Callout", commonProps);
+    return createElement(tag, commonProps);
   },
 };
 
