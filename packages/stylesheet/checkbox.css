@@ -62,7 +62,7 @@
 }
 .checkbox__icon--variant_square:is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     display: block;
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .checkbox__icon--variant_square:is(:disabled, [disabled], [data-disabled]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     display: block;

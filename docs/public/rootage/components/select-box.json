@@ -73,14 +73,14 @@
           "strokeWidth": 0
         },
         "checkboxIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "radioControl": {
           "color": "$color.bg.brand-solid",
           "strokeWidth": 0
         },
         "radioIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         }
       },
       "enabled,selected,pressed": {

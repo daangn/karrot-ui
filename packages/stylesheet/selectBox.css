@@ -55,7 +55,7 @@
 }
 .selectBox__checkboxIcon:is(:checked, [data-checked]) {
     display: block;
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .selectBox__radioControl {
     flex: none;
@@ -89,8 +89,8 @@
 }
 .selectBox__radioIcon:is(:checked, [data-checked]) {
     display: block;
-    background-color: var(--seed-v3-color-fg-static-white);
-    color: var(--seed-v3-color-fg-static-white);
+    background-color: var(--seed-v3-color-palette-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .selectBox__label {
     color: var(--seed-v3-color-fg-neutral);

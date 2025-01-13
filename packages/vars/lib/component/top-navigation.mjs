@@ -50,10 +50,10 @@ export const vars = {
         "color": "#00000000"
       },
       "title": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   },

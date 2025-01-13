@@ -98,7 +98,7 @@
           "color": "$color.palette.static-white-alpha-200"
         },
         "range": {
-          "color": "$color.bg.static-white"
+          "color": "$color.palette.static-white"
         }
       }
     }

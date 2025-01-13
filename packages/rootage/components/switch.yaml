@@ -11,7 +11,7 @@ data:
         color: $color.palette.gray-600
         cornerRadius: $radius.full
       thumb:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
         cornerRadius: $radius.full
     enabled,selected:
       control:

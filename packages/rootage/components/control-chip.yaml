@@ -30,14 +30,14 @@ data:
         strokeWidth: 0
         color: $color.bg.neutral-solid-muted
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
         fontWeight: $font-weight.bold
       prefixIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       suffixIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       count:
         color: $color.palette.static-white-alpha-800
     selected, pressed:

@@ -36,7 +36,7 @@
     font-weight: var(--seed-v3-font-weight-medium);
 }
 .controlChip__label:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .controlChip__label:is(:disabled, [disabled], [data-disabled]) {
@@ -48,7 +48,7 @@
     color: var(--seed-v3-color-fg-neutral);
 }
 .controlChip__prefixIcon:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .controlChip__prefixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
@@ -59,7 +59,7 @@
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
 .controlChip__suffixIcon:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .controlChip__suffixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
@@ -70,7 +70,7 @@
     color: var(--seed-v3-color-fg-neutral);
 }
 .controlChip__icon:is(:checked, [data-checked]) {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .controlChip__icon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);

@@ -92,7 +92,7 @@
           "color": "$color.bg.neutral-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         }
       }
     },
@@ -122,7 +122,7 @@
           "color": "$color.bg.brand-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         }
       }
     },
@@ -152,7 +152,7 @@
           "color": "$color.bg.informative-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         }
       }
     },
@@ -182,7 +182,7 @@
           "color": "$color.bg.positive-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         }
       }
     },
@@ -212,7 +212,7 @@
           "color": "$color.bg.danger-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         }
       }
     },

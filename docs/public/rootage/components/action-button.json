@@ -22,16 +22,16 @@
           "color": "$color.bg.brand-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "icon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "prefixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "suffixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "progressCircle": {
           "trackColor": "$color.palette.static-white-alpha-200",
@@ -172,16 +172,16 @@
           "color": "$color.bg.danger-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "icon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "prefixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "suffixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "progressCircle": {
           "trackColor": "$color.palette.static-white-alpha-200",

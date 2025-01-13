@@ -132,12 +132,12 @@ data:
       root:
         color: $color.bg.danger-solid
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       title:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       description:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       linkLabel:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       actionableIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white

@@ -16,16 +16,16 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "progressCircle": {
         "trackColor": "var(--seed-v3-color-palette-static-white-alpha-200)",
@@ -166,16 +166,16 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-danger-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "progressCircle": {
         "trackColor": "var(--seed-v3-color-palette-static-white-alpha-200)",

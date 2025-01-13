@@ -30,7 +30,7 @@ data:
       control:
         color: $color.bg.brand-solid
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
     pressed:
       control:
         color: $color.bg.layer-default-pressed
@@ -38,7 +38,7 @@ data:
       control:
         color: $color.bg.brand-solid-pressed
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
     disabled:
       control:
         color: $color.bg.disabled

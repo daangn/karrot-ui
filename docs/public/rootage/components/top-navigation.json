@@ -56,10 +56,10 @@
           "color": "#00000000"
         },
         "title": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "icon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         }
       }
     },

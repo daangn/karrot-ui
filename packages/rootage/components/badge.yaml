@@ -59,7 +59,7 @@ data:
       root:
         color: $color.bg.neutral-solid
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
   tone=neutral, variant=outlined:
     enabled:
       root:
@@ -77,7 +77,7 @@ data:
       root:
         color: $color.bg.brand-solid
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
   tone=brand, variant=outlined:
     enabled:
       root:
@@ -95,7 +95,7 @@ data:
       root:
         color: $color.bg.informative-solid
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
   tone=informative, variant=outlined:
     enabled:
       root:
@@ -113,7 +113,7 @@ data:
       root:
         color: $color.bg.positive-solid
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
   tone=positive, variant=outlined:
     enabled:
       root:
@@ -131,7 +131,7 @@ data:
       root:
         color: $color.bg.danger-solid
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
   tone=danger, variant=outlined:
     enabled:
       root:

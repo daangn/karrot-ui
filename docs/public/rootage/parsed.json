@@ -388,7 +388,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#822f00"
+            "value": "#923600"
           }
         }
       ]
@@ -415,7 +415,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#c44501"
+            "value": "#bd4201"
           }
         }
       ]
@@ -442,7 +442,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#f75900"
+            "value": "#e65200"
           }
         }
       ]
@@ -577,7 +577,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#1c2633"
+            "value": "#202742"
           }
         }
       ]
@@ -604,7 +604,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#223444"
+            "value": "#1e3352"
           }
         }
       ]
@@ -631,7 +631,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#184564"
+            "value": "#1a4275"
           }
         }
       ]
@@ -651,14 +651,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#abcefd"
+            "value": "#aacefd"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#035a87"
+            "value": "#0f559e"
           }
         }
       ]
@@ -678,14 +678,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#83b7fd"
+            "value": "#85b8fd"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#126eae"
+            "value": "#1964d8"
           }
         }
       ]
@@ -705,14 +705,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#2787fe"
+            "value": "#5e98fe"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#1889cb"
+            "value": "#1e82eb"
           }
         }
       ]
@@ -732,14 +732,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#1a6edf"
+            "value": "#217cf9"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#2ca5f1"
+            "value": "#41a2f9"
           }
         }
       ]
@@ -759,14 +759,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#1056bb"
+            "value": "#135fcd"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#7bbdf9"
+            "value": "#83bcf9"
           }
         }
       ]
@@ -786,14 +786,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#083b81"
+            "value": "#0b4596"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#b8d7fb"
+            "value": "#b9d7fb"
           }
         }
       ]
@@ -813,7 +813,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#02214a"
+            "value": "#032451"
           }
         },
         {
@@ -840,7 +840,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#fdf2f2"
+            "value": "#fdf0f0"
           }
         },
         {
@@ -867,7 +867,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#fde4e4"
+            "value": "#fde7e7"
           }
         },
         {
@@ -894,7 +894,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#fececc"
+            "value": "#fed4d2"
           }
         },
         {
@@ -921,7 +921,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#feafaa"
+            "value": "#feb7b3"
           }
         },
         {
@@ -948,14 +948,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#fe827b"
+            "value": "#fe928d"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#d11e13"
+            "value": "#ca2319"
           }
         }
       ]
@@ -975,7 +975,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#ff3b2d"
+            "value": "#fc6a66"
           }
         },
         {
@@ -1002,14 +1002,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#ef1f10"
+            "value": "#fa342c"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#f2796d"
+            "value": "#ff6e60"
           }
         }
       ]
@@ -1029,14 +1029,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#c81d13"
+            "value": "#ca1d13"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#f1a39b"
+            "value": "#ffa299"
           }
         }
       ]
@@ -1056,14 +1056,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#8f1e10"
+            "value": "#921708"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#f2cbc9"
+            "value": "#f8c5c3"
           }
         }
       ]
@@ -1090,7 +1090,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#f3cbc8"
+            "value": "#fdf2f2"
           }
         }
       ]
@@ -1110,7 +1110,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#e7f9f3"
+            "value": "#edfaf6"
           }
         },
         {
@@ -1137,7 +1137,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#d1f4e5"
+            "value": "#d9f6e9"
           }
         },
         {
@@ -1164,7 +1164,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#8ff1c3"
+            "value": "#aeebcc"
           }
         },
         {
@@ -1191,7 +1191,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#6be1b0"
+            "value": "#74dcb0"
           }
         },
         {
@@ -1218,7 +1218,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#2ecd95"
+            "value": "#42c593"
           }
         },
         {
@@ -1245,7 +1245,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#10ad7e"
+            "value": "#10ab7d"
           }
         },
         {
@@ -1272,7 +1272,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#068c6d"
+            "value": "#079171"
           }
         },
         {
@@ -1299,7 +1299,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#006b58"
+            "value": "#00745f"
           }
         },
         {
@@ -1326,7 +1326,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#054a3d"
+            "value": "#075445"
           }
         },
         {
@@ -1380,14 +1380,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#fff9e6"
+            "value": "#fff7de"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#2a2517"
+            "value": "#302819"
           }
         }
       ]
@@ -1407,14 +1407,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#fdf3ce"
+            "value": "#fdefb9"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#3d3016"
+            "value": "#413218"
           }
         }
       ]
@@ -1434,14 +1434,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#fbe49a"
+            "value": "#fbdc65"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#513f15"
+            "value": "#543e15"
           }
         }
       ]
@@ -1461,14 +1461,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#f7d24c"
+            "value": "#e9c647"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#695115"
+            "value": "#714e15"
           }
         }
       ]
@@ -1488,14 +1488,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#e3b82c"
+            "value": "#d4ab28"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#83661b"
+            "value": "#91601b"
           }
         }
       ]
@@ -1522,7 +1522,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#9c7f25"
+            "value": "#b6720d"
           }
         }
       ]
@@ -1549,7 +1549,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#b59b36"
+            "value": "#ca901c"
           }
         }
       ]
@@ -1576,7 +1576,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#cdb656"
+            "value": "#dab156"
           }
         }
       ]
@@ -1603,7 +1603,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#e3da96"
+            "value": "#e5d49b"
           }
         }
       ]
@@ -1630,7 +1630,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#f7f0ce"
+            "value": "#f7f0cd"
           }
         }
       ]
@@ -1785,14 +1785,14 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#f6f4fe"
+            "value": "#f5f3fe"
           }
         },
         {
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#322065"
+            "value": "#28213b"
           }
         }
       ]
@@ -1866,7 +1866,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#d2c3ff"
+            "value": "#d0c0ff"
           }
         },
         {
@@ -1893,7 +1893,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#bda8ff"
+            "value": "#b8a1ff"
           }
         },
         {
@@ -1920,7 +1920,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#a186fb"
+            "value": "#9f84fb"
           }
         },
         {
@@ -1947,7 +1947,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#8564e9"
+            "value": "#8969ea"
           }
         },
         {
@@ -1974,7 +1974,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#6646c6"
+            "value": "#6d50cb"
           }
         },
         {
@@ -2001,7 +2001,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#46308a"
+            "value": "#50379b"
           }
         },
         {
@@ -2144,41 +2144,6 @@
           "value": {
             "type": "color",
             "value": "#ffffff33"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "fg"
-        ],
-        "key": "static-white"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-white"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-white"
           }
         }
       ]
@@ -2342,7 +2307,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-700"
+            "key": "carrot-800"
           }
         },
         {
@@ -2353,7 +2318,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-1000"
+            "key": "carrot-900"
           }
         }
       ]
@@ -2377,7 +2342,7 @@
               "color",
               "palette"
             ],
-            "key": "red-600"
+            "key": "red-700"
           }
         },
         {
@@ -2388,7 +2353,7 @@
               "color",
               "palette"
             ],
-            "key": "red-600"
+            "key": "red-700"
           }
         }
       ]
@@ -2458,7 +2423,7 @@
               "color",
               "palette"
             ],
-            "key": "green-600"
+            "key": "green-700"
           }
         }
       ]
@@ -2563,7 +2528,7 @@
               "color",
               "palette"
             ],
-            "key": "blue-700"
+            "key": "blue-800"
           }
         }
       ]
@@ -2681,41 +2646,6 @@
           "color",
           "fg"
         ],
-        "key": "static-black"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-black"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-black"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "fg"
-        ],
         "key": "brand"
       },
       "values": [
@@ -2738,7 +2668,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-600"
+            "key": "carrot-700"
           }
         }
       ]
@@ -2867,7 +2797,7 @@
               "color",
               "palette"
             ],
-            "key": "green-600"
+            "key": "green-700"
           }
         },
         {
@@ -2878,7 +2808,7 @@
               "color",
               "palette"
             ],
-            "key": "green-600"
+            "key": "green-500"
           }
         }
       ]
@@ -2902,7 +2832,7 @@
               "color",
               "palette"
             ],
-            "key": "yellow-400"
+            "key": "yellow-300"
           }
         },
         {
@@ -2913,7 +2843,7 @@
               "color",
               "palette"
             ],
-            "key": "yellow-700"
+            "key": "yellow-600"
           }
         }
       ]
@@ -3007,7 +2937,7 @@
               "color",
               "palette"
             ],
-            "key": "red-600"
+            "key": "red-700"
           }
         },
         {
@@ -3042,7 +2972,7 @@
               "color",
               "palette"
             ],
-            "key": "red-700"
+            "key": "red-800"
           }
         },
         {
@@ -3766,41 +3696,6 @@
           "color",
           "bg"
         ],
-        "key": "static-white"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-white"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-white"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
         "key": "warning-weak-pressed"
       },
       "values": [
@@ -3882,7 +3777,7 @@
               "color",
               "palette"
             ],
-            "key": "blue-600"
+            "key": "blue-700"
           }
         },
         {
@@ -3952,7 +3847,7 @@
               "color",
               "palette"
             ],
-            "key": "blue-700"
+            "key": "blue-800"
           }
         },
         {
@@ -3987,7 +3882,7 @@
               "color",
               "palette"
             ],
-            "key": "green-700"
+            "key": "green-800"
           }
         },
         {
@@ -4022,7 +3917,7 @@
               "color",
               "palette"
             ],
-            "key": "purple-600"
+            "key": "purple-700"
           }
         },
         {
@@ -4057,7 +3952,7 @@
               "color",
               "palette"
             ],
-            "key": "purple-700"
+            "key": "purple-800"
           }
         },
         {
@@ -4302,7 +4197,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-500"
+            "key": "carrot-300"
           }
         },
         {
@@ -4313,7 +4208,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-600"
+            "key": "carrot-300"
           }
         }
       ]
@@ -4477,7 +4372,7 @@
               "color",
               "palette"
             ],
-            "key": "red-700"
+            "key": "red-300"
           }
         },
         {
@@ -4488,7 +4383,7 @@
               "color",
               "palette"
             ],
-            "key": "red-600"
+            "key": "red-300"
           }
         }
       ]
@@ -4512,7 +4407,7 @@
               "color",
               "palette"
             ],
-            "key": "green-600"
+            "key": "green-300"
           }
         },
         {
@@ -4523,7 +4418,42 @@
               "color",
               "palette"
             ],
-            "key": "green-600"
+            "key": "green-300"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "stroke"
+        ],
+        "key": "informative"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "blue-300"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "blue-300"
           }
         }
       ]
@@ -6069,7 +5999,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -6085,7 +6015,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -6101,7 +6031,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -6117,7 +6047,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -6831,7 +6761,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -6847,7 +6777,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -6863,7 +6793,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -6879,7 +6809,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -10729,7 +10659,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -10870,7 +10800,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -11011,7 +10941,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -11152,7 +11082,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -11293,7 +11223,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -12853,7 +12783,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -12916,7 +12846,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -14001,7 +13931,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -14406,7 +14336,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -14432,7 +14362,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -14448,7 +14378,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -14464,7 +14394,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -17185,7 +17115,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -17201,7 +17131,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -17217,7 +17147,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -17233,7 +17163,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -17249,7 +17179,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -17577,7 +17507,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "bg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -17727,7 +17657,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -19576,7 +19506,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -19615,7 +19545,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -20279,7 +20209,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -23354,7 +23284,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -23370,7 +23300,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -23386,7 +23316,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -24590,7 +24520,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }
@@ -24606,7 +24536,7 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
                         "key": "static-white"
                       }

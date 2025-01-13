@@ -1,4 +1,3 @@
-export declare const staticWhite = "var(--seed-v3-color-fg-static-white)";
 export declare const neutral = "var(--seed-v3-color-fg-neutral)";
 export declare const neutralMuted = "var(--seed-v3-color-fg-neutral-muted)";
 export declare const neutralSubtle = "var(--seed-v3-color-fg-neutral-subtle)";
@@ -13,7 +12,6 @@ export declare const informative = "var(--seed-v3-color-fg-informative)";
 export declare const informativeContrast = "var(--seed-v3-color-fg-informative-contrast)";
 export declare const placeholder = "var(--seed-v3-color-fg-placeholder)";
 export declare const disabled = "var(--seed-v3-color-fg-disabled)";
-export declare const staticBlack = "var(--seed-v3-color-fg-static-black)";
 export declare const brand = "var(--seed-v3-color-fg-brand)";
 export declare const magic = "var(--seed-v3-color-fg-magic)";
 export declare const magicContrast = "var(--seed-v3-color-fg-magic-contrast)";

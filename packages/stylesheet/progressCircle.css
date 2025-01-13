@@ -32,7 +32,7 @@
 }
 .progressCircle__root--tone_staticWhite {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
-    --range-color: var(--seed-v3-color-bg-static-white);
+    --range-color: var(--seed-v3-color-palette-static-white);
 }
 .progressCircle__root--tone_inherit {}
 .progressCircle__root--size_24 {

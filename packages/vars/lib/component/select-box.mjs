@@ -67,14 +67,14 @@ export const vars = {
         "strokeWidth": "0"
       },
       "checkboxIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "radioControl": {
         "color": "var(--seed-v3-color-bg-brand-solid)",
         "strokeWidth": "0"
       },
       "radioIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "enabledSelectedPressed": {

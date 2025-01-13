@@ -73,7 +73,7 @@
     background: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
 .toggleButton__label--variant_brandSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .toggleButton__label--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     color: var(--seed-v3-color-fg-neutral);
@@ -82,7 +82,7 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .toggleButton__prefixIcon--variant_brandSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .toggleButton__prefixIcon--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     color: var(--seed-v3-color-fg-neutral);
@@ -91,7 +91,7 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .toggleButton__suffixIcon--variant_brandSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .toggleButton__suffixIcon--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     color: var(--seed-v3-color-fg-neutral);

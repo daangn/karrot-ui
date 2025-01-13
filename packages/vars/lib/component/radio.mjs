@@ -22,7 +22,7 @@ export const vars = {
         "strokeWidth": "0px"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "enabledSelectedPressed": {

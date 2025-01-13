@@ -204,17 +204,17 @@
     background-color: var(--seed-v3-color-bg-danger-solid);
 }
 .inlineBanner__icon--variant_dangerSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .inlineBanner__title--variant_dangerSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .inlineBanner__description--variant_dangerSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .inlineBanner__linkLabel--variant_dangerSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .inlineBanner__actionableIcon--variant_dangerSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }

@@ -60,7 +60,7 @@ export const vars = {
         "color": "var(--seed-v3-color-palette-static-white-alpha-200)"
       },
       "range": {
-        "color": "var(--seed-v3-color-bg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   }

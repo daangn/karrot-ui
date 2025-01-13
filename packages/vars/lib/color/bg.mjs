@@ -25,7 +25,6 @@ export const neutralSolidPressed = "var(--seed-v3-color-bg-neutral-solid-pressed
 export const disabled = "var(--seed-v3-color-bg-disabled)";
 export const layerFloatingPressed = "var(--seed-v3-color-bg-layer-floating-pressed)";
 export const informativeWeakPressed = "var(--seed-v3-color-bg-informative-weak-pressed)";
-export const staticWhite = "var(--seed-v3-color-bg-static-white)";
 export const warningWeakPressed = "var(--seed-v3-color-bg-warning-weak-pressed)";
 export const dangerWeakPressed = "var(--seed-v3-color-bg-danger-weak-pressed)";
 export const informativeSolid = "var(--seed-v3-color-bg-informative-solid)";

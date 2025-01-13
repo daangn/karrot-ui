@@ -33,7 +33,7 @@
 }
 .radio__icon:is(:checked, [data-checked]) {
     display: block;
-    background-color: var(--seed-v3-color-fg-static-white);
+    background-color: var(--seed-v3-color-palette-static-white);
 }
 .radio__icon:is(:disabled, [disabled], [data-disabled]):is(:checked, [data-checked]) {
     background-color: var(--seed-v3-color-palette-gray-300);

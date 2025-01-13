@@ -67,7 +67,7 @@
     font-weight: var(--seed-v3-font-weight-medium);
 }
 .chipTab__label--variant_brandSolid:is(:selected, [data-selected]) {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .chipTab__label--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {

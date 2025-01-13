@@ -72,7 +72,7 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)",
+        "color": "var(--seed-v3-color-palette-static-white)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     },

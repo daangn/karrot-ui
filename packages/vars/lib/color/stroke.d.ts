@@ -6,3 +6,4 @@ export declare const control = "var(--seed-v3-color-stroke-control)";
 export declare const neutralMuted = "var(--seed-v3-color-stroke-neutral-muted)";
 export declare const danger = "var(--seed-v3-color-stroke-danger)";
 export declare const positive = "var(--seed-v3-color-stroke-positive)";
+export declare const informative = "var(--seed-v3-color-stroke-informative)";

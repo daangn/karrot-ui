@@ -21,7 +21,7 @@ data:
         color: $color.bg.brand-solid
         strokeWidth: 0px
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
     enabled,selected,pressed:
       root:
         color: $color.bg.brand-solid-pressed

@@ -35,7 +35,7 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "pressed": {
@@ -48,7 +48,7 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-brand-solid-pressed)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "disabled": {
