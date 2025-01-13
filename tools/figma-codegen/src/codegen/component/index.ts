@@ -3,7 +3,7 @@ import { match } from "ts-pattern";
 import { createIconTagNameFromId, createIconTagNameFromKey } from "../icon";
 import type { ElementNode } from "../jsx";
 import { createElement } from "../jsx";
-import type { BoxButtonProperties, CalloutProperties, ChipProperties } from "./type";
+import type { BoxButtonProperties, CalloutProperties, ActionChipProperties } from "./type";
 
 export interface ComponentHandler<
   T extends InstanceNode["componentProperties"] = InstanceNode["componentProperties"],
@@ -28,24 +28,57 @@ const boxButtonHandler: ComponentHandler<BoxButtonProperties> = {
   },
 };
 
-const chipHandler: ComponentHandler<ChipProperties> = {
-  key: "a586288593c6dccf4932ebc684cbb2f91851ed4c",
+const actionChipHandler: ComponentHandler<ActionChipProperties> = {
+  key: "3d21594ef116e94a9465d507447b858aea062575",
   codegen: ({ componentProperties: props }) => {
+    const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
+      .with("Icon only", () => {
+        return {
+          layout: "iconOnly",
+          prefixIcon: undefined,
+          suffixIcon: undefined,
+          children: createElement(createIconTagNameFromId(props["Icon#8714:0"].value)),
+        };
+      })
+      .with("Icon first", () => ({
+        layout: undefined,
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
+        suffixIcon: undefined,
+        children: props["Label#7185:0"].value,
+      }))
+      .with("Icon last", () => ({
+        layout: undefined,
+        prefixIcon: undefined,
+        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
+        children: props["Label#7185:0"].value,
+      }))
+      .with("Icon both", () => ({
+        layout: undefined,
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
+        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
+        children: props["Label#7185:0"].value,
+      }))
+      .with("Text only", () => ({
+        layout: undefined,
+        prefixIcon: undefined,
+        suffixIcon: undefined,
+        children: props["Label#7185:0"].value,
+      }))
+      .exhaustive();
+
     const commonProps = {
-      size: props.Size.value.toString().toLowerCase(),
-      variant: match(props.동작.value)
-        .with("Button", () => (props.Inverted.value === "True" ? "inverted" : "default"))
-        .with("Toggle", () => undefined)
-        .with("Radio", () => undefined)
-        .exhaustive(),
-      prefixIcon: props["Prefix#28752:25"].value
-        ? createElement(createIconTagNameFromId(props["↳Icon#52835:0"].value))
-        : undefined,
-      suffixIcon: props["Suffix#28752:0"].value
-        ? createElement(createIconTagNameFromId(props["↳Icon #52835:5"].value))
-        : undefined,
+      size: props.Size.value.toLowerCase(),
+      layout,
+      prefixIcon,
+      suffixIcon,
+      ...(props.State.value === "Disabled" && {
+        disabled: true,
+      }),
+      ...(props["Show Counter#7185:42"].value && {
+        count: Number(props["Counter#7185:21"].value),
+      }),
     };
-    return createElement("ChipButton", commonProps, props["Label#28900:0"].value);
+    return createElement("ChipButton", commonProps, children);
   },
 };
 
@@ -114,16 +147,20 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
       description,
       linkLabel,
       ...(linkLabel && { linkProps: {} }),
-      icon: props["Prefix Icon#12598:229"].value
-        ? createElement(createIconTagNameFromId(props["Icon#12598:210"].value))
-        : undefined,
+      ...(props["Prefix Icon#12598:229"].value && {
+        icon: createElement(createIconTagNameFromId(props["Icon#12598:210"].value)),
+      }),
     };
 
     return createElement(tag, commonProps);
   },
 };
 
-const componentHandlers = [boxButtonHandler, chipHandler, calloutHandler] as ComponentHandler[];
+const componentHandlers = [
+  boxButtonHandler,
+  actionChipHandler,
+  calloutHandler,
+] as ComponentHandler[];
 
 export const componentHandlerMap = new Map(
   componentHandlers.map((component) => [component.key, component]),

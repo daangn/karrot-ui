@@ -34,43 +34,43 @@ export type BoxButtonProperties = InferFromDefinition<{
   };
 }>;
 
-export type ChipProperties = InferFromDefinition<{
-  "↳Icon#52835:0": {
+export type ActionChipProperties = InferFromDefinition<{
+  "Icon#8714:0": {
     type: "INSTANCE_SWAP";
-    defaultValue: "764:7528";
+    defaultValue: "8328:4176";
+    preferredValues: [{ type: "COMPONENT_SET"; key: "8be1768c683a0e39d3f319b5d9286ae38f6d5c18" }];
+  };
+  "Prefix Icon#8711:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4043";
+    preferredValues: [{ type: "COMPONENT_SET"; key: "8ed05ef62a40f2dc034ee7eb6945bd0e63ad49aa" }];
+  };
+  "Suffix Icon#8711:3": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:3659";
     preferredValues: [];
   };
-  "↳Icon #52835:5": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "102:6196";
-    preferredValues: [];
-  };
-  "Label#28900:0": {
+  "Label#7185:0": {
     type: "TEXT";
     defaultValue: "라벨";
   };
-  "Prefix#28752:25": {
+  "Show Counter#7185:42": {
     type: "BOOLEAN";
     defaultValue: false;
   };
-  "Suffix#28752:0": {
-    type: "BOOLEAN";
-    defaultValue: false;
+  "Counter#7185:21": {
+    type: "TEXT";
+    defaultValue: "10";
   };
-  동작: {
+  Layout: {
     type: "VARIANT";
-    defaultValue: "Button";
-    variantOptions: ["Button", "Radio", "Toggle"];
+    defaultValue: "Text only";
+    variantOptions: ["Text only", "Icon first", "Icon last", "Icon both", "Icon only"];
   };
   Size: {
     type: "VARIANT";
     defaultValue: "Medium";
-    variantOptions: ["Small", "Medium"];
-  };
-  Inverted: {
-    type: "VARIANT";
-    defaultValue: "False";
-    variantOptions: ["True", "False"];
+    variantOptions: ["Medium", "Small"];
   };
   State: {
     type: "VARIANT";
