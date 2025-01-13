@@ -13144,85 +13144,6 @@
         },
         {
           "key": {
-            "size": "small"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "minHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s7"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "label",
-                  "property": [
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s3"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s3"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "control",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "cornerRadius",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "radius"
-                        ],
-                        "key": "s1"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
             "size": "medium"
           },
           "state": [
@@ -13381,118 +13302,6 @@
         },
         {
           "key": {
-            "variant": "ghost",
-            "size": "small"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 13.5,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "variant": "ghost",
-            "size": "medium"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 15,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "variant": "ghost",
-            "size": "large"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 18,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "variant": "square",
-            "size": "small"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 10.5,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
             "variant": "square",
             "size": "medium"
           },
@@ -13509,7 +13318,7 @@
                       "key": "size",
                       "value": {
                         "type": "dimension",
-                        "value": 11.67,
+                        "value": 12,
                         "unit": "px"
                       }
                     }
@@ -13538,6 +13347,62 @@
                       "value": {
                         "type": "dimension",
                         "value": 14,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "variant": "ghost",
+            "size": "medium"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "icon",
+                  "property": [
+                    {
+                      "key": "size",
+                      "value": {
+                        "type": "dimension",
+                        "value": 14,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "variant": "ghost",
+            "size": "large"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "icon",
+                  "property": [
+                    {
+                      "key": "size",
+                      "value": {
+                        "type": "dimension",
+                        "value": 18,
                         "unit": "px"
                       }
                     }

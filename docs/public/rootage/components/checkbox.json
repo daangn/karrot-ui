@@ -116,21 +116,6 @@
         }
       }
     },
-    "size=small": {
-      "enabled": {
-        "root": {
-          "minHeight": "$unit.s7"
-        },
-        "label": {
-          "fontSize": "$font-size.s3",
-          "lineHeight": "$line-height.s3"
-        },
-        "control": {
-          "size": "$unit.s4",
-          "cornerRadius": "$radius.s1"
-        }
-      }
-    },
     "size=medium": {
       "enabled": {
         "root": {
@@ -161,38 +146,10 @@
         }
       }
     },
-    "variant=ghost,size=small": {
-      "enabled": {
-        "icon": {
-          "size": "13.5px"
-        }
-      }
-    },
-    "variant=ghost,size=medium": {
-      "enabled": {
-        "icon": {
-          "size": "15px"
-        }
-      }
-    },
-    "variant=ghost,size=large": {
-      "enabled": {
-        "icon": {
-          "size": "18px"
-        }
-      }
-    },
-    "variant=square,size=small": {
-      "enabled": {
-        "icon": {
-          "size": "10.5px"
-        }
-      }
-    },
     "variant=square,size=medium": {
       "enabled": {
         "icon": {
-          "size": "11.67px"
+          "size": "12px"
         }
       }
     },
@@ -200,6 +157,20 @@
       "enabled": {
         "icon": {
           "size": "14px"
+        }
+      }
+    },
+    "variant=ghost,size=medium": {
+      "enabled": {
+        "icon": {
+          "size": "14px"
+        }
+      }
+    },
+    "variant=ghost,size=large": {
+      "enabled": {
+        "icon": {
+          "size": "18px"
         }
       }
     }

@@ -29,20 +29,12 @@ const defaultVariant = {
 
 const compoundVariants = [
   {
-    "size": "small",
-    "variant": "ghost"
-  },
-  {
     "size": "medium",
     "variant": "ghost"
   },
   {
     "size": "large",
     "variant": "ghost"
-  },
-  {
-    "size": "small",
-    "variant": "square"
   },
   {
     "size": "medium",
@@ -65,8 +57,7 @@ export const checkboxVariantMap = {
   ],
   "size": [
     "large",
-    "medium",
-    "small"
+    "medium"
   ]
 };
 

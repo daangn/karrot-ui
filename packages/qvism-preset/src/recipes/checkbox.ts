@@ -171,35 +171,9 @@ const checkbox = defineRecipe({
           marginBlockStart: "calc(16px - 0.59375rem)", // 수직 위치 보정, 16 - label.lineHeight / 2
         },
       },
-      small: {
-        root: {
-          minHeight: vars.sizeSmall.enabled.root.minHeight,
-        },
-        control: {
-          borderRadius: vars.sizeSmall.enabled.control.cornerRadius,
-          width: vars.sizeSmall.enabled.control.size,
-          height: vars.sizeSmall.enabled.control.size,
-          margin: `calc((${vars.sizeSmall.enabled.root.minHeight} - ${vars.sizeSmall.enabled.control.size}) / 2) 0`, // 수직 위치 보정
-        },
-        label: {
-          fontSize: vars.sizeSmall.enabled.label.fontSize,
-          lineHeight: vars.sizeSmall.enabled.label.lineHeight,
-          marginBlockStart: "calc(14px - 0.5625rem)", // 수직 위치 보정, 14 - label.lineHeight / 2
-        },
-      },
     },
   },
   compoundVariants: [
-    {
-      size: "small",
-      variant: "ghost",
-      css: {
-        icon: {
-          width: vars.variantGhostSizeSmall.enabled.icon.size,
-          height: vars.variantGhostSizeSmall.enabled.icon.size,
-        },
-      },
-    },
     {
       size: "medium",
       variant: "ghost",
@@ -217,16 +191,6 @@ const checkbox = defineRecipe({
         icon: {
           width: vars.variantGhostSizeLarge.enabled.icon.size,
           height: vars.variantGhostSizeLarge.enabled.icon.size,
-        },
-      },
-    },
-    {
-      size: "small",
-      variant: "square",
-      css: {
-        icon: {
-          width: vars.variantSquareSizeSmall.enabled.icon.size,
-          height: vars.variantSquareSizeSmall.enabled.icon.size,
         },
       },
     },

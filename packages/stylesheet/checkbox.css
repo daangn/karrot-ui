@@ -133,39 +133,17 @@
     line-height: var(--seed-v3-line-height-s4);
     margin-block-start: calc(16px - 0.59375rem);
 }
-.checkbox__root--size_small {
-    min-height: var(--seed-v3-unit-s7);
-}
-.checkbox__control--size_small {
-    border-radius: var(--seed-v3-radius-s1);
-    width: var(--seed-v3-unit-s4);
-    height: var(--seed-v3-unit-s4);
-    margin: calc((var(--seed-v3-unit-s7) - var(--seed-v3-unit-s4)) / 2) 0;
-}
-.checkbox__label--size_small {
-    font-size: var(--seed-v3-font-size-s3);
-    line-height: var(--seed-v3-line-height-s3);
-    margin-block-start: calc(14px - 0.5625rem);
-}
-.checkbox__icon--size_small-variant_ghost {
-    width: 13.5px;
-    height: 13.5px;
-}
 .checkbox__icon--size_medium-variant_ghost {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
 }
 .checkbox__icon--size_large-variant_ghost {
     width: 18px;
     height: 18px;
 }
-.checkbox__icon--size_small-variant_square {
-    width: 10.5px;
-    height: 10.5px;
-}
 .checkbox__icon--size_medium-variant_square {
-    width: 11.67px;
-    height: 11.67px;
+    width: 12px;
+    height: 12px;
 }
 .checkbox__icon--size_large-variant_square {
     width: 14px;

@@ -110,21 +110,6 @@ export const vars = {
       }
     }
   },
-  "sizeSmall": {
-    "enabled": {
-      "root": {
-        "minHeight": "var(--seed-v3-unit-s7)"
-      },
-      "label": {
-        "fontSize": "var(--seed-v3-font-size-s3)",
-        "lineHeight": "var(--seed-v3-line-height-s3)"
-      },
-      "control": {
-        "size": "var(--seed-v3-unit-s4)",
-        "cornerRadius": "var(--seed-v3-radius-s1)"
-      }
-    }
-  },
   "sizeMedium": {
     "enabled": {
       "root": {
@@ -155,38 +140,10 @@ export const vars = {
       }
     }
   },
-  "variantGhostSizeSmall": {
-    "enabled": {
-      "icon": {
-        "size": "13.5px"
-      }
-    }
-  },
-  "variantGhostSizeMedium": {
-    "enabled": {
-      "icon": {
-        "size": "15px"
-      }
-    }
-  },
-  "variantGhostSizeLarge": {
-    "enabled": {
-      "icon": {
-        "size": "18px"
-      }
-    }
-  },
-  "variantSquareSizeSmall": {
-    "enabled": {
-      "icon": {
-        "size": "10.5px"
-      }
-    }
-  },
   "variantSquareSizeMedium": {
     "enabled": {
       "icon": {
-        "size": "11.67px"
+        "size": "12px"
       }
     }
   },
@@ -194,6 +151,20 @@ export const vars = {
     "enabled": {
       "icon": {
         "size": "14px"
+      }
+    }
+  },
+  "variantGhostSizeMedium": {
+    "enabled": {
+      "icon": {
+        "size": "14px"
+      }
+    }
+  },
+  "variantGhostSizeLarge": {
+    "enabled": {
+      "icon": {
+        "size": "18px"
       }
     }
   }

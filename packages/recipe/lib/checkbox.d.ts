@@ -10,7 +10,7 @@ declare interface CheckboxVariant {
 /**
   * @default medium
   */
-  size: "large" | "medium" | "small";
+  size: "large" | "medium";
 }
 
 declare type CheckboxVariantMap = {
