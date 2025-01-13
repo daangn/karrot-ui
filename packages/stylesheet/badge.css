@@ -59,7 +59,7 @@
     background-color: var(--seed-v3-color-bg-neutral-solid)
 }
 .badge__label--tone_neutral-variant_solid {
-    color: var(--seed-v3-color-palette-static-white)
+    color: var(--seed-v3-color-fg-neutral-inverted)
 }
 .badge__root--tone_neutral-variant_outlined {
     border-color: var(--seed-v3-color-stroke-neutral)

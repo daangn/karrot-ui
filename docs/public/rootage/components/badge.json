@@ -92,7 +92,7 @@
           "color": "$color.bg.neutral-solid"
         },
         "label": {
-          "color": "$color.palette.static-white"
+          "color": "$color.fg.neutral-inverted"
         }
       }
     },

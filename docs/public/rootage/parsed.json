@@ -10659,9 +10659,9 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "palette"
+                          "fg"
                         ],
-                        "key": "static-white"
+                        "key": "neutral-inverted"
                       }
                     }
                   ]

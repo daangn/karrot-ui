@@ -86,7 +86,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-neutral-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-palette-static-white)"
+        "color": "var(--seed-v3-color-fg-neutral-inverted)"
       }
     }
   },
