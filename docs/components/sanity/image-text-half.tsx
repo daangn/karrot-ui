@@ -1,9 +1,11 @@
+"use client";
+
 import { PortableContent } from "@/components/sanity/sanity-content";
 import { PortableTextBlock } from "@portabletext/react";
 import { SanityImageAsset } from "@sanity/asset-utils";
 import imageUrlBuilder from "@sanity/image-url";
 import { useCallback } from "react";
-import { client } from "./client";
+import { client } from "../../sanity/components/client";
 
 const builder = imageUrlBuilder(client);
 
@@ -24,7 +26,7 @@ interface SanityImage {
   };
 }
 
-interface ImageWithTextPreviewProps {
+interface ImageTextHalfPreviewProps {
   value: {
     image: SanityImage;
     text: PortableTextBlock[];
@@ -32,8 +34,8 @@ interface ImageWithTextPreviewProps {
   };
 }
 
-export function ImageWithTextPreview({ value }: ImageWithTextPreviewProps) {
-  const { image, text, imagePosition } = value;
+export function ImageTextHalfPreview({ value }: ImageTextHalfPreviewProps) {
+  const { image, text, imagePosition = "left" } = value;
   const imageUrl = useCallback(() => {
     if (!image) {
       return null;
