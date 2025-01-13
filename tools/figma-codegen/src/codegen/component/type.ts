@@ -115,3 +115,53 @@ export type CalloutProperties = InferFromDefinition<{
     variantOptions: ["True", "False"];
   };
 }>;
+
+export type ControlChipProperties = InferFromDefinition<{
+  "Suffix Icon#8722:82": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:3659";
+    preferredValues: [];
+  };
+  "Label#7185:0": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  "Show Counter#7185:42": {
+    type: "BOOLEAN";
+    defaultValue: false;
+  };
+  "Icon#8722:41": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4176";
+    preferredValues: [];
+  };
+  "Prefix Icon#8722:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4043";
+    preferredValues: [{ type: "COMPONENT_SET"; key: "8ed05ef62a40f2dc034ee7eb6945bd0e63ad49aa" }];
+  };
+  "Counter#7185:21": {
+    type: "TEXT";
+    defaultValue: "10";
+  };
+  Layout: {
+    type: "VARIANT";
+    defaultValue: "Text only";
+    variantOptions: ["Text only", "Icon first", "Icon last", "Icon both", "Icon only"];
+  };
+  Selected: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["False", "True"];
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Medium";
+    variantOptions: ["Medium", "Small"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Enabled", "Pressed", "Disabled"];
+  };
+}>;

@@ -1,9 +1,14 @@
 import { camelCase } from "change-case";
 import { match } from "ts-pattern";
-import { createIconTagNameFromId, createIconTagNameFromKey } from "../icon";
+import { createIconTagNameFromId } from "../icon";
 import type { ElementNode } from "../jsx";
 import { createElement } from "../jsx";
-import type { BoxButtonProperties, CalloutProperties, ActionChipProperties } from "./type";
+import type {
+  BoxButtonProperties,
+  CalloutProperties,
+  ActionChipProperties,
+  ControlChipProperties,
+} from "./type";
 
 export interface ComponentHandler<
   T extends InstanceNode["componentProperties"] = InstanceNode["componentProperties"],
@@ -156,10 +161,66 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
   },
 };
 
+const controlChipHandler: ComponentHandler<ControlChipProperties> = {
+  key: "5780d56fc2f9bc4bbd6bc3db93949d8a8b7b7563",
+  codegen: ({ componentProperties: props }) => {
+    const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
+      .with("Icon only", () => {
+        return {
+          layout: "iconOnly",
+          prefixIcon: undefined,
+          suffixIcon: undefined,
+          children: createElement(createIconTagNameFromId(props["Icon#8722:41"].value)),
+        };
+      })
+      .with("Icon first", () => ({
+        layout: undefined,
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
+        suffixIcon: undefined,
+        children: props["Label#7185:0"].value,
+      }))
+      .with("Icon last", () => ({
+        layout: undefined,
+        prefixIcon: undefined,
+        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
+        children: props["Label#7185:0"].value,
+      }))
+      .with("Icon both", () => ({
+        layout: undefined,
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
+        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
+        children: props["Label#7185:0"].value,
+      }))
+      .with("Text only", () => ({
+        layout: undefined,
+        prefixIcon: undefined,
+        suffixIcon: undefined,
+        children: props["Label#7185:0"].value,
+      }))
+      .exhaustive();
+
+    const commonProps = {
+      size: props.Size.value.toLowerCase(),
+      layout,
+      prefixIcon,
+      suffixIcon,
+      ...(props.State.value === "Disabled" && {
+        disabled: true,
+      }),
+      ...(props["Show Counter#7185:42"].value && {
+        count: Number(props["Counter#7185:21"].value),
+      }),
+    };
+
+    return createElement("ControlChip.Toggle", commonProps, children);
+  },
+};
+
 const componentHandlers = [
   boxButtonHandler,
   actionChipHandler,
   calloutHandler,
+  controlChipHandler,
 ] as ComponentHandler[];
 
 export const componentHandlerMap = new Map(
