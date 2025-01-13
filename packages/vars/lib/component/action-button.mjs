@@ -63,7 +63,7 @@ export const vars = {
   "variantNeutralSolid": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid)"
+        "color": "var(--seed-v3-color-bg-neutral-inverted)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral-inverted)"
@@ -84,7 +84,7 @@ export const vars = {
     },
     "pressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid-pressed)"
+        "color": "var(--seed-v3-color-bg-neutral-inverted-pressed)"
       }
     },
     "disabled": {
@@ -106,7 +106,7 @@ export const vars = {
     },
     "loading": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid-pressed)"
+        "color": "var(--seed-v3-color-bg-neutral-inverted-pressed)"
       }
     }
   },

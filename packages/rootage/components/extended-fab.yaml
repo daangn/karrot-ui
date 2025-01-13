@@ -19,14 +19,14 @@ data:
   variant=neutral solid:
     enabled:
       root:
-        color: $color.bg.neutral-solid
+        color: $color.bg.neutral-inverted
       label:
         color: $color.fg.neutral-inverted
       prefixIcon:
         color: $color.fg.neutral-inverted
     pressed:
       root:
-        color: $color.bg.neutral-solid-pressed
+        color: $color.bg.neutral-inverted-pressed
   variant=layer floating:
     enabled:
       root:

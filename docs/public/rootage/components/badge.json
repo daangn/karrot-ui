@@ -89,7 +89,7 @@
     "tone=neutral, variant=solid": {
       "enabled": {
         "root": {
-          "color": "$color.bg.neutral-solid"
+          "color": "$color.bg.neutral-inverted"
         },
         "label": {
           "color": "$color.fg.neutral-inverted"

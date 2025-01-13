@@ -83,7 +83,7 @@ export const vars = {
   "toneNeutralVariantSolid": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid)"
+        "color": "var(--seed-v3-color-bg-neutral-inverted)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral-inverted)"

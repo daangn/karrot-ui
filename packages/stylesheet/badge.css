@@ -56,7 +56,7 @@
     color: var(--seed-v3-color-fg-neutral)
 }
 .badge__root--tone_neutral-variant_solid {
-    background-color: var(--seed-v3-color-bg-neutral-solid)
+    background-color: var(--seed-v3-color-bg-neutral-inverted)
 }
 .badge__label--tone_neutral-variant_solid {
     color: var(--seed-v3-color-fg-neutral-inverted)

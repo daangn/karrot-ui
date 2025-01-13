@@ -449,7 +449,7 @@ data:
       values:
         theme-light: $color.palette.gray-200
         theme-dark: $color.palette.gray-300
-    $color.bg.neutral-solid:
+    $color.bg.neutral-inverted:
       values:
         theme-light: $color.palette.slate-900
         theme-dark: $color.palette.gray-900
@@ -469,10 +469,6 @@ data:
       values:
         theme-light: $color.palette.static-black-alpha-200
         theme-dark: $color.palette.static-black-alpha-200
-    $color.bg.text-selection:
-      values:
-        theme-light: $color.palette.carrot-100
-        theme-dark: $color.palette.carrot-100
     $color.bg.layer-basement:
       values:
         theme-light: $color.palette.gray-200
@@ -481,7 +477,7 @@ data:
       values:
         theme-light: $color.palette.gray-00
         theme-dark: $color.palette.gray-100
-    $color.bg.neutral-solid-pressed:
+    $color.bg.neutral-inverted-pressed:
       values:
         theme-light: $color.palette.gray-800
         theme-dark: $color.palette.gray-800

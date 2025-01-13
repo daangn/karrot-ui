@@ -15,13 +15,13 @@
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .chipTab__root--variant_neutralSolid:is(:selected, [data-selected]) {
-    background-color: var(--seed-v3-color-bg-neutral-solid);
+    background-color: var(--seed-v3-color-bg-neutral-inverted);
 }
 .chipTab__root--variant_neutralSolid:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .chipTab__root--variant_neutralSolid:is(:selected, [data-selected]):is(:active, [data-active]) {
-    background-color: var(--seed-v3-color-bg-neutral-solid-pressed);
+    background-color: var(--seed-v3-color-bg-neutral-inverted-pressed);
 }
 .chipTab__root--variant_neutralSolid:is(:disabled, [disabled], [data-disabled]) {
     cursor: not-allowed;

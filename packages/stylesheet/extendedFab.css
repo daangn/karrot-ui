@@ -28,10 +28,10 @@
     flex-shrink: 0;
 }
 .extendedFab__root--variant_neutralSolid {
-    background: var(--seed-v3-color-bg-neutral-solid);
+    background: var(--seed-v3-color-bg-neutral-inverted);
 }
 .extendedFab__root--variant_neutralSolid:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-neutral-solid-pressed);
+    background: var(--seed-v3-color-bg-neutral-inverted-pressed);
 }
 .extendedFab__label--variant_neutralSolid {
     color: var(--seed-v3-color-fg-neutral-inverted);

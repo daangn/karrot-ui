@@ -3276,7 +3276,7 @@
           "color",
           "bg"
         ],
-        "key": "neutral-solid"
+        "key": "neutral-inverted"
       },
       "values": [
         {
@@ -3451,41 +3451,6 @@
           "color",
           "bg"
         ],
-        "key": "text-selection"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "carrot-100"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "carrot-100"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
         "key": "layer-basement"
       },
       "values": [
@@ -3556,7 +3521,7 @@
           "color",
           "bg"
         ],
-        "key": "neutral-solid-pressed"
+        "key": "neutral-inverted-pressed"
       },
       "values": [
         {
@@ -6239,7 +6204,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid"
+                        "key": "neutral-inverted"
                       }
                     }
                   ]
@@ -6353,7 +6318,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid-pressed"
+                        "key": "neutral-inverted-pressed"
                       }
                     }
                   ]
@@ -6463,7 +6428,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid-pressed"
+                        "key": "neutral-inverted-pressed"
                       }
                     }
                   ]
@@ -10645,7 +10610,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid"
+                        "key": "neutral-inverted"
                       }
                     }
                   ]
@@ -13576,7 +13541,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid"
+                        "key": "neutral-inverted"
                       }
                     }
                   ]
@@ -13616,7 +13581,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid-pressed"
+                        "key": "neutral-inverted-pressed"
                       }
                     }
                   ]
@@ -15207,7 +15172,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid"
+                        "key": "neutral-inverted"
                       }
                     }
                   ]
@@ -15262,7 +15227,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-solid-pressed"
+                        "key": "neutral-inverted-pressed"
                       }
                     }
                   ]

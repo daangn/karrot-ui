@@ -99,16 +99,16 @@
     --range-color: var(--seed-v3-color-palette-static-white);
 }
 .actionButton__root--variant_neutralSolid {
-    background: var(--seed-v3-color-bg-neutral-solid);
+    background: var(--seed-v3-color-bg-neutral-inverted);
 }
 .actionButton__root--variant_neutralSolid:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-neutral-solid-pressed);
+    background: var(--seed-v3-color-bg-neutral-inverted-pressed);
 }
 .actionButton__root--variant_neutralSolid:is(:disabled, [disabled], [data-disabled]) {
     background: var(--seed-v3-color-bg-disabled);
 }
 .actionButton__root--variant_neutralSolid[data-loading] {
-    background: var(--seed-v3-color-bg-neutral-solid-pressed);
+    background: var(--seed-v3-color-bg-neutral-inverted-pressed);
 }
 .actionButton__label--variant_neutralSolid {
     color: var(--seed-v3-color-fg-neutral-inverted);
