@@ -35,5 +35,5 @@ export declare const magicSolidPressed = "var(--seed-v3-color-bg-magic-solid-pre
 export declare const magicWeak = "var(--seed-v3-color-bg-magic-weak)";
 export declare const magicWeakPressed = "var(--seed-v3-color-bg-magic-weak-pressed)";
 export declare const neutralSolidMuted = "var(--seed-v3-color-bg-neutral-solid-muted)";
-export declare const floatingSolid = "var(--seed-v3-color-bg-floating-solid)";
+export declare const neutralSolid = "var(--seed-v3-color-bg-neutral-solid)";
 export declare const neutralSolidMutedPressed = "var(--seed-v3-color-bg-neutral-solid-muted-pressed)";

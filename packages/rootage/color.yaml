@@ -39,9 +39,13 @@ data:
         theme-dark: "#b0b3ba"
     $color.palette.gray-800:
       values:
-        theme-light: "#586070"
+        theme-light: "#555d6d"
         theme-dark: "#dcdee3"
     $color.palette.gray-900:
+      values:
+        theme-light: "#2a3038"
+        theme-dark: "#e9eaec"
+    $color.palette.gray-1000:
       values:
         theme-light: "#1a1c20"
         theme-dark: "#f3f4f5"
@@ -309,22 +313,14 @@ data:
       values:
         theme-light: "#ffffffcc"
         theme-dark: "#ffffffcc"
-    $color.palette.slate-900:
-      values:
-        theme-light: "#2a3038"
-        theme-dark: "#edf2f7"
-    $color.palette.slate-800:
-      values:
-        theme-light: "#545c6e"
-        theme-dark: "#dde3ed"
     $color.palette.static-white-alpha-200:
       values:
         theme-light: "#ffffff33"
         theme-dark: "#ffffff33"
     $color.fg.neutral:
       values:
-        theme-light: $color.palette.gray-900
-        theme-dark: $color.palette.gray-900
+        theme-light: $color.palette.gray-1000
+        theme-dark: $color.palette.gray-1000
     $color.fg.neutral-muted:
       values:
         theme-light: $color.palette.gray-800
@@ -364,7 +360,7 @@ data:
     $color.fg.informative:
       values:
         theme-light: $color.palette.blue-700
-        theme-dark: $color.palette.blue-800
+        theme-dark: $color.palette.blue-700
     $color.fg.informative-contrast:
       values:
         theme-light: $color.palette.blue-900
@@ -451,8 +447,8 @@ data:
         theme-dark: $color.palette.gray-300
     $color.bg.neutral-inverted:
       values:
-        theme-light: $color.palette.slate-900
-        theme-dark: $color.palette.gray-900
+        theme-light: $color.palette.gray-900
+        theme-dark: $color.palette.gray-1000
     $color.bg.neutral-weak-pressed:
       values:
         theme-light: $color.palette.gray-300
@@ -535,15 +531,15 @@ data:
         theme-dark: $color.palette.purple-200
     $color.bg.neutral-solid-muted:
       values:
-        theme-light: $color.palette.slate-800
+        theme-light: $color.palette.gray-800
         theme-dark: $color.palette.gray-400
-    $color.bg.floating-solid:
+    $color.bg.neutral-solid:
       values:
-        theme-light: $color.palette.gray-900
+        theme-light: $color.palette.gray-1000
         theme-dark: $color.palette.gray-300
     $color.bg.neutral-solid-muted-pressed:
       values:
-        theme-light: $color.palette.slate-900
+        theme-light: $color.palette.gray-900
         theme-dark: $color.palette.gray-500
     $color.stroke.neutral:
       values:

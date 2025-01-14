@@ -14,7 +14,7 @@
           "offsetTimingFunction": "$timing-function.easing"
         },
         "root": {
-          "color": "$color.bg.floating-solid",
+          "color": "$color.bg.neutral-solid",
           "cornerRadius": "$radius.s2",
           "minHeight": "44px",
           "paddingX": "$unit.s4",

@@ -246,7 +246,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#586070"
+            "value": "#555d6d"
           }
         },
         {
@@ -267,6 +267,33 @@
           "palette"
         ],
         "key": "gray-900"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#2a3038"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#e9eaec"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "palette"
+        ],
+        "key": "gray-1000"
       },
       "values": [
         {
@@ -2075,60 +2102,6 @@
           "color",
           "palette"
         ],
-        "key": "slate-900"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#2a3038"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#edf2f7"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "palette"
-        ],
-        "key": "slate-800"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#545c6e"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#dde3ed"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "palette"
-        ],
         "key": "static-white-alpha-200"
       },
       "values": [
@@ -2167,7 +2140,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-900"
+            "key": "gray-1000"
           }
         },
         {
@@ -2178,7 +2151,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-900"
+            "key": "gray-1000"
           }
         }
       ]
@@ -2528,7 +2501,7 @@
               "color",
               "palette"
             ],
-            "key": "blue-800"
+            "key": "blue-700"
           }
         }
       ]
@@ -3287,7 +3260,7 @@
               "color",
               "palette"
             ],
-            "key": "slate-900"
+            "key": "gray-900"
           }
         },
         {
@@ -3298,7 +3271,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-900"
+            "key": "gray-1000"
           }
         }
       ]
@@ -4022,7 +3995,7 @@
               "color",
               "palette"
             ],
-            "key": "slate-800"
+            "key": "gray-800"
           }
         },
         {
@@ -4046,7 +4019,7 @@
           "color",
           "bg"
         ],
-        "key": "floating-solid"
+        "key": "neutral-solid"
       },
       "values": [
         {
@@ -4057,7 +4030,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-900"
+            "key": "gray-1000"
           }
         },
         {
@@ -4092,7 +4065,7 @@
               "color",
               "palette"
             ],
-            "key": "slate-900"
+            "key": "gray-900"
           }
         },
         {
@@ -15682,7 +15655,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "floating-solid"
+                        "key": "neutral-solid"
                       }
                     },
                     {
@@ -15728,7 +15701,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "floating-solid"
+                        "key": "neutral-solid"
                       }
                     },
                     {
@@ -19690,7 +19663,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "floating-solid"
+                        "key": "neutral-solid"
                       }
                     },
                     {

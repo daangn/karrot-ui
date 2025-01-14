@@ -8,7 +8,7 @@ export const vars = {
         "offsetTimingFunction": "var(--seed-v3-timing-function-easing)"
       },
       "root": {
-        "color": "var(--seed-v3-color-bg-floating-solid)",
+        "color": "var(--seed-v3-color-bg-neutral-solid)",
         "cornerRadius": "var(--seed-v3-radius-s2)",
         "minHeight": "44px",
         "paddingX": "var(--seed-v3-unit-s4)",

@@ -8,13 +8,13 @@
     "base": {
       "enabled": {
         "root": {
-          "color": "$color.bg.floating-solid",
+          "color": "$color.bg.neutral-solid",
           "cornerRadius": "$radius.s3",
           "paddingX": "$unit.s3",
           "paddingY": "$unit.s3"
         },
         "arrow": {
-          "color": "$color.bg.floating-solid",
+          "color": "$color.bg.neutral-solid",
           "size": "$unit.s2_5"
         },
         "title": {

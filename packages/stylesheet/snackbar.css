@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: var(--seed-v3-color-bg-floating-solid);
+    background: var(--seed-v3-color-bg-neutral-solid);
     border-radius: var(--seed-v3-radius-s2);
     padding-inline: var(--seed-v3-unit-s4);
     padding-block: var(--seed-v3-unit-s2_5);
