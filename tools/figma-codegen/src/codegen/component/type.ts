@@ -110,6 +110,24 @@ export type AvatarProperties = InferFromDefinition<{
   };
 }>;
 
+export type AvatarStackProperties = InferFromDefinition<{
+  Size: {
+    type: "VARIANT";
+    defaultValue: "20";
+    variantOptions: ["20", "24", "36", "48", "64"];
+  };
+  "Top Item": {
+    type: "VARIANT";
+    defaultValue: "Last Item";
+    variantOptions: ["Last Item", "First Item"];
+  };
+  Count: {
+    type: "VARIANT";
+    defaultValue: "5";
+    variantOptions: ["2", "3", "4", "5"];
+  };
+}>;
+
 export type BadgeProperties = InferFromDefinition<{
   "Label#1584:0": {
     type: "TEXT";
@@ -298,6 +316,44 @@ export type ExtendedFabProperties = InferFromDefinition<{
     type: "VARIANT";
     defaultValue: "Enabled";
     variantOptions: ["Enabled", "Pressed"];
+  };
+}>;
+
+export type HelpBubbleProperties = InferFromDefinition<{
+  "Title Text#62535:0": {
+    type: "TEXT";
+    defaultValue: "Help Bubble \n두 줄일 땐 줄바꿈해요";
+  };
+  "↳ Description Text#62535:98": {
+    type: "TEXT";
+    defaultValue: "디스크립션";
+  };
+  "Description#62499:0": {
+    type: "BOOLEAN";
+    defaultValue: true;
+  };
+  "Placement (side-align)": {
+    type: "VARIANT";
+    defaultValue: "Bottom-Left";
+    variantOptions: [
+      "Right-Top",
+      "Right-Center",
+      "Right-Bottom",
+      "Left-Top",
+      "Left-Center",
+      "Left-Bottom",
+      "Bottom-Left",
+      "Bottom-Center",
+      "Bottom-Right",
+      "Top-Left",
+      "Top-Center",
+      "Top-Right",
+    ];
+  };
+  "Close Button": {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["False", "True"];
   };
 }>;
 

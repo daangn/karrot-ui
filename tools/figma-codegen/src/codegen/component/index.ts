@@ -7,12 +7,14 @@ import type {
   ActionButtonProperties,
   ActionChipProperties,
   AvatarProperties,
+  AvatarStackProperties,
   BadgeProperties,
   CalloutProperties,
   CheckboxProperties,
   ControlChipProperties,
   ExtendedFabProperties,
   FabProperties,
+  HelpBubbleProperties,
   IdentityPlaceholderProperties,
 } from "./type";
 
@@ -140,8 +142,10 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
 
     const { componentProperties: props } = node;
 
+    const avatarHasSrc = props["Image#71850:57"].value;
+
     const commonProps = {
-      ...(props["Image#71850:57"].value && {
+      ...(avatarHasSrc && {
         // Placeholder
         src: `https://placehold.co/${props.Size.value}x${props.Size.value}`,
       }),
@@ -161,7 +165,45 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
       "Avatar",
       commonProps,
       props["Badge#1398:26"].value ? createElement("AvatarBadge", {}) : undefined,
+      avatarHasSrc ? "alt 텍스트를 제공해야 합니다." : undefined,
     );
+  },
+};
+
+const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
+  key: "019467fdad2192abb48699dcfb79e344df04b799",
+  codegen: ({ componentProperties: props, children }) => {
+    const avatarStackItems = children.filter(
+      (child) => child.type === "INSTANCE" && child.name.includes("Avatar"),
+    ) as InstanceNode[];
+
+    const avatars = avatarStackItems
+      .filter(
+        (item) => item.children.length > 0 && (item.children[0] as SceneNode).type === "INSTANCE",
+      )
+      .map((item) => item.children[0] as InstanceNode);
+
+    const commonProps = {
+      size: props.Size.value,
+    };
+
+    const avatarStackChildren = avatars.map((avatar) => {
+      const { props, ...rest } = avatarHandler.codegen(
+        avatar as InstanceNode & {
+          componentProperties: AvatarProperties;
+        },
+      );
+
+      return {
+        ...rest,
+        props: {
+          ...props,
+          size: undefined,
+        },
+      };
+    });
+
+    return createElement("AvatarStack", commonProps, avatarStackChildren);
   },
 };
 
@@ -341,6 +383,7 @@ const fabHandler: ComponentHandler<FabProperties> = {
       "Fab",
       {},
       createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
+      "aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
     );
   },
 };
@@ -355,6 +398,68 @@ const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
     };
 
     return createElement("ExtendedFab", commonProps, props["Label#28936:0"].value);
+  },
+};
+
+const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
+  key: "804b327c091278a40d5891939eaed90bb2889659",
+  codegen: ({ componentProperties: props }) => {
+    const placement:
+      | "top"
+      | "right"
+      | "bottom"
+      | "left"
+      | "top-end"
+      | "top-start"
+      | "right-end"
+      | "right-start"
+      | "bottom-end"
+      | "bottom-start"
+      | "left-end"
+      | "left-start" = (() => {
+      switch (props["Placement (side-align)"].value) {
+        case "Bottom-Left":
+          return "top-start";
+        case "Bottom-Center":
+          return "top";
+        case "Bottom-Right":
+          return "top-end";
+        case "Left-Top":
+          return "right-start";
+        case "Left-Center":
+          return "right";
+        case "Left-Bottom":
+          return "right-end";
+        case "Top-Left":
+          return "bottom-start";
+        case "Top-Center":
+          return "bottom";
+        case "Top-Right":
+          return "bottom-end";
+        case "Right-Top":
+          return "left-start";
+        case "Right-Center":
+          return "left";
+        case "Right-Bottom":
+          return "left-end";
+      }
+    })();
+
+    const commonProps = {
+      title: props["Title Text#62535:0"].value,
+      ...(props["Description#62499:0"].value && {
+        description: props["↳ Description Text#62535:98"].value,
+      }),
+      showCloseButton: props["Close Button"].value === "True",
+      defaultOpen: true,
+      placement,
+    };
+
+    return createElement(
+      "HelpBubbleTrigger",
+      commonProps,
+      createElement("ActionButton", {}, "열기", "HelpBubble을 여는 요소를 제공해주세요."),
+    );
   },
 };
 
@@ -373,12 +478,14 @@ const componentHandlers = [
   actionButtonHandler,
   actionChipHandler,
   avatarHandler,
+  avatarStackHandler,
   badgeHandler,
   calloutHandler,
   checkboxHandler,
   controlChipHandler,
   fabHandler,
   extendedFabHandler,
+  helpBubbleHandler,
   identityPlaceholderHandler,
 ] as ComponentHandler[];
 
