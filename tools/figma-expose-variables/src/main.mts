@@ -4,6 +4,7 @@ import { createVariableTables } from "create-variable-tables.mjs";
 import { getSwatches } from "get-swatches.mjs";
 import { drawVariableTablesContainer } from "draw-layer.mjs";
 import { isSceneNodeVariableTablesContainer } from "utils.mjs";
+import { COMMANDS } from "constants.mjs";
 
 setRelaunchButton(figma.root, "add", { description: "페이지에 Variable 프리뷰 프레임을 추가해요" });
 
@@ -38,10 +39,41 @@ figma.variables.getLocalVariableCollectionsAsync().then(async (variableCollectio
     collectionNamesToInclude: ["Color"],
   });
 
+  const drawCombinations = (() => {
+    switch (figma.command) {
+      case COMMANDS.ADD_COLOR_VARIABLE_PREVIEW_FRAME:
+        return true;
+      case COMMANDS.ADD_COLOR_VARIABLE_PREVIEW_FRAME_WITHOUT_COMBINATIONS:
+        return false;
+      default: {
+        if (!isFirstSelectionVariableTablesContainer) return true;
+
+        try {
+          const data = JSON.parse(variableTablesContainer.getPluginData("options"));
+
+          if ("drawCombinations" in data && typeof data.drawCombinations === "boolean")
+            return data.drawCombinations;
+
+          return true;
+        } catch {
+          return true;
+        }
+      }
+    }
+  })();
+
+  variableTablesContainer.setPluginData(
+    "options",
+    JSON.stringify({
+      drawCombinations,
+    }),
+  );
+
   await drawVariableTables(
     {
       variableTables,
       possibleSuffixes: ["-pressed"],
+      drawCombinations,
     },
     variableTablesContainer,
   );

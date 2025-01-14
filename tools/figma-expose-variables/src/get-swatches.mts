@@ -9,10 +9,10 @@ export function getSwatches({ inputFrameNames }: GetSwatchesParams) {
   const inputFrames = {
     default: figma.currentPage.findOne(
       (node) => node.name === inputFrameNames.default && node.type === "FRAME",
-    ) as FrameNode,
+    ) as FrameNode | null,
     dark: figma.currentPage.findOne(
       (node) => node.name === inputFrameNames.dark && node.type === "FRAME",
-    ) as FrameNode,
+    ) as FrameNode | null,
   };
 
   return {

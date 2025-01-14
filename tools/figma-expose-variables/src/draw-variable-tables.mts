@@ -1,18 +1,40 @@
 import { getHexString, isVariableAlias } from "utils.mjs";
-import { FILLS, FONT_FAMILIES, FONT_SIZES, SIZES } from "./constants.mjs";
+import {
+  FILLS,
+  FONT_FAMILIES,
+  FONT_SIZES,
+  VARIABLE_NAMES,
+  SIZES,
+  VARIABLE_TABLE_HEADER_TITLE,
+  COMPONENT_KEYS,
+} from "./constants.mjs";
 import { drawAutoLayout, drawMainFrame, drawTableCell, drawTextNode } from "./draw-layer.mjs";
 import type { VariableTable } from "create-variable-tables.mjs";
 
 interface DrawVariableTablesParams {
   variableTables: VariableTable[];
   possibleSuffixes: string[];
+  drawCombinations?: boolean;
 }
 
 export async function drawVariableTables(
-  { variableTables, possibleSuffixes }: DrawVariableTablesParams,
+  { variableTables, possibleSuffixes, drawCombinations = true }: DrawVariableTablesParams,
   parent?: FrameNode,
 ) {
   await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+
+  const colorVariables = await figma.variables.getLocalVariablesAsync("COLOR");
+
+  const tableMetadataForegroundVariable = colorVariables.find(
+    (variable) => variable.name === VARIABLE_NAMES.TABLE_METADATA_FOREGROUND,
+  );
+
+  const previewStrokeVariable = colorVariables.find(
+    (variable) => variable.name === VARIABLE_NAMES.PREVIEW_STROKE,
+  );
+
+  const headerIconComponent = await figma.importComponentByKeyAsync(COMPONENT_KEYS.HEADER_ICON);
+
   for (const key in FONT_FAMILIES) {
     await figma.loadFontAsync(FONT_FAMILIES[key as keyof typeof FONT_FAMILIES]);
   }
@@ -27,20 +49,82 @@ export async function drawVariableTables(
           layoutMode: "VERTICAL",
           layoutSizingHorizontal: "HUG",
           layoutSizingVertical: "HUG",
-          itemSpacing: 24,
+          itemSpacing: 60,
         },
         table,
       );
 
-      drawTextNode(
+      const header = drawTextNode(
         {
-          characters: `${collection.name} / ${variableTable.name}`,
-          fontName: FONT_FAMILIES.BOLD,
-          fontSize: FONT_SIZES.XXL,
-          fills: [FILLS.DARK],
+          characters: VARIABLE_TABLE_HEADER_TITLE,
+          fontName: FONT_FAMILIES.SF_BOLD,
+          fontSize: 14,
+          fills: [FILLS.DARK], // temporal
         },
         collectionFrame,
       );
+
+      if (header.fills !== figma.mixed && tableMetadataForegroundVariable) {
+        header.fills = [
+          figma.variables.setBoundVariableForPaint(
+            header.fills[0] as SolidPaint,
+            "color",
+            tableMetadataForegroundVariable,
+          ),
+        ];
+      }
+
+      const variableTableNameFrame = drawAutoLayout(
+        {
+          name: variableTable.name,
+          layoutMode: "HORIZONTAL",
+          layoutSizingHorizontal: "HUG",
+          layoutSizingVertical: "HUG",
+          itemSpacing: 16,
+        },
+        collectionFrame,
+      );
+      variableTableNameFrame.counterAxisAlignItems = "CENTER";
+
+      const variableTableName = drawTextNode(
+        {
+          characters: variableTable.name,
+          fontName: FONT_FAMILIES.FIGMA_BOLD,
+          fontSize: FONT_SIZES.XXL,
+          fills: [FILLS.DARK], // temporal
+        },
+        variableTableNameFrame,
+      );
+
+      if (variableTableName.fills !== figma.mixed && tableMetadataForegroundVariable) {
+        variableTableName.fills = [
+          figma.variables.setBoundVariableForPaint(
+            variableTableName.fills[0] as SolidPaint,
+            "color",
+            tableMetadataForegroundVariable,
+          ),
+        ];
+      }
+
+      const icon = headerIconComponent.createInstance();
+      icon.resize(40, 40);
+
+      if (tableMetadataForegroundVariable) {
+        const vectors = icon.children.filter((child) => child.type === "VECTOR") as VectorNode[];
+
+        for (const vector of vectors) {
+          vector.fills = [FILLS.DARK]; // temporal
+          vector.fills = [
+            figma.variables.setBoundVariableForPaint(
+              vector.fills[0] as SolidPaint,
+              "color",
+              tableMetadataForegroundVariable,
+            ),
+          ];
+        }
+      }
+
+      variableTableNameFrame.appendChild(icon);
 
       const modesFrame = drawAutoLayout(
         {
@@ -81,7 +165,7 @@ export async function drawVariableTables(
         drawTextNode(
           {
             characters: mode.name,
-            fontName: FONT_FAMILIES.BOLD,
+            fontName: FONT_FAMILIES.FIGMA_TEXT_BOLD,
             fontSize: FONT_SIZES.XL,
             fills: textFills,
             opacity: 0.9,
@@ -100,7 +184,7 @@ export async function drawVariableTables(
           modeFrame,
         );
 
-        for (const { prefix, variableInfos, previewType } of mode.variablesByPrefix) {
+        for (const { prefix, variableInfos } of mode.variablesByPrefix) {
           const prefixFrame = drawAutoLayout(
             {
               name: prefix,
@@ -126,7 +210,7 @@ export async function drawVariableTables(
           drawTextNode(
             {
               characters: prefix,
-              fontName: FONT_FAMILIES.BOLD,
+              fontName: FONT_FAMILIES.FIGMA_TEXT_BOLD,
               fontSize: FONT_SIZES.LG,
               fills: textFills,
               opacity: 0.8,
@@ -150,7 +234,7 @@ export async function drawVariableTables(
 
           switch (variableTable.type) {
             case "token": {
-              for (const { variable, matchedSwatches } of variableInfos) {
+              for (const { variable, matchedSwatches, previewType } of variableInfos) {
                 const variableRow = drawAutoLayout(
                   {
                     name: variable.name,
@@ -178,7 +262,7 @@ export async function drawVariableTables(
                 drawTextNode(
                   {
                     characters: hasSuffix ? `┗ ${variable.name}` : variable.name,
-                    fontName: FONT_FAMILIES.REGULAR,
+                    fontName: FONT_FAMILIES.FIGMA_TEXT_REGULAR,
                     fontSize: FONT_SIZES.BASE,
                     fills: textFills,
                   },
@@ -201,7 +285,7 @@ export async function drawVariableTables(
                     drawTextNode(
                       {
                         characters: "Aa",
-                        fontName: FONT_FAMILIES.BOLD,
+                        fontName: FONT_FAMILIES.FIGMA_TEXT_BOLD,
                         fontSize: 16,
                         fills: [
                           figma.variables.setBoundVariableForPaint(
@@ -220,7 +304,7 @@ export async function drawVariableTables(
                     const color = figma.createRectangle();
                     color.cornerRadius = 4;
                     color.resize(16, 16);
-                    color.strokes = fadedFills;
+
                     color.fills = frameFills; // temporal
                     color.fills = [
                       figma.variables.setBoundVariableForPaint(
@@ -229,6 +313,18 @@ export async function drawVariableTables(
                         variable,
                       ),
                     ];
+
+                    if (previewStrokeVariable) {
+                      color.strokes = fadedFills; // temporal
+                      color.strokes = [
+                        figma.variables.setBoundVariableForPaint(
+                          color.strokes[0] as SolidPaint,
+                          "color",
+                          previewStrokeVariable,
+                        ),
+                      ];
+                      color.strokeWeight = 1;
+                    }
 
                     previewCell.appendChild(color);
 
@@ -267,7 +363,7 @@ export async function drawVariableTables(
                 drawTextNode(
                   {
                     characters,
-                    fontName: FONT_FAMILIES.REGULAR,
+                    fontName: FONT_FAMILIES.FIGMA_TEXT_REGULAR,
                     fontSize: FONT_SIZES.BASE,
                     fills: textFills,
                   },
@@ -276,7 +372,7 @@ export async function drawVariableTables(
 
                 // Cell #3: Combinations
 
-                if (matchedSwatches.length === 0) continue;
+                if (!drawCombinations || matchedSwatches.length === 0) continue;
 
                 const combinationsCell = drawTableCell(
                   {
@@ -341,7 +437,7 @@ export async function drawVariableTables(
                   drawTextNode(
                     {
                       characters: scale.name,
-                      fontName: FONT_FAMILIES.REGULAR,
+                      fontName: FONT_FAMILIES.FIGMA_TEXT_REGULAR,
                       fontSize: FONT_SIZES.BASE,
                       fills: textFills,
                     },
@@ -360,7 +456,6 @@ export async function drawVariableTables(
                   const color = figma.createRectangle();
                   color.cornerRadius = 4;
                   color.resize(16, 16);
-                  color.strokes = fadedFills;
                   color.fills = frameFills; // temporal
                   color.fills = [
                     figma.variables.setBoundVariableForPaint(
@@ -369,6 +464,18 @@ export async function drawVariableTables(
                       scale,
                     ),
                   ];
+
+                  if (previewStrokeVariable) {
+                    color.strokes = fadedFills;
+                    color.strokes = [
+                      figma.variables.setBoundVariableForPaint(
+                        color.strokes[0] as SolidPaint,
+                        "color",
+                        previewStrokeVariable,
+                      ),
+                    ];
+                    color.strokeWeight = 1;
+                  }
 
                   previewCell.appendChild(color);
 
@@ -384,7 +491,7 @@ export async function drawVariableTables(
                   drawTextNode(
                     {
                       characters,
-                      fontName: FONT_FAMILIES.REGULAR,
+                      fontName: FONT_FAMILIES.FIGMA_TEXT_REGULAR,
                       fontSize: FONT_SIZES.BASE,
                       fills: textFills,
                     },

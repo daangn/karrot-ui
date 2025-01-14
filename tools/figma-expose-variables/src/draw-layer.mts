@@ -1,4 +1,4 @@
-import { setRelaunchButton } from "@create-figma-plugin/utilities";
+import { convertHexColorToRgbColor, setRelaunchButton } from "@create-figma-plugin/utilities";
 
 type drawMainFrameParams = Pick<DrawAutoLayoutParams, "name">;
 
@@ -8,9 +8,9 @@ export function drawVariableTablesContainer() {
     layoutMode: "HORIZONTAL",
     layoutSizingHorizontal: "HUG",
     layoutSizingVertical: "HUG",
-    itemSpacing: 16,
-    paddingX: 64,
-    paddingY: 64,
+    itemSpacing: 100,
+    paddingX: 0,
+    paddingY: 0,
   });
 
   setRelaunchButton(frame, "update", {
@@ -26,12 +26,17 @@ export function drawMainFrame({ name }: drawMainFrameParams, parent?: FrameNode)
     layoutMode: "VERTICAL",
     layoutSizingHorizontal: "HUG",
     layoutSizingVertical: "HUG",
-    itemSpacing: 8,
-    paddingX: 64,
-    paddingY: 64,
+    itemSpacing: 0,
+    paddingX: 88,
+    paddingY: 84,
   });
 
-  frame.fills = [{ type: "SOLID", color: { r: 0.93, g: 0.93, b: 0.95 } }];
+  frame.fills = [
+    {
+      type: "SOLID",
+      color: convertHexColorToRgbColor("F2F3F7") ?? { r: 0, g: 0, b: 0 },
+    },
+  ];
 
   parent?.appendChild(frame);
 
