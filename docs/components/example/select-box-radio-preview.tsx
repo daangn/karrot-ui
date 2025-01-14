@@ -1,17 +1,17 @@
 "use client";
 
-import { SelectBoxRadioGroup, SelectBoxRadio } from "seed-design/ui/select-box";
+import { RadioSelectBoxGroup, RadioSelectBox } from "seed-design/ui/select-box";
 
-export default function SelectBoxRadioPreview() {
+export default function RadioSelectBoxPreview() {
   return (
-    <SelectBoxRadioGroup defaultValue="apple" aria-label="Fruit">
-      <SelectBoxRadio value="apple" label="Apple" />
-      <SelectBoxRadio
+    <RadioSelectBoxGroup defaultValue="apple" aria-label="Fruit">
+      <RadioSelectBox value="apple" label="Apple" />
+      <RadioSelectBox
         value="melon"
         label="Melon"
         description="Elit cupidatat dolore fugiat enim veniam culpa."
       />
-      <SelectBoxRadio value="mango" label="Mango" />
-    </SelectBoxRadioGroup>
+      <RadioSelectBox value="mango" label="Mango" />
+    </RadioSelectBoxGroup>
   );
 }

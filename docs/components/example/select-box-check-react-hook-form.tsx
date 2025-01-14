@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm, useController } from "react-hook-form";
-import { SelectBoxCheck, SelectBoxCheckGroup } from "seed-design/ui/select-box";
+import { CheckSelectBox, CheckSelectBoxGroup } from "seed-design/ui/select-box";
 import { ActionButton } from "seed-design/ui/action-button";
 import { useCallback, type FormEvent } from "react";
 
@@ -9,7 +9,7 @@ const POSSIBLE_FRUIT_VALUES = ["apple", "melon", "mango"] as const;
 
 type FormValues = Record<(typeof POSSIBLE_FRUIT_VALUES)[number], boolean>;
 
-export default function SelectBoxCheckReactHookForm() {
+export default function CheckSelectBoxReactHookForm() {
   const { handleSubmit, reset, setValue, control } = useForm<FormValues>({
     defaultValues: {
       apple: false,
@@ -32,7 +32,7 @@ export default function SelectBoxCheckReactHookForm() {
 
   return (
     <form className="flex flex-col gap-3 w-96" onSubmit={handleSubmit(onValid)} onReset={onReset}>
-      <SelectBoxCheckGroup>
+      <CheckSelectBoxGroup>
         {POSSIBLE_FRUIT_VALUES.map((name) => {
           const {
             field: { value, ...restProps },
@@ -40,7 +40,7 @@ export default function SelectBoxCheckReactHookForm() {
           } = useController({ name, control });
 
           return (
-            <SelectBoxCheck
+            <CheckSelectBox
               key={name}
               label={name}
               checked={value}
@@ -49,7 +49,7 @@ export default function SelectBoxCheckReactHookForm() {
             />
           );
         })}
-      </SelectBoxCheckGroup>
+      </CheckSelectBoxGroup>
       <div className="flex gap-2">
         <ActionButton type="submit" className="grow">
           제출

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { SelectBoxRadio, SelectBoxRadioGroup } from "seed-design/ui/select-box";
+import { RadioSelectBox, RadioSelectBoxGroup } from "seed-design/ui/select-box";
 import { selectBoxGroupVariantMap } from "@seed-design/recipe/selectBoxGroup";
 
 import { SeedThemeDecorator } from "./components/decorator";
@@ -12,18 +12,18 @@ const Component = () => {
   const [value, setValue] = useState(values[0]);
 
   return (
-    <SelectBoxRadioGroup value={value} onValueChange={setValue}>
+    <RadioSelectBoxGroup value={value} onValueChange={setValue}>
       {values.map((value) => (
-        <SelectBoxRadio key={value} value={value} label={value} description={value} />
+        <RadioSelectBox key={value} value={value} label={value} description={value} />
       ))}
-    </SelectBoxRadioGroup>
+    </RadioSelectBoxGroup>
   );
 };
 
 const meta = {
-  component: SelectBoxRadioGroup,
+  component: RadioSelectBoxGroup,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof SelectBoxRadioGroup>;
+} satisfies Meta<typeof RadioSelectBoxGroup>;
 
 export default meta;
 

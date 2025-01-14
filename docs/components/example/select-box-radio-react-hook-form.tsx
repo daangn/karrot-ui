@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm, useController } from "react-hook-form";
-import { SelectBoxRadio, SelectBoxRadioGroup } from "seed-design/ui/select-box";
+import { RadioSelectBox, RadioSelectBoxGroup } from "seed-design/ui/select-box";
 import { ActionButton } from "seed-design/ui/action-button";
 import { useCallback, type FormEvent } from "react";
 
@@ -11,7 +11,7 @@ interface FormValues {
   fruit: (typeof POSSIBLE_FRUIT_VALUES)[number];
 }
 
-export default function SelectBoxRadioReactHookForm() {
+export default function RadioSelectBoxReactHookForm() {
   const { handleSubmit, reset, setValue, control } = useForm<FormValues>({
     defaultValues: {
       fruit: "melon",
@@ -34,11 +34,11 @@ export default function SelectBoxRadioReactHookForm() {
   return (
     <div>
       <form className="flex flex-col gap-3 w-96" onSubmit={handleSubmit(onValid)} onReset={onReset}>
-        <SelectBoxRadioGroup aria-label="Fruit" {...field}>
+        <RadioSelectBoxGroup aria-label="Fruit" {...field}>
           {POSSIBLE_FRUIT_VALUES.map((value) => (
-            <SelectBoxRadio key={value} value={value} label={value} />
+            <RadioSelectBox key={value} value={value} label={value} />
           ))}
-        </SelectBoxRadioGroup>
+        </RadioSelectBoxGroup>
         <div className="flex gap-2">
           <ActionButton type="submit" className="grow">
             제출

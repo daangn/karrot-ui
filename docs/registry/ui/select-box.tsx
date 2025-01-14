@@ -2,31 +2,31 @@
 
 import { IconCheckmarkFatFill } from "@daangn/react-monochrome-icon";
 import {
-  SelectBoxCheck as SeedSelectBoxCheck,
-  SelectBoxRadio as SeedSelectBoxRadio,
+  CheckSelectBox as SeedCheckSelectBox,
+  RadioSelectBox as SeedRadioSelectBox,
 } from "@seed-design/react";
 import * as React from "react";
 
 import "@seed-design/stylesheet/selectBox.css";
 import "@seed-design/stylesheet/selectBoxGroup.css";
 
-export interface SelectBoxRadioGroupProps
-  extends SeedSelectBoxRadio.GroupProps {}
+export interface RadioSelectBoxGroupProps
+  extends SeedRadioSelectBox.GroupProps {}
 
-export const SelectBoxRadioGroup = React.forwardRef<
+export const RadioSelectBoxGroup = React.forwardRef<
   HTMLDivElement,
-  SelectBoxRadioGroupProps
+  RadioSelectBoxGroupProps
 >((props, ref) => {
   if (!props["aria-label"] && !props["aria-labelledby"]) {
     console.warn(
-      "SelectBoxRadioGroup component requires either an `aria-label` or `aria-labelledby` attribute.",
+      "RadioSelectBoxGroup component requires either an `aria-label` or `aria-labelledby` attribute.",
     );
   }
 
-  return <SeedSelectBoxRadio.Group ref={ref} {...props} />;
+  return <SeedRadioSelectBox.Group ref={ref} {...props} />;
 });
 
-export interface SelectBoxRadioProps extends SeedSelectBoxRadio.RootProps {
+export interface RadioSelectBoxProps extends SeedRadioSelectBox.RootProps {
   label: string;
 
   description?: string;
@@ -36,41 +36,41 @@ export interface SelectBoxRadioProps extends SeedSelectBoxRadio.RootProps {
   rootRef?: React.Ref<HTMLLabelElement>;
 }
 
-export const SelectBoxRadio = React.forwardRef<
+export const RadioSelectBox = React.forwardRef<
   HTMLInputElement,
-  SelectBoxRadioProps
+  RadioSelectBoxProps
 >(({ label, description, inputProps, rootRef, ...otherProps }, ref) => {
   return (
-    <SeedSelectBoxRadio.Root ref={rootRef} {...otherProps}>
-      <SeedSelectBoxRadio.HiddenInput ref={ref} {...inputProps} />
-      <SeedSelectBoxRadio.Content>
-        <SeedSelectBoxRadio.Label>{label}</SeedSelectBoxRadio.Label>
+    <SeedRadioSelectBox.Root ref={rootRef} {...otherProps}>
+      <SeedRadioSelectBox.HiddenInput ref={ref} {...inputProps} />
+      <SeedRadioSelectBox.Content>
+        <SeedRadioSelectBox.Label>{label}</SeedRadioSelectBox.Label>
         {description && (
-          <SeedSelectBoxRadio.Description>
+          <SeedRadioSelectBox.Description>
             {description}
-          </SeedSelectBoxRadio.Description>
+          </SeedRadioSelectBox.Description>
         )}
-      </SeedSelectBoxRadio.Content>
-      <SeedSelectBoxRadio.Control>
-        <SeedSelectBoxRadio.Icon
+      </SeedRadioSelectBox.Content>
+      <SeedRadioSelectBox.Control>
+        <SeedRadioSelectBox.Icon
           svg={
             <svg aria-hidden viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="12" fill="currentColor" />
             </svg>
           }
         />
-      </SeedSelectBoxRadio.Control>
-    </SeedSelectBoxRadio.Root>
+      </SeedRadioSelectBox.Control>
+    </SeedRadioSelectBox.Root>
   );
 });
-SelectBoxRadio.displayName = "SelectBoxRadio";
+RadioSelectBox.displayName = "RadioSelectBox";
 
-export interface SelectBoxCheckGroupProps
-  extends SeedSelectBoxCheck.GroupProps {}
+export interface CheckSelectBoxGroupProps
+  extends SeedCheckSelectBox.GroupProps {}
 
-export const SelectBoxCheckGroup = SeedSelectBoxCheck.Group;
+export const CheckSelectBoxGroup = SeedCheckSelectBox.Group;
 
-export interface SelectBoxCheckProps extends SeedSelectBoxCheck.RootProps {
+export interface CheckSelectBoxProps extends SeedCheckSelectBox.RootProps {
   label: string;
 
   description?: string;
@@ -80,25 +80,25 @@ export interface SelectBoxCheckProps extends SeedSelectBoxCheck.RootProps {
   rootRef?: React.Ref<HTMLLabelElement>;
 }
 
-export const SelectBoxCheck = React.forwardRef<
+export const CheckSelectBox = React.forwardRef<
   HTMLInputElement,
-  SelectBoxCheckProps
+  CheckSelectBoxProps
 >(({ label, description, inputProps, rootRef, ...otherProps }, ref) => {
   return (
-    <SeedSelectBoxCheck.Root ref={rootRef} {...otherProps}>
-      <SeedSelectBoxCheck.HiddenInput ref={ref} {...inputProps} />
-      <SeedSelectBoxCheck.Content>
-        <SeedSelectBoxCheck.Label>{label}</SeedSelectBoxCheck.Label>
+    <SeedCheckSelectBox.Root ref={rootRef} {...otherProps}>
+      <SeedCheckSelectBox.HiddenInput ref={ref} {...inputProps} />
+      <SeedCheckSelectBox.Content>
+        <SeedCheckSelectBox.Label>{label}</SeedCheckSelectBox.Label>
         {description && (
-          <SeedSelectBoxCheck.Description>
+          <SeedCheckSelectBox.Description>
             {description}
-          </SeedSelectBoxCheck.Description>
+          </SeedCheckSelectBox.Description>
         )}
-      </SeedSelectBoxCheck.Content>
-      <SeedSelectBoxCheck.Control>
-        <SeedSelectBoxCheck.Icon svg={<IconCheckmarkFatFill />} />
-      </SeedSelectBoxCheck.Control>
-    </SeedSelectBoxCheck.Root>
+      </SeedCheckSelectBox.Content>
+      <SeedCheckSelectBox.Control>
+        <SeedCheckSelectBox.Icon svg={<IconCheckmarkFatFill />} />
+      </SeedCheckSelectBox.Control>
+    </SeedCheckSelectBox.Root>
   );
 });
-SelectBoxCheck.displayName = "SelectBoxCheck";
+CheckSelectBox.displayName = "CheckSelectBox";
