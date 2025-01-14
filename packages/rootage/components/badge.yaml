@@ -99,7 +99,7 @@ data:
   tone=informative, variant=outlined:
     enabled:
       root:
-        strokeColor: $color.fg.informative
+        strokeColor: $color.stroke.informative
       label:
         color: $color.fg.informative
   tone=positive, variant=weak:

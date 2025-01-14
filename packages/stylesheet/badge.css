@@ -98,7 +98,7 @@
     color: var(--seed-v3-color-palette-static-white)
 }
 .badge__root--tone_informative-variant_outlined {
-    border-color: var(--seed-v3-color-fg-informative)
+    border-color: var(--seed-v3-color-stroke-informative)
 }
 .badge__label--tone_informative-variant_outlined {
     color: var(--seed-v3-color-fg-informative)

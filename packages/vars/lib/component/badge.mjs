@@ -153,7 +153,7 @@ export const vars = {
   "toneInformativeVariantOutlined": {
     "enabled": {
       "root": {
-        "strokeColor": "var(--seed-v3-color-fg-informative)"
+        "strokeColor": "var(--seed-v3-color-stroke-informative)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-informative)"
