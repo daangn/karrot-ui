@@ -23,7 +23,9 @@ export const ReactionButton = React.forwardRef<
     <SeedReactionButton.Root ref={ref} loading={loading} {...otherProps}>
       {prefixIcon && <SeedReactionButton.PrefixIcon svg={prefixIcon} />}
       <SeedReactionButton.Label>{children}</SeedReactionButton.Label>
-      <SeedReactionButton.Count>{count}</SeedReactionButton.Count>
+      {count !== undefined && (
+        <SeedReactionButton.Count>{count}</SeedReactionButton.Count>
+      )}
       {loading ? (
         <SeedReactionButton.ProgressIndicator>
           <ProgressCircle size="inherit" tone="inherit" />
