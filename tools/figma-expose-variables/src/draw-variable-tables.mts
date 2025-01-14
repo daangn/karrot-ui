@@ -196,27 +196,29 @@ export async function drawVariableTables(
             prefixesFrame,
           );
 
-          const prefixTitleContainer = drawAutoLayout(
-            {
-              name: prefix,
-              layoutMode: "HORIZONTAL",
-              layoutSizingHorizontal: "HUG",
-              layoutSizingVertical: "HUG",
-              paddingX: 12,
-            },
-            prefixFrame,
-          );
+          if (variableTable.type !== "palette") {
+            const prefixTitleContainer = drawAutoLayout(
+              {
+                name: prefix,
+                layoutMode: "HORIZONTAL",
+                layoutSizingHorizontal: "HUG",
+                layoutSizingVertical: "HUG",
+                paddingX: 12,
+              },
+              prefixFrame,
+            );
 
-          drawTextNode(
-            {
-              characters: prefix,
-              fontName: FONT_FAMILIES.FIGMA_TEXT_BOLD,
-              fontSize: FONT_SIZES.LG,
-              fills: textFills,
-              opacity: 0.8,
-            },
-            prefixTitleContainer,
-          );
+            drawTextNode(
+              {
+                characters: prefix,
+                fontName: FONT_FAMILIES.FIGMA_TEXT_BOLD,
+                fontSize: FONT_SIZES.LG,
+                fills: textFills,
+                opacity: 0.8,
+              },
+              prefixTitleContainer,
+            );
+          }
 
           const prefixTable = drawAutoLayout(
             {
@@ -436,7 +438,7 @@ export async function drawVariableTables(
 
                   drawTextNode(
                     {
-                      characters: scale.name,
+                      characters: scale.name.replace(`${prefix}/`, ""),
                       fontName: FONT_FAMILIES.FIGMA_TEXT_REGULAR,
                       fontSize: FONT_SIZES.BASE,
                       fills: textFills,
