@@ -4,10 +4,16 @@ import { createIconTagNameFromId } from "../icon";
 import type { ElementNode } from "../jsx";
 import { createElement } from "../jsx";
 import type {
-  BoxButtonProperties,
-  CalloutProperties,
+  ActionButtonProperties,
   ActionChipProperties,
+  AvatarProperties,
+  BadgeProperties,
+  CalloutProperties,
+  CheckboxProperties,
   ControlChipProperties,
+  ExtendedFabProperties,
+  FabProperties,
+  IdentityPlaceholderProperties,
 } from "./type";
 
 export interface ComponentHandler<
@@ -17,19 +23,59 @@ export interface ComponentHandler<
   codegen: (node: InstanceNode & { componentProperties: T }) => ElementNode;
 }
 
-const boxButtonHandler: ComponentHandler<BoxButtonProperties> = {
-  key: "21ca4a592a75b9dae5b964421c065c1beb37416e",
+const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
+  key: "450ede9d0bf42fc6ef14345c77e6e407d6d5ee89",
   codegen: ({ componentProperties: props }) => {
+    const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
+      .with("Icon only", () => ({
+        layout: "iconOnly",
+        prefixIcon: undefined,
+        suffixIcon: undefined,
+        children: createElement(createIconTagNameFromId(props["Icon#7574:0"].value)),
+      }))
+      .with("Icon first", () => ({
+        layout: "withText",
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#5987:305"].value)),
+        suffixIcon: undefined,
+        children: props["Label#5987:61"].value,
+      }))
+      .with("Icon last", () => ({
+        layout: "withText",
+        prefixIcon: undefined,
+        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
+        children: props["Label#5987:61"].value,
+      }))
+      .with("Icon both", () => ({
+        layout: "withText",
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#5987:305"].value)),
+        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
+        children: props["Label#5987:61"].value,
+      }))
+      .with("Text only", () => ({
+        layout: "withText",
+        prefixIcon: undefined,
+        suffixIcon: undefined,
+        children: props["Label#5987:61"].value,
+      }))
+      .exhaustive();
+
     const commonProps = {
+      ...(props.State.value === "Disabled" && {
+        disabled: true,
+      }),
+      ...(props.State.value === "Loading" && {
+        loading: true,
+      }),
       size: props.Size.value.toString().toLowerCase(),
-      variant: camelCase(props.Variant.value.toString(), {
+      variant: camelCase(props.Variant.value, {
         mergeAmbiguousCharacters: true,
       }),
-      prefixIcon: props["Prefix Icon#366:0"].value
-        ? createElement(createIconTagNameFromId(props["↳Icons#449:9"].value))
-        : undefined,
+      layout,
+      prefixIcon,
+      suffixIcon,
     };
-    return createElement("BoxButton", commonProps, props["Label#369:5"].value);
+
+    return createElement("ActionButton", commonProps, children);
   },
 };
 
@@ -37,34 +83,32 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
   key: "3d21594ef116e94a9465d507447b858aea062575",
   codegen: ({ componentProperties: props }) => {
     const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon only", () => {
-        return {
-          layout: "iconOnly",
-          prefixIcon: undefined,
-          suffixIcon: undefined,
-          children: createElement(createIconTagNameFromId(props["Icon#8714:0"].value)),
-        };
-      })
+      .with("Icon only", () => ({
+        layout: "iconOnly",
+        prefixIcon: undefined,
+        suffixIcon: undefined,
+        children: createElement(createIconTagNameFromId(props["Icon#8714:0"].value)),
+      }))
       .with("Icon first", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
       }))
       .with("Icon last", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: undefined,
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
         children: props["Label#7185:0"].value,
       }))
       .with("Icon both", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
         children: props["Label#7185:0"].value,
       }))
       .with("Text only", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: undefined,
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
@@ -79,11 +123,59 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
       ...(props.State.value === "Disabled" && {
         disabled: true,
       }),
-      ...(props["Show Counter#7185:42"].value && {
-        count: Number(props["Counter#7185:21"].value),
+      ...(props["Show Count#7185:42"].value && {
+        count: Number(props["Count#7185:21"].value),
       }),
     };
     return createElement("ChipButton", commonProps, children);
+  },
+};
+
+const avatarHandler: ComponentHandler<AvatarProperties> = {
+  key: "d71644aeba2e29deda366798fdfe35977166d120",
+  codegen: (node) => {
+    const placeholder = node.findOne(
+      (child) => child.type === "INSTANCE" && child.name.includes("Identity Placeholder"),
+    ) as InstanceNode | null;
+
+    const { componentProperties: props } = node;
+
+    const commonProps = {
+      ...(props["Image#71850:57"].value && {
+        // Placeholder
+        src: `https://placehold.co/${props.Size.value}x${props.Size.value}`,
+      }),
+      // XXX
+      // alt: ...
+      ...(placeholder?.componentProperties && {
+        fallback: identityPlaceholderHandler.codegen(
+          placeholder as InstanceNode & {
+            componentProperties: IdentityPlaceholderProperties;
+          },
+        ),
+      }),
+      size: props.Size.value,
+    };
+
+    return createElement(
+      "Avatar",
+      commonProps,
+      props["Badge#1398:26"].value ? createElement("AvatarBadge", {}) : undefined,
+    );
+  },
+};
+
+const badgeHandler: ComponentHandler<BadgeProperties> = {
+  key: "04609a35d47a1a0ef4904b3c25f79451892a85a1",
+  codegen: ({ componentProperties: props }) => {
+    const commonProps = {
+      size: props.Size.value.toLowerCase(),
+      tone: props.Tone.value.toLowerCase(),
+      variant: props.Variant.value.toLowerCase(),
+      shape: props.Shape.value.toLowerCase(),
+    };
+
+    return createElement("Badge", commonProps, props["Label#1584:0"].value);
   },
 };
 
@@ -161,6 +253,32 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
   },
 };
 
+const checkboxHandler: ComponentHandler<CheckboxProperties> = {
+  key: "94a2f6957a86f8ae3b8c7ca200dfcd5e29f6075b",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      label: props["Label#49990:0"].value,
+      weight: props.Bold.value === "True" ? "bold" : "regular",
+      variant: props.Shape.value.toLowerCase(),
+      size: props.Size.value.toLowerCase(),
+      ...(states.includes("Selected") && {
+        defaultChecked: true,
+      }),
+      ...(states.includes("Indeterminate") && {
+        defaultChecked: true,
+        indeterminate: true,
+      }),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("Checkbox", commonProps);
+  },
+};
+
 const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   key: "5780d56fc2f9bc4bbd6bc3db93949d8a8b7b7563",
   codegen: ({ componentProperties: props }) => {
@@ -174,25 +292,25 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
         };
       })
       .with("Icon first", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
       }))
       .with("Icon last", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: undefined,
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
         children: props["Label#7185:0"].value,
       }))
       .with("Icon both", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
         children: props["Label#7185:0"].value,
       }))
       .with("Text only", () => ({
-        layout: undefined,
+        layout: "withText",
         prefixIcon: undefined,
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
@@ -207,8 +325,8 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
       ...(props.State.value === "Disabled" && {
         disabled: true,
       }),
-      ...(props["Show Counter#7185:42"].value && {
-        count: Number(props["Counter#7185:21"].value),
+      ...(props["Show Count#7185:42"].value && {
+        count: Number(props["Count#7185:21"].value),
       }),
     };
 
@@ -216,11 +334,52 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   },
 };
 
+const fabHandler: ComponentHandler<FabProperties> = {
+  key: "1974b94703032585bb9e20bd54743e01094b965c",
+  codegen: ({ componentProperties: props }) => {
+    return createElement(
+      "Fab",
+      {},
+      createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
+    );
+  },
+};
+
+const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
+  key: "032f3fddaad0aa3fa5a7f680768c1f5d02fb463f",
+  codegen: ({ componentProperties: props }) => {
+    const commonProps = {
+      size: props.Size.value.toLowerCase(),
+      variant: camelCase(props.Variant.value, { mergeAmbiguousCharacters: true }),
+      prefixIcon: createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
+    };
+
+    return createElement("ExtendedFab", commonProps, props["Label#28936:0"].value);
+  },
+};
+
+const identityPlaceholderHandler: ComponentHandler<IdentityPlaceholderProperties> = {
+  key: "808206c07408aa1056ec85a55925e9844e9265c2",
+  codegen: ({ componentProperties: props }) => {
+    const commonProps = {
+      identity: props.Identity.value.toLowerCase(),
+    };
+
+    return createElement("IdentityPlaceholder", commonProps);
+  },
+};
+
 const componentHandlers = [
-  boxButtonHandler,
+  actionButtonHandler,
   actionChipHandler,
+  avatarHandler,
+  badgeHandler,
   calloutHandler,
+  checkboxHandler,
   controlChipHandler,
+  fabHandler,
+  extendedFabHandler,
+  identityPlaceholderHandler,
 ] as ComponentHandler[];
 
 export const componentHandlerMap = new Map(
