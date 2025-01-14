@@ -279,19 +279,6 @@ export type ControlChipProperties = InferFromDefinition<{
   };
 }>;
 
-export type FabProperties = InferFromDefinition<{
-  "Icon#28796:0": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:4176";
-    preferredValues: [];
-  };
-  State: {
-    type: "VARIANT";
-    defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed"];
-  };
-}>;
-
 export type ExtendedFabProperties = InferFromDefinition<{
   "Label#28936:0": {
     type: "TEXT";
@@ -311,6 +298,19 @@ export type ExtendedFabProperties = InferFromDefinition<{
     type: "VARIANT";
     defaultValue: "Layer Floating";
     variantOptions: ["Neutral Solid", "Layer Floating"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Enabled", "Pressed"];
+  };
+}>;
+
+export type FabProperties = InferFromDefinition<{
+  "Icon#28796:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4176";
+    preferredValues: [];
   };
   State: {
     type: "VARIANT";
@@ -362,5 +362,124 @@ export type IdentityPlaceholderProperties = InferFromDefinition<{
     type: "VARIANT";
     defaultValue: "Person";
     variantOptions: ["Person", "Business"];
+  };
+}>;
+
+export type InlineBannerProperties = InferFromDefinition<{
+  "Prefix Icon#11840:27": {
+    type: "BOOLEAN";
+    defaultValue: true;
+  };
+  "Link Text#1547:81": {
+    type: "TEXT";
+    defaultValue: "자세히보기";
+  };
+  Interaction: {
+    type: "VARIANT";
+    defaultValue: "Default";
+    variantOptions: ["Default", "Link", "Actionable", "Dismissible"];
+  };
+  Variant: {
+    type: "VARIANT";
+    defaultValue: "Neutral Weak";
+    variantOptions: [
+      "Neutral Weak",
+      "Positive Weak",
+      "Informative Weak",
+      "Warning Weak",
+      "Warning Solid",
+      "Danger Weak",
+      "Danger Solid",
+    ];
+  };
+  Title: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["False", "True"];
+  };
+}>;
+
+export type ProgressCircleProperties = InferFromDefinition<{
+  Value: {
+    type: "VARIANT";
+    defaultValue: "0%";
+    variantOptions: ["Indeterminate", "0%", "25%", "75%", "100%"];
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "40";
+    variantOptions: ["24", "40"];
+  };
+  Tone: {
+    type: "VARIANT";
+    defaultValue: "Neutral";
+    variantOptions: ["Brand", "Neutral", "Static White"];
+  };
+}>;
+
+export type ReactionButtonProperties = InferFromDefinition<{
+  "Show Count#6397:33": {
+    type: "BOOLEAN";
+    defaultValue: true;
+  };
+  "Count#15816:0": {
+    type: "TEXT";
+    defaultValue: "1";
+  };
+  "Label#6397:0": {
+    type: "TEXT";
+    defaultValue: "도움돼요";
+  };
+  "Icon#12379:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4010";
+    preferredValues: [];
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "XSmall";
+    variantOptions: ["XSmall", "Small"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Enabled", "Pressed", "Loading", "Disabled"];
+  };
+  Selected: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["False", "True"];
+  };
+}>;
+
+export type SegmentedControlItemProperties = InferFromDefinition<{
+  "Label#11366:15": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled-Selected";
+    variantOptions: [
+      "Enabled-Selected",
+      "Enabled",
+      "Disabled",
+      "Disabled-Selected",
+      "Enabled-Selected-Pressed",
+      "Enabled-Pressed",
+    ];
+  };
+}>;
+
+export type SegmentedControlProperties = InferFromDefinition<{
+  "Item Count": {
+    type: "VARIANT";
+    defaultValue: "2";
+    variantOptions: ["2", "3", "4"];
+  };
+  "Selected Item": {
+    type: "VARIANT";
+    defaultValue: "1";
+    variantOptions: ["1", "2", "3", "4"];
   };
 }>;

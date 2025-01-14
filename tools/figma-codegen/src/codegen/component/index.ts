@@ -1,6 +1,6 @@
 import { camelCase } from "change-case";
 import { match } from "ts-pattern";
-import { createIconTagNameFromId } from "../icon";
+import { createIconTagNameFromId, createIconTagNameFromKey } from "../icon";
 import type { ElementNode } from "../jsx";
 import { createElement } from "../jsx";
 import type {
@@ -16,6 +16,11 @@ import type {
   FabProperties,
   HelpBubbleProperties,
   IdentityPlaceholderProperties,
+  InlineBannerProperties,
+  ProgressCircleProperties,
+  ReactionButtonProperties,
+  SegmentedControlItemProperties,
+  SegmentedControlProperties,
 } from "./type";
 
 export interface ComponentHandler<
@@ -137,7 +142,8 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
   key: "d71644aeba2e29deda366798fdfe35977166d120",
   codegen: (node) => {
     const placeholder = node.findOne(
-      (child) => child.type === "INSTANCE" && child.name.includes("Identity Placeholder"),
+      (child) =>
+        child.type === "INSTANCE" && child.mainComponent?.key === identityPlaceholderHandler.key,
     ) as InstanceNode | null;
 
     const { componentProperties: props } = node;
@@ -153,7 +159,7 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
       // alt: ...
       ...(placeholder?.componentProperties && {
         fallback: identityPlaceholderHandler.codegen(
-          placeholder as InstanceNode & {
+          placeholder as typeof placeholder & {
             componentProperties: IdentityPlaceholderProperties;
           },
         ),
@@ -189,9 +195,7 @@ const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
 
     const avatarStackChildren = avatars.map((avatar) => {
       const { props, ...rest } = avatarHandler.codegen(
-        avatar as InstanceNode & {
-          componentProperties: AvatarProperties;
-        },
+        avatar as typeof avatar & { componentProperties: AvatarProperties },
       );
 
       return {
@@ -226,12 +230,12 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
   codegen: ({ componentProperties: props, children }) => {
     const tag = (() => {
       switch (props.Interaction.value) {
+        case "Default":
+          return "Callout";
         case "Actionable":
           return "ActionableCallout";
         case "Dismissible":
           return "DismissibleCallout";
-        case "Default":
-          return "Callout";
         default:
           return "Callout";
       }
@@ -376,18 +380,6 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   },
 };
 
-const fabHandler: ComponentHandler<FabProperties> = {
-  key: "1974b94703032585bb9e20bd54743e01094b965c",
-  codegen: ({ componentProperties: props }) => {
-    return createElement(
-      "Fab",
-      {},
-      createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
-      "aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
-    );
-  },
-};
-
 const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
   key: "032f3fddaad0aa3fa5a7f680768c1f5d02fb463f",
   codegen: ({ componentProperties: props }) => {
@@ -398,6 +390,18 @@ const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
     };
 
     return createElement("ExtendedFab", commonProps, props["Label#28936:0"].value);
+  },
+};
+
+const fabHandler: ComponentHandler<FabProperties> = {
+  key: "1974b94703032585bb9e20bd54743e01094b965c",
+  codegen: ({ componentProperties: props }) => {
+    return createElement(
+      "Fab",
+      {},
+      createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
+      "aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
+    );
   },
 };
 
@@ -474,6 +478,186 @@ const identityPlaceholderHandler: ComponentHandler<IdentityPlaceholderProperties
   },
 };
 
+const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
+  key: "ce587d0f21754af05240cb32a4880227cb0ea1e1",
+  codegen: (node) => {
+    const { componentProperties: props } = node;
+
+    const tag = (() => {
+      switch (props.Interaction.value) {
+        case "Default":
+          return "InlineBanner";
+        case "Actionable":
+          return "ActionableInlineBanner";
+        case "Dismissible":
+          return "DismissibleInlineBanner";
+        case "Link":
+          return "LinkInlineBanner";
+        default:
+          return "InlineBanner";
+      }
+    })();
+
+    const textNode = node.findOne(
+      (child) => child.type === "TEXT" && child.name === "Label",
+    ) as TextNode;
+    const slices = textNode.getStyledTextSegments(["fontWeight"]);
+
+    let title: string | undefined;
+    let description: string | undefined;
+
+    switch (slices.length) {
+      case 1: {
+        description = slices[0]?.characters.trim();
+
+        break;
+      }
+      case 2: {
+        title = slices[0]?.characters.trim();
+        description = slices[1]?.characters.trim();
+
+        break;
+      }
+    }
+
+    const iconNode = node.findOne(
+      (child) => child.type === "INSTANCE" && child.name === "icon",
+    ) as InstanceNode;
+
+    const commonProps = {
+      variant: camelCase(props.Variant.value),
+      title,
+      description,
+      ...(tag === "LinkInlineBanner" && {
+        linkLabel: props["Link Text#1547:81"].value,
+        linkProps: {},
+      }),
+      ...(props["Prefix Icon#11840:27"].value &&
+        iconNode &&
+        iconNode.mainComponent && {
+          // Figma: 종류별로 아이콘이 지정되어 있음
+          // 웹 구현체: icon prop으로 열려 있음
+          icon: createElement(createIconTagNameFromKey(iconNode.mainComponent.key)),
+        }),
+    };
+
+    return createElement(tag, commonProps);
+  },
+};
+
+const progressCircleHandler: ComponentHandler<ProgressCircleProperties> = {
+  key: "6e6779a372cab2485a0e25529bc4dbc9932a7346",
+  codegen: ({ componentProperties: props }) => {
+    const { value, minValue, maxValue } = match(props.Value.value)
+      .with("Indeterminate", () => ({
+        value: undefined,
+        minValue: undefined,
+        maxValue: undefined,
+      }))
+      .with("0%", () => ({
+        value: 0,
+        minValue: 0,
+        maxValue: 100,
+      }))
+      .with("25%", () => ({
+        value: 25,
+        minValue: 0,
+        maxValue: 100,
+      }))
+      .with("75%", () => ({
+        value: 75,
+        minValue: 0,
+        maxValue: 100,
+      }))
+      .with("100%", () => ({
+        value: 100,
+        minValue: 0,
+        maxValue: 100,
+      }))
+      .exhaustive();
+
+    const commonProps = {
+      value,
+      minValue,
+      maxValue,
+      size: props.Size.value,
+      tone: camelCase(props.Tone.value),
+    };
+
+    return createElement("ProgressCircle", commonProps);
+  },
+};
+
+const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
+  key: "ec43e4e881f7048e95601f8b58c01a0905a174e0",
+  codegen: ({ componentProperties: props }) => {
+    const commonProps = {
+      prefixIcon: createElement(createIconTagNameFromId(props["Icon#12379:0"].value)),
+      ...(props["Show Count#6397:33"].value && {
+        count: Number(props["Count#15816:0"].value),
+      }),
+      size: props.Size.value.toLowerCase(),
+      ...(props.State.value === "Loading" && {
+        loading: true,
+      }),
+      ...(props.State.value === "Disabled" && {
+        disabled: true,
+      }),
+      ...(props.Selected.value === "True" && {
+        defaultPressed: true,
+      }),
+    };
+
+    return createElement("ReactionButton", commonProps, props["Label#6397:0"].value);
+  },
+};
+
+const segmentedControlHandler: ComponentHandler<SegmentedControlProperties> = {
+  key: "3ad7133ba52755867f42f9232375f75639e00d58",
+  codegen: ({ children }) => {
+    const segments = children.filter((child) => child.type === "INSTANCE") as InstanceNode[];
+
+    const selectedSegment = segments.find(
+      (segment) =>
+        "State" in segment.componentProperties &&
+        typeof segment.componentProperties?.State.value === "string" &&
+        segment.componentProperties?.State.value.split("-").includes("Selected"),
+    ) as InstanceNode & { componentProperties: SegmentedControlItemProperties };
+
+    const segmentedControlChildren = segments.map((segment) =>
+      segmentedControlItemHandler.codegen(
+        segment as typeof segment & { componentProperties: SegmentedControlItemProperties },
+      ),
+    );
+
+    const commonProps = {
+      defaultValue: selectedSegment.componentProperties["Label#11366:15"].value,
+    };
+
+    return createElement(
+      "SegmentedControl",
+      commonProps,
+      segmentedControlChildren,
+      "aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
+    );
+  },
+};
+
+const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperties> = {
+  key: "9a7ba0d4c041ddbce84ee48881788434fd6bccc8",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+    const commonProps = {
+      value: props["Label#11366:15"].value,
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("SegmentedControlSegment", commonProps, props["Label#11366:15"].value);
+  },
+};
+
 const componentHandlers = [
   actionButtonHandler,
   actionChipHandler,
@@ -483,10 +667,14 @@ const componentHandlers = [
   calloutHandler,
   checkboxHandler,
   controlChipHandler,
-  fabHandler,
   extendedFabHandler,
+  fabHandler,
   helpBubbleHandler,
   identityPlaceholderHandler,
+  inlineBannerHandler,
+  progressCircleHandler,
+  reactionButtonHandler,
+  segmentedControlHandler,
 ] as ComponentHandler[];
 
 export const componentHandlerMap = new Map(
