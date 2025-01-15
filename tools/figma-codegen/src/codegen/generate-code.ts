@@ -8,6 +8,7 @@ import { createLayoutProps } from "./layout";
 import { createSizingProps } from "./sizing";
 import { createTextProps, getTextStyleTag } from "./text";
 import { iconRecord } from "./icon/data";
+import { getColorVariableName } from "./variable";
 
 export function generateCode(selection: SceneNode) {
   function handleFrameNode(node: FrameNode | InstanceNode | ComponentNode) {
@@ -33,28 +34,37 @@ export function generateCode(selection: SceneNode) {
   function handleTextNode(node: TextNode): ElementNode {
     const maxLines = node.textTruncation === "ENDING" ? (node.maxLines ?? undefined) : undefined;
 
-    const segments = node.getStyledTextSegments([
-      "textStyleId",
-      "fontSize",
-      "fontWeight",
-      "lineHeight",
-      "boundVariables",
-    ]);
+    const segments = node.getStyledTextSegments(["textStyleId", "fills", "boundVariables"]);
 
-    function handleTextSegment(segment: (typeof segments)[number]) {
+    function handleTextSegment(segment: (typeof segments)[number], as?: string) {
       const style = figma.getStyleById(segment.textStyleId);
 
       if (style && style.type === "TEXT") {
-        const textStyleTag = getTextStyleTag(style);
+        if (segment.fills.length > 1) {
+          throw new Error("Expected a single fill");
+        }
+
+        const onlyFill = segment.fills.length === 1 ? segment.fills[0] : null;
+        const fillBoundVariableId =
+          onlyFill && onlyFill.type === "SOLID"
+            ? (onlyFill.boundVariables?.color?.id ?? null)
+            : null;
+
+        const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : undefined;
+
+        const tag = as ?? getTextStyleTag(style);
 
         return createElement(
           "Text",
           {
-            as: textStyleTag,
+            as: tag,
             variant: camelCase(style.name, { mergeAmbiguousCharacters: true }),
+            ...(color ? { color } : {}),
           },
           segment.characters,
-          `${textStyleTag} 태그 사용이 적절한지 확인하세요.`,
+          `${
+            color === undefined ? "color 프로퍼티는 반영되지 않았습니다. " : ""
+          }${tag} 태그 사용이 적절한지 확인하세요.`,
         );
       }
 
@@ -65,20 +75,33 @@ export function generateCode(selection: SceneNode) {
 
       const { fontSize, fontWeight, lineHeight } = textProps;
 
+      if (segment.fills.length > 1) {
+        throw new Error("Expected a single fill");
+      }
+
+      const onlyFill = segment.fills.length === 1 ? segment.fills[0] : null;
+      const fillBoundVariableId =
+        onlyFill && onlyFill.type === "SOLID" ? (onlyFill.boundVariables?.color?.id ?? null) : null;
+
+      const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : null;
+
+      const tag = as ?? "span";
+
       return createElement(
         "Text",
         {
-          as: "span",
+          as: tag,
           ...(fontSize ? { fontSize } : {}),
           ...(fontWeight ? { fontWeight } : {}),
           ...(lineHeight ? { lineHeight } : {}),
+          ...(color ? { color } : {}),
         },
         segment.characters,
         `${
           unavailableProps.length > 0
             ? `${unavailableProps.join(", ")} 프로퍼티는 반영되지 않았습니다. `
             : ""
-        }span 태그 사용이 적절한지 확인하세요.`,
+        }${tag} 태그 사용이 적절한지 확인하세요.`,
       );
     }
 
@@ -89,7 +112,7 @@ export function generateCode(selection: SceneNode) {
           as: "span",
           maxLines,
         },
-        segments.map(handleTextSegment),
+        segments.map((segment) => handleTextSegment(segment, "span")),
         "span 태그 사용이 적절한지 확인하세요.",
       );
     }

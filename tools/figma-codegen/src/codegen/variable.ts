@@ -2,9 +2,7 @@ import { camelCase } from "change-case";
 
 function getNameFromSlashSeparatedVariableName(id: string) {
   const variable = figma.variables.getVariableById(id);
-  if (!variable) {
-    throw new Error(`Variable not found: ${id}`);
-  }
+  if (!variable) return undefined;
 
   const name = variable.name.split("/").pop() as string;
 
@@ -17,9 +15,7 @@ export const getTypographyVariableName = getNameFromSlashSeparatedVariableName;
 
 export function getColorVariableName(id: string) {
   const variable = figma.variables.getVariableById(id);
-  if (!variable) {
-    throw new Error(`Variable not found: ${id}`);
-  }
+  if (!variable) return undefined;
 
   const [group, name] = variable.name.split("/") as [string, string];
 
