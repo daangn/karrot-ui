@@ -19,12 +19,13 @@ function handleColor(color: string | undefined) {
   return vars.$color[type][value] ?? undefined;
 }
 
-function handleSpacing(spacing: string | undefined) {
-  if (!spacing) {
+function handleDimension(dimension: string | undefined) {
+  if (!dimension) {
     return undefined;
   }
+  const [type, value] = dimension.split(".");
   // @ts-ignore
-  return vars.$dimension[spacing] ?? vars.$horizontalSpacing[spacing] ?? undefined;
+  return vars.$dimension[dimension] ?? vars.$dimension[type][value] ?? undefined;
 }
 
 function handleSize(size: string | undefined) {
@@ -211,14 +212,14 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-height": handleSize(height),
           "--seed-box-min-height": handleSize(minHeight),
           "--seed-box-max-height": handleSize(maxHeight),
-          "--seed-box-padding": handleSpacing(padding),
-          "--seed-box-padding-x": handleSpacing(paddingX),
-          "--seed-box-padding-y": handleSpacing(paddingY),
-          "--seed-box-padding-top": handleSpacing(paddingTop),
-          "--seed-box-padding-right": handleSpacing(paddingRight),
-          "--seed-box-padding-bottom": handleSpacing(paddingBottom),
-          "--seed-box-padding-left": handleSpacing(paddingLeft),
-          "--seed-box-gap": handleSpacing(gap),
+          "--seed-box-padding": handleDimension(padding),
+          "--seed-box-padding-x": handleDimension(paddingX),
+          "--seed-box-padding-y": handleDimension(paddingY),
+          "--seed-box-padding-top": handleDimension(paddingTop),
+          "--seed-box-padding-right": handleDimension(paddingRight),
+          "--seed-box-padding-bottom": handleDimension(paddingBottom),
+          "--seed-box-padding-left": handleDimension(paddingLeft),
+          "--seed-box-gap": handleDimension(gap),
           "--seed-box-display": display,
           "--seed-box-position": position,
           "--seed-box-overflow-x": overflowX,
