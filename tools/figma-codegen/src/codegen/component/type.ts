@@ -604,3 +604,52 @@ export type TextButtonProperties = InferFromDefinition<{
     variantOptions: ["Enabled", "Enabled-Pressed", "Disabled"];
   };
 }>;
+
+export type ToggleButtonProperties = InferFromDefinition<{
+  "Show Prefix Icon#6122:392": {
+    type: "BOOLEAN";
+    defaultValue: false;
+  };
+  "Suffix Icon#6122:343": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "102:6307";
+    preferredValues: [];
+  };
+  "Show Suffix Icon#6122:147": {
+    type: "BOOLEAN";
+    defaultValue: false;
+  };
+  "Prefix Icon#6122:98": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:3989";
+    preferredValues: [];
+  };
+  "Label#6122:49": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  Variant: {
+    type: "VARIANT";
+    defaultValue: "Brand Solid";
+    variantOptions: ["Neutral Weak", "Brand Solid"];
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "XSmall";
+    variantOptions: ["Small", "XSmall"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled-Selected";
+    variantOptions: [
+      "Enabled",
+      "Disabled",
+      "Enabled-Selected",
+      "Enabled-Selected-Pressed",
+      "Enabled-Loading",
+      "Disabled-Selected",
+      "Enabled-Pressed",
+      "Enabled-Selected-Loading",
+    ];
+  };
+}>;

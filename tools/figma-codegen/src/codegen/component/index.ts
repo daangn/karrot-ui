@@ -27,6 +27,7 @@ import type {
   SnackbarProperties,
   SwitchProperties,
   TextButtonProperties,
+  ToggleButtonProperties,
 } from "./type";
 import { getLayoutVariableName } from "../variable";
 
@@ -858,6 +859,36 @@ const textButtonHandler: ComponentHandler<TextButtonProperties> = {
 //   },
 // };
 
+const toggleButtonHandler: ComponentHandler<ToggleButtonProperties> = {
+  key: "1d240ee5fd7a56879713e69cbea1b6f006f0ea22",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      variant: camelCase(props.Variant.value),
+      size: camelCase(props.Size.value),
+      ...(props["Show Prefix Icon#6122:392"].value && {
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#6122:98"].value)),
+      }),
+      ...(props["Show Suffix Icon#6122:147"].value && {
+        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#6122:343"].value)),
+      }),
+      ...(states.includes("Selected") && {
+        // XXX: selected vs pressed
+        defaultPressed: true,
+      }),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+      ...(states.includes("Loading") && {
+        loading: true,
+      }),
+    };
+
+    return createElement("ToggleButton", commonProps, props["Label#6122:49"].value);
+  },
+};
+
 const componentHandlers = [
   actionButtonHandler,
   actionChipHandler,
@@ -879,6 +910,7 @@ const componentHandlers = [
   skeletonHandler,
   snackbarHandler,
   textButtonHandler,
+  toggleButtonHandler,
 ] as ComponentHandler[];
 
 export const componentHandlerMap = new Map(
