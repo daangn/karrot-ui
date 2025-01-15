@@ -3,9 +3,8 @@ import type {
   ColorFg,
   ColorPalette,
   ColorStroke,
-  HorizontalSpacing,
+  Dimension,
   Radius,
-  Unit,
 } from "@seed-design/vars";
 import { vars } from "@seed-design/vars";
 import clsx from "clsx";
@@ -76,17 +75,17 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   borderBottomLeftRadius?: Radius;
 
-  width?: Unit | "full" | (string & {});
+  width?: Dimension | "full" | (string & {});
 
-  minWidth?: Unit | "full" | (string & {});
+  minWidth?: Dimension | "full" | (string & {});
 
-  maxWidth?: Unit | "full" | (string & {});
+  maxWidth?: Dimension | "full" | (string & {});
 
-  height?: Unit | "full" | (string & {});
+  height?: Dimension | "full" | (string & {});
 
-  minHeight?: Unit | "full" | (string & {});
+  minHeight?: Dimension | "full" | (string & {});
 
-  maxHeight?: Unit | "full" | (string & {});
+  maxHeight?: Dimension | "full" | (string & {});
 
   top?: 0;
 
@@ -96,19 +95,19 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   bottom?: 0;
 
-  padding?: Unit;
+  padding?: Dimension;
 
-  paddingX?: Unit | HorizontalSpacing;
+  paddingX?: Dimension;
 
-  paddingY?: Unit;
+  paddingY?: Dimension;
 
-  paddingTop?: Unit;
+  paddingTop?: Dimension;
 
-  paddingRight?: Unit | HorizontalSpacing;
+  paddingRight?: Dimension;
 
-  paddingBottom?: Unit;
+  paddingBottom?: Dimension;
 
-  paddingLeft?: Unit | HorizontalSpacing;
+  paddingLeft?: Dimension;
 
   display?: "block" | "flex" | "inline-flex" | "inline" | "inline-block" | "none";
 
@@ -134,7 +133,7 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   alignContent?: "flex-start" | "flex-end" | "center" | "stretch";
 
-  gap?: Unit | HorizontalSpacing;
+  gap?: Dimension;
 }
 
 export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
