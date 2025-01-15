@@ -192,7 +192,7 @@ export function useRadioGroup(props: UseRadioGroupProps) {
             }
           },
           disabled: itemState.disabled,
-          defaultChecked: itemState.checked,
+          defaultChecked: isControlled ? undefined : itemState.checked,
           checked: isControlled ? itemState.checked : undefined,
           style: visuallyHidden,
         }),
