@@ -21,7 +21,13 @@ import type {
   ReactionButtonProperties,
   SegmentedControlItemProperties,
   SegmentedControlProperties,
+  SelectBoxItemProperties,
+  SelectBoxProperties,
+  SkeletonProperties,
+  SnackbarProperties,
+  SwitchProperties,
 } from "./type";
+import { getLayoutVariableName } from "../variable";
 
 export interface ComponentHandler<
   T extends InstanceNode["componentProperties"] = InstanceNode["componentProperties"],
@@ -179,24 +185,28 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
 const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
   key: "019467fdad2192abb48699dcfb79e344df04b799",
   codegen: ({ componentProperties: props, children }) => {
-    const avatarStackItems = children.filter(
-      (child) => child.type === "INSTANCE" && child.name.includes("Avatar"),
-    ) as InstanceNode[];
+    const avatars = children
+      .map((avatarStackItem) => {
+        if ("findChild" in avatarStackItem === false) return null;
 
-    const avatars = avatarStackItems
-      .filter(
-        (item) => item.children.length > 0 && (item.children[0] as SceneNode).type === "INSTANCE",
-      )
-      .map((item) => item.children[0] as InstanceNode);
+        const avatar = avatarStackItem.findChild(
+          (avatarStackItemChild) =>
+            avatarStackItemChild.type === "INSTANCE" &&
+            (avatarStackItemChild.mainComponent?.parent?.type === "COMPONENT_SET"
+              ? avatarStackItemChild.mainComponent.parent.key === avatarHandler.key
+              : avatarStackItemChild.mainComponent?.key === avatarHandler.key),
+        ) as (InstanceNode & { componentProperties: AvatarProperties }) | null;
+
+        return avatar ?? null;
+      })
+      .filter((avatar) => avatar !== null);
 
     const commonProps = {
       size: props.Size.value,
     };
 
     const avatarStackChildren = avatars.map((avatar) => {
-      const { props, ...rest } = avatarHandler.codegen(
-        avatar as typeof avatar & { componentProperties: AvatarProperties },
-      );
+      const { props, ...rest } = avatarHandler.codegen(avatar);
 
       return {
         ...rest,
@@ -528,7 +538,7 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
       variant: camelCase(props.Variant.value),
       title,
       description,
-      ...(tag === "LinkInlineBanner" && {
+      ...(props.Interaction.value === "Link" && {
         linkLabel: props["Link Text#1547:81"].value,
         linkProps: {},
       }),
@@ -615,23 +625,27 @@ const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
 const segmentedControlHandler: ComponentHandler<SegmentedControlProperties> = {
   key: "3ad7133ba52755867f42f9232375f75639e00d58",
   codegen: ({ children }) => {
-    const segments = children.filter((child) => child.type === "INSTANCE") as InstanceNode[];
+    const segments = children.filter(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === segmentedControlItemHandler.key) ||
+          child.mainComponent?.key === segmentedControlItemHandler.key),
+    ) as (InstanceNode & { componentProperties: SegmentedControlItemProperties })[];
 
     const selectedSegment = segments.find(
       (segment) =>
         "State" in segment.componentProperties &&
         typeof segment.componentProperties?.State.value === "string" &&
         segment.componentProperties?.State.value.split("-").includes("Selected"),
-    ) as InstanceNode & { componentProperties: SegmentedControlItemProperties };
-
-    const segmentedControlChildren = segments.map((segment) =>
-      segmentedControlItemHandler.codegen(
-        segment as typeof segment & { componentProperties: SegmentedControlItemProperties },
-      ),
     );
 
+    const segmentedControlChildren = segments.map(segmentedControlItemHandler.codegen);
+
     const commonProps = {
-      defaultValue: selectedSegment.componentProperties["Label#11366:15"].value,
+      ...(selectedSegment && {
+        defaultValue: selectedSegment.componentProperties["Label#11366:15"].value,
+      }),
     };
 
     return createElement(
@@ -658,6 +672,155 @@ const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperti
   },
 };
 
+const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
+  key: "a3d58bb8540600878742cdcf2608a4b3851667ec",
+  codegen: ({ componentProperties: props, children }) => {
+    const tag = (() => {
+      switch (props.Control.value) {
+        case "Checkbox":
+          return "CheckSelectBoxGroup";
+        case "Radio":
+          return "RadioSelectBoxGroup";
+      }
+    })();
+
+    const selectBoxItems = children.filter(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === selectBoxItemHandler.key) ||
+          child.mainComponent?.key === selectBoxItemHandler.key),
+    ) as (InstanceNode & { componentProperties: SelectBoxItemProperties })[];
+
+    const selectedSelectBoxItem = selectBoxItems.find(
+      (selectBoxItem) =>
+        "State" in selectBoxItem.componentProperties &&
+        typeof selectBoxItem.componentProperties?.State.value === "string" &&
+        selectBoxItem.componentProperties?.State.value.split("-").includes("Selected"),
+    );
+
+    const selectBoxChildren = selectBoxItems.map(selectBoxItemHandler.codegen);
+
+    const commonProps = {
+      ...(props.Control.value === "Radio" && {
+        defaultValue: selectedSelectBoxItem?.componentProperties["Label#3635:0"].value,
+      }),
+    };
+
+    return createElement(tag, commonProps, selectBoxChildren);
+  },
+};
+
+const selectBoxItemHandler: ComponentHandler<SelectBoxItemProperties> = {
+  key: "38722ffeb4c966256a709155e8ddac50c93d7c60",
+  codegen: ({ componentProperties: props }) => {
+    const tag = (() => {
+      switch (props.Control.value) {
+        case "Checkbox":
+          return "CheckSelectBox";
+        case "Radio":
+          return "RadioSelectBox";
+      }
+    })();
+
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      label: props["Label#3635:0"].value,
+      ...(props["Description#3033:0"].value && {
+        description: props["Description #3033:5"].value,
+      }),
+      ...(props.Control.value === "Radio" && {
+        value: props["Label#3635:0"].value,
+      }),
+      ...(props.Control.value === "Checkbox" &&
+        states.includes("Selected") && {
+          defaultChecked: true,
+        }),
+    };
+
+    return createElement(tag, commonProps);
+  },
+};
+
+const skeletonHandler: ComponentHandler<SkeletonProperties> = {
+  key: "ef22c3288722fbfa64a5ab73df397ade88f8e05a",
+  codegen: ({
+    componentProperties: props,
+    width,
+    height,
+    layoutSizingHorizontal,
+    layoutSizingVertical,
+    boundVariables,
+    parent,
+  }) => {
+    const commonProps = {
+      radius: props.Radius.value.toLowerCase(),
+      width: (() => {
+        switch (layoutSizingHorizontal) {
+          case "FIXED": {
+            const variableId = boundVariables?.width?.id;
+            if (variableId) return getLayoutVariableName(variableId);
+
+            return `${width}px`;
+          }
+          case "FILL":
+            if (parent?.type === "FRAME" && parent.layoutMode === "VERTICAL") return "full";
+
+            // TODO: grow하는 Flex로 감싸야 할 수도 있다
+            return "full";
+          default:
+            return "full";
+        }
+      })(),
+      height: (() => {
+        switch (layoutSizingVertical) {
+          case "FIXED": {
+            const variableId = boundVariables?.height?.id;
+            if (variableId) return getLayoutVariableName(variableId);
+
+            return `${height}px`;
+          }
+          case "FILL":
+            if (parent?.type === "FRAME" && parent.layoutMode === "HORIZONTAL") return "full";
+
+            // TODO: grow하는 Flex로 감싸야 할 수도 있다
+            return "full";
+          default:
+            return "full";
+        }
+      })(),
+    };
+
+    return createElement("Skeleton", commonProps);
+  },
+};
+
+const snackbarHandler: ComponentHandler<SnackbarProperties> = {
+  key: "81b17fb8c7d731a19cf8d36a8605559d41414eca",
+  codegen: ({ componentProperties: props }) => {
+    const commonProps = {
+      message: props["Message#1528:4"].value,
+      variant: props.Variant.value.toLowerCase(),
+      ...(props["Action Button#1528:0"].value && {
+        actionLabel: props["Action Button Label#1528:8"].value,
+      }),
+    };
+
+    // TODO: adapter.create({ render })
+    return createElement("Snackbar", commonProps);
+  },
+};
+
+// const switchHandler: ComponentHandler<SwitchProperties> = {
+//   key: "80ce5a33b5ab713ab3bd2449472e2fb13d78c7f3",
+//   codegen: ({ componentProperties: props }) => {
+//     const commonProps = {};
+
+//     return createElement("Switch", commonProps);
+//   },
+// };
+
 const componentHandlers = [
   actionButtonHandler,
   actionChipHandler,
@@ -675,6 +838,9 @@ const componentHandlers = [
   progressCircleHandler,
   reactionButtonHandler,
   segmentedControlHandler,
+  selectBoxHandler,
+  skeletonHandler,
+  snackbarHandler,
 ] as ComponentHandler[];
 
 export const componentHandlerMap = new Map(

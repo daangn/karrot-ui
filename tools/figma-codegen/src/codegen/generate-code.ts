@@ -1,12 +1,13 @@
 import { camelCase } from "change-case";
 import { createBackgroundProps, createBorderProps, createColorProps } from "./color";
 import { componentHandlerMap } from "./component";
-import { createIconTagNameFromKey, isIconComponent } from "./icon";
+import { createIconTagNameFromKey, createMonochromeIconFillProps, isIconComponent } from "./icon";
 import type { ElementNode } from "./jsx";
 import { createElement, stringifyElement } from "./jsx";
 import { createLayoutProps } from "./layout";
 import { createSizingProps } from "./sizing";
-import { createBodyProps, createHeadingProps, isBodyText, isHeadingText } from "./text";
+import { createTextProps, getTextStyleTag } from "./text";
+import { iconRecord } from "./icon/data";
 
 export function generateCode(selection: SceneNode) {
   function handleFrameNode(node: FrameNode | InstanceNode | ComponentNode) {
@@ -29,33 +30,74 @@ export function generateCode(selection: SceneNode) {
     );
   }
 
-  function handleTextNode(node: TextNode) {
-    if (!node.textStyleId) {
-      return createElement("span", {}, node.characters);
-    }
-    if (node.textStyleId === figma.mixed) {
-      return createElement("span", {}, node.characters, "Mixed text style is not supported");
-    }
+  function handleTextNode(node: TextNode): ElementNode {
+    const maxLines = node.textTruncation === "ENDING" ? (node.maxLines ?? undefined) : undefined;
 
-    const textStyle = figma.getStyleById(node.textStyleId) as TextStyle;
+    const segments = node.getStyledTextSegments([
+      "textStyleId",
+      "fontSize",
+      "fontWeight",
+      "lineHeight",
+      "boundVariables",
+    ]);
 
-    if (isHeadingText(textStyle)) {
-      return createElement(
-        "Heading",
-        { ...createHeadingProps(textStyle), ...createColorProps(node) },
-        node.characters,
-      );
-    }
+    function handleTextSegment(segment: (typeof segments)[number]) {
+      const style = figma.getStyleById(segment.textStyleId);
 
-    if (isBodyText(textStyle)) {
+      if (style && style.type === "TEXT") {
+        const textStyleTag = getTextStyleTag(style);
+
+        return createElement(
+          "Text",
+          {
+            as: textStyleTag,
+            variant: camelCase(style.name, { mergeAmbiguousCharacters: true }),
+          },
+          segment.characters,
+          `${textStyleTag} 태그 사용이 적절한지 확인하세요.`,
+        );
+      }
+
+      const textProps = createTextProps(segment.boundVariables);
+      const unavailableProps = Object.entries(textProps)
+        .filter(([_, value]) => !value)
+        .map(([key]) => key);
+
+      const { fontSize, fontWeight, lineHeight } = textProps;
+
       return createElement(
         "Text",
-        { ...createBodyProps(textStyle), ...createColorProps(node) },
-        node.characters,
+        {
+          as: "span",
+          ...(fontSize ? { fontSize } : {}),
+          ...(fontWeight ? { fontWeight } : {}),
+          ...(lineHeight ? { lineHeight } : {}),
+        },
+        segment.characters,
+        `${
+          unavailableProps.length > 0
+            ? `${unavailableProps.join(", ")} 프로퍼티는 반영되지 않았습니다. `
+            : ""
+        }span 태그 사용이 적절한지 확인하세요.`,
       );
     }
 
-    return createElement("span", {}, node.characters);
+    if (segments.length > 1) {
+      return createElement(
+        "Text",
+        {
+          as: "span",
+          maxLines,
+        },
+        segments.map(handleTextSegment),
+        "span 태그 사용이 적절한지 확인하세요.",
+      );
+    }
+
+    const onlySegment = segments[0];
+    if (!onlySegment) throw new Error();
+
+    return handleTextSegment(onlySegment);
   }
 
   function handleRectangleNode(node: RectangleNode) {
@@ -77,10 +119,9 @@ export function generateCode(selection: SceneNode) {
       mainComponent.parent?.type === "COMPONENT_SET" ? mainComponent.parent.key : null;
 
     if (isIconComponent(componentKey)) {
-      return createElement("Icon", {
-        svg: createElement(createIconTagNameFromKey(componentKey)),
+      return createElement(createIconTagNameFromKey(componentKey), {
         size: node.width,
-        ...createColorProps(node.children[0] as VectorNode),
+        ...(iconRecord[componentKey]?.type === "monochrome" && createMonochromeIconFillProps(node)),
       });
     }
 
@@ -111,7 +152,7 @@ export function generateCode(selection: SceneNode) {
   }
 
   function traverse(node: SceneNode): ElementNode | undefined {
-    if (!node.visible) {
+    if ("visible" in node && !node.visible) {
       return;
     }
 

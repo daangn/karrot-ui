@@ -452,6 +452,19 @@ export type ReactionButtonProperties = InferFromDefinition<{
   };
 }>;
 
+export type SegmentedControlProperties = InferFromDefinition<{
+  "Item Count": {
+    type: "VARIANT";
+    defaultValue: "2";
+    variantOptions: ["2", "3", "4"];
+  };
+  "Selected Item": {
+    type: "VARIANT";
+    defaultValue: "1";
+    variantOptions: ["1", "2", "3", "4"];
+  };
+}>;
+
 export type SegmentedControlItemProperties = InferFromDefinition<{
   "Label#11366:15": {
     type: "TEXT";
@@ -471,15 +484,90 @@ export type SegmentedControlItemProperties = InferFromDefinition<{
   };
 }>;
 
-export type SegmentedControlProperties = InferFromDefinition<{
+export type SelectBoxProperties = InferFromDefinition<{
+  Control: {
+    type: "VARIANT";
+    defaultValue: "Radio";
+    variantOptions: ["Checkbox", "Radio"];
+  };
   "Item Count": {
     type: "VARIANT";
-    defaultValue: "2";
-    variantOptions: ["2", "3", "4"];
-  };
-  "Selected Item": {
-    type: "VARIANT";
     defaultValue: "1";
-    variantOptions: ["1", "2", "3", "4"];
+    variantOptions: ["1", "2", "3", "4", "5", "6"];
+  };
+}>;
+
+export type SelectBoxItemProperties = InferFromDefinition<{
+  "Label#3635:0": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  "Description #3033:5": {
+    type: "TEXT";
+    defaultValue: "내용을 입력해보세요";
+  };
+  "Description#3033:0": {
+    type: "BOOLEAN";
+    defaultValue: true;
+  };
+  Control: {
+    type: "VARIANT";
+    defaultValue: "Radio";
+    variantOptions: ["Radio", "Checkbox"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Enabled-Selected", "Enabled-Pressed", "Enabled-Selected-Pressed", "Enabled"];
+  };
+}>;
+
+export type SkeletonProperties = InferFromDefinition<{
+  Radius: {
+    type: "VARIANT";
+    defaultValue: "0";
+    variantOptions: ["0", "8", "16", "Full"];
+  };
+}>;
+
+export type SnackbarProperties = InferFromDefinition<{
+  "Action Button Label#1528:8": {
+    type: "TEXT";
+    defaultValue: "확인";
+  };
+  "Message#1528:4": {
+    type: "TEXT";
+    defaultValue: "메세지를 입력하세요";
+  };
+  "Action Button#1528:0": {
+    type: "BOOLEAN";
+    defaultValue: true;
+  };
+  Variant: {
+    type: "VARIANT";
+    defaultValue: "Default";
+    variantOptions: ["Default", "Positive", "Danger"];
+  };
+}>;
+
+export type SwitchProperties = InferFromDefinition<{
+  "Label#15191:2": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Medium";
+    variantOptions: ["Medium", "Small"];
+  };
+  Selected: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["False", "True"];
+  };
+  States: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Disabled", "Enabled"];
   };
 }>;
