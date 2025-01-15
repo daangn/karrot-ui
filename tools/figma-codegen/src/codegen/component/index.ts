@@ -41,31 +41,31 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
   key: "450ede9d0bf42fc6ef14345c77e6e407d6d5ee89",
   codegen: ({ componentProperties: props }) => {
     const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon only", () => ({
+      .with("Icon Only", () => ({
         layout: "iconOnly",
         prefixIcon: undefined,
         suffixIcon: undefined,
         children: createElement(createIconTagNameFromId(props["Icon#7574:0"].value)),
       }))
-      .with("Icon first", () => ({
+      .with("Icon First", () => ({
         layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#5987:305"].value)),
         suffixIcon: undefined,
         children: props["Label#5987:61"].value,
       }))
-      .with("Icon last", () => ({
+      .with("Icon Last", () => ({
         layout: "withText",
         prefixIcon: undefined,
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
         children: props["Label#5987:61"].value,
       }))
-      .with("Icon both", () => ({
+      .with("Icon Both", () => ({
         layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#5987:305"].value)),
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
         children: props["Label#5987:61"].value,
       }))
-      .with("Text only", () => ({
+      .with("Text Only", () => ({
         layout: "withText",
         prefixIcon: undefined,
         suffixIcon: undefined,
@@ -95,31 +95,31 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
   key: "3d21594ef116e94a9465d507447b858aea062575",
   codegen: ({ componentProperties: props }) => {
     const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon only", () => ({
+      .with("Icon Only", () => ({
         layout: "iconOnly",
         prefixIcon: undefined,
         suffixIcon: undefined,
         children: createElement(createIconTagNameFromId(props["Icon#8714:0"].value)),
       }))
-      .with("Icon first", () => ({
+      .with("Icon First", () => ({
         layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon last", () => ({
+      .with("Icon Last", () => ({
         layout: "withText",
         prefixIcon: undefined,
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon both", () => ({
+      .with("Icon Both", () => ({
         layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
         children: props["Label#7185:0"].value,
       }))
-      .with("Text only", () => ({
+      .with("Text Only", () => ({
         layout: "withText",
         prefixIcon: undefined,
         suffixIcon: undefined,
@@ -153,7 +153,7 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
 
     const { componentProperties: props } = node;
 
-    const avatarHasSrc = props["Image#71850:57"].value;
+    const avatarHasSrc = props["Show Image#71850:57"].value;
 
     const commonProps = {
       ...(avatarHasSrc && {
@@ -169,7 +169,7 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
     return createElement(
       "Avatar",
       commonProps,
-      props["Badge#1398:26"].value ? createElement("AvatarBadge", {}) : undefined,
+      props["Show Badge#1398:26"].value ? createElement("AvatarBadge", {}) : undefined,
       avatarHasSrc ? "alt 텍스트를 제공해야 합니다." : undefined,
     );
   },
@@ -292,7 +292,7 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
       title,
       description,
       linkLabel,
-      ...(props["Prefix Icon#12598:229"].value && {
+      ...(props["Icon#12598:210"].value && {
         icon: createElement(createIconTagNameFromId(props["Icon#12598:210"].value)),
       }),
     };
@@ -331,7 +331,7 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   key: "5780d56fc2f9bc4bbd6bc3db93949d8a8b7b7563",
   codegen: ({ componentProperties: props }) => {
     const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon only", () => {
+      .with("Icon Only", () => {
         return {
           layout: "iconOnly",
           prefixIcon: undefined,
@@ -339,25 +339,25 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
           children: createElement(createIconTagNameFromId(props["Icon#8722:41"].value)),
         };
       })
-      .with("Icon first", () => ({
+      .with("Icon First", () => ({
         layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon last", () => ({
+      .with("Icon Last", () => ({
         layout: "withText",
         prefixIcon: undefined,
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon both", () => ({
+      .with("Icon Both", () => ({
         layout: "withText",
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
         children: props["Label#7185:0"].value,
       }))
-      .with("Text only", () => ({
+      .with("Text Only", () => ({
         layout: "withText",
         prefixIcon: undefined,
         suffixIcon: undefined,
@@ -453,10 +453,10 @@ const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
 
     const commonProps = {
       title: props["Title#62535:0"].value,
-      ...(props["Description#62499:0"].value && {
+      ...(props["Show Description#62499:0"].value && {
         description: props["Description#62535:98"].value,
       }),
-      showCloseButton: props["Close Button"].value === "True",
+      showCloseButton: props["Show Close Button"].value === "True",
       defaultOpen: true,
       placement,
     };
@@ -533,7 +533,7 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
       ...(props.Interaction.value === "Link" && {
         linkLabel: props["Link Label#1547:81"].value,
       }),
-      ...(props["Prefix Icon#11840:27"].value &&
+      ...(props["Show Icon#11840:27"].value &&
         iconNode &&
         iconNode.mainComponent && {
           // Figma: 종류별로 아이콘이 지정되어 있음
@@ -592,19 +592,21 @@ const progressCircleHandler: ComponentHandler<ProgressCircleProperties> = {
 const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
   key: "ec43e4e881f7048e95601f8b58c01a0905a174e0",
   codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
     const commonProps = {
       prefixIcon: createElement(createIconTagNameFromId(props["Icon#12379:0"].value)),
       ...(props["Show Count#6397:33"].value && {
         count: Number(props["Count#15816:0"].value),
       }),
       size: camelCase(props.Size.value),
-      ...(props.State.value === "Loading" && {
+      ...(states.includes("Loading") && {
         loading: true,
       }),
-      ...(props.State.value === "Disabled" && {
+      ...(states.includes("Disabled") && {
         disabled: true,
       }),
-      ...(props.Selected.value === "True" && {
+      ...(states.includes("Selected") && {
         defaultPressed: true,
       }),
     };
@@ -718,7 +720,7 @@ const selectBoxItemHandler: ComponentHandler<SelectBoxItemProperties> = {
 
     const commonProps = {
       label: props["Label#3635:0"].value,
-      ...(props["Description#3033:0"].value && {
+      ...(props["Show Description#3033:0"].value && {
         description: props["Description #3033:5"].value,
       }),
       ...(props.Control.value === "Radio" && {
@@ -793,7 +795,7 @@ const snackbarHandler: ComponentHandler<SnackbarProperties> = {
     const commonProps = {
       message: props["Message#1528:4"].value,
       variant: camelCase(props.Variant.value),
-      ...(props["Action Button#1528:0"].value && {
+      ...(props["Show Action Button#1528:0"].value && {
         actionLabel: props["Action Button Label#1528:8"].value,
       }),
     };

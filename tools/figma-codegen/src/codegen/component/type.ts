@@ -44,8 +44,8 @@ export type ActionButtonProperties = InferFromDefinition<{
   };
   Layout: {
     type: "VARIANT";
-    defaultValue: "Text only";
-    variantOptions: ["Text only", "Icon first", "Icon last", "Icon both", "Icon only"];
+    defaultValue: "Text Only";
+    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
   };
 }>;
 
@@ -79,8 +79,8 @@ export type ActionChipProperties = InferFromDefinition<{
   };
   Layout: {
     type: "VARIANT";
-    defaultValue: "Text only";
-    variantOptions: ["Text only", "Icon first", "Icon last", "Icon both", "Icon only"];
+    defaultValue: "Text Only";
+    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
   };
   Size: {
     type: "VARIANT";
@@ -95,11 +95,11 @@ export type ActionChipProperties = InferFromDefinition<{
 }>;
 
 export type AvatarProperties = InferFromDefinition<{
-  "Image#71850:57": {
+  "Show Image#71850:57": {
     type: "BOOLEAN";
     defaultValue: false;
   };
-  "Badge#1398:26": {
+  "Show Badge#1398:26": {
     type: "BOOLEAN";
     defaultValue: false;
   };
@@ -121,7 +121,7 @@ export type AvatarStackProperties = InferFromDefinition<{
     defaultValue: "Last Item";
     variantOptions: ["Last Item", "First Item"];
   };
-  Count: {
+  "Item Count": {
     type: "VARIANT";
     defaultValue: "5";
     variantOptions: ["2", "3", "4", "5"];
@@ -156,7 +156,7 @@ export type BadgeProperties = InferFromDefinition<{
 }>;
 
 export type CalloutProperties = InferFromDefinition<{
-  "Prefix Icon#12598:229": {
+  "Show Icon#12598:229": {
     type: "BOOLEAN";
     defaultValue: true;
   };
@@ -180,12 +180,12 @@ export type CalloutProperties = InferFromDefinition<{
     defaultValue: "Enabled";
     variantOptions: ["Enabled", "Pressed"];
   };
-  Title: {
+  "Show Title": {
     type: "VARIANT";
     defaultValue: "False";
     variantOptions: ["True", "False"];
   };
-  Link: {
+  "Show Link Label": {
     type: "VARIANT";
     defaultValue: "False";
     variantOptions: ["True", "False"];
@@ -259,13 +259,8 @@ export type ControlChipProperties = InferFromDefinition<{
   };
   Layout: {
     type: "VARIANT";
-    defaultValue: "Text only";
-    variantOptions: ["Text only", "Icon first", "Icon last", "Icon both", "Icon only"];
-  };
-  Selected: {
-    type: "VARIANT";
-    defaultValue: "False";
-    variantOptions: ["False", "True"];
+    defaultValue: "Text Only";
+    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
   };
   Size: {
     type: "VARIANT";
@@ -275,7 +270,14 @@ export type ControlChipProperties = InferFromDefinition<{
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed", "Disabled"];
+    variantOptions: [
+      "Enabled",
+      "Enabled-Pressed",
+      "Disabled",
+      "Enabled-Selected",
+      "Enabled-Selected-Pressed",
+      "Disabled-Selected",
+    ];
   };
 }>;
 
@@ -324,7 +326,7 @@ export type HelpBubbleProperties = InferFromDefinition<{
     type: "TEXT";
     defaultValue: "디스크립션";
   };
-  "Description#62499:0": {
+  "Show Description#62499:0": {
     type: "BOOLEAN";
     defaultValue: true;
   };
@@ -350,7 +352,7 @@ export type HelpBubbleProperties = InferFromDefinition<{
       "Top-Right",
     ];
   };
-  "Close Button": {
+  "Show Close Button": {
     type: "VARIANT";
     defaultValue: "False";
     variantOptions: ["False", "True"];
@@ -366,7 +368,7 @@ export type IdentityPlaceholderProperties = InferFromDefinition<{
 }>;
 
 export type InlineBannerProperties = InferFromDefinition<{
-  "Prefix Icon#11840:27": {
+  "Show Icon#11840:27": {
     type: "BOOLEAN";
     defaultValue: true;
   };
@@ -392,7 +394,7 @@ export type InlineBannerProperties = InferFromDefinition<{
       "Danger Solid",
     ];
   };
-  Title: {
+  "Show Title": {
     type: "VARIANT";
     defaultValue: "False";
     variantOptions: ["False", "True"];
@@ -418,6 +420,11 @@ export type ProgressCircleProperties = InferFromDefinition<{
 }>;
 
 export type ReactionButtonProperties = InferFromDefinition<{
+  "Icon#12379:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4010";
+    preferredValues: [];
+  };
   "Show Count#6397:33": {
     type: "BOOLEAN";
     defaultValue: true;
@@ -430,11 +437,6 @@ export type ReactionButtonProperties = InferFromDefinition<{
     type: "TEXT";
     defaultValue: "도움돼요";
   };
-  "Icon#12379:0": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:4010";
-    preferredValues: [];
-  };
   Size: {
     type: "VARIANT";
     defaultValue: "XSmall";
@@ -443,12 +445,16 @@ export type ReactionButtonProperties = InferFromDefinition<{
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed", "Loading", "Disabled"];
-  };
-  Selected: {
-    type: "VARIANT";
-    defaultValue: "False";
-    variantOptions: ["False", "True"];
+    variantOptions: [
+      "Enabled",
+      "Enabled-Selected-Pressed",
+      "Enabled-Selected-Loading",
+      "Disabled",
+      "Enabled-Pressed",
+      "Enabled-Loading",
+      "Enabled-Selected",
+      "Disabled-Selected",
+    ];
   };
 }>;
 
@@ -506,7 +512,7 @@ export type SelectBoxItemProperties = InferFromDefinition<{
     type: "TEXT";
     defaultValue: "내용을 입력해보세요";
   };
-  "Description#3033:0": {
+  "Show Description#3033:0": {
     type: "BOOLEAN";
     defaultValue: true;
   };
@@ -539,7 +545,7 @@ export type SnackbarProperties = InferFromDefinition<{
     type: "TEXT";
     defaultValue: "메세지를 입력하세요";
   };
-  "Action Button#1528:0": {
+  "Show Action Button#1528:0": {
     type: "BOOLEAN";
     defaultValue: true;
   };
@@ -560,15 +566,10 @@ export type SwitchProperties = InferFromDefinition<{
     defaultValue: "Medium";
     variantOptions: ["Medium", "Small"];
   };
-  Selected: {
-    type: "VARIANT";
-    defaultValue: "False";
-    variantOptions: ["False", "True"];
-  };
-  States: {
+  State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Disabled", "Enabled"];
+    variantOptions: ["Disabled", "Enabled", "Enabled-Selected", "Disabled-Selected"];
   };
 }>;
 
