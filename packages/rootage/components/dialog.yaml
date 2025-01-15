@@ -17,9 +17,9 @@ data:
       content:
         color: $color.bg.layer-default
         cornerRadius: $radius.s5
-        marginX: $unit.s8
-        paddingX: $unit.s5
-        paddingY: $unit.s5
+        marginX: $dimension.s8
+        paddingX: $dimension.s5
+        paddingY: $dimension.s5
         maxWidth: 272px
         enterDuration: $duration.s4
         enterTimingFunction: $timing-function.enter-expressive
@@ -29,10 +29,10 @@ data:
         exitTimingFunction: $timing-function.exit
         exitOpacity: 0
       header:
-        gap: $unit.s1_5
+        gap: $dimension.s1_5
       footer:
-        paddingTop: $unit.s4
-        gap: $unit.s2
+        paddingTop: $dimension.s4
+        gap: $dimension.s2
       title:
         color: $color.fg.neutral
         fontSize: $font-size.s7

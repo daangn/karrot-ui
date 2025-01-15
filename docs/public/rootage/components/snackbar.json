@@ -8,8 +8,8 @@
     "base": {
       "enabled": {
         "region": {
-          "paddingX": "$unit.s2",
-          "paddingY": "$unit.s2",
+          "paddingX": "$dimension.s2",
+          "paddingY": "$dimension.s2",
           "offsetDuration": "$duration.s4",
           "offsetTimingFunction": "$timing-function.easing"
         },
@@ -17,9 +17,9 @@
           "color": "$color.bg.neutral-solid",
           "cornerRadius": "$radius.s2",
           "minHeight": "44px",
-          "paddingX": "$unit.s4",
-          "paddingY": "$unit.s2_5",
-          "gap": "$unit.s2",
+          "paddingX": "$dimension.s4",
+          "paddingY": "$dimension.s2_5",
+          "gap": "$dimension.s2",
           "enterOpacity": 0,
           "enterDuration": "$duration.s4",
           "enterTimingFunction": "$timing-function.enter",
@@ -37,7 +37,7 @@
           "size": "24px"
         },
         "actionButton": {
-          "targetPaddingX": "$unit.s2",
+          "targetPaddingX": "$dimension.s2",
           "targetMinHeight": "44px",
           "color": "$color.fg.brand",
           "fontSize": "$font-size.s4",

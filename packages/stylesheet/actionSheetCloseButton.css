@@ -4,8 +4,8 @@
     justify-content: center;
     background-color: var(--seed-v3-color-bg-neutral-weak);
     min-height: 52px;
-    padding-inline: var(--seed-v3-unit-s5);
-    padding-block: var(--seed-v3-unit-s3_5);
+    padding-inline: var(--seed-v3-dimension-s5);
+    padding-block: var(--seed-v3-dimension-s3_5);
     border-radius: var(--seed-v3-radius-s3);
 }
 .actionSheetCloseButton__root:is(:active, [data-active]) {

@@ -11,8 +11,8 @@ export const item = style({
   justifyContent: "space-between",
   alignItems: "center",
 
-  paddingInline: vars.$unit.s4,
-  minHeight: vars.$unit.s13,
+  paddingInline: vars.$dimension.s4,
+  minHeight: vars.$dimension.s13,
 
   borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
   ":last-child": {
@@ -38,6 +38,6 @@ export const icon = style({
   justifyContent: "center",
 
   color: vars.$color.fg.neutralMuted,
-  width: vars.$unit.s4,
-  height: vars.$unit.s4,
+  width: vars.$dimension.s4,
+  height: vars.$dimension.s4,
 });

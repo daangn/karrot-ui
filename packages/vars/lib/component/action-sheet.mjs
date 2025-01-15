@@ -12,8 +12,8 @@ export const vars = {
       },
       "content": {
         "color": "var(--seed-v3-color-bg-layer-floating)",
-        "paddingX": "var(--seed-v3-horizontal-spacing-global-gutter)",
-        "paddingY": "var(--seed-v3-unit-s4)",
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
+        "paddingY": "var(--seed-v3-dimension-s4)",
         "cornerTopRadius": "var(--seed-v3-radius-s6)",
         "enterDuration": "var(--seed-v3-duration-s6)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter-expressive)",
@@ -21,13 +21,13 @@ export const vars = {
         "exitTimingFunction": "var(--seed-v3-timing-function-exit)"
       },
       "list": {
-        "gap": "var(--seed-v3-unit-s2_5)"
+        "gap": "var(--seed-v3-dimension-s2_5)"
       },
       "group": {
         "cornerRadius": "var(--seed-v3-radius-s4)"
       },
       "footer": {
-        "paddingTop": "var(--seed-v3-unit-s2_5)"
+        "paddingTop": "var(--seed-v3-dimension-s2_5)"
       }
     }
   }

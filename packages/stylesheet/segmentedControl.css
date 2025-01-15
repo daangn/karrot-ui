@@ -4,7 +4,7 @@
     min-width: fit-content;
     max-width: 100%;
     position: relative;
-    padding: var(--seed-v3-unit-s1);
+    padding: var(--seed-v3-dimension-s1);
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
     grid-auto-flow: column;
@@ -15,7 +15,7 @@
 .segmentedControl__segment {
     display: grid;
     min-width: 86px;
-    height: var(--seed-v3-unit-s8);
+    height: var(--seed-v3-dimension-s8);
     border-radius: var(--seed-v3-radius-full);
     overflow: hidden;
     user-select: none;
@@ -32,7 +32,7 @@
 }
 .segmentedControl__segmentLabel {
     grid-area: 1 / 1 / 1 / 1;
-    padding-inline: calc(var(--seed-v3-unit-s4) - 1px);
+    padding-inline: calc(var(--seed-v3-dimension-s4) - 1px);
     margin-block: auto;
     text-align: center;
     font-weight: var(--seed-v3-font-weight-medium);
@@ -51,7 +51,7 @@
 }
 .segmentedControl__segmentLabelPlaceholder {
     grid-area: 1 / 1 / 1 / 1;
-    padding-inline: var(--seed-v3-unit-s4);
+    padding-inline: var(--seed-v3-dimension-s4);
     text-align: center;
     font-weight: var(--seed-v3-font-weight-bold);
     font-size: var(--seed-v3-font-size-s5);
@@ -62,9 +62,9 @@
 }
 .segmentedControl__indicator {
     position: absolute;
-    inset-block: var(--seed-v3-unit-s1);
-    inset-inline-start: var(--seed-v3-unit-s1);
-    width: calc((100% - var(--seed-v3-unit-s1) * 2) / var(--seed-design-segmented-control-segment-count));
+    inset-block: var(--seed-v3-dimension-s1);
+    inset-inline-start: var(--seed-v3-dimension-s1);
+    width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--seed-design-segmented-control-segment-count));
     transform: translateX(calc(var(--seed-design-segmented-control-current-segment-index) * 100%));
     z-index: -1;
     border-radius: var(--seed-v3-radius-full);

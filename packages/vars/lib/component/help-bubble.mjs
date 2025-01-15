@@ -4,12 +4,12 @@ export const vars = {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-solid)",
         "cornerRadius": "var(--seed-v3-radius-s3)",
-        "paddingX": "var(--seed-v3-unit-s3)",
-        "paddingY": "var(--seed-v3-unit-s3)"
+        "paddingX": "var(--seed-v3-dimension-s3)",
+        "paddingY": "var(--seed-v3-dimension-s3)"
       },
       "arrow": {
         "color": "var(--seed-v3-color-bg-neutral-solid)",
-        "size": "var(--seed-v3-unit-s2_5)"
+        "size": "var(--seed-v3-dimension-s2_5)"
       },
       "title": {
         "color": "var(--seed-v3-color-palette-static-white)",

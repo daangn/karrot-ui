@@ -19,13 +19,12 @@ export type FontWeight = keyof TokenObject["$fontWeight"];
 
 export type Gradient = keyof TokenObject["$gradient"];
 
-export type HorizontalSpacing = keyof TokenObject["$horizontalSpacing"];
-
 export type LineHeight = keyof TokenObject["$lineHeight"];
 
 export type Radius = keyof TokenObject["$radius"];
 
 export type TimingFunction = keyof TokenObject["$timingFunction"];
 
-export type Unit = keyof TokenObject["$unit"];
+export type Dimension = keyof TokenObject["$dimension"];
 
+export type SpacingX = keyof TokenObject["$dimension"]["spacingX"];

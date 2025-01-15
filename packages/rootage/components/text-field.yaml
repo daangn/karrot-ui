@@ -73,8 +73,8 @@ data:
   size=xlarge:
     enabled:
       header:
-        paddingBottom: $unit.s3
-        gap: $unit.s1_5
+        paddingBottom: $dimension.s3
+        gap: $dimension.s1_5
       label:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
@@ -84,9 +84,9 @@ data:
       field:
         minHeight: 56px
         cornerRadius: $radius.s2_5
-        gap: $unit.s2
-        paddingX: $unit.s4
-        paddingY: $unit.s3
+        gap: $dimension.s2
+        paddingX: $dimension.s4
+        paddingY: $dimension.s3
       value:
         fontSize: $font-size.s6
         lineHeight: $line-height.s6
@@ -94,15 +94,15 @@ data:
         fontSize: $font-size.s6
         lineHeight: $line-height.s6
       prefixIcon:
-        size: $unit.s5
+        size: $dimension.s5
       suffixText:
         fontSize: $font-size.s6
         lineHeight: $line-height.s6
       suffixIcon:
-        size: $unit.s5
+        size: $dimension.s5
       footer:
-        gap: $unit.s3_5
-        paddingTop: $unit.s2
+        gap: $dimension.s3_5
+        paddingTop: $dimension.s2
         minHeight: 20px
       description:
         fontSize: $font-size.s4
@@ -111,8 +111,8 @@ data:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
       errorIcon:
-        size: $unit.s4
-        marginRight: $unit.s1
+        size: $dimension.s4
+        marginRight: $dimension.s1
       characterCount:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
@@ -123,8 +123,8 @@ data:
   size=large:
     enabled:
       header:
-        paddingBottom: $unit.s3
-        gap: $unit.s1_5
+        paddingBottom: $dimension.s3
+        gap: $dimension.s1_5
       label:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
@@ -134,9 +134,9 @@ data:
       field:
         minHeight: 52px
         cornerRadius: $radius.s2_5
-        gap: $unit.s2
-        paddingX: $unit.s4
-        paddingY: $unit.s3
+        gap: $dimension.s2
+        paddingX: $dimension.s4
+        paddingY: $dimension.s3
       value:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
@@ -144,15 +144,15 @@ data:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
       prefixIcon:
-        size: $unit.s5
+        size: $dimension.s5
       suffixText:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
       suffixIcon:
-        size: $unit.s5
+        size: $dimension.s5
       footer:
-        gap: $unit.s3_5
-        paddingTop: $unit.s2
+        gap: $dimension.s3_5
+        paddingTop: $dimension.s2
         minHeight: 20px
       description:
         fontSize: $font-size.s4
@@ -161,8 +161,8 @@ data:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
       errorIcon:
-        size: $unit.s4
-        marginRight: $unit.s1
+        size: $dimension.s4
+        marginRight: $dimension.s1
       characterCount:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
@@ -173,7 +173,7 @@ data:
   size=medium:
     enabled:
       header:
-        paddingBottom: $unit.s3
+        paddingBottom: $dimension.s3
       label:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
@@ -183,9 +183,9 @@ data:
       field:
         minHeight: 40px
         cornerRadius: $radius.s2
-        gap: $unit.s1_5
-        paddingX: $unit.s3_5
-        paddingY: $unit.s2_5
+        gap: $dimension.s1_5
+        paddingX: $dimension.s3_5
+        paddingY: $dimension.s2_5
       value:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
@@ -193,16 +193,16 @@ data:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
       prefixIcon:
-        size: $unit.s4
+        size: $dimension.s4
       suffixText:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
       suffixIcon:
-        size: $unit.s4
+        size: $dimension.s4
       footer:
-        gap: $unit.s3_5
-        paddingTop: $unit.s2
-        minHeight: $unit.s4
+        gap: $dimension.s3_5
+        paddingTop: $dimension.s2
+        minHeight: $dimension.s4
       description:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
@@ -210,8 +210,8 @@ data:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
       errorIcon:
-        size: $unit.s3_5
-        marginRight: $unit.s1
+        size: $dimension.s3_5
+        marginRight: $dimension.s1
       characterCount:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2

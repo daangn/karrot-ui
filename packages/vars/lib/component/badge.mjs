@@ -2,9 +2,9 @@ export const vars = {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s6)",
-        "paddingX": "var(--seed-v3-unit-s2)",
-        "paddingY": "var(--seed-v3-unit-s1)"
+        "minHeight": "var(--seed-v3-dimension-s6)",
+        "paddingX": "var(--seed-v3-dimension-s2)",
+        "paddingY": "var(--seed-v3-dimension-s1)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -15,9 +15,9 @@ export const vars = {
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s5)",
-        "paddingX": "var(--seed-v3-unit-s1_5)",
-        "paddingY": "var(--seed-v3-unit-s0_5)"
+        "minHeight": "var(--seed-v3-dimension-s5)",
+        "paddingX": "var(--seed-v3-dimension-s1_5)",
+        "paddingY": "var(--seed-v3-dimension-s0_5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s1)",

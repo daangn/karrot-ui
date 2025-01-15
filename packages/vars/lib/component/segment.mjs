@@ -2,9 +2,9 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "height": "var(--seed-v3-unit-s8)",
+        "height": "var(--seed-v3-dimension-s8)",
         "cornerRadius": "var(--seed-v3-radius-full)",
-        "paddingX": "var(--seed-v3-unit-s4)",
+        "paddingX": "var(--seed-v3-dimension-s4)",
         "minWidth": "86px"
       },
       "label": {

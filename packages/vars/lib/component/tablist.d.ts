@@ -15,7 +15,7 @@ export declare const vars: {
   "layoutHug": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-unit-s4)"
+        "paddingX": "var(--seed-v3-dimension-s4)"
       }
     }
   },

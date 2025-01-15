@@ -9,7 +9,7 @@
       "enabled": {
         "root": {
           "minHeight": "44px",
-          "paddingX": "$unit.s4"
+          "paddingX": "$dimension.s4"
         },
         "title": {
           "fontSize": "$font-size.s6-static",
@@ -25,7 +25,7 @@
       "enabled": {
         "root": {
           "minHeight": "56px",
-          "paddingX": "$unit.s4"
+          "paddingX": "$dimension.s4"
         },
         "title": {
           "fontSize": "$font-size.s6-static",

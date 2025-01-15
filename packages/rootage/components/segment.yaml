@@ -8,9 +8,9 @@ data:
   base:
     enabled:
       root:
-        height: $unit.s8
+        height: $dimension.s8
         cornerRadius: $radius.full
-        paddingX: $unit.s4
+        paddingX: $dimension.s4
         minWidth: 86px
       label:
         fontSize: $font-size.s5

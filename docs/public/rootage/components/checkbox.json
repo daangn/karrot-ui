@@ -11,7 +11,7 @@
           "color": "$color.fg.neutral"
         },
         "root": {
-          "gap": "$unit.s2"
+          "gap": "$dimension.s2"
         }
       }
     },
@@ -119,14 +119,14 @@
     "size=medium": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s8"
+          "minHeight": "$dimension.s8"
         },
         "label": {
           "fontSize": "$font-size.s4",
           "lineHeight": "$line-height.s4"
         },
         "control": {
-          "size": "$unit.s5",
+          "size": "$dimension.s5",
           "cornerRadius": "$radius.s1"
         }
       }
@@ -134,14 +134,14 @@
     "size=large": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s9"
+          "minHeight": "$dimension.s9"
         },
         "label": {
           "fontSize": "$font-size.s5",
           "lineHeight": "$line-height.s5"
         },
         "control": {
-          "size": "$unit.s6",
+          "size": "$dimension.s6",
           "cornerRadius": "$radius.s1_5"
         }
       }

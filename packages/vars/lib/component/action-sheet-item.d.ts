@@ -4,11 +4,11 @@ export declare const vars: {
       "root": {
         "color": "var(--seed-v3-color-bg-neutral-weak)",
         "minHeight": "52px",
-        "paddingX": "var(--seed-v3-unit-s3_5)",
-        "paddingY": "var(--seed-v3-unit-s4)",
+        "paddingX": "var(--seed-v3-dimension-s3_5)",
+        "paddingY": "var(--seed-v3-dimension-s4)",
         "strokeBottomWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-neutral)",
-        "gap": "var(--seed-v3-unit-s3)"
+        "gap": "var(--seed-v3-dimension-s3)"
       },
       "prefixIcon": {
         "size": "22px"

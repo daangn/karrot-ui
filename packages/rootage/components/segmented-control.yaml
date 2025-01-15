@@ -8,6 +8,6 @@ data:
   base:
     enabled:
       root:
-        padding: $unit.s1
+        padding: $dimension.s1
         cornerRadius: $radius.full
         color: $color.bg.neutral-weak

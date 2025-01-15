@@ -9,11 +9,11 @@ data:
       root:
         color: $color.bg.neutral-weak
         minHeight: 52px
-        paddingX: $unit.s3_5
-        paddingY: $unit.s4
+        paddingX: $dimension.s3_5
+        paddingY: $dimension.s4
         strokeBottomWidth: 1px
         strokeColor: $color.stroke.neutral
-        gap: $unit.s3
+        gap: $dimension.s3
       prefixIcon:
         size: 22px
       label:

@@ -8,12 +8,12 @@ data:
   size=40:
     enabled:
       root:
-        size: $unit.s10
+        size: $dimension.s10
         thickness: 5px
   size=24:
     enabled:
       root:
-        size: $unit.s6
+        size: $dimension.s6
         thickness: 3px
   indeterminate=false:
     enabled:

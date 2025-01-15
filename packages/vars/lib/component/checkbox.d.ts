@@ -5,7 +5,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "root": {
-        "gap": "var(--seed-v3-unit-s2)"
+        "gap": "var(--seed-v3-dimension-s2)"
       }
     }
   },
@@ -113,14 +113,14 @@ export declare const vars: {
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s8)"
+        "minHeight": "var(--seed-v3-dimension-s8)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s4)",
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-s5)",
+        "size": "var(--seed-v3-dimension-s5)",
         "cornerRadius": "var(--seed-v3-radius-s1)"
       }
     }
@@ -128,14 +128,14 @@ export declare const vars: {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s9)"
+        "minHeight": "var(--seed-v3-dimension-s9)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s5)",
         "lineHeight": "var(--seed-v3-line-height-s5)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-s6)",
+        "size": "var(--seed-v3-dimension-s6)",
         "cornerRadius": "var(--seed-v3-radius-s1_5)"
       }
     }

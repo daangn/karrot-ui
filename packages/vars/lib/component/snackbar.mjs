@@ -2,8 +2,8 @@ export const vars = {
   "base": {
     "enabled": {
       "region": {
-        "paddingX": "var(--seed-v3-unit-s2)",
-        "paddingY": "var(--seed-v3-unit-s2)",
+        "paddingX": "var(--seed-v3-dimension-s2)",
+        "paddingY": "var(--seed-v3-dimension-s2)",
         "offsetDuration": "var(--seed-v3-duration-s4)",
         "offsetTimingFunction": "var(--seed-v3-timing-function-easing)"
       },
@@ -11,9 +11,9 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-neutral-solid)",
         "cornerRadius": "var(--seed-v3-radius-s2)",
         "minHeight": "44px",
-        "paddingX": "var(--seed-v3-unit-s4)",
-        "paddingY": "var(--seed-v3-unit-s2_5)",
-        "gap": "var(--seed-v3-unit-s2)",
+        "paddingX": "var(--seed-v3-dimension-s4)",
+        "paddingY": "var(--seed-v3-dimension-s2_5)",
+        "gap": "var(--seed-v3-dimension-s2)",
         "enterOpacity": "0",
         "enterDuration": "var(--seed-v3-duration-s4)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter)",
@@ -31,7 +31,7 @@ export const vars = {
         "size": "24px"
       },
       "actionButton": {
-        "targetPaddingX": "var(--seed-v3-unit-s2)",
+        "targetPaddingX": "var(--seed-v3-dimension-s2)",
         "targetMinHeight": "44px",
         "color": "var(--seed-v3-color-fg-brand)",
         "fontSize": "var(--seed-v3-font-size-s4)",

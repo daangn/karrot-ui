@@ -33,14 +33,13 @@ data:
       - <모드 1>
       - <모드 2>
       # 추가 모드...
-
 ```
 
 - `kind`: `"TokenCollections"`로 고정됩니다.
 - `metadata`: 리소스의 `id`와 `name`을 포함합니다. 이 정보는 api url 등에 활용될 수 있습니다.
 - `data`: 각 컬렉션 선언의 배열이며, 각 선언은 `name`과 `modes`를 포함합니다.
-    - `name`: 컬렉션의 이름.
-    - `modes`: 지원되는 모드의 배열.
+  - `name`: 컬렉션의 이름.
+  - `modes`: 지원되는 모드의 배열.
 
 ### **예제**
 
@@ -58,7 +57,6 @@ data:
     modes:
       - theme-light
       - theme-dark
-
 ```
 
 이 예제에서는 두 가지 컬렉션을 정의합니다:
@@ -83,16 +81,15 @@ data:
     <토큰 이름>:
       values:
         <모드>: <값>
-
 ```
 
 - `kind`: `"Tokens"`로 고정됩니다.
 - `metadata`: 리소스의 `id`와 `name`을 포함합니다. 이 정보는 api url 등에 활용될 수 있습니다.
 - `data.collection`: 토큰들이 속한 컬렉션의 이름입니다.
 - `data.tokens`: 토큰 이름과 그 값의 매핑들을 나열합니다.
-    - `<토큰 이름>`: 토큰 이름 규칙을 따르는 이름을 선언합니다.
-    - `<모드>`: 어떤 모드에 대한 값인지 정의합니다. 컬렉션에 명시된 모든 모드에 대해 작성되어야 합니다.
-    - `<값>`: 디자인 값을 작성하거나 다른 토큰을 참조할 수 있습니다.
+  - `<토큰 이름>`: 토큰 이름 규칙을 따르는 이름을 선언합니다.
+  - `<모드>`: 어떤 모드에 대한 값인지 정의합니다. 컬렉션에 명시된 모든 모드에 대해 작성되어야 합니다.
+  - `<값>`: 디자인 값을 작성하거나 다른 토큰을 참조할 수 있습니다.
 
 **토큰 이름 규칙**
 
@@ -130,7 +127,6 @@ data:
       values:
         theme-light: "$color.palette.gray-200"
         theme-dark: "$color.palette.gray-300"
-
 ```
 
 이 예제에서는 `color` 컬렉션 내에서 색상을 토큰으로 정의합니다.
@@ -164,12 +160,12 @@ data:
 - `kind`: `"ComponentSpec"`로 고정됩니다.
 - `metadata`: 리소스의 `id`와 `name`을 포함합니다. 이 정보는 api url 등에 활용될 수 있습니다.
 - `data`: 컴포넌트의 디자인 사양을 정의하는 객체입니다.
-    - `base`: 모든 Variant에 적용되는 기본 디자인을 정의합니다.
-    - `<Variant 키>=<Variant 이름>`: Variant를 정의하는 문자열입니다(예: `size=small`).
-    - `<상태 이름>`: 상호 작용 상태(예: `enabled`, `hover`, `pressed`).
-    - `<슬롯 이름>`: 디자인 속성을 적용할 요소나 슬롯(예: `root`, `icon`).
-    - `<속성>`: 디자인 속성(예: `color`, `size`, `borderRadius`).
-    - `<값>`: 속성에 대한 값으로, 디자인 값을 작성하거나 다른 토큰을 참조할 수 있습니다.
+  - `base`: 모든 Variant에 적용되는 기본 디자인을 정의합니다.
+  - `<Variant 키>=<Variant 이름>`: Variant를 정의하는 문자열입니다(예: `size=small`).
+  - `<상태 이름>`: 상호 작용 상태(예: `enabled`, `hover`, `pressed`).
+  - `<슬롯 이름>`: 디자인 속성을 적용할 요소나 슬롯(예: `root`, `icon`).
+  - `<속성>`: 디자인 속성(예: `color`, `size`, `borderRadius`).
+  - `<값>`: 속성에 대한 값으로, 디자인 값을 작성하거나 다른 토큰을 참조할 수 있습니다.
 
 **Variant 표현**
 
@@ -209,29 +205,28 @@ data:
   size=small:
     enabled:
       root:
-        size: $unit.x10
+        size: $dimension.x10
       icon:
-        size: $unit.x5
+        size: $dimension.x5
   size=medium:
     enabled:
       root:
-        size: $unit.x12
+        size: $dimension.x12
       icon:
-        size: $unit.x6
-
+        size: $dimension.x6
 ```
 
 이 예제에서는 Floating Action Button (`Fab`) 컴포넌트의 디자인 사양을 정의합니다.
 
 - `base` 디자인은 모든 Variant에 적용되는 속성을 정의합니다.
-    - `enabled` 상태에서:
-        - `root` 슬롯은 layer-floating 배경 색상과 full radius를 가집니다.
-        - `icon` 슬롯은 neutral 전경 색상을 가집니다.
-    - `pressed` 상태에서:
-        - `root` 슬롯은 눌린 상태의 배경 색상으로 변경됩니다.
+  - `enabled` 상태에서:
+    - `root` 슬롯은 layer-floating 배경 색상과 full radius를 가집니다.
+    - `icon` 슬롯은 neutral 전경 색상을 가집니다.
+  - `pressed` 상태에서:
+    - `root` 슬롯은 눌린 상태의 배경 색상으로 변경됩니다.
 - Variant는 `size` 키를 기반으로 `small`과 `medium`을 각각 정의합니다:
-    - 각 Variant는 `enabled` 상태의 속성을 재정의합니다.
-    - `root`와 `icon` 슬롯은 Variant에 따라 특정 크기를 가집니다.
+  - 각 Variant는 `enabled` 상태의 속성을 재정의합니다.
+  - `root`와 `icon` 슬롯은 Variant에 따라 특정 크기를 가집니다.
 
 ### **상태 표현 및 우선순위 예시**
 
@@ -263,46 +258,45 @@ data:
         color: $color.bg.disabled
       label:
         color: $color.fg.disabled
-
 ```
 
 - 컴포넌트가 `enabled` 상태인 경우:
-    - `enabled` 스타일이 적용됩니다.
+  - `enabled` 스타일이 적용됩니다.
 - 컴포넌트가 `enabled`이면서 `pressed` 상태인 경우:
-    - `enabled,pressed` 스타일이 적용됩니다.
+  - `enabled,pressed` 스타일이 적용됩니다.
 - 컴포넌트가 `enabled`, `pressed`, `selected` 상태인 경우:
-    - 아래에 선언된 `pressed,selected` 스타일이 `enabled,selected`보다 우선하여 적용됩니다.
+  - 아래에 선언된 `pressed,selected` 스타일이 `enabled,selected`보다 우선하여 적용됩니다.
 - 컴포넌트가 `disabled` 상태인 경우:
-    - 모든 `enabled` 관련 스타일보다 `disabled` 스타일이 우선하여 적용됩니다.
+  - 모든 `enabled` 관련 스타일보다 `disabled` 스타일이 우선하여 적용됩니다.
 
 ## **허용되는 값**
 
 `<값>` 에는 아래와 같은 유형이 대입될 수 있습니다.
 
 - **Color**
-    - 16진수 색상 코드:
-        - `#rrggbb` (24비트 RGB)
-        - `#rrggbbaa` (24비트 RGB + 8비트 알파)
+  - 16진수 색상 코드:
+    - `#rrggbb` (24비트 RGB)
+    - `#rrggbbaa` (24비트 RGB + 8비트 알파)
 - **Dimension**
-    - https://tr.designtokens.org/format/#dimension
-    - px: `${number}px` (예: `16px`)
-        - Android에서 대응되는 단위는 dp, iOS에서는 pt입니다.
-    - rem: `${number}rem` (예: `1rem`)
-        - 사용자가 설정한 시스템 기본 폰트 크기의 배수를 나타냅니다. Android에서 1rem에 해당하는 값은 16sp입니다.
+  - https://tr.designtokens.org/format/#dimension
+  - px: `${number}px` (예: `16px`)
+    - Android에서 대응되는 단위는 dp, iOS에서는 pt입니다.
+  - rem: `${number}rem` (예: `1rem`)
+    - 사용자가 설정한 시스템 기본 폰트 크기의 배수를 나타냅니다. Android에서 1rem에 해당하는 값은 16sp입니다.
 - **Duration**
-    - 밀리초: `${number}ms` (예: `200ms`)
-    - 초: `${number}s` (예: `0.5s`)
+  - 밀리초: `${number}ms` (예: `200ms`)
+  - 초: `${number}s` (예: `0.5s`)
 - **Number**
-    - 단위 없는 숫자 (예: `0.5`, `1`, `100`)
+  - 단위 없는 숫자 (예: `0.5`, `1`, `100`)
 - **Cubic-bezier**
-    - `{ type: "cubicBezier", value: [p1x, p1y, p2x, p2y] }` 형태로 `type`을 명시해야 합니다.
+  - `{ type: "cubicBezier", value: [p1x, p1y, p2x, p2y] }` 형태로 `type`을 명시해야 합니다.
 - **Shadow**
-    - `{ type: "shadow", value: [{ color, offsetX, offsetY, blur, spread }] }` 형태로 `type`을 명시해야 합니다.
+  - `{ type: "shadow", value: [{ color, offsetX, offsetY, blur, spread }] }` 형태로 `type`을 명시해야 합니다.
 - **Gradient**
-    - `{ type: "gradient", value: [{ color, position }] }` 형태로 `type` 을 명시해야 합니다.
-    - position은 [0, 1] 범위의 실수입니다.
+  - `{ type: "gradient", value: [{ color, position }] }` 형태로 `type` 을 명시해야 합니다.
+  - position은 [0, 1] 범위의 실수입니다.
 - **Reference**
-    - `$`로 시작하는 토큰 이름, 예: `$token-name`
+  - `$`로 시작하는 토큰 이름, 예: `$token-name`
 
 ### **값 작성 방법**
 
@@ -317,7 +311,6 @@ $animation.ease-in-out:
     default:
       type: cubicBezier
       value: [0.42, 0, 0.58, 1]
-
 ```
 
 ### **Shadow 예제**

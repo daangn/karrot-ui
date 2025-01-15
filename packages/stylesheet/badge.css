@@ -10,18 +10,18 @@
     text-decoration: none
 }
 .badge__root--size_medium {
-    min-height: var(--seed-v3-unit-s5);
-    padding-inline: var(--seed-v3-unit-s1_5);
-    padding-block: var(--seed-v3-unit-s0_5)
+    min-height: var(--seed-v3-dimension-s5);
+    padding-inline: var(--seed-v3-dimension-s1_5);
+    padding-block: var(--seed-v3-dimension-s0_5)
 }
 .badge__label--size_medium {
     font-size: var(--seed-v3-font-size-s1);
     line-height: var(--seed-v3-line-height-s1)
 }
 .badge__root--size_large {
-    min-height: var(--seed-v3-unit-s6);
-    padding-inline: var(--seed-v3-unit-s2);
-    padding-block: var(--seed-v3-unit-s1)
+    min-height: var(--seed-v3-dimension-s6);
+    padding-inline: var(--seed-v3-dimension-s2);
+    padding-block: var(--seed-v3-dimension-s1)
 }
 .badge__label--size_large {
     font-size: var(--seed-v3-font-size-s2);

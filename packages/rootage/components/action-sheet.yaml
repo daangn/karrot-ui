@@ -16,8 +16,8 @@ data:
         exitOpacity: 0
       content:
         color: $color.bg.layer-floating
-        paddingX: $horizontal-spacing.global-gutter
-        paddingY: $unit.s4
+        paddingX: $dimension.spacing-x.global-gutter
+        paddingY: $dimension.s4
         cornerTopRadius: $radius.s6
         enterDuration: $duration.s6
         enterTimingFunction: $timing-function.enter-expressive
@@ -25,8 +25,8 @@ data:
         exitDuration: $duration.s4
         exitTimingFunction: $timing-function.exit
       list:
-        gap: $unit.s2_5
+        gap: $dimension.s2_5
       group:
         cornerRadius: $radius.s4
       footer:
-        paddingTop: $unit.s2_5
+        paddingTop: $dimension.s2_5

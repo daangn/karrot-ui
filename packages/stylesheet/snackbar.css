@@ -6,10 +6,10 @@
     width: 100%;
     background: var(--seed-v3-color-bg-neutral-solid);
     border-radius: var(--seed-v3-radius-s2);
-    padding-inline: var(--seed-v3-unit-s4);
-    padding-block: var(--seed-v3-unit-s2_5);
+    padding-inline: var(--seed-v3-dimension-s4);
+    padding-block: var(--seed-v3-dimension-s2_5);
     min-height: 44px;
-    gap: var(--seed-v3-unit-s2);
+    gap: var(--seed-v3-dimension-s2);
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter);
     animation-duration: var(--seed-v3-duration-s4);
@@ -66,8 +66,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: calc(-1 * var(--seed-v3-unit-s2));
-    right: calc(-1 * var(--seed-v3-unit-s2));
+    left: calc(-1 * var(--seed-v3-dimension-s2));
+    right: calc(-1 * var(--seed-v3-dimension-s2));
     min-height: 44px;
     background: transparent;
 }

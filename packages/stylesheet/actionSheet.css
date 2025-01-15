@@ -37,8 +37,8 @@
     box-sizing: border-box;
     word-break: break-all;
     background: var(--seed-v3-color-bg-layer-floating);
-    padding-inline: var(--seed-v3-horizontal-spacing-global-gutter);
-    padding-block: var(--seed-v3-unit-s4);
+    padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
+    padding-block: var(--seed-v3-dimension-s4);
     border-top-left-radius: var(--seed-v3-radius-s6);
     border-top-right-radius: var(--seed-v3-radius-s6);
 }
@@ -65,7 +65,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: var(--seed-v3-unit-s2_5);
+    gap: var(--seed-v3-dimension-s2_5);
 }
 .actionSheet__group {
     display: flex;
@@ -78,5 +78,5 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding-top: var(--seed-v3-unit-s2_5);
+    padding-top: var(--seed-v3-dimension-s2_5);
 }

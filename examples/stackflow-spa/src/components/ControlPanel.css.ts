@@ -19,8 +19,8 @@ export const item = style({
   justifyContent: "space-between",
   alignItems: "center",
 
-  paddingInline: vars.$unit.s4,
-  minHeight: vars.$unit.s13,
+  paddingInline: vars.$dimension.s4,
+  minHeight: vars.$dimension.s13,
 
   borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
 });

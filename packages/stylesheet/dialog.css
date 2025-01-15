@@ -38,8 +38,8 @@
     word-break: break-all;
     background: var(--seed-v3-color-bg-layer-default);
     max-width: 272px;
-    margin: auto var(--seed-v3-unit-s8);
-    padding: var(--seed-v3-unit-s5) var(--seed-v3-unit-s5);
+    margin: auto var(--seed-v3-dimension-s8);
+    padding: var(--seed-v3-dimension-s5) var(--seed-v3-dimension-s5);
     border-radius: var(--seed-v3-radius-s5);
 }
 .dialog__content:is([data-transition-state='exit-active'],[data-transition-state='exit-done']) {
@@ -64,7 +64,7 @@
 .dialog__header {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-unit-s1_5);
+    gap: var(--seed-v3-dimension-s1_5);
 }
 .dialog__title {
     color: var(--seed-v3-color-fg-neutral);
@@ -86,12 +86,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
-    padding-top: var(--seed-v3-unit-s4);
-    gap: var(--seed-v3-unit-s2);
+    padding-top: var(--seed-v3-dimension-s4);
+    gap: var(--seed-v3-dimension-s2);
 }
 .dialog__action {
     width: initial;
-    min-width: calc(50% - var(--seed-v3-unit-s2) / 2);
+    min-width: calc(50% - var(--seed-v3-dimension-s2) / 2);
 }
 .dialog__footer--footerLayout_horizontal {
     flex-direction: row-reverse;

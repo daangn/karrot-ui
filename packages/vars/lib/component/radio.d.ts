@@ -47,40 +47,40 @@ export declare const vars: {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s6)"
+        "size": "var(--seed-v3-dimension-s6)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-s2_5)"
+        "size": "var(--seed-v3-dimension-s2_5)"
       }
     },
     "disabled": {
       "icon": {
-        "size": "var(--seed-v3-unit-s3)"
+        "size": "var(--seed-v3-dimension-s3)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s5)"
+        "size": "var(--seed-v3-dimension-s5)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-s2)"
+        "size": "var(--seed-v3-dimension-s2)"
       }
     },
     "disabled": {
       "icon": {
-        "size": "var(--seed-v3-unit-s2_5)"
+        "size": "var(--seed-v3-dimension-s2_5)"
       }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s4_5)"
+        "size": "var(--seed-v3-dimension-s4_5)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-s2)"
+        "size": "var(--seed-v3-dimension-s2)"
       }
     }
   }

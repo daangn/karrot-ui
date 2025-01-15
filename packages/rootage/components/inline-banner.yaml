@@ -7,32 +7,32 @@ data:
   base:
     enabled:
       root:
-        gap: $unit.s4
-        paddingX: $unit.s4
+        gap: $dimension.s4
+        paddingX: $dimension.s4
       content:
-        gap: $unit.s2
-        paddingY: $unit.s2_5
+        gap: $dimension.s2
+        paddingY: $dimension.s2_5
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
-        minHeight: $unit.s10
+        minHeight: $dimension.s10
       icon:
-        size: $unit.s4
+        size: $dimension.s4
         marginY: 1.5px
       title:
         fontWeight: $font-weight.bold
       description:
         fontWeight: $font-weight.medium
       linkLabel:
-        height: $unit.s10
+        height: $dimension.s10
         fontWeight: $font-weight.regular
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
       dismissButton:
-        size: $unit.s10
+        size: $dimension.s10
       dismissIcon:
-        size: $unit.s4
+        size: $dimension.s4
       actionableIcon:
-        size: $unit.s4
+        size: $dimension.s4
   variant=neutral weak:
     enabled:
       root:

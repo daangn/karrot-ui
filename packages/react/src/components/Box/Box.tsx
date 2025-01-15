@@ -25,7 +25,7 @@ function handleSpacing(spacing: string | undefined) {
     return undefined;
   }
   // @ts-ignore
-  return vars.$unit[spacing] ?? vars.$horizontalSpacing[spacing] ?? undefined;
+  return vars.$dimension[spacing] ?? vars.$horizontalSpacing[spacing] ?? undefined;
 }
 
 function handleSize(size: string | undefined) {
@@ -36,7 +36,7 @@ function handleSize(size: string | undefined) {
     return "100%";
   }
   // @ts-ignore
-  return vars.$unit[size] ?? size;
+  return vars.$dimension[size] ?? size;
 }
 
 function handleRadius(radius: string | undefined) {

@@ -2,15 +2,15 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "padding": "var(--seed-v3-unit-s3_5)",
-        "gap": "var(--seed-v3-unit-s3)",
+        "padding": "var(--seed-v3-dimension-s3_5)",
+        "gap": "var(--seed-v3-dimension-s3)",
         "cornerRadius": "var(--seed-v3-radius-s2_5)",
         "fontSize": "var(--seed-v3-font-size-s4)",
         "lineHeight": "var(--seed-v3-line-height-s5)",
         "minHeight": "50px"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "title": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"
@@ -19,13 +19,13 @@ export const vars = {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "dismissButton": {
-        "size": "var(--seed-v3-unit-s10)"
+        "size": "var(--seed-v3-dimension-s10)"
       },
       "dismissIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "actionableIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       }
     }
   },

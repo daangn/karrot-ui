@@ -9,7 +9,7 @@ data:
     enabled:
       root:
         minHeight: 44px
-        paddingX: $unit.s4
+        paddingX: $dimension.s4
       title:
         fontSize: $font-size.s6-static
         fontWeight: $font-weight.bold
@@ -20,7 +20,7 @@ data:
     enabled:
       root:
         minHeight: 56px
-        paddingX: $unit.s4
+        paddingX: $dimension.s4
       title:
         fontSize: $font-size.s6-static
         fontWeight: $font-weight.bold

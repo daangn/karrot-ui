@@ -9,11 +9,11 @@ data:
       root:
         color: $color.bg.neutral-solid
         cornerRadius: $radius.s3
-        paddingX: $unit.s3
-        paddingY: $unit.s3
+        paddingX: $dimension.s3
+        paddingY: $dimension.s3
       arrow:
         color: $color.bg.neutral-solid
-        size: $unit.s2_5
+        size: $dimension.s2_5
       title:
         color: $color.palette.static-white
         fontSize: $font-size.s3

@@ -8,7 +8,7 @@
     "base": {
       "enabled": {
         "root": {
-          "paddingX": "$unit.s4"
+          "paddingX": "$dimension.s4"
         }
       }
     },

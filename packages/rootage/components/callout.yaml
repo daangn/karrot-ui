@@ -7,24 +7,24 @@ data:
   base:
     enabled:
       root:
-        padding: $unit.s3_5
-        gap: $unit.s3
+        padding: $dimension.s3_5
+        gap: $dimension.s3
         cornerRadius: $radius.s2_5
         fontSize: $font-size.s4
         lineHeight: $line-height.s5
         minHeight: 50px
       icon:
-        size: $unit.s4
+        size: $dimension.s4
       title:
         fontWeight: $font-weight.bold
       description:
         fontWeight: $font-weight.regular
       dismissButton:
-        size: $unit.s10
+        size: $dimension.s10
       dismissIcon:
-        size: $unit.s4
+        size: $dimension.s4
       actionableIcon:
-        size: $unit.s4
+        size: $dimension.s4
 
   tone=neutral:
     enabled:

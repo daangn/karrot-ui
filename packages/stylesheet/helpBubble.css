@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column;
     background: var(--seed-v3-color-bg-neutral-solid);
-    padding-inline: var(--seed-v3-unit-s3);
-    padding-block: var(--seed-v3-unit-s3);
+    padding-inline: var(--seed-v3-dimension-s3);
+    padding-block: var(--seed-v3-dimension-s3);
     border-radius: var(--seed-v3-radius-s3);
     word-break: keep-all;
 }

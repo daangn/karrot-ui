@@ -19,15 +19,15 @@ export const vars = {
         "exitTimingFunction": "var(--seed-v3-timing-function-exit)"
       },
       "header": {
-        "gap": "var(--seed-v3-unit-s2)",
-        "paddingX": "var(--seed-v3-horizontal-spacing-global-gutter)",
-        "paddingTop": "var(--seed-v3-unit-s6)",
-        "paddingBottom": "var(--seed-v3-unit-s4)"
+        "gap": "var(--seed-v3-dimension-s2)",
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
+        "paddingTop": "var(--seed-v3-dimension-s6)",
+        "paddingBottom": "var(--seed-v3-dimension-s4)"
       },
       "footer": {
-        "paddingX": "var(--seed-v3-horizontal-spacing-global-gutter)",
-        "paddingTop": "var(--seed-v3-unit-s3)",
-        "paddingBottom": "var(--seed-v3-unit-s4)"
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
+        "paddingTop": "var(--seed-v3-dimension-s3)",
+        "paddingBottom": "var(--seed-v3-dimension-s4)"
       },
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)",
@@ -46,8 +46,8 @@ export const vars = {
         "cornerRadius": "var(--seed-v3-radius-full)",
         "targetSize": "44px",
         "size": "28px",
-        "fromTop": "var(--seed-v3-unit-s5)",
-        "fromRight": "var(--seed-v3-unit-s5)"
+        "fromTop": "var(--seed-v3-dimension-s5)",
+        "fromRight": "var(--seed-v3-dimension-s5)"
       },
       "closeIcon": {
         "color": "var(--seed-v3-color-fg-neutral)",

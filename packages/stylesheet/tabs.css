@@ -51,7 +51,7 @@
     width: calc(var(--seed-design-tabs-indicator-width, 0px) - 32px);
 }
 .tabs__triggerList--layout_hug {
-    padding: 0px var(--seed-v3-unit-s4);
+    padding: 0px var(--seed-v3-dimension-s4);
     justify-content: flex-start;
 }
 .tabs__indicator--layout_hug {

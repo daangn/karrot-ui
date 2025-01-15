@@ -114,7 +114,7 @@ test("getTokenCss should generate css code", () => {
       data: {
         collection: "global",
         tokens: {
-          "$unit.s1": {
+          "$dimension.s1": {
             values: {
               default: "4px",
             },

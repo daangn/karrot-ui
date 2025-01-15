@@ -62,10 +62,10 @@
 .bottomSheet__header {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-unit-s2);
-    padding-inline: var(--seed-v3-horizontal-spacing-global-gutter);
-    padding-top: var(--seed-v3-unit-s6);
-    padding-bottom: var(--seed-v3-unit-s4);
+    gap: var(--seed-v3-dimension-s2);
+    padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
+    padding-top: var(--seed-v3-dimension-s6);
+    padding-bottom: var(--seed-v3-dimension-s4);
 }
 .bottomSheet__title {
     color: var(--seed-v3-color-fg-neutral);
@@ -85,17 +85,17 @@
 .bottomSheet__footer {
     display: flex;
     flex-direction: column;
-    padding-inline: var(--seed-v3-horizontal-spacing-global-gutter);
-    padding-top: var(--seed-v3-unit-s3);
-    padding-bottom: var(--seed-v3-unit-s4);
+    padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
+    padding-top: var(--seed-v3-dimension-s3);
+    padding-bottom: var(--seed-v3-dimension-s4);
 }
 .bottomSheet__closeButton {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: var(--seed-v3-unit-s5);
-    right: var(--seed-v3-unit-s5);
+    top: var(--seed-v3-dimension-s5);
+    right: var(--seed-v3-dimension-s5);
     border-radius: var(--seed-v3-radius-full);
     background: var(--seed-v3-color-palette-gray-300);
     width: 28px;

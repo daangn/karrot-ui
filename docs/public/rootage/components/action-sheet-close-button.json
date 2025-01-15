@@ -11,9 +11,9 @@
           "color": "$color.bg.neutral-weak",
           "minHeight": "52px",
           "cornerRadius": "$radius.s3",
-          "paddingX": "$unit.s5",
-          "paddingY": "$unit.s3_5",
-          "gap": "$unit.s3"
+          "paddingX": "$dimension.s5",
+          "paddingY": "$dimension.s3_5",
+          "gap": "$dimension.s3"
         },
         "label": {
           "color": "$color.fg.neutral",
