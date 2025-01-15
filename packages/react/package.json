@@ -13,6 +13,16 @@
       "require": "./lib/index.js",
       "import": "./lib/index.mjs"
     },
+    "./vars": {
+      "types": "./lib/vars.d.ts",
+      "require": "./lib/vars.js",
+      "import": "./lib/vars.mjs"
+    },
+    "./primitive": {
+      "types": "./lib/primitive.d.ts",
+      "require": "./lib/primitive.js",
+      "import": "./lib/primitive.mjs"
+    },
     "./package.json": "./package.json"
   },
   "main": "./lib/index.js",

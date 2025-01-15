@@ -18821,39 +18821,6 @@
       ]
     },
     {
-      "id": "select-box-group",
-      "name": "Select Box Group",
-      "data": [
-        {
-          "key": {},
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "gap",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "unit"
-                        ],
-                        "key": "s3"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "select-box",
       "name": "Select Box",
       "data": [

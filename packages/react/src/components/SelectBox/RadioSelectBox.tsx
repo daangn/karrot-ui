@@ -13,61 +13,61 @@ const { withProvider: withGroupProvider } = createStyleContext(selectBoxGroup);
 const { withProvider, withContext } = createStyleContext(selectBox);
 const withStateProps = createWithStateProps([useRadioGroupItemContext]);
 
-export interface SelectBoxRadioGroupProps extends RadioGroupPrimitive.RootProps {}
+export interface RadioSelectBoxRootProps extends RadioGroupPrimitive.RootProps {}
 
-export const SelectBoxRadioGroup = withGroupProvider<HTMLDivElement, SelectBoxRadioGroupProps>(
+export const RadioSelectBoxRoot = withGroupProvider<HTMLDivElement, RadioSelectBoxRootProps>(
   RadioGroupPrimitive.Root,
   "root",
 );
 
-export interface SelectBoxRadioRootProps extends RadioGroupPrimitive.ItemProps {}
+export interface RadioSelectBoxItemProps extends RadioGroupPrimitive.ItemProps {}
 
-export const SelectBoxRadioRoot = withProvider<HTMLLabelElement, SelectBoxRadioRootProps>(
+export const RadioSelectBoxItem = withProvider<HTMLLabelElement, RadioSelectBoxItemProps>(
   RadioGroupPrimitive.Item,
   "root",
 );
 
-export interface SelectBoxRadioContentProps
+export interface RadioSelectBoxContentProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLDivElement> {}
 
-export const SelectBoxRadioContent = withContext<HTMLDivElement, SelectBoxRadioContentProps>(
+export const RadioSelectBoxContent = withContext<HTMLDivElement, RadioSelectBoxContentProps>(
   withStateProps(Primitive.div),
   "content",
 );
 
-export interface SelectBoxRadioLabelProps
+export interface RadioSelectBoxLabelProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const SelectBoxRadioLabel = withContext<HTMLSpanElement, SelectBoxRadioLabelProps>(
+export const RadioSelectBoxLabel = withContext<HTMLSpanElement, RadioSelectBoxLabelProps>(
   withStateProps(Primitive.span),
   "label",
 );
 
-export interface SelectBoxRadioDescriptionProps
+export interface RadioSelectBoxDescriptionProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const SelectBoxRadioDescription = withContext<
+export const RadioSelectBoxDescription = withContext<
   HTMLSpanElement,
-  SelectBoxRadioDescriptionProps
+  RadioSelectBoxDescriptionProps
 >(withStateProps(Primitive.span), "description");
 
-export interface SelectBoxRadioControlProps extends RadioGroupPrimitive.ItemControlProps {}
+export interface RadioSelectBoxControlProps extends RadioGroupPrimitive.ItemControlProps {}
 
-export const SelectBoxRadioControl = withContext<HTMLDivElement, SelectBoxRadioControlProps>(
+export const RadioSelectBoxControl = withContext<HTMLDivElement, RadioSelectBoxControlProps>(
   RadioGroupPrimitive.ItemControl,
   "radioControl",
 );
 
-export interface SelectBoxRadioIconProps extends IconProps {}
+export interface RadioSelectBoxIconProps extends IconProps {}
 
-export const SelectBoxRadioIcon = withContext<SVGSVGElement, SelectBoxRadioIconProps>(
+export const RadioSelectBoxIcon = withContext<SVGSVGElement, RadioSelectBoxIconProps>(
   withStateProps(Icon),
   "radioIcon",
 );
 
-export interface SelectBoxRadioHiddenInputProps extends RadioGroupPrimitive.ItemHiddenInputProps {}
+export interface RadioSelectBoxHiddenInputProps extends RadioGroupPrimitive.ItemHiddenInputProps {}
 
-export const SelectBoxRadioHiddenInput = RadioGroupPrimitive.ItemHiddenInput;
+export const RadioSelectBoxHiddenInput = RadioGroupPrimitive.ItemHiddenInput;

@@ -1,36 +1,46 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { SelectBoxCheck, SelectBoxCheckGroup } from "seed-design/ui/select-box";
 import { selectBoxGroupVariantMap } from "@seed-design/recipe/selectBoxGroup";
+import { CheckSelectBox } from "seed-design/ui/select-box";
 
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 
-const Component = () => {
-  return (
-    <SelectBoxCheckGroup>
-      <SelectBoxCheck key="dolor" label="dolor" description="dolor" defaultChecked />
-      <SelectBoxCheck key="magna" label="magna" description="magna" defaultChecked />
-      <SelectBoxCheck key="sint" label="sint" description="sint" />
-    </SelectBoxCheckGroup>
-  );
-};
-
 const meta = {
-  component: SelectBoxCheckGroup,
+  component: CheckSelectBox,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof SelectBoxCheckGroup>;
+} satisfies Meta<typeof CheckSelectBox>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const conditionMap = {
+  checked: {
+    false: {
+      defaultChecked: false,
+    },
+    true: {
+      defaultChecked: true,
+    },
+  },
+};
+
 const CommonStoryTemplate: Story = {
   args: {
     defaultValue: "dolor",
+    label: "sint",
+    description: "sint",
   },
-  render: function Render(args) {
-    return <VariantTable Component={Component} variantMap={selectBoxGroupVariantMap} {...args} />;
+  render: (args) => {
+    return (
+      <VariantTable
+        Component={CheckSelectBox}
+        variantMap={selectBoxGroupVariantMap}
+        conditionMap={conditionMap}
+        {...args}
+      />
+    );
   },
 };
 

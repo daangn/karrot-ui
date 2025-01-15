@@ -23,7 +23,6 @@ export { vars as radio } from "./radio";
 export { vars as reactionButton } from "./reaction-button";
 export { vars as segment } from "./segment";
 export { vars as segmentedControl } from "./segmented-control";
-export { vars as selectBoxGroup } from "./select-box-group";
 export { vars as selectBox } from "./select-box";
 export { vars as skeleton } from "./skeleton";
 export { vars as snackbar } from "./snackbar";

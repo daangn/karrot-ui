@@ -9,6 +9,7 @@ export {
   type ControlChipIconProps,
   type ControlChipLabelProps,
   type ControlChipPrefixIconProps,
+  type ControlChipRootBaseProps,
   type ControlChipRootProps,
   type ControlChipSuffixIconProps,
 } from "./ControlChip";

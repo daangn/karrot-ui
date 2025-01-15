@@ -1,4 +1,4 @@
-import { selectBoxGroup as groupVars, selectBox as vars } from "@seed-design/vars/component";
+import { selectBox as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, checked, pseudo } from "../utils/pseudo";
 
@@ -9,7 +9,6 @@ export const selectBoxGroup = defineRecipe({
     root: {
       display: "flex",
       flexDirection: "column",
-      gap: groupVars.base.enabled.root.gap,
       width: "100%",
     },
   },
