@@ -222,10 +222,10 @@ export type CheckboxProperties = InferFromDefinition<{
       "Indeterminate-Disabled",
     ];
   };
-  Bold: {
+  Weight: {
     type: "VARIANT";
-    defaultValue: "True";
-    variantOptions: ["False", "True"];
+    defaultValue: "Bold";
+    variantOptions: ["Regular", "Bold"];
   };
 }>;
 
@@ -320,11 +320,7 @@ export type FabProperties = InferFromDefinition<{
 }>;
 
 export type HelpBubbleProperties = InferFromDefinition<{
-  "Title Text#62535:0": {
-    type: "TEXT";
-    defaultValue: "Help Bubble \n두 줄일 땐 줄바꿈해요";
-  };
-  "↳ Description Text#62535:98": {
+  "Description#62535:98": {
     type: "TEXT";
     defaultValue: "디스크립션";
   };
@@ -332,7 +328,11 @@ export type HelpBubbleProperties = InferFromDefinition<{
     type: "BOOLEAN";
     defaultValue: true;
   };
-  "Placement (side-align)": {
+  "Title#62535:0": {
+    type: "TEXT";
+    defaultValue: "Help Bubble\n두 줄일 땐 줄바꿈해요";
+  };
+  Placement: {
     type: "VARIANT";
     defaultValue: "Bottom-Left";
     variantOptions: [
@@ -370,7 +370,7 @@ export type InlineBannerProperties = InferFromDefinition<{
     type: "BOOLEAN";
     defaultValue: true;
   };
-  "Link Text#1547:81": {
+  "Link Label#1547:81": {
     type: "TEXT";
     defaultValue: "자세히보기";
   };
@@ -569,5 +569,37 @@ export type SwitchProperties = InferFromDefinition<{
     type: "VARIANT";
     defaultValue: "Enabled";
     variantOptions: ["Disabled", "Enabled"];
+  };
+}>;
+
+export type TextButtonProperties = InferFromDefinition<{
+  "Prefix Icon#7561:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4174";
+    preferredValues: [];
+  };
+  "Label#6148:0": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  Layout: {
+    type: "VARIANT";
+    defaultValue: "Icon First";
+    variantOptions: ["Icon First", "Icon Last"];
+  };
+  Tone: {
+    type: "VARIANT";
+    defaultValue: "Brand";
+    variantOptions: ["Brand", "Neutral", "Neutral Subtle", "Danger"];
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Large";
+    variantOptions: ["Small", "Medium", "Large"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Enabled", "Enabled-Pressed", "Disabled"];
   };
 }>;

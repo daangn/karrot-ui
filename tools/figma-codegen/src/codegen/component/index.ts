@@ -26,6 +26,7 @@ import type {
   SkeletonProperties,
   SnackbarProperties,
   SwitchProperties,
+  TextButtonProperties,
 } from "./type";
 import { getLayoutVariableName } from "../variable";
 
@@ -79,10 +80,8 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
       ...(props.State.value === "Loading" && {
         loading: true,
       }),
-      size: props.Size.value.toString().toLowerCase(),
-      variant: camelCase(props.Variant.value, {
-        mergeAmbiguousCharacters: true,
-      }),
+      size: camelCase(props.Size.value),
+      variant: camelCase(props.Variant.value),
       layout,
       prefixIcon,
       suffixIcon,
@@ -129,7 +128,7 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
       .exhaustive();
 
     const commonProps = {
-      size: props.Size.value.toLowerCase(),
+      size: camelCase(props.Size.value),
       layout,
       prefixIcon,
       suffixIcon,
@@ -150,7 +149,7 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
     const placeholder = node.findOne(
       (child) =>
         child.type === "INSTANCE" && child.mainComponent?.key === identityPlaceholderHandler.key,
-    ) as InstanceNode | null;
+    ) as (InstanceNode & { componentProperties: IdentityPlaceholderProperties }) | null;
 
     const { componentProperties: props } = node;
 
@@ -161,14 +160,8 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
         // Placeholder
         src: `https://placehold.co/${props.Size.value}x${props.Size.value}`,
       }),
-      // XXX
-      // alt: ...
-      ...(placeholder?.componentProperties && {
-        fallback: identityPlaceholderHandler.codegen(
-          placeholder as typeof placeholder & {
-            componentProperties: IdentityPlaceholderProperties;
-          },
-        ),
+      ...(placeholder && {
+        fallback: identityPlaceholderHandler.codegen(placeholder),
       }),
       size: props.Size.value,
     };
@@ -225,10 +218,10 @@ const badgeHandler: ComponentHandler<BadgeProperties> = {
   key: "04609a35d47a1a0ef4904b3c25f79451892a85a1",
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
-      size: props.Size.value.toLowerCase(),
-      tone: props.Tone.value.toLowerCase(),
-      variant: props.Variant.value.toLowerCase(),
-      shape: props.Shape.value.toLowerCase(),
+      size: camelCase(props.Size.value),
+      tone: camelCase(props.Tone.value),
+      variant: camelCase(props.Variant.value),
+      shape: camelCase(props.Shape.value),
     };
 
     return createElement("Badge", commonProps, props["Label#1584:0"].value);
@@ -299,7 +292,6 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
       title,
       description,
       linkLabel,
-      ...(linkLabel && { linkProps: {} }),
       ...(props["Prefix Icon#12598:229"].value && {
         icon: createElement(createIconTagNameFromId(props["Icon#12598:210"].value)),
       }),
@@ -316,9 +308,9 @@ const checkboxHandler: ComponentHandler<CheckboxProperties> = {
 
     const commonProps = {
       label: props["Label#49990:0"].value,
-      weight: props.Bold.value === "True" ? "bold" : "regular",
-      variant: props.Shape.value.toLowerCase(),
-      size: props.Size.value.toLowerCase(),
+      weight: camelCase(props.Weight.value),
+      variant: camelCase(props.Shape.value),
+      size: camelCase(props.Size.value),
       ...(states.includes("Selected") && {
         defaultChecked: true,
       }),
@@ -374,7 +366,7 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
       .exhaustive();
 
     const commonProps = {
-      size: props.Size.value.toLowerCase(),
+      size: camelCase(props.Size.value),
       layout,
       prefixIcon,
       suffixIcon,
@@ -394,8 +386,8 @@ const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
   key: "032f3fddaad0aa3fa5a7f680768c1f5d02fb463f",
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
-      size: props.Size.value.toLowerCase(),
-      variant: camelCase(props.Variant.value, { mergeAmbiguousCharacters: true }),
+      size: camelCase(props.Size.value),
+      variant: camelCase(props.Variant.value),
       prefixIcon: createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
     };
 
@@ -408,7 +400,7 @@ const fabHandler: ComponentHandler<FabProperties> = {
   codegen: ({ componentProperties: props }) => {
     return createElement(
       "Fab",
-      {},
+      undefined,
       createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
       "aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
     );
@@ -431,7 +423,7 @@ const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
       | "bottom-start"
       | "left-end"
       | "left-start" = (() => {
-      switch (props["Placement (side-align)"].value) {
+      switch (props.Placement.value) {
         case "Bottom-Left":
           return "top-start";
         case "Bottom-Center":
@@ -460,9 +452,9 @@ const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
     })();
 
     const commonProps = {
-      title: props["Title Text#62535:0"].value,
+      title: props["Title#62535:0"].value,
       ...(props["Description#62499:0"].value && {
-        description: props["↳ Description Text#62535:98"].value,
+        description: props["Description#62535:98"].value,
       }),
       showCloseButton: props["Close Button"].value === "True",
       defaultOpen: true,
@@ -472,7 +464,7 @@ const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
     return createElement(
       "HelpBubbleTrigger",
       commonProps,
-      createElement("ActionButton", {}, "열기", "HelpBubble을 여는 요소를 제공해주세요."),
+      createElement("ActionButton", undefined, "열기", "HelpBubble을 여는 요소를 제공해주세요."),
     );
   },
 };
@@ -481,7 +473,7 @@ const identityPlaceholderHandler: ComponentHandler<IdentityPlaceholderProperties
   key: "808206c07408aa1056ec85a55925e9844e9265c2",
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
-      identity: props.Identity.value.toLowerCase(),
+      identity: camelCase(props.Identity.value),
     };
 
     return createElement("IdentityPlaceholder", commonProps);
@@ -539,8 +531,7 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
       title,
       description,
       ...(props.Interaction.value === "Link" && {
-        linkLabel: props["Link Text#1547:81"].value,
-        linkProps: {},
+        linkLabel: props["Link Label#1547:81"].value,
       }),
       ...(props["Prefix Icon#11840:27"].value &&
         iconNode &&
@@ -606,7 +597,7 @@ const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
       ...(props["Show Count#6397:33"].value && {
         count: Number(props["Count#15816:0"].value),
       }),
-      size: props.Size.value.toLowerCase(),
+      size: camelCase(props.Size.value),
       ...(props.State.value === "Loading" && {
         loading: true,
       }),
@@ -755,7 +746,7 @@ const skeletonHandler: ComponentHandler<SkeletonProperties> = {
     parent,
   }) => {
     const commonProps = {
-      radius: props.Radius.value.toLowerCase(),
+      radius: camelCase(props.Radius.value),
       width: (() => {
         switch (layoutSizingHorizontal) {
           case "FIXED": {
@@ -801,7 +792,7 @@ const snackbarHandler: ComponentHandler<SnackbarProperties> = {
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
       message: props["Message#1528:4"].value,
-      variant: props.Variant.value.toLowerCase(),
+      variant: camelCase(props.Variant.value),
       ...(props["Action Button#1528:0"].value && {
         actionLabel: props["Action Button Label#1528:8"].value,
       }),
@@ -809,6 +800,50 @@ const snackbarHandler: ComponentHandler<SnackbarProperties> = {
 
     // TODO: adapter.create({ render })
     return createElement("Snackbar", commonProps);
+  },
+};
+
+const textButtonHandler: ComponentHandler<TextButtonProperties> = {
+  key: "601f788792916250e33d04bd3165dee1404342df",
+  codegen: (node) => {
+    const { componentProperties: props } = node;
+
+    const states = props.State.value.split("-");
+
+    const { prefixIcon, suffixIcon, children } = match(props.Layout.value)
+      .with("Icon First", () => ({
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#7561:0"].value)),
+        suffixIcon: undefined,
+        children: props["Label#6148:0"].value,
+      }))
+      .with("Icon Last", () => {
+        const suffixIconNode = node.findOne(
+          (node) => node.type === "INSTANCE" && node.name === "Suffix Icon",
+        ) as InstanceNode | null;
+
+        const suffixIconComponentKey = suffixIconNode?.mainComponent?.key;
+
+        return {
+          prefixIcon: undefined,
+          suffixIcon: suffixIconComponentKey
+            ? createElement(createIconTagNameFromKey(suffixIconComponentKey))
+            : undefined,
+          children: props["Label#6148:0"].value,
+        };
+      })
+      .exhaustive();
+
+    const commonProps = {
+      tone: camelCase(props.Tone.value),
+      size: camelCase(props.Size.value),
+      prefixIcon,
+      suffixIcon,
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("TextButton", commonProps, children);
   },
 };
 
@@ -841,6 +876,7 @@ const componentHandlers = [
   selectBoxHandler,
   skeletonHandler,
   snackbarHandler,
+  textButtonHandler,
 ] as ComponentHandler[];
 
 export const componentHandlerMap = new Map(
