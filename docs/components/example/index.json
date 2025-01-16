@@ -37,7 +37,7 @@
   "badge-large": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgeLarge() {\n  return <Badge size=\"large\">라벨</Badge>;\n}",
   "badge-medium": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgeMedium() {\n  return <Badge size=\"medium\">라벨</Badge>;\n}",
   "badge-neutral": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgeNeutral() {\n  return <Badge tone=\"neutral\">라벨</Badge>;\n}",
-  "badge-outlined": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgeOutlined() {\n  return <Badge variant=\"outlined\">라벨</Badge>;\n}",
+  "badge-outline": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgeOutline() {\n  return <Badge variant=\"outline\">라벨</Badge>;\n}",
   "badge-pill": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgeRectangle() {\n  return <Badge shape=\"pill\">라벨</Badge>;\n}",
   "badge-positive": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgePositive() {\n  return <Badge tone=\"positive\">라벨</Badge>;\n}",
   "badge-preview": "import { Badge } from \"seed-design/ui/badge\";\n\nexport default function BadgePreview() {\n  return <Badge>라벨</Badge>;\n}",

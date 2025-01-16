@@ -36,11 +36,11 @@
 .badge__label--variant_solid {
     font-weight: var(--seed-v3-font-weight-bold)
 }
-.badge__root--variant_outlined {
+.badge__root--variant_outline {
     border-style: solid;
     border-width: 1px
 }
-.badge__label--variant_outlined {
+.badge__label--variant_outline {
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .badge__root--shape_rectangle-size_medium {
@@ -61,10 +61,10 @@
 .badge__label--tone_neutral-variant_solid {
     color: var(--seed-v3-color-fg-neutral-inverted)
 }
-.badge__root--tone_neutral-variant_outlined {
+.badge__root--tone_neutral-variant_outline {
     border-color: var(--seed-v3-color-stroke-neutral)
 }
-.badge__label--tone_neutral-variant_outlined {
+.badge__label--tone_neutral-variant_outline {
     color: var(--seed-v3-color-fg-neutral)
 }
 .badge__root--tone_brand-variant_weak {
@@ -79,10 +79,10 @@
 .badge__label--tone_brand-variant_solid {
     color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_brand-variant_outlined {
+.badge__root--tone_brand-variant_outline {
     border-color: var(--seed-v3-color-stroke-brand)
 }
-.badge__label--tone_brand-variant_outlined {
+.badge__label--tone_brand-variant_outline {
     color: var(--seed-v3-color-fg-brand)
 }
 .badge__root--tone_informative-variant_weak {
@@ -97,10 +97,10 @@
 .badge__label--tone_informative-variant_solid {
     color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_informative-variant_outlined {
+.badge__root--tone_informative-variant_outline {
     border-color: var(--seed-v3-color-stroke-informative)
 }
-.badge__label--tone_informative-variant_outlined {
+.badge__label--tone_informative-variant_outline {
     color: var(--seed-v3-color-fg-informative)
 }
 .badge__root--tone_positive-variant_weak {
@@ -115,10 +115,10 @@
 .badge__label--tone_positive-variant_solid {
     color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_positive-variant_outlined {
+.badge__root--tone_positive-variant_outline {
     border-color: var(--seed-v3-color-stroke-positive)
 }
-.badge__label--tone_positive-variant_outlined {
+.badge__label--tone_positive-variant_outline {
     color: var(--seed-v3-color-fg-positive)
 }
 .badge__root--tone_danger-variant_weak {
@@ -133,9 +133,9 @@
 .badge__label--tone_danger-variant_solid {
     color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_danger-variant_outlined {
+.badge__root--tone_danger-variant_outline {
     border-color: var(--seed-v3-color-stroke-danger)
 }
-.badge__label--tone_danger-variant_outlined {
+.badge__label--tone_danger-variant_outline {
     color: var(--seed-v3-color-fg-danger)
 }

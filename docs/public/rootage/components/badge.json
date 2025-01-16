@@ -66,7 +66,7 @@
         }
       }
     },
-    "variant=outlined": {
+    "variant=outline": {
       "enabled": {
         "root": {
           "borderWidth": "1px"
@@ -96,7 +96,7 @@
         }
       }
     },
-    "tone=neutral, variant=outlined": {
+    "tone=neutral, variant=outline": {
       "enabled": {
         "root": {
           "strokeColor": "$color.stroke.neutral"
@@ -126,7 +126,7 @@
         }
       }
     },
-    "tone=brand, variant=outlined": {
+    "tone=brand, variant=outline": {
       "enabled": {
         "root": {
           "strokeColor": "$color.stroke.brand"
@@ -156,7 +156,7 @@
         }
       }
     },
-    "tone=informative, variant=outlined": {
+    "tone=informative, variant=outline": {
       "enabled": {
         "root": {
           "strokeColor": "$color.stroke.informative"
@@ -186,7 +186,7 @@
         }
       }
     },
-    "tone=positive, variant=outlined": {
+    "tone=positive, variant=outline": {
       "enabled": {
         "root": {
           "strokeColor": "$color.stroke.positive"
@@ -216,7 +216,7 @@
         }
       }
     },
-    "tone=danger, variant=outlined": {
+    "tone=danger, variant=outline": {
       "enabled": {
         "root": {
           "strokeColor": "$color.stroke.danger"

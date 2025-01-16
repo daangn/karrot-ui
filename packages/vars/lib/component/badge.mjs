@@ -60,7 +60,7 @@ export const vars = {
       }
     }
   },
-  "variantOutlined": {
+  "variantOutline": {
     "enabled": {
       "root": {
         "borderWidth": "1px"
@@ -90,7 +90,7 @@ export const vars = {
       }
     }
   },
-  "toneNeutralVariantOutlined": {
+  "toneNeutralVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-neutral)"
@@ -120,7 +120,7 @@ export const vars = {
       }
     }
   },
-  "toneBrandVariantOutlined": {
+  "toneBrandVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-brand)"
@@ -150,7 +150,7 @@ export const vars = {
       }
     }
   },
-  "toneInformativeVariantOutlined": {
+  "toneInformativeVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-informative)"
@@ -180,7 +180,7 @@ export const vars = {
       }
     }
   },
-  "tonePositiveVariantOutlined": {
+  "tonePositiveVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-positive)"
@@ -210,7 +210,7 @@ export const vars = {
       }
     }
   },
-  "toneDangerVariantOutlined": {
+  "toneDangerVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-danger)"

@@ -42,7 +42,7 @@ data:
     enabled:
       label:
         fontWeight: $font-weight.bold
-  variant=outlined:
+  variant=outline:
     enabled:
       root:
         borderWidth: 1px
@@ -60,7 +60,7 @@ data:
         color: $color.bg.neutral-inverted
       label:
         color: $color.fg.neutral-inverted
-  tone=neutral, variant=outlined:
+  tone=neutral, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.neutral
@@ -78,7 +78,7 @@ data:
         color: $color.bg.brand-solid
       label:
         color: $color.palette.static-white
-  tone=brand, variant=outlined:
+  tone=brand, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.brand
@@ -96,7 +96,7 @@ data:
         color: $color.bg.informative-solid
       label:
         color: $color.palette.static-white
-  tone=informative, variant=outlined:
+  tone=informative, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.informative
@@ -114,7 +114,7 @@ data:
         color: $color.bg.positive-solid
       label:
         color: $color.palette.static-white
-  tone=positive, variant=outlined:
+  tone=positive, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.positive
@@ -132,7 +132,7 @@ data:
         color: $color.bg.danger-solid
       label:
         color: $color.palette.static-white
-  tone=danger, variant=outlined:
+  tone=danger, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.danger

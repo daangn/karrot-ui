@@ -10477,7 +10477,7 @@
         },
         {
           "key": {
-            "variant": "outlined"
+            "variant": "outline"
           },
           "state": [
             {
@@ -10614,7 +10614,7 @@
         {
           "key": {
             "tone": "neutral",
-            "variant": "outlined"
+            "variant": "outline"
           },
           "state": [
             {
@@ -10755,7 +10755,7 @@
         {
           "key": {
             "tone": "brand",
-            "variant": "outlined"
+            "variant": "outline"
           },
           "state": [
             {
@@ -10896,7 +10896,7 @@
         {
           "key": {
             "tone": "informative",
-            "variant": "outlined"
+            "variant": "outline"
           },
           "state": [
             {
@@ -11037,7 +11037,7 @@
         {
           "key": {
             "tone": "positive",
-            "variant": "outlined"
+            "variant": "outline"
           },
           "state": [
             {
@@ -11178,7 +11178,7 @@
         {
           "key": {
             "tone": "danger",
-            "variant": "outlined"
+            "variant": "outline"
           },
           "state": [
             {

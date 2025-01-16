@@ -62,13 +62,13 @@ const badge = defineRecipe({
           fontWeight: vars.variantSolid.enabled.label.fontWeight,
         },
       },
-      outlined: {
+      outline: {
         root: {
           borderStyle: "solid",
-          borderWidth: vars.variantOutlined.enabled.root.borderWidth,
+          borderWidth: vars.variantOutline.enabled.root.borderWidth,
         },
         label: {
-          fontWeight: vars.variantOutlined.enabled.label.fontWeight,
+          fontWeight: vars.variantOutline.enabled.label.fontWeight,
         },
       },
     },
@@ -125,13 +125,13 @@ const badge = defineRecipe({
     },
     {
       tone: "neutral",
-      variant: "outlined",
+      variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneNeutralVariantOutlined.enabled.root.strokeColor,
+          borderColor: vars.toneNeutralVariantOutline.enabled.root.strokeColor,
         },
         label: {
-          color: vars.toneNeutralVariantOutlined.enabled.label.color,
+          color: vars.toneNeutralVariantOutline.enabled.label.color,
         },
       },
     },
@@ -161,13 +161,13 @@ const badge = defineRecipe({
     },
     {
       tone: "brand",
-      variant: "outlined",
+      variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneBrandVariantOutlined.enabled.root.strokeColor,
+          borderColor: vars.toneBrandVariantOutline.enabled.root.strokeColor,
         },
         label: {
-          color: vars.toneBrandVariantOutlined.enabled.label.color,
+          color: vars.toneBrandVariantOutline.enabled.label.color,
         },
       },
     },
@@ -197,13 +197,13 @@ const badge = defineRecipe({
     },
     {
       tone: "informative",
-      variant: "outlined",
+      variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneInformativeVariantOutlined.enabled.root.strokeColor,
+          borderColor: vars.toneInformativeVariantOutline.enabled.root.strokeColor,
         },
         label: {
-          color: vars.toneInformativeVariantOutlined.enabled.label.color,
+          color: vars.toneInformativeVariantOutline.enabled.label.color,
         },
       },
     },
@@ -233,13 +233,13 @@ const badge = defineRecipe({
     },
     {
       tone: "positive",
-      variant: "outlined",
+      variant: "outline",
       css: {
         root: {
-          borderColor: vars.tonePositiveVariantOutlined.enabled.root.strokeColor,
+          borderColor: vars.tonePositiveVariantOutline.enabled.root.strokeColor,
         },
         label: {
-          color: vars.tonePositiveVariantOutlined.enabled.label.color,
+          color: vars.tonePositiveVariantOutline.enabled.label.color,
         },
       },
     },
@@ -269,13 +269,13 @@ const badge = defineRecipe({
     },
     {
       tone: "danger",
-      variant: "outlined",
+      variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneDangerVariantOutlined.enabled.root.strokeColor,
+          borderColor: vars.toneDangerVariantOutline.enabled.root.strokeColor,
         },
         label: {
-          color: vars.toneDangerVariantOutlined.enabled.label.color,
+          color: vars.toneDangerVariantOutline.enabled.label.color,
         },
       },
     },
