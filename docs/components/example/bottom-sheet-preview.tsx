@@ -8,7 +8,7 @@ const BottomSheetPreviewActivity = () => {
   return (
     <BottomSheet title="제목" description="설명을 작성할 수 있어요">
       {/* Horizontal padding is 0 in default for full-width usage. */}
-      {/* If you need padding, you can set paddingX "globalGutter" to ensure consistent padding. */}
+      {/* If you need padding, you can set paddingX "spacingX.globalGutter" to ensure consistent padding. */}
       <Flex paddingX="spacingX.globalGutter" style={{ height: "300px" }}>
         Content
       </Flex>
