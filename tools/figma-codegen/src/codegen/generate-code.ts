@@ -1,5 +1,5 @@
 import { camelCase } from "change-case";
-import { createBackgroundProps, createBorderProps, createColorProps } from "./color";
+import { createBackgroundProps, createBorderProps } from "./color";
 import { componentHandlerMap } from "./component";
 import { createIconTagNameFromKey, createMonochromeIconFillProps, isIconComponent } from "./icon";
 import type { ElementNode } from "./jsx";
@@ -96,7 +96,7 @@ export function generateCode(selection: SceneNode) {
           ...(lineHeight ? { lineHeight } : {}),
           ...(color ? { color } : {}),
         },
-        segment.characters,
+        segment.characters.replace(/\n/g, "<br />"),
         `${
           unavailableProps.length > 0
             ? `${unavailableProps.join(", ")} 프로퍼티는 반영되지 않았습니다. `
