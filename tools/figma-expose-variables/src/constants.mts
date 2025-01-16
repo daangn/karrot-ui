@@ -5,11 +5,16 @@ export const VARIABLE_TABLE_NAMES = {
   PALETTES: "Palettes",
 } as const satisfies Record<Uppercase<string>, string>;
 
-export const COMPONENT_KEYS = {
-  HEADER_ICON: "10b8a2f71849d64716716cede4e3055c9d7c7ae9",
-} as const satisfies Record<Uppercase<string>, ComponentNode["key"]>;
+export const VARIABLE_TABLE_NAME_HYPERLINKS = {
+  Semantic: "https://v3.seed-design.io/docs/design/foundation/color/palette",
+  Palettes: "https://v3.seed-design.io/docs/design/foundation/color/palette",
+} as const satisfies Record<
+  (typeof VARIABLE_TABLE_NAMES)[keyof typeof VARIABLE_TABLE_NAMES],
+  HyperlinkTarget["value"]
+>;
 
 export const FILLS = {
+  NOOP: { type: "SOLID", color: { r: 0, g: 0, b: 0 } },
   DARK: { type: "SOLID", color: { r: 0.102, g: 0.11, b: 0.125 } },
   DARK_FADED: { type: "SOLID", color: { r: 0.0706, g: 0.0706, b: 0.0706 } },
   LIGHT: { type: "SOLID", color: { r: 1, g: 1, b: 1 } },
@@ -24,8 +29,8 @@ export const VARIABLE_NAMES = {
 export const FONT_FAMILIES = {
   FIGMA_TEXT_REGULAR: { family: "Figma Only iOS Text", style: "Regular" },
   FIGMA_TEXT_BOLD: { family: "Figma Only iOS Text", style: "Bold" },
-  FIGMA_BOLD: { family: "Figma Only iOS", style: "Bold" },
-  SF_BOLD: { family: "SF Pro Text", style: "Bold" },
+  SF_PRO_BOLD: { family: "SF Pro", style: "Bold" },
+  SF_PRO_TEXT_BOLD: { family: "SF Pro Text", style: "Bold" },
 } as const satisfies Record<Uppercase<string>, FontName>;
 
 export const FONT_SIZES = {

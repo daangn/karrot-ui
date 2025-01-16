@@ -6,7 +6,7 @@ import {
   VARIABLE_NAMES,
   SIZES,
   VARIABLE_TABLE_HEADER_TITLE,
-  COMPONENT_KEYS,
+  VARIABLE_TABLE_NAME_HYPERLINKS,
 } from "./constants.mjs";
 import { drawAutoLayout, drawMainFrame, drawTableCell, drawTextNode } from "./draw-layer.mjs";
 import type { VariableTable } from "create-variable-tables.mjs";
@@ -33,8 +33,6 @@ export async function drawVariableTables(
     (variable) => variable.name === VARIABLE_NAMES.PREVIEW_STROKE,
   );
 
-  const headerIconComponent = await figma.importComponentByKeyAsync(COMPONENT_KEYS.HEADER_ICON);
-
   for (const key in FONT_FAMILIES) {
     await figma.loadFontAsync(FONT_FAMILIES[key as keyof typeof FONT_FAMILIES]);
   }
@@ -54,25 +52,23 @@ export async function drawVariableTables(
         table,
       );
 
-      const header = drawTextNode(
+      drawTextNode(
         {
           characters: VARIABLE_TABLE_HEADER_TITLE,
-          fontName: FONT_FAMILIES.SF_BOLD,
+          fontName: FONT_FAMILIES.SF_PRO_TEXT_BOLD,
           fontSize: 14,
-          fills: [FILLS.DARK], // temporal
+          fills: tableMetadataForegroundVariable
+            ? [
+                figma.variables.setBoundVariableForPaint(
+                  FILLS.NOOP,
+                  "color",
+                  tableMetadataForegroundVariable,
+                ),
+              ]
+            : [],
         },
         collectionFrame,
       );
-
-      if (header.fills !== figma.mixed && tableMetadataForegroundVariable) {
-        header.fills = [
-          figma.variables.setBoundVariableForPaint(
-            header.fills[0] as SolidPaint,
-            "color",
-            tableMetadataForegroundVariable,
-          ),
-        ];
-      }
 
       const variableTableNameFrame = drawAutoLayout(
         {
@@ -88,43 +84,34 @@ export async function drawVariableTables(
 
       const variableTableName = drawTextNode(
         {
-          characters: variableTable.name,
-          fontName: FONT_FAMILIES.FIGMA_BOLD,
+          characters: `${variableTable.name} ↗`,
+          fontName: FONT_FAMILIES.SF_PRO_BOLD,
           fontSize: FONT_SIZES.XXL,
-          fills: [FILLS.DARK], // temporal
+          fills: tableMetadataForegroundVariable
+            ? [
+                figma.variables.setBoundVariableForPaint(
+                  FILLS.NOOP,
+                  "color",
+                  tableMetadataForegroundVariable,
+                ),
+              ]
+            : [],
         },
         variableTableNameFrame,
       );
 
-      if (variableTableName.fills !== figma.mixed && tableMetadataForegroundVariable) {
-        variableTableName.fills = [
-          figma.variables.setBoundVariableForPaint(
-            variableTableName.fills[0] as SolidPaint,
-            "color",
-            tableMetadataForegroundVariable,
-          ),
-        ];
-      }
-
-      const icon = headerIconComponent.createInstance();
-      icon.resize(40, 40);
-
-      if (tableMetadataForegroundVariable) {
-        const vectors = icon.children.filter((child) => child.type === "VECTOR") as VectorNode[];
-
-        for (const vector of vectors) {
-          vector.fills = [FILLS.DARK]; // temporal
-          vector.fills = [
-            figma.variables.setBoundVariableForPaint(
-              vector.fills[0] as SolidPaint,
-              "color",
-              tableMetadataForegroundVariable,
-            ),
+      if (variableTable.name in VARIABLE_TABLE_NAME_HYPERLINKS) {
+        const value =
+          VARIABLE_TABLE_NAME_HYPERLINKS[
+            variableTable.name as keyof typeof VARIABLE_TABLE_NAME_HYPERLINKS
           ];
-        }
-      }
 
-      variableTableNameFrame.appendChild(icon);
+        variableTableName.setRangeHyperlink(
+          variableTableName.characters.length - 1,
+          variableTableName.characters.length,
+          { type: "URL", value },
+        );
+      }
 
       const modesFrame = drawAutoLayout(
         {
@@ -290,11 +277,7 @@ export async function drawVariableTables(
                         fontName: FONT_FAMILIES.FIGMA_TEXT_BOLD,
                         fontSize: 16,
                         fills: [
-                          figma.variables.setBoundVariableForPaint(
-                            { type: "SOLID", color: { r: 1, g: 1, b: 1 } },
-                            "color",
-                            variable,
-                          ),
+                          figma.variables.setBoundVariableForPaint(FILLS.NOOP, "color", variable),
                         ],
                       },
                       previewCell,
@@ -306,21 +289,14 @@ export async function drawVariableTables(
                     const color = figma.createRectangle();
                     color.cornerRadius = 4;
                     color.resize(16, 16);
-
-                    color.fills = frameFills; // temporal
                     color.fills = [
-                      figma.variables.setBoundVariableForPaint(
-                        color.fills[0] as SolidPaint,
-                        "color",
-                        variable,
-                      ),
+                      figma.variables.setBoundVariableForPaint(FILLS.NOOP, "color", variable),
                     ];
 
                     if (previewStrokeVariable) {
-                      color.strokes = fadedFills; // temporal
                       color.strokes = [
                         figma.variables.setBoundVariableForPaint(
-                          color.strokes[0] as SolidPaint,
+                          FILLS.NOOP,
                           "color",
                           previewStrokeVariable,
                         ),
@@ -337,13 +313,8 @@ export async function drawVariableTables(
                     color.cornerRadius = 4;
                     color.resize(16, 16);
                     color.fills = [];
-                    color.strokes = frameFills; // temporal
                     color.strokes = [
-                      figma.variables.setBoundVariableForPaint(
-                        color.strokes[0] as SolidPaint,
-                        "color",
-                        variable,
-                      ),
+                      figma.variables.setBoundVariableForPaint(FILLS.NOOP, "color", variable),
                     ];
                     color.strokeWeight = 2;
 
@@ -458,20 +429,15 @@ export async function drawVariableTables(
                   const color = figma.createRectangle();
                   color.cornerRadius = 4;
                   color.resize(16, 16);
-                  color.fills = frameFills; // temporal
                   color.fills = [
-                    figma.variables.setBoundVariableForPaint(
-                      color.fills[0] as SolidPaint,
-                      "color",
-                      scale,
-                    ),
+                    figma.variables.setBoundVariableForPaint(FILLS.NOOP, "color", scale),
                   ];
 
                   if (previewStrokeVariable) {
                     color.strokes = fadedFills;
                     color.strokes = [
                       figma.variables.setBoundVariableForPaint(
-                        color.strokes[0] as SolidPaint,
+                        FILLS.NOOP,
                         "color",
                         previewStrokeVariable,
                       ),
