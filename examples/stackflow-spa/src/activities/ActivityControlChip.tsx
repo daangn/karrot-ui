@@ -5,12 +5,12 @@ import { controlChip, controlChipVariantMap } from "@seed-design/recipe/controlC
 
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
-import { ControlChip, type ControlChipToggleProps } from "../design-system/ui/control-chip";
+import { ControlChip, type ToggleControlChipProps } from "../design-system/ui/control-chip";
 
 const initialVariants = {
   size: "medium",
   layout: "withText",
-} satisfies ControlChipToggleProps;
+} satisfies ToggleControlChipProps;
 
 const ActivityControlChip: ActivityComponentType = () => {
   return (
