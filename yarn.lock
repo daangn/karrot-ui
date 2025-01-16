@@ -2985,7 +2985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4":
   version: 7.25.0
   resolution: "@babel/runtime@npm:7.25.0"
   dependencies:
@@ -6531,21 +6531,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-use-callback-ref@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@radix-ui/react-use-callback-ref@npm:1.0.1"
-  dependencies:
-    "@babel/runtime": "npm:^7.13.10"
-  peerDependencies:
-    "@types/react": "*"
-    react: ^16.8 || ^17.0 || ^18.0
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 10/b9fd39911c3644bbda14a84e4fca080682bef84212b8d8931fcaa2d2814465de242c4cfd8d7afb3020646bead9c5e539d478cea0a7031bee8a8a3bb164f3bc4c
-  languageName: node
-  linkType: hard
-
 "@radix-ui/react-use-callback-ref@npm:1.1.0, @radix-ui/react-use-callback-ref@npm:^1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-use-callback-ref@npm:1.1.0"
@@ -6556,22 +6541,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10/2ec7903c67e3034b646005556f44fd975dc5204db6885fc58403e3584f27d95f0b573bc161de3d14fab9fda25150bf3b91f718d299fdfc701c736bd0bd2281fa
-  languageName: node
-  linkType: hard
-
-"@radix-ui/react-use-controllable-state@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@radix-ui/react-use-controllable-state@npm:1.0.1"
-  dependencies:
-    "@babel/runtime": "npm:^7.13.10"
-    "@radix-ui/react-use-callback-ref": "npm:1.0.1"
-  peerDependencies:
-    "@types/react": "*"
-    react: ^16.8 || ^17.0 || ^18.0
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 10/dee2be1937d293c3a492cb6d279fc11495a8f19dc595cdbfe24b434e917302f9ac91db24e8cc5af9a065f3f209c3423115b5442e65a5be9fd1e9091338972be9
   languageName: node
   linkType: hard
 
@@ -6605,7 +6574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-use-layout-effect@npm:1.1.0, @radix-ui/react-use-layout-effect@npm:^1.0.1":
+"@radix-ui/react-use-layout-effect@npm:1.1.0, @radix-ui/react-use-layout-effect@npm:^1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-use-layout-effect@npm:1.1.0"
   peerDependencies:
@@ -7749,7 +7718,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-use-callback-ref": "npm:^1.1.0"
-    "@radix-ui/react-use-layout-effect": "npm:^1.0.1"
+    "@radix-ui/react-use-layout-effect": "npm:^1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
@@ -7764,7 +7733,7 @@ __metadata:
   resolution: "@seed-design/react-checkbox@workspace:packages/react-headless/checkbox"
   dependencies:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
@@ -7789,7 +7758,7 @@ __metadata:
   dependencies:
     "@floating-ui/react": "npm:^0.26.19"
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
@@ -7828,7 +7797,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-radio-group@workspace:packages/react-headless/radio-group"
   dependencies:
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
@@ -7842,7 +7811,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-segmented-control@workspace:packages/react-headless/segmented-control"
   dependencies:
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     nanobundle: "npm:^1.6.0"
   peerDependencies:
@@ -7870,7 +7839,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-switch@workspace:packages/react-headless/switch"
   dependencies:
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
@@ -7884,7 +7853,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-tabs@workspace:packages/react-headless/tabs"
   dependencies:
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@radix-ui/react-use-size": "npm:^1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@use-gesture/react": "npm:^10.3.1"
@@ -7901,7 +7870,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
     "@radix-ui/react-use-callback-ref": "npm:^1.1.0"
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
@@ -7932,7 +7901,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@seed-design/react-toggle@workspace:packages/react-headless/toggle"
   dependencies:
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     nanobundle: "npm:^1.6.0"
@@ -7947,8 +7916,8 @@ __metadata:
   resolution: "@seed-design/react@workspace:packages/react"
   dependencies:
     "@radix-ui/react-compose-refs": "npm:^1.1.1"
-    "@radix-ui/react-use-controllable-state": "npm:1.0.1"
-    "@radix-ui/react-use-layout-effect": "npm:^1.0.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
+    "@radix-ui/react-use-layout-effect": "npm:^1.1.0"
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-checkbox": "npm:0.0.0-alpha-20241030023710"
@@ -8023,7 +7992,7 @@ __metadata:
   resolution: "@seed-design/stackflow-spa@workspace:examples/stackflow-spa"
   dependencies:
     "@daangn/react-monochrome-icon": "npm:^0.0.13"
-    "@radix-ui/react-slot": "npm:^1.1.0"
+    "@radix-ui/react-slot": "npm:^1.1.1"
     "@seed-design/cli": "npm:0.0.0-alpha-20241204134404"
     "@seed-design/react": "npm:0.0.0"
     "@seed-design/react-popover": "npm:0.0.0-alpha-20241030023710"

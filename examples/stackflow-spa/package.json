@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@daangn/react-monochrome-icon": "^0.0.13",
-    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.1",
     "@seed-design/react": "0.0.0",
     "@seed-design/react-popover": "0.0.0-alpha-20241030023710",
     "@seed-design/react-tabs": "0.0.0-alpha-20241209060641",
