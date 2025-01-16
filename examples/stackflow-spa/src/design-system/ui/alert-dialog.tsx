@@ -8,18 +8,11 @@ import { forwardRef } from "react";
 export interface AlertDialogRootProps extends Dialog.RootProps {}
 
 /**
- * @see https://v3.seed-design.io/docs/react/components/alert-dialog
+ * @see https://v3.seed-design.io/docs/react/components/stackflow/alert-dialog
  */
-export const AlertDialogRoot = ({
-  children,
-  ...otherProps
-}: AlertDialogRootProps) => {
+export const AlertDialogRoot = ({ children, ...otherProps }: AlertDialogRootProps) => {
   return (
-    <Dialog.Root
-      role="alertdialog"
-      closeOnInteractOutside={false}
-      {...otherProps}
-    >
+    <Dialog.Root role="alertdialog" closeOnInteractOutside={false} {...otherProps}>
       {children}
     </Dialog.Root>
   );
@@ -30,21 +23,18 @@ export interface AlertDialogContentProps extends Dialog.ContentProps {
   layerIndex?: number;
 }
 
-export const AlertDialogContent = forwardRef<
-  HTMLDivElement,
-  AlertDialogContentProps
->(({ children, layerIndex, ...otherProps }, ref) => {
-  return (
-    <Dialog.Positioner
-      style={{ "--layer-index": layerIndex } as React.CSSProperties}
-    >
-      <Dialog.Backdrop />
-      <Dialog.Content ref={ref} {...otherProps}>
-        {children}
-      </Dialog.Content>
-    </Dialog.Positioner>
-  );
-});
+export const AlertDialogContent = forwardRef<HTMLDivElement, AlertDialogContentProps>(
+  ({ children, layerIndex, ...otherProps }, ref) => {
+    return (
+      <Dialog.Positioner style={{ "--layer-index": layerIndex } as React.CSSProperties}>
+        <Dialog.Backdrop />
+        <Dialog.Content ref={ref} {...otherProps}>
+          {children}
+        </Dialog.Content>
+      </Dialog.Positioner>
+    );
+  },
+);
 
 export interface AlertDialogTriggerProps extends Dialog.TriggerProps {}
 

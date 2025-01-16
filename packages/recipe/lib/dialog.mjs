@@ -4,12 +4,12 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const dialogSlotNames = [
   [
-    "backdrop",
-    "dialog__backdrop"
+    "positioner",
+    "dialog__positioner"
   ],
   [
-    "container",
-    "dialog__container"
+    "backdrop",
+    "dialog__backdrop"
   ],
   [
     "content",
@@ -37,18 +37,11 @@ const dialogSlotNames = [
   ]
 ];
 
-const defaultVariant = {
-  "footerLayout": "horizontal"
-};
+const defaultVariant = {};
 
 const compoundVariants = [];
 
-export const dialogVariantMap = {
-  "footerLayout": [
-    "horizontal",
-    "vertical"
-  ]
-};
+export const dialogVariantMap = {};
 
 export const dialogVariantKeys = Object.keys(dialogVariantMap);
 

@@ -1,35 +1,54 @@
-import type { ActivityComponentType } from "@stackflow/react";
+import { useActivity, type ActivityComponentType } from "@stackflow/react";
 
-import { AlertDialog, AlertDialogAction } from "../design-system/stackflow/AlertDialog";
 import { ActionButton } from "../design-system/ui/action-button";
+import {
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogRoot,
+  AlertDialogTitle,
+} from "../design-system/ui/alert-dialog";
 import { useFlow } from "../stackflow";
+import { Stack } from "@seed-design/react";
+import { send } from "@stackflow/compat-await-push";
 
 const ActivityAlertDialog: ActivityComponentType = () => {
-  const { pop } = useFlow();
+  const activity = useActivity();
+  const { pop, push } = useFlow();
+
+  const handleClose = (open: boolean) => {
+    if (!open) {
+      pop();
+      send({
+        activityId: activity.id,
+        data: {
+          message: "hello",
+        },
+      });
+    }
+  };
 
   return (
-    <AlertDialog title="제목" description="다람쥐 헌 쳇바퀴에 타고파" onInteractOutside={pop}>
-      <AlertDialogAction asChild>
-        <ActionButton
-          onClick={() => {
-            pop();
-          }}
-          variant="neutralWeak"
-        >
-          취소
-        </ActionButton>
-      </AlertDialogAction>
-      <AlertDialogAction asChild>
-        <ActionButton
-          onClick={() => {
-            pop();
-          }}
-          variant="neutralSolid"
-        >
-          확인
-        </ActionButton>
-      </AlertDialogAction>
-    </AlertDialog>
+    <AlertDialogRoot defaultOpen onOpenChange={handleClose}>
+      <AlertDialogContent layerIndex={activity.zIndex * 5}>
+        <AlertDialogHeader>
+          <AlertDialogTitle>제목</AlertDialogTitle>
+          <AlertDialogDescription>다람쥐 헌 쳇바퀴에 타고파</AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <Stack gap="s2">
+            <AlertDialogAction asChild>
+              <ActionButton>확인</ActionButton>
+            </AlertDialogAction>
+            <ActionButton variant="neutralSolid" onClick={() => push("ActivityActionChip", {})}>
+              Push
+            </ActionButton>
+          </Stack>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialogRoot>
   );
 };
 

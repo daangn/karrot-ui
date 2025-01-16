@@ -1,5 +1,7 @@
 "use client";
 
+import { useActivity } from "@stackflow/react";
+import { useFlow } from "@stackflow/react/future";
 import { ActionButton } from "seed-design/ui/action-button";
 import {
   AlertDialogAction,
@@ -9,20 +11,18 @@ import {
   AlertDialogHeader,
   AlertDialogRoot,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "seed-design/ui/alert-dialog";
 
-const AlertDialogSingle = () => {
-  // You can set z-index dialog with "--layer-index" custom property. useful for stackflow integration.
+const AlertDialogStackflow = () => {
+  const activity = useActivity();
+  const { pop } = useFlow();
+
   return (
-    <AlertDialogRoot>
-      <AlertDialogTrigger asChild>
-        <ActionButton>열기</ActionButton>
-      </AlertDialogTrigger>
-      <AlertDialogContent layerIndex={50}>
+    <AlertDialogRoot defaultOpen onOpenChange={(open) => !open && pop()}>
+      <AlertDialogContent layerIndex={activity.zIndex * 5}>
         <AlertDialogHeader>
           <AlertDialogTitle>제목</AlertDialogTitle>
-          <AlertDialogDescription>단일 선택지를 제공합니다.</AlertDialogDescription>
+          <AlertDialogDescription>Stackflow</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogAction asChild>
@@ -34,4 +34,4 @@ const AlertDialogSingle = () => {
   );
 };
 
-export default AlertDialogSingle;
+export default AlertDialogStackflow;

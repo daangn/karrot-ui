@@ -6006,6 +6006,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/primitive@npm:1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/primitive@npm:1.1.1"
+  checksum: 10/d7e819177590108b74139809d52ec043c0962ae3513e947998be575fb13639c5c1c091896ddcf1d6a22a777d44ade59d22c2019ce9099607fc62a5de09c59707
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-accordion@npm:^1.2.1":
   version: 1.2.1
   resolution: "@radix-ui/react-accordion@npm:1.2.1"
@@ -6220,6 +6227,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-dismissable-layer@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@radix-ui/react-dismissable-layer@npm:1.1.3"
+  dependencies:
+    "@radix-ui/primitive": "npm:1.1.1"
+    "@radix-ui/react-compose-refs": "npm:1.1.1"
+    "@radix-ui/react-primitive": "npm:2.0.1"
+    "@radix-ui/react-use-callback-ref": "npm:1.1.0"
+    "@radix-ui/react-use-escape-keydown": "npm:1.1.0"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10/9905ff3d8d630223fd40bf31cdd8027b6e750cecd31aa04c2a5912e6e628f72973e58032bb944a5f4685dd888256a306a1c296a6e18648187974455a9660d95f
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-focus-guards@npm:1.1.1":
   version: 1.1.1
   resolution: "@radix-ui/react-focus-guards@npm:1.1.1"
@@ -6251,6 +6281,27 @@ __metadata:
     "@types/react-dom":
       optional: true
   checksum: 10/a34dc5caecc56483e293de770fde3addcebd975b94625cb7057bee3f0837d82bba9a672bef7c7902d28d68d31ab9b3847c88285664b5b747ac9141dabf11df3c
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-focus-scope@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-focus-scope@npm:1.1.1"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:1.1.1"
+    "@radix-ui/react-primitive": "npm:2.0.1"
+    "@radix-ui/react-use-callback-ref": "npm:1.1.0"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10/128508e7e34a47fd44d51bdb3d66a35a337c54b64125548d4a98bb377ee89b2fd8f96e0a075368d393c6664abba1e5a2f167734a6adbb170c41da0aa7a06d05f
   languageName: node
   linkType: hard
 
@@ -6421,6 +6472,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-primitive@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@radix-ui/react-primitive@npm:2.0.1"
+  dependencies:
+    "@radix-ui/react-slot": "npm:1.1.1"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10/ed6829b8ff4117cde2c02b14325ff78b7902fe9e8324b9fdbfd11646c5bb703f38711d8da5029ffc873384496481b7d398d0e3c17f7cc287b52fb92fbaf67da2
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-roving-focus@npm:1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-roving-focus@npm:1.1.0"
@@ -6490,7 +6560,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-slot@npm:^1.1.1":
+"@radix-ui/react-slot@npm:1.1.1, @radix-ui/react-slot@npm:^1.1.1":
   version: 1.1.1
   resolution: "@radix-ui/react-slot@npm:1.1.1"
   dependencies:
@@ -7743,6 +7813,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@seed-design/react-dialog@npm:0.0.0, @seed-design/react-dialog@workspace:packages/react-headless/dialog":
+  version: 0.0.0-use.local
+  resolution: "@seed-design/react-dialog@workspace:packages/react-headless/dialog"
+  dependencies:
+    "@radix-ui/react-dismissable-layer": "npm:^1.1.3"
+    "@radix-ui/react-focus-scope": "npm:^1.1.1"
+    "@radix-ui/react-use-controllable-state": "npm:1.1.0"
+    "@radix-ui/react-use-layout-effect": "npm:^1.1.0"
+    "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
+    nanobundle: "npm:^1.6.0"
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@seed-design/react-icon@npm:^0.7.3":
   version: 0.7.3
   resolution: "@seed-design/react-icon@npm:0.7.3"
@@ -7921,6 +8007,7 @@ __metadata:
     "@seed-design/dom-utils": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-avatar": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-checkbox": "npm:0.0.0-alpha-20241030023710"
+    "@seed-design/react-dialog": "npm:0.0.0"
     "@seed-design/react-popover": "npm:0.0.0-alpha-20241030023710"
     "@seed-design/react-primitive": "npm:0.0.0"
     "@seed-design/react-progress": "npm:0.0.0"
@@ -7993,6 +8080,7 @@ __metadata:
   dependencies:
     "@daangn/react-monochrome-icon": "npm:^0.0.13"
     "@radix-ui/react-slot": "npm:^1.1.1"
+    "@radix-ui/react-use-callback-ref": "npm:^1.1.0"
     "@seed-design/cli": "npm:0.0.0-alpha-20241204134404"
     "@seed-design/react": "npm:0.0.0"
     "@seed-design/react-popover": "npm:0.0.0-alpha-20241030023710"
@@ -8002,6 +8090,7 @@ __metadata:
     "@seed-design/stackflow": "npm:0.0.0"
     "@seed-design/stylesheet": "npm:3.0.0-alpha-20241212122822"
     "@seed-design/vars": "npm:0.0.0"
+    "@stackflow/compat-await-push": "npm:^1.1.13"
     "@stackflow/core": "npm:^1.1.0"
     "@stackflow/plugin-basic-ui": "npm:^1.11.1"
     "@stackflow/plugin-history-sync": "npm:^1.7.0"
@@ -8333,6 +8422,18 @@ __metadata:
   bin:
     github-codeowners: dist/cli.js
   checksum: 10/34120ef622616fef1ed8af12869d8c1803842aafa3fbacca263805ee7c85f58d11bdc301ef698c9b41268b275b9fd090f5d9f6d89c556abe9d52196e72d1c510
+  languageName: node
+  linkType: hard
+
+"@stackflow/compat-await-push@npm:^1.1.13":
+  version: 1.1.13
+  resolution: "@stackflow/compat-await-push@npm:1.1.13"
+  peerDependencies:
+    "@stackflow/core": ^1.1.0-canary.0
+    "@stackflow/react": ^1.3.2-canary.0
+    "@types/react": ">=16.8.0"
+    react: ">=16.8.0"
+  checksum: 10/ca498d65533f88ce88b70b3f58806397b4c9fcea2857ce085ae3e506cbb9083ab2cb7951deac5ca92f78fbeddc8cc48180b3bf9d27ef175cda88f37b65c7e05b
   languageName: node
   linkType: hard
 

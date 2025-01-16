@@ -143,7 +143,7 @@ export const DialogRoot = forwardRef<HTMLDivElement, DialogRootProps>((props, re
       ref={ref}
       role={role}
       data-stackflow-component-name="Dialog"
-      className={clsx(classNames.container, className)}
+      className={clsx(classNames.positioner, className)}
       {...otherProps}
     >
       <StyleProvider value={classNames}>{children}</StyleProvider>

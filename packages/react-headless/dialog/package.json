@@ -1,0 +1,51 @@
+{
+  "name": "@seed-design/react-dialog",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daangn/seed-design.git",
+    "directory": "packages/react-headless/dialog"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "prepack": "yarn build",
+    "clean": "rm -rf lib",
+    "build": "nanobundle build"
+  },
+  "dependencies": {
+    "@radix-ui/react-dismissable-layer": "^1.1.3",
+    "@radix-ui/react-focus-scope": "^1.1.1",
+    "@radix-ui/react-use-controllable-state": "1.1.0",
+    "@radix-ui/react-use-layout-effect": "^1.1.0",
+    "@seed-design/dom-utils": "0.0.0-alpha-20241030023710"
+  },
+  "devDependencies": {
+    "nanobundle": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "ultra": {
+    "concurrent": [
+      "dev",
+      "build"
+    ]
+  }
+}

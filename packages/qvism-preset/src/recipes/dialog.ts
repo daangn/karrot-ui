@@ -1,36 +1,48 @@
 import { dialog as vars } from "@seed-design/vars/component";
-import { defineRecipe } from "../utils/define-recipe";
 import { enterAnimation, exitAnimation } from "../utils/animation";
-import { pseudo } from "../utils/pseudo";
+import { defineRecipe } from "../utils/define-recipe";
+import { not, open, pseudo } from "../utils/pseudo";
 
 const dialog = defineRecipe({
   name: "dialog",
-  slots: ["backdrop", "container", "content", "header", "footer", "action", "title", "description"],
+  slots: [
+    "positioner",
+    "backdrop",
+    "content",
+    "header",
+    "footer",
+    "action",
+    "title",
+    "description",
+  ],
   base: {
-    backdrop: {
-      position: "fixed",
-      inset: 0,
-      background: vars.base.enabled.backdrop.color,
-
-      [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
-        exitAnimation({
-          timingFunction: vars.base.enabled.backdrop.exitTimingFunction,
-          duration: vars.base.enabled.backdrop.exitDuration,
-          opacity: vars.base.enabled.backdrop.exitOpacity,
-        }),
-      [pseudo(":is([data-transition-state='enter-active'],[data-transition-state='enter-done'])")]:
-        enterAnimation({
-          timingFunction: vars.base.enabled.backdrop.enterTimingFunction,
-          duration: vars.base.enabled.backdrop.enterDuration,
-          opacity: vars.base.enabled.backdrop.enterOpacity,
-        }),
-    },
-    container: {
+    positioner: {
       position: "fixed",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       inset: 0,
+      overscrollBehaviorY: "none",
+
+      "--dialog-z-index": "2",
+      zIndex: "calc(var(--dialog-z-index) + var(--layer-index, 0))",
+    },
+    backdrop: {
+      position: "fixed",
+      inset: 0,
+      background: vars.base.enabled.backdrop.color,
+      zIndex: "calc(var(--dialog-z-index) + var(--layer-index, 0))",
+
+      [pseudo(open)]: enterAnimation({
+        timingFunction: vars.base.enabled.backdrop.enterTimingFunction,
+        duration: vars.base.enabled.backdrop.enterDuration,
+        opacity: vars.base.enabled.backdrop.enterOpacity,
+      }),
+      [pseudo(not(open))]: exitAnimation({
+        timingFunction: vars.base.enabled.backdrop.exitTimingFunction,
+        duration: vars.base.enabled.backdrop.exitDuration,
+        opacity: vars.base.enabled.backdrop.exitOpacity,
+      }),
     },
     content: {
       position: "relative",
@@ -39,6 +51,7 @@ const dialog = defineRecipe({
       flexDirection: "column",
       boxSizing: "border-box",
       wordBreak: "break-all",
+      zIndex: "calc(var(--dialog-z-index) + var(--layer-index, 0))",
 
       background: vars.base.enabled.content.color,
       maxWidth: vars.base.enabled.content.maxWidth,
@@ -46,19 +59,17 @@ const dialog = defineRecipe({
       padding: `${vars.base.enabled.content.paddingY} ${vars.base.enabled.content.paddingX}`,
       borderRadius: vars.base.enabled.content.cornerRadius,
 
-      [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
-        exitAnimation({
-          timingFunction: vars.base.enabled.content.exitTimingFunction,
-          duration: vars.base.enabled.content.exitDuration,
-          opacity: vars.base.enabled.content.exitOpacity,
-        }),
-      [pseudo(":is([data-transition-state='enter-active'],[data-transition-state='enter-done'])")]:
-        enterAnimation({
-          timingFunction: vars.base.enabled.content.enterTimingFunction,
-          duration: vars.base.enabled.content.enterDuration,
-          opacity: vars.base.enabled.content.enterOpacity,
-          scale: vars.base.enabled.content.enterScale,
-        }),
+      [pseudo(open)]: enterAnimation({
+        timingFunction: vars.base.enabled.content.enterTimingFunction,
+        duration: vars.base.enabled.content.enterDuration,
+        opacity: vars.base.enabled.content.enterOpacity,
+        scale: vars.base.enabled.content.enterScale,
+      }),
+      [pseudo(not(open))]: exitAnimation({
+        timingFunction: vars.base.enabled.content.exitTimingFunction,
+        duration: vars.base.enabled.content.exitDuration,
+        opacity: vars.base.enabled.content.exitOpacity,
+      }),
     },
     header: {
       display: "flex",
@@ -85,35 +96,14 @@ const dialog = defineRecipe({
     },
     footer: {
       display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
+      flexDirection: "column",
       alignItems: "stretch",
 
       paddingTop: vars.base.enabled.footer.paddingTop,
-      gap: vars.base.enabled.footer.gap,
-    },
-    action: {
-      width: "initial",
-      minWidth: `calc(50% - ${vars.base.enabled.footer.gap} / 2)`,
     },
   },
-  variants: {
-    footerLayout: {
-      horizontal: {
-        footer: {
-          flexDirection: "row-reverse",
-        },
-      },
-      vertical: {
-        footer: {
-          flexDirection: "column",
-        },
-      },
-    },
-  },
-  defaultVariants: {
-    footerLayout: "horizontal",
-  },
+  variants: {},
+  defaultVariants: {},
 });
 
 export default dialog;

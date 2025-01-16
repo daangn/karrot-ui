@@ -7,6 +7,7 @@ export * from "./Callout";
 export * from "./Checkbox";
 export * from "./Columns";
 export * from "./ControlChip";
+export * from "./Dialog";
 export * from "./ExtendedFab";
 export * from "./Fab";
 export * from "./Flex";
