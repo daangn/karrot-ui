@@ -1,15 +1,18 @@
+import { clsx } from "clsx";
+
 interface ExternalImageProps {
   value: {
     imageUrl: string;
     alt?: string;
   };
+  className?: string;
 }
 
-const ExternalImage = ({ value }: ExternalImageProps) => {
+export const ExternalImage = ({ value, className }: ExternalImageProps) => {
   const { imageUrl, alt } = value;
 
   return (
-    <div className="relative my-4">
+    <div className={clsx("relative my-4", className)}>
       <div className="relative aspect-video">
         <img
           src={imageUrl}
@@ -21,5 +24,3 @@ const ExternalImage = ({ value }: ExternalImageProps) => {
     </div>
   );
 };
-
-export default ExternalImage;

@@ -9,8 +9,8 @@ import ErrorBoundary from "../error-boundary";
 import { PortableImage } from "./image";
 import { Table } from "./table";
 import { ImageTextHalfPreview } from "@/components/sanity/image-text-half";
-import ExternalImage from "@/sanity/components/ExternalImage";
-
+import { DoDont } from "./do-dont";
+import { ExternalImage } from "./external-image";
 interface SanityGuidelineProps {
   title: string;
 }
@@ -53,6 +53,7 @@ export const PortableContent = ({ content }: { content: any }) => {
           tabelContainer: Table,
           imageWithText: ImageTextHalfPreview,
           externalImageLink: ExternalImage,
+          doDont: DoDont,
         },
         block: {
           normal: (props) => <p className="min-h-4 m-0" {...props} />,

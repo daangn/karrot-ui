@@ -5,24 +5,16 @@ import { client } from "./client";
 
 import type { PortableTextTypeComponentProps } from "@portabletext/react";
 import { getImageDimensions, SanityImageAsset } from "@sanity/asset-utils";
+import { SanityImageType } from "./types";
 
 const { projectId, dataset } = client.config();
-
-export interface SanityImage {
-  _type: "image";
-  _key: string;
-  asset: {
-    _ref: string;
-    _type: "reference";
-  };
-}
 
 interface ImageProps {
   value: SanityImageAsset;
   className?: string;
 }
 
-export const Image = ({ value, className }: ImageProps) => {
+export const SanityImage = ({ value, className }: ImageProps) => {
   if (!value) {
     return <div className={`${className} bg-gray-200`} />;
   }
@@ -48,7 +40,7 @@ export const Image = ({ value, className }: ImageProps) => {
   );
 };
 
-export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityImage>) => {
+export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityImageType>) => {
   if (!value || !value?.asset) {
     return null;
   }

@@ -5,7 +5,7 @@ import { PortableTextBlock } from "@portabletext/react";
 import { SanityImageAsset } from "@sanity/asset-utils";
 import imageUrlBuilder from "@sanity/image-url";
 import { useCallback } from "react";
-import { client } from "../../sanity/components/client";
+import { client } from "./client";
 
 const builder = imageUrlBuilder(client);
 
