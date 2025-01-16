@@ -25,6 +25,6 @@ export type Radius = keyof TokenObject["$radius"];
 
 export type TimingFunction = keyof TokenObject["$timingFunction"];
 
-export type Dimension = keyof TokenObject["$dimension"];
+export type Dimension = Exclude<keyof TokenObject["$dimension"], "spacingX">;
 
 export type SpacingX = keyof TokenObject["$dimension"]["spacingX"];

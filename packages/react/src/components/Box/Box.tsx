@@ -5,6 +5,7 @@ import type {
   ColorStroke,
   Dimension,
   Radius,
+  SpacingX,
 } from "@seed-design/vars";
 import { vars } from "@seed-design/vars";
 import clsx from "clsx";
@@ -76,17 +77,17 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   borderBottomLeftRadius?: Radius;
 
-  width?: Dimension | "full" | (string & {});
+  width?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  minWidth?: Dimension | "full" | (string & {});
+  minWidth?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  maxWidth?: Dimension | "full" | (string & {});
+  maxWidth?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  height?: Dimension | "full" | (string & {});
+  height?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  minHeight?: Dimension | "full" | (string & {});
+  minHeight?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  maxHeight?: Dimension | "full" | (string & {});
+  maxHeight?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
   top?: 0;
 
@@ -96,19 +97,19 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   bottom?: 0;
 
-  padding?: Dimension;
+  padding?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingX?: Dimension;
+  paddingX?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingY?: Dimension;
+  paddingY?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingTop?: Dimension;
+  paddingTop?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingRight?: Dimension;
+  paddingRight?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingBottom?: Dimension;
+  paddingBottom?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingLeft?: Dimension;
+  paddingLeft?: Dimension | `spacingX.${SpacingX}`;
 
   display?: "block" | "flex" | "inline-flex" | "inline" | "inline-block" | "none";
 
@@ -134,7 +135,7 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   alignContent?: "flex-start" | "flex-end" | "center" | "stretch";
 
-  gap?: Dimension;
+  gap?: Dimension | `spacingX.${SpacingX}`;
 }
 
 export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
