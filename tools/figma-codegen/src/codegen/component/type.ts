@@ -1,9 +1,13 @@
 import type { InferFromDefinition } from "./type-helper";
 
 export type ActionButtonProperties = InferFromDefinition<{
-  "Suffix Icon#5987:244": {
+  "Label#5987:61": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  "Prefix Icon#5987:305": {
     type: "INSTANCE_SWAP";
-    defaultValue: "8328:3654";
+    defaultValue: "8328:4176";
     preferredValues: [];
   };
   "Icon#7574:0": {
@@ -11,19 +15,20 @@ export type ActionButtonProperties = InferFromDefinition<{
     defaultValue: "8328:4176";
     preferredValues: [];
   };
-  "Prefix Icon#5987:305": {
+  "Suffix Icon#5987:244": {
     type: "INSTANCE_SWAP";
-    defaultValue: "8328:4176";
+    defaultValue: "8328:3654";
     preferredValues: [];
-  };
-  "Label#5987:61": {
-    type: "TEXT";
-    defaultValue: "라벨";
   };
   Size: {
     type: "VARIANT";
     defaultValue: "XSmall";
     variantOptions: ["XSmall", "Small", "Medium", "Large"];
+  };
+  Layout: {
+    type: "VARIANT";
+    defaultValue: "Text Only";
+    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
   };
   Variant: {
     type: "VARIANT";
@@ -40,73 +45,73 @@ export type ActionButtonProperties = InferFromDefinition<{
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed", "Loading", "Disabled"];
-  };
-  Layout: {
-    type: "VARIANT";
-    defaultValue: "Text Only";
-    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
+    variantOptions: ["Enabled", "Enabled-Pressed", "Enabled-Loading", "Disabled"];
   };
 }>;
 
 export type ActionChipProperties = InferFromDefinition<{
-  "Icon#8714:0": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:4176";
-    preferredValues: [{ type: "COMPONENT_SET"; key: "8be1768c683a0e39d3f319b5d9286ae38f6d5c18" }];
-  };
-  "Prefix Icon#8711:0": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:4043";
-    preferredValues: [{ type: "COMPONENT_SET"; key: "8ed05ef62a40f2dc034ee7eb6945bd0e63ad49aa" }];
-  };
   "Suffix Icon#8711:3": {
     type: "INSTANCE_SWAP";
     defaultValue: "8328:3659";
     preferredValues: [];
   };
+  "Prefix Icon#8711:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4043";
+    preferredValues: [
+      {
+        type: "COMPONENT_SET";
+        key: "8ed05ef62a40f2dc034ee7eb6945bd0e63ad49aa";
+      },
+    ];
+  };
   "Label#7185:0": {
     type: "TEXT";
     defaultValue: "라벨";
   };
-  "Show Count#7185:42": {
-    type: "BOOLEAN";
-    defaultValue: false;
+  "Icon#8714:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4176";
+    preferredValues: [];
   };
   "Count#7185:21": {
     type: "TEXT";
     defaultValue: "10";
   };
-  Layout: {
-    type: "VARIANT";
-    defaultValue: "Text Only";
-    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
+  "Show Count#7185:42": {
+    type: "BOOLEAN";
+    defaultValue: false;
   };
   Size: {
     type: "VARIANT";
     defaultValue: "Medium";
     variantOptions: ["Medium", "Small"];
   };
+  Layout: {
+    type: "VARIANT";
+    defaultValue: "Text Only";
+    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
+  };
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed", "Disabled"];
+    variantOptions: ["Enabled", "Enabled-Pressed", "Disabled"];
   };
 }>;
 
 export type AvatarProperties = InferFromDefinition<{
-  "Show Image#71850:57": {
+  "Show Badge#1398:26": {
     type: "BOOLEAN";
     defaultValue: false;
   };
-  "Show Badge#1398:26": {
+  "Show Image#71850:57": {
     type: "BOOLEAN";
     defaultValue: false;
   };
   Size: {
     type: "VARIANT";
     defaultValue: "20";
-    variantOptions: ["20", "24", "36", "48", "64", "80", "96", "40"];
+    variantOptions: ["20", "24", "36", "40", "48", "64", "80", "96"];
   };
 }>;
 
@@ -116,15 +121,15 @@ export type AvatarStackProperties = InferFromDefinition<{
     defaultValue: "20";
     variantOptions: ["20", "24", "36", "48", "64"];
   };
-  "Top Item": {
-    type: "VARIANT";
-    defaultValue: "Last Item";
-    variantOptions: ["Last Item", "First Item"];
-  };
   "Item Count": {
     type: "VARIANT";
     defaultValue: "5";
     variantOptions: ["2", "3", "4", "5"];
+  };
+  "Top Item": {
+    type: "VARIANT";
+    defaultValue: "Last Item";
+    variantOptions: ["Last Item", "First Item"];
   };
 }>;
 
@@ -133,20 +138,20 @@ export type BadgeProperties = InferFromDefinition<{
     type: "TEXT";
     defaultValue: "배지라벨";
   };
-  Tone: {
-    type: "VARIANT";
-    defaultValue: "Neutral";
-    variantOptions: ["Neutral", "Brand", "Informative", "Positive", "Danger"];
-  };
   Size: {
     type: "VARIANT";
     defaultValue: "Large";
     variantOptions: ["Medium", "Large"];
   };
+  Tone: {
+    type: "VARIANT";
+    defaultValue: "Neutral";
+    variantOptions: ["Neutral", "Brand", "Informative", "Positive", "Danger"];
+  };
   Variant: {
     type: "VARIANT";
     defaultValue: "Weak";
-    variantOptions: ["Solid", "Outlined", "Weak"];
+    variantOptions: ["Solid", "Weak", "Outlined"];
   };
   Shape: {
     type: "VARIANT";
@@ -163,7 +168,12 @@ export type CalloutProperties = InferFromDefinition<{
   "Icon#12598:210": {
     type: "INSTANCE_SWAP";
     defaultValue: "8328:4221";
-    preferredValues: [{ type: "COMPONENT_SET"; key: "f2c04b68b0bec4ec9145d832de45947030d3b653" }];
+    preferredValues: [
+      {
+        type: "COMPONENT_SET";
+        key: "f2c04b68b0bec4ec9145d832de45947030d3b653";
+      },
+    ];
   };
   Interaction: {
     type: "VARIANT";
@@ -178,7 +188,7 @@ export type CalloutProperties = InferFromDefinition<{
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed"];
+    variantOptions: ["Enabled", "Enabled-Pressed"];
   };
   "Show Title": {
     type: "VARIANT";
@@ -197,75 +207,20 @@ export type CheckboxProperties = InferFromDefinition<{
     type: "TEXT";
     defaultValue: "라벨";
   };
-  Shape: {
-    type: "VARIANT";
-    defaultValue: "Square";
-    variantOptions: ["Ghost", "Square"];
-  };
   Size: {
     type: "VARIANT";
     defaultValue: "Large";
     variantOptions: ["Medium", "Large"];
   };
-  State: {
+  Shape: {
     type: "VARIANT";
-    defaultValue: "Unselected-Enabled";
-    variantOptions: [
-      "Unselected-Enabled",
-      "Unselected-Pressed",
-      "Unselected-Disabled",
-      "Selected-Enabled",
-      "Selected-Pressed",
-      "Selected-Disabled",
-      "Indeterminate-Enabled",
-      "Indeterminate-Pressed",
-      "Indeterminate-Disabled",
-    ];
+    defaultValue: "Square";
+    variantOptions: ["Square", "Ghost"];
   };
   Weight: {
     type: "VARIANT";
     defaultValue: "Bold";
     variantOptions: ["Regular", "Bold"];
-  };
-}>;
-
-export type ControlChipProperties = InferFromDefinition<{
-  "Suffix Icon#8722:82": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:3659";
-    preferredValues: [];
-  };
-  "Label#7185:0": {
-    type: "TEXT";
-    defaultValue: "라벨";
-  };
-  "Show Count#7185:42": {
-    type: "BOOLEAN";
-    defaultValue: false;
-  };
-  "Icon#8722:41": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:4176";
-    preferredValues: [];
-  };
-  "Prefix Icon#8722:0": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:4043";
-    preferredValues: [{ type: "COMPONENT_SET"; key: "8ed05ef62a40f2dc034ee7eb6945bd0e63ad49aa" }];
-  };
-  "Count#7185:21": {
-    type: "TEXT";
-    defaultValue: "10";
-  };
-  Layout: {
-    type: "VARIANT";
-    defaultValue: "Text Only";
-    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
-  };
-  Size: {
-    type: "VARIANT";
-    defaultValue: "Medium";
-    variantOptions: ["Medium", "Small"];
   };
   State: {
     type: "VARIANT";
@@ -273,9 +228,69 @@ export type ControlChipProperties = InferFromDefinition<{
     variantOptions: [
       "Enabled",
       "Enabled-Pressed",
-      "Disabled",
       "Enabled-Selected",
       "Enabled-Selected-Pressed",
+      "Enabled-Indeterminate",
+      "Enabled-Indeterminate-Pressed",
+      "Disabled",
+      "Disabled-Selected",
+      "Disabled-Indeterminate",
+    ];
+  };
+}>;
+
+export type ControlChipProperties = InferFromDefinition<{
+  "Count#7185:21": {
+    type: "TEXT";
+    defaultValue: "10";
+  };
+  "Icon#8722:41": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4176";
+    preferredValues: [];
+  };
+  "Show Count#7185:42": {
+    type: "BOOLEAN";
+    defaultValue: false;
+  };
+  "Label#7185:0": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  "Prefix Icon#8722:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:4043";
+    preferredValues: [
+      {
+        type: "COMPONENT_SET";
+        key: "8ed05ef62a40f2dc034ee7eb6945bd0e63ad49aa";
+      },
+    ];
+  };
+  "Suffix Icon#8722:82": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:3659";
+    preferredValues: [];
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Medium";
+    variantOptions: ["Medium", "Small"];
+  };
+  Layout: {
+    type: "VARIANT";
+    defaultValue: "Text Only";
+    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: [
+      "Enabled",
+      "Enabled-Pressed",
+      "Enabled-Selected",
+      "Enabled-Selected-Pressed",
+      "Disabled",
       "Disabled-Selected",
     ];
   };
@@ -304,7 +319,7 @@ export type ExtendedFabProperties = InferFromDefinition<{
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed"];
+    variantOptions: ["Enabled", "Enabled-Pressed"];
   };
 }>;
 
@@ -317,11 +332,15 @@ export type FabProperties = InferFromDefinition<{
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled", "Pressed"];
+    variantOptions: ["Enabled", "Enabled-Pressed"];
   };
 }>;
 
 export type HelpBubbleProperties = InferFromDefinition<{
+  "Title#62535:0": {
+    type: "TEXT";
+    defaultValue: "Help Bubble\n두 줄일 땐 줄바꿈해요";
+  };
   "Description#62535:98": {
     type: "TEXT";
     defaultValue: "디스크립션";
@@ -329,10 +348,6 @@ export type HelpBubbleProperties = InferFromDefinition<{
   "Show Description#62499:0": {
     type: "BOOLEAN";
     defaultValue: true;
-  };
-  "Title#62535:0": {
-    type: "TEXT";
-    defaultValue: "Help Bubble\n두 줄일 땐 줄바꿈해요";
   };
   Placement: {
     type: "VARIANT";
@@ -355,7 +370,7 @@ export type HelpBubbleProperties = InferFromDefinition<{
   "Show Close Button": {
     type: "VARIANT";
     defaultValue: "False";
-    variantOptions: ["False", "True"];
+    variantOptions: ["True", "False"];
   };
 }>;
 
@@ -368,13 +383,13 @@ export type IdentityPlaceholderProperties = InferFromDefinition<{
 }>;
 
 export type InlineBannerProperties = InferFromDefinition<{
-  "Show Icon#11840:27": {
-    type: "BOOLEAN";
-    defaultValue: true;
-  };
   "Link Label#1547:81": {
     type: "TEXT";
     defaultValue: "자세히보기";
+  };
+  "Show Icon#11840:27": {
+    type: "BOOLEAN";
+    defaultValue: true;
   };
   Interaction: {
     type: "VARIANT";
@@ -386,27 +401,22 @@ export type InlineBannerProperties = InferFromDefinition<{
     defaultValue: "Neutral Weak";
     variantOptions: [
       "Neutral Weak",
-      "Positive Weak",
       "Informative Weak",
-      "Warning Weak",
+      "Positive Weak",
       "Warning Solid",
-      "Danger Weak",
+      "Warning Weak",
       "Danger Solid",
+      "Danger Weak",
     ];
   };
   "Show Title": {
     type: "VARIANT";
     defaultValue: "False";
-    variantOptions: ["False", "True"];
+    variantOptions: ["True", "False"];
   };
 }>;
 
 export type ProgressCircleProperties = InferFromDefinition<{
-  Value: {
-    type: "VARIANT";
-    defaultValue: "0%";
-    variantOptions: ["Indeterminate", "0%", "25%", "75%", "100%"];
-  };
   Size: {
     type: "VARIANT";
     defaultValue: "40";
@@ -415,7 +425,12 @@ export type ProgressCircleProperties = InferFromDefinition<{
   Tone: {
     type: "VARIANT";
     defaultValue: "Neutral";
-    variantOptions: ["Brand", "Neutral", "Static White"];
+    variantOptions: ["Neutral", "Brand", "Static White"];
+  };
+  Value: {
+    type: "VARIANT";
+    defaultValue: "0%";
+    variantOptions: ["Indeterminate", "0%", "25%", "75%", "100%"];
   };
 }>;
 
@@ -447,12 +462,12 @@ export type ReactionButtonProperties = InferFromDefinition<{
     defaultValue: "Enabled";
     variantOptions: [
       "Enabled",
-      "Enabled-Selected-Pressed",
-      "Enabled-Selected-Loading",
-      "Disabled",
       "Enabled-Pressed",
       "Enabled-Loading",
       "Enabled-Selected",
+      "Enabled-Selected-Pressed",
+      "Enabled-Selected-Loading",
+      "Disabled",
       "Disabled-Selected",
     ];
   };
@@ -480,12 +495,12 @@ export type SegmentedControlItemProperties = InferFromDefinition<{
     type: "VARIANT";
     defaultValue: "Enabled-Selected";
     variantOptions: [
-      "Enabled-Selected",
       "Enabled",
+      "Enabled-Selected",
+      "Enabled-Pressed",
+      "Enabled-Selected-Pressed",
       "Disabled",
       "Disabled-Selected",
-      "Enabled-Selected-Pressed",
-      "Enabled-Pressed",
     ];
   };
 }>;
@@ -519,12 +534,12 @@ export type SelectBoxItemProperties = InferFromDefinition<{
   Control: {
     type: "VARIANT";
     defaultValue: "Radio";
-    variantOptions: ["Radio", "Checkbox"];
+    variantOptions: ["Checkbox", "Radio"];
   };
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Enabled-Selected", "Enabled-Pressed", "Enabled-Selected-Pressed", "Enabled"];
+    variantOptions: ["Enabled", "Enabled-Pressed", "Enabled-Selected", "Enabled-Selected-Pressed"];
   };
 }>;
 
@@ -569,19 +584,24 @@ export type SwitchProperties = InferFromDefinition<{
   State: {
     type: "VARIANT";
     defaultValue: "Enabled";
-    variantOptions: ["Disabled", "Enabled", "Enabled-Selected", "Disabled-Selected"];
+    variantOptions: ["Enabled", "Enabled-Selected", "Disabled", "Disabled-Selected"];
   };
 }>;
 
 export type TextButtonProperties = InferFromDefinition<{
+  "Label#6148:0": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
   "Prefix Icon#7561:0": {
     type: "INSTANCE_SWAP";
     defaultValue: "8328:4174";
     preferredValues: [];
   };
-  "Label#6148:0": {
-    type: "TEXT";
-    defaultValue: "라벨";
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Large";
+    variantOptions: ["Small", "Medium", "Large"];
   };
   Layout: {
     type: "VARIANT";
@@ -591,12 +611,7 @@ export type TextButtonProperties = InferFromDefinition<{
   Tone: {
     type: "VARIANT";
     defaultValue: "Brand";
-    variantOptions: ["Brand", "Neutral", "Neutral Subtle", "Danger"];
-  };
-  Size: {
-    type: "VARIANT";
-    defaultValue: "Large";
-    variantOptions: ["Small", "Medium", "Large"];
+    variantOptions: ["Neutral", "Neutral Subtle", "Brand", "Danger"];
   };
   State: {
     type: "VARIANT";
@@ -606,6 +621,19 @@ export type TextButtonProperties = InferFromDefinition<{
 }>;
 
 export type ToggleButtonProperties = InferFromDefinition<{
+  "Label#6122:49": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  "Prefix Icon#6122:98": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "8328:3989";
+    preferredValues: [];
+  };
+  "Show Suffix Icon#6122:147": {
+    type: "BOOLEAN";
+    defaultValue: false;
+  };
   "Show Prefix Icon#6122:392": {
     type: "BOOLEAN";
     defaultValue: false;
@@ -615,41 +643,28 @@ export type ToggleButtonProperties = InferFromDefinition<{
     defaultValue: "102:6307";
     preferredValues: [];
   };
-  "Show Suffix Icon#6122:147": {
-    type: "BOOLEAN";
-    defaultValue: false;
-  };
-  "Prefix Icon#6122:98": {
-    type: "INSTANCE_SWAP";
-    defaultValue: "8328:3989";
-    preferredValues: [];
-  };
-  "Label#6122:49": {
-    type: "TEXT";
-    defaultValue: "라벨";
+  Size: {
+    type: "VARIANT";
+    defaultValue: "XSmall";
+    variantOptions: ["Small", "XSmall"];
   };
   Variant: {
     type: "VARIANT";
     defaultValue: "Brand Solid";
     variantOptions: ["Neutral Weak", "Brand Solid"];
   };
-  Size: {
-    type: "VARIANT";
-    defaultValue: "XSmall";
-    variantOptions: ["Small", "XSmall"];
-  };
   State: {
     type: "VARIANT";
     defaultValue: "Enabled-Selected";
     variantOptions: [
       "Enabled",
-      "Disabled",
+      "Enabled-Pressed",
+      "Enabled-Loading",
       "Enabled-Selected",
       "Enabled-Selected-Pressed",
-      "Enabled-Loading",
-      "Disabled-Selected",
-      "Enabled-Pressed",
       "Enabled-Selected-Loading",
+      "Disabled",
+      "Disabled-Selected",
     ];
   };
 }>;

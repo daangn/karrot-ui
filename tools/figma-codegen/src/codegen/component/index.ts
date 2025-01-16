@@ -41,6 +41,8 @@ export interface ComponentHandler<
 const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
   key: "450ede9d0bf42fc6ef14345c77e6e407d6d5ee89",
   codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
     const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
       .with("Icon Only", () => ({
         layout: "iconOnly",
@@ -75,10 +77,10 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
       .exhaustive();
 
     const commonProps = {
-      ...(props.State.value === "Disabled" && {
+      ...(states.includes("Disabled") && {
         disabled: true,
       }),
-      ...(props.State.value === "Loading" && {
+      ...(states.includes("Loading") && {
         loading: true,
       }),
       size: camelCase(props.Size.value),
@@ -95,6 +97,8 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
 const actionChipHandler: ComponentHandler<ActionChipProperties> = {
   key: "3d21594ef116e94a9465d507447b858aea062575",
   codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
     const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
       .with("Icon Only", () => ({
         layout: "iconOnly",
@@ -133,7 +137,7 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
       layout,
       prefixIcon,
       suffixIcon,
-      ...(props.State.value === "Disabled" && {
+      ...(states.includes("Disabled") && {
         disabled: true,
       }),
       ...(props["Show Count#7185:42"].value && {
@@ -197,6 +201,7 @@ const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
 
     const commonProps = {
       size: props.Size.value,
+      // TODO: top item
     };
 
     const avatarStackChildren = avatars.map((avatar) => {
@@ -331,6 +336,8 @@ const checkboxHandler: ComponentHandler<CheckboxProperties> = {
 const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   key: "5780d56fc2f9bc4bbd6bc3db93949d8a8b7b7563",
   codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
     const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
       .with("Icon Only", () => {
         return {
@@ -371,7 +378,10 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
       layout,
       prefixIcon,
       suffixIcon,
-      ...(props.State.value === "Disabled" && {
+      ...(states.includes("Selected") && {
+        defaultChecked: true,
+      }),
+      ...(states.includes("Disabled") && {
         disabled: true,
       }),
       ...(props["Show Count#7185:42"].value && {
@@ -724,10 +734,10 @@ const selectBoxItemHandler: ComponentHandler<SelectBoxItemProperties> = {
       ...(props["Show Description#3033:0"].value && {
         description: props["Description #3033:5"].value,
       }),
-      ...(props.Control.value === "Radio" && {
+      ...(tag === "RadioSelectBox" && {
         value: props["Label#3635:0"].value,
       }),
-      ...(props.Control.value === "Checkbox" &&
+      ...(tag === "CheckSelectBox" &&
         states.includes("Selected") && {
           defaultChecked: true,
         }),
