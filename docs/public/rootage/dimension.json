@@ -1,0 +1,119 @@
+{
+  "kind": "Tokens",
+  "metadata": {
+    "id": "unit",
+    "name": "Unit"
+  },
+  "data": {
+    "collection": "global",
+    "tokens": {
+      "$dimension.s0_5": {
+        "values": {
+          "default": "2px"
+        }
+      },
+      "$dimension.s1": {
+        "values": {
+          "default": "4px"
+        }
+      },
+      "$dimension.s1_5": {
+        "values": {
+          "default": "6px"
+        }
+      },
+      "$dimension.s2": {
+        "values": {
+          "default": "8px"
+        }
+      },
+      "$dimension.s2_5": {
+        "values": {
+          "default": "10px"
+        }
+      },
+      "$dimension.s3": {
+        "values": {
+          "default": "12px"
+        }
+      },
+      "$dimension.s3_5": {
+        "values": {
+          "default": "14px"
+        }
+      },
+      "$dimension.s4": {
+        "values": {
+          "default": "16px"
+        }
+      },
+      "$dimension.s4_5": {
+        "values": {
+          "default": "18px"
+        }
+      },
+      "$dimension.s5": {
+        "values": {
+          "default": "20px"
+        }
+      },
+      "$dimension.s6": {
+        "values": {
+          "default": "24px"
+        }
+      },
+      "$dimension.s7": {
+        "values": {
+          "default": "28px"
+        }
+      },
+      "$dimension.s8": {
+        "values": {
+          "default": "32px"
+        }
+      },
+      "$dimension.s9": {
+        "values": {
+          "default": "36px"
+        }
+      },
+      "$dimension.s10": {
+        "values": {
+          "default": "40px"
+        }
+      },
+      "$dimension.s12": {
+        "values": {
+          "default": "48px"
+        }
+      },
+      "$dimension.s13": {
+        "values": {
+          "default": "52px"
+        }
+      },
+      "$dimension.s14": {
+        "values": {
+          "default": "56px"
+        }
+      },
+      "$dimension.s16": {
+        "values": {
+          "default": "64px"
+        }
+      },
+      "$dimension.spacing-x.between-chips": {
+        "description": "Chip 사이의 수평 간격에 사용합니다.",
+        "values": {
+          "default": "$dimension.s2"
+        }
+      },
+      "$dimension.spacing-x.global-gutter": {
+        "description": "화면 전체에 적용되는 기본 수평 padding 값입니다.",
+        "values": {
+          "default": "$dimension.s4"
+        }
+      }
+    }
+  }
+}

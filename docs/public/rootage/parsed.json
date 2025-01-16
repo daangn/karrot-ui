@@ -4401,6 +4401,434 @@
       "token": {
         "type": "token",
         "group": [
+          "dimension"
+        ],
+        "key": "s0_5"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 2,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s1"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 4,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s1_5"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 6,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s2"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 8,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s2_5"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 10,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s3"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 12,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s3_5"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 14,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s4"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 16,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s4_5"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 18,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s5"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 20,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s6"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 24,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s7"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 28,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s8"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 32,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s9"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 36,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s10"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 40,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s12"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 48,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s13"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 52,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s14"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 56,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension"
+        ],
+        "key": "s16"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 64,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension",
+          "spacing-x"
+        ],
+        "key": "between-chips"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "token",
+            "group": [
+              "dimension"
+            ],
+            "key": "s2"
+          }
+        }
+      ],
+      "description": "Chip 사이의 수평 간격에 사용합니다."
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension",
+          "spacing-x"
+        ],
+        "key": "global-gutter"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "token",
+            "group": [
+              "dimension"
+            ],
+            "key": "s4"
+          }
+        }
+      ],
+      "description": "화면 전체에 적용되는 기본 수평 padding 값입니다."
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
           "duration"
         ],
         "key": "s1"
@@ -5417,434 +5845,6 @@
           }
         }
       ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s0_5"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 2,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s1"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 4,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s1_5"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 6,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s2"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 8,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s2_5"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 10,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s3"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 12,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s3_5"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 14,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s4"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 16,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s4_5"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 18,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s5"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 20,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s6"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 24,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s7"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 28,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s8"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 32,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s9"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 36,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s10"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 40,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s12"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 48,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s13"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 52,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s14"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 56,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension"
-        ],
-        "key": "s16"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "dimension",
-            "value": 64,
-            "unit": "px"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension",
-          "spacing-x"
-        ],
-        "key": "between-chips"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "token",
-            "group": [
-              "dimension"
-            ],
-            "key": "s2"
-          }
-        }
-      ],
-      "description": "Chip 사이의 수평 간격에 사용합니다."
-    },
-    {
-      "collection": "global",
-      "token": {
-        "type": "token",
-        "group": [
-          "dimension",
-          "spacing-x"
-        ],
-        "key": "global-gutter"
-      },
-      "values": [
-        {
-          "mode": "default",
-          "value": {
-            "type": "token",
-            "group": [
-              "dimension"
-            ],
-            "key": "s4"
-          }
-        }
-      ],
-      "description": "화면 전체에 적용되는 기본 수평 padding 값입니다."
     }
   ],
   "componentSpecs": [

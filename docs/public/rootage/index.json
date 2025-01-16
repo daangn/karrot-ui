@@ -120,7 +120,7 @@
       "path": "/radius.json"
     },
     {
-      "path": "/unit.json"
+      "path": "/dimension.json"
     },
     {
       "path": "/duration.json"
