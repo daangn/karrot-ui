@@ -1,6 +1,6 @@
 import { camelCase } from "change-case";
 import { createBackgroundProps, createBorderProps } from "./color";
-import { componentHandlerMap } from "./component";
+import { componentHandlerMap, ignoredComponentKeys } from "./component";
 import { createIconTagNameFromKey, createMonochromeIconFillProps, isIconComponent } from "./icon";
 import type { ElementNode } from "./jsx";
 import { createElement, stringifyElement } from "./jsx";
@@ -146,6 +146,10 @@ export function generateCode(selection: SceneNode) {
         size: node.width,
         ...(iconRecord[componentKey]?.type === "monochrome" && createMonochromeIconFillProps(node)),
       });
+    }
+
+    if (ignoredComponentKeys.has(componentSetKey ?? componentKey)) {
+      return;
     }
 
     const componentData = componentSetKey

@@ -37,6 +37,7 @@ import type {
   ToggleButtonProperties,
 } from "./type";
 import { getLayoutVariableName } from "../variable";
+import { handleSize } from "./properties";
 
 export interface ComponentHandler<
   T extends InstanceNode["componentProperties"] = InstanceNode["componentProperties"],
@@ -90,7 +91,7 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
       ...(states.includes("Loading") && {
         loading: true,
       }),
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       variant: camelCase(props.Variant.value),
       layout,
       prefixIcon,
@@ -140,7 +141,7 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
       .exhaustive();
 
     const commonProps = {
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       layout,
       prefixIcon,
       suffixIcon,
@@ -231,7 +232,7 @@ const badgeHandler: ComponentHandler<BadgeProperties> = {
   key: "04609a35d47a1a0ef4904b3c25f79451892a85a1",
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       tone: camelCase(props.Tone.value),
       variant: camelCase(props.Variant.value),
       shape: camelCase(props.Shape.value),
@@ -323,7 +324,7 @@ const checkboxHandler: ComponentHandler<CheckboxProperties> = {
       label: props["Label#49990:0"].value,
       weight: camelCase(props.Weight.value),
       variant: camelCase(props.Shape.value),
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       ...(states.includes("Selected") && {
         defaultChecked: true,
       }),
@@ -430,7 +431,7 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
       .exhaustive();
 
     const commonProps = {
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       layout,
       prefixIcon,
       suffixIcon,
@@ -453,7 +454,7 @@ const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
   key: "032f3fddaad0aa3fa5a7f680768c1f5d02fb463f",
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       variant: camelCase(props.Variant.value),
       prefixIcon: createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
     };
@@ -637,7 +638,7 @@ const multilineTextFieldHandler: ComponentHandler<MultilineTextFieldProperties> 
     const states = state.split("-");
 
     const commonProps = {
-      size: camelCase(size),
+      size: handleSize(size),
       // header
       ...(showHeader && {
         label,
@@ -741,7 +742,7 @@ const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
       ...(props["Show Count#6397:33"].value && {
         count: Number(props["Count#15816:0"].value),
       }),
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       ...(states.includes("Loading") && {
         loading: true,
       }),
@@ -1003,7 +1004,7 @@ const tabsHandler: ComponentHandler<TabsProperties> = {
 
     const commonProps = {
       layout: camelCase(props.Layout.value),
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       ...(selectedTabsItem && {
         defaultValue: selectedTabsItem.componentProperties["Label#4478:2"].value,
       }),
@@ -1085,7 +1086,7 @@ const textButtonHandler: ComponentHandler<TextButtonProperties> = {
 
     const commonProps = {
       tone: camelCase(props.Tone.value),
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       prefixIcon,
       suffixIcon,
       ...(states.includes("Disabled") && {
@@ -1131,7 +1132,7 @@ const textFieldHandler: ComponentHandler<TextFieldProperties> = {
     const states = state.split("-");
 
     const commonProps = {
-      size: camelCase(size),
+      size: handleSize(size),
       // header
       ...(showHeader && {
         label,
@@ -1215,7 +1216,7 @@ const toggleButtonHandler: ComponentHandler<ToggleButtonProperties> = {
 
     const commonProps = {
       variant: camelCase(props.Variant.value),
-      size: camelCase(props.Size.value),
+      size: handleSize(props.Size.value),
       ...(props["Show Prefix Icon#6122:392"].value && {
         prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#6122:98"].value)),
       }),
