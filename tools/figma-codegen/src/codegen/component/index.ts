@@ -24,8 +24,8 @@ import type {
   ReactionButtonProperties,
   SegmentedControlItemProperties,
   SegmentedControlProperties,
-  SelectBoxItemProperties,
   SelectBoxProperties,
+  SelectBoxGroupProperties,
   SkeletonProperties,
   SnackbarProperties,
   SwitchProperties,
@@ -597,7 +597,7 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
       variant: camelCase(props.Variant.value),
       title,
       description,
-      ...(props.Interaction.value === "Link" && {
+      ...(tag === "LinkInlineBanner" && {
         linkLabel: props["Link Label#1547:81"].value,
       }),
       ...(props["Show Icon#11840:27"].value &&
@@ -804,7 +804,7 @@ const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperti
   },
 };
 
-const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
+const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
   key: "a3d58bb8540600878742cdcf2608a4b3851667ec",
   codegen: ({ componentProperties: props, children }) => {
     const tag = (() => {
@@ -816,31 +816,35 @@ const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
       }
     })();
 
-    const selectBoxItems = children.filter(
+    const selectBoxes = children.filter(
       (child) =>
         child.type === "INSTANCE" &&
         ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === selectBoxItemHandler.key) ||
-          child.mainComponent?.key === selectBoxItemHandler.key),
-    ) as (InstanceNode & { componentProperties: SelectBoxItemProperties })[];
+          child.mainComponent?.parent.key === selectBoxHandler.key) ||
+          child.mainComponent?.key === selectBoxHandler.key),
+    ) as (InstanceNode & { componentProperties: SelectBoxProperties })[];
 
-    const selectedSelectBoxItem = selectBoxItems.find((selectBoxItem) =>
-      selectBoxItem.componentProperties.State.value.split("-").includes("Selected"),
+    const selectedSelectBox = selectBoxes.find((selectBox) =>
+      selectBox.componentProperties.State.value.split("-").includes("Selected"),
     );
 
-    const selectBoxChildren = selectBoxItems.map(selectBoxItemHandler.codegen);
+    const stack = createElement(
+      "Stack",
+      { gap: "spacing-y.between-select-boxes" },
+      selectBoxes.map(selectBoxHandler.codegen),
+    );
 
     const commonProps = {
-      ...(props.Control.value === "Radio" && {
-        defaultValue: selectedSelectBoxItem?.componentProperties["Label#3635:0"].value,
+      ...(tag === "RadioSelectBoxGroup" && {
+        defaultValue: selectedSelectBox?.componentProperties["Label#3635:0"].value,
       }),
     };
 
-    return createElement(tag, commonProps, selectBoxChildren);
+    return createElement(tag, commonProps, stack);
   },
 };
 
-const selectBoxItemHandler: ComponentHandler<SelectBoxItemProperties> = {
+const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
   key: "38722ffeb4c966256a709155e8ddac50c93d7c60",
   codegen: ({ componentProperties: props }) => {
     const tag = (() => {
@@ -1253,7 +1257,7 @@ const componentHandlers = [
   progressCircleHandler,
   reactionButtonHandler,
   segmentedControlHandler,
-  selectBoxHandler,
+  selectBoxGroupHandler,
   skeletonHandler,
   snackbarHandler,
   tabsHandler,

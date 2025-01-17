@@ -615,7 +615,7 @@ export type SegmentedControlItemProperties = InferFromDefinition<{
   };
 }>;
 
-export type SelectBoxProperties = InferFromDefinition<{
+export type SelectBoxGroupProperties = InferFromDefinition<{
   Control: {
     type: "VARIANT";
     defaultValue: "Radio";
@@ -628,7 +628,7 @@ export type SelectBoxProperties = InferFromDefinition<{
   };
 }>;
 
-export type SelectBoxItemProperties = InferFromDefinition<{
+export type SelectBoxProperties = InferFromDefinition<{
   "Label#3635:0": {
     type: "TEXT";
     defaultValue: "라벨";
