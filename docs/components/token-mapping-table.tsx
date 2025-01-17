@@ -6,6 +6,7 @@ import {
 } from "@seed-design/rootage-core";
 import { getRootage } from "@/components/get-rootage";
 import { ExpandableTokenCell } from "@/components/expandable-token-cell";
+import { Fragment } from "react";
 
 interface TokenMapping {
   previousTokenId: string;
@@ -68,12 +69,12 @@ export async function TokenMappingTable({ mappings }: TokenMappingTableProps) {
             <td className="align-middle space-y-2">
               {item.newTokens.length > 0 &&
                 item.newTokens.map((newToken, index) => (
-                  <>
-                    <ExpandableTokenCell key={newToken.id} newToken={newToken} />
+                  <Fragment key={newToken.id}>
+                    <ExpandableTokenCell newToken={newToken} />
                     {index !== item.newTokens.length - 1 && (
                       <div className="text-xs text-center">또는</div>
                     )}
-                  </>
+                  </Fragment>
                 ))}
             </td>
             <td>{item.note}</td>
