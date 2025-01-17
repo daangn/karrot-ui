@@ -6,6 +6,7 @@ import { client } from "./client";
 import type { PortableTextTypeComponentProps } from "@portabletext/react";
 import { getImageDimensions, SanityImageAsset } from "@sanity/asset-utils";
 import { SanityImageType } from "./types";
+import clsx from "clsx";
 
 const { projectId, dataset } = client.config();
 
@@ -33,7 +34,7 @@ export const SanityImage = ({ value, className }: ImageProps) => {
     <img
       src={cdnUrl}
       alt={value.originalFilename}
-      className={className}
+      className={clsx("w-full h-auto rounded-2xl overflow-hidden my-4 object-cover", className)}
       loading="lazy"
       draggable={false}
     />
@@ -77,11 +78,9 @@ export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityIm
       draggable={false}
       srcSet={srcSet}
       loading="lazy"
+      className="w-full h-auto rounded-2xl overflow-hidden my-4 object-cover"
       style={{
-        display: "block",
         aspectRatio,
-        width: "100%",
-        height: "auto",
       }}
     />
   );

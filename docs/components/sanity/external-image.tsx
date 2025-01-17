@@ -17,7 +17,7 @@ export const ExternalImage = ({ value, className }: ExternalImageProps) => {
         <img
           src={imageUrl}
           alt={alt || "외부 이미지"}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover rounded-2xl overflow-hidden my-4"
           loading="lazy"
         />
       </div>

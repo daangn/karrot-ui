@@ -50,7 +50,7 @@ export function ImageTextHalfPreview({ value }: ImageTextHalfPreviewProps) {
       }}
       className={`flex flex-col gap-6 ${imagePosition === "right" ? "sm:flex-row-reverse" : "sm:flex-row"}`}
     >
-      <div className="flex-1 w-full sm:max-w-[50%]">
+      <div className="flex-1 w-full sm:max-w-[50%] rounded-2xl my-4">
         <img
           src={imageUrl() ?? undefined}
           alt=""
