@@ -10,7 +10,7 @@ export const Columns = React.forwardRef<HTMLDivElement, ColumnsProps>((props, re
       display="flex"
       flexDirection="row"
       flexWrap="nowrap"
-      justifyContent="flex-start"
+      justifyContent="flexStart"
       {...props}
     />
   );

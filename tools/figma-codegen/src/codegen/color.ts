@@ -13,13 +13,13 @@ export function createBackgroundProps(node: DefaultShapeMixin): Record<string, s
 
   if (node.boundVariables?.fills?.length === 1) {
     return {
-      backgroundColor: getColorVariableName(node.boundVariables.fills[0]!.id),
+      background: getColorVariableName(node.boundVariables.fills[0]!.id),
     };
   }
 
   const color = fill.color;
   return {
-    backgroundColor: `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255}, ${fill.opacity})`,
+    background: `rgba(${color.r * 255}, ${color.g * 255}, ${color.b * 255}, ${fill.opacity})`,
   };
 }
 

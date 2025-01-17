@@ -146,8 +146,12 @@ const layoutShorthandHandlers = {
       return undefined;
     }
     if (paddingLeft === paddingRight) {
+      const value =
+        paddingLeft === "globalGutter" || paddingLeft === "betweenChips"
+          ? `spacingX.${paddingLeft}`
+          : paddingLeft;
       return {
-        value: paddingLeft,
+        value,
         exclude: ["paddingLeft", "paddingRight"],
       };
     }

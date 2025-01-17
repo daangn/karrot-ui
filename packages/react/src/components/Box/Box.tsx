@@ -111,7 +111,7 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   paddingLeft?: Dimension | `spacingX.${SpacingX}`;
 
-  display?: "block" | "flex" | "inline-flex" | "inline" | "inline-block" | "none";
+  display?: "block" | "flex" | "inlineFlex" | "inline" | "inlineBlock" | "none";
 
   position?: "relative" | "absolute" | "fixed" | "sticky";
 
@@ -125,15 +125,17 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   // Flex
 
-  flexDirection?: "row" | "column" | "row-reverse" | "column-reverse";
+  flexDirection?: "row" | "column" | "rowReverse" | "columnReverse";
 
   flexWrap?: "wrap" | "nowrap";
 
-  justifyContent?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around";
+  justifyContent?: "flexStart" | "flexEnd" | "center" | "spaceBetween" | "spaceAround";
 
-  alignItems?: "flex-start" | "flex-end" | "center" | "stretch";
+  alignItems?: "flexStart" | "flexEnd" | "center" | "stretch";
 
-  alignContent?: "flex-start" | "flex-end" | "center" | "stretch";
+  alignContent?: "flexStart" | "flexEnd" | "center" | "stretch";
+
+  alignSelf?: "flexStart" | "flexEnd" | "center" | "stretch";
 
   gap?: Dimension | `spacingX.${SpacingX}`;
 }
@@ -178,6 +180,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
     justifyContent,
     alignItems,
     alignContent,
+    alignSelf,
     gap,
     className,
     style,
@@ -232,6 +235,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-justify-content": justifyContent,
           "--seed-box-align-items": alignItems,
           "--seed-box-align-content": alignContent,
+          "--seed-box-align-self": alignSelf,
           ...style,
         } as React.CSSProperties
       }

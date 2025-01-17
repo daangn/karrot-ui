@@ -10,8 +10,8 @@ export const Inline = React.forwardRef<HTMLDivElement, InlineProps>((props, ref)
       display="flex"
       flexDirection="row"
       flexWrap="wrap"
-      alignItems="flex-start"
-      justifyContent="flex-start"
+      alignItems="flexStart"
+      justifyContent="flexStart"
       {...props}
     />
   );

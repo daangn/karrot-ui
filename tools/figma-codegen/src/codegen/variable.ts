@@ -6,7 +6,7 @@ function getNameFromSlashSeparatedVariableName(id: string) {
 
   const name = variable.name.split("/").pop() as string;
 
-  return camelCase(name, { mergeAmbiguousCharacters: true });
+  return camelCase(name);
 }
 
 export const getLayoutVariableName = getNameFromSlashSeparatedVariableName;
