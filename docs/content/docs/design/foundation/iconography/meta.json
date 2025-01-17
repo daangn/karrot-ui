@@ -1,5 +1,5 @@
 {
   "title": "아이콘",
   "defaultOpen": true,
-  "pages": ["iconography", "usage", "monochrome", "multicolor"]
+  "pages": ["overview", "usage", "library"]
 }

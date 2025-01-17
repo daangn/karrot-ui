@@ -13297,6 +13297,7 @@ __metadata:
     fumadocs-ui: "npm:^14.4.2"
     next: "npm:^14.2.8"
     next-sanity: "npm:^9.8.24"
+    nuqs: "npm:^2.3.1"
     postcss: "npm:^8.4.45"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -18948,6 +18949,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mitt@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "mitt@npm:3.0.1"
+  checksum: 10/287c70d8e73ffc25624261a4989c783768aed95ecb60900f051d180cf83e311e3e59865bfd6e9d029cdb149dc20ba2f128a805e9429c5c4ce33b1416c65bbd14
+  languageName: node
+  linkType: hard
+
 "mkdirp-classic@npm:^0.5.2":
   version: 0.5.3
   resolution: "mkdirp-classic@npm:0.5.3"
@@ -19479,6 +19487,30 @@ __metadata:
   dependencies:
     boolbase: "npm:^1.0.0"
   checksum: 10/5afc3dafcd1573b08877ca8e6148c52abd565f1d06b1eb08caf982e3fa289a82f2cae697ffb55b5021e146d60443f1590a5d6b944844e944714a5b549675bcd3
+  languageName: node
+  linkType: hard
+
+"nuqs@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "nuqs@npm:2.3.1"
+  dependencies:
+    mitt: "npm:^3.0.1"
+  peerDependencies:
+    "@remix-run/react": ">=2"
+    next: ">=14.2.0"
+    react: ">=18.2.0 || ^19.0.0-0"
+    react-router: ^6 || ^7
+    react-router-dom: ^6 || ^7
+  peerDependenciesMeta:
+    "@remix-run/react":
+      optional: true
+    next:
+      optional: true
+    react-router:
+      optional: true
+    react-router-dom:
+      optional: true
+  checksum: 10/2abf3b7040a621273546562fe7c9d5dcb0381c439e26cedde5544920a201416ed631f21b99962033db7fc56e83f7de4be11d7bd960dba477acb670553cb84eb6
   languageName: node
   linkType: hard
 

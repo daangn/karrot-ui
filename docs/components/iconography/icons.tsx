@@ -1,30 +1,34 @@
 "use client";
 
-import * as React from "react";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import * as MonochormeComponents from "@daangn/react-monochrome-icon";
 import * as MulticolorComponents from "@daangn/react-multicolor-icon";
 
-import MulticolorData from "@daangn/icon-data/multicolor.json";
 import MonochromeData from "@daangn/icon-data/monochrome.json";
+import MulticolorData from "@daangn/icon-data/multicolor.json";
 
+import { IconBottomInfomation } from "./icon-bottom-infomation";
 import { IconProvider } from "./icon-context";
 import { IconGrid } from "./icon-grid";
 import { IconSearch } from "./icon-search";
-import { IconBottomInfomation } from "./icon-bottom-infomation";
+import { IconSegmentedControl } from "./icon-segmented-control";
 
-interface Props {
-  iconStyle: "multicolor" | "monochrome";
-}
-
-export const Icons = ({ iconStyle }: Props) => {
-  const IconData = iconStyle === "multicolor" ? MulticolorData : MonochromeData;
-  const Components = iconStyle === "multicolor" ? MulticolorComponents : MonochormeComponents;
+export const Icons = () => {
   return (
-    <IconProvider iconStyle={iconStyle} iconData={IconData} iconComponents={Components}>
-      <IconSearch />
-      <IconGrid />
-      <IconBottomInfomation />
-    </IconProvider>
+    <NuqsAdapter>
+      <IconProvider
+        iconData={{ monochrome: MonochromeData, multicolor: MulticolorData }}
+        iconComponents={{
+          monochrome: MonochormeComponents,
+          multicolor: MulticolorComponents,
+        }}
+      >
+        <IconSegmentedControl />
+        <IconSearch />
+        <IconGrid />
+        <IconBottomInfomation />
+      </IconProvider>
+    </NuqsAdapter>
   );
 };

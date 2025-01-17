@@ -1,6 +1,6 @@
 import * as changeCase from "change-case";
-import * as React from "react";
 import { cva } from "class-variance-authority";
+import * as React from "react";
 import { useIcon } from "./icon-context";
 import { Tag } from "./tags";
 
@@ -9,14 +9,6 @@ type IconComponentType = React.ForwardRefExoticComponent<
   Omit<React.SVGProps<SVGSVGElement> & { size?: number | string }, "ref"> &
     React.RefAttributes<SVGSVGElement>
 >;
-
-// URL 업데이트 함수
-const updateIconUrlParam = (iconName: string) => {
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("icon", iconName);
-  const url = `${window.location.pathname}?${searchParams.toString()}`;
-  window.history.pushState({}, "", url);
-};
 
 // 아이콘 컴포넌트
 const IconItem = ({
@@ -66,28 +58,38 @@ const IconItem = ({
 
 // 메인 컴포넌트
 export const IconGrid = () => {
-  const { iconComponents, iconData, search, setSelectedIcon, selectedIcon, iconStyle } = useIcon();
+  const {
+    iconComponents,
+    iconData,
+    search,
+    setSelectedIconName,
+    setIconStyle,
+    selectedIcon,
+    iconStyle,
+  } = useIcon();
 
-  const handleIconSelect = (iconName: string) => {
+  const handleIconSelect = (iconName: string, iconStyle: "monochrome" | "multicolor") => {
     const isSameIcon = selectedIcon?.name === iconName;
     if (isSameIcon) {
-      setSelectedIcon(undefined);
+      setSelectedIconName("");
       return;
     }
 
-    updateIconUrlParam(iconName);
-    setSelectedIcon(iconData[iconName]);
+    setIconStyle(iconStyle);
+    setSelectedIconName(iconName);
   };
 
   return (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(56px,1fr))] gap-4">
-      {Object.keys(iconComponents).map((iconName) => {
+      {Object.keys(iconComponents[iconStyle]).map((iconName) => {
         const snakeCaseIconName = changeCase.snakeCase(iconName);
-        const metadataString = iconData[snakeCaseIconName]?.metadatas.join(", ");
+        const metadataString = iconData[iconStyle][snakeCaseIconName]?.metadatas.join(", ");
         const dangerTags = [Tag.figmaNotPublished, Tag.fat, Tag.service];
         const isDanger =
           iconStyle === "multicolor" ||
-          iconData[snakeCaseIconName]?.metadatas.some((metadata) => dangerTags.includes(metadata));
+          iconData[iconStyle][snakeCaseIconName]?.metadatas.some((metadata) =>
+            dangerTags.includes(metadata),
+          );
 
         const shouldRenderIcon =
           search === "" || metadataString?.includes(search) || snakeCaseIconName.includes(search);
@@ -99,11 +101,11 @@ export const IconGrid = () => {
           <IconItem
             key={iconName}
             iconName={snakeCaseIconName}
-            IconComponent={iconComponents[iconName] as IconComponentType}
+            IconComponent={iconComponents[iconStyle][iconName] as IconComponentType}
             isSelected={selectedIcon?.name === snakeCaseIconName}
             isDanger={isDanger}
             metadataString={metadataString}
-            onSelect={handleIconSelect}
+            onSelect={(iconName) => handleIconSelect(iconName, iconStyle)}
           />
         );
       })}

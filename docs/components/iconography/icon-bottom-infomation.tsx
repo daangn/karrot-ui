@@ -9,14 +9,14 @@ import { Tag } from "./tags";
 import { getServiceName } from "./utils";
 
 export const IconBottomInfomation = () => {
-  const { selectedIcon, search, iconComponents } = useIcon();
+  const { selectedIcon, search, iconComponents, iconStyle } = useIcon();
 
   if (!selectedIcon) {
     return null;
   }
 
   const pascalCaseIconName = changeCase.pascalCase(selectedIcon?.name);
-  const Icon = iconComponents[pascalCaseIconName] as React.ForwardRefExoticComponent<
+  const Icon = iconComponents[iconStyle][pascalCaseIconName] as React.ForwardRefExoticComponent<
     Omit<
       React.SVGProps<SVGSVGElement> & {
         size?: number | string;
@@ -25,6 +25,10 @@ export const IconBottomInfomation = () => {
     > &
       React.RefAttributes<SVGSVGElement>
   >;
+
+  if (!Icon) {
+    return null;
+  }
 
   const isFigmaNotPublishedIcon = selectedIcon.metadatas.includes(Tag.figmaNotPublished);
   const isFatIcon = selectedIcon.metadatas.includes(Tag.fat);
