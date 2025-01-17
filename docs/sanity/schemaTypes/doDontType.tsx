@@ -1,5 +1,32 @@
-import { defineArrayMember } from "sanity";
+import { defineArrayMember, defineType } from "sanity";
 import { imageFieldType } from "./imageType";
+
+export const doDontSectionType = defineType({
+  name: "doDontSection",
+  title: "섹션",
+  type: "object",
+  fields: [
+    {
+      name: "type",
+      title: "타입",
+      type: "string",
+      options: {
+        list: [
+          { title: "Do", value: "do" },
+          { title: "Don't", value: "dont" },
+        ],
+        layout: "radio",
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    imageFieldType, // 기존 imageFieldType 재사용
+    {
+      name: "description",
+      title: "설명",
+      type: "text",
+    },
+  ],
+});
 
 export const doDontType = defineArrayMember({
   name: "doDont",
@@ -7,66 +34,39 @@ export const doDontType = defineArrayMember({
   type: "object",
   fields: [
     {
-      name: "do",
-      title: "Do",
-      type: "object",
-      fields: [
-        imageFieldType,
-        {
-          name: "description",
-          title: "설명",
-          type: "text",
-        },
-      ],
+      name: "first",
+      title: "첫 번째 섹션",
+      type: "doDontSection",
     },
     {
-      name: "dont",
-      title: "Don't",
-      type: "object",
-      fields: [
-        imageFieldType,
-        {
-          name: "description",
-          title: "설명",
-          type: "text",
-        },
-      ],
+      name: "second",
+      title: "두 번째 섹션",
+      type: "doDontSection",
     },
   ],
   preview: {
     select: {
-      doUploadImage: "do.imageField.uploadImage",
-      doExternalUrl: "do.imageField.externalUrl",
-      doImageType: "do.imageField.imageType",
-      dontUploadImage: "dont.imageField.uploadImage",
-      dontExternalUrl: "dont.imageField.externalUrl",
-      dontImageType: "dont.imageField.imageType",
+      firstType: "first.type",
+      secondType: "second.type",
+      firstImage: "first.imageField.uploadImage",
+      firstUrl: "first.imageField.externalUrl",
+      firstImageType: "first.imageField.imageType",
     },
-    prepare({
-      doUploadImage,
-      doExternalUrl,
-      doImageType,
-      dontUploadImage,
-      dontExternalUrl,
-      dontImageType,
-    }) {
-      const doImage =
-        doImageType === "upload"
-          ? doUploadImage
-          : doExternalUrl
-            ? { _type: "image", asset: { _type: "reference", url: doExternalUrl } }
+    prepare({ firstType, secondType, firstImage, firstUrl, firstImageType }) {
+      const image =
+        firstImageType === "upload"
+          ? firstImage
+          : firstUrl
+            ? { _type: "image", asset: { _type: "reference", url: firstUrl } }
             : undefined;
 
-      const dontImage =
-        dontImageType === "upload"
-          ? dontUploadImage
-          : dontExternalUrl
-            ? { _type: "image", asset: { _type: "reference", url: dontExternalUrl } }
-            : undefined;
+      const title = secondType
+        ? `${firstType?.toUpperCase()} & ${secondType?.toUpperCase()}`
+        : firstType?.toUpperCase();
 
       return {
-        title: "Do & Don't",
-        media: doImage || dontImage,
+        title,
+        media: image,
       };
     },
   },
