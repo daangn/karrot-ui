@@ -13,22 +13,25 @@ import { IconProvider } from "./icon-context";
 import { IconGrid } from "./icon-grid";
 import { IconSearch } from "./icon-search";
 import { IconSegmentedControl } from "./icon-segmented-control";
+import { Suspense } from "react";
 
 export const Icons = () => {
   return (
     <NuqsAdapter>
-      <IconProvider
-        iconData={{ monochrome: MonochromeData, multicolor: MulticolorData }}
-        iconComponents={{
-          monochrome: MonochormeComponents,
-          multicolor: MulticolorComponents,
-        }}
-      >
-        <IconSegmentedControl />
-        <IconSearch />
-        <IconGrid />
-        <IconBottomInfomation />
-      </IconProvider>
+      <Suspense>
+        <IconProvider
+          iconData={{ monochrome: MonochromeData, multicolor: MulticolorData }}
+          iconComponents={{
+            monochrome: MonochormeComponents,
+            multicolor: MulticolorComponents,
+          }}
+        >
+          <IconSegmentedControl />
+          <IconSearch />
+          <IconGrid />
+          <IconBottomInfomation />
+        </IconProvider>
+      </Suspense>
     </NuqsAdapter>
   );
 };
