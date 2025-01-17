@@ -61,7 +61,7 @@ export function generateCode(selection: SceneNode) {
             variant: camelCase(style.name, { mergeAmbiguousCharacters: true }),
             ...(color ? { color } : {}),
           },
-          segment.characters,
+          segment.characters.replace(/\n/g, "<br />"),
           `${
             color === undefined ? "color 프로퍼티는 반영되지 않았습니다. " : ""
           }${tag} 태그 사용이 적절한지 확인하세요.`,
