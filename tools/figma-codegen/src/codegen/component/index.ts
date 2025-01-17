@@ -11,6 +11,8 @@ import type {
   BadgeProperties,
   CalloutProperties,
   CheckboxProperties,
+  ChipTabsItemProperties,
+  ChipTabsProperties,
   ControlChipProperties,
   ExtendedFabProperties,
   FabProperties,
@@ -27,6 +29,9 @@ import type {
   SkeletonProperties,
   SnackbarProperties,
   SwitchProperties,
+  TabsFillItemProperties,
+  TabsHugItemProperties,
+  TabsProperties,
   TextButtonProperties,
   TextFieldProperties,
   ToggleButtonProperties,
@@ -332,6 +337,55 @@ const checkboxHandler: ComponentHandler<CheckboxProperties> = {
     };
 
     return createElement("Checkbox", commonProps);
+  },
+};
+
+const chipTabsHandler: ComponentHandler<ChipTabsProperties> = {
+  key: "d098159beacf7713e9116f0ef38d8a20f64ec84f",
+  codegen: ({ componentProperties: props, children }) => {
+    const chipTabsItems = children.filter(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === chipTabsItemHandler.key) ||
+          child.mainComponent?.key === chipTabsItemHandler.key),
+    ) as (InstanceNode & { componentProperties: ChipTabsItemProperties })[];
+
+    const selectedChipTabsItem = chipTabsItems.find((chipTabsItem) =>
+      chipTabsItem.componentProperties.State.value.split("-").includes("Selected"),
+    );
+
+    const chipTabTriggerList = createElement(
+      "ChipTabTriggerList",
+      undefined,
+      chipTabsItems.map(chipTabsItemHandler.codegen),
+    );
+
+    const commonProps = {
+      variant: camelCase(props.Variant.value),
+      ...(selectedChipTabsItem && {
+        defaultValue: selectedChipTabsItem.componentProperties["Label#8876:0"].value,
+      }),
+    };
+
+    return createElement("ChipTabs", commonProps, chipTabTriggerList);
+  },
+};
+
+const chipTabsItemHandler: ComponentHandler<ChipTabsItemProperties> = {
+  key: "fa80168b02051fbb0ba032238bd76d840dbe2e15",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      value: props["Label#8876:0"].value,
+      ...(states.includes("Disabled") && {
+        // XXX: 구현체 isDisabled, 수정 예정
+        disabled: true,
+      }),
+    };
+
+    return createElement("ChipTabTrigger", commonProps, props["Label#8876:0"].value);
   },
 };
 
@@ -714,11 +768,8 @@ const segmentedControlHandler: ComponentHandler<SegmentedControlProperties> = {
           child.mainComponent?.key === segmentedControlItemHandler.key),
     ) as (InstanceNode & { componentProperties: SegmentedControlItemProperties })[];
 
-    const selectedSegment = segments.find(
-      (segment) =>
-        "State" in segment.componentProperties &&
-        typeof segment.componentProperties?.State.value === "string" &&
-        segment.componentProperties?.State.value.split("-").includes("Selected"),
+    const selectedSegment = segments.find((segment) =>
+      segment.componentProperties.State.value.split("-").includes("Selected"),
     );
 
     const segmentedControlChildren = segments.map(segmentedControlItemHandler.codegen);
@@ -773,11 +824,8 @@ const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
           child.mainComponent?.key === selectBoxItemHandler.key),
     ) as (InstanceNode & { componentProperties: SelectBoxItemProperties })[];
 
-    const selectedSelectBoxItem = selectBoxItems.find(
-      (selectBoxItem) =>
-        "State" in selectBoxItem.componentProperties &&
-        typeof selectBoxItem.componentProperties?.State.value === "string" &&
-        selectBoxItem.componentProperties?.State.value.split("-").includes("Selected"),
+    const selectedSelectBoxItem = selectBoxItems.find((selectBoxItem) =>
+      selectBoxItem.componentProperties.State.value.split("-").includes("Selected"),
     );
 
     const selectBoxChildren = selectBoxItems.map(selectBoxItemHandler.codegen);
@@ -890,6 +938,114 @@ const snackbarHandler: ComponentHandler<SnackbarProperties> = {
 
     // TODO: adapter.create({ render })
     return createElement("Snackbar", commonProps);
+  },
+};
+
+const tabsHandler: ComponentHandler<TabsProperties> = {
+  key: "ffe33411fb8796f7a95d3637b90150007f0dd954",
+  codegen: ({ componentProperties: props, children }) => {
+    const tabsItems = children
+      .map((child) => {
+        if (child.type !== "INSTANCE") return null;
+
+        const componentKey =
+          child.mainComponent?.parent?.type === "COMPONENT_SET"
+            ? child.mainComponent?.parent?.key
+            : child.mainComponent?.key;
+
+        if (componentKey === tabsHugItemHandler.key)
+          return {
+            layout: "hug" as const,
+            node: child as InstanceNode & { componentProperties: TabsHugItemProperties },
+          };
+
+        if (componentKey === tabsFillItemHandler.key)
+          return {
+            layout: "fill" as const,
+            node: child as InstanceNode & { componentProperties: TabsFillItemProperties },
+          };
+
+        return null;
+      })
+      .filter((tabsItem) => tabsItem !== null);
+
+    const selectedTabsItem = tabsItems.find(({ node: { componentProperties } }) =>
+      componentProperties.State.value.split("-").includes("Selected"),
+    )?.node;
+
+    const tabTriggerList = createElement(
+      "TabTriggerList",
+      undefined,
+      tabsItems.map(({ layout, node }) => {
+        switch (layout) {
+          case "hug":
+            return tabsHugItemHandler.codegen(node);
+          case "fill":
+            return tabsFillItemHandler.codegen(node);
+        }
+      }),
+    );
+
+    const tabContentList = createElement(
+      "TabContentList",
+      undefined,
+      tabsItems.map(({ node }) => {
+        const value = node.componentProperties["Label#4478:2"].value;
+        const content = createElement("Content", undefined, value);
+
+        return createElement("TabContent", { value }, content);
+      }),
+    );
+
+    const commonProps = {
+      layout: camelCase(props.Layout.value),
+      size: camelCase(props.Size.value),
+      ...(selectedTabsItem && {
+        defaultValue: selectedTabsItem.componentProperties["Label#4478:2"].value,
+      }),
+    };
+
+    return createElement("Tabs", commonProps, [tabTriggerList, tabContentList]);
+  },
+};
+
+const tabsHugItemHandler: ComponentHandler<TabsHugItemProperties> = {
+  key: "c242492543b327ceb84fa9933841512fc62a898c",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      value: props["Label#4478:2"].value,
+      ...(props.Notification.value === "True" && {
+        alert: true,
+      }),
+      ...(states.includes("Disabled") && {
+        // XXX: 구현체 isDisabled, 수정 예정
+        disabled: true,
+      }),
+    };
+
+    return createElement("TabTrigger", commonProps, props["Label#4478:2"].value);
+  },
+};
+
+const tabsFillItemHandler: ComponentHandler<TabsFillItemProperties> = {
+  key: "7275293344efb40ee9a3f5248ba2659b94a0b305",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      value: props["Label#4478:2"].value,
+      ...(props.Notification.value === "True" && {
+        alert: true,
+      }),
+      ...(states.includes("Disabled") && {
+        // XXX: 구현체 isDisabled, 수정 예정
+        disabled: true,
+      }),
+    };
+
+    return createElement("TabTrigger", commonProps, props["Label#4478:2"].value);
   },
 };
 
@@ -1086,6 +1242,7 @@ const componentHandlers = [
   badgeHandler,
   calloutHandler,
   checkboxHandler,
+  chipTabsHandler,
   controlChipHandler,
   extendedFabHandler,
   fabHandler,
@@ -1099,6 +1256,7 @@ const componentHandlers = [
   selectBoxHandler,
   skeletonHandler,
   snackbarHandler,
+  tabsHandler,
   textButtonHandler,
   textFieldHandler,
   toggleButtonHandler,

@@ -219,8 +219,48 @@ export type CheckboxProperties = InferFromDefinition<{
   };
   Weight: {
     type: "VARIANT";
-    defaultValue: "Bold";
-    variantOptions: ["Regular", "Bold"];
+    defaultValue: "Default";
+    variantOptions: ["Default", "Stronger"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: [
+      "Enabled",
+      "Pressed",
+      "Selected",
+      "Selected-Pressed",
+      "Indeterminate",
+      "Indeterminate-Pressed",
+      "Disabled",
+      "Disabled-Selected",
+      "Disabled-Indeterminate",
+    ];
+  };
+}>;
+
+export type ChipTabsProperties = InferFromDefinition<{
+  "Tab Count": {
+    type: "VARIANT";
+    defaultValue: "2";
+    variantOptions: ["2", "3", "4", "5", "6", "Max"];
+  };
+  Variant: {
+    type: "VARIANT";
+    defaultValue: "Neutral Solid";
+    variantOptions: ["Neutral Solid", "Brand Solid"];
+  };
+}>;
+
+export type ChipTabsItemProperties = InferFromDefinition<{
+  "Label#8876:0": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  Variant: {
+    type: "VARIANT";
+    defaultValue: "Neutral Solid";
+    variantOptions: ["Neutral Solid", "Brand Solid"];
   };
   State: {
     type: "VARIANT";
@@ -230,11 +270,8 @@ export type CheckboxProperties = InferFromDefinition<{
       "Enabled-Pressed",
       "Enabled-Selected",
       "Enabled-Selected-Pressed",
-      "Enabled-Indeterminate",
-      "Enabled-Indeterminate-Pressed",
       "Disabled",
       "Disabled-Selected",
-      "Disabled-Indeterminate",
     ];
   };
 }>;
@@ -658,6 +695,68 @@ export type SwitchProperties = InferFromDefinition<{
     type: "VARIANT";
     defaultValue: "Enabled";
     variantOptions: ["Enabled", "Enabled-Selected", "Disabled", "Disabled-Selected"];
+  };
+}>;
+
+export type TabsProperties = InferFromDefinition<{
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Medium";
+    variantOptions: ["Small", "Medium"];
+  };
+  Layout: {
+    type: "VARIANT";
+    defaultValue: "Hug";
+    variantOptions: ["Hug", "Fill"];
+  };
+  "Tab Count": {
+    type: "VARIANT";
+    defaultValue: "2";
+    variantOptions: ["2", "3", "4", "5+"];
+  };
+}>;
+
+export type TabsHugItemProperties = InferFromDefinition<{
+  "Label#4478:2": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Small";
+    variantOptions: ["Small", "Medium"];
+  };
+  Notification: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["True", "False"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled-Selected";
+    variantOptions: ["Enabled", "Enabled-Selected", "Disabled"];
+  };
+}>;
+
+export type TabsFillItemProperties = InferFromDefinition<{
+  "Label#4478:2": {
+    type: "TEXT";
+    defaultValue: "라벨";
+  };
+  Size: {
+    type: "VARIANT";
+    defaultValue: "Small";
+    variantOptions: ["Small", "Medium"];
+  };
+  Notification: {
+    type: "VARIANT";
+    defaultValue: "False";
+    variantOptions: ["True", "False"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled-Selected";
+    variantOptions: ["Enabled", "Enabled-Selected", "Disabled"];
   };
 }>;
 
