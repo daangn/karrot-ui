@@ -21,6 +21,11 @@ export const doDontSectionType = defineType({
     },
     imageFieldType, // 기존 imageFieldType 재사용
     {
+      name: "title",
+      title: "제목",
+      type: "string",
+    },
+    {
       name: "description",
       title: "설명",
       type: "text",
@@ -50,9 +55,21 @@ export const doDontType = defineArrayMember({
       secondType: "second.type",
       firstImage: "first.imageField.uploadImage",
       firstUrl: "first.imageField.externalUrl",
+      firstTitle: "first.title",
+      firstDescription: "first.description",
       firstImageType: "first.imageField.imageType",
+      secondTitle: "second.title",
+      secondDescription: "second.description",
     },
-    prepare({ firstType, secondType, firstImage, firstUrl, firstImageType }) {
+    prepare({
+      firstType,
+      secondType,
+      firstImage,
+      firstUrl,
+      firstImageType,
+      firstTitle,
+      secondTitle,
+    }) {
       const image =
         firstImageType === "upload"
           ? firstImage
@@ -64,8 +81,11 @@ export const doDontType = defineArrayMember({
         ? `${firstType?.toUpperCase()} & ${secondType?.toUpperCase()}`
         : firstType?.toUpperCase();
 
+      const subtitle = `${firstTitle} & ${secondTitle}`;
+
       return {
         title,
+        subtitle,
         media: image,
       };
     },

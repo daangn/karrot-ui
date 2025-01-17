@@ -14,6 +14,7 @@ interface ImageField {
 
 interface Section {
   type: "do" | "dont";
+  title: string;
   description: string;
   imageField: ImageField;
 }
@@ -44,13 +45,16 @@ export function DoDont({ value, className }: DoDontProps) {
             />
           )}
         </div>
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-3 px-[6px] w-full">
           {isDo ? (
             <IconCheckmarkCircleFill className="text-seed-fg-positive shrink-0" size={30} />
           ) : (
             <IconXmarkCircleFill className="text-seed-fg-danger shrink-0" size={30} />
           )}
-          <span className="text-sm text-seed-fg-neutral-subtle">{section.description}</span>
+          <div className="flex flex-col gap-2 break-all">
+            <span className="text-lg font-bold text-seed-fg-neutral mt-[2px]">{section.title}</span>
+            <span className="text-md text-seed-fg-neutral-subtle">{section.description}</span>
+          </div>
         </div>
       </div>
     );

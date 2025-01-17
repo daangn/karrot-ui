@@ -34,7 +34,7 @@ export const SanityImage = ({ value, className }: ImageProps) => {
     <img
       src={cdnUrl}
       alt={value.originalFilename}
-      className={clsx("w-full h-auto rounded-2xl overflow-hidden my-4 object-cover", className)}
+      className={clsx("w-full rounded-2xl overflow-hidden object-cover", className)}
       loading="lazy"
       draggable={false}
     />

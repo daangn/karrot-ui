@@ -59,7 +59,7 @@ function BlogCard({ title, description, thumbnail }: Blog) {
     <div className="flex flex-col items-start h-full text-left hover:bg-gray-100 rounded-[26px] transition-all duration-200">
       <SanityImage
         value={thumbnail}
-        className="rounded-[26px] aspect-[16/9] h-full w-full object-cover"
+        className="rounded-3xl aspect-[16/9] h-full w-full object-cover my-0"
       />
       <div className="flex flex-col gap-2 px-[10px] py-[24px]">
         <h3 className="font-bold text-lg sm:text-xl">{title}</h3>

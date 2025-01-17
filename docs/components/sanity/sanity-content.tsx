@@ -4,13 +4,14 @@ import { PortableText } from "@portabletext/react";
 import type { SanityDocument } from "next-sanity";
 import { client } from "./client";
 
+import { ImageTextHalfPreview } from "@/components/sanity/image-text-half";
 import { useEffect, useState } from "react";
 import ErrorBoundary from "../error-boundary";
-import { PortableImage } from "./image";
-import { Table } from "./table";
-import { ImageTextHalfPreview } from "@/components/sanity/image-text-half";
 import { DoDont } from "./do-dont";
 import { ExternalImage } from "./external-image";
+import { PortableImage } from "./image";
+import { Table } from "./table";
+
 interface SanityGuidelineProps {
   title: string;
 }
