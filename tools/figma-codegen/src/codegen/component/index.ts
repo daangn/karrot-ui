@@ -1272,6 +1272,6 @@ export const componentHandlerMap = new Map(
 );
 
 export const ignoredComponentKeys = new Set<string>([
-  "a96fe9696d66425daa57bdc86a378a54a54ae0f9",
-  "5f5b68664abeaacde7d38c2418cc8e9706bf20d8",
+  "1acdc7247c83a73a0504d6fad86d08783938cb1a",
+  "b38b719b61cdf1a24458d7a7888bee74b7649084",
 ]);
