@@ -41,9 +41,9 @@ export const IconBottomInfomation = () => {
         <div className="flex gap-4 items-end">
           <div
             className="text-xl font-bold"
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
             dangerouslySetInnerHTML={{ __html: highLightedName }}
           />
-          <div className="text-sm">{pascalCaseIconName}</div>
           <div className="flex flex-col gap-1">
             {serviceName && (
               <div className="text-seed-fg-danger text-xs">
