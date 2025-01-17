@@ -25,7 +25,7 @@ export function createIconTagNameFromId(id: string) {
   return createIconTagNameFromKey(componentKey);
 }
 
-export function createMonochromeIconFillProps(node: InstanceNode) {
+export function createMonochromeIconColorProps(node: InstanceNode) {
   if (node.children.length === 0) {
     throw new Error("Icon node has no children");
   }
@@ -38,9 +38,8 @@ export function createMonochromeIconFillProps(node: InstanceNode) {
   );
 
   if (fills.size > 1) {
-    throw new Error("Icon node has multiple colors");
+    throw new Error(`Children of the icon node ${node.name} has multiple colors`);
   }
 
-  // TODO: prop 수정 필요 (Icon 컴포넌트 등으로 대체될...)
-  return { fills: fills.values().next().value };
+  return { color: fills.values().next().value };
 }

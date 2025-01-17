@@ -1,7 +1,7 @@
 import { camelCase } from "change-case";
 import { createBackgroundProps, createBorderProps } from "./color";
 import { componentHandlerMap, ignoredComponentKeys } from "./component";
-import { createIconTagNameFromKey, createMonochromeIconFillProps, isIconComponent } from "./icon";
+import { createIconTagNameFromKey, createMonochromeIconColorProps, isIconComponent } from "./icon";
 import type { ElementNode } from "./jsx";
 import { createElement, stringifyElement } from "./jsx";
 import { createLayoutProps } from "./layout";
@@ -142,10 +142,24 @@ export function generateCode(selection: SceneNode) {
       mainComponent.parent?.type === "COMPONENT_SET" ? mainComponent.parent.key : null;
 
     if (isIconComponent(componentKey)) {
-      return createElement(createIconTagNameFromKey(componentKey), {
-        size: node.width,
-        ...(iconRecord[componentKey]?.type === "monochrome" && createMonochromeIconFillProps(node)),
-      });
+      const iconElement = createElement(createIconTagNameFromKey(componentKey));
+
+      switch (iconRecord[componentKey]?.type) {
+        case "monochrome":
+          return createElement("Icon", {
+            size: node.width,
+            svg: iconElement,
+            ...createMonochromeIconColorProps(node),
+          });
+        case "multicolor":
+          return iconElement;
+        default:
+          return createElement("Icon", {
+            size: node.width,
+            svg: iconElement,
+            ...createMonochromeIconColorProps(node),
+          });
+      }
     }
 
     if (ignoredComponentKeys.has(componentSetKey ?? componentKey)) {

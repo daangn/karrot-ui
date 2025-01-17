@@ -209,7 +209,8 @@ const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
 
     const commonProps = {
       size: props.Size.value,
-      // TODO: top item
+      // TODO: 구현될 예정
+      // topItem: camelCase(props["Top Item"].value),
     };
 
     const avatarStackChildren = avatars.map((avatar) => {
