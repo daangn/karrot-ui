@@ -6,4 +6,4 @@ export * as $gradient from "./gradient.mjs";
 export * as $lineHeight from "./line-height.mjs";
 export * as $radius from "./radius.mjs";
 export * as $timingFunction from "./timing-function.mjs";
-export * as $dimension from "./dimension.mjs";
+export * as $dimension from "./dimension/index.mjs";
