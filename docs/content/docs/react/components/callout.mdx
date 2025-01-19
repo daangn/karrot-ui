@@ -1,0 +1,94 @@
+---
+title: Callout
+description: 사용자의 주목을 끌어 중요한 정보를 강조하는 컴포넌트에요.
+---
+
+<ComponentExample name="callout-preview" />
+
+## 설치
+
+<Installation name="callout" />
+
+## Props
+
+### `Callout`
+
+<ReactTypeTable path="./registry/ui/callout.tsx" name="CalloutProps" />
+
+### `ActionableCallout`
+
+<ReactTypeTable
+  path="./registry/ui/callout.tsx"
+  name="ActionableCalloutProps"
+/>
+
+### `DismissibleCallout`
+
+<ReactTypeTable
+  path="./registry/ui/callout.tsx"
+  name="DismissibleCalloutProps"
+/>
+
+## 예제
+
+### Content Layout
+
+#### Text Only
+
+<ComponentExample name="callout-text-only" />
+
+#### With Icon
+
+<ComponentExample name="callout-with-icon" />
+
+<Callout type="warn">
+
+`icon` prop은 `Callout`에서만 제공돼요.
+
+</Callout>
+
+#### With Title Text
+
+<ComponentExample name="callout-with-title-text" />
+
+#### With Link Label
+
+<ComponentExample name="callout-with-link-label" />
+
+<Callout type="warn">
+
+`linkLabel`과 `linkProps` prop은 `Callout`과 `DismissibleCallout`에서만 제공돼요.
+
+</Callout>
+
+#### With All
+
+<ComponentExample name="callout-with-all" />
+
+### Customizable Parts
+
+#### Rendering Link Label as Child
+
+<ComponentExample name="callout-link-label-as-child" />
+
+### Tones
+
+#### Neutral (Default)
+
+<ComponentExample name="callout-neutral" />
+
+#### Informative
+
+<ComponentExample name="callout-informative" />
+
+#### Warning
+
+<ComponentExample name="callout-warning" />
+
+#### Danger
+
+<ComponentExample name="callout-danger" />
+
+#### Magic
+
+<ComponentExample name="callout-magic" />

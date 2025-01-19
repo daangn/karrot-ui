@@ -63,7 +63,7 @@
 }
 .appBar__container--theme_cupertino {
     height: 44px;
-    padding-inline: var(--seed-v3-unit-s4);
+    padding-inline: var(--seed-v3-dimension-s4);
 }
 [data-stackflow-activity-is-active="false"] .appBar__container--theme_cupertino {
     opacity: calc(pow(var(--stackflow-swipe-back-displacement-ratio, 1), 2));
@@ -115,7 +115,7 @@
 }
 .appBar__container--theme_android {
     height: 56px;
-    padding-inline: var(--seed-v3-unit-s4);
+    padding-inline: var(--seed-v3-dimension-s4);
 }
 .appBar__iconButton--theme_android {
     width: 40px;
@@ -154,10 +154,10 @@
     background-color: #00000000;
 }
 .appBar__icon--tone_transparent {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .appBar__titleMain--tone_transparent {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .appBar__root--border_true {
     box-shadow: inset 0px calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral-muted);

@@ -1,0 +1,21 @@
+export const s0_5 = "var(--seed-v3-dimension-s0_5)";
+export const s1 = "var(--seed-v3-dimension-s1)";
+export const s1_5 = "var(--seed-v3-dimension-s1_5)";
+export const s2 = "var(--seed-v3-dimension-s2)";
+export const s2_5 = "var(--seed-v3-dimension-s2_5)";
+export const s3 = "var(--seed-v3-dimension-s3)";
+export const s3_5 = "var(--seed-v3-dimension-s3_5)";
+export const s4 = "var(--seed-v3-dimension-s4)";
+export const s4_5 = "var(--seed-v3-dimension-s4_5)";
+export const s5 = "var(--seed-v3-dimension-s5)";
+export const s6 = "var(--seed-v3-dimension-s6)";
+export const s7 = "var(--seed-v3-dimension-s7)";
+export const s8 = "var(--seed-v3-dimension-s8)";
+export const s9 = "var(--seed-v3-dimension-s9)";
+export const s10 = "var(--seed-v3-dimension-s10)";
+export const s12 = "var(--seed-v3-dimension-s12)";
+export const s13 = "var(--seed-v3-dimension-s13)";
+export const s14 = "var(--seed-v3-dimension-s14)";
+export const s16 = "var(--seed-v3-dimension-s16)";
+
+export * as spacingX from "./spacing-x.mjs";

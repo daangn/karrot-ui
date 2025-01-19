@@ -19,15 +19,15 @@
   border-left-width: var(--seed-box-border-left-width);
   border-right-width: var(--seed-box-border-right-width);
 
-  --seed-box-padding: initial;
+  --seed-box-padding: 0;
   --seed-box-padding-y: var(--seed-box-padding);
   --seed-box-padding-x: var(--seed-box-padding);
   --seed-box-padding-bottom: var(--seed-box-padding-y);
   --seed-box-padding-top: var(--seed-box-padding-y);
   --seed-box-padding-left: var(--seed-box-padding-x);
   --seed-box-padding-right: var(--seed-box-padding-x);
-  padding-bottom: var(--seed-box-padding-bottom);
   padding-top: var(--seed-box-padding-top);
+  padding-bottom: var(--seed-box-padding-bottom);
   padding-left: var(--seed-box-padding-left);
   padding-right: var(--seed-box-padding-right);
 
@@ -83,12 +83,14 @@
   --seed-box-justify-content: initial;
   --seed-box-align-items: stretch;
   --seed-box-align-content: stretch;
+  --seed-box-align-self: auto;
   --seed-box-gap: initial;
   flex-direction: var(--seed-box-flex-direction);
   flex-wrap: var(--seed-box-flex-wrap);
   justify-content: var(--seed-box-justify-content);
   align-items: var(--seed-box-align-items);
   align-content: var(--seed-box-align-content);
+  align-self: var(--seed-box-align-self);
   gap: var(--seed-box-gap);
 }
 

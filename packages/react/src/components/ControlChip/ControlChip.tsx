@@ -1,24 +1,27 @@
+import { useCheckboxContext } from "@seed-design/react-checkbox";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { Checkbox as CheckboxPrimitive, useCheckboxContext } from "@seed-design/react-checkbox";
+import { useRadioGroupItemContext } from "@seed-design/react-radio-group";
 import { controlChip, type ControlChipVariantProps } from "@seed-design/recipe/controlChip";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { Icon, type IconProps } from "../private/Icon";
 import { createWithStateProps } from "../../utils/createWithStateProps";
+import { Icon, type IconProps } from "../private/Icon";
 
 const { withProvider, withContext } = createStyleContext(controlChip);
-const withStateProps = createWithStateProps([useCheckboxContext]);
+const withStateProps = createWithStateProps([useCheckboxContext, useRadioGroupItemContext], {
+  strict: false,
+});
+
+export interface ControlChipRootBaseProps extends PrimitiveProps, ControlChipVariantProps {}
 
 export interface ControlChipRootProps
-  extends ControlChipVariantProps,
-    PrimitiveProps,
-    React.ButtonHTMLAttributes<HTMLLabelElement> {}
+  extends ControlChipRootBaseProps,
+    React.HTMLAttributes<HTMLButtonElement> {}
 
-export const ControlChipRoot = withProvider<HTMLLabelElement, ControlChipRootProps>(
-  CheckboxPrimitive.Root,
+export const ControlChipRoot = withProvider<HTMLButtonElement, ControlChipRootProps>(
+  Primitive.button,
   "root",
 );
-ControlChipRoot.displayName = "ControlChip";
 
 export interface ControlChipLabelProps
   extends PrimitiveProps,

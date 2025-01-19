@@ -1,12 +1,12 @@
 export {
   ToggleButtonLabel as Label,
   ToggleButtonPrefixIcon as PrefixIcon,
-  ToggleButtonProgressCircle as ProgressCircle,
+  ToggleButtonProgressIndicator as ProgressIndicator,
   ToggleButtonRoot as Root,
   ToggleButtonSuffixIcon as SuffixIcon,
   type ToggleButtonLabelProps as LabelProps,
   type ToggleButtonPrefixIconProps as PrefixIconProps,
-  type ToggleButtonProgressCircleProps as ProgressCircleProps,
+  type ToggleButtonProgressIndicatorProps as ProgressIndicatorProps,
   type ToggleButtonRootProps as RootProps,
   type ToggleButtonSuffixIconProps as SuffixIconProps,
 } from "./ToggleButton";

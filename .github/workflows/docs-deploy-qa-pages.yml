@@ -7,6 +7,8 @@ on:
       - "examples/stackflow-spa/**"
       - "packages/recipe/**"
       - "packages/stylesheet/**"
+      - "packages/react/**"
+      - "packages/stackflow/**"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,14 +7,14 @@ data:
   base:
     enabled:
       root:
-        paddingX: $unit.s4
-        paddingY: 19px
-        gap: $unit.s2_5
+        paddingX: $dimension.s4
+        paddingY: $dimension.s5
+        gap: $dimension.s2_5
         strokeWidth: 1px
         strokeColor: $color.stroke.neutral
         cornerRadius: $radius.s3
       content:
-        gap: $unit.s0_5
+        gap: $dimension.s0_5
       label:
         color: $color.fg.neutral
         fontWeight: $font-weight.bold
@@ -26,22 +26,21 @@ data:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
       checkboxControl:
-        size: 22px
-        margin: 1px
+        size: $dimension.s6
         color: $color.bg.layer-default
         strokeWidth: 1.25px
         strokeColor: $color.stroke.control
         cornerRadius: $radius.s1
       checkboxIcon:
-        size: $unit.s3_5
+        size: $dimension.s3_5
       radioControl:
-        size: $unit.s6
+        size: $dimension.s6
         color: $color.bg.layer-default
         strokeWidth: 1.25px
         strokeColor: $color.stroke.control
         cornerRadius: $radius.full
       radioIcon:
-        size: $unit.s2_5
+        size: $dimension.s2_5
         cornerRadius: $radius.full
 
     enabled,pressed:
@@ -60,12 +59,12 @@ data:
         color: $color.bg.brand-solid
         strokeWidth: 0
       checkboxIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       radioControl:
         color: $color.bg.brand-solid
         strokeWidth: 0
       radioIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
 
     enabled,selected,pressed:
       root:

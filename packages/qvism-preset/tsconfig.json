@@ -4,6 +4,14 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "lib",
+
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   }
 }

@@ -16,11 +16,11 @@ data:
       root:
         color: $color.bg.brand-solid
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       prefixIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       suffixIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       progressCircle:
         trackColor: $color.palette.static-white-alpha-200
         rangeColor: $color.palette.static-white
@@ -106,15 +106,15 @@ data:
   size=xsmall:
     enabled:
       root:
-        minHeight: $unit.s8
+        minHeight: $dimension.s8
         cornerRadius: $radius.full
-        gap: $unit.s1
-        paddingX: $unit.s3_5
-        paddingY: $unit.s1_5
+        gap: $dimension.s1
+        paddingX: $dimension.s3_5
+        paddingY: $dimension.s1_5
       prefixIcon:
-        size: $unit.s3_5
+        size: $dimension.s3_5
       suffixIcon:
-        size: $unit.s3_5
+        size: $dimension.s3_5
       label:
         fontSize: $font-size.s4
       progressCircle:
@@ -123,15 +123,15 @@ data:
   size=small:
     enabled:
       root:
-        minHeight: $unit.s9
+        minHeight: $dimension.s9
         cornerRadius: $radius.full
-        gap: $unit.s1
-        paddingX: $unit.s4
-        paddingY: $unit.s2
+        gap: $dimension.s1
+        paddingX: $dimension.s4
+        paddingY: $dimension.s2
       prefixIcon:
-        size: $unit.s3_5
+        size: $dimension.s3_5
       suffixIcon:
-        size: $unit.s3_5
+        size: $dimension.s3_5
       label:
         fontSize: $font-size.s4
       progressCircle:

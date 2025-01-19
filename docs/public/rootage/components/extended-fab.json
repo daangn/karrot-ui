@@ -27,7 +27,7 @@
     "variant=neutral solid": {
       "enabled": {
         "root": {
-          "color": "$color.bg.neutral-solid"
+          "color": "$color.bg.neutral-inverted"
         },
         "label": {
           "color": "$color.fg.neutral-inverted"
@@ -38,7 +38,7 @@
       },
       "pressed": {
         "root": {
-          "color": "$color.bg.neutral-solid-pressed"
+          "color": "$color.bg.neutral-inverted-pressed"
         }
       }
     },
@@ -64,9 +64,9 @@
       "enabled": {
         "root": {
           "minHeight": "40px",
-          "gap": "$unit.s1",
-          "paddingX": "$unit.s3_5",
-          "paddingY": "$unit.s2_5"
+          "gap": "$dimension.s1",
+          "paddingX": "$dimension.s3_5",
+          "paddingY": "$dimension.s2_5"
         },
         "prefixIcon": {
           "size": "16px"
@@ -82,9 +82,9 @@
       "enabled": {
         "root": {
           "minHeight": "48px",
-          "gap": "$unit.s1",
-          "paddingX": "$unit.s4",
-          "paddingY": "$unit.s3"
+          "gap": "$dimension.s1",
+          "paddingX": "$dimension.s4",
+          "paddingY": "$dimension.s3"
         },
         "prefixIcon": {
           "size": "16px"

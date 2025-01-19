@@ -22,16 +22,16 @@
           "color": "$color.bg.brand-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "icon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "prefixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "suffixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "progressCircle": {
           "trackColor": "$color.palette.static-white-alpha-200",
@@ -69,7 +69,7 @@
     "variant=neutral solid": {
       "enabled": {
         "root": {
-          "color": "$color.bg.neutral-solid"
+          "color": "$color.bg.neutral-inverted"
         },
         "label": {
           "color": "$color.fg.neutral-inverted"
@@ -90,7 +90,7 @@
       },
       "pressed": {
         "root": {
-          "color": "$color.bg.neutral-solid-pressed"
+          "color": "$color.bg.neutral-inverted-pressed"
         }
       },
       "disabled": {
@@ -112,7 +112,7 @@
       },
       "loading": {
         "root": {
-          "color": "$color.bg.neutral-solid-pressed"
+          "color": "$color.bg.neutral-inverted-pressed"
         }
       }
     },
@@ -172,16 +172,16 @@
           "color": "$color.bg.danger-solid"
         },
         "label": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "icon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "prefixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "suffixIcon": {
-          "color": "$color.fg.static-white"
+          "color": "$color.palette.static-white"
         },
         "progressCircle": {
           "trackColor": "$color.palette.static-white-alpha-200",
@@ -325,7 +325,7 @@
     "size=xsmall": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s8",
+          "minHeight": "$dimension.s8",
           "cornerRadius": "$radius.full"
         },
         "progressCircle": {
@@ -337,15 +337,15 @@
     "size=xsmall, layout=with text": {
       "enabled": {
         "root": {
-          "gap": "$unit.s1",
-          "paddingX": "$unit.s3_5",
-          "paddingY": "$unit.s1_5"
+          "gap": "$dimension.s1",
+          "paddingX": "$dimension.s3_5",
+          "paddingY": "$dimension.s1_5"
         },
         "prefixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "suffixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "label": {
           "fontSize": "$font-size.s4"
@@ -355,19 +355,19 @@
     "size=xsmall, layout=icon only": {
       "enabled": {
         "root": {
-          "minWidth": "$unit.s8",
-          "paddingX": "$unit.s1_5",
-          "paddingY": "$unit.s1_5"
+          "minWidth": "$dimension.s8",
+          "paddingX": "$dimension.s1_5",
+          "paddingY": "$dimension.s1_5"
         },
         "icon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         }
       }
     },
     "size=small": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s9",
+          "minHeight": "$dimension.s9",
           "cornerRadius": "$radius.s2"
         },
         "progressCircle": {
@@ -379,15 +379,15 @@
     "size=small, layout=with text": {
       "enabled": {
         "root": {
-          "gap": "$unit.s1",
-          "paddingX": "$unit.s3_5",
-          "paddingY": "$unit.s2"
+          "gap": "$dimension.s1",
+          "paddingX": "$dimension.s3_5",
+          "paddingY": "$dimension.s2"
         },
         "prefixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "suffixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "label": {
           "fontSize": "$font-size.s4"
@@ -397,19 +397,19 @@
     "size=small, layout=icon only": {
       "enabled": {
         "root": {
-          "minWidth": "$unit.s9",
-          "paddingX": "$unit.s2",
-          "paddingY": "$unit.s2"
+          "minWidth": "$dimension.s9",
+          "paddingX": "$dimension.s2",
+          "paddingY": "$dimension.s2"
         },
         "icon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         }
       }
     },
     "size=medium": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s10",
+          "minHeight": "$dimension.s10",
           "cornerRadius": "$radius.s2"
         },
         "progressCircle": {
@@ -421,15 +421,15 @@
     "size=medium, layout=with text": {
       "enabled": {
         "root": {
-          "gap": "$unit.s1",
-          "paddingX": "$unit.s4",
-          "paddingY": "$unit.s2_5"
+          "gap": "$dimension.s1",
+          "paddingX": "$dimension.s4",
+          "paddingY": "$dimension.s2_5"
         },
         "prefixIcon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         },
         "suffixIcon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         },
         "label": {
           "fontSize": "$font-size.s4"
@@ -439,9 +439,9 @@
     "size=medium, layout=icon only": {
       "enabled": {
         "root": {
-          "minWidth": "$unit.s10",
-          "paddingX": "$unit.s2_5",
-          "paddingY": "$unit.s2_5"
+          "minWidth": "$dimension.s10",
+          "paddingX": "$dimension.s2_5",
+          "paddingY": "$dimension.s2_5"
         },
         "icon": {
           "size": "18px"
@@ -451,7 +451,7 @@
     "size=large": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s13",
+          "minHeight": "$dimension.s13",
           "cornerRadius": "$radius.s3"
         },
         "progressCircle": {
@@ -463,9 +463,9 @@
     "size=large, layout=with text": {
       "enabled": {
         "root": {
-          "gap": "$unit.s2",
-          "paddingX": "$unit.s5",
-          "paddingY": "$unit.s3_5"
+          "gap": "$dimension.s2",
+          "paddingX": "$dimension.s5",
+          "paddingY": "$dimension.s3_5"
         },
         "prefixIcon": {
           "size": "22px"
@@ -481,9 +481,9 @@
     "size=large, layout=icon only": {
       "enabled": {
         "root": {
-          "minWidth": "$unit.s13",
-          "paddingX": "$unit.s3_5",
-          "paddingY": "$unit.s3_5"
+          "minWidth": "$dimension.s13",
+          "paddingX": "$dimension.s3_5",
+          "paddingY": "$dimension.s3_5"
         },
         "icon": {
           "size": "22px"

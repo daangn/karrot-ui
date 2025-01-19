@@ -1,7 +1,7 @@
 "use client";
 
 import { client } from "@/components/sanity/client";
-import { Image } from "@/components/sanity/image";
+import { SanityImage } from "@/components/sanity/image";
 import { PortableContent } from "@/components/sanity/sanity-content";
 import { SanityImageAsset } from "@sanity/asset-utils";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
@@ -54,7 +54,7 @@ export default function BlogPage() {
       <DocsTitle>{data?.title}</DocsTitle>
       <DocsDescription>{data?.description}</DocsDescription>
       <DocsBody>
-        <Image value={data?.thumbnail} className="rounded-[26px]" />
+        <SanityImage value={data?.thumbnail} className="rounded-[26px]" />
         <PortableContent content={data?.content} />
       </DocsBody>
     </DocsPage>

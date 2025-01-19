@@ -2,7 +2,7 @@ import { vars } from "@seed-design/vars";
 import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
-import { stackflow } from "@stackflow/react";
+import { stackflow, type ActivityComponentType, type UseActionsOutputType } from "@stackflow/react";
 import React from "react";
 
 import { IconChevronLeftLine } from "@daangn/react-monochrome-icon";
@@ -29,6 +29,9 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityAlertDialog: React.lazy(() => import("../activities/ActivityAlertDialog")),
     ActivityBottomSheet: React.lazy(() => import("../activities/ActivityBottomSheet")),
     ActivityActionSheet: React.lazy(() => import("../activities/ActivityActionSheet")),
+    ActivityExtendedActionSheet: React.lazy(
+      () => import("../activities/ActivityExtendedActionSheet"),
+    ),
     ActivityNotFound,
   },
   plugins: [
@@ -78,6 +81,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityAlertDialog: "/alert-dialog",
         ActivityBottomSheet: "/bottom-sheet",
         ActivityActionSheet: "/action-sheet",
+        ActivityExtendedActionSheet: "/extended-action-sheet",
         ActivityNotFound: "/404",
       },
     }),
@@ -88,3 +92,14 @@ const { Stack, useFlow, useStepFlow } = stackflow({
 export { Stack };
 export type TypeUseFlow = typeof useFlow;
 export type TypeUseStepFlow = typeof useStepFlow;
+
+export type InferActivities<T> = T extends () => UseActionsOutputType<infer A> ? A : never;
+export type Activities = InferActivities<typeof useFlow>;
+export type ActivityName = keyof Activities;
+export type ActivityParamOf<K extends ActivityName> = Activities[K] extends ActivityComponentType<
+  infer U
+>
+  ? U
+  : Activities[K] extends { component: ActivityComponentType<infer U> }
+    ? U
+    : {};

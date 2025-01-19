@@ -1,7 +1,7 @@
 "use client";
 
 import { client } from "@/components/sanity/client";
-import { Image } from "@/components/sanity/image";
+import { SanityImage } from "@/components/sanity/image";
 import type { SanityImageAsset } from "@sanity/asset-utils";
 import { SanityDocument } from "@sanity/client";
 import Link from "next/link";
@@ -57,9 +57,9 @@ export default function HomePage() {
 function BlogCard({ title, description, thumbnail }: Blog) {
   return (
     <div className="flex flex-col items-start h-full text-left hover:bg-gray-100 rounded-[26px] transition-all duration-200">
-      <Image
+      <SanityImage
         value={thumbnail}
-        className="rounded-[26px] aspect-[16/9] h-full w-full object-cover"
+        className="rounded-3xl aspect-[16/9] h-full w-full object-cover my-0"
       />
       <div className="flex flex-col gap-2 px-[10px] py-[24px]">
         <h3 className="font-bold text-lg sm:text-xl">{title}</h3>

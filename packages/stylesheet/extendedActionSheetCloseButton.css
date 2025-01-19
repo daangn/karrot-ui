@@ -1,0 +1,19 @@
+.extendedActionSheetCloseButton__root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--seed-v3-color-bg-neutral-weak);
+    min-height: 52px;
+    padding-inline: var(--seed-v3-dimension-s5);
+    padding-block: var(--seed-v3-dimension-s3_5);
+    border-radius: var(--seed-v3-radius-s3);
+}
+.extendedActionSheetCloseButton__root:is(:active, [data-active]) {
+    background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
+}
+.extendedActionSheetCloseButton__label {
+    color: var(--seed-v3-color-fg-neutral);
+    font-size: var(--seed-v3-font-size-s5);
+    line-height: var(--seed-v3-line-height-s5);
+    font-weight: var(--seed-v3-font-weight-medium);
+}

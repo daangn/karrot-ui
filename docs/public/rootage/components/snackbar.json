@@ -1,0 +1,65 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "snackbar",
+    "name": "Snackbar"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "region": {
+          "paddingX": "$dimension.s2",
+          "paddingY": "$dimension.s2",
+          "offsetDuration": "$duration.s4",
+          "offsetTimingFunction": "$timing-function.easing"
+        },
+        "root": {
+          "color": "$color.bg.neutral-solid",
+          "cornerRadius": "$radius.s2",
+          "minHeight": "44px",
+          "paddingX": "$dimension.s4",
+          "paddingY": "$dimension.s2_5",
+          "gap": "$dimension.s2",
+          "enterOpacity": 0,
+          "enterDuration": "$duration.s4",
+          "enterTimingFunction": "$timing-function.enter",
+          "exitOpacity": 0,
+          "exitDuration": "$duration.s4",
+          "exitTimingFunction": "$timing-function.exit"
+        },
+        "message": {
+          "color": "$color.palette.static-white",
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4",
+          "fontWeight": "$font-weight.regular"
+        },
+        "prefixIcon": {
+          "size": "24px"
+        },
+        "actionButton": {
+          "targetPaddingX": "$dimension.s2",
+          "targetMinHeight": "44px",
+          "color": "$color.fg.brand",
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4",
+          "fontWeight": "$font-weight.bold"
+        }
+      }
+    },
+    "variant=default": {},
+    "variant=positive": {
+      "enabled": {
+        "prefixIcon": {
+          "color": "$color.fg.positive"
+        }
+      }
+    },
+    "variant=danger": {
+      "enabled": {
+        "prefixIcon": {
+          "color": "$color.fg.danger"
+        }
+      }
+    }
+  }
+}

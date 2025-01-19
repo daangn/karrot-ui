@@ -2,17 +2,17 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "paddingY": "var(--seed-v3-unit-s0_5)",
+        "paddingY": "var(--seed-v3-dimension-s0_5)",
         "borderWidth": "0.125rem"
       },
       "label": {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "prefixIcon": {
-        "marginXEnd": "var(--seed-v3-unit-s1)"
+        "marginXEnd": "var(--seed-v3-dimension-s1)"
       },
       "suffixIcon": {
-        "marginXStart": "var(--seed-v3-unit-s0_5)"
+        "marginXStart": "var(--seed-v3-dimension-s0_5)"
       }
     },
     "pressed": {
@@ -61,10 +61,10 @@ export const vars = {
         "cornerRadius": "var(--seed-v3-radius-s1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s6)",
@@ -78,10 +78,10 @@ export const vars = {
         "cornerRadius": "var(--seed-v3-radius-s1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s3_5)"
+        "size": "var(--seed-v3-dimension-s3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s3_5)"
+        "size": "var(--seed-v3-dimension-s3_5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -95,10 +95,10 @@ export const vars = {
         "cornerRadius": "var(--seed-v3-radius-s1)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s3_5)"
+        "size": "var(--seed-v3-dimension-s3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s3_5)"
+        "size": "var(--seed-v3-dimension-s3_5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s4)",

@@ -44,11 +44,11 @@
 .toggleButton__suffixIcon[data-loading] {
     opacity: 0;
 }
-.toggleButton__progressCircle {
+.toggleButton__progressIndicator {
     position: absolute;
     display: none;
 }
-.toggleButton__progressCircle[data-loading] {
+.toggleButton__progressIndicator[data-loading] {
     display: flex;
 }
 .toggleButton__root--variant_brandSolid {
@@ -73,7 +73,7 @@
     background: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
 .toggleButton__label--variant_brandSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .toggleButton__label--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     color: var(--seed-v3-color-fg-neutral);
@@ -82,7 +82,7 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .toggleButton__prefixIcon--variant_brandSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .toggleButton__prefixIcon--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     color: var(--seed-v3-color-fg-neutral);
@@ -91,7 +91,7 @@
     color: var(--seed-v3-color-fg-disabled);
 }
 .toggleButton__suffixIcon--variant_brandSolid {
-    color: var(--seed-v3-color-fg-static-white);
+    color: var(--seed-v3-color-palette-static-white);
 }
 .toggleButton__suffixIcon--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     color: var(--seed-v3-color-fg-neutral);
@@ -99,11 +99,11 @@
 .toggleButton__suffixIcon--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.toggleButton__progressCircle--variant_brandSolid {
+.toggleButton__progressIndicator--variant_brandSolid {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
     --range-color: var(--seed-v3-color-palette-static-white);
 }
-.toggleButton__progressCircle--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
+.toggleButton__progressIndicator--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
@@ -155,55 +155,55 @@
 .toggleButton__suffixIcon--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.toggleButton__progressCircle--variant_neutralWeak {
+.toggleButton__progressIndicator--variant_neutralWeak {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
-.toggleButton__progressCircle--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
+.toggleButton__progressIndicator--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
 .toggleButton__root--size_xsmall {
-    height: var(--seed-v3-unit-s8);
+    height: var(--seed-v3-dimension-s8);
     border-radius: var(--seed-v3-radius-full);
-    gap: var(--seed-v3-unit-s1);
-    padding-inline: var(--seed-v3-unit-s3_5);
-    padding-block: var(--seed-v3-unit-s1_5);
+    gap: var(--seed-v3-dimension-s1);
+    padding-inline: var(--seed-v3-dimension-s3_5);
+    padding-block: var(--seed-v3-dimension-s1_5);
 }
 .toggleButton__label--size_xsmall {
     font-size: var(--seed-v3-font-size-s4);
 }
 .toggleButton__prefixIcon--size_xsmall {
-    width: var(--seed-v3-unit-s3_5);
-    height: var(--seed-v3-unit-s3_5);
+    width: var(--seed-v3-dimension-s3_5);
+    height: var(--seed-v3-dimension-s3_5);
 }
 .toggleButton__suffixIcon--size_xsmall {
-    width: var(--seed-v3-unit-s3_5);
-    height: var(--seed-v3-unit-s3_5);
+    width: var(--seed-v3-dimension-s3_5);
+    height: var(--seed-v3-dimension-s3_5);
 }
-.toggleButton__progressCircle--size_xsmall {
+.toggleButton__progressIndicator--size_xsmall {
     --size: 14px;
     --thickness: 2px;
 }
 .toggleButton__root--size_small {
-    height: var(--seed-v3-unit-s9);
+    height: var(--seed-v3-dimension-s9);
     border-radius: var(--seed-v3-radius-full);
-    gap: var(--seed-v3-unit-s1);
-    padding-inline: var(--seed-v3-unit-s4);
-    padding-block: var(--seed-v3-unit-s2);
+    gap: var(--seed-v3-dimension-s1);
+    padding-inline: var(--seed-v3-dimension-s4);
+    padding-block: var(--seed-v3-dimension-s2);
 }
 .toggleButton__label--size_small {
     font-size: var(--seed-v3-font-size-s4);
 }
 .toggleButton__prefixIcon--size_small {
-    width: var(--seed-v3-unit-s3_5);
-    height: var(--seed-v3-unit-s3_5);
+    width: var(--seed-v3-dimension-s3_5);
+    height: var(--seed-v3-dimension-s3_5);
 }
 .toggleButton__suffixIcon--size_small {
-    width: var(--seed-v3-unit-s3_5);
-    height: var(--seed-v3-unit-s3_5);
+    width: var(--seed-v3-dimension-s3_5);
+    height: var(--seed-v3-dimension-s3_5);
 }
-.toggleButton__progressCircle--size_small {
+.toggleButton__progressIndicator--size_small {
     --size: 14px;
     --thickness: 2px;
 }

@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/textField.css";
-
 import * as React from "react";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
 import { TextField as SeedTextField } from "@seed-design/react";
@@ -70,9 +68,6 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             <SeedTextField.SuffixText>{suffix}</SeedTextField.SuffixText>
           )}
           {suffixIcon && <SeedTextField.SuffixIcon svg={suffixIcon} />}
-          {indicator && (
-            <SeedTextField.Indicator>{indicator}</SeedTextField.Indicator>
-          )}
         </SeedTextField.Field>
         {renderFooter && (
           <SeedTextField.Footer>

@@ -48,9 +48,22 @@ export interface TextFieldIndicatorProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const TextFieldIndicator = withContext<HTMLSpanElement, TextFieldIndicatorProps>(
-  withStateProps(Primitive.span),
-  "indicator",
+export const TextFieldIndicator = forwardRef<HTMLSpanElement, TextFieldIndicatorProps>(
+  (props, ref) => {
+    const { className, ...otherProps } = props;
+    const classNames = useClassNames();
+
+    return (
+      <>
+        <Primitive.span> </Primitive.span>
+        <Primitive.span
+          ref={ref}
+          className={clsx(classNames.indicator, className)}
+          {...otherProps}
+        />
+      </>
+    );
+  },
 );
 
 ////////////////////////////////////////////////////////////////////////////////////

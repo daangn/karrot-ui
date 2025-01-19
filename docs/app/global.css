@@ -33,6 +33,9 @@
   --destructive: 0 100% 50%;
   --destructive-foreground: 210 40% 98%;
   --ring: 215 20.2% 65.1%;
+
+  /* Lift Dialog, Sheet z-index for documentation */
+  --layer-index: 100;
 }
 
 #nd-sidebar {

@@ -21,7 +21,7 @@ data:
         color: $color.bg.brand-solid
         strokeWidth: 0px
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
     enabled,selected,pressed:
       root:
         color: $color.bg.brand-solid-pressed
@@ -37,24 +37,24 @@ data:
   size=large:
     enabled:
       root:
-        size: $unit.s6
+        size: $dimension.s6
       icon:
-        size: $unit.s2_5
+        size: $dimension.s2_5
     disabled:
       icon:
-        size: $unit.s3
+        size: $dimension.s3
   size=medium:
     enabled:
       root:
-        size: $unit.s5
+        size: $dimension.s5
       icon:
-        size: $unit.s2
+        size: $dimension.s2
     disabled:
       icon:
-        size: $unit.s2_5
+        size: $dimension.s2_5
   size=small:
     enabled:
       root:
-        size: $unit.s4_5
+        size: $dimension.s4_5
       icon:
-        size: $unit.s2
+        size: $dimension.s2

@@ -1,12 +1,12 @@
 export {
   ToggleButtonLabel,
   ToggleButtonPrefixIcon,
-  ToggleButtonProgressCircle,
+  ToggleButtonProgressIndicator,
   ToggleButtonRoot,
   ToggleButtonSuffixIcon,
   type ToggleButtonLabelProps,
   type ToggleButtonPrefixIconProps,
-  type ToggleButtonProgressCircleProps,
+  type ToggleButtonProgressIndicatorProps,
   type ToggleButtonRootProps,
   type ToggleButtonSuffixIconProps,
 } from "./ToggleButton";

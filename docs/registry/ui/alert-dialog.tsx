@@ -1,38 +1,69 @@
 "use client";
 
-import "@seed-design/stylesheet/dialog.css";
-
-import { Dialog } from "@seed-design/stackflow";
+import { Dialog } from "@seed-design/react";
 import { forwardRef } from "react";
 
-export interface AlertDialogProps extends Dialog.RootProps {
-  title: string;
-  description: string;
-}
+export interface AlertDialogRootProps extends Dialog.RootProps {}
 
 /**
- * @see https://v3.seed-design.io/docs/react/components/stackflow/alert-dialog
+ * @see https://v3.seed-design.io/docs/react/components/alert-dialog
  */
-export const AlertDialog = forwardRef<HTMLDivElement, AlertDialogProps>(
-  ({ title, description, children, ...otherProps }, ref) => {
-    // FIXME: Footer 안의 action 배열을 다룰 쓸만한 인터페이스가 생각이 안남. 인터페이스 다시 생각할 것.
-    return (
-      <Dialog.Root ref={ref} {...otherProps}>
-        <Dialog.Backdrop />
-        <Dialog.Content role="alertdialog">
-          <Dialog.Header>
-            <Dialog.Title>{title}</Dialog.Title>
-            <Dialog.Description>{description}</Dialog.Description>
-          </Dialog.Header>
-          <Dialog.Footer>{children}</Dialog.Footer>
-        </Dialog.Content>
-      </Dialog.Root>
-    );
-  },
-);
+export const AlertDialogRoot = ({
+  children,
+  ...otherProps
+}: AlertDialogRootProps) => {
+  return (
+    <Dialog.Root
+      role="alertdialog"
+      closeOnInteractOutside={false}
+      {...otherProps}
+    >
+      {children}
+    </Dialog.Root>
+  );
+};
+AlertDialogRoot.displayName = "AlertDialogRoot";
 
-AlertDialog.displayName = "AlertDialog";
+export interface AlertDialogContentProps extends Dialog.ContentProps {
+  layerIndex?: number;
+}
 
-export type AlertDialogActionProps = Dialog.ActionProps;
+export const AlertDialogContent = forwardRef<
+  HTMLDivElement,
+  AlertDialogContentProps
+>(({ children, layerIndex, ...otherProps }, ref) => {
+  return (
+    <Dialog.Positioner
+      style={{ "--layer-index": layerIndex } as React.CSSProperties}
+    >
+      <Dialog.Backdrop />
+      <Dialog.Content ref={ref} {...otherProps}>
+        {children}
+      </Dialog.Content>
+    </Dialog.Positioner>
+  );
+});
+
+export interface AlertDialogTriggerProps extends Dialog.TriggerProps {}
+
+export const AlertDialogTrigger = Dialog.Trigger;
+
+export interface AlertDialogHeaderProps extends Dialog.HeaderProps {}
+
+export const AlertDialogHeader = Dialog.Header;
+
+export interface AlertDialogTitleProps extends Dialog.TitleProps {}
+
+export const AlertDialogTitle = Dialog.Title;
+
+export interface AlertDialogDescriptionProps extends Dialog.DescriptionProps {}
+
+export const AlertDialogDescription = Dialog.Description;
+
+export interface AlertDialogFooterProps extends Dialog.FooterProps {}
+
+export const AlertDialogFooter = Dialog.Footer;
+
+export interface AlertDialogActionProps extends Dialog.ActionProps {}
 
 export const AlertDialogAction = Dialog.Action;

@@ -61,11 +61,11 @@ data:
   size=xsmall:
     enabled:
       root:
-        minHeight: $unit.s8
+        minHeight: $dimension.s8
         cornerRadius: $radius.full
-        gap: $unit.s1
-        paddingX: $unit.s3
-        paddingY: $unit.s1_5
+        gap: $dimension.s1
+        paddingX: $dimension.s3
+        paddingY: $dimension.s1_5
       prefixIcon:
         size: 18px
       label:
@@ -80,11 +80,11 @@ data:
   size=small:
     enabled:
       root:
-        minHeight: $unit.s9
+        minHeight: $dimension.s9
         cornerRadius: $radius.full
-        gap: $unit.s1
-        paddingX: $unit.s3_5
-        paddingY: $unit.s2
+        gap: $dimension.s1
+        paddingX: $dimension.s3_5
+        paddingY: $dimension.s2
       prefixIcon:
         size: 18px
       label:

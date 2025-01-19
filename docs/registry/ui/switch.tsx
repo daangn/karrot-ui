@@ -3,7 +3,6 @@
 import * as React from "react";
 import { Switch as SeedSwitch } from "@seed-design/react";
 
-import "@seed-design/stylesheet/switch.css";
 
 export interface SwitchProps extends SeedSwitch.RootProps {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;

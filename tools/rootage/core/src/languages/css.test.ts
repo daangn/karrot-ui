@@ -114,7 +114,7 @@ test("getTokenCss should generate css code", () => {
       data: {
         collection: "global",
         tokens: {
-          "$unit.s1": {
+          "$dimension.s1": {
             values: {
               default: "4px",
             },
@@ -149,7 +149,7 @@ test("getTokenCss should generate css code", () => {
     }
 
     :root {
-      --seed-v3-unit-s1: 4px;
+      --seed-v3-dimension-s1: 4px;
     }"
   `);
 });

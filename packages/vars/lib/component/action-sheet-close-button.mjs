@@ -2,23 +2,21 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-weak)",
-        "minHeight": "52px",
-        "cornerRadius": "var(--seed-v3-radius-s3)",
-        "paddingX": "var(--seed-v3-unit-s5)",
-        "paddingY": "var(--seed-v3-unit-s3_5)",
-        "gap": "var(--seed-v3-unit-s3)"
+        "color": "var(--seed-v3-color-bg-layer-floating)",
+        "minHeight": "50px",
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
+        "paddingY": "var(--seed-v3-dimension-s3_5)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-neutral)",
         "fontSize": "var(--seed-v3-font-size-s5)",
         "lineHeight": "var(--seed-v3-line-height-s5)",
-        "fontWeight": "var(--seed-v3-font-weight-medium)"
+        "fontWeight": "var(--seed-v3-font-weight-bold)",
+        "color": "var(--seed-v3-color-fg-neutral)"
       }
     },
     "pressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
+        "color": "var(--seed-v3-color-bg-layer-floating-pressed)"
       }
     }
   }

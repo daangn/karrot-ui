@@ -4,6 +4,7 @@ import postcssNested from "postcss-nested";
 
 import { compact } from "./compact";
 import type { SlotRecipeDefinition, SlotRecipeVariantRecord } from "./types";
+import { transform } from "lightningcss";
 
 type Definition = SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>;
 
@@ -86,7 +87,9 @@ export function generateKeyframeRules(definition: Definition["keyframes"]) {
   });
 }
 
-export async function transpileRulesToCss(rules: (postcss.AtRule | postcss.Rule | undefined)[]) {
+export async function transpileRulesToCss(
+  rules: (postcss.AtRule | postcss.Rule | undefined)[],
+): Promise<string> {
   const root = postcss.root({
     nodes: compact(rules),
   });
@@ -101,7 +104,9 @@ export async function transpileRulesToCss(rules: (postcss.AtRule | postcss.Rule 
   return css;
 }
 
-export async function generateCss(definition: Definition): Promise<string> {
+export function generateCssRules(
+  definition: Definition,
+): (postcss.AtRule | postcss.Rule | undefined)[] {
   const baseRules = generateBaseRules({
     name: definition.name,
     definition: definition.base,
@@ -116,10 +121,23 @@ export async function generateCss(definition: Definition): Promise<string> {
   });
   const keyframeRules = generateKeyframeRules(definition.keyframes);
 
-  return transpileRulesToCss([
-    ...baseRules,
-    ...variantRules,
-    ...compoundVariantRules,
-    ...keyframeRules,
-  ]);
+  return [...baseRules, ...variantRules, ...compoundVariantRules, ...keyframeRules];
+}
+
+export async function generateCss(definition: Definition): Promise<string> {
+  return transpileRulesToCss(generateCssRules(definition));
+}
+
+export async function generateCssBundle(
+  definitions: Definition[],
+  options: { minify?: boolean } = {},
+): Promise<string> {
+  const rules = definitions.flatMap(generateCssRules);
+  const css = await transpileRulesToCss(rules);
+
+  return transform({
+    filename: "component.css",
+    code: Buffer.from(css),
+    minify: options.minify,
+  }).code.toString();
 }

@@ -102,7 +102,7 @@ interface TokenDefinition {
 }
 
 interface TokenGroup {
-  path: string;
+  dir: string;
   code: TokenDefinition[];
 }
 
@@ -113,12 +113,17 @@ function getTokenGroups(ast: RootageAST): TokenGroup[] {
   const groups: Record<string, TokenExpression[]> = {};
 
   for (const expression of tokenExpressions) {
-    const group = expression.group.join("/");
-    if (!groups[group]) {
-      groups[group] = [];
+    for (let i = 0; i < expression.group.length; i++) {
+      const group = expression.group.slice(0, i + 1).join("/");
+      if (!groups[group]) {
+        groups[group] = [];
+      }
     }
+  }
 
-    groups[group].push(expression);
+  for (const expression of tokenExpressions) {
+    const group = expression.group.join("/");
+    groups[group]!.push(expression);
   }
 
   return Object.entries(groups).map(([group, expressions]) => {
@@ -129,7 +134,7 @@ function getTokenGroups(ast: RootageAST): TokenGroup[] {
     });
 
     return {
-      path: group,
+      dir: group,
       code: definitions,
     };
   });
@@ -139,16 +144,35 @@ function generateTokenCode(
   groups: TokenGroup[],
   isDeclaration: boolean,
 ): { path: string; code: string }[] {
-  return groups.map(({ path, code }) => {
+  return groups.map(({ dir, code }) => {
     const definitions = code
       .map(({ key, value }) => {
         const exportKeyword = isDeclaration ? "export declare const" : "export const";
         return `${exportKeyword} ${key} = "${value}";`;
       })
       .join("\n");
+
+    const reExports = groups
+      .filter(
+        (g) => g.dir.startsWith(`${dir}/`) && g.dir.split("/").length === dir.split("/").length + 1,
+      )
+      .map((g) => {
+        const relativePath = g.dir.replace(`${dir}/`, "");
+        return `export * as ${camelCase(relativePath)} from "./${isDeclaration ? relativePath : `${relativePath}.mjs`}";`;
+      })
+      .join("\n");
+
+    const path = isDeclaration
+      ? reExports
+        ? `${dir}/index.d.ts`
+        : `${dir}.d.ts`
+      : reExports
+        ? `${dir}/index.mjs`
+        : `${dir}.mjs`;
+
     return {
       path,
-      code: definitions,
+      code: [definitions, reExports].filter(Boolean).join("\n\n"),
     };
   });
 }

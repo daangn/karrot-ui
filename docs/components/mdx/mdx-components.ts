@@ -19,7 +19,7 @@ export const mdxComponents = {
   ComponentExample,
   TokenReference,
   ComponentSpecBlock,
-  SanityGuideline: SanityGuideline,
+  SanityGuideline,
   Tab,
   Tabs,
   Step,

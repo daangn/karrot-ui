@@ -9,7 +9,7 @@ data:
     enabled:
       root:
         minHeight: 44px
-        paddingX: $unit.s4
+        paddingX: $dimension.s4
       title:
         fontSize: $font-size.s6-static
         fontWeight: $font-weight.bold
@@ -20,7 +20,7 @@ data:
     enabled:
       root:
         minHeight: 56px
-        paddingX: $unit.s4
+        paddingX: $dimension.s4
       title:
         fontSize: $font-size.s6-static
         fontWeight: $font-weight.bold
@@ -40,9 +40,9 @@ data:
       root:
         color: "#00000000"
       title:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
   divider=true:
     enabled:
       root:

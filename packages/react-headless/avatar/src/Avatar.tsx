@@ -1,4 +1,5 @@
 import { composeRefs } from "@radix-ui/react-compose-refs";
+import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import type * as React from "react";
 import { forwardRef } from "react";
@@ -11,10 +12,11 @@ export interface AvatarRootProps
     React.HTMLAttributes<HTMLDivElement> {}
 
 export const AvatarRoot = forwardRef<HTMLDivElement, AvatarRootProps>((props, ref) => {
-  const api = useAvatar(props);
+  const { onLoadingStatusChange, ...otherProps } = props;
+  const api = useAvatar({ onLoadingStatusChange });
   return (
     <AvatarProvider value={api}>
-      <Primitive.div ref={ref} {...api.rootProps} {...api.restProps} />
+      <Primitive.div ref={ref} {...mergeProps(api.rootProps, otherProps)} />
     </AvatarProvider>
   );
 });
@@ -30,7 +32,9 @@ export const AvatarImage = forwardRef<HTMLImageElement, AvatarImageProps>((props
   const { refs, getImageProps } = useAvatarContext();
   const imageProps = getImageProps({ src, onLoad, onError });
 
-  return <Primitive.img ref={composeRefs(refs.image, ref)} {...imageProps} {...otherProps} />;
+  return (
+    <Primitive.img ref={composeRefs(refs.image, ref)} {...mergeProps(imageProps, otherProps)} />
+  );
 });
 AvatarImage.displayName = "AvatarImage";
 
@@ -38,6 +42,6 @@ export interface AvatarFallbackProps extends PrimitiveProps, React.HTMLAttribute
 
 export const AvatarFallback = forwardRef<HTMLDivElement, AvatarFallbackProps>((props, ref) => {
   const { fallbackProps } = useAvatarContext();
-  return <Primitive.div ref={ref} {...fallbackProps} {...props} />;
+  return <Primitive.div ref={ref} {...mergeProps(fallbackProps, props)} />;
 });
 AvatarFallback.displayName = "AvatarFallback";

@@ -1,12 +1,14 @@
 import { camelCase } from "change-case";
-import { createBackgroundProps, createBorderProps, createColorProps } from "./color";
-import { componentHandlerMap } from "./component";
-import { createIconTagNameFromKey, isIconComponent } from "./icon";
+import { createBackgroundProps, createBorderProps } from "./color";
+import { componentHandlerMap, ignoredComponentKeys } from "./component";
+import { createIconTagNameFromKey, createMonochromeIconColorProps, isIconComponent } from "./icon";
 import type { ElementNode } from "./jsx";
 import { createElement, stringifyElement } from "./jsx";
 import { createLayoutProps } from "./layout";
 import { createSizingProps } from "./sizing";
-import { createBodyProps, createHeadingProps, isBodyText, isHeadingText } from "./text";
+import { createTextProps, getTextStyleTag } from "./text";
+import { iconRecord } from "./icon/data";
+import { getColorVariableName } from "./variable";
 
 export function generateCode(selection: SceneNode) {
   function handleFrameNode(node: FrameNode | InstanceNode | ComponentNode) {
@@ -29,33 +31,96 @@ export function generateCode(selection: SceneNode) {
     );
   }
 
-  function handleTextNode(node: TextNode) {
-    if (!node.textStyleId) {
-      return createElement("span", {}, node.characters);
-    }
-    if (node.textStyleId === figma.mixed) {
-      return createElement("span", {}, node.characters, "Mixed text style is not supported");
-    }
+  function handleTextNode(node: TextNode): ElementNode {
+    const maxLines = node.textTruncation === "ENDING" ? (node.maxLines ?? undefined) : undefined;
 
-    const textStyle = figma.getStyleById(node.textStyleId) as TextStyle;
+    const segments = node.getStyledTextSegments(["textStyleId", "fills", "boundVariables"]);
 
-    if (isHeadingText(textStyle)) {
-      return createElement(
-        "Heading",
-        { ...createHeadingProps(textStyle), ...createColorProps(node) },
-        node.characters,
-      );
-    }
+    function handleTextSegment(segment: (typeof segments)[number], as?: string) {
+      const style = figma.getStyleById(segment.textStyleId);
 
-    if (isBodyText(textStyle)) {
+      if (style && style.type === "TEXT") {
+        if (segment.fills.length > 1) {
+          throw new Error("Expected a single fill");
+        }
+
+        const onlyFill = segment.fills.length === 1 ? segment.fills[0] : null;
+        const fillBoundVariableId =
+          onlyFill && onlyFill.type === "SOLID"
+            ? (onlyFill.boundVariables?.color?.id ?? null)
+            : null;
+
+        const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : undefined;
+
+        const tag = as ?? getTextStyleTag(style);
+
+        return createElement(
+          "Text",
+          {
+            as: tag,
+            variant: camelCase(style.name, { mergeAmbiguousCharacters: true }),
+            ...(color ? { color } : {}),
+          },
+          segment.characters.replace(/\n/g, "<br />"),
+          `${
+            color === undefined ? "color 프로퍼티는 반영되지 않았습니다. " : ""
+          }${tag} 태그 사용이 적절한지 확인하세요.`,
+        );
+      }
+
+      const textProps = createTextProps(segment.boundVariables);
+      const unavailableProps = Object.entries(textProps)
+        .filter(([_, value]) => !value)
+        .map(([key]) => key);
+
+      const { fontSize, fontWeight, lineHeight } = textProps;
+
+      if (segment.fills.length > 1) {
+        throw new Error("Expected a single fill");
+      }
+
+      const onlyFill = segment.fills.length === 1 ? segment.fills[0] : null;
+      const fillBoundVariableId =
+        onlyFill && onlyFill.type === "SOLID" ? (onlyFill.boundVariables?.color?.id ?? null) : null;
+
+      const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : null;
+
+      const tag = as ?? "span";
+
       return createElement(
         "Text",
-        { ...createBodyProps(textStyle), ...createColorProps(node) },
-        node.characters,
+        {
+          as: tag,
+          ...(fontSize ? { fontSize } : {}),
+          ...(fontWeight ? { fontWeight } : {}),
+          ...(lineHeight ? { lineHeight } : {}),
+          ...(color ? { color } : {}),
+        },
+        segment.characters.replace(/\n/g, "<br />"),
+        `${
+          unavailableProps.length > 0
+            ? `${unavailableProps.join(", ")} 프로퍼티는 반영되지 않았습니다. `
+            : ""
+        }${tag} 태그 사용이 적절한지 확인하세요.`,
       );
     }
 
-    return createElement("span", {}, node.characters);
+    if (segments.length > 1) {
+      return createElement(
+        "Text",
+        {
+          as: "span",
+          maxLines,
+        },
+        segments.map((segment) => handleTextSegment(segment, "span")),
+        "span 태그 사용이 적절한지 확인하세요.",
+      );
+    }
+
+    const onlySegment = segments[0];
+    if (!onlySegment) throw new Error();
+
+    return handleTextSegment(onlySegment);
   }
 
   function handleRectangleNode(node: RectangleNode) {
@@ -77,11 +142,28 @@ export function generateCode(selection: SceneNode) {
       mainComponent.parent?.type === "COMPONENT_SET" ? mainComponent.parent.key : null;
 
     if (isIconComponent(componentKey)) {
-      return createElement("Icon", {
-        svg: createElement(createIconTagNameFromKey(componentKey)),
-        size: node.width,
-        ...createColorProps(node.children[0] as VectorNode),
-      });
+      const iconElement = createElement(createIconTagNameFromKey(componentKey));
+
+      switch (iconRecord[componentKey]?.type) {
+        case "monochrome":
+          return createElement("Icon", {
+            size: node.width,
+            svg: iconElement,
+            ...createMonochromeIconColorProps(node),
+          });
+        case "multicolor":
+          return iconElement;
+        default:
+          return createElement("Icon", {
+            size: node.width,
+            svg: iconElement,
+            ...createMonochromeIconColorProps(node),
+          });
+      }
+    }
+
+    if (ignoredComponentKeys.has(componentSetKey ?? componentKey)) {
+      return;
     }
 
     const componentData = componentSetKey
@@ -111,7 +193,7 @@ export function generateCode(selection: SceneNode) {
   }
 
   function traverse(node: SceneNode): ElementNode | undefined {
-    if (!node.visible) {
+    if ("visible" in node && !node.visible) {
       return;
     }
 

@@ -2,11 +2,11 @@ export {
   ReactionButtonCount as Count,
   ReactionButtonLabel as Label,
   ReactionButtonPrefixIcon as PrefixIcon,
-  ReactionButtonProgressCircle as ProgressCircle,
+  ReactionButtonProgressIndicator as ProgressIndicator,
   ReactionButtonRoot as Root,
   type ReactionButtonCountProps as CountProps,
   type ReactionButtonLabelProps as LabelProps,
   type ReactionButtonPrefixIconProps as PrefixIconProps,
-  type ReactionButtonProgressCircleProps as ProgressCircleProps,
+  type ReactionButtonProgressIndicatorProps as ProgressIndicatorProps,
   type ReactionButtonRootProps as RootProps,
 } from "./ReactionButton";

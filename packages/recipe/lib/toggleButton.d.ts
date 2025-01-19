@@ -15,7 +15,7 @@ declare type ToggleButtonVariantMap = {
 
 export declare type ToggleButtonVariantProps = Partial<ToggleButtonVariant>;
 
-export declare type ToggleButtonSlotName = "root" | "label" | "prefixIcon" | "suffixIcon" | "progressCircle";
+export declare type ToggleButtonSlotName = "root" | "label" | "prefixIcon" | "suffixIcon" | "progressIndicator";
 
 export declare const toggleButtonVariantMap: ToggleButtonVariantMap;
 

@@ -2,9 +2,9 @@ export declare const vars: {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s6)",
-        "paddingX": "var(--seed-v3-unit-s2)",
-        "paddingY": "var(--seed-v3-unit-s1)"
+        "minHeight": "var(--seed-v3-dimension-s6)",
+        "paddingX": "var(--seed-v3-dimension-s2)",
+        "paddingY": "var(--seed-v3-dimension-s1)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -15,9 +15,9 @@ export declare const vars: {
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s5)",
-        "paddingX": "var(--seed-v3-unit-s1_5)",
-        "paddingY": "var(--seed-v3-unit-s0_5)"
+        "minHeight": "var(--seed-v3-dimension-s5)",
+        "paddingX": "var(--seed-v3-dimension-s1_5)",
+        "paddingY": "var(--seed-v3-dimension-s0_5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s1)",
@@ -60,7 +60,7 @@ export declare const vars: {
       }
     }
   },
-  "variantOutlined": {
+  "variantOutline": {
     "enabled": {
       "root": {
         "borderWidth": "1px"
@@ -83,14 +83,14 @@ export declare const vars: {
   "toneNeutralVariantSolid": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid)"
+        "color": "var(--seed-v3-color-bg-neutral-inverted)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-fg-neutral-inverted)"
       }
     }
   },
-  "toneNeutralVariantOutlined": {
+  "toneNeutralVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-neutral)"
@@ -116,11 +116,11 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   },
-  "toneBrandVariantOutlined": {
+  "toneBrandVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-brand)"
@@ -146,14 +146,14 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-informative-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   },
-  "toneInformativeVariantOutlined": {
+  "toneInformativeVariantOutline": {
     "enabled": {
       "root": {
-        "strokeColor": "var(--seed-v3-color-fg-informative)"
+        "strokeColor": "var(--seed-v3-color-stroke-informative)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-informative)"
@@ -176,11 +176,11 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-positive-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   },
-  "tonePositiveVariantOutlined": {
+  "tonePositiveVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-positive)"
@@ -206,11 +206,11 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-danger-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   },
-  "toneDangerVariantOutlined": {
+  "toneDangerVariantOutline": {
     "enabled": {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-danger)"

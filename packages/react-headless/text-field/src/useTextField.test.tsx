@@ -53,7 +53,7 @@ const TextField = (props: TextFieldProps) => {
 };
 
 function ControlledTextField(props: Omit<TextFieldProps, "value" | "onValueChange">) {
-  const { defaultValue } = props;
+  const { defaultValue = "" } = props;
   const [value, setValue] = React.useState(defaultValue);
   const mockSetValue = vi.fn(({ value }) => setValue(value));
 
@@ -61,7 +61,7 @@ function ControlledTextField(props: Omit<TextFieldProps, "value" | "onValueChang
 }
 
 function SlicingControlledTextField(props: Omit<TextFieldProps, "value" | "onValueChange">) {
-  const { defaultValue } = props;
+  const { defaultValue = "" } = props;
   const [value, setValue] = React.useState(defaultValue);
   const mockSliceSetValue = vi.fn(({ slicedValue }) => setValue(slicedValue));
 

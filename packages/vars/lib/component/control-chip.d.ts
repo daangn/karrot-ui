@@ -35,17 +35,17 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-neutral-solid-muted)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)",
+        "color": "var(--seed-v3-color-palette-static-white)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "suffixIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "count": {
         "color": "var(--seed-v3-color-palette-static-white-alpha-800)"
@@ -80,18 +80,18 @@ export declare const vars: {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s8)",
-        "paddingY": "var(--seed-v3-unit-s1_5)",
-        "gap": "var(--seed-v3-unit-s1)"
+        "minHeight": "var(--seed-v3-dimension-s8)",
+        "paddingY": "var(--seed-v3-dimension-s1_5)",
+        "gap": "var(--seed-v3-dimension-s1)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s4)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s3_5)"
+        "size": "var(--seed-v3-dimension-s3_5)"
       },
       "count": {
         "fontSize": "var(--seed-v3-font-size-s4)"
@@ -101,18 +101,18 @@ export declare const vars: {
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s9)",
-        "paddingY": "var(--seed-v3-unit-s2)",
-        "gap": "var(--seed-v3-unit-s1)"
+        "minHeight": "var(--seed-v3-dimension-s9)",
+        "paddingY": "var(--seed-v3-dimension-s2)",
+        "gap": "var(--seed-v3-dimension-s1)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s4)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s3_5)"
+        "size": "var(--seed-v3-dimension-s3_5)"
       },
       "count": {
         "fontSize": "var(--seed-v3-font-size-s4)"
@@ -122,34 +122,34 @@ export declare const vars: {
   "sizeSmallLayoutWithText": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-unit-s3)"
+        "paddingX": "var(--seed-v3-dimension-s3)"
       }
     }
   },
   "sizeSmallLayoutIconOnly": {
     "enabled": {
       "root": {
-        "minWidth": "var(--seed-v3-unit-s8)"
+        "minWidth": "var(--seed-v3-dimension-s8)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       }
     }
   },
   "sizeMediumLayoutWithText": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-unit-s3_5)"
+        "paddingX": "var(--seed-v3-dimension-s3_5)"
       }
     }
   },
   "sizeMediumLayoutIconOnly": {
     "enabled": {
       "root": {
-        "minWidth": "var(--seed-v3-unit-s9)"
+        "minWidth": "var(--seed-v3-dimension-s9)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       }
     }
   }

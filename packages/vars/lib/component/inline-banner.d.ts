@@ -2,40 +2,40 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-unit-s4)",
-        "paddingX": "var(--seed-v3-unit-s4)"
+        "gap": "var(--seed-v3-dimension-s4)",
+        "paddingX": "var(--seed-v3-dimension-s4)"
       },
       "content": {
-        "gap": "var(--seed-v3-unit-s2)",
-        "paddingY": "var(--seed-v3-unit-s2_5)",
+        "gap": "var(--seed-v3-dimension-s2)",
+        "paddingY": "var(--seed-v3-dimension-s2_5)",
         "fontSize": "var(--seed-v3-font-size-s4)",
         "lineHeight": "var(--seed-v3-line-height-s4)",
-        "minHeight": "var(--seed-v3-unit-s10)"
+        "minHeight": "var(--seed-v3-dimension-s10)"
       },
       "icon": {
-        "size": "var(--seed-v3-unit-s4)",
+        "size": "var(--seed-v3-dimension-s4)",
         "marginY": "1.5px"
       },
       "title": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
-      "label": {
+      "description": {
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
       "linkLabel": {
-        "height": "var(--seed-v3-unit-s10)",
+        "height": "var(--seed-v3-dimension-s10)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
         "fontSize": "var(--seed-v3-font-size-s2)",
         "lineHeight": "var(--seed-v3-line-height-s2)"
       },
       "dismissButton": {
-        "size": "var(--seed-v3-unit-s10)"
+        "size": "var(--seed-v3-dimension-s10)"
       },
       "dismissIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "actionableIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       }
     }
   },
@@ -50,7 +50,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "linkLabel": {
@@ -75,7 +75,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-positive-contrast)"
       },
       "linkLabel": {
@@ -100,7 +100,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-informative-contrast)"
       },
       "linkLabel": {
@@ -125,7 +125,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-warning-contrast)"
       },
       "linkLabel": {
@@ -150,7 +150,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "linkLabel": {
@@ -175,7 +175,7 @@ export declare const vars: {
       "title": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
-      "label": {
+      "description": {
         "color": "var(--seed-v3-color-fg-danger-contrast)"
       },
       "linkLabel": {
@@ -192,19 +192,19 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-danger-solid)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "title": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
-      "label": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+      "description": {
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "linkLabel": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "actionableIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   }

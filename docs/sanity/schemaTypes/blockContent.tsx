@@ -1,5 +1,6 @@
 import { ImageIcon } from "@sanity/icons";
 import { defineArrayMember, defineType } from "sanity";
+import { doDontType } from "./doDontType";
 // 외부 이미지 링크 타입 정의
 export const externalImageLinkType = defineArrayMember({
   name: "externalImageLink",
@@ -138,6 +139,10 @@ export const tableType = defineArrayMember({
   ],
 });
 
+const DescriptionStyle = (props: any) => (
+  <span style={{ fontSize: "14px" }}>{props.children} </span>
+);
+
 export default defineType({
   title: "Block Content",
   name: "blockContent",
@@ -151,13 +156,17 @@ export default defineType({
       // use your content.
       styles: [
         { title: "Normal", value: "normal" },
+        { title: "Description", value: "description", component: DescriptionStyle },
         { title: "H1", value: "h1" },
         { title: "H2", value: "h2" },
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
         { title: "Quote", value: "blockquote" },
       ],
-      lists: [{ title: "Bullet", value: "bullet" }],
+      lists: [
+        { title: "Bullet", value: "bullet" },
+        { title: "Number", value: "number" },
+      ],
       // Marks let you mark up inline text in the Portable Text Editor
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
@@ -184,6 +193,7 @@ export default defineType({
       },
     }),
     imageType,
+    doDontType,
     tableType,
     imageWithTextType,
     externalImageLinkType,

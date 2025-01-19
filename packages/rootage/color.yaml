@@ -5,6 +5,86 @@ metadata:
 data:
   collection: color
   tokens:
+    $color.palette.blue-100:
+      values:
+        theme-light: "#eff6ff"
+        theme-dark: "#202742"
+    $color.palette.blue-200:
+      values:
+        theme-light: "#e2edfc"
+        theme-dark: "#1e3352"
+    $color.palette.blue-300:
+      values:
+        theme-light: "#cbdffa"
+        theme-dark: "#1a4275"
+    $color.palette.blue-400:
+      values:
+        theme-light: "#aacefd"
+        theme-dark: "#0f559e"
+    $color.palette.blue-500:
+      values:
+        theme-light: "#85b8fd"
+        theme-dark: "#1964d8"
+    $color.palette.blue-600:
+      values:
+        theme-light: "#5e98fe"
+        theme-dark: "#1e82eb"
+    $color.palette.blue-700:
+      values:
+        theme-light: "#217cf9"
+        theme-dark: "#41a2f9"
+    $color.palette.blue-800:
+      values:
+        theme-light: "#135fcd"
+        theme-dark: "#83bcf9"
+    $color.palette.blue-900:
+      values:
+        theme-light: "#0b4596"
+        theme-dark: "#b9d7fb"
+    $color.palette.blue-1000:
+      values:
+        theme-light: "#032451"
+        theme-dark: "#e5f0fe"
+    $color.palette.carrot-100:
+      values:
+        theme-light: "#fff2ec"
+        theme-dark: "#31241f"
+    $color.palette.carrot-200:
+      values:
+        theme-light: "#ffe8db"
+        theme-dark: "#4b291c"
+    $color.palette.carrot-300:
+      values:
+        theme-light: "#ffd5c0"
+        theme-dark: "#6b311c"
+    $color.palette.carrot-400:
+      values:
+        theme-light: "#ffb999"
+        theme-dark: "#923600"
+    $color.palette.carrot-500:
+      values:
+        theme-light: "#ff9364"
+        theme-dark: "#bd4201"
+    $color.palette.carrot-600:
+      values:
+        theme-light: "#ff6600"
+        theme-dark: "#e65200"
+    $color.palette.carrot-700:
+      values:
+        theme-light: "#e84500"
+        theme-dark: "#ff6600"
+    $color.palette.carrot-800:
+      values:
+        theme-light: "#b93901"
+        theme-dark: "#ff9e65"
+    $color.palette.carrot-900:
+      values:
+        theme-light: "#862b00"
+        theme-dark: "#eecebc"
+    $color.palette.carrot-1000:
+      values:
+        theme-light: "#471601"
+        theme-dark: "#f4eeea"
     $color.palette.gray-00:
       values:
         theme-light: "#ffffff"
@@ -39,236 +119,60 @@ data:
         theme-dark: "#b0b3ba"
     $color.palette.gray-800:
       values:
-        theme-light: "#586070"
+        theme-light: "#555d6d"
         theme-dark: "#dcdee3"
     $color.palette.gray-900:
       values:
+        theme-light: "#2a3038"
+        theme-dark: "#e9eaec"
+    $color.palette.gray-1000:
+      values:
         theme-light: "#1a1c20"
         theme-dark: "#f3f4f5"
-    $color.palette.carrot-100:
-      values:
-        theme-light: "#fff2ec"
-        theme-dark: "#31241f"
-    $color.palette.carrot-200:
-      values:
-        theme-light: "#ffe8db"
-        theme-dark: "#4b291c"
-    $color.palette.carrot-300:
-      values:
-        theme-light: "#ffd5c0"
-        theme-dark: "#6b311c"
-    $color.palette.carrot-400:
-      values:
-        theme-light: "#ffb999"
-        theme-dark: "#822f00"
-    $color.palette.carrot-500:
-      values:
-        theme-light: "#ff9364"
-        theme-dark: "#c44501"
-    $color.palette.carrot-600:
-      values:
-        theme-light: "#ff6600"
-        theme-dark: "#f75900"
-    $color.palette.carrot-700:
-      values:
-        theme-light: "#e84500"
-        theme-dark: "#ff6600"
-    $color.palette.carrot-800:
-      values:
-        theme-light: "#b93901"
-        theme-dark: "#ff9e65"
-    $color.palette.carrot-900:
-      values:
-        theme-light: "#862b00"
-        theme-dark: "#eecebc"
-    $color.palette.carrot-1000:
-      values:
-        theme-light: "#471601"
-        theme-dark: "#f4eeea"
-    $color.palette.blue-100:
-      values:
-        theme-light: "#eff6ff"
-        theme-dark: "#1c2633"
-    $color.palette.blue-200:
-      values:
-        theme-light: "#e2edfc"
-        theme-dark: "#223444"
-    $color.palette.blue-300:
-      values:
-        theme-light: "#cbdffa"
-        theme-dark: "#184564"
-    $color.palette.blue-400:
-      values:
-        theme-light: "#abcefd"
-        theme-dark: "#035a87"
-    $color.palette.blue-500:
-      values:
-        theme-light: "#83b7fd"
-        theme-dark: "#126eae"
-    $color.palette.blue-600:
-      values:
-        theme-light: "#2787fe"
-        theme-dark: "#1889cb"
-    $color.palette.blue-700:
-      values:
-        theme-light: "#1a6edf"
-        theme-dark: "#2ca5f1"
-    $color.palette.blue-800:
-      values:
-        theme-light: "#1056bb"
-        theme-dark: "#7bbdf9"
-    $color.palette.blue-900:
-      values:
-        theme-light: "#083b81"
-        theme-dark: "#b8d7fb"
-    $color.palette.blue-1000:
-      values:
-        theme-light: "#02214a"
-        theme-dark: "#e5f0fe"
-    $color.palette.red-100:
-      values:
-        theme-light: "#fdf2f2"
-        theme-dark: "#322323"
-    $color.palette.red-200:
-      values:
-        theme-light: "#fde4e4"
-        theme-dark: "#4f2624"
-    $color.palette.red-300:
-      values:
-        theme-light: "#fececc"
-        theme-dark: "#742826"
-    $color.palette.red-400:
-      values:
-        theme-light: "#feafaa"
-        theme-dark: "#a12621"
-    $color.palette.red-500:
-      values:
-        theme-light: "#fe827b"
-        theme-dark: "#d11e13"
-    $color.palette.red-600:
-      values:
-        theme-light: "#ff3b2d"
-        theme-dark: "#f73526"
-    $color.palette.red-700:
-      values:
-        theme-light: "#ef1f10"
-        theme-dark: "#f2796d"
-    $color.palette.red-800:
-      values:
-        theme-light: "#c81d13"
-        theme-dark: "#f1a39b"
-    $color.palette.red-900:
-      values:
-        theme-light: "#8f1e10"
-        theme-dark: "#f2cbc9"
-    $color.palette.red-1000:
-      values:
-        theme-light: "#4a1209"
-        theme-dark: "#f3cbc8"
     $color.palette.green-100:
       values:
-        theme-light: "#e7f9f3"
+        theme-light: "#edfaf6"
         theme-dark: "#202926"
     $color.palette.green-200:
       values:
-        theme-light: "#d1f4e5"
+        theme-light: "#d9f6e9"
         theme-dark: "#20362e"
     $color.palette.green-300:
       values:
-        theme-light: "#8ff1c3"
+        theme-light: "#aeebcc"
         theme-dark: "#20493b"
     $color.palette.green-400:
       values:
-        theme-light: "#6be1b0"
+        theme-light: "#74dcb0"
         theme-dark: "#19604c"
     $color.palette.green-500:
       values:
-        theme-light: "#2ecd95"
+        theme-light: "#42c593"
         theme-dark: "#117956"
     $color.palette.green-600:
       values:
-        theme-light: "#10ad7e"
+        theme-light: "#10ab7d"
         theme-dark: "#1b946d"
     $color.palette.green-700:
       values:
-        theme-light: "#068c6d"
+        theme-light: "#079171"
         theme-dark: "#22b27f"
     $color.palette.green-800:
       values:
-        theme-light: "#006b58"
+        theme-light: "#00745f"
         theme-dark: "#35ce9a"
     $color.palette.green-900:
       values:
-        theme-light: "#054a3d"
+        theme-light: "#075445"
         theme-dark: "#93e5c0"
     $color.palette.green-1000:
       values:
         theme-light: "#0a2b24"
         theme-dark: "#d4f6ef"
-    $color.palette.yellow-100:
-      values:
-        theme-light: "#fff9e6"
-        theme-dark: "#2a2517"
-    $color.palette.yellow-200:
-      values:
-        theme-light: "#fdf3ce"
-        theme-dark: "#3d3016"
-    $color.palette.yellow-300:
-      values:
-        theme-light: "#fbe49a"
-        theme-dark: "#513f15"
-    $color.palette.yellow-400:
-      values:
-        theme-light: "#f7d24c"
-        theme-dark: "#695115"
-    $color.palette.yellow-500:
-      values:
-        theme-light: "#e3b82c"
-        theme-dark: "#83661b"
-    $color.palette.yellow-600:
-      values:
-        theme-light: "#c49725"
-        theme-dark: "#9c7f25"
-    $color.palette.yellow-700:
-      values:
-        theme-light: "#9b7821"
-        theme-dark: "#b59b36"
-    $color.palette.yellow-800:
-      values:
-        theme-light: "#755b22"
-        theme-dark: "#cdb656"
-    $color.palette.yellow-900:
-      values:
-        theme-light: "#4f3e1f"
-        theme-dark: "#e3da96"
-    $color.palette.yellow-1000:
-      values:
-        theme-light: "#2c2512"
-        theme-dark: "#f7f0ce"
-    $color.palette.static-black:
-      values:
-        theme-light: "#000000"
-        theme-dark: "#000000"
-    $color.palette.static-white:
-      values:
-        theme-light: "#ffffff"
-        theme-dark: "#ffffff"
-    $color.palette.static-black-alpha-200:
-      values:
-        theme-light: "#00000033"
-        theme-dark: "#00000033"
-    $color.palette.static-black-alpha-500:
-      values:
-        theme-light: "#00000080"
-        theme-dark: "#00000080"
-    $color.palette.static-black-alpha-50:
-      values:
-        theme-light: "#0000000d"
-        theme-dark: "#0000000d"
     $color.palette.purple-100:
       values:
-        theme-light: "#f6f4fe"
-        theme-dark: "#322065"
+        theme-light: "#f5f3fe"
+        theme-dark: "#28213b"
     $color.palette.purple-200:
       values:
         theme-light: "#efeafe"
@@ -279,56 +183,188 @@ data:
         theme-dark: "#443081"
     $color.palette.purple-400:
       values:
-        theme-light: "#d2c3ff"
+        theme-light: "#d0c0ff"
         theme-dark: "#5a3bb1"
     $color.palette.purple-500:
       values:
-        theme-light: "#bda8ff"
+        theme-light: "#b8a1ff"
         theme-dark: "#764fd9"
     $color.palette.purple-600:
       values:
-        theme-light: "#a186fb"
+        theme-light: "#9f84fb"
         theme-dark: "#8e6bee"
     $color.palette.purple-700:
       values:
-        theme-light: "#8564e9"
+        theme-light: "#8969ea"
         theme-dark: "#a78df0"
     $color.palette.purple-800:
       values:
-        theme-light: "#6646c6"
+        theme-light: "#6d50cb"
         theme-dark: "#beadf2"
     $color.palette.purple-900:
       values:
-        theme-light: "#46308a"
+        theme-light: "#50379b"
         theme-dark: "#d9cefa"
     $color.palette.purple-1000:
       values:
         theme-light: "#29175d"
         theme-dark: "#f0edfc"
-    $color.palette.static-white-alpha-800:
+    $color.palette.red-100:
       values:
-        theme-light: "#ffffffcc"
-        theme-dark: "#ffffffcc"
-    $color.palette.slate-900:
+        theme-light: "#fdf0f0"
+        theme-dark: "#322323"
+    $color.palette.red-200:
       values:
-        theme-light: "#2a3038"
-        theme-dark: "#edf2f7"
-    $color.palette.slate-800:
+        theme-light: "#fde7e7"
+        theme-dark: "#4f2624"
+    $color.palette.red-300:
       values:
-        theme-light: "#545c6e"
-        theme-dark: "#dde3ed"
+        theme-light: "#fed4d2"
+        theme-dark: "#742826"
+    $color.palette.red-400:
+      values:
+        theme-light: "#feb7b3"
+        theme-dark: "#a12621"
+    $color.palette.red-500:
+      values:
+        theme-light: "#fe928d"
+        theme-dark: "#ca2319"
+    $color.palette.red-600:
+      values:
+        theme-light: "#fc6a66"
+        theme-dark: "#f73526"
+    $color.palette.red-700:
+      values:
+        theme-light: "#fa342c"
+        theme-dark: "#ff6e60"
+    $color.palette.red-800:
+      values:
+        theme-light: "#ca1d13"
+        theme-dark: "#ffa299"
+    $color.palette.red-900:
+      values:
+        theme-light: "#921708"
+        theme-dark: "#f8c5c3"
+    $color.palette.red-1000:
+      values:
+        theme-light: "#4a1209"
+        theme-dark: "#fdf2f2"
+    $color.palette.static-black:
+      values:
+        theme-light: "#000000"
+        theme-dark: "#000000"
+    $color.palette.static-white:
+      values:
+        theme-light: "#ffffff"
+        theme-dark: "#ffffff"
+    $color.palette.static-black-alpha-50:
+      values:
+        theme-light: "#0000000d"
+        theme-dark: "#0000000d"
+    $color.palette.static-black-alpha-200:
+      values:
+        theme-light: "#00000033"
+        theme-dark: "#00000033"
+    $color.palette.static-black-alpha-500:
+      values:
+        theme-light: "#00000080"
+        theme-dark: "#00000080"
     $color.palette.static-white-alpha-200:
       values:
         theme-light: "#ffffff33"
         theme-dark: "#ffffff33"
-    $color.fg.static-white:
+    $color.palette.static-white-alpha-800:
       values:
-        theme-light: $color.palette.static-white
-        theme-dark: $color.palette.static-white
+        theme-light: "#ffffffcc"
+        theme-dark: "#ffffffcc"
+    $color.palette.yellow-100:
+      values:
+        theme-light: "#fff7de"
+        theme-dark: "#302819"
+    $color.palette.yellow-200:
+      values:
+        theme-light: "#fdefb9"
+        theme-dark: "#413218"
+    $color.palette.yellow-300:
+      values:
+        theme-light: "#fbdc65"
+        theme-dark: "#543e15"
+    $color.palette.yellow-400:
+      values:
+        theme-light: "#e9c647"
+        theme-dark: "#714e15"
+    $color.palette.yellow-500:
+      values:
+        theme-light: "#d4ab28"
+        theme-dark: "#91601b"
+    $color.palette.yellow-600:
+      values:
+        theme-light: "#c49725"
+        theme-dark: "#b6720d"
+    $color.palette.yellow-700:
+      values:
+        theme-light: "#9b7821"
+        theme-dark: "#ca901c"
+    $color.palette.yellow-800:
+      values:
+        theme-light: "#755b22"
+        theme-dark: "#dab156"
+    $color.palette.yellow-900:
+      values:
+        theme-light: "#4f3e1f"
+        theme-dark: "#e5d49b"
+    $color.palette.yellow-1000:
+      values:
+        theme-light: "#2c2512"
+        theme-dark: "#f7f0cd"
     $color.fg.neutral:
       values:
-        theme-light: $color.palette.gray-900
-        theme-dark: $color.palette.gray-900
+        theme-light: $color.palette.gray-1000
+        theme-dark: $color.palette.gray-1000
+    $color.fg.danger:
+      values:
+        theme-light: $color.palette.red-700
+        theme-dark: $color.palette.red-700
+    $color.fg.positive:
+      values:
+        theme-light: $color.palette.green-700
+        theme-dark: $color.palette.green-700
+    $color.fg.informative:
+      values:
+        theme-light: $color.palette.blue-700
+        theme-dark: $color.palette.blue-700
+    $color.fg.placeholder:
+      values:
+        theme-light: $color.palette.gray-600
+        theme-dark: $color.palette.gray-600
+    $color.fg.disabled:
+      values:
+        theme-light: $color.palette.gray-500
+        theme-dark: $color.palette.gray-500
+    $color.fg.brand:
+      values:
+        theme-light: $color.palette.carrot-600
+        theme-dark: $color.palette.carrot-700
+    $color.fg.magic:
+      values:
+        theme-light: $color.palette.purple-700
+        theme-dark: $color.palette.purple-700
+    $color.fg.brand-contrast:
+      values:
+        theme-light: $color.palette.carrot-800
+        theme-dark: $color.palette.carrot-900
+    $color.fg.danger-contrast:
+      values:
+        theme-light: $color.palette.red-900
+        theme-dark: $color.palette.red-900
+    $color.fg.informative-contrast:
+      values:
+        theme-light: $color.palette.blue-900
+        theme-dark: $color.palette.blue-900
+    $color.fg.magic-contrast:
+      values:
+        theme-light: $color.palette.purple-900
+        theme-dark: $color.palette.purple-900
     $color.fg.neutral-muted:
       values:
         theme-light: $color.palette.gray-800
@@ -341,22 +377,6 @@ data:
       values:
         theme-light: $color.palette.gray-00
         theme-dark: $color.palette.gray-100
-    $color.fg.brand-contrast:
-      values:
-        theme-light: $color.palette.carrot-700
-        theme-dark: $color.palette.carrot-1000
-    $color.fg.danger:
-      values:
-        theme-light: $color.palette.red-600
-        theme-dark: $color.palette.red-600
-    $color.fg.danger-contrast:
-      values:
-        theme-light: $color.palette.red-900
-        theme-dark: $color.palette.red-900
-    $color.fg.positive:
-      values:
-        theme-light: $color.palette.green-700
-        theme-dark: $color.palette.green-600
     $color.fg.positive-contrast:
       values:
         theme-light: $color.palette.green-900
@@ -365,66 +385,14 @@ data:
       values:
         theme-light: $color.palette.yellow-900
         theme-dark: $color.palette.yellow-900
-    $color.fg.informative:
+    $color.bg.overlay:
       values:
-        theme-light: $color.palette.blue-700
-        theme-dark: $color.palette.blue-700
-    $color.fg.informative-contrast:
+        theme-light: $color.palette.static-black-alpha-500
+        theme-dark: $color.palette.static-black-alpha-500
+    $color.bg.disabled:
       values:
-        theme-light: $color.palette.blue-900
-        theme-dark: $color.palette.blue-900
-    $color.fg.placeholder:
-      values:
-        theme-light: $color.palette.gray-600
-        theme-dark: $color.palette.gray-600
-    $color.fg.disabled:
-      values:
-        theme-light: $color.palette.gray-500
-        theme-dark: $color.palette.gray-500
-    $color.fg.static-black:
-      values:
-        theme-light: $color.palette.static-black
-        theme-dark: $color.palette.static-black
-    $color.fg.brand:
-      values:
-        theme-light: $color.palette.carrot-600
-        theme-dark: $color.palette.carrot-600
-    $color.fg.magic:
-      values:
-        theme-light: $color.palette.purple-700
-        theme-dark: $color.palette.purple-700
-    $color.fg.magic-contrast:
-      values:
-        theme-light: $color.palette.purple-900
-        theme-dark: $color.palette.purple-900
-    $color.bg.positive-weak:
-      values:
-        theme-light: $color.palette.green-100
-        theme-dark: $color.palette.green-100
-    $color.bg.positive-solid:
-      values:
-        theme-light: $color.palette.green-600
-        theme-dark: $color.palette.green-600
-    $color.bg.warning-solid:
-      values:
-        theme-light: $color.palette.yellow-400
-        theme-dark: $color.palette.yellow-700
-    $color.bg.warning-weak:
-      values:
-        theme-light: $color.palette.yellow-100
-        theme-dark: $color.palette.yellow-100
-    $color.bg.danger-weak:
-      values:
-        theme-light: $color.palette.red-100
-        theme-dark: $color.palette.red-100
-    $color.bg.danger-solid:
-      values:
-        theme-light: $color.palette.red-600
-        theme-dark: $color.palette.red-600
-    $color.bg.danger-solid-pressed:
-      values:
-        theme-light: $color.palette.red-700
-        theme-dark: $color.palette.red-700
+        theme-light: $color.palette.gray-200
+        theme-dark: $color.palette.gray-200
     $color.bg.brand-weak:
       values:
         theme-light: $color.palette.carrot-100
@@ -441,46 +409,46 @@ data:
       values:
         theme-light: $color.palette.carrot-200
         theme-dark: $color.palette.carrot-300
-    $color.bg.layer-default:
+    $color.bg.danger-weak:
       values:
-        theme-light: $color.palette.gray-00
-        theme-dark: $color.palette.gray-00
-    $color.bg.layer-default-pressed:
+        theme-light: $color.palette.red-100
+        theme-dark: $color.palette.red-100
+    $color.bg.danger-solid:
       values:
-        theme-light: $color.palette.gray-100
-        theme-dark: $color.palette.gray-200
-    $color.bg.layer-fill:
+        theme-light: $color.palette.red-700
+        theme-dark: $color.palette.red-600
+    $color.bg.danger-solid-pressed:
       values:
-        theme-light: $color.palette.gray-100
-        theme-dark: $color.palette.gray-100
-    $color.bg.neutral-weak:
+        theme-light: $color.palette.red-800
+        theme-dark: $color.palette.red-700
+    $color.bg.danger-weak-pressed:
       values:
-        theme-light: $color.palette.gray-200
-        theme-dark: $color.palette.gray-300
-    $color.bg.neutral-solid:
-      values:
-        theme-light: $color.palette.slate-900
-        theme-dark: $color.palette.gray-900
-    $color.bg.neutral-weak-pressed:
-      values:
-        theme-light: $color.palette.gray-300
-        theme-dark: $color.palette.gray-400
+        theme-light: $color.palette.red-200
+        theme-dark: $color.palette.red-200
     $color.bg.informative-weak:
       values:
         theme-light: $color.palette.blue-100
         theme-dark: $color.palette.blue-100
-    $color.bg.overlay:
+    $color.bg.informative-solid:
       values:
-        theme-light: $color.palette.static-black-alpha-500
-        theme-dark: $color.palette.static-black-alpha-500
-    $color.bg.overlay-muted:
+        theme-light: $color.palette.blue-700
+        theme-dark: $color.palette.blue-600
+    $color.bg.informative-solid-pressed:
       values:
-        theme-light: $color.palette.static-black-alpha-200
-        theme-dark: $color.palette.static-black-alpha-200
-    $color.bg.text-selection:
+        theme-light: $color.palette.blue-800
+        theme-dark: $color.palette.blue-700
+    $color.bg.informative-weak-pressed:
       values:
-        theme-light: $color.palette.carrot-100
-        theme-dark: $color.palette.carrot-100
+        theme-light: $color.palette.blue-200
+        theme-dark: $color.palette.blue-200
+    $color.bg.layer-default:
+      values:
+        theme-light: $color.palette.gray-00
+        theme-dark: $color.palette.gray-00
+    $color.bg.layer-fill:
+      values:
+        theme-light: $color.palette.gray-100
+        theme-dark: $color.palette.gray-100
     $color.bg.layer-basement:
       values:
         theme-light: $color.palette.gray-200
@@ -489,107 +457,123 @@ data:
       values:
         theme-light: $color.palette.gray-00
         theme-dark: $color.palette.gray-100
-    $color.bg.neutral-solid-pressed:
+    $color.bg.layer-default-pressed:
       values:
-        theme-light: $color.palette.gray-800
-        theme-dark: $color.palette.gray-800
-    $color.bg.disabled:
-      values:
-        theme-light: $color.palette.gray-200
+        theme-light: $color.palette.gray-100
         theme-dark: $color.palette.gray-200
     $color.bg.layer-floating-pressed:
       values:
         theme-light: $color.palette.gray-100
         theme-dark: $color.palette.gray-300
-    $color.bg.informative-weak-pressed:
-      values:
-        theme-light: $color.palette.blue-200
-        theme-dark: $color.palette.blue-200
-    $color.bg.static-white:
-      values:
-        theme-light: $color.palette.static-white
-        theme-dark: $color.palette.static-white
-    $color.bg.warning-weak-pressed:
-      values:
-        theme-light: $color.palette.yellow-200
-        theme-dark: $color.palette.yellow-200
-    $color.bg.danger-weak-pressed:
-      values:
-        theme-light: $color.palette.red-200
-        theme-dark: $color.palette.red-200
-    $color.bg.informative-solid:
-      values:
-        theme-light: $color.palette.blue-600
-        theme-dark: $color.palette.blue-600
-    $color.bg.positive-weak-pressed:
-      values:
-        theme-light: $color.palette.green-200
-        theme-dark: $color.palette.green-200
-    $color.bg.informative-solid-pressed:
-      values:
-        theme-light: $color.palette.blue-700
-        theme-dark: $color.palette.blue-700
-    $color.bg.positive-solid-pressed:
-      values:
-        theme-light: $color.palette.green-700
-        theme-dark: $color.palette.green-500
     $color.bg.magic-solid:
       values:
-        theme-light: $color.palette.purple-600
-        theme-dark: $color.palette.purple-600
-    $color.bg.magic-solid-pressed:
-      values:
         theme-light: $color.palette.purple-700
-        theme-dark: $color.palette.purple-700
+        theme-dark: $color.palette.purple-600
     $color.bg.magic-weak:
       values:
         theme-light: $color.palette.purple-100
         theme-dark: $color.palette.purple-100
+    $color.bg.magic-solid-pressed:
+      values:
+        theme-light: $color.palette.purple-800
+        theme-dark: $color.palette.purple-700
     $color.bg.magic-weak-pressed:
       values:
         theme-light: $color.palette.purple-200
         theme-dark: $color.palette.purple-200
-    $color.bg.neutral-solid-muted:
+    $color.bg.neutral-weak:
       values:
-        theme-light: $color.palette.slate-800
-        theme-dark: $color.palette.gray-400
-    $color.bg.floating-solid:
+        theme-light: $color.palette.gray-200
+        theme-dark: $color.palette.gray-300
+    $color.bg.neutral-inverted:
       values:
         theme-light: $color.palette.gray-900
+        theme-dark: $color.palette.gray-1000
+    $color.bg.neutral-solid:
+      values:
+        theme-light: $color.palette.gray-1000
         theme-dark: $color.palette.gray-300
+    $color.bg.neutral-inverted-pressed:
+      values:
+        theme-light: $color.palette.gray-800
+        theme-dark: $color.palette.gray-800
+    $color.bg.neutral-solid-muted:
+      values:
+        theme-light: $color.palette.gray-800
+        theme-dark: $color.palette.gray-400
     $color.bg.neutral-solid-muted-pressed:
       values:
-        theme-light: $color.palette.slate-900
+        theme-light: $color.palette.gray-900
         theme-dark: $color.palette.gray-500
+    $color.bg.neutral-weak-pressed:
+      values:
+        theme-light: $color.palette.gray-300
+        theme-dark: $color.palette.gray-400
+    $color.bg.overlay-muted:
+      values:
+        theme-light: $color.palette.static-black-alpha-200
+        theme-dark: $color.palette.static-black-alpha-200
+    $color.bg.positive-weak:
+      values:
+        theme-light: $color.palette.green-100
+        theme-dark: $color.palette.green-100
+    $color.bg.positive-solid:
+      values:
+        theme-light: $color.palette.green-700
+        theme-dark: $color.palette.green-500
+    $color.bg.positive-solid-pressed:
+      values:
+        theme-light: $color.palette.green-800
+        theme-dark: $color.palette.green-500
+    $color.bg.positive-weak-pressed:
+      values:
+        theme-light: $color.palette.green-200
+        theme-dark: $color.palette.green-200
+    $color.bg.warning-solid:
+      values:
+        theme-light: $color.palette.yellow-300
+        theme-dark: $color.palette.yellow-600
+    $color.bg.warning-weak:
+      values:
+        theme-light: $color.palette.yellow-100
+        theme-dark: $color.palette.yellow-100
+    $color.bg.warning-weak-pressed:
+      values:
+        theme-light: $color.palette.yellow-200
+        theme-dark: $color.palette.yellow-200
     $color.stroke.neutral:
       values:
         theme-light: $color.palette.gray-300
         theme-dark: $color.palette.gray-300
     $color.stroke.brand:
       values:
-        theme-light: $color.palette.carrot-500
-        theme-dark: $color.palette.carrot-600
+        theme-light: $color.palette.carrot-300
+        theme-dark: $color.palette.carrot-300
     $color.stroke.field:
       values:
         theme-light: $color.palette.gray-400
         theme-dark: $color.palette.gray-400
-    $color.stroke.field-focused:
-      values:
-        theme-light: $color.palette.gray-800
-        theme-dark: $color.palette.gray-800
     $color.stroke.control:
       values:
         theme-light: $color.palette.gray-400
         theme-dark: $color.palette.gray-400
+    $color.stroke.danger:
+      values:
+        theme-light: $color.palette.red-300
+        theme-dark: $color.palette.red-300
+    $color.stroke.positive:
+      values:
+        theme-light: $color.palette.green-300
+        theme-dark: $color.palette.green-300
+    $color.stroke.informative:
+      values:
+        theme-light: $color.palette.blue-300
+        theme-dark: $color.palette.blue-300
+    $color.stroke.field-focused:
+      values:
+        theme-light: $color.palette.gray-800
+        theme-dark: $color.palette.gray-800
     $color.stroke.neutral-muted:
       values:
         theme-light: $color.palette.gray-200
         theme-dark: $color.palette.gray-200
-    $color.stroke.danger:
-      values:
-        theme-light: $color.palette.red-700
-        theme-dark: $color.palette.red-600
-    $color.stroke.positive:
-      values:
-        theme-light: $color.palette.green-600
-        theme-dark: $color.palette.green-600

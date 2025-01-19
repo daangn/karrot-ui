@@ -19,8 +19,7 @@ const progressCircleSlotNames = [
 
 const defaultVariant = {
   "tone": "neutral",
-  "size": 40,
-  "indeterminate": false
+  "size": 40
 };
 
 const compoundVariants = [];
@@ -29,15 +28,13 @@ export const progressCircleVariantMap = {
   "tone": [
     "neutral",
     "brand",
-    "staticWhite"
+    "staticWhite",
+    "inherit"
   ],
   "size": [
     "24",
-    "40"
-  ],
-  "indeterminate": [
-    true,
-    false
+    "40",
+    "inherit"
   ]
 };
 

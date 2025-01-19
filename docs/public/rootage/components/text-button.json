@@ -8,17 +8,17 @@
     "base": {
       "enabled": {
         "root": {
-          "paddingY": "$unit.s0_5",
+          "paddingY": "$dimension.s0_5",
           "borderWidth": "0.125rem"
         },
         "label": {
           "fontWeight": "$font-weight.regular"
         },
         "prefixIcon": {
-          "marginXEnd": "$unit.s1"
+          "marginXEnd": "$dimension.s1"
         },
         "suffixIcon": {
-          "marginXStart": "$unit.s0_5"
+          "marginXStart": "$dimension.s0_5"
         }
       },
       "pressed": {
@@ -67,10 +67,10 @@
           "cornerRadius": "$radius.s1_5"
         },
         "prefixIcon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         },
         "suffixIcon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         },
         "label": {
           "fontSize": "$font-size.s6",
@@ -84,10 +84,10 @@
           "cornerRadius": "$radius.s1_5"
         },
         "prefixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "suffixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "label": {
           "fontSize": "$font-size.s5",
@@ -101,10 +101,10 @@
           "cornerRadius": "$radius.s1"
         },
         "prefixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "suffixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "label": {
           "fontSize": "$font-size.s4",

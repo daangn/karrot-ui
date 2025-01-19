@@ -8,24 +8,28 @@ const actionSheetSlotNames = [
     "actionSheet__backdrop"
   ],
   [
-    "container",
-    "actionSheet__container"
+    "positioner",
+    "actionSheet__positioner"
   ],
   [
     "content",
     "actionSheet__content"
   ],
   [
+    "header",
+    "actionSheet__header"
+  ],
+  [
+    "title",
+    "actionSheet__title"
+  ],
+  [
+    "description",
+    "actionSheet__description"
+  ],
+  [
     "list",
     "actionSheet__list"
-  ],
-  [
-    "group",
-    "actionSheet__group"
-  ],
-  [
-    "footer",
-    "actionSheet__footer"
   ]
 ];
 

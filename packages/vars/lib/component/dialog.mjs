@@ -13,9 +13,9 @@ export const vars = {
       "content": {
         "color": "var(--seed-v3-color-bg-layer-default)",
         "cornerRadius": "var(--seed-v3-radius-s5)",
-        "marginX": "var(--seed-v3-unit-s8)",
-        "paddingX": "var(--seed-v3-unit-s5)",
-        "paddingY": "var(--seed-v3-unit-s5)",
+        "marginX": "var(--seed-v3-dimension-s8)",
+        "paddingX": "var(--seed-v3-dimension-s5)",
+        "paddingY": "var(--seed-v3-dimension-s5)",
         "maxWidth": "272px",
         "enterDuration": "var(--seed-v3-duration-s4)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter-expressive)",
@@ -26,11 +26,11 @@ export const vars = {
         "exitOpacity": "0"
       },
       "header": {
-        "gap": "var(--seed-v3-unit-s1_5)"
+        "gap": "var(--seed-v3-dimension-s1_5)"
       },
       "footer": {
-        "paddingTop": "var(--seed-v3-unit-s4)",
-        "gap": "var(--seed-v3-unit-s2)"
+        "paddingTop": "var(--seed-v3-dimension-s4)",
+        "gap": "var(--seed-v3-dimension-s2)"
       },
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)",

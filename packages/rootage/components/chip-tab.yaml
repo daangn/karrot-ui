@@ -7,8 +7,8 @@ data:
   base:
     enabled:
       root:
-        paddingX: $unit.s3_5
-        paddingY: $unit.s2
+        paddingX: $dimension.s3_5
+        paddingY: $dimension.s2
         cornerRadius: $radius.full
         minHeight: 36px
       label:
@@ -24,12 +24,12 @@ data:
         color: $color.bg.layer-default-pressed
     selected:
       root:
-        color: $color.bg.neutral-solid
+        color: $color.bg.neutral-inverted
       label:
         color: $color.fg.neutral-inverted
     selected,pressed:
       root:
-        color: $color.bg.neutral-solid-pressed
+        color: $color.bg.neutral-inverted-pressed
     disabled:
       label:
         color: $color.fg.disabled
@@ -52,7 +52,7 @@ data:
       root:
         color: $color.bg.brand-solid
       label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
         fontWeight: $font-weight.bold
     selected,pressed:
       root:

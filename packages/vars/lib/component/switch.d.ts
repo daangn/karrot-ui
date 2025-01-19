@@ -6,7 +6,7 @@ export declare const vars: {
         "cornerRadius": "var(--seed-v3-radius-full)"
       },
       "thumb": {
-        "color": "var(--seed-v3-color-fg-static-white)",
+        "color": "var(--seed-v3-color-palette-static-white)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       }
     },

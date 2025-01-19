@@ -5,24 +5,17 @@ import { client } from "./client";
 
 import type { PortableTextTypeComponentProps } from "@portabletext/react";
 import { getImageDimensions, SanityImageAsset } from "@sanity/asset-utils";
+import { SanityImageType } from "./types";
+import clsx from "clsx";
 
 const { projectId, dataset } = client.config();
-
-export interface SanityImage {
-  _type: "image";
-  _key: string;
-  asset: {
-    _ref: string;
-    _type: "reference";
-  };
-}
 
 interface ImageProps {
   value: SanityImageAsset;
   className?: string;
 }
 
-export const Image = ({ value, className }: ImageProps) => {
+export const SanityImage = ({ value, className }: ImageProps) => {
   if (!value) {
     return <div className={`${className} bg-gray-200`} />;
   }
@@ -41,14 +34,14 @@ export const Image = ({ value, className }: ImageProps) => {
     <img
       src={cdnUrl}
       alt={value.originalFilename}
-      className={className}
+      className={clsx("w-full rounded-2xl overflow-hidden object-cover", className)}
       loading="lazy"
       draggable={false}
     />
   );
 };
 
-export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityImage>) => {
+export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityImageType>) => {
   if (!value || !value?.asset) {
     return null;
   }
@@ -85,11 +78,9 @@ export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityIm
       draggable={false}
       srcSet={srcSet}
       loading="lazy"
+      className="w-full h-auto rounded-2xl overflow-hidden my-4 object-cover"
       style={{
-        display: "block",
         aspectRatio,
-        width: "100%",
-        height: "auto",
       }}
     />
   );

@@ -7,32 +7,32 @@ data:
   base:
     enabled:
       root:
-        gap: $unit.s4
-        paddingX: $unit.s4
+        gap: $dimension.s4
+        paddingX: $dimension.s4
       content:
-        gap: $unit.s2
-        paddingY: $unit.s2_5
+        gap: $dimension.s2
+        paddingY: $dimension.s2_5
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
-        minHeight: $unit.s10
+        minHeight: $dimension.s10
       icon:
-        size: $unit.s4
+        size: $dimension.s4
         marginY: 1.5px
       title:
         fontWeight: $font-weight.bold
-      label:
+      description:
         fontWeight: $font-weight.medium
       linkLabel:
-        height: $unit.s10
+        height: $dimension.s10
         fontWeight: $font-weight.regular
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
       dismissButton:
-        size: $unit.s10
+        size: $dimension.s10
       dismissIcon:
-        size: $unit.s4
+        size: $dimension.s4
       actionableIcon:
-        size: $unit.s4
+        size: $dimension.s4
   variant=neutral weak:
     enabled:
       root:
@@ -41,7 +41,7 @@ data:
         color: $color.fg.neutral
       title:
         color: $color.fg.neutral
-      label:
+      description:
         color: $color.fg.neutral
       linkLabel:
         color: $color.fg.neutral
@@ -57,7 +57,7 @@ data:
         color: $color.fg.positive-contrast
       title:
         color: $color.fg.positive-contrast
-      label:
+      description:
         color: $color.fg.positive-contrast
       linkLabel:
         color: $color.fg.positive-contrast
@@ -73,7 +73,7 @@ data:
         color: $color.fg.informative-contrast
       title:
         color: $color.fg.informative-contrast
-      label:
+      description:
         color: $color.fg.informative-contrast
       linkLabel:
         color: $color.fg.informative-contrast
@@ -89,7 +89,7 @@ data:
         color: $color.fg.warning-contrast
       title:
         color: $color.fg.warning-contrast
-      label:
+      description:
         color: $color.fg.warning-contrast
       linkLabel:
         color: $color.fg.warning-contrast
@@ -105,7 +105,7 @@ data:
         color: $color.fg.neutral
       title:
         color: $color.fg.neutral
-      label:
+      description:
         color: $color.fg.neutral
       linkLabel:
         color: $color.fg.neutral
@@ -121,7 +121,7 @@ data:
         color: $color.fg.danger-contrast
       title:
         color: $color.fg.danger-contrast
-      label:
+      description:
         color: $color.fg.danger-contrast
       linkLabel:
         color: $color.fg.danger-contrast
@@ -132,12 +132,12 @@ data:
       root:
         color: $color.bg.danger-solid
       icon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       title:
-        color: $color.fg.static-white
-      label:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
+      description:
+        color: $color.palette.static-white
       linkLabel:
-        color: $color.fg.static-white
+        color: $color.palette.static-white
       actionableIcon:
-        color: $color.fg.static-white
+        color: $color.palette.static-white

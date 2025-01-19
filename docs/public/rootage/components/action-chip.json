@@ -21,6 +21,9 @@
         "suffixIcon": {
           "color": "$color.fg.neutral-subtle"
         },
+        "icon": {
+          "color": "$color.fg.neutral"
+        },
         "count": {
           "color": "$color.fg.neutral-muted",
           "fontWeight": "$font-weight.medium"
@@ -44,6 +47,9 @@
         "suffixIcon": {
           "color": "$color.fg.disabled"
         },
+        "icon": {
+          "color": "$color.fg.disabled"
+        },
         "count": {
           "color": "$color.fg.disabled"
         }
@@ -52,18 +58,18 @@
     "size=small": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s8",
-          "paddingY": "$unit.s1_5",
-          "gap": "$unit.s1"
+          "minHeight": "$dimension.s8",
+          "paddingY": "$dimension.s1_5",
+          "gap": "$dimension.s1"
         },
         "label": {
           "fontSize": "$font-size.s4"
         },
         "prefixIcon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         },
         "suffixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "count": {
           "fontSize": "$font-size.s4"
@@ -73,18 +79,18 @@
     "size=medium": {
       "enabled": {
         "root": {
-          "minHeight": "$unit.s9",
-          "paddingY": "$unit.s2",
-          "gap": "$unit.s1"
+          "minHeight": "$dimension.s9",
+          "paddingY": "$dimension.s2",
+          "gap": "$dimension.s1"
         },
         "label": {
           "fontSize": "$font-size.s4"
         },
         "prefixIcon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         },
         "suffixIcon": {
-          "size": "$unit.s3_5"
+          "size": "$dimension.s3_5"
         },
         "count": {
           "fontSize": "$font-size.s4"
@@ -94,34 +100,34 @@
     "size=small,layout=with text": {
       "enabled": {
         "root": {
-          "paddingX": "$unit.s3"
+          "paddingX": "$dimension.s3"
         }
       }
     },
     "size=small,layout=icon only": {
       "enabled": {
         "root": {
-          "minWidth": "$unit.s8"
+          "minWidth": "$dimension.s8"
         },
         "icon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         }
       }
     },
     "size=medium,layout=with text": {
       "enabled": {
         "root": {
-          "paddingX": "$unit.s3_5"
+          "paddingX": "$dimension.s3_5"
         }
       }
     },
     "size=medium,layout=icon only": {
       "enabled": {
         "root": {
-          "minWidth": "$unit.s9"
+          "minWidth": "$dimension.s9"
         },
         "icon": {
-          "size": "$unit.s4"
+          "size": "$dimension.s4"
         }
       }
     }

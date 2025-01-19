@@ -7,27 +7,26 @@ data:
   base:
     enabled:
       root:
-        padding: $unit.s3_5
-        gap: $unit.s3
+        padding: $dimension.s3_5
+        gap: $dimension.s3
         cornerRadius: $radius.s2_5
         fontSize: $font-size.s4
         lineHeight: $line-height.s5
         minHeight: 50px
       icon:
-        # XXX: scalable 결정 x
-        size: $unit.s4
+        size: $dimension.s4
       title:
         fontWeight: $font-weight.bold
-      label:
+      description:
         fontWeight: $font-weight.regular
       dismissButton:
-        size: $unit.s10
+        size: $dimension.s10
       dismissIcon:
-        size: $unit.s4
+        size: $dimension.s4
       actionableIcon:
-        size: $unit.s4
+        size: $dimension.s4
 
-  variant=neutral:
+  tone=neutral:
     enabled:
       root:
         color: $color.bg.neutral-weak
@@ -35,7 +34,7 @@ data:
         color: $color.fg.neutral
       title:
         color: $color.fg.neutral
-      label:
+      description:
         color: $color.fg.neutral
       linkLabel:
         color: $color.fg.neutral
@@ -47,7 +46,7 @@ data:
       root:
         color: $color.bg.neutral-weak-pressed
 
-  variant=informative:
+  tone=informative:
     enabled:
       root:
         color: $color.bg.informative-weak
@@ -55,7 +54,7 @@ data:
         color: $color.fg.informative-contrast
       title:
         color: $color.fg.informative-contrast
-      label:
+      description:
         color: $color.fg.informative-contrast
       linkLabel:
         color: $color.fg.informative-contrast
@@ -67,7 +66,7 @@ data:
       root:
         color: $color.bg.informative-weak-pressed
 
-  variant=warning:
+  tone=warning:
     enabled:
       root:
         color: $color.bg.warning-weak
@@ -75,7 +74,7 @@ data:
         color: $color.fg.warning-contrast
       title:
         color: $color.fg.warning-contrast
-      label:
+      description:
         color: $color.fg.warning-contrast
       linkLabel:
         color: $color.fg.warning-contrast
@@ -87,7 +86,7 @@ data:
       root:
         color: $color.bg.warning-weak-pressed
 
-  variant=danger:
+  tone=danger:
     enabled:
       root:
         color: $color.bg.danger-weak
@@ -95,7 +94,7 @@ data:
         color: $color.fg.danger-contrast
       title:
         color: $color.fg.danger-contrast
-      label:
+      description:
         color: $color.fg.danger-contrast
       linkLabel:
         color: $color.fg.danger-contrast
@@ -107,7 +106,7 @@ data:
       root:
         color: $color.bg.danger-weak-pressed
 
-  variant=magic:
+  tone=magic:
     enabled:
       root:
         color: $color.bg.magic-weak
@@ -115,7 +114,7 @@ data:
         color: $color.fg.magic-contrast
       title:
         color: $color.fg.magic-contrast
-      label:
+      description:
         color: $color.fg.magic-contrast
       linkLabel:
         color: $color.fg.magic-contrast

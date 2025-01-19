@@ -14,20 +14,17 @@ const withStateProps = createWithStateProps([usePopoverContext]);
 
 export interface HelpBubbleRootProps extends HelpBubbleVariantProps, PopoverPrimitive.RootProps {}
 
-export const HelpBubbleRoot = withRootProvider<HTMLDivElement, HelpBubbleRootProps>(
-  PopoverPrimitive.Root,
-  {
-    defaultProps: {
-      placement: "top",
-      gutter: 4,
-      overflowPadding: 16,
-      arrowPadding: 14,
-      flip: true,
-      slide: true,
-      strategy: "absolute",
-    },
+export const HelpBubbleRoot = withRootProvider<HelpBubbleRootProps>(PopoverPrimitive.Root, {
+  defaultProps: {
+    placement: "top",
+    gutter: 4,
+    overflowPadding: 16,
+    arrowPadding: 14,
+    flip: true,
+    slide: true,
+    strategy: "absolute",
   },
-);
+});
 
 ////////////////////////////////////////////////////////////////////////////////////
 

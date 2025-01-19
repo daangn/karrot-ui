@@ -23,7 +23,19 @@ function rgbaToHex(r: number, g: number, b: number, a: number) {
 }
 
 export function getColorRootageTokens(): string {
-  const variables = figma.variables.getLocalVariables();
+  const variables = figma.variables.getLocalVariables().sort((a, b) => {
+    const aParts = a.name.split("-");
+    const bParts = b.name.split("-");
+    const aName = aParts.slice(0, -1).join("-");
+    const bName = bParts.slice(0, -1).join("-");
+    const aIndex = Number(aParts[aParts.length - 1]);
+    const bIndex = Number(bParts[bParts.length - 1]);
+    if (aName === bName) {
+      return aIndex - bIndex;
+    }
+
+    return aName.localeCompare(bName);
+  });
 
   function transformName(str: string) {
     return `$color.${str.split("/").join(".")}`;

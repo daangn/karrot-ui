@@ -98,8 +98,8 @@ export const vars = {
   "sizeXlarge": {
     "enabled": {
       "header": {
-        "paddingBottom": "var(--seed-v3-unit-s3)",
-        "gap": "var(--seed-v3-unit-s1_5)"
+        "paddingBottom": "var(--seed-v3-dimension-s3)",
+        "gap": "var(--seed-v3-dimension-s1_5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -112,9 +112,9 @@ export const vars = {
       "field": {
         "minHeight": "56px",
         "cornerRadius": "var(--seed-v3-radius-s2_5)",
-        "gap": "var(--seed-v3-unit-s2)",
-        "paddingX": "var(--seed-v3-unit-s4)",
-        "paddingY": "var(--seed-v3-unit-s3)"
+        "gap": "var(--seed-v3-dimension-s2)",
+        "paddingX": "var(--seed-v3-dimension-s4)",
+        "paddingY": "var(--seed-v3-dimension-s3)"
       },
       "value": {
         "fontSize": "var(--seed-v3-font-size-s6)",
@@ -125,18 +125,18 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s6)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s5)"
+        "size": "var(--seed-v3-dimension-s5)"
       },
       "suffixText": {
         "fontSize": "var(--seed-v3-font-size-s6)",
         "lineHeight": "var(--seed-v3-line-height-s6)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s5)"
+        "size": "var(--seed-v3-dimension-s5)"
       },
       "footer": {
-        "gap": "var(--seed-v3-unit-s3_5)",
-        "paddingTop": "var(--seed-v3-unit-s2)",
+        "gap": "var(--seed-v3-dimension-s3_5)",
+        "paddingTop": "var(--seed-v3-dimension-s2)",
         "minHeight": "20px"
       },
       "description": {
@@ -148,8 +148,8 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "errorIcon": {
-        "size": "var(--seed-v3-unit-s4)",
-        "marginRight": "var(--seed-v3-unit-s1)"
+        "size": "var(--seed-v3-dimension-s4)",
+        "marginRight": "var(--seed-v3-dimension-s1)"
       },
       "characterCount": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -164,8 +164,8 @@ export const vars = {
   "sizeLarge": {
     "enabled": {
       "header": {
-        "paddingBottom": "var(--seed-v3-unit-s3)",
-        "gap": "var(--seed-v3-unit-s1_5)"
+        "paddingBottom": "var(--seed-v3-dimension-s3)",
+        "gap": "var(--seed-v3-dimension-s1_5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -178,9 +178,9 @@ export const vars = {
       "field": {
         "minHeight": "52px",
         "cornerRadius": "var(--seed-v3-radius-s2_5)",
-        "gap": "var(--seed-v3-unit-s2)",
-        "paddingX": "var(--seed-v3-unit-s4)",
-        "paddingY": "var(--seed-v3-unit-s3)"
+        "gap": "var(--seed-v3-dimension-s2)",
+        "paddingX": "var(--seed-v3-dimension-s4)",
+        "paddingY": "var(--seed-v3-dimension-s3)"
       },
       "value": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -191,18 +191,18 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s5)"
+        "size": "var(--seed-v3-dimension-s5)"
       },
       "suffixText": {
         "fontSize": "var(--seed-v3-font-size-s5)",
         "lineHeight": "var(--seed-v3-line-height-s5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s5)"
+        "size": "var(--seed-v3-dimension-s5)"
       },
       "footer": {
-        "gap": "var(--seed-v3-unit-s3_5)",
-        "paddingTop": "var(--seed-v3-unit-s2)",
+        "gap": "var(--seed-v3-dimension-s3_5)",
+        "paddingTop": "var(--seed-v3-dimension-s2)",
         "minHeight": "20px"
       },
       "description": {
@@ -214,8 +214,8 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "errorIcon": {
-        "size": "var(--seed-v3-unit-s4)",
-        "marginRight": "var(--seed-v3-unit-s1)"
+        "size": "var(--seed-v3-dimension-s4)",
+        "marginRight": "var(--seed-v3-dimension-s1)"
       },
       "characterCount": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -230,7 +230,7 @@ export const vars = {
   "sizeMedium": {
     "enabled": {
       "header": {
-        "paddingBottom": "var(--seed-v3-unit-s3)"
+        "paddingBottom": "var(--seed-v3-dimension-s3)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -243,9 +243,9 @@ export const vars = {
       "field": {
         "minHeight": "40px",
         "cornerRadius": "var(--seed-v3-radius-s2)",
-        "gap": "var(--seed-v3-unit-s1_5)",
-        "paddingX": "var(--seed-v3-unit-s3_5)",
-        "paddingY": "var(--seed-v3-unit-s2_5)"
+        "gap": "var(--seed-v3-dimension-s1_5)",
+        "paddingX": "var(--seed-v3-dimension-s3_5)",
+        "paddingY": "var(--seed-v3-dimension-s2_5)"
       },
       "value": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -256,19 +256,19 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "suffixText": {
         "fontSize": "var(--seed-v3-font-size-s4)",
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-unit-s4)"
+        "size": "var(--seed-v3-dimension-s4)"
       },
       "footer": {
-        "gap": "var(--seed-v3-unit-s3_5)",
-        "paddingTop": "var(--seed-v3-unit-s2)",
-        "minHeight": "var(--seed-v3-unit-s4)"
+        "gap": "var(--seed-v3-dimension-s3_5)",
+        "paddingTop": "var(--seed-v3-dimension-s2)",
+        "minHeight": "var(--seed-v3-dimension-s4)"
       },
       "description": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -279,8 +279,8 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s2)"
       },
       "errorIcon": {
-        "size": "var(--seed-v3-unit-s3_5)",
-        "marginRight": "var(--seed-v3-unit-s1)"
+        "size": "var(--seed-v3-dimension-s3_5)",
+        "marginRight": "var(--seed-v3-dimension-s1)"
       },
       "characterCount": {
         "fontSize": "var(--seed-v3-font-size-s2)",

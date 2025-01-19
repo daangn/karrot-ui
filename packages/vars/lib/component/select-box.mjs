@@ -2,15 +2,15 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-unit-s4)",
-        "paddingY": "19px",
-        "gap": "var(--seed-v3-unit-s2_5)",
+        "paddingX": "var(--seed-v3-dimension-s4)",
+        "paddingY": "var(--seed-v3-dimension-s5)",
+        "gap": "var(--seed-v3-dimension-s2_5)",
         "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-neutral)",
         "cornerRadius": "var(--seed-v3-radius-s3)"
       },
       "content": {
-        "gap": "var(--seed-v3-unit-s0_5)"
+        "gap": "var(--seed-v3-dimension-s0_5)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)",
@@ -25,25 +25,24 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "checkboxControl": {
-        "size": "22px",
-        "margin": "1px",
+        "size": "var(--seed-v3-dimension-s6)",
         "color": "var(--seed-v3-color-bg-layer-default)",
         "strokeWidth": "1.25px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radius-s1)"
       },
       "checkboxIcon": {
-        "size": "var(--seed-v3-unit-s3_5)"
+        "size": "var(--seed-v3-dimension-s3_5)"
       },
       "radioControl": {
-        "size": "var(--seed-v3-unit-s6)",
+        "size": "var(--seed-v3-dimension-s6)",
         "color": "var(--seed-v3-color-bg-layer-default)",
         "strokeWidth": "1.25px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       },
       "radioIcon": {
-        "size": "var(--seed-v3-unit-s2_5)",
+        "size": "var(--seed-v3-dimension-s2_5)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       }
     },
@@ -68,14 +67,14 @@ export const vars = {
         "strokeWidth": "0"
       },
       "checkboxIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "radioControl": {
         "color": "var(--seed-v3-color-bg-brand-solid)",
         "strokeWidth": "0"
       },
       "radioIcon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "enabledSelectedPressed": {

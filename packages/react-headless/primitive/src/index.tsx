@@ -35,5 +35,9 @@ export const Primitive = {
   textarea: createPrimitive("textarea"),
   a: createPrimitive("a"),
   p: createPrimitive("p"),
+  h2: createPrimitive("h2"),
+  ul: createPrimitive("ul"),
+  li: createPrimitive("li"),
   svg: createPrimitive("svg"),
+  circle: createPrimitive("circle"),
 };

@@ -2,8 +2,8 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-unit-s3_5)",
-        "paddingY": "var(--seed-v3-unit-s2)",
+        "paddingX": "var(--seed-v3-dimension-s3_5)",
+        "paddingY": "var(--seed-v3-dimension-s2)",
         "cornerRadius": "var(--seed-v3-radius-full)",
         "minHeight": "36px"
       },
@@ -27,7 +27,7 @@ export const vars = {
     },
     "selected": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid)"
+        "color": "var(--seed-v3-color-bg-neutral-inverted)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral-inverted)"
@@ -35,7 +35,7 @@ export const vars = {
     },
     "selectedPressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid-pressed)"
+        "color": "var(--seed-v3-color-bg-neutral-inverted-pressed)"
       }
     },
     "disabled": {
@@ -72,7 +72,7 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-static-white)",
+        "color": "var(--seed-v3-color-palette-static-white)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     },

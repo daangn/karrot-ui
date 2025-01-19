@@ -1,11 +1,8 @@
 "use client";
 
-import "@seed-design/stylesheet/progressCircle.css";
-// TODO: we have to ensure load order between reactionButton.css and progressCircle.css. should we bundle them together?
-import "@seed-design/stylesheet/reactionButton.css";
-
 import { ReactionButton as SeedReactionButton } from "@seed-design/react";
 import * as React from "react";
+import { ProgressCircle } from "./progress-circle";
 
 export interface ReactionButtonProps extends SeedReactionButton.RootProps {
   prefixIcon?: React.ReactNode;
@@ -24,8 +21,14 @@ export const ReactionButton = React.forwardRef<
     <SeedReactionButton.Root ref={ref} loading={loading} {...otherProps}>
       {prefixIcon && <SeedReactionButton.PrefixIcon svg={prefixIcon} />}
       <SeedReactionButton.Label>{children}</SeedReactionButton.Label>
-      <SeedReactionButton.Count>{count}</SeedReactionButton.Count>
-      {loading ? <SeedReactionButton.ProgressCircle /> : null}
+      {count !== undefined && (
+        <SeedReactionButton.Count>{count}</SeedReactionButton.Count>
+      )}
+      {loading ? (
+        <SeedReactionButton.ProgressIndicator>
+          <ProgressCircle size="inherit" tone="inherit" />
+        </SeedReactionButton.ProgressIndicator>
+      ) : null}
     </SeedReactionButton.Root>
   );
 });

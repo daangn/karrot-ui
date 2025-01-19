@@ -1,8 +1,6 @@
 import type { RegistryUI } from "./schema";
 
-import segmentedControlPkg from "@seed-design/react-segmented-control/package.json";
 import textFieldPkg from "@seed-design/react-text-field/package.json";
-import dismissiblePkg from "@seed-design/react-dismissible/package.json";
 import tabsPkg from "@seed-design/react-tabs/package.json";
 import popoverPkg from "@seed-design/react-popover/package.json";
 
@@ -25,13 +23,18 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "bottom-sheet",
-    dependencies: ["@seed-design/stackflow"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:bottom-sheet.tsx"],
   },
   {
     name: "action-sheet",
-    dependencies: ["@seed-design/stackflow"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:action-sheet.tsx"],
+  },
+  {
+    name: "extended-action-sheet",
+    dependencies: ["@seed-design/react"],
+    files: ["ui:extended-action-sheet.tsx"],
   },
   {
     name: "avatar",
@@ -76,11 +79,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "callout",
-    dependencies: [
-      "@radix-ui/react-slot",
-      `@seed-design/react-dismissible@${dismissiblePkg.version}`,
-      "@daangn/react-monochrome-icon",
-    ],
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
     files: ["ui:callout.tsx"],
   },
   {
@@ -100,12 +99,13 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "inline-banner",
-    dependencies: [
-      "@radix-ui/react-slot",
-      `@seed-design/react-dismissible@${dismissiblePkg.version}`,
-      "@daangn/react-monochrome-icon",
-    ],
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
     files: ["ui:inline-banner.tsx"],
+  },
+  {
+    name: "snackbar",
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
+    files: ["ui:snackbar.tsx"],
   },
   {
     name: "help-bubble",
@@ -137,9 +137,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "segmented-control",
-    dependencies: [
-      `@seed-design/react-segmented-control@${segmentedControlPkg.version}`,
-    ],
+    dependencies: ["@seed-design/react"],
     files: ["ui:segmented-control.tsx"],
   },
   {

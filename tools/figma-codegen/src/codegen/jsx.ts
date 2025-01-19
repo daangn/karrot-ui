@@ -43,6 +43,10 @@ export function stringifyElement(element: ElementNode) {
     const propFragments = propEntries
       .map(([key, value]) => {
         if (typeof value === "string") {
+          if (value.includes("\n")) {
+            return `${key}={\"${value.replace("\n", "\\n")}\"}`;
+          }
+
           return `${key}="${value}"`;
         }
 
@@ -81,7 +85,7 @@ export function stringifyElement(element: ElementNode) {
           }`;
 
     if (children == null || children.length === 0) {
-      return `<${tag}${propsString} />${comment ? ` {/* ${comment} */}` : ""}`;
+      return `<${tag}${propsString} />${comment ? `{/* ${comment} */}` : ""}`;
     }
 
     const result = [
@@ -90,7 +94,7 @@ export function stringifyElement(element: ElementNode) {
         .filter(exists)
         .map((child) => recursive(child, depth + 1))
         .map((str) => "  ".repeat(depth + 1) + str),
-      "  ".repeat(depth) + `</${tag}>`,
+      `${"  ".repeat(depth)}</${tag}>${comment ? `{/* ${comment} */}` : ""}`,
     ].join("\n");
 
     return result;

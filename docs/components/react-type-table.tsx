@@ -4,7 +4,6 @@
 import "server-only";
 
 import {
-  type DocEntry,
   type GenerateDocumentationOptions,
   generateDocumentation,
   getProject,

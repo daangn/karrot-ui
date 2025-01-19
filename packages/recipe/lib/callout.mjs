@@ -20,8 +20,8 @@ const calloutSlotNames = [
     "callout__spacer"
   ],
   [
-    "label",
-    "callout__label"
+    "description",
+    "callout__description"
   ],
   [
     "linkLabel",
@@ -42,13 +42,13 @@ const calloutSlotNames = [
 ];
 
 const defaultVariant = {
-  "variant": "neutral"
+  "tone": "neutral"
 };
 
 const compoundVariants = [];
 
 export const calloutVariantMap = {
-  "variant": [
+  "tone": [
     "neutral",
     "informative",
     "warning",

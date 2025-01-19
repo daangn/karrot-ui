@@ -4,6 +4,7 @@ import { ariaAttr, dataAttr, elementProps, inputProps, labelProps } from "@seed-
 import { useCallback, useId, useMemo, useState } from "react";
 import { splitGraphemes } from "unicode-segmenter/grapheme";
 import { getDescriptionId, getErrorMessageId, getInputId, getLabelId } from "./dom";
+import { memoize } from "./memoize";
 
 export interface UseTextFieldStateProps {
   value?: string;
@@ -17,46 +18,39 @@ export interface UseTextFieldStateProps {
   maxGraphemeCount?: number | undefined;
 }
 
+const getGraphemes = (string: string) => Array.from(splitGraphemes(string));
+const memoizedGetGraphemes = memoize(getGraphemes);
+
 export function useTextFieldState({
   value: __value,
   defaultValue,
   onValueChange: __onValueChange,
   maxGraphemeCount,
 }: UseTextFieldStateProps) {
+  const onValueChange = useCallbackRef(__onValueChange);
+
+  const handleValueChange = useCallback(
+    (value: string) => {
+      const graphemes = memoizedGetGraphemes(value);
+      const slicedGraphemes = maxGraphemeCount ? graphemes.slice(0, maxGraphemeCount) : graphemes;
+      const slicedValue = slicedGraphemes.join("");
+
+      onValueChange({ value, graphemes, slicedValue, slicedGraphemes });
+    },
+    [maxGraphemeCount, onValueChange],
+  );
+
   const [value, setValue] = useControllableState({
     prop: __value,
     defaultProp: defaultValue,
-    // TODO: Why onValueChange is not passed here?
+    onChange: handleValueChange,
   });
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusVisible, setIsFocusVisible] = useState(false);
 
-  // TODO: prevent duplicate call of splitGraphemes. this is expensive operation.
-  const graphemes = useMemo(
-    () => Array.from(splitGraphemes(value ?? defaultValue ?? "")),
-    [value, defaultValue],
-  );
-
-  const onValueChange = useCallbackRef(__onValueChange);
-
-  // TODO: handleValueChange is not preferred name. keep private for now.
-  const handleValueChange = useCallback(
-    (newValue: string) => {
-      const graphemes = Array.from(splitGraphemes(newValue));
-
-      const value = graphemes.join("");
-
-      setValue(value);
-
-      const slicedGraphemes = maxGraphemeCount ? graphemes.slice(0, maxGraphemeCount) : graphemes;
-      const slicedValue = slicedGraphemes.join("");
-
-      onValueChange({ value, graphemes, slicedValue, slicedGraphemes });
-    },
-    [setValue, onValueChange, maxGraphemeCount],
-  );
+  const graphemes = useMemo(() => memoizedGetGraphemes(value ?? ""), [value]);
 
   const [isLabelRendered, setIsLabelRendered] = useState(false);
   const labelRef = useCallback((node: HTMLLabelElement | null) => {
@@ -90,7 +84,7 @@ export function useTextFieldState({
       errorMessage: isErrorMessageRendered,
     },
 
-    handleValueChange,
+    setValue,
     setIsHovered,
     setIsActive,
     setIsFocused,
@@ -143,7 +137,7 @@ export function useTextField(props: UseTextFieldProps) {
     isActive,
     isFocused,
     isFocusVisible,
-    handleValueChange,
+    setValue,
     setIsHovered,
     setIsActive,
     setIsFocused,
@@ -231,7 +225,7 @@ export function useTextField(props: UseTextFieldProps) {
       name: props.name || id,
       onChange: (event) => {
         setIsFocusVisible(event.target.matches(":focus-visible"));
-        handleValueChange(event.target.value);
+        setValue(event.target.value);
       },
       onBlur() {
         setIsFocused(false);

@@ -39,7 +39,7 @@ const compoundVariants = [
   },
   {
     "tone": "neutral",
-    "variant": "outlined"
+    "variant": "outline"
   },
   {
     "tone": "brand",
@@ -51,7 +51,7 @@ const compoundVariants = [
   },
   {
     "tone": "brand",
-    "variant": "outlined"
+    "variant": "outline"
   },
   {
     "tone": "informative",
@@ -63,7 +63,7 @@ const compoundVariants = [
   },
   {
     "tone": "informative",
-    "variant": "outlined"
+    "variant": "outline"
   },
   {
     "tone": "positive",
@@ -75,7 +75,7 @@ const compoundVariants = [
   },
   {
     "tone": "positive",
-    "variant": "outlined"
+    "variant": "outline"
   },
   {
     "tone": "danger",
@@ -87,7 +87,7 @@ const compoundVariants = [
   },
   {
     "tone": "danger",
-    "variant": "outlined"
+    "variant": "outline"
   }
 ];
 
@@ -103,7 +103,7 @@ export const badgeVariantMap = {
   "variant": [
     "weak",
     "solid",
-    "outlined"
+    "outline"
   ],
   "tone": [
     "neutral",

@@ -11,7 +11,6 @@ import {
   usePendingButtonContext,
   type UsePendingButtonProps,
 } from "../private/usePendingButton";
-import { ProgressCircle, type ProgressCircleProps } from "../ProgressCircle";
 
 const { ClassNamesProvider, withContext } = createStyleContext(actionButton);
 const withStateProps = createWithStateProps([usePendingButtonContext]);
@@ -89,9 +88,11 @@ export const ActionButtonIcon = withContext<SVGSVGElement, ActionButtonIconProps
   "icon",
 );
 
-export interface ActionButtonProgressCircleProps extends ProgressCircleProps {}
+export interface ActionButtonProgressIndicatorProps
+  extends PrimitiveProps,
+    React.HTMLAttributes<HTMLDivElement> {}
 
-export const ActionButtonProgressCircle = withContext<
-  SVGSVGElement,
-  ActionButtonProgressCircleProps
->(withStateProps(ProgressCircle), "progressCircle");
+export const ActionButtonProgressIndicator = withContext<
+  HTMLDivElement,
+  ActionButtonProgressIndicatorProps
+>(withStateProps(Primitive.div), "progressIndicator");

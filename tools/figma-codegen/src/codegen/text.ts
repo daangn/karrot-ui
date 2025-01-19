@@ -1,41 +1,28 @@
-export function isHeadingText(textStyle: TextStyle) {
-  return textStyle.name.startsWith("heading");
+import { getTypographyVariableName } from "./variable";
+
+export function getTextStyleTag(textStyle: TextStyle) {
+  if (textStyle.name.startsWith("heading")) return "h1";
+  if (textStyle.name.startsWith("title")) return "h2";
+  if (textStyle.name.startsWith("body")) return "p";
+  if (textStyle.name.startsWith("label")) return "span";
+
+  return "span";
 }
 
-export function isBodyText(textStyle: TextStyle) {
-  return textStyle.name.startsWith("body");
-}
+export function createTextProps(
+  segmentBoundVariables: ReturnType<TextNode["getStyledTextSegments"]>[number]["boundVariables"],
+) {
+  const fontSizeBoundVariables = segmentBoundVariables?.fontSize;
+  const fontStyleBoundVariables = segmentBoundVariables?.fontStyle;
+  const lineHeightBoundVariables = segmentBoundVariables?.lineHeight;
 
-export function createHeadingProps(textStyle: TextStyle) {
-  const rest = textStyle.name.split("/")[1]?.split("-") ?? [];
-  const weight = rest.pop();
-  const size = rest.join("-");
-
-  if (!size) {
-    throw new Error(`Invalid heading text style name: ${textStyle.name}`);
-  }
-  if (weight === "default") {
-    return {
-      size,
-    };
-  }
-
-  return { weight, size };
-}
-
-export function createBodyProps(textStyle: TextStyle) {
-  const rest = textStyle.name.split("/")[1]?.split("-") ?? [];
-  const weight = rest.pop();
-  const size = rest.join("-");
-
-  if (!size) {
-    throw new Error(`Invalid body text style name: ${textStyle.name}`);
-  }
-  if (weight === "default") {
-    return {
-      size,
-    };
-  }
-
-  return { weight, size };
+  return {
+    fontSize: fontSizeBoundVariables ? getTypographyVariableName(fontSizeBoundVariables.id) : null,
+    fontWeight: fontStyleBoundVariables
+      ? getTypographyVariableName(fontStyleBoundVariables.id)
+      : null,
+    lineHeight: lineHeightBoundVariables
+      ? getTypographyVariableName(lineHeightBoundVariables.id)
+      : null,
+  };
 }

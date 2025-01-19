@@ -1,15 +1,18 @@
 import type React from "react";
 
-import { Stack } from "./stackflow";
+import { SnackbarProvider } from "./design-system/ui/snackbar";
 import { PreferenceProvider } from "./hooks/usePreference";
+import { Stack } from "./stackflow";
 import { Suspense } from "react";
 
 const App: React.FC = () => (
   <div>
     <PreferenceProvider>
-      <Suspense>
-        <Stack />
-      </Suspense>
+      <SnackbarProvider>
+        <Suspense>
+          <Stack />
+        </Suspense>
+      </SnackbarProvider>
     </PreferenceProvider>
   </div>
 );

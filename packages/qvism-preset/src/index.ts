@@ -1,38 +1,42 @@
-import actionButton from "./action-button.recipe";
-import actionChip from "./action-chip.recipe";
-import actionSheet from "./action-sheet";
-import actionSheetCloseButton from "./action-sheet-close-button";
-import actionSheetItem from "./action-sheet-item";
-import { appBar, appScreen } from "./app-screen.recipe";
-import avatarStack from "./avatar-stack.recipe";
-import avatar from "./avatar.recipe";
-import badge from "./badge.recipe";
-import bottomSheet from "./bottom-sheet";
-import callout from "./callout.recipe";
-import checkbox from "./checkbox.recipe";
-import chipTab from "./chip-tab.recipe";
-import chipTabs from "./chip-tabs.recipe";
-import controlChip from "./control-chip.recipe";
-import dialog from "./dialog.recipe";
-import extendedFab from "./extended-fab";
-import fab from "./fab.recipe";
-import helpBubble from "./help-bubble.recipe";
-import identityPlaceholder from "./identity-placeholder";
-import inlineBanner from "./inline-banner.recipe";
-import progressCircle from "./progress-circle.recipe";
-import radio from "./radio.recipe";
-import reactionButton from "./reaction-button.recipe";
-import segmentedControl from "./segmented-control.recipe";
-import { selectBox, selectBoxGroup } from "./select-box.recipe";
-import skeleton from "./skeleton";
-import switchRecipe from "./switch.recipe";
-import tab from "./tab.recipe";
-import tabs from "./tabs.recipe";
-import textButton from "./text-button.recipe";
-import textField from "./text-field.recipe";
-import text from "./text.recipe";
-import toggleButton from "./toggle-button.recipe";
-import visuallyHidden from "./visually-hidden";
+import actionButton from "./recipes/action-button";
+import actionChip from "./recipes/action-chip";
+import actionSheet from "./recipes/action-sheet";
+import actionSheetCloseButton from "./recipes/action-sheet-close-button";
+import actionSheetItem from "./recipes/action-sheet-item";
+import { appBar, appScreen } from "./recipes/app-screen.recipe";
+import avatar from "./recipes/avatar";
+import avatarStack from "./recipes/avatar-stack";
+import badge from "./recipes/badge";
+import bottomSheet from "./recipes/bottom-sheet";
+import callout from "./recipes/callout";
+import checkbox from "./recipes/checkbox";
+import chipTab from "./recipes/chip-tab";
+import chipTabs from "./recipes/chip-tabs";
+import controlChip from "./recipes/control-chip";
+import dialog from "./recipes/dialog";
+import extendedActionSheet from "./recipes/extended-action-sheet";
+import extendedActionSheetCloseButton from "./recipes/extended-action-sheet-close-button";
+import extendedActionSheetItem from "./recipes/extended-action-sheet-item";
+import extendedFab from "./recipes/extended-fab";
+import fab from "./recipes/fab";
+import helpBubble from "./recipes/help-bubble";
+import identityPlaceholder from "./recipes/identity-placeholder";
+import inlineBanner from "./recipes/inline-banner";
+import progressCircle from "./recipes/progress-circle";
+import radio from "./recipes/radio";
+import reactionButton from "./recipes/reaction-button";
+import segmentedControl from "./recipes/segmented-control";
+import { selectBox, selectBoxGroup } from "./recipes/select-box";
+import skeleton from "./recipes/skeleton";
+import { snackbar, snackbarRegion } from "./recipes/snackbar";
+import switchRecipe from "./recipes/switch";
+import tab from "./recipes/tab";
+import tabs from "./recipes/tabs";
+import text from "./recipes/text";
+import textButton from "./recipes/text-button";
+import textField from "./recipes/text-field";
+import toggleButton from "./recipes/toggle-button";
+import visuallyHidden from "./recipes/visually-hidden";
 
 const recipes = {
   avatar,
@@ -44,6 +48,9 @@ const recipes = {
   actionSheet,
   actionSheetItem,
   actionSheetCloseButton,
+  extendedActionSheet,
+  extendedActionSheetItem,
+  extendedActionSheetCloseButton,
   fab,
   extendedFab,
   badge,
@@ -66,6 +73,8 @@ const recipes = {
   chipTab,
   chipTabs,
   skeleton,
+  snackbar,
+  snackbarRegion,
   text,
   textButton,
   textField,

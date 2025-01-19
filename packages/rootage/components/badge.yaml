@@ -7,18 +7,18 @@ data:
   size=large:
     enabled:
       root:
-        minHeight: $unit.s6
-        paddingX: $unit.s2
-        paddingY: $unit.s1
+        minHeight: $dimension.s6
+        paddingX: $dimension.s2
+        paddingY: $dimension.s1
       label:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
   size=medium:
     enabled:
       root:
-        minHeight: $unit.s5
-        paddingX: $unit.s1_5
-        paddingY: $unit.s0_5
+        minHeight: $dimension.s5
+        paddingX: $dimension.s1_5
+        paddingY: $dimension.s0_5
       label:
         fontSize: $font-size.s1
         lineHeight: $line-height.s1
@@ -42,7 +42,7 @@ data:
     enabled:
       label:
         fontWeight: $font-weight.bold
-  variant=outlined:
+  variant=outline:
     enabled:
       root:
         borderWidth: 1px
@@ -57,10 +57,10 @@ data:
   tone=neutral, variant=solid:
     enabled:
       root:
-        color: $color.bg.neutral-solid
+        color: $color.bg.neutral-inverted
       label:
-        color: $color.fg.static-white
-  tone=neutral, variant=outlined:
+        color: $color.fg.neutral-inverted
+  tone=neutral, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.neutral
@@ -77,8 +77,8 @@ data:
       root:
         color: $color.bg.brand-solid
       label:
-        color: $color.fg.static-white
-  tone=brand, variant=outlined:
+        color: $color.palette.static-white
+  tone=brand, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.brand
@@ -95,11 +95,11 @@ data:
       root:
         color: $color.bg.informative-solid
       label:
-        color: $color.fg.static-white
-  tone=informative, variant=outlined:
+        color: $color.palette.static-white
+  tone=informative, variant=outline:
     enabled:
       root:
-        strokeColor: $color.fg.informative
+        strokeColor: $color.stroke.informative
       label:
         color: $color.fg.informative
   tone=positive, variant=weak:
@@ -113,8 +113,8 @@ data:
       root:
         color: $color.bg.positive-solid
       label:
-        color: $color.fg.static-white
-  tone=positive, variant=outlined:
+        color: $color.palette.static-white
+  tone=positive, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.positive
@@ -131,8 +131,8 @@ data:
       root:
         color: $color.bg.danger-solid
       label:
-        color: $color.fg.static-white
-  tone=danger, variant=outlined:
+        color: $color.palette.static-white
+  tone=danger, variant=outline:
     enabled:
       root:
         strokeColor: $color.stroke.danger

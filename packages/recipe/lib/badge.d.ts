@@ -10,7 +10,7 @@ declare interface BadgeVariant {
 /**
   * @default solid
   */
-  variant: "weak" | "solid" | "outlined";
+  variant: "weak" | "solid" | "outline";
 /**
   * @default neutral
   */

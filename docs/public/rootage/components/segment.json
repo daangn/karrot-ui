@@ -1,0 +1,63 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "segment",
+    "name": "Segment"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "height": "$dimension.s8",
+          "cornerRadius": "$radius.full",
+          "paddingX": "$dimension.s4",
+          "minWidth": "86px"
+        },
+        "label": {
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5",
+          "fontWeight": "$font-weight.medium",
+          "color": "$color.fg.neutral-muted"
+        }
+      },
+      "enabled,pressed": {
+        "root": {
+          "color": "$color.bg.neutral-weak-pressed"
+        }
+      },
+      "enabled,selected": {
+        "root": {
+          "color": "$color.bg.layer-default",
+          "shadow": {
+            "type": "shadow",
+            "value": [
+              {
+                "offsetX": "0px",
+                "offsetY": "1px",
+                "blur": "6px",
+                "spread": "0px",
+                "color": "#0000000d"
+              }
+            ]
+          },
+          "transformDuration": "$duration.s4",
+          "transformTimingFunction": "$timing-function.easing"
+        },
+        "label": {
+          "fontWeight": "$font-weight.bold",
+          "color": "$color.fg.neutral"
+        }
+      },
+      "enabled,selected,pressed": {
+        "root": {
+          "color": "$color.bg.layer-default-pressed"
+        }
+      },
+      "disabled": {
+        "label": {
+          "color": "$color.fg.disabled"
+        }
+      }
+    }
+  }
+}

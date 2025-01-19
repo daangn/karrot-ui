@@ -46,7 +46,7 @@ RadioGroupLabel.displayName = "RadioGroupLabel";
 export interface RadioGroupItemProps
   extends RadioItemProps,
     PrimitiveProps,
-    Omit<React.InputHTMLAttributes<HTMLLabelElement>, "value"> {}
+    Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "value"> {}
 
 export const RadioGroupItem = forwardRef<HTMLLabelElement, RadioGroupItemProps>((props, ref) => {
   const { value, invalid, disabled, ...otherProps } = props;
@@ -76,7 +76,7 @@ RadioGroupItemControl.displayName = "RadioGroupItemControl";
 
 export interface RadioGroupItemHiddenInputProps
   extends PrimitiveProps,
-    React.HTMLAttributes<HTMLInputElement> {}
+    React.InputHTMLAttributes<HTMLInputElement> {}
 
 export const RadioGroupItemHiddenInput = forwardRef<
   HTMLInputElement,

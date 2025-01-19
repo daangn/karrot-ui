@@ -2,7 +2,7 @@ declare interface CalloutVariant {
   /**
   * @default neutral
   */
-  variant: "neutral" | "informative" | "warning" | "danger" | "magic";
+  tone: "neutral" | "informative" | "warning" | "danger" | "magic";
 }
 
 declare type CalloutVariantMap = {
@@ -11,7 +11,7 @@ declare type CalloutVariantMap = {
 
 export declare type CalloutVariantProps = Partial<CalloutVariant>;
 
-export declare type CalloutSlotName = "root" | "icon" | "title" | "spacer" | "label" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
+export declare type CalloutSlotName = "root" | "icon" | "title" | "spacer" | "description" | "linkLabel" | "actionableIcon" | "dismissButton" | "dismissIcon";
 
 export declare const calloutVariantMap: CalloutVariantMap;
 

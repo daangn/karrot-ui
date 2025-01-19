@@ -3,7 +3,7 @@ export const vars = {
     "enabled": {
       "root": {
         "minHeight": "44px",
-        "paddingX": "var(--seed-v3-unit-s4)"
+        "paddingX": "var(--seed-v3-dimension-s4)"
       },
       "title": {
         "fontSize": "var(--seed-v3-font-size-s6-static)",
@@ -19,7 +19,7 @@ export const vars = {
     "enabled": {
       "root": {
         "minHeight": "56px",
-        "paddingX": "var(--seed-v3-unit-s4)"
+        "paddingX": "var(--seed-v3-dimension-s4)"
       },
       "title": {
         "fontSize": "var(--seed-v3-font-size-s6-static)",
@@ -50,10 +50,10 @@ export const vars = {
         "color": "#00000000"
       },
       "title": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   },

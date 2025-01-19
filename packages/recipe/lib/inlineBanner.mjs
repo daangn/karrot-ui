@@ -24,8 +24,8 @@ const inlineBannerSlotNames = [
     "inlineBanner__spacer"
   ],
   [
-    "label",
-    "inlineBanner__label"
+    "description",
+    "inlineBanner__description"
   ],
   [
     "linkLabel",

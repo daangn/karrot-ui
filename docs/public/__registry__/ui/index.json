@@ -32,7 +32,7 @@
   {
     "name": "bottom-sheet",
     "dependencies": [
-      "@seed-design/stackflow"
+      "@seed-design/react"
     ],
     "files": [
       "ui:bottom-sheet.tsx"
@@ -41,10 +41,19 @@
   {
     "name": "action-sheet",
     "dependencies": [
-      "@seed-design/stackflow"
+      "@seed-design/react"
     ],
     "files": [
       "ui:action-sheet.tsx"
+    ]
+  },
+  {
+    "name": "extended-action-sheet",
+    "dependencies": [
+      "@seed-design/react"
+    ],
+    "files": [
+      "ui:extended-action-sheet.tsx"
     ]
   },
   {
@@ -125,8 +134,7 @@
   {
     "name": "callout",
     "dependencies": [
-      "@radix-ui/react-slot",
-      "@seed-design/react-dismissible@0.0.0",
+      "@seed-design/react",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
@@ -162,12 +170,21 @@
   {
     "name": "inline-banner",
     "dependencies": [
-      "@radix-ui/react-slot",
-      "@seed-design/react-dismissible@0.0.0",
+      "@seed-design/react",
       "@daangn/react-monochrome-icon"
     ],
     "files": [
       "ui:inline-banner.tsx"
+    ]
+  },
+  {
+    "name": "snackbar",
+    "dependencies": [
+      "@seed-design/react",
+      "@daangn/react-monochrome-icon"
+    ],
+    "files": [
+      "ui:snackbar.tsx"
     ]
   },
   {
@@ -220,7 +237,7 @@
   {
     "name": "segmented-control",
     "dependencies": [
-      "@seed-design/react-segmented-control@0.0.0"
+      "@seed-design/react"
     ],
     "files": [
       "ui:segmented-control.tsx"

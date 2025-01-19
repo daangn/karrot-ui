@@ -69,10 +69,19 @@
       "path": "/components/reaction-button.json"
     },
     {
-      "path": "/components/switch.json"
+      "path": "/components/segment.json"
+    },
+    {
+      "path": "/components/segmented-control.json"
+    },
+    {
+      "path": "/components/select-box.json"
     },
     {
       "path": "/components/skeleton.json"
+    },
+    {
+      "path": "/components/switch.json"
     },
     {
       "path": "/components/tab.json"
@@ -82,6 +91,9 @@
     },
     {
       "path": "/components/text-button.json"
+    },
+    {
+      "path": "/components/text-field.json"
     },
     {
       "path": "/components/toggle-button.json"
@@ -108,7 +120,7 @@
       "path": "/radius.json"
     },
     {
-      "path": "/unit.json"
+      "path": "/dimension.json"
     },
     {
       "path": "/duration.json"

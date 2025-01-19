@@ -1,9 +1,17 @@
-import { InlineBanner, InlineBannerDescription } from "seed-design/ui/inline-banner";
+import {
+  ActionableInlineBanner,
+  DismissibleInlineBanner,
+  InlineBanner,
+  LinkInlineBanner,
+} from "seed-design/ui/inline-banner";
 
 export default function InlineBannerTextOnly() {
   return (
-    <InlineBanner variant="informativeWeak">
-      <InlineBannerDescription>다른 사람과 예약된 물품이 있어요.</InlineBannerDescription>
-    </InlineBanner>
+    <div className="flex flex-col gap-3 w-full">
+      <InlineBanner description="사업자 정보를 등록해주세요." />
+      <LinkInlineBanner description="사업자 정보를 등록해주세요." linkLabel="자세히보기" />
+      <ActionableInlineBanner description="사업자 정보를 등록해주세요." />
+      <DismissibleInlineBanner description="사업자 정보를 등록해주세요." />
+    </div>
   );
 }

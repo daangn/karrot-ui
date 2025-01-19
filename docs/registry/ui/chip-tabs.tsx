@@ -13,8 +13,6 @@ import { type ChipTabsVariant, chipTabs } from "@seed-design/recipe/chipTabs";
 import clsx from "clsx";
 import * as React from "react";
 
-import "@seed-design/stylesheet/chipTab.css";
-import "@seed-design/stylesheet/chipTabs.css";
 
 type Assign<T, U> = Omit<T, keyof U> & U;
 

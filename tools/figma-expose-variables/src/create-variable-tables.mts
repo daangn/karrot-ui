@@ -1,7 +1,7 @@
 import { VARIABLE_TABLE_NAMES } from "constants.mjs";
 import { getPreviewType } from "utils.mjs";
 
-type PreviewType = "foreground" | "background" | "stroke";
+export type PreviewType = "foreground" | "background" | "stroke";
 
 export interface VariableTable {
   name: FrameNode["name"];
@@ -15,9 +15,9 @@ export interface VariableTable {
       isDark: boolean;
       variablesByPrefix: {
         prefix: string;
-        previewType: PreviewType;
         variableInfos: {
           variable: Variable;
+          previewType: PreviewType;
           matchedSwatches: FrameNode[];
         }[];
       }[];
@@ -55,7 +55,7 @@ export async function createVariableTables({
         if (!variable) continue;
 
         const variablePrefix = variable.name.split("/")[0];
-        const previewType = getPreviewType(variablePrefix);
+        const previewType = getPreviewType(variable.name);
         const isVariablePalette = variablePrefix.startsWith("palette");
 
         let frameToDraw: VariableTable | undefined = isVariablePalette
@@ -74,13 +74,7 @@ export async function createVariableTables({
                 id: mode.modeId,
                 name: mode.name,
                 isDark: mode.name.toLowerCase().includes("dark"),
-                variablesByPrefix: [
-                  {
-                    prefix: variablePrefix,
-                    previewType,
-                    variableInfos: [],
-                  },
-                ],
+                variablesByPrefix: [{ prefix: variablePrefix, variableInfos: [] }],
               })),
             })),
           };
@@ -98,13 +92,7 @@ export async function createVariableTables({
               id: mode.modeId,
               name: mode.name,
               isDark: mode.name.toLowerCase().includes("dark"),
-              variablesByPrefix: [
-                {
-                  prefix: variablePrefix,
-                  previewType: previewType as PreviewType,
-                  variableInfos: [],
-                },
-              ],
+              variablesByPrefix: [{ prefix: variablePrefix, variableInfos: [] }],
             })),
           };
 
@@ -118,13 +106,7 @@ export async function createVariableTables({
             id: mode.modeId,
             name: mode.name,
             isDark: mode.name.toLowerCase().includes("dark"),
-            variablesByPrefix: [
-              {
-                prefix: variablePrefix,
-                previewType: previewType as PreviewType,
-                variableInfos: [],
-              },
-            ],
+            variablesByPrefix: [{ prefix: variablePrefix, variableInfos: [] }],
           };
 
           collectionToDraw.modes.push(newMode);
@@ -135,11 +117,7 @@ export async function createVariableTables({
           ({ prefix }) => prefix === variablePrefix,
         );
         if (!variablesByPrefixToDraw) {
-          const newVariablesByPrefix = {
-            prefix: variablePrefix,
-            previewType: previewType as PreviewType,
-            variableInfos: [],
-          };
+          const newVariablesByPrefix = { prefix: variablePrefix, variableInfos: [] };
 
           modeToDraw.variablesByPrefix.push(newVariablesByPrefix);
           variablesByPrefixToDraw = newVariablesByPrefix;
@@ -157,7 +135,7 @@ export async function createVariableTables({
           return nodeToCheck.fills[0].boundVariables?.color?.id === variable.id;
         });
 
-        variablesByPrefixToDraw.variableInfos.push({ variable, matchedSwatches });
+        variablesByPrefixToDraw.variableInfos.push({ variable, previewType, matchedSwatches });
       }
     }
   }

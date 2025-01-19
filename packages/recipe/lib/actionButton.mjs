@@ -24,8 +24,8 @@ const actionButtonSlotNames = [
     "actionButton__suffixIcon"
   ],
   [
-    "progressCircle",
-    "actionButton__progressCircle"
+    "progressIndicator",
+    "actionButton__progressIndicator"
   ]
 ];
 

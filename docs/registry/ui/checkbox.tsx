@@ -5,7 +5,6 @@ import IconMinusFatFill from "@daangn/react-monochrome-icon/IconMinusFatFill";
 import { Checkbox as SeedCheckbox } from "@seed-design/react";
 import * as React from "react";
 
-import "@seed-design/stylesheet/checkbox.css";
 
 export interface CheckboxProps extends SeedCheckbox.RootProps {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;

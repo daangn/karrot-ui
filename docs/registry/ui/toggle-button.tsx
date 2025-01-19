@@ -1,11 +1,8 @@
 "use client";
 
-import "@seed-design/stylesheet/progressCircle.css";
-// TODO: we have to ensure load order between toggleButton.css and progressCircle.css. should we bundle them together?
-import "@seed-design/stylesheet/toggleButton.css";
-
 import { ToggleButton as SeedToggleButton } from "@seed-design/react";
 import * as React from "react";
+import { ProgressCircle } from "./progress-circle";
 
 export interface ToggleButtonProps extends SeedToggleButton.RootProps {
   prefixIcon?: React.ReactNode;
@@ -29,7 +26,11 @@ export const ToggleButton = React.forwardRef<
         {prefixIcon && <SeedToggleButton.PrefixIcon svg={prefixIcon} />}
         <SeedToggleButton.Label>{children}</SeedToggleButton.Label>
         {suffixIcon && <SeedToggleButton.SuffixIcon svg={suffixIcon} />}
-        {loading ? <SeedToggleButton.ProgressCircle /> : null}
+        {loading ? (
+          <SeedToggleButton.ProgressIndicator>
+            <ProgressCircle size="inherit" tone="inherit" />
+          </SeedToggleButton.ProgressIndicator>
+        ) : null}
       </SeedToggleButton.Root>
     );
   },

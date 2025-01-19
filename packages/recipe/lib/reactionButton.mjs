@@ -20,8 +20,8 @@ const reactionButtonSlotNames = [
     "reactionButton__prefixIcon"
   ],
   [
-    "progressCircle",
-    "reactionButton__progressCircle"
+    "progressIndicator",
+    "reactionButton__progressIndicator"
   ]
 ];
 

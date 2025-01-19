@@ -7,7 +7,7 @@ export interface FlexProps extends Omit<BoxProps, "display"> {
    */
   display?: "flex" | "none";
 
-  direction?: "row" | "column" | "row-reverse" | "column-reverse";
+  direction?: "row" | "column" | "rowReverse" | "columnReverse";
 
   wrap?: "wrap" | "nowrap";
 }

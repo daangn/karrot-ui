@@ -3,9 +3,9 @@ import type {
   ColorFg,
   ColorPalette,
   ColorStroke,
-  HorizontalSpacing,
+  Dimension,
   Radius,
-  Unit,
+  SpacingX,
 } from "@seed-design/vars";
 import { vars } from "@seed-design/vars";
 import clsx from "clsx";
@@ -20,12 +20,13 @@ function handleColor(color: string | undefined) {
   return vars.$color[type][value] ?? undefined;
 }
 
-function handleSpacing(spacing: string | undefined) {
-  if (!spacing) {
+function handleDimension(dimension: string | undefined) {
+  if (!dimension) {
     return undefined;
   }
+  const [type, value] = dimension.split(".");
   // @ts-ignore
-  return vars.$unit[spacing] ?? vars.$horizontalSpacing[spacing] ?? undefined;
+  return vars.$dimension[dimension] ?? vars.$dimension[type][value] ?? undefined;
 }
 
 function handleSize(size: string | undefined) {
@@ -36,7 +37,7 @@ function handleSize(size: string | undefined) {
     return "100%";
   }
   // @ts-ignore
-  return vars.$unit[size] ?? size;
+  return vars.$dimension[size] ?? size;
 }
 
 function handleRadius(radius: string | undefined) {
@@ -47,7 +48,66 @@ function handleRadius(radius: string | undefined) {
   return vars.$radius[radius] ?? undefined;
 }
 
+function handleDisplay(
+  display: "block" | "flex" | "inlineFlex" | "inline" | "inlineBlock" | "none" | undefined,
+) {
+  if (!display) {
+    return undefined;
+  }
+
+  return {
+    block: "block",
+    flex: "flex",
+    inlineFlex: "inline-flex",
+    inline: "inline",
+    inlineBlock: "inline-block",
+    none: "none",
+  }[display];
+}
+
+function handleFlexDirection(flexDirection: string | undefined) {
+  if (!flexDirection) {
+    return undefined;
+  }
+
+  return {
+    row: "row",
+    column: "column",
+    rowReverse: "row-reverse",
+    columnReverse: "column-reverse",
+  }[flexDirection];
+}
+
+function handleJustifyContent(justifyContent: string | undefined) {
+  if (!justifyContent) {
+    return undefined;
+  }
+
+  return {
+    flexStart: "flex-start",
+    flexEnd: "flex-end",
+    center: "center",
+    spaceBetween: "space-between",
+    spaceAround: "space-around",
+  }[justifyContent];
+}
+
+function handleAlignItems(alignItems: string | undefined) {
+  if (!alignItems) {
+    return undefined;
+  }
+
+  return {
+    flexStart: "flex-start",
+    flexEnd: "flex-end",
+    center: "center",
+    stretch: "stretch",
+  }[alignItems];
+}
+
 export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
+  as?: React.ElementType;
+
   background?: `bg.${ColorBg}` | `palette.${ColorPalette}`;
 
   color?: `fg.${ColorFg}` | `palette.${ColorPalette}`;
@@ -74,17 +134,17 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   borderBottomLeftRadius?: Radius;
 
-  width?: Unit | "full" | (string & {});
+  width?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  minWidth?: Unit | "full" | (string & {});
+  minWidth?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  maxWidth?: Unit | "full" | (string & {});
+  maxWidth?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  height?: Unit | "full" | (string & {});
+  height?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  minHeight?: Unit | "full" | (string & {});
+  minHeight?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
-  maxHeight?: Unit | "full" | (string & {});
+  maxHeight?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
 
   top?: 0;
 
@@ -94,21 +154,21 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   bottom?: 0;
 
-  padding?: Unit;
+  padding?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingX?: Unit | HorizontalSpacing;
+  paddingX?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingY?: Unit;
+  paddingY?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingTop?: Unit;
+  paddingTop?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingRight?: Unit | HorizontalSpacing;
+  paddingRight?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingBottom?: Unit;
+  paddingBottom?: Dimension | `spacingX.${SpacingX}`;
 
-  paddingLeft?: Unit | HorizontalSpacing;
+  paddingLeft?: Dimension | `spacingX.${SpacingX}`;
 
-  display?: "block" | "flex" | "inline" | "inlineBlock" | "none";
+  display?: "block" | "flex" | "inlineFlex" | "inline" | "inlineBlock" | "none";
 
   position?: "relative" | "absolute" | "fixed" | "sticky";
 
@@ -122,21 +182,24 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   // Flex
 
-  flexDirection?: "row" | "column" | "row-reverse" | "column-reverse";
+  flexDirection?: "row" | "column" | "rowReverse" | "columnReverse";
 
   flexWrap?: "wrap" | "nowrap";
 
-  justifyContent?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around";
+  justifyContent?: "flexStart" | "flexEnd" | "center" | "spaceBetween" | "spaceAround";
 
-  alignItems?: "flex-start" | "flex-end" | "center" | "stretch";
+  alignItems?: "flexStart" | "flexEnd" | "center" | "stretch";
 
-  alignContent?: "flex-start" | "flex-end" | "center" | "stretch";
+  alignContent?: "flexStart" | "flexEnd" | "center" | "stretch";
 
-  gap?: Unit;
+  alignSelf?: "flexStart" | "flexEnd" | "center" | "stretch";
+
+  gap?: Dimension | `spacingX.${SpacingX}`;
 }
 
 export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   const {
+    as: Comp = "div",
     background,
     color,
     borderColor,
@@ -174,6 +237,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
     justifyContent,
     alignItems,
     alignContent,
+    alignSelf,
     gap,
     className,
     style,
@@ -181,7 +245,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   } = props;
 
   return (
-    <div
+    <Comp
       ref={ref}
       className={clsx("seed-box", className)}
       style={
@@ -209,25 +273,26 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-height": handleSize(height),
           "--seed-box-min-height": handleSize(minHeight),
           "--seed-box-max-height": handleSize(maxHeight),
-          "--seed-box-padding": handleSpacing(padding),
-          "--seed-box-padding-x": handleSpacing(paddingX),
-          "--seed-box-padding-y": handleSpacing(paddingY),
-          "--seed-box-padding-top": handleSpacing(paddingTop),
-          "--seed-box-padding-right": handleSpacing(paddingRight),
-          "--seed-box-padding-bottom": handleSpacing(paddingBottom),
-          "--seed-box-padding-left": handleSpacing(paddingLeft),
-          "--seed-box-display": display,
+          "--seed-box-padding": handleDimension(padding),
+          "--seed-box-padding-x": handleDimension(paddingX),
+          "--seed-box-padding-y": handleDimension(paddingY),
+          "--seed-box-padding-top": handleDimension(paddingTop),
+          "--seed-box-padding-right": handleDimension(paddingRight),
+          "--seed-box-padding-bottom": handleDimension(paddingBottom),
+          "--seed-box-padding-left": handleDimension(paddingLeft),
+          "--seed-box-gap": handleDimension(gap),
+          "--seed-box-display": handleDisplay(display),
           "--seed-box-position": position,
           "--seed-box-overflow-x": overflowX,
           "--seed-box-overflow-y": overflowY,
           "--seed-box-flex-grow": flexGrow,
           "--seed-box-flex-shrink": flexShrink,
-          "--seed-box-flex-direction": flexDirection,
+          "--seed-box-flex-direction": handleFlexDirection(flexDirection),
           "--seed-box-flex-wrap": flexWrap,
-          "--seed-box-justify-content": justifyContent,
-          "--seed-box-align-items": alignItems,
-          "--seed-box-align-content": alignContent,
-          "--seed-box-gap": gap ? `var(--seed-v3-unit-${gap})` : undefined,
+          "--seed-box-justify-content": handleJustifyContent(justifyContent),
+          "--seed-box-align-items": handleAlignItems(alignItems),
+          "--seed-box-align-content": handleAlignItems(alignContent),
+          "--seed-box-align-self": handleAlignItems(alignSelf),
           ...style,
         } as React.CSSProperties
       }

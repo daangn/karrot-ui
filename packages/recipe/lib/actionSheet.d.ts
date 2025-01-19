@@ -8,7 +8,7 @@ declare type ActionSheetVariantMap = {
 
 export declare type ActionSheetVariantProps = Partial<ActionSheetVariant>;
 
-export declare type ActionSheetSlotName = "backdrop" | "container" | "content" | "list" | "group" | "footer";
+export declare type ActionSheetSlotName = "backdrop" | "positioner" | "content" | "header" | "title" | "description" | "list";
 
 export declare const actionSheetVariantMap: ActionSheetVariantMap;
 

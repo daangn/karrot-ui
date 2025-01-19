@@ -1,4 +1,4 @@
 {
   "title": "색상",
-  "pages": ["color-system", "color-role", "palette"]
+  "pages": ["color-system", "color-role", "palette", "migration-to-v3"]
 }

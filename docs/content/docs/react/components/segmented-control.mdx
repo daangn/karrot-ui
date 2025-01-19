@@ -4,7 +4,7 @@ title: Segmented Control
 
 <ComponentExample name="segmented-control-preview" />
 
-### 설치
+## 설치
 
 <Installation name="segmented-control" />
 
@@ -23,13 +23,16 @@ title: Segmented Control
 
 </Callout>
 
-### `Segment`
+### `SegmentedControlSegment`
 
-<ReactTypeTable path="./registry/ui/segmented-control.tsx" name="SegmentProps" />
+<ReactTypeTable
+  path="./registry/ui/segmented-control.tsx"
+  name="SegmentedControlSegmentProps"
+/>
 
 ## 예제
 
-### Status
+### State
 
 #### Disabled
 
@@ -37,13 +40,13 @@ title: Segmented Control
 
 ### 최소 너비보다 넓은 옵션 레이블
 
-Pill 형태의 `Segment` 한 개는 86px의 최소 너비를 가져요. 제공한 옵션 중 이 너비를 초과하는 옵션이 있다면, 가장 긴 옵션의 너비에 모든 옵션의 너비가 맞춰져요.
+Pill 형태의 `SegmentedControlSegment` 한 개는 86px의 최소 너비를 가져요. 제공한 옵션 중 이 너비를 초과하는 옵션이 있다면, 가장 긴 옵션의 너비에 모든 옵션의 너비가 맞춰져요.
 
 <ComponentExample name="segmented-control-long-label" />
 
 ### Fixed Width
 
-`SegmentControl`의 `style` prop에 `width`를 제공해서 직접 너비를 설정할 수 있어요.
+`SegmentedControl`의 `style` prop에 `width`를 제공해서 직접 너비를 설정할 수 있어요.
 
 <Callout type="info" title="지정한 너비가 무시되는 경우">
 

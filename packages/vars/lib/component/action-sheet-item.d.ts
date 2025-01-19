@@ -2,16 +2,12 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-weak)",
-        "minHeight": "52px",
-        "paddingX": "var(--seed-v3-unit-s3_5)",
-        "paddingY": "var(--seed-v3-unit-s4)",
+        "color": "var(--seed-v3-color-bg-layer-floating)",
+        "minHeight": "50px",
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
+        "paddingY": "var(--seed-v3-dimension-s3_5)",
         "strokeBottomWidth": "1px",
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)",
-        "gap": "var(--seed-v3-unit-s3)"
-      },
-      "prefixIcon": {
-        "size": "22px"
+        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -21,15 +17,12 @@ export declare const vars: {
     },
     "pressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-weak-pressed)"
+        "color": "var(--seed-v3-color-bg-layer-floating-pressed)"
       }
     }
   },
   "toneNeutral": {
     "enabled": {
-      "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-neutral)"
-      },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)"
       }
@@ -37,9 +30,6 @@ export declare const vars: {
   },
   "toneDanger": {
     "enabled": {
-      "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-danger)"
-      },
       "label": {
         "color": "var(--seed-v3-color-fg-danger)"
       }

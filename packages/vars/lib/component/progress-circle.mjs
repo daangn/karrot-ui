@@ -2,7 +2,7 @@ export const vars = {
   "size40": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s10)",
+        "size": "var(--seed-v3-dimension-s10)",
         "thickness": "5px"
       }
     }
@@ -10,7 +10,7 @@ export const vars = {
   "size24": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-unit-s6)",
+        "size": "var(--seed-v3-dimension-s6)",
         "thickness": "3px"
       }
     }
@@ -60,7 +60,7 @@ export const vars = {
         "color": "var(--seed-v3-color-palette-static-white-alpha-200)"
       },
       "range": {
-        "color": "var(--seed-v3-color-bg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   }

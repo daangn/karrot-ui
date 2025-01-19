@@ -127,8 +127,8 @@
     font-weight: var(--seed-v3-font-weight-regular);
 }
 .textField__header--size_xlarge {
-    padding-bottom: var(--seed-v3-unit-s3);
-    gap: var(--seed-v3-unit-s1_5);
+    padding-bottom: var(--seed-v3-dimension-s3);
+    gap: var(--seed-v3-dimension-s1_5);
 }
 .textField__label--size_xlarge {
     font-size: var(--seed-v3-font-size-s5);
@@ -141,11 +141,11 @@
 .textField__field--size_xlarge {
     min-height: 56px;
     border-radius: var(--seed-v3-radius-s2_5);
-    gap: var(--seed-v3-unit-s2);
-    padding-inline: var(--seed-v3-unit-s4);
+    gap: var(--seed-v3-dimension-s2);
+    padding-inline: var(--seed-v3-dimension-s4);
 }
 .textField__value--size_xlarge {
-    padding-block: var(--seed-v3-unit-s3);
+    padding-block: var(--seed-v3-dimension-s3);
     font-size: var(--seed-v3-font-size-s6);
     line-height: var(--seed-v3-line-height-s6);
 }
@@ -154,20 +154,20 @@
     line-height: var(--seed-v3-line-height-s6);
 }
 .textField__prefixIcon--size_xlarge {
-    width: var(--seed-v3-unit-s5);
-    height: var(--seed-v3-unit-s5);
+    width: var(--seed-v3-dimension-s5);
+    height: var(--seed-v3-dimension-s5);
 }
 .textField__suffixText--size_xlarge {
     font-size: var(--seed-v3-font-size-s6);
     line-height: var(--seed-v3-line-height-s6);
 }
 .textField__suffixIcon--size_xlarge {
-    width: var(--seed-v3-unit-s5);
-    height: var(--seed-v3-unit-s5);
+    width: var(--seed-v3-dimension-s5);
+    height: var(--seed-v3-dimension-s5);
 }
 .textField__footer--size_xlarge {
-    gap: var(--seed-v3-unit-s3_5);
-    padding-top: var(--seed-v3-unit-s2);
+    gap: var(--seed-v3-dimension-s3_5);
+    padding-top: var(--seed-v3-dimension-s2);
     min-height: 20px;
 }
 .textField__description--size_xlarge {
@@ -179,9 +179,9 @@
     line-height: var(--seed-v3-line-height-s4);
 }
 .textField__errorIcon--size_xlarge {
-    width: var(--seed-v3-unit-s4);
-    height: var(--seed-v3-unit-s4);
-    margin-right: var(--seed-v3-unit-s1);
+    width: var(--seed-v3-dimension-s4);
+    height: var(--seed-v3-dimension-s4);
+    margin-right: var(--seed-v3-dimension-s1);
 }
 .textField__characterCount--size_xlarge {
     font-size: var(--seed-v3-font-size-s2);
@@ -192,8 +192,8 @@
     line-height: var(--seed-v3-line-height-s2);
 }
 .textField__header--size_large {
-    padding-bottom: var(--seed-v3-unit-s3);
-    gap: var(--seed-v3-unit-s1_5);
+    padding-bottom: var(--seed-v3-dimension-s3);
+    gap: var(--seed-v3-dimension-s1_5);
 }
 .textField__label--size_large {
     font-size: var(--seed-v3-font-size-s5);
@@ -206,11 +206,11 @@
 .textField__field--size_large {
     min-height: 52px;
     border-radius: var(--seed-v3-radius-s2_5);
-    gap: var(--seed-v3-unit-s2);
-    padding-inline: var(--seed-v3-unit-s4);
+    gap: var(--seed-v3-dimension-s2);
+    padding-inline: var(--seed-v3-dimension-s4);
 }
 .textField__value--size_large {
-    padding-block: var(--seed-v3-unit-s3);
+    padding-block: var(--seed-v3-dimension-s3);
     font-size: var(--seed-v3-font-size-s5);
     line-height: var(--seed-v3-line-height-s5);
 }
@@ -219,20 +219,20 @@
     line-height: var(--seed-v3-line-height-s5);
 }
 .textField__prefixIcon--size_large {
-    width: var(--seed-v3-unit-s5);
-    height: var(--seed-v3-unit-s5);
+    width: var(--seed-v3-dimension-s5);
+    height: var(--seed-v3-dimension-s5);
 }
 .textField__suffixText--size_large {
     font-size: var(--seed-v3-font-size-s5);
     line-height: var(--seed-v3-line-height-s5);
 }
 .textField__suffixIcon--size_large {
-    width: var(--seed-v3-unit-s5);
-    height: var(--seed-v3-unit-s5);
+    width: var(--seed-v3-dimension-s5);
+    height: var(--seed-v3-dimension-s5);
 }
 .textField__footer--size_large {
-    gap: var(--seed-v3-unit-s3_5);
-    padding-top: var(--seed-v3-unit-s2);
+    gap: var(--seed-v3-dimension-s3_5);
+    padding-top: var(--seed-v3-dimension-s2);
     min-height: 20px;
 }
 .textField__description--size_large {
@@ -244,9 +244,9 @@
     line-height: var(--seed-v3-line-height-s4);
 }
 .textField__errorIcon--size_large {
-    width: var(--seed-v3-unit-s4);
-    height: var(--seed-v3-unit-s4);
-    margin-right: var(--seed-v3-unit-s1);
+    width: var(--seed-v3-dimension-s4);
+    height: var(--seed-v3-dimension-s4);
+    margin-right: var(--seed-v3-dimension-s1);
 }
 .textField__characterCount--size_large {
     font-size: var(--seed-v3-font-size-s2);
@@ -257,7 +257,7 @@
     line-height: var(--seed-v3-line-height-s2);
 }
 .textField__header--size_medium {
-    padding-bottom: var(--seed-v3-unit-s3);
+    padding-bottom: var(--seed-v3-dimension-s3);
 }
 .textField__label--size_medium {
     font-size: var(--seed-v3-font-size-s4);
@@ -270,11 +270,11 @@
 .textField__field--size_medium {
     min-height: 40px;
     border-radius: var(--seed-v3-radius-s2);
-    gap: var(--seed-v3-unit-s1_5);
-    padding-inline: var(--seed-v3-unit-s3_5);
+    gap: var(--seed-v3-dimension-s1_5);
+    padding-inline: var(--seed-v3-dimension-s3_5);
 }
 .textField__value--size_medium {
-    padding-block: var(--seed-v3-unit-s2_5);
+    padding-block: var(--seed-v3-dimension-s2_5);
     font-size: var(--seed-v3-font-size-s4);
     line-height: var(--seed-v3-line-height-s4);
 }
@@ -283,21 +283,21 @@
     line-height: var(--seed-v3-line-height-s4);
 }
 .textField__prefixIcon--size_medium {
-    width: var(--seed-v3-unit-s4);
-    height: var(--seed-v3-unit-s4);
+    width: var(--seed-v3-dimension-s4);
+    height: var(--seed-v3-dimension-s4);
 }
 .textField__suffixText--size_medium {
     font-size: var(--seed-v3-font-size-s4);
     line-height: var(--seed-v3-line-height-s4);
 }
 .textField__suffixIcon--size_medium {
-    width: var(--seed-v3-unit-s4);
-    height: var(--seed-v3-unit-s4);
+    width: var(--seed-v3-dimension-s4);
+    height: var(--seed-v3-dimension-s4);
 }
 .textField__footer--size_medium {
-    gap: var(--seed-v3-unit-s3_5);
-    padding-top: var(--seed-v3-unit-s2);
-    min-height: var(--seed-v3-unit-s4);
+    gap: var(--seed-v3-dimension-s3_5);
+    padding-top: var(--seed-v3-dimension-s2);
+    min-height: var(--seed-v3-dimension-s4);
 }
 .textField__description--size_medium {
     font-size: var(--seed-v3-font-size-s2);
@@ -308,9 +308,9 @@
     line-height: var(--seed-v3-line-height-s2);
 }
 .textField__errorIcon--size_medium {
-    width: var(--seed-v3-unit-s3_5);
-    height: var(--seed-v3-unit-s3_5);
-    margin-right: var(--seed-v3-unit-s1);
+    width: var(--seed-v3-dimension-s3_5);
+    height: var(--seed-v3-dimension-s3_5);
+    margin-right: var(--seed-v3-dimension-s1);
 }
 .textField__characterCount--size_medium {
     font-size: var(--seed-v3-font-size-s2);

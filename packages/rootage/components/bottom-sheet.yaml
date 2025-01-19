@@ -23,14 +23,16 @@ data:
         exitDuration: $duration.s4
         exitTimingFunction: $timing-function.exit
       header:
-        gap: $unit.s2
-        paddingX: $horizontal-spacing.global-gutter
-        paddingTop: $unit.s6
-        paddingBottom: $unit.s4
+        gap: $dimension.s2
+        paddingX: $dimension.spacing-x.global-gutter
+        paddingTop: $dimension.s6
+        paddingBottom: $dimension.s4
+      body:
+        paddingX: $dimension.spacing-x.global-gutter
       footer:
-        paddingX: $horizontal-spacing.global-gutter
-        paddingTop: $unit.s3
-        paddingBottom: $unit.s4
+        paddingX: $dimension.spacing-x.global-gutter
+        paddingTop: $dimension.s3
+        paddingBottom: $dimension.s4
       title:
         color: $color.fg.neutral
         fontSize: $font-size.s8
@@ -46,8 +48,8 @@ data:
         cornerRadius: $radius.full
         targetSize: 44px
         size: 28px
-        fromTop: $unit.s5
-        fromRight: $unit.s5
+        fromTop: $dimension.s5
+        fromRight: $dimension.s5
       closeIcon:
         color: $color.fg.neutral
         size: 14px

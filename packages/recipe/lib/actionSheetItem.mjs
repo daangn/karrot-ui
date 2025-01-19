@@ -8,10 +8,6 @@ const actionSheetItemSlotNames = [
     "actionSheetItem__root"
   ],
   [
-    "prefixIcon",
-    "actionSheetItem__prefixIcon"
-  ],
-  [
     "label",
     "actionSheetItem__label"
   ]

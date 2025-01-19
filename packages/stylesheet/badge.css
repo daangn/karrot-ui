@@ -10,18 +10,18 @@
     text-decoration: none
 }
 .badge__root--size_medium {
-    min-height: var(--seed-v3-unit-s5);
-    padding-inline: var(--seed-v3-unit-s1_5);
-    padding-block: var(--seed-v3-unit-s0_5)
+    min-height: var(--seed-v3-dimension-s5);
+    padding-inline: var(--seed-v3-dimension-s1_5);
+    padding-block: var(--seed-v3-dimension-s0_5)
 }
 .badge__label--size_medium {
     font-size: var(--seed-v3-font-size-s1);
     line-height: var(--seed-v3-line-height-s1)
 }
 .badge__root--size_large {
-    min-height: var(--seed-v3-unit-s6);
-    padding-inline: var(--seed-v3-unit-s2);
-    padding-block: var(--seed-v3-unit-s1)
+    min-height: var(--seed-v3-dimension-s6);
+    padding-inline: var(--seed-v3-dimension-s2);
+    padding-block: var(--seed-v3-dimension-s1)
 }
 .badge__label--size_large {
     font-size: var(--seed-v3-font-size-s2);
@@ -36,11 +36,11 @@
 .badge__label--variant_solid {
     font-weight: var(--seed-v3-font-weight-bold)
 }
-.badge__root--variant_outlined {
+.badge__root--variant_outline {
     border-style: solid;
     border-width: 1px
 }
-.badge__label--variant_outlined {
+.badge__label--variant_outline {
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .badge__root--shape_rectangle-size_medium {
@@ -56,15 +56,15 @@
     color: var(--seed-v3-color-fg-neutral)
 }
 .badge__root--tone_neutral-variant_solid {
-    background-color: var(--seed-v3-color-bg-neutral-solid)
+    background-color: var(--seed-v3-color-bg-neutral-inverted)
 }
 .badge__label--tone_neutral-variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+    color: var(--seed-v3-color-fg-neutral-inverted)
 }
-.badge__root--tone_neutral-variant_outlined {
+.badge__root--tone_neutral-variant_outline {
     border-color: var(--seed-v3-color-stroke-neutral)
 }
-.badge__label--tone_neutral-variant_outlined {
+.badge__label--tone_neutral-variant_outline {
     color: var(--seed-v3-color-fg-neutral)
 }
 .badge__root--tone_brand-variant_weak {
@@ -77,12 +77,12 @@
     background-color: var(--seed-v3-color-bg-brand-solid)
 }
 .badge__label--tone_brand-variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+    color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_brand-variant_outlined {
+.badge__root--tone_brand-variant_outline {
     border-color: var(--seed-v3-color-stroke-brand)
 }
-.badge__label--tone_brand-variant_outlined {
+.badge__label--tone_brand-variant_outline {
     color: var(--seed-v3-color-fg-brand)
 }
 .badge__root--tone_informative-variant_weak {
@@ -95,12 +95,12 @@
     background-color: var(--seed-v3-color-bg-informative-solid)
 }
 .badge__label--tone_informative-variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+    color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_informative-variant_outlined {
-    border-color: var(--seed-v3-color-fg-informative)
+.badge__root--tone_informative-variant_outline {
+    border-color: var(--seed-v3-color-stroke-informative)
 }
-.badge__label--tone_informative-variant_outlined {
+.badge__label--tone_informative-variant_outline {
     color: var(--seed-v3-color-fg-informative)
 }
 .badge__root--tone_positive-variant_weak {
@@ -113,12 +113,12 @@
     background-color: var(--seed-v3-color-bg-positive-solid)
 }
 .badge__label--tone_positive-variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+    color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_positive-variant_outlined {
+.badge__root--tone_positive-variant_outline {
     border-color: var(--seed-v3-color-stroke-positive)
 }
-.badge__label--tone_positive-variant_outlined {
+.badge__label--tone_positive-variant_outline {
     color: var(--seed-v3-color-fg-positive)
 }
 .badge__root--tone_danger-variant_weak {
@@ -131,11 +131,11 @@
     background-color: var(--seed-v3-color-bg-danger-solid)
 }
 .badge__label--tone_danger-variant_solid {
-    color: var(--seed-v3-color-fg-static-white)
+    color: var(--seed-v3-color-palette-static-white)
 }
-.badge__root--tone_danger-variant_outlined {
+.badge__root--tone_danger-variant_outline {
     border-color: var(--seed-v3-color-stroke-danger)
 }
-.badge__label--tone_danger-variant_outlined {
+.badge__label--tone_danger-variant_outline {
     color: var(--seed-v3-color-fg-danger)
 }

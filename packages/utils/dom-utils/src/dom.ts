@@ -4,28 +4,29 @@ type Booleanish = boolean | "true" | "false";
 export const dataAttr = (guard: boolean | undefined) => {
   return guard ? "" : undefined;
 };
-export const ariaAttr = (guard: boolean | undefined) => {
-  return guard ? "true" : (undefined as Booleanish);
+export const ariaAttr = (guard: boolean | undefined): Booleanish | undefined => {
+  return guard ? "true" : undefined;
 };
 
-type DataAttr = Record<`data-${string}`, string | undefined>;
+type DataAttr = { [key in `data-${string}`]?: string | undefined };
+type WithoutRef<T> = Omit<T, "ref">;
 
 export const elementProps = (
   props: React.HTMLAttributes<HTMLElement> & DataAttr,
-): React.HTMLAttributes<HTMLElement> => props;
+): WithoutRef<React.HTMLAttributes<HTMLElement>> => props;
 
 export const inputProps = (
   props: React.InputHTMLAttributes<HTMLInputElement> & DataAttr,
-): React.InputHTMLAttributes<HTMLInputElement> => props;
+): WithoutRef<React.InputHTMLAttributes<HTMLInputElement>> => props;
 
 export const labelProps = (
   props: React.LabelHTMLAttributes<HTMLLabelElement> & DataAttr,
-): React.LabelHTMLAttributes<HTMLLabelElement> => props;
+): WithoutRef<React.LabelHTMLAttributes<HTMLLabelElement>> => props;
 
 export const buttonProps = (
   props: React.ButtonHTMLAttributes<HTMLButtonElement> & DataAttr,
-): React.ButtonHTMLAttributes<HTMLButtonElement> => props;
+): WithoutRef<React.ButtonHTMLAttributes<HTMLButtonElement>> => props;
 
 export const imgProps = (
   props: React.ImgHTMLAttributes<HTMLImageElement> & DataAttr,
-): React.ImgHTMLAttributes<HTMLImageElement> => props;
+): WithoutRef<React.ImgHTMLAttributes<HTMLImageElement>> => props;

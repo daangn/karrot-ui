@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/helpBubble.css";
-
 import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
 import { HelpBubble as SeedHelpBubble } from "@seed-design/react";
 import { forwardRef } from "react";

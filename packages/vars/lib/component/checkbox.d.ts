@@ -5,7 +5,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "root": {
-        "gap": "var(--seed-v3-unit-s2)"
+        "gap": "var(--seed-v3-dimension-s2)"
       }
     }
   },
@@ -35,7 +35,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-brand-solid)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "pressed": {
@@ -48,7 +48,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-brand-solid-pressed)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-static-white)"
+        "color": "var(--seed-v3-color-palette-static-white)"
       }
     },
     "disabled": {
@@ -110,32 +110,17 @@ export declare const vars: {
       }
     }
   },
-  "sizeSmall": {
-    "enabled": {
-      "root": {
-        "minHeight": "var(--seed-v3-unit-s7)"
-      },
-      "label": {
-        "fontSize": "var(--seed-v3-font-size-s3)",
-        "lineHeight": "var(--seed-v3-line-height-s3)"
-      },
-      "control": {
-        "size": "var(--seed-v3-unit-s4)",
-        "cornerRadius": "var(--seed-v3-radius-s1)"
-      }
-    }
-  },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s8)"
+        "minHeight": "var(--seed-v3-dimension-s8)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s4)",
         "lineHeight": "var(--seed-v3-line-height-s4)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-s5)",
+        "size": "var(--seed-v3-dimension-s5)",
         "cornerRadius": "var(--seed-v3-radius-s1)"
       }
     }
@@ -143,50 +128,22 @@ export declare const vars: {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-unit-s9)"
+        "minHeight": "var(--seed-v3-dimension-s9)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s5)",
         "lineHeight": "var(--seed-v3-line-height-s5)"
       },
       "control": {
-        "size": "var(--seed-v3-unit-s6)",
+        "size": "var(--seed-v3-dimension-s6)",
         "cornerRadius": "var(--seed-v3-radius-s1_5)"
-      }
-    }
-  },
-  "variantGhostSizeSmall": {
-    "enabled": {
-      "icon": {
-        "size": "13.5px"
-      }
-    }
-  },
-  "variantGhostSizeMedium": {
-    "enabled": {
-      "icon": {
-        "size": "15px"
-      }
-    }
-  },
-  "variantGhostSizeLarge": {
-    "enabled": {
-      "icon": {
-        "size": "18px"
-      }
-    }
-  },
-  "variantSquareSizeSmall": {
-    "enabled": {
-      "icon": {
-        "size": "10.5px"
       }
     }
   },
   "variantSquareSizeMedium": {
     "enabled": {
       "icon": {
-        "size": "11.67px"
+        "size": "12px"
       }
     }
   },
@@ -194,6 +151,20 @@ export declare const vars: {
     "enabled": {
       "icon": {
         "size": "14px"
+      }
+    }
+  },
+  "variantGhostSizeMedium": {
+    "enabled": {
+      "icon": {
+        "size": "14px"
+      }
+    }
+  },
+  "variantGhostSizeLarge": {
+    "enabled": {
+      "icon": {
+        "size": "18px"
       }
     }
   }

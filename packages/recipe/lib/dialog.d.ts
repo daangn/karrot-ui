@@ -1,8 +1,5 @@
 declare interface DialogVariant {
-  /**
-  * @default horizontal
-  */
-  footerLayout: "horizontal" | "vertical";
+  
 }
 
 declare type DialogVariantMap = {
@@ -11,7 +8,7 @@ declare type DialogVariantMap = {
 
 export declare type DialogVariantProps = Partial<DialogVariant>;
 
-export declare type DialogSlotName = "backdrop" | "container" | "content" | "header" | "footer" | "action" | "title" | "description";
+export declare type DialogSlotName = "positioner" | "backdrop" | "content" | "header" | "footer" | "action" | "title" | "description";
 
 export declare const dialogVariantMap: DialogVariantMap;
 
