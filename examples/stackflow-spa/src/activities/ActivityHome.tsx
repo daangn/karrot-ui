@@ -4,8 +4,8 @@ import { AppScreen } from "@stackflow/plugin-basic-ui";
 
 import { useSnackbarAdapter } from "@seed-design/react";
 import { receive } from "@stackflow/compat-await-push";
-import { useRef } from "react";
 import { List, ListItem } from "../components/List";
+import { DialogPushTrigger } from "../design-system/stackflow/DialogPushTrigger";
 import { ActionButton } from "../design-system/ui/action-button";
 import {
   AlertDialogContent,
@@ -19,22 +19,21 @@ import {
 import { Snackbar } from "../design-system/ui/snackbar";
 import { useStepDialog } from "../design-system/util/use-step-dialog";
 import { useFlow } from "../stackflow";
+import { actionSheetCallback } from "./ActivityActionSheet";
+import { extendedActionSheetCallback } from "./ActivityExtendedActionSheet";
 
 const ActivityHome: ActivityComponentType = () => {
   const { push } = useFlow();
   const { dialogProps } = useStepDialog();
-  const ref = useRef<HTMLDivElement>(null);
   const snackbarAdapter = useSnackbarAdapter();
 
   return (
     <AppScreen appBar={{ title: "Home" }}>
       <div
-        ref={ref}
         style={
           {
             overflow: "auto",
             height: "calc(100vh - var(--stackflow-plugin-basic-ui-app-bar-height))",
-            "--layer-index": 100,
           } as React.CSSProperties
         }
       >
@@ -45,6 +44,7 @@ const ActivityHome: ActivityComponentType = () => {
           <ListItem onClick={() => push("ActivityHelpBubble", {})} title="HelpBubble" />
           <ListItem onClick={() => push("ActivityLayerBar", {})} title="LayerBar" />
           <ListItem onClick={() => push("ActivityTransparentBar", {})} title="TransparentBar" />
+
           <AlertDialogRoot {...dialogProps}>
             <AlertDialogTrigger asChild>
               <ListItem title="AlertDialog (step)" />
@@ -61,6 +61,7 @@ const ActivityHome: ActivityComponentType = () => {
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialogRoot>
+
           <ListItem
             onClick={async () => {
               const result = await receive<any>(push("ActivityAlertDialog", {}));
@@ -69,7 +70,33 @@ const ActivityHome: ActivityComponentType = () => {
             title="AlertDialog (activity)"
           />
           <ListItem onClick={() => push("ActivityBottomSheet", {})} title="BottomSheet" />
-          <ListItem onClick={() => push("ActivityActionSheet", {})} title="ActionSheet" />
+          <DialogPushTrigger
+            callbackActivity={actionSheetCallback}
+            params={{}}
+            onPop={(result) => {
+              snackbarAdapter.create({
+                render: () => <Snackbar message={`ActionSheet: ${result?.action}`} />,
+              });
+            }}
+          >
+            <ListItem title="ActionSheet" />
+          </DialogPushTrigger>
+          <DialogPushTrigger
+            callbackActivity={extendedActionSheetCallback}
+            params={{}}
+            onPop={(result) => {
+              snackbarAdapter.create({
+                render: () => (
+                  <Snackbar
+                    message={`ExtendedActionSheet: ${result?.action}`}
+                    actionLabel="Dance"
+                  />
+                ),
+              });
+            }}
+          >
+            <ListItem title="ExtendedActionSheet" />
+          </DialogPushTrigger>
           <ListItem
             onClick={() =>
               snackbarAdapter.create({

@@ -1348,8 +1348,10 @@
 
 .actionSheet__header {
   box-shadow: inset 0 calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral);
+  padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
+  padding-block: var(--seed-v3-dimension-s3_5);
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   display: flex;
 }
 
@@ -1494,6 +1496,20 @@
   --seed-enter-translate-y: 100%;
   --seed-enter-opacity: 1;
   --seed-enter-scale: 1;
+}
+
+.extendedActionSheet__header {
+  align-items: center;
+  gap: var(--seed-v3-dimension-s1);
+  padding-bottom: var(--seed-v3-dimension-s4);
+  flex-direction: column;
+  display: flex;
+}
+
+.extendedActionSheet__title {
+  font-size: var(--seed-v3-font-size-s6);
+  line-height: var(--seed-v3-line-height-s6);
+  font-weight: var(--seed-v3-font-weight-bold);
 }
 
 .extendedActionSheet__list {

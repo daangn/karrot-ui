@@ -3,8 +3,6 @@
 import { ActionChip as SeedActionChip } from "@seed-design/react";
 import * as React from "react";
 
-import "@seed-design/stylesheet/actionChip.css";
-
 export interface ActionChipProps extends SeedActionChip.RootProps {
   prefixIcon?: React.ReactNode;
 

@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/progressCircle.css";
-
 import { ProgressCircle as SeedProgressCircle } from "@seed-design/react";
 import * as React from "react";
 

@@ -61,6 +61,19 @@ const extendedActionSheet = defineRecipe({
         translateY: "100%",
       }),
     },
+    header: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+
+      gap: vars.base.enabled.header.gap,
+      paddingBottom: vars.base.enabled.header.paddingBottom,
+    },
+    title: {
+      fontSize: vars.base.enabled.title.fontSize,
+      lineHeight: vars.base.enabled.title.lineHeight,
+      fontWeight: vars.base.enabled.title.fontWeight,
+    },
     list: {
       display: "flex",
       flexDirection: "column",

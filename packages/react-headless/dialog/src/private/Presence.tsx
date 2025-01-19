@@ -1,4 +1,3 @@
-import { composeRefs } from "@radix-ui/react-compose-refs";
 import { Primitive } from "@seed-design/react-primitive";
 import { useRef } from "react";
 import { usePresence } from "./usePresence";
@@ -27,7 +26,7 @@ export const Presence = (props: PresenceProps) => {
   }
 
   return (
-    <Primitive.div ref={composeRefs(ref)} asChild>
+    <Primitive.div ref={ref as any} asChild>
       {props.children}
     </Primitive.div>
   );

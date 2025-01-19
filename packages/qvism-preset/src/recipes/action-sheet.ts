@@ -62,8 +62,11 @@ const actionSheet = defineRecipe({
     header: {
       display: "flex",
       flexDirection: "column",
-      alignItems: "stretch",
+      alignItems: "center",
+
       boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.header.strokeBottomWidth}) 0 ${vars.base.enabled.header.strokeColor}`,
+      paddingInline: vars.base.enabled.header.paddingX,
+      paddingBlock: vars.base.enabled.header.paddingY,
     },
     title: {
       fontSize: vars.base.enabled.title.fontSize,
