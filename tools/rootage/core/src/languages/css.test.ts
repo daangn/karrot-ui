@@ -149,7 +149,7 @@ test("getTokenCss should generate css code", () => {
     }
 
     :root {
-      --seed-v3-unit-s1: 4px;
+      --seed-v3-dimension-s1: 4px;
     }"
   `);
 });
