@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/textButton.css";
-
 import { TextButton as SeedTextButton } from "@seed-design/react";
 import * as React from "react";
 

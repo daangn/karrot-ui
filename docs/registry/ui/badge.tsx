@@ -3,7 +3,6 @@
 import { Badge as SeedBadge } from "@seed-design/react";
 import * as React from "react";
 
-import "@seed-design/stylesheet/badge.css";
 
 export interface BadgeProps extends SeedBadge.RootProps {}
 

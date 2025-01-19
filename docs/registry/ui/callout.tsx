@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/callout.css";
-
 import { Callout as SeedCallout } from "@seed-design/react";
 import * as React from "react";
 

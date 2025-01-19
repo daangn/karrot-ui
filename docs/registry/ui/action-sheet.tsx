@@ -1,9 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/actionSheet.css";
-import "@seed-design/stylesheet/actionSheetCloseButton.css";
-import "@seed-design/stylesheet/actionSheetItem.css";
-
 import { ActionSheet as SeedActionSheet } from "@seed-design/react";
 import { forwardRef } from "react";
 

@@ -7,7 +7,6 @@ import {
 import clsx from "clsx";
 import * as React from "react";
 
-import "@seed-design/stylesheet/identityPlaceholder.css";
 
 export interface IdentityPlaceholderProps
   extends React.HTMLAttributes<HTMLDivElement>,

@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/reactionButton.css";
-
 import { ReactionButton as SeedReactionButton } from "@seed-design/react";
 import * as React from "react";
 import { ProgressCircle } from "./progress-circle";

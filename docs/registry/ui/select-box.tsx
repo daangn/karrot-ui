@@ -7,8 +7,6 @@ import {
 } from "@seed-design/react";
 import * as React from "react";
 
-import "@seed-design/stylesheet/selectBox.css";
-import "@seed-design/stylesheet/selectBoxGroup.css";
 
 export interface RadioSelectBoxRootProps extends SeedRadioSelectBox.RootProps {}
 

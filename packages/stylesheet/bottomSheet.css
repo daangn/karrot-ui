@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: flex-end;
     inset: 0;
+    overscroll-behavior-y: none;
     --sheet-z-index: 2;
     z-index: calc(var(--sheet-z-index) + var(--layer-index, 0));
 }

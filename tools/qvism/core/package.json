@@ -30,6 +30,7 @@
     "access": "public"
   },
   "dependencies": {
+    "lightningcss": "^1.29.1",
     "outdent": "^0.8.0",
     "postcss": "^8.4.30",
     "postcss-js": "^4.0.1",

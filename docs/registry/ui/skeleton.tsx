@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/skeleton.css";
-
 import {
   Skeleton as SeedSkeleton,
   type SkeletonProps as SeedSkeletonProps,

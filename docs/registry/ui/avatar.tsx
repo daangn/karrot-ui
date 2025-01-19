@@ -1,8 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/avatar.css";
-import "@seed-design/stylesheet/avatarStack.css";
-
 import { Avatar as SeedAvatar } from "@seed-design/react";
 import * as React from "react";
 

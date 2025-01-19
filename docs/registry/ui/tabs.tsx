@@ -14,8 +14,6 @@ import {
 import { tabs } from "@seed-design/recipe/tabs";
 import { tab } from "@seed-design/recipe/tab";
 
-import "@seed-design/stylesheet/tabs.css";
-import "@seed-design/stylesheet/tab.css";
 
 type Assign<T, U> = Omit<T, keyof U> & U;
 

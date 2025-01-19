@@ -4,7 +4,6 @@ import { ControlChip as SeedControlChip } from "@seed-design/react";
 import { Checkbox, RadioGroup } from "@seed-design/react/primitive";
 import * as React from "react";
 
-import "@seed-design/stylesheet/controlChip.css";
 
 export interface ToggleControlChipProps
   extends SeedControlChip.RootBaseProps,

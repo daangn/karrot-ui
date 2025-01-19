@@ -24,6 +24,7 @@ const bottomSheet = defineRecipe({
       justifyContent: "center",
       alignItems: "flex-end",
       inset: 0,
+      overscrollBehaviorY: "none",
 
       "--sheet-z-index": "2",
       zIndex: "calc(var(--sheet-z-index) + var(--layer-index, 0))",

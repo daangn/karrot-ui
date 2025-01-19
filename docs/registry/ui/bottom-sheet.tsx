@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/bottomSheet.css";
-
 import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
 import { BottomSheet as SeedBottomSheet } from "@seed-design/react";
 import { forwardRef } from "react";

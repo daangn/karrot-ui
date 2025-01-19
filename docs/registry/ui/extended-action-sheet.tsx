@@ -1,9 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/extendedActionSheet.css";
-import "@seed-design/stylesheet/extendedActionSheetCloseButton.css";
-import "@seed-design/stylesheet/extendedActionSheetItem.css";
-
 import { ExtendedActionSheet as SeedExtendedActionSheet } from "@seed-design/react";
 import { forwardRef } from "react";
 

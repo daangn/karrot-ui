@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/fab.css";
-
 import { Fab as SeedFab } from "@seed-design/react";
 import * as React from "react";
 

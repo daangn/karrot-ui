@@ -49,3 +49,5 @@ export interface SlotRecipeDefinition<S extends string, T extends SlotRecipeVari
   defaultVariants: Required<RecipeSelection<T>>;
   keyframes?: Record<string, Partial<Record<"from" | "to" | `${string}%`, StyleObject>>>;
 }
+
+export type Config = Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;

@@ -4,7 +4,7 @@ import { isBooleanString, not } from "./logic";
 import { escapeReservedWord } from "./reserved-words";
 import type { SlotRecipeDefinition, SlotRecipeVariantRecord, StyleObject } from "./types";
 
-const capitalize = (str: string) => str[0].toUpperCase() + str.slice(1);
+const capitalize = (str: string) => str[0]!.toUpperCase() + str.slice(1);
 
 const stringLiteralType = (key: string) => `"${key}"`;
 
@@ -16,7 +16,7 @@ const generateVariantInterface = (
   >["defaultVariants"],
 ) => {
   const generateVariantType = (
-    variantName: string,
+    variantName: keyof typeof defaultVariants,
     variant: Record<string, Partial<Record<string, StyleObject>>>,
   ) => {
     const values = Object.keys(variant);
@@ -41,7 +41,9 @@ const generateVariantInterface = (
   };
 
   return Object.entries(variants)
-    .map(([variantName, variant]) => generateVariantType(variantName, variant))
+    .map(([variantName, variant]) =>
+      generateVariantType(variantName as keyof typeof defaultVariants, variant),
+    )
     .join("\n");
 };
 

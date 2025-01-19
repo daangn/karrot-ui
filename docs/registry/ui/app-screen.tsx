@@ -1,8 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/screen.css";
-import "@seed-design/stylesheet/topNavigation.css";
-
 import {
   IconChevronLeftLine,
   IconXmarkLine,

@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/inlineBanner.css";
-
 import { InlineBanner as SeedInlineBanner } from "@seed-design/react";
 import * as React from "react";
 

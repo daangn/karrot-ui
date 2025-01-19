@@ -5,7 +5,6 @@ import {
   type TextProps as SeedTextProps,
 } from "@seed-design/react";
 
-import "@seed-design/stylesheet/text.css";
 
 export type TextProps = SeedTextProps;
 

@@ -1,7 +1,5 @@
 "use client";
 
-import "@seed-design/stylesheet/segmentedControl.css";
-
 import { SegmentedControl as SeedSegmentedControl } from "@seed-design/react";
 import * as React from "react";
 
