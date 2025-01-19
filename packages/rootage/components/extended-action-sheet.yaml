@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: extended-action-sheet
+  name: Extended Action Sheet
+data:
+  base:
+    enabled:
+      backdrop:
+        color: $color.bg.overlay
+        enterDuration: $duration.s2
+        enterTimingFunction: $timing-function.enter
+        enterOpacity: 0
+        exitDuration: $duration.s2
+        exitTimingFunction: $timing-function.exit
+        exitOpacity: 0
+      content:
+        color: $color.bg.layer-floating
+        paddingX: $dimension.spacing-x.global-gutter
+        paddingY: $dimension.s4
+        cornerTopRadius: $radius.s5
+        enterDuration: $duration.s6
+        enterTimingFunction: $timing-function.enter-expressive
+        # Do we need translateY definition here?
+        exitDuration: $duration.s4
+        exitTimingFunction: $timing-function.exit
+      header:
+        gap: $dimension.s1
+        paddingBottom: $dimension.s4
+      title:
+        fontSize: $font-size.s6
+        lineHeight: $line-height.s6
+        fontWeight: $font-weight.bold
+        color: $color.fg.neutral
+      # We might need description in near future
+      list:
+        gap: $dimension.s2_5
+      group:
+        cornerRadius: $radius.s4
+      footer:
+        paddingTop: $dimension.s2_5

@@ -8,16 +8,12 @@
     "base": {
       "enabled": {
         "root": {
-          "color": "$color.bg.neutral-weak",
-          "minHeight": "52px",
-          "paddingX": "$dimension.s3_5",
-          "paddingY": "$dimension.s4",
+          "color": "$color.bg.layer-floating",
+          "minHeight": "50px",
+          "paddingX": "$dimension.spacing-x.global-gutter",
+          "paddingY": "$dimension.s3_5",
           "strokeBottomWidth": "1px",
-          "strokeColor": "$color.stroke.neutral",
-          "gap": "$dimension.s3"
-        },
-        "prefixIcon": {
-          "size": "22px"
+          "strokeColor": "$color.stroke.neutral"
         },
         "label": {
           "fontSize": "$font-size.s5",
@@ -27,15 +23,12 @@
       },
       "pressed": {
         "root": {
-          "color": "$color.bg.neutral-weak-pressed"
+          "color": "$color.bg.layer-floating-pressed"
         }
       }
     },
     "tone=neutral": {
       "enabled": {
-        "prefixIcon": {
-          "color": "$color.fg.neutral"
-        },
         "label": {
           "color": "$color.fg.neutral"
         }
@@ -43,9 +36,6 @@
     },
     "tone=danger": {
       "enabled": {
-        "prefixIcon": {
-          "color": "$color.fg.danger"
-        },
         "label": {
           "color": "$color.fg.danger"
         }

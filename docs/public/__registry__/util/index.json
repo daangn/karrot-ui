@@ -1,14 +1,1 @@
-[
-  {
-    "name": "types",
-    "files": [
-      "util:types.ts"
-    ]
-  },
-  {
-    "name": "visuallyHidden",
-    "files": [
-      "util:visuallyHidden.ts"
-    ]
-  }
-]
+[]

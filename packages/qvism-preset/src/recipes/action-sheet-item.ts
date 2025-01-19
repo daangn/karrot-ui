@@ -4,18 +4,17 @@ import { active, pseudo } from "../utils/pseudo";
 
 const actionSheetItem = defineRecipe({
   name: "actionSheetItem",
-  slots: ["root", "prefixIcon", "label"],
+  slots: ["root", "label"],
   base: {
     root: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "center",
 
       backgroundColor: vars.base.enabled.root.color,
       minHeight: vars.base.enabled.root.minHeight,
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
-      gap: vars.base.enabled.root.gap,
       boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.root.strokeBottomWidth}) 0 ${vars.base.enabled.root.strokeColor}`,
 
       [pseudo(active)]: {
@@ -27,13 +26,6 @@ const actionSheetItem = defineRecipe({
       lineHeight: vars.base.enabled.label.lineHeight,
       fontWeight: vars.base.enabled.label.fontWeight,
     },
-    prefixIcon: {
-      display: "inline-flex",
-      flexShrink: 0,
-
-      width: vars.base.enabled.prefixIcon.size,
-      height: vars.base.enabled.prefixIcon.size,
-    },
   },
   variants: {
     tone: {
@@ -41,16 +33,10 @@ const actionSheetItem = defineRecipe({
         label: {
           color: vars.toneNeutral.enabled.label.color,
         },
-        prefixIcon: {
-          color: vars.toneNeutral.enabled.prefixIcon.color,
-        },
       },
       danger: {
         label: {
           color: vars.toneDanger.enabled.label.color,
-        },
-        prefixIcon: {
-          color: vars.toneDanger.enabled.prefixIcon.color,
         },
       },
     },

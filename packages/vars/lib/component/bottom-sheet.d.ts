@@ -24,6 +24,9 @@ export declare const vars: {
         "paddingTop": "var(--seed-v3-dimension-s6)",
         "paddingBottom": "var(--seed-v3-dimension-s4)"
       },
+      "body": {
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)"
+      },
       "footer": {
         "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
         "paddingTop": "var(--seed-v3-dimension-s3)",

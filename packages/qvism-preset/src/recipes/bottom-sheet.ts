@@ -1,15 +1,16 @@
 import { bottomSheet as vars } from "@seed-design/vars/component";
-import { defineRecipe } from "../utils/define-recipe";
 import { enterAnimation, exitAnimation } from "../utils/animation";
-import { pseudo } from "../utils/pseudo";
+import { defineRecipe } from "../utils/define-recipe";
+import { not, open, pseudo } from "../utils/pseudo";
 
 const bottomSheet = defineRecipe({
   name: "bottomSheet",
   slots: [
+    "positioner",
     "backdrop",
-    "container",
     "content",
     "header",
+    "body",
     "footer",
     "title",
     "description",
@@ -17,30 +18,32 @@ const bottomSheet = defineRecipe({
     "closeIcon",
   ],
   base: {
-    backdrop: {
-      position: "fixed",
-      inset: 0,
-      background: vars.base.enabled.backdrop.color,
-
-      [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
-        exitAnimation({
-          timingFunction: vars.base.enabled.backdrop.exitTimingFunction,
-          duration: vars.base.enabled.backdrop.exitDuration,
-          opacity: vars.base.enabled.backdrop.exitOpacity,
-        }),
-      [pseudo(":is([data-transition-state='enter-active'],[data-transition-state='enter-done'])")]:
-        enterAnimation({
-          timingFunction: vars.base.enabled.backdrop.enterTimingFunction,
-          duration: vars.base.enabled.backdrop.enterDuration,
-          opacity: vars.base.enabled.backdrop.enterOpacity,
-        }),
-    },
-    container: {
+    positioner: {
       position: "fixed",
       display: "flex",
       justifyContent: "center",
       alignItems: "flex-end",
       inset: 0,
+
+      "--sheet-z-index": "2",
+      zIndex: "calc(var(--sheet-z-index) + var(--layer-index, 0))",
+    },
+    backdrop: {
+      position: "fixed",
+      inset: 0,
+      background: vars.base.enabled.backdrop.color,
+      zIndex: "calc(var(--sheet-z-index) + var(--layer-index, 0))",
+
+      [pseudo(not(open))]: exitAnimation({
+        timingFunction: vars.base.enabled.backdrop.exitTimingFunction,
+        duration: vars.base.enabled.backdrop.exitDuration,
+        opacity: vars.base.enabled.backdrop.exitOpacity,
+      }),
+      [pseudo(open)]: enterAnimation({
+        timingFunction: vars.base.enabled.backdrop.enterTimingFunction,
+        duration: vars.base.enabled.backdrop.enterDuration,
+        opacity: vars.base.enabled.backdrop.enterOpacity,
+      }),
     },
     content: {
       position: "relative",
@@ -49,23 +52,22 @@ const bottomSheet = defineRecipe({
       flexDirection: "column",
       boxSizing: "border-box",
       wordBreak: "break-all",
+      zIndex: "calc(var(--sheet-z-index) + var(--layer-index, 0))",
 
       background: vars.base.enabled.content.color,
       borderTopLeftRadius: vars.base.enabled.content.cornerTopRadius,
       borderTopRightRadius: vars.base.enabled.content.cornerTopRadius,
 
-      [pseudo(":is([data-transition-state='exit-active'],[data-transition-state='exit-done'])")]:
-        exitAnimation({
-          timingFunction: vars.base.enabled.content.exitTimingFunction,
-          duration: vars.base.enabled.content.exitDuration,
-          translateY: "100%",
-        }),
-      [pseudo(":is([data-transition-state='enter-active'],[data-transition-state='enter-done'])")]:
-        enterAnimation({
-          timingFunction: vars.base.enabled.content.enterTimingFunction,
-          duration: vars.base.enabled.content.enterDuration,
-          translateY: "100%",
-        }),
+      [pseudo(not(open))]: exitAnimation({
+        timingFunction: vars.base.enabled.content.exitTimingFunction,
+        duration: vars.base.enabled.content.exitDuration,
+        translateY: "100%",
+      }),
+      [pseudo(open)]: enterAnimation({
+        timingFunction: vars.base.enabled.content.enterTimingFunction,
+        duration: vars.base.enabled.content.enterDuration,
+        translateY: "100%",
+      }),
     },
     header: {
       display: "flex",
@@ -92,6 +94,12 @@ const bottomSheet = defineRecipe({
 
       margin: 0,
       whiteSpace: "pre-wrap",
+    },
+    body: {
+      display: "flex",
+      flexDirection: "column",
+
+      paddingInline: vars.base.enabled.body.paddingX,
     },
     footer: {
       display: "flex",

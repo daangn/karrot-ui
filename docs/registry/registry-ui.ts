@@ -23,13 +23,18 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "bottom-sheet",
-    dependencies: ["@seed-design/stackflow"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:bottom-sheet.tsx"],
   },
   {
     name: "action-sheet",
-    dependencies: ["@seed-design/stackflow"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:action-sheet.tsx"],
+  },
+  {
+    name: "extended-action-sheet",
+    dependencies: ["@seed-design/react"],
+    files: ["ui:extended-action-sheet.tsx"],
   },
   {
     name: "avatar",

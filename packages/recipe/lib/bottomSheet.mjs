@@ -4,12 +4,12 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 
 const bottomSheetSlotNames = [
   [
-    "backdrop",
-    "bottomSheet__backdrop"
+    "positioner",
+    "bottomSheet__positioner"
   ],
   [
-    "container",
-    "bottomSheet__container"
+    "backdrop",
+    "bottomSheet__backdrop"
   ],
   [
     "content",
@@ -18,6 +18,10 @@ const bottomSheetSlotNames = [
   [
     "header",
     "bottomSheet__header"
+  ],
+  [
+    "body",
+    "bottomSheet__body"
   ],
   [
     "footer",

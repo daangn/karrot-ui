@@ -11,7 +11,7 @@ declare type ActionSheetItemVariantMap = {
 
 export declare type ActionSheetItemVariantProps = Partial<ActionSheetItemVariant>;
 
-export declare type ActionSheetItemSlotName = "root" | "prefixIcon" | "label";
+export declare type ActionSheetItemSlotName = "root" | "label";
 
 export declare const actionSheetItemVariantMap: ActionSheetItemVariantMap;
 

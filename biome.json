@@ -51,7 +51,8 @@
         "noDangerouslySetInnerHtml": "warn"
       },
       "suspicious": {
-        "noExplicitAny": "info"
+        "noExplicitAny": "info",
+        "noArrayIndexKey": "info"
       },
       "a11y": {
         "useKeyWithClickEvents": "off",

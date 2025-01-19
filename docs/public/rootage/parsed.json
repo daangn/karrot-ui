@@ -9023,25 +9023,15 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-weak"
+                        "key": "layer-floating"
                       }
                     },
                     {
                       "key": "minHeight",
                       "value": {
                         "type": "dimension",
-                        "value": 52,
+                        "value": 50,
                         "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "cornerRadius",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "radius"
-                        ],
-                        "key": "s3"
                       }
                     },
                     {
@@ -9049,9 +9039,10 @@
                       "value": {
                         "type": "token",
                         "group": [
-                          "dimension"
+                          "dimension",
+                          "spacing-x"
                         ],
-                        "key": "s5"
+                        "key": "global-gutter"
                       }
                     },
                     {
@@ -9063,33 +9054,12 @@
                         ],
                         "key": "s3_5"
                       }
-                    },
-                    {
-                      "key": "gap",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "s3"
-                      }
                     }
                   ]
                 },
                 {
                   "key": "label",
                   "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "neutral"
-                      }
-                    },
                     {
                       "key": "fontSize",
                       "value": {
@@ -9117,7 +9087,18 @@
                         "group": [
                           "font-weight"
                         ],
-                        "key": "medium"
+                        "key": "bold"
+                      }
+                    },
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral"
                       }
                     }
                   ]
@@ -9140,7 +9121,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-weak-pressed"
+                        "key": "layer-floating-pressed"
                       }
                     }
                   ]
@@ -9174,14 +9155,14 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-weak"
+                        "key": "layer-floating"
                       }
                     },
                     {
                       "key": "minHeight",
                       "value": {
                         "type": "dimension",
-                        "value": 52,
+                        "value": 50,
                         "unit": "px"
                       }
                     },
@@ -9190,9 +9171,10 @@
                       "value": {
                         "type": "token",
                         "group": [
-                          "dimension"
+                          "dimension",
+                          "spacing-x"
                         ],
-                        "key": "s3_5"
+                        "key": "global-gutter"
                       }
                     },
                     {
@@ -9202,7 +9184,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "s3_5"
                       }
                     },
                     {
@@ -9222,29 +9204,6 @@
                           "stroke"
                         ],
                         "key": "neutral"
-                      }
-                    },
-                    {
-                      "key": "gap",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "s3"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "prefixIcon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "dimension",
-                        "value": 22,
-                        "unit": "px"
                       }
                     }
                   ]
@@ -9302,7 +9261,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "neutral-weak-pressed"
+                        "key": "layer-floating-pressed"
                       }
                     }
                   ]
@@ -9321,22 +9280,6 @@
                 "enabled"
               ],
               "slot": [
-                {
-                  "key": "prefixIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "neutral"
-                      }
-                    }
-                  ]
-                },
                 {
                   "key": "label",
                   "property": [
@@ -9367,22 +9310,6 @@
                 "enabled"
               ],
               "slot": [
-                {
-                  "key": "prefixIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "danger"
-                      }
-                    }
-                  ]
-                },
                 {
                   "key": "label",
                   "property": [
@@ -9502,34 +9429,13 @@
                       }
                     },
                     {
-                      "key": "paddingX",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension",
-                          "spacing-x"
-                        ],
-                        "key": "global-gutter"
-                      }
-                    },
-                    {
-                      "key": "paddingY",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
                       "key": "cornerTopRadius",
                       "value": {
                         "type": "token",
                         "group": [
                           "radius"
                         ],
-                        "key": "s6"
+                        "key": "s5"
                       }
                     },
                     {
@@ -9575,46 +9481,138 @@
                   ]
                 },
                 {
-                  "key": "list",
+                  "key": "header",
                   "property": [
                     {
-                      "key": "gap",
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
                       "value": {
                         "type": "token",
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "s3_5"
+                      }
+                    },
+                    {
+                      "key": "strokeBottomWidth",
+                      "value": {
+                        "type": "dimension",
+                        "value": 1,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "neutral"
                       }
                     }
                   ]
                 },
                 {
-                  "key": "group",
+                  "key": "title",
                   "property": [
                     {
-                      "key": "cornerRadius",
+                      "key": "fontSize",
                       "value": {
                         "type": "token",
                         "group": [
-                          "radius"
+                          "font-size"
                         ],
                         "key": "s4"
                       }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    },
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral-muted"
+                      }
                     }
                   ]
                 },
                 {
-                  "key": "footer",
+                  "key": "description",
                   "property": [
                     {
-                      "key": "paddingTop",
+                      "key": "fontSize",
                       "value": {
                         "type": "token",
                         "group": [
-                          "dimension"
+                          "font-size"
                         ],
-                        "key": "s2_5"
+                        "key": "s3"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s3"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
+                      }
+                    },
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral-muted"
                       }
                     }
                   ]
@@ -11446,6 +11444,22 @@
                           "dimension"
                         ],
                         "key": "s4"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "body",
+                  "property": [
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
                       }
                     }
                   ]
@@ -15093,6 +15107,702 @@
                           "font-weight"
                         ],
                         "key": "regular"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "extended-action-sheet-close-button",
+      "name": "Extended Action Sheet Close Button",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "neutral-weak"
+                      }
+                    },
+                    {
+                      "key": "minHeight",
+                      "value": {
+                        "type": "dimension",
+                        "value": 52,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "s3"
+                      }
+                    },
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s3_5"
+                      }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s3"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral"
+                      }
+                    },
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "medium"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": [
+                "pressed"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "neutral-weak-pressed"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "extended-action-sheet-item",
+      "name": "Extended Action Sheet Item",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "neutral-weak"
+                      }
+                    },
+                    {
+                      "key": "minHeight",
+                      "value": {
+                        "type": "dimension",
+                        "value": 52,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s3_5"
+                      }
+                    },
+                    {
+                      "key": "strokeBottomWidth",
+                      "value": {
+                        "type": "dimension",
+                        "value": 1,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "neutral"
+                      }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s3_5"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "size",
+                      "value": {
+                        "type": "dimension",
+                        "value": 22,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": [
+                "pressed"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "neutral-weak-pressed"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "tone": "neutral"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "tone": "danger"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "danger"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "danger"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "extended-action-sheet",
+      "name": "Extended Action Sheet",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "backdrop",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "overlay"
+                      }
+                    },
+                    {
+                      "key": "enterDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "enterTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "enter"
+                      }
+                    },
+                    {
+                      "key": "enterOpacity",
+                      "value": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    },
+                    {
+                      "key": "exitDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "exitTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "exit"
+                      }
+                    },
+                    {
+                      "key": "exitOpacity",
+                      "value": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "content",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "layer-floating"
+                      }
+                    },
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "cornerTopRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
+                      "key": "enterDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s6"
+                      }
+                    },
+                    {
+                      "key": "enterTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "enter-expressive"
+                      }
+                    },
+                    {
+                      "key": "exitDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "exitTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "exit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "header",
+                  "property": [
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s1"
+                      }
+                    },
+                    {
+                      "key": "paddingBottom",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s4"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "title",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s6"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s6"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    },
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "list",
+                  "property": [
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s2_5"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "group",
+                  "property": [
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "s4"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "footer",
+                  "property": [
+                    {
+                      "key": "paddingTop",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s2_5"
                       }
                     }
                   ]

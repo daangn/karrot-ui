@@ -1,22 +1,26 @@
 "use client";
 
-import { IconEyeSlashLine } from "@daangn/react-monochrome-icon";
-import { ActionSheet, ActionSheetGroup, ActionSheetItem } from "seed-design/ui/action-sheet";
+import {
+  ActionSheetContent,
+  ActionSheetItem,
+  ActionSheetRoot,
+  ActionSheetTrigger,
+} from "seed-design/ui/action-sheet";
+import { ActionButton } from "seed-design/ui/action-button";
 
-const ActionSheetPreviewActivity = () => {
+const ActionSheetPreview = () => {
   return (
-    <ActionSheet>
-      <ActionSheetGroup>
-        <ActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 1" />
-        <ActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 2" />
-        <ActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 3" />
-      </ActionSheetGroup>
-      <ActionSheetGroup>
-        <ActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 4" />
-        <ActionSheetItem tone="danger" prefixIcon={<IconEyeSlashLine />} label="Action 5" />
-      </ActionSheetGroup>
-    </ActionSheet>
+    <ActionSheetRoot>
+      <ActionSheetTrigger asChild>
+        <ActionButton>Open</ActionButton>
+      </ActionSheetTrigger>
+      <ActionSheetContent aria-label="Action Sheet">
+        <ActionSheetItem label="Action 1" />
+        <ActionSheetItem label="Action 2" />
+        <ActionSheetItem tone="danger" label="Action 3" />
+      </ActionSheetContent>
+    </ActionSheetRoot>
   );
 };
 
-export default ActionSheetPreviewActivity;
+export default ActionSheetPreview;

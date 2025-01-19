@@ -3,6 +3,9 @@ import actionChip from "./recipes/action-chip";
 import actionSheet from "./recipes/action-sheet";
 import actionSheetCloseButton from "./recipes/action-sheet-close-button";
 import actionSheetItem from "./recipes/action-sheet-item";
+import extendedActionSheet from "./recipes/extended-action-sheet";
+import extendedActionSheetCloseButton from "./recipes/extended-action-sheet-close-button";
+import extendedActionSheetItem from "./recipes/extended-action-sheet-item";
 import avatar from "./recipes/avatar";
 import avatarStack from "./recipes/avatar-stack";
 import badge from "./recipes/badge";
@@ -46,6 +49,9 @@ const recipes = {
   actionSheet,
   actionSheetItem,
   actionSheetCloseButton,
+  extendedActionSheet,
+  extendedActionSheetItem,
+  extendedActionSheetCloseButton,
   fab,
   extendedFab,
   badge,
