@@ -8459,6 +8459,22 @@
                   ]
                 },
                 {
+                  "key": "icon",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral"
+                      }
+                    }
+                  ]
+                },
+                {
                   "key": "count",
                   "property": [
                     {
@@ -8564,6 +8580,22 @@
                 },
                 {
                   "key": "suffixIcon",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "disabled"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "icon",
                   "property": [
                     {
                       "key": "color",

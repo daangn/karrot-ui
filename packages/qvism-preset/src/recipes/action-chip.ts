@@ -61,6 +61,15 @@ const actionChip = defineRecipe({
         color: vars.base.disabled.suffixIcon.color,
       },
     },
+    icon: {
+      display: "inline-flex",
+      flexShrink: 0,
+
+      color: vars.base.enabled.icon.color,
+      [pseudo(disabled)]: {
+        color: vars.base.disabled.icon.color,
+      },
+    },
     count: {
       lineHeight: 1,
 

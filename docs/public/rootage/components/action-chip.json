@@ -21,6 +21,9 @@
         "suffixIcon": {
           "color": "$color.fg.neutral-subtle"
         },
+        "icon": {
+          "color": "$color.fg.neutral"
+        },
         "count": {
           "color": "$color.fg.neutral-muted",
           "fontWeight": "$font-weight.medium"
@@ -42,6 +45,9 @@
           "color": "$color.fg.disabled"
         },
         "suffixIcon": {
+          "color": "$color.fg.disabled"
+        },
+        "icon": {
           "color": "$color.fg.disabled"
         },
         "count": {

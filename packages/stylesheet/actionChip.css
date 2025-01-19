@@ -49,6 +49,14 @@
 .actionChip__suffixIcon:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
+.actionChip__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: var(--seed-v3-color-fg-neutral);
+}
+.actionChip__icon:is(:disabled, [disabled], [data-disabled]) {
+    color: var(--seed-v3-color-fg-disabled);
+}
 .actionChip__count {
     line-height: 1;
     color: var(--seed-v3-color-fg-neutral-muted);
