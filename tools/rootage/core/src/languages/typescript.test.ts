@@ -40,7 +40,7 @@ test("getTokenMjs should generate esm definitions", () => {
       kind: "Tokens",
       metadata: {
         id: "3",
-        name: "unit",
+        name: "dimension",
       },
       data: {
         collection: "global",
@@ -60,17 +60,66 @@ test("getTokenMjs should generate esm definitions", () => {
   expect(result).toMatchInlineSnapshot(`
     [
       {
+        "code": "export * as palette from \\"./palette.mjs\\";
+    export * as bg from \\"./bg.mjs\\";",
+        "path": "color/index.mjs",
+      },
+      {
         "code": "export const gray00 = \\"var(--seed-v3-color-palette-gray-00)\\";
     export const gray100 = \\"var(--seed-v3-color-palette-gray-100)\\";",
-        "path": "color/palette",
+        "path": "color/palette.mjs",
       },
       {
         "code": "export const layer1 = \\"var(--seed-v3-color-bg-layer-1)\\";",
-        "path": "color/bg",
+        "path": "color/bg.mjs",
       },
       {
-        "code": "export const s1_5 = \\"var(--seed-v3-unit-s1_5)\\";",
-        "path": "unit",
+        "code": "export const s1_5 = \\"var(--seed-v3-dimension-s1_5)\\";",
+        "path": "dimension.mjs",
+      },
+    ]
+  `);
+});
+
+test("getTokenMjs should generate esm definitions with nesting", () => {
+  const models: Model[] = [
+    {
+      kind: "Tokens",
+      metadata: {
+        id: "1",
+        name: "dimension",
+      },
+      data: {
+        collection: "global",
+        tokens: {
+          "$dimension.s1_5": {
+            values: {
+              default: "6px",
+            },
+          },
+          "$dimension.spacing-x.default": {
+            values: {
+              default: "$dimension.s1_5",
+            },
+          },
+        },
+      },
+    },
+  ];
+
+  const result = getTokenMjs(parse(models));
+
+  expect(result).toMatchInlineSnapshot(`
+    [
+      {
+        "code": "export const s1_5 = \\"var(--seed-v3-dimension-s1_5)\\";
+
+    export * as spacingX from \\"./spacing-x.mjs\\";",
+        "path": "dimension/index.mjs",
+      },
+      {
+        "code": "export const default = \\"var(--seed-v3-dimension-spacing-x-default)\\";",
+        "path": "dimension/spacing-x.mjs",
       },
     ]
   `);
@@ -112,7 +161,7 @@ test("getTokenDts should generate typescript definitions", () => {
       kind: "Tokens",
       metadata: {
         id: "3",
-        name: "unit",
+        name: "dimension",
       },
       data: {
         collection: "global",
@@ -132,17 +181,66 @@ test("getTokenDts should generate typescript definitions", () => {
   expect(result).toMatchInlineSnapshot(`
     [
       {
+        "code": "export * as palette from \\"./palette\\";
+    export * as bg from \\"./bg\\";",
+        "path": "color/index.d.ts",
+      },
+      {
         "code": "export declare const gray00 = \\"var(--seed-v3-color-palette-gray-00)\\";
     export declare const gray100 = \\"var(--seed-v3-color-palette-gray-100)\\";",
-        "path": "color/palette",
+        "path": "color/palette.d.ts",
       },
       {
         "code": "export declare const layer1 = \\"var(--seed-v3-color-bg-layer-1)\\";",
-        "path": "color/bg",
+        "path": "color/bg.d.ts",
       },
       {
-        "code": "export declare const s1_5 = \\"var(--seed-v3-unit-s1_5)\\";",
-        "path": "unit",
+        "code": "export declare const s1_5 = \\"var(--seed-v3-dimension-s1_5)\\";",
+        "path": "dimension.d.ts",
+      },
+    ]
+  `);
+});
+
+test("getTokenDts should generate typescript definitions with nesting", () => {
+  const models: Model[] = [
+    {
+      kind: "Tokens",
+      metadata: {
+        id: "1",
+        name: "dimension",
+      },
+      data: {
+        collection: "global",
+        tokens: {
+          "$dimension.s1_5": {
+            values: {
+              default: "6px",
+            },
+          },
+          "$dimension.spacing-x.default": {
+            values: {
+              default: "$dimension.s1_5",
+            },
+          },
+        },
+      },
+    },
+  ];
+
+  const result = getTokenDts(parse(models));
+
+  expect(result).toMatchInlineSnapshot(`
+    [
+      {
+        "code": "export declare const s1_5 = \\"var(--seed-v3-dimension-s1_5)\\";
+
+    export * as spacingX from \\"./spacing-x\\";",
+        "path": "dimension/index.d.ts",
+      },
+      {
+        "code": "export declare const default = \\"var(--seed-v3-dimension-spacing-x-default)\\";",
+        "path": "dimension/spacing-x.d.ts",
       },
     ]
   `);

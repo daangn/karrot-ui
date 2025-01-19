@@ -76,7 +76,7 @@ async function writeTokenTs() {
   const dtsResults = getTokenDts(ast);
 
   for (const result of mjsResults) {
-    const writePath = path.join(process.cwd(), dir, `${result.path}.mjs`);
+    const writePath = path.join(process.cwd(), dir, result.path);
 
     console.log("Writing", result.path, "to", writePath);
 
@@ -87,7 +87,7 @@ async function writeTokenTs() {
   }
 
   for (const result of dtsResults) {
-    const writePath = path.join(process.cwd(), dir, `${result.path}.d.ts`);
+    const writePath = path.join(process.cwd(), dir, result.path);
 
     console.log("Writing", result.path, "to", writePath);
 

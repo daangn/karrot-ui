@@ -18,4 +18,4 @@ export const s13 = "var(--seed-v3-dimension-s13)";
 export const s14 = "var(--seed-v3-dimension-s14)";
 export const s16 = "var(--seed-v3-dimension-s16)";
 
-export * as spacingX from "./dimension/spacing-x.mjs";
+export * as spacingX from "./spacing-x.mjs";
