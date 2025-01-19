@@ -4,8 +4,11 @@
     box-sizing: content-box;
     width: 100%;
 }
-.appBar__root[data-transition-state=exit-active] {
-    transform: translate3d(100%, 0, 0);
+.appBar__root:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 }
 .appBar__safeArea {
     height: max(0px, env(safe-area-inset-top));
@@ -61,15 +64,40 @@
     text-overflow: ellipsis;
     width: 100%;
 }
+[data-global-transition-state=enter-active] .appBar__root--theme_cupertino[data-activity-is-top]:before {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: 100%;
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: 1;
+    --seed-enter-scale: 1;
+    transform: translate3d(0, 0, 0);
+}
+[data-global-transition-state=exit-active] .appBar__root--theme_cupertino[data-activity-is-top]:before {
+    transform: translate3d(var(--swipe-back-displacement, 0), 0, 0);
+    animation: seed-exit;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    --seed-exit-translate-x: 100%;
+    --seed-exit-translate-y: 0;
+    --seed-exit-opacity: 1;
+    --seed-exit-scale: 1;
+}
+[data-global-transition-state=enter-done] .appBar__root--theme_cupertino[data-activity-is-top]:before {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: var(--swipe-back-displacement, 0);
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: 1;
+    --seed-enter-scale: 1;
+    transform: translate3d(0, 0, 0);
+}
 .appBar__container--theme_cupertino {
     height: 44px;
     padding-inline: var(--seed-v3-dimension-s4);
-}
-[data-stackflow-activity-is-active="false"] .appBar__container--theme_cupertino {
-    opacity: calc(pow(var(--stackflow-swipe-back-displacement-ratio, 1), 2));
-}
-[data-stackflow-activity-is-active="true"] .appBar__container--theme_cupertino {
-    opacity: calc(1 - pow(var(--stackflow-swipe-back-displacement-ratio, 0), 2));
 }
 .appBar__iconButton--theme_cupertino {
     width: 40px;
@@ -84,6 +112,77 @@
 .appBar__icon--theme_cupertino {
     width: 24px;
     height: 24px;
+}
+[data-global-transition-state=enter-active] .appBar__icon--theme_cupertino[data-activity-is-top] {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: 0;
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: 0;
+    --seed-enter-scale: 1;
+    opacity: 1;
+}
+[data-global-transition-state=exit-active] .appBar__icon--theme_cupertino[data-activity-is-top] {
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    animation: seed-exit;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    --seed-exit-translate-x: 0;
+    --seed-exit-translate-y: 0;
+    --seed-exit-opacity: 0;
+    --seed-exit-scale: 1;
+}
+[data-global-transition-state=enter-done] .appBar__icon--theme_cupertino[data-activity-is-top] {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: 0;
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    --seed-enter-scale: 1;
+    opacity: 1;
+}
+[data-swipe-back-state=swiping] .appBar__icon--theme_cupertino[data-activity-is-top]:not(#\#) {
+    animation: none;
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+}
+[data-global-transition-state=enter-active] .appBar__icon--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+    opacity: 1;
+    animation: seed-exit;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    --seed-exit-translate-x: 0;
+    --seed-exit-translate-y: 0;
+    --seed-exit-opacity: 0;
+    --seed-exit-scale: 1;
+}
+[data-global-transition-state=exit-active] .appBar__icon--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: 0;
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    --seed-enter-scale: 1;
+    opacity: 1;
+}
+[data-global-transition-state=enter-done] .appBar__icon--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    animation: seed-exit;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    --seed-exit-translate-x: 0;
+    --seed-exit-translate-y: 0;
+    --seed-exit-opacity: 0;
+    --seed-exit-scale: 1;
+}
+[data-swipe-back-state=swiping] .appBar__icon--theme_cupertino:not([data-activity-is-top]):not(#\#) {
+    animation: none;
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
 }
 .appBar__titleMain--theme_cupertino {
     position: absolute;
@@ -101,18 +200,89 @@
     font-size: var(--seed-v3-font-size-s6-static);
     font-weight: var(--seed-v3-font-weight-bold);
 }
+[data-global-transition-state=enter-active] .appBar__titleText--theme_cupertino[data-activity-is-top] {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: 25%;
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: 0;
+    --seed-enter-scale: 1;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+[data-global-transition-state=exit-active] .appBar__titleText--theme_cupertino[data-activity-is-top] {
+    transform: translate3d(var(--swipe-back-displacement, 0) * 0.25, 0, 0);
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    animation: seed-exit;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    --seed-exit-translate-x: 25%;
+    --seed-exit-translate-y: 0;
+    --seed-exit-opacity: 0;
+    --seed-exit-scale: 1;
+}
+[data-global-transition-state=enter-done] .appBar__titleText--theme_cupertino[data-activity-is-top] {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: var(--swipe-back-displacement, 0) * 0.25;
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    --seed-enter-scale: 1;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+[data-swipe-back-state=swiping] .appBar__titleText--theme_cupertino[data-activity-is-top]:not(#\#) {
+    animation: none;
+    transform: translate3d(var(--swipe-back-displacement, 0) * 0.25, 0, 0);
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+}
+[data-global-transition-state=enter-active] .appBar__titleText--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    animation: seed-exit;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    --seed-exit-translate-x: -25%;
+    --seed-exit-translate-y: 0;
+    --seed-exit-opacity: 0;
+    --seed-exit-scale: 1;
+}
+[data-global-transition-state=exit-active] .appBar__titleText--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+    animation: seed-enter;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    --seed-enter-translate-x: calc(-25% + var(--swipe-back-displacement, 0) * 0.25);
+    --seed-enter-translate-y: 0;
+    --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    --seed-enter-scale: 1;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+[data-global-transition-state=enter-done] .appBar__titleText--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+    transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * 0.25), 0, 0);
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+    animation: seed-exit;
+    animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    --seed-exit-translate-x: -25%;
+    --seed-exit-translate-y: 0;
+    --seed-exit-opacity: 0;
+    --seed-exit-scale: 1;
+}
+[data-swipe-back-state=swiping] .appBar__titleText--theme_cupertino:not([data-activity-is-top]):not(#\#) {
+    animation: none;
+    transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * 0.25), 0, 0);
+    opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+}
 .appBar__titleEdge--theme_cupertino {
     display: block;
 }
-.appBar__root--theme_android {
-    opacity: 0;
-    transform: translate3d(0, 160px, 0);
-    transition: transform 300ms;
-}
-.appBar__root--theme_android:is([data-transition-state=enter-active], [data-transition-state=enter-done]) {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-}
+.appBar__root--theme_android {}
 .appBar__container--theme_android {
     height: 56px;
     padding-inline: var(--seed-v3-dimension-s4);
@@ -141,7 +311,7 @@
     font-size: var(--seed-v3-font-size-s6-static);
     font-weight: var(--seed-v3-font-weight-bold);
 }
-.appBar__root--tone_layer {
+.appBar__root--tone_layer:before {
     background-color: var(--seed-v3-color-bg-layer-default);
 }
 .appBar__icon--tone_layer {

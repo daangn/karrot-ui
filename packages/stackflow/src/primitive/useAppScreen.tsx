@@ -1,7 +1,8 @@
 import { dataAttr } from "@seed-design/dom-utils";
-import { useMounted, useNullableActivity, useZIndexBase } from "@stackflow/react-ui-core";
-import { createContext, useContext, useMemo, useRef } from "react";
+import { useNullableActivity, useZIndexBase } from "@stackflow/react-ui-core";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { type UseSwipeBackProps, useSwipeBack } from "./useSwipeBack";
+import { useStack } from "@stackflow/react";
 
 export interface UseAppScreenProps extends UseSwipeBackProps {}
 
@@ -9,7 +10,6 @@ export type UseAppScreenReturn = ReturnType<typeof useAppScreen>;
 
 export function useAppScreen(props: UseAppScreenProps) {
   const activity = useNullableActivity();
-  const mounted = useMounted();
 
   const layerRef = useRef<HTMLDivElement>(null);
   const appBarRef = useRef<HTMLDivElement>(null);
@@ -26,15 +26,25 @@ export function useAppScreen(props: UseAppScreenProps) {
     [zIndexBase],
   );
 
+  // FIXME: ugly hack for top activity type; extract to global provider if stackflow supports provider between stack and activities.
+  const stack = useStack();
+  const [topEl, setTopEl] = useState<HTMLElement | null>(null);
+  const topActivityType = topEl?.dataset["activityType"];
+  const topId = stack.activities.find((activity) => activity.isTop)?.id;
+  useEffect(() => {
+    if (!topId) return;
+
+    setTopEl(document.getElementById(topId));
+  }, [topId]);
+
   const stateProps = useMemo(
     () => ({
-      "data-activity-id": activity?.id,
       "data-activity-is-top": dataAttr(activity?.isTop),
       "data-activity-is-active": dataAttr(activity?.isActive),
-      "data-is-mounted": mounted,
       "data-transition-state": transitionState,
+      "data-top-activity-type": topActivityType,
     }),
-    [transitionState, mounted, activity?.id, activity?.isActive, activity?.isTop],
+    [transitionState, activity?.isActive, activity?.isTop, topActivityType],
   );
 
   return useMemo(
@@ -52,7 +62,9 @@ export function useAppScreen(props: UseAppScreenProps) {
       },
       stateProps,
       activityProps: {
+        id: activity?.id,
         "data-part": "activity",
+        "data-activity-type": "full-screen",
         ...activityProps,
         ...stateProps,
         "data-activity-id": activity?.id,

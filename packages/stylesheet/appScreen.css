@@ -96,11 +96,11 @@
     --seed-enter-scale: 1;
     transform: translate3d(0, 0, 0);
 }
-[data-swipe-back-state=swiping] .appScreen__layer--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+[data-swipe-back-state=swiping] .appScreen__layer--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
     animation: none;
     transform: translate3d(var(--swipe-back-displacement, 0), 0, 0);
 }
-[data-global-transition-state=enter-active] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+[data-global-transition-state=enter-active] .appScreen__layer--transitionStyle_slideFromRightIOS[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
     transform: translate3d(0, 0, 0);
     animation: seed-exit;
     animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
@@ -111,7 +111,7 @@
     --seed-exit-opacity: 1;
     --seed-exit-scale: 1;
 }
-[data-global-transition-state=exit-active] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+[data-global-transition-state=exit-active] .appScreen__layer--transitionStyle_slideFromRightIOS[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
     animation: seed-enter;
     animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
     animation-duration: 300ms;
@@ -121,7 +121,7 @@
     --seed-enter-scale: 1;
     transform: translate3d(0, 0, 0);
 }
-[data-global-transition-state=enter-done] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+[data-global-transition-state=enter-done] .appScreen__layer--transitionStyle_slideFromRightIOS[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
     transform: translate3d(calc(-30% + var(--swipe-back-displacement, 0) * 0.3), 0, 0);
     animation: seed-exit;
     animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
@@ -132,7 +132,7 @@
     --seed-exit-opacity: 1;
     --seed-exit-scale: 1;
 }
-[data-swipe-back-state=swiping] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+[data-swipe-back-state=swiping] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]):not(#\#) {
     animation: none;
     transform: translate3d(calc(-30% + var(--swipe-back-displacement, 0) * 0.3), 0, 0);
 }
@@ -170,7 +170,7 @@
     --seed-enter-scale: 1;
     opacity: 1;
 }
-[data-swipe-back-state=swiping] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+[data-swipe-back-state=swiping] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
     animation: none;
     opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
 }
@@ -189,17 +189,21 @@
     animation-timing-function: cubic-bezier(0.23, 0.1, 0.32, 1);
     animation-duration: 300ms;
     --seed-enter-translate-x: 0;
-    --seed-enter-translate-y: var(--screen-height, 8vh);
+    --seed-enter-translate-y: 8vh;
     --seed-enter-opacity: 0;
     --seed-enter-scale: 1;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
 }
 [data-global-transition-state=exit-active] .appScreen__layer--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
     animation: seed-exit;
     animation-timing-function: linear;
-    animation-duration: 300ms;
+    animation-duration: 150ms;
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
-    --seed-exit-translate-y: var(--screen-height, 8vh);
+    --seed-exit-translate-y: 8vh;
     --seed-exit-opacity: 0;
     --seed-exit-scale: 1;
 }

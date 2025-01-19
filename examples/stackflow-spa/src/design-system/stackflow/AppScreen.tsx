@@ -1,9 +1,7 @@
-import "@seed-design/stylesheet/appScreen.css";
-
 import { AppScreen as SeedAppScreen, type AppScreenProps } from "@seed-design/stackflow";
 import { useActions } from "@stackflow/react";
 import { forwardRef } from "react";
-import { flushSync } from "react-dom";
+import { theme } from "../../stackflow/theme";
 
 export const AppScreen = forwardRef<HTMLDivElement, AppScreenProps>(
   ({ children, onSwipeEnd, ...otherProps }, ref) => {
@@ -18,6 +16,7 @@ export const AppScreen = forwardRef<HTMLDivElement, AppScreenProps>(
           }
           onSwipeEnd?.({ swiped });
         }}
+        theme={theme}
         {...otherProps}
       >
         <SeedAppScreen.Dim />

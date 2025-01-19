@@ -71,10 +71,20 @@ export interface AppScreenProps
 }
 
 export const AppScreenRoot = forwardRef<HTMLDivElement, AppScreenProps>(
-  ({ appBar, theme, children, ...otherProps }, ref) => {
+  ({ appBar, theme, transitionStyle, children, ...otherProps }, ref) => {
     const hasAppBar = !!appBar;
     const api = useAppScreen(otherProps);
-    const classNames = useMemo(() => appScreen({ theme, hasAppBar }), [theme, hasAppBar]);
+    const classNames = useMemo(
+      () =>
+        appScreen({
+          theme,
+          transitionStyle:
+            transitionStyle ??
+            (theme === "cupertino" ? "slideFromRightIOS" : "fadeFromBottomAndroid"),
+          hasAppBar,
+        }),
+      [theme, transitionStyle, hasAppBar],
+    );
 
     return (
       <div

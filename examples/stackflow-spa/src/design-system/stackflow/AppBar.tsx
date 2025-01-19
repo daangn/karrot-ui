@@ -1,5 +1,3 @@
-import "@seed-design/stylesheet/appBar.css";
-
 import { IconChevronLeftLine, IconXmarkLine } from "@daangn/react-monochrome-icon";
 import { AppBar as SeedAppBar, type AppBarIconButtonProps } from "@seed-design/stackflow";
 import { useActions, useActivity } from "@stackflow/react";
