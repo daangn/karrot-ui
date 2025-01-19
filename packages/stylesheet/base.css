@@ -83,12 +83,14 @@
   --seed-box-justify-content: initial;
   --seed-box-align-items: stretch;
   --seed-box-align-content: stretch;
+  --seed-box-align-self: auto;
   --seed-box-gap: initial;
   flex-direction: var(--seed-box-flex-direction);
   flex-wrap: var(--seed-box-flex-wrap);
   justify-content: var(--seed-box-justify-content);
   align-items: var(--seed-box-align-items);
   align-content: var(--seed-box-align-content);
+  align-self: var(--seed-box-align-self);
   gap: var(--seed-box-gap);
 }
 

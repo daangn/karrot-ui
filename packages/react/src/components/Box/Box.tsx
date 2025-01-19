@@ -48,6 +48,63 @@ function handleRadius(radius: string | undefined) {
   return vars.$radius[radius] ?? undefined;
 }
 
+function handleDisplay(
+  display: "block" | "flex" | "inlineFlex" | "inline" | "inlineBlock" | "none" | undefined,
+) {
+  if (!display) {
+    return undefined;
+  }
+
+  return {
+    block: "block",
+    flex: "flex",
+    inlineFlex: "inline-flex",
+    inline: "inline",
+    inlineBlock: "inline-block",
+    none: "none",
+  }[display];
+}
+
+function handleFlexDirection(flexDirection: string | undefined) {
+  if (!flexDirection) {
+    return undefined;
+  }
+
+  return {
+    row: "row",
+    column: "column",
+    rowReverse: "row-reverse",
+    columnReverse: "column-reverse",
+  }[flexDirection];
+}
+
+function handleJustifyContent(justifyContent: string | undefined) {
+  if (!justifyContent) {
+    return undefined;
+  }
+
+  return {
+    flexStart: "flex-start",
+    flexEnd: "flex-end",
+    center: "center",
+    spaceBetween: "space-between",
+    spaceAround: "space-around",
+  }[justifyContent];
+}
+
+function handleAlignItems(alignItems: string | undefined) {
+  if (!alignItems) {
+    return undefined;
+  }
+
+  return {
+    flexStart: "flex-start",
+    flexEnd: "flex-end",
+    center: "center",
+    stretch: "stretch",
+  }[alignItems];
+}
+
 export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   as?: React.ElementType;
 
@@ -224,18 +281,18 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
           "--seed-box-padding-bottom": handleDimension(paddingBottom),
           "--seed-box-padding-left": handleDimension(paddingLeft),
           "--seed-box-gap": handleDimension(gap),
-          "--seed-box-display": display,
+          "--seed-box-display": handleDisplay(display),
           "--seed-box-position": position,
           "--seed-box-overflow-x": overflowX,
           "--seed-box-overflow-y": overflowY,
           "--seed-box-flex-grow": flexGrow,
           "--seed-box-flex-shrink": flexShrink,
-          "--seed-box-flex-direction": flexDirection,
+          "--seed-box-flex-direction": handleFlexDirection(flexDirection),
           "--seed-box-flex-wrap": flexWrap,
-          "--seed-box-justify-content": justifyContent,
-          "--seed-box-align-items": alignItems,
-          "--seed-box-align-content": alignContent,
-          "--seed-box-align-self": alignSelf,
+          "--seed-box-justify-content": handleJustifyContent(justifyContent),
+          "--seed-box-align-items": handleAlignItems(alignItems),
+          "--seed-box-align-content": handleAlignItems(alignContent),
+          "--seed-box-align-self": handleAlignItems(alignSelf),
           ...style,
         } as React.CSSProperties
       }
