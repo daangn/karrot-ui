@@ -13,6 +13,14 @@ export function getJsonSchema(ast: RootageAST): string {
         switch (value.type) {
           case "token":
             return stringifyTokenExpression(value);
+          case "color":
+            return value.value;
+          case "gradient":
+            return value.value
+              .map(({ position, color }) => `${Math.round(position * 100)}%: ${color}`)
+              .join(", ");
+          case "number":
+            return `${value.value}`;
           case "dimension":
             return `${value.value}${value.unit}`;
           case "duration":
@@ -27,7 +35,7 @@ export function getJsonSchema(ast: RootageAST): string {
               )
               .join(" / ");
           default:
-            return `${value.value}`;
+            return `${value}`;
         }
       })();
 
