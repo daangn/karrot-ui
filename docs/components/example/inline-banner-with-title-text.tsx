@@ -1,3 +1,4 @@
+import { Stack } from "@/registry/ui/layout";
 import {
   ActionableInlineBanner,
   DismissibleInlineBanner,
@@ -7,7 +8,7 @@ import {
 
 export default function InlineBannerWithTitleText() {
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <Stack gap="s4" width="full">
       <InlineBanner title="타이틀" description="사업자 정보를 등록해주세요." />
       <LinkInlineBanner
         title="타이틀"
@@ -16,6 +17,6 @@ export default function InlineBannerWithTitleText() {
       />
       <ActionableInlineBanner title="타이틀" description="사업자 정보를 등록해주세요." />
       <DismissibleInlineBanner title="타이틀" description="사업자 정보를 등록해주세요." />
-    </div>
+    </Stack>
   );
 }

@@ -5,10 +5,11 @@ import {
   LinkInlineBanner,
 } from "seed-design/ui/inline-banner";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
+import { Stack } from "@/registry/ui/layout";
 
 export default function InlineBannerWithIcon() {
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <Stack gap="s4" width="full">
       <InlineBanner icon={<IconBellFill />} description="사업자 정보를 등록해주세요." />
       <LinkInlineBanner
         icon={<IconBellFill />}
@@ -17,6 +18,6 @@ export default function InlineBannerWithIcon() {
       />
       <ActionableInlineBanner icon={<IconBellFill />} description="사업자 정보를 등록해주세요." />
       <DismissibleInlineBanner icon={<IconBellFill />} description="사업자 정보를 등록해주세요." />
-    </div>
+    </Stack>
   );
 }

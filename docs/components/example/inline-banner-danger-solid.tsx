@@ -4,10 +4,11 @@ import {
   LinkInlineBanner,
 } from "seed-design/ui/inline-banner";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
+import { Stack } from "@/registry/ui/layout";
 
 export default function InlineBannerDangerSolid() {
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <Stack gap="s4" width="full">
       <InlineBanner
         variant="dangerSolid"
         icon={<IconExclamationmarkCircleFill />}
@@ -24,6 +25,6 @@ export default function InlineBannerDangerSolid() {
         icon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
-    </div>
+    </Stack>
   );
 }

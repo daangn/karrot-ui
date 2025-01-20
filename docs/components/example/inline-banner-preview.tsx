@@ -1,3 +1,4 @@
+import { Stack } from "@/registry/ui/layout";
 import {
   ActionableInlineBanner,
   DismissibleInlineBanner,
@@ -7,7 +8,7 @@ import {
 
 export default function InlineBannerPreview() {
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <Stack gap="s4" width="full">
       <InlineBanner description="Ut veniam in ea ea anim laborum magna dolore ea laborum duis ut aute mollit amet." />
       <LinkInlineBanner
         description="Ut veniam in ea ea anim laborum magna dolore ea laborum duis ut aute mollit amet."
@@ -15,6 +16,6 @@ export default function InlineBannerPreview() {
       />
       <ActionableInlineBanner description="Ut veniam in ea ea anim laborum magna dolore ea laborum duis ut aute mollit amet." />
       <DismissibleInlineBanner description="Ut veniam in ea ea anim laborum magna dolore ea laborum duis ut aute mollit amet." />
-    </div>
+    </Stack>
   );
 }
