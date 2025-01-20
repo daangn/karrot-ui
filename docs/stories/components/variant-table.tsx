@@ -22,7 +22,9 @@ const generateCombinations = (variantMap: VariantMap, conditionMap: ConditionMap
   for (const key of keys) {
     const values = [
       ...new Set(
-        [...(variantMap[key] ?? []), ...Object.keys(conditionMap[key] ?? {})].map(Boolish.asUnion),
+        [...(conditionMap[key] ? Object.keys(conditionMap[key]) : (variantMap[key] ?? []))].map(
+          Boolish.asUnion,
+        ),
       ),
     ];
     const temp: Record<string, string | boolean>[] = [];
