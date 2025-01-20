@@ -178,6 +178,15 @@
     ]
   },
   {
+    "name": "layout",
+    "dependencies": [
+      "@seed-design/react"
+    ],
+    "files": [
+      "ui:layout.tsx"
+    ]
+  },
+  {
     "name": "snackbar",
     "dependencies": [
       "@seed-design/react",
