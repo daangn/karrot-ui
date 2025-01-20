@@ -4279,6 +4279,7 @@
 .textField__value:is(textarea) {
   width: 100%;
   min-height: 90px;
+  padding-inline: 0;
 }
 
 .textField__value {
