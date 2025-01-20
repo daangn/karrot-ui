@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "preact/hooks";
 import type {
   RequestComponentKeyHandler,
   RequestComponentPropertyDefinitionsHandler,
+  RequestCurrentPageComponentSetDefinitionHandler,
   RequestRootageTokensHandler,
   ResponseHandler,
 } from "./types";
@@ -40,6 +41,18 @@ function Plugin() {
 
   return (
     <Container space="medium">
+      <Button
+        fullWidth
+        onClick={useCallback(
+          () =>
+            emit<RequestCurrentPageComponentSetDefinitionHandler>(
+              "REQUEST_CURRENT_PAGE_COMPONENT_SET_DEFINITION",
+            ),
+          [],
+        )}
+      >
+        GET CurrentPageComponentSetDefinition (오래걸림주의)
+      </Button>
       <Button
         fullWidth
         onClick={useCallback(

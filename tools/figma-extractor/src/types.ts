@@ -1,5 +1,10 @@
 import type { EventHandler } from "@create-figma-plugin/utilities";
 
+export interface RequestCurrentPageComponentSetDefinitionHandler extends EventHandler {
+  name: "REQUEST_CURRENT_PAGE_COMPONENT_SET_DEFINITION";
+  handler: () => void;
+}
+
 export interface RequestComponentPropertyDefinitionsHandler extends EventHandler {
   name: "REQUEST_COMPONENT_PROPERTY_DEFINITIONS";
   handler: () => void;
