@@ -1,5 +1,5 @@
 import { useCallbackRef } from "@radix-ui/react-use-callback-ref";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 export type SwipeBackState = "idle" | "swiping" | "transitioning";
 
@@ -54,12 +54,7 @@ export function useGlobalInteraction() {
     displacementRatio: 0,
     velocity: 0,
   });
-  const swipeBackStateRef = useRef<SwipeBackState>(swipeBackState);
   const stackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    swipeBackStateRef.current = swipeBackState;
-  }, [swipeBackState]);
 
   const setSwipeBackContext = useCallback((ctx: SwipeBackContext) => {
     swipeBackContextRef.current = ctx;

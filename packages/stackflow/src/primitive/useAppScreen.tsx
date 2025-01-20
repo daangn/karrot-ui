@@ -1,8 +1,8 @@
-import { dataAttr } from "@seed-design/dom-utils";
+import { buttonProps, dataAttr, elementProps } from "@seed-design/dom-utils";
+import { useStack } from "@stackflow/react";
 import { useNullableActivity, useZIndexBase } from "@stackflow/react-ui-core";
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { type UseSwipeBackProps, useSwipeBack } from "./useSwipeBack";
-import { useStack } from "@stackflow/react";
 
 export interface UseAppScreenProps extends UseSwipeBackProps {}
 
@@ -20,9 +20,10 @@ export function useAppScreen(props: UseAppScreenProps) {
 
   const zIndexBase = useZIndexBase();
   const zIndexStyle = useMemo(
-    () => ({
-      "--z-index-base": zIndexBase.toString(),
-    }),
+    () =>
+      ({
+        "--z-index-base": zIndexBase.toString(),
+      }) as React.CSSProperties,
     [zIndexBase],
   );
 
@@ -61,7 +62,7 @@ export function useAppScreen(props: UseAppScreenProps) {
         appBar: appBarRef,
       },
       stateProps,
-      activityProps: {
+      activityProps: elementProps({
         id: activity?.id,
         "data-part": "activity",
         "data-activity-type": "full-screen",
@@ -69,22 +70,22 @@ export function useAppScreen(props: UseAppScreenProps) {
         ...stateProps,
         "data-activity-id": activity?.id,
         style: zIndexStyle,
-      } as React.HTMLAttributes<HTMLDivElement>,
-      dimProps: {
+      }),
+      dimProps: elementProps({
         "data-part": "dim",
         ...stateProps,
-      } as React.HTMLAttributes<HTMLDivElement>,
-      layerProps: {
+      }),
+      layerProps: elementProps({
         "data-part": "layer",
         ...stateProps,
         ...layerProps,
-      } as React.HTMLAttributes<HTMLDivElement>,
-      edgeProps: {
+      }),
+      edgeProps: elementProps({
         "data-part": "edge",
         ...edgeProps,
         ...stateProps,
-      } as React.HTMLAttributes<HTMLDivElement>,
-      appBarEdgeProps: {
+      }),
+      appBarEdgeProps: buttonProps({
         ...stateProps,
         onClick: (e) => {
           if (!e.defaultPrevented) {
@@ -94,7 +95,7 @@ export function useAppScreen(props: UseAppScreenProps) {
             });
           }
         },
-      } as React.HTMLAttributes<HTMLButtonElement>,
+      }),
     }),
     [activity, zIndexStyle, stateProps, activityProps, edgeProps, layerProps],
   );
