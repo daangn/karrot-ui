@@ -3934,7 +3934,7 @@
 }
 
 .text__root {
-  text-align: inherit;
+  text-align: var(--seed-text-align);
   color: var(--seed-text-color);
   font-size: var(--seed-font-size);
   line-height: var(--seed-line-height);
@@ -3943,6 +3943,7 @@
   --seed-font-size: inherit;
   --seed-line-height: inherit;
   --seed-font-weight: inherit;
+  --seed-text-align: inherit;
   --seed-max-lines: initial;
   margin: 0;
 }

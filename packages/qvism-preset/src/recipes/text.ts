@@ -12,7 +12,7 @@ const text = defineRecipe({
   base: {
     root: {
       margin: 0,
-      textAlign: "inherit",
+      textAlign: "var(--seed-text-align)",
       color: "var(--seed-text-color)",
       fontSize: "var(--seed-font-size)",
       lineHeight: "var(--seed-line-height)",
@@ -21,6 +21,7 @@ const text = defineRecipe({
       "--seed-font-size": "inherit",
       "--seed-line-height": "inherit",
       "--seed-font-weight": "inherit",
+      "--seed-text-align": "inherit",
       "--seed-max-lines": "initial",
     },
   },

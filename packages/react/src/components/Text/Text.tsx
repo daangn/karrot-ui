@@ -77,6 +77,11 @@ export interface TextProps
    * The maximum number of lines to display. If the text overflows, it will be truncated.
    */
   maxLines?: number;
+
+  /**
+   * The alignment of the text.
+   */
+  align?: "left" | "center" | "right";
 }
 
 function mapMaxLines(maxLines: number | undefined): "none" | "single" | "multi" {
@@ -122,6 +127,7 @@ export const Text = ({
           "--seed-font-size": handleFontSize(fontSize),
           "--seed-line-height": handleLineHeight(lineHeight ?? fontSize),
           "--seed-font-weight": handleFontWeight(fontWeight),
+          "--seed-text-align": otherProps.align,
           ...style,
         } as React.CSSProperties
       }

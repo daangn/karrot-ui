@@ -1,6 +1,6 @@
 .text__root {
     margin: 0;
-    text-align: inherit;
+    text-align: var(--seed-text-align);
     color: var(--seed-text-color);
     font-size: var(--seed-font-size);
     line-height: var(--seed-line-height);
@@ -9,6 +9,7 @@
     --seed-font-size: inherit;
     --seed-line-height: inherit;
     --seed-font-weight: inherit;
+    --seed-text-align: inherit;
     --seed-max-lines: initial
 }
 .text__root--variant_labelSmallDefault {
