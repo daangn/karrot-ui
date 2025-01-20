@@ -1,6 +1,8 @@
 import type { Decorator } from "@storybook/react";
 import { useEffect } from "react";
 
+import "@seed-design/stylesheet/component.min.css";
+
 const STORY_NAMES_THEMES = {
   LIGHT: "Light Theme",
   DARK: "Dark Theme",
