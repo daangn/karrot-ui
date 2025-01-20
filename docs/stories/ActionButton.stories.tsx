@@ -26,16 +26,19 @@ const conditionMap = {
     true: { loading: true },
   },
   layout: {
-    withText: { layout: "withText", children: "Action Button" },
+    textOnly: { layout: "withText", children: "Action Button" },
+    iconFirst: { layout: "withText", children: "Action Button", prefixIcon: <IconBellFill /> },
+    iconLast: {
+      layout: "withText",
+      children: "Action Button",
+      suffixIcon: <IconChevronRightFill />,
+    },
     iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
   },
 };
 
 const CommonStoryTemplate: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronRightFill />,
-  },
+  args: {},
   render: (args) => (
     <VariantTable
       Component={meta.component}
