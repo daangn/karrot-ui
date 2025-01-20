@@ -11,6 +11,12 @@ export const registryUI: RegistryUI = [
     dependencies: ["@seed-design/stackflow"],
   },
   {
+    name: "error-state",
+    files: ["ui:error-state.tsx"],
+    innerDependencies: ["action-button"],
+    dependencies: ["@seed-design/react"],
+  },
+  {
     name: "text",
     files: ["ui:text.tsx"],
     dependencies: ["@seed-design/react"],
