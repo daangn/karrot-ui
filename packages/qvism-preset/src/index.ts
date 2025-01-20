@@ -3,7 +3,7 @@ import actionChip from "./recipes/action-chip";
 import actionSheet from "./recipes/action-sheet";
 import actionSheetCloseButton from "./recipes/action-sheet-close-button";
 import actionSheetItem from "./recipes/action-sheet-item";
-import { appBar, appScreen } from "./recipes/app-screen.recipe";
+import { appBar, appScreen } from "./stackflow/app-screen.recipe";
 import avatar from "./recipes/avatar";
 import avatarStack from "./recipes/avatar-stack";
 import badge from "./recipes/badge";
