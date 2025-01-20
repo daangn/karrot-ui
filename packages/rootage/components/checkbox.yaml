@@ -97,7 +97,7 @@ data:
         lineHeight: $line-height.s5
       control:
         size: $dimension.s6
-        cornerRadius: $radius.s1_5
+        cornerRadius: $radius.s1
 
   variant=square,size=medium:
     enabled:

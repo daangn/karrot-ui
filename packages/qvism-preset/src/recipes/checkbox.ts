@@ -30,7 +30,6 @@ const checkbox = defineRecipe({
       display: "none",
       content: '""',
       position: "absolute",
-      borderRadius: "100%",
       margin: "auto",
       left: 0,
       right: 0,

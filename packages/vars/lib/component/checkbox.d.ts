@@ -136,7 +136,7 @@ export declare const vars: {
       },
       "control": {
         "size": "var(--seed-v3-dimension-s6)",
-        "cornerRadius": "var(--seed-v3-radius-s1_5)"
+        "cornerRadius": "var(--seed-v3-radius-s1)"
       }
     }
   },

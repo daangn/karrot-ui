@@ -70,6 +70,7 @@
     padding-inline: 0;
 }
 .textField__value:is(textarea) {
+    padding-inline: 0;
     min-height: 90px;
     width: 100%;
 }

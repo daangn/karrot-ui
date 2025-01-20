@@ -20,7 +20,6 @@
     display: none;
     content: "";
     position: absolute;
-    border-radius: 100%;
     margin: auto;
     left: 0;
     right: 0;
@@ -109,7 +108,7 @@
     min-height: var(--seed-v3-dimension-s9);
 }
 .checkbox__control--size_large {
-    border-radius: var(--seed-v3-radius-s1_5);
+    border-radius: var(--seed-v3-radius-s1);
     width: var(--seed-v3-dimension-s6);
     height: var(--seed-v3-dimension-s6);
     margin: calc((var(--seed-v3-dimension-s9) - var(--seed-v3-dimension-s6)) / 2) 0;
