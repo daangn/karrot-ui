@@ -75,6 +75,7 @@ const switchRecipe = defineRecipe({
           minInlineSize: vars.sizeSmall.enabled.control.width,
           minBlockSize: vars.sizeSmall.enabled.control.height,
           padding: `${vars.sizeSmall.enabled.control.paddingY} ${vars.sizeSmall.enabled.control.paddingX}`,
+          margin: `calc((${vars.sizeSmall.enabled.root.height} - ${vars.sizeSmall.enabled.control.height}) / 2) 0`, // 수직 위치 보정
         },
         thumb: {
           width: vars.sizeSmall.enabled.thumb.width,
@@ -88,6 +89,7 @@ const switchRecipe = defineRecipe({
           fontSize: vars.sizeSmall.enabled.label.fontSize,
           lineHeight: vars.sizeSmall.enabled.label.lineHeight,
           fontWeight: vars.sizeSmall.enabled.label.fontWeight,
+          marginTop: "calc(12px - 0.59375rem)", // 수직 위치 보정, 24 / 2 - label.lineHeight / 2
         },
       },
     },

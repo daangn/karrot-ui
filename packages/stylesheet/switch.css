@@ -53,6 +53,7 @@
     min-inline-size: 26px;
     min-block-size: 16px;
     padding: 2px 2px;
+    margin: calc((24px - 16px) / 2) 0;
 }
 .switch__thumb--size_small {
     width: 12px;
@@ -65,4 +66,5 @@
     font-size: var(--seed-v3-font-size-s4);
     line-height: var(--seed-v3-line-height-s4);
     font-weight: var(--seed-v3-font-weight-regular);
+    margin-top: calc(12px - 0.59375rem);
 }

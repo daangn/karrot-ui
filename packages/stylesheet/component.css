@@ -3022,6 +3022,7 @@
 .switch__control--size_small {
   min-block-size: 16px;
   min-inline-size: 26px;
+  margin: 4px 0;
   padding: 2px;
 }
 
@@ -3038,6 +3039,7 @@
   font-size: var(--seed-v3-font-size-s4);
   line-height: var(--seed-v3-line-height-s4);
   font-weight: var(--seed-v3-font-weight-regular);
+  margin-top: calc(12px - .59375rem);
 }
 
 .screen__root {
