@@ -7,7 +7,7 @@
     {
       "name": "fab.tsx",
       "type": "ui",
-      "content": "\"use client\";\n\nimport \"@seed-design/stylesheet/fab.css\";\n\nimport { Fab as SeedFab } from \"@seed-design/react\";\nimport * as React from \"react\";\n\nexport interface FabProps extends SeedFab.RootProps {}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/fab\n */\nexport const Fab = React.forwardRef<HTMLButtonElement, FabProps>(\n  ({ children, ...otherProps }, ref) => {\n    if (!(otherProps[\"aria-label\"] || otherProps[\"aria-labelledby\"])) {\n      console.warn(\n        \"'aria-label' or 'aria-labelledby' should be provided in <Fab />.\",\n      );\n    }\n\n    return (\n      <SeedFab.Root ref={ref} {...otherProps}>\n        <SeedFab.Icon svg={children} />\n      </SeedFab.Root>\n    );\n  },\n);\nFab.displayName = \"Fab\";\n"
+      "content": "\"use client\";\n\nimport { Fab as SeedFab } from \"@seed-design/react\";\nimport * as React from \"react\";\n\nexport interface FabProps extends SeedFab.RootProps {}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/fab\n */\nexport const Fab = React.forwardRef<HTMLButtonElement, FabProps>(\n  ({ children, ...otherProps }, ref) => {\n    if (!(otherProps[\"aria-label\"] || otherProps[\"aria-labelledby\"])) {\n      console.warn(\n        \"'aria-label' or 'aria-labelledby' should be provided in <Fab />.\",\n      );\n    }\n\n    return (\n      <SeedFab.Root ref={ref} {...otherProps}>\n        <SeedFab.Icon svg={children} />\n      </SeedFab.Root>\n    );\n  },\n);\nFab.displayName = \"Fab\";\n"
     }
   ]
 }
