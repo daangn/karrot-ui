@@ -2633,6 +2633,10 @@
   flex: none;
 }
 
+.callout__textContent {
+  margin-inline-end: auto;
+}
+
 .callout__title {
   font-weight: var(--seed-v3-font-weight-bold);
 }
@@ -2660,7 +2664,6 @@
   width: var(--seed-v3-dimension-s4);
   height: var(--seed-v3-dimension-s4);
   flex: none;
-  margin-inline-start: auto;
 }
 
 .callout__dismissButton {
@@ -2673,7 +2676,6 @@
   flex: none;
   justify-content: center;
   align-items: center;
-  margin-inline-start: auto;
   padding: 0;
   display: flex;
 }

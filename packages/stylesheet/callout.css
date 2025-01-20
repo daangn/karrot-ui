@@ -22,6 +22,9 @@
     width: var(--seed-v3-dimension-s4);
     height: var(--seed-v3-dimension-s4);
 }
+.callout__textContent {
+    margin-inline-end: auto;
+}
 .callout__title {
     font-weight: var(--seed-v3-font-weight-bold);
 }
@@ -45,7 +48,6 @@
     flex: none;
     width: var(--seed-v3-dimension-s4);
     height: var(--seed-v3-dimension-s4);
-    margin-inline-start: auto;
 }
 .callout__dismissButton {
     flex: none;
@@ -55,7 +57,6 @@
     width: var(--seed-v3-dimension-s10);
     height: var(--seed-v3-dimension-s10);
     margin: calc((var(--seed-v3-dimension-s10) - var(--seed-v3-dimension-s4)) * -0.5);
-    margin-inline-start: auto;
     border: none;
     background-color: transparent;
     padding: 0;

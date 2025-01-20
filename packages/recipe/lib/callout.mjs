@@ -12,6 +12,10 @@ const calloutSlotNames = [
     "callout__icon"
   ],
   [
+    "textContent",
+    "callout__textContent"
+  ],
+  [
     "title",
     "callout__title"
   ],

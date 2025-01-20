@@ -7,6 +7,7 @@ const callout = defineRecipe({
   slots: [
     "root",
     "icon",
+    "textContent",
     "title",
     "spacer",
     "description",
@@ -46,6 +47,9 @@ const callout = defineRecipe({
       width: vars.base.enabled.icon.size,
       height: vars.base.enabled.icon.size,
     },
+    textContent: {
+      marginInlineEnd: "auto",
+    },
     title: {
       fontWeight: vars.base.enabled.title.fontWeight,
     },
@@ -71,8 +75,6 @@ const callout = defineRecipe({
 
       width: vars.base.enabled.actionableIcon.size,
       height: vars.base.enabled.actionableIcon.size,
-
-      marginInlineStart: "auto",
     },
     dismissButton: {
       flex: "none",
@@ -85,7 +87,6 @@ const callout = defineRecipe({
       height: vars.base.enabled.dismissButton.size,
 
       margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.dismissIcon.size}) * -0.5)`,
-      marginInlineStart: "auto",
 
       border: "none",
       backgroundColor: "transparent",
