@@ -13,6 +13,7 @@
     line-height: var(--seed-v3-line-height-s5);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: inherit;
 }
 .callout__root:is(button) {
     cursor: pointer;
@@ -41,7 +42,7 @@
     background-color: transparent;
     padding: 0;
     border: none;
-    font: inherit;
+    font-family: inherit;
     cursor: pointer;
 }
 .callout__actionableIcon {

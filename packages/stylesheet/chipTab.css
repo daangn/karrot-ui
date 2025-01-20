@@ -9,6 +9,7 @@
     box-sizing: border-box;
     white-space: nowrap;
     min-height: 36px;
+    font-family: inherit;
 }
 .chipTab__label {
     font-size: var(--seed-v3-font-size-s4);

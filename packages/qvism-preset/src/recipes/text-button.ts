@@ -22,6 +22,7 @@ const textButton = defineRecipe({
 
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+      fontFamily: "inherit",
 
       cursor: "pointer",
 

@@ -19,6 +19,7 @@ const extendedFab = defineRecipe({
       MozOsxFontSmoothing: "grayscale",
       textDecoration: "none",
       flexShrink: 0,
+      fontFamily: "inherit",
 
       [pseudo(focus)]: {
         outline: "none",

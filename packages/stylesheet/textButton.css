@@ -10,6 +10,7 @@
     border-style: solid;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: inherit;
     cursor: pointer;
 }
 .textButton__root:is(:disabled, [disabled], [data-disabled]) {

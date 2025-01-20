@@ -19,6 +19,7 @@ const actionChip = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       flexShrink: 0,
+      fontFamily: "inherit",
 
       borderRadius: vars.base.enabled.root.cornerRadius,
       [pseudo(focus)]: {

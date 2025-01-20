@@ -9,7 +9,7 @@
     padding-inline: var(--seed-v3-dimension-s4);
     border: none;
     padding-block: 0;
-    font: inherit;
+    font-family: inherit;
 }
 .inlineBanner__root:is(button) {
     cursor: pointer;
@@ -48,6 +48,7 @@
     font-weight: var(--seed-v3-font-weight-regular);
     font-size: var(--seed-v3-font-size-s2);
     line-height: var(--seed-v3-line-height-s2);
+    font-family: inherit;
     text-decoration: underline;
     text-underline-offset: 2px;
     border: none;

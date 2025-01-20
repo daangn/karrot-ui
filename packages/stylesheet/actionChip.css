@@ -10,6 +10,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     flex-shrink: 0;
+    font-family: inherit;
     border-radius: var(--seed-v3-radius-full);
 }
 .actionChip__root:is(:focus, [data-focus]) {

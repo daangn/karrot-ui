@@ -198,6 +198,7 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+  font-family: inherit;
   text-decoration: none;
   display: inline-flex;
 }
@@ -741,6 +742,7 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+  font-family: inherit;
   text-decoration: none;
   display: inline-flex;
 }
@@ -977,6 +979,7 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+  font-family: inherit;
   text-decoration: none;
   display: inline-flex;
 }
@@ -1602,6 +1605,7 @@
   border: none;
   justify-content: center;
   align-items: center;
+  font-family: inherit;
   text-decoration: none;
   display: inline-flex;
 }
@@ -1646,6 +1650,7 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+  font-family: inherit;
   text-decoration: none;
   display: inline-flex;
 }
@@ -2287,6 +2292,7 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+  font-family: inherit;
   display: inline-flex;
 }
 
@@ -2620,6 +2626,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border: none;
+  font-family: inherit;
   display: flex;
 }
 
@@ -2651,11 +2658,11 @@
 
 .callout__linkLabel {
   text-underline-offset: 2px;
-  font: inherit;
   cursor: pointer;
   background-color: #0000;
   border: none;
   padding: 0;
+  font-family: inherit;
   text-decoration: underline;
   display: inline-block;
 }
@@ -3242,9 +3249,9 @@
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   padding-inline: var(--seed-v3-dimension-s4);
-  font: inherit;
   border: none;
   padding-block: 0;
+  font-family: inherit;
   display: flex;
 }
 
@@ -3295,6 +3302,7 @@
   flex: none;
   align-items: center;
   padding: 0;
+  font-family: inherit;
   text-decoration: underline;
   display: flex;
 }
@@ -3642,6 +3650,7 @@
   justify-content: center;
   align-items: center;
   min-height: 36px;
+  font-family: inherit;
   display: flex;
 }
 
@@ -4101,6 +4110,7 @@
   border: .125rem solid #0000;
   align-items: center;
   padding-inline: 0;
+  font-family: inherit;
   display: inline-flex;
 }
 

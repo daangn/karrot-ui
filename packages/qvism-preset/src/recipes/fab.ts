@@ -18,6 +18,7 @@ const fab = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       textDecoration: "none",
+      fontFamily: "inherit",
       [pseudo(focus)]: {
         outline: "none",
       },

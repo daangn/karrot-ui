@@ -31,7 +31,7 @@ const inlineBanner = defineRecipe({
 
       border: "none",
       paddingBlock: 0,
-      font: "inherit",
+      fontFamily: "inherit",
 
       [pseudo(":is(button)")]: {
         cursor: "pointer",
@@ -80,6 +80,7 @@ const inlineBanner = defineRecipe({
       fontWeight: vars.base.enabled.linkLabel.fontWeight,
       fontSize: vars.base.enabled.linkLabel.fontSize,
       lineHeight: vars.base.enabled.linkLabel.lineHeight,
+      fontFamily: "inherit",
 
       textDecoration: "underline",
       textUnderlineOffset: "2px",

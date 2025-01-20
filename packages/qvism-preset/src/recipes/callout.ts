@@ -36,6 +36,7 @@ const callout = defineRecipe({
       lineHeight: vars.base.enabled.root.lineHeight,
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+      fontFamily: "inherit",
 
       [pseudo(":is(button)")]: {
         cursor: "pointer",
@@ -67,7 +68,7 @@ const callout = defineRecipe({
       backgroundColor: "transparent",
       padding: 0,
       border: "none",
-      font: "inherit",
+      fontFamily: "inherit",
       cursor: "pointer",
     },
     actionableIcon: {

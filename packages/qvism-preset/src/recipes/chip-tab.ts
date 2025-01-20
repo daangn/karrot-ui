@@ -1,6 +1,6 @@
 import { chipTab as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
-import { pseudo, selected, active, disabled, not } from "../utils/pseudo";
+import { pseudo, selected, active, disabled } from "../utils/pseudo";
 
 const chipTab = defineRecipe({
   name: "chipTab",
@@ -17,6 +17,7 @@ const chipTab = defineRecipe({
       boxSizing: "border-box",
       whiteSpace: "nowrap",
       minHeight: vars.base.enabled.root.minHeight,
+      fontFamily: "inherit",
     },
     label: {
       fontSize: vars.base.enabled.label.fontSize,
