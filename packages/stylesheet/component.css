@@ -2132,7 +2132,6 @@
   content: "";
   text-align: center;
   overflow: initial;
-  border-radius: 100%;
   margin: auto;
   display: none;
   position: absolute;
@@ -2227,7 +2226,7 @@
 }
 
 .checkbox__control--size_large {
-  border-radius: var(--seed-v3-radius-s1_5);
+  border-radius: var(--seed-v3-radius-s1);
   width: var(--seed-v3-dimension-s6);
   height: var(--seed-v3-dimension-s6);
   margin: calc((var(--seed-v3-dimension-s9)  - var(--seed-v3-dimension-s6)) / 2) 0;
@@ -2335,6 +2334,16 @@
 }
 
 .actionChip__suffixIcon:is(:disabled, [disabled], [data-disabled]) {
+  color: var(--seed-v3-color-fg-disabled);
+}
+
+.actionChip__icon {
+  color: var(--seed-v3-color-fg-neutral);
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.actionChip__icon:is(:disabled, [disabled], [data-disabled]) {
   color: var(--seed-v3-color-fg-disabled);
 }
 
