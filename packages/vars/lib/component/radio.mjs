@@ -73,15 +73,5 @@ export const vars = {
         "size": "var(--seed-v3-dimension-s2_5)"
       }
     }
-  },
-  "sizeSmall": {
-    "enabled": {
-      "root": {
-        "size": "var(--seed-v3-dimension-s4_5)"
-      },
-      "icon": {
-        "size": "var(--seed-v3-dimension-s2)"
-      }
-    }
   }
 }

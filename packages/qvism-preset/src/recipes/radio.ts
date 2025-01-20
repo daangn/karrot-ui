@@ -91,16 +91,6 @@ const radio = defineRecipe({
           },
         },
       },
-      small: {
-        root: {
-          width: vars.sizeSmall.enabled.root.size,
-          height: vars.sizeSmall.enabled.root.size,
-        },
-        icon: {
-          width: vars.sizeSmall.enabled.icon.size,
-          height: vars.sizeSmall.enabled.icon.size,
-        },
-      },
     },
   },
   defaultVariants: {

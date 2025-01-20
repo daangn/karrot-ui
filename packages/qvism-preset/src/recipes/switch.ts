@@ -4,7 +4,7 @@ import { checked, disabled, pseudo } from "../utils/pseudo";
 
 const switchRecipe = defineRecipe({
   name: "switch",
-  slots: ["root", "control", "thumb"],
+  slots: ["root", "control", "thumb", "label"],
   base: {
     root: {
       boxSizing: "border-box",
@@ -48,9 +48,12 @@ const switchRecipe = defineRecipe({
   variants: {
     size: {
       medium: {
+        root: {
+          minHeight: vars.sizeMedium.enabled.root.height,
+        },
         control: {
-          minInlineSize: vars.sizeMedium.enabled.root.width,
-          minBlockSize: vars.sizeMedium.enabled.root.height,
+          minInlineSize: vars.sizeMedium.enabled.control.width,
+          minBlockSize: vars.sizeMedium.enabled.control.height,
           padding: `${vars.sizeMedium.enabled.control.paddingY} ${vars.sizeMedium.enabled.control.paddingX}`,
         },
         thumb: {
@@ -59,14 +62,18 @@ const switchRecipe = defineRecipe({
           boxShadow: vars.sizeMedium.enabled.thumb.shadow,
 
           [pseudo(checked)]: {
-            transform: `translateX(calc(${vars.sizeMedium.enabled.root.width} - ${vars.sizeMedium.enabled.root.height}))`,
+            transform: `translateX(calc(${vars.sizeMedium.enabled.control.width} - ${vars.sizeMedium.enabled.control.height}))`,
           },
         },
       },
       small: {
+        root: {
+          minHeight: vars.sizeSmall.enabled.root.height,
+          gap: vars.sizeSmall.enabled.root.gap,
+        },
         control: {
-          minInlineSize: vars.sizeSmall.enabled.root.width,
-          minBlockSize: vars.sizeSmall.enabled.root.height,
+          minInlineSize: vars.sizeSmall.enabled.control.width,
+          minBlockSize: vars.sizeSmall.enabled.control.height,
           padding: `${vars.sizeSmall.enabled.control.paddingY} ${vars.sizeSmall.enabled.control.paddingX}`,
         },
         thumb: {
@@ -74,8 +81,13 @@ const switchRecipe = defineRecipe({
           height: vars.sizeSmall.enabled.thumb.height,
 
           [pseudo(checked)]: {
-            transform: `translateX(calc(${vars.sizeSmall.enabled.root.width} - ${vars.sizeSmall.enabled.root.height}))`,
+            transform: `translateX(calc(${vars.sizeSmall.enabled.control.width} - ${vars.sizeSmall.enabled.control.height}))`,
           },
+        },
+        label: {
+          fontSize: vars.sizeSmall.enabled.label.fontSize,
+          lineHeight: vars.sizeSmall.enabled.label.lineHeight,
+          fontWeight: vars.sizeSmall.enabled.label.fontWeight,
         },
       },
     },

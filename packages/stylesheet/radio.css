@@ -62,11 +62,3 @@
     width: var(--seed-v3-dimension-s2_5);
     height: var(--seed-v3-dimension-s2_5);
 }
-.radio__root--size_small {
-    width: var(--seed-v3-dimension-s4_5);
-    height: var(--seed-v3-dimension-s4_5);
-}
-.radio__icon--size_small {
-    width: var(--seed-v3-dimension-s2);
-    height: var(--seed-v3-dimension-s2);
-}

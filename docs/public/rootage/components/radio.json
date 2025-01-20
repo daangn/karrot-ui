@@ -79,16 +79,6 @@
           "size": "$dimension.s2_5"
         }
       }
-    },
-    "size=small": {
-      "enabled": {
-        "root": {
-          "size": "$dimension.s4_5"
-        },
-        "icon": {
-          "size": "$dimension.s2"
-        }
-      }
     }
   }
 }

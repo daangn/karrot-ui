@@ -18437,50 +18437,6 @@
               ]
             }
           ]
-        },
-        {
-          "key": {
-            "size": "small"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "s4_5"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "s2"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ]
     },
@@ -20807,15 +20763,7 @@
                       "key": "height",
                       "value": {
                         "type": "dimension",
-                        "value": 31,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "width",
-                      "value": {
-                        "type": "dimension",
-                        "value": 51,
+                        "value": 32,
                         "unit": "px"
                       }
                     }
@@ -20824,6 +20772,22 @@
                 {
                   "key": "control",
                   "property": [
+                    {
+                      "key": "height",
+                      "value": {
+                        "type": "dimension",
+                        "value": 32,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "width",
+                      "value": {
+                        "type": "dimension",
+                        "value": 52,
+                        "unit": "px"
+                      }
+                    },
                     {
                       "key": "paddingX",
                       "value": {
@@ -20849,7 +20813,7 @@
                       "key": "height",
                       "value": {
                         "type": "dimension",
-                        "value": 27,
+                        "value": 28,
                         "unit": "px"
                       }
                     },
@@ -20857,7 +20821,7 @@
                       "key": "width",
                       "value": {
                         "type": "dimension",
-                        "value": 27,
+                        "value": 28,
                         "unit": "px"
                       }
                     },
@@ -20930,6 +20894,29 @@
                       "key": "height",
                       "value": {
                         "type": "dimension",
+                        "value": 24,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "control",
+                  "property": [
+                    {
+                      "key": "height",
+                      "value": {
+                        "type": "dimension",
                         "value": 16,
                         "unit": "px"
                       }
@@ -20941,12 +20928,7 @@
                         "value": 26,
                         "unit": "px"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "control",
-                  "property": [
+                    },
                     {
                       "key": "paddingX",
                       "value": {
@@ -20982,6 +20964,41 @@
                         "type": "dimension",
                         "value": 12,
                         "unit": "px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
                       }
                     }
                   ]

@@ -15,11 +15,27 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const variantMap = { ...switchVariantMap, checked: ["false", "true"] };
+const conditionMap = {
+  checked: {
+    true: { checked: true },
+    false: { checked: false },
+  },
+  size: {
+    small: { size: "small", label: "라벨" },
+    medium: { size: "medium" },
+  },
+};
 
 const CommonStoryTemplate: Story = {
   args: {},
-  render: (args) => <VariantTable Component={meta.component} variantMap={variantMap} {...args} />,
+  render: (args) => (
+    <VariantTable
+      Component={meta.component}
+      variantMap={switchVariantMap}
+      conditionMap={conditionMap}
+      {...args}
+    />
+  ),
 };
 
 export const LightTheme = CommonStoryTemplate;
