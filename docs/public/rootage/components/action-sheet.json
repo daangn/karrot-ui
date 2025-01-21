@@ -18,7 +18,6 @@
         },
         "content": {
           "color": "$color.bg.layer-floating",
-          "paddingX": "$dimension.spacing-x.global-gutter",
           "cornerTopRadius": "$radius.s5",
           "enterDuration": "$duration.s6",
           "enterTimingFunction": "$timing-function.enter-expressive",
@@ -26,6 +25,7 @@
           "exitTimingFunction": "$timing-function.exit"
         },
         "header": {
+          "paddingX": "$dimension.spacing-x.global-gutter",
           "paddingY": "$dimension.s3_5",
           "gap": "$dimension.s1"
         },
@@ -43,7 +43,8 @@
         },
         "divider": {
           "strokeWidth": "1px",
-          "strokeColor": "$color.stroke.neutral"
+          "strokeColor": "$color.stroke.neutral",
+          "marginX": "$dimension.spacing-x.global-gutter"
         }
       }
     }

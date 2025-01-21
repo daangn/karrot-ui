@@ -9434,17 +9434,6 @@
                       }
                     },
                     {
-                      "key": "paddingX",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension",
-                          "spacing-x"
-                        ],
-                        "key": "global-gutter"
-                      }
-                    },
-                    {
                       "key": "cornerTopRadius",
                       "value": {
                         "type": "token",
@@ -9499,6 +9488,17 @@
                 {
                   "key": "header",
                   "property": [
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
+                      }
+                    },
                     {
                       "key": "paddingY",
                       "value": {
@@ -9633,6 +9633,17 @@
                           "stroke"
                         ],
                         "key": "neutral"
+                      }
+                    },
+                    {
+                      "key": "marginX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
                       }
                     }
                   ]

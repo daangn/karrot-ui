@@ -12,7 +12,6 @@ export const vars = {
       },
       "content": {
         "color": "var(--seed-v3-color-bg-layer-floating)",
-        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
         "cornerTopRadius": "var(--seed-v3-radius-s5)",
         "enterDuration": "var(--seed-v3-duration-s6)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter-expressive)",
@@ -20,6 +19,7 @@ export const vars = {
         "exitTimingFunction": "var(--seed-v3-timing-function-exit)"
       },
       "header": {
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
         "paddingY": "var(--seed-v3-dimension-s3_5)",
         "gap": "var(--seed-v3-dimension-s1)"
       },
@@ -37,7 +37,8 @@ export const vars = {
       },
       "divider": {
         "strokeWidth": "1px",
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
+        "strokeColor": "var(--seed-v3-color-stroke-neutral)",
+        "marginX": "var(--seed-v3-dimension-spacing-x-global-gutter)"
       }
     }
   }
