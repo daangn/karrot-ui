@@ -60,10 +60,10 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>((pro
       {...otherProps}
     >
       <Stack gap="s1">
-        <Text align="center" fontSize="s5" fontWeight="regular">
+        <Text align="center" textStyle="titleSmallDefault">
           {title}
         </Text>
-        <Text align="center" color="fg.neutralSubtle" fontSize="s4">
+        <Text align="center" color="fg.neutralSubtle" textStyle="bodyMediumDefault">
           {description}
         </Text>
       </Stack>
