@@ -71,6 +71,7 @@
     align-items: center;
     box-shadow: inset 0 calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral);
     padding-block: var(--seed-v3-dimension-s3_5);
+    gap: var(--seed-v3-dimension-s1);
 }
 .actionSheet__title {
     color: var(--seed-v3-color-fg-neutral-muted);

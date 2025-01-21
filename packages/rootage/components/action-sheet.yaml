@@ -25,6 +25,7 @@ data:
         exitTimingFunction: $timing-function.exit
       header:
         paddingY: $dimension.s3_5
+        gap: $dimension.s1
       title:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4

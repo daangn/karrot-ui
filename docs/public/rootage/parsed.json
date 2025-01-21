@@ -9508,6 +9508,16 @@
                         ],
                         "key": "s3_5"
                       }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s1"
+                      }
                     }
                   ]
                 },

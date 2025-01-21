@@ -67,6 +67,7 @@ const actionSheet = defineRecipe({
 
       boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.divider.strokeWidth}) 0 ${vars.base.enabled.divider.strokeColor}`,
       paddingBlock: vars.base.enabled.header.paddingY,
+      gap: vars.base.enabled.header.gap,
     },
     title: {
       color: vars.base.enabled.title.color,

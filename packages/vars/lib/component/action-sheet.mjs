@@ -20,7 +20,8 @@ export const vars = {
         "exitTimingFunction": "var(--seed-v3-timing-function-exit)"
       },
       "header": {
-        "paddingY": "var(--seed-v3-dimension-s3_5)"
+        "paddingY": "var(--seed-v3-dimension-s3_5)",
+        "gap": "var(--seed-v3-dimension-s1)"
       },
       "title": {
         "fontSize": "var(--seed-v3-font-size-s4)",
