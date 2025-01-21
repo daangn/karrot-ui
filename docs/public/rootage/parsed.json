@@ -25152,7 +25152,7 @@
       "data": [
         {
           "key": {
-            "type": "label-small-default"
+            "textStyle": "label-small-default"
           },
           "state": [
             {
@@ -25201,7 +25201,7 @@
         },
         {
           "key": {
-            "type": "label-small-strong"
+            "textStyle": "label-small-strong"
           },
           "state": [
             {
@@ -25250,7 +25250,7 @@
         },
         {
           "key": {
-            "type": "label-small-stronger"
+            "textStyle": "label-small-stronger"
           },
           "state": [
             {
@@ -25299,7 +25299,7 @@
         },
         {
           "key": {
-            "type": "label-medium-default"
+            "textStyle": "label-medium-default"
           },
           "state": [
             {
@@ -25348,7 +25348,7 @@
         },
         {
           "key": {
-            "type": "label-medium-strong"
+            "textStyle": "label-medium-strong"
           },
           "state": [
             {
@@ -25397,7 +25397,7 @@
         },
         {
           "key": {
-            "type": "label-medium-stronger"
+            "textStyle": "label-medium-stronger"
           },
           "state": [
             {
@@ -25446,7 +25446,7 @@
         },
         {
           "key": {
-            "type": "label-large-default"
+            "textStyle": "label-large-default"
           },
           "state": [
             {
@@ -25495,7 +25495,7 @@
         },
         {
           "key": {
-            "type": "label-large-strong"
+            "textStyle": "label-large-strong"
           },
           "state": [
             {
@@ -25544,7 +25544,7 @@
         },
         {
           "key": {
-            "type": "label-large-stronger"
+            "textStyle": "label-large-stronger"
           },
           "state": [
             {
@@ -25593,7 +25593,7 @@
         },
         {
           "key": {
-            "type": "body-small-default"
+            "textStyle": "body-small-default"
           },
           "state": [
             {
@@ -25642,7 +25642,7 @@
         },
         {
           "key": {
-            "type": "body-small-reading-default"
+            "textStyle": "body-small-reading-default"
           },
           "state": [
             {
@@ -25691,7 +25691,7 @@
         },
         {
           "key": {
-            "type": "body-small-strong"
+            "textStyle": "body-small-strong"
           },
           "state": [
             {
@@ -25740,7 +25740,7 @@
         },
         {
           "key": {
-            "type": "body-small-stronger"
+            "textStyle": "body-small-stronger"
           },
           "state": [
             {
@@ -25789,7 +25789,7 @@
         },
         {
           "key": {
-            "type": "body-medium-default"
+            "textStyle": "body-medium-default"
           },
           "state": [
             {
@@ -25838,7 +25838,7 @@
         },
         {
           "key": {
-            "type": "body-medium-reading-default"
+            "textStyle": "body-medium-reading-default"
           },
           "state": [
             {
@@ -25887,7 +25887,7 @@
         },
         {
           "key": {
-            "type": "body-medium-strong"
+            "textStyle": "body-medium-strong"
           },
           "state": [
             {
@@ -25936,7 +25936,7 @@
         },
         {
           "key": {
-            "type": "body-medium-stronger"
+            "textStyle": "body-medium-stronger"
           },
           "state": [
             {
@@ -25985,7 +25985,7 @@
         },
         {
           "key": {
-            "type": "title-small-default"
+            "textStyle": "title-small-default"
           },
           "state": [
             {
@@ -26034,7 +26034,7 @@
         },
         {
           "key": {
-            "type": "title-medium-default"
+            "textStyle": "title-medium-default"
           },
           "state": [
             {
@@ -26083,7 +26083,7 @@
         },
         {
           "key": {
-            "type": "title-large-default"
+            "textStyle": "title-large-default"
           },
           "state": [
             {
@@ -26132,7 +26132,7 @@
         },
         {
           "key": {
-            "type": "heading-small-default"
+            "textStyle": "heading-small-default"
           },
           "state": [
             {
@@ -26181,7 +26181,7 @@
         },
         {
           "key": {
-            "type": "heading-medium-default"
+            "textStyle": "heading-medium-default"
           },
           "state": [
             {
@@ -26230,7 +26230,7 @@
         },
         {
           "key": {
-            "type": "heading-large-default"
+            "textStyle": "heading-large-default"
           },
           "state": [
             {

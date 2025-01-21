@@ -20,12 +20,12 @@ function handleColor(color: string | undefined) {
   return vars.$color[type][value] ?? undefined;
 }
 
-function handleFontWeight(spacing: string | undefined) {
-  if (!spacing) {
+function handleFontWeight(fontWeight: string | undefined) {
+  if (!fontWeight) {
     return undefined;
   }
   // @ts-ignore
-  return vars.$fontWeight[spacing] ?? undefined;
+  return vars.$fontWeight[fontWeight] ?? undefined;
 }
 
 function handleFontSize(size: string | undefined) {
@@ -59,17 +59,17 @@ export interface TextProps
   color?: `fg.${ColorFg}` | `palette.${ColorPalette}`;
 
   /**
-   * The font size of the text. applied only if the variant is not set.
+   * The font size of the text. Partially overrides the textStyle.
    */
   fontSize?: FontSize;
 
   /**
-   * The line height of the text. applied only if the variant is not set.
+   * The line height of the text. Partially overrides the textStyle.
    */
   lineHeight?: LineHeight;
 
   /**
-   * The font weight of the text. applied only if the variant is not set.
+   * The font weight of the text. Partially overrides the textStyle.
    */
   fontWeight?: FontWeight;
 
@@ -97,7 +97,7 @@ function mapMaxLines(maxLines: number | undefined): "none" | "single" | "multi" 
 export const Text = ({
   as,
   color,
-  variant,
+  textStyle,
   fontSize,
   lineHeight,
   fontWeight,
@@ -111,10 +111,10 @@ export const Text = ({
   const classNames = useMemo(
     () =>
       text({
-        variant,
+        textStyle,
         maxLines: mapMaxLines(maxLines),
       }),
-    [variant, maxLines],
+    [textStyle, maxLines],
   );
 
   return (
