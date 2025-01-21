@@ -12,11 +12,10 @@ import {
   extendedActionSheetItem,
   type ExtendedActionSheetItemVariantProps,
 } from "@seed-design/recipe/extendedActionSheetItem";
-import * as React from "react";
+import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 import { Icon, type IconProps } from "../private/Icon";
-import { forwardRef } from "react";
 
 const { withRootProvider, withContext } = createStyleContext(extendedActionSheet);
 const { withProvider: withItemProvider, withContext: withItemContext } =
@@ -107,27 +106,10 @@ export const ExtendedActionSheetList = withContext<HTMLDivElement, ExtendedActio
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ExtendedActionSheetGroupProps extends React.HTMLAttributes<HTMLUListElement> {}
+export interface ExtendedActionSheetGroupProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const ExtendedActionSheetGroup = withContext<
-  HTMLUListElement,
-  ExtendedActionSheetGroupProps
->(
-  withStateProps(
-    forwardRef<HTMLUListElement, ExtendedActionSheetGroupProps>((props, ref) => {
-      const { children, ...otherProps } = props;
-      const asArray = React.Children.toArray(children);
-      return (
-        <ul ref={ref} {...otherProps}>
-          {asArray.map((child, index) => (
-            <li key={index} style={{ display: "flex", flexDirection: "column" }}>
-              {child}
-            </li>
-          ))}
-        </ul>
-      );
-    }),
-  ),
+export const ExtendedActionSheetGroup = withContext<HTMLDivElement, ExtendedActionSheetGroupProps>(
+  withStateProps(Primitive.div),
   "group",
 );
 
