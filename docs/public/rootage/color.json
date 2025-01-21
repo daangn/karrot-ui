@@ -207,13 +207,13 @@
       },
       "$color.palette.green-300": {
         "values": {
-          "theme-light": "#aeebcc",
+          "theme-light": "#b9e9d2",
           "theme-dark": "#20493b"
         }
       },
       "$color.palette.green-400": {
         "values": {
-          "theme-light": "#74dcb0",
+          "theme-light": "#7ddcb3",
           "theme-dark": "#19604c"
         }
       },
