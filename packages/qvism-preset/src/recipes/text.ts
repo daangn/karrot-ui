@@ -29,7 +29,13 @@ const text = defineRecipe({
     variant: Object.fromEntries(
       Object.entries(vars).map(([key, value]) => [
         uncapitalize(key.split("type")[1]),
-        { root: value.enabled.root },
+        {
+          root: {
+            "--seed-font-size": value.enabled.root.fontSize,
+            "--seed-line-height": value.enabled.root.lineHeight,
+            "--seed-font-weight": value.enabled.root.fontWeight,
+          },
+        },
       ]),
     ) as Record<Uncapitalize<OmitTypePrefix<keyof typeof vars>>, unknown>,
     maxLines: {
