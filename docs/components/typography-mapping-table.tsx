@@ -23,11 +23,11 @@ export async function TypographyMappingTable({ mappings }: TypographyMappingTabl
     previousTokenId: item.previousTokenId,
     newTextStyleIds: item.newTextStyleIds.map((id) => {
       const typography = rootage.componentSpecEntities.typography.data.find(
-        ({ key }) => "type" in key && key.type === id,
+        ({ key }) => "textStyle" in key && key.textStyle === id,
       );
 
       if (!typography) {
-        throw new Error(`Typography component spec not found for variant type=${id}`);
+        throw new Error(`Typography component spec not found for variant textStyle=${id}`);
       }
 
       return id;
