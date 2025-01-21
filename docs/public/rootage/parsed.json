@@ -5320,7 +5320,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 0.8125,
+            "value": 0.9375,
             "unit": "rem"
           }
         }
@@ -5400,7 +5400,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 1.3125,
+            "value": 1.375,
             "unit": "rem"
           }
         }
@@ -5440,7 +5440,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 1.5625,
+            "value": 1.6875,
             "unit": "rem"
           }
         }
@@ -5500,7 +5500,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 2.125,
+            "value": 2.1875,
             "unit": "rem"
           }
         }

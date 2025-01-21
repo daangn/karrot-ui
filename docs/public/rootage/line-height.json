@@ -9,7 +9,7 @@
     "tokens": {
       "$line-height.s1": {
         "values": {
-          "default": "0.8125rem"
+          "default": "0.9375rem"
         }
       },
       "$line-height.s2": {
@@ -29,7 +29,7 @@
       },
       "$line-height.s5": {
         "values": {
-          "default": "1.3125rem"
+          "default": "1.375rem"
         }
       },
       "$line-height.s6": {
@@ -39,7 +39,7 @@
       },
       "$line-height.s7": {
         "values": {
-          "default": "1.5625rem"
+          "default": "1.6875rem"
         }
       },
       "$line-height.s8": {
@@ -54,7 +54,7 @@
       },
       "$line-height.s10": {
         "values": {
-          "default": "2.125rem"
+          "default": "2.1875rem"
         }
       }
     }
