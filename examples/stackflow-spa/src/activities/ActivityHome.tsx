@@ -74,9 +74,7 @@ const ActivityHome: ActivityComponentType = () => {
             callbackActivity={actionSheetCallback}
             params={{}}
             onPop={(result) => {
-              snackbarAdapter.create({
-                render: () => <Snackbar message={`ActionSheet: ${result?.action}`} />,
-              });
+              console.log(result?.action);
             }}
           >
             <ListItem title="ActionSheet" />
@@ -85,14 +83,7 @@ const ActivityHome: ActivityComponentType = () => {
             callbackActivity={extendedActionSheetCallback}
             params={{}}
             onPop={(result) => {
-              snackbarAdapter.create({
-                render: () => (
-                  <Snackbar
-                    message={`ExtendedActionSheet: ${result?.action}`}
-                    actionLabel="Dance"
-                  />
-                ),
-              });
+              console.log(result?.action);
             }}
           >
             <ListItem title="ExtendedActionSheet" />

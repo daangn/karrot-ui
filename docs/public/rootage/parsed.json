@@ -9210,25 +9210,6 @@
                         ],
                         "key": "s3_5"
                       }
-                    },
-                    {
-                      "key": "strokeBottomWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "strokeColor",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "stroke"
-                        ],
-                        "key": "neutral"
-                      }
                     }
                   ]
                 },
@@ -9453,6 +9434,17 @@
                       }
                     },
                     {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
+                      }
+                    },
+                    {
                       "key": "cornerTopRadius",
                       "value": {
                         "type": "token",
@@ -9508,17 +9500,6 @@
                   "key": "header",
                   "property": [
                     {
-                      "key": "paddingX",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension",
-                          "spacing-x"
-                        ],
-                        "key": "global-gutter"
-                      }
-                    },
-                    {
                       "key": "paddingY",
                       "value": {
                         "type": "token",
@@ -9526,25 +9507,6 @@
                           "dimension"
                         ],
                         "key": "s3_5"
-                      }
-                    },
-                    {
-                      "key": "strokeBottomWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "strokeColor",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "stroke"
-                        ],
-                        "key": "neutral"
                       }
                     }
                   ]
@@ -9637,6 +9599,30 @@
                           "fg"
                         ],
                         "key": "neutral-muted"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "divider",
+                  "property": [
+                    {
+                      "key": "strokeWidth",
+                      "value": {
+                        "type": "dimension",
+                        "value": 1,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "neutral"
                       }
                     }
                   ]
@@ -15347,25 +15333,6 @@
                       }
                     },
                     {
-                      "key": "strokeBottomWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "strokeColor",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "stroke"
-                        ],
-                        "key": "neutral"
-                      }
-                    },
-                    {
                       "key": "gap",
                       "value": {
                         "type": "token",
@@ -15812,6 +15779,30 @@
                           "radius"
                         ],
                         "key": "s4"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "divider",
+                  "property": [
+                    {
+                      "key": "strokeBottomWidth",
+                      "value": {
+                        "type": "dimension",
+                        "value": 1,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "neutral"
                       }
                     }
                   ]

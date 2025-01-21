@@ -1,4 +1,4 @@
-import { actionSheetItem as vars } from "@seed-design/vars/component";
+import { actionSheetItem as vars, actionSheet as rootVars } from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 
@@ -15,7 +15,7 @@ const actionSheetItem = defineRecipe({
       minHeight: vars.base.enabled.root.minHeight,
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
-      boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.root.strokeBottomWidth}) 0 ${vars.base.enabled.root.strokeColor}`,
+      boxShadow: `inset 0 calc(-1 * ${rootVars.base.enabled.divider.strokeWidth}) 0 ${rootVars.base.enabled.divider.strokeColor}`,
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.root.color,

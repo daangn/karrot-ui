@@ -12,6 +12,7 @@ export declare const vars: {
       },
       "content": {
         "color": "var(--seed-v3-color-bg-layer-floating)",
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
         "cornerTopRadius": "var(--seed-v3-radius-s5)",
         "enterDuration": "var(--seed-v3-duration-s6)",
         "enterTimingFunction": "var(--seed-v3-timing-function-enter-expressive)",
@@ -19,10 +20,7 @@ export declare const vars: {
         "exitTimingFunction": "var(--seed-v3-timing-function-exit)"
       },
       "header": {
-        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
-        "paddingY": "var(--seed-v3-dimension-s3_5)",
-        "strokeBottomWidth": "1px",
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
+        "paddingY": "var(--seed-v3-dimension-s3_5)"
       },
       "title": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -35,6 +33,10 @@ export declare const vars: {
         "lineHeight": "var(--seed-v3-line-height-s3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
         "color": "var(--seed-v3-color-fg-neutral-muted)"
+      },
+      "divider": {
+        "strokeWidth": "1px",
+        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
       }
     }
   }

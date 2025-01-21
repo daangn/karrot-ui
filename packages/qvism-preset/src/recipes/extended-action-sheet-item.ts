@@ -1,4 +1,7 @@
-import { extendedActionSheetItem as vars } from "@seed-design/vars/component";
+import {
+  extendedActionSheetItem as vars,
+  extendedActionSheet as rootVars,
+} from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 
@@ -16,10 +19,13 @@ const extendedActionSheetItem = defineRecipe({
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
       gap: vars.base.enabled.root.gap,
-      boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.root.strokeBottomWidth}) 0 ${vars.base.enabled.root.strokeColor}`,
+      boxShadow: `inset 0 calc(-1 * ${rootVars.base.enabled.divider.strokeBottomWidth}) 0 ${rootVars.base.enabled.divider.strokeColor}`,
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.root.color,
+      },
+      "&:last-child": {
+        boxShadow: "none",
       },
     },
     label: {

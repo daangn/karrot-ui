@@ -45,6 +45,7 @@ const actionSheet = defineRecipe({
       zIndex: "calc(var(--sheet-z-index) + var(--layer-index, 0))",
 
       background: vars.base.enabled.content.color,
+      paddingInline: vars.base.enabled.content.paddingX,
       borderTopLeftRadius: vars.base.enabled.content.cornerTopRadius,
       borderTopRightRadius: vars.base.enabled.content.cornerTopRadius,
 
@@ -64,16 +65,17 @@ const actionSheet = defineRecipe({
       flexDirection: "column",
       alignItems: "center",
 
-      boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.header.strokeBottomWidth}) 0 ${vars.base.enabled.header.strokeColor}`,
-      paddingInline: vars.base.enabled.header.paddingX,
+      boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.divider.strokeWidth}) 0 ${vars.base.enabled.divider.strokeColor}`,
       paddingBlock: vars.base.enabled.header.paddingY,
     },
     title: {
+      color: vars.base.enabled.title.color,
       fontSize: vars.base.enabled.title.fontSize,
       lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,
     },
     description: {
+      color: vars.base.enabled.description.color,
       fontSize: vars.base.enabled.description.fontSize,
       lineHeight: vars.base.enabled.description.lineHeight,
       fontWeight: vars.base.enabled.description.fontWeight,

@@ -12,6 +12,9 @@
 .extendedActionSheetItem__root:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
+.extendedActionSheetItem__root:last-child {
+    box-shadow: none;
+}
 .extendedActionSheetItem__label {
     font-size: var(--seed-v3-font-size-s5);
     line-height: var(--seed-v3-line-height-s5);

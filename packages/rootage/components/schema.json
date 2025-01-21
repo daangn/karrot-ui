@@ -369,7 +369,7 @@
         { "const": "$font-weight.regular", "title": "$font-weight.regular", "description": "default: 400", "markdownDescription": "- default: `400`" },
         { "const": "$font-weight.medium", "title": "$font-weight.medium", "description": "default: 500", "markdownDescription": "- default: `500`" },
         { "const": "$font-weight.bold", "title": "$font-weight.bold", "description": "default: 700", "markdownDescription": "- default: `700`" },
-        { "const": "$gradient.shimmer", "title": "$gradient.shimmer", "description": "theme-light: 0%: #ffffff00, 46%: #ffffff66, 54%: #ffffff66, 100%: #ffffff00\ntheme-dark: 0%: #ffffff00, 46%: #ffffff1a, 54%: #ffffff1a, 100%: #ffffff00", "markdownDescription": "- theme-light: `0%: #ffffff00, 46%: #ffffff66, 54%: #ffffff66, 100%: #ffffff00`\n\n- theme-dark: `0%: #ffffff00, 46%: #ffffff1a, 54%: #ffffff1a, 100%: #ffffff00`" },
+        { "const": "$gradient.shimmer", "title": "$gradient.shimmer", "description": "theme-light: [object Object],[object Object],[object Object],[object Object]\ntheme-dark: [object Object],[object Object],[object Object],[object Object]", "markdownDescription": "- theme-light: `[object Object],[object Object],[object Object],[object Object]`\n\n- theme-dark: `[object Object],[object Object],[object Object],[object Object]`" },
         { "const": "$line-height.s1", "title": "$line-height.s1", "description": "default: 0.8125rem", "markdownDescription": "- default: `0.8125rem`" },
         { "const": "$line-height.s2", "title": "$line-height.s2", "description": "default: 1rem", "markdownDescription": "- default: `1rem`" },
         { "const": "$line-height.s3", "title": "$line-height.s3", "description": "default: 1.125rem", "markdownDescription": "- default: `1.125rem`" },

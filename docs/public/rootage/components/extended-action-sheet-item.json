@@ -12,8 +12,6 @@
           "minHeight": "52px",
           "paddingX": "$dimension.s4",
           "paddingY": "$dimension.s3_5",
-          "strokeBottomWidth": "1px",
-          "strokeColor": "$color.stroke.neutral",
           "gap": "$dimension.s3_5"
         },
         "prefixIcon": {
