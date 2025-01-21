@@ -1201,14 +1201,29 @@ const textFieldHandler: ComponentHandler<TextFieldProperties> = {
   },
 };
 
-// const switchHandler: ComponentHandler<SwitchProperties> = {
-//   key: "80ce5a33b5ab713ab3bd2449472e2fb13d78c7f3",
-//   codegen: ({ componentProperties: props }) => {
-//     const commonProps = {};
+const switchHandler: ComponentHandler<SwitchProperties> = {
+  key: "80ce5a33b5ab713ab3bd2449472e2fb13d78c7f3",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
 
-//     return createElement("Switch", commonProps);
-//   },
-// };
+    const size = handleSize(props.Size.value);
+
+    const commonProps = {
+      size,
+      ...(size === "small" && {
+        label: props["Label#15191:2"].value,
+      }),
+      ...(states.includes("Selected") && {
+        defaultChecked: true,
+      }),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("Switch", commonProps);
+  },
+};
 
 const toggleButtonHandler: ComponentHandler<ToggleButtonProperties> = {
   key: "1d240ee5fd7a56879713e69cbea1b6f006f0ea22",
@@ -1262,6 +1277,7 @@ const componentHandlers = [
   selectBoxGroupHandler,
   skeletonHandler,
   snackbarHandler,
+  switchHandler,
   tabsHandler,
   textButtonHandler,
   textFieldHandler,

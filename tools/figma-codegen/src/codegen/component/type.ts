@@ -689,7 +689,7 @@ export type SwitchProperties = InferFromDefinition<{
   Size: {
     type: "VARIANT";
     defaultValue: "Medium";
-    variantOptions: ["Medium", "Small"];
+    variantOptions: ["Small", "Medium"];
   };
   State: {
     type: "VARIANT";
