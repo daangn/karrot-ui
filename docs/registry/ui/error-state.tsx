@@ -64,7 +64,7 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>(
           <Text align="center" fontSize="s5" fontWeight="regular">
             {title}
           </Text>
-          <Text align="center" color="fg.neutralSubtle" fontSize="s6">
+          <Text align="center" color="fg.neutralSubtle" fontSize="s4">
             {description}
           </Text>
         </Stack>
