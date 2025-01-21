@@ -92,7 +92,7 @@ export interface ActionSheetDescriptionProps extends DialogPrimitive.Description
 export const ActionSheetDescription = withContext<
   HTMLParagraphElement,
   ActionSheetDescriptionProps
->(withStateProps(Primitive.p), "title");
+>(withStateProps(Primitive.p), "description");
 
 ////////////////////////////////////////////////////////////////////////////////////
 
