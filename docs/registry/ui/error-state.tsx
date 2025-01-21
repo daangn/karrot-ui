@@ -68,7 +68,7 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>(
             {description}
           </Text>
         </Stack>
-        <Stack gap="s4">
+        <Stack alignItems="center" gap="s4">
           {primaryActionProps && (
             <ActionButton
               variant={primaryActionVariant[variant]}
