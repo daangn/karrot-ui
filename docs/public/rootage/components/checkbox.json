@@ -33,7 +33,7 @@
       "enabled": {
         "control": {
           "strokeColor": "$color.stroke.control",
-          "strokeWidth": "1.25px"
+          "strokeWidth": "1px"
         }
       },
       "enabled,selected": {

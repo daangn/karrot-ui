@@ -27,7 +27,7 @@ export const vars = {
     "enabled": {
       "control": {
         "strokeColor": "var(--seed-v3-color-stroke-control)",
-        "strokeWidth": "1.25px"
+        "strokeWidth": "1px"
       }
     },
     "enabledSelected": {

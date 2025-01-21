@@ -2168,7 +2168,7 @@
 
 .checkbox__control--variant_square {
   border-style: solid;
-  border-width: 1.25px;
+  border-width: 1px;
   border-color: var(--seed-v3-color-stroke-control);
 }
 

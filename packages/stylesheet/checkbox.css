@@ -38,7 +38,7 @@
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .checkbox__control--variant_square {
-    border-width: 1.25px;
+    border-width: 1px;
     border-style: solid;
     border-color: var(--seed-v3-color-stroke-control);
 }
