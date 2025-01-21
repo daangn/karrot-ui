@@ -1835,7 +1835,7 @@
 }
 
 .badge__label--tone_brand-variant_weak {
-  color: var(--seed-v3-color-fg-brand);
+  color: var(--seed-v3-color-fg-brand-contrast);
 }
 
 .badge__root--tone_brand-variant_solid {
@@ -1859,7 +1859,7 @@
 }
 
 .badge__label--tone_informative-variant_weak {
-  color: var(--seed-v3-color-fg-informative);
+  color: var(--seed-v3-color-fg-informative-contrast);
 }
 
 .badge__root--tone_informative-variant_solid {
@@ -1883,7 +1883,7 @@
 }
 
 .badge__label--tone_positive-variant_weak {
-  color: var(--seed-v3-color-fg-positive);
+  color: var(--seed-v3-color-fg-positive-contrast);
 }
 
 .badge__root--tone_positive-variant_solid {
@@ -1907,7 +1907,7 @@
 }
 
 .badge__label--tone_danger-variant_weak {
-  color: var(--seed-v3-color-fg-danger);
+  color: var(--seed-v3-color-fg-danger-contrast);
 }
 
 .badge__root--tone_danger-variant_solid {

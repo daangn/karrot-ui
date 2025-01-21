@@ -112,7 +112,7 @@
           "color": "$color.bg.brand-weak"
         },
         "label": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.brand-contrast"
         }
       }
     },
@@ -142,7 +142,7 @@
           "color": "$color.bg.informative-weak"
         },
         "label": {
-          "color": "$color.fg.informative"
+          "color": "$color.fg.informative-contrast"
         }
       }
     },
@@ -172,7 +172,7 @@
           "color": "$color.bg.positive-weak"
         },
         "label": {
-          "color": "$color.fg.positive"
+          "color": "$color.fg.positive-contrast"
         }
       }
     },
@@ -202,7 +202,7 @@
           "color": "$color.bg.danger-weak"
         },
         "label": {
-          "color": "$color.fg.danger"
+          "color": "$color.fg.danger-contrast"
         }
       }
     },

@@ -106,7 +106,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-brand-weak)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-brand)"
+        "color": "var(--seed-v3-color-fg-brand-contrast)"
       }
     }
   },
@@ -136,7 +136,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-informative-weak)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-informative)"
+        "color": "var(--seed-v3-color-fg-informative-contrast)"
       }
     }
   },
@@ -166,7 +166,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-positive-weak)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-positive)"
+        "color": "var(--seed-v3-color-fg-positive-contrast)"
       }
     }
   },
@@ -196,7 +196,7 @@ export declare const vars: {
         "color": "var(--seed-v3-color-bg-danger-weak)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-danger-contrast)"
       }
     }
   },

@@ -10746,7 +10746,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "brand"
+                        "key": "brand-contrast"
                       }
                     }
                   ]
@@ -10887,7 +10887,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "informative"
+                        "key": "informative-contrast"
                       }
                     }
                   ]
@@ -11028,7 +11028,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "positive"
+                        "key": "positive-contrast"
                       }
                     }
                   ]
@@ -11169,7 +11169,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "danger-contrast"
                       }
                     }
                   ]
