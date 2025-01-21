@@ -8,7 +8,8 @@ import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 
 const meta = {
-  component: ActionButton,
+  title: "Action Button Medium",
+  component: (props) => <ActionButton size="medium" {...props} />,
   decorators: [SeedThemeDecorator],
 } satisfies Meta<typeof ActionButton>;
 
@@ -39,14 +40,18 @@ const conditionMap = {
 
 const CommonStoryTemplate: Story = {
   args: {},
-  render: (args) => (
-    <VariantTable
-      Component={meta.component}
-      variantMap={actionButtonVariantMap}
-      conditionMap={conditionMap}
-      {...args}
-    />
-  ),
+  render: (args) => {
+    const { size, ...variantMap } = actionButtonVariantMap;
+
+    return (
+      <VariantTable
+        Component={meta.component}
+        variantMap={variantMap}
+        conditionMap={conditionMap}
+        {...args}
+      />
+    );
+  },
 };
 
 export const LightTheme = CommonStoryTemplate;
