@@ -19,3 +19,4 @@ export declare const s14 = "var(--seed-v3-dimension-s14)";
 export declare const s16 = "var(--seed-v3-dimension-s16)";
 
 export * as spacingX from "./spacing-x";
+export * as spacingY from "./spacing-y";

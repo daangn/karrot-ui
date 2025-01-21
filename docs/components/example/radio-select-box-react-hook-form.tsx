@@ -36,7 +36,7 @@ export default function RadioSelectBoxReactHookForm() {
     <form onSubmit={handleSubmit(onValid)} onReset={onReset}>
       <Stack gap="s3" width="384px">
         <RadioSelectBoxRoot aria-label="Fruit" {...field}>
-          <Stack gap="s3">
+          <Stack gap="spacingY.betweenSelectBoxes">
             {POSSIBLE_FRUIT_VALUES.map((value) => (
               <RadioSelectBoxItem key={value} value={value} label={value} />
             ))}

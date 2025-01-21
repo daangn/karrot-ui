@@ -4829,6 +4829,30 @@
       "token": {
         "type": "token",
         "group": [
+          "dimension",
+          "spacing-y"
+        ],
+        "key": "between-select-boxes"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "token",
+            "group": [
+              "dimension"
+            ],
+            "key": "s3"
+          }
+        }
+      ],
+      "description": "Select Box 사이의 수직 간격에 사용합니다."
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
           "duration"
         ],
         "key": "s1"

@@ -113,6 +113,12 @@
         "values": {
           "default": "$dimension.s4"
         }
+      },
+      "$dimension.spacing-y.between-select-boxes": {
+        "description": "Select Box 사이의 수직 간격에 사용합니다.",
+        "values": {
+          "default": "$dimension.s3"
+        }
       }
     }
   }

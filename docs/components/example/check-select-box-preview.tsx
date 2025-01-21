@@ -6,7 +6,7 @@ import { CheckSelectBox, CheckSelectBoxGroup } from "seed-design/ui/select-box";
 export default function CheckSelectBoxPreview() {
   return (
     <CheckSelectBoxGroup>
-      <Stack gap="s3">
+      <Stack gap="spacingY.betweenSelectBoxes">
         <CheckSelectBox label="Apple" defaultChecked />
         <CheckSelectBox
           label="Melon"
