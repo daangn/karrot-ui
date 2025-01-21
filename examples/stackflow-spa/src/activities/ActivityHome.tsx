@@ -88,6 +88,7 @@ const ActivityHome: ActivityComponentType = () => {
           >
             <ListItem title="ExtendedActionSheet" />
           </DialogPushTrigger>
+          <ListItem onClick={() => push("ActivityErrorState", {})} title="ErrorState" />
           <ListItem
             onClick={() =>
               snackbarAdapter.create({
