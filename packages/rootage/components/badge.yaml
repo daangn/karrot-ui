@@ -45,7 +45,7 @@ data:
   variant=outline:
     enabled:
       root:
-        borderWidth: 1px
+        strokeWidth: 1px
       label:
         fontWeight: $font-weight.bold
   tone=neutral, variant=weak:

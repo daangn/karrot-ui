@@ -10550,7 +10550,7 @@
                   "key": "root",
                   "property": [
                     {
-                      "key": "borderWidth",
+                      "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
                         "value": 1,
@@ -21526,14 +21526,6 @@
                         ],
                         "key": "s0_5"
                       }
-                    },
-                    {
-                      "key": "borderWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 0.125,
-                        "unit": "rem"
-                      }
                     }
                   ]
                 },
@@ -21594,17 +21586,6 @@
                   "property": [
                     {
                       "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "palette"
-                        ],
-                        "key": "gray-200"
-                      }
-                    },
-                    {
-                      "key": "borderColor",
                       "value": {
                         "type": "token",
                         "group": [

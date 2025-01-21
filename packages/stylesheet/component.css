@@ -1807,16 +1807,7 @@
   font-weight: var(--seed-v3-font-weight-medium);
 }
 
-.badge__label--variant_solid {
-  font-weight: var(--seed-v3-font-weight-bold);
-}
-
-.badge__root--variant_outline {
-  border-style: solid;
-  border-width: 1px;
-}
-
-.badge__label--variant_outline {
+.badge__label--variant_solid, .badge__label--variant_outline {
   font-weight: var(--seed-v3-font-weight-bold);
 }
 
@@ -1845,7 +1836,7 @@
 }
 
 .badge__root--tone_neutral-variant_outline {
-  border-color: var(--seed-v3-color-stroke-neutral);
+  box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-neutral);
 }
 
 .badge__label--tone_neutral-variant_outline {
@@ -1869,7 +1860,7 @@
 }
 
 .badge__root--tone_brand-variant_outline {
-  border-color: var(--seed-v3-color-stroke-brand);
+  box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-brand);
 }
 
 .badge__label--tone_brand-variant_outline {
@@ -1893,7 +1884,7 @@
 }
 
 .badge__root--tone_informative-variant_outline {
-  border-color: var(--seed-v3-color-stroke-informative);
+  box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-informative);
 }
 
 .badge__label--tone_informative-variant_outline {
@@ -1917,7 +1908,7 @@
 }
 
 .badge__root--tone_positive-variant_outline {
-  border-color: var(--seed-v3-color-stroke-positive);
+  box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-positive);
 }
 
 .badge__label--tone_positive-variant_outline {
@@ -1941,7 +1932,7 @@
 }
 
 .badge__root--tone_danger-variant_outline {
-  border-color: var(--seed-v3-color-stroke-danger);
+  box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-danger);
 }
 
 .badge__label--tone_danger-variant_outline {
@@ -4145,7 +4136,7 @@
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
   background-color: #0000;
-  border: .125rem solid #0000;
+  border-style: solid;
   align-items: center;
   padding-inline: 0;
   font-family: inherit;
@@ -4159,7 +4150,7 @@
 
 .textButton__root:is(:active, [data-active]) {
   background-color: var(--seed-v3-color-palette-gray-200);
-  border-color: var(--seed-v3-color-palette-gray-200);
+  box-shadow: 0 0 0 2px var(--seed-v3-color-palette-gray-200);
 }
 
 .textButton__root:is(:disabled, [disabled], [data-disabled]):is(:active, [data-active]) {

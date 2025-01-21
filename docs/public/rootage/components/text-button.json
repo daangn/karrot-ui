@@ -8,8 +8,7 @@
     "base": {
       "enabled": {
         "root": {
-          "paddingY": "$dimension.s0_5",
-          "borderWidth": "0.125rem"
+          "paddingY": "$dimension.s0_5"
         },
         "label": {
           "fontWeight": "$font-weight.regular"
@@ -23,8 +22,7 @@
       },
       "pressed": {
         "root": {
-          "color": "$color.palette.gray-200",
-          "borderColor": "$color.palette.gray-200"
+          "color": "$color.palette.gray-200"
         }
       },
       "disabled": {

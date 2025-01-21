@@ -15,9 +15,6 @@ const textButton = defineRecipe({
 
       backgroundColor: "transparent",
       boxSizing: "border-box",
-
-      borderWidth: vars.base.enabled.root.borderWidth,
-      borderColor: "transparent",
       borderStyle: "solid",
 
       WebkitFontSmoothing: "antialiased",
@@ -33,7 +30,8 @@ const textButton = defineRecipe({
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.root.color,
-        borderColor: vars.base.pressed.root.borderColor,
+        // we use boxShadow instead of border to avoid layout shift
+        boxShadow: `0 0 0 2px ${vars.base.pressed.root.color}`, // TODO: move 2px to rootage
       },
 
       [pseudo(disabled, active)]: {

@@ -63,7 +63,7 @@ export const vars = {
   "variantOutline": {
     "enabled": {
       "root": {
-        "borderWidth": "1px"
+        "strokeWidth": "1px"
       },
       "label": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"

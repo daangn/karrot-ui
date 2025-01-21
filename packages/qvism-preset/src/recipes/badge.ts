@@ -63,10 +63,6 @@ const badge = defineRecipe({
         },
       },
       outline: {
-        root: {
-          borderStyle: "solid",
-          borderWidth: vars.variantOutline.enabled.root.borderWidth,
-        },
         label: {
           fontWeight: vars.variantOutline.enabled.label.fontWeight,
         },
@@ -128,7 +124,7 @@ const badge = defineRecipe({
       variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneNeutralVariantOutline.enabled.root.strokeColor,
+          boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneNeutralVariantOutline.enabled.root.strokeColor}`,
         },
         label: {
           color: vars.toneNeutralVariantOutline.enabled.label.color,
@@ -164,7 +160,7 @@ const badge = defineRecipe({
       variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneBrandVariantOutline.enabled.root.strokeColor,
+          boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneBrandVariantOutline.enabled.root.strokeColor}`,
         },
         label: {
           color: vars.toneBrandVariantOutline.enabled.label.color,
@@ -200,7 +196,7 @@ const badge = defineRecipe({
       variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneInformativeVariantOutline.enabled.root.strokeColor,
+          boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneInformativeVariantOutline.enabled.root.strokeColor}`,
         },
         label: {
           color: vars.toneInformativeVariantOutline.enabled.label.color,
@@ -236,7 +232,7 @@ const badge = defineRecipe({
       variant: "outline",
       css: {
         root: {
-          borderColor: vars.tonePositiveVariantOutline.enabled.root.strokeColor,
+          boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.tonePositiveVariantOutline.enabled.root.strokeColor}`,
         },
         label: {
           color: vars.tonePositiveVariantOutline.enabled.label.color,
@@ -272,7 +268,7 @@ const badge = defineRecipe({
       variant: "outline",
       css: {
         root: {
-          borderColor: vars.toneDangerVariantOutline.enabled.root.strokeColor,
+          boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneDangerVariantOutline.enabled.root.strokeColor}`,
         },
         label: {
           color: vars.toneDangerVariantOutline.enabled.label.color,

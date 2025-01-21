@@ -5,8 +5,6 @@
     padding-inline: 0;
     background-color: transparent;
     box-sizing: border-box;
-    border-width: 0.125rem;
-    border-color: transparent;
     border-style: solid;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -19,7 +17,7 @@
 }
 .textButton__root:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-palette-gray-200);
-    border-color: var(--seed-v3-color-palette-gray-200);
+    box-shadow: 0 0 0 2px var(--seed-v3-color-palette-gray-200);
 }
 .textButton__root:is(:disabled, [disabled], [data-disabled]):is(:active, [data-active]) {
     background-color: transparent;
