@@ -16,7 +16,7 @@ const ActivityErrorState: ActivityComponentType = () => {
           children: "다시 시도",
         }}
         secondaryActionProps={{
-          children: variant === "default" ? "default로 전환" : "basement로 전환",
+          children: variant === "basement" ? "default로 전환" : "basement로 전환",
           onClick: () => setVariant((prev) => (prev === "default" ? "basement" : "default")),
         }}
       />
