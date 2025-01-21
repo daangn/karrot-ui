@@ -4130,15 +4130,16 @@
 }
 
 .textButton__root {
-  padding-block: var(--seed-v3-dimension-s0_5);
+  cursor: pointer;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: pointer;
-  background-color: #0000;
-  border-style: solid;
-  align-items: center;
   padding-inline: 0;
+  padding-block: var(--seed-v3-dimension-s0_5);
+  background-color: #0000;
+  border: none;
+  outline: none;
+  align-items: center;
   font-family: inherit;
   display: inline-flex;
 }

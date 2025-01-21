@@ -1,15 +1,16 @@
 .textButton__root {
     display: inline-flex;
     align-items: center;
-    padding-block: var(--seed-v3-dimension-s0_5);
-    padding-inline: 0;
+    cursor: pointer;
     background-color: transparent;
     box-sizing: border-box;
-    border-style: solid;
+    border: none;
+    outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: inherit;
-    cursor: pointer;
+    padding-inline: 0;
+    padding-block: var(--seed-v3-dimension-s0_5);
 }
 .textButton__root:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);

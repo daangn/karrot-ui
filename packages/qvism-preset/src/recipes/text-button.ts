@@ -10,18 +10,18 @@ const textButton = defineRecipe({
     root: {
       display: "inline-flex",
       alignItems: "center",
-      paddingBlock: vars.base.enabled.root.paddingY,
-      paddingInline: 0,
-
+      cursor: "pointer",
       backgroundColor: "transparent",
       boxSizing: "border-box",
-      borderStyle: "solid",
+      border: "none",
+      outline: "none",
 
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       fontFamily: "inherit",
 
-      cursor: "pointer",
+      paddingInline: 0,
+      paddingBlock: vars.base.enabled.root.paddingY,
 
       [pseudo(disabled)]: {
         color: vars.base.disabled.root.color,
