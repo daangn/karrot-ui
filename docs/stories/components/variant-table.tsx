@@ -102,7 +102,9 @@ export const VariantTable = (props: Props) => {
                       >
                         {key}:
                       </span>
-                      <code style={{ fontSize: "13px" }}>{Boolish.asString(combination[key])}</code>
+                      <code style={{ fontSize: "13px", fontFamily: "Courier" }}>
+                        {Boolish.asString(combination[key])}
+                      </code>
                     </div>
                   </td>
                 ))}
