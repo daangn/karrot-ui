@@ -3,7 +3,7 @@ import { TextButton } from "seed-design/ui/text-button";
 
 export default function TextButtonPreview() {
   return (
-    <TextButton disabled prefixIcon={<IconPenHorizlineLine />}>
+    <TextButton disabled icon={<IconPenHorizlineLine />}>
       새 글
     </TextButton>
   );
