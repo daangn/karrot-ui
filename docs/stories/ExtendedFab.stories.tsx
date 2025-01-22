@@ -6,6 +6,7 @@ import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { extendedFabVariantMap } from "@seed-design/recipe/extendedFab";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: ExtendedFab,
@@ -28,8 +29,17 @@ const CommonStoryTemplate: Story = {
 
 export const LightTheme = CommonStoryTemplate;
 
-export const DarkTheme = CommonStoryTemplate;
+export const DarkTheme = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { theme: "dark" },
+});
 
-export const FontScalingExtraSmall = CommonStoryTemplate;
+export const FontScalingExtraSmall = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
 
-export const FontScalingExtraExtraExtraLarge = CommonStoryTemplate;
+export const FontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

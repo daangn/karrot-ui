@@ -6,6 +6,7 @@ import { textButtonVariantMap } from "@seed-design/recipe/textButton";
 import { VariantTable } from "./components/variant-table";
 import { IconPlusCircleLine } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: TextButton,
@@ -26,7 +27,7 @@ const conditionMap = {
 const CommonStoryTemplate: Story = {
   args: {
     children: "새 글",
-    prefixIcon: <IconPlusCircleLine />,
+    icon: <IconPlusCircleLine />,
   },
   render: (args) => (
     <VariantTable
@@ -38,10 +39,19 @@ const CommonStoryTemplate: Story = {
   ),
 };
 
-export const LightTheme: Story = CommonStoryTemplate;
+export const LightTheme = CommonStoryTemplate;
 
-export const DarkTheme: Story = CommonStoryTemplate;
+export const DarkTheme = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { theme: "dark" },
+});
 
-export const FontScalingExtraSmall: Story = CommonStoryTemplate;
+export const FontScalingExtraSmall = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
 
-export const FontScalingExtraExtraExtraLarge: Story = CommonStoryTemplate;
+export const FontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

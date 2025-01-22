@@ -5,6 +5,7 @@ import { Badge } from "seed-design/ui/badge";
 import { badgeVariantMap } from "@seed-design/recipe/badge";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: Badge,
@@ -15,7 +16,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const StoryTemplate: Story = {
+const CommonStoryTemplate: Story = {
   args: {
     children: "뱃지",
   },
@@ -24,10 +25,19 @@ const StoryTemplate: Story = {
   ),
 };
 
-export const LightTheme = StoryTemplate;
+export const LightTheme = CommonStoryTemplate;
 
-export const DarkTheme = StoryTemplate;
+export const DarkTheme = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { theme: "dark" },
+});
 
-export const FontScalingExtraSmall = StoryTemplate;
+export const FontScalingExtraSmall = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
 
-export const FontScalingExtraExtraExtraLarge = StoryTemplate;
+export const FontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

@@ -5,6 +5,7 @@ import { ProgressCircle } from "seed-design/ui/progress-circle";
 import { progressCircleVariantMap } from "@seed-design/recipe/progressCircle";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: ProgressCircle,
@@ -51,16 +52,28 @@ const Determinate100Template: Story = {
 
 export const IndeterminateLightTheme = IndeterminateTemplate;
 
-export const IndeterminateDarkTheme = IndeterminateTemplate;
+export const IndeterminateDarkTheme = createStoryWithParameters({
+  ...IndeterminateTemplate,
+  parameters: { theme: "dark" },
+});
 
 export const Determinate0LightTheme = Determinate0Template;
 
-export const Determinate0DarkTheme = Determinate0Template;
+export const Determinate0DarkTheme = createStoryWithParameters({
+  ...Determinate0Template,
+  parameters: { theme: "dark" },
+});
 
 export const Determinate50LightTheme = Determinate50Template;
 
-export const Determinate50DarkTheme = Determinate50Template;
+export const Determinate50DarkTheme = createStoryWithParameters({
+  ...Determinate50Template,
+  parameters: { theme: "dark" },
+});
 
 export const Determinate100LightTheme = Determinate100Template;
 
-export const Determinate100DarkTheme = Determinate100Template;
+export const Determinate100DarkTheme = createStoryWithParameters({
+  ...Determinate100Template,
+  parameters: { theme: "dark" },
+});
