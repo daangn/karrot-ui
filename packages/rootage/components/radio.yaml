@@ -8,7 +8,7 @@ data:
     enabled:
       root:
         color: $color.bg.layer-default
-        strokeWidth: 1.25px
+        strokeWidth: 1px
         strokeColor: $color.stroke.control
         cornerRadius: $radius.full
       icon:

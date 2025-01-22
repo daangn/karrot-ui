@@ -1943,7 +1943,7 @@
   box-sizing: border-box;
   background-color: var(--seed-v3-color-bg-layer-default);
   border-style: solid;
-  border-width: 1.25px;
+  border-width: 1px;
   border-color: var(--seed-v3-color-stroke-control);
   border-radius: var(--seed-v3-radius-full);
   flex: none;
@@ -2891,7 +2891,7 @@
   height: var(--seed-v3-dimension-s6);
   background-color: var(--seed-v3-color-bg-layer-default);
   border-style: solid;
-  border-width: 1.25px;
+  border-width: 1px;
   border-color: var(--seed-v3-color-stroke-control);
   border-radius: var(--seed-v3-radius-s1);
   flex: none;
@@ -2930,7 +2930,7 @@
   height: var(--seed-v3-dimension-s6);
   background-color: var(--seed-v3-color-bg-layer-default);
   border-style: solid;
-  border-width: 1.25px;
+  border-width: 1px;
   border-color: var(--seed-v3-color-stroke-control);
   border-radius: var(--seed-v3-radius-full);
   flex: none;

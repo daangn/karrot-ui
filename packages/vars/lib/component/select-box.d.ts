@@ -27,7 +27,7 @@ export declare const vars: {
       "checkboxControl": {
         "size": "var(--seed-v3-dimension-s6)",
         "color": "var(--seed-v3-color-bg-layer-default)",
-        "strokeWidth": "1.25px",
+        "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radius-s1)"
       },
@@ -37,7 +37,7 @@ export declare const vars: {
       "radioControl": {
         "size": "var(--seed-v3-dimension-s6)",
         "color": "var(--seed-v3-color-bg-layer-default)",
-        "strokeWidth": "1.25px",
+        "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       },

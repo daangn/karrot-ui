@@ -7,7 +7,6 @@ const radio = defineRecipe({
   slots: ["root", "icon"],
   base: {
     root: {
-      // XXX: css reset 생기면 불필요할 가능성
       borderStyle: "solid",
       boxSizing: "border-box",
 

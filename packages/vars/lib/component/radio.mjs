@@ -3,7 +3,7 @@ export const vars = {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-layer-default)",
-        "strokeWidth": "1.25px",
+        "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       },

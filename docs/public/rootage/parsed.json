@@ -18136,7 +18136,7 @@
                       "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
-                        "value": 1.25,
+                        "value": 1,
                         "unit": "px"
                       }
                     },
@@ -19770,7 +19770,7 @@
                       "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
-                        "value": 1.25,
+                        "value": 1,
                         "unit": "px"
                       }
                     },
@@ -19840,7 +19840,7 @@
                       "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
-                        "value": 1.25,
+                        "value": 1,
                         "unit": "px"
                       }
                     },

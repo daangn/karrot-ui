@@ -28,7 +28,7 @@ data:
       checkboxControl:
         size: $dimension.s6
         color: $color.bg.layer-default
-        strokeWidth: 1.25px
+        strokeWidth: 1px
         strokeColor: $color.stroke.control
         cornerRadius: $radius.s1
       checkboxIcon:
@@ -36,7 +36,7 @@ data:
       radioControl:
         size: $dimension.s6
         color: $color.bg.layer-default
-        strokeWidth: 1.25px
+        strokeWidth: 1px
         strokeColor: $color.stroke.control
         cornerRadius: $radius.full
       radioIcon:

@@ -6,7 +6,7 @@
     justify-content: center;
     flex: none;
     background-color: var(--seed-v3-color-bg-layer-default);
-    border-width: 1.25px;
+    border-width: 1px;
     border-color: var(--seed-v3-color-stroke-control);
     border-radius: var(--seed-v3-radius-full);
 }
