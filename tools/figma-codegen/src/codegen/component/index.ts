@@ -70,12 +70,6 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
         children: props["Label#5987:61"].value,
       }))
-      .with("Icon Both", () => ({
-        layout: "withText",
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#5987:305"].value)),
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
-        children: props["Label#5987:61"].value,
-      }))
       .with("Text Only", () => ({
         layout: "withText",
         prefixIcon: undefined,

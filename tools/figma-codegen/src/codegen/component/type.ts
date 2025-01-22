@@ -1,13 +1,9 @@
 import type { InferFromDefinition } from "./type-helper";
 
 export type ActionButtonProperties = InferFromDefinition<{
-  "Label#5987:61": {
-    type: "TEXT";
-    defaultValue: "라벨";
-  };
-  "Prefix Icon#5987:305": {
+  "Suffix Icon#5987:244": {
     type: "INSTANCE_SWAP";
-    defaultValue: "8328:4176";
+    defaultValue: "8328:3654";
     preferredValues: [];
   };
   "Icon#7574:0": {
@@ -15,10 +11,14 @@ export type ActionButtonProperties = InferFromDefinition<{
     defaultValue: "8328:4176";
     preferredValues: [];
   };
-  "Suffix Icon#5987:244": {
+  "Prefix Icon#5987:305": {
     type: "INSTANCE_SWAP";
-    defaultValue: "8328:3654";
+    defaultValue: "8328:4176";
     preferredValues: [];
+  };
+  "Label#5987:61": {
+    type: "TEXT";
+    defaultValue: "라벨";
   };
   Size: {
     type: "VARIANT";
@@ -28,7 +28,7 @@ export type ActionButtonProperties = InferFromDefinition<{
   Layout: {
     type: "VARIANT";
     defaultValue: "Text Only";
-    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Both", "Icon Only"];
+    variantOptions: ["Text Only", "Icon First", "Icon Last", "Icon Only"];
   };
   Variant: {
     type: "VARIANT";
