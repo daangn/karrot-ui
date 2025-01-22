@@ -157,8 +157,10 @@ function generateTokenCode(
         (g) => g.dir.startsWith(`${dir}/`) && g.dir.split("/").length === dir.split("/").length + 1,
       )
       .map((g) => {
-        const relativePath = g.dir.replace(`${dir}/`, "");
-        return `export * as ${camelCase(relativePath)} from "./${isDeclaration ? relativePath : `${relativePath}.mjs`}";`;
+        const isTargetNested = groups.some((x) => x.dir.startsWith(`${g.dir}/`));
+        const name = g.dir.replace(`${dir}/`, "");
+        const relativePath = isTargetNested ? `${name}/index` : name;
+        return `export * as ${camelCase(name)} from "./${isDeclaration ? name : `${relativePath}.mjs`}";`;
       })
       .join("\n");
 
