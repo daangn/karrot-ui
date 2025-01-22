@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=./schema.json
+kind: ComponentSpec
+metadata:
+  id: manner-temp-badge
+  name: Manner Temp Badge
+data:
+  base:
+    enabled:
+      root:
+        minHeight: 20px
+        paddingY: $dimension.s0_5
+        paddingX: $dimension.s1_5
+        cornerRadius: $radius.full
+      label:
+        fontSize: $font-size.s1
+        lineHeight: $line-height.s1
+        fontWeight: $font-weight.bold
+  level=l1:
+    enabled:
+      root:
+        color: $color.manner-temp.l1.bg
+      label:
+        color: $color.manner-temp.l1.text
+  level=l2:
+    enabled:
+      root:
+        color: $color.manner-temp.l2.bg
+      label:
+        color: $color.manner-temp.l2.text
+  level=l3:
+    enabled:
+      root:
+        color: $color.manner-temp.l3.bg
+      label:
+        color: $color.manner-temp.l3.text
+  level=l4:
+    enabled:
+      root:
+        color: $color.manner-temp.l4.bg
+      label:
+        color: $color.manner-temp.l4.text
+  level=l5:
+    enabled:
+      root:
+        color: $color.manner-temp.l5.bg
+      label:
+        color: $color.manner-temp.l5.text
+  level=l6:
+    enabled:
+      root:
+        color: $color.manner-temp.l6.bg
+      label:
+        color: $color.manner-temp.l6.text

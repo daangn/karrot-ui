@@ -864,6 +864,78 @@
           "theme-light": "$color.palette.gray-200",
           "theme-dark": "$color.palette.gray-200"
         }
+      },
+      "$color.manner-temp.l1.text": {
+        "values": {
+          "theme-light": "#62666a",
+          "theme-dark": "#b1b5b9"
+        }
+      },
+      "$color.manner-temp.l2.text": {
+        "values": {
+          "theme-light": "#2592f7",
+          "theme-dark": "#7cbaf4"
+        }
+      },
+      "$color.manner-temp.l3.text": {
+        "values": {
+          "theme-light": "#0099c8",
+          "theme-dark": "#47c3eb"
+        }
+      },
+      "$color.manner-temp.l4.text": {
+        "values": {
+          "theme-light": "#03a07e",
+          "theme-dark": "#33cc94"
+        }
+      },
+      "$color.manner-temp.l5.text": {
+        "values": {
+          "theme-light": "#d28500",
+          "theme-dark": "#ffa100"
+        }
+      },
+      "$color.manner-temp.l6.text": {
+        "values": {
+          "theme-light": "#f06000",
+          "theme-dark": "#ff9147"
+        }
+      },
+      "$color.manner-temp.l1.bg": {
+        "values": {
+          "theme-light": "#eff0f1",
+          "theme-dark": "#222226"
+        }
+      },
+      "$color.manner-temp.l2.bg": {
+        "values": {
+          "theme-light": "#e7f2fc",
+          "theme-dark": "#16212b"
+        }
+      },
+      "$color.manner-temp.l3.bg": {
+        "values": {
+          "theme-light": "#e3f6fc",
+          "theme-dark": "#12262c"
+        }
+      },
+      "$color.manner-temp.l4.bg": {
+        "values": {
+          "theme-light": "#ebf9f4",
+          "theme-dark": "#162822"
+        }
+      },
+      "$color.manner-temp.l5.bg": {
+        "values": {
+          "theme-light": "#fff5e5",
+          "theme-dark": "#2e2312"
+        }
+      },
+      "$color.manner-temp.l6.bg": {
+        "values": {
+          "theme-light": "#fff0e5",
+          "theme-dark": "#2e1d12"
+        }
       }
     }
   }

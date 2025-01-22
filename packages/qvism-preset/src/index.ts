@@ -38,6 +38,7 @@ import textField from "./recipes/text-field";
 import toggleButton from "./recipes/toggle-button";
 import topNavigation from "./recipes/top-navigation";
 import visuallyHidden from "./recipes/visually-hidden";
+import mannerTempBadge from "./recipes/manner-temp-badge";
 
 const recipes = {
   avatar,
@@ -61,6 +62,7 @@ const recipes = {
   actionChip,
   controlChip,
   callout,
+  mannerTempBadge,
   segmentedControl,
   selectBoxGroup,
   selectBox,

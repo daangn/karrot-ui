@@ -4397,6 +4397,342 @@
       ]
     },
     {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l1"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#62666a"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#b1b5b9"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l2"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#2592f7"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#7cbaf4"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l3"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#0099c8"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#47c3eb"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l4"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#03a07e"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#33cc94"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l5"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#d28500"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#ffa100"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l6"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#f06000"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#ff9147"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l1"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#eff0f1"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#222226"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l2"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#e7f2fc"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#16212b"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l3"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#e3f6fc"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#12262c"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l4"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#ebf9f4"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#162822"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l5"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#fff5e5"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#2e2312"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l6"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#fff0e5"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#2e1d12"
+          }
+        }
+      ]
+    },
+    {
       "collection": "global",
       "token": {
         "type": "token",
@@ -17768,6 +18104,390 @@
                           "palette"
                         ],
                         "key": "static-white"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manner-temp-badge",
+      "name": "Manner Temp Badge",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "minHeight",
+                      "value": {
+                        "type": "dimension",
+                        "value": 20,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s0_5"
+                      }
+                    },
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s1_5"
+                      }
+                    },
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "full"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s1"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s1"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l1"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l1"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l1"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l2"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l2"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l2"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l3"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l3"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l3"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l4"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l4"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l4"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l5"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l5"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l5"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l6"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l6"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l6"
+                        ],
+                        "key": "text"
                       }
                     }
                   ]

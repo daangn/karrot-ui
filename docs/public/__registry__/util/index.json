@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "name": "manner-temp-level",
+    "files": [
+      "util:manner-temp-level.ts"
+    ]
+  }
+]

@@ -30,6 +30,18 @@
     ]
   },
   {
+    "name": "manner-temp-badge",
+    "files": [
+      "ui:manner-temp-badge.tsx"
+    ],
+    "innerDependencies": [
+      "manner-temp-level"
+    ],
+    "dependencies": [
+      "@seed-design/react"
+    ]
+  },
+  {
     "name": "alert-dialog",
     "innerDependencies": [
       "action-button"
