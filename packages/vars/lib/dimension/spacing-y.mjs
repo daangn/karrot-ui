@@ -1,1 +1,1 @@
-export const betweenSelectBoxes = "var(--seed-v3-dimension-spacing-y-between-select-boxes)";
+export const componentDefault = "var(--seed-v3-dimension-spacing-y-component-default)";

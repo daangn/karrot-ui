@@ -6,7 +6,7 @@ import { RadioSelectBoxItem, RadioSelectBoxRoot } from "seed-design/ui/select-bo
 export default function RadioSelectBoxPreview() {
   return (
     <RadioSelectBoxRoot defaultValue="apple" aria-label="Fruit">
-      <Stack gap="spacingY.betweenSelectBoxes">
+      <Stack gap="spacingY.componentDefault">
         <RadioSelectBoxItem value="apple" label="Apple" />
         <RadioSelectBoxItem
           value="melon"

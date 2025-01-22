@@ -826,7 +826,7 @@ const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
 
     const stack = createElement(
       "Stack",
-      { gap: "spacing-y.between-select-boxes" },
+      { gap: "spacingY.componentDefault" },
       selectBoxes.map(selectBoxHandler.codegen),
     );
 

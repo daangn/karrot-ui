@@ -348,7 +348,7 @@
         { "const": "$dimension.s16", "title": "$dimension.s16", "description": "default: 64px", "markdownDescription": "- default: `64px`" },
         { "const": "$dimension.spacing-x.between-chips", "title": "$dimension.spacing-x.between-chips", "description": "default: $dimension.s2", "markdownDescription": "- default: `$dimension.s2`" },
         { "const": "$dimension.spacing-x.global-gutter", "title": "$dimension.spacing-x.global-gutter", "description": "default: $dimension.s4", "markdownDescription": "- default: `$dimension.s4`" },
-        { "const": "$dimension.spacing-y.between-select-boxes", "title": "$dimension.spacing-y.between-select-boxes", "description": "default: $dimension.s3", "markdownDescription": "- default: `$dimension.s3`" },
+        { "const": "$dimension.spacing-y.component-default", "title": "$dimension.spacing-y.component-default", "description": "default: $dimension.s3", "markdownDescription": "- default: `$dimension.s3`" },
         { "const": "$duration.s1", "title": "$duration.s1", "description": "default: 50ms", "markdownDescription": "- default: `50ms`" },
         { "const": "$duration.s2", "title": "$duration.s2", "description": "default: 100ms", "markdownDescription": "- default: `100ms`" },
         { "const": "$duration.s3", "title": "$duration.s3", "description": "default: 150ms", "markdownDescription": "- default: `150ms`" },
