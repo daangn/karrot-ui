@@ -91,7 +91,7 @@ export const VariantTable = (props: Props) => {
             return (
               <tr key={combinationKey}>
                 {keys.map((key) => (
-                  <td key={key} style={{ width: "10%" }}>
+                  <td data-chromatic="ignore" key={key} style={{ width: "10%" }}>
                     <div style={{ display: "flex", flexDirection: "column" }}>
                       <span
                         style={{
