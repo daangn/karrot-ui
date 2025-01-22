@@ -2,7 +2,7 @@ declare interface ActionSheetItemVariant {
   /**
   * @default neutral
   */
-  tone: "neutral" | "danger";
+  tone: "neutral" | "critical";
 }
 
 declare type ActionSheetItemVariantMap = {

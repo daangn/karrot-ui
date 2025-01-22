@@ -13,7 +13,7 @@ import {
 } from "seed-design/ui/alert-dialog";
 import { Column, Columns } from "@seed-design/react";
 
-const AlertDialogDanger = () => {
+const AlertDialogCritical = () => {
   return (
     // You can set z-index dialog with "--layer-index" custom property. useful for stackflow integration.
     <AlertDialogRoot>
@@ -34,7 +34,7 @@ const AlertDialogDanger = () => {
             </Column>
             <Column>
               <AlertDialogAction asChild>
-                <ActionButton variant="dangerSolid">확인</ActionButton>
+                <ActionButton variant="criticalSolid">확인</ActionButton>
               </AlertDialogAction>
             </Column>
           </Columns>
@@ -44,4 +44,4 @@ const AlertDialogDanger = () => {
   );
 };
 
-export default AlertDialogDanger;
+export default AlertDialogCritical;

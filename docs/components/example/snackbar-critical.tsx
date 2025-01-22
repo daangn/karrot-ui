@@ -14,7 +14,7 @@ function Component() {
           onClose: () => {},
           render: () => (
             <Snackbar
-              variant="danger"
+              variant="critical"
               message="알림 메세지"
               actionLabel="확인"
               onAction={() => {}}

@@ -117,12 +117,31 @@ export function getColorRootageTokens(): string {
     }),
   );
 
+  const mannerTemps = variables.filter((variable) => variable.name.startsWith("manner-temp/"));
+
+  const mannerTempColors = Object.fromEntries(
+    mannerTemps.map((mannerTemp) => {
+      const lightValue = mannerTemp.valuesByMode["1928:7"] as RGBA;
+      const darkValue = mannerTemp.valuesByMode["1928:8"] as RGBA;
+      return [
+        `$color.${mannerTemp.name.split("/").join(".")}`,
+        {
+          values: {
+            "theme-light": rgbaToHex(lightValue.r, lightValue.g, lightValue.b, lightValue.a),
+            "theme-dark": rgbaToHex(darkValue.r, darkValue.g, darkValue.b, darkValue.a),
+          },
+        },
+      ];
+    }),
+  );
+
   return YAML.stringify({
     tokens: {
       ...paletteColors,
       ...fgColors,
       ...bgColors,
       ...strokeColors,
+      ...mannerTempColors,
     },
   });
 }

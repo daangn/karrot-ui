@@ -78,7 +78,7 @@ export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
           svg={
             variant === "positive" ? (
               <IconCheckmarkCircleFill />
-            ) : variant === "danger" ? (
+            ) : variant === "critical" ? (
               <IconExclamationmarkCircleFill />
             ) : null
           }

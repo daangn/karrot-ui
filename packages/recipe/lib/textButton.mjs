@@ -33,7 +33,7 @@ export const textButtonVariantMap = {
     "brand",
     "neutral",
     "neutralSubtle",
-    "danger"
+    "critical"
   ],
   "size": [
     "large",

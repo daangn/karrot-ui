@@ -238,44 +238,44 @@ const inlineBanner = defineRecipe({
           color: vars.variantWarningSolid.enabled.dismissIcon.color,
         },
       },
-      dangerWeak: {
+      criticalWeak: {
         root: {
-          backgroundColor: vars.variantDangerWeak.enabled.root.color,
+          backgroundColor: vars.variantCriticalWeak.enabled.root.color,
         },
         icon: {
-          color: vars.variantDangerWeak.enabled.icon.color,
+          color: vars.variantCriticalWeak.enabled.icon.color,
         },
         title: {
-          color: vars.variantDangerWeak.enabled.title.color,
+          color: vars.variantCriticalWeak.enabled.title.color,
         },
         description: {
-          color: vars.variantDangerWeak.enabled.description.color,
+          color: vars.variantCriticalWeak.enabled.description.color,
         },
         linkLabel: {
-          color: vars.variantDangerWeak.enabled.linkLabel.color,
+          color: vars.variantCriticalWeak.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.variantDangerWeak.enabled.actionableIcon.color,
+          color: vars.variantCriticalWeak.enabled.actionableIcon.color,
         },
       },
-      dangerSolid: {
+      criticalSolid: {
         root: {
-          backgroundColor: vars.variantDangerSolid.enabled.root.color,
+          backgroundColor: vars.variantCriticalSolid.enabled.root.color,
         },
         icon: {
-          color: vars.variantDangerSolid.enabled.icon.color,
+          color: vars.variantCriticalSolid.enabled.icon.color,
         },
         title: {
-          color: vars.variantDangerSolid.enabled.title.color,
+          color: vars.variantCriticalSolid.enabled.title.color,
         },
         description: {
-          color: vars.variantDangerSolid.enabled.description.color,
+          color: vars.variantCriticalSolid.enabled.description.color,
         },
         linkLabel: {
-          color: vars.variantDangerSolid.enabled.linkLabel.color,
+          color: vars.variantCriticalSolid.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.variantDangerSolid.enabled.actionableIcon.color,
+          color: vars.variantCriticalSolid.enabled.actionableIcon.color,
         },
       },
     },

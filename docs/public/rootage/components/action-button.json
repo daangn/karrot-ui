@@ -166,10 +166,10 @@
         }
       }
     },
-    "variant=danger solid": {
+    "variant=critical solid": {
       "enabled": {
         "root": {
-          "color": "$color.bg.danger-solid"
+          "color": "$color.bg.critical-solid"
         },
         "label": {
           "color": "$color.palette.static-white"
@@ -190,7 +190,7 @@
       },
       "pressed": {
         "root": {
-          "color": "$color.bg.danger-solid-pressed"
+          "color": "$color.bg.critical-solid-pressed"
         }
       },
       "disabled": {
@@ -212,7 +212,7 @@
       },
       "loading": {
         "root": {
-          "color": "$color.bg.danger-solid-pressed"
+          "color": "$color.bg.critical-solid-pressed"
         }
       }
     },

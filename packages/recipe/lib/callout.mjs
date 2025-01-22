@@ -56,7 +56,7 @@ export const calloutVariantMap = {
     "neutral",
     "informative",
     "warning",
-    "danger",
+    "critical",
     "magic"
   ]
 };

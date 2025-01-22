@@ -37,7 +37,7 @@ const ActivityActionSheet: ActivityComponentType = () => {
       >
         <ActionSheetItem onClick={handleAction("add")} label="Add" />
         <ActionSheetItem onClick={handleAction("edit")} label="Edit" />
-        <ActionSheetItem onClick={handleAction("delete")} tone="danger" label="Delete" />
+        <ActionSheetItem onClick={handleAction("delete")} tone="critical" label="Delete" />
       </ActionSheetContent>
     </ActionSheetRoot>
   );

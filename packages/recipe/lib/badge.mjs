@@ -78,15 +78,15 @@ const compoundVariants = [
     "variant": "outline"
   },
   {
-    "tone": "danger",
+    "tone": "critical",
     "variant": "weak"
   },
   {
-    "tone": "danger",
+    "tone": "critical",
     "variant": "solid"
   },
   {
-    "tone": "danger",
+    "tone": "critical",
     "variant": "outline"
   }
 ];
@@ -110,7 +110,7 @@ export const badgeVariantMap = {
     "brand",
     "informative",
     "positive",
-    "danger"
+    "critical"
   ]
 };
 

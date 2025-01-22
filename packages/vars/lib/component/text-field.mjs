@@ -37,7 +37,7 @@ export const vars = {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "errorMessage": {
-        "color": "var(--seed-v3-color-fg-danger)",
+        "color": "var(--seed-v3-color-fg-critical)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "characterCount": {
@@ -56,8 +56,8 @@ export const vars = {
     },
     "invalid": {
       "field": {
-        "color": "var(--seed-v3-color-bg-danger-weak)",
-        "strokeColor": "var(--seed-v3-color-stroke-danger)"
+        "color": "var(--seed-v3-color-bg-critical-weak)",
+        "strokeColor": "var(--seed-v3-color-stroke-critical)"
       }
     },
     "invalidFocused": {

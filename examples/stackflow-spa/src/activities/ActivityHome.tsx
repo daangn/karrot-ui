@@ -111,11 +111,11 @@ const ActivityHome: ActivityComponentType = () => {
             onClick={() =>
               snackbarAdapter.create({
                 render: () => (
-                  <Snackbar variant="danger" message="Disco Party!" actionLabel="Dance" />
+                  <Snackbar variant="critical" message="Disco Party!" actionLabel="Dance" />
                 ),
               })
             }
-            title="Snackbar (danger)"
+            title="Snackbar (critical)"
           />
         </List>
       </div>

@@ -51,12 +51,12 @@ const extendedActionSheetItem = defineRecipe({
           color: vars.toneNeutral.enabled.prefixIcon.color,
         },
       },
-      danger: {
+      critical: {
         label: {
-          color: vars.toneDanger.enabled.label.color,
+          color: vars.toneCritical.enabled.label.color,
         },
         prefixIcon: {
-          color: vars.toneDanger.enabled.prefixIcon.color,
+          color: vars.toneCritical.enabled.prefixIcon.color,
         },
       },
     },

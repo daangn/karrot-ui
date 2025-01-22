@@ -58,8 +58,8 @@ export const inlineBannerVariantMap = {
     "informativeWeak",
     "warningWeak",
     "warningSolid",
-    "dangerWeak",
-    "dangerSolid"
+    "criticalWeak",
+    "criticalSolid"
   ]
 };
 

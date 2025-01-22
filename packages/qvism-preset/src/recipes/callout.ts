@@ -185,31 +185,31 @@ const callout = defineRecipe({
           color: vars.toneWarning.enabled.dismissIcon.color,
         },
       },
-      danger: {
+      critical: {
         root: {
-          backgroundColor: vars.toneDanger.enabled.root.color,
+          backgroundColor: vars.toneCritical.enabled.root.color,
 
           [pseudo(":is(button)", active)]: {
-            backgroundColor: vars.toneDanger.pressed.root.color,
+            backgroundColor: vars.toneCritical.pressed.root.color,
           },
         },
         icon: {
-          color: vars.toneDanger.enabled.icon.color,
+          color: vars.toneCritical.enabled.icon.color,
         },
         title: {
-          color: vars.toneDanger.enabled.title.color,
+          color: vars.toneCritical.enabled.title.color,
         },
         description: {
-          color: vars.toneDanger.enabled.description.color,
+          color: vars.toneCritical.enabled.description.color,
         },
         linkLabel: {
-          color: vars.toneDanger.enabled.linkLabel.color,
+          color: vars.toneCritical.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.toneDanger.enabled.actionableIcon.color,
+          color: vars.toneCritical.enabled.actionableIcon.color,
         },
         dismissIcon: {
-          color: vars.toneDanger.enabled.dismissIcon.color,
+          color: vars.toneCritical.enabled.dismissIcon.color,
         },
       },
       magic: {

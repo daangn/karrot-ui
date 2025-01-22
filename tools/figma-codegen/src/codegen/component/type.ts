@@ -39,7 +39,7 @@ export type ActionButtonProperties = InferFromDefinition<{
       "Neutral Outline",
       "Brand Solid",
       "Brand Outline",
-      "Danger Solid",
+      "Critical Solid",
     ];
   };
   State: {
@@ -146,7 +146,7 @@ export type BadgeProperties = InferFromDefinition<{
   Tone: {
     type: "VARIANT";
     defaultValue: "Neutral";
-    variantOptions: ["Neutral", "Brand", "Informative", "Positive", "Danger"];
+    variantOptions: ["Neutral", "Brand", "Informative", "Positive", "Critical"];
   };
   Variant: {
     type: "VARIANT";
@@ -183,7 +183,7 @@ export type CalloutProperties = InferFromDefinition<{
   Tone: {
     type: "VARIANT";
     defaultValue: "Neutral";
-    variantOptions: ["Neutral", "Informative", "Warning", "Danger", "Magic"];
+    variantOptions: ["Neutral", "Informative", "Warning", "Critical", "Magic"];
   };
   State: {
     type: "VARIANT";
@@ -442,8 +442,8 @@ export type InlineBannerProperties = InferFromDefinition<{
       "Positive Weak",
       "Warning Solid",
       "Warning Weak",
-      "Danger Solid",
-      "Danger Weak",
+      "Critical Solid",
+      "Critical Weak",
     ];
   };
   "Show Title": {
@@ -677,7 +677,7 @@ export type SnackbarProperties = InferFromDefinition<{
   Variant: {
     type: "VARIANT";
     defaultValue: "Default";
-    variantOptions: ["Default", "Positive", "Danger"];
+    variantOptions: ["Default", "Positive", "Critical"];
   };
 }>;
 
@@ -783,7 +783,7 @@ export type TextButtonProperties = InferFromDefinition<{
   Tone: {
     type: "VARIANT";
     defaultValue: "Brand";
-    variantOptions: ["Neutral", "Neutral Subtle", "Brand", "Danger"];
+    variantOptions: ["Neutral", "Neutral Subtle", "Brand", "Critical"];
   };
   State: {
     type: "VARIANT";

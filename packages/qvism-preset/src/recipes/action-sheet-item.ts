@@ -45,9 +45,9 @@ const actionSheetItem = defineRecipe({
           color: vars.toneNeutral.enabled.label.color,
         },
       },
-      danger: {
+      critical: {
         label: {
-          color: vars.toneDanger.enabled.label.color,
+          color: vars.toneCritical.enabled.label.color,
         },
       },
     },

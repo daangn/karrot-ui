@@ -52,10 +52,10 @@
         }
       }
     },
-    "tone=danger": {
+    "tone=critical": {
       "enabled": {
         "root": {
-          "color": "$color.fg.danger"
+          "color": "$color.fg.critical"
         }
       }
     },

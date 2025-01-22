@@ -29,6 +29,6 @@
 .actionSheetItem__label--tone_neutral {
     color: var(--seed-v3-color-fg-neutral);
 }
-.actionSheetItem__label--tone_danger {
-    color: var(--seed-v3-color-fg-danger);
+.actionSheetItem__label--tone_critical {
+    color: var(--seed-v3-color-fg-critical);
 }

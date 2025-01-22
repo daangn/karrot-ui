@@ -46,10 +46,10 @@ export declare const vars: {
       }
     }
   },
-  "toneDanger": {
+  "toneCritical": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       }
     }
   },

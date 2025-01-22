@@ -24,8 +24,8 @@
     border-color: var(--seed-v3-color-stroke-field-focused);
 }
 .textField__field:is(:invalid, [data-invalid]) {
-    background-color: var(--seed-v3-color-bg-danger-weak);
-    border-color: var(--seed-v3-color-stroke-danger);
+    background-color: var(--seed-v3-color-bg-critical-weak);
+    border-color: var(--seed-v3-color-stroke-critical);
 }
 .textField__field:is(:invalid, [data-invalid]):is(:focus, [data-focus]) {
     background-color: var(--seed-v3-color-bg-layer-default);
@@ -105,7 +105,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: var(--seed-v3-color-fg-danger);
+    color: var(--seed-v3-color-fg-critical);
 }
 .textField__errorIcon {
     flex: none;

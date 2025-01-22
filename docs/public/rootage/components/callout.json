@@ -125,33 +125,33 @@
         }
       }
     },
-    "tone=danger": {
+    "tone=critical": {
       "enabled": {
         "root": {
-          "color": "$color.bg.danger-weak"
+          "color": "$color.bg.critical-weak"
         },
         "icon": {
-          "color": "$color.fg.danger-contrast"
+          "color": "$color.fg.critical-contrast"
         },
         "title": {
-          "color": "$color.fg.danger-contrast"
+          "color": "$color.fg.critical-contrast"
         },
         "description": {
-          "color": "$color.fg.danger-contrast"
+          "color": "$color.fg.critical-contrast"
         },
         "linkLabel": {
-          "color": "$color.fg.danger-contrast"
+          "color": "$color.fg.critical-contrast"
         },
         "dismissIcon": {
-          "color": "$color.fg.danger-contrast"
+          "color": "$color.fg.critical-contrast"
         },
         "actionableIcon": {
-          "color": "$color.fg.danger-contrast"
+          "color": "$color.fg.critical-contrast"
         }
       },
       "pressed": {
         "root": {
-          "color": "$color.bg.danger-weak-pressed"
+          "color": "$color.bg.critical-weak-pressed"
         }
       }
     },

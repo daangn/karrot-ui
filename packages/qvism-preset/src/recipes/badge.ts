@@ -73,7 +73,7 @@ const badge = defineRecipe({
       brand: {},
       informative: {},
       positive: {},
-      danger: {},
+      critical: {},
     },
   },
   compoundVariants: [
@@ -240,38 +240,38 @@ const badge = defineRecipe({
       },
     },
     {
-      tone: "danger",
+      tone: "critical",
       variant: "weak",
       css: {
         root: {
-          backgroundColor: vars.toneDangerVariantWeak.enabled.root.color,
+          backgroundColor: vars.toneCriticalVariantWeak.enabled.root.color,
         },
         label: {
-          color: vars.toneDangerVariantWeak.enabled.label.color,
+          color: vars.toneCriticalVariantWeak.enabled.label.color,
         },
       },
     },
     {
-      tone: "danger",
+      tone: "critical",
       variant: "solid",
       css: {
         root: {
-          backgroundColor: vars.toneDangerVariantSolid.enabled.root.color,
+          backgroundColor: vars.toneCriticalVariantSolid.enabled.root.color,
         },
         label: {
-          color: vars.toneDangerVariantSolid.enabled.label.color,
+          color: vars.toneCriticalVariantSolid.enabled.label.color,
         },
       },
     },
     {
-      tone: "danger",
+      tone: "critical",
       variant: "outline",
       css: {
         root: {
-          boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneDangerVariantOutline.enabled.root.strokeColor}`,
+          boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneCriticalVariantOutline.enabled.root.strokeColor}`,
         },
         label: {
-          color: vars.toneDangerVariantOutline.enabled.label.color,
+          color: vars.toneCriticalVariantOutline.enabled.label.color,
         },
       },
     },

@@ -60,7 +60,7 @@ const ActivityExtendedActionSheet: ActivityComponentType = () => {
           />
           <ExtendedActionSheetItem
             onClick={handleAction("delete")}
-            tone="danger"
+            tone="critical"
             prefixIcon={<IconTrashcanLine />}
             label="Delete"
           />

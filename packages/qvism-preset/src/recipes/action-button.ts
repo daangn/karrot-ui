@@ -204,46 +204,46 @@ const actionButton = defineRecipe({
           "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
         },
       },
-      dangerSolid: {
+      criticalSolid: {
         root: {
-          background: vars.variantDangerSolid.enabled.root.color,
+          background: vars.variantCriticalSolid.enabled.root.color,
           [pseudo(active)]: {
-            background: vars.variantDangerSolid.pressed.root.color,
+            background: vars.variantCriticalSolid.pressed.root.color,
           },
           [pseudo(disabled)]: {
-            background: vars.variantDangerSolid.disabled.root.color,
+            background: vars.variantCriticalSolid.disabled.root.color,
           },
           [pseudo(loading)]: {
-            background: vars.variantDangerSolid.loading.root.color,
+            background: vars.variantCriticalSolid.loading.root.color,
           },
         },
         label: {
-          color: vars.variantDangerSolid.enabled.label.color,
+          color: vars.variantCriticalSolid.enabled.label.color,
           [pseudo(disabled)]: {
-            color: vars.variantDangerSolid.disabled.label.color,
+            color: vars.variantCriticalSolid.disabled.label.color,
           },
         },
         icon: {
-          color: vars.variantDangerSolid.enabled.icon.color,
+          color: vars.variantCriticalSolid.enabled.icon.color,
           [pseudo(disabled)]: {
-            color: vars.variantDangerSolid.disabled.icon.color,
+            color: vars.variantCriticalSolid.disabled.icon.color,
           },
         },
         prefixIcon: {
-          color: vars.variantDangerSolid.enabled.prefixIcon.color,
+          color: vars.variantCriticalSolid.enabled.prefixIcon.color,
           [pseudo(disabled)]: {
-            color: vars.variantDangerSolid.disabled.prefixIcon.color,
+            color: vars.variantCriticalSolid.disabled.prefixIcon.color,
           },
         },
         suffixIcon: {
-          color: vars.variantDangerSolid.enabled.suffixIcon.color,
+          color: vars.variantCriticalSolid.enabled.suffixIcon.color,
           [pseudo(disabled)]: {
-            color: vars.variantDangerSolid.disabled.suffixIcon.color,
+            color: vars.variantCriticalSolid.disabled.suffixIcon.color,
           },
         },
         progressIndicator: {
-          "--track-color": vars.variantDangerSolid.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantDangerSolid.enabled.progressCircle.rangeColor,
+          "--track-color": vars.variantCriticalSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantCriticalSolid.enabled.progressCircle.rangeColor,
         },
       },
       brandOutline: {

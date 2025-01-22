@@ -421,55 +421,55 @@
   --range-color: var(--seed-v3-color-fg-neutral);
 }
 
-.actionButton__root--variant_dangerSolid {
-  background: var(--seed-v3-color-bg-danger-solid);
+.actionButton__root--variant_criticalSolid {
+  background: var(--seed-v3-color-bg-critical-solid);
 }
 
-.actionButton__root--variant_dangerSolid:is(:active, [data-active]) {
-  background: var(--seed-v3-color-bg-danger-solid-pressed);
+.actionButton__root--variant_criticalSolid:is(:active, [data-active]) {
+  background: var(--seed-v3-color-bg-critical-solid-pressed);
 }
 
-.actionButton__root--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__root--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
   background: var(--seed-v3-color-bg-disabled);
 }
 
-.actionButton__root--variant_dangerSolid[data-loading] {
-  background: var(--seed-v3-color-bg-danger-solid-pressed);
+.actionButton__root--variant_criticalSolid[data-loading] {
+  background: var(--seed-v3-color-bg-critical-solid-pressed);
 }
 
-.actionButton__label--variant_dangerSolid {
+.actionButton__label--variant_criticalSolid {
   color: var(--seed-v3-color-palette-static-white);
 }
 
-.actionButton__label--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__label--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
   color: var(--seed-v3-color-fg-disabled);
 }
 
-.actionButton__icon--variant_dangerSolid {
+.actionButton__icon--variant_criticalSolid {
   color: var(--seed-v3-color-palette-static-white);
 }
 
-.actionButton__icon--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__icon--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
   color: var(--seed-v3-color-fg-disabled);
 }
 
-.actionButton__prefixIcon--variant_dangerSolid {
+.actionButton__prefixIcon--variant_criticalSolid {
   color: var(--seed-v3-color-palette-static-white);
 }
 
-.actionButton__prefixIcon--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__prefixIcon--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
   color: var(--seed-v3-color-fg-disabled);
 }
 
-.actionButton__suffixIcon--variant_dangerSolid {
+.actionButton__suffixIcon--variant_criticalSolid {
   color: var(--seed-v3-color-palette-static-white);
 }
 
-.actionButton__suffixIcon--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__suffixIcon--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
   color: var(--seed-v3-color-fg-disabled);
 }
 
-.actionButton__progressIndicator--variant_dangerSolid {
+.actionButton__progressIndicator--variant_criticalSolid {
   --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
   --range-color: var(--seed-v3-color-palette-static-white);
 }
@@ -1426,8 +1426,8 @@
   color: var(--seed-v3-color-fg-neutral);
 }
 
-.actionSheetItem__label--tone_danger {
-  color: var(--seed-v3-color-fg-danger);
+.actionSheetItem__label--tone_critical {
+  color: var(--seed-v3-color-fg-critical);
 }
 
 .actionSheetCloseButton__root {
@@ -1600,8 +1600,8 @@
   color: var(--seed-v3-color-fg-neutral);
 }
 
-.extendedActionSheetItem__label--tone_danger, .extendedActionSheetItem__prefixIcon--tone_danger {
-  color: var(--seed-v3-color-fg-danger);
+.extendedActionSheetItem__label--tone_critical, .extendedActionSheetItem__prefixIcon--tone_critical {
+  color: var(--seed-v3-color-fg-critical);
 }
 
 .extendedActionSheetCloseButton__root {
@@ -1915,28 +1915,28 @@
   color: var(--seed-v3-color-fg-positive);
 }
 
-.badge__root--tone_danger-variant_weak {
-  background-color: var(--seed-v3-color-bg-danger-weak);
+.badge__root--tone_critical-variant_weak {
+  background-color: var(--seed-v3-color-bg-critical-weak);
 }
 
-.badge__label--tone_danger-variant_weak {
-  color: var(--seed-v3-color-fg-danger-contrast);
+.badge__label--tone_critical-variant_weak {
+  color: var(--seed-v3-color-fg-critical-contrast);
 }
 
-.badge__root--tone_danger-variant_solid {
-  background-color: var(--seed-v3-color-bg-danger-solid);
+.badge__root--tone_critical-variant_solid {
+  background-color: var(--seed-v3-color-bg-critical-solid);
 }
 
-.badge__label--tone_danger-variant_solid {
+.badge__label--tone_critical-variant_solid {
   color: var(--seed-v3-color-palette-static-white);
 }
 
-.badge__root--tone_danger-variant_outline {
-  box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-danger);
+.badge__root--tone_critical-variant_outline {
+  box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-critical);
 }
 
-.badge__label--tone_danger-variant_outline {
-  color: var(--seed-v3-color-fg-danger);
+.badge__label--tone_critical-variant_outline {
+  color: var(--seed-v3-color-fg-critical);
 }
 
 .radio__root {
@@ -2739,16 +2739,16 @@
   color: var(--seed-v3-color-fg-warning-contrast);
 }
 
-.callout__root--tone_danger {
-  background-color: var(--seed-v3-color-bg-danger-weak);
+.callout__root--tone_critical {
+  background-color: var(--seed-v3-color-bg-critical-weak);
 }
 
-.callout__root--tone_danger:is(button):is(:active, [data-active]) {
-  background-color: var(--seed-v3-color-bg-danger-weak-pressed);
+.callout__root--tone_critical:is(button):is(:active, [data-active]) {
+  background-color: var(--seed-v3-color-bg-critical-weak-pressed);
 }
 
-.callout__icon--tone_danger, .callout__title--tone_danger, .callout__description--tone_danger, .callout__linkLabel--tone_danger, .callout__actionableIcon--tone_danger, .callout__dismissIcon--tone_danger {
-  color: var(--seed-v3-color-fg-danger-contrast);
+.callout__icon--tone_critical, .callout__title--tone_critical, .callout__description--tone_critical, .callout__linkLabel--tone_critical, .callout__actionableIcon--tone_critical, .callout__dismissIcon--tone_critical {
+  color: var(--seed-v3-color-fg-critical-contrast);
 }
 
 .callout__root--tone_magic {
@@ -3400,19 +3400,19 @@
   color: var(--seed-v3-color-fg-neutral);
 }
 
-.inlineBanner__root--variant_dangerWeak {
-  background-color: var(--seed-v3-color-bg-danger-weak);
+.inlineBanner__root--variant_criticalWeak {
+  background-color: var(--seed-v3-color-bg-critical-weak);
 }
 
-.inlineBanner__icon--variant_dangerWeak, .inlineBanner__title--variant_dangerWeak, .inlineBanner__description--variant_dangerWeak, .inlineBanner__linkLabel--variant_dangerWeak, .inlineBanner__actionableIcon--variant_dangerWeak {
-  color: var(--seed-v3-color-fg-danger-contrast);
+.inlineBanner__icon--variant_criticalWeak, .inlineBanner__title--variant_criticalWeak, .inlineBanner__description--variant_criticalWeak, .inlineBanner__linkLabel--variant_criticalWeak, .inlineBanner__actionableIcon--variant_criticalWeak {
+  color: var(--seed-v3-color-fg-critical-contrast);
 }
 
-.inlineBanner__root--variant_dangerSolid {
-  background-color: var(--seed-v3-color-bg-danger-solid);
+.inlineBanner__root--variant_criticalSolid {
+  background-color: var(--seed-v3-color-bg-critical-solid);
 }
 
-.inlineBanner__icon--variant_dangerSolid, .inlineBanner__title--variant_dangerSolid, .inlineBanner__description--variant_dangerSolid, .inlineBanner__linkLabel--variant_dangerSolid, .inlineBanner__actionableIcon--variant_dangerSolid {
+.inlineBanner__icon--variant_criticalSolid, .inlineBanner__title--variant_criticalSolid, .inlineBanner__description--variant_criticalSolid, .inlineBanner__linkLabel--variant_criticalSolid, .inlineBanner__actionableIcon--variant_criticalSolid {
   color: var(--seed-v3-color-palette-static-white);
 }
 
@@ -3935,8 +3935,8 @@
   color: var(--seed-v3-color-fg-positive);
 }
 
-.snackbar__prefixIcon--variant_danger {
-  color: var(--seed-v3-color-fg-danger);
+.snackbar__prefixIcon--variant_critical {
+  color: var(--seed-v3-color-fg-critical);
 }
 
 .snackbarRegion__root {
@@ -4184,8 +4184,8 @@
   color: var(--seed-v3-color-fg-neutral-subtle);
 }
 
-.textButton__root--tone_danger {
-  color: var(--seed-v3-color-fg-danger);
+.textButton__root--tone_critical {
+  color: var(--seed-v3-color-fg-critical);
 }
 
 .textButton__root--size_large {
@@ -4263,8 +4263,8 @@
 }
 
 .textField__field:is(:invalid, [data-invalid]) {
-  background-color: var(--seed-v3-color-bg-danger-weak);
-  border-color: var(--seed-v3-color-stroke-danger);
+  background-color: var(--seed-v3-color-bg-critical-weak);
+  border-color: var(--seed-v3-color-stroke-critical);
 }
 
 .textField__field:is(:invalid, [data-invalid]):is(:focus, [data-focus]) {
@@ -4354,7 +4354,7 @@
 }
 
 .textField__errorMessage {
-  color: var(--seed-v3-color-fg-danger);
+  color: var(--seed-v3-color-fg-critical);
   flex-direction: row;
   align-items: center;
   display: flex;

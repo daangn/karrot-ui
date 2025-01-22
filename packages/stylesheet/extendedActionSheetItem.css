@@ -32,9 +32,9 @@
 .extendedActionSheetItem__prefixIcon--tone_neutral {
     color: var(--seed-v3-color-fg-neutral);
 }
-.extendedActionSheetItem__label--tone_danger {
-    color: var(--seed-v3-color-fg-danger);
+.extendedActionSheetItem__label--tone_critical {
+    color: var(--seed-v3-color-fg-critical);
 }
-.extendedActionSheetItem__prefixIcon--tone_danger {
-    color: var(--seed-v3-color-fg-danger);
+.extendedActionSheetItem__prefixIcon--tone_critical {
+    color: var(--seed-v3-color-fg-critical);
 }

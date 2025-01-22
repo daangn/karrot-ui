@@ -43,8 +43,8 @@
 .textButton__root--tone_neutralSubtle {
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
-.textButton__root--tone_danger {
-    color: var(--seed-v3-color-fg-danger);
+.textButton__root--tone_critical {
+    color: var(--seed-v3-color-fg-critical);
 }
 .textButton__root--size_large {
     min-height: 2rem;

@@ -6,22 +6,22 @@ import {
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
 import { Stack } from "@/registry/ui/layout";
 
-export default function InlineBannerDangerWeak() {
+export default function InlineBannerCriticalWeak() {
   return (
     <Stack gap="s4" width="full">
       <InlineBanner
-        variant="dangerWeak"
+        variant="criticalWeak"
         icon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <LinkInlineBanner
-        variant="dangerWeak"
+        variant="criticalWeak"
         icon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
         linkLabel="자세히보기"
       />
       <ActionableInlineBanner
-        variant="dangerWeak"
+        variant="criticalWeak"
         icon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />

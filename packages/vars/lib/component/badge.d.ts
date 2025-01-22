@@ -190,33 +190,33 @@ export declare const vars: {
       }
     }
   },
-  "toneDangerVariantWeak": {
+  "toneCriticalVariantWeak": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger-weak)"
+        "color": "var(--seed-v3-color-bg-critical-weak)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
+        "color": "var(--seed-v3-color-fg-critical-contrast)"
       }
     }
   },
-  "toneDangerVariantSolid": {
+  "toneCriticalVariantSolid": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger-solid)"
+        "color": "var(--seed-v3-color-bg-critical-solid)"
       },
       "label": {
         "color": "var(--seed-v3-color-palette-static-white)"
       }
     }
   },
-  "toneDangerVariantOutline": {
+  "toneCriticalVariantOutline": {
     "enabled": {
       "root": {
-        "strokeColor": "var(--seed-v3-color-stroke-danger)"
+        "strokeColor": "var(--seed-v3-color-stroke-critical)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       }
     }
   }

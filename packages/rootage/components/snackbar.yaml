@@ -44,7 +44,7 @@ data:
     enabled:
       prefixIcon:
         color: $color.fg.positive
-  variant=danger:
+  variant=critical:
     enabled:
       prefixIcon:
-        color: $color.fg.danger
+        color: $color.fg.critical

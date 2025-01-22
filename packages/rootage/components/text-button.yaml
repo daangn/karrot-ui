@@ -33,10 +33,10 @@ data:
     enabled:
       root:
         color: $color.fg.neutral-subtle
-  tone=danger:
+  tone=critical:
     enabled:
       root:
-        color: $color.fg.danger
+        color: $color.fg.critical
   size=large:
     enabled:
       root:

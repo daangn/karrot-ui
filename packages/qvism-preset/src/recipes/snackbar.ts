@@ -123,9 +123,9 @@ export const snackbar = defineRecipe({
           color: vars.variantPositive.enabled.prefixIcon.color,
         },
       },
-      danger: {
+      critical: {
         prefixIcon: {
-          color: vars.variantDanger.enabled.prefixIcon.color,
+          color: vars.variantCritical.enabled.prefixIcon.color,
         },
       },
     },

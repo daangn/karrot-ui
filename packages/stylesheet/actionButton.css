@@ -179,43 +179,43 @@
     --track-color: var(--seed-v3-color-palette-gray-500);
     --range-color: var(--seed-v3-color-fg-neutral);
 }
-.actionButton__root--variant_dangerSolid {
-    background: var(--seed-v3-color-bg-danger-solid);
+.actionButton__root--variant_criticalSolid {
+    background: var(--seed-v3-color-bg-critical-solid);
 }
-.actionButton__root--variant_dangerSolid:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-danger-solid-pressed);
+.actionButton__root--variant_criticalSolid:is(:active, [data-active]) {
+    background: var(--seed-v3-color-bg-critical-solid-pressed);
 }
-.actionButton__root--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__root--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
     background: var(--seed-v3-color-bg-disabled);
 }
-.actionButton__root--variant_dangerSolid[data-loading] {
-    background: var(--seed-v3-color-bg-danger-solid-pressed);
+.actionButton__root--variant_criticalSolid[data-loading] {
+    background: var(--seed-v3-color-bg-critical-solid-pressed);
 }
-.actionButton__label--variant_dangerSolid {
+.actionButton__label--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.actionButton__label--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__label--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__icon--variant_dangerSolid {
+.actionButton__icon--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.actionButton__icon--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__icon--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__prefixIcon--variant_dangerSolid {
+.actionButton__prefixIcon--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.actionButton__prefixIcon--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__prefixIcon--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__suffixIcon--variant_dangerSolid {
+.actionButton__suffixIcon--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.actionButton__suffixIcon--variant_dangerSolid:is(:disabled, [disabled], [data-disabled]) {
+.actionButton__suffixIcon--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
 }
-.actionButton__progressIndicator--variant_dangerSolid {
+.actionButton__progressIndicator--variant_criticalSolid {
     --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
     --range-color: var(--seed-v3-color-palette-static-white);
 }

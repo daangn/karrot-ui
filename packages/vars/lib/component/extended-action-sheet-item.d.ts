@@ -33,13 +33,13 @@ export declare const vars: {
       }
     }
   },
-  "toneDanger": {
+  "toneCritical": {
     "enabled": {
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       }
     }
   }

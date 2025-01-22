@@ -72,9 +72,9 @@ const textButton = defineRecipe({
           color: vars.toneNeutralSubtle.enabled.root.color,
         },
       },
-      danger: {
+      critical: {
         root: {
-          color: vars.toneDanger.enabled.root.color,
+          color: vars.toneCritical.enabled.root.color,
         },
       },
     },

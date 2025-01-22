@@ -22,7 +22,7 @@ data:
     enabled:
       label:
         color: $color.fg.neutral
-  tone=danger:
+  tone=critical:
     enabled:
       label:
-        color: $color.fg.danger
+        color: $color.fg.critical

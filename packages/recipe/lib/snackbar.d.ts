@@ -2,7 +2,7 @@ declare interface SnackbarVariant {
   /**
   * @default default
   */
-  variant: "default" | "positive" | "danger";
+  variant: "default" | "positive" | "critical";
 }
 
 declare type SnackbarVariantMap = {

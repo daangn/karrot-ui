@@ -17,7 +17,7 @@ const ActionSheetPreview = () => {
       <ActionSheetContent aria-label="Action Sheet">
         <ActionSheetItem label="Action 1" />
         <ActionSheetItem label="Action 2" />
-        <ActionSheetItem tone="danger" label="Action 3" />
+        <ActionSheetItem tone="critical" label="Action 3" />
       </ActionSheetContent>
     </ActionSheetRoot>
   );

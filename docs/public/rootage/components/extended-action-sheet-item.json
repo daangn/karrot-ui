@@ -39,13 +39,13 @@
         }
       }
     },
-    "tone=danger": {
+    "tone=critical": {
       "enabled": {
         "prefixIcon": {
-          "color": "$color.fg.danger"
+          "color": "$color.fg.critical"
         },
         "label": {
-          "color": "$color.fg.danger"
+          "color": "$color.fg.critical"
         }
       }
     }

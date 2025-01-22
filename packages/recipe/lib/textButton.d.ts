@@ -2,7 +2,7 @@ declare interface TextButtonVariant {
   /**
   * @default brand
   */
-  tone: "brand" | "neutral" | "neutralSubtle" | "danger";
+  tone: "brand" | "neutral" | "neutralSubtle" | "critical";
 /**
   * @default medium
   */

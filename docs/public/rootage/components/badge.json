@@ -196,33 +196,33 @@
         }
       }
     },
-    "tone=danger, variant=weak": {
+    "tone=critical, variant=weak": {
       "enabled": {
         "root": {
-          "color": "$color.bg.danger-weak"
+          "color": "$color.bg.critical-weak"
         },
         "label": {
-          "color": "$color.fg.danger-contrast"
+          "color": "$color.fg.critical-contrast"
         }
       }
     },
-    "tone=danger, variant=solid": {
+    "tone=critical, variant=solid": {
       "enabled": {
         "root": {
-          "color": "$color.bg.danger-solid"
+          "color": "$color.bg.critical-solid"
         },
         "label": {
           "color": "$color.palette.static-white"
         }
       }
     },
-    "tone=danger, variant=outline": {
+    "tone=critical, variant=outline": {
       "enabled": {
         "root": {
-          "strokeColor": "$color.stroke.danger"
+          "strokeColor": "$color.stroke.critical"
         },
         "label": {
-          "color": "$color.fg.danger"
+          "color": "$color.fg.critical"
         }
       }
     }

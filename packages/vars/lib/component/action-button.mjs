@@ -160,10 +160,10 @@ export const vars = {
       }
     }
   },
-  "variantDangerSolid": {
+  "variantCriticalSolid": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger-solid)"
+        "color": "var(--seed-v3-color-bg-critical-solid)"
       },
       "label": {
         "color": "var(--seed-v3-color-palette-static-white)"
@@ -184,7 +184,7 @@ export const vars = {
     },
     "pressed": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger-solid-pressed)"
+        "color": "var(--seed-v3-color-bg-critical-solid-pressed)"
       }
     },
     "disabled": {
@@ -206,7 +206,7 @@ export const vars = {
     },
     "loading": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger-solid-pressed)"
+        "color": "var(--seed-v3-color-bg-critical-solid-pressed)"
       }
     }
   },

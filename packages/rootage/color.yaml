@@ -321,7 +321,7 @@ data:
       values:
         theme-light: $color.palette.gray-1000
         theme-dark: $color.palette.gray-1000
-    $color.fg.danger:
+    $color.fg.critical:
       values:
         theme-light: $color.palette.red-700
         theme-dark: $color.palette.red-700
@@ -353,7 +353,7 @@ data:
       values:
         theme-light: $color.palette.carrot-800
         theme-dark: $color.palette.carrot-900
-    $color.fg.danger-contrast:
+    $color.fg.critical-contrast:
       values:
         theme-light: $color.palette.red-900
         theme-dark: $color.palette.red-900
@@ -409,19 +409,19 @@ data:
       values:
         theme-light: $color.palette.carrot-200
         theme-dark: $color.palette.carrot-300
-    $color.bg.danger-weak:
+    $color.bg.critical-weak:
       values:
         theme-light: $color.palette.red-100
         theme-dark: $color.palette.red-100
-    $color.bg.danger-solid:
+    $color.bg.critical-solid:
       values:
         theme-light: $color.palette.red-700
         theme-dark: $color.palette.red-600
-    $color.bg.danger-solid-pressed:
+    $color.bg.critical-solid-pressed:
       values:
         theme-light: $color.palette.red-800
         theme-dark: $color.palette.red-700
-    $color.bg.danger-weak-pressed:
+    $color.bg.critical-weak-pressed:
       values:
         theme-light: $color.palette.red-200
         theme-dark: $color.palette.red-200
@@ -557,7 +557,7 @@ data:
       values:
         theme-light: $color.palette.gray-400
         theme-dark: $color.palette.gray-400
-    $color.stroke.danger:
+    $color.stroke.critical:
       values:
         theme-light: $color.palette.red-300
         theme-dark: $color.palette.red-300

@@ -1,5 +1,5 @@
 export const neutral = "var(--seed-v3-color-fg-neutral)";
-export const danger = "var(--seed-v3-color-fg-danger)";
+export const critical = "var(--seed-v3-color-fg-critical)";
 export const positive = "var(--seed-v3-color-fg-positive)";
 export const informative = "var(--seed-v3-color-fg-informative)";
 export const placeholder = "var(--seed-v3-color-fg-placeholder)";
@@ -7,7 +7,7 @@ export const disabled = "var(--seed-v3-color-fg-disabled)";
 export const brand = "var(--seed-v3-color-fg-brand)";
 export const magic = "var(--seed-v3-color-fg-magic)";
 export const brandContrast = "var(--seed-v3-color-fg-brand-contrast)";
-export const dangerContrast = "var(--seed-v3-color-fg-danger-contrast)";
+export const criticalContrast = "var(--seed-v3-color-fg-critical-contrast)";
 export const informativeContrast = "var(--seed-v3-color-fg-informative-contrast)";
 export const magicContrast = "var(--seed-v3-color-fg-magic-contrast)";
 export const neutralMuted = "var(--seed-v3-color-fg-neutral-muted)";

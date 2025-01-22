@@ -2164,7 +2164,7 @@
           "color",
           "fg"
         ],
-        "key": "danger"
+        "key": "critical"
       },
       "values": [
         {
@@ -2444,7 +2444,7 @@
           "color",
           "fg"
         ],
-        "key": "danger-contrast"
+        "key": "critical-contrast"
       },
       "values": [
         {
@@ -2934,7 +2934,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-weak"
+        "key": "critical-weak"
       },
       "values": [
         {
@@ -2969,7 +2969,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-solid"
+        "key": "critical-solid"
       },
       "values": [
         {
@@ -3004,7 +3004,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-solid-pressed"
+        "key": "critical-solid-pressed"
       },
       "values": [
         {
@@ -3039,7 +3039,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-weak-pressed"
+        "key": "critical-weak-pressed"
       },
       "values": [
         {
@@ -4229,7 +4229,7 @@
           "color",
           "stroke"
         ],
-        "key": "danger"
+        "key": "critical"
       },
       "values": [
         {
@@ -6692,7 +6692,7 @@
         },
         {
           "key": {
-            "variant": "danger solid"
+            "variant": "critical solid"
           },
           "state": [
             {
@@ -6711,7 +6711,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid"
+                        "key": "critical-solid"
                       }
                     }
                   ]
@@ -6825,7 +6825,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid-pressed"
+                        "key": "critical-solid-pressed"
                       }
                     }
                   ]
@@ -6935,7 +6935,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid-pressed"
+                        "key": "critical-solid-pressed"
                       }
                     }
                   ]
@@ -9307,7 +9307,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -9326,7 +9326,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -11144,7 +11144,7 @@
         },
         {
           "key": {
-            "tone": "danger",
+            "tone": "critical",
             "variant": "weak"
           },
           "state": [
@@ -11164,7 +11164,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     }
                   ]
@@ -11180,7 +11180,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -11191,7 +11191,7 @@
         },
         {
           "key": {
-            "tone": "danger",
+            "tone": "critical",
             "variant": "solid"
           },
           "state": [
@@ -11211,7 +11211,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid"
+                        "key": "critical-solid"
                       }
                     }
                   ]
@@ -11238,7 +11238,7 @@
         },
         {
           "key": {
-            "tone": "danger",
+            "tone": "critical",
             "variant": "outline"
           },
           "state": [
@@ -11258,7 +11258,7 @@
                           "color",
                           "stroke"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -11274,7 +11274,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -12333,7 +12333,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -12352,7 +12352,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     }
                   ]
@@ -12368,7 +12368,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12384,7 +12384,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12400,7 +12400,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12416,7 +12416,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12432,7 +12432,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12448,7 +12448,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12471,7 +12471,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak-pressed"
+                        "key": "critical-weak-pressed"
                       }
                     }
                   ]
@@ -15488,7 +15488,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -15507,7 +15507,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -15523,7 +15523,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -17558,7 +17558,7 @@
         },
         {
           "key": {
-            "variant": "danger weak"
+            "variant": "critical weak"
           },
           "state": [
             {
@@ -17577,7 +17577,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     }
                   ]
@@ -17593,7 +17593,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17609,7 +17609,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17625,7 +17625,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17641,7 +17641,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17657,7 +17657,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17668,7 +17668,7 @@
         },
         {
           "key": {
-            "variant": "danger solid"
+            "variant": "critical solid"
           },
           "state": [
             {
@@ -17687,7 +17687,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid"
+                        "key": "critical-solid"
                       }
                     }
                   ]
@@ -20641,7 +20641,7 @@
         },
         {
           "key": {
-            "variant": "danger"
+            "variant": "critical"
           },
           "state": [
             {
@@ -20660,7 +20660,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -21716,7 +21716,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -21735,7 +21735,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -22230,7 +22230,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     },
                     {
@@ -22338,7 +22338,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     },
                     {
@@ -22349,7 +22349,7 @@
                           "color",
                           "stroke"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
