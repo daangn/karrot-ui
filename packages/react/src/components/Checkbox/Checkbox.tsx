@@ -5,7 +5,7 @@ import { checkbox, type CheckboxVariantProps } from "@seed-design/recipe/checkbo
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon, type IconProps } from "../private/Icon";
+import { Icon } from "../private/Icon";
 
 const { withProvider, withContext, useClassNames } = createStyleContext(checkbox);
 const withStateProps = createWithStateProps([useCheckboxContext]);
@@ -30,37 +30,55 @@ export const CheckboxControl = withContext<HTMLDivElement, CheckboxControlProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface CheckboxCheckedIconProps extends IconProps {}
+export interface CheckboxIndicatorProps extends React.SVGAttributes<SVGSVGElement> {
+  /**
+   * The icon to display when the checkbox is unchecked.
+   */
+  unchecked?: React.ReactNode;
 
-export const CheckboxCheckedIcon = forwardRef<SVGSVGElement, CheckboxCheckedIconProps>(
-  ({ svg }, ref) => {
+  /**
+   * The icon to display when the checkbox is checked.
+   */
+  checked: React.ReactNode;
+
+  /**
+   * The icon to display when the checkbox is in an indeterminate state.
+   */
+  indeterminate?: React.ReactNode;
+}
+
+export const CheckboxIndicator = forwardRef<SVGSVGElement, CheckboxIndicatorProps>(
+  (
+    {
+      unchecked: uncheckedSvg,
+      checked: checkedSvg,
+      indeterminate: indeterminateSvg,
+      ...otherProps
+    },
+    ref,
+  ) => {
     const { stateProps, checked, indeterminate } = useCheckboxContext();
     const classNames = useClassNames();
 
-    if (!checked || indeterminate) return null;
+    const mergedProps = mergeProps(
+      stateProps,
+      { className: classNames.icon },
+      otherProps as React.HTMLAttributes<HTMLElement>,
+    );
 
-    const mergedProps = mergeProps(stateProps, { className: classNames.icon });
+    if (indeterminate && !indeterminateSvg) {
+      console.warn(
+        "CheckboxIndicator: the `indeterminate` prop must be provided when the checkbox is in an indeterminate state.",
+      );
+    }
 
-    return <Icon ref={ref} svg={svg} {...mergedProps} />;
+    if (indeterminate) return <Icon ref={ref} svg={indeterminateSvg} {...mergedProps} />;
+    if (checked) return <Icon ref={ref} svg={checkedSvg} {...mergedProps} />;
+    if (uncheckedSvg) return <Icon ref={ref} svg={uncheckedSvg} {...mergedProps} />;
+    return null;
   },
 );
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface CheckboxIndeterminateIconProps extends IconProps {}
-
-export const CheckboxIndeterminateIcon = forwardRef<SVGSVGElement, CheckboxIndeterminateIconProps>(
-  ({ svg }, ref) => {
-    const { stateProps, indeterminate } = useCheckboxContext();
-    const classNames = useClassNames();
-
-    if (!indeterminate) return null;
-
-    const mergedProps = mergeProps(stateProps, { className: classNames.icon });
-
-    return <Icon ref={ref} svg={svg} {...mergedProps} />;
-  },
-);
+CheckboxIndicator.displayName = "CheckboxIndicator";
 
 ////////////////////////////////////////////////////////////////////////////////////
 
