@@ -10,12 +10,10 @@ interface ComponentExampleProps {
   name: string;
 
   previewOnly?: boolean;
-
-  height?: number;
 }
 
 export function ComponentExample(props: ComponentExampleProps) {
-  const { name, height } = props;
+  const { name } = props;
 
   const Code = React.useMemo(() => {
     return (Index as Record<string, string>)[name];
@@ -24,7 +22,7 @@ export function ComponentExample(props: ComponentExampleProps) {
   if (props.previewOnly) {
     return (
       <React.Suspense fallback={null}>
-        <ExampleFrame name={name} height={height} />
+        <ExampleFrame name={name} />
       </React.Suspense>
     );
   }
@@ -34,7 +32,7 @@ export function ComponentExample(props: ComponentExampleProps) {
       <Tabs items={["미리보기", "코드"]}>
         <Tab value="미리보기">
           <React.Suspense fallback={null}>
-            <ExampleFrame name={name} height={height} />
+            <ExampleFrame name={name} />
           </React.Suspense>
         </Tab>
         <Tab value="코드">

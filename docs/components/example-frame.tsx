@@ -6,14 +6,15 @@ import type ReactDOM from "react-dom/client";
 
 interface ExampleFrameProps {
   name: string;
-
-  height?: number;
 }
 
-export default function ExampleFrame({ name, height }: ExampleFrameProps) {
+const MIN_HEIGHT = 300;
+
+export default function ExampleFrame({ name }: ExampleFrameProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const rootRef = useRef<ReactDOM.Root | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [height, setHeight] = useState(MIN_HEIGHT);
 
   useEffect(() => {
     if (!iframeRef.current) return;
@@ -82,6 +83,22 @@ export default function ExampleFrame({ name, height }: ExampleFrameProps) {
       }
     };
   }, [name]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      const iframe = iframeRef.current;
+      const doc = iframe?.contentDocument;
+      const root = doc?.getElementById("root");
+
+      if (root) {
+        const contentHeight = root.children[0]?.scrollHeight;
+        if (contentHeight && contentHeight > MIN_HEIGHT) {
+          const padding = 48;
+          setHeight(contentHeight + padding);
+        }
+      }
+    }
+  }, [isLoaded]);
 
   return (
     <iframe
