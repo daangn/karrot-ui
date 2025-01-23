@@ -6,9 +6,11 @@ import type ReactDOM from "react-dom/client";
 
 interface ExampleFrameProps {
   name: string;
+
+  height?: number;
 }
 
-export default function ExampleFrame({ name }: ExampleFrameProps) {
+export default function ExampleFrame({ name, height }: ExampleFrameProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const rootRef = useRef<ReactDOM.Root | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -86,9 +88,10 @@ export default function ExampleFrame({ name }: ExampleFrameProps) {
       ref={iframeRef}
       title="example-frame"
       className={clsx(
-        "w-full h-[300px] bg-seed-bg-layer-default transition-opacity duration-200",
+        "w-full bg-seed-bg-layer-default transition-opacity duration-200",
         isLoaded ? "opacity-100" : "opacity-0",
       )}
+      style={{ height: height ? `${height}px` : "300px" }}
     />
   );
 }
