@@ -2,14 +2,25 @@
 
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
+import type ReactDOM from "react-dom/client";
 
 interface ExampleFrameProps {
   name: string;
 }
 
+function getStyles(doc: Document) {
+  return Array.from(doc.styleSheets)
+    .map((sheet) => {
+      return Array.from(sheet.cssRules)
+        .map((rule) => rule.cssText)
+        .join("\n");
+    })
+    .join("\n");
+}
+
 export default function ExampleFrame({ name }: ExampleFrameProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const rootRef = useRef<ReactDOM.Container | null>(null);
+  const rootRef = useRef<ReactDOM.Root | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -20,17 +31,7 @@ export default function ExampleFrame({ name }: ExampleFrameProps) {
     if (!doc) return;
 
     // 현재 문서의 모든 스타일시트를 가져옵니다
-    const styles = Array.from(document.styleSheets)
-      .map((sheet) => {
-        try {
-          return Array.from(sheet.cssRules)
-            .map((rule) => rule.cssText)
-            .join("\n");
-        } catch {
-          return "";
-        }
-      })
-      .join("\n");
+    const styles = getStyles(doc);
 
     const initialContent = `
     <!DOCTYPE html>
@@ -64,25 +65,19 @@ export default function ExampleFrame({ name }: ExampleFrameProps) {
       rootRef.current = ReactDOM.createRoot(root);
     }
 
-    // 예제 컴포넌트 동적 로드 및 렌더링
+    // 컴포넌트 로드 및 렌더링
     import(`./example/${name}.tsx`).then((module) => {
       const Component = module.default;
-      const root = doc.getElementById("root");
-
-      if (root) {
-        const ReactDOM = require("react-dom/client");
-        const container = ReactDOM.createRoot(root);
-        container.render(<Component />);
+      if (rootRef.current) {
+        rootRef.current.render(<Component />);
         setIsLoaded(true);
       }
     });
 
     return () => {
-      const root = doc.getElementById("root");
-      if (root) {
-        const ReactDOM = require("react-dom/client");
-        const container = ReactDOM.createRoot(root);
-        container.unmount();
+      if (rootRef.current) {
+        rootRef.current.unmount();
+        rootRef.current = null;
       }
     };
   }, [name]);
