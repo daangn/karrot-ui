@@ -8,7 +8,7 @@ export interface ErrorStateProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "title" | "color"> {
   title?: React.ReactNode;
 
-  description?: React.ReactNode;
+  description: React.ReactNode;
 
   primaryActionProps?: ActionButtonProps;
 
@@ -28,6 +28,11 @@ const bg = {
 const primaryActionVariant = {
   default: "neutralWeak",
   basement: "neutralOutline",
+} as const;
+
+const descriptionTextStyle = {
+  descriptionOnly: "bodyMediumReadingDefault",
+  withTitle: "bodySmallReadingDefault",
 } as const;
 
 /**
@@ -67,7 +72,11 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>(
           <Text
             align="center"
             color="fg.neutralSubtle"
-            textStyle="bodyMediumDefault"
+            textStyle={
+              title
+                ? descriptionTextStyle.withTitle
+                : descriptionTextStyle.descriptionOnly
+            }
           >
             {description}
           </Text>

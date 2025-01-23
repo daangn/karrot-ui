@@ -6,14 +6,16 @@ import { ErrorState, type ErrorStateProps } from "../design-system/ui/error-stat
 
 const ActivityErrorState: ActivityComponentType = () => {
   const [variant, setVariant] = React.useState<ErrorStateProps["variant"]>("default");
+  const [hideTitle, setHideTitle] = React.useState(false);
   return (
     <AppScreen appBar={{}}>
       <ErrorState
         variant={variant}
-        title="에러 타이틀"
+        title={hideTitle ? undefined : "에러 타이틀"}
         description="에러가 발생했습니다."
         primaryActionProps={{
-          children: "다시 시도",
+          children: hideTitle ? "타이틀 보이기" : "타이틀 숨기기",
+          onClick: () => setHideTitle((prev) => !prev),
         }}
         secondaryActionProps={{
           children: variant === "basement" ? "default로 전환" : "basement로 전환",
