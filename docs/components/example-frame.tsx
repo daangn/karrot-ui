@@ -8,16 +8,6 @@ interface ExampleFrameProps {
   name: string;
 }
 
-function getStyles(doc: Document) {
-  return Array.from(doc.styleSheets)
-    .map((sheet) => {
-      return Array.from(sheet.cssRules)
-        .map((rule) => rule.cssText)
-        .join("\n");
-    })
-    .join("\n");
-}
-
 export default function ExampleFrame({ name }: ExampleFrameProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const rootRef = useRef<ReactDOM.Root | null>(null);
@@ -30,8 +20,17 @@ export default function ExampleFrame({ name }: ExampleFrameProps) {
     const doc = iframe.contentDocument;
     if (!doc) return;
 
-    // 현재 문서의 모든 스타일시트를 가져옵니다
-    const styles = getStyles(doc);
+    const styles = Array.from(document.styleSheets)
+      .map((sheet) => {
+        try {
+          return Array.from(sheet.cssRules)
+            .map((rule) => rule.cssText)
+            .join("\n");
+        } catch {
+          return "";
+        }
+      })
+      .join("\n");
 
     const initialContent = `
     <!DOCTYPE html>
