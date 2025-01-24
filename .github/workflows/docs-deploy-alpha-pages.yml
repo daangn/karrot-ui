@@ -13,6 +13,7 @@ on:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }}
 
 name: Deploy seed-design-v3 docs (Alpha)
 
