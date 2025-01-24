@@ -11,7 +11,7 @@
     "sanity:build": "sanity build",
     "postinstall": "fumadocs-mdx",
     "gen": "yarn generate:all",
-    "pages:build": "yarn dlx @cloudflare/next-on-pages",
+    "pages:build": "yarn next-on-pages",
     "preview": "yarn pages:build && wrangler pages dev",
     "deploy": "yarn pages:build && wrangler pages deploy",
     "generate:all": "yarn generate:registry && yarn generate:example && yarn generate:rootage",
