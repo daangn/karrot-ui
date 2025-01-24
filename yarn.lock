@@ -5182,10 +5182,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@figma/rest-api-spec@npm:^0.22.0":
-  version: 0.22.0
-  resolution: "@figma/rest-api-spec@npm:0.22.0"
-  checksum: 10/4be3cd847cc1a74fc0d9eaf1050e3aea2fe0e822516a44b5c21f2e78bcc027d0eb6ce9fa574c6420883ba34d43b6e855a7d4505e27f90eaeb26653d1592f30a0
+"@figma/rest-api-spec@npm:^0.23.0":
+  version: 0.23.0
+  resolution: "@figma/rest-api-spec@npm:0.23.0"
+  checksum: 10/98bb6036006e89ec0bdffe60f255307680581b547f59a8bbbd7e8a6d27b411bb140fc9f66d04cbf6b0d2c38419cd6da7f81a5813c3559065f19155b7f35f33d7
   languageName: node
   linkType: hard
 
@@ -7752,7 +7752,7 @@ __metadata:
     "@create-figma-plugin/tsconfig": "npm:^3.0.2"
     "@create-figma-plugin/utilities": "npm:^3.0.2"
     "@figma/plugin-typings": "npm:^1.107.0-beta.1"
-    "@seed-design/figma-extractor": "npm:0.0.1-alpha-20250124060425"
+    "@seed-design/figma-extractor": "npm:0.0.1-alpha-20250124065342"
     change-case: "npm:^5.2.0"
     ts-pattern: "npm:^5.2.0"
     typescript: "npm:^5.4.5"
@@ -7785,11 +7785,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/figma-extractor@npm:0.0.1-alpha-20250124060425, @seed-design/figma-extractor@workspace:tools/figma-extractor":
+"@seed-design/figma-extractor@npm:0.0.1-alpha-20250124065342, @seed-design/figma-extractor@workspace:tools/figma-extractor":
   version: 0.0.0-use.local
   resolution: "@seed-design/figma-extractor@workspace:tools/figma-extractor"
   dependencies:
-    "@figma/rest-api-spec": "npm:^0.22.0"
+    "@figma/rest-api-spec": "npm:^0.23.0"
     "@types/fs-extra": "npm:^11.0.4"
     cac: "npm:^6.7.14"
     change-case: "npm:^5.4.4"

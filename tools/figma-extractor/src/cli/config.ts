@@ -28,7 +28,17 @@ const explorer = cosmiconfig(MODULE_NAME, {
   ],
 });
 
-export const config = ((await explorer.search()) ?? { config: {} }).config as Config;
+const DEFAULT_CONFIG: Config = {
+  data: {
+    componentSet: {},
+    variable: {},
+    style: {},
+  },
+};
+
+const searchResult = await explorer.search();
+
+export const config = searchResult ? (searchResult.config as Config) : DEFAULT_CONFIG;
 
 export type Filter<T> = (item: T) => boolean;
 export type Transform<T> = (item: T) => MetadataItem;

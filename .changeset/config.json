@@ -13,7 +13,6 @@
     "@seed-design/figma-codegen",
     "@seed-design/figma-contrast-checker",
     "@seed-design/figma-expose-variables",
-    "@seed-design/figma-extractor",
     "@seed-design/figma-spec-widget"
   ],
   "snapshot": {

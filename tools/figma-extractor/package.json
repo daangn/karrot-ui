@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/figma-extractor",
-  "version": "0.0.1-alpha-20250124060425",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
@@ -16,12 +16,12 @@
     }
   },
   "devDependencies": {
-    "@figma/rest-api-spec": "^0.22.0",
     "@types/fs-extra": "^11.0.4",
     "nanobundle": "^2.1.0",
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "@figma/rest-api-spec": "^0.23.0",
     "cac": "^6.7.14",
     "change-case": "^5.4.4",
     "cosmiconfig": "^9.0.0",
