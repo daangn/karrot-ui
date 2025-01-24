@@ -10,7 +10,7 @@ export async function Live() {
       {(await draftMode()).isEnabled && (
         <>
           <DisableDraftMode />
-          <VisualEditing />
+          <VisualEditing zIndex={1000} />
         </>
       )}
     </>
