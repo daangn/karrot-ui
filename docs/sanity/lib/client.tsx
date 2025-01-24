@@ -6,6 +6,7 @@ export const client = createClient({
   dataset: dataset,
   apiVersion: apiVersion,
   useCdn: false,
+  resultSourceMap: "withKeyArraySelector",
   stega: {
     enabled: true,
     studioUrl: "/admin#",
