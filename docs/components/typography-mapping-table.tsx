@@ -1,10 +1,9 @@
-import { type ComponentSpecData } from "@seed-design/rootage-core";
-import { getRootage } from "@/components/get-rootage";
+import { getRootage } from "@/components/rootage";
 import { Fragment } from "react";
 
 interface TypographyMapping {
   previousTokenId: string;
-  newTextStyleIds: (keyof ComponentSpecData)[];
+  newTextStyleIds: string[];
   note?: string;
 }
 
@@ -22,8 +21,8 @@ export async function TypographyMappingTable({ mappings }: TypographyMappingTabl
   const tableItems: TypographyMapping[] = mappings.map((item) => ({
     previousTokenId: item.previousTokenId,
     newTextStyleIds: item.newTextStyleIds.map((id) => {
-      const typography = rootage.componentSpecEntities.typography.data.find(
-        ({ key }) => "textStyle" in key && key.textStyle === id,
+      const typography = rootage.componentSpecEntities.typography.body.find(({ variants }) =>
+        variants.some((variant) => variant.name === "textStyle" && variant.value === id),
       );
 
       if (!typography) {

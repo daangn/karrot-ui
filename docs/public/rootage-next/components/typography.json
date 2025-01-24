@@ -1,0 +1,653 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "typography",
+    "name": "Typography"
+  },
+  "data": [
+    {
+      "variants": {
+        "textStyle": "label-small-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s1"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s1"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-small-strong"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s1"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s1"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.medium"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-small-stronger"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s1"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s1"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-medium-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s2"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s2"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-medium-strong"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s2"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s2"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.medium"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-medium-stronger"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s2"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s2"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-large-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s3"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s3"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-large-strong"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s3"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s3"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.medium"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "label-large-stronger"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s3"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s3"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-small-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s4"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-small-reading-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-small-strong"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s4"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.medium"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-small-stronger"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s4"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-medium-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-medium-reading-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s6"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-medium-strong"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.medium"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "body-medium-stronger"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "title-small-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "title-medium-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s6"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s6"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "title-large-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s7"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s7"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "heading-small-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s8"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s8"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "heading-medium-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s9"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s9"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "textStyle": "heading-large-default"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s10"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s10"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

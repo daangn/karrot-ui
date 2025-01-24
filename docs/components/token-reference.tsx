@@ -1,5 +1,6 @@
-import { resolveToken, stringifyValueExpression } from "@seed-design/rootage-core";
-import { getRootage } from "./get-rootage";
+import { resolveToken } from "@seed-design/rootage-core";
+import { getRootage } from "./rootage";
+import { stringifyValueLit } from "./rootage";
 import { TokenTable, TokenTableItem } from "./token-table";
 
 interface TokenReferenceProps {
@@ -19,7 +20,7 @@ export async function TokenReference(props: TokenReferenceProps) {
       });
       return {
         id: tokenId,
-        values: [...path.slice(1), stringifyValueExpression(value)],
+        values: [...path.slice(1), stringifyValueLit(value)],
         resolvedValue: value,
       };
     });

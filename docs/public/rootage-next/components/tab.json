@@ -1,0 +1,153 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "tab",
+    "name": "Tab"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "label": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral-subtle"
+              }
+            },
+            "notification": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s1"
+              },
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.full"
+              },
+              "color": {
+                "type": "color",
+                "value": "$color.bg.brand-solid"
+              },
+              "marginLeft": {
+                "type": "color",
+                "value": "$dimension.s0_5"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "selected"
+          ],
+          "slots": {
+            "label": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "disabled"
+          ],
+          "slots": {
+            "label": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.disabled"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "size": "medium"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "minHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 44,
+                  "unit": "px"
+                }
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              },
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              }
+            },
+            "label": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "size": "small"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "minHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 40,
+                  "unit": "px"
+                }
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              },
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              }
+            },
+            "label": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

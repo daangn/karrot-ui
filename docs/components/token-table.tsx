@@ -1,6 +1,6 @@
 "use client";
 
-import { ValueExpression } from "@seed-design/rootage-core";
+import { AST } from "@seed-design/rootage-core";
 import { useState } from "react";
 import { TokenCell } from "./token-cell";
 import { TokenLink } from "./token-link";
@@ -8,7 +8,7 @@ import { TokenLink } from "./token-link";
 export interface TokenTableItem {
   id: string;
   values: string[];
-  resolvedValue: ValueExpression;
+  resolvedValue: AST.ValueLit;
 }
 
 export interface TokenTableProps {

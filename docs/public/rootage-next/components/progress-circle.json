@@ -1,0 +1,230 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "progress-circle",
+    "name": "Progress Circle"
+  },
+  "data": [
+    {
+      "variants": {
+        "size": "40"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s10"
+              },
+              "thickness": {
+                "type": "dimension",
+                "value": {
+                  "value": 5,
+                  "unit": "px"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "size": "24"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s6"
+              },
+              "thickness": {
+                "type": "dimension",
+                "value": {
+                  "value": 3,
+                  "unit": "px"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "indeterminate": "false"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "range": {
+              "lengthDuration": {
+                "type": "duration",
+                "value": {
+                  "value": 300,
+                  "unit": "ms"
+                }
+              },
+              "lengthTimingFunction": {
+                "type": "cubicBezier",
+                "value": [
+                  0,
+                  0,
+                  0.15,
+                  1
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "indeterminate": "true"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "range": {
+              "lengthDuration": {
+                "type": "duration",
+                "value": {
+                  "value": 1.2,
+                  "unit": "s"
+                }
+              },
+              "rotateDuration": {
+                "type": "duration",
+                "value": {
+                  "value": 1.2,
+                  "unit": "s"
+                }
+              },
+              "headTimingFunction": {
+                "type": "cubicBezier",
+                "value": [
+                  0.35,
+                  0,
+                  0.65,
+                  1
+                ]
+              },
+              "tailTimingFunction": {
+                "type": "cubicBezier",
+                "value": [
+                  0.35,
+                  0,
+                  0.65,
+                  0.6
+                ]
+              },
+              "rotateTimingFunction": {
+                "type": "cubicBezier",
+                "value": [
+                  0.35,
+                  0.25,
+                  0.65,
+                  0.75
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "neutral"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "track": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.gray-200"
+              }
+            },
+            "range": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.gray-500"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "brand"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "track": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.carrot-200"
+              }
+            },
+            "range": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.brand-solid"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "static white"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "track": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white-alpha-200"
+              }
+            },
+            "range": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

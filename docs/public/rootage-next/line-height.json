@@ -1,0 +1,122 @@
+{
+  "kind": "Tokens",
+  "metadata": {
+    "id": "line-height",
+    "name": "Line Height"
+  },
+  "data": {
+    "collection": "global",
+    "tokens": {
+      "$line-height.s1": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 0.9375,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s2": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s3": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.125,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s4": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.1875,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s5": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.375,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s6": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.5,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s7": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.6875,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s8": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.875,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s9": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 2,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$line-height.s10": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 2.1875,
+              "unit": "rem"
+            }
+          }
+        }
+      }
+    }
+  }
+}

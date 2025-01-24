@@ -1,0 +1,158 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "segment",
+    "name": "Segment"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "height": {
+                "type": "color",
+                "value": "$dimension.s8"
+              },
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.full"
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s4"
+              },
+              "minWidth": {
+                "type": "dimension",
+                "value": {
+                  "value": 86,
+                  "unit": "px"
+                }
+              }
+            },
+            "label": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.medium"
+              },
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral-muted"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "enabled",
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.neutral-weak-pressed"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "enabled",
+            "selected"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.layer-default"
+              },
+              "shadow": {
+                "type": "shadow",
+                "value": [
+                  {
+                    "offsetX": {
+                      "value": 0,
+                      "unit": "px"
+                    },
+                    "offsetY": {
+                      "value": 1,
+                      "unit": "px"
+                    },
+                    "blur": {
+                      "value": 6,
+                      "unit": "px"
+                    },
+                    "spread": {
+                      "value": 0,
+                      "unit": "px"
+                    },
+                    "color": "#0000000d"
+                  }
+                ]
+              },
+              "transformDuration": {
+                "type": "color",
+                "value": "$duration.s4"
+              },
+              "transformTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.easing"
+              }
+            },
+            "label": {
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              },
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "enabled",
+            "selected",
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.layer-default-pressed"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "disabled"
+          ],
+          "slots": {
+            "label": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.disabled"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

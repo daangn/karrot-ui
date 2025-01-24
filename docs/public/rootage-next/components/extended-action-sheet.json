@@ -1,0 +1,144 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "extended-action-sheet",
+    "name": "Extended Action Sheet"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "backdrop": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.overlay"
+              },
+              "enterDuration": {
+                "type": "color",
+                "value": "$duration.s2"
+              },
+              "enterTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.enter"
+              },
+              "enterOpacity": {
+                "type": "number",
+                "value": 0
+              },
+              "exitDuration": {
+                "type": "color",
+                "value": "$duration.s2"
+              },
+              "exitTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.exit"
+              },
+              "exitOpacity": {
+                "type": "number",
+                "value": 0
+              }
+            },
+            "content": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.layer-floating"
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.spacing-x.global-gutter"
+              },
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s4"
+              },
+              "cornerTopRadius": {
+                "type": "color",
+                "value": "$radius.s5"
+              },
+              "enterDuration": {
+                "type": "color",
+                "value": "$duration.s6"
+              },
+              "enterTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.enter-expressive"
+              },
+              "exitDuration": {
+                "type": "color",
+                "value": "$duration.s4"
+              },
+              "exitTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.exit"
+              }
+            },
+            "header": {
+              "gap": {
+                "type": "color",
+                "value": "$dimension.s1"
+              },
+              "paddingBottom": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "title": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s6"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s6"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              },
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "list": {
+              "gap": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              }
+            },
+            "group": {
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.s4"
+              }
+            },
+            "divider": {
+              "strokeBottomWidth": {
+                "type": "dimension",
+                "value": {
+                  "value": 1,
+                  "unit": "px"
+                }
+              },
+              "strokeColor": {
+                "type": "color",
+                "value": "$color.stroke.neutral"
+              }
+            },
+            "footer": {
+              "paddingTop": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

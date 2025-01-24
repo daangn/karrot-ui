@@ -1,0 +1,33 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "identity-placeholder",
+    "name": "Identity Placeholder"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.gray-400"
+              }
+            },
+            "image": {
+              "color": {
+                "type": "color",
+                "value": "#f7f8fa"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
