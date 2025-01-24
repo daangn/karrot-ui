@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { defineEnableDraftMode } from "next-sanity/draft-mode";
 import { client } from "@/sanity/lib/client";
 import { viewerToken } from "@/sanity/env.server";

@@ -11,6 +11,9 @@
     "sanity:build": "sanity build",
     "postinstall": "fumadocs-mdx",
     "gen": "yarn generate:all",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy",
     "generate:all": "yarn generate:registry && yarn generate:example && yarn generate:rootage",
     "generate:registry": "vite-node scripts/generate-registry.ts",
     "generate:example": "vite-node scripts/generate-example.ts",
@@ -67,6 +70,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
+    "@cloudflare/next-on-pages": "^1.13.7",
     "@storybook/addon-essentials": "^8.4.4",
     "@storybook/addon-interactions": "^8.4.4",
     "@storybook/addon-onboarding": "^8.4.4",
@@ -86,7 +90,8 @@
     "tailwindcss": "^3.4.10",
     "ts-pattern": "^5.5.0",
     "typescript": "^5.5.4",
-    "vite-node": "^2.1.2"
+    "vite-node": "^2.1.2",
+    "wrangler": "^3.105.0"
   },
   "ultra": {
     "concurrent": [
