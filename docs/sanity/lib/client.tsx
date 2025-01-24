@@ -5,5 +5,9 @@ export const client = createClient({
   projectId: projectId,
   dataset: dataset,
   apiVersion: apiVersion,
-  useCdn: true,
+  useCdn: false,
+  stega: {
+    enabled: true,
+    studioUrl: "/admin#",
+  },
 });

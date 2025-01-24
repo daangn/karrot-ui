@@ -87,7 +87,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug?: string } }) {
   const blogs = await sanityFetch({
     query: BLOG_QUERY,
-    perspective: "published",
+    stega: false,
   }).then((res) => res.data as Blog[]);
 
   const page = blogs.find((blog) => blog.slug.current === params.slug);
