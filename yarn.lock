@@ -7794,6 +7794,7 @@ __metadata:
     change-case: "npm:^5.4.4"
     cosmiconfig: "npm:^9.0.0"
     dotenv: "npm:^16.4.7"
+    es-toolkit: "npm:^1.31.0"
     figma-api: "npm:^2.0.1-beta"
     fs-extra: "npm:^11.3.0"
     nanobundle: "npm:^2.1.0"
@@ -13864,6 +13865,18 @@ __metadata:
     prettier-plugin-sort-re-exports@0.0.1:
       unplugged: true
   checksum: 10/4bc6984728d8289cd47f1ae87a6ff2a3b54ca9cfbb1cf880e2d3137921aed620d9d6e574daf8430297c61c59e2374356dfd219b84b6f38909d57853bc0c066e7
+  languageName: node
+  linkType: hard
+
+"es-toolkit@npm:^1.31.0":
+  version: 1.31.0
+  resolution: "es-toolkit@npm:1.31.0"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+  checksum: 10/6d9d88901f6e9589c991d2f9cd85df8076eb02dc472a5661477332fb9870c23e0b13170a19cd37cfe58839717792b132a44aecc6e4954c1e57cddb6c5f531570
   languageName: node
   linkType: hard
 

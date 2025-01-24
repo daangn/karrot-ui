@@ -9,7 +9,7 @@ export type GenerateStylesMetadataOptions = {
   transform?: Transform<StyleMetadataItem>;
 };
 
-export async function generateStylesMetadata({
+export async function generateStyleMetadata({
   fileKey,
   dir,
   options: { filter = defaultFilter, transform = defaultTransform } = {},
@@ -18,9 +18,15 @@ export async function generateStylesMetadata({
   dir: string;
   options?: GenerateStylesMetadataOptions;
 }) {
-  console.log("Generating style metadata");
+  console.log("style 메타데이터 생성 중");
 
   const stylesMetadata = (await getStylesMetadataInFile({ fileKey })).filter(filter).map(transform);
+
+  if (stylesMetadata.length === 0) {
+    console.error("추출할 style 메타데이터가 없습니다.");
+
+    return;
+  }
 
   for await (const data of stylesMetadata) {
     const { mjs, dts } = createContent(data);
@@ -39,4 +45,6 @@ export async function generateStylesMetadata({
 
   await writeFile(mjsPath, mjs);
   await writeFile(dtsPath, dts);
+
+  console.log(`style 메타데이터 ${stylesMetadata.length}개 생성 완료`);
 }

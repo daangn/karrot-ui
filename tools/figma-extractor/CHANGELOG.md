@@ -1,5 +1,11 @@
 # @seed-design/figma-extractor
 
+## 0.0.2
+
+### Patch Changes
+
+- component 추출 추가, 로그 개선 등
+
 ## 0.0.1
 
 ### Patch Changes

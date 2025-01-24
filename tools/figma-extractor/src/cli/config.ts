@@ -4,14 +4,16 @@ import type { GenerateStylesMetadataOptions } from "../services/styles";
 import type { GenerateVariablesMetadataOptions } from "../services/variables";
 import type { MetadataItem } from "./write";
 import { MODULE_NAME } from "../constants";
+import type { GenerateComponentMetadataOptions } from "../services/components";
 
 export type Config = {
   fileKey?: string;
   personalAccessToken?: string;
   data?: {
-    componentSet?: GenerateComponentSetMetadataOptions;
-    variable?: GenerateVariablesMetadataOptions;
-    style?: GenerateStylesMetadataOptions;
+    components?: GenerateComponentMetadataOptions;
+    componentSets?: GenerateComponentSetMetadataOptions;
+    variables?: GenerateVariablesMetadataOptions;
+    styles?: GenerateStylesMetadataOptions;
   };
 };
 
@@ -30,9 +32,9 @@ const explorer = cosmiconfig(MODULE_NAME, {
 
 const DEFAULT_CONFIG: Config = {
   data: {
-    componentSet: {},
-    variable: {},
-    style: {},
+    componentSets: {},
+    variables: {},
+    styles: {},
   },
 };
 

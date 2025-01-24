@@ -14,11 +14,17 @@ export async function generateComponentSetMetadata({
   dir,
   options: { filter = defaultFilter, transform = defaultTransform } = {},
 }: { fileKey: string; dir: string; options?: GenerateComponentSetMetadataOptions }) {
-  console.log("Generating component set metadata");
+  console.log("component set 메타데이터 생성 중");
 
   const componentSetsMetadata = (await getComponentSetMetadataItemsInFile({ fileKey }))
     .filter(filter)
     .map(transform);
+
+  if (componentSetsMetadata.length === 0) {
+    console.error("추출할 component set 메타데이터가 없습니다.");
+
+    return;
+  }
 
   for await (const data of componentSetsMetadata) {
     const { mjs, dts } = createContent(data);
@@ -45,4 +51,6 @@ export async function generateComponentSetMetadata({
 
   await writeFile(mjsPath, mjs);
   await writeFile(dtsPath, dts);
+
+  console.log(`component set 메타데이터 ${componentSetsMetadata.length}개 생성 완료`);
 }

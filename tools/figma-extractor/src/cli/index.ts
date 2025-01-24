@@ -5,16 +5,18 @@ import { z } from "zod";
 import { generateComponentSetMetadata } from "../services/component-sets";
 import { ENV } from "../env";
 import { POSSIBLE_DATA_TYPES } from "../constants";
-import { generateStylesMetadata } from "../services/styles";
+import { generateStyleMetadata } from "../services/styles";
 import { config } from "./config";
-import { generateVariablesMetadata } from "../services/variables";
+import { generateVariableMetadata } from "../services/variables";
 import path from "node:path";
 import pkg from "../../package.json" with { type: "json" };
+import { generateComponentMetadata } from "../services/components";
 
 const cli = cac();
 const paramSchema = z.object({
   dataTypes: z.array(
     z.enum([
+      POSSIBLE_DATA_TYPES.COMPONENTS,
       POSSIBLE_DATA_TYPES.COMPONENT_SETS,
       POSSIBLE_DATA_TYPES.VARIABLES,
       POSSIBLE_DATA_TYPES.STYLES,
@@ -47,27 +49,35 @@ cli
       );
     }
 
+    if (generateAll || dataTypes.includes("components")) {
+      await generateComponentMetadata({
+        fileKey,
+        dir: resolvedDir,
+        options: config.data.components,
+      });
+    }
+
     if (generateAll || dataTypes.includes("component-sets")) {
       await generateComponentSetMetadata({
         fileKey,
         dir: resolvedDir,
-        options: config.data.componentSet,
+        options: config.data.componentSets,
       });
     }
 
     if (generateAll || dataTypes.includes("styles")) {
-      await generateStylesMetadata({
+      await generateStyleMetadata({
         fileKey,
         dir: resolvedDir,
-        options: config.data.style,
+        options: config.data.styles,
       });
     }
 
     if (generateAll || dataTypes.includes("variables")) {
-      await generateVariablesMetadata({
+      await generateVariableMetadata({
         fileKey,
         dir: resolvedDir,
-        options: config.data.variable,
+        options: config.data.variables,
       });
     }
   });

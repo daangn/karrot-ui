@@ -9,7 +9,7 @@ export type GenerateVariablesMetadataOptions = {
   transform?: Transform<VariableMetadataItem>;
 };
 
-export async function generateVariablesMetadata({
+export async function generateVariableMetadata({
   fileKey,
   dir,
   options: { filter = defaultFilter, transform = defaultTransform } = {},
@@ -18,11 +18,17 @@ export async function generateVariablesMetadata({
   dir: string;
   options?: GenerateVariablesMetadataOptions;
 }) {
-  console.log("Generating variable metadata");
+  console.log("variable 메타데이터 생성 중");
 
   const variablesMetadata = (await getVariableMetadataItemsInFile({ fileKey }))
     .filter(filter)
     .map(transform);
+
+  if (variablesMetadata.length === 0) {
+    console.error("추출할 variable 메타데이터가 없습니다.");
+
+    return;
+  }
 
   for await (const data of variablesMetadata) {
     const { mjs, dts } = createContent(data);
@@ -41,4 +47,6 @@ export async function generateVariablesMetadata({
 
   await writeFile(mjsPath, mjs);
   await writeFile(dtsPath, dts);
+
+  console.log(`variable 메타데이터 ${variablesMetadata.length}개 생성 완료`);
 }
