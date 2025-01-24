@@ -22,7 +22,8 @@ export async function generateVariableMetadata({
 
   const variablesMetadata = (await getVariableMetadataItemsInFile({ fileKey }))
     .filter(filter)
-    .map(transform);
+    .map(transform)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   if (variablesMetadata.length === 0) {
     console.error("추출할 variable 메타데이터가 없습니다.");
