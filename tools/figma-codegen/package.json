@@ -11,7 +11,6 @@
     "@create-figma-plugin/build": "^3.0.2",
     "@create-figma-plugin/tsconfig": "^3.0.2",
     "@figma/plugin-typings": "^1.107.0-beta.1",
-    "@seed-design/figma-extractor": "0.0.0",
     "typescript": "^5.4.5",
     "vitest": "^3.0.3"
   },
