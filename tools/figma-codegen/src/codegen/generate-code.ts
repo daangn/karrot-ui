@@ -97,9 +97,12 @@ export function generateCode(selection: SceneNode) {
 
     if (segments.length > 1) {
       return createElement(
-        "Text",
-        { maxLines },
+        "span",
+        undefined,
         segments.map((segment) => handleTextSegment(segment)),
+        maxLines
+          ? "텍스트 레이어가 여러 스타일로 이루어져 있어 max line truncation이 적용되지 않았습니다. <Text /> 컴포넌트는 중첩되어 사용되도록 만들어지지 않았습니다."
+          : "",
       );
     }
 
