@@ -21,8 +21,8 @@ export async function TypographyMappingTable({ mappings }: TypographyMappingTabl
   const tableItems: TypographyMapping[] = mappings.map((item) => ({
     previousTokenId: item.previousTokenId,
     newTextStyleIds: item.newTextStyleIds.map((id) => {
-      const typography = rootage.componentSpecEntities.typography.body.find(
-        ({ body }) => "textStyle" in body && body.textStyle === id,
+      const typography = rootage.componentSpecEntities.typography.body.find(({ variants }) =>
+        variants.some((variant) => variant.name === "textStyle" && variant.value === id),
       );
 
       if (!typography) {
