@@ -47,3 +47,5 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: ./docs
           command: pages deploy .vercel/output/static --project-name=seed-design-v3 --branch=${{ github.ref_name }}
+        env:
+          SANITY_API_READ_TOKEN: ${{ secrets.SANITY_API_READ_TOKEN }}
