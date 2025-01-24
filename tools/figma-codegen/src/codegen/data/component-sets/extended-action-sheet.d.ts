@@ -2,6 +2,9 @@ export declare const metadata: {
   "name": "🟢 Extended Action Sheet",
   "key": "cd4cf8a850bf3de87b79080b36b421a649bf3fcb",
   "componentPropertyDefinitions": {
+    "Show Title#17043:12": {
+      "type": "BOOLEAN"
+    },
     "OS Indicator (Figma Only)#81637:129": {
       "type": "BOOLEAN"
     },
@@ -16,13 +19,6 @@ export declare const metadata: {
       "variantOptions": [
         "Normal",
         "Destructive"
-      ]
-    },
-    "Header": {
-      "type": "VARIANT",
-      "variantOptions": [
-        "True",
-        "False"
       ]
     },
     "Action Group Count": {

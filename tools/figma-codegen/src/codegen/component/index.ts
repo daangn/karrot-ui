@@ -8,6 +8,8 @@ import * as metadata from "../data/component-sets";
 import type {
   ActionButtonProperties,
   ActionChipProperties,
+  ActionSheetItemProperties,
+  ActionSheetProperties,
   AvatarProperties,
   AvatarStackProperties,
   BadgeProperties,
@@ -16,18 +18,23 @@ import type {
   ChipTabsItemProperties,
   ChipTabsProperties,
   ControlChipProperties,
+  ErrorStateProperties,
+  ExtendedActionSheetGroupProperties,
+  ExtendedActionSheetItemProperties,
+  ExtendedActionSheetProperties,
   ExtendedFabProperties,
   FabProperties,
   HelpBubbleProperties,
   IdentityPlaceholderProperties,
   InlineBannerProperties,
+  MannerTempBadgeProperties,
   MultilineTextFieldProperties,
   ProgressCircleProperties,
   ReactionButtonProperties,
   SegmentedControlItemProperties,
   SegmentedControlProperties,
-  SelectBoxProperties,
   SelectBoxGroupProperties,
+  SelectBoxProperties,
   SkeletonProperties,
   SnackbarProperties,
   SwitchProperties,
@@ -146,7 +153,79 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
         count: Number(props["Count#7185:21"].value),
       }),
     };
-    return createElement("ChipButton", commonProps, children);
+    return createElement("ActionChip", commonProps, children);
+  },
+};
+
+const actionSheetHandler: ComponentHandler<ActionSheetProperties> = {
+  key: metadata.actionSheet.key,
+  codegen: (node) => {
+    const { componentProperties: props } = node;
+
+    const contentProps = match(props.Header.value)
+      .with("None", () => ({
+        title: undefined,
+        description: undefined,
+      }))
+      .with("Title Only", () => ({
+        title: props["Title#15641:37"].value,
+        description: undefined,
+      }))
+      .with("Description Only", () => ({
+        title: undefined,
+        description: props["Description#15641:70"].value,
+      }))
+      .with("Title With Description", () => ({
+        title: props["Title#15641:37"].value,
+        description: props["Description#15641:70"].value,
+      }))
+      .exhaustive();
+
+    const items = node.findAll(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === actionSheetItemHandler.key) ||
+          child.mainComponent?.key === actionSheetItemHandler.key),
+    ) as (InstanceNode & { componentProperties: ActionSheetItemProperties })[];
+
+    const contentChildren = items.map(actionSheetItemHandler.codegen);
+
+    console.log(contentProps, contentChildren);
+
+    const content = createElement(
+      "ActionSheetContent",
+      contentProps,
+      contentChildren,
+      contentProps.title
+        ? ""
+        : "title을 제공하지 않는 경우 aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
+    );
+
+    const trigger = createElement(
+      "ActionSheetTrigger",
+      { asChild: true },
+      createElement("ActionButton", undefined, "열기", "ActionSheet을 여는 요소를 제공해주세요."),
+    );
+
+    return createElement("ActionSheet", undefined, [trigger, content]);
+  },
+};
+
+const actionSheetItemHandler: ComponentHandler<ActionSheetItemProperties> = {
+  key: "c3cafd3a3fdcd45fecb6971019d88eaf39a2e381",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      label: props["Label#15420:4"].value,
+      tone: camelCase(props.Tone.value),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("ActionSheetItem", commonProps);
   },
 };
 
@@ -155,7 +234,10 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
   codegen: (node) => {
     const placeholder = node.findOne(
       (child) =>
-        child.type === "INSTANCE" && child.mainComponent?.key === identityPlaceholderHandler.key,
+        child.type === "INSTANCE" &&
+        (child.mainComponent?.parent?.type === "COMPONENT_SET"
+          ? child.mainComponent.parent.key === identityPlaceholderHandler.key
+          : child.mainComponent?.key === identityPlaceholderHandler.key),
     ) as (InstanceNode & { componentProperties: IdentityPlaceholderProperties }) | null;
 
     const { componentProperties: props } = node;
@@ -445,6 +527,117 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   },
 };
 
+const errorStateHandler: ComponentHandler<ErrorStateProperties> = {
+  key: metadata.errorState.key,
+  codegen: (node) => {
+    const props = node.componentProperties;
+
+    const actionButtonNode = node.findOne(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === actionButtonHandler.key) ||
+          child.mainComponent?.key === actionButtonHandler.key),
+    ) as InstanceNode & { componentProperties: ActionButtonProperties };
+
+    const commonProps = {
+      variant: camelCase(props.Variant.value),
+      ...(props.Layout.value === "With Title" && {
+        title: props["Title#16237:0"].value,
+      }),
+      description: props["Description#16237:5"].value,
+      ...(actionButtonNode && {
+        primaryActionProps: {
+          children: actionButtonHandler.codegen(actionButtonNode).children[0],
+        },
+        secondaryActionProps: {
+          children: props["Secondary Action Label#17042:0"].value,
+        },
+      }),
+    };
+
+    return createElement("ErrorState", commonProps);
+  },
+};
+
+const extendedActionSheetHandler: ComponentHandler<ExtendedActionSheetProperties> = {
+  key: metadata.extendedActionSheet.key,
+  codegen: (node) => {
+    const { componentProperties: props } = node;
+
+    const groups = node.findAll(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === extendedActionSheetGroupHandler.key) ||
+          child.mainComponent?.key === extendedActionSheetGroupHandler.key),
+    ) as (InstanceNode & { componentProperties: ExtendedActionSheetGroupProperties })[];
+
+    const contentChildren = groups.map(extendedActionSheetGroupHandler.codegen);
+
+    const title = props["Show Title#17043:12"].value ? props["Title#14599:0"].value : undefined;
+
+    const content = createElement(
+      "ExtendedActionSheetContent",
+      { title },
+      contentChildren,
+      title
+        ? ""
+        : "title을 제공하지 않는 경우 aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
+    );
+
+    const trigger = createElement(
+      "ExtendedActionSheetTrigger",
+      { asChild: true },
+      createElement(
+        "ActionButton",
+        undefined,
+        "열기",
+        "ExtendedActionSheet을 여는 요소를 제공해주세요.",
+      ),
+    );
+
+    return createElement("ExtendedActionSheet", undefined, [trigger, content]);
+  },
+};
+
+const extendedActionSheetGroupHandler: ComponentHandler<ExtendedActionSheetGroupProperties> = {
+  key: "2a504a1c6b7810d5e652862dcba2cb7048f9eb16",
+  codegen: (node) => {
+    const items = node.findAll(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === extendedActionSheetItemHandler.key) ||
+          child.mainComponent?.key === extendedActionSheetItemHandler.key),
+    ) as (InstanceNode & { componentProperties: ExtendedActionSheetItemProperties })[];
+
+    const contentChildren = items.map(extendedActionSheetItemHandler.codegen);
+
+    return createElement("ExtendedActionSheetGroup", undefined, contentChildren);
+  },
+};
+
+const extendedActionSheetItemHandler: ComponentHandler<ExtendedActionSheetItemProperties> = {
+  key: "057083e95466da59051119eec0b41d4ad5a07f8f",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      tone: camelCase(props.Tone.value),
+      label: props["Label#55905:8"].value,
+      ...(props["Show Prefix Icon#17043:5"].value && {
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#55948:0"].value)),
+      }),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("ExtendedActionSheetItem", commonProps);
+  },
+};
+
 const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
   key: metadata.extendedFloatingActionButton.key,
   codegen: ({ componentProperties: props }) => {
@@ -606,6 +799,19 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
     };
 
     return createElement(tag, commonProps);
+  },
+};
+
+const mannerTempBadgeHandler: ComponentHandler<MannerTempBadgeProperties> = {
+  key: metadata.mannerTempBadge.key,
+  codegen: ({ children }) => {
+    const textNode = children.find((child) => child.type === "TEXT");
+
+    const commonProps = {
+      temperature: Number(textNode?.characters.replace(/[^\d.-]/g, "") ?? "-1"),
+    };
+
+    return createElement("MannerTempBadge", commonProps);
   },
 };
 
@@ -1252,6 +1458,7 @@ const toggleButtonHandler: ComponentHandler<ToggleButtonProperties> = {
 const componentHandlers = [
   actionButtonHandler,
   actionChipHandler,
+  actionSheetHandler,
   avatarHandler,
   avatarStackHandler,
   badgeHandler,
@@ -1259,16 +1466,20 @@ const componentHandlers = [
   checkboxHandler,
   chipTabsHandler,
   controlChipHandler,
+  errorStateHandler,
+  extendedActionSheetHandler,
   extendedFabHandler,
   fabHandler,
   helpBubbleHandler,
   identityPlaceholderHandler,
   inlineBannerHandler,
+  mannerTempBadgeHandler,
   multilineTextFieldHandler,
   progressCircleHandler,
   reactionButtonHandler,
   segmentedControlHandler,
   selectBoxGroupHandler,
+  selectBoxHandler,
   skeletonHandler,
   snackbarHandler,
   switchHandler,

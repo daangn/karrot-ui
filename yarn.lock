@@ -7752,7 +7752,7 @@ __metadata:
     "@create-figma-plugin/tsconfig": "npm:^3.0.2"
     "@create-figma-plugin/utilities": "npm:^3.0.2"
     "@figma/plugin-typings": "npm:^1.107.0-beta.1"
-    "@seed-design/figma-extractor": "npm:^0.0.2"
+    "@seed-design/figma-extractor": "npm:^0.0.3"
     change-case: "npm:^5.2.0"
     ts-pattern: "npm:^5.2.0"
     typescript: "npm:^5.4.5"
@@ -7785,7 +7785,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@seed-design/figma-extractor@npm:^0.0.2, @seed-design/figma-extractor@workspace:tools/figma-extractor":
+"@seed-design/figma-extractor@npm:^0.0.3, @seed-design/figma-extractor@workspace:tools/figma-extractor":
   version: 0.0.0-use.local
   resolution: "@seed-design/figma-extractor@workspace:tools/figma-extractor"
   dependencies:
