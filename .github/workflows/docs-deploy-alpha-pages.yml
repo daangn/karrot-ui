@@ -45,4 +45,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          workingDirectory: ./docs
           command: pages deploy .vercel/output/static --project-name=seed-design-v3 --branch=${{ github.ref_name }}
