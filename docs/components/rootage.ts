@@ -28,13 +28,13 @@ export function stringifyValueLit(lit: AST.ValueLit): string {
 }
 
 export const getRootage = async () => {
-  const index: { resources: { path: string }[] } = await import("@/public/rootage/index.json").then(
-    (module) => {
-      return module.default;
-    },
-  );
+  const index: { resources: { path: string }[] } = await import(
+    "@/public/rootage-next/index.json"
+  ).then((module) => {
+    return module.default;
+  });
   const models: Document.Model[] = await Promise.all(
-    index.resources.map((resource) => import(`@/public/rootage${resource.path}`)),
+    index.resources.map((resource) => import(`@/public/rootage-next${resource.path}`)),
   );
   return buildContext(parse(models));
 };

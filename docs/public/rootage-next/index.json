@@ -1,0 +1,132 @@
+{
+  "name": "Rootage",
+  "version": "0.0",
+  "resources": [
+    {
+      "path": "/collections.json"
+    },
+    {
+      "path": "/color.json"
+    },
+    {
+      "path": "/components/action-button.json"
+    },
+    {
+      "path": "/components/action-chip.json"
+    },
+    {
+      "path": "/components/avatar.json"
+    },
+    {
+      "path": "/components/avatar-stack.json"
+    },
+    {
+      "path": "/components/badge.json"
+    },
+    {
+      "path": "/components/callout.json"
+    },
+    {
+      "path": "/components/checkbox.json"
+    },
+    {
+      "path": "/components/chip-tab.json"
+    },
+    {
+      "path": "/components/chip-tablist.json"
+    },
+    {
+      "path": "/components/control-chip.json"
+    },
+    {
+      "path": "/components/dialog.json"
+    },
+    {
+      "path": "/components/bottom-sheet.json"
+    },
+    {
+      "path": "/components/fab.json"
+    },
+    {
+      "path": "/components/extended-fab.json"
+    },
+    {
+      "path": "/components/help-bubble.json"
+    },
+    {
+      "path": "/components/identity-placeholder.json"
+    },
+    {
+      "path": "/components/inline-banner.json"
+    },
+    {
+      "path": "/components/progress-circle.json"
+    },
+    {
+      "path": "/components/radio.json"
+    },
+    {
+      "path": "/components/reaction-button.json"
+    },
+    {
+      "path": "/components/segment.json"
+    },
+    {
+      "path": "/components/segmented-control.json"
+    },
+    {
+      "path": "/components/select-box.json"
+    },
+    {
+      "path": "/components/skeleton.json"
+    },
+    {
+      "path": "/components/switch.json"
+    },
+    {
+      "path": "/components/tab.json"
+    },
+    {
+      "path": "/components/tablist.json"
+    },
+    {
+      "path": "/components/text-button.json"
+    },
+    {
+      "path": "/components/text-field.json"
+    },
+    {
+      "path": "/components/toggle-button.json"
+    },
+    {
+      "path": "/components/top-navigation.json"
+    },
+    {
+      "path": "/components/typography.json"
+    },
+    {
+      "path": "/font-size.json"
+    },
+    {
+      "path": "/font-weight.json"
+    },
+    {
+      "path": "/line-height.json"
+    },
+    {
+      "path": "/gradient.json"
+    },
+    {
+      "path": "/radius.json"
+    },
+    {
+      "path": "/dimension.json"
+    },
+    {
+      "path": "/duration.json"
+    },
+    {
+      "path": "/timing-function.json"
+    }
+  ]
+}
