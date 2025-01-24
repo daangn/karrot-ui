@@ -31,7 +31,7 @@ jobs:
           cache: yarn
 
       - name: Install Dependencies
-        run: yarn install --immutable && yarn add vercel@35.0.0
+        run: yarn install --immutable
 
       - name: Build Packages
         run: yarn build-only-package && yarn rootage:build
@@ -39,7 +39,7 @@ jobs:
       - name: Build Docs
         working-directory: ./docs
         run: |
-          yarn pages:build
+          yarn add vercel@35.0.0 && yarn pages:build
 
       - name: Deploy docs at Cloudflare Pages in `seed-design-v3` project (Alpha)
         uses: cloudflare/wrangler-action@v3
