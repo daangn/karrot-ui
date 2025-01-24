@@ -8,6 +8,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PortableTextBlock } from "sanity";
 
+export const dynamicParams = false;
+
 export default async function Page({
   params,
 }: {
