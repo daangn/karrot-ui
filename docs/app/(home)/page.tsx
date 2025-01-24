@@ -1,11 +1,7 @@
-"use client";
-
 import { client } from "@/components/sanity/client";
 import { SanityImage } from "@/components/sanity/image";
 import type { SanityImageAsset } from "@sanity/asset-utils";
-import { SanityDocument } from "@sanity/client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 interface Blog {
   title: string;
@@ -26,16 +22,14 @@ const BLOG_QUERY = `*[_type == "blog"] {
   publishedAt,
 }`;
 
-export default function HomePage() {
-  const [data, setData] = useState<SanityDocument<Blog>[] | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await client.fetch<SanityDocument<Blog>[]>(BLOG_QUERY);
-      setData(data);
-    };
-    fetchData();
-  }, []);
+export default async function HomePage() {
+  const blogs = await client.fetch<Blog[]>(
+    BLOG_QUERY,
+    {},
+    {
+      perspective: "published",
+    },
+  );
 
   return (
     <main className="flex flex-col justify-center items-center text-center">
@@ -43,8 +37,8 @@ export default function HomePage() {
         <h1 className="text-3xl sm:text-4xl font-bold text-left">Design system updates</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 mt-[20px] gap-[20px]">
-          {data?.map((item) => (
-            <Link href={`/blog?slug=${item.slug.current}`} key={item.slug.current}>
+          {blogs?.map((item) => (
+            <Link href={`/blog/${item.slug.current}`} key={item.slug.current}>
               <BlogCard {...item} />
             </Link>
           ))}
