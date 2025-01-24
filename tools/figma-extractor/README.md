@@ -8,16 +8,22 @@ yarn add -D @seed-design/figma-extractor
 
 ## 사용
 
-### 컴포넌트 정보를 src/data에 추출
+### Component Set 정보를 src/data에 추출
 
 ```shell
-yarn figma-extractor src/data components
+yarn figma-extractor src/data component-sets
 ```
 
 ### Variable 정보를 src/data에 추출
 
 ```shell
 yarn figma-extractor src/data variables
+```
+
+### Style 정보를 src/data에 추출
+
+```shell
+yarn figma-extractor src/data styles
 ```
 
 ### 사용 가능한 모든 정보를 src/data에 추출
