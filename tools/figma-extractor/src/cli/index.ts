@@ -2,15 +2,14 @@
 
 import { cac } from "cac";
 import { z } from "zod";
-import { cosmiconfig } from "cosmiconfig";
 import { generateComponentSetMetadata } from "../services/component-sets";
 import { ENV } from "../env";
+import { POSSIBLE_DATA_TYPES } from "../constants";
+import { generateStylesMetadata } from "../services/styles";
+import { config } from "./config";
+import { generateVariablesMetadata } from "../services/variables";
 import path from "node:path";
 import pkg from "../../package.json" with { type: "json" };
-import { MODULE_NAME, POSSIBLE_DATA_TYPES } from "../constants";
-import { generateStylesMetadata } from "../services/styles";
-import { config, type Config } from "./config";
-import { generateVariablesMetadata } from "../services/variables";
 
 const cli = cac();
 const paramSchema = z.object({
