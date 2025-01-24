@@ -31,7 +31,7 @@ jobs:
           cache: yarn
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: yarn install --immutable && yarn add vercel@35.0.0
 
       - name: Build Packages
         run: yarn build-only-package && yarn rootage:build
