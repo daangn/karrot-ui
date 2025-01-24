@@ -1,0 +1,133 @@
+{
+  "kind": "Tokens",
+  "metadata": {
+    "id": "font-size",
+    "name": "Font Size"
+  },
+  "data": {
+    "collection": "global",
+    "tokens": {
+      "$font-size.s1": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 0.6875,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s2": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 0.75,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s3": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 0.8125,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s4": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 0.875,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s5": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s6": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.125,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s7": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.25,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s8": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.375,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s9": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.5,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s10": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 1.625,
+              "unit": "rem"
+            }
+          }
+        }
+      },
+      "$font-size.s6-static": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 18,
+              "unit": "px"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 kind: Tokens
 metadata:
-  id: unit
-  name: Unit
+  id: dimension
+  name: Dimension
 data:
   collection: global
   tokens:

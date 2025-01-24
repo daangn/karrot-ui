@@ -14,7 +14,7 @@
     "generate:all": "yarn generate:registry && yarn generate:example && yarn generate:rootage",
     "generate:registry": "vite-node scripts/generate-registry.ts",
     "generate:example": "vite-node scripts/generate-example.ts",
-    "generate:rootage": "rootage json public/rootage/",
+    "generate:rootage": "rootage json-legacy public/rootage/ && rootage json public/rootage-next",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

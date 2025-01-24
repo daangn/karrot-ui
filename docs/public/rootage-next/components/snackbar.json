@@ -1,0 +1,194 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "snackbar",
+    "name": "Snackbar"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "region": {
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s2"
+              },
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s2"
+              },
+              "offsetDuration": {
+                "type": "color",
+                "value": "$duration.s4"
+              },
+              "offsetTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.easing"
+              }
+            },
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.neutral-solid"
+              },
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.s2"
+              },
+              "minHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 44,
+                  "unit": "px"
+                }
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s4"
+              },
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              },
+              "gap": {
+                "type": "color",
+                "value": "$dimension.s2"
+              },
+              "enterOpacity": {
+                "type": "number",
+                "value": 0
+              },
+              "enterDuration": {
+                "type": "color",
+                "value": "$duration.s4"
+              },
+              "enterTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.enter"
+              },
+              "exitOpacity": {
+                "type": "number",
+                "value": 0
+              },
+              "exitDuration": {
+                "type": "color",
+                "value": "$duration.s4"
+              },
+              "exitTimingFunction": {
+                "type": "color",
+                "value": "$timing-function.exit"
+              }
+            },
+            "message": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              },
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s4"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            },
+            "prefixIcon": {
+              "size": {
+                "type": "dimension",
+                "value": {
+                  "value": 24,
+                  "unit": "px"
+                }
+              }
+            },
+            "actionButton": {
+              "targetPaddingX": {
+                "type": "color",
+                "value": "$dimension.s2"
+              },
+              "targetMinHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 44,
+                  "unit": "px"
+                }
+              },
+              "color": {
+                "type": "color",
+                "value": "$color.fg.brand"
+              },
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s4"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "default"
+      },
+      "definitions": []
+    },
+    {
+      "variants": {
+        "variant": "positive"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "prefixIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.positive"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "critical"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "prefixIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

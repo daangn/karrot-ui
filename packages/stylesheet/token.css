@@ -10,7 +10,7 @@
   color-scheme: dark;
 }
 
-:root[data-seed] {
+  :root[data-seed] {
   --seed-v3-dimension-s0_5: 2px;
   --seed-v3-dimension-s1: 4px;
   --seed-v3-dimension-s1_5: 6px;

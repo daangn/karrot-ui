@@ -1,0 +1,206 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "top-navigation",
+    "name": "Top Navigation"
+  },
+  "data": [
+    {
+      "variants": {
+        "theme": "cupertino"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "minHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 44,
+                  "unit": "px"
+                }
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "title": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s6-static"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            },
+            "icon": {
+              "size": {
+                "type": "dimension",
+                "value": {
+                  "value": 24,
+                  "unit": "px"
+                }
+              },
+              "targetSize": {
+                "type": "dimension",
+                "value": {
+                  "value": 40,
+                  "unit": "px"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "theme": "android"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "minHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 56,
+                  "unit": "px"
+                }
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "title": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s6-static"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            },
+            "icon": {
+              "size": {
+                "type": "dimension",
+                "value": {
+                  "value": 24,
+                  "unit": "px"
+                }
+              },
+              "targetSize": {
+                "type": "dimension",
+                "value": {
+                  "value": 40,
+                  "unit": "px"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "layer"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.layer-default"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "transparent"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "#00000000"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "divider": "true"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "strokeColor": {
+                "type": "color",
+                "value": "$color.stroke.neutral-muted"
+              },
+              "strokeWidth": {
+                "type": "dimension",
+                "value": {
+                  "value": 1,
+                  "unit": "px"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

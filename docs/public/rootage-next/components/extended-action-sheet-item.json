@@ -1,0 +1,134 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "extended-action-sheet-item",
+    "name": "Extended Action Sheet Item"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.neutral-weak"
+              },
+              "minHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 52,
+                  "unit": "px"
+                }
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s4"
+              },
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s3_5"
+              },
+              "gap": {
+                "type": "color",
+                "value": "$dimension.s3_5"
+              }
+            },
+            "prefixIcon": {
+              "size": {
+                "type": "dimension",
+                "value": {
+                  "value": 22,
+                  "unit": "px"
+                }
+              }
+            },
+            "label": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.neutral-weak-pressed"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "neutral"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "prefixIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "label": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "critical"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "prefixIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical"
+              }
+            },
+            "label": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

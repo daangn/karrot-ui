@@ -1,12 +1,8 @@
-import { getRootage } from "@/components/get-rootage";
+import { getRootage, stringifyValueLit } from "@/components/rootage";
 import { TokenLink } from "@/components/token-link";
 import { TypeIndicator } from "@/components/type-indicator";
 import { IconArrowRightLine } from "@daangn/react-monochrome-icon";
-import {
-  resolveReferences,
-  resolveToken,
-  stringifyValueExpression,
-} from "@seed-design/rootage-core";
+import { resolveReferences, resolveToken } from "@seed-design/rootage-core";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -51,7 +47,7 @@ export default async function Page({
           ))}
           <div className="flex items-center space-x-2 px-3 py-2 bg-fd-background rounded-md border border-fd-border">
             <TypeIndicator value={value} />
-            <div>{stringifyValueExpression(value)}</div>
+            <div>{stringifyValueLit(value)}</div>
           </div>
         </div>
         <h2>References</h2>
