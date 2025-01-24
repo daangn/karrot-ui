@@ -1,6 +1,5 @@
 interface ComponentPropertyDefinition {
   type: ComponentPropertyType;
-  defaultValue: string | boolean;
   preferredValues?: InstanceSwapPreferredValue[];
   variantOptions?: string[];
 }

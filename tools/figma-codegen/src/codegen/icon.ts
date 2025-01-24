@@ -1,7 +1,7 @@
 import { pascalCase } from "change-case";
 
-import { iconRecord } from "./data";
-import { createColorProps } from "../color";
+import { iconRecord } from "./data/icons";
+import { createColorProps } from "./color";
 
 export function isIconComponent(componentKey: string) {
   return !!iconRecord[componentKey];

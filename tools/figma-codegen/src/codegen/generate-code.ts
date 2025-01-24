@@ -7,7 +7,7 @@ import { createElement, stringifyElement } from "./jsx";
 import { createLayoutProps } from "./layout";
 import { createSizingProps } from "./sizing";
 import { createTextProps } from "./text";
-import { iconRecord } from "./icon/data";
+import { iconRecord } from "./data/icons";
 import { getColorVariableName } from "./variable";
 
 export function generateCode(selection: SceneNode) {
