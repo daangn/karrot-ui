@@ -1,5 +1,8 @@
 import { source } from "@/app/source";
 import { mdxComponents } from "@/components/mdx/mdx-components";
+import { sanityFetch } from "@/sanity/lib/live";
+import { GUIDELINE_QUERY } from "@/sanity/lib/queries";
+import { PortableContent } from "@/sanity/lib/sanity-content";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -14,11 +17,19 @@ export default async function Page({
 
   const MDX = page.data.body;
 
+  const guideline = params.slug?.includes("design")
+    ? await sanityFetch({
+        query: GUIDELINE_QUERY,
+        params: { title: page.data.title },
+      }).then((res) => res.data)
+    : null;
+
   return (
     <DocsPage toc={page.data.toc} full={page.data.full} lastUpdate={page.data.lastModified}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
+        {guideline && <PortableContent content={guideline.content} />}
         <MDX components={mdxComponents} />
       </DocsBody>
     </DocsPage>

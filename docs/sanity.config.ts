@@ -26,6 +26,11 @@ export default defineConfig({
   plugins: [
     structureTool({ structure }),
     presentationTool({
+      previewUrl: {
+        previewMode: {
+          enable: "/api/draft-mode/enable",
+        },
+      },
       resolve: {
         locations: {
           contents: defineLocations({
