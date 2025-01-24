@@ -90,6 +90,7 @@
     "tailwindcss": "^3.4.10",
     "ts-pattern": "^5.5.0",
     "typescript": "^5.5.4",
+    "vercel": "^39.3.0",
     "vite-node": "^2.1.2",
     "wrangler": "^3.105.0"
   },
