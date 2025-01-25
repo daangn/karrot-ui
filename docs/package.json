@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
-    "@cloudflare/next-on-pages": "^1.13.7",
+    "@rickmartensnl/next-on-pages": "^1.13.7",
     "@storybook/addon-essentials": "^8.4.4",
     "@storybook/addon-interactions": "^8.4.4",
     "@storybook/addon-onboarding": "^8.4.4",

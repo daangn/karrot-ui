@@ -3561,35 +3561,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/next-on-pages@npm:^1.13.7":
-  version: 1.13.7
-  resolution: "@cloudflare/next-on-pages@npm:1.13.7"
-  dependencies:
-    acorn: "npm:^8.8.0"
-    ast-types: "npm:^0.14.2"
-    chalk: "npm:^5.2.0"
-    chokidar: "npm:^3.5.3"
-    commander: "npm:^11.1.0"
-    cookie: "npm:^0.5.0"
-    esbuild: "npm:^0.15.3"
-    js-yaml: "npm:^4.1.0"
-    miniflare: "npm:^3.20231218.1"
-    package-manager-manager: "npm:^0.2.0"
-    pcre-to-regexp: "npm:^1.1.0"
-    semver: "npm:^7.5.2"
-  peerDependencies:
-    "@cloudflare/workers-types": ^4.20240208.0
-    vercel: ">=30.0.0"
-    wrangler: ^3.28.2
-  peerDependenciesMeta:
-    "@cloudflare/workers-types":
-      optional: true
-  bin:
-    next-on-pages: bin/index.js
-  checksum: 10/a5ef8b5808f8b1b42d4aff51edfbd36b570b6fe67cb7bc89b3218b952200a504157fa350c07cfb973b99ebfbd6cab7eb8e6c1bff66d1e060cce234c33c7dc7b2
-  languageName: node
-  linkType: hard
-
 "@cloudflare/workerd-darwin-64@npm:1.20241230.0":
   version: 1.20241230.0
   resolution: "@cloudflare/workerd-darwin-64@npm:1.20241230.0"
@@ -7203,6 +7174,35 @@ __metadata:
     react: ^18 || ^19
     react-dom: ^18 || ^19
   checksum: 10/60094d230fd0fabc3511f4e861618deda51e448533e7cb037606b0cc33ee5487db03dc5ab06a3f95b9b9fbdf0c269aca84ca08aed95783408cea9d346810ad79
+  languageName: node
+  linkType: hard
+
+"@rickmartensnl/next-on-pages@npm:^1.13.7":
+  version: 1.13.7
+  resolution: "@rickmartensnl/next-on-pages@npm:1.13.7"
+  dependencies:
+    acorn: "npm:^8.8.0"
+    ast-types: "npm:^0.14.2"
+    chalk: "npm:^5.2.0"
+    chokidar: "npm:^3.5.3"
+    commander: "npm:^11.1.0"
+    cookie: "npm:^0.5.0"
+    esbuild: "npm:^0.15.3"
+    js-yaml: "npm:^4.1.0"
+    miniflare: "npm:^3.20231218.1"
+    package-manager-manager: "npm:^0.2.0"
+    pcre-to-regexp: "npm:^1.1.0"
+    semver: "npm:^7.5.2"
+  peerDependencies:
+    "@cloudflare/workers-types": ^4.20240208.0
+    vercel: ">=30.0.0"
+    wrangler: ^3.28.2
+  peerDependenciesMeta:
+    "@cloudflare/workers-types":
+      optional: true
+  bin:
+    next-on-pages: bin/index.js
+  checksum: 10/98ac9e4347838894f9c48f94b8e6747f8eba0b9b8ef73498589efa2fe29f5a2cd90081b1279afd69dec559e12e03c887bc43f0a1305b067d5b2f0e93c354d7f9
   languageName: node
   linkType: hard
 
@@ -14849,12 +14849,12 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@chromatic-com/storybook": "npm:^3.2.2"
-    "@cloudflare/next-on-pages": "npm:^1.13.7"
     "@daangn/icon-data": "npm:^0.0.19"
     "@daangn/react-monochrome-icon": "npm:^0.0.14"
     "@daangn/react-multicolor-icon": "npm:^0.0.12"
     "@next/env": "npm:^15.0.4"
     "@portabletext/react": "npm:^3.1.0"
+    "@rickmartensnl/next-on-pages": "npm:^1.13.7"
     "@sanity/asset-utils": "npm:^2.2.1"
     "@sanity/client": "npm:^6.27.1"
     "@sanity/icons": "npm:^3.5.7"
