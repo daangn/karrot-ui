@@ -1,8 +1,11 @@
-import { Switch as SwitchPrimitive } from "@seed-design/react-switch";
+import { Switch as SwitchPrimitive, useSwitchContext } from "@seed-design/react-switch";
 import { switchStyle, type SwitchVariantProps } from "@seed-design/recipe/switch";
 import { createStyleContext } from "../../utils/createStyleContext";
+import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
+import { createWithStateProps } from "../../utils/createWithStateProps";
 
 const { withProvider, withContext } = createStyleContext(switchStyle);
+const withStateProps = createWithStateProps([useSwitchContext]);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,6 +32,15 @@ export interface SwitchThumbProps extends SwitchPrimitive.ThumbProps {}
 export const SwitchThumb = withContext<HTMLDivElement, SwitchThumbProps>(
   SwitchPrimitive.Thumb,
   "thumb",
+);
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface SwitchLabelProps extends PrimitiveProps, React.HTMLAttributes<HTMLSpanElement> {}
+
+export const SwitchLabel = withContext<HTMLSpanElement, SwitchLabelProps>(
+  withStateProps(Primitive.span),
+  "label",
 );
 
 ////////////////////////////////////////////////////////////////////////////////////

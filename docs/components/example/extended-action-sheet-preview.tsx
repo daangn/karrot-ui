@@ -25,7 +25,7 @@ const ExtendedActionSheetPreview = () => {
         <ExtendedActionSheetGroup>
           <ExtendedActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 4" />
           <ExtendedActionSheetItem
-            tone="danger"
+            tone="critical"
             prefixIcon={<IconEyeSlashLine />}
             label="Action 5"
           />

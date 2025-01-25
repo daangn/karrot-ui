@@ -2,7 +2,7 @@ declare interface TextVariant {
   /**
   * @default bodyMediumDefault
   */
-  variant: "labelSmallDefault" | "labelSmallStrong" | "labelSmallStronger" | "labelMediumDefault" | "labelMediumStrong" | "labelMediumStronger" | "labelLargeDefault" | "labelLargeStrong" | "labelLargeStronger" | "bodySmallDefault" | "bodySmallReadingDefault" | "bodySmallStrong" | "bodySmallStronger" | "bodyMediumDefault" | "bodyMediumReadingDefault" | "bodyMediumStrong" | "bodyMediumStronger" | "titleSmallDefault" | "titleMediumDefault" | "titleLargeDefault" | "headingSmallDefault" | "headingMediumDefault" | "headingLargeDefault";
+  textStyle: "labelSmallDefault" | "labelSmallStrong" | "labelSmallStronger" | "labelMediumDefault" | "labelMediumStrong" | "labelMediumStronger" | "labelLargeDefault" | "labelLargeStrong" | "labelLargeStronger" | "bodySmallDefault" | "bodySmallReadingDefault" | "bodySmallStrong" | "bodySmallStronger" | "bodyMediumDefault" | "bodyMediumReadingDefault" | "bodyMediumStrong" | "bodyMediumStronger" | "titleSmallDefault" | "titleMediumDefault" | "titleLargeDefault" | "headingSmallDefault" | "headingMediumDefault" | "headingLargeDefault";
 /**
   * @default none
   */

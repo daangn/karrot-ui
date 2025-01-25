@@ -22,8 +22,7 @@ const compoundVariants = [];
 export const radioVariantMap = {
   "size": [
     "large",
-    "medium",
-    "small"
+    "medium"
   ]
 };
 

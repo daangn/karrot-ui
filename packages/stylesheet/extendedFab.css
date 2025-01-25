@@ -10,6 +10,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
     flex-shrink: 0;
+    font-family: inherit;
 }
 .extendedFab__root:is(:focus, [data-focus]) {
     outline: none;

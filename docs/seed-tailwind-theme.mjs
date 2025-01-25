@@ -104,9 +104,9 @@ export default {
             contrast: "var(--seed-v3-color-fg-brand-contrast)",
             DEFAULT: "var(--seed-v3-color-fg-brand)",
           },
-          danger: {
-            contrast: "var(--seed-v3-color-fg-danger-contrast)",
-            DEFAULT: "var(--seed-v3-color-fg-danger)",
+          critical: {
+            contrast: "var(--seed-v3-color-fg-critical-contrast)",
+            DEFAULT: "var(--seed-v3-color-fg-critical)",
           },
           disabled: "var(--seed-v3-color-fg-disabled)",
           informative: {
@@ -143,14 +143,14 @@ export default {
               DEFAULT: "var(--seed-v3-color-bg-brand-weak)",
             },
           },
-          danger: {
+          critical: {
             solid: {
-              pressed: "var(--seed-v3-color-bg-danger-solid-pressed)",
-              DEFAULT: "var(--seed-v3-color-bg-danger-solid)",
+              pressed: "var(--seed-v3-color-bg-critical-solid-pressed)",
+              DEFAULT: "var(--seed-v3-color-bg-critical-solid)",
             },
             weak: {
-              pressed: "var(--seed-v3-color-bg-danger-weak-pressed)",
-              DEFAULT: "var(--seed-v3-color-bg-danger-weak)",
+              pressed: "var(--seed-v3-color-bg-critical-weak-pressed)",
+              DEFAULT: "var(--seed-v3-color-bg-critical-weak)",
             },
           },
           disabled: "var(--seed-v3-color-bg-disabled)",
@@ -211,7 +211,7 @@ export default {
         stroke: {
           brand: "var(--seed-v3-color-stroke-brand)",
           control: "var(--seed-v3-color-stroke-control)",
-          danger: "var(--seed-v3-color-stroke-danger)",
+          critical: "var(--seed-v3-color-stroke-critical)",
           field: {
             focused: "var(--seed-v3-color-stroke-field-focused)",
             DEFAULT: "var(--seed-v3-color-stroke-field)",

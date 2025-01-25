@@ -1,0 +1,431 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "callout",
+    "name": "Callout"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "padding": {
+                "type": "color",
+                "value": "$dimension.s3_5"
+              },
+              "gap": {
+                "type": "color",
+                "value": "$dimension.s3"
+              },
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.s2_5"
+              },
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              },
+              "minHeight": {
+                "type": "dimension",
+                "value": {
+                  "value": 50,
+                  "unit": "px"
+                }
+              }
+            },
+            "icon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "title": {
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            },
+            "description": {
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            },
+            "dismissButton": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s10"
+              }
+            },
+            "dismissIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "actionableIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "neutral"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.neutral-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.neutral-weak-pressed"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "informative"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.informative-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.informative-weak-pressed"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "warning"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.warning-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.warning-weak-pressed"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "critical"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.critical-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.critical-weak-pressed"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "magic"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.magic-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.magic-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.magic-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.magic-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.magic-contrast"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.magic-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.magic-contrast"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.magic-weak-pressed"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

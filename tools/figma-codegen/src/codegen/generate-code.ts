@@ -6,8 +6,8 @@ import type { ElementNode } from "./jsx";
 import { createElement, stringifyElement } from "./jsx";
 import { createLayoutProps } from "./layout";
 import { createSizingProps } from "./sizing";
-import { createTextProps, getTextStyleTag } from "./text";
-import { iconRecord } from "./icon/data";
+import { createTextProps } from "./text";
+import { iconRecord } from "./data/icons";
 import { getColorVariableName } from "./variable";
 
 export function generateCode(selection: SceneNode) {
@@ -36,7 +36,7 @@ export function generateCode(selection: SceneNode) {
 
     const segments = node.getStyledTextSegments(["textStyleId", "fills", "boundVariables"]);
 
-    function handleTextSegment(segment: (typeof segments)[number], as?: string) {
+    function handleTextSegment(segment: (typeof segments)[number]) {
       const style = figma.getStyleById(segment.textStyleId);
 
       if (style && style.type === "TEXT") {
@@ -52,19 +52,14 @@ export function generateCode(selection: SceneNode) {
 
         const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : undefined;
 
-        const tag = as ?? getTextStyleTag(style);
-
         return createElement(
           "Text",
           {
-            as: tag,
             variant: camelCase(style.name, { mergeAmbiguousCharacters: true }),
             ...(color ? { color } : {}),
           },
           segment.characters.replace(/\n/g, "<br />"),
-          `${
-            color === undefined ? "color 프로퍼티는 반영되지 않았습니다. " : ""
-          }${tag} 태그 사용이 적절한지 확인하세요.`,
+          color ? "" : "color 프로퍼티는 반영되지 않았습니다.",
         );
       }
 
@@ -85,35 +80,26 @@ export function generateCode(selection: SceneNode) {
 
       const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : null;
 
-      const tag = as ?? "span";
-
       return createElement(
         "Text",
         {
-          as: tag,
           ...(fontSize ? { fontSize } : {}),
           ...(fontWeight ? { fontWeight } : {}),
           ...(lineHeight ? { lineHeight } : {}),
           ...(color ? { color } : {}),
         },
         segment.characters.replace(/\n/g, "<br />"),
-        `${
-          unavailableProps.length > 0
-            ? `${unavailableProps.join(", ")} 프로퍼티는 반영되지 않았습니다. `
-            : ""
-        }${tag} 태그 사용이 적절한지 확인하세요.`,
+        unavailableProps.length > 0
+          ? `${unavailableProps.join(", ")} 프로퍼티는 반영되지 않았습니다.`
+          : "",
       );
     }
 
     if (segments.length > 1) {
       return createElement(
         "Text",
-        {
-          as: "span",
-          maxLines,
-        },
-        segments.map((segment) => handleTextSegment(segment, "span")),
-        "span 태그 사용이 적절한지 확인하세요.",
+        { maxLines },
+        segments.map((segment) => handleTextSegment(segment)),
       );
     }
 

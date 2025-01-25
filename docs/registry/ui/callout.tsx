@@ -31,10 +31,8 @@ export const Callout = React.forwardRef<
     <SeedCallout.Root ref={ref} {...otherProps}>
       {icon && <SeedCallout.Icon svg={icon} />}
       <SeedCallout.TextContent>
-        <SeedCallout.Title>{title}</SeedCallout.Title>
-        {description && (
-          <SeedCallout.Description>{description}</SeedCallout.Description>
-        )}
+        {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
+        <SeedCallout.Description>{description}</SeedCallout.Description>
         {linkLabel && (
           <SeedCallout.Link {...linkProps}>{linkLabel}</SeedCallout.Link>
         )}
@@ -64,10 +62,8 @@ export const ActionableCallout = React.forwardRef<
     <SeedCallout.Root ref={ref} {...otherProps} asChild>
       <button type="button">
         <SeedCallout.TextContent>
-          <SeedCallout.Title>{title}</SeedCallout.Title>
-          {description && (
-            <SeedCallout.Description>{description}</SeedCallout.Description>
-          )}
+          {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
+          <SeedCallout.Description>{description}</SeedCallout.Description>
         </SeedCallout.TextContent>
         <SeedCallout.ActionableIcon svg={<IconChevronRightLine />} />
       </button>
@@ -107,10 +103,8 @@ export const DismissibleCallout = React.forwardRef<
     return (
       <SeedCallout.Root ref={ref} {...otherProps}>
         <SeedCallout.TextContent>
-          <SeedCallout.Title>{title}</SeedCallout.Title>
-          {description && (
-            <SeedCallout.Description>{description}</SeedCallout.Description>
-          )}
+          {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
+          <SeedCallout.Description>{description}</SeedCallout.Description>
           {linkLabel && (
             <SeedCallout.Link {...linkProps}>{linkLabel}</SeedCallout.Link>
           )}

@@ -120,7 +120,7 @@ export interface DismissibleInlineBannerProps
   description: React.ReactNode;
   variant?: Exclude<
     SeedInlineBanner.RootProps["variant"],
-    "dangerWeak" | "dangerSolid"
+    "criticalWeak" | "criticalSolid"
   >;
 }
 

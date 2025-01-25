@@ -5,6 +5,7 @@ import { Avatar, AvatarStack } from "seed-design/ui/avatar";
 import { avatarStackVariantMap } from "@seed-design/recipe/avatarStack";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: AvatarStack,
@@ -18,7 +19,7 @@ const ENCODED_IMAGE =
 
 type Story = StoryObj<typeof meta>;
 
-const StoryTemplate: Story = {
+const CommonStoryTemplate: Story = {
   args: {},
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={avatarStackVariantMap} {...args}>
@@ -30,10 +31,19 @@ const StoryTemplate: Story = {
   ),
 };
 
-export const LightTheme = StoryTemplate;
+export const LightTheme = CommonStoryTemplate;
 
-export const DarkTheme = StoryTemplate;
+export const DarkTheme = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { theme: "dark" },
+});
 
-export const FontScalingExtraSmall = StoryTemplate;
+export const FontScalingExtraSmall = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
 
-export const FontScalingExtraExtraExtraLarge = StoryTemplate;
+export const FontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

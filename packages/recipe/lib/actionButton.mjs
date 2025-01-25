@@ -75,7 +75,7 @@ export const actionButtonVariantMap = {
     "brandSolid",
     "neutralSolid",
     "neutralWeak",
-    "dangerSolid",
+    "criticalSolid",
     "brandOutline",
     "neutralOutline"
   ],

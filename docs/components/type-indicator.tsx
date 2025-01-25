@@ -1,4 +1,4 @@
-import { ValueExpression } from "@seed-design/rootage-core";
+import { AST } from "@seed-design/rootage-core";
 import {
   HourglassIcon,
   LayersIcon,
@@ -8,14 +8,14 @@ import {
   SplineIcon,
 } from "lucide-react";
 
-export function TypeIndicator(props: { value: ValueExpression }) {
+export function TypeIndicator(props: { value: AST.ValueLit }) {
   const { value } = props;
 
-  if (value.type === "color") {
+  if (value.kind === "ColorHexLit") {
     return <div className="w-4 h-4 rounded-full border" style={{ backgroundColor: value.value }} />;
   }
 
-  if (value.type === "dimension") {
+  if (value.kind === "DimensionLit") {
     return (
       <div>
         <RulerIcon className="w-4 h-4" />
@@ -23,7 +23,7 @@ export function TypeIndicator(props: { value: ValueExpression }) {
     );
   }
 
-  if (value.type === "duration") {
+  if (value.kind === "DurationLit") {
     return (
       <div>
         <HourglassIcon className="w-4 h-4" />
@@ -31,7 +31,7 @@ export function TypeIndicator(props: { value: ValueExpression }) {
     );
   }
 
-  if (value.type === "number") {
+  if (value.kind === "NumberLit") {
     return (
       <div>
         <SigmaIcon className="w-4 h-4" />
@@ -39,7 +39,7 @@ export function TypeIndicator(props: { value: ValueExpression }) {
     );
   }
 
-  if (value.type === "shadow") {
+  if (value.kind === "ShadowLit") {
     return (
       <div>
         <LayersIcon className="w-4 h-4" />
@@ -47,7 +47,7 @@ export function TypeIndicator(props: { value: ValueExpression }) {
     );
   }
 
-  if (value.type === "cubicBezier") {
+  if (value.kind === "CubicBezierLit") {
     return (
       <div>
         <SplineIcon className="w-4 h-4" />
@@ -55,7 +55,7 @@ export function TypeIndicator(props: { value: ValueExpression }) {
     );
   }
 
-  if (value.type === "gradient") {
+  if (value.kind === "GradientLit") {
     return (
       <div>
         <PaintbrushIcon className="w-4 h-4" />

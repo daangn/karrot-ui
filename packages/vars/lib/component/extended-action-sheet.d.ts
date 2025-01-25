@@ -36,6 +36,10 @@ export declare const vars: {
       "group": {
         "cornerRadius": "var(--seed-v3-radius-s4)"
       },
+      "divider": {
+        "strokeBottomWidth": "1px",
+        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
+      },
       "footer": {
         "paddingTop": "var(--seed-v3-dimension-s2_5)"
       }

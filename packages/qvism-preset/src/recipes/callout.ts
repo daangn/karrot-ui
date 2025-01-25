@@ -7,6 +7,7 @@ const callout = defineRecipe({
   slots: [
     "root",
     "icon",
+    "textContent",
     "title",
     "spacer",
     "description",
@@ -35,6 +36,7 @@ const callout = defineRecipe({
       lineHeight: vars.base.enabled.root.lineHeight,
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+      fontFamily: "inherit",
 
       [pseudo(":is(button)")]: {
         cursor: "pointer",
@@ -45,6 +47,9 @@ const callout = defineRecipe({
 
       width: vars.base.enabled.icon.size,
       height: vars.base.enabled.icon.size,
+    },
+    textContent: {
+      marginInlineEnd: "auto",
     },
     title: {
       fontWeight: vars.base.enabled.title.fontWeight,
@@ -63,7 +68,7 @@ const callout = defineRecipe({
       backgroundColor: "transparent",
       padding: 0,
       border: "none",
-      font: "inherit",
+      fontFamily: "inherit",
       cursor: "pointer",
     },
     actionableIcon: {
@@ -71,8 +76,6 @@ const callout = defineRecipe({
 
       width: vars.base.enabled.actionableIcon.size,
       height: vars.base.enabled.actionableIcon.size,
-
-      marginInlineStart: "auto",
     },
     dismissButton: {
       flex: "none",
@@ -85,7 +88,6 @@ const callout = defineRecipe({
       height: vars.base.enabled.dismissButton.size,
 
       margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.dismissIcon.size}) * -0.5)`,
-      marginInlineStart: "auto",
 
       border: "none",
       backgroundColor: "transparent",
@@ -183,31 +185,31 @@ const callout = defineRecipe({
           color: vars.toneWarning.enabled.dismissIcon.color,
         },
       },
-      danger: {
+      critical: {
         root: {
-          backgroundColor: vars.toneDanger.enabled.root.color,
+          backgroundColor: vars.toneCritical.enabled.root.color,
 
           [pseudo(":is(button)", active)]: {
-            backgroundColor: vars.toneDanger.pressed.root.color,
+            backgroundColor: vars.toneCritical.pressed.root.color,
           },
         },
         icon: {
-          color: vars.toneDanger.enabled.icon.color,
+          color: vars.toneCritical.enabled.icon.color,
         },
         title: {
-          color: vars.toneDanger.enabled.title.color,
+          color: vars.toneCritical.enabled.title.color,
         },
         description: {
-          color: vars.toneDanger.enabled.description.color,
+          color: vars.toneCritical.enabled.description.color,
         },
         linkLabel: {
-          color: vars.toneDanger.enabled.linkLabel.color,
+          color: vars.toneCritical.enabled.linkLabel.color,
         },
         actionableIcon: {
-          color: vars.toneDanger.enabled.actionableIcon.color,
+          color: vars.toneCritical.enabled.actionableIcon.color,
         },
         dismissIcon: {
-          color: vars.toneDanger.enabled.dismissIcon.color,
+          color: vars.toneCritical.enabled.dismissIcon.color,
         },
       },
       magic: {

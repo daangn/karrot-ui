@@ -108,6 +108,8 @@ const textField = defineRecipe({
       },
 
       [pseudo(":is(textarea)")]: {
+        paddingInline: 0,
+
         minHeight: "90px",
         width: "100%",
       },

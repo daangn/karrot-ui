@@ -11,8 +11,20 @@ export const registryUI: RegistryUI = [
     dependencies: ["@seed-design/stackflow"],
   },
   {
+    name: "error-state",
+    files: ["ui:error-state.tsx"],
+    innerDependencies: ["action-button"],
+    dependencies: ["@seed-design/react"],
+  },
+  {
     name: "text",
     files: ["ui:text.tsx"],
+    dependencies: ["@seed-design/react"],
+  },
+  {
+    name: "manner-temp-badge",
+    files: ["ui:manner-temp-badge.tsx"],
+    innerDependencies: ["manner-temp-level"],
     dependencies: ["@seed-design/react"],
   },
   {
@@ -101,6 +113,11 @@ export const registryUI: RegistryUI = [
     name: "inline-banner",
     dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
     files: ["ui:inline-banner.tsx"],
+  },
+  {
+    name: "layout",
+    dependencies: ["@seed-design/react"],
+    files: ["ui:layout.tsx"],
   },
   {
     name: "snackbar",

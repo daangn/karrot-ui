@@ -107,10 +107,10 @@ data:
     loading:
       root:
         color: $color.bg.neutral-weak-pressed
-  variant=danger solid:
+  variant=critical solid:
     enabled:
       root:
-        color: $color.bg.danger-solid
+        color: $color.bg.critical-solid
       label:
         color: $color.palette.static-white
       icon:
@@ -124,7 +124,7 @@ data:
         rangeColor: $color.palette.static-white
     pressed:
       root:
-        color: $color.bg.danger-solid-pressed
+        color: $color.bg.critical-solid-pressed
     disabled:
       root:
         color: $color.bg.disabled
@@ -138,7 +138,7 @@ data:
         color: $color.fg.disabled
     loading:
       root:
-        color: $color.bg.danger-solid-pressed
+        color: $color.bg.critical-solid-pressed
   variant=neutral outline:
     enabled:
       root:

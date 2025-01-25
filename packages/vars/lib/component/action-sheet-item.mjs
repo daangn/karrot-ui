@@ -5,9 +5,7 @@ export const vars = {
         "color": "var(--seed-v3-color-bg-layer-floating)",
         "minHeight": "50px",
         "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
-        "paddingY": "var(--seed-v3-dimension-s3_5)",
-        "strokeBottomWidth": "1px",
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
+        "paddingY": "var(--seed-v3-dimension-s3_5)"
       },
       "label": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -28,10 +26,10 @@ export const vars = {
       }
     }
   },
-  "toneDanger": {
+  "toneCritical": {
     "enabled": {
       "label": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       }
     }
   }

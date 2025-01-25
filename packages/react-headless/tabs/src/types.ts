@@ -38,6 +38,8 @@ export interface UseTabsProps extends UseTabsStateProps, UseSwipeableStateProps 
      */
     duration?: number;
   };
+
+  orientation?: "horizontal" | "vertical";
 }
 
 export interface TriggerProps {

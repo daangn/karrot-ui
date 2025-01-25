@@ -2,7 +2,7 @@ declare interface InlineBannerVariant {
   /**
   * @default neutralWeak
   */
-  variant: "neutralWeak" | "positiveWeak" | "informativeWeak" | "warningWeak" | "warningSolid" | "dangerWeak" | "dangerSolid";
+  variant: "neutralWeak" | "positiveWeak" | "informativeWeak" | "warningWeak" | "warningSolid" | "criticalWeak" | "criticalSolid";
 }
 
 declare type InlineBannerVariantMap = {

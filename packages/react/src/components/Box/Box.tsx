@@ -6,6 +6,7 @@ import type {
   Dimension,
   Radius,
   SpacingX,
+  SpacingY,
 } from "@seed-design/vars";
 import { vars } from "@seed-design/vars";
 import clsx from "clsx";
@@ -134,17 +135,17 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   borderBottomLeftRadius?: Radius;
 
-  width?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
+  width?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}` | "full" | (string & {});
 
-  minWidth?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
+  minWidth?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}` | "full" | (string & {});
 
-  maxWidth?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
+  maxWidth?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}` | "full" | (string & {});
 
-  height?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
+  height?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}` | "full" | (string & {});
 
-  minHeight?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
+  minHeight?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}` | "full" | (string & {});
 
-  maxHeight?: Dimension | `spacingX.${SpacingX}` | "full" | (string & {});
+  maxHeight?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}` | "full" | (string & {});
 
   top?: 0;
 
@@ -154,19 +155,19 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   bottom?: 0;
 
-  padding?: Dimension | `spacingX.${SpacingX}`;
+  padding?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 
-  paddingX?: Dimension | `spacingX.${SpacingX}`;
+  paddingX?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 
-  paddingY?: Dimension | `spacingX.${SpacingX}`;
+  paddingY?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 
-  paddingTop?: Dimension | `spacingX.${SpacingX}`;
+  paddingTop?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 
-  paddingRight?: Dimension | `spacingX.${SpacingX}`;
+  paddingRight?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 
-  paddingBottom?: Dimension | `spacingX.${SpacingX}`;
+  paddingBottom?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 
-  paddingLeft?: Dimension | `spacingX.${SpacingX}`;
+  paddingLeft?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 
   display?: "block" | "flex" | "inlineFlex" | "inline" | "inlineBlock" | "none";
 
@@ -194,7 +195,7 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
   alignSelf?: "flexStart" | "flexEnd" | "center" | "stretch";
 
-  gap?: Dimension | `spacingX.${SpacingX}`;
+  gap?: Dimension | `spacingX.${SpacingX}` | `spacingY.${SpacingY}`;
 }
 
 export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {

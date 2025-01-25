@@ -48,10 +48,10 @@ export const vars = {
       }
     }
   },
-  "variantDanger": {
+  "variantCritical": {
     "enabled": {
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       }
     }
   }

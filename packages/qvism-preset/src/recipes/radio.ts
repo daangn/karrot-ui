@@ -7,7 +7,6 @@ const radio = defineRecipe({
   slots: ["root", "icon"],
   base: {
     root: {
-      // XXX: css reset 생기면 불필요할 가능성
       borderStyle: "solid",
       boxSizing: "border-box",
 
@@ -89,16 +88,6 @@ const radio = defineRecipe({
             width: vars.sizeMedium.disabled.icon.size,
             height: vars.sizeMedium.disabled.icon.size,
           },
-        },
-      },
-      small: {
-        root: {
-          width: vars.sizeSmall.enabled.root.size,
-          height: vars.sizeSmall.enabled.root.size,
-        },
-        icon: {
-          width: vars.sizeSmall.enabled.icon.size,
-          height: vars.sizeSmall.enabled.icon.size,
         },
       },
     },

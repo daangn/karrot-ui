@@ -9,8 +9,7 @@ import {
   actionSheetItem,
   type ActionSheetItemVariantProps,
 } from "@seed-design/recipe/actionSheetItem";
-import * as React from "react";
-import { forwardRef } from "react";
+import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 
@@ -92,28 +91,14 @@ export interface ActionSheetDescriptionProps extends DialogPrimitive.Description
 export const ActionSheetDescription = withContext<
   HTMLParagraphElement,
   ActionSheetDescriptionProps
->(withStateProps(Primitive.p), "title");
+>(withStateProps(Primitive.p), "description");
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ActionSheetListProps extends React.HTMLAttributes<HTMLUListElement> {}
+export interface ActionSheetListProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const ActionSheetList = withContext<HTMLUListElement, ActionSheetListProps>(
-  withStateProps(
-    forwardRef<HTMLUListElement, ActionSheetListProps>((props, ref) => {
-      const { children, ...otherProps } = props;
-      const asArray = React.Children.toArray(children);
-      return (
-        <ul ref={ref} {...otherProps}>
-          {asArray.map((child, index) => (
-            <li key={index} style={{ display: "flex", flexDirection: "column" }}>
-              {child}
-            </li>
-          ))}
-        </ul>
-      );
-    }),
-  ),
+export const ActionSheetList = withContext<HTMLDivElement, ActionSheetListProps>(
+  withStateProps(Primitive.div),
   "list",
 );
 

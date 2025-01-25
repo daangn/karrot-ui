@@ -15,14 +15,14 @@ const IconItem = ({
   iconName,
   IconComponent,
   isSelected,
-  isDanger,
+  isCritical,
   metadataString,
   onSelect,
 }: {
   iconName: string;
   IconComponent: IconComponentType;
   isSelected: boolean;
-  isDanger: boolean;
+  isCritical: boolean;
   metadataString: string;
   onSelect: (name: string) => void;
 }) => {
@@ -34,8 +34,8 @@ const IconItem = ({
           true: "bg-seed-bg-brand-weak hover:bg-seed-bg-brand-weak-pressed border-seed-stroke-brand",
           false: "bg-seed-bg-layer-default hover:bg-seed-bg-layer-default-pressed",
         },
-        danger: {
-          true: "border-seed-stroke-danger border-[1px] bg-seed-bg-danger-weak",
+        critical: {
+          true: "border-seed-stroke-critical border-[1px] bg-seed-bg-critical-weak",
           false: "border-[1px]",
         },
       },
@@ -46,7 +46,7 @@ const IconItem = ({
     <div
       onClick={() => onSelect(iconName)}
       className={iconComponentVariants({
-        danger: isDanger,
+        critical: isCritical,
         selected: isSelected,
       })}
       data-metadatas={metadataString}
@@ -84,11 +84,11 @@ export const IconGrid = () => {
       {Object.keys(iconComponents[iconStyle]).map((iconName) => {
         const snakeCaseIconName = changeCase.snakeCase(iconName);
         const metadataString = iconData[iconStyle][snakeCaseIconName]?.metadatas.join(", ");
-        const dangerTags = [Tag.figmaNotPublished, Tag.fat, Tag.service];
-        const isDanger =
+        const criticalTags = [Tag.figmaNotPublished, Tag.fat, Tag.service];
+        const isCritical =
           iconStyle === "multicolor" ||
           iconData[iconStyle][snakeCaseIconName]?.metadatas.some((metadata) =>
-            dangerTags.includes(metadata),
+            criticalTags.includes(metadata),
           );
 
         const shouldRenderIcon =
@@ -103,7 +103,7 @@ export const IconGrid = () => {
             iconName={snakeCaseIconName}
             IconComponent={iconComponents[iconStyle][iconName] as IconComponentType}
             isSelected={selectedIcon?.name === snakeCaseIconName}
-            isDanger={isDanger}
+            isCritical={isCritical}
             metadataString={metadataString}
             onSelect={(iconName) => handleIconSelect(iconName, iconStyle)}
           />

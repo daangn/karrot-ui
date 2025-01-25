@@ -14,6 +14,10 @@ const switchSlotNames = [
   [
     "thumb",
     "switch__thumb"
+  ],
+  [
+    "label",
+    "switch__label"
   ]
 ];
 

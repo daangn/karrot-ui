@@ -9,6 +9,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
+    font-family: inherit;
 }
 .fab__root:is(:focus, [data-focus]) {
     outline: none;

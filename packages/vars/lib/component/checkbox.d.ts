@@ -27,7 +27,7 @@ export declare const vars: {
     "enabled": {
       "control": {
         "strokeColor": "var(--seed-v3-color-stroke-control)",
-        "strokeWidth": "1.25px"
+        "strokeWidth": "1px"
       }
     },
     "enabledSelected": {
@@ -136,7 +136,7 @@ export declare const vars: {
       },
       "control": {
         "size": "var(--seed-v3-dimension-s6)",
-        "cornerRadius": "var(--seed-v3-radius-s1_5)"
+        "cornerRadius": "var(--seed-v3-radius-s1)"
       }
     }
   },

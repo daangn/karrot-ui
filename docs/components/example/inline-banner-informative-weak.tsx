@@ -5,10 +5,11 @@ import {
   LinkInlineBanner,
 } from "seed-design/ui/inline-banner";
 import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
+import { Stack } from "@/registry/ui/layout";
 
 export default function InlineBannerInformativeWeak() {
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <Stack gap="s4" width="full">
       <InlineBanner
         variant="informativeWeak"
         icon={<IconILowercaseSerifCircleFill />}
@@ -30,6 +31,6 @@ export default function InlineBannerInformativeWeak() {
         icon={<IconILowercaseSerifCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
-    </div>
+    </Stack>
   );
 }

@@ -10,20 +10,18 @@ const textButton = defineRecipe({
     root: {
       display: "inline-flex",
       alignItems: "center",
-      paddingBlock: vars.base.enabled.root.paddingY,
-      paddingInline: 0,
-
+      cursor: "pointer",
       backgroundColor: "transparent",
       boxSizing: "border-box",
-
-      borderWidth: vars.base.enabled.root.borderWidth,
-      borderColor: "transparent",
-      borderStyle: "solid",
+      border: "none",
+      outline: "none",
 
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
+      fontFamily: "inherit",
 
-      cursor: "pointer",
+      paddingInline: 0,
+      paddingBlock: vars.base.enabled.root.paddingY,
 
       [pseudo(disabled)]: {
         color: vars.base.disabled.root.color,
@@ -32,7 +30,8 @@ const textButton = defineRecipe({
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.root.color,
-        borderColor: vars.base.pressed.root.borderColor,
+        // we use boxShadow instead of border to avoid layout shift
+        boxShadow: `0 0 0 2px ${vars.base.pressed.root.color}`, // TODO: move 2px to rootage
       },
 
       [pseudo(disabled, active)]: {
@@ -73,9 +72,9 @@ const textButton = defineRecipe({
           color: vars.toneNeutralSubtle.enabled.root.color,
         },
       },
-      danger: {
+      critical: {
         root: {
-          color: vars.toneDanger.enabled.root.color,
+          color: vars.toneCritical.enabled.root.color,
         },
       },
     },

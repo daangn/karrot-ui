@@ -2,18 +2,15 @@
 
 import {
   buildContext,
-  getComponentSpecDts,
-  getComponentSpecIndexDts,
-  getComponentSpecIndexMjs,
-  getComponentSpecMjs,
-  getJsonSchema,
-  getTokenCss,
-  getTokenDts,
-  getTokenMjs,
+  css,
+  jsonschema,
   parse,
+  transform,
+  typescript,
   validate,
-  type Model,
+  type ShorthandDocument,
 } from "@seed-design/rootage-core";
+import { parse as parseLegacy } from "@seed-design/rootage-core/legacy";
 import fs from "fs-extra";
 import path from "node:path";
 import YAML from "yaml";
@@ -49,9 +46,10 @@ async function prepare() {
 
   const fileContents = await Promise.all(filePaths.map((name) => fs.readFile(name, "utf-8")));
 
-  const models = fileContents.map((content) => YAML.parse(content) as Model);
-
-  const ast = parse(models);
+  const models = fileContents.map((content) => YAML.parse(content) as ShorthandDocument.Model);
+  const transformedModels = transform(models);
+  const ast = parse(transformedModels);
+  const astLegacy = parseLegacy(models);
   const ctx = buildContext(ast);
 
   const validationResult = validate(ctx);
@@ -63,17 +61,19 @@ async function prepare() {
 
   return {
     ast,
+    astLegacy,
     ctx,
     filePaths,
     models,
+    transformedModels,
   };
 }
 
 async function writeTokenTs() {
   const { ast } = await prepare();
 
-  const mjsResults = getTokenMjs(ast);
-  const dtsResults = getTokenDts(ast);
+  const mjsResults = typescript.getTokenMjs(ast);
+  const dtsResults = typescript.getTokenDts(ast);
 
   for (const result of mjsResults) {
     const writePath = path.join(process.cwd(), dir, result.path);
@@ -99,7 +99,7 @@ async function writeComponentSpec() {
   const { ast } = await prepare();
 
   for (const spec of ast.componentSpecs) {
-    const mjsCode = getComponentSpecMjs(ast, spec.id);
+    const mjsCode = typescript.getComponentSpecMjs(ast, spec.id);
     const mjsWritePath = path.join(process.cwd(), dir, `${spec.id}.mjs`);
 
     console.log("Writing", spec.name, "to", mjsWritePath);
@@ -109,7 +109,7 @@ async function writeComponentSpec() {
     }
     fs.writeFileSync(mjsWritePath, mjsCode);
 
-    const dtsCode = getComponentSpecDts(ast, spec.id);
+    const dtsCode = typescript.getComponentSpecDts(ast, spec.id);
     const dtsWritePath = path.join(process.cwd(), dir, `${spec.id}.d.ts`);
 
     console.log("Writing", spec.name, "to", dtsWritePath);
@@ -117,14 +117,14 @@ async function writeComponentSpec() {
     fs.writeFileSync(dtsWritePath, dtsCode);
   }
 
-  const mjsIndexCode = getComponentSpecIndexMjs(ast);
+  const mjsIndexCode = typescript.getComponentSpecIndexMjs(ast);
   const mjsIndexWritePath = path.join(process.cwd(), dir, "index.mjs");
 
   console.log("Writing index to", mjsIndexWritePath);
 
   fs.writeFileSync(mjsIndexWritePath, mjsIndexCode);
 
-  const dtsIndexCode = getComponentSpecIndexDts(ast);
+  const dtsIndexCode = typescript.getComponentSpecIndexDts(ast);
   const dtsIndexWritePath = path.join(process.cwd(), dir, "index.d.ts");
 
   console.log("Writing index to", dtsIndexWritePath);
@@ -135,7 +135,7 @@ async function writeComponentSpec() {
 async function writeTokenCss() {
   const { ast } = await prepare();
 
-  const code = getTokenCss(ast, {
+  const code = css.getTokenCss(ast, {
     banner: `:root[data-seed] {
   color-scheme: light dark;
 }
@@ -174,7 +174,7 @@ async function writeTokenCss() {
 async function writeJsonSchema() {
   const { ast } = await prepare();
 
-  const jsonSchema = getJsonSchema(ast);
+  const jsonSchema = jsonschema.getJsonSchema(ast);
   const writePath = path.join(artifactsDir, "components", "schema.json");
 
   console.log("Writing schema to", writePath);
@@ -183,8 +183,8 @@ async function writeJsonSchema() {
 }
 
 async function writeJson() {
-  const { ast, models, filePaths } = await prepare();
-  const entries = filePaths.map((file, index) => ({ file, content: models[index] }));
+  const { ast, transformedModels, filePaths } = await prepare();
+  const entries = filePaths.map((file, index) => ({ file, content: transformedModels[index] }));
 
   for (const { file, content } of entries) {
     const code = JSON.stringify(content, null, 2);
@@ -202,6 +202,37 @@ async function writeJson() {
   }
 
   const code = JSON.stringify(ast, null, 2);
+  const writePath = path.join(process.cwd(), dir, "parsed.json");
+
+  console.log("Writing parsed.json to", writePath);
+
+  if (!fs.existsSync(path.dirname(writePath))) {
+    fs.mkdirpSync(path.dirname(writePath));
+  }
+
+  fs.writeFileSync(writePath, code);
+}
+
+async function writeJsonLegacy() {
+  const { astLegacy, models, filePaths } = await prepare();
+  const entries = filePaths.map((file, index) => ({ file, content: models[index] }));
+
+  for (const { file, content } of entries) {
+    const code = JSON.stringify(content, null, 2);
+    const relativePath = path.relative(artifactsDir, file);
+    const withoutExt = relativePath.replace(path.extname(relativePath), "");
+    const writePath = path.join(process.cwd(), dir, `${withoutExt}.json`);
+
+    console.log("Writing", withoutExt, "to", writePath);
+
+    if (!fs.existsSync(path.dirname(writePath))) {
+      fs.mkdirpSync(path.dirname(writePath));
+    }
+
+    fs.writeFileSync(writePath, code);
+  }
+
+  const code = JSON.stringify(astLegacy, null, 2);
   const writePath = path.join(process.cwd(), dir, "parsed.json");
 
   console.log("Writing parsed.json to", writePath);
@@ -248,6 +279,14 @@ if (command === "json-schema") {
 if (command === "json") {
   console.log("Start");
   writeJson().then(() => {
+    console.log("Done");
+    process.exit(0);
+  });
+}
+
+if (command === "json-legacy") {
+  console.log("Start");
+  writeJsonLegacy().then(() => {
     console.log("Done");
     process.exit(0);
   });

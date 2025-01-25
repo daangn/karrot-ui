@@ -70,6 +70,7 @@ const extendedActionSheet = defineRecipe({
       paddingBottom: vars.base.enabled.header.paddingBottom,
     },
     title: {
+      color: vars.base.enabled.title.color,
       fontSize: vars.base.enabled.title.fontSize,
       lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,

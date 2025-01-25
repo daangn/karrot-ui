@@ -6,6 +6,7 @@ import { IconBellFill, IconChevronRightFill } from "@daangn/react-monochrome-ico
 import { actionButtonVariantMap } from "@seed-design/recipe/actionButton";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: ActionButton,
@@ -26,30 +27,127 @@ const conditionMap = {
     true: { loading: true },
   },
   layout: {
-    withText: { layout: "withText", children: "Action Button" },
+    textOnly: { layout: "withText", children: "Action Button" },
+    iconFirst: { layout: "withText", children: "Action Button", prefixIcon: <IconBellFill /> },
+    iconLast: {
+      layout: "withText",
+      children: "Action Button",
+      suffixIcon: <IconChevronRightFill />,
+    },
     iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
   },
 };
 
-const CommonStoryTemplate: Story = {
+const { size, ...variantMapWithoutSize } = actionButtonVariantMap;
+
+const XSmallTemplate: Story = {
   args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronRightFill />,
+    size: "xsmall",
   },
   render: (args) => (
     <VariantTable
       Component={meta.component}
-      variantMap={actionButtonVariantMap}
+      variantMap={variantMapWithoutSize}
       conditionMap={conditionMap}
       {...args}
     />
   ),
 };
 
-export const LightTheme = CommonStoryTemplate;
+const SmallTemplate: Story = {
+  args: {
+    size: "small",
+  },
+  render: (args) => (
+    <VariantTable
+      Component={meta.component}
+      variantMap={variantMapWithoutSize}
+      conditionMap={conditionMap}
+      {...args}
+    />
+  ),
+};
 
-export const DarkTheme = CommonStoryTemplate;
+const MediumTemplate: Story = {
+  args: {
+    size: "medium",
+  },
+  render: (args) => (
+    <VariantTable
+      Component={meta.component}
+      variantMap={variantMapWithoutSize}
+      conditionMap={conditionMap}
+      {...args}
+    />
+  ),
+};
 
-export const FontScalingExtraSmall = CommonStoryTemplate;
+const LargeTemplate: Story = {
+  args: {
+    size: "large",
+  },
+  render: (args) => (
+    <VariantTable
+      Component={meta.component}
+      variantMap={variantMapWithoutSize}
+      conditionMap={conditionMap}
+      {...args}
+    />
+  ),
+};
 
-export const FontScalingExtraExtraExtraLarge = CommonStoryTemplate;
+export const XSmallLightTheme = XSmallTemplate;
+export const XSmallDarkTheme = createStoryWithParameters({
+  ...XSmallTemplate,
+  parameters: { theme: "dark" },
+});
+export const XSmallFontScalingExtraSmall = createStoryWithParameters({
+  ...XSmallTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
+export const XSmallFontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...XSmallTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});
+
+export const SmallLightTheme = SmallTemplate;
+export const SmallDarkTheme = createStoryWithParameters({
+  ...SmallTemplate,
+  parameters: { theme: "dark" },
+});
+export const SmallFontScalingExtraSmall = createStoryWithParameters({
+  ...SmallTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
+export const SmallFontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...SmallTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});
+
+export const MediumLightTheme = MediumTemplate;
+export const MediumDarkTheme = createStoryWithParameters({
+  ...MediumTemplate,
+  parameters: { theme: "dark" },
+});
+export const MediumFontScalingExtraSmall = createStoryWithParameters({
+  ...MediumTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
+export const MediumFontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...MediumTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});
+
+export const LargeLightTheme = LargeTemplate;
+export const LargeDarkTheme = createStoryWithParameters({
+  ...LargeTemplate,
+  parameters: { theme: "dark" },
+});
+export const LargeFontScalingExtraSmall = createStoryWithParameters({
+  ...LargeTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
+export const LargeFontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...LargeTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

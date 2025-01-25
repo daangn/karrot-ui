@@ -13,6 +13,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
 
+    "declaration": true,
+    "declarationMap": true,
+
     "jsx": "react-jsx"
   },
   "include": ["src"]

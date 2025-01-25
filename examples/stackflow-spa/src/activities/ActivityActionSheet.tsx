@@ -30,10 +30,14 @@ const ActivityActionSheet: ActivityComponentType = () => {
 
   return (
     <ActionSheetRoot open={activity.isActive} onOpenChange={handleClose}>
-      <ActionSheetContent layerIndex={activity.zIndex * 5} title="Actions">
+      <ActionSheetContent
+        layerIndex={activity.zIndex * 5}
+        title="Actions"
+        description="Select an action"
+      >
         <ActionSheetItem onClick={handleAction("add")} label="Add" />
         <ActionSheetItem onClick={handleAction("edit")} label="Edit" />
-        <ActionSheetItem onClick={handleAction("delete")} tone="danger" label="Delete" />
+        <ActionSheetItem onClick={handleAction("delete")} tone="critical" label="Delete" />
       </ActionSheetContent>
     </ActionSheetRoot>
   );

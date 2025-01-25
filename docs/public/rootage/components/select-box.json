@@ -33,7 +33,7 @@
         "checkboxControl": {
           "size": "$dimension.s6",
           "color": "$color.bg.layer-default",
-          "strokeWidth": "1.25px",
+          "strokeWidth": "1px",
           "strokeColor": "$color.stroke.control",
           "cornerRadius": "$radius.s1"
         },
@@ -43,7 +43,7 @@
         "radioControl": {
           "size": "$dimension.s6",
           "color": "$color.bg.layer-default",
-          "strokeWidth": "1.25px",
+          "strokeWidth": "1px",
           "strokeColor": "$color.stroke.control",
           "cornerRadius": "$radius.full"
         },

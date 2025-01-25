@@ -1,0 +1,78 @@
+{
+  "kind": "Tokens",
+  "metadata": {
+    "id": "duration",
+    "name": "Duration"
+  },
+  "data": {
+    "collection": "global",
+    "tokens": {
+      "$duration.s1": {
+        "values": {
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 50,
+              "unit": "ms"
+            }
+          }
+        }
+      },
+      "$duration.s2": {
+        "values": {
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 100,
+              "unit": "ms"
+            }
+          }
+        }
+      },
+      "$duration.s3": {
+        "values": {
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 150,
+              "unit": "ms"
+            }
+          }
+        }
+      },
+      "$duration.s4": {
+        "values": {
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 200,
+              "unit": "ms"
+            }
+          }
+        }
+      },
+      "$duration.s5": {
+        "values": {
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 250,
+              "unit": "ms"
+            }
+          }
+        }
+      },
+      "$duration.s6": {
+        "values": {
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 300,
+              "unit": "ms"
+            }
+          }
+        }
+      }
+    }
+  }
+}

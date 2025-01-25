@@ -10,14 +10,14 @@ const textSlotNames = [
 ];
 
 const defaultVariant = {
-  "variant": "bodyMediumDefault",
+  "textStyle": "bodyMediumDefault",
   "maxLines": "none"
 };
 
 const compoundVariants = [];
 
 export const textVariantMap = {
-  "variant": [
+  "textStyle": [
     "labelSmallDefault",
     "labelSmallStrong",
     "labelSmallStronger",

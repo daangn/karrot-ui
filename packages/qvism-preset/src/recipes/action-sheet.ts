@@ -63,17 +63,31 @@ const actionSheet = defineRecipe({
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      position: "relative",
 
-      boxShadow: `inset 0 calc(-1 * ${vars.base.enabled.header.strokeBottomWidth}) 0 ${vars.base.enabled.header.strokeColor}`,
       paddingInline: vars.base.enabled.header.paddingX,
       paddingBlock: vars.base.enabled.header.paddingY,
+      gap: vars.base.enabled.header.gap,
+
+      "&:after": {
+        content: "''",
+        display: "block",
+        position: "absolute",
+        left: vars.base.enabled.divider.marginX,
+        right: vars.base.enabled.divider.marginX,
+        bottom: 0,
+        height: vars.base.enabled.divider.strokeWidth,
+        background: vars.base.enabled.divider.strokeColor,
+      },
     },
     title: {
+      color: vars.base.enabled.title.color,
       fontSize: vars.base.enabled.title.fontSize,
       lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,
     },
     description: {
+      color: vars.base.enabled.description.color,
       fontSize: vars.base.enabled.description.fontSize,
       lineHeight: vars.base.enabled.description.lineHeight,
       fontWeight: vars.base.enabled.description.fontWeight,

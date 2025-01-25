@@ -5,3 +5,5 @@ output.css
 /build/
 /manifest.json
 node_modules/
+
+.env

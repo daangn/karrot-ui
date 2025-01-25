@@ -1,0 +1,494 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "inline-banner",
+    "name": "Inline Banner"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "gap": {
+                "type": "color",
+                "value": "$dimension.s4"
+              },
+              "paddingX": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "content": {
+              "gap": {
+                "type": "color",
+                "value": "$dimension.s2"
+              },
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s2_5"
+              },
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s4"
+              },
+              "minHeight": {
+                "type": "color",
+                "value": "$dimension.s10"
+              }
+            },
+            "icon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              },
+              "marginY": {
+                "type": "dimension",
+                "value": {
+                  "value": 1.5,
+                  "unit": "px"
+                }
+              }
+            },
+            "title": {
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            },
+            "description": {
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.medium"
+              }
+            },
+            "linkLabel": {
+              "height": {
+                "type": "color",
+                "value": "$dimension.s10"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              },
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s2"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s2"
+              }
+            },
+            "dismissButton": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s10"
+              }
+            },
+            "dismissIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "actionableIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "neutral weak"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.neutral-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "positive weak"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.positive-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.positive-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.positive-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.positive-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.positive-contrast"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.positive-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.positive-contrast"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "informative weak"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.informative-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.informative-contrast"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "warning weak"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.warning-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.warning-contrast"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "warning solid"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.warning-solid"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "dismissIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "critical weak"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.critical-weak"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical-contrast"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "variant": "critical solid"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.bg.critical-solid"
+              }
+            },
+            "icon": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            },
+            "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            },
+            "description": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            },
+            "linkLabel": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            },
+            "actionableIcon": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

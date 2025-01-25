@@ -5,6 +5,7 @@ import { Checkbox } from "seed-design/ui/checkbox";
 import { checkboxVariantMap } from "@seed-design/recipe/checkbox";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: Checkbox,
@@ -50,8 +51,17 @@ const CommonStoryTemplate: Story = {
 
 export const LightTheme = CommonStoryTemplate;
 
-export const DarkTheme = CommonStoryTemplate;
+export const DarkTheme = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { theme: "dark" },
+});
 
-export const FontScalingExtraSmall = CommonStoryTemplate;
+export const FontScalingExtraSmall = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
 
-export const FontScalingExtraExtraExtraLarge = CommonStoryTemplate;
+export const FontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

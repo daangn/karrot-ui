@@ -2,7 +2,7 @@ declare interface ExtendedActionSheetItemVariant {
   /**
   * @default neutral
   */
-  tone: "neutral" | "danger";
+  tone: "neutral" | "critical";
 }
 
 declare type ExtendedActionSheetItemVariantMap = {

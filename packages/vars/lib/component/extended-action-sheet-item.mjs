@@ -6,8 +6,6 @@ export const vars = {
         "minHeight": "52px",
         "paddingX": "var(--seed-v3-dimension-s4)",
         "paddingY": "var(--seed-v3-dimension-s3_5)",
-        "strokeBottomWidth": "1px",
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)",
         "gap": "var(--seed-v3-dimension-s3_5)"
       },
       "prefixIcon": {
@@ -35,13 +33,13 @@ export const vars = {
       }
     }
   },
-  "toneDanger": {
+  "toneCritical": {
     "enabled": {
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       },
       "label": {
-        "color": "var(--seed-v3-color-fg-danger)"
+        "color": "var(--seed-v3-color-fg-critical)"
       }
     }
   }

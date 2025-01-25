@@ -42,6 +42,10 @@
         "group": {
           "cornerRadius": "$radius.s4"
         },
+        "divider": {
+          "strokeBottomWidth": "1px",
+          "strokeColor": "$color.stroke.neutral"
+        },
         "footer": {
           "paddingTop": "$dimension.s2_5"
         }

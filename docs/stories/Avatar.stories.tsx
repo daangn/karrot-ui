@@ -6,6 +6,7 @@ import { IdentityPlaceholder } from "seed-design/ui/identity-placeholder";
 import { avatarVariantMap } from "@seed-design/recipe/avatar";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: Avatar,
@@ -26,7 +27,7 @@ const conditionMap = {
   },
 };
 
-const StoryTemplate: Story = {
+const CommonStoryTemplate: Story = {
   args: {
     fallback: <IdentityPlaceholder />,
   },
@@ -40,10 +41,19 @@ const StoryTemplate: Story = {
   ),
 };
 
-export const LightTheme = StoryTemplate;
+export const LightTheme = CommonStoryTemplate;
 
-export const DarkTheme = StoryTemplate;
+export const DarkTheme = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { theme: "dark" },
+});
 
-export const FontScalingExtraSmall = StoryTemplate;
+export const FontScalingExtraSmall = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
 
-export const FontScalingExtraExtraExtraLarge = StoryTemplate;
+export const FontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

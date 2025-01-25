@@ -45,7 +45,7 @@ data:
   variant=outline:
     enabled:
       root:
-        borderWidth: 1px
+        strokeWidth: 1px
       label:
         fontWeight: $font-weight.bold
   tone=neutral, variant=weak:
@@ -71,7 +71,7 @@ data:
       root:
         color: $color.bg.brand-weak
       label:
-        color: $color.fg.brand
+        color: $color.fg.brand-contrast
   tone=brand, variant=solid:
     enabled:
       root:
@@ -89,7 +89,7 @@ data:
       root:
         color: $color.bg.informative-weak
       label:
-        color: $color.fg.informative
+        color: $color.fg.informative-contrast
   tone=informative, variant=solid:
     enabled:
       root:
@@ -107,7 +107,7 @@ data:
       root:
         color: $color.bg.positive-weak
       label:
-        color: $color.fg.positive
+        color: $color.fg.positive-contrast
   tone=positive, variant=solid:
     enabled:
       root:
@@ -120,21 +120,21 @@ data:
         strokeColor: $color.stroke.positive
       label:
         color: $color.fg.positive
-  tone=danger, variant=weak:
+  tone=critical, variant=weak:
     enabled:
       root:
-        color: $color.bg.danger-weak
+        color: $color.bg.critical-weak
       label:
-        color: $color.fg.danger
-  tone=danger, variant=solid:
+        color: $color.fg.critical-contrast
+  tone=critical, variant=solid:
     enabled:
       root:
-        color: $color.bg.danger-solid
+        color: $color.bg.critical-solid
       label:
         color: $color.palette.static-white
-  tone=danger, variant=outline:
+  tone=critical, variant=outline:
     enabled:
       root:
-        strokeColor: $color.stroke.danger
+        strokeColor: $color.stroke.critical
       label:
-        color: $color.fg.danger
+        color: $color.fg.critical

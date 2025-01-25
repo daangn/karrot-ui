@@ -1,19 +1,13 @@
 "use client";
 
-import {
-  ComponentSpecExpression,
-  resolveToken,
-  RootageCtx,
-  stringifyTokenExpression,
-  stringifyValueExpression,
-  ValueExpression,
-} from "@seed-design/rootage-core";
+import { AST, resolveToken, RootageCtx } from "@seed-design/rootage-core";
 import { useMemo, useState } from "react";
 import { TokenCell } from "./token-cell";
+import { stringifyStates, stringifyTokenLit, stringifyValueLit } from "./rootage";
 
 interface ComponentVariantTableProps {
   rootage: RootageCtx;
-  variant: ComponentSpecExpression[number];
+  variant: AST.VariantDeclaration;
 }
 
 interface TableItem {
@@ -22,7 +16,7 @@ interface TableItem {
   slotKey: string;
   propertyKey: string;
   values: string[];
-  resolvedValue: ValueExpression;
+  resolvedValue: AST.ValueLit;
 }
 
 export function ComponentVariantTable(props: ComponentVariantTableProps) {
@@ -34,28 +28,24 @@ export function ComponentVariantTable(props: ComponentVariantTableProps) {
   const { rootage, variant } = props;
   const tableItems: TableItem[] = useMemo(
     () =>
-      variant.state.flatMap((state) => {
-        const stateKey = state.key.join(", ");
-        return state.slot.flatMap((slot) => {
-          const slotKey = slot.key;
-          return slot.property.map((property) => {
-            const propertyKey = property.key;
+      variant.body.flatMap((stateDecl) => {
+        const stateKey = stringifyStates(stateDecl.states);
+        return stateDecl.body.flatMap((slotDecl) => {
+          const slotKey = slotDecl.slot;
+          return slotDecl.body.map((propertyDecl) => {
+            const propertyKey = propertyDecl.property;
 
-            if (property.value.type === "token") {
-              const { path, value } = resolveToken(
-                rootage,
-                stringifyTokenExpression(property.value),
-                {
-                  global: "default",
-                  color: "theme-light",
-                },
-              );
+            if (propertyDecl.value.kind === "TokenLit") {
+              const { path, value } = resolveToken(rootage, stringifyTokenLit(propertyDecl.value), {
+                global: "default",
+                color: "theme-light",
+              });
               return {
                 id: `${stateKey}/${slotKey}/${propertyKey}`,
                 stateKey,
                 slotKey,
                 propertyKey,
-                values: [...path, stringifyValueExpression(value)],
+                values: [...path, stringifyValueLit(value)],
                 resolvedValue: value,
               };
             }
@@ -65,8 +55,8 @@ export function ComponentVariantTable(props: ComponentVariantTableProps) {
               stateKey,
               slotKey,
               propertyKey,
-              values: [stringifyValueExpression(property.value)],
-              resolvedValue: property.value,
+              values: [stringifyValueLit(propertyDecl.value)],
+              resolvedValue: propertyDecl.value,
             };
           });
         });

@@ -9,7 +9,7 @@
     padding-inline: var(--seed-v3-dimension-s4);
     border: none;
     padding-block: 0;
-    font: inherit;
+    font-family: inherit;
 }
 .inlineBanner__root:is(button) {
     cursor: pointer;
@@ -48,6 +48,7 @@
     font-weight: var(--seed-v3-font-weight-regular);
     font-size: var(--seed-v3-font-size-s2);
     line-height: var(--seed-v3-line-height-s2);
+    font-family: inherit;
     text-decoration: underline;
     text-underline-offset: 2px;
     border: none;
@@ -182,39 +183,39 @@
 .inlineBanner__dismissIcon--variant_warningSolid {
     color: var(--seed-v3-color-fg-neutral);
 }
-.inlineBanner__root--variant_dangerWeak {
-    background-color: var(--seed-v3-color-bg-danger-weak);
+.inlineBanner__root--variant_criticalWeak {
+    background-color: var(--seed-v3-color-bg-critical-weak);
 }
-.inlineBanner__icon--variant_dangerWeak {
-    color: var(--seed-v3-color-fg-danger-contrast);
+.inlineBanner__icon--variant_criticalWeak {
+    color: var(--seed-v3-color-fg-critical-contrast);
 }
-.inlineBanner__title--variant_dangerWeak {
-    color: var(--seed-v3-color-fg-danger-contrast);
+.inlineBanner__title--variant_criticalWeak {
+    color: var(--seed-v3-color-fg-critical-contrast);
 }
-.inlineBanner__description--variant_dangerWeak {
-    color: var(--seed-v3-color-fg-danger-contrast);
+.inlineBanner__description--variant_criticalWeak {
+    color: var(--seed-v3-color-fg-critical-contrast);
 }
-.inlineBanner__linkLabel--variant_dangerWeak {
-    color: var(--seed-v3-color-fg-danger-contrast);
+.inlineBanner__linkLabel--variant_criticalWeak {
+    color: var(--seed-v3-color-fg-critical-contrast);
 }
-.inlineBanner__actionableIcon--variant_dangerWeak {
-    color: var(--seed-v3-color-fg-danger-contrast);
+.inlineBanner__actionableIcon--variant_criticalWeak {
+    color: var(--seed-v3-color-fg-critical-contrast);
 }
-.inlineBanner__root--variant_dangerSolid {
-    background-color: var(--seed-v3-color-bg-danger-solid);
+.inlineBanner__root--variant_criticalSolid {
+    background-color: var(--seed-v3-color-bg-critical-solid);
 }
-.inlineBanner__icon--variant_dangerSolid {
+.inlineBanner__icon--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.inlineBanner__title--variant_dangerSolid {
+.inlineBanner__title--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.inlineBanner__description--variant_dangerSolid {
+.inlineBanner__description--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.inlineBanner__linkLabel--variant_dangerSolid {
+.inlineBanner__linkLabel--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }
-.inlineBanner__actionableIcon--variant_dangerSolid {
+.inlineBanner__actionableIcon--variant_criticalSolid {
     color: var(--seed-v3-color-palette-static-white);
 }

@@ -12,14 +12,7 @@ export interface BadgeRootProps
     PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const BadgeRoot = withProvider<HTMLSpanElement, BadgeRootProps>(Primitive.span, "root", {
-  defaultProps: {
-    size: "medium",
-    shape: "rectangle",
-    variant: "weak",
-    tone: "neutral",
-  },
-});
+export const BadgeRoot = withProvider<HTMLSpanElement, BadgeRootProps>(Primitive.span, "root");
 
 ////////////////////////////////////////////////////////////////////////////////////
 

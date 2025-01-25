@@ -74,6 +74,7 @@
     padding-bottom: var(--seed-v3-dimension-s4);
 }
 .extendedActionSheet__title {
+    color: var(--seed-v3-color-fg-neutral);
     font-size: var(--seed-v3-font-size-s6);
     line-height: var(--seed-v3-line-height-s6);
     font-weight: var(--seed-v3-font-weight-bold);

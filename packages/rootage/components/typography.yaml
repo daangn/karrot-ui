@@ -4,139 +4,139 @@ metadata:
   id: typography
   name: Typography
 data:
-  type=label-small-default:
+  textStyle=label-small-default:
     enabled:
       root:
         fontSize: $font-size.s1
         lineHeight: $line-height.s1
         fontWeight: $font-weight.regular
-  type=label-small-strong:
+  textStyle=label-small-strong:
     enabled:
       root:
         fontSize: $font-size.s1
         lineHeight: $line-height.s1
         fontWeight: $font-weight.medium
-  type=label-small-stronger:
+  textStyle=label-small-stronger:
     enabled:
       root:
         fontSize: $font-size.s1
         lineHeight: $line-height.s1
         fontWeight: $font-weight.bold
-  type=label-medium-default:
+  textStyle=label-medium-default:
     enabled:
       root:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
         fontWeight: $font-weight.regular
-  type=label-medium-strong:
+  textStyle=label-medium-strong:
     enabled:
       root:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
         fontWeight: $font-weight.medium
-  type=label-medium-stronger:
+  textStyle=label-medium-stronger:
     enabled:
       root:
         fontSize: $font-size.s2
         lineHeight: $line-height.s2
         fontWeight: $font-weight.bold
-  type=label-large-default:
+  textStyle=label-large-default:
     enabled:
       root:
         fontSize: $font-size.s3
         lineHeight: $line-height.s3
         fontWeight: $font-weight.regular
-  type=label-large-strong:
+  textStyle=label-large-strong:
     enabled:
       root:
         fontSize: $font-size.s3
         lineHeight: $line-height.s3
         fontWeight: $font-weight.medium
-  type=label-large-stronger:
+  textStyle=label-large-stronger:
     enabled:
       root:
         fontSize: $font-size.s3
         lineHeight: $line-height.s3
         fontWeight: $font-weight.bold
-  type=body-small-default:
+  textStyle=body-small-default:
     enabled:
       root:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
         fontWeight: $font-weight.regular
-  type=body-small-reading-default:
+  textStyle=body-small-reading-default:
     enabled:
       root:
         fontSize: $font-size.s4
         lineHeight: $line-height.s5
         fontWeight: $font-weight.regular
-  type=body-small-strong:
+  textStyle=body-small-strong:
     enabled:
       root:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
         fontWeight: $font-weight.medium
-  type=body-small-stronger:
+  textStyle=body-small-stronger:
     enabled:
       root:
         fontSize: $font-size.s4
         lineHeight: $line-height.s4
         fontWeight: $font-weight.bold
-  type=body-medium-default:
+  textStyle=body-medium-default:
     enabled:
       root:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
         fontWeight: $font-weight.regular
-  type=body-medium-reading-default:
+  textStyle=body-medium-reading-default:
     enabled:
       root:
         fontSize: $font-size.s5
         lineHeight: $line-height.s6
         fontWeight: $font-weight.regular
-  type=body-medium-strong:
+  textStyle=body-medium-strong:
     enabled:
       root:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
         fontWeight: $font-weight.medium
-  type=body-medium-stronger:
+  textStyle=body-medium-stronger:
     enabled:
       root:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
         fontWeight: $font-weight.bold
-  type=title-small-default:
+  textStyle=title-small-default:
     enabled:
       root:
         fontSize: $font-size.s5
         lineHeight: $line-height.s5
         fontWeight: $font-weight.bold
-  type=title-medium-default:
+  textStyle=title-medium-default:
     enabled:
       root:
         fontSize: $font-size.s6
         lineHeight: $line-height.s6
         fontWeight: $font-weight.bold
-  type=title-large-default:
+  textStyle=title-large-default:
     enabled:
       root:
         fontSize: $font-size.s7
         lineHeight: $line-height.s7
         fontWeight: $font-weight.bold
-  type=heading-small-default:
+  textStyle=heading-small-default:
     enabled:
       root:
         fontSize: $font-size.s8
         lineHeight: $line-height.s8
         fontWeight: $font-weight.bold
-  type=heading-medium-default:
+  textStyle=heading-medium-default:
     enabled:
       root:
         fontSize: $font-size.s9
         lineHeight: $line-height.s9
         fontWeight: $font-weight.bold
-  type=heading-large-default:
+  textStyle=heading-large-default:
     enabled:
       root:
         fontSize: $font-size.s10

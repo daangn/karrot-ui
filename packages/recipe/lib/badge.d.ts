@@ -14,7 +14,7 @@ declare interface BadgeVariant {
 /**
   * @default neutral
   */
-  tone: "neutral" | "brand" | "informative" | "positive" | "danger";
+  tone: "neutral" | "brand" | "informative" | "positive" | "critical";
 }
 
 declare type BadgeVariantMap = {

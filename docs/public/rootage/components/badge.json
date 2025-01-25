@@ -69,7 +69,7 @@
     "variant=outline": {
       "enabled": {
         "root": {
-          "borderWidth": "1px"
+          "strokeWidth": "1px"
         },
         "label": {
           "fontWeight": "$font-weight.bold"
@@ -112,7 +112,7 @@
           "color": "$color.bg.brand-weak"
         },
         "label": {
-          "color": "$color.fg.brand"
+          "color": "$color.fg.brand-contrast"
         }
       }
     },
@@ -142,7 +142,7 @@
           "color": "$color.bg.informative-weak"
         },
         "label": {
-          "color": "$color.fg.informative"
+          "color": "$color.fg.informative-contrast"
         }
       }
     },
@@ -172,7 +172,7 @@
           "color": "$color.bg.positive-weak"
         },
         "label": {
-          "color": "$color.fg.positive"
+          "color": "$color.fg.positive-contrast"
         }
       }
     },
@@ -196,33 +196,33 @@
         }
       }
     },
-    "tone=danger, variant=weak": {
+    "tone=critical, variant=weak": {
       "enabled": {
         "root": {
-          "color": "$color.bg.danger-weak"
+          "color": "$color.bg.critical-weak"
         },
         "label": {
-          "color": "$color.fg.danger"
+          "color": "$color.fg.critical-contrast"
         }
       }
     },
-    "tone=danger, variant=solid": {
+    "tone=critical, variant=solid": {
       "enabled": {
         "root": {
-          "color": "$color.bg.danger-solid"
+          "color": "$color.bg.critical-solid"
         },
         "label": {
           "color": "$color.palette.static-white"
         }
       }
     },
-    "tone=danger, variant=outline": {
+    "tone=critical, variant=outline": {
       "enabled": {
         "root": {
-          "strokeColor": "$color.stroke.danger"
+          "strokeColor": "$color.stroke.critical"
         },
         "label": {
-          "color": "$color.fg.danger"
+          "color": "$color.fg.critical"
         }
       }
     }

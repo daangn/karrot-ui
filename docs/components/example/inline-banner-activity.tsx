@@ -16,8 +16,8 @@ declare module "@stackflow/config" {
 
 const InlineBannerActivity: ActivityComponentType<"InlineBanner"> = () => {
   const [variant, setVariant] =
-    React.useState<Extract<InlineBannerProps["variant"], "neutralWeak" | "dangerSolid">>(
-      "dangerSolid",
+    React.useState<Extract<InlineBannerProps["variant"], "neutralWeak" | "criticalSolid">>(
+      "criticalSolid",
     );
 
   return (
@@ -25,12 +25,12 @@ const InlineBannerActivity: ActivityComponentType<"InlineBanner"> = () => {
       <InlineBanner
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
         variant={variant}
-        {...(variant === "dangerSolid" && { style: { position: "sticky", top: 0 } })}
+        {...(variant === "criticalSolid" && { style: { position: "sticky", top: 0 } })}
       />
       <div style={{ display: "flex", flexDirection: "column", padding: "1rem", gap: "0.75rem" }}>
         <ActionButton
           onClick={() =>
-            setVariant((prev) => (prev === "dangerSolid" ? "neutralWeak" : "dangerSolid"))
+            setVariant((prev) => (prev === "criticalSolid" ? "neutralWeak" : "criticalSolid"))
           }
         >
           Toggle tone

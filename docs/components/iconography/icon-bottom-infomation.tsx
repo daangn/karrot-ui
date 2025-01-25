@@ -45,17 +45,17 @@ export const IconBottomInfomation = () => {
         <div className="flex gap-4 items-end">
           <div
             className="text-xl font-bold"
-            // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+            // biome-ignore lint/security/nodangerouslySetInnerHtml: <explanation>
             dangerouslySetInnerHTML={{ __html: highLightedName }}
           />
           <div className="flex flex-col gap-1">
             {serviceName && (
-              <div className="text-seed-fg-danger text-xs">
+              <div className="text-seed-fg-critical text-xs">
                 <span className="font-bold">[{serviceName} 서비스 아이콘]</span>
               </div>
             )}
             {isFigmaNotPublishedIcon && (
-              <div className="text-seed-fg-danger text-xs">
+              <div className="text-seed-fg-critical text-xs">
                 <span className="font-bold">[피그마 컴포넌트로 배포되지 않은 아이콘]</span>
                 <span>
                   {" "}
@@ -65,7 +65,7 @@ export const IconBottomInfomation = () => {
               </div>
             )}
             {isFatIcon && (
-              <div className="text-seed-fg-danger text-xs">
+              <div className="text-seed-fg-critical text-xs">
                 <span className="font-bold">[Fat 아이콘]</span>
                 <span>
                   {" "}
@@ -75,7 +75,7 @@ export const IconBottomInfomation = () => {
               </div>
             )}
             {isServiceIcon && (
-              <div className="text-seed-fg-danger text-xs">
+              <div className="text-seed-fg-critical text-xs">
                 <span className="font-bold">[서비스 아이콘]</span>
                 <span>
                   {" "}

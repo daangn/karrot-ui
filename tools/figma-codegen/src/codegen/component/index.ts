@@ -1,11 +1,15 @@
 import { camelCase } from "change-case";
 import { match } from "ts-pattern";
 import { createIconTagNameFromId, createIconTagNameFromKey } from "../icon";
-import type { ElementNode } from "../jsx";
-import { createElement } from "../jsx";
+import { type ElementNode, createElement } from "../jsx";
+import { getLayoutVariableName } from "../variable";
+import { handleSize } from "./properties";
+import * as metadata from "../data/component-sets";
 import type {
   ActionButtonProperties,
   ActionChipProperties,
+  ActionSheetItemProperties,
+  ActionSheetProperties,
   AvatarProperties,
   AvatarStackProperties,
   BadgeProperties,
@@ -14,18 +18,23 @@ import type {
   ChipTabsItemProperties,
   ChipTabsProperties,
   ControlChipProperties,
+  ErrorStateProperties,
+  ExtendedActionSheetGroupProperties,
+  ExtendedActionSheetItemProperties,
+  ExtendedActionSheetProperties,
   ExtendedFabProperties,
   FabProperties,
   HelpBubbleProperties,
   IdentityPlaceholderProperties,
   InlineBannerProperties,
+  MannerTempBadgeProperties,
   MultilineTextFieldProperties,
   ProgressCircleProperties,
   ReactionButtonProperties,
   SegmentedControlItemProperties,
   SegmentedControlProperties,
-  SelectBoxProperties,
   SelectBoxGroupProperties,
+  SelectBoxProperties,
   SkeletonProperties,
   SnackbarProperties,
   SwitchProperties,
@@ -36,8 +45,6 @@ import type {
   TextFieldProperties,
   ToggleButtonProperties,
 } from "./type";
-import { getLayoutVariableName } from "../variable";
-import { handleSize } from "./properties";
 
 export interface ComponentHandler<
   T extends InstanceNode["componentProperties"] = InstanceNode["componentProperties"],
@@ -47,7 +54,7 @@ export interface ComponentHandler<
 }
 
 const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
-  key: "450ede9d0bf42fc6ef14345c77e6e407d6d5ee89",
+  key: metadata.actionButton.key,
   codegen: ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
@@ -67,12 +74,6 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
       .with("Icon Last", () => ({
         layout: "withText",
         prefixIcon: undefined,
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
-        children: props["Label#5987:61"].value,
-      }))
-      .with("Icon Both", () => ({
-        layout: "withText",
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#5987:305"].value)),
         suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
         children: props["Label#5987:61"].value,
       }))
@@ -103,7 +104,7 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
 };
 
 const actionChipHandler: ComponentHandler<ActionChipProperties> = {
-  key: "3d21594ef116e94a9465d507447b858aea062575",
+  key: metadata.actionChip.key,
   codegen: ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
@@ -152,16 +153,91 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
         count: Number(props["Count#7185:21"].value),
       }),
     };
-    return createElement("ChipButton", commonProps, children);
+    return createElement("ActionChip", commonProps, children);
+  },
+};
+
+const actionSheetHandler: ComponentHandler<ActionSheetProperties> = {
+  key: metadata.actionSheet.key,
+  codegen: (node) => {
+    const { componentProperties: props } = node;
+
+    const contentProps = match(props.Header.value)
+      .with("None", () => ({
+        title: undefined,
+        description: undefined,
+      }))
+      .with("Title Only", () => ({
+        title: props["Title#15641:37"].value,
+        description: undefined,
+      }))
+      .with("Description Only", () => ({
+        title: undefined,
+        description: props["Description#15641:70"].value,
+      }))
+      .with("Title With Description", () => ({
+        title: props["Title#15641:37"].value,
+        description: props["Description#15641:70"].value,
+      }))
+      .exhaustive();
+
+    const items = node.findAll(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === actionSheetItemHandler.key) ||
+          child.mainComponent?.key === actionSheetItemHandler.key),
+    ) as (InstanceNode & { componentProperties: ActionSheetItemProperties })[];
+
+    const contentChildren = items.map(actionSheetItemHandler.codegen);
+
+    console.log(contentProps, contentChildren);
+
+    const content = createElement(
+      "ActionSheetContent",
+      contentProps,
+      contentChildren,
+      contentProps.title
+        ? ""
+        : "title을 제공하지 않는 경우 aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
+    );
+
+    const trigger = createElement(
+      "ActionSheetTrigger",
+      { asChild: true },
+      createElement("ActionButton", undefined, "열기", "ActionSheet을 여는 요소를 제공해주세요."),
+    );
+
+    return createElement("ActionSheet", undefined, [trigger, content]);
+  },
+};
+
+const actionSheetItemHandler: ComponentHandler<ActionSheetItemProperties> = {
+  key: "c3cafd3a3fdcd45fecb6971019d88eaf39a2e381",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      label: props["Label#15420:4"].value,
+      tone: camelCase(props.Tone.value),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("ActionSheetItem", commonProps);
   },
 };
 
 const avatarHandler: ComponentHandler<AvatarProperties> = {
-  key: "d71644aeba2e29deda366798fdfe35977166d120",
+  key: metadata.avatar.key,
   codegen: (node) => {
     const placeholder = node.findOne(
       (child) =>
-        child.type === "INSTANCE" && child.mainComponent?.key === identityPlaceholderHandler.key,
+        child.type === "INSTANCE" &&
+        (child.mainComponent?.parent?.type === "COMPONENT_SET"
+          ? child.mainComponent.parent.key === identityPlaceholderHandler.key
+          : child.mainComponent?.key === identityPlaceholderHandler.key),
     ) as (InstanceNode & { componentProperties: IdentityPlaceholderProperties }) | null;
 
     const { componentProperties: props } = node;
@@ -189,7 +265,7 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
 };
 
 const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
-  key: "019467fdad2192abb48699dcfb79e344df04b799",
+  key: metadata.avatarStack.key,
   codegen: ({ componentProperties: props, children }) => {
     const avatars = children
       .map((avatarStackItem) => {
@@ -230,7 +306,7 @@ const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
 };
 
 const badgeHandler: ComponentHandler<BadgeProperties> = {
-  key: "04609a35d47a1a0ef4904b3c25f79451892a85a1",
+  key: metadata.badge.key,
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
       size: handleSize(props.Size.value),
@@ -244,7 +320,7 @@ const badgeHandler: ComponentHandler<BadgeProperties> = {
 };
 
 const calloutHandler: ComponentHandler<CalloutProperties> = {
-  key: "ec46d38baac3c367c4a5ffa47a2110d51ba0a4fe",
+  key: metadata.callout.key,
   codegen: ({ componentProperties: props, children }) => {
     const tag = (() => {
       switch (props.Interaction.value) {
@@ -317,7 +393,7 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
 };
 
 const checkboxHandler: ComponentHandler<CheckboxProperties> = {
-  key: "94a2f6957a86f8ae3b8c7ca200dfcd5e29f6075b",
+  key: metadata.checkbox.key,
   codegen: ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
@@ -343,7 +419,7 @@ const checkboxHandler: ComponentHandler<CheckboxProperties> = {
 };
 
 const chipTabsHandler: ComponentHandler<ChipTabsProperties> = {
-  key: "d098159beacf7713e9116f0ef38d8a20f64ec84f",
+  key: metadata.chipTablist.key,
   codegen: ({ componentProperties: props, children }) => {
     const chipTabsItems = children.filter(
       (child) =>
@@ -392,7 +468,7 @@ const chipTabsItemHandler: ComponentHandler<ChipTabsItemProperties> = {
 };
 
 const controlChipHandler: ComponentHandler<ControlChipProperties> = {
-  key: "5780d56fc2f9bc4bbd6bc3db93949d8a8b7b7563",
+  key: metadata.controlChip.key,
   codegen: ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
@@ -451,8 +527,119 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   },
 };
 
+const errorStateHandler: ComponentHandler<ErrorStateProperties> = {
+  key: metadata.errorState.key,
+  codegen: (node) => {
+    const props = node.componentProperties;
+
+    const actionButtonNode = node.findOne(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === actionButtonHandler.key) ||
+          child.mainComponent?.key === actionButtonHandler.key),
+    ) as InstanceNode & { componentProperties: ActionButtonProperties };
+
+    const commonProps = {
+      variant: camelCase(props.Variant.value),
+      ...(props.Layout.value === "With Title" && {
+        title: props["Title#16237:0"].value,
+      }),
+      description: props["Description#16237:5"].value,
+      ...(actionButtonNode && {
+        primaryActionProps: {
+          children: actionButtonHandler.codegen(actionButtonNode).children[0],
+        },
+        secondaryActionProps: {
+          children: props["Secondary Action Label#17042:0"].value,
+        },
+      }),
+    };
+
+    return createElement("ErrorState", commonProps);
+  },
+};
+
+const extendedActionSheetHandler: ComponentHandler<ExtendedActionSheetProperties> = {
+  key: metadata.extendedActionSheet.key,
+  codegen: (node) => {
+    const { componentProperties: props } = node;
+
+    const groups = node.findAll(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === extendedActionSheetGroupHandler.key) ||
+          child.mainComponent?.key === extendedActionSheetGroupHandler.key),
+    ) as (InstanceNode & { componentProperties: ExtendedActionSheetGroupProperties })[];
+
+    const contentChildren = groups.map(extendedActionSheetGroupHandler.codegen);
+
+    const title = props["Show Title#17043:12"].value ? props["Title#14599:0"].value : undefined;
+
+    const content = createElement(
+      "ExtendedActionSheetContent",
+      { title },
+      contentChildren,
+      title
+        ? ""
+        : "title을 제공하지 않는 경우 aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
+    );
+
+    const trigger = createElement(
+      "ExtendedActionSheetTrigger",
+      { asChild: true },
+      createElement(
+        "ActionButton",
+        undefined,
+        "열기",
+        "ExtendedActionSheet을 여는 요소를 제공해주세요.",
+      ),
+    );
+
+    return createElement("ExtendedActionSheet", undefined, [trigger, content]);
+  },
+};
+
+const extendedActionSheetGroupHandler: ComponentHandler<ExtendedActionSheetGroupProperties> = {
+  key: "2a504a1c6b7810d5e652862dcba2cb7048f9eb16",
+  codegen: (node) => {
+    const items = node.findAll(
+      (child) =>
+        child.type === "INSTANCE" &&
+        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
+          child.mainComponent?.parent.key === extendedActionSheetItemHandler.key) ||
+          child.mainComponent?.key === extendedActionSheetItemHandler.key),
+    ) as (InstanceNode & { componentProperties: ExtendedActionSheetItemProperties })[];
+
+    const contentChildren = items.map(extendedActionSheetItemHandler.codegen);
+
+    return createElement("ExtendedActionSheetGroup", undefined, contentChildren);
+  },
+};
+
+const extendedActionSheetItemHandler: ComponentHandler<ExtendedActionSheetItemProperties> = {
+  key: "057083e95466da59051119eec0b41d4ad5a07f8f",
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
+
+    const commonProps = {
+      tone: camelCase(props.Tone.value),
+      label: props["Label#55905:8"].value,
+      ...(props["Show Prefix Icon#17043:5"].value && {
+        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#55948:0"].value)),
+      }),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("ExtendedActionSheetItem", commonProps);
+  },
+};
+
 const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
-  key: "032f3fddaad0aa3fa5a7f680768c1f5d02fb463f",
+  key: metadata.extendedFloatingActionButton.key,
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
       size: handleSize(props.Size.value),
@@ -465,7 +652,7 @@ const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
 };
 
 const fabHandler: ComponentHandler<FabProperties> = {
-  key: "1974b94703032585bb9e20bd54743e01094b965c",
+  key: metadata.floatingActionButton.key,
   codegen: ({ componentProperties: props }) => {
     return createElement(
       "Fab",
@@ -477,7 +664,7 @@ const fabHandler: ComponentHandler<FabProperties> = {
 };
 
 const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
-  key: "804b327c091278a40d5891939eaed90bb2889659",
+  key: metadata.helpBubble.key,
   codegen: ({ componentProperties: props }) => {
     const placement:
       | "top"
@@ -539,7 +726,7 @@ const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
 };
 
 const identityPlaceholderHandler: ComponentHandler<IdentityPlaceholderProperties> = {
-  key: "808206c07408aa1056ec85a55925e9844e9265c2",
+  key: metadata.identityPlaceholder.key,
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
       identity: camelCase(props.Identity.value),
@@ -550,7 +737,7 @@ const identityPlaceholderHandler: ComponentHandler<IdentityPlaceholderProperties
 };
 
 const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
-  key: "ce587d0f21754af05240cb32a4880227cb0ea1e1",
+  key: metadata.inlineBanner.key,
   codegen: (node) => {
     const { componentProperties: props } = node;
 
@@ -615,8 +802,21 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
   },
 };
 
+const mannerTempBadgeHandler: ComponentHandler<MannerTempBadgeProperties> = {
+  key: metadata.mannerTempBadge.key,
+  codegen: ({ children }) => {
+    const textNode = children.find((child) => child.type === "TEXT");
+
+    const commonProps = {
+      temperature: Number(textNode?.characters.replace(/[^\d.-]/g, "") ?? "-1"),
+    };
+
+    return createElement("MannerTempBadge", commonProps);
+  },
+};
+
 const multilineTextFieldHandler: ComponentHandler<MultilineTextFieldProperties> = {
-  key: "88b2399c930c85f9ce2972163a078bc684b84bbe",
+  key: metadata.multilineTextField.key,
   codegen: ({ componentProperties: props }) => {
     const {
       Size: { value: size },
@@ -691,7 +891,7 @@ const multilineTextFieldHandler: ComponentHandler<MultilineTextFieldProperties> 
 };
 
 const progressCircleHandler: ComponentHandler<ProgressCircleProperties> = {
-  key: "6e6779a372cab2485a0e25529bc4dbc9932a7346",
+  key: metadata.progressCircle.key,
   codegen: ({ componentProperties: props }) => {
     const { value, minValue, maxValue } = match(props.Value.value)
       .with("Indeterminate", () => ({
@@ -734,7 +934,7 @@ const progressCircleHandler: ComponentHandler<ProgressCircleProperties> = {
 };
 
 const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
-  key: "ec43e4e881f7048e95601f8b58c01a0905a174e0",
+  key: metadata.reactionButton.key,
   codegen: ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
@@ -760,7 +960,7 @@ const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
 };
 
 const segmentedControlHandler: ComponentHandler<SegmentedControlProperties> = {
-  key: "3ad7133ba52755867f42f9232375f75639e00d58",
+  key: metadata.segmentedControl.key,
   codegen: ({ children }) => {
     const segments = children.filter(
       (child) =>
@@ -807,7 +1007,7 @@ const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperti
 };
 
 const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
-  key: "a3d58bb8540600878742cdcf2608a4b3851667ec",
+  key: metadata.selectBoxGroup.key,
   codegen: ({ componentProperties: props, children }) => {
     const tag = (() => {
       switch (props.Control.value) {
@@ -832,7 +1032,7 @@ const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
 
     const stack = createElement(
       "Stack",
-      { gap: "spacing-y.between-select-boxes" },
+      { gap: "spacingY.componentDefault" },
       selectBoxes.map(selectBoxHandler.codegen),
     );
 
@@ -847,7 +1047,7 @@ const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
 };
 
 const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
-  key: "38722ffeb4c966256a709155e8ddac50c93d7c60",
+  key: metadata.selectBox.key,
   codegen: ({ componentProperties: props }) => {
     const tag = (() => {
       switch (props.Control.value) {
@@ -879,7 +1079,7 @@ const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
 };
 
 const skeletonHandler: ComponentHandler<SkeletonProperties> = {
-  key: "ef22c3288722fbfa64a5ab73df397ade88f8e05a",
+  key: metadata.skeleton.key,
   codegen: ({
     componentProperties: props,
     width,
@@ -932,7 +1132,7 @@ const skeletonHandler: ComponentHandler<SkeletonProperties> = {
 };
 
 const snackbarHandler: ComponentHandler<SnackbarProperties> = {
-  key: "81b17fb8c7d731a19cf8d36a8605559d41414eca",
+  key: metadata.snackbar.key,
   codegen: ({ componentProperties: props }) => {
     const commonProps = {
       message: props["Message#1528:4"].value,
@@ -948,7 +1148,7 @@ const snackbarHandler: ComponentHandler<SnackbarProperties> = {
 };
 
 const tabsHandler: ComponentHandler<TabsProperties> = {
-  key: "ffe33411fb8796f7a95d3637b90150007f0dd954",
+  key: metadata.tablist.key,
   codegen: ({ componentProperties: props, children }) => {
     const tabsItems = children
       .map((child) => {
@@ -1056,7 +1256,7 @@ const tabsFillItemHandler: ComponentHandler<TabsFillItemProperties> = {
 };
 
 const textButtonHandler: ComponentHandler<TextButtonProperties> = {
-  key: "601f788792916250e33d04bd3165dee1404342df",
+  key: metadata.textButton.key,
   codegen: (node) => {
     const { componentProperties: props } = node;
 
@@ -1100,7 +1300,7 @@ const textButtonHandler: ComponentHandler<TextButtonProperties> = {
 };
 
 const textFieldHandler: ComponentHandler<TextFieldProperties> = {
-  key: "c49873c37a639f0dffdea4efd0eb43760d66c141",
+  key: metadata.textField.key,
   codegen: ({ componentProperties: props }) => {
     const {
       Size: { value: size },
@@ -1201,17 +1401,32 @@ const textFieldHandler: ComponentHandler<TextFieldProperties> = {
   },
 };
 
-// const switchHandler: ComponentHandler<SwitchProperties> = {
-//   key: "80ce5a33b5ab713ab3bd2449472e2fb13d78c7f3",
-//   codegen: ({ componentProperties: props }) => {
-//     const commonProps = {};
+const switchHandler: ComponentHandler<SwitchProperties> = {
+  key: metadata.switch.key,
+  codegen: ({ componentProperties: props }) => {
+    const states = props.State.value.split("-");
 
-//     return createElement("Switch", commonProps);
-//   },
-// };
+    const size = handleSize(props.Size.value);
+
+    const commonProps = {
+      size,
+      ...(size === "small" && {
+        label: props["Label#15191:2"].value,
+      }),
+      ...(states.includes("Selected") && {
+        defaultChecked: true,
+      }),
+      ...(states.includes("Disabled") && {
+        disabled: true,
+      }),
+    };
+
+    return createElement("Switch", commonProps);
+  },
+};
 
 const toggleButtonHandler: ComponentHandler<ToggleButtonProperties> = {
-  key: "1d240ee5fd7a56879713e69cbea1b6f006f0ea22",
+  key: metadata.toggleButton.key,
   codegen: ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
@@ -1243,6 +1458,7 @@ const toggleButtonHandler: ComponentHandler<ToggleButtonProperties> = {
 const componentHandlers = [
   actionButtonHandler,
   actionChipHandler,
+  actionSheetHandler,
   avatarHandler,
   avatarStackHandler,
   badgeHandler,
@@ -1250,18 +1466,23 @@ const componentHandlers = [
   checkboxHandler,
   chipTabsHandler,
   controlChipHandler,
+  errorStateHandler,
+  extendedActionSheetHandler,
   extendedFabHandler,
   fabHandler,
   helpBubbleHandler,
   identityPlaceholderHandler,
   inlineBannerHandler,
+  mannerTempBadgeHandler,
   multilineTextFieldHandler,
   progressCircleHandler,
   reactionButtonHandler,
   segmentedControlHandler,
   selectBoxGroupHandler,
+  selectBoxHandler,
   skeletonHandler,
   snackbarHandler,
+  switchHandler,
   tabsHandler,
   textButtonHandler,
   textFieldHandler,

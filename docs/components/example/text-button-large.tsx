@@ -3,7 +3,7 @@ import { TextButton } from "seed-design/ui/text-button";
 
 export default function TextButtonLarge() {
   return (
-    <TextButton tone="neutral" prefixIcon={<IconPlusCircleLine />} size="large">
+    <TextButton tone="neutral" icon={<IconPlusCircleLine />} size="large">
       추가
     </TextButton>
   );

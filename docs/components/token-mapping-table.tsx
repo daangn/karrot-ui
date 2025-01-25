@@ -1,16 +1,11 @@
-import {
-  resolveToken,
-  stringifyValueExpression,
-  type TokenRef,
-  type ValueExpression,
-} from "@seed-design/rootage-core";
-import { getRootage } from "@/components/get-rootage";
+import { resolveToken, type AST, type Document } from "@seed-design/rootage-core";
+import { getRootage, stringifyValueLit } from "@/components/rootage";
 import { ExpandableTokenCell } from "@/components/expandable-token-cell";
 import { Fragment } from "react";
 
 interface TokenMapping {
   previousTokenId: string;
-  newTokenIds: TokenRef[];
+  newTokenIds: Document.TokenRef[];
   note?: string;
 }
 
@@ -23,7 +18,7 @@ export interface TokenMappingItem {
   newTokens: {
     id: TokenMapping["newTokenIds"][number];
     values: string[];
-    resolvedValue: ValueExpression;
+    resolvedValue: AST.ValueLit;
   }[];
   note?: TokenMapping["note"];
 }
@@ -41,7 +36,7 @@ export async function TokenMappingTable({ mappings }: TokenMappingTableProps) {
 
       return {
         id: newId,
-        values: [...path, stringifyValueExpression(value)],
+        values: [...path, stringifyValueLit(value)],
         resolvedValue: value,
       };
     }),

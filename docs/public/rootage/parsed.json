@@ -921,7 +921,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#aeebcc"
+            "value": "#b9e9d2"
           }
         },
         {
@@ -948,7 +948,7 @@
           "mode": "theme-light",
           "value": {
             "type": "color",
-            "value": "#74dcb0"
+            "value": "#7ddcb3"
           }
         },
         {
@@ -2164,7 +2164,7 @@
           "color",
           "fg"
         ],
-        "key": "danger"
+        "key": "critical"
       },
       "values": [
         {
@@ -2444,7 +2444,7 @@
           "color",
           "fg"
         ],
-        "key": "danger-contrast"
+        "key": "critical-contrast"
       },
       "values": [
         {
@@ -2934,7 +2934,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-weak"
+        "key": "critical-weak"
       },
       "values": [
         {
@@ -2969,7 +2969,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-solid"
+        "key": "critical-solid"
       },
       "values": [
         {
@@ -3004,7 +3004,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-solid-pressed"
+        "key": "critical-solid-pressed"
       },
       "values": [
         {
@@ -3039,7 +3039,7 @@
           "color",
           "bg"
         ],
-        "key": "danger-weak-pressed"
+        "key": "critical-weak-pressed"
       },
       "values": [
         {
@@ -4229,7 +4229,7 @@
           "color",
           "stroke"
         ],
-        "key": "danger"
+        "key": "critical"
       },
       "values": [
         {
@@ -4392,6 +4392,342 @@
               "palette"
             ],
             "key": "gray-200"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l1"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#62666a"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#b1b5b9"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l2"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#2592f7"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#7cbaf4"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l3"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#0099c8"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#47c3eb"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l4"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#03a07e"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#33cc94"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l5"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#d28500"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#ffa100"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l6"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#f06000"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#ff9147"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l1"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#eff0f1"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#222226"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l2"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#e7f2fc"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#16212b"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l3"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#e3f6fc"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#12262c"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l4"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#ebf9f4"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#162822"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l5"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#fff5e5"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#2e2312"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l6"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#fff0e5"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#2e1d12"
           }
         }
       ]
@@ -4823,6 +5159,30 @@
         }
       ],
       "description": "화면 전체에 적용되는 기본 수평 padding 값입니다."
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "dimension",
+          "spacing-y"
+        ],
+        "key": "component-default"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "token",
+            "group": [
+              "dimension"
+            ],
+            "key": "s3"
+          }
+        }
+      ],
+      "description": "컴포넌트 간 수직 간격 토큰이 정의되지 않은 컴포넌트 사이의 수직 간격에 사용합니다."
     },
     {
       "collection": "global",
@@ -5296,7 +5656,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 0.8125,
+            "value": 0.9375,
             "unit": "rem"
           }
         }
@@ -5376,7 +5736,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 1.3125,
+            "value": 1.375,
             "unit": "rem"
           }
         }
@@ -5416,7 +5776,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 1.5625,
+            "value": 1.6875,
             "unit": "rem"
           }
         }
@@ -5476,7 +5836,7 @@
           "mode": "default",
           "value": {
             "type": "dimension",
-            "value": 2.125,
+            "value": 2.1875,
             "unit": "rem"
           }
         }
@@ -6668,7 +7028,7 @@
         },
         {
           "key": {
-            "variant": "danger solid"
+            "variant": "critical solid"
           },
           "state": [
             {
@@ -6687,7 +7047,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid"
+                        "key": "critical-solid"
                       }
                     }
                   ]
@@ -6801,7 +7161,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid-pressed"
+                        "key": "critical-solid-pressed"
                       }
                     }
                   ]
@@ -6911,7 +7271,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid-pressed"
+                        "key": "critical-solid-pressed"
                       }
                     }
                   ]
@@ -9186,25 +9546,6 @@
                         ],
                         "key": "s3_5"
                       }
-                    },
-                    {
-                      "key": "strokeBottomWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "strokeColor",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "stroke"
-                        ],
-                        "key": "neutral"
-                      }
                     }
                   ]
                 },
@@ -9302,7 +9643,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -9321,7 +9662,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -9505,22 +9846,13 @@
                       }
                     },
                     {
-                      "key": "strokeBottomWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "strokeColor",
+                      "key": "gap",
                       "value": {
                         "type": "token",
                         "group": [
-                          "color",
-                          "stroke"
+                          "dimension"
                         ],
-                        "key": "neutral"
+                        "key": "s1"
                       }
                     }
                   ]
@@ -9613,6 +9945,41 @@
                           "fg"
                         ],
                         "key": "neutral-muted"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "divider",
+                  "property": [
+                    {
+                      "key": "strokeWidth",
+                      "value": {
+                        "type": "dimension",
+                        "value": 1,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "neutral"
+                      }
+                    },
+                    {
+                      "key": "marginX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
                       }
                     }
                   ]
@@ -10519,7 +10886,7 @@
                   "key": "root",
                   "property": [
                     {
-                      "key": "borderWidth",
+                      "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
                         "value": 1,
@@ -10726,7 +11093,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "brand"
+                        "key": "brand-contrast"
                       }
                     }
                   ]
@@ -10867,7 +11234,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "informative"
+                        "key": "informative-contrast"
                       }
                     }
                   ]
@@ -11008,7 +11375,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "positive"
+                        "key": "positive-contrast"
                       }
                     }
                   ]
@@ -11113,7 +11480,7 @@
         },
         {
           "key": {
-            "tone": "danger",
+            "tone": "critical",
             "variant": "weak"
           },
           "state": [
@@ -11133,7 +11500,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     }
                   ]
@@ -11149,7 +11516,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -11160,7 +11527,7 @@
         },
         {
           "key": {
-            "tone": "danger",
+            "tone": "critical",
             "variant": "solid"
           },
           "state": [
@@ -11180,7 +11547,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid"
+                        "key": "critical-solid"
                       }
                     }
                   ]
@@ -11207,7 +11574,7 @@
         },
         {
           "key": {
-            "tone": "danger",
+            "tone": "critical",
             "variant": "outline"
           },
           "state": [
@@ -11227,7 +11594,7 @@
                           "color",
                           "stroke"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -11243,7 +11610,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -12302,7 +12669,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -12321,7 +12688,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     }
                   ]
@@ -12337,7 +12704,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12353,7 +12720,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12369,7 +12736,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12385,7 +12752,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12401,7 +12768,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12417,7 +12784,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -12440,7 +12807,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak-pressed"
+                        "key": "critical-weak-pressed"
                       }
                     }
                   ]
@@ -12733,7 +13100,7 @@
                       "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
-                        "value": 1.25,
+                        "value": 1,
                         "unit": "px"
                       }
                     }
@@ -13280,7 +13647,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1_5"
+                        "key": "s1"
                       }
                     }
                   ]
@@ -15323,25 +15690,6 @@
                       }
                     },
                     {
-                      "key": "strokeBottomWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "strokeColor",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "stroke"
-                        ],
-                        "key": "neutral"
-                      }
-                    },
-                    {
                       "key": "gap",
                       "value": {
                         "type": "token",
@@ -15476,7 +15824,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -15495,7 +15843,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -15511,7 +15859,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -15788,6 +16136,30 @@
                           "radius"
                         ],
                         "key": "s4"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "divider",
+                  "property": [
+                    {
+                      "key": "strokeBottomWidth",
+                      "value": {
+                        "type": "dimension",
+                        "value": 1,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "strokeColor",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "stroke"
+                        ],
+                        "key": "neutral"
                       }
                     }
                   ]
@@ -17522,7 +17894,7 @@
         },
         {
           "key": {
-            "variant": "danger weak"
+            "variant": "critical weak"
           },
           "state": [
             {
@@ -17541,7 +17913,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     }
                   ]
@@ -17557,7 +17929,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17573,7 +17945,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17589,7 +17961,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17605,7 +17977,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17621,7 +17993,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger-contrast"
+                        "key": "critical-contrast"
                       }
                     }
                   ]
@@ -17632,7 +18004,7 @@
         },
         {
           "key": {
-            "variant": "danger solid"
+            "variant": "critical solid"
           },
           "state": [
             {
@@ -17651,7 +18023,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-solid"
+                        "key": "critical-solid"
                       }
                     }
                   ]
@@ -17732,6 +18104,390 @@
                           "palette"
                         ],
                         "key": "static-white"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manner-temp-badge",
+      "name": "Manner Temp Badge",
+      "data": [
+        {
+          "key": {},
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "minHeight",
+                      "value": {
+                        "type": "dimension",
+                        "value": 20,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s0_5"
+                      }
+                    },
+                    {
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s1_5"
+                      }
+                    },
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "full"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s1"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s1"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l1"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l1"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l1"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l2"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l2"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l2"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l3"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l3"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l3"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l4"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l4"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l4"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l5"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l5"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l5"
+                        ],
+                        "key": "text"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "level": "l6"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l6"
+                        ],
+                        "key": "bg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "manner-temp",
+                          "l6"
+                        ],
+                        "key": "text"
                       }
                     }
                   ]
@@ -18100,7 +18856,7 @@
                       "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
-                        "value": 1.25,
+                        "value": 1,
                         "unit": "px"
                       }
                     },
@@ -18430,50 +19186,6 @@
                           "dimension"
                         ],
                         "key": "s2_5"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "size": "small"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "s4_5"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "s2"
                       }
                     }
                   ]
@@ -19778,7 +20490,7 @@
                       "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
-                        "value": 1.25,
+                        "value": 1,
                         "unit": "px"
                       }
                     },
@@ -19848,7 +20560,7 @@
                       "key": "strokeWidth",
                       "value": {
                         "type": "dimension",
-                        "value": 1.25,
+                        "value": 1,
                         "unit": "px"
                       }
                     },
@@ -20649,7 +21361,7 @@
         },
         {
           "key": {
-            "variant": "danger"
+            "variant": "critical"
           },
           "state": [
             {
@@ -20668,7 +21380,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -20807,15 +21519,7 @@
                       "key": "height",
                       "value": {
                         "type": "dimension",
-                        "value": 31,
-                        "unit": "px"
-                      }
-                    },
-                    {
-                      "key": "width",
-                      "value": {
-                        "type": "dimension",
-                        "value": 51,
+                        "value": 32,
                         "unit": "px"
                       }
                     }
@@ -20824,6 +21528,22 @@
                 {
                   "key": "control",
                   "property": [
+                    {
+                      "key": "height",
+                      "value": {
+                        "type": "dimension",
+                        "value": 32,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "width",
+                      "value": {
+                        "type": "dimension",
+                        "value": 52,
+                        "unit": "px"
+                      }
+                    },
                     {
                       "key": "paddingX",
                       "value": {
@@ -20849,7 +21569,7 @@
                       "key": "height",
                       "value": {
                         "type": "dimension",
-                        "value": 27,
+                        "value": 28,
                         "unit": "px"
                       }
                     },
@@ -20857,7 +21577,7 @@
                       "key": "width",
                       "value": {
                         "type": "dimension",
-                        "value": 27,
+                        "value": 28,
                         "unit": "px"
                       }
                     },
@@ -20930,6 +21650,29 @@
                       "key": "height",
                       "value": {
                         "type": "dimension",
+                        "value": 24,
+                        "unit": "px"
+                      }
+                    },
+                    {
+                      "key": "gap",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "s2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "control",
+                  "property": [
+                    {
+                      "key": "height",
+                      "value": {
+                        "type": "dimension",
                         "value": 16,
                         "unit": "px"
                       }
@@ -20941,12 +21684,7 @@
                         "value": 26,
                         "unit": "px"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "control",
-                  "property": [
+                    },
                     {
                       "key": "paddingX",
                       "value": {
@@ -20982,6 +21720,41 @@
                         "type": "dimension",
                         "value": 12,
                         "unit": "px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "label",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
                       }
                     }
                   ]
@@ -21473,14 +22246,6 @@
                         ],
                         "key": "s0_5"
                       }
-                    },
-                    {
-                      "key": "borderWidth",
-                      "value": {
-                        "type": "dimension",
-                        "value": 0.125,
-                        "unit": "rem"
-                      }
                     }
                   ]
                 },
@@ -21541,17 +22306,6 @@
                   "property": [
                     {
                       "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "palette"
-                        ],
-                        "key": "gray-200"
-                      }
-                    },
-                    {
-                      "key": "borderColor",
                       "value": {
                         "type": "token",
                         "group": [
@@ -21682,7 +22436,7 @@
         },
         {
           "key": {
-            "tone": "danger"
+            "tone": "critical"
           },
           "state": [
             {
@@ -21701,7 +22455,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -22196,7 +22950,7 @@
                           "color",
                           "fg"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     },
                     {
@@ -22304,7 +23058,7 @@
                           "color",
                           "bg"
                         ],
-                        "key": "danger-weak"
+                        "key": "critical-weak"
                       }
                     },
                     {
@@ -22315,7 +23069,7 @@
                           "color",
                           "stroke"
                         ],
-                        "key": "danger"
+                        "key": "critical"
                       }
                     }
                   ]
@@ -25110,7 +25864,7 @@
       "data": [
         {
           "key": {
-            "type": "label-small-default"
+            "textStyle": "label-small-default"
           },
           "state": [
             {
@@ -25159,7 +25913,7 @@
         },
         {
           "key": {
-            "type": "label-small-strong"
+            "textStyle": "label-small-strong"
           },
           "state": [
             {
@@ -25208,7 +25962,7 @@
         },
         {
           "key": {
-            "type": "label-small-stronger"
+            "textStyle": "label-small-stronger"
           },
           "state": [
             {
@@ -25257,7 +26011,7 @@
         },
         {
           "key": {
-            "type": "label-medium-default"
+            "textStyle": "label-medium-default"
           },
           "state": [
             {
@@ -25306,7 +26060,7 @@
         },
         {
           "key": {
-            "type": "label-medium-strong"
+            "textStyle": "label-medium-strong"
           },
           "state": [
             {
@@ -25355,7 +26109,7 @@
         },
         {
           "key": {
-            "type": "label-medium-stronger"
+            "textStyle": "label-medium-stronger"
           },
           "state": [
             {
@@ -25404,7 +26158,7 @@
         },
         {
           "key": {
-            "type": "label-large-default"
+            "textStyle": "label-large-default"
           },
           "state": [
             {
@@ -25453,7 +26207,7 @@
         },
         {
           "key": {
-            "type": "label-large-strong"
+            "textStyle": "label-large-strong"
           },
           "state": [
             {
@@ -25502,7 +26256,7 @@
         },
         {
           "key": {
-            "type": "label-large-stronger"
+            "textStyle": "label-large-stronger"
           },
           "state": [
             {
@@ -25551,7 +26305,7 @@
         },
         {
           "key": {
-            "type": "body-small-default"
+            "textStyle": "body-small-default"
           },
           "state": [
             {
@@ -25600,7 +26354,7 @@
         },
         {
           "key": {
-            "type": "body-small-reading-default"
+            "textStyle": "body-small-reading-default"
           },
           "state": [
             {
@@ -25649,7 +26403,7 @@
         },
         {
           "key": {
-            "type": "body-small-strong"
+            "textStyle": "body-small-strong"
           },
           "state": [
             {
@@ -25698,7 +26452,7 @@
         },
         {
           "key": {
-            "type": "body-small-stronger"
+            "textStyle": "body-small-stronger"
           },
           "state": [
             {
@@ -25747,7 +26501,7 @@
         },
         {
           "key": {
-            "type": "body-medium-default"
+            "textStyle": "body-medium-default"
           },
           "state": [
             {
@@ -25796,7 +26550,7 @@
         },
         {
           "key": {
-            "type": "body-medium-reading-default"
+            "textStyle": "body-medium-reading-default"
           },
           "state": [
             {
@@ -25845,7 +26599,7 @@
         },
         {
           "key": {
-            "type": "body-medium-strong"
+            "textStyle": "body-medium-strong"
           },
           "state": [
             {
@@ -25894,7 +26648,7 @@
         },
         {
           "key": {
-            "type": "body-medium-stronger"
+            "textStyle": "body-medium-stronger"
           },
           "state": [
             {
@@ -25943,7 +26697,7 @@
         },
         {
           "key": {
-            "type": "title-small-default"
+            "textStyle": "title-small-default"
           },
           "state": [
             {
@@ -25992,7 +26746,7 @@
         },
         {
           "key": {
-            "type": "title-medium-default"
+            "textStyle": "title-medium-default"
           },
           "state": [
             {
@@ -26041,7 +26795,7 @@
         },
         {
           "key": {
-            "type": "title-large-default"
+            "textStyle": "title-large-default"
           },
           "state": [
             {
@@ -26090,7 +26844,7 @@
         },
         {
           "key": {
-            "type": "heading-small-default"
+            "textStyle": "heading-small-default"
           },
           "state": [
             {
@@ -26139,7 +26893,7 @@
         },
         {
           "key": {
-            "type": "heading-medium-default"
+            "textStyle": "heading-medium-default"
           },
           "state": [
             {
@@ -26188,7 +26942,7 @@
         },
         {
           "key": {
-            "type": "heading-large-default"
+            "textStyle": "heading-large-default"
           },
           "state": [
             {

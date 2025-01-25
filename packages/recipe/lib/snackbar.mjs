@@ -31,7 +31,7 @@ export const snackbarVariantMap = {
   "variant": [
     "default",
     "positive",
-    "danger"
+    "critical"
   ]
 };
 

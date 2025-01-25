@@ -21,8 +21,7 @@ export const vars = {
       "header": {
         "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)",
         "paddingY": "var(--seed-v3-dimension-s3_5)",
-        "strokeBottomWidth": "1px",
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
+        "gap": "var(--seed-v3-dimension-s1)"
       },
       "title": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -35,6 +34,11 @@ export const vars = {
         "lineHeight": "var(--seed-v3-line-height-s3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
         "color": "var(--seed-v3-color-fg-neutral-muted)"
+      },
+      "divider": {
+        "strokeWidth": "1px",
+        "strokeColor": "var(--seed-v3-color-stroke-neutral)",
+        "marginX": "var(--seed-v3-dimension-spacing-x-global-gutter)"
       }
     }
   }

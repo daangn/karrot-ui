@@ -3,7 +3,7 @@ export declare const vars: {
     "enabled": {
       "root": {
         "color": "var(--seed-v3-color-bg-layer-default)",
-        "strokeWidth": "1.25px",
+        "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       },
@@ -71,16 +71,6 @@ export declare const vars: {
     "disabled": {
       "icon": {
         "size": "var(--seed-v3-dimension-s2_5)"
-      }
-    }
-  },
-  "sizeSmall": {
-    "enabled": {
-      "root": {
-        "size": "var(--seed-v3-dimension-s4_5)"
-      },
-      "icon": {
-        "size": "var(--seed-v3-dimension-s2)"
       }
     }
   }

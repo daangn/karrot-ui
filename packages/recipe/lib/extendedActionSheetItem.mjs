@@ -26,7 +26,7 @@ const compoundVariants = [];
 export const extendedActionSheetItemVariantMap = {
   "tone": [
     "neutral",
-    "danger"
+    "critical"
   ]
 };
 

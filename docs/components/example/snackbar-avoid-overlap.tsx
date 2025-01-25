@@ -29,7 +29,7 @@ function Component() {
         <Flex
           width="full"
           height="s16"
-          background="bg.dangerWeak"
+          background="bg.criticalWeak"
           justifyContent="center"
           alignItems="center"
         >

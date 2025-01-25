@@ -13,6 +13,11 @@
       "types": "./lib/index.d.ts",
       "require": "./lib/index.js",
       "import": "./lib/index.mjs"
+    },
+    "./legacy": {
+      "types": "./lib/legacy/index.d.ts",
+      "require": "./lib/legacy/index.js",
+      "import": "./lib/legacy/index.mjs"
     }
   },
   "main": "./lib/index.js",

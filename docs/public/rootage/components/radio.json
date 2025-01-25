@@ -9,7 +9,7 @@
       "enabled": {
         "root": {
           "color": "$color.bg.layer-default",
-          "strokeWidth": "1.25px",
+          "strokeWidth": "1px",
           "strokeColor": "$color.stroke.control",
           "cornerRadius": "$radius.full"
         },
@@ -77,16 +77,6 @@
       "disabled": {
         "icon": {
           "size": "$dimension.s2_5"
-        }
-      }
-    },
-    "size=small": {
-      "enabled": {
-        "root": {
-          "size": "$dimension.s4_5"
-        },
-        "icon": {
-          "size": "$dimension.s2"
         }
       }
     }

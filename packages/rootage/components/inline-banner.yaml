@@ -113,24 +113,24 @@ data:
         color: $color.fg.neutral
       actionableIcon:
         color: $color.fg.neutral
-  variant=danger weak:
+  variant=critical weak:
     enabled:
       root:
-        color: $color.bg.danger-weak
+        color: $color.bg.critical-weak
       icon:
-        color: $color.fg.danger-contrast
+        color: $color.fg.critical-contrast
       title:
-        color: $color.fg.danger-contrast
+        color: $color.fg.critical-contrast
       description:
-        color: $color.fg.danger-contrast
+        color: $color.fg.critical-contrast
       linkLabel:
-        color: $color.fg.danger-contrast
+        color: $color.fg.critical-contrast
       actionableIcon:
-        color: $color.fg.danger-contrast
-  variant=danger solid:
+        color: $color.fg.critical-contrast
+  variant=critical solid:
     enabled:
       root:
-        color: $color.bg.danger-solid
+        color: $color.bg.critical-solid
       icon:
         color: $color.palette.static-white
       title:

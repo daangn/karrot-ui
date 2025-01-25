@@ -30,7 +30,6 @@ const checkbox = defineRecipe({
       display: "none",
       content: '""',
       position: "absolute",
-      borderRadius: "100%",
       margin: "auto",
       left: 0,
       right: 0,
@@ -152,7 +151,7 @@ const checkbox = defineRecipe({
         label: {
           fontSize: vars.sizeLarge.enabled.label.fontSize,
           lineHeight: vars.sizeLarge.enabled.label.lineHeight,
-          marginBlockStart: "calc(18px - 0.65625rem)", // 수직 위치 보정, 18 - label.lineHeight / 2
+          marginBlockStart: "calc(18px - 0.65625rem)", // 수직 위치 보정, 36 / 2 - label.lineHeight / 2
         },
       },
       medium: {
@@ -168,7 +167,7 @@ const checkbox = defineRecipe({
         label: {
           fontSize: vars.sizeMedium.enabled.label.fontSize,
           lineHeight: vars.sizeMedium.enabled.label.lineHeight,
-          marginBlockStart: "calc(16px - 0.59375rem)", // 수직 위치 보정, 16 - label.lineHeight / 2
+          marginBlockStart: "calc(16px - 0.59375rem)", // 수직 위치 보정, 32 / 2 - label.lineHeight / 2
         },
       },
     },

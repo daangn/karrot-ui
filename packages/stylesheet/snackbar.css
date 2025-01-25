@@ -77,6 +77,6 @@
 .snackbar__prefixIcon--variant_positive {
     color: var(--seed-v3-color-fg-positive);
 }
-.snackbar__prefixIcon--variant_danger {
-    color: var(--seed-v3-color-fg-danger);
+.snackbar__prefixIcon--variant_critical {
+    color: var(--seed-v3-color-fg-critical);
 }

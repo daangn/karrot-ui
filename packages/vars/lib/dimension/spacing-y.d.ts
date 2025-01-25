@@ -1,0 +1,1 @@
+export declare const componentDefault = "var(--seed-v3-dimension-spacing-y-component-default)";

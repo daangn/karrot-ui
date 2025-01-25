@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 
 const uncapitalize = (str: string) => str.charAt(0).toLowerCase() + str.slice(1);
 
-type OmitTypePrefix<T> = T extends `type${infer U}` ? U : never;
+type OmitPrefix<T> = T extends `textStyle${infer U}` ? U : never;
 
 const text = defineRecipe({
   name: "text",
@@ -12,7 +12,7 @@ const text = defineRecipe({
   base: {
     root: {
       margin: 0,
-      textAlign: "inherit",
+      textAlign: "var(--seed-text-align)",
       color: "var(--seed-text-color)",
       fontSize: "var(--seed-font-size)",
       lineHeight: "var(--seed-line-height)",
@@ -21,16 +21,23 @@ const text = defineRecipe({
       "--seed-font-size": "inherit",
       "--seed-line-height": "inherit",
       "--seed-font-weight": "inherit",
+      "--seed-text-align": "inherit",
       "--seed-max-lines": "initial",
     },
   },
   variants: {
-    variant: Object.fromEntries(
+    textStyle: Object.fromEntries(
       Object.entries(vars).map(([key, value]) => [
-        uncapitalize(key.split("type")[1]),
-        { root: value.enabled.root },
+        uncapitalize(key.split("textStyle")[1]),
+        {
+          root: {
+            "--seed-font-size": value.enabled.root.fontSize,
+            "--seed-line-height": value.enabled.root.lineHeight,
+            "--seed-font-weight": value.enabled.root.fontWeight,
+          },
+        },
       ]),
-    ) as Record<Uncapitalize<OmitTypePrefix<keyof typeof vars>>, unknown>,
+    ) as Record<Uncapitalize<OmitPrefix<keyof typeof vars>>, Record<"root", any>>,
     maxLines: {
       none: {
         root: {
@@ -66,7 +73,7 @@ const text = defineRecipe({
     },
   },
   defaultVariants: {
-    variant: "bodyMediumDefault",
+    textStyle: "bodyMediumDefault",
     maxLines: "none",
   },
 });

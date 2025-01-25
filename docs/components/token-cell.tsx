@@ -1,5 +1,5 @@
 import IconArrowDownLine from "@daangn/react-monochrome-icon/IconArrowDownLine";
-import type { ValueExpression } from "@seed-design/rootage-core";
+import type { AST } from "@seed-design/rootage-core";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { Fragment } from "react";
 import { TokenLink } from "./token-link";
@@ -8,7 +8,7 @@ import { TypeIndicator } from "./type-indicator";
 export interface TokenCellProps {
   isExpanded: boolean;
   values: string[];
-  resolvedValue: ValueExpression;
+  resolvedValue: AST.ValueLit;
 }
 
 export function TokenCell(props: TokenCellProps) {

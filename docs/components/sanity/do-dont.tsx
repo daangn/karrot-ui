@@ -49,7 +49,7 @@ export function DoDont({ value, className }: DoDontProps) {
           {isDo ? (
             <IconCheckmarkCircleFill className="text-seed-fg-positive shrink-0" size={30} />
           ) : (
-            <IconXmarkCircleFill className="text-seed-fg-danger shrink-0" size={30} />
+            <IconXmarkCircleFill className="text-seed-fg-critical shrink-0" size={30} />
           )}
           <div className="flex flex-col gap-2 break-all">
             <span className="text-lg font-bold text-seed-fg-neutral mt-[2px]">{section.title}</span>

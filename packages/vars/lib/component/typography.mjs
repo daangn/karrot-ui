@@ -1,5 +1,5 @@
 export const vars = {
-  "typeLabelSmallDefault": {
+  "textStyleLabelSmallDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s1)",
@@ -8,7 +8,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelSmallStrong": {
+  "textStyleLabelSmallStrong": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s1)",
@@ -17,7 +17,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelSmallStronger": {
+  "textStyleLabelSmallStronger": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s1)",
@@ -26,7 +26,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelMediumDefault": {
+  "textStyleLabelMediumDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -35,7 +35,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelMediumStrong": {
+  "textStyleLabelMediumStrong": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -44,7 +44,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelMediumStronger": {
+  "textStyleLabelMediumStronger": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s2)",
@@ -53,7 +53,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelLargeDefault": {
+  "textStyleLabelLargeDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s3)",
@@ -62,7 +62,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelLargeStrong": {
+  "textStyleLabelLargeStrong": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s3)",
@@ -71,7 +71,7 @@ export const vars = {
       }
     }
   },
-  "typeLabelLargeStronger": {
+  "textStyleLabelLargeStronger": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s3)",
@@ -80,7 +80,7 @@ export const vars = {
       }
     }
   },
-  "typeBodySmallDefault": {
+  "textStyleBodySmallDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -89,7 +89,7 @@ export const vars = {
       }
     }
   },
-  "typeBodySmallReadingDefault": {
+  "textStyleBodySmallReadingDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -98,7 +98,7 @@ export const vars = {
       }
     }
   },
-  "typeBodySmallStrong": {
+  "textStyleBodySmallStrong": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -107,7 +107,7 @@ export const vars = {
       }
     }
   },
-  "typeBodySmallStronger": {
+  "textStyleBodySmallStronger": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s4)",
@@ -116,7 +116,7 @@ export const vars = {
       }
     }
   },
-  "typeBodyMediumDefault": {
+  "textStyleBodyMediumDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -125,7 +125,7 @@ export const vars = {
       }
     }
   },
-  "typeBodyMediumReadingDefault": {
+  "textStyleBodyMediumReadingDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -134,7 +134,7 @@ export const vars = {
       }
     }
   },
-  "typeBodyMediumStrong": {
+  "textStyleBodyMediumStrong": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -143,7 +143,7 @@ export const vars = {
       }
     }
   },
-  "typeBodyMediumStronger": {
+  "textStyleBodyMediumStronger": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -152,7 +152,7 @@ export const vars = {
       }
     }
   },
-  "typeTitleSmallDefault": {
+  "textStyleTitleSmallDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s5)",
@@ -161,7 +161,7 @@ export const vars = {
       }
     }
   },
-  "typeTitleMediumDefault": {
+  "textStyleTitleMediumDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s6)",
@@ -170,7 +170,7 @@ export const vars = {
       }
     }
   },
-  "typeTitleLargeDefault": {
+  "textStyleTitleLargeDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s7)",
@@ -179,7 +179,7 @@ export const vars = {
       }
     }
   },
-  "typeHeadingSmallDefault": {
+  "textStyleHeadingSmallDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s8)",
@@ -188,7 +188,7 @@ export const vars = {
       }
     }
   },
-  "typeHeadingMediumDefault": {
+  "textStyleHeadingMediumDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s9)",
@@ -197,7 +197,7 @@ export const vars = {
       }
     }
   },
-  "typeHeadingLargeDefault": {
+  "textStyleHeadingLargeDefault": {
     "enabled": {
       "root": {
         "fontSize": "var(--seed-v3-font-size-s10)",

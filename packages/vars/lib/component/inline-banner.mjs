@@ -164,32 +164,32 @@ export const vars = {
       }
     }
   },
-  "variantDangerWeak": {
+  "variantCriticalWeak": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger-weak)"
+        "color": "var(--seed-v3-color-bg-critical-weak)"
       },
       "icon": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
+        "color": "var(--seed-v3-color-fg-critical-contrast)"
       },
       "title": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
+        "color": "var(--seed-v3-color-fg-critical-contrast)"
       },
       "description": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
+        "color": "var(--seed-v3-color-fg-critical-contrast)"
       },
       "linkLabel": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
+        "color": "var(--seed-v3-color-fg-critical-contrast)"
       },
       "actionableIcon": {
-        "color": "var(--seed-v3-color-fg-danger-contrast)"
+        "color": "var(--seed-v3-color-fg-critical-contrast)"
       }
     }
   },
-  "variantDangerSolid": {
+  "variantCriticalSolid": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-danger-solid)"
+        "color": "var(--seed-v3-color-bg-critical-solid)"
       },
       "icon": {
         "color": "var(--seed-v3-color-palette-static-white)"

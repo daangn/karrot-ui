@@ -18,6 +18,7 @@ const toggleButton = defineRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       textDecoration: "none",
+      fontFamily: "inherit",
       flexShrink: 0,
 
       [pseudo(focus)]: {

@@ -8,7 +8,6 @@ data:
     enabled:
       root:
         paddingY: $dimension.s0_5
-        borderWidth: 0.125rem
       label:
         fontWeight: $font-weight.regular
       prefixIcon:
@@ -18,7 +17,7 @@ data:
     pressed:
       root:
         color: $color.palette.gray-200
-        borderColor: $color.palette.gray-200
+        # TODO: 터치 효과 좌우 2px 늘어나는 것 표현
     disabled:
       root:
         color: $color.fg.disabled
@@ -34,10 +33,10 @@ data:
     enabled:
       root:
         color: $color.fg.neutral-subtle
-  tone=danger:
+  tone=critical:
     enabled:
       root:
-        color: $color.fg.danger
+        color: $color.fg.critical
   size=large:
     enabled:
       root:

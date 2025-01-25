@@ -25,12 +25,10 @@ export interface CalloutTextContentProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLDivElement> {}
 
-export const CalloutTextContent = React.forwardRef<HTMLDivElement, CalloutTextContentProps>(
-  (props, ref) => {
-    return <Primitive.div ref={ref} {...props} />;
-  },
+export const CalloutTextContent = withContext<HTMLDivElement, CalloutTextContentProps>(
+  Primitive.div,
+  "textContent",
 );
-CalloutTextContent.displayName = "CalloutTextContent";
 
 export interface CalloutTitleProps extends PrimitiveProps, React.HTMLAttributes<HTMLSpanElement> {}
 

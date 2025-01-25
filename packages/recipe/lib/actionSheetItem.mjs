@@ -22,7 +22,7 @@ const compoundVariants = [];
 export const actionSheetItemVariantMap = {
   "tone": [
     "neutral",
-    "danger"
+    "critical"
   ]
 };
 

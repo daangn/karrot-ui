@@ -32,6 +32,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityExtendedActionSheet: React.lazy(
       () => import("../activities/ActivityExtendedActionSheet"),
     ),
+    ActivityErrorState: React.lazy(() => import("../activities/ActivityErrorState")),
     ActivityNotFound,
   },
   plugins: [
@@ -82,6 +83,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityBottomSheet: "/bottom-sheet",
         ActivityActionSheet: "/action-sheet",
         ActivityExtendedActionSheet: "/extended-action-sheet",
+        ActivityErrorState: "/error",
         ActivityNotFound: "/404",
       },
     }),

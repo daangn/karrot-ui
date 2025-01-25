@@ -1,16 +1,16 @@
 .textButton__root {
     display: inline-flex;
     align-items: center;
-    padding-block: var(--seed-v3-dimension-s0_5);
-    padding-inline: 0;
+    cursor: pointer;
     background-color: transparent;
     box-sizing: border-box;
-    border-width: 0.125rem;
-    border-color: transparent;
-    border-style: solid;
+    border: none;
+    outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: pointer;
+    font-family: inherit;
+    padding-inline: 0;
+    padding-block: var(--seed-v3-dimension-s0_5);
 }
 .textButton__root:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
@@ -18,7 +18,7 @@
 }
 .textButton__root:is(:active, [data-active]) {
     background-color: var(--seed-v3-color-palette-gray-200);
-    border-color: var(--seed-v3-color-palette-gray-200);
+    box-shadow: 0 0 0 2px var(--seed-v3-color-palette-gray-200);
 }
 .textButton__root:is(:disabled, [disabled], [data-disabled]):is(:active, [data-active]) {
     background-color: transparent;
@@ -43,8 +43,8 @@
 .textButton__root--tone_neutralSubtle {
     color: var(--seed-v3-color-fg-neutral-subtle);
 }
-.textButton__root--tone_danger {
-    color: var(--seed-v3-color-fg-danger);
+.textButton__root--tone_critical {
+    color: var(--seed-v3-color-fg-critical);
 }
 .textButton__root--size_large {
     min-height: 2rem;

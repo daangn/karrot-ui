@@ -33,7 +33,7 @@
       "enabled": {
         "control": {
           "strokeColor": "$color.stroke.control",
-          "strokeWidth": "1.25px"
+          "strokeWidth": "1px"
         }
       },
       "enabled,selected": {
@@ -142,7 +142,7 @@
         },
         "control": {
           "size": "$dimension.s6",
-          "cornerRadius": "$radius.s1_5"
+          "cornerRadius": "$radius.s1"
         }
       }
     },

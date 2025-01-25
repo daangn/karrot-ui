@@ -27,8 +27,7 @@
         "header": {
           "paddingX": "$dimension.spacing-x.global-gutter",
           "paddingY": "$dimension.s3_5",
-          "strokeBottomWidth": "1px",
-          "strokeColor": "$color.stroke.neutral"
+          "gap": "$dimension.s1"
         },
         "title": {
           "fontSize": "$font-size.s4",
@@ -41,6 +40,11 @@
           "lineHeight": "$line-height.s3",
           "fontWeight": "$font-weight.regular",
           "color": "$color.fg.neutral-muted"
+        },
+        "divider": {
+          "strokeWidth": "1px",
+          "strokeColor": "$color.stroke.neutral",
+          "marginX": "$dimension.spacing-x.global-gutter"
         }
       }
     }

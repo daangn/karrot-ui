@@ -9,6 +9,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
+    font-family: inherit;
     flex-shrink: 0;
 }
 .toggleButton__root:is(:focus, [data-focus]) {

@@ -32,7 +32,7 @@ data:
         color: $color.fg.neutral-subtle
         fontWeight: $font-weight.regular
       errorMessage:
-        color: $color.fg.danger
+        color: $color.fg.critical
         fontWeight: $font-weight.regular
       characterCount:
         color: $color.fg.neutral
@@ -45,8 +45,8 @@ data:
         strokeColor: $color.stroke.field-focused
     invalid:
       field:
-        color: $color.bg.danger-weak
-        strokeColor: $color.stroke.danger
+        color: $color.bg.critical-weak
+        strokeColor: $color.stroke.critical
     invalid,focused:
       field:
         color: $color.bg.layer-default

@@ -6,6 +6,7 @@ import { segmentedControlVariantMap } from "@seed-design/recipe/segmentedControl
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { useState } from "react";
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const Component = ({ disabled }: { disabled: boolean }) => {
   const values = ["dolor", "magna", "sint"];
@@ -53,8 +54,17 @@ const CommonStoryTemplate: Story = {
 
 export const LightTheme = CommonStoryTemplate;
 
-export const DarkTheme = CommonStoryTemplate;
+export const DarkTheme = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { theme: "dark" },
+});
 
-export const FontScalingExtraSmall = CommonStoryTemplate;
+export const FontScalingExtraSmall = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Small" },
+});
 
-export const FontScalingExtraExtraExtraLarge = CommonStoryTemplate;
+export const FontScalingExtraExtraExtraLarge = createStoryWithParameters({
+  ...CommonStoryTemplate,
+  parameters: { fontScale: "Extra Extra Extra Large" },
+});

@@ -1,0 +1,277 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "text-button",
+    "name": "Text Button"
+  },
+  "data": [
+    {
+      "variants": {},
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "paddingY": {
+                "type": "color",
+                "value": "$dimension.s0_5"
+              }
+            },
+            "label": {
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
+              }
+            },
+            "prefixIcon": {
+              "marginXEnd": {
+                "type": "color",
+                "value": "$dimension.s1"
+              }
+            },
+            "suffixIcon": {
+              "marginXStart": {
+                "type": "color",
+                "value": "$dimension.s0_5"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "pressed"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.gray-200"
+              }
+            }
+          }
+        },
+        {
+          "states": [
+            "disabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.disabled"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "brand"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.brand"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "neutral"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "neutral subtle"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral-subtle"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "tone": "critical"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.critical"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "size": "large"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.s1_5"
+              }
+            },
+            "prefixIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "suffixIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s4"
+              }
+            },
+            "label": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s6"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s6"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "size": "medium"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.s1_5"
+              }
+            },
+            "prefixIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s3_5"
+              }
+            },
+            "suffixIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s3_5"
+              }
+            },
+            "label": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s5"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "size": "small"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "root": {
+              "cornerRadius": {
+                "type": "color",
+                "value": "$radius.s1"
+              }
+            },
+            "prefixIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s3_5"
+              }
+            },
+            "suffixIcon": {
+              "size": {
+                "type": "color",
+                "value": "$dimension.s3_5"
+              }
+            },
+            "label": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s4"
+              },
+              "lineHeight": {
+                "type": "color",
+                "value": "$line-height.s4"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

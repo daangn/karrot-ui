@@ -35,7 +35,7 @@ export default function CheckSelectBoxReactHookForm() {
     <form onSubmit={handleSubmit(onValid)} onReset={onReset}>
       <Stack gap="s3" width="384px">
         <CheckSelectBoxGroup>
-          <Stack gap="s3">
+          <Stack gap="spacingY.componentDefault">
             {POSSIBLE_FRUIT_VALUES.map((name) => {
               const {
                 field: { value, ...restProps },
