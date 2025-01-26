@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { SanityImage } from "@/sanity/lib/image";
+import { sanityFetch } from "@/sanity/lib/live";
 import { BLOG_QUERY, SINGLE_BLOG_QUERY } from "@/sanity/lib/queries";
 import { PortableContent } from "@/sanity/lib/sanity-content";
 import { SanityImageAsset } from "@sanity/asset-utils";
@@ -29,9 +30,12 @@ export default async function Page({
 }: {
   params: { slug?: string };
 }) {
-  const page = await client.fetch<Blog>(SINGLE_BLOG_QUERY, {
-    slug: params.slug,
-  });
+  const page = await sanityFetch({
+    query: SINGLE_BLOG_QUERY,
+    params: {
+      slug: params.slug,
+    },
+  }).then((res) => res.data as Blog);
 
   if (!page) {
     notFound();
@@ -81,13 +85,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { slug?: string } }) {
-  const blogs = await client.fetch<Blog[]>(
-    BLOG_QUERY,
-    {},
-    {
-      perspective: "published",
-    },
-  );
+  const blogs = await sanityFetch({
+    query: BLOG_QUERY,
+    stega: false,
+  }).then((res) => res.data as Blog[]);
 
   const page = blogs.find((blog) => blog.slug.current === params.slug);
 

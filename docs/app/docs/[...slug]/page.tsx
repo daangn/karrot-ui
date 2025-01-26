@@ -1,12 +1,14 @@
 import { source } from "@/app/source";
 import { mdxComponents } from "@/components/mdx/mdx-components";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { GUIDELINE_QUERY } from "@/sanity/lib/queries";
 import { PortableContent } from "@/sanity/lib/sanity-content";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PortableTextBlock } from "sanity";
+
+export const dynamicParams = false;
 
 export default async function Page({
   params,
@@ -19,7 +21,10 @@ export default async function Page({
   const MDX = page.data.body;
 
   const guideline = params.slug?.includes("design")
-    ? await client.fetch(GUIDELINE_QUERY, { title: page.data.title })
+    ? await sanityFetch({
+        query: GUIDELINE_QUERY,
+        params: { title: page.data.title },
+      }).then((res) => res.data)
     : null;
 
   const guidelineToc =
