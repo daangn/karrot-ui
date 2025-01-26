@@ -8,7 +8,7 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structure } from "./sanity/structure";
 import { structureTool } from "sanity/structure";
-import { presentationTool, defineLocations } from "sanity/presentation";
+import { presentationTool, defineLocations, defineDocuments } from "sanity/presentation";
 import * as changeCase from "change-case";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
@@ -26,6 +26,10 @@ export default defineConfig({
     structureTool({ structure }),
     presentationTool({
       resolve: {
+        // TODO: add design guidelines to mainDocuments
+        mainDocuments: defineDocuments([
+          { route: "/blog/:slug", filter: `_type == "blog" && slug.current == $slug` },
+        ]),
         locations: {
           contents: defineLocations({
             select: {
