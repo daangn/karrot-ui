@@ -1,5 +1,11 @@
 # @seed-design/figma-extractor
 
+## 0.0.3
+
+### Patch Changes
+
+- Sort exports
+
 ## 0.0.2
 
 ### Patch Changes

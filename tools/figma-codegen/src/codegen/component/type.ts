@@ -9,6 +9,27 @@ export type ActionChipProperties = InferFromDefinition<
   typeof metadata.actionChip.componentPropertyDefinitions
 >;
 
+export type ActionSheetProperties = InferFromDefinition<
+  typeof metadata.actionSheet.componentPropertyDefinitions
+>;
+
+export type ActionSheetItemProperties = InferFromDefinition<{
+  "Label#15420:4": {
+    type: "TEXT";
+    defaultValue: "액션 버튼";
+  };
+  Tone: {
+    type: "VARIANT";
+    defaultValue: "Default";
+    variantOptions: ["Default", "Critical"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Enabled", "Enabled-Pressed", "Disabled"];
+  };
+}>;
+
 export type AvatarProperties = InferFromDefinition<
   typeof metadata.avatar.componentPropertyDefinitions
 >;
@@ -61,6 +82,48 @@ export type ControlChipProperties = InferFromDefinition<
   typeof metadata.controlChip.componentPropertyDefinitions
 >;
 
+export type ErrorStateProperties = InferFromDefinition<
+  typeof metadata.errorState.componentPropertyDefinitions
+>;
+
+export type ExtendedActionSheetProperties = InferFromDefinition<
+  typeof metadata.extendedActionSheet.componentPropertyDefinitions
+>;
+
+export type ExtendedActionSheetGroupProperties = InferFromDefinition<{
+  "Action Count": {
+    type: "VARIANT";
+    defaultValue: "8";
+    variantOptions: ["1", "2", "3", "4", "5", "6", "7", "8"];
+  };
+}>;
+
+export type ExtendedActionSheetItemProperties = InferFromDefinition<{
+  "Show Prefix Icon#17043:5": {
+    type: "BOOLEAN";
+    defaultValue: true;
+  };
+  "Label#55905:8": {
+    type: "TEXT";
+    defaultValue: "액션 버튼";
+  };
+  "Prefix Icon#55948:0": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "17024:100799";
+    preferredValues: [];
+  };
+  Tone: {
+    type: "VARIANT";
+    defaultValue: "Neutral";
+    variantOptions: ["Neutral", "Critical"];
+  };
+  State: {
+    type: "VARIANT";
+    defaultValue: "Enabled";
+    variantOptions: ["Enabled", "Enabled-Pressed", "Disabled"];
+  };
+}>;
+
 export type ExtendedFabProperties = InferFromDefinition<
   typeof metadata.extendedFloatingActionButton.componentPropertyDefinitions
 >;
@@ -79,6 +142,10 @@ export type IdentityPlaceholderProperties = InferFromDefinition<
 
 export type InlineBannerProperties = InferFromDefinition<
   typeof metadata.inlineBanner.componentPropertyDefinitions
+>;
+
+export type MannerTempBadgeProperties = InferFromDefinition<
+  typeof metadata.mannerTempBadge.componentPropertyDefinitions
 >;
 
 export type MultilineTextFieldProperties = InferFromDefinition<

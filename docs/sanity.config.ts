@@ -31,11 +31,11 @@ export default defineConfig({
         },
       },
       resolve: {
+        // TODO: add design guidelines to mainDocuments
         mainDocuments: defineDocuments([
           { route: "/blog/:slug", filter: `_type == "blog" && slug.current == $slug` },
         ]),
         locations: {
-          // TODO: move design guidelines to mainDocuments
           contents: defineLocations({
             select: {
               title: "title",

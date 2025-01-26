@@ -18,7 +18,8 @@ export async function generateComponentMetadata({
 
   const componentsMetadata = (await getComponentMetadataItemsInFile({ fileKey }))
     .filter(filter)
-    .map(transform);
+    .map(transform)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   if (componentsMetadata.length === 0) {
     console.error("추출할 component 메타데이터가 없습니다.");

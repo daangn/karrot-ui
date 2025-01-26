@@ -20,7 +20,10 @@ export async function generateStyleMetadata({
 }) {
   console.log("style 메타데이터 생성 중");
 
-  const stylesMetadata = (await getStylesMetadataInFile({ fileKey })).filter(filter).map(transform);
+  const stylesMetadata = (await getStylesMetadataInFile({ fileKey }))
+    .filter(filter)
+    .map(transform)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   if (stylesMetadata.length === 0) {
     console.error("추출할 style 메타데이터가 없습니다.");
