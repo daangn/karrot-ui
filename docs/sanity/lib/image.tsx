@@ -1,14 +1,13 @@
 "use client";
 
-import imageUrlBuilder from "@sanity/image-url";
-import { client } from "./client";
-
 import type { PortableTextTypeComponentProps } from "@portabletext/react";
 import { getImageDimensions, SanityImageAsset } from "@sanity/asset-utils";
-import { SanityImageType } from "./types";
+import imageUrlBuilder from "@sanity/image-url";
 import clsx from "clsx";
+import { client } from "./client";
+import { SanityImageType } from "./types";
 
-const { projectId, dataset } = client.config();
+const builder = imageUrlBuilder(client);
 
 interface ImageProps {
   value: SanityImageAsset;
@@ -20,7 +19,6 @@ export const SanityImage = ({ value, className }: ImageProps) => {
     return <div className={`${className} bg-gray-200`} />;
   }
 
-  const builder = imageUrlBuilder({ projectId: projectId!, dataset: dataset! });
   const cdnUrl = builder
     .image(value)
     .width(1000)
@@ -48,7 +46,6 @@ export const PortableImage = ({ value }: PortableTextTypeComponentProps<SanityIm
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const { aspectRatio } = getImageDimensions(value as any);
-  const builder = imageUrlBuilder({ projectId: projectId!, dataset: dataset! });
 
   // Sanity CDN URL 생성
   const cdnUrl = builder

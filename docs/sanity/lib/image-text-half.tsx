@@ -1,11 +1,11 @@
 "use client";
 
-import { PortableContent } from "@/components/sanity/sanity-content";
-import { PortableTextBlock } from "@portabletext/react";
+import { PortableTextBlock } from "sanity";
 import { SanityImageAsset } from "@sanity/asset-utils";
 import imageUrlBuilder from "@sanity/image-url";
 import { useCallback } from "react";
 import { client } from "./client";
+import { PortableContent } from "./sanity-content";
 
 const builder = imageUrlBuilder(client);
 

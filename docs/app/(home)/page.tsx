@@ -1,5 +1,6 @@
-import { client } from "@/components/sanity/client";
-import { SanityImage } from "@/components/sanity/image";
+import { client } from "@/sanity/lib/client";
+import { SanityImage } from "@/sanity/lib/image";
+import { BLOG_QUERY } from "@/sanity/lib/queries";
 import type { SanityImageAsset } from "@sanity/asset-utils";
 import Link from "next/link";
 
@@ -13,14 +14,6 @@ interface Blog {
   };
   publishedAt: string;
 }
-
-const BLOG_QUERY = `*[_type == "blog"] {
-  title,
-  description,
-  thumbnail,
-  slug,
-  publishedAt,
-}`;
 
 export default async function HomePage() {
   const blogs = await client.fetch<Blog[]>(

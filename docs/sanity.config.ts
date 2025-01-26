@@ -18,7 +18,6 @@ import { schema } from "./sanity/schemaTypes";
 import { table } from "@sanity/table";
 
 export default defineConfig({
-  basePath: "/studio",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
