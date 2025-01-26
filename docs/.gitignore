@@ -24,7 +24,9 @@ yarn-error.log*
 
 # others
 .env*.local
+.env
 .vercel
+.wrangler
 next-env.d.ts
 *storybook.log
 
