@@ -1,7 +1,6 @@
 import { ComponentExample } from "@/components/component-example";
 import { ComponentSpecBlock } from "@/components/component-spec-block";
 import { Installation } from "@/components/installation";
-import { SanityGuideline } from "@/components/sanity/sanity-content";
 import { StackflowExample } from "@/components/stackflow-example";
 import { File, Files, Folder } from "fumadocs-ui/components/files";
 import { Step, Steps } from "fumadocs-ui/components/steps";
@@ -19,7 +18,6 @@ export const mdxComponents = {
   ComponentExample,
   TokenReference,
   ComponentSpecBlock,
-  SanityGuideline,
   Tab,
   Tabs,
   Step,

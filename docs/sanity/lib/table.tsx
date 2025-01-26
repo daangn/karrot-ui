@@ -1,5 +1,3 @@
-"use client";
-
 import type { PortableTextTypeComponentProps } from "@portabletext/react";
 
 interface TableContainerProps {
