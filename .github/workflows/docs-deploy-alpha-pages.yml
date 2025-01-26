@@ -39,7 +39,7 @@ jobs:
       - name: Build Docs
         working-directory: ./docs
         run: |
-          yarn add vercel@35.0.0 && yarn pages:build
+          yarn pages:build
 
       - name: Deploy docs at Cloudflare Pages in `seed-design-v3` project (Alpha)
         uses: cloudflare/wrangler-action@v3
