@@ -8,9 +8,9 @@ declare interface AppScreenVariant {
   */
   transitionStyle: "slideFromRightIOS" | "fadeFromBottomAndroid";
 /**
-  * @default false
+  * @default appBar
   */
-  hasAppBar: boolean;
+  layerOffsetTop: "none" | "safeArea" | "appBar";
 }
 
 declare type AppScreenVariantMap = {

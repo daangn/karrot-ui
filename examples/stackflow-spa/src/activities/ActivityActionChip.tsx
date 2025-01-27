@@ -1,6 +1,6 @@
 import type { ActivityComponentType } from "@stackflow/react";
-import { AppBar, BackButton, Left, Title } from "../design-system/stackflow/AppBar";
-import { AppScreen } from "../design-system/stackflow/AppScreen";
+import { AppBar, BackButton, AppBarLeft, AppBarTitle } from "../design-system/stackflow/AppBar";
+import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
 import { actionChip, actionChipVariantMap } from "@seed-design/recipe/actionChip";
 
@@ -15,26 +15,25 @@ const initialVariants = {
 
 const ActivityActionChip: ActivityComponentType = () => {
   return (
-    <AppScreen
-      appBar={
-        <AppBar>
-          <Left>
-            <BackButton />
-          </Left>
-          <Title>Action Chip</Title>
-        </AppBar>
-      }
-    >
-      <ComponentAnalyzer
-        variantsMap={actionChipVariantMap}
-        initialVariants={initialVariants}
-        recipeFn={actionChip}
-        render={(variants) => (
-          <ActionChip count={10} key={JSON.stringify(variants)} {...variants}>
-            {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
-          </ActionChip>
-        )}
-      />
+    <AppScreen>
+      <AppBar>
+        <AppBarLeft>
+          <BackButton />
+        </AppBarLeft>
+        <AppBarTitle>Action Chip</AppBarTitle>
+      </AppBar>
+      <AppScreenContent>
+        <ComponentAnalyzer
+          variantsMap={actionChipVariantMap}
+          initialVariants={initialVariants}
+          recipeFn={actionChip}
+          render={(variants) => (
+            <ActionChip count={10} key={JSON.stringify(variants)} {...variants}>
+              {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
+            </ActionChip>
+          )}
+        />
+      </AppScreenContent>
     </AppScreen>
   );
 };

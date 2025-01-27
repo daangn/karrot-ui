@@ -13,8 +13,6 @@ import {
   swipeBackSwipingBehind,
 } from "./pseudo";
 
-const MIN_SAFE_AREA_INSET_TOP = "0px"; // TODO: turn into public interface
-
 export const appScreen = defineRecipe({
   name: "appScreen",
   slots: ["root", "layer", "dim", "edge"],
@@ -26,6 +24,8 @@ export const appScreen = defineRecipe({
       left: 0,
       right: 0,
       overflow: "hidden",
+
+      "--app-bar-offset": "calc(var(--app-bar-height) + var(--seed-safe-area-top))",
     },
     dim: {
       zIndex: "var(--z-index-dim)",
@@ -129,21 +129,24 @@ export const appScreen = defineRecipe({
         },
       },
     },
-    hasAppBar: {
-      true: {
-        root: {
-          "--app-bar-margin": "var(--app-bar-height)",
-
-          "@supports (padding: max(0px)) and (padding: constant(safe-area-inset-top))": {
-            "--app-bar-margin": `calc(var(--app-bar-height) + max(${MIN_SAFE_AREA_INSET_TOP}, constant(safe-area-inset-top)))`,
-          },
-          "@supports (padding: max(0px)) and (padding: env(safe-area-inset-top))": {
-            "--app-bar-margin": `calc(var(--app-bar-height) + max(${MIN_SAFE_AREA_INSET_TOP}, env(safe-area-inset-top)))`,
-          },
+    layerOffsetTop: {
+      none: {},
+      safeArea: {
+        layer: {
+          paddingTop: "var(--seed-safe-area-top)",
         },
-        edge: {
-          top: "var(--app-bar-height)",
-          height: "calc(100% - var(--app-bar-height))",
+      },
+      appBar: {
+        layer: {
+          paddingTop: "var(--app-bar-offset)",
+        },
+      },
+    },
+    layerOffsetBottom: {
+      none: {},
+      safeArea: {
+        layer: {
+          paddingBottom: "var(--seed-safe-area-bottom)",
         },
       },
     },
@@ -151,7 +154,8 @@ export const appScreen = defineRecipe({
   defaultVariants: {
     theme: "cupertino",
     transitionStyle: "slideFromRightIOS",
-    hasAppBar: false,
+    layerOffsetTop: "appBar",
+    layerOffsetBottom: "none",
   },
 });
 
@@ -160,13 +164,12 @@ export const appBar = defineRecipe({
   slots: [
     "root",
     "safeArea",
-    "container",
     "left",
     "right",
     "title",
     "titleMain",
-    "titleEdge",
     "titleText",
+    "subtitleText",
     "iconButton",
     "icon",
   ],
@@ -175,9 +178,10 @@ export const appBar = defineRecipe({
       zIndex: "var(--z-index-app-bar)",
 
       position: "absolute",
-      boxSizing: "content-box",
+      boxSizing: "border-box",
       width: "100%",
-      // TODO: do we need to set overflow?
+      display: "flex",
+      alignItems: "flex-end",
 
       "&:before": {
         content: '""',
@@ -185,14 +189,6 @@ export const appBar = defineRecipe({
         inset: 0,
         zIndex: -1,
       },
-    },
-    safeArea: {
-      height: `max(${MIN_SAFE_AREA_INSET_TOP}, env(safe-area-inset-top))`,
-    },
-    container: {
-      display: "flex",
-      alignItems: "flex-end",
-      // TODO: do we need to set overflow?
     },
     left: {
       display: "flex",
@@ -216,24 +212,14 @@ export const appBar = defineRecipe({
     },
     title: {
       display: "flex",
-      alignItems: "center",
+      flexDirection: "column",
+      justifyContent: "center",
       flex: 1,
       height: "100%",
     },
-    titleMain: {},
-    titleEdge: {
-      appearance: "none",
-      border: 0,
-      padding: 0,
-      background: "none",
-      position: "absolute",
-      top: 0,
-      cursor: "pointer",
-      left: "50%",
-      height: "20px",
-      transform: "translate(-50%)",
-      maxWidth: "5rem",
-      display: "none",
+    titleMain: {
+      display: "flex",
+      alignItems: "center",
     },
     titleText: {
       whiteSpace: "nowrap",
@@ -241,16 +227,25 @@ export const appBar = defineRecipe({
       textOverflow: "ellipsis",
       width: "100%",
     },
+    subtitleText: {
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      width: "100%",
+    },
   },
   variants: {
+    titleLayout: {
+      titleOnly: {},
+      withSubtitle: {},
+    },
     theme: {
       cupertino: {
         root: {
           [`${push}:before`]: iOSAnimations.appBarBackground.push,
           [`${pop}:before`]: iOSAnimations.appBarBackground.pop,
           [`${idle}:before`]: iOSAnimations.appBarBackground.idle,
-        },
-        container: {
+
           height: navVars.themeCupertino.enabled.root.minHeight,
           paddingInline: navVars.themeCupertino.enabled.root.paddingX,
         },
@@ -280,21 +275,18 @@ export const appBar = defineRecipe({
           [idleBehind]: iOSAnimations.iconBehind.idle,
           [swipeBackSwipingBehind]: iOSAnimations.iconBehind.interaction,
         },
-        titleMain: {
+        title: {
           position: "absolute",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          width: "var(--title-width, 100%)",
           height: "100%",
-          left: "50%",
-          transform: "translate(-50%)",
-          top: `max(${MIN_SAFE_AREA_INSET_TOP}, env(safe-area-inset-top))`,
-        },
-        titleText: {
-          fontSize: navVars.themeCupertino.enabled.title.fontSize,
-          fontWeight: navVars.themeCupertino.enabled.title.fontWeight,
+          left: 0,
+          right: 0,
+          paddingInline: "calc(50% - var(--centered-title-max-width, 100%) / 2)",
+          pointerEvents: "none",
+
           // top
           [push]: iOSAnimations.title.push,
           [pop]: iOSAnimations.title.pop,
@@ -307,13 +299,13 @@ export const appBar = defineRecipe({
           [idleBehind]: iOSAnimations.titleBehind.idle,
           [swipeBackSwipingBehind]: iOSAnimations.titleBehind.interaction,
         },
-        titleEdge: {
-          display: "block",
+        titleText: {
+          fontSize: navVars.themeCupertino.enabled.title.fontSize,
+          fontWeight: navVars.themeCupertino.enabled.title.fontWeight,
         },
       },
       android: {
-        root: {},
-        container: {
+        root: {
           height: navVars.themeAndroid.enabled.root.minHeight,
           paddingInline: navVars.themeAndroid.enabled.root.paddingX,
         },
@@ -332,7 +324,7 @@ export const appBar = defineRecipe({
           width: navVars.themeAndroid.enabled.icon.size,
           height: navVars.themeAndroid.enabled.icon.size,
         },
-        titleMain: {
+        title: {
           width: "100%",
           justifyContent: "flex-start",
           paddingLeft: "16px",
@@ -354,13 +346,15 @@ export const appBar = defineRecipe({
         icon: {
           color: navVars.toneLayer.enabled.icon.color,
         },
-        titleMain: {
+        titleText: {
           color: navVars.toneLayer.enabled.title.color,
         },
       },
       transparent: {
         root: {
-          backgroundColor: navVars.toneTransparent.enabled.root.color,
+          "&:before": {
+            backgroundColor: navVars.toneTransparent.enabled.root.color,
+          },
         },
         icon: {
           color: navVars.toneTransparent.enabled.icon.color,
@@ -370,7 +364,7 @@ export const appBar = defineRecipe({
         },
       },
     },
-    border: {
+    divider: {
       true: {
         root: {
           boxShadow: `inset 0px calc(-1 * ${navVars.dividerTrue.enabled.root.strokeWidth}) 0 ${navVars.dividerTrue.enabled.root.strokeColor}`,
@@ -381,6 +375,7 @@ export const appBar = defineRecipe({
   defaultVariants: {
     theme: "cupertino",
     tone: "layer",
-    border: false,
+    titleLayout: "titleOnly",
+    divider: false,
   },
 });

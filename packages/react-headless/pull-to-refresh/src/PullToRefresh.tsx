@@ -20,12 +20,12 @@ export const PullToRefreshRoot = ({ children, ...otherProps }: PullToRefreshRoot
 };
 
 export interface PullToRefreshIndicatorProps {
-  render: (props: PullToRefreshIndicatorRenderProps) => React.ReactNode;
+  children: (props: PullToRefreshIndicatorRenderProps) => React.ReactNode;
 }
 
-export const PullToRefreshIndicator = ({ render }: PullToRefreshIndicatorProps) => {
-  const { getIndicatorRenderProps } = usePullToRefreshContext();
-  return render(getIndicatorRenderProps());
+export const PullToRefreshIndicator = ({ children }: PullToRefreshIndicatorProps) => {
+  const { indicatorProps, getIndicatorRenderProps } = usePullToRefreshContext();
+  return <div {...indicatorProps}>{children(getIndicatorRenderProps())}</div>;
 };
 
 export interface PullToRefreshContainerProps

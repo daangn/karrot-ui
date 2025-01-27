@@ -5,6 +5,7 @@
     left: 0;
     right: 0;
     overflow: hidden;
+    --app-bar-offset: calc(var(--app-bar-height) + var(--seed-safe-area-top));
 }
 .appScreen__dim {
     z-index: var(--z-index-dim);
@@ -207,20 +208,9 @@
     --seed-exit-opacity: 0;
     --seed-exit-scale: 1;
 }
-.appScreen__root--hasAppBar_true {
-    --app-bar-margin: var(--app-bar-height);
+.appScreen__layer--layerOffsetTop_safeArea {
+    padding-top: var(--seed-safe-area-top);
 }
-@supports (padding: max(0px)) and (padding: constant(safe-area-inset-top)) {
-    .appScreen__root--hasAppBar_true {
-        --app-bar-margin: calc(var(--app-bar-height) + max(0px, constant(safe-area-inset-top)));
-    }
-}
-@supports (padding: max(0px)) and (padding: env(safe-area-inset-top)) {
-    .appScreen__root--hasAppBar_true {
-        --app-bar-margin: calc(var(--app-bar-height) + max(0px, env(safe-area-inset-top)));
-    }
-}
-.appScreen__edge--hasAppBar_true {
-    top: var(--app-bar-height);
-    height: calc(100% - var(--app-bar-height));
+.appScreen__layer--layerOffsetTop_appBar {
+    padding-top: var(--app-bar-offset);
 }

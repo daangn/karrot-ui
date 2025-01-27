@@ -6,7 +6,7 @@ import { stackflow, type ActivityComponentType, type UseActionsOutputType } from
 import React from "react";
 
 import { IconChevronLeftLine } from "@daangn/react-monochrome-icon";
-import { GlobalInteractionProvider, useGlobalInteraction } from "@seed-design/stackflow";
+import { seedPlugin } from "@seed-design/stackflow";
 import ActivityNotFound from "../activities/ActivityNotFound";
 import { theme } from "./theme";
 
@@ -50,24 +50,8 @@ const { Stack, useFlow, useStepFlow } = stackflow({
       dimBackgroundColor: vars.$color.bg.overlay,
       theme,
     }),
-    () => ({
-      key: "test",
-      wrapStack: ({ stack }) => {
-        const api = useGlobalInteraction();
-        const topActivity = stack.activities.find((activity) => activity.isTop);
-        const globalTransitionState = topActivity?.transitionState ?? "enter-done";
-        return (
-          <GlobalInteractionProvider value={api}>
-            <div
-              ref={api.stackRef}
-              {...api.stackProps}
-              data-global-transition-state={globalTransitionState}
-            >
-              {stack.render()}
-            </div>
-          </GlobalInteractionProvider>
-        );
-      },
+    seedPlugin({
+      theme,
     }),
     historySyncPlugin({
       fallbackActivity: () => "ActivityNotFound",

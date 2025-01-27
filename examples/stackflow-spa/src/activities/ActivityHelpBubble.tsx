@@ -1,23 +1,20 @@
 import type { ActivityComponentType } from "@stackflow/react";
 
-import { AppBar, BackButton, Left, Title } from "../design-system/stackflow/AppBar";
-import { AppScreen } from "../design-system/stackflow/AppScreen";
+import { AppBar, AppBarLeft, AppBarTitle, BackButton } from "../design-system/stackflow/AppBar";
+import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 import { ActionButton } from "../design-system/ui/action-button";
 import { HelpBubbleTrigger } from "../design-system/ui/help-bubble";
 
 const ActivityHelpBubble: ActivityComponentType = () => {
   return (
-    <AppScreen
-      appBar={
-        <AppBar>
-          <Left>
-            <BackButton />
-          </Left>
-          <Title>Help Bubble</Title>
-        </AppBar>
-      }
-    >
-      <div style={{ overflowY: "auto", height: "200vh" }}>
+    <AppScreen>
+      <AppBar>
+        <AppBarLeft>
+          <BackButton />
+        </AppBarLeft>
+        <AppBarTitle>Help Bubble</AppBarTitle>
+      </AppBar>
+      <AppScreenContent style={{ overflowY: "auto", height: "200vh" }}>
         <div style={{ display: "flex", paddingTop: "20vh", justifyContent: "center" }}>
           <HelpBubbleTrigger title="Flip 테스트">
             <ActionButton>Flip 테스트</ActionButton>
@@ -52,7 +49,7 @@ const ActivityHelpBubble: ActivityComponentType = () => {
             <ActionButton>Placement=bottom 테스트</ActionButton>
           </HelpBubbleTrigger>
         </div>
-      </div>
+      </AppScreenContent>
     </AppScreen>
   );
 };

@@ -1,20 +1,17 @@
 import type { ActivityComponentType } from "@stackflow/react";
-import { AppBar, BackButton, Left, Title } from "../design-system/stackflow/AppBar";
-import { AppScreen } from "../design-system/stackflow/AppScreen";
+import { AppBar, BackButton, AppBarLeft, AppBarTitle } from "../design-system/stackflow/AppBar";
+import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
 const ActivityNotFound: ActivityComponentType = () => {
   return (
-    <AppScreen
-      appBar={
-        <AppBar>
-          <Left>
-            <BackButton />
-          </Left>
-          <Title>Error</Title>
-        </AppBar>
-      }
-    >
-      404 Not Found
+    <AppScreen>
+      <AppBar>
+        <AppBarLeft>
+          <BackButton />
+        </AppBarLeft>
+        <AppBarTitle>Error</AppBarTitle>
+      </AppBar>
+      <AppScreenContent>404 Not Found</AppScreenContent>
     </AppScreen>
   );
 };

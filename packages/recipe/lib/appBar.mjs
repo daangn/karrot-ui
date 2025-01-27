@@ -12,10 +12,6 @@ const appBarSlotNames = [
     "appBar__safeArea"
   ],
   [
-    "container",
-    "appBar__container"
-  ],
-  [
     "left",
     "appBar__left"
   ],
@@ -32,12 +28,12 @@ const appBarSlotNames = [
     "appBar__titleMain"
   ],
   [
-    "titleEdge",
-    "appBar__titleEdge"
-  ],
-  [
     "titleText",
     "appBar__titleText"
+  ],
+  [
+    "subtitleText",
+    "appBar__subtitleText"
   ],
   [
     "iconButton",
@@ -52,12 +48,17 @@ const appBarSlotNames = [
 const defaultVariant = {
   "theme": "cupertino",
   "tone": "layer",
-  "border": false
+  "titleLayout": "titleOnly",
+  "divider": false
 };
 
 const compoundVariants = [];
 
 export const appBarVariantMap = {
+  "titleLayout": [
+    "titleOnly",
+    "withSubtitle"
+  ],
   "theme": [
     "cupertino",
     "android"
@@ -66,7 +67,7 @@ export const appBarVariantMap = {
     "layer",
     "transparent"
   ],
-  "border": [
+  "divider": [
     true
   ]
 };

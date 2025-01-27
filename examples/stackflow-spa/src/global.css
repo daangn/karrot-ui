@@ -3,3 +3,7 @@
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: var(--seed-v3-color-bg-layer-default);
 }
+
+body {
+  overscroll-behavior: none;
+}

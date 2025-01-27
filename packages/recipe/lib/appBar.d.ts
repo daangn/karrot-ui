@@ -1,5 +1,9 @@
 declare interface AppBarVariant {
   /**
+  * @default titleOnly
+  */
+  titleLayout: "titleOnly" | "withSubtitle";
+/**
   * @default cupertino
   */
   theme: "cupertino" | "android";
@@ -10,7 +14,7 @@ declare interface AppBarVariant {
 /**
   * @default false
   */
-  border: boolean;
+  divider: boolean;
 }
 
 declare type AppBarVariantMap = {
@@ -19,7 +23,7 @@ declare type AppBarVariantMap = {
 
 export declare type AppBarVariantProps = Partial<AppBarVariant>;
 
-export declare type AppBarSlotName = "root" | "safeArea" | "container" | "left" | "right" | "title" | "titleMain" | "titleEdge" | "titleText" | "iconButton" | "icon";
+export declare type AppBarSlotName = "root" | "safeArea" | "left" | "right" | "title" | "titleMain" | "titleText" | "subtitleText" | "iconButton" | "icon";
 
 export declare const appBarVariantMap: AppBarVariantMap;
 

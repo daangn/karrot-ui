@@ -1,21 +1,16 @@
 .appBar__root {
     z-index: var(--z-index-app-bar);
     position: absolute;
-    box-sizing: content-box;
+    box-sizing: border-box;
     width: 100%;
+    display: flex;
+    align-items: flex-end;
 }
 .appBar__root:before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
-}
-.appBar__safeArea {
-    height: max(0px, env(safe-area-inset-top));
-}
-.appBar__container {
-    display: flex;
-    align-items: flex-end;
 }
 .appBar__left {
     display: flex;
@@ -39,26 +34,22 @@
 }
 .appBar__title {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     flex: 1;
     height: 100%;
 }
-.appBar__titleMain {}
-.appBar__titleEdge {
-    appearance: none;
-    border: 0;
-    padding: 0;
-    background: none;
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-    left: 50%;
-    height: 20px;
-    transform: translate(-50%);
-    max-width: 5rem;
-    display: none;
+.appBar__titleMain {
+    display: flex;
+    align-items: center;
 }
 .appBar__titleText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.appBar__subtitleText {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -95,7 +86,7 @@
     --seed-enter-scale: 1;
     transform: translate3d(0, 0, 0);
 }
-.appBar__container--theme_cupertino {
+.appBar__root--theme_cupertino {
     height: 44px;
     padding-inline: var(--seed-v3-dimension-s4);
 }
@@ -184,23 +175,19 @@
     animation: none;
     opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
 }
-.appBar__titleMain--theme_cupertino {
+.appBar__title--theme_cupertino {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: var(--title-width, 100%);
     height: 100%;
-    left: 50%;
-    transform: translate(-50%);
-    top: max(0px, env(safe-area-inset-top));
+    left: 0;
+    right: 0;
+    padding-inline: calc(50% - var(--centered-title-max-width, 100%) / 2);
+    pointer-events: none;
 }
-.appBar__titleText--theme_cupertino {
-    font-size: var(--seed-v3-font-size-s6-static);
-    font-weight: var(--seed-v3-font-weight-bold);
-}
-[data-global-transition-state=enter-active] .appBar__titleText--theme_cupertino[data-activity-is-top] {
+[data-global-transition-state=enter-active] .appBar__title--theme_cupertino[data-activity-is-top] {
     animation: seed-enter;
     animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
     animation-duration: 300ms;
@@ -211,7 +198,7 @@
     transform: translate3d(0, 0, 0);
     opacity: 1;
 }
-[data-global-transition-state=exit-active] .appBar__titleText--theme_cupertino[data-activity-is-top] {
+[data-global-transition-state=exit-active] .appBar__title--theme_cupertino[data-activity-is-top] {
     transform: translate3d(var(--swipe-back-displacement, 0) * 0.25, 0, 0);
     opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
     animation: seed-exit;
@@ -223,7 +210,7 @@
     --seed-exit-opacity: 0;
     --seed-exit-scale: 1;
 }
-[data-global-transition-state=enter-done] .appBar__titleText--theme_cupertino[data-activity-is-top] {
+[data-global-transition-state=enter-done] .appBar__title--theme_cupertino[data-activity-is-top] {
     animation: seed-enter;
     animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
     animation-duration: 300ms;
@@ -234,12 +221,12 @@
     transform: translate3d(0, 0, 0);
     opacity: 1;
 }
-[data-swipe-back-state=swiping] .appBar__titleText--theme_cupertino[data-activity-is-top]:not(#\#) {
+[data-swipe-back-state=swiping] .appBar__title--theme_cupertino[data-activity-is-top]:not(#\#) {
     animation: none;
     transform: translate3d(var(--swipe-back-displacement, 0) * 0.25, 0, 0);
     opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
 }
-[data-global-transition-state=enter-active] .appBar__titleText--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+[data-global-transition-state=enter-active] .appBar__title--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
     transform: translate3d(0, 0, 0);
     opacity: 1;
     animation: seed-exit;
@@ -251,7 +238,7 @@
     --seed-exit-opacity: 0;
     --seed-exit-scale: 1;
 }
-[data-global-transition-state=exit-active] .appBar__titleText--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+[data-global-transition-state=exit-active] .appBar__title--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
     animation: seed-enter;
     animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
     animation-duration: 300ms;
@@ -262,7 +249,7 @@
     transform: translate3d(0, 0, 0);
     opacity: 1;
 }
-[data-global-transition-state=enter-done] .appBar__titleText--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
+[data-global-transition-state=enter-done] .appBar__title--theme_cupertino[data-top-activity-type="full-screen"]:not([data-activity-is-top]) {
     transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * 0.25), 0, 0);
     opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
     animation: seed-exit;
@@ -274,16 +261,16 @@
     --seed-exit-opacity: 0;
     --seed-exit-scale: 1;
 }
-[data-swipe-back-state=swiping] .appBar__titleText--theme_cupertino:not([data-activity-is-top]):not(#\#) {
+[data-swipe-back-state=swiping] .appBar__title--theme_cupertino:not([data-activity-is-top]):not(#\#) {
     animation: none;
     transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * 0.25), 0, 0);
     opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
 }
-.appBar__titleEdge--theme_cupertino {
-    display: block;
+.appBar__titleText--theme_cupertino {
+    font-size: var(--seed-v3-font-size-s6-static);
+    font-weight: var(--seed-v3-font-weight-bold);
 }
-.appBar__root--theme_android {}
-.appBar__container--theme_android {
+.appBar__root--theme_android {
     height: 56px;
     padding-inline: var(--seed-v3-dimension-s4);
 }
@@ -301,7 +288,7 @@
     width: 24px;
     height: 24px;
 }
-.appBar__titleMain--theme_android {
+.appBar__title--theme_android {
     width: 100%;
     justify-content: flex-start;
     padding-left: 16px;
@@ -317,10 +304,10 @@
 .appBar__icon--tone_layer {
     color: var(--seed-v3-color-fg-neutral);
 }
-.appBar__titleMain--tone_layer {
+.appBar__titleText--tone_layer {
     color: var(--seed-v3-color-fg-neutral);
 }
-.appBar__root--tone_transparent {
+.appBar__root--tone_transparent:before {
     background-color: #00000000;
 }
 .appBar__icon--tone_transparent {
@@ -329,6 +316,6 @@
 .appBar__titleMain--tone_transparent {
     color: var(--seed-v3-color-palette-static-white);
 }
-.appBar__root--border_true {
+.appBar__root--divider_true {
     box-shadow: inset 0px calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral-muted);
 }

@@ -1,6 +1,6 @@
 import type { ActivityComponentType } from "@stackflow/react";
-import { AppBar, BackButton, Left, Title } from "../design-system/stackflow/AppBar";
-import { AppScreen } from "../design-system/stackflow/AppScreen";
+import { AppBar, BackButton, AppBarLeft, AppBarTitle } from "../design-system/stackflow/AppBar";
+import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
 import { actionButton, actionButtonVariantMap } from "@seed-design/recipe/actionButton";
 
@@ -16,26 +16,25 @@ const initialVariants = {
 
 const ActivityActionButton: ActivityComponentType = () => {
   return (
-    <AppScreen
-      appBar={
-        <AppBar>
-          <Left>
-            <BackButton />
-          </Left>
-          <Title>Action Button</Title>
-        </AppBar>
-      }
-    >
-      <ComponentAnalyzer
-        variantsMap={actionButtonVariantMap}
-        initialVariants={initialVariants}
-        recipeFn={actionButton}
-        render={(variants) => (
-          <ActionButton key={JSON.stringify(variants)} {...variants}>
-            {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
-          </ActionButton>
-        )}
-      />
+    <AppScreen>
+      <AppBar>
+        <AppBarLeft>
+          <BackButton />
+        </AppBarLeft>
+        <AppBarTitle>Action Button</AppBarTitle>
+      </AppBar>
+      <AppScreenContent>
+        <ComponentAnalyzer
+          variantsMap={actionButtonVariantMap}
+          initialVariants={initialVariants}
+          recipeFn={actionButton}
+          render={(variants) => (
+            <ActionButton key={JSON.stringify(variants)} {...variants}>
+              {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
+            </ActionButton>
+          )}
+        />
+      </AppScreenContent>
     </AppScreen>
   );
 };

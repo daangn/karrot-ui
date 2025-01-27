@@ -1,5 +1,6 @@
 import { useCallbackRef } from "@radix-ui/react-use-callback-ref";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useStack } from "@stackflow/react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 export type SwipeBackState = "idle" | "swiping" | "transitioning";
 
@@ -147,12 +148,27 @@ export function useGlobalInteraction() {
     [setSwipeBackContext],
   );
 
+  const stack = useStack();
+  const [topEl, setTopEl] = useState<HTMLElement | null>(null);
+  const topId = stack.activities.find((activity) => activity.isTop)?.id;
+  const topActivity = stack.activities.find((activity) => activity.isTop);
+  const globalTransitionState = topActivity?.transitionState ?? "enter-done";
+  const topActivityType = topEl?.dataset["activityType"];
+
+  useEffect(() => {
+    if (!topId) return;
+
+    setTopEl(document.getElementById(topId));
+  }, [topId]);
+
   const stackProps = useMemo(
     () => ({
       "data-swipe-back-state": swipeBackState,
+      "data-global-transition-state": globalTransitionState,
+      "data-top-activity-type": topActivityType,
     }),
-    [swipeBackState],
-  );
+    [swipeBackState, globalTransitionState, topActivityType],
+  ) as React.HTMLAttributes<HTMLElement>;
 
   return useMemo(
     () => ({

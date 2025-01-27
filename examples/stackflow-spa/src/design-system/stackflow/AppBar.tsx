@@ -1,15 +1,49 @@
 import { IconChevronLeftLine, IconXmarkLine } from "@daangn/react-monochrome-icon";
 import { AppBar as SeedAppBar, type AppBarIconButtonProps } from "@seed-design/stackflow";
 import { useActions, useActivity } from "@stackflow/react";
+import * as React from "react";
 import { forwardRef } from "react";
 
 export const AppBar = SeedAppBar.Root;
 
-export const Left = SeedAppBar.Left;
+export const AppBarLeft = SeedAppBar.Left;
 
-export const Right = SeedAppBar.Right;
+export const AppBarRight = SeedAppBar.Right;
 
-export const Title = SeedAppBar.Title;
+export interface AppBarTitleProps extends Omit<SeedAppBar.TitleProps, "asChild"> {
+  /**
+   * The title of the app bar.
+   * If children is provided as ReactElement, this prop will be ignored.
+   */
+  title?: string;
+
+  /**
+   * The subtitle of the app bar.
+   * If children is provided as ReactElement, this prop will be ignored.
+   */
+  subtitle?: string;
+}
+
+export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>(
+  ({ title, subtitle, children, ...otherProps }, ref) => {
+    if (React.isValidElement(children)) {
+      return (
+        <SeedAppBar.Title {...otherProps} ref={ref}>
+          {children}
+        </SeedAppBar.Title>
+      );
+    }
+
+    return (
+      <SeedAppBar.Title {...otherProps} ref={ref}>
+        <SeedAppBar.TitleMain>
+          <SeedAppBar.TitleText>{children ?? title}</SeedAppBar.TitleText>
+        </SeedAppBar.TitleMain>
+        {subtitle ? <SeedAppBar.SubtitleText>{subtitle}</SeedAppBar.SubtitleText> : null}
+      </SeedAppBar.Title>
+    );
+  },
+);
 
 export const IconButton = SeedAppBar.IconButton;
 

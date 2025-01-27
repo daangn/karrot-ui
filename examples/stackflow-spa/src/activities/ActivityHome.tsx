@@ -2,8 +2,8 @@ import { useSnackbarAdapter } from "@seed-design/react";
 import { receive } from "@stackflow/compat-await-push";
 import type { ActivityComponentType } from "@stackflow/react";
 import { List, ListItem } from "../components/List";
-import { AppBar, Title } from "../design-system/stackflow/AppBar";
-import { AppScreen } from "../design-system/stackflow/AppScreen";
+import { AppBar, AppBarTitle } from "../design-system/stackflow/AppBar";
+import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 import { DialogPushTrigger } from "../design-system/stackflow/DialogPushTrigger";
 import { ActionButton } from "../design-system/ui/action-button";
 import {
@@ -27,21 +27,11 @@ const ActivityHome: ActivityComponentType = () => {
   const snackbarAdapter = useSnackbarAdapter();
 
   return (
-    <AppScreen
-      appBar={
-        <AppBar>
-          <Title>Home</Title>
-        </AppBar>
-      }
-    >
-      <div
-        style={
-          {
-            overflow: "auto",
-            height: "calc(100vh - var(--stackflow-plugin-basic-ui-app-bar-height))",
-          } as React.CSSProperties
-        }
-      >
+    <AppScreen>
+      <AppBar>
+        <AppBarTitle>Home</AppBarTitle>
+      </AppBar>
+      <AppScreenContent>
         <List>
           <ListItem onClick={() => push("ActivityActionButton", {})} title="ActionButton" />
           <ListItem onClick={() => push("ActivityActionChip", {})} title="ActionChip" />
@@ -123,7 +113,7 @@ const ActivityHome: ActivityComponentType = () => {
             title="Snackbar (critical)"
           />
         </List>
-      </div>
+      </AppScreenContent>
     </AppScreen>
   );
 };

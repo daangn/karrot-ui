@@ -4,6 +4,9 @@ export {
   AppBarRight as Right,
   AppBarRoot as Root,
   AppBarTitle as Title,
+  AppBarTitleMain as TitleMain,
+  AppBarTitleText as TitleText,
+  AppBarSubtitleText as SubtitleText,
 } from "./AppBar";
 
 export type {
@@ -12,4 +15,7 @@ export type {
   AppBarRightProps as RightProps,
   AppBarProps as RootProps,
   AppBarTitleProps as TitleProps,
+  AppBarTitleMainProps as TitleMainProps,
+  AppBarTitleTextProps as TitleTextProps,
+  AppBarSubtitleTextProps as SubtitleTextProps,
 } from "./AppBar";

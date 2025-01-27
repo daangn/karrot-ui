@@ -9,5 +9,5 @@ export type {
   AppScreenDimProps as DimProps,
   AppScreenEdgeProps as EdgeProps,
   AppScreenLayerProps as LayerProps,
-  AppScreenProps as RootProps,
+  AppScreenRootProps as RootProps,
 } from "./AppScreen";
