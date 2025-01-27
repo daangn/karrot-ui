@@ -9,6 +9,7 @@
 .appBar__root:before {
     content: "";
     position: absolute;
+    pointer-events: none;
     inset: 0;
     z-index: -1;
 }
@@ -42,6 +43,7 @@
 .appBar__titleMain {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .appBar__titleText {
     white-space: nowrap;
@@ -184,7 +186,7 @@
     height: 100%;
     left: 0;
     right: 0;
-    padding-inline: calc(50% - var(--centered-title-max-width, 100%) / 2);
+    padding-inline: var(--centered-title-padding-x, 0);
     pointer-events: none;
 }
 [data-global-transition-state=enter-active] .appBar__title--theme_cupertino[data-activity-is-top] {

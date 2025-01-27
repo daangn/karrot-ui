@@ -1,7 +1,7 @@
-import { useSize } from "@radix-ui/react-use-size";
 import { elementProps } from "@seed-design/dom-utils";
 import { useMemo, useState } from "react";
 import { useAppScreenContext } from "../AppScreen";
+import { useElementOffset } from "./useElementOffset";
 
 // biome-ignore lint/suspicious/noEmptyInterface: intentionally empty for future extension
 export interface UseAppBarProps {}
@@ -15,11 +15,10 @@ export function useAppBar(_props: UseAppBarProps) {
   const [left, leftRef] = useState<HTMLElement | null>(null);
   const [right, rightRef] = useState<HTMLElement | null>(null);
 
-  const rootSize = useSize(root);
-  const leftSize = useSize(left);
-  const rightSize = useSize(right);
-  const centeredTitleMaxWidth = rootSize
-    ? `${rootSize.width ?? 0 - Math.max(leftSize?.width ?? 0, rightSize?.width ?? 0)}px`
+  const leftOffset = useElementOffset(left);
+  const rightOffset = useElementOffset(right);
+  const centeredTitlePaddingX = root
+    ? `${Math.max(leftOffset?.fromLeft ?? 0, rightOffset?.fromRight ?? 0)}px`
     : "initial";
 
   return useMemo(
@@ -34,10 +33,10 @@ export function useAppBar(_props: UseAppBarProps) {
         "data-part": "appBar",
         ...stateProps,
         style: {
-          "--centered-title-max-width": centeredTitleMaxWidth,
+          "--centered-title-padding-x": centeredTitlePaddingX,
         } as React.CSSProperties,
       }),
     }),
-    [stateProps, centeredTitleMaxWidth],
+    [stateProps, centeredTitlePaddingX],
   );
 }

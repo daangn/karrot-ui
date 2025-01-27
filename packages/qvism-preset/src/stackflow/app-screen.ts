@@ -187,6 +187,7 @@ export const appBar = defineRecipe({
       "&:before": {
         content: '""',
         position: "absolute",
+        pointerEvents: "none",
         inset: 0,
         zIndex: -1,
       },
@@ -221,6 +222,7 @@ export const appBar = defineRecipe({
     titleMain: {
       display: "flex",
       alignItems: "center",
+      width: "100%",
     },
     titleText: {
       whiteSpace: "nowrap",
@@ -285,7 +287,7 @@ export const appBar = defineRecipe({
           height: "100%",
           left: 0,
           right: 0,
-          paddingInline: "calc(50% - var(--centered-title-max-width, 100%) / 2)",
+          paddingInline: "var(--centered-title-padding-x, 0)",
           pointerEvents: "none",
 
           // top
