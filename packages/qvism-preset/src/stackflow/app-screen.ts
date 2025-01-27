@@ -31,9 +31,9 @@ export const appScreen = defineRecipe({
       zIndex: "var(--z-index-dim)",
       position: "absolute",
       width: "100%",
+      top: 0,
       left: 0,
       right: 0,
-      opacity: 0,
     },
     layer: {
       zIndex: "var(--z-index-layer)",
@@ -103,7 +103,6 @@ export const appScreen = defineRecipe({
           [swipeBackSwipingBehind]: iOSAnimations.layerBehind.interaction,
         },
         dim: {
-          opacity: 1,
           [push]: iOSAnimations.dim.push,
           [pop]: iOSAnimations.dim.pop,
           [idle]: iOSAnimations.dim.idle,
@@ -118,15 +117,15 @@ export const appScreen = defineRecipe({
           "--z-index-app-bar": "calc(var(--z-index-base) + 4)",
         },
         dim: {
-          top: 0,
           height: "160px",
           background: `linear-gradient(${vars.$color.bg.overlay}, rgba(0, 0, 0, 0))`,
+
           [push]: fadeFromBottomAndroidAnimations.dim.push,
           [pop]: fadeFromBottomAndroidAnimations.dim.pop,
         },
         layer: {
-          opacity: 1,
           transform: "translate3d(0, 0, 0)",
+
           [push]: fadeFromBottomAndroidAnimations.layer.push,
           [pop]: fadeFromBottomAndroidAnimations.layer.pop,
         },
@@ -166,7 +165,6 @@ export const appBar = defineRecipe({
   name: "appBar",
   slots: [
     "root",
-    "safeArea",
     "left",
     "right",
     "title",

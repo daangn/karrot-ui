@@ -8,10 +8,6 @@ const appBarSlotNames = [
     "appBar__root"
   ],
   [
-    "safeArea",
-    "appBar__safeArea"
-  ],
-  [
     "left",
     "appBar__left"
   ],

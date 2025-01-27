@@ -4548,9 +4548,9 @@
 
 .appScreen__dim {
   z-index: var(--z-index-dim);
-  opacity: 0;
   width: 100%;
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
 }
@@ -4676,10 +4676,6 @@
   animation: none;
 }
 
-.appScreen__dim--transitionStyle_slideFromRightIOS {
-  opacity: 1;
-}
-
 [data-global-transition-state="enter-active"] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top] {
   --seed-enter-translate-x: 0;
   --seed-enter-translate-y: 0;
@@ -4722,7 +4718,6 @@
 .appScreen__dim--transitionStyle_fadeFromBottomAndroid {
   background: linear-gradient(var(--seed-v3-color-bg-overlay), #0000);
   height: 160px;
-  top: 0;
 }
 
 [data-global-transition-state="enter-active"] .appScreen__dim--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
@@ -4746,7 +4741,6 @@
 }
 
 .appScreen__layer--transitionStyle_fadeFromBottomAndroid {
-  opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 

@@ -11,9 +11,9 @@
     z-index: var(--z-index-dim);
     position: absolute;
     width: 100%;
+    top: 0;
     left: 0;
     right: 0;
-    opacity: 0;
 }
 .appScreen__layer {
     z-index: var(--z-index-layer);
@@ -133,9 +133,6 @@
     animation: none;
     transform: translate3d(calc(-30% + var(--swipe-back-displacement, 0) * 0.3), 0, 0);
 }
-.appScreen__dim--transitionStyle_slideFromRightIOS {
-    opacity: 1;
-}
 [data-global-transition-state=enter-active] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top] {
     animation: seed-enter;
     animation-timing-function: cubic-bezier(0.22, 0.1, 0.3, 0.85);
@@ -178,7 +175,6 @@
     --z-index-app-bar: calc(var(--z-index-base) + 4);
 }
 .appScreen__dim--transitionStyle_fadeFromBottomAndroid {
-    top: 0;
     height: 160px;
     background: linear-gradient(var(--seed-v3-color-bg-overlay), rgba(0, 0, 0, 0));
 }
@@ -206,7 +202,6 @@
     --seed-exit-scale: 1;
 }
 .appScreen__layer--transitionStyle_fadeFromBottomAndroid {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
 }
 [data-global-transition-state=enter-active] .appScreen__layer--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
