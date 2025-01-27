@@ -9,17 +9,17 @@ import { ProgressCircle } from "../ui/progress-circle";
 export interface AppScreenProps extends SeedAppScreen.RootProps {}
 
 export const AppScreen = forwardRef<HTMLDivElement, AppScreenProps>(
-  ({ children, onSwipeEnd, ...otherProps }, ref) => {
+  ({ children, onSwipeBackEnd, ...otherProps }, ref) => {
     const { pop } = useActions();
 
     return (
       <SeedAppScreen.Root
         ref={ref}
-        onSwipeEnd={({ swiped }) => {
+        onSwipeBackEnd={({ swiped }) => {
           if (swiped) {
             pop();
           }
-          onSwipeEnd?.({ swiped });
+          onSwipeBackEnd?.({ swiped });
         }}
         {...otherProps}
       >

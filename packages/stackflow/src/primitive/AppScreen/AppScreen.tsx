@@ -11,19 +11,19 @@ export interface AppScreenRootProps
 
 export const AppScreenRoot = forwardRef<HTMLDivElement, AppScreenRootProps>((props, ref) => {
   const {
-    displacementRatioThreshold,
-    velocityThreshold,
-    onSwipeEnd,
-    onSwipeMove,
-    onSwipeStart,
+    swipeBackDisplacementRatioThreshold,
+    swipeBackVelocityThreshold,
+    onSwipeBackEnd,
+    onSwipeBackMove,
+    onSwipeBackStart,
     ...otherProps
   } = props;
   const api = useAppScreen({
-    displacementRatioThreshold,
-    velocityThreshold,
-    onSwipeEnd,
-    onSwipeMove,
-    onSwipeStart,
+    swipeBackDisplacementRatioThreshold,
+    swipeBackVelocityThreshold,
+    onSwipeBackEnd,
+    onSwipeBackMove,
+    onSwipeBackStart,
   });
 
   return (

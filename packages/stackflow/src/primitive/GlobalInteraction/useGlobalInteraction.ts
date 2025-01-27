@@ -19,17 +19,17 @@ export interface SwipeBackProps {
    * The threshold to determine whether the swipe back is intentional.
    * @default 0.4
    */
-  displacementRatioThreshold?: number;
+  swipeBackDisplacementRatioThreshold?: number;
 
   /**
    * The threshold to determine whether the swipe back is intentional.
    * @default 1
    */
-  velocityThreshold?: number;
+  swipeBackVelocityThreshold?: number;
 
-  onSwipeStart?: () => void;
-  onSwipeMove?: (props: { displacement: number; displacementRatio: number }) => void;
-  onSwipeEnd?: (props: { swiped: boolean }) => void;
+  onSwipeBackStart?: () => void;
+  onSwipeBackMove?: (props: { displacement: number; displacementRatio: number }) => void;
+  onSwipeBackEnd?: (props: { swiped: boolean }) => void;
 }
 
 export interface StartSwipeBackProps {
@@ -71,10 +71,13 @@ export function useGlobalInteraction() {
 
   const getSwipeBackEvents = useCallback(
     (props: SwipeBackProps) => {
-      const { displacementRatioThreshold = 0.4, velocityThreshold = 1 } = props;
-      const onSwipeStart = useCallbackRef(props.onSwipeStart);
-      const onSwipeMove = useCallbackRef(props.onSwipeMove);
-      const onSwipeEnd = useCallbackRef(props.onSwipeEnd);
+      const {
+        swipeBackDisplacementRatioThreshold: displacementRatioThreshold = 0.4,
+        swipeBackVelocityThreshold: velocityThreshold = 1,
+      } = props;
+      const onSwipeStart = useCallbackRef(props.onSwipeBackStart);
+      const onSwipeMove = useCallbackRef(props.onSwipeBackMove);
+      const onSwipeEnd = useCallbackRef(props.onSwipeBackEnd);
 
       const startSwipeBack = useCallback(
         ({ x0, t0 }: StartSwipeBackProps) => {
