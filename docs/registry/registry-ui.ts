@@ -7,8 +7,8 @@ import popoverPkg from "@seed-design/react-popover/package.json";
 export const registryUI: RegistryUI = [
   {
     name: "app-screen",
-    files: ["ui:app-screen.tsx"],
-    dependencies: ["@seed-design/stackflow"],
+    files: ["ui:app-screen.tsx", "ui:app-bar.tsx"],
+    dependencies: ["@seed-design/react", "@seed-design/stackflow"],
   },
   {
     name: "error-state",

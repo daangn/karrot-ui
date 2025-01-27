@@ -1,5 +1,10 @@
 import type { ActivityComponentType } from "@stackflow/react";
-import { AppBar, BackButton, AppBarLeft, AppBarTitle } from "../design-system/stackflow/AppBar";
+import {
+  AppBar,
+  AppBarBackButton,
+  AppBarLeft,
+  AppBarTitle,
+} from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
 import { actionChip, actionChipVariantMap } from "@seed-design/recipe/actionChip";
@@ -18,7 +23,7 @@ const ActivityActionChip: ActivityComponentType = () => {
     <AppScreen>
       <AppBar>
         <AppBarLeft>
-          <BackButton />
+          <AppBarBackButton />
         </AppBarLeft>
         <AppBarTitle>Action Chip</AppBarTitle>
       </AppBar>

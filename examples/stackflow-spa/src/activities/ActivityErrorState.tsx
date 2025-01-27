@@ -3,7 +3,12 @@ import type { ActivityComponentType } from "@stackflow/react";
 import React from "react";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 import { ErrorState, type ErrorStateProps } from "../design-system/ui/error-state";
-import { AppBar, AppBarLeft, AppBarTitle, BackButton } from "../design-system/stackflow/AppBar";
+import {
+  AppBar,
+  AppBarLeft,
+  AppBarTitle,
+  AppBarBackButton,
+} from "../design-system/stackflow/AppBar";
 
 const ActivityErrorState: ActivityComponentType = () => {
   const [variant, setVariant] = React.useState<ErrorStateProps["variant"]>("default");
@@ -12,7 +17,7 @@ const ActivityErrorState: ActivityComponentType = () => {
     <AppScreen>
       <AppBar>
         <AppBarLeft>
-          <BackButton />
+          <AppBarBackButton />
         </AppBarLeft>
         <AppBarTitle>Error State</AppBarTitle>
       </AppBar>

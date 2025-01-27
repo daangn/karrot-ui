@@ -4,8 +4,8 @@ import {
   AppBarLeft,
   AppBarRight,
   AppBarTitle,
-  BackButton,
-  IconButton,
+  AppBarBackButton,
+  AppBarIconButton,
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
@@ -16,22 +16,22 @@ const ActivityLayerBar: ActivityComponentType = () => {
     <AppScreen>
       <AppBar tone="layer">
         <AppBarLeft>
-          <BackButton />
+          <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>야옹</AppBarTitle>
+        <AppBarTitle>Random Long Title Hello World</AppBarTitle>
         <AppBarRight>
-          <IconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
-          <IconButton>
+          </AppBarIconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
-          <IconButton>
+          </AppBarIconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
-          <IconButton>
+          </AppBarIconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
+          </AppBarIconButton>
         </AppBarRight>
       </AppBar>
       <AppScreenContent />

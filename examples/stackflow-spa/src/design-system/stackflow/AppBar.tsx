@@ -44,10 +44,11 @@ export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>(
     );
   },
 );
+AppBarTitle.displayName = "AppBarTitle";
 
-export const IconButton = SeedAppBar.IconButton;
+export const AppBarIconButton = SeedAppBar.IconButton;
 
-export const BackButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
+export const AppBarBackButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
   ({ children = <IconChevronLeftLine />, onClick, ...otherProps }, ref) => {
     const activity = useActivity();
     const actions = useActions();
@@ -80,9 +81,9 @@ export const BackButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
     );
   },
 );
-BackButton.displayName = "BackButton";
+AppBarBackButton.displayName = "AppBarBackButton";
 
-export const CloseButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
+export const AppBarCloseButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
   ({ children = <IconXmarkLine />, onClick, ...otherProps }, ref) => {
     const activity = useActivity();
 
@@ -101,7 +102,7 @@ export const CloseButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
     }
 
     return (
-      <IconButton
+      <AppBarIconButton
         ref={ref}
         aria-label="Close"
         type="button"
@@ -109,8 +110,8 @@ export const CloseButton = forwardRef<HTMLButtonElement, AppBarIconButtonProps>(
         {...otherProps}
       >
         {children}
-      </IconButton>
+      </AppBarIconButton>
     );
   },
 );
-CloseButton.displayName = "CloseButton";
+AppBarCloseButton.displayName = "AppBarCloseButton";

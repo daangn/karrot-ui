@@ -1,115 +1,69 @@
 "use client";
 
-import {
-  IconChevronLeftLine,
-  IconXmarkLine,
-} from "@daangn/react-monochrome-icon";
-import {
-  AppBar as SeedAppBar,
-  AppScreen as SeedAppScreen,
-} from "@seed-design/stackflow";
-import { useActions, useActivity } from "@stackflow/react";
-import { forwardRef, useCallback } from "react";
+import { PullToRefresh } from "@seed-design/react/primitive";
+import { AppScreen as SeedAppScreen } from "@seed-design/stackflow";
+import { useActions } from "@stackflow/react";
+import { forwardRef } from "react";
+import { ProgressCircle } from "../ui/progress-circle";
 
-export type AppBarProps = SeedAppBar.RootProps;
-
-export type AppScreenProps = SeedAppScreen.RootProps;
-
-export const AppBar = SeedAppBar.Root;
-
-export const Left = SeedAppBar.Left;
-
-export const Right = SeedAppBar.Right;
-
-export const Title = SeedAppBar.Title;
-
-export const IconButton = SeedAppBar.IconButton;
-
-export const BackButton = forwardRef<
-  HTMLButtonElement,
-  SeedAppBar.IconButtonProps
->(({ children = <IconChevronLeftLine />, onClick, ...otherProps }, ref) => {
-  const activity = useActivity();
-  const actions = useActions();
-
-  const handleOnClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      onClick?.(e);
-
-      if (!e.defaultPrevented) {
-        actions.pop();
-      }
-    },
-    [actions],
-  );
-
-  if (!activity) {
-    return null;
-  }
-  if (activity.isRoot) {
-    return null;
-  }
-
-  return (
-    <SeedAppBar.IconButton
-      ref={ref}
-      aria-label="Go Back"
-      type="button"
-      onClick={handleOnClick}
-      {...otherProps}
-    >
-      {children}
-    </SeedAppBar.IconButton>
-  );
-});
-BackButton.displayName = "BackButton";
-
-export const CloseButton = forwardRef<
-  HTMLButtonElement,
-  SeedAppBar.IconButtonProps
->(({ children = <IconXmarkLine />, onClick, ...otherProps }, ref) => {
-  const activity = useActivity();
-
-  const handleOnClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      onClick?.(e);
-
-      if (!e.defaultPrevented) {
-        // you can do something here
-      }
-    },
-    [],
-  );
-
-  const isRoot = !activity || activity.isRoot;
-
-  if (!isRoot) {
-    return null;
-  }
-
-  return (
-    <IconButton
-      ref={ref}
-      aria-label="Close"
-      type="button"
-      onClick={handleOnClick}
-      {...otherProps}
-    >
-      {children}
-    </IconButton>
-  );
-});
-CloseButton.displayName = "CloseButton";
+export interface AppScreenProps extends SeedAppScreen.RootProps {}
 
 export const AppScreen = forwardRef<HTMLDivElement, AppScreenProps>(
-  ({ children, ...otherProps }, ref) => {
+  ({ children, onSwipeEnd, ...otherProps }, ref) => {
+    const { pop } = useActions();
+
     return (
-      <SeedAppScreen.Root ref={ref} {...otherProps}>
+      <SeedAppScreen.Root
+        ref={ref}
+        onSwipeEnd={({ swiped }) => {
+          if (swiped) {
+            pop();
+          }
+          onSwipeEnd?.({ swiped });
+        }}
+        {...otherProps}
+      >
         <SeedAppScreen.Dim />
-        <SeedAppScreen.Layer>{children}</SeedAppScreen.Layer>
+        {children}
         <SeedAppScreen.Edge />
       </SeedAppScreen.Root>
     );
   },
 );
 AppScreen.displayName = "AppScreen";
+
+export interface AppScreenContentProps extends SeedAppScreen.LayerProps {
+  ptr?: boolean;
+
+  onPtrReady?: () => void;
+
+  onPtrRefresh?: () => Promise<void>;
+}
+
+export const AppScreenContent = forwardRef<
+  HTMLDivElement,
+  AppScreenContentProps
+>(({ children, ptr, onPtrReady, onPtrRefresh, ...otherProps }, ref) => {
+  if (!ptr) {
+    return (
+      <SeedAppScreen.Layer ref={ref} {...otherProps}>
+        {children}
+      </SeedAppScreen.Layer>
+    );
+  }
+
+  return (
+    <PullToRefresh.Root
+      asChild
+      onPtrReady={onPtrReady}
+      onPtrRefresh={onPtrRefresh}
+    >
+      <SeedAppScreen.Layer ref={ref} {...otherProps}>
+        <PullToRefresh.Indicator>
+          {(props) => <ProgressCircle tone="brand" {...props} />}
+        </PullToRefresh.Indicator>
+        <PullToRefresh.Content asChild>{children}</PullToRefresh.Content>
+      </SeedAppScreen.Layer>
+    </PullToRefresh.Root>
+  );
+});

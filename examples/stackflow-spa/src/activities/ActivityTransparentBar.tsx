@@ -4,8 +4,8 @@ import {
   AppBarLeft,
   AppBarRight,
   AppBarTitle,
-  BackButton,
-  IconButton,
+  AppBarBackButton,
+  AppBarIconButton,
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
@@ -17,22 +17,22 @@ const ActivityTransparentBar: ActivityComponentType = () => {
     <AppScreen layerOffsetTop="none">
       <AppBar tone="transparent">
         <AppBarLeft>
-          <BackButton />
+          <AppBarBackButton />
         </AppBarLeft>
         <AppBarTitle>야옹</AppBarTitle>
         <AppBarRight>
-          <IconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
-          <IconButton>
+          </AppBarIconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
-          <IconButton>
+          </AppBarIconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
-          <IconButton>
+          </AppBarIconButton>
+          <AppBarIconButton>
             <IconBellLine />
-          </IconButton>
+          </AppBarIconButton>
         </AppBarRight>
       </AppBar>
       <AppScreenContent>

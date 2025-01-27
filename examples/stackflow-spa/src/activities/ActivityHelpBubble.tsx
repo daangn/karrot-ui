@@ -1,6 +1,11 @@
 import type { ActivityComponentType } from "@stackflow/react";
 
-import { AppBar, AppBarLeft, AppBarTitle, BackButton } from "../design-system/stackflow/AppBar";
+import {
+  AppBar,
+  AppBarLeft,
+  AppBarTitle,
+  AppBarBackButton,
+} from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 import { ActionButton } from "../design-system/ui/action-button";
 import { HelpBubbleTrigger } from "../design-system/ui/help-bubble";
@@ -10,7 +15,7 @@ const ActivityHelpBubble: ActivityComponentType = () => {
     <AppScreen>
       <AppBar>
         <AppBarLeft>
-          <BackButton />
+          <AppBarBackButton />
         </AppBarLeft>
         <AppBarTitle>Help Bubble</AppBarTitle>
       </AppBar>

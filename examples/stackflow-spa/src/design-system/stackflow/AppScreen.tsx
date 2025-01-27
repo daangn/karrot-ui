@@ -2,7 +2,6 @@ import { PullToRefresh, usePullToRefreshContext } from "@seed-design/react/primi
 import { AppScreen as SeedAppScreen } from "@seed-design/stackflow";
 import { useActions } from "@stackflow/react";
 import { forwardRef } from "react";
-import { theme } from "../../stackflow/theme";
 import { ProgressCircle } from "../ui/progress-circle";
 
 export interface AppScreenProps extends SeedAppScreen.RootProps {}
@@ -20,7 +19,6 @@ export const AppScreen = forwardRef<HTMLDivElement, AppScreenProps>(
           }
           onSwipeEnd?.({ swiped });
         }}
-        theme={theme}
         {...otherProps}
       >
         <SeedAppScreen.Dim />
