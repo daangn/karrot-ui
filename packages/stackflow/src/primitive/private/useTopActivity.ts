@@ -20,11 +20,7 @@ export function useTopActivity() {
   useEffect(() => {
     if (!topId) return;
 
-    const el = document.getElementById(topId);
-    if (!el) {
-      throw new Error(`Cannot find the top activity element with id: ${topId}`);
-    }
-
+    const el = document.querySelector<HTMLElement>(`[data-activity-id="${topId}"]`);
     setTopEl(el);
   }, [topId]);
 

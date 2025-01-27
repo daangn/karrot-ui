@@ -37,13 +37,14 @@ export function useAppScreen(props: UseAppScreenProps) {
       activity,
       stateProps,
       activityProps: elementProps({
-        id: activity?.id,
         "data-part": "activity",
         "data-activity-type": "full-screen",
         ...activityProps,
         ...stateProps,
         "data-activity-id": activity?.id,
         style: zIndexStyle,
+        // FIXME: @stackflow/react should prevent activity.id hydration mismatch; this is temporal fix.
+        suppressHydrationWarning: true,
       }),
       dimProps: elementProps({
         "data-part": "dim",
