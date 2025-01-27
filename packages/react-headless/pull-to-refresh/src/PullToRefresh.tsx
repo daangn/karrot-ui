@@ -1,3 +1,4 @@
+import { composeRefs } from "@radix-ui/react-compose-refs";
 import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { forwardRef } from "react";
@@ -7,17 +8,45 @@ import {
   type UsePullToRefreshProps,
 } from "./usePullToRefresh";
 import { PullToRefreshProvider, usePullToRefreshContext } from "./usePullToRefreshContext";
-import { composeRefs } from "@radix-ui/react-compose-refs";
 
-export interface PullToRefreshRootProps extends UsePullToRefreshProps {
-  children?: React.ReactNode;
-}
+export interface PullToRefreshRootProps
+  extends UsePullToRefreshProps,
+    PrimitiveProps,
+    React.HTMLAttributes<HTMLDivElement> {}
 
-export const PullToRefreshRoot = ({ children, ...otherProps }: PullToRefreshRootProps) => {
-  const api = usePullToRefresh(otherProps);
+export const PullToRefreshRoot = forwardRef<HTMLDivElement, PullToRefreshRootProps>(
+  (props, ref) => {
+    const {
+      displacementMultiplier,
+      threshold,
+      onPtrPullStart,
+      onPtrPullMove,
+      onPtrPullEnd,
+      onPtrReady,
+      onPtrRefresh,
+      ...otherProps
+    } = props;
+    const api = usePullToRefresh({
+      displacementMultiplier,
+      threshold,
+      onPtrPullStart,
+      onPtrPullMove,
+      onPtrPullEnd,
+      onPtrReady,
+      onPtrRefresh,
+    });
 
-  return <PullToRefreshProvider value={api}>{children}</PullToRefreshProvider>;
-};
+    return (
+      <PullToRefreshProvider value={api}>
+        <Primitive.div
+          ref={composeRefs(api.refs.root, ref)}
+          {...mergeProps(api.rootProps, otherProps)}
+        />
+      </PullToRefreshProvider>
+    );
+  },
+);
+PullToRefreshRoot.displayName = "PullToRefreshRoot";
 
 export interface PullToRefreshIndicatorProps {
   children: (props: PullToRefreshIndicatorRenderProps) => React.ReactNode;
@@ -28,15 +57,14 @@ export const PullToRefreshIndicator = ({ children }: PullToRefreshIndicatorProps
   return <div {...indicatorProps}>{children(getIndicatorRenderProps())}</div>;
 };
 
-export interface PullToRefreshContainerProps
+export interface PullToRefreshContentProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLDivElement> {}
 
-export const PullToRefreshContainer = forwardRef<HTMLDivElement, PullToRefreshContainerProps>(
+export const PullToRefreshContent = forwardRef<HTMLDivElement, PullToRefreshContentProps>(
   (props, ref) => {
-    const { refs, containerProps } = usePullToRefreshContext();
-    const mergedProps = mergeProps(containerProps, props);
-    return <Primitive.div ref={composeRefs(refs.containerRef, ref)} {...mergedProps} />;
+    const { contentProps } = usePullToRefreshContext();
+    return <Primitive.div ref={ref} {...mergeProps(contentProps, props)} />;
   },
 );
-PullToRefreshContainer.displayName = "PullToRefreshContainer";
+PullToRefreshContent.displayName = "PullToRefreshContent";

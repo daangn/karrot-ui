@@ -3,8 +3,12 @@ import type React from "react";
 import * as styles from "./List.css";
 import { forwardRef } from "react";
 
-export function List({ children }: React.PropsWithChildren<{}>) {
-  return <div className={styles.root}>{children}</div>;
+export function List({ children, ...otherProps }: React.PropsWithChildren<{}>) {
+  return (
+    <div className={styles.root} {...otherProps}>
+      {children}
+    </div>
+  );
 }
 
 interface ListItemProps {

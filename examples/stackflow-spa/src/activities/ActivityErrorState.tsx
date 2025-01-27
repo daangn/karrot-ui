@@ -16,7 +16,12 @@ const ActivityErrorState: ActivityComponentType = () => {
         </AppBarLeft>
         <AppBarTitle>Error State</AppBarTitle>
       </AppBar>
-      <AppScreenContent>
+      <AppScreenContent
+        ptr
+        onPtrRefresh={async () => {
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+        }}
+      >
         <ErrorState
           variant={variant}
           title={hideAppBarTitle ? undefined : "에러 타이틀"}

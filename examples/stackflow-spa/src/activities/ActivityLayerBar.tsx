@@ -10,11 +10,10 @@ import {
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
 import { IconBellLine } from "@daangn/react-monochrome-icon";
-import { theme } from "../stackflow/theme";
 
 const ActivityLayerBar: ActivityComponentType = () => {
   return (
-    <AppScreen theme={theme}>
+    <AppScreen>
       <AppBar tone="layer">
         <AppBarLeft>
           <BackButton />

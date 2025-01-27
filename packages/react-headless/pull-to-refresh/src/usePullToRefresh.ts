@@ -1,4 +1,4 @@
-import { elementProps } from "@seed-design/dom-utils";
+import { dataAttr, elementProps } from "@seed-design/dom-utils";
 import { useRef, useState, useSyncExternalStore } from "react";
 import { Store } from "./store";
 
@@ -15,9 +15,31 @@ interface UsePullToRefreshStateProps {
    */
   displacementMultiplier?: number;
 
-  onReady?: () => void;
+  /**
+   * Callback when the pull-to-refresh has started to pull.
+   */
+  onPtrPullStart?: (ctx: PullToRefreshContext) => void;
 
-  onRefresh?: () => Promise<void>;
+  /**
+   * Callback when the pull-to-refresh is moving during the pull.
+   */
+  onPtrPullMove?: (ctx: PullToRefreshContext) => void;
+
+  /**
+   * Callback when the pull-to-refresh is released.
+   * It does not matter if it is ready or not. If you want to handle the refresh, use `onPtrRefresh`.
+   */
+  onPtrPullEnd?: (ctx: PullToRefreshContext) => void;
+
+  /**
+   * Callback when the pull-to-refresh is pulled over the threshold.
+   */
+  onPtrReady?: () => void;
+
+  /**
+   * Callback when the pull-to-refresh is released after ready.
+   */
+  onPtrRefresh?: () => Promise<void>;
 }
 
 interface PullToRefreshContext {
@@ -45,11 +67,11 @@ const useContextStore = () => {
 };
 
 function usePullToRefreshState(props: UsePullToRefreshStateProps) {
-  const threshold = props.threshold ?? 80;
+  const threshold = props.threshold ?? 44;
   const displacementMultiplier = props.displacementMultiplier ?? 0.5;
 
   const [state, setState] = useState<PullToRefreshState>("idle");
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
 
   function setContext({ y0, displacement }: Omit<PullToRefreshContext, "displacementRatio">) {
     contextStore.setState({
@@ -57,37 +79,40 @@ function usePullToRefreshState(props: UsePullToRefreshStateProps) {
       displacement,
       displacementRatio: Math.min(displacement / threshold, 1),
     });
-    containerRef.current?.style.setProperty("--ptr-displacement", `${displacement}px`);
+    rootRef.current?.style.setProperty("--ptr-displacement", `${displacement}px`);
   }
 
   const events = {
-    start: ({ y0 }: { y0: number }) => {
-      if (state !== "idle") {
-        return;
+    move: ({ y, scrollTop }: { y: number; scrollTop: number }) => {
+      if (state === "idle") {
+        if (scrollTop <= 0) {
+          setContext({ y0: y, displacement: 0 });
+          props.onPtrPullStart?.(contextStore.getState());
+          setState("pulling");
+        }
       }
-      setContext({ y0, displacement: 0 });
-      setState("pulling");
-    },
-    move: ({ y }: { y: number }) => {
-      if (state !== "pulling" && state !== "ready") {
-        return;
-      }
+      if (state === "pulling" || state === "ready") {
+        const { y0 } = contextStore.getState();
+        const displacement = (y - y0) * displacementMultiplier;
+        setContext({ y0, displacement });
+        props.onPtrPullMove?.(contextStore.getState());
 
-      const { y0 } = contextStore.getState();
-      const displacement = (y - y0) * displacementMultiplier;
-      setContext({ y0, displacement });
-
-      if (displacement > threshold) {
-        setState("ready");
-        props.onReady?.();
-      } else {
-        setState("pulling");
+        if (displacement > threshold) {
+          setState("ready");
+          props.onPtrReady?.();
+        } else {
+          setState("pulling");
+        }
       }
     },
     end: () => {
-      if (state === "ready" && props.onRefresh) {
+      if (state === "pulling" || state === "ready") {
+        props.onPtrPullEnd?.(contextStore.getState());
+      }
+      if (state === "ready" && props.onPtrRefresh) {
         setState("loading");
-        props.onRefresh().then(() => {
+        setContext({ y0: 0, displacement: threshold });
+        props.onPtrRefresh().then(() => {
           setState("idle");
           setContext({ y0: 0, displacement: 0 });
         });
@@ -100,7 +125,8 @@ function usePullToRefreshState(props: UsePullToRefreshStateProps) {
 
   return {
     state,
-    refs: { containerRef },
+    threshold,
+    refs: { root: rootRef },
     events,
   };
 }
@@ -110,65 +136,70 @@ export interface UsePullToRefreshProps extends UsePullToRefreshStateProps {}
 export interface PullToRefreshIndicatorRenderProps {
   minValue: number;
   maxValue: number;
-  value: number;
+  value: number | undefined;
 }
 
 export type UsePullToRefreshReturn = ReturnType<typeof usePullToRefresh>;
 
 export function usePullToRefresh(props: UsePullToRefreshProps) {
-  const { state, refs, events } = usePullToRefreshState(props);
+  const { state, threshold, refs, events } = usePullToRefreshState(props);
 
+  const isDragging = state === "pulling" || state === "ready";
   const stateProps = elementProps({
     "data-ptr-state": state,
+    "data-ptr-dragging": dataAttr(isDragging),
   });
-  const isDragging = state === "pulling" || state === "ready";
 
   return {
     state,
 
     refs,
     stateProps,
-    getIndicatorRenderProps: () => {
-      const ctx = useContextStore();
-      return {
-        minValue: 0,
-        maxValue: 100,
-        value: ctx.displacementRatio * 100,
-        style: {
-          opacity: ctx.displacementRatio,
-        },
-      };
-    },
-    indicatorProps: elementProps({
+    rootProps: elementProps({
       ...stateProps,
-      style: {
-        position: "relative",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "var(--ptr-size, 44px)",
-        marginBottom: "calc(var(--ptr-size, 44px) * -1)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      },
-    }),
-    containerProps: elementProps({
-      ...stateProps,
-      onTouchStart: (e: React.TouchEvent) => {
-        events.start({ y0: e.touches[0].clientY });
-      },
       onTouchMove: (e: React.TouchEvent) => {
-        events.move({ y: e.touches[0].clientY });
+        events.move({ y: e.touches[0].clientY, scrollTop: e.currentTarget.scrollTop });
       },
       onTouchEnd: () => {
         events.end();
       },
       style: {
-        transform: "translateY(var(--ptr-displacement, 0))",
-        transition: isDragging ? "none" : "transform var(--ptr-transition-duration, 0.3s)",
         overscrollBehaviorY: "none",
         overflowY: "auto",
+      },
+    }),
+    indicatorProps: elementProps({
+      ...stateProps,
+      style: {
+        pointerEvents: "none",
+        touchAction: "none",
+        position: "relative",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: `var(--ptr-size, ${threshold}px)`,
+        marginBottom: `calc(var(--ptr-size, ${threshold}px) * -1)`,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    }),
+    getIndicatorRenderProps: () => {
+      const ctx = useContextStore();
+      return {
+        minValue: 0,
+        maxValue: 100,
+        value: state === "loading" ? undefined : ctx.displacementRatio * 100,
+        style: {
+          opacity: ctx.displacementRatio,
+        },
+      };
+    },
+    contentProps: elementProps({
+      ...stateProps,
+      style: {
+        transform: state === "idle" ? undefined : "translateY(var(--ptr-displacement, 0))",
+        transition: isDragging ? "none" : "transform var(--ptr-transition-duration, 0.3s)",
       },
     }),
   };

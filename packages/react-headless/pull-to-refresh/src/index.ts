@@ -1,10 +1,10 @@
 export {
-  PullToRefreshRoot,
+  PullToRefreshContent,
   PullToRefreshIndicator,
-  PullToRefreshContainer,
-  type PullToRefreshRootProps,
+  PullToRefreshRoot,
+  type PullToRefreshContentProps,
   type PullToRefreshIndicatorProps,
-  type PullToRefreshContainerProps,
+  type PullToRefreshRootProps,
 } from "./PullToRefresh";
 
 export {

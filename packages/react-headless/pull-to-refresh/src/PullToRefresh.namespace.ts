@@ -1,8 +1,8 @@
 export {
-  PullToRefreshRoot as Root,
+  PullToRefreshContent as Content,
   PullToRefreshIndicator as Indicator,
-  PullToRefreshContainer as Container,
-  type PullToRefreshRootProps as RootProps,
+  PullToRefreshRoot as Root,
+  type PullToRefreshContentProps as ContentProps,
   type PullToRefreshIndicatorProps as IndicatorProps,
-  type PullToRefreshContainerProps as ContainerProps,
+  type PullToRefreshRootProps as RootProps,
 } from "./PullToRefresh";

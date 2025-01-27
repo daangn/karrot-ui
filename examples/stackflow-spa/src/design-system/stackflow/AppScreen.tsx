@@ -32,19 +32,33 @@ export const AppScreen = forwardRef<HTMLDivElement, AppScreenProps>(
 );
 AppScreen.displayName = "AppScreen";
 
-export interface AppScreenContentProps extends SeedAppScreen.LayerProps {}
+export interface AppScreenContentProps extends SeedAppScreen.LayerProps {
+  ptr?: boolean;
+
+  onPtrReady?: () => void;
+
+  onPtrRefresh?: () => Promise<void>;
+}
 
 export const AppScreenContent = forwardRef<HTMLDivElement, AppScreenContentProps>(
-  ({ children, ...otherProps }, ref) => {
+  ({ children, ptr, onPtrReady, onPtrRefresh, ...otherProps }, ref) => {
+    if (!ptr) {
+      return (
+        <SeedAppScreen.Layer ref={ref} {...otherProps}>
+          {children}
+        </SeedAppScreen.Layer>
+      );
+    }
+
     return (
-      <PullToRefresh.Root>
+      <PullToRefresh.Root asChild onPtrReady={onPtrReady} onPtrRefresh={onPtrRefresh}>
         <SeedAppScreen.Layer ref={ref} {...otherProps}>
           <PullToRefresh.Indicator>
             {(props) => <ProgressCircle tone="brand" {...props} />}
           </PullToRefresh.Indicator>
-          <PullToRefresh.Container style={{ height: "100%" }}>{children}</PullToRefresh.Container>
+          <PullToRefresh.Content asChild>{children}</PullToRefresh.Content>
+          <Debug />
         </SeedAppScreen.Layer>
-        <Debug />
       </PullToRefresh.Root>
     );
   },
