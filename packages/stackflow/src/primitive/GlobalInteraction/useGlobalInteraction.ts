@@ -149,6 +149,12 @@ export function useGlobalInteraction() {
   );
 
   const stack = useStack();
+  if (!stack) {
+    throw new Error(
+      "useStack is not available in the context. Make sure you are using @stackflow/react >= 1.4.1. (https://github.com/daangn/stackflow/blob/main/integrations/react/CHANGELOG.md#141)",
+    );
+  }
+
   const [topEl, setTopEl] = useState<HTMLElement | null>(null);
   const topId = stack.activities.find((activity) => activity.isTop)?.id;
   const topActivity = stack.activities.find((activity) => activity.isTop);

@@ -44,7 +44,7 @@
     "@stackflow/core": "^1.1.0",
     "@stackflow/plugin-basic-ui": "^1.10.0",
     "@stackflow/plugin-renderer-basic": "^1.1.13",
-    "@stackflow/react": "^1.4.0",
+    "@stackflow/react": "^1.4.1",
     "change-case": "^5.4.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
