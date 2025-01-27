@@ -1,7 +1,7 @@
 import { elementProps } from "@seed-design/dom-utils";
 import { useMemo, useState } from "react";
 import { useAppScreenContext } from "../AppScreen";
-import { useElementOffset } from "./useElementOffset";
+import { useElementOffset } from "../private/useElementOffset";
 
 // biome-ignore lint/suspicious/noEmptyInterface: intentionally empty for future extension
 export interface UseAppBarProps {}

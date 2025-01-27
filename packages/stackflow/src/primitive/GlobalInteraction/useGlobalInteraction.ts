@@ -1,6 +1,6 @@
 import { useCallbackRef } from "@radix-ui/react-use-callback-ref";
-import { useStack } from "@stackflow/react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
+import { useTopActivity } from "../private/useTopActivity";
 
 export type SwipeBackState = "idle" | "swiping" | "transitioning";
 
@@ -151,32 +151,15 @@ export function useGlobalInteraction() {
     [setSwipeBackContext],
   );
 
-  const stack = useStack();
-  if (!stack) {
-    throw new Error(
-      "useStack is not available in the context. Make sure you are using @stackflow/react >= 1.4.1. (https://github.com/daangn/stackflow/blob/main/integrations/react/CHANGELOG.md#141)",
-    );
-  }
-
-  const [topEl, setTopEl] = useState<HTMLElement | null>(null);
-  const topId = stack.activities.find((activity) => activity.isTop)?.id;
-  const topActivity = stack.activities.find((activity) => activity.isTop);
-  const globalTransitionState = topActivity?.transitionState ?? "enter-done";
-  const topActivityType = topEl?.dataset["activityType"];
-
-  useEffect(() => {
-    if (!topId) return;
-
-    setTopEl(document.getElementById(topId));
-  }, [topId]);
+  const topActivity = useTopActivity();
 
   const stackProps = useMemo(
     () => ({
       "data-swipe-back-state": swipeBackState,
-      "data-global-transition-state": globalTransitionState,
-      "data-top-activity-type": topActivityType,
+      "data-global-transition-state": topActivity.transitionState,
+      "data-top-activity-type": topActivity.activityType,
     }),
-    [swipeBackState, globalTransitionState, topActivityType],
+    [swipeBackState, topActivity.transitionState, topActivity.activityType],
   ) as React.HTMLAttributes<HTMLElement>;
 
   return useMemo(
