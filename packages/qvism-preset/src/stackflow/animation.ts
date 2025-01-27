@@ -142,4 +142,24 @@ export const fadeFromBottomAndroidAnimations = {
       translateY: "8vh",
     },
   }),
+  dim: fadeFromBottomAndroidPresence.getAnimations({
+    in: {
+      opacity: "1",
+      translateY: "-8vh",
+    },
+    out: {
+      opacity: "0",
+      translateY: "0",
+    },
+  }),
+  appBar: fadeFromBottomAndroidPresence.getAnimations({
+    in: {
+      opacity: "1",
+      translateY: "0",
+    },
+    out: {
+      opacity: "0",
+      translateY: "8vh",
+    },
+  }),
 };

@@ -4597,11 +4597,6 @@
   --app-bar-height: 56px;
 }
 
-.appScreen__dim--theme_android {
-  height: var(--screen-height, 8vh);
-  background: linear-gradient(var(--seed-v3-color-bg-overlay), #0000);
-}
-
 .appScreen__edge--theme_android {
   display: none;
 }
@@ -4722,6 +4717,32 @@
   --z-index-layer: calc(var(--z-index-base)  + 3);
   --z-index-edge: calc(var(--z-index-base)  + 4);
   --z-index-app-bar: calc(var(--z-index-base)  + 4);
+}
+
+.appScreen__dim--transitionStyle_fadeFromBottomAndroid {
+  background: linear-gradient(var(--seed-v3-color-bg-overlay), #0000);
+  height: 160px;
+  top: 0;
+}
+
+[data-global-transition-state="enter-active"] .appScreen__dim--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.23, .1, .32, 1) seed-enter;
+  transform: translate3d(0, -8vh, 0);
+}
+
+[data-global-transition-state="exit-active"] .appScreen__dim--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .15s linear forwards seed-exit;
+  transform: translate3d(0, -8vh, 0);
 }
 
 .appScreen__layer--transitionStyle_fadeFromBottomAndroid {
@@ -5030,6 +5051,26 @@
   padding-inline: var(--seed-v3-dimension-s4);
 }
 
+[data-global-transition-state="enter-active"] .appBar__root--theme_android[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 8vh;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.23, .1, .32, 1) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appBar__root--theme_android[data-activity-is-top] {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 8vh;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .15s linear forwards seed-exit;
+  transform: translate3d(0, 0, 0);
+}
+
 .appBar__iconButton--theme_android {
   width: 40px;
   height: 40px;
@@ -5048,11 +5089,12 @@
   height: 24px;
 }
 
+.appBar__left--theme_android {
+  padding-right: 16px;
+}
+
 .appBar__title--theme_android {
-  box-sizing: border-box;
-  justify-content: flex-start;
   width: 100%;
-  padding-left: 16px;
 }
 
 .appBar__titleText--theme_android {

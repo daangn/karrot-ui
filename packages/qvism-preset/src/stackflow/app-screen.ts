@@ -75,10 +75,6 @@ export const appScreen = defineRecipe({
         root: {
           "--app-bar-height": navVars.themeAndroid.enabled.root.minHeight,
         },
-        dim: {
-          height: "var(--screen-height, 8vh)",
-          background: `linear-gradient(${vars.$color.bg.overlay}, rgba(0, 0, 0, 0))`,
-        },
         edge: {
           display: "none",
         },
@@ -120,6 +116,13 @@ export const appScreen = defineRecipe({
           "--z-index-layer": "calc(var(--z-index-base) + 3)",
           "--z-index-edge": "calc(var(--z-index-base) + 4)",
           "--z-index-app-bar": "calc(var(--z-index-base) + 4)",
+        },
+        dim: {
+          top: 0,
+          height: "160px",
+          background: `linear-gradient(${vars.$color.bg.overlay}, rgba(0, 0, 0, 0))`,
+          [push]: fadeFromBottomAndroidAnimations.dim.push,
+          [pop]: fadeFromBottomAndroidAnimations.dim.pop,
         },
         layer: {
           opacity: 1,
@@ -308,6 +311,9 @@ export const appBar = defineRecipe({
         root: {
           height: navVars.themeAndroid.enabled.root.minHeight,
           paddingInline: navVars.themeAndroid.enabled.root.paddingX,
+
+          [push]: fadeFromBottomAndroidAnimations.appBar.push,
+          [pop]: fadeFromBottomAndroidAnimations.appBar.pop,
         },
         iconButton: {
           width: navVars.themeAndroid.enabled.icon.targetSize,
@@ -324,11 +330,11 @@ export const appBar = defineRecipe({
           width: navVars.themeAndroid.enabled.icon.size,
           height: navVars.themeAndroid.enabled.icon.size,
         },
+        left: {
+          paddingRight: "16px",
+        },
         title: {
           width: "100%",
-          justifyContent: "flex-start",
-          paddingLeft: "16px",
-          boxSizing: "border-box",
         },
         titleText: {
           fontSize: navVars.themeAndroid.enabled.title.fontSize,
