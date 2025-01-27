@@ -11,6 +11,10 @@ declare interface AppScreenVariant {
   * @default appBar
   */
   layerOffsetTop: "none" | "safeArea" | "appBar";
+/**
+  * @default none
+  */
+  layerOffsetBottom: "none" | "safeArea";
 }
 
 declare type AppScreenVariantMap = {

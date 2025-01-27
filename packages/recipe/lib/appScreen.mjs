@@ -24,7 +24,8 @@ const appScreenSlotNames = [
 const defaultVariant = {
   "theme": "cupertino",
   "transitionStyle": "slideFromRightIOS",
-  "layerOffsetTop": "appBar"
+  "layerOffsetTop": "appBar",
+  "layerOffsetBottom": "none"
 };
 
 const compoundVariants = [];
@@ -42,6 +43,10 @@ export const appScreenVariantMap = {
     "none",
     "safeArea",
     "appBar"
+  ],
+  "layerOffsetBottom": [
+    "none",
+    "safeArea"
   ]
 };
 
