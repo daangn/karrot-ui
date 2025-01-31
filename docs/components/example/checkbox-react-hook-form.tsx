@@ -3,6 +3,7 @@
 import { useController, useForm } from "react-hook-form";
 import { Checkbox } from "seed-design/ui/checkbox";
 import { ActionButton } from "seed-design/ui/action-button";
+import { Column, Columns, Stack } from "seed-design/ui/layout";
 import { useCallback, type FormEvent } from "react";
 
 const POSSIBLE_FRUIT_VALUES = ["apple", "melon", "mango"] as const;
@@ -31,14 +32,13 @@ export default function CheckboxReactHookForm() {
   );
 
   return (
-    <form className="flex flex-col gap-3 w-96" onSubmit={handleSubmit(onValid)} onReset={onReset}>
-      <div className="flex flex-col">
+    <Stack gap="s3" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+      <Stack>
         {POSSIBLE_FRUIT_VALUES.map((name) => {
           const {
             field: { value, ...restProps },
             fieldState: { invalid },
           } = useController({ name, control });
-
           return (
             <Checkbox
               key={name}
@@ -49,18 +49,22 @@ export default function CheckboxReactHookForm() {
             />
           );
         })}
-      </div>
-      <div className="flex gap-2">
-        <ActionButton type="submit" className="grow">
-          제출
-        </ActionButton>
-        <ActionButton type="button" variant="neutralWeak" onClick={() => setValue("mango", true)}>
-          mango 선택
-        </ActionButton>
-        <ActionButton type="reset" variant="neutralWeak">
-          초기화
-        </ActionButton>
-      </div>
-    </form>
+      </Stack>
+      <Columns gap="s2">
+        <Column width="content">
+          <ActionButton type="reset" variant="neutralWeak">
+            초기화
+          </ActionButton>
+        </Column>
+        <Column width="content">
+          <ActionButton type="button" variant="neutralWeak" onClick={() => setValue("mango", true)}>
+            mango 선택
+          </ActionButton>
+        </Column>
+        <Column>
+          <ActionButton type="submit">제출</ActionButton>
+        </Column>
+      </Columns>
+    </Stack>
   );
 }

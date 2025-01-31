@@ -1,4 +1,4 @@
-import { Stack } from "@/registry/ui/layout";
+import { Stack } from "seed-design/ui/layout";
 import { Callout, DismissibleCallout } from "seed-design/ui/callout";
 
 export default function CalloutLinkLabelAsChild() {

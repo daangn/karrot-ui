@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex } from "@/registry/ui/layout";
+import { Flex } from "seed-design/ui/layout";
 import { ActionButton } from "seed-design/ui/action-button";
 import {
   Snackbar,

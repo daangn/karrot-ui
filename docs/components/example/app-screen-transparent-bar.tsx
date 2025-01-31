@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex } from "@/registry/ui/layout";
+import { Flex } from "seed-design/ui/layout";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import type { ActivityComponentType } from "@stackflow/react/future";
 import {

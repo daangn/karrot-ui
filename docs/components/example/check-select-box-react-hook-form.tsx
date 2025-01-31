@@ -32,48 +32,42 @@ export default function CheckSelectBoxReactHookForm() {
   );
 
   return (
-    <form onSubmit={handleSubmit(onValid)} onReset={onReset}>
-      <Stack gap="s3" width="384px">
-        <CheckSelectBoxGroup>
-          <Stack gap="spacingY.componentDefault">
-            {POSSIBLE_FRUIT_VALUES.map((name) => {
-              const {
-                field: { value, ...restProps },
-                fieldState: { invalid },
-              } = useController({ name, control });
+    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+      <CheckSelectBoxGroup>
+        <Stack gap="spacingY.componentDefault">
+          {POSSIBLE_FRUIT_VALUES.map((name) => {
+            const {
+              field: { value, ...restProps },
+              fieldState: { invalid },
+            } = useController({ name, control });
 
-              return (
-                <CheckSelectBox
-                  key={name}
-                  label={name}
-                  checked={value}
-                  inputProps={restProps}
-                  invalid={invalid}
-                />
-              );
-            })}
-          </Stack>
-        </CheckSelectBoxGroup>
-        <Columns gap="s2">
-          <Column>
-            <ActionButton type="submit">제출</ActionButton>
-          </Column>
-          <Column width="content">
-            <ActionButton
-              type="button"
-              variant="neutralWeak"
-              onClick={() => setValue("mango", true)}
-            >
-              mango 선택
-            </ActionButton>
-          </Column>
-          <Column width="content">
-            <ActionButton type="reset" variant="neutralWeak">
-              초기화
-            </ActionButton>
-          </Column>
-        </Columns>
-      </Stack>
-    </form>
+            return (
+              <CheckSelectBox
+                key={name}
+                label={name}
+                checked={value}
+                inputProps={restProps}
+                invalid={invalid}
+              />
+            );
+          })}
+        </Stack>
+      </CheckSelectBoxGroup>
+      <Columns gap="s2">
+        <Column width="content">
+          <ActionButton type="reset" variant="neutralWeak">
+            초기화
+          </ActionButton>
+        </Column>
+        <Column width="content">
+          <ActionButton type="button" variant="neutralWeak" onClick={() => setValue("mango", true)}>
+            mango 선택
+          </ActionButton>
+        </Column>
+        <Column>
+          <ActionButton type="submit">제출</ActionButton>
+        </Column>
+      </Columns>
+    </Stack>
   );
 }

@@ -3,6 +3,7 @@
 import { ActionButton } from "seed-design/ui/action-button";
 import { useController, useForm } from "react-hook-form";
 import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
+import { Column, Columns, Stack } from "seed-design/ui/layout";
 import { useCallback, type FormEvent, type KeyboardEvent } from "react";
 
 interface FormValues {
@@ -61,43 +62,47 @@ export default function MultilineTextFieldReactHookForm() {
   );
 
   return (
-    <form
-      className="grid grid-cols-2 gap-3 w-full"
-      onSubmit={handleSubmit(onValid)}
-      onReset={onReset}
-    >
-      <TextField
-        label="자기소개"
-        indicator="(필수)"
-        description="자기소개를 써주세요"
-        invalid={bioFieldState.invalid}
-        errorMessage={bioFieldState.error?.message}
-        required
-        {...bioField}
-      >
-        <TextFieldTextarea placeholder="저는…" onKeyDown={onMetaReturn} />
-      </TextField>
-      <TextField
-        label="주소"
-        indicator="(필수)"
-        description="주소를 써주세요"
-        invalid={addressFieldState.invalid}
-        errorMessage={addressFieldState.error?.message}
-        maxGraphemeCount={30}
-        onValueChange={({ slicedValue }) => addressOnChange(slicedValue)}
-        required
-        {...addressField}
-      >
-        <TextFieldTextarea placeholder="대한민국" onKeyDown={onMetaReturn} />
-      </TextField>
-      <div className="col-span-2 flex gap-2">
-        <ActionButton type="submit" className="grow">
-          제출
-        </ActionButton>
-        <ActionButton type="reset" variant="neutralWeak">
-          초기화
-        </ActionButton>
-      </div>
-    </form>
+    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+      <Columns gap="s2">
+        <Column>
+          <TextField
+            label="자기소개"
+            indicator="(필수)"
+            description="자기소개를 써주세요"
+            invalid={bioFieldState.invalid}
+            errorMessage={bioFieldState.error?.message}
+            required
+            {...bioField}
+          >
+            <TextFieldTextarea placeholder="저는…" onKeyDown={onMetaReturn} />
+          </TextField>
+        </Column>
+        <Column>
+          <TextField
+            label="주소"
+            indicator="(필수)"
+            description="주소를 써주세요"
+            invalid={addressFieldState.invalid}
+            errorMessage={addressFieldState.error?.message}
+            maxGraphemeCount={30}
+            onValueChange={({ slicedValue }) => addressOnChange(slicedValue)}
+            required
+            {...addressField}
+          >
+            <TextFieldTextarea placeholder="대한민국" onKeyDown={onMetaReturn} />
+          </TextField>
+        </Column>
+      </Columns>
+      <Columns gap="s2">
+        <Column width="content">
+          <ActionButton type="reset" variant="neutralWeak">
+            초기화
+          </ActionButton>
+        </Column>
+        <Column>
+          <ActionButton type="submit">제출</ActionButton>
+        </Column>
+      </Columns>
+    </Stack>
   );
 }

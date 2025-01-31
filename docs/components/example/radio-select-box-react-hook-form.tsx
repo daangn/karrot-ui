@@ -33,35 +33,33 @@ export default function RadioSelectBoxReactHookForm() {
   );
 
   return (
-    <form onSubmit={handleSubmit(onValid)} onReset={onReset}>
-      <Stack gap="s3" width="384px">
-        <RadioSelectBoxRoot aria-label="Fruit" {...field}>
-          <Stack gap="spacingY.componentDefault">
-            {POSSIBLE_FRUIT_VALUES.map((value) => (
-              <RadioSelectBoxItem key={value} value={value} label={value} />
-            ))}
-          </Stack>
-        </RadioSelectBoxRoot>
-        <Columns gap="s2">
-          <Column>
-            <ActionButton type="submit">제출</ActionButton>
-          </Column>
-          <Column width="content">
-            <ActionButton
-              type="button"
-              variant="neutralWeak"
-              onClick={() => setValue("fruit", "mango")}
-            >
-              mango 선택
-            </ActionButton>
-          </Column>
-          <Column width="content">
-            <ActionButton type="reset" variant="neutralWeak">
-              초기화
-            </ActionButton>
-          </Column>
-        </Columns>
-      </Stack>
-    </form>
+    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+      <RadioSelectBoxRoot aria-label="Fruit" {...field}>
+        <Stack gap="spacingY.componentDefault">
+          {POSSIBLE_FRUIT_VALUES.map((value) => (
+            <RadioSelectBoxItem key={value} value={value} label={value} />
+          ))}
+        </Stack>
+      </RadioSelectBoxRoot>
+      <Columns gap="s2">
+        <Column width="content">
+          <ActionButton type="reset" variant="neutralWeak">
+            초기화
+          </ActionButton>
+        </Column>
+        <Column width="content">
+          <ActionButton
+            type="button"
+            variant="neutralWeak"
+            onClick={() => setValue("fruit", "mango")}
+          >
+            mango 선택
+          </ActionButton>
+        </Column>
+        <Column>
+          <ActionButton type="submit">제출</ActionButton>
+        </Column>
+      </Columns>
+    </Stack>
   );
 }

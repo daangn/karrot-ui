@@ -2,6 +2,7 @@
 
 import { ActionButton } from "seed-design/ui/action-button";
 import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
+import { Column, Columns, Inline, Stack } from "seed-design/ui/layout";
 import { useState, useCallback, type FormEvent } from "react";
 
 interface FormValues {
@@ -80,38 +81,46 @@ export default function MultilineTextFieldForm() {
   };
 
   return (
-    <form className="grid grid-cols-2 gap-3 w-full" onSubmit={handleSubmit} onReset={handleReset}>
-      <TextField
-        label="자기소개"
-        indicator="(필수)"
-        description="자기소개를 써주세요"
-        required
-        value={formValues.bio}
-        onValueChange={({ value }) => handleNameChange(value)}
-        {...(fieldErrors.bio && { invalid: true, errorMessage: fieldErrors.bio })}
-      >
-        <TextFieldTextarea placeholder="저는…" />
-      </TextField>
-      <TextField
-        label="주소"
-        indicator="(필수)"
-        description="주소를 써주세요"
-        maxGraphemeCount={30}
-        required
-        value={formValues.address}
-        onValueChange={({ slicedValue }) => handleAddressChange(slicedValue)}
-        {...(fieldErrors.address && { invalid: true, errorMessage: fieldErrors.address })}
-      >
-        <TextFieldTextarea placeholder="대한민국" />
-      </TextField>
-      <div className="col-span-2 flex gap-2">
-        <ActionButton type="submit" className="grow">
-          제출
-        </ActionButton>
-        <ActionButton type="reset" variant="neutralWeak">
-          초기화
-        </ActionButton>
-      </div>
-    </form>
+    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit} onReset={handleReset}>
+      <Columns gap="s2">
+        <Column>
+          <TextField
+            label="자기소개"
+            indicator="(필수)"
+            description="자기소개를 써주세요"
+            required
+            value={formValues.bio}
+            onValueChange={({ value }) => handleNameChange(value)}
+            {...(fieldErrors.bio && { invalid: true, errorMessage: fieldErrors.bio })}
+          >
+            <TextFieldTextarea placeholder="저는…" />
+          </TextField>
+        </Column>
+        <Column>
+          <TextField
+            label="주소"
+            indicator="(필수)"
+            description="주소를 써주세요"
+            maxGraphemeCount={30}
+            required
+            value={formValues.address}
+            onValueChange={({ slicedValue }) => handleAddressChange(slicedValue)}
+            {...(fieldErrors.address && { invalid: true, errorMessage: fieldErrors.address })}
+          >
+            <TextFieldTextarea placeholder="대한민국" />
+          </TextField>
+        </Column>
+      </Columns>
+      <Columns gap="s2">
+        <Column width="content">
+          <ActionButton type="reset" variant="neutralWeak">
+            초기화
+          </ActionButton>
+        </Column>
+        <Column>
+          <ActionButton type="submit">제출</ActionButton>
+        </Column>
+      </Columns>
+    </Stack>
   );
 }
