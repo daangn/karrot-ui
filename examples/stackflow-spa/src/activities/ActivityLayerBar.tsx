@@ -3,7 +3,7 @@ import {
   AppBar,
   AppBarLeft,
   AppBarRight,
-  AppBarTitle,
+  AppBarMain,
   AppBarBackButton,
   AppBarIconButton,
 } from "../design-system/stackflow/AppBar";
@@ -18,7 +18,7 @@ const ActivityLayerBar: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>Random Long Title Hello World</AppBarTitle>
+        <AppBarMain>Random Long Title Hello World</AppBarMain>
         <AppBarRight>
           <AppBarIconButton>
             <IconBellLine />

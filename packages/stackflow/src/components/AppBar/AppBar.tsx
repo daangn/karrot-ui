@@ -7,14 +7,44 @@ import { forwardRef } from "react";
 import { AppBar as AppBarPrimitive } from "../../primitive";
 import { useAppBarContext } from "../../primitive/AppBar/useAppBarContext";
 import { createStyleContext } from "../../utils/createStyleContext";
+import { appBarMain, type AppBarMainVariantProps } from "@seed-design/recipe/appBarMain";
 
-const { PropsProvider, withProvider, withContext, useClassNames } = createStyleContext(appBar);
+const { PropsProvider, ClassNamesProvider, useProps, withContext, useClassNames } =
+  createStyleContext(appBar);
+const {
+  PropsProvider: MainPropsProvider,
+  withProvider: withMainProvider,
+  withContext: withMainContext,
+} = createStyleContext(appBarMain);
 
 export const AppBarPropsProvider = PropsProvider;
 
 export interface AppBarProps extends AppBarVariantProps, AppBarPrimitive.RootProps {}
 
-export const AppBarRoot = withProvider<HTMLDivElement, AppBarProps>(AppBarPrimitive.Root, "root");
+export const AppBarRoot = forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
+  const contextProps = useProps();
+  const [variantProps, otherProps] = appBar.splitVariantProps({ ...contextProps, ...props });
+
+  const classNames = appBar(variantProps);
+
+  return (
+    <ClassNamesProvider value={classNames}>
+      <MainPropsProvider
+        value={{
+          theme: variantProps.theme,
+          transitionStyle: variantProps.transitionStyle,
+          tone: variantProps.tone,
+        }}
+      >
+        <AppBarPrimitive.Root
+          ref={ref}
+          {...mergeProps({ className: classNames.root }, otherProps)}
+        />
+      </MainPropsProvider>
+    </ClassNamesProvider>
+  );
+});
+AppBarRoot.displayName = "AppBarRoot";
 
 export interface AppBarLeftProps extends AppBarPrimitive.LeftProps {}
 
@@ -30,38 +60,27 @@ export const AppBarRight = withContext<HTMLDivElement, AppBarRightProps>(
   "right",
 );
 
-export interface AppBarTitleProps extends AppBarPrimitive.TitleProps {}
+export interface AppBarMainProps extends AppBarMainVariantProps, AppBarPrimitive.MainProps {}
 
-export const AppBarTitle = withContext<HTMLDivElement, AppBarTitleProps>(
-  AppBarPrimitive.Title,
+export const AppBarMain = withMainProvider<HTMLDivElement, AppBarMainProps>(
+  AppBarPrimitive.Main,
+  "root",
+);
+
+export interface AppBarTitleProps extends PrimitiveProps, React.HTMLAttributes<HTMLSpanElement> {}
+
+export const AppBarTitle = withMainContext<HTMLSpanElement, AppBarTitleProps>(
+  Primitive.span,
   "title",
 );
 
-export interface AppBarTitleMainProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLDivElement> {}
-
-export const AppBarTitleMain = withContext<HTMLDivElement, AppBarTitleMainProps>(
-  Primitive.div,
-  "titleMain",
-);
-
-export interface AppBarTitleTextProps
+export interface AppBarSubtitleProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const AppBarTitleText = withContext<HTMLSpanElement, AppBarTitleTextProps>(
+export const AppBarSubtitle = withMainContext<HTMLSpanElement, AppBarSubtitleProps>(
   Primitive.span,
-  "titleText",
-);
-
-export interface AppBarSubtitleTextProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const AppBarSubtitleText = withContext<HTMLSpanElement, AppBarSubtitleTextProps>(
-  Primitive.span,
-  "subtitleText",
+  "subtitle",
 );
 
 export interface AppBarIconButtonProps

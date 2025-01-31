@@ -117,6 +117,28 @@
           }
         }
       },
+      "$font-size.s2-static": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 12,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "$font-size.s5-static": {
+        "values": {
+          "default": {
+            "type": "dimension",
+            "value": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      },
       "$font-size.s6-static": {
         "values": {
           "default": {

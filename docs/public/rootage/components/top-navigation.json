@@ -11,10 +11,6 @@
           "minHeight": "44px",
           "paddingX": "$dimension.s4"
         },
-        "title": {
-          "fontSize": "$font-size.s6-static",
-          "fontWeight": "$font-weight.bold"
-        },
         "icon": {
           "size": "24px",
           "targetSize": "40px"
@@ -26,10 +22,6 @@
         "root": {
           "minHeight": "56px",
           "paddingX": "$dimension.s4"
-        },
-        "title": {
-          "fontSize": "$font-size.s6-static",
-          "fontWeight": "$font-weight.bold"
         },
         "icon": {
           "size": "24px",
@@ -45,6 +37,9 @@
         "title": {
           "color": "$color.fg.neutral"
         },
+        "subtitle": {
+          "color": "$color.fg.neutral-muted"
+        },
         "icon": {
           "color": "$color.fg.neutral"
         }
@@ -58,6 +53,9 @@
         "title": {
           "color": "$color.palette.static-white"
         },
+        "subtitle": {
+          "color": "$color.palette.static-white"
+        },
         "icon": {
           "color": "$color.palette.static-white"
         }
@@ -68,6 +66,26 @@
         "root": {
           "strokeColor": "$color.stroke.neutral-muted",
           "strokeWidth": "1px"
+        }
+      }
+    },
+    "titleLayout=titleOnly": {
+      "enabled": {
+        "title": {
+          "fontSize": "$font-size.s6-static",
+          "fontWeight": "$font-weight.bold"
+        }
+      }
+    },
+    "titleLayout=withSubtitle": {
+      "enabled": {
+        "title": {
+          "fontSize": "$font-size.s5-static",
+          "fontWeight": "$font-weight.bold"
+        },
+        "subtitle": {
+          "fontSize": "$font-size.s2-static",
+          "fontWeight": "$font-weight.regular"
         }
       }
     }

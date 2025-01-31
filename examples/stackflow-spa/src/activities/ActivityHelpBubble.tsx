@@ -3,7 +3,7 @@ import type { ActivityComponentType } from "@stackflow/react";
 import {
   AppBar,
   AppBarLeft,
-  AppBarTitle,
+  AppBarMain,
   AppBarBackButton,
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
@@ -17,7 +17,7 @@ const ActivityHelpBubble: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>Help Bubble</AppBarTitle>
+        <AppBarMain>Help Bubble</AppBarMain>
       </AppBar>
       <AppScreenContent style={{ overflowY: "auto", height: "200vh" }}>
         <div style={{ display: "flex", paddingTop: "20vh", justifyContent: "center" }}>

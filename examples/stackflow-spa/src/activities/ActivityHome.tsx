@@ -2,7 +2,7 @@ import { Stack, useSnackbarAdapter } from "@seed-design/react";
 import { receive } from "@stackflow/compat-await-push";
 import type { ActivityComponentType } from "@stackflow/react";
 import { List, ListItem } from "../components/List";
-import { AppBar, AppBarTitle } from "../design-system/stackflow/AppBar";
+import { AppBar, AppBarMain } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 import { DialogPushTrigger } from "../design-system/stackflow/DialogPushTrigger";
 import { ActionButton } from "../design-system/ui/action-button";
@@ -29,7 +29,7 @@ const ActivityHome: ActivityComponentType = () => {
   return (
     <AppScreen>
       <AppBar>
-        <AppBarTitle>Home</AppBarTitle>
+        <AppBarMain title="Home" subtitle="Subtitle" />
       </AppBar>
       <AppScreenContent
         ptr

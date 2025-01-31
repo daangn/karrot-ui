@@ -4817,54 +4817,6 @@
   display: inline-block;
 }
 
-.appBar__title {
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  height: 100%;
-  display: flex;
-}
-
-.appBar__titleMain {
-  align-items: center;
-  width: 100%;
-  display: flex;
-}
-
-.appBar__titleText, .appBar__subtitleText {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
-  overflow: hidden;
-}
-
-[data-global-transition-state="enter-active"] .appBar__root--theme_cupertino[data-activity-is-top]:before {
-  --seed-enter-translate-x: 100%;
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: 1;
-  --seed-enter-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-  transform: translate3d(0, 0, 0);
-}
-
-[data-global-transition-state="exit-active"] .appBar__root--theme_cupertino[data-activity-is-top]:before {
-  transform: translate3d(var(--swipe-back-displacement, 0), 0, 0);
-  --seed-exit-translate-x: 100%;
-  --seed-exit-translate-y: 0;
-  --seed-exit-opacity: 1;
-  --seed-exit-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
-}
-
-[data-global-transition-state="enter-done"] .appBar__root--theme_cupertino[data-activity-is-top]:before {
-  --seed-enter-translate-x: var(--swipe-back-displacement, 0);
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: 1;
-  --seed-enter-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-  transform: translate3d(0, 0, 0);
-}
-
 .appBar__root--theme_cupertino {
   height: 44px;
   padding-inline: var(--seed-v3-dimension-s4);
@@ -4888,183 +4840,9 @@
   height: 24px;
 }
 
-[data-global-transition-state="enter-active"] .appBar__icon--theme_cupertino[data-activity-is-top] {
-  --seed-enter-translate-x: 0;
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: 0;
-  --seed-enter-scale: 1;
-  opacity: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-}
-
-[data-global-transition-state="exit-active"] .appBar__icon--theme_cupertino[data-activity-is-top] {
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-exit-translate-x: 0;
-  --seed-exit-translate-y: 0;
-  --seed-exit-opacity: 0;
-  --seed-exit-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
-}
-
-[data-global-transition-state="enter-done"] .appBar__icon--theme_cupertino[data-activity-is-top] {
-  --seed-enter-translate-x: 0;
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-enter-scale: 1;
-  opacity: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-}
-
-[data-swipe-back-state="swiping"] .appBar__icon--theme_cupertino[data-activity-is-top]:not(#\#) {
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  animation: none;
-}
-
-[data-global-transition-state="enter-active"][data-top-activity-type="full-screen"] .appBar__icon--theme_cupertino:not([data-activity-is-top]) {
-  opacity: 1;
-  --seed-exit-translate-x: 0;
-  --seed-exit-translate-y: 0;
-  --seed-exit-opacity: 0;
-  --seed-exit-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
-}
-
-[data-global-transition-state="exit-active"][data-top-activity-type="full-screen"] .appBar__icon--theme_cupertino:not([data-activity-is-top]) {
-  --seed-enter-translate-x: 0;
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-enter-scale: 1;
-  opacity: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-}
-
-[data-global-transition-state="enter-done"][data-top-activity-type="full-screen"] .appBar__icon--theme_cupertino:not([data-activity-is-top]) {
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-exit-translate-x: 0;
-  --seed-exit-translate-y: 0;
-  --seed-exit-opacity: 0;
-  --seed-exit-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
-}
-
-[data-swipe-back-state="swiping"] .appBar__icon--theme_cupertino:not([data-activity-is-top]):not(#\#) {
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  animation: none;
-}
-
-.appBar__title--theme_cupertino {
-  text-align: center;
-  height: 100%;
-  padding-inline: var(--centered-title-padding-x, 0);
-  pointer-events: none;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-[data-global-transition-state="enter-active"] .appBar__title--theme_cupertino[data-activity-is-top] {
-  --seed-enter-translate-x: 25%;
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: 0;
-  --seed-enter-scale: 1;
-  opacity: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-  transform: translate3d(0, 0, 0);
-}
-
-[data-global-transition-state="exit-active"] .appBar__title--theme_cupertino[data-activity-is-top] {
-  transform: translate3d(var(--swipe-back-displacement, 0) * .25, 0, 0);
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-exit-translate-x: 25%;
-  --seed-exit-translate-y: 0;
-  --seed-exit-opacity: 0;
-  --seed-exit-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
-}
-
-[data-global-transition-state="enter-done"] .appBar__title--theme_cupertino[data-activity-is-top] {
-  --seed-enter-translate-x: var(--swipe-back-displacement, 0) * .25;
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-enter-scale: 1;
-  opacity: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-  transform: translate3d(0, 0, 0);
-}
-
-[data-swipe-back-state="swiping"] .appBar__title--theme_cupertino[data-activity-is-top]:not(#\#) {
-  transform: translate3d(var(--swipe-back-displacement, 0) * .25, 0, 0);
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  animation: none;
-}
-
-[data-global-transition-state="enter-active"][data-top-activity-type="full-screen"] .appBar__title--theme_cupertino:not([data-activity-is-top]) {
-  opacity: 1;
-  --seed-exit-translate-x: -25%;
-  --seed-exit-translate-y: 0;
-  --seed-exit-opacity: 0;
-  --seed-exit-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
-  transform: translate3d(0, 0, 0);
-}
-
-[data-global-transition-state="exit-active"][data-top-activity-type="full-screen"] .appBar__title--theme_cupertino:not([data-activity-is-top]) {
-  --seed-enter-translate-x: calc(-25% + var(--swipe-back-displacement, 0) * .25);
-  --seed-enter-translate-y: 0;
-  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-enter-scale: 1;
-  opacity: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
-  transform: translate3d(0, 0, 0);
-}
-
-[data-global-transition-state="enter-done"][data-top-activity-type="full-screen"] .appBar__title--theme_cupertino:not([data-activity-is-top]) {
-  transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * .25), 0, 0);
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  --seed-exit-translate-x: -25%;
-  --seed-exit-translate-y: 0;
-  --seed-exit-opacity: 0;
-  --seed-exit-scale: 1;
-  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
-}
-
-[data-swipe-back-state="swiping"] .appBar__title--theme_cupertino:not([data-activity-is-top]):not(#\#) {
-  transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * .25), 0, 0);
-  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
-  animation: none;
-}
-
-.appBar__titleText--theme_cupertino {
-  font-size: var(--seed-v3-font-size-s6-static);
-  font-weight: var(--seed-v3-font-weight-bold);
-}
-
 .appBar__root--theme_android {
   height: 56px;
   padding-inline: var(--seed-v3-dimension-s4);
-}
-
-[data-global-transition-state="enter-active"] .appBar__root--theme_android[data-activity-is-top] {
-  --seed-enter-translate-x: 0;
-  --seed-enter-translate-y: 8vh;
-  --seed-enter-opacity: 0;
-  --seed-enter-scale: 1;
-  opacity: 1;
-  animation: .3s cubic-bezier(.23, .1, .32, 1) seed-enter;
-  transform: translate3d(0, 0, 0);
-}
-
-[data-global-transition-state="exit-active"] .appBar__root--theme_android[data-activity-is-top] {
-  opacity: 1;
-  --seed-exit-translate-x: 0;
-  --seed-exit-translate-y: 8vh;
-  --seed-exit-opacity: 0;
-  --seed-exit-scale: 1;
-  animation: .15s linear forwards seed-exit;
-  transform: translate3d(0, 0, 0);
 }
 
 .appBar__iconButton--theme_android {
@@ -5089,20 +4867,122 @@
   padding-right: 16px;
 }
 
-.appBar__title--theme_android {
-  width: 100%;
+[data-global-transition-state="enter-active"] .appBar__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:before {
+  --seed-enter-translate-x: 100%;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 1;
+  --seed-enter-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
 }
 
-.appBar__titleText--theme_android {
-  font-size: var(--seed-v3-font-size-s6-static);
-  font-weight: var(--seed-v3-font-weight-bold);
+[data-global-transition-state="exit-active"] .appBar__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:before {
+  transform: translate3d(var(--swipe-back-displacement, 0), 0, 0);
+  --seed-exit-translate-x: 100%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 1;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appBar__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:before {
+  --seed-enter-translate-x: var(--swipe-back-displacement, 0);
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 1;
+  --seed-enter-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="enter-active"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-global-transition-state="exit-active"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-swipe-back-state="swiping"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"][data-top-activity-type="full-screen"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="exit-active"][data-top-activity-type="full-screen"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-global-transition-state="enter-done"][data-top-activity-type="full-screen"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-swipe-back-state="swiping"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]):not(#\#) {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"] .appBar__root--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 8vh;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.23, .1, .32, 1) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appBar__root--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 8vh;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .15s linear forwards seed-exit;
+  transform: translate3d(0, 0, 0);
 }
 
 .appBar__root--tone_layer:before {
   background-color: var(--seed-v3-color-bg-layer-default);
 }
 
-.appBar__icon--tone_layer, .appBar__titleText--tone_layer {
+.appBar__icon--tone_layer {
   color: var(--seed-v3-color-fg-neutral);
 }
 
@@ -5110,10 +4990,140 @@
   background-color: #0000;
 }
 
-.appBar__icon--tone_transparent, .appBar__titleMain--tone_transparent {
+.appBar__icon--tone_transparent {
   color: var(--seed-v3-color-palette-static-white);
 }
 
 .appBar__root--divider_true {
   box-shadow: inset 0px calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral-muted);
+}
+
+.appBarMain__root {
+  flex: 1;
+  height: 100%;
+}
+
+.appBarMain__title, .appBarMain__subtitle {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.appBarMain__title--layout_titleOnly {
+  font-size: var(--seed-v3-font-size-s6-static);
+  font-weight: var(--seed-v3-font-weight-bold);
+}
+
+.appBarMain__title--layout_withSubtitle {
+  font-size: var(--seed-v3-font-size-s5-static);
+  font-weight: var(--seed-v3-font-weight-bold);
+}
+
+.appBarMain__subtitle--layout_withSubtitle {
+  font-size: var(--seed-v3-font-size-s2-static);
+  font-weight: var(--seed-v3-font-weight-regular);
+}
+
+.appBarMain__root--theme_cupertino {
+  text-align: center;
+  height: 100%;
+  padding-inline: var(--centered-title-padding-x, 0);
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.appBarMain__root--theme_android {
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+[data-global-transition-state="enter-active"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 25%;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  transform: translate3d(var(--swipe-back-displacement, 0) * .25, 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: 25%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: var(--swipe-back-displacement, 0) * .25;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-swipe-back-state="swiping"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
+  transform: translate3d(var(--swipe-back-displacement, 0) * .25, 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"][data-top-activity-type="full-screen"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  opacity: 1;
+  --seed-exit-translate-x: -25%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"][data-top-activity-type="full-screen"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  --seed-enter-translate-x: calc(-25% + var(--swipe-back-displacement, 0) * .25);
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="enter-done"][data-top-activity-type="full-screen"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * .25), 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: -25%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-swipe-back-state="swiping"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]):not(#\#) {
+  transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * .25), 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+.appBarMain__root--tone_layer, .appBarMain__title--tone_layer {
+  color: var(--seed-v3-color-fg-neutral);
+}
+
+.appBarMain__subtitle--tone_layer {
+  color: var(--seed-v3-color-fg-neutral-muted);
+}
+
+.appBarMain__root--tone_transparent, .appBarMain__title--tone_transparent, .appBarMain__subtitle--tone_transparent {
+  color: var(--seed-v3-color-palette-static-white);
 }

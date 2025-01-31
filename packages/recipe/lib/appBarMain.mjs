@@ -2,39 +2,35 @@ import { createClassName } from "./className.mjs";
 import { mergeVariants } from "./mergeVariants.mjs";
 import { splitVariantProps } from "./splitVariantProps.mjs";
 
-const appBarSlotNames = [
+const appBarMainSlotNames = [
   [
     "root",
-    "appBar__root"
+    "appBarMain__root"
   ],
   [
-    "left",
-    "appBar__left"
+    "title",
+    "appBarMain__title"
   ],
   [
-    "right",
-    "appBar__right"
-  ],
-  [
-    "iconButton",
-    "appBar__iconButton"
-  ],
-  [
-    "icon",
-    "appBar__icon"
+    "subtitle",
+    "appBarMain__subtitle"
   ]
 ];
 
 const defaultVariant = {
+  "layout": "titleOnly",
   "theme": "cupertino",
   "transitionStyle": "slideFromRightIOS",
-  "tone": "layer",
-  "divider": false
+  "tone": "layer"
 };
 
 const compoundVariants = [];
 
-export const appBarVariantMap = {
+export const appBarMainVariantMap = {
+  "layout": [
+    "titleOnly",
+    "withSubtitle"
+  ],
   "theme": [
     "cupertino",
     "android"
@@ -46,17 +42,14 @@ export const appBarVariantMap = {
   "tone": [
     "layer",
     "transparent"
-  ],
-  "divider": [
-    true
   ]
 };
 
-export const appBarVariantKeys = Object.keys(appBarVariantMap);
+export const appBarMainVariantKeys = Object.keys(appBarMainVariantMap);
 
-export function appBar(props) {
+export function appBarMain(props) {
   return Object.fromEntries(
-    appBarSlotNames.map(([slot, className]) => {
+    appBarMainSlotNames.map(([slot, className]) => {
       return [
         slot,
         createClassName(className, mergeVariants(defaultVariant, props), compoundVariants),
@@ -65,4 +58,4 @@ export function appBar(props) {
   );
 }
 
-Object.assign(appBar, { splitVariantProps: (props) => splitVariantProps(props, appBarVariantMap) });
+Object.assign(appBarMain, { splitVariantProps: (props) => splitVariantProps(props, appBarMainVariantMap) });

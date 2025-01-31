@@ -28,7 +28,10 @@ export const AppScreenRoot = forwardRef<HTMLDivElement, AppScreenRootProps>((pro
   return (
     <ClassNamesProvider value={classNames}>
       <AppBarPropsProvider
-        value={useMemo(() => ({ theme: variantProps.theme }), [variantProps.theme])}
+        value={useMemo(
+          () => ({ theme: variantProps.theme, transitionStyle }),
+          [variantProps.theme, transitionStyle],
+        )}
       >
         <AppScreenPrimitive.Root
           ref={ref}

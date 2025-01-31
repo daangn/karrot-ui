@@ -3,7 +3,7 @@ import {
   AppBar,
   AppBarLeft,
   AppBarRight,
-  AppBarTitle,
+  AppBarMain,
   AppBarBackButton,
   AppBarIconButton,
 } from "../design-system/stackflow/AppBar";
@@ -19,7 +19,7 @@ const ActivityTransparentBar: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>야옹</AppBarTitle>
+        <AppBarMain>야옹</AppBarMain>
         <AppBarRight>
           <AppBarIconButton>
             <IconBellLine />

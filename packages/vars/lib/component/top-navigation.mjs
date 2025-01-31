@@ -5,10 +5,6 @@ export const vars = {
         "minHeight": "44px",
         "paddingX": "var(--seed-v3-dimension-s4)"
       },
-      "title": {
-        "fontSize": "var(--seed-v3-font-size-s6-static)",
-        "fontWeight": "var(--seed-v3-font-weight-bold)"
-      },
       "icon": {
         "size": "24px",
         "targetSize": "40px"
@@ -20,10 +16,6 @@ export const vars = {
       "root": {
         "minHeight": "56px",
         "paddingX": "var(--seed-v3-dimension-s4)"
-      },
-      "title": {
-        "fontSize": "var(--seed-v3-font-size-s6-static)",
-        "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "icon": {
         "size": "24px",
@@ -39,6 +31,9 @@ export const vars = {
       "title": {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
+      "subtitle": {
+        "color": "var(--seed-v3-color-fg-neutral-muted)"
+      },
       "icon": {
         "color": "var(--seed-v3-color-fg-neutral)"
       }
@@ -52,6 +47,9 @@ export const vars = {
       "title": {
         "color": "var(--seed-v3-color-palette-static-white)"
       },
+      "subtitle": {
+        "color": "var(--seed-v3-color-palette-static-white)"
+      },
       "icon": {
         "color": "var(--seed-v3-color-palette-static-white)"
       }
@@ -62,6 +60,26 @@ export const vars = {
       "root": {
         "strokeColor": "var(--seed-v3-color-stroke-neutral-muted)",
         "strokeWidth": "1px"
+      }
+    }
+  },
+  "titleLayoutTitleOnly": {
+    "enabled": {
+      "title": {
+        "fontSize": "var(--seed-v3-font-size-s6-static)",
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
+      }
+    }
+  },
+  "titleLayoutWithSubtitle": {
+    "enabled": {
+      "title": {
+        "fontSize": "var(--seed-v3-font-size-s5-static)",
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
+      },
+      "subtitle": {
+        "fontSize": "var(--seed-v3-font-size-s2-static)",
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
   }

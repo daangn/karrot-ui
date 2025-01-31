@@ -3,7 +3,7 @@ import {
   AppBar,
   AppBarBackButton,
   AppBarLeft,
-  AppBarTitle,
+  AppBarMain,
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
@@ -26,7 +26,7 @@ const ActivityActionButton: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>Action Button</AppBarTitle>
+        <AppBarMain>Action Button</AppBarMain>
       </AppBar>
       <AppScreenContent>
         <ComponentAnalyzer

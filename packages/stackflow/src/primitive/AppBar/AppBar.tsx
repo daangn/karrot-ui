@@ -18,7 +18,6 @@ export const AppBarRoot = forwardRef<HTMLDivElement, AppBarRootProps>((props, re
     <AppBarProvider value={api}>
       <Primitive.div
         ref={composeRefs(api.refs.root, ref)}
-        data-stackflow-component-name="AppBar"
         {...mergeProps(api.rootProps, otherProps)}
       />
     </AppBarProvider>
@@ -44,9 +43,9 @@ export const AppBarRight = forwardRef<HTMLDivElement, AppBarRightProps>((props, 
 });
 AppBarRight.displayName = "AppBarRight";
 
-export interface AppBarTitleProps extends PrimitiveProps, React.HTMLAttributes<HTMLDivElement> {}
+export interface AppBarMainProps extends PrimitiveProps, React.HTMLAttributes<HTMLDivElement> {}
 
-export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>((props, ref) => {
+export const AppBarMain = forwardRef<HTMLDivElement, AppBarMainProps>((props, ref) => {
   const { stateProps } = useAppBarContext();
 
   return <Primitive.div ref={ref} {...mergeProps(stateProps, props)} />;

@@ -6,7 +6,7 @@ import { ErrorState, type ErrorStateProps } from "../design-system/ui/error-stat
 import {
   AppBar,
   AppBarLeft,
-  AppBarTitle,
+  AppBarMain,
   AppBarBackButton,
 } from "../design-system/stackflow/AppBar";
 
@@ -19,7 +19,7 @@ const ActivityErrorState: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>Error State</AppBarTitle>
+        <AppBarMain>Error State</AppBarMain>
       </AppBar>
       <AppScreenContent
         ptr

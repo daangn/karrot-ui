@@ -3,7 +3,6 @@ import actionChip from "./recipes/action-chip";
 import actionSheet from "./recipes/action-sheet";
 import actionSheetCloseButton from "./recipes/action-sheet-close-button";
 import actionSheetItem from "./recipes/action-sheet-item";
-import { appBar, appScreen } from "./stackflow/app-screen";
 import avatar from "./recipes/avatar";
 import avatarStack from "./recipes/avatar-stack";
 import badge from "./recipes/badge";
@@ -22,6 +21,7 @@ import fab from "./recipes/fab";
 import helpBubble from "./recipes/help-bubble";
 import identityPlaceholder from "./recipes/identity-placeholder";
 import inlineBanner from "./recipes/inline-banner";
+import mannerTempBadge from "./recipes/manner-temp-badge";
 import progressCircle from "./recipes/progress-circle";
 import radio from "./recipes/radio";
 import reactionButton from "./recipes/reaction-button";
@@ -37,7 +37,8 @@ import textButton from "./recipes/text-button";
 import textField from "./recipes/text-field";
 import toggleButton from "./recipes/toggle-button";
 import visuallyHidden from "./recipes/visually-hidden";
-import mannerTempBadge from "./recipes/manner-temp-badge";
+import { appBar, appBarMain } from "./stackflow/app-bar";
+import { appScreen } from "./stackflow/app-screen";
 
 const recipes = {
   avatar,
@@ -83,6 +84,7 @@ const recipes = {
   visuallyHidden,
   appScreen,
   appBar,
+  appBarMain,
 };
 
 export default recipes;

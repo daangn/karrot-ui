@@ -55,6 +55,17 @@ export const iOSAnimations = {
     },
     gravity: "out",
   }),
+  dim: iOSPresence.getAnimations({
+    in: {
+      opacity: "1",
+    },
+    interaction: {
+      opacity: "calc(1 - var(--swipe-back-displacement-ratio, 0))",
+    },
+    out: {
+      opacity: "0",
+    },
+  }),
   title: iOSPresence.getAnimations({
     in: {
       opacity: "1",
@@ -117,17 +128,6 @@ export const iOSAnimations = {
       opacity: "0",
     },
     gravity: "out",
-  }),
-  dim: iOSPresence.getAnimations({
-    in: {
-      opacity: "1",
-    },
-    interaction: {
-      opacity: "calc(1 - var(--swipe-back-displacement-ratio, 0))",
-    },
-    out: {
-      opacity: "0",
-    },
   }),
 };
 

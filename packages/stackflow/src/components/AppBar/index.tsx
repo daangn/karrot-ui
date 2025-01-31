@@ -1,23 +1,21 @@
 export {
   AppBarIconButton,
   AppBarLeft,
+  AppBarMain,
   AppBarRight,
   AppBarRoot,
+  AppBarSubtitle,
   AppBarTitle,
-  AppBarTitleMain,
-  AppBarTitleText,
-  AppBarSubtitleText,
 } from "./AppBar";
 
 export type {
   AppBarIconButtonProps,
   AppBarLeftProps,
+  AppBarMainProps,
   AppBarProps,
   AppBarRightProps,
+  AppBarSubtitleProps,
   AppBarTitleProps,
-  AppBarTitleMainProps,
-  AppBarTitleTextProps,
-  AppBarSubtitleTextProps,
 } from "./AppBar";
 
 export * as AppBar from "./AppBar.namespace";

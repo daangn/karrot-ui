@@ -1,4 +1,5 @@
 import { IconChevronLeftLine, IconXmarkLine } from "@daangn/react-monochrome-icon";
+import { Stack } from "@seed-design/react";
 import { AppBar as SeedAppBar, type AppBarIconButtonProps } from "@seed-design/stackflow";
 import { useActions, useActivity } from "@stackflow/react";
 import * as React from "react";
@@ -10,7 +11,7 @@ export const AppBarLeft = SeedAppBar.Left;
 
 export const AppBarRight = SeedAppBar.Right;
 
-export interface AppBarTitleProps extends Omit<SeedAppBar.TitleProps, "asChild"> {
+export interface AppBarMainProps extends Omit<SeedAppBar.MainProps, "asChild"> {
   /**
    * The title of the app bar.
    * If children is provided as ReactElement, this prop will be ignored.
@@ -24,27 +25,27 @@ export interface AppBarTitleProps extends Omit<SeedAppBar.TitleProps, "asChild">
   subtitle?: string;
 }
 
-export const AppBarTitle = forwardRef<HTMLDivElement, AppBarTitleProps>(
+export const AppBarMain = forwardRef<HTMLDivElement, AppBarMainProps>(
   ({ title, subtitle, children, ...otherProps }, ref) => {
     if (React.isValidElement(children)) {
       return (
-        <SeedAppBar.Title {...otherProps} ref={ref}>
+        <SeedAppBar.Main {...otherProps} ref={ref}>
           {children}
-        </SeedAppBar.Title>
+        </SeedAppBar.Main>
       );
     }
 
     return (
-      <SeedAppBar.Title {...otherProps} ref={ref}>
-        <SeedAppBar.TitleMain>
-          <SeedAppBar.TitleText>{children ?? title}</SeedAppBar.TitleText>
-        </SeedAppBar.TitleMain>
-        {subtitle ? <SeedAppBar.SubtitleText>{subtitle}</SeedAppBar.SubtitleText> : null}
-      </SeedAppBar.Title>
+      <SeedAppBar.Main layout={subtitle ? "withSubtitle" : "titleOnly"} {...otherProps} ref={ref}>
+        <Stack overflowX="auto">
+          <SeedAppBar.Title>{children ?? title}</SeedAppBar.Title>
+          {subtitle ? <SeedAppBar.Subtitle>{subtitle}</SeedAppBar.Subtitle> : null}
+        </Stack>
+      </SeedAppBar.Main>
     );
   },
 );
-AppBarTitle.displayName = "AppBarTitle";
+AppBarMain.displayName = "AppBarMain";
 
 export const AppBarIconButton = SeedAppBar.IconButton;
 

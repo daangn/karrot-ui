@@ -8,4 +8,6 @@ export declare const s7 = "var(--seed-v3-font-size-s7)";
 export declare const s8 = "var(--seed-v3-font-size-s8)";
 export declare const s9 = "var(--seed-v3-font-size-s9)";
 export declare const s10 = "var(--seed-v3-font-size-s10)";
+export declare const s2Static = "var(--seed-v3-font-size-s2-static)";
+export declare const s5Static = "var(--seed-v3-font-size-s5-static)";
 export declare const s6Static = "var(--seed-v3-font-size-s6-static)";

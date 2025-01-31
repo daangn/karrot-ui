@@ -1,21 +1,19 @@
 export {
   AppBarIconButton as IconButton,
   AppBarLeft as Left,
+  AppBarMain as Main,
   AppBarRight as Right,
   AppBarRoot as Root,
+  AppBarSubtitle as Subtitle,
   AppBarTitle as Title,
-  AppBarTitleMain as TitleMain,
-  AppBarTitleText as TitleText,
-  AppBarSubtitleText as SubtitleText,
 } from "./AppBar";
 
 export type {
   AppBarIconButtonProps as IconButtonProps,
   AppBarLeftProps as LeftProps,
+  AppBarMainProps as MainProps,
   AppBarRightProps as RightProps,
   AppBarProps as RootProps,
+  AppBarSubtitleProps as SubtitleProps,
   AppBarTitleProps as TitleProps,
-  AppBarTitleMainProps as TitleMainProps,
-  AppBarTitleTextProps as TitleTextProps,
-  AppBarSubtitleTextProps as SubtitleTextProps,
 } from "./AppBar";

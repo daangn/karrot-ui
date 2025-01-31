@@ -10,7 +10,7 @@
   color-scheme: dark;
 }
 
-  :root[data-seed] {
+:root[data-seed] {
   --seed-v3-dimension-s0_5: 2px;
   --seed-v3-dimension-s1: 4px;
   --seed-v3-dimension-s1_5: 6px;
@@ -49,6 +49,8 @@
   --seed-v3-font-size-s8: 1.375rem;
   --seed-v3-font-size-s9: 1.5rem;
   --seed-v3-font-size-s10: 1.625rem;
+  --seed-v3-font-size-s2-static: 12px;
+  --seed-v3-font-size-s5-static: 16px;
   --seed-v3-font-size-s6-static: 18px;
   --seed-v3-font-weight-regular: 400;
   --seed-v3-font-weight-medium: 500;

@@ -8,7 +8,7 @@ import {
   AppBarIconButton,
   AppBarLeft,
   AppBarRight,
-  AppBarTitle,
+  AppBarMain,
 } from "seed-design/ui/app-bar";
 import { AppScreen, AppScreenContent } from "seed-design/ui/app-screen";
 import { Flex } from "seed-design/ui/layout";
@@ -26,7 +26,7 @@ const AppScreenPreviewActivity: ActivityComponentType<"AppScreenPreview"> = () =
         <AppBarLeft>
           <AppBarCloseButton />
         </AppBarLeft>
-        <AppBarTitle>Preview</AppBarTitle>
+        <AppBarMain>Preview</AppBarMain>
         <AppBarRight>
           <AppBarIconButton aria-label="Notification">
             <IconBellFill />

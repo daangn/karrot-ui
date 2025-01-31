@@ -1,12 +1,12 @@
 declare interface AppBarVariant {
   /**
-  * @default titleOnly
-  */
-  titleLayout: "titleOnly" | "withSubtitle";
-/**
   * @default cupertino
   */
   theme: "cupertino" | "android";
+/**
+  * @default slideFromRightIOS
+  */
+  transitionStyle: "slideFromRightIOS" | "fadeFromBottomAndroid";
 /**
   * @default layer
   */
@@ -23,7 +23,7 @@ declare type AppBarVariantMap = {
 
 export declare type AppBarVariantProps = Partial<AppBarVariant>;
 
-export declare type AppBarSlotName = "root" | "left" | "right" | "title" | "titleMain" | "titleText" | "subtitleText" | "iconButton" | "icon";
+export declare type AppBarSlotName = "root" | "left" | "right" | "iconButton" | "icon";
 
 export declare const appBarVariantMap: AppBarVariantMap;
 

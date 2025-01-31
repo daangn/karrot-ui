@@ -3,7 +3,7 @@ import {
   AppBar,
   AppBarBackButton,
   AppBarLeft,
-  AppBarTitle,
+  AppBarMain,
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
@@ -14,7 +14,7 @@ const ActivityNotFound: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>Error</AppBarTitle>
+        <AppBarMain>Error</AppBarMain>
       </AppBar>
       <AppScreenContent>404 Not Found</AppScreenContent>
     </AppScreen>

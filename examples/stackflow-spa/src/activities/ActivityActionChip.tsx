@@ -3,7 +3,7 @@ import {
   AppBar,
   AppBarBackButton,
   AppBarLeft,
-  AppBarTitle,
+  AppBarMain,
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
@@ -25,7 +25,7 @@ const ActivityActionChip: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarTitle>Action Chip</AppBarTitle>
+        <AppBarMain>Action Chip</AppBarMain>
       </AppBar>
       <AppScreenContent>
         <ComponentAnalyzer

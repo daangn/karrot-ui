@@ -57,6 +57,16 @@
           "default": "1.625rem"
         }
       },
+      "$font-size.s2-static": {
+        "values": {
+          "default": "12px"
+        }
+      },
+      "$font-size.s5-static": {
+        "values": {
+          "default": "16px"
+        }
+      },
       "$font-size.s6-static": {
         "values": {
           "default": "18px"

@@ -2,11 +2,11 @@ export {
   AppBarLeft,
   AppBarRight,
   AppBarRoot,
-  AppBarTitle,
+  AppBarMain,
   type AppBarLeftProps,
   type AppBarRightProps,
   type AppBarRootProps,
-  type AppBarTitleProps,
+  type AppBarMainProps,
 } from "./AppBar";
 
 export * as AppBar from "./AppBar.namespace";
