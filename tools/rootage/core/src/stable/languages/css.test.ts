@@ -1,12 +1,9 @@
 import { expect, test } from "vitest";
-import * as factory from "../parser/factory";
-import { parse } from "../parser/parse";
-import type * as Shorthand from "../transformer/shorthand-document";
+import { factory, Authoring } from "../parser";
 import { getTokenCss, stringifyTokenReference, stringifyValueLit } from "./css";
-import { transform } from "../transformer/transform";
 
 test("stringifyTokenReference should stringify token expression", () => {
-  const token = factory.createTokenLit(["color", "bg"], "layer-1");
+  const token = factory.createTokenLit("$color.bg.layer-1");
 
   const result = stringifyTokenReference(token);
 
@@ -41,7 +38,7 @@ test("stringifyValueExpression should stringify gradient expression", () => {
 });
 
 test("getTokenCss should generate css code", () => {
-  const models: Shorthand.Model[] = [
+  const collections: Authoring.TokenCollectionsModel[] = [
     {
       kind: "TokenCollections",
       metadata: {
@@ -59,6 +56,8 @@ test("getTokenCss should generate css code", () => {
         },
       ],
     },
+  ];
+  const tokens: Authoring.TokensModel[] = [
     {
       kind: "Tokens",
       metadata: {
@@ -102,18 +101,24 @@ test("getTokenCss should generate css code", () => {
     },
   ];
 
-  const result = getTokenCss(parse(transform(models)), {
-    banner: "",
-    selectors: {
-      global: {
-        default: ":root",
-      },
-      color: {
-        light: `:root[data-theme="light"]`,
-        dark: `:root[data-theme="dark"]`,
+  const result = getTokenCss(
+    {
+      tokenCollections: collections.flatMap((x) => Authoring.parseTokenCollectionsDocument(x).data),
+      tokens: tokens.flatMap((x) => Authoring.parseTokensDocument(x).data),
+    },
+    {
+      banner: "",
+      selectors: {
+        global: {
+          default: ":root",
+        },
+        color: {
+          light: `:root[data-theme="light"]`,
+          dark: `:root[data-theme="dark"]`,
+        },
       },
     },
-  });
+  );
 
   expect(result).toMatchInlineSnapshot(`
     ":root[data-theme=\\"light\\"] {

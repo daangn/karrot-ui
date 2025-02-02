@@ -4,130 +4,134 @@
     "id": "skeleton",
     "name": "Skeleton"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.gray-200"
-              }
-            },
-            "shimmer": {
-              "duration": {
-                "type": "duration",
-                "value": {
-                  "value": 1.5,
-                  "unit": "s"
+  "data": {
+    "id": "skeleton",
+    "name": "Skeleton",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.gray-200"
                 }
               },
-              "timingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.easing"
-              },
-              "color": {
-                "type": "gradient",
-                "value": "$gradient.shimmer"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "radius": "0"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "cornerRadius": {
-                "type": "dimension",
-                "value": {
-                  "value": 0,
-                  "unit": "px"
+              "shimmer": {
+                "duration": {
+                  "type": "duration",
+                  "value": {
+                    "value": 1.5,
+                    "unit": "s"
+                  }
+                },
+                "timingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.easing"
+                },
+                "color": {
+                  "type": "gradient",
+                  "value": "$gradient.shimmer"
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "radius": "8"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "cornerRadius": {
-                "type": "dimension",
-                "value": {
-                  "value": 8,
-                  "unit": "px"
+      {
+        "variants": {
+          "radius": "0"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 0,
+                    "unit": "px"
+                  }
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "radius": "16"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "cornerRadius": {
-                "type": "dimension",
-                "value": {
-                  "value": 16,
-                  "unit": "px"
+      {
+        "variants": {
+          "radius": "8"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 8,
+                    "unit": "px"
+                  }
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "radius": "full"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.full"
+      {
+        "variants": {
+          "radius": "16"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 16,
+                    "unit": "px"
+                  }
+                }
               }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      },
+      {
+        "variants": {
+          "radius": "full"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

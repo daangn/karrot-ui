@@ -1,9 +1,8 @@
 import { describe, expect, it } from "vitest";
 
 import YAML from "yaml";
-import { transformComponentSpecModel } from "../transformer/component-spec";
-import { parseComponentSpecModel } from "./component-spec";
-import * as factory from "./factory";
+import { parseComponentSpecDeclaration } from "./component-spec";
+import * as factory from "../factory";
 
 describe("parseComponentSpecData", () => {
   it("should parse base only", () => {
@@ -19,7 +18,7 @@ describe("parseComponentSpecData", () => {
           color: "#ffffff"
   `;
 
-    const parsed = parseComponentSpecModel(transformComponentSpecModel(YAML.parse(yaml)));
+    const parsed = parseComponentSpecDeclaration(YAML.parse(yaml));
 
     const expected = factory.createComponentSpecDeclaration("test", "test", [
       factory.createVariantDeclaration(
@@ -60,7 +59,7 @@ describe("parseComponentSpecData", () => {
           color: "#000000"
   `;
 
-    const parsed = parseComponentSpecModel(transformComponentSpecModel(YAML.parse(yaml)));
+    const parsed = parseComponentSpecDeclaration(YAML.parse(yaml));
 
     const expected = factory.createComponentSpecDeclaration("test", "test", [
       factory.createVariantDeclaration(
@@ -113,7 +112,7 @@ describe("parseComponentSpecData", () => {
           color: "#ffffff"
   `;
 
-    const parsed = parseComponentSpecModel(transformComponentSpecModel(YAML.parse(yaml)));
+    const parsed = parseComponentSpecDeclaration(YAML.parse(yaml));
 
     const expected = factory.createComponentSpecDeclaration("test", "test", [
       factory.createVariantDeclaration(
@@ -154,7 +153,7 @@ describe("parseComponentSpecData", () => {
           color: "#000000"
   `;
 
-    const parsed = parseComponentSpecModel(transformComponentSpecModel(YAML.parse(yaml)));
+    const parsed = parseComponentSpecDeclaration(YAML.parse(yaml));
 
     const expected = factory.createComponentSpecDeclaration("test", "test", [
       factory.createVariantDeclaration(
@@ -222,7 +221,7 @@ describe("parseComponentSpecData", () => {
                 color: "#0000000f"
   `;
 
-    const parsed = parseComponentSpecModel(transformComponentSpecModel(YAML.parse(yaml)));
+    const parsed = parseComponentSpecDeclaration(YAML.parse(yaml));
 
     const expected = factory.createComponentSpecDeclaration("test", "test", [
       factory.createVariantDeclaration(

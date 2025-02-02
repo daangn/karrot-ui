@@ -1,4 +1,3 @@
-import { stringifyTokenLit } from "./stringify";
 import type { RootageCtx } from "./types";
 
 interface ValidationResult {
@@ -28,7 +27,7 @@ export function validate(ctx: RootageCtx): ValidationResult {
     if (!collectionNameSet.has(tokenBinding.collection)) {
       return {
         valid: false,
-        message: `Token collection "${tokenBinding.collection}" is not defined but used in "${stringifyTokenLit(tokenBinding.token)}"`,
+        message: `Token collection "${tokenBinding.collection}" is not defined but used in "${tokenBinding.token.identifier}"`,
       };
     }
   }
@@ -42,24 +41,24 @@ export function validate(ctx: RootageCtx): ValidationResult {
       if (!collection.modes.includes(mode)) {
         return {
           valid: false,
-          message: `Mode "${mode}" is not defined in token collection "${tokenBinding.collection}" but used in "${stringifyTokenLit(tokenBinding.token)}"`,
+          message: `Mode "${mode}" is not defined in token collection "${tokenBinding.collection}" but used in "${tokenBinding.token.identifier}"`,
         };
       }
     }
   }
 
   // validate token references
-  const tokenNames = tokens.map((binding) => stringifyTokenLit(binding.token));
+  const tokenNames = tokens.map((binding) => binding.token.identifier);
   const tokenNameSet = new Set(tokenNames);
 
   for (const tokenBinding of tokens) {
     for (const { value } of tokenBinding.values) {
       if (value.kind === "TokenLit") {
-        const tokenName = stringifyTokenLit(value);
+        const tokenName = value.identifier;
         if (!tokenNameSet.has(tokenName)) {
           return {
             valid: false,
-            message: `Token "${tokenName}" is not defined but used in "${stringifyTokenLit(tokenBinding.token)}"`,
+            message: `Token "${tokenName}" is not defined but used in "${tokenBinding.token.identifier}"`,
           };
         }
       }
@@ -72,7 +71,7 @@ export function validate(ctx: RootageCtx): ValidationResult {
         for (const slot of state.body) {
           for (const property of slot.body) {
             if (property.value.kind === "TokenLit") {
-              const tokenName = stringifyTokenLit(property.value);
+              const tokenName = property.value.identifier;
               if (!tokenNameSet.has(tokenName)) {
                 return {
                   valid: false,

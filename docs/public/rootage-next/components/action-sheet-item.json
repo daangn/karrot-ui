@@ -4,106 +4,110 @@
     "id": "action-sheet-item",
     "name": "Action Sheet Item"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-floating"
-              },
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 50,
-                  "unit": "px"
+  "data": {
+    "id": "action-sheet-item",
+    "name": "Action Sheet Item",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-floating"
+                },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 50,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.spacing-x.global-gutter"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
                 }
               },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.spacing-x.global-gutter"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s5"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
               }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s5"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s5"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.regular"
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-floating-pressed"
+                }
               }
             }
           }
+        ]
+      },
+      {
+        "variants": {
+          "tone": "neutral"
         },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-floating-pressed"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "tone": "neutral"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
+      {
+        "variants": {
+          "tone": "critical"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.critical"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "tone": "critical"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.critical"
-              }
-            }
-          }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

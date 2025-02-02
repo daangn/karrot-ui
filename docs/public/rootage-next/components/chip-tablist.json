@@ -4,70 +4,74 @@
     "id": "chip-tablist",
     "name": "Chip Tablist"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "neutral solid"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "triggerList": {
-              "gap": {
-                "type": "dimension",
-                "value": {
-                  "value": 0,
-                  "unit": "px"
+  "data": {
+    "id": "chip-tablist",
+    "name": "Chip Tablist",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "brand solid"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "triggerList": {
-              "gap": {
-                "type": "dimension",
-                "value": {
-                  "value": 8,
-                  "unit": "px"
+      {
+        "variants": {
+          "variant": "neutral solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "triggerList": {
+                "gap": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 0,
+                    "unit": "px"
+                  }
                 }
               }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      },
+      {
+        "variants": {
+          "variant": "brand solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "triggerList": {
+                "gap": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 8,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

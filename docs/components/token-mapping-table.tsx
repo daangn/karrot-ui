@@ -1,11 +1,11 @@
-import { resolveToken, type AST, type Document } from "@seed-design/rootage-core";
+import { resolveToken, type AST } from "@seed-design/rootage-core";
 import { getRootage, stringifyValueLit } from "@/components/rootage";
 import { ExpandableTokenCell } from "@/components/expandable-token-cell";
 import { Fragment } from "react";
 
 interface TokenMapping {
   previousTokenId: string;
-  newTokenIds: Document.TokenRef[];
+  newTokenIds: AST.TokenRef[];
   note?: string;
 }
 

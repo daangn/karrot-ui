@@ -4,114 +4,118 @@
     "id": "help-bubble",
     "name": "Help Bubble"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-solid"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s3"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s3"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s3"
-              }
-            },
-            "arrow": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-solid"
-              },
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
-              }
-            },
-            "title": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              },
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s3"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
-              }
-            },
-            "description": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              },
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s3"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.regular"
-              }
-            },
-            "closeButton": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              },
-              "fromRight": {
-                "type": "dimension",
-                "value": {
-                  "value": 4,
-                  "unit": "px"
+  "data": {
+    "id": "help-bubble",
+    "name": "Help Bubble",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-solid"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s3"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s3"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s3"
                 }
               },
-              "fromTop": {
-                "type": "dimension",
-                "value": {
-                  "value": 4,
-                  "unit": "px"
+              "arrow": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-solid"
+                },
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
                 }
               },
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 14,
-                  "unit": "px"
+              "title": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s3"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
                 }
               },
-              "targetSize": {
-                "type": "dimension",
-                "value": {
-                  "value": 32,
-                  "unit": "px"
+              "description": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s3"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
                 }
-              }
-            },
-            "backdrop": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.overlay"
+              },
+              "closeButton": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fromRight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 4,
+                    "unit": "px"
+                  }
+                },
+                "fromTop": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 4,
+                    "unit": "px"
+                  }
+                },
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 14,
+                    "unit": "px"
+                  }
+                },
+                "targetSize": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 32,
+                    "unit": "px"
+                  }
+                }
+              },
+              "backdrop": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.overlay"
+                }
               }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

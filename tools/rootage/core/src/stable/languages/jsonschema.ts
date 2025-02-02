@@ -1,13 +1,11 @@
 import dedent from "dedent";
-import type { RootageAST, TokenLit } from "../parser/ast";
+import type { TokenDeclaration, TokenLit } from "../parser/ast";
 
 function stringifyTokenExpression(token: TokenLit): string {
   return `$${token.group.join(".")}.${token.key}`;
 }
 
-export function getJsonSchema(ast: RootageAST): string {
-  const { tokens } = ast;
-
+export function getJsonSchema(tokens: TokenDeclaration[]): string {
   const tokenAnnotations = tokens.map(({ token, values }) => {
     const title = stringifyTokenExpression(token);
 

@@ -1,30 +1,40 @@
-import type * as Document from "./document";
-import * as factory from "./factory";
 import type {
   ComponentSpecDeclaration,
+  ComponentSpecDocument,
   PropertyDeclaration,
   SlotDeclaration,
   StateDeclaration,
   VariantDeclaration,
-} from "./ast";
+} from "../ast";
+import * as factory from "../factory";
+import type * as Document from "./types";
+import { parseMetadataDeclaration } from "./metadata";
 import {
   parseColorValue,
-  parseDimensionValue,
-  parseNumberValue,
-  parseDurationValue,
   parseCubicBezierValue,
-  parseShadowValue,
+  parseDimensionValue,
+  parseDurationValue,
   parseGradientValue,
+  parseNumberValue,
+  parseShadowValue,
 } from "./value";
 
-export function parseComponentSpecModel(
+export function parseComponentSpecDocument(
   model: Document.ComponentSpecModel,
+): ComponentSpecDocument {
+  return factory.createComponentSpecDocument(
+    parseMetadataDeclaration(model.metadata),
+    parseComponentSpecDeclaration(model.data),
+  );
+}
+
+export function parseComponentSpecDeclaration(
+  data: Document.ComponentSpecData,
 ): ComponentSpecDeclaration {
-  // We'll produce exactly ONE ComponentSpecDeclaration per Document.ComponentSpecModel
-  const { id, name } = model.metadata;
+  const { id, name } = data;
   const body: VariantDeclaration[] = [];
 
-  for (const variantDecl of model.data) {
+  for (const variantDecl of data.definitions) {
     body.push(parseVariantDeclaration(variantDecl));
   }
 

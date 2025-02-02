@@ -4,253 +4,257 @@
     "id": "top-navigation",
     "name": "Top Navigation"
   },
-  "data": [
-    {
-      "variants": {
-        "theme": "cupertino"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 44,
-                  "unit": "px"
+  "data": {
+    "id": "top-navigation",
+    "name": "Top Navigation",
+    "definitions": [
+      {
+        "variants": {
+          "theme": "cupertino"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 44,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
                 }
               },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              }
-            },
-            "icon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 24,
-                  "unit": "px"
-                }
-              },
-              "targetSize": {
-                "type": "dimension",
-                "value": {
-                  "value": 40,
-                  "unit": "px"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "theme": "android"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 56,
-                  "unit": "px"
-                }
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              }
-            },
-            "icon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 24,
-                  "unit": "px"
-                }
-              },
-              "targetSize": {
-                "type": "dimension",
-                "value": {
-                  "value": 40,
-                  "unit": "px"
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                },
+                "targetSize": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 40,
+                    "unit": "px"
+                  }
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "tone": "layer"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              }
-            },
-            "title": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "subtitle": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-muted"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "tone": "transparent"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "#00000000"
-              }
-            },
-            "title": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "subtitle": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "divider": "true"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.neutral-muted"
+      {
+        "variants": {
+          "theme": "android"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 56,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                }
               },
-              "strokeWidth": {
-                "type": "dimension",
-                "value": {
-                  "value": 1,
-                  "unit": "px"
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                },
+                "targetSize": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 40,
+                    "unit": "px"
+                  }
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "titleLayout": "titleOnly"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "title": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s6-static"
+      {
+        "variants": {
+          "tone": "layer"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                }
               },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
+              "title": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "subtitle": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-muted"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "titleLayout": "withSubtitle"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "title": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s5-static"
+      {
+        "variants": {
+          "tone": "transparent"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "#00000000"
+                }
               },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
-              }
-            },
-            "subtitle": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s2-static"
+              "title": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
               },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.regular"
+              "subtitle": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
               }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      },
+      {
+        "variants": {
+          "divider": "true"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral-muted"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "titleLayout": "titleOnly"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s6-static"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "titleLayout": "withSubtitle"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s5-static"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              },
+              "subtitle": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s2-static"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

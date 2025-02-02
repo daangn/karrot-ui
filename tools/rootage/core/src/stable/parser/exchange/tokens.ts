@@ -1,6 +1,3 @@
-import type * as Document from "./document";
-import * as factory from "./factory";
-import { parseTokenRef } from "./token-ref";
 import type {
   ColorHexLit,
   CubicBezierLit,
@@ -11,21 +8,27 @@ import type {
   ShadowLit,
   TokenDeclaration,
   TokenLit,
-} from "./ast";
+  TokensDocument,
+} from "../ast";
+import * as factory from "../factory";
+import type * as Document from "./types";
+import { parseMetadataDeclaration } from "./metadata";
 import { parseValue } from "./value";
 
-export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[] {
+export function parseTokensDocument(model: Document.TokensModel): TokensDocument {
+  return factory.createTokensDocument(
+    parseMetadataDeclaration(model.metadata),
+    parseTokenDeclarations(model.data),
+  );
+}
+
+export function parseTokenDeclarations(data: Document.TokensData): TokenDeclaration[] {
   const out: TokenDeclaration[] = [];
-  const collectionName = model.data.collection;
+  const collectionName = data.collection;
 
   // Each token entry => a single TokenDeclaration
   // For each token, we guess the type of token from the first mode's value type.
-  // In real usage, you'd enforce consistent types across all modes for that token.
-  for (const [tokenRef, tokenData] of Object.entries(model.data.tokens)) {
-    // `tokenRef` is something like `"$myColorPrimary"`
-    // We can parse that tokenRef => group/key, or just store it directly as the key.
-    const { group, key } = parseTokenRef(tokenRef);
-
+  for (const [tokenRef, tokenData] of Object.entries(data.tokens)) {
     // get the first mode's value to guess the type
     const firstMode = Object.keys(tokenData.values)[0]!;
     const firstValue = tokenData.values[firstMode]!;
@@ -46,8 +49,10 @@ export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[
         out.push(
           factory.createColorTokenDeclaration(
             collectionName,
-            factory.createTokenLit(group, key),
-            modeValues as Array<{ mode: string; value: ColorHexLit | TokenLit }>,
+            factory.createTokenLit(tokenRef),
+            modeValues.map(({ mode, value }) =>
+              factory.createColorTokenValueDeclaration(mode, value as ColorHexLit | TokenLit),
+            ),
             tokenData.description,
           ),
         );
@@ -56,8 +61,10 @@ export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[
         out.push(
           factory.createDimensionTokenDeclaration(
             collectionName,
-            factory.createTokenLit(group, key),
-            modeValues as Array<{ mode: string; value: DimensionLit | TokenLit }>,
+            factory.createTokenLit(tokenRef),
+            modeValues.map(({ mode, value }) =>
+              factory.createDimensionTokenValueDeclaration(mode, value as DimensionLit | TokenLit),
+            ),
             tokenData.description,
           ),
         );
@@ -66,8 +73,10 @@ export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[
         out.push(
           factory.createNumberTokenDeclaration(
             collectionName,
-            factory.createTokenLit(group, key),
-            modeValues as Array<{ mode: string; value: NumberLit | TokenLit }>,
+            factory.createTokenLit(tokenRef),
+            modeValues.map(({ mode, value }) =>
+              factory.createNumberTokenValueDeclaration(mode, value as NumberLit | TokenLit),
+            ),
             tokenData.description,
           ),
         );
@@ -76,8 +85,10 @@ export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[
         out.push(
           factory.createDurationTokenDeclaration(
             collectionName,
-            factory.createTokenLit(group, key),
-            modeValues as Array<{ mode: string; value: DurationLit | TokenLit }>,
+            factory.createTokenLit(tokenRef),
+            modeValues.map(({ mode, value }) =>
+              factory.createDurationTokenValueDeclaration(mode, value as DurationLit | TokenLit),
+            ),
             tokenData.description,
           ),
         );
@@ -86,8 +97,13 @@ export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[
         out.push(
           factory.createCubicBezierTokenDeclaration(
             collectionName,
-            factory.createTokenLit(group, key),
-            modeValues as Array<{ mode: string; value: CubicBezierLit | TokenLit }>,
+            factory.createTokenLit(tokenRef),
+            modeValues.map(({ mode, value }) =>
+              factory.createCubicBezierTokenValueDeclaration(
+                mode,
+                value as CubicBezierLit | TokenLit,
+              ),
+            ),
             tokenData.description,
           ),
         );
@@ -96,8 +112,10 @@ export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[
         out.push(
           factory.createShadowTokenDeclaration(
             collectionName,
-            factory.createTokenLit(group, key),
-            modeValues as Array<{ mode: string; value: ShadowLit | TokenLit }>,
+            factory.createTokenLit(tokenRef),
+            modeValues.map(({ mode, value }) =>
+              factory.createShadowTokenValueDeclaration(mode, value as ShadowLit | TokenLit),
+            ),
             tokenData.description,
           ),
         );
@@ -106,13 +124,14 @@ export function parseTokensModel(model: Document.TokensModel): TokenDeclaration[
         out.push(
           factory.createGradientTokenDeclaration(
             collectionName,
-            factory.createTokenLit(group, key),
-            modeValues as Array<{ mode: string; value: GradientLit | TokenLit }>,
+            factory.createTokenLit(tokenRef),
+            modeValues.map(({ mode, value }) =>
+              factory.createGradientTokenValueDeclaration(mode, value as GradientLit | TokenLit),
+            ),
             tokenData.description,
           ),
         );
         break;
-
       // If none matched (e.g. if it's a reference to another token),
       // you might fallback to color or throw an error. We'll just throw here.
       default:

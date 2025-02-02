@@ -4,267 +4,271 @@
     "id": "chip-tab",
     "name": "Chip Tab"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
+  "data": {
+    "id": "chip-tab",
+    "name": "Chip Tab",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 36,
+                    "unit": "px"
+                  }
+                }
               },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.full"
-              },
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 36,
-                  "unit": "px"
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
                 }
               }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
-              }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "neutral solid"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
+      {
+        "variants": {
+          "variant": "neutral solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted"
+                }
               },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
               }
             }
           }
-        },
-        {
-          "states": [
-            "enabled",
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "selected"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-inverted"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-inverted"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "selected",
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-inverted-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "selected",
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.disabled"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "brand solid"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-muted"
+      {
+        "variants": {
+          "variant": "brand solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak"
+                }
               },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.medium"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-muted"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.medium"
+                }
               }
             }
-          }
-        },
-        {
-          "states": [
-            "enabled",
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak-pressed"
+          },
+          {
+            "states": [
+              "enabled",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
+                }
               }
             }
-          }
-        },
-        {
-          "states": [
-            "selected"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
+          },
+          {
+            "states": [
+              "selected"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
+                }
               },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
               }
             }
           }
-        },
-        {
-          "states": [
-            "selected",
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.disabled"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "selected",
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.disabled"
-              }
-            }
-          }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

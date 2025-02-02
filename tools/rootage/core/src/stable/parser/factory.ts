@@ -32,7 +32,21 @@ import type {
   GradientTokenDeclaration,
   TokenDeclaration,
   TokenCollectionDeclaration,
-  RootageAST,
+  MetadataDeclaration,
+  MetadataFieldDeclaration,
+  ComponentSpecDocument,
+  TokenCollectionsDocument,
+  TokensDocument,
+  UnresolvedTokenDeclaration,
+  ColorTokenValueDeclaration,
+  DimensionTokenValueDeclaration,
+  NumberTokenValueDeclaration,
+  DurationTokenValueDeclaration,
+  CubicBezierTokenValueDeclaration,
+  ShadowTokenValueDeclaration,
+  GradientTokenValueDeclaration,
+  UnresolvedTokenValueDeclaration,
+  UnresolvedPropertyDeclaration,
 } from "./ast";
 
 /**
@@ -143,12 +157,29 @@ export function createGradientLit(stops: GradientStopLit[]): GradientLit {
 /**
  * TokenLit factory
  */
-export function createTokenLit(group: string[], key: string): TokenLit {
+// "$brand.colors.primary" => group=["brand", "colors"], key="primary"
+export function createTokenLit(identifier: string): TokenLit {
+  if (typeof identifier !== "string" || !identifier.startsWith("$")) {
+    throw new Error(`Invalid token identifier: ${identifier}`);
+  }
+
+  const bare = identifier.slice(1); // remove leading '$'
+  const group = bare.split(".");
+  if (group.length > 1) {
+    const key = group.pop()!;
+    return {
+      kind: "TokenLit",
+      identifier,
+      group,
+      key,
+    } as TokenLit;
+  }
   return {
     kind: "TokenLit",
+    identifier,
     group,
-    key,
-  };
+    key: bare,
+  } as TokenLit;
 }
 
 // -----------------------------------------------------------------------------
@@ -248,6 +279,20 @@ export function createGradientPropertyDeclaration(
 ): GradientPropertyDeclaration {
   return {
     kind: "GradientPropertyDeclaration",
+    property,
+    value,
+  };
+}
+
+/**
+ * UnresolvedPropertyDeclaration factory
+ */
+export function createUnresolvedPropertyDeclaration(
+  property: string,
+  value: TokenLit,
+): UnresolvedPropertyDeclaration {
+  return {
+    kind: "UnresolvedPropertyDeclaration",
     property,
     value,
   };
@@ -355,10 +400,7 @@ export function createComponentSpecDeclaration(
 export function createColorTokenDeclaration(
   collection: string,
   token: TokenLit,
-  values: Array<{
-    mode: string;
-    value: ColorHexLit | TokenLit;
-  }>,
+  values: ColorTokenValueDeclaration[],
   description?: string,
 ): ColorTokenDeclaration {
   return {
@@ -376,10 +418,7 @@ export function createColorTokenDeclaration(
 export function createDimensionTokenDeclaration(
   collection: string,
   token: TokenLit,
-  values: Array<{
-    mode: string;
-    value: DimensionLit | TokenLit;
-  }>,
+  values: DimensionTokenValueDeclaration[],
   description?: string,
 ): DimensionTokenDeclaration {
   return {
@@ -397,10 +436,7 @@ export function createDimensionTokenDeclaration(
 export function createNumberTokenDeclaration(
   collection: string,
   token: TokenLit,
-  values: Array<{
-    mode: string;
-    value: NumberLit | TokenLit;
-  }>,
+  values: NumberTokenValueDeclaration[],
   description?: string,
 ): NumberTokenDeclaration {
   return {
@@ -418,10 +454,7 @@ export function createNumberTokenDeclaration(
 export function createDurationTokenDeclaration(
   collection: string,
   token: TokenLit,
-  values: Array<{
-    mode: string;
-    value: DurationLit | TokenLit;
-  }>,
+  values: DurationTokenValueDeclaration[],
   description?: string,
 ): DurationTokenDeclaration {
   return {
@@ -439,10 +472,7 @@ export function createDurationTokenDeclaration(
 export function createCubicBezierTokenDeclaration(
   collection: string,
   token: TokenLit,
-  values: Array<{
-    mode: string;
-    value: CubicBezierLit | TokenLit;
-  }>,
+  values: CubicBezierTokenValueDeclaration[],
   description?: string,
 ): CubicBezierTokenDeclaration {
   return {
@@ -460,10 +490,7 @@ export function createCubicBezierTokenDeclaration(
 export function createShadowTokenDeclaration(
   collection: string,
   token: TokenLit,
-  values: Array<{
-    mode: string;
-    value: ShadowLit | TokenLit;
-  }>,
+  values: ShadowTokenValueDeclaration[],
   description?: string,
 ): ShadowTokenDeclaration {
   return {
@@ -481,10 +508,7 @@ export function createShadowTokenDeclaration(
 export function createGradientTokenDeclaration(
   collection: string,
   token: TokenLit,
-  values: Array<{
-    mode: string;
-    value: GradientLit | TokenLit;
-  }>,
+  values: GradientTokenValueDeclaration[],
   description?: string,
 ): GradientTokenDeclaration {
   return {
@@ -493,6 +517,217 @@ export function createGradientTokenDeclaration(
     token,
     values,
     description,
+  };
+}
+
+/**
+ * UnresolvedTokenDeclaration factory
+ */
+export function createUnresolvedTokenDeclaration(
+  collection: string,
+  token: TokenLit,
+  values: UnresolvedTokenValueDeclaration[],
+  description?: string,
+): UnresolvedTokenDeclaration {
+  return {
+    kind: "UnresolvedTokenDeclaration",
+    collection,
+    token,
+    values,
+    description,
+  };
+}
+
+/**
+ * Helper function to create a TokenDeclaration based on the type of values
+ */
+export function createTokenDeclaration(
+  collection: string,
+  token: TokenLit,
+  values:
+    | ColorTokenValueDeclaration[]
+    | DimensionTokenValueDeclaration[]
+    | NumberTokenValueDeclaration[]
+    | DurationTokenValueDeclaration[]
+    | CubicBezierTokenValueDeclaration[]
+    | ShadowTokenValueDeclaration[]
+    | GradientTokenValueDeclaration[]
+    | UnresolvedTokenValueDeclaration[],
+  description?: string,
+): TokenDeclaration {
+  switch (values[0]!.kind) {
+    case "ColorTokenValueDeclaration":
+      return createColorTokenDeclaration(
+        collection,
+        token,
+        values as ColorTokenValueDeclaration[],
+        description,
+      );
+    case "DimensionTokenValueDeclaration":
+      return createDimensionTokenDeclaration(
+        collection,
+        token,
+        values as DimensionTokenValueDeclaration[],
+        description,
+      );
+    case "NumberTokenValueDeclaration":
+      return createNumberTokenDeclaration(
+        collection,
+        token,
+        values as NumberTokenValueDeclaration[],
+        description,
+      );
+    case "DurationTokenValueDeclaration":
+      return createDurationTokenDeclaration(
+        collection,
+        token,
+        values as DurationTokenValueDeclaration[],
+        description,
+      );
+    case "CubicBezierTokenValueDeclaration":
+      return createCubicBezierTokenDeclaration(
+        collection,
+        token,
+        values as CubicBezierTokenValueDeclaration[],
+        description,
+      );
+    case "ShadowTokenValueDeclaration":
+      return createShadowTokenDeclaration(
+        collection,
+        token,
+        values as ShadowTokenValueDeclaration[],
+        description,
+      );
+    case "GradientTokenValueDeclaration":
+      return createGradientTokenDeclaration(
+        collection,
+        token,
+        values as GradientTokenValueDeclaration[],
+        description,
+      );
+    case "UnresolvedTokenValueDeclaration":
+      return createUnresolvedTokenDeclaration(
+        collection,
+        token,
+        values as UnresolvedTokenValueDeclaration[],
+        description,
+      );
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Token Value Declarations
+// -----------------------------------------------------------------------------
+
+/**
+ * ColorTokenValueDeclaration factory
+ */
+export function createColorTokenValueDeclaration(
+  mode: string,
+  value: ColorHexLit | TokenLit,
+): ColorTokenValueDeclaration {
+  return {
+    kind: "ColorTokenValueDeclaration",
+    mode,
+    value,
+  };
+}
+
+/**
+ * DimensionTokenValueDeclaration factory
+ */
+export function createDimensionTokenValueDeclaration(
+  mode: string,
+  value: DimensionLit | TokenLit,
+): DimensionTokenValueDeclaration {
+  return {
+    kind: "DimensionTokenValueDeclaration",
+    mode,
+    value,
+  };
+}
+
+/**
+ * NumberTokenValueDeclaration factory
+ */
+export function createNumberTokenValueDeclaration(
+  mode: string,
+  value: NumberLit | TokenLit,
+): NumberTokenValueDeclaration {
+  return {
+    kind: "NumberTokenValueDeclaration",
+    mode,
+    value,
+  };
+}
+
+/**
+ * DurationTokenValueDeclaration factory
+ */
+export function createDurationTokenValueDeclaration(
+  mode: string,
+  value: DurationLit | TokenLit,
+): DurationTokenValueDeclaration {
+  return {
+    kind: "DurationTokenValueDeclaration",
+    mode,
+    value,
+  };
+}
+
+/**
+ * CubicBezierTokenValueDeclaration factory
+ */
+export function createCubicBezierTokenValueDeclaration(
+  mode: string,
+  value: CubicBezierLit | TokenLit,
+): CubicBezierTokenValueDeclaration {
+  return {
+    kind: "CubicBezierTokenValueDeclaration",
+    mode,
+    value,
+  };
+}
+
+/**
+ * ShadowTokenValueDeclaration factory
+ */
+export function createShadowTokenValueDeclaration(
+  mode: string,
+  value: ShadowLit | TokenLit,
+): ShadowTokenValueDeclaration {
+  return {
+    kind: "ShadowTokenValueDeclaration",
+    mode,
+    value,
+  };
+}
+
+/**
+ * GradientTokenValueDeclaration factory
+ */
+export function createGradientTokenValueDeclaration(
+  mode: string,
+  value: GradientLit | TokenLit,
+): GradientTokenValueDeclaration {
+  return {
+    kind: "GradientTokenValueDeclaration",
+    mode,
+    value,
+  };
+}
+
+/**
+ * UnresolvedTokenValueDeclaration factory
+ */
+export function createUnresolvedTokenValueDeclaration(
+  mode: string,
+  value: TokenLit,
+): UnresolvedTokenValueDeclaration {
+  return {
+    kind: "UnresolvedTokenValueDeclaration",
+    mode,
+    value,
   };
 }
 
@@ -515,21 +750,75 @@ export function createTokenCollectionDeclaration(
 }
 
 // -----------------------------------------------------------------------------
-// RootageAST
+// Metadata
 // -----------------------------------------------------------------------------
 
 /**
- * Root AST node factory
+ * MetadataFieldDeclaration factory
  */
-export function createRootageAST(
-  componentSpecs: ComponentSpecDeclaration[],
-  tokens: TokenDeclaration[],
-  tokenCollections: TokenCollectionDeclaration[],
-): RootageAST {
+export function createMetadataFieldDeclaration(
+  key: string,
+  value: string | number | boolean,
+): MetadataFieldDeclaration {
   return {
-    kind: "RootageAST",
-    componentSpecs,
-    tokens,
-    tokenCollections,
+    kind: "MetadataFieldDeclaration",
+    key,
+    value,
+  };
+}
+
+/**
+ * MetadataDeclaration factory
+ */
+export function createMetadataDeclaration(fields: MetadataFieldDeclaration[]): MetadataDeclaration {
+  return {
+    kind: "MetadataDeclaration",
+    fields,
+  };
+}
+
+// -----------------------------------------------------------------------------
+// Document Entry Points
+// -----------------------------------------------------------------------------
+
+/**
+ * TokenCollectionsDocument factory
+ */
+export function createTokenCollectionsDocument(
+  metadata: MetadataDeclaration,
+  data: TokenCollectionDeclaration[],
+): TokenCollectionsDocument {
+  return {
+    kind: "TokenCollectionsDocument",
+    metadata,
+    data,
+  };
+}
+
+/**
+ * TokensDocument factory
+ */
+export function createTokensDocument(
+  metadata: MetadataDeclaration,
+  data: TokenDeclaration[],
+): TokensDocument {
+  return {
+    kind: "TokensDocument",
+    metadata,
+    data,
+  };
+}
+
+/**
+ * ComponentSpecDocument factory
+ */
+export function createComponentSpecDocument(
+  metadata: MetadataDeclaration,
+  data: ComponentSpecDeclaration,
+): ComponentSpecDocument {
+  return {
+    kind: "ComponentSpecDocument",
+    metadata,
+    data,
   };
 }

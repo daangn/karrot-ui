@@ -10,7 +10,7 @@ esbuild
     write: true,
     treeShaking: true,
     sourcemap: false,
-    minify: true,
+    minify: false,
     format: "esm",
     platform: "node",
     target: ["node16"],

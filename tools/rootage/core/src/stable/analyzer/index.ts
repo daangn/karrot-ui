@@ -1,4 +1,10 @@
-export { buildContext } from "./context";
-export { resolveReferences, resolveToken } from "./resolver";
-export { validate } from "./validate";
+export {
+  buildContext,
+  getComponentSpecDeclarations,
+  getTokenCollectionDeclarations,
+  getTokenDeclarations,
+  getSourceFiles,
+} from "./context";
+export { transformResolvedType, resolveReferences, resolveToken } from "./resolver";
 export type * from "./types";
+export { validate } from "./validate";

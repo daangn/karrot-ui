@@ -4,191 +4,195 @@
     "id": "snackbar",
     "name": "Snackbar"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "region": {
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              },
-              "offsetDuration": {
-                "type": "duration",
-                "value": "$duration.s4"
-              },
-              "offsetTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.easing"
-              }
-            },
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-solid"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s2"
-              },
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 44,
-                  "unit": "px"
+  "data": {
+    "id": "snackbar",
+    "name": "Snackbar",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "region": {
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                },
+                "offsetDuration": {
+                  "type": "duration",
+                  "value": "$duration.s4"
+                },
+                "offsetTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.easing"
                 }
               },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
-              },
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              },
-              "enterOpacity": {
-                "type": "number",
-                "value": 0
-              },
-              "enterDuration": {
-                "type": "duration",
-                "value": "$duration.s4"
-              },
-              "enterTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.enter"
-              },
-              "exitOpacity": {
-                "type": "number",
-                "value": 0
-              },
-              "exitDuration": {
-                "type": "duration",
-                "value": "$duration.s4"
-              },
-              "exitTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.exit"
-              }
-            },
-            "message": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              },
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s4"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.regular"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 24,
-                  "unit": "px"
-                }
-              }
-            },
-            "actionButton": {
-              "targetPaddingX": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              },
-              "targetMinHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 44,
-                  "unit": "px"
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-solid"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s2"
+                },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 44,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                },
+                "enterOpacity": {
+                  "type": "number",
+                  "value": 0
+                },
+                "enterDuration": {
+                  "type": "duration",
+                  "value": "$duration.s4"
+                },
+                "enterTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.enter"
+                },
+                "exitOpacity": {
+                  "type": "number",
+                  "value": 0
+                },
+                "exitDuration": {
+                  "type": "duration",
+                  "value": "$duration.s4"
+                },
+                "exitTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.exit"
                 }
               },
-              "color": {
-                "type": "color",
-                "value": "$color.fg.brand"
+              "message": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
               },
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                }
               },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s4"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
+              "actionButton": {
+                "targetPaddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                },
+                "targetMinHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 44,
+                    "unit": "px"
+                  }
+                },
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.brand"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "default"
+        ]
       },
-      "definitions": []
-    },
-    {
-      "variants": {
-        "variant": "positive"
+      {
+        "variants": {
+          "variant": "default"
+        },
+        "definitions": []
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.positive"
+      {
+        "variants": {
+          "variant": "positive"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.positive"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "critical"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.critical"
+      {
+        "variants": {
+          "variant": "critical"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.critical"
+                }
               }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

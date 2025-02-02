@@ -1,19 +1,13 @@
 import { describe, expect, it } from "vitest";
+import { Authoring, visitEachChild, visitNode, type AST } from "../parser";
 import { buildContext } from "./context";
-import { parse } from "../parser/parse";
-import { resolveReferences, resolveToken } from "./resolver";
-import type { ResolvedTokenResult } from "./types";
-import type { Model, TokensModel } from "../transformer/shorthand-document";
-import { transform } from "../transformer/transform";
-
-const buildRootage = (models: Model[]) => {
-  const parsed = parse(transform(models));
-  return buildContext(parsed);
-};
+import { transformResolvedType, resolveReferences, resolveToken } from "./resolver";
+import type { ResolvedTokenResult, SourceFile } from "./types";
+import type { Node } from "../parser/ast";
 
 describe("resolveToken", () => {
   it("should resolve value as is", () => {
-    const input: TokensModel = {
+    const input: Authoring.TokensModel = {
       kind: "Tokens",
       metadata: {
         name: "tokens",
@@ -36,7 +30,12 @@ describe("resolveToken", () => {
       },
     };
 
-    const parsed = buildRootage([input]);
+    const parsed = buildContext([
+      {
+        fileName: "tokens",
+        ast: Authoring.fromObject(input),
+      },
+    ]);
     const result1 = resolveToken(parsed, "$size-1", { global: "default" });
     const result2 = resolveToken(parsed, "$duration-1", { global: "default" });
 
@@ -51,7 +50,7 @@ describe("resolveToken", () => {
   });
 
   it("should resolve to referenced token type for token ref", () => {
-    const input: TokensModel = {
+    const input: Authoring.TokensModel = {
       kind: "Tokens",
       metadata: {
         name: "tokens",
@@ -76,7 +75,12 @@ describe("resolveToken", () => {
       },
     };
 
-    const parsed = buildRootage([input]);
+    const parsed = buildContext([
+      {
+        fileName: "tokens",
+        ast: Authoring.fromObject(input),
+      },
+    ]);
     const resultLight = resolveToken(parsed, "$color.bg.layer-1", { color: "light" });
     const resultDark = resolveToken(parsed, "$color.bg.layer-1", { color: "dark" });
 
@@ -91,7 +95,7 @@ describe("resolveToken", () => {
   });
 
   it("should track multiple reference", () => {
-    const input: TokensModel = {
+    const input: Authoring.TokensModel = {
       kind: "Tokens",
       metadata: {
         name: "tokens",
@@ -122,7 +126,12 @@ describe("resolveToken", () => {
       },
     };
 
-    const parsed = buildRootage([input]);
+    const parsed = buildContext([
+      {
+        fileName: "tokens",
+        ast: Authoring.fromObject(input),
+      },
+    ]);
     const resultLight = resolveToken(parsed, "$color.bg.layer-default", { color: "light" });
     const resultDark = resolveToken(parsed, "$color.bg.layer-default", { color: "dark" });
 
@@ -139,131 +148,143 @@ describe("resolveToken", () => {
 
 describe("resolveReferences", () => {
   it("should resolve references", () => {
-    const input: TokensModel[] = [
+    const input: SourceFile[] = [
       {
-        kind: "Tokens",
-        metadata: {
-          name: "tokens",
-          id: "id",
-        },
-        data: {
-          collection: "color",
-          tokens: {
-            "$color.palette.gray-00": {
-              values: {
-                light: "#ffffff",
-                dark: "#000000",
+        fileName: "tokens",
+        ast: Authoring.fromObject({
+          kind: "Tokens",
+          metadata: {
+            name: "tokens",
+            id: "id",
+          },
+          data: {
+            collection: "color",
+            tokens: {
+              "$color.palette.gray-00": {
+                values: {
+                  light: "#ffffff",
+                  dark: "#000000",
+                },
               },
-            },
-            "$color.bg.layer-1": {
-              values: {
-                light: "$color.palette.gray-00",
-                dark: "$color.palette.gray-00",
+              "$color.bg.layer-1": {
+                values: {
+                  light: "$color.palette.gray-00",
+                  dark: "$color.palette.gray-00",
+                },
               },
             },
           },
-        },
+        }),
       },
     ];
 
-    const parsed = buildRootage(input);
+    const parsed = buildContext(input);
     const result = resolveReferences(parsed, "$color.palette.gray-00", { color: "light" });
 
     expect(result).toEqual(["$color.bg.layer-1"]);
   });
 
   it("should resolve multiple references", () => {
-    const input: TokensModel[] = [
+    const input: SourceFile[] = [
       {
-        kind: "Tokens",
-        metadata: {
-          name: "tokens",
-          id: "id",
-        },
-        data: {
-          collection: "color",
-          tokens: {
-            "$color.palette.gray-00": {
-              values: {
-                light: "#ffffff",
-                dark: "#000000",
+        fileName: "tokens",
+        ast: Authoring.fromObject({
+          kind: "Tokens",
+          metadata: {
+            name: "tokens",
+            id: "id",
+          },
+          data: {
+            collection: "color",
+            tokens: {
+              "$color.palette.gray-00": {
+                values: {
+                  light: "#ffffff",
+                  dark: "#000000",
+                },
               },
-            },
-            "$color.bg.layer-1": {
-              values: {
-                light: "$color.palette.gray-00",
-                dark: "$color.palette.gray-00",
+              "$color.bg.layer-1": {
+                values: {
+                  light: "$color.palette.gray-00",
+                  dark: "$color.palette.gray-00",
+                },
               },
-            },
-            "$color.bg.layer-default": {
-              values: {
-                light: "$color.bg.layer-1",
-                dark: "$color.bg.layer-1",
+              "$color.bg.layer-default": {
+                values: {
+                  light: "$color.bg.layer-1",
+                  dark: "$color.bg.layer-1",
+                },
               },
             },
           },
-        },
+        }),
       },
     ];
 
-    const parsed = buildRootage(input);
+    const parsed = buildContext(input);
     const result = resolveReferences(parsed, "$color.palette.gray-00", { color: "light" });
 
     expect(result).toEqual(["$color.bg.layer-1", "$color.bg.layer-default"]);
   });
 
   it("should resolve component spec references", () => {
-    const input: Model[] = [
+    const input: SourceFile[] = [
       {
-        kind: "Tokens",
-        metadata: {
-          name: "tokens",
-          id: "id",
-        },
-        data: {
-          collection: "color",
-          tokens: {
-            "$color.palette.gray-00": {
-              values: {
-                light: "#ffffff",
-                dark: "#000000",
+        fileName: "tokens",
+        ast: Authoring.fromObject({
+          kind: "Tokens",
+          metadata: {
+            name: "tokens",
+            id: "id",
+          },
+          data: {
+            collection: "color",
+            tokens: {
+              "$color.palette.gray-00": {
+                values: {
+                  light: "#ffffff",
+                  dark: "#000000",
+                },
               },
-            },
-            "$color.bg.layer-default": {
-              values: {
-                light: "$color.palette.gray-00",
-                dark: "$color.palette.gray-00",
+              "$color.bg.layer-default": {
+                values: {
+                  light: "$color.palette.gray-00",
+                  dark: "$color.palette.gray-00",
+                },
               },
             },
           },
-        },
+        }),
       },
       {
-        kind: "ComponentSpec",
-        metadata: {
-          name: "Test",
-          id: "testid",
-        },
-        data: {
-          base: {
-            enabled: {
-              root: {
-                color: "$color.bg.layer-default",
+        fileName: "component",
+        ast: Authoring.fromObject({
+          kind: "ComponentSpec",
+          metadata: {
+            name: "Test",
+            id: "testid",
+          },
+          data: {
+            base: {
+              enabled: {
+                root: {
+                  color: "$color.bg.layer-default",
+                },
+              },
+            },
+            "tone=layer": {
+              enabled: {
+                root: {
+                  color: "$color.bg.layer-default",
+                },
               },
             },
           },
-          "tone=layer": {
-            enabled: {
-              root: {
-                color: "$color.bg.layer-default",
-              },
-            },
-          },
-        },
+        }),
       },
     ];
 
-    const parsed = buildRootage(input);
+    const parsed = buildContext(input);
     const result = resolveReferences(parsed, "$color.palette.gray-00", { color: "light" });
 
     expect(result).toEqual([
@@ -271,5 +292,142 @@ describe("resolveReferences", () => {
       "testid/base/enabled/root/color",
       "testid/tone=layer/enabled/root/color",
     ]);
+  });
+});
+
+describe("getTypeResolvedSourceFile", () => {
+  it("should get type resolved tokens file", () => {
+    const data: SourceFile[] = [
+      {
+        fileName: "collection",
+        ast: Authoring.fromObject({
+          kind: "TokenCollections",
+          metadata: {
+            name: "collection",
+            id: "id",
+          },
+          data: [
+            {
+              name: "color",
+              modes: ["light", "dark"],
+            },
+          ],
+        }),
+      },
+      {
+        fileName: "tokens",
+        ast: Authoring.fromObject({
+          kind: "Tokens",
+          metadata: {
+            name: "tokens",
+            id: "id",
+          },
+          data: {
+            collection: "color",
+            tokens: {
+              "$color.palette.gray-00": {
+                values: {
+                  light: "#ffffff",
+                  dark: "#000000",
+                },
+              },
+              "$color.bg.layer-1": {
+                values: {
+                  light: "$color.palette.gray-00",
+                  dark: "$color.palette.gray-00",
+                },
+              },
+            },
+          },
+        }),
+      },
+    ];
+    const ctx = buildContext(data);
+
+    const result = transformResolvedType(ctx, data[1]!.ast) as AST.TokensDocument;
+
+    expect(result.data.find((x) => x.kind === "UnresolvedTokenDeclaration")).toBeUndefined();
+  });
+
+  it("should get type resolved ComponentSpec file", () => {
+    const data: SourceFile[] = [
+      {
+        fileName: "collection",
+        ast: Authoring.fromObject({
+          kind: "TokenCollections",
+          metadata: {
+            name: "collection",
+            id: "id",
+          },
+          data: [
+            {
+              name: "color",
+              modes: ["light", "dark"],
+            },
+          ],
+        }),
+      },
+      {
+        fileName: "tokens",
+        ast: Authoring.fromObject({
+          kind: "Tokens",
+          metadata: {
+            name: "tokens",
+            id: "id",
+          },
+          data: {
+            collection: "color",
+            tokens: {
+              "$color.palette.gray-00": {
+                values: {
+                  light: "#ffffff",
+                  dark: "#000000",
+                },
+              },
+              "$color.bg.layer-1": {
+                values: {
+                  light: "$color.palette.gray-00",
+                  dark: "$color.palette.gray-00",
+                },
+              },
+            },
+          },
+        }),
+      },
+      {
+        fileName: "component",
+        ast: Authoring.fromObject({
+          kind: "ComponentSpec",
+          metadata: {
+            name: "Test",
+            id: "testid",
+          },
+          data: {
+            base: {
+              enabled: {
+                root: {
+                  color: "$color.bg.layer-1",
+                },
+              },
+            },
+          },
+        }),
+      },
+    ];
+    const ctx = buildContext(data);
+
+    const result = transformResolvedType(ctx, data[2]!.ast) as AST.ComponentSpecDocument;
+
+    let hasUnresolved = false;
+    function visit(node: Node): Node {
+      if (node.kind === "UnresolvedPropertyDeclaration") {
+        hasUnresolved = true;
+      }
+
+      return visitEachChild(node, visit);
+    }
+    visitNode(result, visit);
+
+    expect(hasUnresolved).toBe(false);
   });
 });

@@ -1,4 +1,4 @@
-import type { TokenRef } from "../parser/document";
+export type TokenRef = `$${string}`;
 
 export type Color = `#${string}`;
 export type Dimension = `${number}px` | `${number}rem`;
@@ -8,26 +8,35 @@ export type CubicBezier = {
   type: "cubicBezier";
   value: readonly [number, number, number, number];
 };
+export type ShadowLayer = {
+  color: Color;
+  offsetX: Dimension;
+  offsetY: Dimension;
+  blur: Dimension;
+  spread: Dimension;
+};
 export type Shadow = {
   type: "shadow";
-  value: Array<{
-    color: Color;
-    offsetX: Dimension;
-    offsetY: Dimension;
-    blur: Dimension;
-    spread: Dimension;
-  }>;
+  value: ShadowLayer[];
+};
+export type GradientStop = {
+  color: Color;
+  position: Number;
 };
 export type Gradient = {
   type: "gradient";
-  value: Array<{
-    color: Color;
-    position: number;
-  }>;
+  value: GradientStop[];
 };
 
-export type Value = Color | Dimension | Number | Duration | CubicBezier | Shadow | Gradient;
-export type RighthandValue = Value | TokenRef;
+export type Value =
+  | Color
+  | Dimension
+  | Number
+  | Duration
+  | CubicBezier
+  | Shadow
+  | Gradient
+  | TokenRef;
 
 export interface TokenCollectionsModel {
   kind: "TokenCollections";
@@ -55,7 +64,7 @@ export interface TokensData {
   tokens: {
     [tokenName: TokenRef]: {
       values: {
-        [mode: string]: RighthandValue;
+        [mode: string]: Value;
       };
       description?: string;
     };
@@ -75,7 +84,7 @@ export interface ComponentSpecData {
   [variantExpression: string]: {
     [state: string]: {
       [slot: string]: {
-        [property: string]: RighthandValue;
+        [property: string]: Value;
       };
     };
   };

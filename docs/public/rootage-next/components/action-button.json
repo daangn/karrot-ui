@@ -4,1266 +4,1270 @@
     "id": "action-button",
     "name": "Action Button"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "colorDuration": {
-                "type": "duration",
-                "value": "$duration.s4"
-              },
-              "colorTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.easing"
-              }
-            },
-            "label": {
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "brand solid"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "progressCircle": {
-              "trackColor": {
-                "type": "color",
-                "value": "$color.palette.static-white-alpha-200"
-              },
-              "rangeColor": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.disabled"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "loading"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid-pressed"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "neutral solid"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-inverted"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-inverted"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-inverted"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-inverted"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-inverted"
-              }
-            },
-            "progressCircle": {
-              "trackColor": {
-                "type": "color",
-                "value": "$color.palette.static-white-alpha-200"
-              },
-              "rangeColor": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-inverted-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.disabled"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "loading"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-inverted-pressed"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "neutral weak"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "progressCircle": {
-              "trackColor": {
-                "type": "color",
-                "value": "$color.palette.gray-500"
-              },
-              "rangeColor": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.disabled"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "loading"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak-pressed"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "critical solid"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.critical-solid"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "progressCircle": {
-              "trackColor": {
-                "type": "color",
-                "value": "$color.palette.static-white-alpha-200"
-              },
-              "rangeColor": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.critical-solid-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.disabled"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "loading"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.critical-solid-pressed"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "neutral outline"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.neutral"
-              },
-              "strokeWidth": {
-                "type": "dimension",
-                "value": {
-                  "value": 1,
-                  "unit": "px"
-                }
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "progressCircle": {
-              "trackColor": {
-                "type": "color",
-                "value": "$color.palette.gray-500"
-              },
-              "rangeColor": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.neutral"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "loading"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "brand outline"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.neutral"
-              },
-              "strokeWidth": {
-                "type": "dimension",
-                "value": {
-                  "value": 1,
-                  "unit": "px"
-                }
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.brand"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.brand"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.brand"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.brand"
-              }
-            },
-            "progressCircle": {
-              "trackColor": {
-                "type": "color",
-                "value": "$color.palette.carrot-200"
-              },
-              "rangeColor": {
-                "type": "color",
-                "value": "$color.bg.brand-solid"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "disabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.neutral"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "icon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            },
-            "suffixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.disabled"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "loading"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "xsmall"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": "$dimension.s8"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.full"
-              }
-            },
-            "progressCircle": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 14,
-                  "unit": "px"
+  "data": {
+    "id": "action-button",
+    "name": "Action Button",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "colorDuration": {
+                  "type": "duration",
+                  "value": "$duration.s4"
+                },
+                "colorTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.easing"
                 }
               },
-              "thickness": {
-                "type": "dimension",
-                "value": {
-                  "value": 2,
-                  "unit": "px"
+              "label": {
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "xsmall",
-        "layout": "with text"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s1"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s1_5"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "suffixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "xsmall",
-        "layout": "icon only"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minWidth": {
-                "type": "dimension",
-                "value": "$dimension.s8"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s1_5"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s1_5"
-              }
-            },
-            "icon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "small"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": "$dimension.s9"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s2"
-              }
-            },
-            "progressCircle": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 14,
-                  "unit": "px"
+      {
+        "variants": {
+          "variant": "brand solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
                 }
               },
-              "thickness": {
-                "type": "dimension",
-                "value": {
-                  "value": 2,
-                  "unit": "px"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "progressCircle": {
+                "trackColor": {
+                  "type": "color",
+                  "value": "$color.palette.static-white-alpha-200"
+                },
+                "rangeColor": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "loading"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid-pressed"
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "small",
-        "layout": "with text"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s1"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "suffixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "small",
-        "layout": "icon only"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minWidth": {
-                "type": "dimension",
-                "value": "$dimension.s9"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              }
-            },
-            "icon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "medium"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": "$dimension.s10"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s2"
-              }
-            },
-            "progressCircle": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 16,
-                  "unit": "px"
+      {
+        "variants": {
+          "variant": "neutral solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted"
                 }
               },
-              "thickness": {
-                "type": "dimension",
-                "value": {
-                  "value": 2,
-                  "unit": "px"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              },
+              "progressCircle": {
+                "trackColor": {
+                  "type": "color",
+                  "value": "$color.palette.static-white-alpha-200"
+                },
+                "rangeColor": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "loading"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted-pressed"
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "medium",
-        "layout": "with text"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s1"
+      {
+        "variants": {
+          "variant": "neutral weak"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak"
+                }
               },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
               },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              }
-            },
-            "suffixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "medium",
-        "layout": "icon only"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minWidth": {
-                "type": "dimension",
-                "value": "$dimension.s10"
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
               },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
               },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
-              }
-            },
-            "icon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 18,
-                  "unit": "px"
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "progressCircle": {
+                "trackColor": {
+                  "type": "color",
+                  "value": "$color.palette.gray-500"
+                },
+                "rangeColor": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
                 }
               }
             }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "large"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": "$dimension.s13"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s3"
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
+                }
               }
-            },
-            "progressCircle": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 18,
-                  "unit": "px"
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
                 }
               },
-              "thickness": {
-                "type": "dimension",
-                "value": {
-                  "value": 2,
-                  "unit": "px"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "loading"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
                 }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "large",
-        "layout": "with text"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s2"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s5"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 22,
-                  "unit": "px"
+      {
+        "variants": {
+          "variant": "critical solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.critical-solid"
                 }
-              }
-            },
-            "suffixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 22,
-                  "unit": "px"
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
                 }
-              }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s6"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "large",
-        "layout": "icon only"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minWidth": {
-                "type": "dimension",
-                "value": "$dimension.s13"
               },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
               },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "icon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 22,
-                  "unit": "px"
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "progressCircle": {
+                "trackColor": {
+                  "type": "color",
+                  "value": "$color.palette.static-white-alpha-200"
+                },
+                "rangeColor": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
                 }
               }
             }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.critical-solid-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "loading"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.critical-solid-pressed"
+                }
+              }
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      },
+      {
+        "variants": {
+          "variant": "neutral outline"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "progressCircle": {
+                "trackColor": {
+                  "type": "color",
+                  "value": "$color.palette.gray-500"
+                },
+                "rangeColor": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "loading"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "variant": "brand outline"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.brand"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.brand"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.brand"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.brand"
+                }
+              },
+              "progressCircle": {
+                "trackColor": {
+                  "type": "color",
+                  "value": "$color.palette.carrot-200"
+                },
+                "rangeColor": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              },
+              "suffixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "loading"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "xsmall"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": "$dimension.s8"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
+              },
+              "progressCircle": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 14,
+                    "unit": "px"
+                  }
+                },
+                "thickness": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 2,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "xsmall",
+          "layout": "with text"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s1"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s1_5"
+                }
+              },
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              },
+              "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "xsmall",
+          "layout": "icon only"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minWidth": {
+                  "type": "dimension",
+                  "value": "$dimension.s8"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s1_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s1_5"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "small"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": "$dimension.s9"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s2"
+                }
+              },
+              "progressCircle": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 14,
+                    "unit": "px"
+                  }
+                },
+                "thickness": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 2,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "small",
+          "layout": "with text"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s1"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                }
+              },
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              },
+              "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "small",
+          "layout": "icon only"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minWidth": {
+                  "type": "dimension",
+                  "value": "$dimension.s9"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "medium"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": "$dimension.s10"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s2"
+                }
+              },
+              "progressCircle": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 16,
+                    "unit": "px"
+                  }
+                },
+                "thickness": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 2,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "medium",
+          "layout": "with text"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s1"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                }
+              },
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                }
+              },
+              "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "medium",
+          "layout": "icon only"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minWidth": {
+                  "type": "dimension",
+                  "value": "$dimension.s10"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 18,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "large"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": "$dimension.s13"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s3"
+                }
+              },
+              "progressCircle": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 18,
+                    "unit": "px"
+                  }
+                },
+                "thickness": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 2,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "large",
+          "layout": "with text"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s2"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              },
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 22,
+                    "unit": "px"
+                  }
+                }
+              },
+              "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 22,
+                    "unit": "px"
+                  }
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s6"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "large",
+          "layout": "icon only"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minWidth": {
+                  "type": "dimension",
+                  "value": "$dimension.s13"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 22,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

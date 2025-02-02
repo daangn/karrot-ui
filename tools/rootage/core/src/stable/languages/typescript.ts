@@ -1,5 +1,13 @@
 import { camelCase } from "change-case";
-import type { RootageAST, StateExpression, TokenLit, VariantExpression } from "../parser/ast";
+import type {
+  ComponentSpecDeclaration,
+  ComponentSpecDocument,
+  StateExpression,
+  TokenDeclaration,
+  TokenLit,
+  TokensDocument,
+  VariantExpression,
+} from "../parser/ast";
 import { stringifyCssValue, stringifyTokenReference } from "./css";
 
 /**
@@ -29,11 +37,8 @@ function stringifyStateKey(state: StateExpression[]): string {
   return camelCase(state.map((s) => s.value).join("-"));
 }
 
-function getComponentSpec(ast: RootageAST, componentId: string) {
-  const body = ast.componentSpecs.find((spec) => spec.id === componentId)?.body;
-  if (!body) {
-    throw new Error(`Component spec not found: ${componentId}`);
-  }
+function getComponentSpec(decl: ComponentSpecDeclaration) {
+  const body = decl.body;
 
   const result: Record<string, Record<string, Record<string, Record<string, string>>>> = {};
 
@@ -68,26 +73,26 @@ function getComponentSpec(ast: RootageAST, componentId: string) {
   return result;
 }
 
-export function getComponentSpecMjs(ast: RootageAST, componentId: string) {
-  const result = getComponentSpec(ast, componentId);
+export function getComponentSpecMjs(decl: ComponentSpecDeclaration) {
+  const result = getComponentSpec(decl);
   return `export const vars = ${JSON.stringify(result, null, 2)}`;
 }
 
-export function getComponentSpecDts(ast: RootageAST, componentId: string) {
-  const result = getComponentSpec(ast, componentId);
+export function getComponentSpecDts(decl: ComponentSpecDeclaration) {
+  const result = getComponentSpec(decl);
   return `export declare const vars: ${JSON.stringify(result, null, 2)}`;
 }
 
-export function getComponentSpecIndexMjs(ast: RootageAST) {
-  const result = ast.componentSpecs.map((spec) => {
+export function getComponentSpecIndexMjs(decls: ComponentSpecDeclaration[]) {
+  const result = decls.map((spec) => {
     return `export { vars as ${camelCase(spec.id, { mergeAmbiguousCharacters: true })} } from "./${spec.id}.mjs";`;
   });
 
   return result.join("\n");
 }
 
-export function getComponentSpecIndexDts(ast: RootageAST) {
-  const result = ast.componentSpecs.map((spec) => {
+export function getComponentSpecIndexDts(decls: ComponentSpecDeclaration[]) {
+  const result = decls.map((spec) => {
     return `export { vars as ${camelCase(spec.id, { mergeAmbiguousCharacters: true })} } from "./${spec.id}";`;
   });
 
@@ -104,9 +109,8 @@ interface TokenGroup {
   code: TokenDefinition[];
 }
 
-function getTokenGroups(ast: RootageAST): TokenGroup[] {
-  const { tokens } = ast;
-  const tokenExpressions = tokens.map((decl) => decl.token);
+function getTokenGroups(decls: TokenDeclaration[]): TokenGroup[] {
+  const tokenExpressions = decls.map((decl) => decl.token);
 
   const groups: Record<string, TokenLit[]> = {};
 
@@ -177,12 +181,12 @@ function generateTokenCode(
   });
 }
 
-export function getTokenMjs(ast: RootageAST): { path: string; code: string }[] {
-  const groups = getTokenGroups(ast);
+export function getTokenMjs(decls: TokenDeclaration[]): { path: string; code: string }[] {
+  const groups = getTokenGroups(decls);
   return generateTokenCode(groups, false);
 }
 
-export function getTokenDts(ast: RootageAST): { path: string; code: string }[] {
-  const groups = getTokenGroups(ast);
+export function getTokenDts(decls: TokenDeclaration[]): { path: string; code: string }[] {
+  const groups = getTokenGroups(decls);
   return generateTokenCode(groups, true);
 }

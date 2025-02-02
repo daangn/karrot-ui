@@ -1,5 +1,3 @@
-import { isTokenRef } from "./is-token-ref";
-import type * as Document from "./document";
 import type {
   ColorHexLit,
   CubicBezierLit,
@@ -11,9 +9,10 @@ import type {
   ShadowLayerLit,
   ShadowLit,
   TokenLit,
-} from "./ast";
-import * as factory from "./factory";
-import { parseTokenRef } from "./token-ref";
+} from "../ast";
+import * as factory from "../factory";
+import type * as Document from "./types";
+import { isTokenRef } from "./is-token-ref";
 
 /* ------------------------------------------------------------------
    Value -> AST "literal" or token reference
@@ -39,8 +38,7 @@ export function parseValue(
   | TokenLit {
   if (typeof v === "string") {
     // It's a token reference
-    const { group, key } = parseTokenRef(v);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(v);
   }
 
   // Otherwise, it's a Document.Value
@@ -68,8 +66,7 @@ export function parseColorValue(colorVal: Document.Color): ColorHexLit | TokenLi
   const c = colorVal.value;
   if (isTokenRef(c)) {
     // It's a token reference
-    const { group, key } = parseTokenRef(c);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(c);
   }
   // Otherwise c is `#...`
   return factory.createColorHexLit(c as `#${string}`);
@@ -80,8 +77,7 @@ export function parseColorValue(colorVal: Document.Color): ColorHexLit | TokenLi
 export function parseDimensionValue(dimVal: Document.Dimension): DimensionLit | TokenLit {
   const d = dimVal.value;
   if (isTokenRef(d)) {
-    const { group, key } = parseTokenRef(d);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(d);
   }
   // Otherwise d is { value: number, unit: "px"|"rem" }
   return factory.createDimensionLit(d.value, d.unit);
@@ -92,8 +88,7 @@ export function parseDimensionValue(dimVal: Document.Dimension): DimensionLit | 
 export function parseNumberValue(numVal: Document.Number): NumberLit | TokenLit {
   const n = numVal.value;
   if (typeof n === "string" && n.startsWith("$")) {
-    const { group, key } = parseTokenRef(n);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(n);
   }
   return factory.createNumberLit(n as number);
 }
@@ -103,8 +98,7 @@ export function parseNumberValue(numVal: Document.Number): NumberLit | TokenLit 
 export function parseDurationValue(durVal: Document.Duration): DurationLit | TokenLit {
   const d = durVal.value;
   if (isTokenRef(d)) {
-    const { group, key } = parseTokenRef(d);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(d);
   }
   return factory.createDurationLit(d.value, d.unit);
 }
@@ -114,8 +108,7 @@ export function parseDurationValue(durVal: Document.Duration): DurationLit | Tok
 export function parseCubicBezierValue(cbVal: Document.CubicBezier): CubicBezierLit | TokenLit {
   const c = cbVal.value;
   if (isTokenRef(c)) {
-    const { group, key } = parseTokenRef(c);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(c);
   }
   // otherwise it's an array of [n1,n2,n3,n4]
   return factory.createCubicBezierLit(c as [number, number, number, number]);
@@ -126,8 +119,7 @@ export function parseCubicBezierValue(cbVal: Document.CubicBezier): CubicBezierL
 export function parseShadowValue(shVal: Document.Shadow): ShadowLit | TokenLit {
   const s = shVal.value;
   if (isTokenRef(s)) {
-    const { group, key } = parseTokenRef(s);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(s);
   }
   // Otherwise it's an array of shadow layers
   const layers = (s as Document.ShadowLayer[]).map(parseShadowLayer);
@@ -164,8 +156,7 @@ export function parseShadowLayer(layer: Document.ShadowLayer): ShadowLayerLit {
 export function parseGradientValue(grVal: Document.Gradient): GradientLit | TokenLit {
   const g = grVal.value;
   if (isTokenRef(g)) {
-    const { group, key } = parseTokenRef(g);
-    return factory.createTokenLit(group, key);
+    return factory.createTokenLit(g);
   }
   // Otherwise it's an array of gradient stops
   const stops = (g as Document.GradientStop[]).map(parseGradientStop);

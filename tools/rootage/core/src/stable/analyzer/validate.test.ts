@@ -1,223 +1,187 @@
+import dedent from "dedent";
 import { describe, expect, it } from "vitest";
-import { parse } from "../parser/parse";
-import type { Model } from "../parser/document";
+import { Authoring } from "../parser";
 import { buildContext } from "./context";
+import type { SourceFile } from "./types";
 import { validate } from "./validate";
 
-const buildRootage = (models: Model[]) => {
-  const parsed = parse(models);
-  return buildContext(parsed);
-};
-
-describe("validateModels", () => {
+describe("validate", () => {
   it("should return true for valid models", () => {
-    const models: Model[] = [
+    const files: SourceFile[] = [
       {
-        kind: "TokenCollections",
-        metadata: {
-          id: "1",
-          name: "collection",
-        },
-        data: [
-          {
-            name: "color",
-            modes: ["light", "dark"],
-          },
-        ],
+        fileName: "collection",
+        ast: Authoring.fromString(dedent`
+        kind: TokenCollections
+        metadata:
+          id: "1"
+          name: collection
+        data:
+          - name: color
+            modes: 
+              - light
+              - dark`),
       },
       {
-        kind: "Tokens",
-        metadata: {
-          id: "2",
-          name: "tokens",
-        },
-        data: {
-          collection: "color",
-          tokens: {
-            "$color.bg.layer-1": {
-              values: {
-                light: { type: "color", value: "#ffffff" },
-                dark: { type: "color", value: "#000000" },
-              },
-            },
-          },
-        },
+        fileName: "tokens",
+        ast: Authoring.fromString(dedent`
+        kind: Tokens
+        metadata:
+          id: "2"
+          name: tokens
+        data:
+          collection: color
+          tokens:
+            "$color.bg.layer-1":
+              values:
+                light: "#ffffff"
+                dark: "#000000"`),
       },
       {
-        kind: "ComponentSpec",
-        metadata: {
-          id: "3",
-          name: "component",
-        },
-        data: [
-          {
-            variants: {},
-            definitions: [
-              {
-                states: ["default"],
-                slots: {
-                  default: {
-                    color: { type: "color", value: "$color.bg.layer-1" },
-                  },
-                },
-              },
-            ],
-          },
-        ],
+        fileName: "component",
+        ast: Authoring.fromString(dedent`
+        kind: ComponentSpec
+        metadata:
+          id: "3"
+          name: component
+        data:
+          base:
+            enabled:
+              default:
+                color: "$color.bg.layer-1"`),
       },
     ];
 
-    const result = validate(buildRootage(models));
+    const result = validate(buildContext(files));
 
     expect(result.valid).toEqual(true);
   });
 
   it("should return false if token collection is not defined", () => {
-    const models: Model[] = [
+    const files: SourceFile[] = [
       {
-        kind: "Tokens",
-        metadata: {
-          id: "2",
-          name: "tokens",
-        },
-        data: {
-          collection: "color",
-          tokens: {
-            "$color.bg.layer-1": {
-              values: {
-                light: { type: "color", value: "#ffffff" },
-                dark: { type: "color", value: "#000000" },
-              },
-            },
-          },
-        },
+        fileName: "tokens",
+        ast: Authoring.fromString(dedent`
+        kind: Tokens
+        metadata:
+          id: "2"
+          name: tokens
+        data:
+          collection: color
+          tokens:
+            "$color.bg.layer-1":
+              values:
+                light: "#ffffff"
+                dark: "#000000"`),
       },
     ];
 
-    const result = validate(buildRootage(models));
+    const result = validate(buildContext(files));
 
     expect(result.valid).toEqual(false);
   });
 
   it("should return false if mode is not defined in token collection", () => {
-    const models: Model[] = [
+    const files: SourceFile[] = [
       {
-        kind: "TokenCollections",
-        metadata: {
-          id: "1",
-          name: "collection",
-        },
-        data: [
-          {
-            name: "color",
-            modes: ["light"],
-          },
-        ],
+        fileName: "collection",
+        ast: Authoring.fromString(dedent`
+        kind: TokenCollections
+        metadata:
+          id: "1"
+          name: collection
+        data:
+          - name: color
+            modes: 
+              - light`),
       },
       {
-        kind: "Tokens",
-        metadata: {
-          id: "2",
-          name: "tokens",
-        },
-        data: {
-          collection: "color",
-          tokens: {
-            "$color.bg.layer-1": {
-              values: {
-                light: { type: "color", value: "#ffffff" },
-                dark: { type: "color", value: "#000000" },
-              },
-            },
-          },
-        },
+        fileName: "tokens",
+        ast: Authoring.fromString(dedent`
+        kind: Tokens
+        metadata:
+          id: "2"
+          name: tokens
+        data:
+          collection: color
+          tokens:
+            "$color.bg.layer-1":
+              values:
+                light: "#ffffff"
+                dark: "#000000"`),
       },
     ];
 
-    const result = validate(buildRootage(models));
+    const result = validate(buildContext(files));
 
     expect(result.valid).toEqual(false);
   });
 
   it("should return false if referenced token is not defined - Tokens", () => {
-    const models: Model[] = [
+    const files: SourceFile[] = [
       {
-        kind: "TokenCollections",
-        metadata: {
-          id: "1",
-          name: "collection",
-        },
-        data: [
-          {
-            name: "color",
-            modes: ["light"],
-          },
-        ],
+        fileName: "collection",
+        ast: Authoring.fromString(dedent`
+        kind: TokenCollections
+        metadata:
+          id: "1"
+          name: collection
+        data:
+          - name: color
+            modes: 
+              - light`),
       },
       {
-        kind: "Tokens",
-        metadata: {
-          id: "2",
-          name: "tokens",
-        },
-        data: {
-          collection: "color",
-          tokens: {
-            "$color.bg.layer-1": {
-              values: {
-                light: { type: "color", value: "$color.bg.layer-2" },
-              },
-            },
-          },
-        },
+        fileName: "tokens",
+        ast: Authoring.fromString(dedent`
+        kind: Tokens
+        metadata:
+          id: "2"
+          name: tokens
+        data:
+          collection: color
+          tokens:
+            "$color.bg.layer-1":
+              values:
+                light: $color.bg.layer-2`),
       },
     ];
 
-    const result = validate(buildRootage(models));
+    const result = validate(buildContext(files));
 
     expect(result.valid).toEqual(false);
   });
 
   it("should return false if referenced token is not defined - ComponentSpec", () => {
-    const models: Model[] = [
+    const files: SourceFile[] = [
       {
-        kind: "TokenCollections",
-        metadata: {
-          id: "1",
-          name: "collection",
-        },
-        data: [
-          {
-            name: "color",
-            modes: ["light"],
-          },
-        ],
+        fileName: "collection",
+        ast: Authoring.fromString(dedent`
+        kind: TokenCollections
+        metadata:
+          id: "1"
+          name: collection
+        data:
+          - name: color
+            modes: 
+              - light
+              - dark`),
       },
       {
-        kind: "ComponentSpec",
-        metadata: {
-          id: "3",
-          name: "component",
-        },
-        data: [
-          {
-            variants: {},
-            definitions: [
-              {
-                states: ["default"],
-                slots: {
-                  default: {
-                    color: { type: "color", value: "$color.bg.layer-1" },
-                  },
-                },
-              },
-            ],
-          },
-        ],
+        fileName: "component",
+        ast: Authoring.fromString(dedent`
+        kind: ComponentSpec
+        metadata:
+          id: "3"
+          name: component
+        data:
+          base:
+            enabled:
+              default:
+                color: "$color.bg.layer-1"`),
       },
     ];
 
-    const result = validate(buildRootage(models));
+    const result = validate(buildContext(files));
 
     expect(result.valid).toEqual(false);
   });

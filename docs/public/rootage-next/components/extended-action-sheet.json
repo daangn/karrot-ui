@@ -4,141 +4,145 @@
     "id": "extended-action-sheet",
     "name": "Extended Action Sheet"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "backdrop": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.overlay"
-              },
-              "enterDuration": {
-                "type": "duration",
-                "value": "$duration.s2"
-              },
-              "enterTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.enter"
-              },
-              "enterOpacity": {
-                "type": "number",
-                "value": 0
-              },
-              "exitDuration": {
-                "type": "duration",
-                "value": "$duration.s2"
-              },
-              "exitTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.exit"
-              },
-              "exitOpacity": {
-                "type": "number",
-                "value": 0
-              }
-            },
-            "content": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-floating"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.spacing-x.global-gutter"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              },
-              "cornerTopRadius": {
-                "type": "dimension",
-                "value": "$radius.s5"
-              },
-              "enterDuration": {
-                "type": "duration",
-                "value": "$duration.s6"
-              },
-              "enterTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.enter-expressive"
-              },
-              "exitDuration": {
-                "type": "duration",
-                "value": "$duration.s4"
-              },
-              "exitTimingFunction": {
-                "type": "cubicBezier",
-                "value": "$timing-function.exit"
-              }
-            },
-            "header": {
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s1"
-              },
-              "paddingBottom": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              }
-            },
-            "title": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s6"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s6"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
-              },
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "list": {
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
-              }
-            },
-            "group": {
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s4"
-              }
-            },
-            "divider": {
-              "strokeBottomWidth": {
-                "type": "dimension",
-                "value": {
-                  "value": 1,
-                  "unit": "px"
+  "data": {
+    "id": "extended-action-sheet",
+    "name": "Extended Action Sheet",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "backdrop": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.overlay"
+                },
+                "enterDuration": {
+                  "type": "duration",
+                  "value": "$duration.s2"
+                },
+                "enterTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.enter"
+                },
+                "enterOpacity": {
+                  "type": "number",
+                  "value": 0
+                },
+                "exitDuration": {
+                  "type": "duration",
+                  "value": "$duration.s2"
+                },
+                "exitTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.exit"
+                },
+                "exitOpacity": {
+                  "type": "number",
+                  "value": 0
                 }
               },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.neutral"
-              }
-            },
-            "footer": {
-              "paddingTop": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
+              "content": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-floating"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.spacing-x.global-gutter"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                },
+                "cornerTopRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s5"
+                },
+                "enterDuration": {
+                  "type": "duration",
+                  "value": "$duration.s6"
+                },
+                "enterTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.enter-expressive"
+                },
+                "exitDuration": {
+                  "type": "duration",
+                  "value": "$duration.s4"
+                },
+                "exitTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.exit"
+                }
+              },
+              "header": {
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s1"
+                },
+                "paddingBottom": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                }
+              },
+              "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s6"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s6"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                },
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "list": {
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                }
+              },
+              "group": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s4"
+                }
+              },
+              "divider": {
+                "strokeBottomWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral"
+                }
+              },
+              "footer": {
+                "paddingTop": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                }
               }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

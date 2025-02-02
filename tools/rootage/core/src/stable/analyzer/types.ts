@@ -1,5 +1,5 @@
 import type * as AST from "../parser/ast";
-import type { TokenRef } from "../parser/document";
+import type { TokenRef } from "../parser/exchange/types";
 
 // resolver
 export interface ResolvedTokenResult {
@@ -33,7 +33,13 @@ export interface ReferenceGraph {
   [tokenRef: TokenRef]: ReferenceNode;
 }
 
+export interface SourceFile {
+  fileName: string;
+  ast: AST.TokensDocument | AST.TokenCollectionsDocument | AST.ComponentSpecDocument;
+}
+
 export interface RootageCtx {
+  sourceFiles: SourceFile[];
   tokenIds: TokenRef[];
   tokenEntities: Record<TokenRef, AST.TokenDeclaration>;
   tokenCollectionIds: string[];

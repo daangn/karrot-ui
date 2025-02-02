@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 
 import {
+  Authoring,
   buildContext,
   css,
+  exchange,
+  getComponentSpecDeclarations,
+  getSourceFiles,
+  getTokenCollectionDeclarations,
+  getTokenDeclarations,
   jsonschema,
-  parse,
-  transform,
   typescript,
   validate,
-  type ShorthandDocument,
 } from "@seed-design/rootage-core";
 import { parse as parseLegacy } from "@seed-design/rootage-core/legacy";
 import fs from "fs-extra";
@@ -46,11 +49,14 @@ async function prepare() {
 
   const fileContents = await Promise.all(filePaths.map((name) => fs.readFile(name, "utf-8")));
 
-  const models = fileContents.map((content) => YAML.parse(content) as ShorthandDocument.Model);
-  const transformedModels = transform(models);
-  const ast = parse(transformedModels);
+  const models = fileContents.map((content) => YAML.parse(content) as Authoring.Model);
   const astLegacy = parseLegacy(models);
-  const ctx = buildContext(ast);
+  const ctx = buildContext(
+    models.map((model, i) => ({
+      fileName: filePaths[i],
+      ast: Authoring.fromObject(model),
+    })),
+  );
 
   const validationResult = validate(ctx);
 
@@ -60,20 +66,18 @@ async function prepare() {
   }
 
   return {
-    ast,
     astLegacy,
     ctx,
     filePaths,
     models,
-    transformedModels,
   };
 }
 
 async function writeTokenTs() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  const mjsResults = typescript.getTokenMjs(ast);
-  const dtsResults = typescript.getTokenDts(ast);
+  const mjsResults = typescript.getTokenMjs(getTokenDeclarations(ctx));
+  const dtsResults = typescript.getTokenDts(getTokenDeclarations(ctx));
 
   for (const result of mjsResults) {
     const writePath = path.join(process.cwd(), dir, result.path);
@@ -96,10 +100,11 @@ async function writeTokenTs() {
 }
 
 async function writeComponentSpec() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  for (const spec of ast.componentSpecs) {
-    const mjsCode = typescript.getComponentSpecMjs(ast, spec.id);
+  const specs = getComponentSpecDeclarations(ctx);
+  for (const spec of specs) {
+    const mjsCode = typescript.getComponentSpecMjs(spec);
     const mjsWritePath = path.join(process.cwd(), dir, `${spec.id}.mjs`);
 
     console.log("Writing", spec.name, "to", mjsWritePath);
@@ -109,7 +114,7 @@ async function writeComponentSpec() {
     }
     fs.writeFileSync(mjsWritePath, mjsCode);
 
-    const dtsCode = typescript.getComponentSpecDts(ast, spec.id);
+    const dtsCode = typescript.getComponentSpecDts(spec);
     const dtsWritePath = path.join(process.cwd(), dir, `${spec.id}.d.ts`);
 
     console.log("Writing", spec.name, "to", dtsWritePath);
@@ -117,14 +122,14 @@ async function writeComponentSpec() {
     fs.writeFileSync(dtsWritePath, dtsCode);
   }
 
-  const mjsIndexCode = typescript.getComponentSpecIndexMjs(ast);
+  const mjsIndexCode = typescript.getComponentSpecIndexMjs(specs);
   const mjsIndexWritePath = path.join(process.cwd(), dir, "index.mjs");
 
   console.log("Writing index to", mjsIndexWritePath);
 
   fs.writeFileSync(mjsIndexWritePath, mjsIndexCode);
 
-  const dtsIndexCode = typescript.getComponentSpecIndexDts(ast);
+  const dtsIndexCode = typescript.getComponentSpecIndexDts(specs);
   const dtsIndexWritePath = path.join(process.cwd(), dir, "index.d.ts");
 
   console.log("Writing index to", dtsIndexWritePath);
@@ -133,10 +138,15 @@ async function writeComponentSpec() {
 }
 
 async function writeTokenCss() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  const code = css.getTokenCss(ast, {
-    banner: `:root[data-seed] {
+  const code = css.getTokenCss(
+    {
+      tokens: getTokenDeclarations(ctx),
+      tokenCollections: getTokenCollectionDeclarations(ctx),
+    },
+    {
+      banner: `:root[data-seed] {
   color-scheme: light dark;
 }
 
@@ -149,20 +159,21 @@ async function writeTokenCss() {
 }
 
 `,
-    selectors: {
-      global: {
-        default: ":root[data-seed]",
-      },
-      color: {
-        "theme-light": `:root[data-seed][data-seed="light-only"][data-seed-scale-color="dark"],
+      selectors: {
+        global: {
+          default: ":root[data-seed]",
+        },
+        color: {
+          "theme-light": `:root[data-seed][data-seed="light-only"][data-seed-scale-color="dark"],
 :root[data-seed][data-seed-scale-color="light"]:not([data-seed="dark-only"]),
 :root[data-seed]:not([data-seed="dark-only"]) [data-seed-scale-color="light"]`,
-        "theme-dark": `:root[data-seed][data-seed="dark-only"][data-seed-scale-color="light"],
+          "theme-dark": `:root[data-seed][data-seed="dark-only"][data-seed-scale-color="light"],
 :root[data-seed][data-seed-scale-color="dark"]:not([data-seed="light-only"]),
 :root[data-seed]:not([data-seed="light-only"]) [data-seed-scale-color="dark"]`,
+        },
       },
     },
-  });
+  );
 
   const writePath = path.join(process.cwd(), dir, "token.css");
 
@@ -172,9 +183,9 @@ async function writeTokenCss() {
 }
 
 async function writeJsonSchema() {
-  const { ast } = await prepare();
+  const { ctx } = await prepare();
 
-  const jsonSchema = jsonschema.getJsonSchema(ast);
+  const jsonSchema = jsonschema.getJsonSchema(getTokenDeclarations(ctx));
   const writePath = path.join(artifactsDir, "components", "schema.json");
 
   console.log("Writing schema to", writePath);
@@ -183,12 +194,12 @@ async function writeJsonSchema() {
 }
 
 async function writeJson() {
-  const { ast, transformedModels, filePaths } = await prepare();
-  const entries = filePaths.map((file, index) => ({ file, content: transformedModels[index] }));
+  const { ctx } = await prepare();
 
-  for (const { file, content } of entries) {
+  for (const { fileName, ast } of getSourceFiles(ctx)) {
+    const content = exchange.getModel(ast);
     const code = JSON.stringify(content, null, 2);
-    const relativePath = path.relative(artifactsDir, file);
+    const relativePath = path.relative(artifactsDir, fileName);
     const withoutExt = relativePath.replace(path.extname(relativePath), "");
     const writePath = path.join(process.cwd(), dir, `${withoutExt}.json`);
 
@@ -200,17 +211,6 @@ async function writeJson() {
 
     fs.writeFileSync(writePath, code);
   }
-
-  const code = JSON.stringify(ast, null, 2);
-  const writePath = path.join(process.cwd(), dir, "parsed.json");
-
-  console.log("Writing parsed.json to", writePath);
-
-  if (!fs.existsSync(path.dirname(writePath))) {
-    fs.mkdirpSync(path.dirname(writePath));
-  }
-
-  fs.writeFileSync(writePath, code);
 }
 
 async function writeJsonLegacy() {

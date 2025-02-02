@@ -4,131 +4,135 @@
     "id": "extended-action-sheet-item",
     "name": "Extended Action Sheet Item"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak"
-              },
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 52,
-                  "unit": "px"
+  "data": {
+    "id": "extended-action-sheet-item",
+    "name": "Extended Action Sheet Item",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak"
+                },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 52,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
                 }
               },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 22,
+                    "unit": "px"
+                  }
+                }
               },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              },
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 22,
-                  "unit": "px"
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s5"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
                 }
               }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s5"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s5"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.regular"
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
+                }
               }
             }
           }
+        ]
+      },
+      {
+        "variants": {
+          "tone": "neutral"
         },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak-pressed"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "tone": "neutral"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "tone": "critical"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.critical"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.critical"
+      {
+        "variants": {
+          "tone": "critical"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.critical"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.critical"
+                }
               }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

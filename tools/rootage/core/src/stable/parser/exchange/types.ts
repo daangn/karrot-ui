@@ -73,7 +73,11 @@ export interface VariantDeclaration {
   }>;
 }
 
-export type ComponentSpecData = VariantDeclaration[];
+export interface ComponentSpecData {
+  id: string;
+  name: string;
+  definitions: VariantDeclaration[];
+}
 
 export interface TokensModel {
   kind: "Tokens";

@@ -1,11 +1,9 @@
 import { expect, test } from "vitest";
-import { parse } from "../parser/parse";
+import { Authoring } from "../parser";
 import { getJsonSchema } from "./jsonschema";
-import type { TokensModel } from "../transformer/shorthand-document";
-import { transform } from "../transformer/transform";
 
 test("getJsonSchema should generate jsonschema for component spec", () => {
-  const models: TokensModel[] = [
+  const models: Authoring.TokensModel[] = [
     {
       kind: "Tokens",
       metadata: {
@@ -55,7 +53,9 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
     },
   ];
 
-  const result = getJsonSchema(parse(transform(models)));
+  const result = getJsonSchema(
+    models.flatMap((model) => Authoring.parseTokensDocument(model).data),
+  );
 
   expect(result).toMatchInlineSnapshot(`
     "{
@@ -256,7 +256,7 @@ test("getJsonSchema should generate jsonschema for component spec", () => {
 });
 
 test("getJsonSchema should generate valid json", () => {
-  const models: TokensModel[] = [
+  const models: Authoring.TokensModel[] = [
     {
       kind: "Tokens",
       metadata: {
@@ -306,7 +306,9 @@ test("getJsonSchema should generate valid json", () => {
     },
   ];
 
-  const result = getJsonSchema(parse(transform(models)));
+  const result = getJsonSchema(
+    models.flatMap((model) => Authoring.parseTokensDocument(model).data),
+  );
 
   expect(() => JSON.parse(result)).not.toThrow();
 });

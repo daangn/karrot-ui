@@ -1,3 +1,6 @@
+export type TokenRef = `$${string}`;
+
+// Literal
 export interface ColorHexLit {
   kind: "ColorHexLit";
   value: `#${string}`;
@@ -50,12 +53,6 @@ export interface GradientLit {
   stops: GradientStopLit[];
 }
 
-export interface TokenLit {
-  kind: "TokenLit";
-  group: string[];
-  key: string;
-}
-
 export type ValueLit =
   | ColorHexLit
   | DimensionLit
@@ -65,6 +62,170 @@ export type ValueLit =
   | ShadowLit
   | GradientLit;
 
+export interface TokenLit {
+  kind: "TokenLit";
+  identifier: TokenRef;
+  group: string[];
+  key: string;
+}
+
+// Metadata
+export interface MetadataDeclaration {
+  kind: "MetadataDeclaration";
+  fields: MetadataFieldDeclaration[];
+}
+
+export interface MetadataFieldDeclaration {
+  kind: "MetadataFieldDeclaration";
+  key: string;
+  value: string | number | boolean;
+}
+
+// Tokens
+export interface ColorTokenDeclaration {
+  kind: "ColorTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: ColorTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface ColorTokenValueDeclaration {
+  kind: "ColorTokenValueDeclaration";
+  mode: string;
+  value: ColorHexLit | TokenLit;
+}
+
+export interface DimensionTokenDeclaration {
+  kind: "DimensionTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: DimensionTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface DimensionTokenValueDeclaration {
+  kind: "DimensionTokenValueDeclaration";
+  mode: string;
+  value: DimensionLit | TokenLit;
+}
+
+export interface NumberTokenDeclaration {
+  kind: "NumberTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: NumberTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface NumberTokenValueDeclaration {
+  kind: "NumberTokenValueDeclaration";
+  mode: string;
+  value: NumberLit | TokenLit;
+}
+
+export interface DurationTokenDeclaration {
+  kind: "DurationTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: DurationTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface DurationTokenValueDeclaration {
+  kind: "DurationTokenValueDeclaration";
+  mode: string;
+  value: DurationLit | TokenLit;
+}
+
+export interface CubicBezierTokenDeclaration {
+  kind: "CubicBezierTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: CubicBezierTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface CubicBezierTokenValueDeclaration {
+  kind: "CubicBezierTokenValueDeclaration";
+  mode: string;
+  value: CubicBezierLit | TokenLit;
+}
+
+export interface ShadowTokenDeclaration {
+  kind: "ShadowTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: ShadowTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface ShadowTokenValueDeclaration {
+  kind: "ShadowTokenValueDeclaration";
+  mode: string;
+  value: ShadowLit | TokenLit;
+}
+
+export interface GradientTokenDeclaration {
+  kind: "GradientTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: GradientTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface GradientTokenValueDeclaration {
+  kind: "GradientTokenValueDeclaration";
+  mode: string;
+  value: GradientLit | TokenLit;
+}
+
+// Used when a token references another token but the referenced token is unknown while parsing
+// (e.g. when a token references a token that is defined later in the document or in another document)
+export interface UnresolvedTokenDeclaration {
+  kind: "UnresolvedTokenDeclaration";
+  collection: string;
+  token: TokenLit;
+  values: UnresolvedTokenValueDeclaration[];
+  description?: string;
+}
+
+export interface UnresolvedTokenValueDeclaration {
+  kind: "UnresolvedTokenValueDeclaration";
+  mode: string;
+  value: TokenLit;
+}
+
+export type TokenDeclaration =
+  | ColorTokenDeclaration
+  | DimensionTokenDeclaration
+  | NumberTokenDeclaration
+  | DurationTokenDeclaration
+  | CubicBezierTokenDeclaration
+  | ShadowTokenDeclaration
+  | GradientTokenDeclaration
+  | UnresolvedTokenDeclaration;
+
+export interface TokensDocument {
+  kind: "TokensDocument";
+  metadata: MetadataDeclaration;
+  data: TokenDeclaration[];
+}
+
+// TokenCollections
+export interface TokenCollectionDeclaration {
+  kind: "TokenCollectionDeclaration";
+  name: string;
+  modes: string[];
+}
+
+export interface TokenCollectionsDocument {
+  kind: "TokenCollectionsDocument";
+  metadata: MetadataDeclaration;
+  data: TokenCollectionDeclaration[];
+}
+
+// ComponentSpec
 export interface ColorPropertyDeclaration {
   kind: "ColorPropertyDeclaration";
   property: string;
@@ -107,6 +268,12 @@ export interface GradientPropertyDeclaration {
   value: GradientLit | TokenLit;
 }
 
+export interface UnresolvedPropertyDeclaration {
+  kind: "UnresolvedPropertyDeclaration";
+  property: string;
+  value: TokenLit;
+}
+
 export type PropertyDeclaration =
   | ColorPropertyDeclaration
   | DimensionPropertyDeclaration
@@ -114,7 +281,8 @@ export type PropertyDeclaration =
   | DurationPropertyDeclaration
   | CubicBezierPropertyDeclaration
   | ShadowPropertyDeclaration
-  | GradientPropertyDeclaration;
+  | GradientPropertyDeclaration
+  | UnresolvedPropertyDeclaration;
 
 export interface SlotDeclaration {
   kind: "SlotDeclaration";
@@ -152,101 +320,56 @@ export interface ComponentSpecDeclaration {
   body: VariantDeclaration[];
 }
 
-export interface ColorTokenDeclaration {
-  kind: "ColorTokenDeclaration";
-  collection: string;
-  token: TokenLit;
-  values: Array<{
-    mode: string;
-    value: ColorHexLit | TokenLit;
-  }>;
-  description?: string;
+export interface ComponentSpecDocument {
+  kind: "ComponentSpecDocument";
+  metadata: MetadataDeclaration;
+  data: ComponentSpecDeclaration;
 }
 
-export interface DimensionTokenDeclaration {
-  kind: "DimensionTokenDeclaration";
-  collection: string;
-  token: TokenLit;
-  values: Array<{
-    mode: string;
-    value: DimensionLit | TokenLit;
-  }>;
-  description?: string;
-}
-
-export interface NumberTokenDeclaration {
-  kind: "NumberTokenDeclaration";
-  collection: string;
-  token: TokenLit;
-  values: Array<{
-    mode: string;
-    value: NumberLit | TokenLit;
-  }>;
-  description?: string;
-}
-
-export interface DurationTokenDeclaration {
-  kind: "DurationTokenDeclaration";
-  collection: string;
-  token: TokenLit;
-  values: Array<{
-    mode: string;
-    value: DurationLit | TokenLit;
-  }>;
-  description?: string;
-}
-
-export interface CubicBezierTokenDeclaration {
-  kind: "CubicBezierTokenDeclaration";
-  collection: string;
-  token: TokenLit;
-  values: Array<{
-    mode: string;
-    value: CubicBezierLit | TokenLit;
-  }>;
-  description?: string;
-}
-
-export interface ShadowTokenDeclaration {
-  kind: "ShadowTokenDeclaration";
-  collection: string;
-  token: TokenLit;
-  values: Array<{
-    mode: string;
-    value: ShadowLit | TokenLit;
-  }>;
-  description?: string;
-}
-
-export interface GradientTokenDeclaration {
-  kind: "GradientTokenDeclaration";
-  collection: string;
-  token: TokenLit;
-  values: Array<{
-    mode: string;
-    value: GradientLit | TokenLit;
-  }>;
-  description?: string;
-}
-
-export type TokenDeclaration =
+export type Node =
+  | ColorHexLit
+  | DimensionLit
+  | DurationLit
+  | NumberLit
+  | CubicBezierLit
+  | ShadowLayerLit
+  | ShadowLit
+  | GradientStopLit
+  | GradientLit
+  | TokenLit
+  | MetadataDeclaration
+  | MetadataFieldDeclaration
   | ColorTokenDeclaration
+  | ColorTokenValueDeclaration
   | DimensionTokenDeclaration
+  | DimensionTokenValueDeclaration
   | NumberTokenDeclaration
+  | NumberTokenValueDeclaration
   | DurationTokenDeclaration
+  | DurationTokenValueDeclaration
   | CubicBezierTokenDeclaration
+  | CubicBezierTokenValueDeclaration
   | ShadowTokenDeclaration
-  | GradientTokenDeclaration;
-
-export interface TokenCollectionDeclaration {
-  kind: "TokenCollectionDeclaration";
-  name: string;
-  modes: string[];
-}
-
-export interface RootageAST {
-  kind: "RootageAST";
-  componentSpecs: ComponentSpecDeclaration[];
-  tokens: TokenDeclaration[];
-  tokenCollections: TokenCollectionDeclaration[];
-}
+  | ShadowTokenValueDeclaration
+  | GradientTokenDeclaration
+  | GradientTokenValueDeclaration
+  | UnresolvedTokenDeclaration
+  | UnresolvedTokenValueDeclaration
+  | TokensDocument
+  | TokenCollectionDeclaration
+  | TokenCollectionsDocument
+  | ColorPropertyDeclaration
+  | DimensionPropertyDeclaration
+  | NumberPropertyDeclaration
+  | DurationPropertyDeclaration
+  | CubicBezierPropertyDeclaration
+  | ShadowPropertyDeclaration
+  | GradientPropertyDeclaration
+  | UnresolvedPropertyDeclaration
+  | SlotDeclaration
+  | StateExpression
+  | StateDeclaration
+  | VariantExpression
+  | VariantDeclaration
+  | ComponentSpecDeclaration
+  | ComponentSpecDocument;

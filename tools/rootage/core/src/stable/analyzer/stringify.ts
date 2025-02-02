@@ -1,9 +1,4 @@
-import type { TokenRef } from "../parser/document";
-import type { StateExpression, TokenLit, VariantExpression } from "../parser/ast";
-
-export function stringifyTokenLit(token: TokenLit): TokenRef {
-  return `$${[...token.group, token.key].join(".")}`;
-}
+import type { StateExpression, VariantExpression } from "../parser/ast";
 
 export function stringifyVariantExpression(variants: VariantExpression[]): string {
   if (variants.length === 0) {

@@ -4,254 +4,258 @@
     "id": "extended-fab",
     "name": "Extended Fab"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.full"
+  "data": {
+    "id": "extended-fab",
+    "name": "Extended Fab",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                },
+                "shadow": {
+                  "type": "shadow",
+                  "value": [
+                    {
+                      "color": "#00000026",
+                      "offsetX": {
+                        "value": 0,
+                        "unit": "px"
+                      },
+                      "offsetY": {
+                        "value": 2,
+                        "unit": "px"
+                      },
+                      "blur": {
+                        "value": 6,
+                        "unit": "px"
+                      },
+                      "spread": {
+                        "value": 0,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "variant": "neutral solid"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted"
+                }
               },
-              "shadow": {
-                "type": "shadow",
-                "value": [
-                  {
-                    "offsetX": {
-                      "value": 0,
-                      "unit": "px"
-                    },
-                    "offsetY": {
-                      "value": 2,
-                      "unit": "px"
-                    },
-                    "blur": {
-                      "value": 6,
-                      "unit": "px"
-                    },
-                    "spread": {
-                      "value": 0,
-                      "unit": "px"
-                    },
-                    "color": "#00000026"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted-pressed"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "variant": "layer floating"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-floating"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-floating-pressed"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "small"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 40,
+                    "unit": "px"
                   }
-                ]
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s1"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                }
+              },
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 16,
+                    "unit": "px"
+                  }
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.medium"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "neutral solid"
+        ]
       },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-inverted"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-inverted"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-inverted"
-              }
-            }
-          }
+      {
+        "variants": {
+          "size": "medium"
         },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-inverted-pressed"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "variant": "layer floating"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-floating"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            },
-            "prefixIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-floating-pressed"
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "small"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 40,
-                  "unit": "px"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 48,
+                    "unit": "px"
+                  }
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s1"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s3"
                 }
               },
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s1"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 16,
-                  "unit": "px"
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 16,
+                    "unit": "px"
+                  }
                 }
-              }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
               },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s4"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.medium"
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s5"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "variants": {
-        "size": "medium"
-      },
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 48,
-                  "unit": "px"
-                }
-              },
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s1"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s3"
-              }
-            },
-            "prefixIcon": {
-              "size": {
-                "type": "dimension",
-                "value": {
-                  "value": 16,
-                  "unit": "px"
-                }
-              }
-            },
-            "label": {
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s5"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s5"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
-              }
-            }
-          }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

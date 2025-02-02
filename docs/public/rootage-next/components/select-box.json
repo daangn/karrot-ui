@@ -4,258 +4,262 @@
     "id": "select-box",
     "name": "Select Box"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s4"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s5"
-              },
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
-              },
-              "strokeWidth": {
-                "type": "dimension",
-                "value": {
-                  "value": 1,
-                  "unit": "px"
+  "data": {
+    "id": "select-box",
+    "name": "Select Box",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s4"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s5"
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s3"
                 }
               },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.neutral"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s3"
-              }
-            },
-            "content": {
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s0_5"
-              }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.bold"
-              },
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s5"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s5"
-              }
-            },
-            "description": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral-muted"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.regular"
-              },
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s4"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s4"
-              }
-            },
-            "checkboxControl": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s6"
-              },
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              },
-              "strokeWidth": {
-                "type": "dimension",
-                "value": {
-                  "value": 1,
-                  "unit": "px"
+              "content": {
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s0_5"
                 }
               },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.control"
-              },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s1"
-              }
-            },
-            "checkboxIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              }
-            },
-            "radioControl": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s6"
-              },
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default"
-              },
-              "strokeWidth": {
-                "type": "dimension",
-                "value": {
-                  "value": 1,
-                  "unit": "px"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s5"
                 }
               },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.control"
+              "description": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-muted"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                }
               },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.full"
+              "checkboxControl": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s6"
+                },
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.control"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s1"
+                }
+              },
+              "checkboxIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                }
+              },
+              "radioControl": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s6"
+                },
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.control"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
+              },
+              "radioIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.s2_5"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
               }
-            },
-            "radioIcon": {
-              "size": {
-                "type": "dimension",
-                "value": "$dimension.s2_5"
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
               },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.full"
+              "checkboxControl": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
+              },
+              "radioControl": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "selected"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak"
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.control"
+                }
+              },
+              "checkboxControl": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
+                },
+                "strokeWidth": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              "checkboxIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "radioControl": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
+                },
+                "strokeWidth": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              "radioIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "selected",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
+                }
+              },
+              "checkboxControl": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid-pressed"
+                }
+              },
+              "radioControl": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid-pressed"
+                }
               }
             }
           }
-        },
-        {
-          "states": [
-            "enabled",
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default-pressed"
-              }
-            },
-            "checkboxControl": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default-pressed"
-              }
-            },
-            "radioControl": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.layer-default-pressed"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "enabled",
-            "selected"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak"
-              },
-              "strokeColor": {
-                "type": "color",
-                "value": "$color.stroke.control"
-              }
-            },
-            "checkboxControl": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid"
-              },
-              "strokeWidth": {
-                "type": "number",
-                "value": 0
-              }
-            },
-            "checkboxIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            },
-            "radioControl": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid"
-              },
-              "strokeWidth": {
-                "type": "number",
-                "value": 0
-              }
-            },
-            "radioIcon": {
-              "color": {
-                "type": "color",
-                "value": "$color.palette.static-white"
-              }
-            }
-          }
-        },
-        {
-          "states": [
-            "enabled",
-            "selected",
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak-pressed"
-              }
-            },
-            "checkboxControl": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid-pressed"
-              }
-            },
-            "radioControl": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.brand-solid-pressed"
-              }
-            }
-          }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

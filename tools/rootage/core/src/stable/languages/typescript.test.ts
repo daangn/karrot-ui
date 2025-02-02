@@ -1,13 +1,11 @@
 import { describe, expect, it, test } from "vitest";
 import YAML from "yaml";
-import { parse } from "../parser/parse";
-import type * as Shorthand from "../transformer/shorthand-document";
+import { Authoring } from "../parser";
 import { getComponentSpecDts, getComponentSpecMjs, getTokenDts, getTokenMjs } from "./typescript";
-import { transform } from "../transformer/transform";
 
 describe("getTokenMjs", () => {
   it("should generate esm definitions", () => {
-    const models: Shorthand.Model[] = [
+    const models: Authoring.TokensModel[] = [
       {
         kind: "Tokens",
         metadata: {
@@ -57,7 +55,7 @@ describe("getTokenMjs", () => {
       },
     ];
 
-    const result = getTokenMjs(parse(transform(models)));
+    const result = getTokenMjs(models.flatMap((x) => Authoring.parseTokensDocument(x).data));
 
     expect(result).toMatchInlineSnapshot(`
     [
@@ -84,7 +82,7 @@ describe("getTokenMjs", () => {
   });
 
   it("should generate esm definitions with nesting", () => {
-    const models: Shorthand.Model[] = [
+    const models: Authoring.TokensModel[] = [
       {
         kind: "Tokens",
         metadata: {
@@ -114,7 +112,7 @@ describe("getTokenMjs", () => {
       },
     ];
 
-    const result = getTokenMjs(parse(transform(models)));
+    const result = getTokenMjs(models.flatMap((x) => Authoring.parseTokensDocument(x).data));
 
     expect(result).toMatchInlineSnapshot(`
       [
@@ -141,7 +139,7 @@ describe("getTokenMjs", () => {
 
 describe("getTokenDts", () => {
   it("should generate typescript definitions", () => {
-    const models: Shorthand.Model[] = [
+    const models: Authoring.TokensModel[] = [
       {
         kind: "Tokens",
         metadata: {
@@ -191,7 +189,7 @@ describe("getTokenDts", () => {
       },
     ];
 
-    const result = getTokenDts(parse(transform(models)));
+    const result = getTokenDts(models.flatMap((x) => Authoring.parseTokensDocument(x).data));
 
     expect(result).toMatchInlineSnapshot(`
     [
@@ -218,7 +216,7 @@ describe("getTokenDts", () => {
   });
 
   it("should generate typescript definitions with nesting", () => {
-    const models: Shorthand.Model[] = [
+    const models: Authoring.TokensModel[] = [
       {
         kind: "Tokens",
         metadata: {
@@ -243,7 +241,7 @@ describe("getTokenDts", () => {
       },
     ];
 
-    const result = getTokenDts(parse(transform(models)));
+    const result = getTokenDts(models.flatMap((x) => Authoring.parseTokensDocument(x).data));
 
     expect(result).toMatchInlineSnapshot(`
     [
@@ -278,9 +276,9 @@ data:
       root:
         color: "#000000"
 `;
-  const models = [YAML.parse(yaml)];
+  const model = Authoring.parseComponentSpecDocument(YAML.parse(yaml));
 
-  const result = getComponentSpecMjs(parse(transform(models)), "test");
+  const result = getComponentSpecMjs(model.data);
 
   expect(result).toMatchInlineSnapshot(`
     "export const vars = {
@@ -318,9 +316,9 @@ data:
       root:
         color: "#000000"
 `;
-  const models = [YAML.parse(yaml)];
+  const model = Authoring.parseComponentSpecDocument(YAML.parse(yaml));
 
-  const result = getComponentSpecDts(parse(transform(models)), "test");
+  const result = getComponentSpecDts(model.data);
 
   expect(result).toMatchInlineSnapshot(`
     "export declare const vars: {

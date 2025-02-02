@@ -1,4 +1,4 @@
-import { AST, buildContext, css, Document, parse } from "@seed-design/rootage-core";
+import { AST, buildContext, css, Exchange } from "@seed-design/rootage-core";
 
 export function stringifyVariants(variants: AST.VariantExpression[]) {
   if (variants.length === 0) {
@@ -12,7 +12,7 @@ export function stringifyStates(states: AST.StateExpression[]) {
   return states.map(({ value }) => value).join(", ");
 }
 
-export function stringifyTokenLit(token: AST.TokenLit): Document.TokenRef {
+export function stringifyTokenLit(token: AST.TokenLit): AST.TokenRef {
   return `$${[...token.group, token.key].join(".")}`;
 }
 
@@ -33,8 +33,13 @@ export const getRootage = async () => {
   ).then((module) => {
     return module.default;
   });
-  const models: Document.Model[] = await Promise.all(
-    index.resources.map((resource) => import(`@/public/rootage-next${resource.path}`)),
+  const sourceFiles = await Promise.all(
+    index.resources.map((resource) =>
+      import(`@/public/rootage-next${resource.path}`).then((res: Exchange.Model) => ({
+        fileName: resource.path,
+        ast: Exchange.fromObject(res),
+      })),
+    ),
   );
-  return buildContext(parse(models));
+  return buildContext(sourceFiles);
 };

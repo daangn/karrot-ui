@@ -4,78 +4,82 @@
     "id": "extended-action-sheet-close-button",
     "name": "Extended Action Sheet Close Button"
   },
-  "data": [
-    {
-      "variants": {},
-      "definitions": [
-        {
-          "states": [
-            "enabled"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak"
-              },
-              "minHeight": {
-                "type": "dimension",
-                "value": {
-                  "value": 52,
-                  "unit": "px"
+  "data": {
+    "id": "extended-action-sheet-close-button",
+    "name": "Extended Action Sheet Close Button",
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak"
+                },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 52,
+                    "unit": "px"
+                  }
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.s3"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.s5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.s3_5"
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.s3"
                 }
               },
-              "cornerRadius": {
-                "type": "dimension",
-                "value": "$radius.s3"
-              },
-              "paddingX": {
-                "type": "dimension",
-                "value": "$dimension.s5"
-              },
-              "paddingY": {
-                "type": "dimension",
-                "value": "$dimension.s3_5"
-              },
-              "gap": {
-                "type": "dimension",
-                "value": "$dimension.s3"
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s5"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.medium"
+                }
               }
-            },
-            "label": {
-              "color": {
-                "type": "color",
-                "value": "$color.fg.neutral"
-              },
-              "fontSize": {
-                "type": "dimension",
-                "value": "$font-size.s5"
-              },
-              "lineHeight": {
-                "type": "dimension",
-                "value": "$line-height.s5"
-              },
-              "fontWeight": {
-                "type": "number",
-                "value": "$font-weight.medium"
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
+                }
               }
             }
           }
-        },
-        {
-          "states": [
-            "pressed"
-          ],
-          "slots": {
-            "root": {
-              "color": {
-                "type": "color",
-                "value": "$color.bg.neutral-weak-pressed"
-              }
-            }
-          }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }

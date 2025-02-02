@@ -1,8 +1,9 @@
 import type {
   CubicBezierLit,
   GradientLit,
-  RootageAST,
   ShadowLit,
+  TokenCollectionDeclaration,
+  TokenDeclaration,
   TokenLit,
   ValueLit,
 } from "../parser/ast";
@@ -74,7 +75,10 @@ export function stringifyCssValue(value: ValueLit | TokenLit): string {
 }
 
 export function getTokenCss(
-  ast: RootageAST,
+  ast: {
+    tokens: TokenDeclaration[];
+    tokenCollections: TokenCollectionDeclaration[];
+  },
   options: {
     banner: string;
     selectors: {
