@@ -10,9 +10,6 @@ data:
       root:
         minHeight: 44px
         paddingX: $dimension.s4
-      title:
-        fontSize: $font-size.s6-static
-        fontWeight: $font-weight.bold
       icon:
         size: 24px
         targetSize: 40px
@@ -21,9 +18,6 @@ data:
       root:
         minHeight: 56px
         paddingX: $dimension.s4
-      title:
-        fontSize: $font-size.s6-static
-        fontWeight: $font-weight.bold
       icon:
         size: 24px
         targetSize: 40px
@@ -33,6 +27,8 @@ data:
         color: $color.bg.layer-default
       title:
         color: $color.fg.neutral
+      subtitle:
+        color: $color.fg.neutral-muted
       icon:
         color: $color.fg.neutral
   tone=transparent:
@@ -41,6 +37,8 @@ data:
         color: "#00000000"
       title:
         color: $color.palette.static-white
+      subtitle:
+        color: $color.palette.static-white
       icon:
         color: $color.palette.static-white
   divider=true:
@@ -48,3 +46,16 @@ data:
       root:
         strokeColor: $color.stroke.neutral-muted
         strokeWidth: 1px
+  titleLayout=titleOnly:
+    enabled:
+      title:
+        fontSize: $font-size.s6-static
+        fontWeight: $font-weight.bold
+  titleLayout=withSubtitle:
+    enabled:
+      title:
+        fontSize: $font-size.s5-static
+        fontWeight: $font-weight.bold
+      subtitle:
+        fontSize: $font-size.s2-static
+        fontWeight: $font-weight.regular

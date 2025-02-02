@@ -1,10 +1,9 @@
-import type { ActivityComponentType } from "@stackflow/react";
-
-import { AppScreen } from "@stackflow/plugin-basic-ui";
-
-import { useSnackbarAdapter } from "@seed-design/react";
+import { Stack, useSnackbarAdapter } from "@seed-design/react";
 import { receive } from "@stackflow/compat-await-push";
+import type { ActivityComponentType } from "@stackflow/react";
 import { List, ListItem } from "../components/List";
+import { AppBar, AppBarMain } from "../design-system/stackflow/AppBar";
+import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 import { DialogPushTrigger } from "../design-system/stackflow/DialogPushTrigger";
 import { ActionButton } from "../design-system/ui/action-button";
 import {
@@ -24,18 +23,19 @@ import { extendedActionSheetCallback } from "./ActivityExtendedActionSheet";
 
 const ActivityHome: ActivityComponentType = () => {
   const { push } = useFlow();
-  const { dialogProps } = useStepDialog();
+  const { dialogProps, setOpen } = useStepDialog();
   const snackbarAdapter = useSnackbarAdapter();
 
   return (
-    <AppScreen appBar={{ title: "Home" }}>
-      <div
-        style={
-          {
-            overflow: "auto",
-            height: "calc(100vh - var(--stackflow-plugin-basic-ui-app-bar-height))",
-          } as React.CSSProperties
-        }
+    <AppScreen>
+      <AppBar>
+        <AppBarMain title="Home" subtitle="Subtitle" />
+      </AppBar>
+      <AppScreenContent
+        ptr
+        onPtrRefresh={async () => {
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+        }}
       >
         <List>
           <ListItem onClick={() => push("ActivityActionButton", {})} title="ActionButton" />
@@ -57,7 +57,15 @@ const ActivityHome: ActivityComponentType = () => {
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <ActionButton onClick={() => push("ActivityActionChip", {})}>확인</ActionButton>
+                <Stack gap="s2">
+                  <ActionButton onClick={() => setOpen(false)}>확인</ActionButton>
+                  <ActionButton
+                    variant="neutralSolid"
+                    onClick={() => push("ActivityActionChip", {})}
+                  >
+                    Push
+                  </ActionButton>
+                </Stack>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialogRoot>
@@ -118,7 +126,7 @@ const ActivityHome: ActivityComponentType = () => {
             title="Snackbar (critical)"
           />
         </List>
-      </div>
+      </AppScreenContent>
     </AppScreen>
   );
 };

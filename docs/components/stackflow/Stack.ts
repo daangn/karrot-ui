@@ -3,14 +3,13 @@ import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { type ActivityComponentType, stackflow } from "@stackflow/react/future";
 import { getConfig } from "./stackflow.config";
 import type { Register } from "@stackflow/config";
+import { seedPlugin } from "@seed-design/stackflow";
 
 interface MakeStackProps<T extends keyof Register> {
   Activity: ActivityComponentType<T>;
 }
 
-export const makeStack = <T extends keyof Register>(
-  props: MakeStackProps<T>,
-) => {
+export const makeStack = <T extends keyof Register>(props: MakeStackProps<T>) => {
   const { Activity } = props;
 
   const { Stack, actions, stepActions } = stackflow({
@@ -30,6 +29,9 @@ export const makeStack = <T extends keyof Register>(
             ariaLabel: "닫기",
           },
         },
+      }),
+      seedPlugin({
+        theme: "cupertino",
       }),
     ],
   });

@@ -6,6 +6,7 @@ import { stackflow, type ActivityComponentType, type UseActionsOutputType } from
 import React from "react";
 
 import { IconChevronLeftLine } from "@daangn/react-monochrome-icon";
+import { seedPlugin } from "@seed-design/stackflow";
 import ActivityNotFound from "../activities/ActivityNotFound";
 import { theme } from "./theme";
 
@@ -47,6 +48,9 @@ const { Stack, useFlow, useStepFlow } = stackflow({
       },
       backgroundColor: vars.$color.bg.layerDefault,
       dimBackgroundColor: vars.$color.bg.overlay,
+      theme,
+    }),
+    seedPlugin({
       theme,
     }),
     historySyncPlugin({

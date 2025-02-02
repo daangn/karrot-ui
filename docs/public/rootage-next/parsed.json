@@ -23507,34 +23507,6 @@
                 },
                 {
                   "kind": "SlotDeclaration",
-                  "slot": "title",
-                  "body": [
-                    {
-                      "kind": "ColorPropertyDeclaration",
-                      "property": "fontSize",
-                      "value": {
-                        "kind": "TokenLit",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s6-static"
-                      }
-                    },
-                    {
-                      "kind": "ColorPropertyDeclaration",
-                      "property": "fontWeight",
-                      "value": {
-                        "kind": "TokenLit",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "bold"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "kind": "SlotDeclaration",
                   "slot": "icon",
                   "body": [
                     {
@@ -23602,34 +23574,6 @@
                           "dimension"
                         ],
                         "key": "s4"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "kind": "SlotDeclaration",
-                  "slot": "title",
-                  "body": [
-                    {
-                      "kind": "ColorPropertyDeclaration",
-                      "property": "fontSize",
-                      "value": {
-                        "kind": "TokenLit",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s6-static"
-                      }
-                    },
-                    {
-                      "kind": "ColorPropertyDeclaration",
-                      "property": "fontWeight",
-                      "value": {
-                        "kind": "TokenLit",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "bold"
                       }
                     }
                   ]
@@ -23719,6 +23663,24 @@
                 },
                 {
                   "kind": "SlotDeclaration",
+                  "slot": "subtitle",
+                  "body": [
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "color",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral-muted"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "kind": "SlotDeclaration",
                   "slot": "icon",
                   "body": [
                     {
@@ -23775,6 +23737,24 @@
                 {
                   "kind": "SlotDeclaration",
                   "slot": "title",
+                  "body": [
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "color",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "color",
+                          "palette"
+                        ],
+                        "key": "static-white"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "kind": "SlotDeclaration",
+                  "slot": "subtitle",
                   "body": [
                     {
                       "kind": "ColorPropertyDeclaration",
@@ -23854,6 +23834,136 @@
                         "kind": "DimensionLit",
                         "value": 1,
                         "unit": "px"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "VariantDeclaration",
+          "variants": [
+            {
+              "kind": "VariantExpression",
+              "name": "titleLayout",
+              "value": "titleOnly"
+            }
+          ],
+          "body": [
+            {
+              "kind": "StateDeclaration",
+              "states": [
+                {
+                  "kind": "StateExpression",
+                  "value": "enabled"
+                }
+              ],
+              "body": [
+                {
+                  "kind": "SlotDeclaration",
+                  "slot": "title",
+                  "body": [
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "fontSize",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s6-static"
+                      }
+                    },
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "fontWeight",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "VariantDeclaration",
+          "variants": [
+            {
+              "kind": "VariantExpression",
+              "name": "titleLayout",
+              "value": "withSubtitle"
+            }
+          ],
+          "body": [
+            {
+              "kind": "StateDeclaration",
+              "states": [
+                {
+                  "kind": "StateExpression",
+                  "value": "enabled"
+                }
+              ],
+              "body": [
+                {
+                  "kind": "SlotDeclaration",
+                  "slot": "title",
+                  "body": [
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "fontSize",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s5-static"
+                      }
+                    },
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "fontWeight",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "kind": "SlotDeclaration",
+                  "slot": "subtitle",
+                  "body": [
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "fontSize",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2-static"
+                      }
+                    },
+                    {
+                      "kind": "ColorPropertyDeclaration",
+                      "property": "fontWeight",
+                      "value": {
+                        "kind": "TokenLit",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
                       }
                     }
                   ]
@@ -30977,6 +31087,48 @@
             "kind": "DimensionLit",
             "value": 1.625,
             "unit": "rem"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "DimensionTokenDeclaration",
+      "collection": "global",
+      "token": {
+        "kind": "TokenLit",
+        "group": [
+          "font-size"
+        ],
+        "key": "s2-static"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "kind": "DimensionLit",
+            "value": 12,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "DimensionTokenDeclaration",
+      "collection": "global",
+      "token": {
+        "kind": "TokenLit",
+        "group": [
+          "font-size"
+        ],
+        "key": "s5-static"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "kind": "DimensionLit",
+            "value": 16,
+            "unit": "px"
           }
         }
       ]

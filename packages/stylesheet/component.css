@@ -3132,129 +3132,6 @@
   margin-top: calc(12px - .59375rem);
 }
 
-.screen__root {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-}
-
-.screen__root[data-transition-state="exit-done"] {
-  transform: translate3d(100%, 0, 0);
-}
-
-.screen__dim {
-  z-index: var(--z-index-dim);
-  opacity: 0;
-  width: 100%;
-  transition: transform var(--seed-v3-duration-s6), opacity var(--seed-v3-duration-s6);
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.screen__dim:is([data-transition-state="enter-active"], [data-transition-state="enter-done"]) {
-  opacity: 1;
-}
-
-.screen__dim:is([data-transition-state="exit-active"], [data-transition-state="exit-done"]) {
-  opacity: 0;
-}
-
-.screen__layer {
-  z-index: var(--z-index-layer);
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  overflow-y: scroll;
-}
-
-.screen__layer::-webkit-scrollbar {
-  display: none;
-}
-
-.screen__layer {
-  background-color: var(--seed-v3-color-bg-layer-default);
-  transition: transform var(--seed-v3-duration-s6), opacity var(--seed-v3-duration-s6);
-}
-
-.screen__edge {
-  z-index: var(--z-index-edge);
-  width: 20px;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.screen__root--theme_cupertino {
-  --app-bar-height: 44px;
-}
-
-.screen__dim--theme_cupertino {
-  background: var(--seed-v3-color-bg-overlay);
-  height: 100%;
-}
-
-.screen__layer--theme_cupertino {
-  transform: translate3d(100%, 0, 0);
-}
-
-.screen__layer--theme_cupertino:is([data-transition-state="enter-active"], [data-transition-state="enter-done"]) {
-  transform: translate3d(0, 0, 0);
-}
-
-.screen__root--theme_android {
-  --app-bar-height: 56px;
-}
-
-.screen__dim--theme_android {
-  background: linear-gradient(var(--seed-v3-color-bg-overlay), #0000);
-  height: 10rem;
-}
-
-.screen__layer--theme_android {
-  opacity: 0;
-  transform: translate3d(0, 10rem, 0);
-}
-
-.screen__layer--theme_android:is([data-transition-state="enter-active"], [data-transition-state="enter-done"]) {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-.screen__root--hasAppBar_true {
-  --app-bar-margin: var(--app-bar-height);
-}
-
-@supports (padding: max(0px)) and (padding: constant(safe-area-inset-top)) {
-  .screen__root--hasAppBar_true {
-    --app-bar-margin: calc(var(--app-bar-height)  + max(0px, constant(safe-area-inset-top)));
-  }
-}
-
-@supports (padding: max(0px)) and (padding: env(safe-area-inset-top)) {
-  .screen__root--hasAppBar_true {
-    --app-bar-margin: calc(var(--app-bar-height)  + max(0px, env(safe-area-inset-top)));
-  }
-}
-
-.screen__layer--hasAppBar_true {
-  box-sizing: border-box;
-  transition: transform var(--seed-v3-duration-s6), opacity var(--seed-v3-duration-s6);
-  height: 100%;
-}
-
-.screen__edge--hasAppBar_true {
-  top: var(--app-bar-height);
-  height: calc(100% - var(--app-bar-height));
-}
-
 .helpBubble__backdrop {
   z-index: 1000;
   background: var(--seed-v3-color-bg-overlay);
@@ -4647,206 +4524,6 @@
   line-height: var(--seed-v3-line-height-s2);
 }
 
-.topNavigation__root {
-  z-index: var(--z-index-app-bar);
-  box-sizing: content-box;
-  width: 100%;
-  position: absolute;
-}
-
-.topNavigation__root[data-transition-state="exit-active"] {
-  transition: background-color, box-shadow, transform;
-  transform: translate3d(100%, 0, 0);
-}
-
-.topNavigation__safeArea {
-  height: max(0px, env(safe-area-inset-top));
-}
-
-.topNavigation__container {
-  align-items: flex-end;
-  display: flex;
-}
-
-.topNavigation__left {
-  align-items: center;
-  height: 100%;
-  display: flex;
-}
-
-.topNavigation__right {
-  align-items: center;
-  height: 100%;
-  margin-left: auto;
-  display: flex;
-}
-
-.topNavigation__iconButton {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.topNavigation__icon {
-  flex-shrink: 0;
-  display: inline-block;
-}
-
-.topNavigation__title {
-  flex: 1;
-  align-items: center;
-  height: 100%;
-  display: flex;
-}
-
-.topNavigation__titleMain {
-  transition: color;
-}
-
-.topNavigation__titleEdge {
-  appearance: none;
-  cursor: pointer;
-  background: none;
-  border: 0;
-  max-width: 5rem;
-  height: 20px;
-  padding: 0;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.topNavigation__titleText {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
-  overflow: hidden;
-}
-
-.topNavigation__container--theme_cupertino {
-  height: 44px;
-  padding-inline: var(--seed-v3-dimension-s4);
-}
-
-[data-stackflow-activity-is-active="false"] .topNavigation__container--theme_cupertino {
-  opacity: calc(pow(var(--stackflow-swipe-back-ratio, 1), 2));
-}
-
-[data-stackflow-activity-is-active="true"] .topNavigation__container--theme_cupertino {
-  opacity: calc(1 - pow(var(--stackflow-swipe-back-ratio, 0), 2));
-}
-
-.topNavigation__iconButton--theme_cupertino {
-  width: 40px;
-  height: 40px;
-}
-
-.topNavigation__iconButton--theme_cupertino:first-child {
-  margin-left: -8px;
-}
-
-.topNavigation__iconButton--theme_cupertino:last-child {
-  margin-right: -8px;
-}
-
-.topNavigation__icon--theme_cupertino {
-  width: 24px;
-  height: 24px;
-}
-
-[data-stackflow-activity-is-active="true"] .topNavigation__icon--theme_cupertino[data-transition-state="enter-active"], [data-stackflow-activity-is-active="true"] .topNavigation__icon--theme_cupertino[data-transition-state="enter-done"] {
-  opacity: 1;
-}
-
-.topNavigation__titleMain--theme_cupertino {
-  text-align: center;
-  height: 100%;
-  left: 50%;
-  top: max(0px, env(safe-area-inset-top));
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: absolute;
-  transform: translate(-50%);
-}
-
-.topNavigation__titleText--theme_cupertino {
-  font-size: var(--seed-v3-font-size-s6-static);
-  font-weight: var(--seed-v3-font-weight-bold);
-}
-
-.topNavigation__titleEdge--theme_cupertino {
-  display: block;
-}
-
-.topNavigation__root--theme_android {
-  opacity: 0;
-  transition: background-color, box-shadow, transform .3s;
-  transform: translate3d(0, 160px, 0);
-}
-
-.topNavigation__root--theme_android:is([data-transition-state="enter-active"], [data-transition-state="enter-done"]) {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-.topNavigation__container--theme_android {
-  height: 56px;
-  padding-inline: var(--seed-v3-dimension-s4);
-}
-
-.topNavigation__iconButton--theme_android {
-  width: 40px;
-  height: 40px;
-}
-
-.topNavigation__iconButton--theme_android:first-child {
-  margin-left: -8px;
-}
-
-.topNavigation__iconButton--theme_android:last-child {
-  margin-right: -8px;
-}
-
-.topNavigation__icon--theme_android {
-  width: 24px;
-  height: 24px;
-}
-
-.topNavigation__titleMain--theme_android {
-  box-sizing: border-box;
-  justify-content: flex-start;
-  width: 100%;
-  padding-left: 16px;
-}
-
-.topNavigation__titleText--theme_android {
-  font-size: var(--seed-v3-font-size-s6-static);
-  font-weight: var(--seed-v3-font-weight-bold);
-}
-
-.topNavigation__root--tone_layer {
-  background-color: var(--seed-v3-color-bg-layer-default);
-}
-
-.topNavigation__icon--tone_layer, .topNavigation__titleMain--tone_layer {
-  color: var(--seed-v3-color-fg-neutral);
-}
-
-.topNavigation__root--tone_transparent {
-  background-color: #0000;
-}
-
-.topNavigation__icon--tone_transparent, .topNavigation__titleMain--tone_transparent {
-  color: var(--seed-v3-color-palette-static-white);
-}
-
-.topNavigation__root--border_true {
-  box-shadow: inset 0px calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral-muted);
-}
-
 .visuallyHidden__root {
   clip: rect(0 0 0 0);
   white-space: nowrap;
@@ -4857,4 +4534,596 @@
   padding: 0;
   position: absolute;
   overflow: hidden;
+}
+
+.appScreen__root {
+  --app-bar-offset: calc(var(--app-bar-height)  + var(--seed-safe-area-top));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.appScreen__dim {
+  z-index: var(--z-index-dim);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.appScreen__layer {
+  z-index: var(--z-index-layer);
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+}
+
+.appScreen__layer::-webkit-scrollbar {
+  display: none;
+}
+
+.appScreen__layer {
+  background-color: var(--seed-v3-color-bg-layer-default);
+}
+
+.appScreen__edge {
+  z-index: var(--z-index-edge);
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.appScreen__root--theme_cupertino {
+  --app-bar-height: 44px;
+}
+
+.appScreen__dim--theme_cupertino {
+  background: var(--seed-v3-color-bg-overlay);
+  height: 100%;
+}
+
+.appScreen__root--theme_android {
+  --app-bar-height: 56px;
+}
+
+.appScreen__edge--theme_android {
+  display: none;
+}
+
+.appScreen__root--transitionStyle_slideFromRightIOS {
+  --z-index-dim: calc(var(--z-index-base)  + 0);
+  --z-index-layer: calc(var(--z-index-base)  + 2);
+  --z-index-edge: calc(var(--z-index-base)  + 4);
+  --z-index-app-bar: calc(var(--z-index-base)  + 7);
+}
+
+.appScreen__layer--transitionStyle_slideFromRightIOS {
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="enter-active"] .appScreen__layer--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 100%;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 1;
+  --seed-enter-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appScreen__layer--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  transform: translate3d(var(--swipe-back-displacement, 0), 0, 0);
+  --seed-exit-translate-x: 100%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 1;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appScreen__layer--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: var(--swipe-back-displacement, 0);
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 1;
+  --seed-enter-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-swipe-back-state="swiping"] .appScreen__layer--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
+  transform: translate3d(var(--swipe-back-displacement, 0), 0, 0);
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"][data-top-activity-type="full-screen"] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  --seed-exit-translate-x: -30%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 1;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"][data-top-activity-type="full-screen"] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  --seed-enter-translate-x: calc(-30% + var(--swipe-back-displacement, 0) * .3);
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 1;
+  --seed-enter-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="enter-done"][data-top-activity-type="full-screen"] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  transform: translate3d(calc(-30% + var(--swipe-back-displacement, 0) * .3), 0, 0);
+  --seed-exit-translate-x: -30%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 1;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-swipe-back-state="swiping"] .appScreen__layer--transitionStyle_slideFromRightIOS:not([data-activity-is-top]):not(#\#) {
+  transform: translate3d(calc(-30% + var(--swipe-back-displacement, 0) * .3), 0, 0);
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-global-transition-state="exit-active"] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-swipe-back-state="swiping"] .appScreen__dim--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+.appScreen__root--transitionStyle_fadeFromBottomAndroid {
+  --z-index-dim: calc(var(--z-index-base)  + 0);
+  --z-index-layer: calc(var(--z-index-base)  + 3);
+  --z-index-edge: calc(var(--z-index-base)  + 4);
+  --z-index-app-bar: calc(var(--z-index-base)  + 4);
+}
+
+.appScreen__dim--transitionStyle_fadeFromBottomAndroid {
+  background: linear-gradient(var(--seed-v3-color-bg-overlay), #0000);
+  height: 160px;
+}
+
+[data-global-transition-state="enter-active"] .appScreen__dim--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.23, .1, .32, 1) seed-enter;
+  transform: translate3d(0, -8vh, 0);
+}
+
+[data-global-transition-state="exit-active"] .appScreen__dim--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .15s linear forwards seed-exit;
+  transform: translate3d(0, -8vh, 0);
+}
+
+.appScreen__layer--transitionStyle_fadeFromBottomAndroid {
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="enter-active"] .appScreen__layer--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 8vh;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.23, .1, .32, 1) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appScreen__layer--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 8vh;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .15s linear forwards seed-exit;
+  transform: translate3d(0, 0, 0);
+}
+
+.appScreen__layer--layerOffsetTop_safeArea {
+  padding-top: var(--seed-safe-area-top);
+}
+
+.appScreen__layer--layerOffsetTop_appBar {
+  padding-top: var(--app-bar-offset);
+}
+
+.appScreen__layer--layerOffsetBottom_safeArea {
+  padding-bottom: var(--seed-safe-area-bottom);
+}
+
+.appBar__root {
+  z-index: var(--z-index-app-bar);
+  box-sizing: border-box;
+  align-items: flex-end;
+  width: 100%;
+  display: flex;
+  position: absolute;
+}
+
+.appBar__root:before {
+  content: "";
+  pointer-events: none;
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+}
+
+.appBar__left {
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.appBar__right {
+  align-items: center;
+  height: 100%;
+  margin-left: auto;
+  display: flex;
+}
+
+.appBar__iconButton {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.appBar__icon {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.appBar__root--theme_cupertino {
+  height: 44px;
+  padding-inline: var(--seed-v3-dimension-s4);
+}
+
+.appBar__iconButton--theme_cupertino {
+  width: 40px;
+  height: 40px;
+}
+
+.appBar__iconButton--theme_cupertino:first-child {
+  margin-left: -8px;
+}
+
+.appBar__iconButton--theme_cupertino:last-child {
+  margin-right: -8px;
+}
+
+.appBar__icon--theme_cupertino {
+  width: 24px;
+  height: 24px;
+}
+
+.appBar__root--theme_android {
+  height: 56px;
+  padding-inline: var(--seed-v3-dimension-s4);
+}
+
+.appBar__iconButton--theme_android {
+  width: 40px;
+  height: 40px;
+}
+
+.appBar__iconButton--theme_android:first-child {
+  margin-left: -8px;
+}
+
+.appBar__iconButton--theme_android:last-child {
+  margin-right: -8px;
+}
+
+.appBar__icon--theme_android {
+  width: 24px;
+  height: 24px;
+}
+
+.appBar__left--theme_android {
+  padding-right: 16px;
+}
+
+[data-global-transition-state="enter-active"] .appBar__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:before {
+  --seed-enter-translate-x: 100%;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 1;
+  --seed-enter-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appBar__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:before {
+  transform: translate3d(var(--swipe-back-displacement, 0), 0, 0);
+  --seed-exit-translate-x: 100%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 1;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appBar__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:before {
+  --seed-enter-translate-x: var(--swipe-back-displacement, 0);
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 1;
+  --seed-enter-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="enter-active"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-global-transition-state="exit-active"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-swipe-back-state="swiping"] .appBar__icon--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"][data-top-activity-type="full-screen"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="exit-active"][data-top-activity-type="full-screen"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+}
+
+[data-global-transition-state="enter-done"][data-top-activity-type="full-screen"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-swipe-back-state="swiping"] .appBar__icon--transitionStyle_slideFromRightIOS:not([data-activity-is-top]):not(#\#) {
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"] .appBar__root--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  --seed-enter-translate-x: 0;
+  --seed-enter-translate-y: 8vh;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.23, .1, .32, 1) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appBar__root--transitionStyle_fadeFromBottomAndroid[data-activity-is-top] {
+  opacity: 1;
+  --seed-exit-translate-x: 0;
+  --seed-exit-translate-y: 8vh;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .15s linear forwards seed-exit;
+  transform: translate3d(0, 0, 0);
+}
+
+.appBar__root--tone_layer:before {
+  background-color: var(--seed-v3-color-bg-layer-default);
+}
+
+.appBar__icon--tone_layer {
+  color: var(--seed-v3-color-fg-neutral);
+}
+
+.appBar__root--tone_transparent:before {
+  background-color: #0000;
+}
+
+.appBar__icon--tone_transparent {
+  color: var(--seed-v3-color-palette-static-white);
+}
+
+.appBar__root--divider_true {
+  box-shadow: inset 0px calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral-muted);
+}
+
+.appBarMain__root {
+  flex: 1;
+  height: 100%;
+}
+
+.appBarMain__title, .appBarMain__subtitle {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.appBarMain__title--layout_titleOnly {
+  font-size: var(--seed-v3-font-size-s6-static);
+  font-weight: var(--seed-v3-font-weight-bold);
+}
+
+.appBarMain__title--layout_withSubtitle {
+  font-size: var(--seed-v3-font-size-s5-static);
+  font-weight: var(--seed-v3-font-weight-bold);
+}
+
+.appBarMain__subtitle--layout_withSubtitle {
+  font-size: var(--seed-v3-font-size-s2-static);
+  font-weight: var(--seed-v3-font-weight-regular);
+}
+
+.appBarMain__root--theme_cupertino {
+  text-align: center;
+  height: 100%;
+  padding-inline: var(--centered-title-padding-x, 0);
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.appBarMain__root--theme_android {
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+[data-global-transition-state="enter-active"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: 25%;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: 0;
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  transform: translate3d(var(--swipe-back-displacement, 0) * .25, 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: 25%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-global-transition-state="enter-done"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top] {
+  --seed-enter-translate-x: var(--swipe-back-displacement, 0) * .25;
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-swipe-back-state="swiping"] .appBarMain__root--transitionStyle_slideFromRightIOS[data-activity-is-top]:not(#\#) {
+  transform: translate3d(var(--swipe-back-displacement, 0) * .25, 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+[data-global-transition-state="enter-active"][data-top-activity-type="full-screen"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  opacity: 1;
+  --seed-exit-translate-x: -25%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="exit-active"][data-top-activity-type="full-screen"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  --seed-enter-translate-x: calc(-25% + var(--swipe-back-displacement, 0) * .25);
+  --seed-enter-translate-y: 0;
+  --seed-enter-opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-enter-scale: 1;
+  opacity: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) seed-enter;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-global-transition-state="enter-done"][data-top-activity-type="full-screen"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]) {
+  transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * .25), 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  --seed-exit-translate-x: -25%;
+  --seed-exit-translate-y: 0;
+  --seed-exit-opacity: 0;
+  --seed-exit-scale: 1;
+  animation: .3s cubic-bezier(.22, .1, .3, .85) forwards seed-exit;
+}
+
+[data-swipe-back-state="swiping"] .appBarMain__root--transitionStyle_slideFromRightIOS:not([data-activity-is-top]):not(#\#) {
+  transform: translate3d(calc(-25% + var(--swipe-back-displacement, 0) * .25), 0, 0);
+  opacity: calc(1 - var(--swipe-back-displacement-ratio, 0));
+  animation: none;
+}
+
+.appBarMain__root--tone_layer, .appBarMain__title--tone_layer {
+  color: var(--seed-v3-color-fg-neutral);
+}
+
+.appBarMain__subtitle--tone_layer {
+  color: var(--seed-v3-color-fg-neutral-muted);
+}
+
+.appBarMain__root--tone_transparent, .appBarMain__title--tone_transparent, .appBarMain__subtitle--tone_transparent {
+  color: var(--seed-v3-color-palette-static-white);
 }

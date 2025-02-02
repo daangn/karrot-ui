@@ -28,16 +28,6 @@
                 "value": "$dimension.s4"
               }
             },
-            "title": {
-              "fontSize": {
-                "type": "color",
-                "value": "$font-size.s6-static"
-              },
-              "fontWeight": {
-                "type": "color",
-                "value": "$font-weight.bold"
-              }
-            },
             "icon": {
               "size": {
                 "type": "dimension",
@@ -79,16 +69,6 @@
               "paddingX": {
                 "type": "color",
                 "value": "$dimension.s4"
-              }
-            },
-            "title": {
-              "fontSize": {
-                "type": "color",
-                "value": "$font-size.s6-static"
-              },
-              "fontWeight": {
-                "type": "color",
-                "value": "$font-weight.bold"
               }
             },
             "icon": {
@@ -133,6 +113,12 @@
                 "value": "$color.fg.neutral"
               }
             },
+            "subtitle": {
+              "color": {
+                "type": "color",
+                "value": "$color.fg.neutral-muted"
+              }
+            },
             "icon": {
               "color": {
                 "type": "color",
@@ -160,6 +146,12 @@
               }
             },
             "title": {
+              "color": {
+                "type": "color",
+                "value": "$color.palette.static-white"
+              }
+            },
+            "subtitle": {
               "color": {
                 "type": "color",
                 "value": "$color.palette.static-white"
@@ -196,6 +188,64 @@
                   "value": 1,
                   "unit": "px"
                 }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "titleLayout": "titleOnly"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "title": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s6-static"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "variants": {
+        "titleLayout": "withSubtitle"
+      },
+      "definitions": [
+        {
+          "states": [
+            "enabled"
+          ],
+          "slots": {
+            "title": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s5-static"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.bold"
+              }
+            },
+            "subtitle": {
+              "fontSize": {
+                "type": "color",
+                "value": "$font-size.s2-static"
+              },
+              "fontWeight": {
+                "type": "color",
+                "value": "$font-weight.regular"
               }
             }
           }

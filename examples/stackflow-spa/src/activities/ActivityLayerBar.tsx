@@ -1,46 +1,40 @@
 import type { ActivityComponentType } from "@stackflow/react";
 import {
   AppBar,
-  BackButton,
-  IconButton,
-  Left,
-  Right,
-  Title,
+  AppBarLeft,
+  AppBarRight,
+  AppBarMain,
+  AppBarBackButton,
+  AppBarIconButton,
 } from "../design-system/stackflow/AppBar";
-import { AppScreen } from "../design-system/stackflow/AppScreen";
+import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
 import { IconBellLine } from "@daangn/react-monochrome-icon";
-import img from "../assets/peng.jpeg";
-import { theme } from "../stackflow/theme";
 
 const ActivityLayerBar: ActivityComponentType = () => {
   return (
-    <AppScreen
-      appBar={
-        <AppBar tone="layer" border={false}>
-          <Left>
-            <BackButton />
-          </Left>
-          <Title>야옹</Title>
-          <Right>
-            <IconButton>
-              <IconBellLine />
-            </IconButton>
-            <IconButton>
-              <IconBellLine />
-            </IconButton>
-            <IconButton>
-              <IconBellLine />
-            </IconButton>
-            <IconButton>
-              <IconBellLine />
-            </IconButton>
-          </Right>
-        </AppBar>
-      }
-      theme={theme}
-    >
-      <div style={{ height: 800 }} />
+    <AppScreen>
+      <AppBar tone="layer">
+        <AppBarLeft>
+          <AppBarBackButton />
+        </AppBarLeft>
+        <AppBarMain>Random Long Title Hello World</AppBarMain>
+        <AppBarRight>
+          <AppBarIconButton>
+            <IconBellLine />
+          </AppBarIconButton>
+          <AppBarIconButton>
+            <IconBellLine />
+          </AppBarIconButton>
+          <AppBarIconButton>
+            <IconBellLine />
+          </AppBarIconButton>
+          <AppBarIconButton>
+            <IconBellLine />
+          </AppBarIconButton>
+        </AppBarRight>
+      </AppBar>
+      <AppScreenContent />
     </AppScreen>
   );
 };

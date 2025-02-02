@@ -5511,6 +5511,46 @@
         "group": [
           "font-size"
         ],
+        "key": "s2-static"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 12,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "font-size"
+        ],
+        "key": "s5-static"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "dimension",
+            "value": 16,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
+          "font-size"
+        ],
         "key": "s6-static"
       },
       "values": [
@@ -25566,31 +25606,6 @@
                   ]
                 },
                 {
-                  "key": "title",
-                  "property": [
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s6-static"
-                      }
-                    },
-                    {
-                      "key": "fontWeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "bold"
-                      }
-                    }
-                  ]
-                },
-                {
                   "key": "icon",
                   "property": [
                     {
@@ -25644,31 +25659,6 @@
                           "dimension"
                         ],
                         "key": "s4"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "title",
-                  "property": [
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s6-static"
-                      }
-                    },
-                    {
-                      "key": "fontWeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "bold"
                       }
                     }
                   ]
@@ -25741,6 +25731,22 @@
                   ]
                 },
                 {
+                  "key": "subtitle",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "fg"
+                        ],
+                        "key": "neutral-muted"
+                      }
+                    }
+                  ]
+                },
+                {
                   "key": "icon",
                   "property": [
                     {
@@ -25784,6 +25790,22 @@
                 },
                 {
                   "key": "title",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "palette"
+                        ],
+                        "key": "static-white"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "subtitle",
                   "property": [
                     {
                       "key": "color",
@@ -25848,6 +25870,109 @@
                         "type": "dimension",
                         "value": 1,
                         "unit": "px"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "titleLayout": "titleOnly"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "title",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s6-static"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "titleLayout": "withSubtitle"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "title",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s5-static"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "subtitle",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s2-static"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
                       }
                     }
                   ]

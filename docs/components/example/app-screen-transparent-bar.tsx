@@ -1,17 +1,17 @@
 "use client";
 
-import { Flex } from "seed-design/ui/layout";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import type { ActivityComponentType } from "@stackflow/react/future";
 import {
   AppBar,
-  AppScreen,
-  CloseButton,
-  IconButton,
-  Left,
-  Right,
-  Title,
-} from "seed-design/ui/app-screen";
+  AppBarCloseButton,
+  AppBarIconButton,
+  AppBarLeft,
+  AppBarMain,
+  AppBarRight,
+} from "seed-design/ui/app-bar";
+import { AppScreen, AppScreenContent } from "seed-design/ui/app-screen";
+import { Flex } from "seed-design/ui/layout";
 
 declare module "@stackflow/config" {
   interface Register {
@@ -21,25 +21,23 @@ declare module "@stackflow/config" {
 
 const AppScreenTransparentBarActivity: ActivityComponentType<"AppScreenTransparentBar"> = () => {
   return (
-    <AppScreen
-      theme="cupertino"
-      appBar={
-        <AppBar tone="transparent" border={false}>
-          <Left>
-            <CloseButton />
-          </Left>
-          <Title>Transparent Bar</Title>
-          <Right>
-            <IconButton aria-label="Notification">
-              <IconBellFill />
-            </IconButton>
-          </Right>
-        </AppBar>
-      }
-    >
-      <Flex height="full">
-        <img src="/penguin.webp" alt="Penguin" />
-      </Flex>
+    <AppScreen theme="cupertino">
+      <AppBar tone="transparent">
+        <AppBarLeft>
+          <AppBarCloseButton />
+        </AppBarLeft>
+        <AppBarMain>Preview</AppBarMain>
+        <AppBarRight>
+          <AppBarIconButton aria-label="Notification">
+            <IconBellFill />
+          </AppBarIconButton>
+        </AppBarRight>
+      </AppBar>
+      <AppScreenContent>
+        <Flex height="full" justifyContent="center" alignItems="center">
+          Preview
+        </Flex>
+      </AppScreenContent>
     </AppScreen>
   );
 };
