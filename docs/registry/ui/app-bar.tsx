@@ -13,9 +13,15 @@ import { useActions, useActivity } from "@stackflow/react";
 import * as React from "react";
 import { forwardRef } from "react";
 
+export interface AppBarProps extends SeedAppBar.RootProps {}
+
 export const AppBar = SeedAppBar.Root;
 
+export interface AppBarLeftProps extends SeedAppBar.LeftProps {}
+
 export const AppBarLeft = SeedAppBar.Left;
+
+export interface AppBarRightProps extends SeedAppBar.RightProps {}
 
 export const AppBarRight = SeedAppBar.Right;
 
