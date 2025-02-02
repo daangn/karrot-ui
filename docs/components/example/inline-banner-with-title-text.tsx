@@ -1,10 +1,10 @@
-import { Stack } from "@/registry/ui/layout";
 import {
   ActionableInlineBanner,
   DismissibleInlineBanner,
   InlineBanner,
   LinkInlineBanner,
 } from "seed-design/ui/inline-banner";
+import { Stack } from "seed-design/ui/layout";
 
 export default function InlineBannerWithTitleText() {
   return (

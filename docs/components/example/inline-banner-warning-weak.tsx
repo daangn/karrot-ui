@@ -5,7 +5,7 @@ import {
   LinkInlineBanner,
 } from "seed-design/ui/inline-banner";
 import { IconExclamationmarkCircleFill } from "@daangn/react-monochrome-icon";
-import { Stack } from "@/registry/ui/layout";
+import { Stack } from "seed-design/ui/layout";
 
 export default function InlineBannerWarningWeak() {
   return (
