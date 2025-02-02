@@ -9,6 +9,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { AtomIcon } from "lucide-react";
 import { createReactTypeTable } from "../react-type-table";
 import { TokenReference } from "../token-reference";
+import { ColorGrid } from "../color-grid";
 
 const { ReactTypeTable } = createReactTypeTable();
 
@@ -28,4 +29,5 @@ export const mdxComponents = {
   AtomIcon,
   StackflowExample,
   ReactTypeTable,
+  ColorGrid,
 };

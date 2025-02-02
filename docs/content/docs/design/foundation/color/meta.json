@@ -1,4 +1,5 @@
 {
   "title": "색상",
+  "defaultOpen": true,
   "pages": ["color-system", "color-role", "palette", "migration-to-v3"]
 }

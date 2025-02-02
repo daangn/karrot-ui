@@ -1,4 +1,5 @@
 {
   "title": "파운데이션",
-  "pages": ["design-token", "color", "typography", "iconography", "..."]
+  "defaultOpen": true,
+  "pages": ["design-token", "design-token-reference", "color", "typography", "iconography", "..."]
 }

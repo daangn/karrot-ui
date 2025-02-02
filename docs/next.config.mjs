@@ -12,6 +12,10 @@ const config = {
     "@seed-design/react",
     "@seed-design/stackflow",
   ],
+  images: {
+    // FIXME: temporal use for static export; will remove after image optimization setup
+    unoptimized: true,
+  },
 };
 
 export default withMDX(config);
