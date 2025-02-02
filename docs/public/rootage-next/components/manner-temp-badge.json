@@ -22,29 +22,29 @@
                 }
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s0_5"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s1"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s1"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }

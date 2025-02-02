@@ -17,25 +17,25 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s6"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s2"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s2"
               }
             }
@@ -55,25 +55,25 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s0_5"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s1"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s1"
               }
             }
@@ -93,7 +93,7 @@
           "slots": {
             "root": {
               "borderRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             }
@@ -114,7 +114,7 @@
           "slots": {
             "root": {
               "borderRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s1_5"
               }
             }
@@ -135,7 +135,7 @@
           "slots": {
             "root": {
               "borderRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s1"
               }
             }
@@ -155,7 +155,7 @@
           "slots": {
             "label": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             }
@@ -175,7 +175,7 @@
           "slots": {
             "label": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -204,7 +204,7 @@
             },
             "label": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }

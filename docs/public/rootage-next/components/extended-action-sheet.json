@@ -19,11 +19,11 @@
                 "value": "$color.bg.overlay"
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter"
               },
               "enterOpacity": {
@@ -31,11 +31,11 @@
                 "value": 0
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               },
               "exitOpacity": {
@@ -49,55 +49,55 @@
                 "value": "$color.bg.layer-floating"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.spacing-x.global-gutter"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "cornerTopRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s5"
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s6"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter-expressive"
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               }
             },
             "header": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "paddingBottom": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "title": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s6"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s6"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               },
               "color": {
@@ -107,13 +107,13 @@
             },
             "list": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             },
             "group": {
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s4"
               }
             },
@@ -132,7 +132,7 @@
             },
             "footer": {
               "paddingTop": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             }

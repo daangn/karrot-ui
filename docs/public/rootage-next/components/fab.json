@@ -19,7 +19,7 @@
                 "value": "$color.bg.layer-floating"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               },
               "size": {

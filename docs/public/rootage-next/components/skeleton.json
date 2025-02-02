@@ -28,11 +28,11 @@
                 }
               },
               "timingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.easing"
               },
               "color": {
-                "type": "color",
+                "type": "gradient",
                 "value": "$gradient.shimmer"
               }
             }
@@ -121,7 +121,7 @@
           "slots": {
             "root": {
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             }

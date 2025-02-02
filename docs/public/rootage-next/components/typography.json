@@ -17,15 +17,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s1"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s1"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }
@@ -45,15 +45,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s1"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s1"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             }
@@ -73,15 +73,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s1"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s1"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -101,15 +101,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s2"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s2"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }
@@ -129,15 +129,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s2"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s2"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             }
@@ -157,15 +157,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s2"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s2"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -185,15 +185,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }
@@ -213,15 +213,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             }
@@ -241,15 +241,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -269,15 +269,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }
@@ -297,15 +297,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }
@@ -325,15 +325,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             }
@@ -353,15 +353,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -381,15 +381,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }
@@ -409,15 +409,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s6"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }
@@ -437,15 +437,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             }
@@ -465,15 +465,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -493,15 +493,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -521,15 +521,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s6"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s6"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -549,15 +549,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s7"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s7"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -577,15 +577,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s8"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s8"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -605,15 +605,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s9"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s9"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -633,15 +633,15 @@
           "slots": {
             "root": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s10"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s10"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }

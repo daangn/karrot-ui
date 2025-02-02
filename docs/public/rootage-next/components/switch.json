@@ -19,7 +19,7 @@
                 "value": "$color.palette.gray-600"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             },
@@ -29,7 +29,7 @@
                 "value": "$color.palette.static-white"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             }
@@ -195,7 +195,7 @@
                 }
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               }
             },
@@ -247,15 +247,15 @@
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }

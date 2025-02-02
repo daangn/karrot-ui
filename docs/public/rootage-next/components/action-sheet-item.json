@@ -26,25 +26,25 @@
                 }
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.spacing-x.global-gutter"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }

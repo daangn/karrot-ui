@@ -19,11 +19,11 @@
                 "value": "$color.bg.overlay"
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter"
               },
               "enterOpacity": {
@@ -31,11 +31,11 @@
                 "value": 0
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               },
               "exitOpacity": {
@@ -49,19 +49,19 @@
                 "value": "$color.bg.layer-default"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s5"
               },
               "marginX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s8"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               },
               "maxWidth": {
@@ -72,11 +72,11 @@
                 }
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter-expressive"
               },
               "enterOpacity": {
@@ -88,11 +88,11 @@
                 "value": 1.3
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               },
               "exitOpacity": {
@@ -102,17 +102,17 @@
             },
             "header": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               }
             },
             "footer": {
               "paddingTop": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               }
             },
@@ -122,15 +122,15 @@
                 "value": "$color.fg.neutral"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s7"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s7"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             },
@@ -140,15 +140,15 @@
                 "value": "$color.fg.neutral"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }

@@ -19,15 +19,15 @@
                 "value": "$color.bg.neutral-solid"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s3"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3"
               }
             },
@@ -37,7 +37,7 @@
                 "value": "$color.bg.neutral-solid"
               },
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             },
@@ -47,11 +47,11 @@
                 "value": "$color.palette.static-white"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             },
@@ -61,11 +61,11 @@
                 "value": "$color.palette.static-white"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             },

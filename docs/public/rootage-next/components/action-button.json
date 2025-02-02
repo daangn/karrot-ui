@@ -15,17 +15,17 @@
           "slots": {
             "root": {
               "colorDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "colorTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.easing"
               }
             },
             "label": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -777,11 +777,11 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s8"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             },
@@ -818,33 +818,33 @@
           "slots": {
             "root": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               }
             },
             "prefixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "suffixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               }
             }
@@ -865,21 +865,21 @@
           "slots": {
             "root": {
               "minWidth": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s8"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               }
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             }
@@ -899,11 +899,11 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s9"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s2"
               }
             },
@@ -940,33 +940,33 @@
           "slots": {
             "root": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               }
             },
             "prefixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "suffixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               }
             }
@@ -987,21 +987,21 @@
           "slots": {
             "root": {
               "minWidth": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s9"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               }
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             }
@@ -1021,11 +1021,11 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s10"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s2"
               }
             },
@@ -1062,33 +1062,33 @@
           "slots": {
             "root": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             },
             "prefixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "suffixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               }
             }
@@ -1109,15 +1109,15 @@
           "slots": {
             "root": {
               "minWidth": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s10"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             },
@@ -1146,11 +1146,11 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s13"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s3"
               }
             },
@@ -1187,15 +1187,15 @@
           "slots": {
             "root": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
@@ -1219,7 +1219,7 @@
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s6"
               }
             }
@@ -1240,15 +1240,15 @@
           "slots": {
             "root": {
               "minWidth": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s13"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },

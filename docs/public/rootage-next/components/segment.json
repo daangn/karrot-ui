@@ -15,15 +15,15 @@
           "slots": {
             "root": {
               "height": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s8"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "minWidth": {
@@ -36,15 +36,15 @@
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               },
               "color": {
@@ -104,17 +104,17 @@
                 ]
               },
               "transformDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "transformTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.easing"
               }
             },
             "label": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               },
               "color": {

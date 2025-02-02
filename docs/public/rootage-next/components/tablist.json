@@ -59,7 +59,7 @@
           "slots": {
             "root": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             }

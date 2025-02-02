@@ -17,7 +17,7 @@
           "slots": {
             "root": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s10"
               },
               "thickness": {
@@ -44,7 +44,7 @@
           "slots": {
             "root": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s6"
               },
               "thickness": {

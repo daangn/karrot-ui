@@ -15,39 +15,39 @@
           "slots": {
             "root": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "content": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s10"
               }
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "marginY": {
@@ -60,49 +60,49 @@
             },
             "title": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             },
             "description": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             },
             "linkLabel": {
               "height": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s10"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s2"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s2"
               }
             },
             "dismissButton": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s10"
               }
             },
             "dismissIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "actionableIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             }

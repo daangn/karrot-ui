@@ -15,11 +15,11 @@
           "slots": {
             "root": {
               "padding": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               },
               "color": {

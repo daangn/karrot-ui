@@ -24,7 +24,7 @@
                 }
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
@@ -67,7 +67,7 @@
                 }
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
@@ -206,11 +206,11 @@
           "slots": {
             "title": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s6-static"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -230,21 +230,21 @@
           "slots": {
             "title": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5-static"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             },
             "subtitle": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s2-static"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             }

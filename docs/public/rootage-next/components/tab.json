@@ -21,11 +21,11 @@
             },
             "notification": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               },
               "color": {
@@ -33,7 +33,7 @@
                 "value": "$color.bg.brand-solid"
               },
               "marginLeft": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s0_5"
               }
             }
@@ -86,21 +86,21 @@
                 }
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }
@@ -127,21 +127,21 @@
                 }
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }

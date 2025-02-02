@@ -19,11 +19,11 @@
                 "value": "$color.bg.overlay"
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter"
               },
               "enterOpacity": {
@@ -31,11 +31,11 @@
                 "value": 0
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               },
               "exitOpacity": {
@@ -49,61 +49,61 @@
                 "value": "$color.bg.layer-default"
               },
               "cornerTopRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s6"
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s6"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter-expressive"
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               }
             },
             "header": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.spacing-x.global-gutter"
               },
               "paddingTop": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s6"
               },
               "paddingBottom": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "body": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.spacing-x.global-gutter"
               }
             },
             "footer": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.spacing-x.global-gutter"
               },
               "paddingTop": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3"
               },
               "paddingBottom": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
@@ -113,15 +113,15 @@
                 "value": "$color.fg.neutral"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s8"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s8"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             },
@@ -131,15 +131,15 @@
                 "value": "$color.fg.neutral-muted"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s6"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s6"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             },
@@ -149,7 +149,7 @@
                 "value": "$color.palette.gray-300"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               },
               "targetSize": {
@@ -167,11 +167,11 @@
                 }
               },
               "fromTop": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               },
               "fromRight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               }
             },

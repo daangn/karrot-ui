@@ -15,15 +15,15 @@
           "slots": {
             "root": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               },
               "strokeWidth": {
@@ -38,13 +38,13 @@
                 "value": "$color.stroke.neutral"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s3"
               }
             },
             "content": {
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s0_5"
               }
             },
@@ -54,15 +54,15 @@
                 "value": "$color.fg.neutral"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s5"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               }
             },
@@ -72,21 +72,21 @@
                 "value": "$color.fg.neutral-muted"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               }
             },
             "checkboxControl": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s6"
               },
               "color": {
@@ -105,19 +105,19 @@
                 "value": "$color.stroke.control"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s1"
               }
             },
             "checkboxIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "radioControl": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s6"
               },
               "color": {
@@ -136,17 +136,17 @@
                 "value": "$color.stroke.control"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             },
             "radioIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             }

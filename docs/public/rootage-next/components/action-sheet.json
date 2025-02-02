@@ -19,11 +19,11 @@
                 "value": "$color.bg.overlay"
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter"
               },
               "enterOpacity": {
@@ -31,11 +31,11 @@
                 "value": 0
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s2"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               },
               "exitOpacity": {
@@ -49,51 +49,51 @@
                 "value": "$color.bg.layer-floating"
               },
               "cornerTopRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s5"
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s6"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter-expressive"
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               }
             },
             "header": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.spacing-x.global-gutter"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               }
             },
             "title": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               },
               "color": {
@@ -103,15 +103,15 @@
             },
             "description": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               },
               "color": {
@@ -132,7 +132,7 @@
                 "value": "$color.stroke.neutral"
               },
               "marginX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.spacing-x.global-gutter"
               }
             }

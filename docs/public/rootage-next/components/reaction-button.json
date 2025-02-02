@@ -19,11 +19,11 @@
                 "value": "$color.bg.neutral-weak"
               },
               "colorDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "colorTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.easing"
               }
             },
@@ -33,7 +33,7 @@
                 "value": "$color.fg.neutral"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             },
@@ -43,7 +43,7 @@
                 "value": "$color.fg.neutral"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             },
@@ -230,23 +230,23 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s8"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               }
             },
@@ -261,21 +261,21 @@
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               }
             },
             "count": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               }
             },
@@ -311,23 +311,23 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s9"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               }
             },
@@ -342,21 +342,21 @@
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               }
             },
             "count": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s3"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s3"
               }
             },

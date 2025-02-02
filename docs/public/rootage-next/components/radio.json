@@ -30,13 +30,13 @@
                 "value": "$color.stroke.control"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             },
             "icon": {
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             }
@@ -145,13 +145,13 @@
           "slots": {
             "root": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s6"
               }
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             }
@@ -164,7 +164,7 @@
           "slots": {
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3"
               }
             }
@@ -184,13 +184,13 @@
           "slots": {
             "root": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s5"
               }
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               }
             }
@@ -203,7 +203,7 @@
           "slots": {
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               }
             }

@@ -15,19 +15,19 @@
           "slots": {
             "region": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "offsetDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "offsetTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.easing"
               }
             },
@@ -37,7 +37,7 @@
                 "value": "$color.bg.neutral-solid"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s2"
               },
               "minHeight": {
@@ -48,15 +48,15 @@
                 }
               },
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2_5"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "enterOpacity": {
@@ -64,11 +64,11 @@
                 "value": 0
               },
               "enterDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "enterTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.enter"
               },
               "exitOpacity": {
@@ -76,11 +76,11 @@
                 "value": 0
               },
               "exitDuration": {
-                "type": "color",
+                "type": "duration",
                 "value": "$duration.s4"
               },
               "exitTimingFunction": {
-                "type": "color",
+                "type": "cubicBezier",
                 "value": "$timing-function.exit"
               }
             },
@@ -90,15 +90,15 @@
                 "value": "$color.palette.static-white"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             },
@@ -113,7 +113,7 @@
             },
             "actionButton": {
               "targetPaddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "targetMinHeight": {
@@ -128,15 +128,15 @@
                 "value": "$color.fg.brand"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s4"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             }

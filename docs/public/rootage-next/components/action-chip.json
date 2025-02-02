@@ -19,7 +19,7 @@
                 "value": "$color.bg.neutral-weak"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.full"
               }
             },
@@ -29,7 +29,7 @@
                 "value": "$color.fg.neutral"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             },
@@ -57,7 +57,7 @@
                 "value": "$color.fg.neutral-muted"
               },
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.medium"
               }
             }
@@ -133,39 +133,39 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s8"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1_5"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               }
             },
             "prefixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "suffixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "count": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               }
             }
@@ -185,39 +185,39 @@
           "slots": {
             "root": {
               "minHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s9"
               },
               "paddingY": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s2"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s1"
               }
             },
             "label": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               }
             },
             "prefixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "suffixIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             },
             "count": {
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               }
             }
@@ -238,7 +238,7 @@
           "slots": {
             "root": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3"
               }
             }
@@ -259,13 +259,13 @@
           "slots": {
             "root": {
               "minWidth": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s8"
               }
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             }
@@ -286,7 +286,7 @@
           "slots": {
             "root": {
               "paddingX": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               }
             }
@@ -307,13 +307,13 @@
           "slots": {
             "root": {
               "minWidth": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s9"
               }
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             }

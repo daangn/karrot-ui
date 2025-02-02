@@ -15,23 +15,23 @@
           "slots": {
             "root": {
               "padding": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3_5"
               },
               "gap": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s3"
               },
               "cornerRadius": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$radius.s2_5"
               },
               "fontSize": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$font-size.s4"
               },
               "lineHeight": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$line-height.s5"
               },
               "minHeight": {
@@ -44,37 +44,37 @@
             },
             "icon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "title": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.bold"
               }
             },
             "description": {
               "fontWeight": {
-                "type": "color",
+                "type": "number",
                 "value": "$font-weight.regular"
               }
             },
             "dismissButton": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s10"
               }
             },
             "dismissIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             },
             "actionableIcon": {
               "size": {
-                "type": "color",
+                "type": "dimension",
                 "value": "$dimension.s4"
               }
             }
