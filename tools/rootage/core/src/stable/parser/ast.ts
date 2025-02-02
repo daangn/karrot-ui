@@ -313,10 +313,31 @@ export interface VariantDeclaration {
   body: StateDeclaration[];
 }
 
+export interface ComponentSpecSchemaDeclaration {
+  kind: "ComponentSpecSchemaDeclaration";
+  // TODO: variants schema
+  slots: SlotSchemaDeclaration[];
+}
+
+export interface SlotSchemaDeclaration {
+  kind: "SlotSchemaDeclaration";
+  name: string;
+  description?: string;
+  properties: PropertySchemaDeclaration[];
+}
+
+export interface PropertySchemaDeclaration {
+  kind: "PropertySchemaDeclaration";
+  name: string;
+  description?: string;
+  type: "color" | "dimension" | "number" | "duration" | "cubic-bezier" | "shadow" | "gradient";
+}
+
 export interface ComponentSpecDeclaration {
   kind: "ComponentSpecDeclaration";
   id: string;
   name: string;
+  schema: ComponentSpecSchemaDeclaration;
   body: VariantDeclaration[];
 }
 
