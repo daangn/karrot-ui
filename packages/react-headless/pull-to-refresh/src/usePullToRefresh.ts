@@ -179,9 +179,6 @@ export function usePullToRefresh(props: UsePullToRefreshProps) {
         width: "100%",
         height: `var(--ptr-size, ${threshold}px)`,
         marginBottom: `calc(var(--ptr-size, ${threshold}px) * -1)`,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
       },
     }),
     getIndicatorRenderProps: () => {

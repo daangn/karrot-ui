@@ -20,6 +20,7 @@ export * from "./Inline";
 export * from "./InlineBanner";
 export * from "./MannerTempBadge";
 export * from "./ProgressCircle";
+export * from "./PullToRefresh";
 export * from "./ReactionButton";
 export * from "./SegmentedControl";
 export * from "./SelectBox";

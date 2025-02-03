@@ -29,7 +29,7 @@ const ActivityHome: ActivityComponentType = () => {
   return (
     <AppScreen>
       <AppBar>
-        <AppBarMain title="Home" subtitle="Subtitle" />
+        <AppBarMain title="Home" />
       </AppBar>
       <AppScreenContent
         ptr

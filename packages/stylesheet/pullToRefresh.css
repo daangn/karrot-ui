@@ -1,0 +1,9 @@
+.pullToRefresh__root {
+    --ptr-size: 44px;
+    --ptr-transition-duration: var(--seed-v3-duration-s6)
+}
+.pullToRefresh__indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}

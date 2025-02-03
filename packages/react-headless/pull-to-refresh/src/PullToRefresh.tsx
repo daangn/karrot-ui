@@ -48,13 +48,17 @@ export const PullToRefreshRoot = forwardRef<HTMLDivElement, PullToRefreshRootPro
 );
 PullToRefreshRoot.displayName = "PullToRefreshRoot";
 
-export interface PullToRefreshIndicatorProps {
+export interface PullToRefreshIndicatorProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
   children: (props: PullToRefreshIndicatorRenderProps) => React.ReactNode;
 }
 
-export const PullToRefreshIndicator = ({ children }: PullToRefreshIndicatorProps) => {
+export const PullToRefreshIndicator = (props: PullToRefreshIndicatorProps) => {
+  const { children, ...otherProps } = props;
   const { indicatorProps, getIndicatorRenderProps } = usePullToRefreshContext();
-  return <div {...indicatorProps}>{children(getIndicatorRenderProps())}</div>;
+  return (
+    <div {...mergeProps(indicatorProps, otherProps)}>{children(getIndicatorRenderProps())}</div>
+  );
 };
 
 export interface PullToRefreshContentProps

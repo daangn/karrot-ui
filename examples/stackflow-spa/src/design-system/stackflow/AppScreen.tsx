@@ -1,4 +1,5 @@
-import { PullToRefresh, usePullToRefreshContext } from "@seed-design/react/primitive";
+import { PullToRefresh } from "@seed-design/react";
+import { usePullToRefreshContext } from "@seed-design/react/primitive";
 import { AppScreen as SeedAppScreen } from "@seed-design/stackflow";
 import { useActions } from "@stackflow/react";
 import { forwardRef } from "react";
@@ -52,7 +53,7 @@ export const AppScreenContent = forwardRef<HTMLDivElement, AppScreenContentProps
       <PullToRefresh.Root asChild onPtrReady={onPtrReady} onPtrRefresh={onPtrRefresh}>
         <SeedAppScreen.Layer ref={ref} {...otherProps}>
           <PullToRefresh.Indicator>
-            {(props) => <ProgressCircle tone="brand" {...props} />}
+            {(props) => <ProgressCircle size="24" tone="brand" {...props} />}
           </PullToRefresh.Indicator>
           <PullToRefresh.Content asChild>{children}</PullToRefresh.Content>
           <Debug />

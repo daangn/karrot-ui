@@ -18,7 +18,7 @@ const ActivityLayerBar: ActivityComponentType = () => {
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
-        <AppBarMain>Random Long Title Hello World</AppBarMain>
+        <AppBarMain title="Random Long Title Hello World" subtitle="Subtitle" />
         <AppBarRight>
           <AppBarIconButton>
             <IconBellLine />

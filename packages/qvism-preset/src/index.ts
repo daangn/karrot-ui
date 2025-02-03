@@ -23,6 +23,7 @@ import identityPlaceholder from "./recipes/identity-placeholder";
 import inlineBanner from "./recipes/inline-banner";
 import mannerTempBadge from "./recipes/manner-temp-badge";
 import progressCircle from "./recipes/progress-circle";
+import pullToRefresh from "./recipes/pull-to-refresh";
 import radio from "./recipes/radio";
 import reactionButton from "./recipes/reaction-button";
 import segmentedControl from "./recipes/segmented-control";
@@ -85,6 +86,7 @@ const recipes = {
   appScreen,
   appBar,
   appBarMain,
+  pullToRefresh,
 };
 
 export default recipes;

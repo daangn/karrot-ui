@@ -5127,3 +5127,14 @@
 .appBarMain__root--tone_transparent, .appBarMain__title--tone_transparent, .appBarMain__subtitle--tone_transparent {
   color: var(--seed-v3-color-palette-static-white);
 }
+
+.pullToRefresh__root {
+  --ptr-size: 44px;
+  --ptr-transition-duration: var(--seed-v3-duration-s6);
+}
+
+.pullToRefresh__indicator {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
