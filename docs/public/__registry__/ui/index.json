@@ -2,9 +2,11 @@
   {
     "name": "app-screen",
     "files": [
-      "ui:app-screen.tsx"
+      "ui:app-screen.tsx",
+      "ui:app-bar.tsx"
     ],
     "dependencies": [
+      "@seed-design/react",
       "@seed-design/stackflow"
     ]
   },
