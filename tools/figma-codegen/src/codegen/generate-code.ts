@@ -55,7 +55,7 @@ export function generateCode(selection: SceneNode) {
         return createElement(
           "Text",
           {
-            variant: camelCase(style.name, { mergeAmbiguousCharacters: true }),
+            textStyle: camelCase(style.name, { mergeAmbiguousCharacters: true }),
             ...(color ? { color } : {}),
           },
           segment.characters.replace(/\n/g, "<br />"),

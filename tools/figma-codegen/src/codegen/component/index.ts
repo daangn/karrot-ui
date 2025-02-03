@@ -1197,9 +1197,8 @@ const tabsHandler: ComponentHandler<TabsProperties> = {
       undefined,
       tabsItems.map(({ node }) => {
         const value = node.componentProperties["Label#4478:2"].value;
-        const content = createElement("Content", undefined, value);
 
-        return createElement("TabContent", { value }, content);
+        return createElement("TabContent", { value }, value);
       }),
     );
 

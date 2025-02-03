@@ -2,11 +2,23 @@ import { camelCase } from "change-case";
 
 function getNameFromSlashSeparatedVariableName(id: string) {
   const variable = figma.variables.getVariableById(id);
+
   if (!variable) return undefined;
 
-  const name = variable.name.split("/").pop() as string;
+  const splits = variable.name.split("/");
 
-  return camelCase(name);
+  const name = splits.pop() ?? "";
+  const group = splits.pop() ?? "";
+
+  console.log(group, name);
+
+  switch (group) {
+    case "spacing-x":
+    case "spacing-y":
+      return `${camelCase(group)}.${camelCase(name)}`;
+    default:
+      return camelCase(name);
+  }
 }
 
 export const getLayoutVariableName = getNameFromSlashSeparatedVariableName;
