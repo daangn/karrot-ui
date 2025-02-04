@@ -73,4 +73,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages publish ./docs/public --project-name=seed-design --branch=${{ github.ref_name }}
+          command: pages publish ./docs/public --project-name=seed-design-v2 --branch=${{ github.ref_name }}
