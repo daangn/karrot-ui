@@ -19,16 +19,47 @@ export function generateCode(selection: SceneNode) {
       return createElement("div", {}, children.map(traverse));
     }
 
-    return createElement(
-      "Flex",
-      {
-        ...createLayoutProps(node),
-        ...createSizingProps(node),
-        ...createBackgroundProps(node),
-        ...createBorderProps(node),
-      },
-      children.map(traverse),
-    );
+    const props = {
+      ...createLayoutProps(node),
+      ...createSizingProps(node),
+      ...createBackgroundProps(node),
+      ...createBorderProps(node),
+    };
+
+    if (
+      props.flexDirection === "row" &&
+      props.alignItems === "flexStart" &&
+      props.justifyContent === "flexStart" &&
+      props.flexWrap === "wrap"
+    ) {
+      const { flexDirection, flexWrap, alignItems, justifyContent, ...rest } = props;
+
+      return createElement("Inline", rest, children.map(traverse));
+    }
+
+    if (
+      props.flexDirection === "row" &&
+      props.justifyContent === "flexStart" &&
+      props.flexWrap === "nowrap"
+    ) {
+      const { flexDirection, flexWrap, justifyContent, ...rest } = props;
+
+      const childrenResult = children.map(traverse);
+
+      return createElement(
+        "Columns",
+        rest,
+        childrenResult.map((child) => createElement("Column", {}, child)),
+      );
+    }
+
+    if (props.flexDirection === "column") {
+      const { flexDirection, ...rest } = props;
+
+      return createElement("Stack", rest, children.map(traverse));
+    }
+
+    return createElement("Flex", props, children.map(traverse));
   }
 
   function handleTextNode(node: TextNode): ElementNode {
