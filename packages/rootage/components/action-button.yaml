@@ -229,6 +229,7 @@ data:
         size: $dimension.s3_5
       label:
         fontSize: $font-size.s4
+        lineHeight: $line-height.s4
   size=xsmall, layout=icon only:
     enabled:
       root:
@@ -257,6 +258,7 @@ data:
         size: $dimension.s3_5
       label:
         fontSize: $font-size.s4
+        lineHeight: $line-height.s4
   size=small, layout=icon only:
     enabled:
       root:
@@ -285,6 +287,7 @@ data:
         size: $dimension.s4
       label:
         fontSize: $font-size.s4
+        lineHeight: $line-height.s4
   size=medium, layout=icon only:
     enabled:
       root:
@@ -313,6 +316,7 @@ data:
         size: 22px
       label:
         fontSize: $font-size.s6
+        lineHeight: $line-height.s6
   size=large, layout=icon only:
     enabled:
       root:

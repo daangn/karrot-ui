@@ -849,6 +849,10 @@
                 "fontSize": {
                   "type": "dimension",
                   "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
                 }
               }
             }
@@ -971,6 +975,10 @@
                 "fontSize": {
                   "type": "dimension",
                   "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
                 }
               }
             }
@@ -1093,6 +1101,10 @@
                 "fontSize": {
                   "type": "dimension",
                   "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
                 }
               }
             }
@@ -1224,6 +1236,10 @@
                 "fontSize": {
                   "type": "dimension",
                   "value": "$font-size.s6"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s6"
                 }
               }
             }

@@ -8036,6 +8036,16 @@
                         ],
                         "key": "s4"
                       }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
                     }
                   ]
                 }
@@ -8253,6 +8263,16 @@
                         "type": "token",
                         "group": [
                           "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
                         ],
                         "key": "s4"
                       }
@@ -8476,6 +8496,16 @@
                         ],
                         "key": "s4"
                       }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
                     }
                   ]
                 }
@@ -8687,6 +8717,16 @@
                         "type": "token",
                         "group": [
                           "font-size"
+                        ],
+                        "key": "s6"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
                         ],
                         "key": "s6"
                       }

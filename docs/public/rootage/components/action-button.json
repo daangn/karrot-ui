@@ -348,7 +348,8 @@
           "size": "$dimension.s3_5"
         },
         "label": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         }
       }
     },
@@ -390,7 +391,8 @@
           "size": "$dimension.s3_5"
         },
         "label": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         }
       }
     },
@@ -432,7 +434,8 @@
           "size": "$dimension.s4"
         },
         "label": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.s4",
+          "lineHeight": "$line-height.s4"
         }
       }
     },
@@ -474,7 +477,8 @@
           "size": "22px"
         },
         "label": {
-          "fontSize": "$font-size.s6"
+          "fontSize": "$font-size.s6",
+          "lineHeight": "$line-height.s6"
         }
       }
     },

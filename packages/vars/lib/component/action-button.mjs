@@ -342,7 +342,8 @@ export const vars = {
         "size": "var(--seed-v3-dimension-s3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)"
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)"
       }
     }
   },
@@ -384,7 +385,8 @@ export const vars = {
         "size": "var(--seed-v3-dimension-s3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)"
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)"
       }
     }
   },
@@ -426,7 +428,8 @@ export const vars = {
         "size": "var(--seed-v3-dimension-s4)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)"
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)"
       }
     }
   },
@@ -468,7 +471,8 @@ export const vars = {
         "size": "22px"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s6)"
+        "fontSize": "var(--seed-v3-font-size-s6)",
+        "lineHeight": "var(--seed-v3-line-height-s6)"
       }
     }
   },
