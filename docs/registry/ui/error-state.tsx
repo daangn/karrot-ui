@@ -81,21 +81,23 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>(
             {description}
           </Text>
         </Stack>
-        <Stack alignItems="center" gap="s4">
-          {primaryActionProps && (
-            <ActionButton
-              variant={primaryActionVariant[variant]}
-              {...primaryActionProps}
-            />
-          )}
-          {secondaryActionProps && (
-            <button {...secondaryActionOtherProps}>
-              <Text color="fg.neutralMuted" fontSize="s4" fontWeight="medium">
-                {secondaryActionLabel}
-              </Text>
-            </button>
-          )}
-        </Stack>
+        {(primaryActionProps || secondaryActionProps) && (
+          <Stack alignItems="center" gap="s4">
+            {primaryActionProps && (
+              <ActionButton
+                variant={primaryActionVariant[variant]}
+                {...primaryActionProps}
+              />
+            )}
+            {secondaryActionProps && (
+              <button {...secondaryActionOtherProps}>
+                <Text color="fg.neutralMuted" fontSize="s4" fontWeight="medium">
+                  {secondaryActionLabel}
+                </Text>
+              </button>
+            )}
+          </Stack>
+        )}
       </Box>
     );
   },
