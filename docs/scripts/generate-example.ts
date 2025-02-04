@@ -4,7 +4,7 @@ import fs from "node:fs";
 const EXAMPLE_PATH = path.join(process.cwd(), "components", "example");
 
 // read files from path and then generate the index.json containing key-value pairs of the file name and the file content
-const files = fs.readdirSync(EXAMPLE_PATH);
+const files = fs.readdirSync(EXAMPLE_PATH, { recursive: true, encoding: "utf8" });
 
 const example = Object.fromEntries(
   files
@@ -13,10 +13,7 @@ const example = Object.fromEntries(
       const filePath = path.join(EXAMPLE_PATH, file);
       const content = fs.readFileSync(filePath, "utf8");
 
-      return [
-        file.replace(".tsx", ""),
-        content.replace('"use client";', "").trim(),
-      ];
+      return [file.replace(".tsx", ""), content.replace('"use client";', "").trim()];
     }),
 );
 

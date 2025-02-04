@@ -191,8 +191,6 @@ const actionSheetHandler: ComponentHandler<ActionSheetProperties> = {
 
     const contentChildren = items.map(actionSheetItemHandler.codegen);
 
-    console.log(contentProps, contentChildren);
-
     const content = createElement(
       "ActionSheetContent",
       contentProps,

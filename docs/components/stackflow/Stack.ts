@@ -20,8 +20,6 @@ export const makeStack = <T extends RegisteredActivityName>({ activities }: Make
     {} as Record<T, ActivityComponentType<T>>,
   );
 
-  console.log({ components, activities });
-
   const { Stack, actions, stepActions } = stackflow({
     config: defineConfig({
       activities: activities.map(({ name }) => ({ name })),

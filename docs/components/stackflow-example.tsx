@@ -33,8 +33,15 @@ export function StackflowExample(props: StackflowExampleProps) {
     return Components;
   }, [names]);
 
-  const Code = React.useMemo(() => {
-    return (Index as Record<string, string>)[names[0]];
+  const code = React.useMemo(() => {
+    if (names.length === 0) return "";
+    if (names.length === 1) return Index[names[0] as keyof typeof Index];
+
+    return names
+      .map((name) => {
+        return `// ${name}.tsx\n\n${(Index as Record<string, string>)[name]}`;
+      })
+      .join("\n\n");
   }, [names]);
 
   return (
@@ -45,7 +52,7 @@ export function StackflowExample(props: StackflowExampleProps) {
             <Stackflow activities={activities} />
           </Tab>
           <Tab value="코드">
-            <CodeBlock lang="tsx" wrapper={{ allowCopy: true }} code={Code} />
+            <CodeBlock lang="tsx" wrapper={{ allowCopy: true }} code={code} />
           </Tab>
         </Tabs>
       </React.Suspense>
