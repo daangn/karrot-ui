@@ -15,11 +15,11 @@ import { Flex } from "seed-design/ui/layout";
 
 declare module "@stackflow/config" {
   interface Register {
-    AppScreenTransparentBar: unknown;
+    "app-screen-transparent-bar": unknown;
   }
 }
 
-const AppScreenTransparentBarActivity: ActivityComponentType<"AppScreenTransparentBar"> = () => {
+const AppScreenTransparentBarActivity: ActivityComponentType<"app-screen-transparent-bar"> = () => {
   return (
     <AppScreen theme="cupertino">
       <AppBar tone="transparent">

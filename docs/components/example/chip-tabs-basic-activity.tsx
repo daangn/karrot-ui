@@ -9,11 +9,11 @@ import AppScreen from "@/components/stackflow/ActivityLayout";
 
 declare module "@stackflow/config" {
   interface Register {
-    ChipTabsBasic: unknown;
+    "chip-tabs-basic": unknown;
   }
 }
 
-const ChipTabsBasicActivity: ActivityComponentType<"ChipTabsBasic"> = () => {
+const ChipTabsBasicActivity: ActivityComponentType<"chip-tabs-basic"> = () => {
   const [value, setValue] = React.useState("1");
 
   const commonStyle = {

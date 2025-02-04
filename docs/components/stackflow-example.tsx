@@ -7,35 +7,42 @@ import { CodeBlock } from "./code-block";
 
 import { Stackflow } from "./stackflow/Stackflow";
 import type { ActivityComponentType } from "@stackflow/react/future";
+import type { RegisteredActivityName } from "@stackflow/config";
 
 interface StackflowExampleProps {
-  name: string;
+  names: string[];
 }
 
 export function StackflowExample(props: StackflowExampleProps) {
-  const { name } = props;
+  const { names } = props;
 
-  const Activity = React.useMemo(() => {
-    const Component = React.lazy(() => import(`./example/${name}.tsx`));
+  const activities = React.useMemo(() => {
+    const Components = names.map((name) => {
+      const Component = React.lazy(() => import(`./example/${name}.tsx`));
 
-    if (!Component) {
-      return <div>컴포넌트가 존재하지 않습니다.</div>;
-    }
+      if (!Component) {
+        throw new Error(`Component not found: ${name}`);
+      }
 
-    return Component;
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  }, [name]) as unknown as ActivityComponentType<any>;
+      return {
+        name: name as RegisteredActivityName,
+        component: Component,
+      };
+    });
+
+    return Components;
+  }, [names]);
 
   const Code = React.useMemo(() => {
-    return (Index as Record<string, string>)[name];
-  }, [name]);
+    return (Index as Record<string, string>)[names[0]];
+  }, [names]);
 
   return (
     <ErrorBoundary>
       <React.Suspense fallback={null}>
         <Tabs items={["미리보기", "코드"]}>
           <Tab value="미리보기">
-            <Stackflow Activity={Activity} />
+            <Stackflow activities={activities} />
           </Tab>
           <Tab value="코드">
             <CodeBlock lang="tsx" wrapper={{ allowCopy: true }} code={Code} />

@@ -10,11 +10,11 @@ import AppScreen from "@/components/stackflow/ActivityLayout";
 
 declare module "@stackflow/config" {
   interface Register {
-    InlineBanner: unknown;
+    "inline-banner": unknown;
   }
 }
 
-const InlineBannerActivity: ActivityComponentType<"InlineBanner"> = () => {
+const InlineBannerActivity: ActivityComponentType<"inline-banner"> = () => {
   const [variant, setVariant] =
     React.useState<Extract<InlineBannerProps["variant"], "neutralWeak" | "criticalSolid">>(
       "criticalSolid",

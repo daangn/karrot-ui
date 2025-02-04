@@ -15,11 +15,11 @@ import { Flex } from "seed-design/ui/layout";
 
 declare module "@stackflow/config" {
   interface Register {
-    AppScreenPreview: unknown;
+    "app-screen-preview": unknown;
   }
 }
 
-const AppScreenPreviewActivity: ActivityComponentType<"AppScreenPreview"> = () => {
+const AppScreenPreviewActivity: ActivityComponentType<"app-screen-preview"> = () => {
   return (
     <AppScreen theme="cupertino">
       <AppBar>

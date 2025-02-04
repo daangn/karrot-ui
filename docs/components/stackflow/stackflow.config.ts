@@ -1,13 +1,8 @@
-import { defineConfig } from "@stackflow/config";
+import { defineConfig, ActivityDefinition } from "@stackflow/config";
 
-export const getConfig = (name: string) =>
+export const getConfig = <T extends string>(activities: ActivityDefinition<T>[]) =>
   defineConfig({
-    activities: [
-      {
-        name,
-        path: "/",
-      },
-    ],
+    activities,
     transitionDuration: 270,
-    initialActivity: () => name,
+    initialActivity: () => activities[0].name,
   });

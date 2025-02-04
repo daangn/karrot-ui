@@ -1,7 +1,7 @@
 "use client";
 
 import { useActivity } from "@stackflow/react";
-import { useFlow } from "@stackflow/react/future";
+import { useFlow, ActivityComponentType } from "@stackflow/react/future";
 import { ActionButton } from "seed-design/ui/action-button";
 import {
   AlertDialogAction,
@@ -13,7 +13,13 @@ import {
   AlertDialogTitle,
 } from "seed-design/ui/alert-dialog";
 
-const AlertDialogStackflow = () => {
+declare module "@stackflow/config" {
+  interface Register {
+    "alert-dialog-stackflow": unknown;
+  }
+}
+
+const AlertDialogStackflow: ActivityComponentType<"alert-dialog-stackflow"> = () => {
   const activity = useActivity();
   const { pop } = useFlow();
 
