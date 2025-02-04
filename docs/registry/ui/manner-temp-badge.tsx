@@ -5,7 +5,7 @@ import {
   MannerTempBadge as SeedMannerTempBadge,
 } from "@seed-design/react";
 import * as React from "react";
-import { mannerTempToLevel } from "../util/manner-temp-level";
+import { mannerTempToLevel } from "../lib/manner-temp-level";
 
 export interface MannerTempBadgeProps
   extends Omit<SeedMannerTempBadge.RootProps, "children" | "asChild"> {

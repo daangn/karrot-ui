@@ -13,7 +13,7 @@ export const registryUI: RegistryUI = [
   {
     name: "error-state",
     files: ["ui:error-state.tsx"],
-    innerDependencies: ["action-button"],
+    innerDependencies: ["ui:action-button"],
     dependencies: ["@seed-design/react"],
   },
   {
@@ -24,12 +24,12 @@ export const registryUI: RegistryUI = [
   {
     name: "manner-temp-badge",
     files: ["ui:manner-temp-badge.tsx"],
-    innerDependencies: ["manner-temp-level"],
+    innerDependencies: ["lib:manner-temp-level"],
     dependencies: ["@seed-design/react"],
   },
   {
     name: "alert-dialog",
-    innerDependencies: ["action-button"],
+    innerDependencies: ["ui:action-button"],
     dependencies: ["@seed-design/stackflow"],
     files: ["ui:alert-dialog.tsx"],
   },
@@ -50,7 +50,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "avatar",
-    innerDependencies: ["identity-placeholder"],
+    innerDependencies: ["ui:identity-placeholder"],
     dependencies: ["@seed-design/react"],
     files: ["ui:avatar.tsx"],
   },

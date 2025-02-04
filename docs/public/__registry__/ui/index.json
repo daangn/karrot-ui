@@ -16,7 +16,7 @@
       "ui:error-state.tsx"
     ],
     "innerDependencies": [
-      "action-button"
+      "ui:action-button"
     ],
     "dependencies": [
       "@seed-design/react"
@@ -37,7 +37,7 @@
       "ui:manner-temp-badge.tsx"
     ],
     "innerDependencies": [
-      "manner-temp-level"
+      "lib:manner-temp-level"
     ],
     "dependencies": [
       "@seed-design/react"
@@ -46,7 +46,7 @@
   {
     "name": "alert-dialog",
     "innerDependencies": [
-      "action-button"
+      "ui:action-button"
     ],
     "dependencies": [
       "@seed-design/stackflow"
@@ -85,7 +85,7 @@
   {
     "name": "avatar",
     "innerDependencies": [
-      "identity-placeholder"
+      "ui:identity-placeholder"
     ],
     "dependencies": [
       "@seed-design/react"

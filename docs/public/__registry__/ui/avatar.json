@@ -4,7 +4,7 @@
     "@seed-design/react"
   ],
   "innerDependencies": [
-    "identity-placeholder"
+    "ui:identity-placeholder"
   ],
   "registries": [
     {

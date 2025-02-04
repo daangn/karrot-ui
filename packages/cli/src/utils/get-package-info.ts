@@ -13,5 +13,6 @@ function getPackagePath() {
 }
 
 export function getPackageInfo() {
-  return fs.readJSONSync(getPackagePath()) as PackageJson;
+  const packageJsonPath = getPackagePath();
+  return fs.readJSONSync(packageJsonPath) as PackageJson;
 }

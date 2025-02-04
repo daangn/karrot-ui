@@ -4,7 +4,7 @@
     "@seed-design/stackflow"
   ],
   "innerDependencies": [
-    "action-button"
+    "ui:action-button"
   ],
   "registries": [
     {

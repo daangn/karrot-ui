@@ -1,18 +1,21 @@
 import { getConfig } from "@/src/utils/get-config";
-import { fetchRegistryUIItem, getRegistryUIIndex } from "@/src/utils/get-metadata";
-import { getPackageManager } from "@/src/utils/get-package-manager";
+import {
+  fetchRegistryItem,
+  getRegistryLibIndex,
+  getRegistryUIIndex,
+} from "@/src/utils/get-metadata";
 import { transform } from "@/src/utils/transformers";
 import * as p from "@clack/prompts";
-import { execa } from "execa";
 import fs from "fs-extra";
 import path from "path";
 import color from "picocolors";
 import { z } from "zod";
 
 import type { CAC } from "cac";
-import { addRelativeComponents } from "../utils/add-relative-components";
 import { BASE_URL } from "../constants";
+import { addRelativeRegistries } from "../utils/add-relative-registries";
 import { highlight } from "../utils/color";
+import { installDependencies } from "../utils/install";
 
 const addOptionsSchema = z.object({
   components: z.array(z.string()).optional(),
@@ -43,7 +46,7 @@ export const addCommand = (cli: CAC) => {
     .example("seed-design add box-button")
     .example("seed-design add alert-dialog")
     .action(async (components, opts) => {
-      p.intro(color.bgCyan("컴포넌트 추가하기"));
+      p.intro(color.bgCyan("seed-design add"));
       const options = addOptionsSchema.parse({
         components,
         ...opts,
@@ -52,7 +55,7 @@ export const addCommand = (cli: CAC) => {
       const baseUrl = options.baseUrl;
       const config = await getConfig(cwd);
       const registryComponentIndex = await getRegistryUIIndex(baseUrl);
-
+      const libRegistryIndex = await getRegistryLibIndex(baseUrl);
       let selectedComponents: string[] = options.all
         ? registryComponentIndex.map((registry) => registry.name)
         : options.components;
@@ -62,7 +65,7 @@ export const addCommand = (cli: CAC) => {
           { label: string; value: string; hint: string }[],
           string
         >({
-          message: "추가할 컴포넌트를 선택해주세요 (스페이스바로 여러 개 선택 가능)",
+          message: "추가할 컴포넌트를 선택해주세요 (스페이스 바로 여러 개 선택 가능)",
           options: registryComponentIndex.map((metadata) => {
             return {
               label: metadata.name,
@@ -85,28 +88,46 @@ export const addCommand = (cli: CAC) => {
         process.exit(0);
       }
 
-      const allComponents = addRelativeComponents(selectedComponents, registryComponentIndex);
-      const addedComponents = allComponents.filter((c) => !selectedComponents.includes(c));
-      const registryComponentItems = await fetchRegistryUIItem(allComponents, baseUrl);
+      const allRelativeRegistries = addRelativeRegistries({
+        userSelects: selectedComponents,
+        uiRegistryIndex: registryComponentIndex,
+        libRegistryIndex,
+      });
+
+      const allRegistryItems = [];
+      for (const registry of allRelativeRegistries) {
+        const registryItem = await fetchRegistryItem(registry.name, baseUrl, registry.type);
+        allRegistryItems.push(registryItem);
+      }
 
       p.log.message(`선택된 컴포넌트: ${highlight(selectedComponents.join(", "))}`);
-      if (addedComponents.length) {
-        p.log.message(`내부 의존성: ${highlight(addedComponents.join(", "))} 추가됩니다.`);
+      if (allRegistryItems.length) {
+        const filteredRegistryItems = allRegistryItems.filter(
+          (c) => !selectedComponents.includes(c.name),
+        );
+        p.log.message(
+          `추가로 설치될 레지스트리: ${highlight(
+            filteredRegistryItems.map((c) => c.name).join(", "),
+          )}`,
+        );
       }
 
       // 선택된 컴포넌트.json 레지스트리 파일 기반으로 컴포넌트를 추가합니다.
-      for (const component of registryComponentItems) {
+      const registryResult = [];
+      const installResult = {
+        installed: new Set(),
+        filtered: new Set(),
+      };
+      for (const component of allRegistryItems) {
+        p.log.step(`${highlight(component.name)} 관련 파일 추가`);
         for (const registry of component.registries) {
           let targetPath = "";
           switch (registry.type) {
             case "ui":
               targetPath = config.resolvedUIPaths;
               break;
-            case "hook":
-              targetPath = config.resolbedHookPaths;
-              break;
-            case "util":
-              targetPath = config.resolvedUtilPaths;
+            case "lib":
+              targetPath = config.resolvedLibPaths;
               break;
             default:
               break;
@@ -131,60 +152,50 @@ export const addCommand = (cli: CAC) => {
 
           await fs.writeFile(filePath, content);
           const relativePath = path.relative(cwd, filePath);
-          p.log.info(`${highlight(registry.name)} 추가됨: ${highlight(relativePath)}`);
+
+          registryResult.push({
+            name: registry.name,
+            path: relativePath,
+          });
         }
-
-        const packageManager = await getPackageManager(cwd);
-
-        const { start, stop } = p.spinner();
 
         // Install dependencies.
         if (component.dependencies?.length) {
-          start(color.gray("의존성 설치중..."));
-
-          const result = await execa(
-            packageManager,
-            [packageManager === "npm" ? "install" : "add", ...component.dependencies],
-            {
-              cwd,
-            },
-          );
-
-          if (result.failed) {
-            console.error(result.all);
-            process.exit(1);
-          } else {
-            for (const deps of component.dependencies) {
-              p.log.info(`- ${deps}`);
-            }
-            stop("의존성 설치 완료.");
-          }
+          const result = await installDependencies({ cwd, deps: component.dependencies });
+          installResult.installed = new Set([...installResult.installed, ...result.installed]);
+          installResult.filtered = new Set([...installResult.filtered, ...result.filtered]);
         }
 
         // Install devDependencies.
         if (component.devDependencies?.length) {
-          start(color.gray("개발 의존성 설치중..."));
+          const result = await installDependencies({
+            cwd,
+            deps: component.devDependencies,
+            dev: true,
+          });
+          installResult.installed = new Set([...installResult.installed, ...result.installed]);
+          installResult.filtered = new Set([...installResult.filtered, ...result.filtered]);
+        }
 
-          const result = await execa(
-            packageManager,
-            [packageManager === "npm" ? "install" : "add", "-D", ...component.devDependencies],
-            {
-              cwd,
-            },
-          );
+        p.log.success(`${highlight(component.name)} 관련 파일 추가 완료`);
+      }
 
-          if (result.failed) {
-            console.error(result.all);
-            process.exit(1);
-          } else {
-            for (const deps of component.devDependencies) {
-              p.log.info(`- ${deps}`);
-            }
-            stop("개발 의존성 설치 완료.");
-          }
+      if (installResult.installed.size) {
+        p.log.message(
+          `설치된 의존성: ${highlight(Array.from(installResult.installed).join(", "))}`,
+        );
+      }
+      if (installResult.filtered.size) {
+        p.log.message(
+          `이미 설치된 의존성: ${highlight(Array.from(installResult.filtered).join(", "))}`,
+        );
+      }
+      if (registryResult.length) {
+        for (const registry of registryResult) {
+          p.log.message(`추가된 파일: ${highlight(registry.path)}`);
         }
       }
 
-      p.outro(`${components.join(", ")} 컴포넌트를 추가했어요.`);
+      p.outro("컴포넌트 추가 완료.");
     });
 };

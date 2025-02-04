@@ -27,8 +27,7 @@ export type RawConfig = z.infer<typeof rawConfigSchema>;
 
 export const configSchema = rawConfigSchema.extend({
   resolvedUIPaths: z.string(),
-  resolbedHookPaths: z.string(),
-  resolvedUtilPaths: z.string(),
+  resolvedLibPaths: z.string(),
 });
 
 export async function getConfig(cwd: string) {
@@ -51,26 +50,20 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
   }
 
   const resolvedUIPaths = path.join(seedComponentRootPath, "ui");
-  const resolbedHookPaths = path.join(seedComponentRootPath, "hook");
-  const resolvedUtilPaths = path.join(seedComponentRootPath, "util");
+  const resolvedLibPaths = path.join(seedComponentRootPath, "lib");
 
   if (!fs.existsSync(resolvedUIPaths)) {
     fs.mkdirSync(resolvedUIPaths, { recursive: true });
   }
 
-  if (!fs.existsSync(resolbedHookPaths)) {
-    fs.mkdirSync(resolbedHookPaths, { recursive: true });
-  }
-
-  if (!fs.existsSync(resolvedUtilPaths)) {
-    fs.mkdirSync(resolvedUtilPaths, { recursive: true });
+  if (!fs.existsSync(resolvedLibPaths)) {
+    fs.mkdirSync(resolvedLibPaths, { recursive: true });
   }
 
   return configSchema.parse({
     ...config,
     resolvedUIPaths,
-    resolbedHookPaths,
-    resolvedUtilPaths,
+    resolvedLibPaths,
   });
 }
 

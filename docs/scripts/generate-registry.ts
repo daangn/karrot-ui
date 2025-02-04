@@ -5,26 +5,24 @@ import path from "node:path";
 import { match } from "ts-pattern";
 
 import { registryUI } from "../registry/registry-ui.js";
-import { registryHook } from "../registry/registry-hook.js";
-import { registryUtil } from "../registry/registry-util.js";
+import { registryLib } from "../registry/registry-lib.js";
 import {
   type RegistryUI,
-  type RegistryHook,
-  type RegistryUtil,
+  type RegistryLib,
   registryUIItemMachineGeneratedSchema,
-  registryHookItemMachineGeneratedSchema,
-  registryUtilItemMachineGeneratedSchema,
+  registryLibItemMachineGeneratedSchema,
 } from "../registry/schema.js";
 
 const GENERATED_REGISTRY_PATH = path.join(process.cwd(), "public", "__registry__");
 const REGISTRY_PATH = path.join(process.cwd(), "registry");
 
-type RegistryType = "ui" | "hook" | "util";
+type RegistryType = "ui" | "lib";
 
 interface GenerateRegistryIndexProps {
-  registry: RegistryUI | RegistryHook | RegistryUtil;
+  registry: RegistryUI | RegistryLib;
   type: RegistryType;
 }
+
 async function generateRegistryIndex({ registry, type }: GenerateRegistryIndexProps) {
   const metadatasJson = JSON.stringify(registry, null, 2);
   const targetFolder = path.join(GENERATED_REGISTRY_PATH, type);
@@ -41,6 +39,27 @@ interface GenerateRegistryProps {
   registry: RegistryUI;
   type: RegistryType;
 }
+
+function generateRegistryFromFile(file: string) {
+  const [type, name] = file.split(":");
+  const filePath = path.join(REGISTRY_PATH, type, name);
+
+  if (!existsSync(filePath)) {
+    console.log(
+      chalk.red(`[Generate Registry] ${type}:${chalk.bgRed(name)} file file does not exist!`),
+    );
+    return null;
+  }
+
+  const content = readFileSync(filePath, "utf8");
+
+  return {
+    name,
+    type,
+    content,
+  };
+}
+
 async function generateRegistry({ registry, type }: GenerateRegistryProps) {
   const targetPath = path.join(GENERATED_REGISTRY_PATH, type);
 
@@ -49,27 +68,8 @@ async function generateRegistry({ registry, type }: GenerateRegistryProps) {
   }
 
   for (const item of registry) {
-    const registries = item.files
-      ?.map((file) => {
-        const [type, name] = file.split(":");
-        const filePath = path.join(REGISTRY_PATH, type, name);
-
-        if (!existsSync(filePath)) {
-          console.log(
-            chalk.red(`[Generate Registry] ${type}:${chalk.bgRed(name)} file file does not exist!`),
-          );
-          return null;
-        }
-
-        const content = readFileSync(filePath, "utf8");
-
-        return {
-          name,
-          type,
-          content,
-        };
-      })
-      .filter(Boolean);
+    const fileRegistries =
+      item.files?.map((file) => generateRegistryFromFile(file)).filter(Boolean) || [];
 
     const removeFiles = {
       ...item,
@@ -78,15 +78,12 @@ async function generateRegistry({ registry, type }: GenerateRegistryProps) {
 
     const payload = {
       ...removeFiles,
-      registries,
+      registries: [...fileRegistries],
     };
 
     const parsedPayload = match(type)
       .with("ui", () => registryUIItemMachineGeneratedSchema.parse(payload))
-      // TODO
-      .with("hook", () => registryHookItemMachineGeneratedSchema.parse(payload))
-      // TODO
-      .with("util", () => registryUtilItemMachineGeneratedSchema.parse(payload))
+      .with("lib", () => registryLibItemMachineGeneratedSchema.parse(payload))
       .exhaustive();
 
     await fs.writeFile(
@@ -102,10 +99,8 @@ async function main() {
 
   await generateRegistryIndex({ registry: registryUI, type: "ui" });
   await generateRegistry({ registry: registryUI, type: "ui" });
-  await generateRegistryIndex({ registry: registryHook, type: "hook" });
-  await generateRegistry({ registry: registryHook, type: "hook" });
-  await generateRegistryIndex({ registry: registryUtil, type: "util" });
-  await generateRegistry({ registry: registryUtil, type: "util" });
+  await generateRegistryIndex({ registry: registryLib, type: "lib" });
+  await generateRegistry({ registry: registryLib, type: "lib" });
 
   console.log(chalk.green("Component Registry Generated !"));
 }

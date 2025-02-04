@@ -2,7 +2,7 @@
   {
     "name": "manner-temp-level",
     "files": [
-      "util:manner-temp-level.ts"
+      "lib:manner-temp-level.ts"
     ]
   }
 ]
