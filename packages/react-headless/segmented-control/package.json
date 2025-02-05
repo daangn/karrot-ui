@@ -26,6 +26,7 @@
     "build": "nanobundle build"
   },
   "dependencies": {
+    "@radix-ui/react-compose-refs": "^1.1.1",
     "@radix-ui/react-use-controllable-state": "1.1.0",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710"
   },

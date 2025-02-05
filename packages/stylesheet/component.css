@@ -2905,8 +2905,8 @@
 
 .segmentedControl__indicator {
   inset-block: var(--seed-v3-dimension-s1);
-  width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--seed-design-segmented-control-segment-count));
-  transform: translateX(calc(var(--seed-design-segmented-control-current-segment-index) * 100%));
+  width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--segment-count));
+  transform: translateX(calc(var(--segment-index) * 100%));
   z-index: -1;
   border-radius: var(--seed-v3-radius-full);
   background-color: var(--seed-v3-color-bg-layer-default);

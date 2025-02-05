@@ -103,9 +103,8 @@ const segmentedControl = defineRecipe({
       insetBlock: segmentedControlVars.base.enabled.root.padding,
       insetInlineStart: segmentedControlVars.base.enabled.root.padding,
 
-      width: `calc((100% - ${segmentedControlVars.base.enabled.root.padding} * 2) / var(--seed-design-segmented-control-segment-count))`,
-      transform:
-        "translateX(calc(var(--seed-design-segmented-control-current-segment-index) * 100%))",
+      width: `calc((100% - ${segmentedControlVars.base.enabled.root.padding} * 2) / var(--segment-count))`,
+      transform: "translateX(calc(var(--segment-index) * 100%))",
 
       zIndex: -1,
 

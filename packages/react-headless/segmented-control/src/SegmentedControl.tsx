@@ -1,3 +1,4 @@
+import { composeRefs } from "@radix-ui/react-compose-refs";
 import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import * as React from "react";
@@ -33,7 +34,7 @@ export const SegmentedControlRoot = React.forwardRef<HTMLDivElement, SegmentedCo
 
     return (
       <SegmentedControlProvider value={api}>
-        <Primitive.div ref={ref} {...mergedProps} />
+        <Primitive.div ref={composeRefs(ref, api.refs.root)} {...mergedProps} />
       </SegmentedControlProvider>
     );
   },

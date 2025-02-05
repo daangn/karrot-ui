@@ -1,5 +1,5 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { useCallback, useId, useLayoutEffect, useState } from "react";
+import { useId, useMemo, useState } from "react";
 
 import { dataAttr, elementProps, inputProps, visuallyHidden } from "@seed-design/dom-utils";
 import * as dom from "./dom";
@@ -12,7 +12,7 @@ interface UseSegmentedControlStateProps {
   onValueChange?: (value: string) => void;
 }
 
-function useSegmentedControlState(props: UseSegmentedControlStateProps & { id: string }) {
+function useSegmentedControlState(props: UseSegmentedControlStateProps) {
   const [value, setValue] = useControllableState({
     prop: props.value,
     defaultProp: props.defaultValue,
@@ -24,7 +24,19 @@ function useSegmentedControlState(props: UseSegmentedControlStateProps & { id: s
   const [focusedValue, setFocusedValue] = useState<string | null>(null);
   const [isFocusVisible, setIsFocusVisible] = useState(false);
 
+  const [rootEl, setRootEl] = useState<HTMLElement | null>(null);
+
+  const segmentCount = useMemo(() => {
+    return rootEl ? dom.getAllValues(rootEl).length : 0;
+  }, [rootEl]);
+  const segmentIndex = useMemo(() => {
+    return value && rootEl ? dom.getSegmentIndex(value, rootEl) : -1;
+  }, [value, rootEl]);
+
   return {
+    refs: {
+      root: setRootEl,
+    },
     value,
     setValue,
     hoveredValue,
@@ -35,6 +47,9 @@ function useSegmentedControlState(props: UseSegmentedControlStateProps & { id: s
     setFocusedValue,
     isFocusVisible,
     setIsFocusVisible,
+
+    segmentCount,
+    segmentIndex,
   };
 }
 
@@ -60,8 +75,8 @@ export type GetSegmentPropsReturn = ReturnType<UseSegmentedControlReturn["getSeg
 
 export function useSegmentedControl(props: UseSegmentedControlProps) {
   const id = useId();
-
   const {
+    refs,
     value,
     setValue,
     hoveredValue,
@@ -72,7 +87,9 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
     setFocusedValue,
     isFocusVisible,
     setIsFocusVisible,
-  } = useSegmentedControlState({ ...props, id });
+    segmentCount,
+    segmentIndex,
+  } = useSegmentedControlState(props);
 
   const { disabled, form, name } = props;
 
@@ -82,48 +99,20 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
     "data-disabled": dataAttr(disabled),
   });
 
-  const [rootEl, setRootEl] = useState<HTMLElement | null>(null);
-
-  const segmentCount = dom.getAllValues(id).length;
-  const currentSegmentIndex = value ? dom.getSegmentIndex(value, id) : -1;
-
-  useLayoutEffect(() => {
-    setRootEl(dom.getRootEl(id));
-  }, [id]);
-
-  const updateCurrentIndex = useCallback(() => {
-    if (rootEl) {
-      rootEl.style.setProperty(
-        "--seed-design-segmented-control-current-segment-index",
-        `${currentSegmentIndex}`,
-      );
-    }
-  }, [currentSegmentIndex, rootEl]);
-
-  const updateSegmentCount = useCallback(() => {
-    if (rootEl) {
-      rootEl.style.setProperty("--seed-design-segmented-control-segment-count", `${segmentCount}`);
-    }
-  }, [segmentCount, rootEl]);
-
-  useLayoutEffect(() => {
-    updateCurrentIndex();
-  }, [updateCurrentIndex]);
-
-  useLayoutEffect(() => {
-    updateSegmentCount();
-  }, [updateSegmentCount]);
-
   return {
     value,
     setValue,
 
+    refs,
     stateProps,
 
     rootProps: elementProps({
-      id: dom.getRootId(id),
       role: "radiogroup",
       ...stateProps,
+      style: {
+        "--segment-index": segmentIndex.toString(),
+        "--segment-count": segmentCount.toString(),
+      } as React.CSSProperties,
     }),
 
     getSegmentProps(segmentProps: SegmentProps) {
