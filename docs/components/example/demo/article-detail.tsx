@@ -40,9 +40,6 @@ const SEGMENTS = [
 const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
   params: { article },
 }) => {
-  const [selectedSegment, setSelectedSegment] =
-    useState<(typeof SEGMENTS)[number]["value"]>("popular");
-
   const categoryName = CATEGORIES.find((c) => c.id === article.categoryId)?.name;
 
   return (
@@ -99,13 +96,9 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
                 description="따뜻한 댓글을 남겨주세요."
                 icon={<IconILowercaseSerifCircleFill />}
               />
-              <SegmentedControl value={selectedSegment} style={{ width: "100%" }}>
+              <SegmentedControl defaultValue={SEGMENTS[0].value} style={{ width: "100%" }}>
                 {SEGMENTS.map((tab) => (
-                  <SegmentedControlSegment
-                    key={tab.value}
-                    value={tab.value}
-                    onClick={() => setSelectedSegment(tab.value)}
-                  >
+                  <SegmentedControlSegment key={tab.value} value={tab.value}>
                     {tab.label}
                   </SegmentedControlSegment>
                 ))}

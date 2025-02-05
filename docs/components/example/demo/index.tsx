@@ -7,7 +7,7 @@ import { AppScreen, AppScreenContent } from "seed-design/ui/app-screen";
 import { Tabs, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
 import { ErrorState } from "seed-design/ui/error-state";
 import { SnackbarProvider } from "seed-design/ui/snackbar";
-import { Home } from "@/components/example/demo/tabs/Home";
+import { Home } from "@/components/example/demo/tabs/home";
 
 declare module "@stackflow/config" {
   interface Register {
