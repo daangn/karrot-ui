@@ -40,8 +40,7 @@ jobs:
           yarn build
 
       - name: Deploy docs at Cloudflare Pages in `seed-design-v3` project (Alpha)
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ./docs/out --project-name=seed-design-v3 --branch=${{ github.ref_name }}
+        run: |
+          CLOUDFLARE_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} \
+          CLOUDFLARE_API_TOKEN=${{ secrets.CF_API_TOKEN }} \
+          yarn wrangler pages deploy ./docs/out --project-name=seed-design-v3 --branch=${{ github.ref_name }}
