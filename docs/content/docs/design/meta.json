@@ -3,5 +3,14 @@
   "description": "SEED 디자인 문서",
   "icon": "Palette",
   "root": true,
-  "pages": ["index", "foundation", "components", "guidelines"]
+  "pages": [
+    "---Overview---",
+    "index",
+    "---Foundations---",
+    "...foundation",
+    "---Components---",
+    "...components",
+    "---Guidelines---",
+    "...guidelines"
+  ]
 }

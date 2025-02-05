@@ -1,5 +1,5 @@
 {
-  "title": "타이포그래피",
+  "title": "Typography",
   "defaultOpen": true,
   "pages": ["typography", "migration-to-v3"]
 }
