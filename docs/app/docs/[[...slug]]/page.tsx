@@ -21,7 +21,7 @@ export default async function Page({
   if (!page) notFound();
 
   const MDX = page.data.body;
-  const path = getPath(["docs", ...(params.slug ?? [])]);  
+  const path = getPath(params.slug ?? []);
   const guideline = params.slug?.includes("design")
     ? await client.fetch(GUIDELINE_QUERY, { path })
     : null;
