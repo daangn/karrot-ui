@@ -8,6 +8,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PortableTextBlock } from "sanity";
 
+function getPath(slug: string[]) {
+  return slug.join("/");
+}
+
 export default async function Page({
   params,
 }: {
@@ -17,9 +21,9 @@ export default async function Page({
   if (!page) notFound();
 
   const MDX = page.data.body;
-
+  const path = getPath(["docs", ...(params.slug ?? [])]);  
   const guideline = params.slug?.includes("design")
-    ? await client.fetch(GUIDELINE_QUERY, { title: page.data.title })
+    ? await client.fetch(GUIDELINE_QUERY, { path })
     : null;
 
   const guidelineToc =

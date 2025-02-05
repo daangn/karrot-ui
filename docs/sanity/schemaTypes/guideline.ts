@@ -10,7 +10,13 @@ export default defineType({
     defineField({
       name: "title",
       title: "가이드라인 이름",
-      description: "가이드라인 이름은 변경하지 말아주세요.",
+      description: "이름은 Sanity에서 사용되는 이름입니다.",
+      type: "string",
+    }),
+    defineField({
+      name: "path",
+      title: "가이드라인 path",
+      description: "가이드라인 path는 seed-design.io를 제외한 나머지 path를 붙여주세요 (ex: docs/design/foundation/iconography/library)",
       type: "string",
     }),
     defineField({
