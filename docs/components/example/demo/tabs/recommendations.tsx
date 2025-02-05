@@ -30,7 +30,7 @@ const FILTERS = [
 
 type Filter = (typeof FILTERS)[number]["value"];
 
-export function Home() {
+export function Recommendations() {
   const [currentFilterBottomSheet, setCurrentFilterBottomSheet] = useState<Filter | null>(null);
 
   const defaultFilters = useMemo(

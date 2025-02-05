@@ -6,7 +6,6 @@ import ErrorBoundary from "./error-boundary";
 import { CodeBlock } from "./code-block";
 
 import { Stackflow } from "./stackflow/Stackflow";
-import type { ActivityComponentType } from "@stackflow/react/future";
 import type { RegisteredActivityName } from "@stackflow/config";
 
 interface StackflowExampleProps {

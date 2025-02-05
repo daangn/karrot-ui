@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { CATEGORIES, type Article } from "@/components/example/demo/data";
 import type { ActivityComponentType } from "@stackflow/react/future";
 import { AppScreen, AppScreenContent } from "seed-design/ui/app-screen";
@@ -20,9 +19,10 @@ import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 import { ErrorState } from "seed-design/ui/error-state";
 import { ActionButton } from "seed-design/ui/action-button";
 import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
-import img from "@/public/penguin.webp";
 import { ArticleAuthor } from "./components/article-author";
 import { formatDate } from "@/components/example/demo/utils/date";
+
+import img from "@/public/penguin.webp";
 
 declare module "@stackflow/config" {
   interface Register {

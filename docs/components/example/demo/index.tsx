@@ -7,7 +7,7 @@ import { AppScreen, AppScreenContent } from "seed-design/ui/app-screen";
 import { Tabs, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
 import { ErrorState } from "seed-design/ui/error-state";
 import { SnackbarProvider } from "seed-design/ui/snackbar";
-import { Home } from "@/components/example/demo/tabs/home";
+import { Recommendations } from "@/components/example/demo/tabs/recommendations";
 
 declare module "@stackflow/config" {
   interface Register {
@@ -56,7 +56,7 @@ const DemoActivity: ActivityComponentType<"demo/index"> = () => {
                 </TabTrigger>
               ))}
             </TabTriggerList>
-            {tab === "recommendations" && <Home />}
+            {tab === "recommendations" && <Recommendations />}
             {tab === "subscriptions" && (
               <ErrorState
                 title="구독한 글이 없습니다."
