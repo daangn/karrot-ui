@@ -5134,7 +5134,13 @@
 }
 
 .pullToRefresh__indicator {
+  transform: translateY(calc(var(--ptr-displacement, 0)  - var(--ptr-size)));
+  transition: transform var(--seed-v3-duration-s6);
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.pullToRefresh__indicator[data-ptr-dragging] {
+  transition: none;
 }

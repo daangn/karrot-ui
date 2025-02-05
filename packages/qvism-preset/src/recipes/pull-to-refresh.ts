@@ -1,5 +1,6 @@
 import { vars } from "@seed-design/vars";
 import { defineRecipe } from "../utils/define-recipe";
+import { pseudo } from "../utils/pseudo";
 
 const pullToRefresh = defineRecipe({
   name: "pullToRefresh",
@@ -13,6 +14,13 @@ const pullToRefresh = defineRecipe({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+
+      transform: "translateY(calc(var(--ptr-displacement, 0) - var(--ptr-size)))",
+      transition: `transform ${vars.$duration.s6}`,
+
+      [pseudo("[data-ptr-dragging]")]: {
+        transition: "none",
+      },
     },
   },
   variants: {},
