@@ -1,0 +1,2 @@
+[install.scopes]
+daangn = { url = "https://npm.pkg.github.com", token = "$GITHUB_TOKEN" }
