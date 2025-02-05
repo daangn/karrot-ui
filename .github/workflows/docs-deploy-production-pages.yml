@@ -10,6 +10,7 @@ on:
       - "packages/react/**"
       - "packages/stackflow/**"
   workflow_dispatch:
+  repository_dispatch:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
