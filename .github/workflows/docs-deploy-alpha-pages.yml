@@ -43,7 +43,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Build Packages
-        run: yarn build-docs-deps && yarn rootage:build
+        run: yarn build-only-package && yarn rootage:build
 
       - name: Build Docs
         working-directory: ./docs
