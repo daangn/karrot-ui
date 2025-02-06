@@ -25,12 +25,18 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      
       - name: Install dependencies
-        # 👇 Install dependencies with the same package manager used in the project (replace it as needed) e.g. yarn, npm, pnpm
-        run: yarn
+        run: bun install --immutable
+      
       - name: Build
-        run: yarn build-only-package
+        run: bun build-only-package
+      
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         # Chromatic GitHub Action options

@@ -26,21 +26,19 @@ jobs:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
-      - name: Setup Node.js 18.x
-        uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 18.x
-          cache: yarn
+          bun-version: latest
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: bun install --immutable
 
       - name: 릴리즈 Pull Request를 만들거나 패키지를 배포해요
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: yarn release
-          version: yarn version
+          publish: bun release
+          version: bun version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
