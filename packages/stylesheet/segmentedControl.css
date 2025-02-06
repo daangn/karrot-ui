@@ -12,8 +12,22 @@
     align-items: center;
     isolation: isolate;
 }
-.segmentedControl__segment {
+.segmentedControl__indicator {
+    position: absolute;
+    z-index: -1;
+    will-change: transform;
+    transform: translateX(calc(var(--segment-index) * 100%));
+    inset-block: var(--seed-v3-dimension-s1);
+    inset-inline-start: var(--seed-v3-dimension-s1);
+    width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--segment-count));
+    border-radius: var(--seed-v3-radius-full);
+    background-color: var(--seed-v3-color-bg-layer-default);
+    box-shadow: 0px 1px 6px 0px #0000000d;
+    transition: transform var(--seed-v3-duration-s4) var(--seed-v3-timing-function-easing);
+}
+.segmentedControl__item {
     display: grid;
+    cursor: pointer;
     min-width: 86px;
     height: var(--seed-v3-dimension-s8);
     border-radius: var(--seed-v3-radius-full);
@@ -21,16 +35,13 @@
     user-select: none;
     line-height: var(--seed-v3-line-height-s5);
 }
-.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])) {
-    cursor: pointer;
+.segmentedControl__item:is(:disabled, [disabled], [data-disabled]) {
+    cursor: not-allowed;
 }
-.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:active, [data-active]) {
+.segmentedControl__item:not(:is(:checked, [data-checked])):is(:active, [data-active]) {
     background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
-.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:checked, [data-checked]):is(:active, [data-active]) {
-    background-color: var(--seed-v3-color-bg-layer-default-pressed);
-}
-.segmentedControl__segmentLabel {
+.segmentedControl__itemLabel {
     grid-area: 1 / 1 / 1 / 1;
     padding-inline: calc(var(--seed-v3-dimension-s4) - 1px);
     margin-block: auto;
@@ -42,34 +53,10 @@
     overflow: hidden;
     color: var(--seed-v3-color-fg-neutral-muted);
 }
-.segmentedControl__segmentLabel:is(:checked, [data-checked]) {
+.segmentedControl__itemLabel:is(:checked, [data-checked]) {
     color: var(--seed-v3-color-fg-neutral);
     font-weight: var(--seed-v3-font-weight-bold);
 }
-.segmentedControl__segmentLabel:is(:disabled, [disabled], [data-disabled]) {
+.segmentedControl__itemLabel:is(:disabled, [disabled], [data-disabled]) {
     color: var(--seed-v3-color-fg-disabled);
-}
-.segmentedControl__segmentLabelPlaceholder {
-    grid-area: 1 / 1 / 1 / 1;
-    padding-inline: var(--seed-v3-dimension-s4);
-    text-align: center;
-    font-weight: var(--seed-v3-font-weight-bold);
-    font-size: var(--seed-v3-font-size-s5);
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    opacity: 0;
-}
-.segmentedControl__indicator {
-    position: absolute;
-    inset-block: var(--seed-v3-dimension-s1);
-    inset-inline-start: var(--seed-v3-dimension-s1);
-    width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--segment-count));
-    transform: translateX(calc(var(--segment-index) * 100%));
-    z-index: -1;
-    border-radius: var(--seed-v3-radius-full);
-    background-color: var(--seed-v3-color-bg-layer-default);
-    box-shadow: 0px 1px 6px 0px #0000000d;
-    will-change: transform;
-    transition: transform var(--seed-v3-duration-s4) var(--seed-v3-timing-function-easing);
 }

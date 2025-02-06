@@ -1,16 +1,14 @@
 export {
   SegmentedControlIndicator,
   SegmentedControlRoot,
-  SegmentedControlSegment,
-  SegmentedControlSegmentHiddenInput,
-  SegmentedControlSegmentLabel,
-  SegmentedControlSegmentLabelPlaceholder,
+  SegmentedControlItem,
+  SegmentedControlItemHiddenInput,
+  SegmentedControlItemLabel,
   type SegmentedControlIndicatorProps,
   type SegmentedControlRootProps,
-  type SegmentedControlSegmentProps,
-  type SegmentedControlSegmentHiddenInputProps,
-  type SegmentedControlSegmentLabelProps,
-  type SegmentedControlSegmentLabelPlaceholderProps,
+  type SegmentedControlItemProps,
+  type SegmentedControlItemHiddenInputProps,
+  type SegmentedControlItemLabelProps,
 } from "./SegmentedControl";
 
 export * as SegmentedControl from "./SegmentedControl.namespace";

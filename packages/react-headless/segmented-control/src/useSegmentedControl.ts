@@ -61,7 +61,7 @@ export interface UseSegmentedControlProps extends UseSegmentedControlStateProps 
   form?: string;
 }
 
-export interface SegmentProps {
+export interface UseSegmentedControlItemProps {
   value: string;
 
   disabled?: boolean;
@@ -71,7 +71,7 @@ export interface SegmentProps {
 
 export type UseSegmentedControlReturn = ReturnType<typeof useSegmentedControl>;
 
-export type GetSegmentPropsReturn = ReturnType<UseSegmentedControlReturn["getSegmentProps"]>;
+export type GetItemPropsReturn = ReturnType<UseSegmentedControlReturn["getItemProps"]>;
 
 export function useSegmentedControl(props: UseSegmentedControlProps) {
   const id = useId();
@@ -115,8 +115,8 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
       } as React.CSSProperties,
     }),
 
-    getSegmentProps(segmentProps: SegmentProps) {
-      const { value: itemValue, disabled: itemDisabled, invalid: itemInvalid } = segmentProps;
+    getItemProps(itemProps: UseSegmentedControlItemProps) {
+      const { value: itemValue, disabled: itemDisabled, invalid: itemInvalid } = itemProps;
 
       const itemState = {
         invalid: !!itemInvalid,
@@ -151,7 +151,7 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
 
           onPointerMove() {
             if (itemState.disabled) return;
-            setHoveredValue(segmentProps.value);
+            setHoveredValue(itemProps.value);
           },
           onPointerLeave() {
             if (itemState.disabled) return;
@@ -165,7 +165,7 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
             if (itemState.focused && event.pointerType === "mouse") {
               event.preventDefault();
             }
-            setActiveValue(segmentProps.value);
+            setActiveValue(itemProps.value);
           },
           onPointerUp() {
             if (itemState.disabled) return;
@@ -178,13 +178,13 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
           name: name || id,
           form,
 
-          value: segmentProps.value,
+          value: itemProps.value,
 
           onChange(event) {
             if (itemState.disabled) return;
 
             if (event.target.checked) {
-              setValue(segmentProps.value);
+              setValue(itemProps.value);
             }
             setIsFocusVisible(event.target.matches(":focus-visible"));
           },
@@ -193,12 +193,12 @@ export function useSegmentedControl(props: UseSegmentedControlProps) {
             setIsFocusVisible(false);
           },
           onFocus(event) {
-            setFocusedValue(segmentProps.value);
+            setFocusedValue(itemProps.value);
             setIsFocusVisible(event.target.matches(":focus-visible"));
           },
           onKeyDown(event) {
             if (event.key === " ") {
-              setActiveValue(segmentProps.value);
+              setActiveValue(itemProps.value);
             }
           },
           onKeyUp(event) {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { SegmentedControl, SegmentedControlSegment } from "seed-design/ui/segmented-control";
+import { SegmentedControl, SegmentedControlItem } from "seed-design/ui/segmented-control";
 
 import { segmentedControlVariantMap } from "@seed-design/recipe/segmentedControl";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -15,9 +15,9 @@ const Component = ({ disabled }: { disabled: boolean }) => {
   return (
     <SegmentedControl value={value} onValueChange={setValue} disabled={disabled}>
       {values.map((value) => (
-        <SegmentedControlSegment key={value} value={value}>
+        <SegmentedControlItem key={value} value={value}>
           {value}
-        </SegmentedControlSegment>
+        </SegmentedControlItem>
       ))}
     </SegmentedControl>
   );

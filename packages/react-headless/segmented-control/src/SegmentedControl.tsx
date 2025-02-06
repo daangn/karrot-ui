@@ -4,14 +4,14 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import * as React from "react";
 import {
   useSegmentedControl,
-  type SegmentProps,
+  type UseSegmentedControlItemProps,
   type UseSegmentedControlProps,
 } from "./useSegmentedControl";
 import { SegmentedControlProvider, useSegmentedControlContext } from "./useSegmentedControlContext";
 import {
-  SegmentedControlSegmentProvider,
-  useSegmentedControlSegmentContext,
-} from "./useSegmentedControlSegmentContext";
+  SegmentedControlItemProvider,
+  useSegmentedControlItemContext,
+} from "./useSegmentedControlItemContext";
 
 export interface SegmentedControlRootProps
   extends UseSegmentedControlProps,
@@ -41,39 +41,39 @@ export const SegmentedControlRoot = React.forwardRef<HTMLDivElement, SegmentedCo
 );
 SegmentedControlRoot.displayName = "SegmentedControl";
 
-export interface SegmentedControlSegmentProps
-  extends SegmentProps,
+export interface SegmentedControlItemProps
+  extends UseSegmentedControlItemProps,
     PrimitiveProps,
     Omit<React.InputHTMLAttributes<HTMLLabelElement>, "value"> {}
 
-export const SegmentedControlSegment = React.forwardRef<
+export const SegmentedControlItem = React.forwardRef<
   HTMLLabelElement,
-  SegmentedControlSegmentProps
+  UseSegmentedControlItemProps
 >((props, ref) => {
   const { value, invalid, disabled, ...otherProps } = props;
-  const { getSegmentProps } = useSegmentedControlContext();
-  const itemProps = getSegmentProps({ value, disabled, invalid });
+  const { getItemProps } = useSegmentedControlContext();
+  const itemProps = getItemProps({ value, disabled, invalid });
   const mergedProps = mergeProps(itemProps.rootProps, otherProps);
 
   return (
-    <SegmentedControlSegmentProvider value={itemProps}>
+    <SegmentedControlItemProvider value={itemProps}>
       <Primitive.label ref={ref} {...mergedProps} />
-    </SegmentedControlSegmentProvider>
+    </SegmentedControlItemProvider>
   );
 });
-SegmentedControlSegment.displayName = "SegmentedControlSegment";
+SegmentedControlItem.displayName = "SegmentedControlItem";
 
-export interface SegmentedControlSegmentHiddenInputProps
+export interface SegmentedControlItemHiddenInputProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLInputElement> {}
 
-export const SegmentedControlSegmentHiddenInput = React.forwardRef<
+export const SegmentedControlItemHiddenInput = React.forwardRef<
   HTMLInputElement,
-  SegmentedControlSegmentHiddenInputProps
+  SegmentedControlItemHiddenInputProps
 >((props, ref) => {
-  const { hiddenInputProps } = useSegmentedControlSegmentContext();
+  const { hiddenInputProps } = useSegmentedControlItemContext();
   const mergedProps = mergeProps(hiddenInputProps, props);
 
   return <Primitive.input ref={ref} {...mergedProps} />;
 });
-SegmentedControlSegmentHiddenInput.displayName = "SegmentedControlSegmentHiddenInput";
+SegmentedControlItemHiddenInput.displayName = "SegmentedControlItemHiddenInput";

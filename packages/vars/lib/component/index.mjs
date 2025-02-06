@@ -25,7 +25,7 @@ export { vars as mannerTempBadge } from "./manner-temp-badge.mjs";
 export { vars as progressCircle } from "./progress-circle.mjs";
 export { vars as radio } from "./radio.mjs";
 export { vars as reactionButton } from "./reaction-button.mjs";
-export { vars as segment } from "./segment.mjs";
+export { vars as segmentedControlItem } from "./segmented-control-item.mjs";
 export { vars as segmentedControl } from "./segmented-control.mjs";
 export { vars as selectBox } from "./select-box.mjs";
 export { vars as skeleton } from "./skeleton.mjs";

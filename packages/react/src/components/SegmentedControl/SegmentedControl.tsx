@@ -1,7 +1,7 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import {
   SegmentedControl as SegmentedControlPrimitive,
-  useSegmentedControlSegmentContext,
+  useSegmentedControlItemContext,
 } from "@seed-design/react-segmented-control";
 import {
   segmentedControl,
@@ -11,7 +11,7 @@ import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 
 const { withProvider, withContext } = createStyleContext(segmentedControl);
-const withStateProps = createWithStateProps([useSegmentedControlSegmentContext]);
+const withStateProps = createWithStateProps([useSegmentedControlItemContext]);
 
 export interface SegmentedControlRootProps
   extends SegmentedControlVariantProps,
@@ -31,32 +31,23 @@ export const SegmentedControlIndicator = withContext<
   SegmentedControlIndicatorProps
 >(Primitive.div, "indicator");
 
-export interface SegmentedControlSegmentProps extends SegmentedControlPrimitive.SegmentProps {}
+export interface SegmentedControlItemProps extends SegmentedControlPrimitive.ItemProps {}
 
-export const SegmentedControlSegment = withContext<HTMLLabelElement, SegmentedControlSegmentProps>(
-  SegmentedControlPrimitive.Segment,
-  "segment",
+export const SegmentedControlItem = withContext<HTMLLabelElement, SegmentedControlItemProps>(
+  SegmentedControlPrimitive.Item,
+  "item",
 );
 
-export interface SegmentedControlSegmentHiddenInputProps
-  extends SegmentedControlPrimitive.SegmentHiddenInputProps {}
+export interface SegmentedControlItemHiddenInputProps
+  extends SegmentedControlPrimitive.ItemHiddenInputProps {}
 
-export const SegmentedControlSegmentHiddenInput = SegmentedControlPrimitive.SegmentHiddenInput;
+export const SegmentedControlItemHiddenInput = SegmentedControlPrimitive.ItemHiddenInput;
 
-export interface SegmentedControlSegmentLabelProps
+export interface SegmentedControlItemLabelProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const SegmentedControlSegmentLabel = withContext<
+export const SegmentedControlItemLabel = withContext<
   HTMLSpanElement,
-  SegmentedControlSegmentLabelProps
->(withStateProps(Primitive.span), "segmentLabel");
-
-export interface SegmentedControlSegmentLabelPlaceholderProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const SegmentedControlSegmentLabelPlaceholder = withContext<
-  HTMLSpanElement,
-  SegmentedControlSegmentLabelPlaceholderProps
->(withStateProps(Primitive.span), "segmentLabelPlaceholder");
+  SegmentedControlItemLabelProps
+>(withStateProps(Primitive.span), "itemLabel");

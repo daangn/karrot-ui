@@ -30,27 +30,24 @@ export const SegmentedControl = React.forwardRef<
 });
 SegmentedControl.displayName = "SegmentedControl";
 
-export interface SegmentedControlSegmentProps
-  extends SeedSegmentedControl.SegmentProps {
+export interface SegmentedControlItemProps
+  extends SeedSegmentedControl.ItemProps {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 
   rootRef?: React.Ref<HTMLLabelElement>;
 }
 
-export const SegmentedControlSegment = React.forwardRef<
+export const SegmentedControlItem = React.forwardRef<
   HTMLInputElement,
-  SegmentedControlSegmentProps
+  SegmentedControlItemProps
 >(({ children, inputProps, rootRef, ...otherProps }, ref) => {
   return (
-    <SeedSegmentedControl.Segment ref={rootRef} {...otherProps}>
+    <SeedSegmentedControl.Item ref={rootRef} {...otherProps}>
       <SeedSegmentedControl.SegmentHiddenInput ref={ref} {...inputProps} />
       <SeedSegmentedControl.SegmentLabel>
         {children}
       </SeedSegmentedControl.SegmentLabel>
-      <SeedSegmentedControl.SegmentLabelPlaceholder aria-hidden>
-        {children}
-      </SeedSegmentedControl.SegmentLabelPlaceholder>
-    </SeedSegmentedControl.Segment>
+    </SeedSegmentedControl.Item>
   );
 });
-SegmentedControlSegment.displayName = "SegmentedControlSegment";
+SegmentedControlItem.displayName = "SegmentedControlItem";

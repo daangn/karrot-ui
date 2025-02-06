@@ -2847,7 +2847,22 @@
   position: relative;
 }
 
-.segmentedControl__segment {
+.segmentedControl__indicator {
+  z-index: -1;
+  will-change: transform;
+  transform: translateX(calc(var(--segment-index) * 100%));
+  inset-block: var(--seed-v3-dimension-s1);
+  width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--segment-count));
+  border-radius: var(--seed-v3-radius-full);
+  background-color: var(--seed-v3-color-bg-layer-default);
+  transition: transform var(--seed-v3-duration-s4) var(--seed-v3-timing-function-easing);
+  position: absolute;
+  inset-inline-start: var(--seed-v3-dimension-s1);
+  box-shadow: 0 1px 6px #0000000d;
+}
+
+.segmentedControl__item {
+  cursor: pointer;
   min-width: 86px;
   height: var(--seed-v3-dimension-s8);
   border-radius: var(--seed-v3-radius-full);
@@ -2857,19 +2872,15 @@
   overflow: hidden;
 }
 
-.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])) {
-  cursor: pointer;
+.segmentedControl__item:is(:disabled, [disabled], [data-disabled]) {
+  cursor: not-allowed;
 }
 
-.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:active, [data-active]) {
+.segmentedControl__item:not(:is(:checked, [data-checked])):is(:active, [data-active]) {
   background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
 }
 
-.segmentedControl__segment:not(:is(:disabled, [disabled], [data-disabled])):is(:checked, [data-checked]):is(:active, [data-active]) {
-  background-color: var(--seed-v3-color-bg-layer-default-pressed);
-}
-
-.segmentedControl__segmentLabel {
+.segmentedControl__itemLabel {
   padding-inline: calc(var(--seed-v3-dimension-s4)  - 1px);
   text-align: center;
   font-weight: var(--seed-v3-font-weight-medium);
@@ -2882,39 +2893,13 @@
   overflow: hidden;
 }
 
-.segmentedControl__segmentLabel:is(:checked, [data-checked]) {
+.segmentedControl__itemLabel:is(:checked, [data-checked]) {
   color: var(--seed-v3-color-fg-neutral);
   font-weight: var(--seed-v3-font-weight-bold);
 }
 
-.segmentedControl__segmentLabel:is(:disabled, [disabled], [data-disabled]) {
+.segmentedControl__itemLabel:is(:disabled, [disabled], [data-disabled]) {
   color: var(--seed-v3-color-fg-disabled);
-}
-
-.segmentedControl__segmentLabelPlaceholder {
-  padding-inline: var(--seed-v3-dimension-s4);
-  text-align: center;
-  font-weight: var(--seed-v3-font-weight-bold);
-  font-size: var(--seed-v3-font-size-s5);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  opacity: 0;
-  grid-area: 1 / 1 / 1 / 1;
-  overflow: hidden;
-}
-
-.segmentedControl__indicator {
-  inset-block: var(--seed-v3-dimension-s1);
-  width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--segment-count));
-  transform: translateX(calc(var(--segment-index) * 100%));
-  z-index: -1;
-  border-radius: var(--seed-v3-radius-full);
-  background-color: var(--seed-v3-color-bg-layer-default);
-  will-change: transform;
-  transition: transform var(--seed-v3-duration-s4) var(--seed-v3-timing-function-easing);
-  position: absolute;
-  inset-inline-start: var(--seed-v3-dimension-s1);
-  box-shadow: 0 1px 6px #0000000d;
 }
 
 .selectBoxGroup__root {

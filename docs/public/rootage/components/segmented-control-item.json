@@ -1,0 +1,41 @@
+{
+  "kind": "ComponentSpec",
+  "metadata": {
+    "id": "segmented-control-item",
+    "name": "Segmented Control Item"
+  },
+  "data": {
+    "base": {
+      "enabled": {
+        "root": {
+          "height": "$dimension.s8",
+          "cornerRadius": "$radius.full",
+          "paddingX": "$dimension.s4",
+          "minWidth": "86px"
+        },
+        "label": {
+          "fontSize": "$font-size.s5",
+          "lineHeight": "$line-height.s5",
+          "fontWeight": "$font-weight.medium",
+          "color": "$color.fg.neutral-muted"
+        }
+      },
+      "pressed": {
+        "root": {
+          "color": "$color.bg.neutral-weak-pressed"
+        }
+      },
+      "selected": {
+        "label": {
+          "fontWeight": "$font-weight.bold",
+          "color": "$color.fg.neutral"
+        }
+      },
+      "disabled": {
+        "label": {
+          "color": "$color.fg.disabled"
+        }
+      }
+    }
+  }
+}

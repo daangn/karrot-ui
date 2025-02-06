@@ -8,10 +8,10 @@ import * as React from "react";
 
 import {
   SegmentedControlRoot as Root,
-  SegmentedControlSegment as Segment,
-  SegmentedControlSegmentHiddenInput as HiddenInput,
+  SegmentedControlItem as Segment,
+  SegmentedControlItemHiddenInput as HiddenInput,
   type SegmentedControlRootProps,
-  type SegmentedControlSegmentProps,
+  type SegmentedControlItemProps,
 } from "./SegmentedControl";
 
 afterEach(cleanup);
@@ -32,7 +32,7 @@ function SegmentedControl({ children, ...otherProps }: SegmentedControlRootProps
   );
 }
 
-function SegmentedControlSegment({ children, ...otherProps }: SegmentedControlSegmentProps) {
+function SegmentedControlItem({ children, ...otherProps }: SegmentedControlItemProps) {
   return (
     <Segment {...otherProps}>
       <HiddenInput data-testid={otherProps.value} />
@@ -49,7 +49,7 @@ describe("useSegmentedControl", () => {
       const { getByTestId } = setUp(
         <SegmentedControl defaultValue={values[0]}>
           {values.map((value) => (
-            <SegmentedControlSegment key={value} value={value} />
+            <SegmentedControlItem key={value} value={value} />
           ))}
         </SegmentedControl>,
       );
@@ -64,7 +64,7 @@ describe("useSegmentedControl", () => {
       const { user, getByTestId } = setUp(
         <SegmentedControl defaultValue={values[0]}>
           {values.map((value) => (
-            <SegmentedControlSegment key={value} value={value} />
+            <SegmentedControlItem key={value} value={value} />
           ))}
         </SegmentedControl>,
       );
@@ -85,7 +85,7 @@ describe("useSegmentedControl", () => {
       const { getByTestId } = setUp(
         <SegmentedControl disabled defaultValue={values[0]}>
           {values.map((value) => (
-            <SegmentedControlSegment key={value} value={value} />
+            <SegmentedControlItem key={value} value={value} />
           ))}
         </SegmentedControl>,
       );
@@ -100,7 +100,7 @@ describe("useSegmentedControl", () => {
       const { user, getByTestId } = setUp(
         <SegmentedControl disabled defaultValue={values[0]}>
           {values.map((value) => (
-            <SegmentedControlSegment key={value} value={value} />
+            <SegmentedControlItem key={value} value={value} />
           ))}
         </SegmentedControl>,
       );
@@ -126,7 +126,7 @@ describe("useSegmentedControl", () => {
         return (
           <SegmentedControl value={value} onValueChange={setValue}>
             {values.map((value) => (
-              <SegmentedControlSegment key={value} value={value} />
+              <SegmentedControlItem key={value} value={value} />
             ))}
           </SegmentedControl>
         );
@@ -144,7 +144,7 @@ describe("useSegmentedControl", () => {
       const { user, getByTestId } = setUp(
         <SegmentedControl value={values[0]} onValueChange={handleValueChange}>
           {values.map((value) => (
-            <SegmentedControlSegment key={value} value={value} />
+            <SegmentedControlItem key={value} value={value} />
           ))}
         </SegmentedControl>,
       );
@@ -163,7 +163,7 @@ describe("useSegmentedControl", () => {
         return (
           <SegmentedControl value={value} onValueChange={setValue}>
             {values.map((value) => (
-              <SegmentedControlSegment key={value} value={value} />
+              <SegmentedControlItem key={value} value={value} />
             ))}
           </SegmentedControl>
         );
@@ -189,7 +189,7 @@ describe("useSegmentedControl", () => {
       const { user, getByTestId } = setUp(
         <SegmentedControl disabled value={values[0]} onValueChange={handleValueChange}>
           {values.map((value) => (
-            <SegmentedControlSegment key={value} value={value} />
+            <SegmentedControlItem key={value} value={value} />
           ))}
         </SegmentedControl>,
       );

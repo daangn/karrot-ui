@@ -1,10 +1,10 @@
 export {
   SegmentedControlRoot,
-  SegmentedControlSegment,
-  SegmentedControlSegmentHiddenInput,
+  SegmentedControlItem,
+  SegmentedControlItemHiddenInput,
   type SegmentedControlRootProps,
-  type SegmentedControlSegmentProps,
-  type SegmentedControlSegmentHiddenInputProps,
+  type SegmentedControlItemProps,
+  type SegmentedControlItemHiddenInputProps,
 } from "./SegmentedControl";
 
 export {
@@ -13,8 +13,8 @@ export {
 } from "./useSegmentedControlContext";
 
 export {
-  useSegmentedControlSegmentContext,
-  type UseSegmentedControlSegmentContext,
-} from "./useSegmentedControlSegmentContext";
+  useSegmentedControlItemContext,
+  type UseSegmentedControlItemContext,
+} from "./useSegmentedControlItemContext";
 
 export * as SegmentedControl from "./SegmentedControl.namespace";

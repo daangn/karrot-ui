@@ -20030,8 +20030,8 @@
       ]
     },
     {
-      "id": "segment",
-      "name": "Segment",
+      "id": "segmented-control-item",
+      "name": "Segmented Control Item",
       "data": [
         {
           "key": {},
@@ -20134,7 +20134,6 @@
             },
             {
               "key": [
-                "enabled",
                 "pressed"
               ],
               "slot": [
@@ -20158,73 +20157,9 @@
             },
             {
               "key": [
-                "enabled",
                 "selected"
               ],
               "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "bg"
-                        ],
-                        "key": "layer-default"
-                      }
-                    },
-                    {
-                      "key": "shadow",
-                      "value": {
-                        "type": "shadow",
-                        "value": [
-                          {
-                            "offsetX": {
-                              "value": 0,
-                              "unit": "px"
-                            },
-                            "offsetY": {
-                              "value": 1,
-                              "unit": "px"
-                            },
-                            "blur": {
-                              "value": 6,
-                              "unit": "px"
-                            },
-                            "spread": {
-                              "value": 0,
-                              "unit": "px"
-                            },
-                            "color": "#0000000d"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "key": "transformDuration",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "duration"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "transformTimingFunction",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "timing-function"
-                        ],
-                        "key": "easing"
-                      }
-                    }
-                  ]
-                },
                 {
                   "key": "label",
                   "property": [
@@ -20247,31 +20182,6 @@
                           "fg"
                         ],
                         "key": "neutral"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "key": [
-                "enabled",
-                "selected",
-                "pressed"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "bg"
-                        ],
-                        "key": "layer-default-pressed"
                       }
                     }
                   ]
@@ -20349,6 +20259,79 @@
                           "bg"
                         ],
                         "key": "neutral-weak"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "indicator",
+                  "property": [
+                    {
+                      "key": "color",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "color",
+                          "bg"
+                        ],
+                        "key": "layer-default"
+                      }
+                    },
+                    {
+                      "key": "cornerRadius",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "radius"
+                        ],
+                        "key": "full"
+                      }
+                    },
+                    {
+                      "key": "shadow",
+                      "value": {
+                        "type": "shadow",
+                        "value": [
+                          {
+                            "offsetX": {
+                              "value": 0,
+                              "unit": "px"
+                            },
+                            "offsetY": {
+                              "value": 1,
+                              "unit": "px"
+                            },
+                            "blur": {
+                              "value": 6,
+                              "unit": "px"
+                            },
+                            "spread": {
+                              "value": 0,
+                              "unit": "px"
+                            },
+                            "color": "#0000000d"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "key": "transformDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "transformTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "easing"
                       }
                     }
                   ]

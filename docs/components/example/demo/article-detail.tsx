@@ -13,7 +13,7 @@ import {
 import { Stack, Columns, Column, Box } from "seed-design/ui/layout";
 import { Text } from "seed-design/ui/text";
 import { Badge } from "seed-design/ui/badge";
-import { SegmentedControl, SegmentedControlSegment } from "seed-design/ui/segmented-control";
+import { SegmentedControl, SegmentedControlItem } from "seed-design/ui/segmented-control";
 import { Callout } from "seed-design/ui/callout";
 import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 import { ErrorState } from "seed-design/ui/error-state";
@@ -98,9 +98,9 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
               />
               <SegmentedControl defaultValue={SEGMENTS[0].value} style={{ width: "100%" }}>
                 {SEGMENTS.map((tab) => (
-                  <SegmentedControlSegment key={tab.value} value={tab.value}>
+                  <SegmentedControlItem key={tab.value} value={tab.value}>
                     {tab.label}
-                  </SegmentedControlSegment>
+                  </SegmentedControlItem>
                 ))}
               </SegmentedControl>
               <Box paddingY="s3">

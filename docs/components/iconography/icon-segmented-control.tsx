@@ -1,6 +1,6 @@
 "use client";
 
-import { SegmentedControl, SegmentedControlSegment } from "seed-design/ui/segmented-control";
+import { SegmentedControl, SegmentedControlItem } from "seed-design/ui/segmented-control";
 import { useIcon } from "./icon-context";
 
 export const IconSegmentedControl = () => {
@@ -13,8 +13,8 @@ export const IconSegmentedControl = () => {
       value={iconStyle}
       aria-label="Sort by"
     >
-      <SegmentedControlSegment value="monochrome">Monochrome</SegmentedControlSegment>
-      <SegmentedControlSegment value="multicolor">Multicolor</SegmentedControlSegment>
+      <SegmentedControlItem value="monochrome">Monochrome</SegmentedControlItem>
+      <SegmentedControlItem value="multicolor">Multicolor</SegmentedControlItem>
     </SegmentedControl>
   );
 };
