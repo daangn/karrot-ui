@@ -47,7 +47,7 @@ jobs:
       - name: Build Docs
         working-directory: ./docs
         run: |
-          bun build
+          bun run build
 
       - name: Deploy docs at Cloudflare Pages in `seed-design-v3` project (Alpha)
         run: |

@@ -38,7 +38,7 @@ jobs:
       - name: Build Docs
         working-directory: ./docs
         run: |
-          yarn build
+          bun run build
 
       - name: Deploy docs at Cloudflare Pages in `seed-design-v3` project (Production)
         run: |
