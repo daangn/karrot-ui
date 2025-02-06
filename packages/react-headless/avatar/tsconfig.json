@@ -1,24 +1,8 @@
 {
+  "extends": "../../../tsconfig.headless.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "moduleResolution": "Bundler",
-    "verbatimModuleSyntax": true,
-
-    "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    
-    "emitDeclarationOnly": true,
-    "declaration": true,
     "rootDir": "src",
     "outDir": "lib",
-    
-    "jsx": "react-jsx"
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.*"]
