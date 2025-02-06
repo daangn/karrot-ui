@@ -12,6 +12,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
 
     "rootDir": "src",
     "outDir": "lib"

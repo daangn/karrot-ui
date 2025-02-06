@@ -4,7 +4,7 @@
 
 ```sh
 npm install @seed-design/stylesheet
-yarn add @seed-design/stylesheet
+bun add @seed-design/stylesheet
 ```
 
 ## 가이드

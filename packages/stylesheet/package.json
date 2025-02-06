@@ -10,10 +10,10 @@
     "access": "public"
   },
   "scripts": {
-    "prepack": "yarn generate",
-    "generate": "yarn qvism:generate && yarn rootage:generate",
-    "qvism:generate": "yarn qvism css",
-    "rootage:generate": "yarn rootage token-css"
+    "prepack": "bun generate",
+    "generate": "bun qvism:generate && bun rootage:generate",
+    "qvism:generate": "bun qvism css",
+    "rootage:generate": "bun rootage token-css"
   },
   "exports": {
     "./*.css": "./*.css",

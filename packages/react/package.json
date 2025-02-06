@@ -31,9 +31,10 @@
     "src"
   ],
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "bun run build",
     "clean": "rm -rf lib",
-    "build": "nanobundle build"
+    "build": "bun build.mjs && tsc --emitDeclarationOnly",
+    "dev": "bun run dev.mjs"
   },
   "dependencies": {
     "@radix-ui/react-compose-refs": "^1.1.1",
@@ -55,9 +56,6 @@
     "@seed-design/react-toggle": "0.0.0",
     "@seed-design/vars": "0.0.0",
     "clsx": "^2.1.1"
-  },
-  "devDependencies": {
-    "nanobundle": "^1.6.0"
   },
   "peerDependencies": {
     "@seed-design/recipe": "*",

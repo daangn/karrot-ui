@@ -7,7 +7,7 @@
     "directory": "tools/figma-extractor"
   },
   "scripts": {
-    "build": "nanobundle build"
+    "build": "bun build.mjs && tsc"
   },
   "bin": "./lib/cli/index.mjs",
   "exports": {
@@ -15,11 +15,9 @@
       "types": "./lib/index.d.ts"
     }
   },
-  "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "nanobundle": "^2.1.0",
-    "typescript": "^5.7.3"
-  },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@figma/rest-api-spec": "^0.23.0",
     "cac": "^6.7.14",
@@ -31,9 +29,10 @@
     "fs-extra": "^11.3.0",
     "zod": "^3.24.1"
   },
-  "files": [
-    "lib"
-  ],
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "typescript": "^5.7.3"
+  },
   "publishConfig": {
     "access": "public"
   }

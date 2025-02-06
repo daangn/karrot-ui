@@ -21,15 +21,12 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "prepack": "yarn clean && yarn build",
-    "build": "node ./build.mjs"
+    "prepack": "bun run clean && bun run build",
+    "build": "bun ./build.mjs"
   },
   "dependencies": {
     "@seed-design/qvism-core": "0.0.0",
     "@seed-design/vars": "0.0.0"
-  },
-  "devDependencies": {
-    "esbuild": "^0.19.3"
   },
   "publishConfig": {
     "access": "public"

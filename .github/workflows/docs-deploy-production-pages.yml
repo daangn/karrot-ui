@@ -24,25 +24,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 20.11.0
-          cache: yarn
+          bun-version: latest
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: bun install --immutable
 
       - name: Build Packages
-        run: yarn build-only-package && yarn rootage:build
+        run: bun build-only-package && bun rootage:build
 
       - name: Build Docs
         working-directory: ./docs
         run: |
-          yarn build
+          bun run build
 
       - name: Deploy docs at Cloudflare Pages in `seed-design-v3` project (Production)
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ./docs/out --project-name=seed-design-v3 --branch=main
+        run: |
+          CLOUDFLARE_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} \
+          CLOUDFLARE_API_TOKEN=${{ secrets.CF_API_TOKEN }} \
+          bun wrangler pages deploy ./docs/out --project-name=seed-design-v3 --branch=main

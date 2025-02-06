@@ -24,10 +24,8 @@
     "lib"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
-    "build": "nanobundle build"
-  },
-  "devDependencies": {
-    "nanobundle": "^1.6.0"
+    "prepack": "rm -rf lib && bun run build",
+    "build": "bun build.mjs && tsc",
+    "dev": "bun dev.mjs"
   }
 }

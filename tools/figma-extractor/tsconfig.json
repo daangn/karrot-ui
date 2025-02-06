@@ -3,6 +3,11 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "rootDir": "src"
-  }
+    "rootDir": "src",
+    "outDir": "lib",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
 }

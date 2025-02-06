@@ -3,11 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "test": "yarn tsc && yarn build",
+    "test": "bun run tsc && bun run build",
     "tsc": "tsc --noEmit -p widget-src",
-    "build": "yarn bundle --minify",
-    "bundle": "esbuild widget-src/code.tsx --target=es2016 --bundle --outfile=dist/code.js",
-    "dev": "concurrently -n tsc,build 'yarn tsc --preserveWatchOutput --watch' 'yarn bundle --watch'"
+    "build": "bun build.mjs",
+    "dev": "concurrently -n tsc,build 'bun tsc --preserveWatchOutput --watch' 'bun dev.mjs'"
   },
   "author": "Asher <asher@daangn.com>",
   "license": "MIT",
@@ -19,7 +18,6 @@
     "@figma/plugin-typings": "^1.107.0-beta.1",
     "@figma/widget-typings": "*",
     "concurrently": "^6.3.0",
-    "esbuild": "^0.15.13",
     "typescript": "^5.4.5"
   }
 }

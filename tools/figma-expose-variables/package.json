@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "test": "yarn tsc && yarn build",
+    "test": "bun tsc && bun build",
     "tsc": "tsc --noEmit -p .",
-    "build": "yarn bundle --minify",
-    "bundle": "yarn apply-manifest && esbuild src/main.mts --target=es2016 --bundle --outfile=dist/main.js",
-    "dev": "yarn apply-manifest && concurrently -n tsc,build 'yarn tsc --preserveWatchOutput --watch' 'yarn bundle --watch'",
+    "build": "bun bundle --minify",
+    "bundle": "bun apply-manifest && esbuild src/main.mts --target=es2016 --bundle --outfile=dist/main.js",
+    "dev": "bun apply-manifest && concurrently -n tsc,build 'bun tsc --preserveWatchOutput --watch' 'bun bundle --watch'",
     "apply-manifest": "rm -rf dist && mkdir dist && cp src/manifest.json dist"
   },
   "dependencies": {
@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.107.0-beta.1",
-    "concurrently": "^6.3.0",
-    "esbuild": "^0.15.13"
+    "concurrently": "^6.3.0"
   }
 }

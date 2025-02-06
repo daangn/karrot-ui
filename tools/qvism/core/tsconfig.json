@@ -18,15 +18,16 @@
     /* AND if you're building for a library: */
     "declaration": true,
     "declarationMap": true,
+    "emitDeclarationOnly": true,
 
     /* If NOT transpiling with TypeScript: */
     "module": "preserve",
-    "noEmit": true,
 
     /* If your code doesn't run in the DOM: */
     "lib": ["es2022"],
-    
     "rootDir": "src",
     "outDir": "lib"
-  }
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.*"]
 }

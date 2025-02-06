@@ -17,8 +17,8 @@
     "lib"
   ],
   "scripts": {
-    "prepack": "yarn qvism js ./lib",
-    "qvism:generate": "yarn qvism js ./lib"
+    "prepack": "bun qvism js ./lib",
+    "qvism:generate": "bun qvism js ./lib"
   },
   "devDependencies": {
     "@seed-design/qvism-cli": "0.0.0"

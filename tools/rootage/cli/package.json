@@ -16,10 +16,10 @@
     "src"
   ],
   "scripts": {
-    "build": "node ./build.mjs",
-    "rootage:build": "node ./build.mjs",
-    "dev": "node ./dev.mjs",
-    "generate:schema": "node ./bin/index.mjs json-schema"
+    "build": "bun build.mjs",
+    "rootage:build": "bun build.mjs",
+    "dev": "bun dev.mjs",
+    "generate:schema": "bun ./bin/index.mjs json-schema"
   },
   "dependencies": {
     "@seed-design/rootage-artifacts": "0.0.0",
@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.2",
-    "esbuild": "^0.19.3",
     "typescript": "^5.4.5",
     "ultra-runner": "^3.10.5"
   },

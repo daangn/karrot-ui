@@ -9,22 +9,31 @@ light, dark, 그리고 system.
 
 ```console
 $ npm install @seed-design/react-theming
-$ yarn add @seed-design/react-theming
+$ bun add @seed-design/react-theming
 ```
 
 ## 사용법
 
 ```ts
 // Provider를 감싸줘야해요.
-import { type ColorMode, ThemeContext, useThemeBehavior } from "@seed-design/react-theming";
+import {
+  type ColorMode,
+  ThemeContext,
+  useThemeBehavior,
+} from "@seed-design/react-theming";
 
 export type Options = {
   mode: ColorMode; // "light-only" | "dark-only" | "auto",
 };
 
-export const Wrapper: React.FC<React.PropsWithChildren<Options>> = ({ mode, children }) => {
+export const Wrapper: React.FC<React.PropsWithChildren<Options>> = ({
+  mode,
+  children,
+}) => {
   const theme = useThemeBehavior({ mode });
-  return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+  );
 };
 
 // 변경하기

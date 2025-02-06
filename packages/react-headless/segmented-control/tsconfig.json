@@ -12,9 +12,13 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-
+    "emitDeclarationOnly": true,
+    "declaration": true,
     "rootDir": "src",
     "outDir": "lib",
+    
     "jsx": "react-jsx"
-  }
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.*"]
 }

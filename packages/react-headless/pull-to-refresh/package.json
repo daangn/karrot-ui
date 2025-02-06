@@ -21,17 +21,14 @@
     "src"
   ],
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "bun run build",
     "clean": "rm -rf lib",
-    "build": "nanobundle build"
+    "build": "bun build.mjs && tsc"
   },
   "dependencies": {
     "@radix-ui/react-compose-refs": "^1.1.1",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
     "@seed-design/react-primitive": "0.0.0"
-  },
-  "devDependencies": {
-    "nanobundle": "^1.6.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

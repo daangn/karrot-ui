@@ -13,10 +13,10 @@
     "bin"
   ],
   "scripts": {
-    "prepack": "yarn build",
-    "dev": "node ./dev.mjs",
-    "build": "node ./build.mjs",
-    "test": "LOG=true yarn vitest"
+    "prepack": "bun run build",
+    "dev": "bun ./dev.mjs",
+    "build": "bun ./build.mjs",
+    "test": "LOG=true bun vitest"
   },
   "dependencies": {
     "@june-so/analytics-node": "^8.0.0",
@@ -36,7 +36,6 @@
     "change-case": "^5.4.4",
     "csv-parse": "^5.5.6",
     "dotenv": "^16.4.5",
-    "esbuild": "^0.24.0",
     "typescript": "^5.4.5",
     "vitest": "^2.0.5"
   },
