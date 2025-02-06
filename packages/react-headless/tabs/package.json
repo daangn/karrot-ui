@@ -21,18 +21,15 @@
     "src"
   ],
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "bun run build",
     "clean": "rm -rf lib",
-    "build": "nanobundle build"
+    "build": "bun build.mjs && tsc"
   },
   "dependencies": {
     "@radix-ui/react-use-controllable-state": "1.1.0",
     "@radix-ui/react-use-size": "^1.1.0",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
     "@use-gesture/react": "^10.3.1"
-  },
-  "devDependencies": {
-    "nanobundle": "^1.6.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

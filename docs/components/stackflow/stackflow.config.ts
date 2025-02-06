@@ -1,6 +1,6 @@
-import { defineConfig, ActivityDefinition } from "@stackflow/config";
+import { defineConfig, ActivityDefinition, RegisteredActivityName } from "@stackflow/config";
 
-export const getConfig = <T extends string>(activities: ActivityDefinition<T>[]) =>
+export const getConfig = (activities: ActivityDefinition<RegisteredActivityName>[]) =>
   defineConfig({
     activities,
     transitionDuration: 270,

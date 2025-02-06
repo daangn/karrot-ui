@@ -16,9 +16,9 @@
     "src"
   ],
   "scripts": {
-    "build": "node ./build.mjs",
-    "qvism:build": "node ./build.mjs",
-    "dev": "node ./dev.mjs"
+    "build": "bun build.mjs",
+    "qvism:build": "bun build.mjs",
+    "dev": "bun dev.mjs"
   },
   "dependencies": {
     "@seed-design/qvism-core": "0.0.0",
@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.2",
-    "esbuild": "^0.19.3",
     "typescript": "^5.4.5",
     "ultra-runner": "^3.10.5"
   },

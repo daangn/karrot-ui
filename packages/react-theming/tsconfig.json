@@ -3,7 +3,10 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib",
-    "jsx": "preserve"
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "jsx": "preserve",
+    "skipLibCheck": true
   },
   "include": ["src"]
 }

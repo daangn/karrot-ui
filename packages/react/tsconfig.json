@@ -16,7 +16,8 @@
     "declaration": true,
     "declarationMap": true,
 
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "outDir": "lib"
   },
   "include": ["src"]
 }

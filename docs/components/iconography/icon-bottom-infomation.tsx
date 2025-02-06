@@ -45,7 +45,6 @@ export const IconBottomInfomation = () => {
         <div className="flex gap-4 items-end">
           <div
             className="text-xl font-bold"
-            // biome-ignore lint/security/nodangerouslySetInnerHtml: <explanation>
             dangerouslySetInnerHTML={{ __html: highLightedName }}
           />
           <div className="flex flex-col gap-1">

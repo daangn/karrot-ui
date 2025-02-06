@@ -28,7 +28,7 @@ const paramSchema = z.object({
 cli
   .command("<dir> [...data-types]", "메타데이터 생성")
   .example(
-    `  $ FIGMA_FILE_KEY="foo" FIGMA_PERSONAL_ACCESS_TOKEN="bar" yarn figma-extractor ${Object.values(
+    `  $ FIGMA_FILE_KEY="foo" FIGMA_PERSONAL_ACCESS_TOKEN="bar" bun figma-extractor ${Object.values(
       POSSIBLE_DATA_TYPES,
     )
       .slice(0, 2)

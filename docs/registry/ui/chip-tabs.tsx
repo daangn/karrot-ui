@@ -13,7 +13,6 @@ import { type ChipTabsVariant, chipTabs } from "@seed-design/recipe/chipTabs";
 import clsx from "clsx";
 import * as React from "react";
 
-
 type Assign<T, U> = Omit<T, keyof U> & U;
 
 interface ChipTabsContextValue {
@@ -50,7 +49,7 @@ export const ChipTabs = React.forwardRef<HTMLDivElement, ChipTabsProps>(
     });
     const { rootProps, value, restProps } = api;
     const { shouldRender } = useLazyContents({
-      currentValue: value,
+      currentValue: value ?? "",
       lazyMode,
       isLazy,
     });

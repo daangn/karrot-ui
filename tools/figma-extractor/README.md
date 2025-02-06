@@ -3,7 +3,7 @@
 ## 설치
 
 ```shell
-yarn add -D @seed-design/figma-extractor
+bun add -D @seed-design/figma-extractor
 ```
 
 ## 사용
@@ -11,31 +11,31 @@ yarn add -D @seed-design/figma-extractor
 ### Component 정보를 src/data에 추출
 
 ```shell
-yarn figma-extractor src/data components
+bun figma-extractor src/data components
 ```
 
 ### Component Set 정보를 src/data에 추출
 
 ```shell
-yarn figma-extractor src/data component-sets
+bun figma-extractor src/data component-sets
 ```
 
 ### Variable 정보를 src/data에 추출
 
 ```shell
-yarn figma-extractor src/data variables
+bun figma-extractor src/data variables
 ```
 
 ### Style 정보를 src/data에 추출
 
 ```shell
-yarn figma-extractor src/data styles
+bun figma-extractor src/data styles
 ```
 
 ### 사용 가능한 모든 정보를 src/data에 추출
 
 ```shell
-yarn figma-extractor src/data
+bun figma-extractor src/data
 ```
 
 ## 설정 파일

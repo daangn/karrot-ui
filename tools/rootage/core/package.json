@@ -26,9 +26,10 @@
     "src"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && yarn build",
-    "build": "nanobundle build",
-    "rootage:build": "nanobundle build",
+    "clean": "rm -rf lib",
+    "prepack": "bun run clean && bun run build",
+    "build": "bun build.mjs && tsc",
+    "rootage:build": "bun run build",
     "test": "vitest"
   },
   "publishConfig": {
@@ -39,7 +40,6 @@
     "dedent": "^1.5.3"
   },
   "devDependencies": {
-    "nanobundle": "^1.6.0",
     "typescript": "^5.4.5",
     "ultra-runner": "^3.10.5",
     "vitest": "^0.34.6",

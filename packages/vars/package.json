@@ -16,6 +16,14 @@
       "types": "./lib/component/index.d.ts",
       "import": "./lib/component/index.mjs"
     },
+    "./color": {
+      "types": "./lib/color/index.d.ts",
+      "import": "./lib/color/index.mjs"
+    },
+    "./dimension": {
+      "types": "./lib/dimension/index.d.ts",
+      "import": "./lib/dimension/index.mjs"
+    },
     "./package.json": "./package.json"
   },
   "files": [
@@ -23,8 +31,8 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "prepack": "yarn rootage:generate",
-    "rootage:generate": "yarn rootage token-ts ./lib && rootage component-spec ./lib/component"
+    "prepack": "bun rootage:generate",
+    "rootage:generate": "bun rootage token-ts ./lib && rootage component-spec ./lib/component"
   },
   "devDependencies": {
     "@seed-design/rootage-cli": "0.0.0"

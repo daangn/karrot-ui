@@ -9,34 +9,35 @@ import { useSize } from "@radix-ui/react-use-size";
 const useLayoutEffect = globalThis?.document ? React.useLayoutEffect : React.useEffect;
 
 function useTabsState(props: UseTabsStateProps & { id: string }) {
+  const tabValues = dom.getAllValues(props.id);
   const [value, setValue] = useControllableState({
     prop: props.value,
-    defaultProp: props.defaultValue,
+    defaultProp: props.defaultValue ?? tabValues[0] ?? undefined,
     onChange: props.onValueChange,
   });
+
   const [hoveredValue, setHoveredValue] = React.useState<string | null>(null);
   const [activeValue, setActiveValue] = React.useState<string | null>(null);
   const [focusedValue, setFocusedValue] = React.useState<string | null>(null);
   const [isFocusVisible, setIsFocusVisible] = React.useState(false);
   const [rootEl, setRootEl] = React.useState<HTMLElement | null>(null);
-  const triggerEl = dom.getTabTriggerEl(value, props.id);
+  const triggerEl = value ? dom.getTabTriggerEl(value, props.id) : null;
   const cameraEl = dom.getTabContentCameraEl(props.id);
   const triggerSize = useSize(triggerEl);
   const cameraSize = useSize(cameraEl);
 
-  const tabValues = dom.getAllValues(props.id);
   const tabEnabledValues = dom.getEnabledValues(props.id);
-  const currentTabIndex = dom.getTabIndex(value, props.id);
-  const currentTabEnabledIndex = dom.getTabIndexOnlyEnabled(value, props.id);
+  const currentTabIndex = value ? dom.getTabIndex(value, props.id) : -1;
+  const currentTabEnabledIndex = value ? dom.getTabIndexOnlyEnabled(value, props.id) : -1;
 
   const isFirst = currentTabEnabledIndex === 0;
   const isLast = currentTabEnabledIndex === tabEnabledValues.length - 1;
 
   const prevIndex = isFirst
     ? tabEnabledValues.length - 1
-    : (tabEnabledValues.indexOf(value) - 1 + tabEnabledValues.length) % tabEnabledValues.length;
+    : (currentTabEnabledIndex - 1 + tabEnabledValues.length) % tabEnabledValues.length;
 
-  const nextIndex = isLast ? 0 : (tabEnabledValues.indexOf(value) + 1) % tabEnabledValues.length;
+  const nextIndex = isLast ? 0 : (currentTabEnabledIndex + 1) % tabEnabledValues.length;
 
   useLayoutEffect(() => {
     setRootEl(dom.getRootEl(props.id));
@@ -44,13 +45,19 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
 
   const events = {
     movePrev: () => {
-      setValue(tabEnabledValues[prevIndex]);
+      const prevValue = tabEnabledValues[prevIndex];
+      if (!prevValue) return;
+      setValue(prevValue);
     },
     moveNext: () => {
-      setValue(tabEnabledValues[nextIndex]);
+      const nextValue = tabEnabledValues[nextIndex];
+      if (!nextValue) return;
+      setValue(nextValue);
     },
     focusPrev: () => {
-      const prevTriggerEl = dom.getTabTriggerEl(tabEnabledValues[prevIndex], props.id);
+      const prevValue = tabEnabledValues[prevIndex];
+      if (!prevValue) return;
+      const prevTriggerEl = dom.getTabTriggerEl(prevValue, props.id);
 
       if (prevTriggerEl) prevTriggerEl.focus();
     },
@@ -58,7 +65,9 @@ function useTabsState(props: UseTabsStateProps & { id: string }) {
       if (triggerEl) triggerEl.focus();
     },
     focusNext: () => {
-      const nextTriggerEl = dom.getTabTriggerEl(tabEnabledValues[nextIndex], props.id);
+      const nextValue = tabEnabledValues[nextIndex];
+      if (!nextValue) return;
+      const nextTriggerEl = dom.getTabTriggerEl(nextValue, props.id);
 
       if (nextTriggerEl) nextTriggerEl.focus();
     },
@@ -300,14 +309,20 @@ export function useTabs(props: UseTabsProps) {
                 events.focusNext();
 
                 break;
-              case "Home":
-                events.setValue(tabEnabledValues[0]);
+              case "Home": {
+                const firstValue = tabEnabledValues[0];
+                if (!firstValue) return;
+                events.setValue(firstValue);
 
                 break;
-              case "End":
-                events.setValue(tabEnabledValues[tabEnabledValues.length - 1]);
+              }
+              case "End": {
+                const lastValue = tabEnabledValues[tabEnabledValues.length - 1];
+                if (!lastValue) return;
+                events.setValue(lastValue);
 
                 break;
+              }
               case " ":
               case "Enter":
                 events.setValue(triggerValue);

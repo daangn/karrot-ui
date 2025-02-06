@@ -14,7 +14,6 @@ import {
 import { tabs } from "@seed-design/recipe/tabs";
 import { tab } from "@seed-design/recipe/tab";
 
-
 type Assign<T, U> = Omit<T, keyof U> & U;
 
 interface TabsContextValue {
@@ -88,7 +87,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, ReactTabsProps>(
     });
     const { rootProps, value } = useTabsProps;
     const { shouldRender } = useLazyContents({
-      currentValue: value,
+      currentValue: value ?? "",
       lazyMode,
       isLazy,
     });

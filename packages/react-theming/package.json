@@ -36,8 +36,8 @@
     "not ie 11"
   ],
   "scripts": {
-    "build": "nanobundle build",
-    "prepack": "yarn build"
+    "prepack": "bun run build",
+    "build": "bun build.mjs && tsc --emitDeclarationOnly"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
@@ -48,7 +48,6 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
-    "nanobundle": "^1.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.4.5"
