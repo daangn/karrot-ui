@@ -14,58 +14,58 @@
   --design-color: 250 80% 54%;
   --react-color: 220deg 91% 54%;
 
-  --background: 0 0% 100%;
-  --foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 47.4% 11.2%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 47.4% 11.2%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --destructive: 0 100% 50%;
-  --destructive-foreground: 210 40% 98%;
-  --ring: 215 20.2% 65.1%;
+  --fd-background: 0 0% 100%;
+  --fd-foreground: 222.2 47.4% 11.2%;
+  --fd-muted: 210 40% 96.1%;
+  --fd-muted-foreground: 215.4 16.3% 46.9%;
+  --fd-card: 0 0% 100%;
+  --fd-card-foreground: 222.2 47.4% 11.2%;
+  --fd-popover: 0 0% 100%;
+  --fd-popover-foreground: 222.2 47.4% 11.2%;
+  --fd-border: 214.3 31.8% 91.4%;
+  --fd-input: 214.3 31.8% 91.4%;
+  --fd-primary: 222.2 47.4% 11.2%;
+  --fd-primary-foreground: 210 40% 98%;
+  --fd-secondary: 210 40% 96.1%;
+  --fd-secondary-foreground: 222.2 47.4% 11.2%;
+  --fd-accent: 210 40% 96.1%;
+  --fd-accent-foreground: 222.2 47.4% 11.2%;
+  --fd-destructive: 0 100% 50%;
+  --fd-destructive-foreground: 210 40% 98%;
+  --fd-ring: 215 20.2% 65.1%;
 
   /* Lift Dialog, Sheet z-index for documentation */
   --layer-index: 100;
 }
 
 #nd-sidebar {
-  --muted-foreground: 0 0% 30%;
+  --fd-muted-foreground: 0 0% 30%;
 }
 
 .dark {
   --design-color: 250 100% 80%;
   --react-color: 217deg 92% 76%;
 
-  --background: 0 0% 8.9%;
-  --foreground: 0 0% 92%;
-  --muted: 0 0% 12.9%;
-  --muted-foreground: 0 0% 60.9%;
-  --popover: 0 0% 9.8%;
-  --popover-foreground: 0 0% 88%;
-  --card: 0 0% 10%;
-  --card-foreground: 0 0% 98%;
-  --border: 0 0% 18%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 0 0% 9%;
-  --secondary: 0 0% 12.9%;
-  --secondary-foreground: 0 0% 98%;
-  --accent: 0 0% 16.9%;
-  --accent-foreground: 0 0% 90%;
-  --ring: 0 0% 14.9%;
+  --fd-background: 0 0% 8.9%;
+  --fd-foreground: 0 0% 92%;
+  --fd-muted: 0 0% 12.9%;
+  --fd-muted-foreground: 0 0% 60.9%;
+  --fd-popover: 0 0% 9.8%;
+  --fd-popover-foreground: 0 0% 88%;
+  --fd-card: 0 0% 10%;
+  --fd-card-foreground: 0 0% 98%;
+  --fd-border: 0 0% 18%;
+  --fd-primary: 0 0% 98%;
+  --fd-primary-foreground: 0 0% 9%;
+  --fd-secondary: 0 0% 12.9%;
+  --fd-secondary-foreground: 0 0% 98%;
+  --fd-accent: 0 0% 16.9%;
+  --fd-accent-foreground: 0 0% 90%;
+  --fd-ring: 0 0% 14.9%;
 }
 
 .dark #nd-sidebar {
-  --muted: 0deg 0% 16%;
+  --fd-muted: 0deg 0% 16%;
 }
 
 .example-reset {
