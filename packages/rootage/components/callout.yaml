@@ -11,7 +11,7 @@ data:
         gap: $dimension.s3
         cornerRadius: $radius.s2_5
         fontSize: $font-size.s4
-        lineHeight: $line-height.s5
+        lineHeight: $line-height.s4
         minHeight: 50px
       icon:
         size: $dimension.s4

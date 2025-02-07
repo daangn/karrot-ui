@@ -35,7 +35,7 @@
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.s4"
                 },
                 "minHeight": {
                   "type": "dimension",
