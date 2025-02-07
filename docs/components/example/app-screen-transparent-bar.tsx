@@ -21,7 +21,7 @@ declare module "@stackflow/config" {
 
 const AppScreenTransparentBarActivity: ActivityComponentType<"app-screen-transparent-bar"> = () => {
   return (
-    <AppScreen theme="cupertino">
+    <AppScreen theme="cupertino" layerOffsetTop="none">
       <AppBar tone="transparent">
         <AppBarLeft>
           <AppBarCloseButton />
@@ -34,7 +34,12 @@ const AppScreenTransparentBarActivity: ActivityComponentType<"app-screen-transpa
         </AppBarRight>
       </AppBar>
       <AppScreenContent>
-        <Flex height="full" justifyContent="center" alignItems="center">
+        <Flex
+          height="full"
+          justifyContent="center"
+          alignItems="center"
+          background="palette.gray500"
+        >
           Preview
         </Flex>
       </AppScreenContent>
