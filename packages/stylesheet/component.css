@@ -2633,7 +2633,7 @@
   border-radius: var(--seed-v3-radius-s2_5);
   text-align: start;
   font-size: var(--seed-v3-font-size-s4);
-  line-height: var(--seed-v3-line-height-s5);
+  line-height: var(--seed-v3-line-height-s4);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border: none;
