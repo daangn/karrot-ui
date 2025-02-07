@@ -10,7 +10,7 @@ import type { CAC } from "cac";
 
 const initOptionsSchema = z.object({
   cwd: z.string(),
-  default: z.boolean().optional(),
+  yes: z.boolean().optional(),
 });
 
 export const initCommand = (cli: CAC) => {
@@ -19,14 +19,13 @@ export const initCommand = (cli: CAC) => {
     .option("-c, --cwd <cwd>", "작업 디렉토리. 기본값은 현재 디렉토리.", {
       default: process.cwd(),
     })
-    .option("-d, --default", "모든 질문에 대해 기본값으로 답변합니다.")
+    .option("-y, --yes", "모든 질문에 대해 기본값으로 답변합니다.")
     .action(async (opts) => {
       const highlight = (text: string) => color.cyan(text);
       p.intro(color.bgCyan("seed-design.json 파일 생성"));
 
       const options = initOptionsSchema.parse(opts);
-      const isDefaultOption = options.default;
-
+      const isYesOption = options.yes;
       let config: RawConfig = {
         rsc: false,
         tsx: true,
@@ -34,7 +33,7 @@ export const initCommand = (cli: CAC) => {
         path: "./seed-design",
       };
 
-      if (!isDefaultOption) {
+      if (!isYesOption) {
         const group = await p.group(
           {
             tsx: () =>

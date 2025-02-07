@@ -7,6 +7,16 @@ export const { docs, meta } = defineDocs();
 export default defineConfig({
   lastModifiedTime: "git",
   mdxOptions: {
-    remarkPlugins: [remarkInstall, remarkStructure],
+    remarkPlugins: [
+      [
+        remarkInstall,
+        {
+          persist: {
+            id: "package-manager",
+          },
+        },
+      ],
+      remarkStructure,
+    ],
   },
 });

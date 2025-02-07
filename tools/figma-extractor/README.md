@@ -1,6 +1,6 @@
 # @seed-design/figma-extractor
 
-## 설치
+## Installation
 
 ```shell
 bun add -D @seed-design/figma-extractor

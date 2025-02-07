@@ -1,6 +1,7 @@
 import type { RegistryUIItemMachineGenerated } from "@/registry/schema";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Accordions, Accordion } from "fumadocs-ui/components/accordion";
 import type * as React from "react";
 import { CodeBlock } from "./code-block";
 import ErrorBoundary from "./error-boundary";
@@ -26,26 +27,77 @@ export async function Installation(props: InstallationProps) {
     return module.default;
   })) as RegistryUIItemMachineGenerated;
 
+  const packageManagers = ["npm", "yarn", "pnpm", "bun"];
+
   return (
     <ErrorBoundary>
-      <Tabs items={["CLI", "Manual"]}>
-        <Tab value="CLI">
+      <Tabs items={packageManagers} groupId="package-manager" persist>
+        <Tab value="npm">
           <CodeBlock
             lang="bash"
             wrapper={{ allowCopy: true }}
             code={`npx @seed-design/cli@latest add ${json?.name}`}
           />
         </Tab>
-        <Tab value="Manual">
+        <Tab value="yarn">
+          <CodeBlock
+            lang="bash"
+            wrapper={{ allowCopy: true }}
+            code={`yarn dlx @seed-design/cli@latest add ${json?.name}`}
+          />
+        </Tab>
+        <Tab value="pnpm">
+          <CodeBlock
+            lang="bash"
+            wrapper={{ allowCopy: true }}
+            code={`pnpm dlx @seed-design/cli@latest add ${json?.name}`}
+          />
+        </Tab>
+        <Tab value="bun">
+          <CodeBlock
+            lang="bash"
+            wrapper={{ allowCopy: true }}
+            code={`bunx @seed-design/cli@latest add ${json?.name}`}
+          />
+        </Tab>
+      </Tabs>
+
+      <Accordions type="single">
+        <Accordion title="Manual Installation" id="manual-install">
           <Steps>
             {json?.dependencies && (
               <Step>
                 <Heading3>의존성 설치</Heading3>
-                <CodeBlock
-                  lang="bash"
-                  wrapper={{ allowCopy: true }}
-                  code={`npm install ${json?.dependencies.join(" ")}`}
-                />
+                <Tabs items={packageManagers} groupId="package-manager" persist>
+                  <Tab value="npm">
+                    <CodeBlock
+                      lang="bash"
+                      wrapper={{ allowCopy: true }}
+                      code={`npm install ${json?.dependencies.join(" ")}`}
+                    />
+                  </Tab>
+                  <Tab value="yarn">
+                    <CodeBlock
+                      lang="bash"
+                      wrapper={{ allowCopy: true }}
+                      code={`yarn add ${json?.dependencies.join(" ")}`}
+                    />
+                  </Tab>
+                  <Tab value="pnpm">
+                    <CodeBlock
+                      lang="bash"
+                      wrapper={{ allowCopy: true }}
+                      code={`pnpm add ${json?.dependencies.join(" ")}`}
+                    />
+                  </Tab>
+                  <Tab value="bun">
+                    <CodeBlock
+                      lang="bash"
+                      wrapper={{ allowCopy: true }}
+                      code={`bun add ${json?.dependencies.join(" ")}`}
+                    />
+                  </Tab>
+                </Tabs>
               </Step>
             )}
 
@@ -63,8 +115,8 @@ export async function Installation(props: InstallationProps) {
               })}
             </Step>
           </Steps>
-        </Tab>
-      </Tabs>
+        </Accordion>
+      </Accordions>
     </ErrorBoundary>
   );
 }

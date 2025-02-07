@@ -2,7 +2,7 @@
 
 > gatsby에서 seed-design을 사용할 수 있어요. (다크모드, stylesheet 지원)
 
-## 설치
+## Installation
 
 ```console
 $ npm install gatsby-plugin-seed-design
@@ -47,15 +47,16 @@ export const wrapper = style({
 ```
 
 // 혹은
+
 ```console
 yarn add -D @seed-design/design-token
 ```
 
 ```js
 // css-in-js example
-import { vars } from "@seed-design/design-token"
+import { vars } from "@seed-design/design-token";
 
 export const wrapper = style({
-  color: vars.$scale.color.gray00
-})
+  color: vars.$scale.color.gray00,
+});
 ```

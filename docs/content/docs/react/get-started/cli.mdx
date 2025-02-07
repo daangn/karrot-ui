@@ -1,31 +1,8 @@
 ---
 title: CLI
 ---
+
 `@seed-design/cli` 패키지를 사용하여 seed-design을 더 쉽게 사용할 수 있어요.
-
-```package-install
--D @seed-design/cli@alpha
-```
-
-```sh copy
-Usage:
-  $ seed-design <command> [options]
-
-Commands:
-  add [...components]  add component
-  init                 initialize seed-design.json
-
-For more info, run any command with the `--help` flag:
-  $ seed-design add --help
-  $ seed-design init --help
-
-Options:
-  -v, --version  Display version number 
-  -h, --help     Display this message
-```
-
-기본적으로 `add`, `init`과 같은 명령어를 제공하고 있지만,
-CLI가 없이도 수동으로 사용할 수 있는 매뉴얼도 제공하고 있어요.
 
 ## init
 
@@ -39,7 +16,8 @@ CLI가 없이도 수동으로 사용할 수 있는 매뉴얼도 제공하고 있
 ### init 명령어 입력하기
 
 </Step>
-```sh
+
+```package-install
 npx @seed-design/cli@latest init
 ```
 
@@ -47,19 +25,17 @@ npx @seed-design/cli@latest init
 
 ### seed-design 설정
 ```sh
-◇  Would you like to use TypeScript (recommended)?
+◇  TypeScript를 사용중이신가요?
 │  Yes
 │
-◇  Are you using React Server Components?
+◇  React Server Components를 사용중이신가요?
 │  No
 │
-◇  Would you like to use CSS Loader? (If true, CSS import will be added in components)
+◇  CSS Loader를 사용중이신가요? (true일 경우 컴포넌트에 CSS import가 추가됩니다.)
 │  Yes
 │
-◇  Enter the path to your seed-design directory
+◇  seed-design 폴더 경로를 입력해주세요. (기본값은 프로젝트 루트에 생성됩니다.)
 │  ./seed-design
-│
-◇  seed-design.json written to seed-design.json
 ```
 </Step>
 </Steps>
@@ -86,7 +62,8 @@ Usage:
   $ seed-design init
 
 Options:
-  -c, --cwd <cwd>  the working directory. defaults to the current directory. (default: /Users/jeonghyeonsu/Documents/GitHub/seed-design/examples/cli)
+  -c, --cwd <cwd>  작업 디렉토리. 기본값은 현재 디렉토리.
+  -y, --yes        모든 질문에 대해 기본값으로 답변합니다. 
   -h, --help       Display this message 
 ```
 
@@ -94,14 +71,14 @@ Options:
 
 컴포넌트를 추가하기 위한 명령어에요.
 
-```sh copy
-yarn seed-design add [...components]
+```package-install
+npx @seed-design/cli@latest add [...components]
 ```
 
 컴포넌트를 입력하지 않고 명령어를 입력하게 되면 받을 수 있는 모든 컴포넌트를 볼 수 있어요.
 
-```sh copy
-yarn seed-design add
+```package-install
+npx @seed-design/cli@latest add
 ```
 
 ```sh copy
@@ -119,8 +96,8 @@ yarn seed-design add
 
 혹은 여러 컴포넌트를 입력해서 추가할 수도 있어요.
 
-```sh copy
-yarn seed-design add box-button alert-dialog
+```package-install
+npx @seed-design/cli@latest add box-button alert-dialog
 ```
 
 ### 옵션들
@@ -131,7 +108,7 @@ Usage:
 
 Options:
   -a, --all        Add all components (default: false)
-  -c, --cwd <cwd>  the working directory. defaults to the current directory. (default: /Users/jeonghyeonsu/Documents/GitHub/seed-design/examples/cli)
+  -c, --cwd <cwd>  the working directory. defaults to the current directory.
   -h, --help       Display this message 
 
 Examples:

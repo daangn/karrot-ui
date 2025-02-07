@@ -8,7 +8,7 @@
 - [한국어](./README.md)
 - [English](./README-en.md)
 
-## 설치하기
+## Installation하기
 
 `@seed-design/icon`는 seed icon 생성을 위한 커맨드라인 도구입니다.
 

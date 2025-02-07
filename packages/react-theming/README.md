@@ -5,7 +5,7 @@
 다크모드는 원래 두 가지 옵션이 아니라 세 가지 옵션이에요.
 light, dark, 그리고 system.
 
-## 설치
+## Installation
 
 ```console
 $ npm install @seed-design/react-theming

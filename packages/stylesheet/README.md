@@ -1,6 +1,6 @@
 # @seed-design/stylesheet
 
-## 설치
+## Installation
 
 ```sh
 npm install @seed-design/stylesheet
