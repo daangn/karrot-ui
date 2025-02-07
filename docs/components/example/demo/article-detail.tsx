@@ -18,9 +18,11 @@ import { Callout } from "seed-design/ui/callout";
 import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 import { ErrorState } from "seed-design/ui/error-state";
 import { ActionButton } from "seed-design/ui/action-button";
+import { Skeleton } from "seed-design/ui/skeleton";
 import { IconILowercaseSerifCircleFill } from "@daangn/react-monochrome-icon";
 import { ArticleAuthor } from "./components/article-author";
 import { formatDate } from "@/components/example/demo/utils/date";
+import { useState } from "react";
 
 import img from "@/public/penguin.webp";
 
@@ -41,6 +43,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
   params: { article },
 }) => {
   const categoryName = CATEGORIES.find((c) => c.id === article.categoryId)?.name;
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
     <AppScreen layerOffsetTop="none">
@@ -54,7 +57,15 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
       </AppBar>
       <AppScreenContent>
         <Stack gap="s4">
-          <img src={img.src} alt="penguin" />
+          <Box style={{ aspectRatio: "1 / 1", position: "relative" }}>
+            <img
+              src={img.src}
+              alt="penguin"
+              onLoad={() => setIsImageLoading(false)}
+              style={{ position: "absolute", zIndex: 1 }}
+            />
+            {isImageLoading && <Skeleton width="full" height="full" radius="0" />}
+          </Box>
           <Stack gap="s6" paddingBottom="s4">
             <Stack
               paddingX="spacingX.globalGutter"
@@ -96,7 +107,11 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
                 description="따뜻한 댓글을 남겨주세요."
                 icon={<IconILowercaseSerifCircleFill />}
               />
-              <SegmentedControl defaultValue={SEGMENTS[0].value} style={{ width: "100%" }}>
+              <SegmentedControl
+                aria-label="댓글 정렬 방식"
+                defaultValue={SEGMENTS[0].value}
+                style={{ width: "100%" }}
+              >
                 {SEGMENTS.map((tab) => (
                   <SegmentedControlItem key={tab.value} value={tab.value}>
                     {tab.label}
@@ -106,7 +121,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
               <Box paddingY="s3">
                 <ErrorState title="댓글 없음" description="댓글이 없습니다." />
               </Box>
-              <TextField maxGraphemeCount={200}>
+              <TextField label="댓글" maxGraphemeCount={200}>
                 <TextFieldTextarea placeholder="저는…" />
               </TextField>
               <ActionButton>게시</ActionButton>
