@@ -43,7 +43,7 @@ export default async function HomePage() {
 
 function BlogCard({ title, description, thumbnail }: Blog) {
   return (
-    <div className="flex flex-col items-start h-full text-left hover:bg-gray-100 rounded-[26px] transition-all duration-200">
+    <div className="flex flex-col items-start h-full text-left hover:bg-gray-100 rounded-[26px] transition-all duration-200 dark:hover:bg-neutral-800">
       <SanityImage
         value={thumbnail}
         className="rounded-3xl aspect-[16/9] h-full w-full object-cover my-0"
