@@ -1,6 +1,6 @@
 import { getTypographyVariableName } from "./variable";
 
-export function createTextProps(
+export async function createTextProps(
   segmentBoundVariables: ReturnType<TextNode["getStyledTextSegments"]>[number]["boundVariables"],
 ) {
   const fontSizeBoundVariables = segmentBoundVariables?.fontSize;
@@ -8,12 +8,14 @@ export function createTextProps(
   const lineHeightBoundVariables = segmentBoundVariables?.lineHeight;
 
   return {
-    fontSize: fontSizeBoundVariables ? getTypographyVariableName(fontSizeBoundVariables.id) : null,
+    fontSize: fontSizeBoundVariables
+      ? await getTypographyVariableName(fontSizeBoundVariables.id)
+      : null,
     fontWeight: fontStyleBoundVariables
-      ? getTypographyVariableName(fontStyleBoundVariables.id)
+      ? await getTypographyVariableName(fontStyleBoundVariables.id)
       : null,
     lineHeight: lineHeightBoundVariables
-      ? getTypographyVariableName(lineHeightBoundVariables.id)
+      ? await getTypographyVariableName(lineHeightBoundVariables.id)
       : null,
   };
 }

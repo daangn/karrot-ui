@@ -32,8 +32,12 @@
         "value": "react"
       }
     ],
-    "id": "",
+    "id": "1469592983561656263",
     "name": "Seed Design Codegen",
-    "main": "src/main.ts"
+    "main": "src/main.ts",
+    "documentAccess": "dynamic-page",
+    "networkAccess": {
+      "allowedDomains": ["none"]
+    }
   }
 }

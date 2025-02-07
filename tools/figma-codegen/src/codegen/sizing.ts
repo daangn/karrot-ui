@@ -6,20 +6,20 @@ type SizingPropHandler = (props: {
   layoutSizingVertical: FrameNode["layoutSizingVertical"];
   width: FrameNode["width"];
   height: FrameNode["height"];
-}) => string | number | boolean | undefined;
+}) => string | number | boolean | undefined | Promise<string | number | boolean | undefined>;
 
 const sizingPropHandlers = {
-  height: ({ boundVariables, layoutSizingVertical, height }) =>
+  height: async ({ boundVariables, layoutSizingVertical, height }) =>
     layoutSizingVertical === "FIXED"
       ? boundVariables.height
-        ? getLayoutVariableName(boundVariables.height.id)
+        ? await getLayoutVariableName(boundVariables.height.id)
         : height
       : undefined,
 } satisfies Record<string, SizingPropHandler>;
 
-export function createSizingProps(
+export async function createSizingProps(
   node: DefaultShapeMixin,
-): Record<string, string | number | boolean> {
+): Promise<Record<string, string | number | boolean>> {
   const boundVariables = node.boundVariables;
   const layoutSizingHorizontal = node.layoutSizingHorizontal;
   const layoutSizingVertical = node.layoutSizingVertical;
@@ -32,8 +32,8 @@ export function createSizingProps(
 
   const result: Record<string, string | number | boolean> = {};
 
-  for (const [prop, handler] of Object.entries(sizingPropHandlers)) {
-    const value = handler({
+  for await (const [prop, handler] of Object.entries(sizingPropHandlers)) {
+    const value = await handler({
       boundVariables,
       layoutSizingHorizontal,
       layoutSizingVertical,

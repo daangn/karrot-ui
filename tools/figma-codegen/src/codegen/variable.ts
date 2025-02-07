@@ -1,7 +1,7 @@
 import { camelCase } from "change-case";
 
-function getNameFromSlashSeparatedVariableName(id: string) {
-  const variable = figma.variables.getVariableById(id);
+async function getNameFromSlashSeparatedVariableName(id: string) {
+  const variable = await figma.variables.getVariableByIdAsync(id);
 
   if (!variable) return undefined;
 
@@ -9,8 +9,6 @@ function getNameFromSlashSeparatedVariableName(id: string) {
 
   const name = splits.pop() ?? "";
   const group = splits.pop() ?? "";
-
-  console.log(group, name);
 
   switch (group) {
     case "spacing-x":
@@ -25,8 +23,8 @@ export const getLayoutVariableName = getNameFromSlashSeparatedVariableName;
 
 export const getTypographyVariableName = getNameFromSlashSeparatedVariableName;
 
-export function getColorVariableName(id: string) {
-  const variable = figma.variables.getVariableById(id);
+export async function getColorVariableName(id: string) {
+  const variable = await figma.variables.getVariableByIdAsync(id);
   if (!variable) return undefined;
 
   const [group, name] = variable.name.split("/") as [string, string];

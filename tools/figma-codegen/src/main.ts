@@ -8,7 +8,7 @@ export default function () {
         {
           title: "React",
           language: "TYPESCRIPT",
-          code: generateCode(node),
+          code: await generateCode(node),
         },
       ];
     });

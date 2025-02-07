@@ -28,7 +28,9 @@ interface FigmaLayoutProps {
   children: readonly SceneNode[];
 }
 
-type LayoutPropHandler = (props: FigmaLayoutProps) => string | number | boolean | undefined;
+type LayoutPropHandler = (
+  props: FigmaLayoutProps,
+) => string | number | boolean | undefined | Promise<string | number | boolean | undefined>;
 
 const layoutPropHandlers = {
   flexDirection: ({ layoutMode }) => (layoutMode === "HORIZONTAL" ? "row" : "column"),
@@ -82,31 +84,31 @@ const layoutPropHandlers = {
         return "flexEnd";
     }
   },
-  gap: ({ itemSpacing, boundVariables, primaryAxisAlignItems, children }) =>
+  gap: async ({ itemSpacing, boundVariables, primaryAxisAlignItems, children }) =>
     children.length <= 1
       ? 0
       : primaryAxisAlignItems === "SPACE_BETWEEN"
         ? 0
         : boundVariables.itemSpacing
-          ? getLayoutVariableName(boundVariables.itemSpacing.id)
+          ? await getLayoutVariableName(boundVariables.itemSpacing.id)
           : unit(itemSpacing),
-  paddingTop: ({ paddingTop, boundVariables }) =>
+  paddingTop: async ({ paddingTop, boundVariables }) =>
     boundVariables.paddingTop
-      ? getLayoutVariableName(boundVariables.paddingTop.id)
+      ? await getLayoutVariableName(boundVariables.paddingTop.id)
       : unit(paddingTop),
-  paddingBottom: ({ paddingBottom, boundVariables }) =>
+  paddingBottom: async ({ paddingBottom, boundVariables }) =>
     boundVariables.paddingBottom
-      ? getLayoutVariableName(boundVariables.paddingBottom.id)
+      ? await getLayoutVariableName(boundVariables.paddingBottom.id)
       : unit(paddingBottom),
-  paddingLeft: ({ paddingLeft, boundVariables }) =>
+  paddingLeft: async ({ paddingLeft, boundVariables }) =>
     boundVariables.paddingLeft
-      ? getLayoutVariableName(boundVariables.paddingLeft.id)
+      ? await getLayoutVariableName(boundVariables.paddingLeft.id)
       : unit(paddingLeft),
-  paddingRight: ({ paddingRight, boundVariables }) =>
+  paddingRight: async ({ paddingRight, boundVariables }) =>
     boundVariables.paddingRight
-      ? getLayoutVariableName(boundVariables.paddingRight.id)
+      ? await getLayoutVariableName(boundVariables.paddingRight.id)
       : unit(paddingRight),
-  borderRadius: ({
+  borderRadius: async ({
     bottomLeftRadius,
     bottomRightRadius,
     topLeftRadius,
@@ -119,7 +121,7 @@ const layoutPropHandlers = {
       bottomLeftRadius === topRightRadius
     ) {
       return boundVariables.bottomLeftRadius
-        ? getLayoutVariableName(boundVariables.bottomLeftRadius.id)
+        ? await getLayoutVariableName(boundVariables.bottomLeftRadius.id)
         : unit(bottomLeftRadius);
     }
   },
@@ -208,9 +210,9 @@ const layoutPropDefaults: Record<string, string | number | boolean> = {
   borderRadius: 0,
 } satisfies Record<GeneratedLayoutProps | GeneratedShorthandLayoutProps, string | number | boolean>;
 
-export function createLayoutProps(
+export async function createLayoutProps(
   node: DefaultFrameMixin,
-): Record<string, string | number | boolean> {
+): Promise<Record<string, string | number | boolean>> {
   const boundVariables = node.boundVariables;
   const children = node.children;
 
@@ -248,8 +250,8 @@ export function createLayoutProps(
 
   const result: Record<string, string | number | boolean> = {};
 
-  for (const [prop, handler] of Object.entries(layoutPropHandlers)) {
-    const value = handler({
+  for await (const [prop, handler] of Object.entries(layoutPropHandlers)) {
+    const value = await handler({
       ...autoLayoutProperties,
       ...radiusProperties,
       boundVariables,

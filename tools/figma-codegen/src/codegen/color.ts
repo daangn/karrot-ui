@@ -1,6 +1,8 @@
 import { getColorVariableName } from "./variable";
 
-export function createBackgroundProps(node: DefaultShapeMixin): Record<string, string | undefined> {
+export async function createBackgroundProps(
+  node: DefaultShapeMixin,
+): Promise<Record<string, string | undefined>> {
   const fills = node.fills;
   if (fills === figma.mixed || fills.length === 0) {
     return {};
@@ -13,7 +15,7 @@ export function createBackgroundProps(node: DefaultShapeMixin): Record<string, s
 
   if (node.boundVariables?.fills?.length === 1) {
     return {
-      background: getColorVariableName(node.boundVariables.fills[0]!.id),
+      background: await getColorVariableName(node.boundVariables.fills[0]!.id),
     };
   }
 
@@ -23,7 +25,9 @@ export function createBackgroundProps(node: DefaultShapeMixin): Record<string, s
   };
 }
 
-export function createColorProps(node: DefaultShapeMixin): Record<string, string | undefined> {
+export async function createColorProps(
+  node: DefaultShapeMixin,
+): Promise<Record<string, string | undefined>> {
   const fills = node.fills;
   if (fills === figma.mixed || fills.length === 0) {
     return {};
@@ -36,7 +40,7 @@ export function createColorProps(node: DefaultShapeMixin): Record<string, string
 
   if (node.boundVariables?.fills?.length === 1) {
     return {
-      color: getColorVariableName(node.boundVariables.fills[0]!.id),
+      color: await getColorVariableName(node.boundVariables.fills[0]!.id),
     };
   }
 
@@ -46,9 +50,9 @@ export function createColorProps(node: DefaultShapeMixin): Record<string, string
   };
 }
 
-export function createBorderProps(
+export async function createBorderProps(
   node: DefaultShapeMixin,
-): Record<string, string | number | undefined> {
+): Promise<Record<string, string | number | undefined>> {
   const strokes = node.strokes;
   if (strokes.length === 0) {
     return {};
@@ -62,7 +66,7 @@ export function createBorderProps(
   if (node.boundVariables?.strokes?.length === 1) {
     return {
       borderWidth: node.strokeWeight as number,
-      borderColor: getColorVariableName(node.boundVariables.strokes[0]!.id),
+      borderColor: await getColorVariableName(node.boundVariables.strokes[0]!.id),
     };
   }
 

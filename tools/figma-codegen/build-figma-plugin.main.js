@@ -1,4 +1,4 @@
 module.exports = (buildOptions) => ({
   ...buildOptions,
-  resolveExtensions: [".ts", ".mjs"],
+  resolveExtensions: [".ts", ".js", ".json", ".mjs"],
 });

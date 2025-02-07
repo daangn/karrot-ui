@@ -18,23 +18,26 @@ export function createIconTagNameFromKey(key: string) {
   return pascalCase(`${name}${weight ? weight : ""}`);
 }
 
-export function createIconTagNameFromId(id: string) {
-  const component = figma.getNodeById(id) as ComponentNode;
+export async function createIconTagNameFromId(id: string) {
+  const component = (await figma.getNodeByIdAsync(id)) as ComponentNode;
   const componentKey = component.key;
 
   return createIconTagNameFromKey(componentKey);
 }
 
-export function createMonochromeIconColorProps(node: InstanceNode) {
+export async function createMonochromeIconColorProps(node: InstanceNode) {
   if (node.children.length === 0) {
     throw new Error("Icon node has no children");
   }
 
+  const icons = node.children.filter(
+    (child) => child.type === "VECTOR" || child.type === "BOOLEAN_OPERATION",
+  );
+
+  const colorProps = await Promise.all(icons.map(createColorProps));
+
   const fills = new Set(
-    node.children
-      .filter((child) => child.type === "VECTOR" || child.type === "BOOLEAN_OPERATION")
-      .map((child) => createColorProps(child).color)
-      .filter((color) => color !== undefined),
+    colorProps.map((props) => props.color).filter((color) => color !== undefined),
   );
 
   if (fills.size > 1) {

@@ -10,20 +10,21 @@ import { createTextProps } from "./text";
 import { iconRecord } from "./data/icons";
 import { getColorVariableName } from "./variable";
 
-export function generateCode(selection: SceneNode) {
-  function handleFrameNode(node: FrameNode | InstanceNode | ComponentNode) {
+export async function generateCode(selection: SceneNode) {
+  async function handleFrameNode(node: FrameNode | InstanceNode | ComponentNode) {
     const children = node.children;
 
     const autoLayout = node.inferredAutoLayout;
+
     if (!autoLayout) {
-      return createElement("div", {}, children.map(traverse));
+      return createElement("div", {}, await Promise.all(children.map(traverse)));
     }
 
     const props = {
-      ...createLayoutProps(node),
-      ...createSizingProps(node),
-      ...createBackgroundProps(node),
-      ...createBorderProps(node),
+      ...(await createLayoutProps(node)),
+      ...(await createSizingProps(node)),
+      ...(await createBackgroundProps(node)),
+      ...(await createBorderProps(node)),
     };
 
     if (
@@ -34,7 +35,7 @@ export function generateCode(selection: SceneNode) {
     ) {
       const { flexDirection, flexWrap, alignItems, justifyContent, ...rest } = props;
 
-      return createElement("Inline", rest, children.map(traverse));
+      return createElement("Inline", rest, await Promise.all(children.map(traverse)));
     }
 
     if (
@@ -44,7 +45,7 @@ export function generateCode(selection: SceneNode) {
     ) {
       const { flexDirection, flexWrap, justifyContent, ...rest } = props;
 
-      const childrenResult = children.map(traverse);
+      const childrenResult = await Promise.all(children.map(traverse));
 
       return createElement(
         "Columns",
@@ -56,19 +57,19 @@ export function generateCode(selection: SceneNode) {
     if (props.flexDirection === "column") {
       const { flexDirection, ...rest } = props;
 
-      return createElement("Stack", rest, children.map(traverse));
+      return createElement("Stack", rest, await Promise.all(children.map(traverse)));
     }
 
-    return createElement("Flex", props, children.map(traverse));
+    return createElement("Flex", props, await Promise.all(children.map(traverse)));
   }
 
-  function handleTextNode(node: TextNode): ElementNode {
+  async function handleTextNode(node: TextNode): Promise<ElementNode> {
     const maxLines = node.textTruncation === "ENDING" ? (node.maxLines ?? undefined) : undefined;
 
     const segments = node.getStyledTextSegments(["textStyleId", "fills", "boundVariables"]);
 
-    function handleTextSegment(segment: (typeof segments)[number]) {
-      const style = figma.getStyleById(segment.textStyleId);
+    async function handleTextSegment(segment: (typeof segments)[number]) {
+      const style = await figma.getStyleByIdAsync(segment.textStyleId);
 
       if (style && style.type === "TEXT") {
         if (segment.fills.length > 1) {
@@ -81,7 +82,9 @@ export function generateCode(selection: SceneNode) {
             ? (onlyFill.boundVariables?.color?.id ?? null)
             : null;
 
-        const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : undefined;
+        const color = fillBoundVariableId
+          ? await getColorVariableName(fillBoundVariableId)
+          : undefined;
 
         return createElement(
           "Text",
@@ -94,7 +97,7 @@ export function generateCode(selection: SceneNode) {
         );
       }
 
-      const textProps = createTextProps(segment.boundVariables);
+      const textProps = await createTextProps(segment.boundVariables);
       const unavailableProps = Object.entries(textProps)
         .filter(([_, value]) => !value)
         .map(([key]) => key);
@@ -109,7 +112,7 @@ export function generateCode(selection: SceneNode) {
       const fillBoundVariableId =
         onlyFill && onlyFill.type === "SOLID" ? (onlyFill.boundVariables?.color?.id ?? null) : null;
 
-      const color = fillBoundVariableId ? getColorVariableName(fillBoundVariableId) : null;
+      const color = fillBoundVariableId ? await getColorVariableName(fillBoundVariableId) : null;
 
       return createElement(
         "Text",
@@ -130,7 +133,7 @@ export function generateCode(selection: SceneNode) {
       return createElement(
         "span",
         undefined,
-        segments.map((segment) => handleTextSegment(segment)),
+        await Promise.all(segments.map(handleTextSegment)),
         maxLines
           ? "텍스트 레이어가 여러 스타일로 이루어져 있어 max line truncation이 적용되지 않았습니다. <Text /> 컴포넌트는 중첩되어 사용되도록 만들어지지 않았습니다."
           : "",
@@ -140,19 +143,19 @@ export function generateCode(selection: SceneNode) {
     const onlySegment = segments[0];
     if (!onlySegment) throw new Error();
 
-    return handleTextSegment(onlySegment);
+    return await handleTextSegment(onlySegment);
   }
 
-  function handleRectangleNode(node: RectangleNode) {
-    return createElement("div", createSizingProps(node), undefined, "Rectangle");
+  async function handleRectangleNode(node: RectangleNode) {
+    return createElement("div", await createSizingProps(node), undefined, "Rectangle");
   }
 
-  function handleComponentNode(node: ComponentNode) {
-    return handleFrameNode(node);
+  async function handleComponentNode(node: ComponentNode) {
+    return await handleFrameNode(node);
   }
 
-  function handleInstanceNode(node: InstanceNode) {
-    const mainComponent = node.mainComponent;
+  async function handleInstanceNode(node: InstanceNode) {
+    const mainComponent = await node.getMainComponentAsync();
     if (!mainComponent) {
       return;
     }
@@ -169,7 +172,7 @@ export function generateCode(selection: SceneNode) {
           return createElement("Icon", {
             size: node.width,
             svg: iconElement,
-            ...createMonochromeIconColorProps(node),
+            ...(await createMonochromeIconColorProps(node)),
           });
         case "multicolor":
           return iconElement;
@@ -177,7 +180,7 @@ export function generateCode(selection: SceneNode) {
           return createElement("Icon", {
             size: node.width,
             svg: iconElement,
-            ...createMonochromeIconColorProps(node),
+            ...(await createMonochromeIconColorProps(node)),
           });
       }
     }
@@ -195,7 +198,7 @@ export function generateCode(selection: SceneNode) {
     }
 
     if (node.id === selection.id) {
-      return handleFrameNode(node);
+      return await handleFrameNode(node);
     }
 
     return createElement(
@@ -212,22 +215,22 @@ export function generateCode(selection: SceneNode) {
     );
   }
 
-  function traverse(node: SceneNode): ElementNode | undefined {
+  async function traverse(node: SceneNode): Promise<ElementNode | undefined> {
     if ("visible" in node && !node.visible) {
       return;
     }
 
-    if (node.type === "FRAME") return handleFrameNode(node);
-    if (node.type === "TEXT") return handleTextNode(node);
-    if (node.type === "RECTANGLE") return handleRectangleNode(node);
-    if (node.type === "COMPONENT") return handleComponentNode(node);
-    if (node.type === "INSTANCE") return handleInstanceNode(node);
+    if (node.type === "FRAME") return await handleFrameNode(node);
+    if (node.type === "TEXT") return await handleTextNode(node);
+    if (node.type === "RECTANGLE") return await handleRectangleNode(node);
+    if (node.type === "COMPONENT") return await handleComponentNode(node);
+    if (node.type === "INSTANCE") return await handleInstanceNode(node);
 
     return;
   }
 
   try {
-    const rootEl = traverse(selection);
+    const rootEl = await traverse(selection);
     if (!rootEl) {
       return "";
     }
