@@ -8,19 +8,15 @@ const external = Object.keys({
 });
 
 const baseConfig = {
-  entryPoints: ["./src/index.ts"],
-  outdir: "lib",
-  target: "es2019",
+  entryPoints: ["./src/cli/index.ts"],
+  outdir: "bin",
+  platform: "node",
   bundle: true,
   sourcemap: true,
   external,
 };
 
 Promise.all([
-  build({
-    ...baseConfig,
-    format: "cjs",
-  }),
   build({
     ...baseConfig,
     format: "esm",

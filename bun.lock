@@ -618,7 +618,7 @@
     "tools/figma-extractor": {
       "name": "@seed-design/figma-extractor",
       "version": "0.0.3",
-      "bin": "./lib/cli/index.mjs",
+      "bin": "./bin/index.mjs",
       "dependencies": {
         "@figma/rest-api-spec": "^0.23.0",
         "cac": "^6.7.14",

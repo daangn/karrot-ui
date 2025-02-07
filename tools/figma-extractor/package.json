@@ -9,13 +9,16 @@
   "scripts": {
     "build": "bun build.mjs && tsc"
   },
-  "bin": "./lib/cli/index.mjs",
+  "bin": {
+    "figma-extractor": "./bin/index.mjs"
+  },
   "exports": {
     ".": {
       "types": "./lib/index.d.ts"
     }
   },
   "files": [
+    "bin",
     "lib"
   ],
   "dependencies": {
