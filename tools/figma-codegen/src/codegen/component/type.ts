@@ -184,7 +184,7 @@ export type SegmentedControlItemProperties = InferFromDefinition<{
 }>;
 
 export type SelectBoxGroupProperties = InferFromDefinition<
-  typeof metadata.selectBoxGroup.componentPropertyDefinitions
+  typeof metadata.templateSelectBoxGroup.componentPropertyDefinitions
 >;
 
 export type SelectBoxProperties = InferFromDefinition<

@@ -37,11 +37,11 @@ export const metadata = {
       "type": "VARIANT",
       "variantOptions": [
         "Enabled",
-        "Enabled-Pressed",
-        "Enabled-Loading",
-        "Enabled-Selected",
-        "Enabled-Selected-Pressed",
-        "Enabled-Selected-Loading",
+        "Pressed",
+        "Loading",
+        "Selected",
+        "Selected-Pressed",
+        "Selected-Loading",
         "Disabled",
         "Disabled-Selected"
       ]

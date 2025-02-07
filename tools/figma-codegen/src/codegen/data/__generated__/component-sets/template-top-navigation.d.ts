@@ -1,15 +1,17 @@
 export declare const metadata: {
-  "name": "🟢 Top Navigation",
-  "key": "c07bfe331cf214375fce9ad47cb6fdb459d1fb1b",
+  "name": "🔵 [Template] Top Navigation",
+  "key": "74f045c1972dc31d0fddd0a0027537b6779cd0e8",
   "componentPropertyDefinitions": {
-    "Title#28176:5": {
+    "Action Button#17406:0": {
       "type": "BOOLEAN"
     },
-    "Variant": {
+    "Variants": {
       "type": "VARIANT",
       "variantOptions": [
-        "Layer Default",
-        "Transparent"
+        "Main Tab",
+        "Standard",
+        "Standard Transparent",
+        "Large Title"
       ]
     },
     "OS": {

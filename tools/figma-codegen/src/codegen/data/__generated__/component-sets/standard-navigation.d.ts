@@ -1,5 +1,5 @@
-export const metadata = {
-  "name": "🟢 Top Navigation",
+export declare const metadata: {
+  "name": "🟢 Standard Navigation",
   "key": "c07bfe331cf214375fce9ad47cb6fdb459d1fb1b",
   "componentPropertyDefinitions": {
     "Title#28176:5": {

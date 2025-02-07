@@ -30,11 +30,11 @@ export declare const metadata: {
       "type": "VARIANT",
       "variantOptions": [
         "Enabled",
-        "Enabled-Pressed",
-        "Enabled-Selected",
-        "Enabled-Selected-Pressed",
-        "Enabled-Indeterminate",
-        "Enabled-Indeterminate-Pressed",
+        "Pressed",
+        "Selected",
+        "Selected-Pressed",
+        "Indeterminate",
+        "Indeterminate-Pressed",
         "Disabled",
         "Disabled-Selected",
         "Disabled-Indeterminate"

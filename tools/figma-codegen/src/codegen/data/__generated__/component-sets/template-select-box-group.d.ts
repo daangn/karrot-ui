@@ -1,5 +1,5 @@
-export const metadata = {
-  "name": "🔵 Select Box Group",
+export declare const metadata: {
+  "name": "🔵 [Template] Select Box Group",
   "key": "a3d58bb8540600878742cdcf2608a4b3851667ec",
   "componentPropertyDefinitions": {
     "Control": {

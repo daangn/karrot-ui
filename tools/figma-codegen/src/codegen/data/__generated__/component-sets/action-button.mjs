@@ -50,8 +50,8 @@ export const metadata = {
       "type": "VARIANT",
       "variantOptions": [
         "Enabled",
-        "Enabled-Pressed",
-        "Enabled-Loading",
+        "Pressed",
+        "Loading",
         "Disabled"
       ]
     }

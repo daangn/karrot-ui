@@ -1,7 +1,10 @@
 export declare const metadata: {
-  "name": "🟢 Top Navigation / Main / KR",
-  "key": "41d3601e6b4c632a56cdc8fad485a76c026fdd8e",
+  "name": "🟢 Main Tab Navigation / Global",
+  "key": "a694a1da14a5c1d7d5c66bc78218c0c61fb388ab",
   "componentPropertyDefinitions": {
+    "Button Label#6409:18": {
+      "type": "TEXT"
+    },
     "Title#6406:6": {
       "type": "TEXT"
     },
@@ -9,7 +12,7 @@ export declare const metadata: {
       "type": "VARIANT",
       "variantOptions": [
         "Text",
-        "Button"
+        "Text +  Button"
       ]
     },
     "Variant": {

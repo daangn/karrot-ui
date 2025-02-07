@@ -82,9 +82,9 @@ export const metadata = {
       "type": "VARIANT",
       "variantOptions": [
         "Enabled",
-        "Enabled-Focused",
-        "Enabled-Invalid",
-        "Enabled-Invalid-Focused",
+        "Focused",
+        "Invalid",
+        "Invalid-Focused",
         "Disabled",
         "Read Only"
       ]

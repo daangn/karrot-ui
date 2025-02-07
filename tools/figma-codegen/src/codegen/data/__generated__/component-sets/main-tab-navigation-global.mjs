@@ -1,5 +1,5 @@
-export declare const metadata: {
-  "name": "🟢 Top Navigation / Main / Global",
+export const metadata = {
+  "name": "🟢 Main Tab Navigation / Global",
   "key": "a694a1da14a5c1d7d5c66bc78218c0c61fb388ab",
   "componentPropertyDefinitions": {
     "Button Label#6409:18": {

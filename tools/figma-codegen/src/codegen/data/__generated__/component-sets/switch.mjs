@@ -16,7 +16,7 @@ export const metadata = {
       "type": "VARIANT",
       "variantOptions": [
         "Enabled",
-        "Enabled-Selected",
+        "Selected",
         "Disabled",
         "Disabled-Selected"
       ]

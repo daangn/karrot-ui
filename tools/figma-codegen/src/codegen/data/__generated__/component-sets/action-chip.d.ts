@@ -49,7 +49,7 @@ export declare const metadata: {
       "type": "VARIANT",
       "variantOptions": [
         "Enabled",
-        "Enabled-Pressed",
+        "Pressed",
         "Disabled"
       ]
     }

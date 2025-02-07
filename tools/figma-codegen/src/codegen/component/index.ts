@@ -983,7 +983,7 @@ const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperti
 };
 
 const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
-  key: metadata.selectBoxGroup.key,
+  key: metadata.templateSelectBoxGroup.key,
   codegen: async (node) => {
     const props = node.componentProperties;
 

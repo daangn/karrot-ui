@@ -22,9 +22,9 @@ export const metadata = {
       "type": "VARIANT",
       "variantOptions": [
         "Enabled",
-        "Enabled-Pressed",
-        "Enabled-Selected",
-        "Enabled-Selected-Pressed"
+        "Pressed",
+        "Selected",
+        "Selected-Pressed"
       ]
     }
   }
