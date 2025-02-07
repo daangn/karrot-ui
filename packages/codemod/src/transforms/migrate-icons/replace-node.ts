@@ -1,8 +1,8 @@
 import jscodeshift from "jscodeshift";
-import type { MigrateIconsOptions } from "../transforms/migrate-icons.js";
+import type { MigrateIconsOptions } from "./index.js";
 import type { Logger } from "winston";
 import { partition, uniqWith } from "es-toolkit";
-import type { createTrack } from "./log.js";
+import type { createTrack } from "../../utils/log.js";
 
 interface ReplaceImportDeclarationsParams {
   importDeclarations: jscodeshift.Collection<jscodeshift.ImportDeclaration>;

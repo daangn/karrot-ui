@@ -8,7 +8,7 @@ import { createTrack, LOG_PREFIX } from "./utils/log.js";
 import { readdirSync } from "fs";
 import { z } from "zod";
 import { satisfies, minVersion } from "semver";
-import { getGitInfo } from "./utils/getGitInfo.js";
+import { getGitInfo } from "./utils/git.js";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("../package.json");
@@ -79,7 +79,7 @@ cli
       process.exit(1);
     }
 
-    const transformPath = resolve(TRANSFORM_PATH, `${transformName}.mjs`);
+    const transformPath = resolve(TRANSFORM_PATH, transformName, "index.mjs");
 
     console.log(LOG_PREFIX, `${paths.join(", ")}에 ${transformName} transform을 실행해요.`);
     await runTransform(transformPath, paths, options);

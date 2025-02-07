@@ -1,4 +1,4 @@
-import type { MigrateIconsOptions } from "../transforms/migrate-icons.js";
+import type { MigrateIconsOptions } from "./index.js";
 
 export const identifierMatchReact: MigrateIconsOptions["match"]["identifier"] = [
   { oldName: "IconAddThin", newName: "IconPlusLine" },

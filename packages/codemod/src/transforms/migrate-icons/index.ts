@@ -3,10 +3,10 @@ import {
   replaceIdentifiers,
   replaceImportDeclarations,
   replaceStringLiterals,
-} from "../utils/replace-node.js";
+} from "./replace-node.js";
 import { createLogger, format, transports } from "winston";
-import { identifierMatchReact } from "../utils/identifier-match.js";
-import { createTrack } from "../utils/log.js";
+import { identifierMatchReact } from "./identifier-match.js";
+import { createTrack } from "../../utils/log.js";
 
 export interface MigrateIconsOptions {
   match?: {

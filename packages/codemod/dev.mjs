@@ -1,4 +1,6 @@
 import esbuild from "esbuild";
+import * as fs from "node:fs"
+import * as path from "node:path";
 
 import pkg from "./package.json" with { type: "json" };
 
@@ -19,20 +21,22 @@ esbuild
   .then((ctx) => ctx.watch())
   .catch(() => process.exit(1));
 
-esbuild
-  .context({
-    entryPoints: ["./src/transforms/**/*.ts"],
-    outdir: "./bin/transforms",
-    outExtension: { ".js": ".mjs" },
-    bundle: true,
-    write: true,
-    treeShaking: true,
-    sourcemap: false,
-    minify: false,
-    format: "esm",
-    platform: "node",
-    target: ["esnext"],
-    external: [...Object.keys(pkg.dependencies)],
-  })
-  .then((ctx) => ctx.watch())
-  .catch(() => process.exit(1));
+fs.readdirSync("./src/transforms").forEach((folder) => {
+  esbuild
+    .context({
+      entryPoints: [path.join("./src/transforms", folder, "index.ts")],
+      outdir: path.join("./bin/transforms", folder),
+      outExtension: { ".js": ".mjs" },
+      bundle: true,
+      write: true,
+      treeShaking: true,
+      sourcemap: false,
+      minify: false,
+      format: "esm",
+      platform: "node",
+      target: ["esnext"],
+      external: [...Object.keys(pkg.dependencies)],
+    })
+    .then((ctx) => ctx.watch())
+    .catch(() => process.exit(1));
+});
