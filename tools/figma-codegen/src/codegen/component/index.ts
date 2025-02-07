@@ -978,7 +978,7 @@ const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperti
       }),
     };
 
-    return createElement("SegmentedControlSegment", commonProps, props["Label#11366:15"].value);
+    return createElement("SegmentedControlItem", commonProps, props["Label#11366:15"].value);
   },
 };
 
