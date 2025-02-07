@@ -13512,9 +13512,9 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "bg"
+                          "palette"
                         ],
-                        "key": "brand-weak-pressed"
+                        "key": "carrot-200"
                       }
                     }
                   ]

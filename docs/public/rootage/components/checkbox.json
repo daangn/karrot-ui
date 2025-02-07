@@ -96,7 +96,7 @@
       },
       "pressed,selected": {
         "control": {
-          "color": "$color.bg.brand-weak-pressed"
+          "color": "$color.palette.carrot-200"
         }
       },
       "disabled": {

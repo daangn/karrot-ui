@@ -80,7 +80,7 @@
     background: var(--seed-v3-color-bg-layer-default-pressed);
 }
 .checkbox__control--variant_ghost:is(:active, [data-active]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
-    background: var(--seed-v3-color-bg-brand-weak-pressed);
+    background: var(--seed-v3-color-palette-carrot-200);
 }
 .checkbox__control--variant_ghost:is(:disabled, [disabled], [data-disabled]):is(:checked, :indeterminate, [data-checked], [data-indeterminate]) {
     background: none;

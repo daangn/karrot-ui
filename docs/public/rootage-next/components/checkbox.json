@@ -254,7 +254,7 @@
               "control": {
                 "color": {
                   "type": "color",
-                  "value": "$color.bg.brand-weak-pressed"
+                  "value": "$color.palette.carrot-200"
                 }
               }
             }

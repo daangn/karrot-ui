@@ -90,7 +90,7 @@ export const vars = {
     },
     "pressedSelected": {
       "control": {
-        "color": "var(--seed-v3-color-bg-brand-weak-pressed)"
+        "color": "var(--seed-v3-color-palette-carrot-200)"
       }
     },
     "disabled": {
