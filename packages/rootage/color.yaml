@@ -545,6 +545,10 @@ data:
       values:
         theme-light: $color.palette.gray-300
         theme-dark: $color.palette.gray-300
+    $color.stroke.on-image:
+      values:
+        theme-light: $color.palette.static-black-alpha-50
+        theme-dark: $color.palette.static-black-alpha-50
     $color.stroke.brand:
       values:
         theme-light: $color.palette.carrot-300

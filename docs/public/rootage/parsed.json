@@ -4124,6 +4124,41 @@
           "color",
           "stroke"
         ],
+        "key": "on-image"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "static-black-alpha-50"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "static-black-alpha-50"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "stroke"
+        ],
         "key": "brand"
       },
       "values": [

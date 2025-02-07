@@ -1627,6 +1627,18 @@
           }
         }
       },
+      "$color.stroke.on-image": {
+        "values": {
+          "theme-light": {
+            "type": "color",
+            "value": "$color.palette.static-black-alpha-50"
+          },
+          "theme-dark": {
+            "type": "color",
+            "value": "$color.palette.static-black-alpha-50"
+          }
+        }
+      },
       "$color.stroke.brand": {
         "values": {
           "theme-light": {

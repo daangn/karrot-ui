@@ -223,6 +223,7 @@
   --seed-v3-color-bg-warning-weak: var(--seed-v3-color-palette-yellow-100);
   --seed-v3-color-bg-warning-weak-pressed: var(--seed-v3-color-palette-yellow-200);
   --seed-v3-color-stroke-neutral: var(--seed-v3-color-palette-gray-300);
+  --seed-v3-color-stroke-on-image: var(--seed-v3-color-palette-static-black-alpha-50);
   --seed-v3-color-stroke-brand: var(--seed-v3-color-palette-carrot-300);
   --seed-v3-color-stroke-field: var(--seed-v3-color-palette-gray-400);
   --seed-v3-color-stroke-control: var(--seed-v3-color-palette-gray-400);
@@ -384,6 +385,7 @@
   --seed-v3-color-bg-warning-weak: var(--seed-v3-color-palette-yellow-100);
   --seed-v3-color-bg-warning-weak-pressed: var(--seed-v3-color-palette-yellow-200);
   --seed-v3-color-stroke-neutral: var(--seed-v3-color-palette-gray-300);
+  --seed-v3-color-stroke-on-image: var(--seed-v3-color-palette-static-black-alpha-50);
   --seed-v3-color-stroke-brand: var(--seed-v3-color-palette-carrot-300);
   --seed-v3-color-stroke-field: var(--seed-v3-color-palette-gray-400);
   --seed-v3-color-stroke-control: var(--seed-v3-color-palette-gray-400);

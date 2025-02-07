@@ -1,4 +1,5 @@
 export declare const neutral = "var(--seed-v3-color-stroke-neutral)";
+export declare const onImage = "var(--seed-v3-color-stroke-on-image)";
 export declare const brand = "var(--seed-v3-color-stroke-brand)";
 export declare const field = "var(--seed-v3-color-stroke-field)";
 export declare const control = "var(--seed-v3-color-stroke-control)";
