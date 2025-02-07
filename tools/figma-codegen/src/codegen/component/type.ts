@@ -1,5 +1,5 @@
 import type { InferFromDefinition } from "./type-helper";
-import type * as metadata from "../data/component-sets";
+import type * as metadata from "../data/__generated__/component-sets";
 
 export type ActionButtonProperties = InferFromDefinition<
   typeof metadata.actionButton.componentPropertyDefinitions

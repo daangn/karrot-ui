@@ -4,7 +4,7 @@ import { createIconTagNameFromId, createIconTagNameFromKey } from "../icon";
 import { type ElementNode, createElement } from "../jsx";
 import { getLayoutVariableName } from "../variable";
 import { handleSize } from "./properties";
-import * as metadata from "../data/component-sets";
+import * as metadata from "../data/__generated__/component-sets";
 import type {
   ActionButtonProperties,
   ActionChipProperties,
@@ -45,36 +45,42 @@ import type {
   TextFieldProperties,
   ToggleButtonProperties,
 } from "./type";
+import { findMatchingInstancesInNode, instanceMatchesComponentKey } from "../instance";
+import { traverseNodeAsync } from "@create-figma-plugin/utilities";
 
 export interface ComponentHandler<
   T extends InstanceNode["componentProperties"] = InstanceNode["componentProperties"],
 > {
   key: string;
-  codegen: (node: InstanceNode & { componentProperties: T }) => ElementNode;
+  codegen: (node: InstanceNode & { componentProperties: T }) => Promise<ElementNode>;
 }
 
 const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
   key: metadata.actionButton.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
-    const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon Only", () => ({
+    const { layout, prefixIcon, suffixIcon, children } = await match(props.Layout.value)
+      .with("Icon Only", async () => ({
         layout: "iconOnly",
         prefixIcon: undefined,
         suffixIcon: undefined,
-        children: createElement(createIconTagNameFromId(props["Icon#7574:0"].value)),
+        children: createElement(await createIconTagNameFromId(props["Icon#7574:0"].value)),
       }))
-      .with("Icon First", () => ({
+      .with("Icon First", async () => ({
         layout: "withText",
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#5987:305"].value)),
+        prefixIcon: createElement(
+          await createIconTagNameFromId(props["Prefix Icon#5987:305"].value),
+        ),
         suffixIcon: undefined,
         children: props["Label#5987:61"].value,
       }))
-      .with("Icon Last", () => ({
+      .with("Icon Last", async () => ({
         layout: "withText",
         prefixIcon: undefined,
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#5987:244"].value)),
+        suffixIcon: createElement(
+          await createIconTagNameFromId(props["Suffix Icon#5987:244"].value),
+        ),
         children: props["Label#5987:61"].value,
       }))
       .with("Text Only", () => ({
@@ -105,32 +111,32 @@ const actionButtonHandler: ComponentHandler<ActionButtonProperties> = {
 
 const actionChipHandler: ComponentHandler<ActionChipProperties> = {
   key: metadata.actionChip.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
-    const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon Only", () => ({
+    const { layout, prefixIcon, suffixIcon, children } = await match(props.Layout.value)
+      .with("Icon Only", async () => ({
         layout: "iconOnly",
         prefixIcon: undefined,
         suffixIcon: undefined,
-        children: createElement(createIconTagNameFromId(props["Icon#8714:0"].value)),
+        children: createElement(await createIconTagNameFromId(props["Icon#8714:0"].value)),
       }))
-      .with("Icon First", () => ({
+      .with("Icon First", async () => ({
         layout: "withText",
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
+        prefixIcon: createElement(await createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon Last", () => ({
+      .with("Icon Last", async () => ({
         layout: "withText",
         prefixIcon: undefined,
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
+        suffixIcon: createElement(await createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon Both", () => ({
+      .with("Icon Both", async () => ({
         layout: "withText",
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
+        prefixIcon: createElement(await createIconTagNameFromId(props["Prefix Icon#8711:0"].value)),
+        suffixIcon: createElement(await createIconTagNameFromId(props["Suffix Icon#8711:3"].value)),
         children: props["Label#7185:0"].value,
       }))
       .with("Text Only", () => ({
@@ -159,7 +165,7 @@ const actionChipHandler: ComponentHandler<ActionChipProperties> = {
 
 const actionSheetHandler: ComponentHandler<ActionSheetProperties> = {
   key: metadata.actionSheet.key,
-  codegen: (node) => {
+  codegen: async (node) => {
     const { componentProperties: props } = node;
 
     const contentProps = match(props.Header.value)
@@ -181,15 +187,12 @@ const actionSheetHandler: ComponentHandler<ActionSheetProperties> = {
       }))
       .exhaustive();
 
-    const items = node.findAll(
-      (child) =>
-        child.type === "INSTANCE" &&
-        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === actionSheetItemHandler.key) ||
-          child.mainComponent?.key === actionSheetItemHandler.key),
-    ) as (InstanceNode & { componentProperties: ActionSheetItemProperties })[];
+    const items = await findMatchingInstancesInNode<ActionSheetItemProperties>({
+      node,
+      key: actionSheetItemHandler.key,
+    });
 
-    const contentChildren = items.map(actionSheetItemHandler.codegen);
+    const contentChildren = await Promise.all(items.map(actionSheetItemHandler.codegen));
 
     const content = createElement(
       "ActionSheetContent",
@@ -212,7 +215,7 @@ const actionSheetHandler: ComponentHandler<ActionSheetProperties> = {
 
 const actionSheetItemHandler: ComponentHandler<ActionSheetItemProperties> = {
   key: "c3cafd3a3fdcd45fecb6971019d88eaf39a2e381",
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
@@ -229,15 +232,11 @@ const actionSheetItemHandler: ComponentHandler<ActionSheetItemProperties> = {
 
 const avatarHandler: ComponentHandler<AvatarProperties> = {
   key: metadata.avatar.key,
-  codegen: (node) => {
-    const placeholder = node.findOne(
-      (child) =>
-        child.type === "INSTANCE" &&
-        (child.mainComponent?.parent?.type === "COMPONENT_SET"
-          ? child.mainComponent.parent.key === identityPlaceholderHandler.key
-          : child.mainComponent?.key === identityPlaceholderHandler.key),
-    ) as (InstanceNode & { componentProperties: IdentityPlaceholderProperties }) | null;
-
+  codegen: async (node) => {
+    const [placeholder] = await findMatchingInstancesInNode<IdentityPlaceholderProperties>({
+      node,
+      key: identityPlaceholderHandler.key,
+    });
     const { componentProperties: props } = node;
 
     const avatarHasSrc = props["Show Image#71850:57"].value;
@@ -248,7 +247,7 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
         src: `https://placehold.co/${props.Size.value}x${props.Size.value}`,
       }),
       ...(placeholder && {
-        fallback: identityPlaceholderHandler.codegen(placeholder),
+        fallback: await identityPlaceholderHandler.codegen(placeholder),
       }),
       size: props.Size.value,
     };
@@ -264,22 +263,13 @@ const avatarHandler: ComponentHandler<AvatarProperties> = {
 
 const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
   key: metadata.avatarStack.key,
-  codegen: ({ componentProperties: props, children }) => {
-    const avatars = children
-      .map((avatarStackItem) => {
-        if ("findChild" in avatarStackItem === false) return null;
+  codegen: async (node) => {
+    const avatarNodes = await findMatchingInstancesInNode<AvatarProperties>({
+      node,
+      key: avatarHandler.key,
+    });
 
-        const avatar = avatarStackItem.findChild(
-          (avatarStackItemChild) =>
-            avatarStackItemChild.type === "INSTANCE" &&
-            (avatarStackItemChild.mainComponent?.parent?.type === "COMPONENT_SET"
-              ? avatarStackItemChild.mainComponent.parent.key === avatarHandler.key
-              : avatarStackItemChild.mainComponent?.key === avatarHandler.key),
-        ) as (InstanceNode & { componentProperties: AvatarProperties }) | null;
-
-        return avatar ?? null;
-      })
-      .filter((avatar) => avatar !== null);
+    const { componentProperties: props } = node;
 
     const commonProps = {
       size: props.Size.value,
@@ -287,17 +277,14 @@ const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
       // topItem: camelCase(props["Top Item"].value),
     };
 
-    const avatarStackChildren = avatars.map((avatar) => {
-      const { props, ...rest } = avatarHandler.codegen(avatar);
-
-      return {
-        ...rest,
-        props: {
-          ...props,
-          size: undefined,
-        },
-      };
-    });
+    const avatarStackChildren = (await Promise.all(avatarNodes.map(avatarHandler.codegen))).map(
+      (avatar) => {
+        return {
+          ...avatar,
+          props: { ...avatar.props, size: undefined },
+        };
+      },
+    );
 
     return createElement("AvatarStack", commonProps, avatarStackChildren);
   },
@@ -305,7 +292,7 @@ const avatarStackHandler: ComponentHandler<AvatarStackProperties> = {
 
 const badgeHandler: ComponentHandler<BadgeProperties> = {
   key: metadata.badge.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const commonProps = {
       size: handleSize(props.Size.value),
       tone: camelCase(props.Tone.value),
@@ -319,7 +306,7 @@ const badgeHandler: ComponentHandler<BadgeProperties> = {
 
 const calloutHandler: ComponentHandler<CalloutProperties> = {
   key: metadata.callout.key,
-  codegen: ({ componentProperties: props, children }) => {
+  codegen: async ({ componentProperties: props, children }) => {
     const tag = (() => {
       switch (props.Interaction.value) {
         case "Default":
@@ -382,7 +369,7 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
       description,
       linkLabel,
       ...(props["Icon#12598:210"].value && {
-        icon: createElement(createIconTagNameFromId(props["Icon#12598:210"].value)),
+        icon: createElement(await createIconTagNameFromId(props["Icon#12598:210"].value)),
       }),
     };
 
@@ -392,7 +379,7 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
 
 const checkboxHandler: ComponentHandler<CheckboxProperties> = {
   key: metadata.checkbox.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
@@ -418,14 +405,11 @@ const checkboxHandler: ComponentHandler<CheckboxProperties> = {
 
 const chipTabsHandler: ComponentHandler<ChipTabsProperties> = {
   key: metadata.chipTablist.key,
-  codegen: ({ componentProperties: props, children }) => {
-    const chipTabsItems = children.filter(
-      (child) =>
-        child.type === "INSTANCE" &&
-        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === chipTabsItemHandler.key) ||
-          child.mainComponent?.key === chipTabsItemHandler.key),
-    ) as (InstanceNode & { componentProperties: ChipTabsItemProperties })[];
+  codegen: async (node) => {
+    const chipTabsItems = await findMatchingInstancesInNode<ChipTabsItemProperties>({
+      node,
+      key: chipTabsItemHandler.key,
+    });
 
     const selectedChipTabsItem = chipTabsItems.find((chipTabsItem) =>
       chipTabsItem.componentProperties.State.value.split("-").includes("Selected"),
@@ -434,11 +418,11 @@ const chipTabsHandler: ComponentHandler<ChipTabsProperties> = {
     const chipTabTriggerList = createElement(
       "ChipTabTriggerList",
       undefined,
-      chipTabsItems.map(chipTabsItemHandler.codegen),
+      await Promise.all(chipTabsItems.map(chipTabsItemHandler.codegen)),
     );
 
     const commonProps = {
-      variant: camelCase(props.Variant.value),
+      variant: camelCase(node.componentProperties.Variant.value),
       ...(selectedChipTabsItem && {
         defaultValue: selectedChipTabsItem.componentProperties["Label#8876:0"].value,
       }),
@@ -450,7 +434,7 @@ const chipTabsHandler: ComponentHandler<ChipTabsProperties> = {
 
 const chipTabsItemHandler: ComponentHandler<ChipTabsItemProperties> = {
   key: "fa80168b02051fbb0ba032238bd76d840dbe2e15",
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
@@ -467,34 +451,36 @@ const chipTabsItemHandler: ComponentHandler<ChipTabsItemProperties> = {
 
 const controlChipHandler: ComponentHandler<ControlChipProperties> = {
   key: metadata.controlChip.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
-    const { layout, prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon Only", () => {
-        return {
-          layout: "iconOnly",
-          prefixIcon: undefined,
-          suffixIcon: undefined,
-          children: createElement(createIconTagNameFromId(props["Icon#8722:41"].value)),
-        };
-      })
-      .with("Icon First", () => ({
+    const { layout, prefixIcon, suffixIcon, children } = await match(props.Layout.value)
+      .with("Icon Only", async () => ({
+        layout: "iconOnly",
+        prefixIcon: undefined,
+        suffixIcon: undefined,
+        children: createElement(await createIconTagNameFromId(props["Icon#8722:41"].value)),
+      }))
+      .with("Icon First", async () => ({
         layout: "withText",
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
+        prefixIcon: createElement(await createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
         suffixIcon: undefined,
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon Last", () => ({
+      .with("Icon Last", async () => ({
         layout: "withText",
         prefixIcon: undefined,
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
+        suffixIcon: createElement(
+          await createIconTagNameFromId(props["Suffix Icon#8722:82"].value),
+        ),
         children: props["Label#7185:0"].value,
       }))
-      .with("Icon Both", () => ({
+      .with("Icon Both", async () => ({
         layout: "withText",
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#8722:82"].value)),
+        prefixIcon: createElement(await createIconTagNameFromId(props["Prefix Icon#8722:0"].value)),
+        suffixIcon: createElement(
+          await createIconTagNameFromId(props["Suffix Icon#8722:82"].value),
+        ),
         children: props["Label#7185:0"].value,
       }))
       .with("Text Only", () => ({
@@ -527,16 +513,13 @@ const controlChipHandler: ComponentHandler<ControlChipProperties> = {
 
 const errorStateHandler: ComponentHandler<ErrorStateProperties> = {
   key: metadata.errorState.key,
-  codegen: (node) => {
+  codegen: async (node) => {
     const props = node.componentProperties;
 
-    const actionButtonNode = node.findOne(
-      (child) =>
-        child.type === "INSTANCE" &&
-        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === actionButtonHandler.key) ||
-          child.mainComponent?.key === actionButtonHandler.key),
-    ) as InstanceNode & { componentProperties: ActionButtonProperties };
+    const [actionButtonNode] = await findMatchingInstancesInNode<ActionButtonProperties>({
+      node,
+      key: actionButtonHandler.key,
+    });
 
     const commonProps = {
       variant: camelCase(props.Variant.value),
@@ -546,7 +529,7 @@ const errorStateHandler: ComponentHandler<ErrorStateProperties> = {
       description: props["Description#16237:5"].value,
       ...(actionButtonNode && {
         primaryActionProps: {
-          children: actionButtonHandler.codegen(actionButtonNode).children[0],
+          children: (await actionButtonHandler.codegen(actionButtonNode)).children[0],
         },
         secondaryActionProps: {
           children: props["Secondary Action Label#17042:0"].value,
@@ -560,18 +543,15 @@ const errorStateHandler: ComponentHandler<ErrorStateProperties> = {
 
 const extendedActionSheetHandler: ComponentHandler<ExtendedActionSheetProperties> = {
   key: metadata.extendedActionSheet.key,
-  codegen: (node) => {
+  codegen: async (node) => {
     const { componentProperties: props } = node;
 
-    const groups = node.findAll(
-      (child) =>
-        child.type === "INSTANCE" &&
-        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === extendedActionSheetGroupHandler.key) ||
-          child.mainComponent?.key === extendedActionSheetGroupHandler.key),
-    ) as (InstanceNode & { componentProperties: ExtendedActionSheetGroupProperties })[];
+    const groups = await findMatchingInstancesInNode<ExtendedActionSheetGroupProperties>({
+      node,
+      key: extendedActionSheetGroupHandler.key,
+    });
 
-    const contentChildren = groups.map(extendedActionSheetGroupHandler.codegen);
+    const contentChildren = await Promise.all(groups.map(extendedActionSheetGroupHandler.codegen));
 
     const title = props["Show Title#17043:12"].value ? props["Title#14599:0"].value : undefined;
 
@@ -580,7 +560,7 @@ const extendedActionSheetHandler: ComponentHandler<ExtendedActionSheetProperties
       { title },
       contentChildren,
       title
-        ? ""
+        ? undefined
         : "title을 제공하지 않는 경우 aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
     );
 
@@ -601,16 +581,13 @@ const extendedActionSheetHandler: ComponentHandler<ExtendedActionSheetProperties
 
 const extendedActionSheetGroupHandler: ComponentHandler<ExtendedActionSheetGroupProperties> = {
   key: "2a504a1c6b7810d5e652862dcba2cb7048f9eb16",
-  codegen: (node) => {
-    const items = node.findAll(
-      (child) =>
-        child.type === "INSTANCE" &&
-        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === extendedActionSheetItemHandler.key) ||
-          child.mainComponent?.key === extendedActionSheetItemHandler.key),
-    ) as (InstanceNode & { componentProperties: ExtendedActionSheetItemProperties })[];
+  codegen: async (node) => {
+    const items = await findMatchingInstancesInNode<ExtendedActionSheetItemProperties>({
+      node,
+      key: extendedActionSheetItemHandler.key,
+    });
 
-    const contentChildren = items.map(extendedActionSheetItemHandler.codegen);
+    const contentChildren = await Promise.all(items.map(extendedActionSheetItemHandler.codegen));
 
     return createElement("ExtendedActionSheetGroup", undefined, contentChildren);
   },
@@ -618,14 +595,16 @@ const extendedActionSheetGroupHandler: ComponentHandler<ExtendedActionSheetGroup
 
 const extendedActionSheetItemHandler: ComponentHandler<ExtendedActionSheetItemProperties> = {
   key: "057083e95466da59051119eec0b41d4ad5a07f8f",
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
       tone: camelCase(props.Tone.value),
       label: props["Label#55905:8"].value,
       ...(props["Show Prefix Icon#17043:5"].value && {
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#55948:0"].value)),
+        prefixIcon: createElement(
+          await createIconTagNameFromId(props["Prefix Icon#55948:0"].value),
+        ),
       }),
       ...(states.includes("Disabled") && {
         disabled: true,
@@ -638,11 +617,11 @@ const extendedActionSheetItemHandler: ComponentHandler<ExtendedActionSheetItemPr
 
 const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
   key: metadata.extendedFloatingActionButton.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const commonProps = {
       size: handleSize(props.Size.value),
       variant: camelCase(props.Variant.value),
-      prefixIcon: createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
+      prefixIcon: createElement(await createIconTagNameFromId(props["Icon#28796:0"].value)),
     };
 
     return createElement("ExtendedFab", commonProps, props["Label#28936:0"].value);
@@ -651,11 +630,11 @@ const extendedFabHandler: ComponentHandler<ExtendedFabProperties> = {
 
 const fabHandler: ComponentHandler<FabProperties> = {
   key: metadata.floatingActionButton.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     return createElement(
       "Fab",
       undefined,
-      createElement(createIconTagNameFromId(props["Icon#28796:0"].value)),
+      createElement(await createIconTagNameFromId(props["Icon#28796:0"].value)),
       "aria-label이나 aria-labelledby 중 하나를 제공해야 합니다.",
     );
   },
@@ -663,7 +642,7 @@ const fabHandler: ComponentHandler<FabProperties> = {
 
 const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
   key: metadata.helpBubble.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const placement:
       | "top"
       | "right"
@@ -725,7 +704,7 @@ const helpBubbleHandler: ComponentHandler<HelpBubbleProperties> = {
 
 const identityPlaceholderHandler: ComponentHandler<IdentityPlaceholderProperties> = {
   key: metadata.identityPlaceholder.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const commonProps = {
       identity: camelCase(props.Identity.value),
     };
@@ -736,7 +715,7 @@ const identityPlaceholderHandler: ComponentHandler<IdentityPlaceholderProperties
 
 const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
   key: metadata.inlineBanner.key,
-  codegen: (node) => {
+  codegen: async (node) => {
     const { componentProperties: props } = node;
 
     const tag = (() => {
@@ -780,6 +759,12 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
       (child) => child.type === "INSTANCE" && child.name === "icon",
     ) as InstanceNode;
 
+    const iconComponent =
+      props["Show Icon#11840:27"] && iconNode ? await iconNode.getMainComponentAsync() : undefined;
+    const icon = iconComponent
+      ? createElement(createIconTagNameFromKey(iconComponent.key))
+      : undefined;
+
     const commonProps = {
       variant: camelCase(props.Variant.value),
       title,
@@ -787,13 +772,7 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
       ...(tag === "LinkInlineBanner" && {
         linkLabel: props["Link Label#1547:81"].value,
       }),
-      ...(props["Show Icon#11840:27"].value &&
-        iconNode &&
-        iconNode.mainComponent && {
-          // Figma: 종류별로 아이콘이 지정되어 있음
-          // 웹 구현체: icon prop으로 열려 있음
-          icon: createElement(createIconTagNameFromKey(iconNode.mainComponent.key)),
-        }),
+      icon,
     };
 
     return createElement(tag, commonProps);
@@ -802,7 +781,7 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
 
 const mannerTempBadgeHandler: ComponentHandler<MannerTempBadgeProperties> = {
   key: metadata.mannerTempBadge.key,
-  codegen: ({ children }) => {
+  codegen: async ({ children }) => {
     const textNode = children.find((child) => child.type === "TEXT");
 
     const commonProps = {
@@ -815,7 +794,7 @@ const mannerTempBadgeHandler: ComponentHandler<MannerTempBadgeProperties> = {
 
 const multilineTextFieldHandler: ComponentHandler<MultilineTextFieldProperties> = {
   key: metadata.multilineTextField.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const {
       Size: { value: size },
       State: { value: state },
@@ -890,7 +869,7 @@ const multilineTextFieldHandler: ComponentHandler<MultilineTextFieldProperties> 
 
 const progressCircleHandler: ComponentHandler<ProgressCircleProperties> = {
   key: metadata.progressCircle.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const { value, minValue, maxValue } = match(props.Value.value)
       .with("Indeterminate", () => ({
         value: undefined,
@@ -933,11 +912,11 @@ const progressCircleHandler: ComponentHandler<ProgressCircleProperties> = {
 
 const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
   key: metadata.reactionButton.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
-      prefixIcon: createElement(createIconTagNameFromId(props["Icon#12379:0"].value)),
+      prefixIcon: createElement(await createIconTagNameFromId(props["Icon#12379:0"].value)),
       ...(props["Show Count#6397:33"].value && {
         count: Number(props["Count#15816:0"].value),
       }),
@@ -959,20 +938,19 @@ const reactionButtonHandler: ComponentHandler<ReactionButtonProperties> = {
 
 const segmentedControlHandler: ComponentHandler<SegmentedControlProperties> = {
   key: metadata.segmentedControl.key,
-  codegen: ({ children }) => {
-    const segments = children.filter(
-      (child) =>
-        child.type === "INSTANCE" &&
-        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === segmentedControlItemHandler.key) ||
-          child.mainComponent?.key === segmentedControlItemHandler.key),
-    ) as (InstanceNode & { componentProperties: SegmentedControlItemProperties })[];
+  codegen: async (node) => {
+    const segments = await findMatchingInstancesInNode<SegmentedControlItemProperties>({
+      node,
+      key: segmentedControlItemHandler.key,
+    });
 
     const selectedSegment = segments.find((segment) =>
       segment.componentProperties.State.value.split("-").includes("Selected"),
     );
 
-    const segmentedControlChildren = segments.map(segmentedControlItemHandler.codegen);
+    const segmentedControlChildren = await Promise.all(
+      segments.map(segmentedControlItemHandler.codegen),
+    );
 
     const commonProps = {
       ...(selectedSegment && {
@@ -991,7 +969,7 @@ const segmentedControlHandler: ComponentHandler<SegmentedControlProperties> = {
 
 const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperties> = {
   key: "9a7ba0d4c041ddbce84ee48881788434fd6bccc8",
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
     const commonProps = {
       value: props["Label#11366:15"].value,
@@ -1006,7 +984,9 @@ const segmentedControlItemHandler: ComponentHandler<SegmentedControlItemProperti
 
 const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
   key: metadata.selectBoxGroup.key,
-  codegen: ({ componentProperties: props, children }) => {
+  codegen: async (node) => {
+    const props = node.componentProperties;
+
     const tag = (() => {
       switch (props.Control.value) {
         case "Checkbox":
@@ -1016,13 +996,10 @@ const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
       }
     })();
 
-    const selectBoxes = children.filter(
-      (child) =>
-        child.type === "INSTANCE" &&
-        ((child.mainComponent?.parent?.type === "COMPONENT_SET" &&
-          child.mainComponent?.parent.key === selectBoxHandler.key) ||
-          child.mainComponent?.key === selectBoxHandler.key),
-    ) as (InstanceNode & { componentProperties: SelectBoxProperties })[];
+    const selectBoxes = await findMatchingInstancesInNode<SelectBoxProperties>({
+      node,
+      key: selectBoxHandler.key,
+    });
 
     const selectedSelectBox = selectBoxes.find((selectBox) =>
       selectBox.componentProperties.State.value.split("-").includes("Selected"),
@@ -1031,7 +1008,7 @@ const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
     const stack = createElement(
       "Stack",
       { gap: "spacingY.componentDefault" },
-      selectBoxes.map(selectBoxHandler.codegen),
+      await Promise.all(selectBoxes.map(selectBoxHandler.codegen)),
     );
 
     const commonProps = {
@@ -1046,7 +1023,7 @@ const selectBoxGroupHandler: ComponentHandler<SelectBoxGroupProperties> = {
 
 const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
   key: metadata.selectBox.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const tag = (() => {
       switch (props.Control.value) {
         case "Checkbox":
@@ -1078,7 +1055,7 @@ const selectBoxHandler: ComponentHandler<SelectBoxProperties> = {
 
 const skeletonHandler: ComponentHandler<SkeletonProperties> = {
   key: metadata.skeleton.key,
-  codegen: ({
+  codegen: async ({
     componentProperties: props,
     width,
     height,
@@ -1089,11 +1066,11 @@ const skeletonHandler: ComponentHandler<SkeletonProperties> = {
   }) => {
     const commonProps = {
       radius: camelCase(props.Radius.value),
-      width: (() => {
+      width: await (async () => {
         switch (layoutSizingHorizontal) {
           case "FIXED": {
             const variableId = boundVariables?.width?.id;
-            if (variableId) return getLayoutVariableName(variableId);
+            if (variableId) return await getLayoutVariableName(variableId);
 
             return `${width}px`;
           }
@@ -1106,11 +1083,11 @@ const skeletonHandler: ComponentHandler<SkeletonProperties> = {
             return "full";
         }
       })(),
-      height: (() => {
+      height: await (async () => {
         switch (layoutSizingVertical) {
           case "FIXED": {
             const variableId = boundVariables?.height?.id;
-            if (variableId) return getLayoutVariableName(variableId);
+            if (variableId) return await getLayoutVariableName(variableId);
 
             return `${height}px`;
           }
@@ -1131,7 +1108,7 @@ const skeletonHandler: ComponentHandler<SkeletonProperties> = {
 
 const snackbarHandler: ComponentHandler<SnackbarProperties> = {
   key: metadata.snackbar.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const commonProps = {
       message: props["Message#1528:4"].value,
       variant: camelCase(props.Variant.value),
@@ -1147,7 +1124,7 @@ const snackbarHandler: ComponentHandler<SnackbarProperties> = {
 
 const tabsHandler: ComponentHandler<TabsProperties> = {
   key: metadata.tablist.key,
-  codegen: ({ componentProperties: props, children }) => {
+  codegen: async ({ componentProperties: props, children }) => {
     const tabsItems = children
       .map((child) => {
         if (child.type !== "INSTANCE") return null;
@@ -1180,14 +1157,16 @@ const tabsHandler: ComponentHandler<TabsProperties> = {
     const tabTriggerList = createElement(
       "TabTriggerList",
       undefined,
-      tabsItems.map(({ layout, node }) => {
-        switch (layout) {
-          case "hug":
-            return tabsHugItemHandler.codegen(node);
-          case "fill":
-            return tabsFillItemHandler.codegen(node);
-        }
-      }),
+      await Promise.all(
+        tabsItems.map(({ layout, node }) => {
+          switch (layout) {
+            case "hug":
+              return tabsHugItemHandler.codegen(node);
+            case "fill":
+              return tabsFillItemHandler.codegen(node);
+          }
+        }),
+      ),
     );
 
     const tabContentList = createElement(
@@ -1214,7 +1193,7 @@ const tabsHandler: ComponentHandler<TabsProperties> = {
 
 const tabsHugItemHandler: ComponentHandler<TabsHugItemProperties> = {
   key: "c242492543b327ceb84fa9933841512fc62a898c",
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
@@ -1234,7 +1213,7 @@ const tabsHugItemHandler: ComponentHandler<TabsHugItemProperties> = {
 
 const tabsFillItemHandler: ComponentHandler<TabsFillItemProperties> = {
   key: "7275293344efb40ee9a3f5248ba2659b94a0b305",
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
@@ -1254,14 +1233,14 @@ const tabsFillItemHandler: ComponentHandler<TabsFillItemProperties> = {
 
 const textButtonHandler: ComponentHandler<TextButtonProperties> = {
   key: metadata.textButton.key,
-  codegen: (node) => {
+  codegen: async (node) => {
     const { componentProperties: props } = node;
 
     const states = props.State.value.split("-");
 
-    const { prefixIcon, suffixIcon, children } = match(props.Layout.value)
-      .with("Icon First", () => ({
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#7561:0"].value)),
+    const { prefixIcon, suffixIcon, children } = await match(props.Layout.value)
+      .with("Icon First", async () => ({
+        prefixIcon: createElement(await createIconTagNameFromId(props["Prefix Icon#7561:0"].value)),
         suffixIcon: undefined,
         children: props["Label#6148:0"].value,
       }))
@@ -1298,7 +1277,7 @@ const textButtonHandler: ComponentHandler<TextButtonProperties> = {
 
 const textFieldHandler: ComponentHandler<TextFieldProperties> = {
   key: metadata.textField.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const {
       Size: { value: size },
       State: { value: state },
@@ -1342,7 +1321,7 @@ const textFieldHandler: ComponentHandler<TextFieldProperties> = {
       // input affixes
       ...(showPrefix &&
         showPrefixIcon && {
-          prefixIcon: createElement(createIconTagNameFromId(prefixIcon)),
+          prefixIcon: createElement(await createIconTagNameFromId(prefixIcon)),
         }),
       ...(showPrefix &&
         showPrefixText && {
@@ -1350,7 +1329,7 @@ const textFieldHandler: ComponentHandler<TextFieldProperties> = {
         }),
       ...(showSuffix &&
         showSuffixIcon && {
-          suffixIcon: createElement(createIconTagNameFromId(suffixIcon)),
+          suffixIcon: createElement(await createIconTagNameFromId(suffixIcon)),
         }),
       ...(showSuffix &&
         showSuffixText && {
@@ -1400,7 +1379,7 @@ const textFieldHandler: ComponentHandler<TextFieldProperties> = {
 
 const switchHandler: ComponentHandler<SwitchProperties> = {
   key: metadata.switch.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const size = handleSize(props.Size.value);
@@ -1424,17 +1403,21 @@ const switchHandler: ComponentHandler<SwitchProperties> = {
 
 const toggleButtonHandler: ComponentHandler<ToggleButtonProperties> = {
   key: metadata.toggleButton.key,
-  codegen: ({ componentProperties: props }) => {
+  codegen: async ({ componentProperties: props }) => {
     const states = props.State.value.split("-");
 
     const commonProps = {
       variant: camelCase(props.Variant.value),
       size: handleSize(props.Size.value),
       ...(props["Show Prefix Icon#6122:392"].value && {
-        prefixIcon: createElement(createIconTagNameFromId(props["Prefix Icon#6122:98"].value)),
+        prefixIcon: createElement(
+          await createIconTagNameFromId(props["Prefix Icon#6122:98"].value),
+        ),
       }),
       ...(props["Show Suffix Icon#6122:147"].value && {
-        suffixIcon: createElement(createIconTagNameFromId(props["Suffix Icon#6122:343"].value)),
+        suffixIcon: createElement(
+          await createIconTagNameFromId(props["Suffix Icon#6122:343"].value),
+        ),
       }),
       ...(states.includes("Selected") && {
         // XXX: selected vs pressed
