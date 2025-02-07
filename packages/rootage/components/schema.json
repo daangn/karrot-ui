@@ -367,6 +367,7 @@
         { "const": "$dimension.spacing-x.between-chips", "title": "$dimension.spacing-x.between-chips", "description": "default: $dimension.s2", "markdownDescription": "- default: `$dimension.s2`" },
         { "const": "$dimension.spacing-x.global-gutter", "title": "$dimension.spacing-x.global-gutter", "description": "default: $dimension.s4", "markdownDescription": "- default: `$dimension.s4`" },
         { "const": "$dimension.spacing-y.component-default", "title": "$dimension.spacing-y.component-default", "description": "default: $dimension.s3", "markdownDescription": "- default: `$dimension.s3`" },
+        { "const": "$dimension.spacing-y.nav-to-title", "title": "$dimension.spacing-y.nav-to-title", "description": "default: $dimension.s5", "markdownDescription": "- default: `$dimension.s5`" },
         { "const": "$gradient.shimmer", "title": "$gradient.shimmer", "description": "theme-light: 0%: #ffffff00, 46%: #ffffff66, 54%: #ffffff66, 100%: #ffffff00\ntheme-dark: 0%: #ffffff00, 46%: #ffffff1a, 54%: #ffffff1a, 100%: #ffffff00", "markdownDescription": "- theme-light: `0%: #ffffff00, 46%: #ffffff66, 54%: #ffffff66, 100%: #ffffff00`\n\n- theme-dark: `0%: #ffffff00, 46%: #ffffff1a, 54%: #ffffff1a, 100%: #ffffff00`" },
         { "const": "$font-size.s1", "title": "$font-size.s1", "description": "default: 0.6875rem", "markdownDescription": "- default: `0.6875rem`" },
         { "const": "$font-size.s2", "title": "$font-size.s2", "description": "default: 0.75rem", "markdownDescription": "- default: `0.75rem`" },

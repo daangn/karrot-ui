@@ -33,6 +33,7 @@
   --seed-v3-dimension-spacing-x-between-chips: var(--seed-v3-dimension-s2);
   --seed-v3-dimension-spacing-x-global-gutter: var(--seed-v3-dimension-s4);
   --seed-v3-dimension-spacing-y-component-default: var(--seed-v3-dimension-s3);
+  --seed-v3-dimension-spacing-y-nav-to-title: var(--seed-v3-dimension-s5);
   --seed-v3-duration-s1: 50ms;
   --seed-v3-duration-s2: 100ms;
   --seed-v3-duration-s3: 150ms;

@@ -119,6 +119,12 @@
         "values": {
           "default": "$dimension.s3"
         }
+      },
+      "$dimension.spacing-y.nav-to-title": {
+        "description": "Top Navigation과 Page Title 사이의 간격입니다.",
+        "values": {
+          "default": "$dimension.s5"
+        }
       }
     }
   }

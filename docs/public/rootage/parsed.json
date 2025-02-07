@@ -5189,6 +5189,30 @@
       "token": {
         "type": "token",
         "group": [
+          "dimension",
+          "spacing-y"
+        ],
+        "key": "nav-to-title"
+      },
+      "values": [
+        {
+          "mode": "default",
+          "value": {
+            "type": "token",
+            "group": [
+              "dimension"
+            ],
+            "key": "s5"
+          }
+        }
+      ],
+      "description": "Top Navigation과 Page Title 사이의 간격입니다."
+    },
+    {
+      "collection": "global",
+      "token": {
+        "type": "token",
+        "group": [
           "duration"
         ],
         "key": "s1"
