@@ -1,5 +1,3 @@
-"use client";
-
 import { ActionButton as SeedActionButton } from "@seed-design/react";
 import * as React from "react";
 import { ProgressCircle } from "./progress-circle";
