@@ -1,28 +1,33 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ChipTabs, ChipTabsProps, ChipTabsTrigger, ChipTabsList } from "seed-design/ui/chip-tabs";
+import {
+  ChipTabsRoot,
+  ChipTabsRootProps,
+  ChipTabsTrigger,
+  ChipTabsList,
+} from "seed-design/ui/chip-tabs";
 
 import { chipTabsVariantMap } from "@seed-design/recipe/chipTabs";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
 
-const Component = (props: ChipTabsProps) => {
+const Component = (props: ChipTabsRootProps) => {
   return (
-    <ChipTabs {...props}>
+    <ChipTabsRoot {...props}>
       <ChipTabsList>
         <ChipTabsTrigger value="1">Tab 1</ChipTabsTrigger>
         <ChipTabsTrigger value="2">Tab 2</ChipTabsTrigger>
         <ChipTabsTrigger value="3">Tab 3</ChipTabsTrigger>
       </ChipTabsList>
-    </ChipTabs>
+    </ChipTabsRoot>
   );
 };
 
 const meta = {
-  component: ChipTabs,
+  component: ChipTabsRoot,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof ChipTabs>;
+} satisfies Meta<typeof ChipTabsRoot>;
 
 export default meta;
 
