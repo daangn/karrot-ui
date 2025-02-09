@@ -88,6 +88,8 @@ export const addCommand = (cli: CAC) => {
         process.exit(0);
       }
 
+      p.log.message(`선택된 컴포넌트: ${highlight(selectedComponents.join(", "))}`);
+
       const allRelativeRegistries = addRelativeRegistries({
         userSelects: selectedComponents,
         uiRegistryIndex: registryComponentIndex,
@@ -95,12 +97,17 @@ export const addCommand = (cli: CAC) => {
       });
 
       const allRegistryItems = [];
+
+      const { start, stop } = p.spinner();
+      start("Registry를 가져오고 있어요...");
+
       for (const registry of allRelativeRegistries) {
         const registryItem = await fetchRegistryItem(registry.name, baseUrl, registry.type);
         allRegistryItems.push(registryItem);
       }
 
-      p.log.message(`선택된 컴포넌트: ${highlight(selectedComponents.join(", "))}`);
+      stop();
+
       if (allRegistryItems.length) {
         const filteredRegistryItems = allRegistryItems.filter(
           (c) => !selectedComponents.includes(c.name),
@@ -119,7 +126,6 @@ export const addCommand = (cli: CAC) => {
         filtered: new Set(),
       };
       for (const component of allRegistryItems) {
-        p.log.step(`${highlight(component.name)} 관련 파일 추가`);
         for (const registry of component.registries) {
           let targetPath = "";
           switch (registry.type) {
