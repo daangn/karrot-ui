@@ -14443,7 +14443,7 @@
               ],
               "slot": [
                 {
-                  "key": "triggerList",
+                  "key": "root",
                   "property": [
                     {
                       "key": "gap",
@@ -14470,7 +14470,7 @@
               ],
               "slot": [
                 {
-                  "key": "triggerList",
+                  "key": "root",
                   "property": [
                     {
                       "key": "gap",
@@ -22068,6 +22068,16 @@
                       }
                     },
                     {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s5"
+                      }
+                    },
+                    {
                       "key": "fontWeight",
                       "value": {
                         "type": "token",
@@ -22135,6 +22145,16 @@
                         "type": "token",
                         "group": [
                           "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
                         ],
                         "key": "s4"
                       }
@@ -22225,6 +22245,26 @@
                         ],
                         "key": "neutral"
                       }
+                    },
+                    {
+                      "key": "transformDuration",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "duration"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "transformTimingFunction",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "timing-function"
+                        ],
+                        "key": "easing"
+                      }
                     }
                   ]
                 }
@@ -22250,9 +22290,23 @@
                       "value": {
                         "type": "token",
                         "group": [
-                          "dimension"
+                          "dimension",
+                          "spacing-x"
                         ],
-                        "key": "s4"
+                        "key": "global-gutter"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "indicator",
+                  "property": [
+                    {
+                      "key": "insetX",
+                      "value": {
+                        "type": "dimension",
+                        "value": 0,
+                        "unit": "px"
                       }
                     }
                   ]
@@ -22280,6 +22334,22 @@
                         "type": "dimension",
                         "value": 0,
                         "unit": "px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "indicator",
+                  "property": [
+                    {
+                      "key": "insetX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension",
+                          "spacing-x"
+                        ],
+                        "key": "global-gutter"
                       }
                     }
                   ]

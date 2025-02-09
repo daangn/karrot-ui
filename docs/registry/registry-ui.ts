@@ -122,19 +122,17 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "help-bubble",
-    dependencies: ["@seed-design/react", "@radix-ui/react-slot"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:help-bubble.tsx"],
   },
   {
     name: "tabs",
-    // TODO: 탭 코드 수정 후 `@seed-design/react`로 변경
-    dependencies: ["@seed-design/react-tabs"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:tabs.tsx"],
   },
   {
     name: "chip-tabs",
-    // TODO: 탭 코드 수정 후 `@seed-design/react`로 변경
-    dependencies: ["@seed-design/react-tabs"],
+    dependencies: ["@seed-design/react"],
     files: ["ui:chip-tabs.tsx"],
   },
   {
@@ -169,11 +167,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "text-field",
-    dependencies: [
-      "@seed-design/react",
-      "@daangn/react-monochrome-icon",
-      "@radix-ui/react-slot",
-    ],
+    dependencies: ["@seed-design/react", "@daangn/react-monochrome-icon"],
     files: ["ui:text-field.tsx"],
   },
 ];

@@ -9,7 +9,6 @@ import badge from "./recipes/badge";
 import bottomSheet from "./recipes/bottom-sheet";
 import callout from "./recipes/callout";
 import checkbox from "./recipes/checkbox";
-import chipTab from "./recipes/chip-tab";
 import chipTabs from "./recipes/chip-tabs";
 import controlChip from "./recipes/control-chip";
 import dialog from "./recipes/dialog";
@@ -31,7 +30,6 @@ import { selectBox, selectBoxGroup } from "./recipes/select-box";
 import skeleton from "./recipes/skeleton";
 import { snackbar, snackbarRegion } from "./recipes/snackbar";
 import switchRecipe from "./recipes/switch";
-import tab from "./recipes/tab";
 import tabs from "./recipes/tabs";
 import text from "./recipes/text";
 import textButton from "./recipes/text-button";
@@ -40,7 +38,6 @@ import toggleButton from "./recipes/toggle-button";
 import visuallyHidden from "./recipes/visually-hidden";
 import { appBar, appBarMain } from "./stackflow/app-bar";
 import { appScreen } from "./stackflow/app-screen";
-
 const recipes = {
   avatar,
   avatarStack,
@@ -72,9 +69,7 @@ const recipes = {
   identityPlaceholder,
   inlineBanner,
   progressCircle,
-  tab,
   tabs,
-  chipTab,
   chipTabs,
   skeleton,
   snackbar,

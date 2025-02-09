@@ -225,8 +225,7 @@
   {
     "name": "help-bubble",
     "dependencies": [
-      "@seed-design/react",
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "files": [
       "ui:help-bubble.tsx"
@@ -235,7 +234,7 @@
   {
     "name": "tabs",
     "dependencies": [
-      "@seed-design/react-tabs"
+      "@seed-design/react"
     ],
     "files": [
       "ui:tabs.tsx"
@@ -244,7 +243,7 @@
   {
     "name": "chip-tabs",
     "dependencies": [
-      "@seed-design/react-tabs"
+      "@seed-design/react"
     ],
     "files": [
       "ui:chip-tabs.tsx"
@@ -309,8 +308,7 @@
     "name": "text-field",
     "dependencies": [
       "@seed-design/react",
-      "@daangn/react-monochrome-icon",
-      "@radix-ui/react-slot"
+      "@daangn/react-monochrome-icon"
     ],
     "files": [
       "ui:text-field.tsx"

@@ -8,25 +8,35 @@ const chipTabsSlotNames = [
     "chipTabs__root"
   ],
   [
-    "triggerList",
-    "chipTabs__triggerList"
+    "list",
+    "chipTabs__list"
   ],
   [
-    "contentList",
-    "chipTabs__contentList"
+    "carousel",
+    "chipTabs__carousel"
   ],
   [
-    "contentCamera",
-    "chipTabs__contentCamera"
+    "carouselCamera",
+    "chipTabs__carouselCamera"
   ],
   [
     "content",
     "chipTabs__content"
+  ],
+  [
+    "trigger",
+    "chipTabs__trigger"
+  ],
+  [
+    "triggerLabel",
+    "chipTabs__triggerLabel"
   ]
 ];
 
 const defaultVariant = {
-  "variant": "neutralSolid"
+  "variant": "neutralSolid",
+  "contentLayout": "hug",
+  "stickyList": false
 };
 
 const compoundVariants = [];
@@ -35,6 +45,14 @@ export const chipTabsVariantMap = {
   "variant": [
     "neutralSolid",
     "brandSolid"
+  ],
+  "contentLayout": [
+    "fill",
+    "hug"
+  ],
+  "stickyList": [
+    true,
+    false
   ]
 };
 

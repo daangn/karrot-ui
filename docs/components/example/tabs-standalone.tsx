@@ -1,19 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Tabs, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
+import { TabsRoot, TabsList, TabsTrigger } from "seed-design/ui/tabs";
 
 export default function TabsStandalone() {
   const [activeTab, setActiveTab] = useState("1");
 
   return (
     <div style={{ width: "360px" }}>
-      <Tabs defaultValue="1" onValueChange={setActiveTab}>
-        <TabTriggerList>
-          <TabTrigger value="1">라벨1</TabTrigger>
-          <TabTrigger value="2">라벨2</TabTrigger>
-          <TabTrigger value="3">라벨3</TabTrigger>
-        </TabTriggerList>
+      <TabsRoot defaultValue="1" onValueChange={setActiveTab}>
+        <TabsList>
+          <TabsTrigger value="1">라벨1</TabsTrigger>
+          <TabsTrigger value="2">라벨2</TabsTrigger>
+          <TabsTrigger value="3">라벨3</TabsTrigger>
+        </TabsList>
         {activeTab === "1" && (
           <div>
             <Content>Content 1</Content>
@@ -29,7 +29,7 @@ export default function TabsStandalone() {
             <Content>Content 3</Content>
           </div>
         )}
-      </Tabs>
+      </TabsRoot>
     </div>
   );
 }

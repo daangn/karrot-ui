@@ -11,21 +11,33 @@ description: "이 문서는 정리 중이에요. 문의 내용은 #_design_core 
 
 ## Props
 
-Tabs
+### TabsRoot
 
-<ReactTypeTable path="./registry/ui/tabs.tsx" name="TabsProps" />
+<ReactTypeTable path="./registry/ui/tabs.tsx" name="TabsRootProps" />
 
-TabTrigger
+### TabsList
 
-<ReactTypeTable path="./registry/ui/tabs.tsx" name="TabTriggerProps" />
+<ReactTypeTable path="./registry/ui/tabs.tsx" name="TabsListProps" />
+
+### TabsTrigger
+
+<ReactTypeTable path="./registry/ui/tabs.tsx" name="TabsTriggerProps" />
+
+### TabsCarousel
+
+<ReactTypeTable path="./registry/ui/tabs.tsx" name="TabsCarouselProps" />
+
+### TabsContent
+
+<ReactTypeTable path="./registry/ui/tabs.tsx" name="TabsContentProps" />
 
 ## Examples
 
-### Layout Fill
+### Layout Fill (Default)
 
 <ComponentExample name="tabs-layout-fill" />
 
-### Layout Hug (Default)
+### Layout Hug
 
 <ComponentExample name="tabs-layout-hug" />
 
@@ -45,19 +57,19 @@ TabTrigger
 
 <ComponentExample name="tabs-disabled" />
 
-### Alert
+### Notification
 
-<ComponentExample name="tabs-alert" />
+<ComponentExample name="tabs-notification" />
 
-### Fix Trigger List
+### Sticky List
 
 <Callout type="info">
 
-탭이 전체화면을 차지하고, Tab의 머리 부분인 TriggerList가 top에 고정되어 있는 경우 사용하는 예시입니다.
+탭이 전체화면을 차지하고, Tabs.List가 top에 고정되어 있는 경우 사용하는 예시입니다.
 
 </Callout>
 
-<ComponentExample name="tabs-fix-trigger-list" />
+<ComponentExample name="tabs-sticky-list" />
 
 ### Standalone
 

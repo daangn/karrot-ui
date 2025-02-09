@@ -1,8 +1,12 @@
 declare interface TabsVariant {
   /**
+  * @default fill
+  */
+  triggerLayout: "fill" | "hug";
+/**
   * @default hug
   */
-  layout: "fill" | "hug";
+  contentLayout: "fill" | "hug";
 /**
   * @default small
   */
@@ -10,7 +14,7 @@ declare interface TabsVariant {
 /**
   * @default false
   */
-  fixTriggerList: boolean;
+  stickyList: boolean;
 }
 
 declare type TabsVariantMap = {
@@ -19,7 +23,7 @@ declare type TabsVariantMap = {
 
 export declare type TabsVariantProps = Partial<TabsVariant>;
 
-export declare type TabsSlotName = "root" | "triggerList" | "contentList" | "contentCamera" | "content" | "indicator";
+export declare type TabsSlotName = "root" | "list" | "carousel" | "carouselCamera" | "content" | "indicator" | "trigger" | "triggerLabel" | "triggerNotification";
 
 export declare const tabsVariantMap: TabsVariantMap;
 

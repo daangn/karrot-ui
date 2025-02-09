@@ -8,14 +8,19 @@ export const vars = {
       },
       "indicator": {
         "height": "2px",
-        "color": "var(--seed-v3-color-fg-neutral)"
+        "color": "var(--seed-v3-color-fg-neutral)",
+        "transformDuration": "var(--seed-v3-duration-s4)",
+        "transformTimingFunction": "var(--seed-v3-timing-function-easing)"
       }
     }
   },
   "layoutHug": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-dimension-s4)"
+        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)"
+      },
+      "indicator": {
+        "insetX": "0px"
       }
     }
   },
@@ -23,6 +28,9 @@ export const vars = {
     "enabled": {
       "root": {
         "paddingX": "0px"
+      },
+      "indicator": {
+        "insetX": "var(--seed-v3-dimension-spacing-x-global-gutter)"
       }
     }
   },

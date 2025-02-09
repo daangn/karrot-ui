@@ -1,239 +1,324 @@
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { ariaAttr, buttonProps, dataAttr, elementProps } from "@seed-design/dom-utils";
-import * as React from "react";
-import * as dom from "./dom";
-import type { ContentProps, TriggerProps, UseTabsProps, UseTabsStateProps } from "./types";
-
+import { useLayoutEffect } from "@radix-ui/react-use-layout-effect";
 import { useSize } from "@radix-ui/react-use-size";
+import { ariaAttr, buttonProps, dataAttr, elementProps } from "@seed-design/dom-utils";
+import type * as React from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import * as dom from "./dom";
+import { getNextIndex, getPrevIndex } from "./utils";
 
-const useLayoutEffect = globalThis?.document ? React.useLayoutEffect : React.useEffect;
+export interface UseTabsStateProps {
+  value?: string;
 
-function useTabsState(props: UseTabsStateProps & { id: string }) {
-  const tabValues = dom.getAllValues(props.id);
+  defaultValue?: string;
+
+  onValueChange?: (value: string) => void;
+}
+
+function useTabsState(props: UseTabsStateProps) {
+  const [interactionState, setInteractionState] = useState<"idle" | "focused">("idle");
+
   const [value, setValue] = useControllableState({
     prop: props.value,
-    defaultProp: props.defaultValue ?? tabValues[0] ?? undefined,
+    defaultProp: props.defaultValue ?? undefined,
     onChange: props.onValueChange,
   });
 
-  const [hoveredValue, setHoveredValue] = React.useState<string | null>(null);
-  const [activeValue, setActiveValue] = React.useState<string | null>(null);
-  const [focusedValue, setFocusedValue] = React.useState<string | null>(null);
-  const [isFocusVisible, setIsFocusVisible] = React.useState(false);
-  const [rootEl, setRootEl] = React.useState<HTMLElement | null>(null);
-  const triggerEl = value ? dom.getTabTriggerEl(value, props.id) : null;
-  const cameraEl = dom.getTabContentCameraEl(props.id);
-  const triggerSize = useSize(triggerEl);
-  const cameraSize = useSize(cameraEl);
+  const [focusedValue, setFocusedValue] = useState<string | null>(null);
+  const [isFocusVisible, setIsFocusVisible] = useState(false);
+  const [isSSR, setIsSSR] = useState(true);
 
-  const tabEnabledValues = dom.getEnabledValues(props.id);
-  const currentTabIndex = value ? dom.getTabIndex(value, props.id) : -1;
-  const currentTabEnabledIndex = value ? dom.getTabIndexOnlyEnabled(value, props.id) : -1;
+  useEffect(() => {
+    setIsSSR(false);
+  }, []);
 
-  const isFirst = currentTabEnabledIndex === 0;
-  const isLast = currentTabEnabledIndex === tabEnabledValues.length - 1;
+  const [listEl, listRef] = useState<HTMLElement | null>(null);
+  const [triggerEls, setTriggerEls] = useState<Record<string, HTMLElement>>({});
+  const selectedTriggerEl = value ? triggerEls[value] : null;
+  const selectedTriggerSize = useSize(selectedTriggerEl);
 
-  const prevIndex = isFirst
-    ? tabEnabledValues.length - 1
-    : (currentTabEnabledIndex - 1 + tabEnabledValues.length) % tabEnabledValues.length;
+  const enabledValues = useMemo(() => (listEl ? dom.getEnabledValues(listEl) : []), [listEl]);
+  const contentIndex = value ? enabledValues.indexOf(value) : -1;
 
-  const nextIndex = isLast ? 0 : (currentTabEnabledIndex + 1) % tabEnabledValues.length;
+  const prevIndex = contentIndex >= 0 ? getPrevIndex(contentIndex, enabledValues.length) : -1;
+  const nextIndex = contentIndex >= 0 ? getNextIndex(contentIndex, enabledValues.length) : -1;
 
-  useLayoutEffect(() => {
-    setRootEl(dom.getRootEl(props.id));
-  }, [props.id]);
-
-  const events = {
-    movePrev: () => {
-      const prevValue = tabEnabledValues[prevIndex];
+  const actions = {
+    selectPrev: () => {
+      const prevValue = enabledValues[prevIndex];
       if (!prevValue) return;
       setValue(prevValue);
     },
-    moveNext: () => {
-      const nextValue = tabEnabledValues[nextIndex];
+    selectNext: () => {
+      const nextValue = enabledValues[nextIndex];
       if (!nextValue) return;
       setValue(nextValue);
     },
-    focusPrev: () => {
-      const prevValue = tabEnabledValues[prevIndex];
-      if (!prevValue) return;
-      const prevTriggerEl = dom.getTabTriggerEl(prevValue, props.id);
+    selectFirst: () => {
+      const firstValue = enabledValues[0];
+      if (!firstValue) return;
+      setValue(firstValue);
+    },
+    selectLast: () => {
+      const lastValue = enabledValues[enabledValues.length - 1];
+      if (!lastValue) return;
+      setValue(lastValue);
+    },
+    setFocusedValue: (value: string) => {
+      setFocusedValue(value);
+    },
+    clearFocusedValue: () => {
+      setFocusedValue(null);
+    },
+    setValue: (value: string) => {
+      setValue(value);
+    },
+  };
 
-      if (prevTriggerEl) prevTriggerEl.focus();
+  const events = {
+    arrowPrev: () => {
+      if (interactionState === "focused") {
+        actions.selectPrev();
+        setIsFocusVisible(true);
+      }
     },
-    focusCurrent: () => {
-      if (triggerEl) triggerEl.focus();
+    arrowNext: () => {
+      if (interactionState === "focused") {
+        actions.selectNext();
+        setIsFocusVisible(true);
+      }
     },
-    focusNext: () => {
-      const nextValue = tabEnabledValues[nextIndex];
-      if (!nextValue) return;
-      const nextTriggerEl = dom.getTabTriggerEl(nextValue, props.id);
+    arrowUp: () => {
+      if (interactionState === "focused") {
+        actions.selectPrev();
+        setIsFocusVisible(true);
+      }
+    },
+    arrowDown: () => {
+      if (interactionState === "focused") {
+        actions.selectNext();
+        setIsFocusVisible(true);
+      }
+    },
+    home: () => {
+      if (interactionState === "focused") {
+        actions.selectFirst();
+        setIsFocusVisible(true);
+      }
+    },
+    end: () => {
+      if (interactionState === "focused") {
+        actions.selectLast();
+        setIsFocusVisible(true);
+      }
+    },
+    tabFocus: (value: string) => {
+      actions.setFocusedValue(value);
+      if (interactionState === "idle") {
+        setInteractionState("focused");
+      }
+    },
+    tabBlur: () => {
+      if (interactionState === "focused") {
+        actions.clearFocusedValue();
+        setInteractionState("idle");
+      }
+    },
+    tabClick: (value: string) => {
+      actions.setFocusedValue(value);
+      actions.setValue(value);
+      if (interactionState === "idle") {
+        setInteractionState("focused");
+      }
+    },
 
-      if (nextTriggerEl) nextTriggerEl.focus();
-    },
-    setValue,
-    setHoveredValue,
-    setActiveValue,
-    setFocusedValue,
+    setValue: actions.setValue,
+    selectNext: actions.selectNext,
+    selectPrev: actions.selectPrev,
+    setContentIndex: useCallback(
+      (index: number) => {
+        const valueFromIndex = enabledValues[index];
+        if (!valueFromIndex) return;
+
+        setValue(valueFromIndex);
+      },
+      [enabledValues, setValue],
+    ),
     setIsFocusVisible,
+
+    mountTrigger: (value: string, el: HTMLElement) => {
+      setTriggerEls((prev) => ({ ...prev, [value]: el }));
+    },
+    unmountTrigger: (value: string) => {
+      setTriggerEls((prev) => {
+        const { [value]: _, ...rest } = prev;
+        return rest;
+      });
+    },
   };
 
   return {
+    refs: {
+      list: listRef,
+    },
+    interactionState,
     value,
-    rootEl,
-    triggerSize: {
-      width: triggerSize?.width || 0,
-      height: triggerSize?.height || 0,
-      left: triggerEl?.offsetLeft || 0,
+    isSSR,
+    triggerRect: {
+      width: selectedTriggerSize?.width || 0,
+      height: selectedTriggerSize?.height || 0,
+      left: selectedTriggerEl?.offsetLeft || 0,
     },
-    cameraSize: {
-      width: cameraSize?.width || 0,
-      height: cameraSize?.height || 0,
-    },
-    hoveredValue,
-    activeValue,
     focusedValue,
     isFocusVisible,
-    currentTabIndex,
-    currentTabEnabledIndex,
-    tabValues,
-    tabEnabledValues,
+    contentIndex,
     events,
   };
 }
 
+export interface UseTabsProps extends UseTabsStateProps {
+  orientation?: "horizontal" | "vertical";
+}
+
+export interface UseTabsTriggerProps {
+  value: string;
+
+  disabled?: boolean;
+}
+
+export interface UseTabsContentProps {
+  value: string;
+}
+
+export type UseTabsReturn = ReturnType<typeof useTabs>;
+
+export type GetTriggerPropsReturn = ReturnType<UseTabsReturn["getTriggerProps"]>;
+
 export function useTabs(props: UseTabsProps) {
-  const id = React.useId();
+  const autoId = useId();
   const {
+    refs,
+    interactionState,
     value,
-    currentTabIndex,
-    currentTabEnabledIndex,
+    isSSR,
     events,
-    tabValues,
-    tabEnabledValues,
-    triggerSize,
-    cameraSize,
-    activeValue,
+    triggerRect,
     focusedValue,
-    hoveredValue,
     isFocusVisible,
-    rootEl,
-  } = useTabsState({
-    id,
-    ...props,
+    contentIndex,
+  } = useTabsState(props);
+  const { orientation = "horizontal" } = props;
+  const focused = interactionState === "focused";
+
+  const stateProps = elementProps({
+    "data-orientation": orientation,
+    "data-focus": dataAttr(focused),
+    "data-ssr": dataAttr(isSSR),
   });
-  const {
-    value: omitValue,
-    defaultValue: omitDefaultValue,
-    onValueChange: omitOnValueChange,
-    isSwipeable = false,
-    swipeConfig,
-    orientation = "horizontal",
-    ...restProps
-  } = props;
-
-  const updateIndicatorStyle = React.useCallback(() => {
-    if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tabs-indicator-left", `${triggerSize.left}px`);
-      rootEl.style.setProperty("--seed-design-tabs-indicator-width", `${triggerSize.width}px`);
-    }
-  }, [triggerSize, rootEl]);
-
-  const updateCameraStyle = React.useCallback(() => {
-    if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tabs-tab-camera-width", `${cameraSize.width}`);
-    }
-  }, [cameraSize, rootEl]);
-
-  const updateCurrentIndex = React.useCallback(() => {
-    if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tabs-current-tab-index", `${currentTabIndex}`);
-      rootEl.style.setProperty(
-        "--seed-design-tabs-current-tab-enabled-index",
-        `${currentTabEnabledIndex}`,
-      );
-    }
-  }, [currentTabIndex, currentTabEnabledIndex, rootEl]);
-
-  const updateTabCount = React.useCallback(() => {
-    if (rootEl) {
-      rootEl.style.setProperty("--seed-design-tabs-tab-count", `${tabValues.length}`);
-    }
-  }, [tabValues.length, rootEl]);
-
-  useLayoutEffect(() => {
-    updateIndicatorStyle();
-    window.addEventListener("resize", updateIndicatorStyle);
-    return () => {
-      window.removeEventListener("resize", updateIndicatorStyle);
-    };
-  }, [updateIndicatorStyle]);
-
-  useLayoutEffect(() => {
-    updateCameraStyle();
-    window.addEventListener("resize", updateCameraStyle);
-    return () => {
-      window.removeEventListener("resize", updateCameraStyle);
-    };
-  }, [updateCameraStyle]);
-
-  useLayoutEffect(() => {
-    updateCurrentIndex();
-  }, [updateCurrentIndex]);
-
-  useLayoutEffect(() => {
-    updateTabCount();
-  }, [updateTabCount]);
 
   return {
+    refs,
     value,
-    triggerSize,
-    currentTabIndex,
-    currentTabEnabledIndex,
-    tabEnabledCount: tabEnabledValues.length,
+    contentIndex,
+    triggerRect,
 
-    tabCount: tabValues.length,
+    selectNext: events.selectNext,
+    selectPrev: events.selectPrev,
+    setValue: events.setValue,
+    setContentIndex: events.setContentIndex,
 
-    moveNext: events.moveNext,
-    movePrev: events.movePrev,
+    stateProps,
 
-    restProps,
     rootProps: elementProps({
-      id: dom.getRootId(id),
-      "data-orientation": orientation,
+      ...stateProps,
+      style: {
+        "--indicator-left": `${triggerRect.left}px`,
+        "--indicator-width": `${triggerRect.width}px`,
+      } as React.CSSProperties,
     }),
 
-    tabTriggerListProps: elementProps({
-      id: dom.getTabTriggerListId(id),
+    listProps: elementProps({
+      id: dom.getListId(autoId),
       role: "tablist",
       "aria-orientation": orientation,
-      "data-orientation": orientation,
+      ...stateProps,
+
+      onKeyDown(event) {
+        if (event.defaultPrevented) return;
+        if (event.nativeEvent.isComposing) return;
+
+        // TODO: support activationMode="manual"
+        switch (event.key) {
+          case "ArrowLeft":
+            if (orientation !== "horizontal") return;
+            events.arrowPrev();
+            break;
+          case "ArrowRight":
+            if (orientation !== "horizontal") return;
+            events.arrowNext();
+            break;
+          case "ArrowUp":
+            if (orientation !== "vertical") return;
+            events.arrowPrev();
+            break;
+          case "ArrowDown":
+            if (orientation !== "vertical") return;
+            events.arrowNext();
+            break;
+          case "Home": {
+            events.home();
+            break;
+          }
+          case "End": {
+            events.end();
+            break;
+          }
+        }
+      },
     }),
-    getTabTriggerProps: (props: TriggerProps) => {
-      const { isDisabled, value: triggerValue } = props;
+
+    getTriggerProps: (props: UseTabsTriggerProps) => {
+      const { disabled: isDisabled, value: triggerValue } = props;
 
       const itemState = {
         isDisabled,
         isSelected: value === triggerValue,
         isFocused: focusedValue === triggerValue,
-        isHovered: hoveredValue === triggerValue,
-        isActive: activeValue === triggerValue,
       };
 
       const itemStateProps = {
         "data-focus": dataAttr(itemState.isFocused),
         "data-focus-visible": dataAttr(itemState.isFocused && isFocusVisible),
-        "data-active": dataAttr(itemState.isActive),
-        "data-hover": dataAttr(itemState.isHovered),
         "data-selected": dataAttr(itemState.isSelected),
         "data-disabled": dataAttr(itemState.isDisabled),
+        "data-ssr": dataAttr(isSSR),
         "aria-disabled": ariaAttr(itemState.isDisabled),
         "aria-selected": ariaAttr(itemState.isSelected),
       };
 
+      const ref = useRef<HTMLButtonElement>(null);
+
+      useLayoutEffect(() => {
+        if (ref.current) {
+          events.mountTrigger(triggerValue, ref.current);
+        }
+
+        () => {
+          events.unmountTrigger(triggerValue);
+        };
+      }, [triggerValue]);
+
       return {
+        ...itemState,
+
+        refs: {
+          root: ref,
+        },
+
+        stateProps: itemStateProps,
+
         rootProps: buttonProps({
-          id: dom.getTabTriggerRootId(triggerValue, id),
+          id: dom.getTriggerId(triggerValue, autoId),
           role: "tab",
           type: "button",
           disabled: isDisabled,
@@ -241,150 +326,50 @@ export function useTabs(props: UseTabsProps) {
           ...itemStateProps,
           "data-value": triggerValue,
           "data-orientation": orientation,
-          "data-ownedby": dom.getTabTriggerListId(id),
-          "aria-controls": dom.getTabTriggerRootId(triggerValue, id),
-          onClick() {
+          "data-ownedby": dom.getListId(autoId),
+          "aria-controls": dom.getContentId(triggerValue, autoId),
+          onClick(event) {
             if (itemState.isDisabled) return;
-            events.setValue(triggerValue);
-          },
-          onPointerMove() {
-            if (itemState.isDisabled) return;
-            events.setHoveredValue(triggerValue);
-          },
-          onPointerLeave() {
-            if (itemState.isDisabled) return;
-            events.setHoveredValue(null);
-            events.setActiveValue(null);
-          },
-          onPointerDown(event) {
-            if (itemState.isDisabled) return;
-            // On pointerdown, the input blurs and returns focus to the `body`,
-            // we need to prevent this.
-            if (itemState.isFocused && event.pointerType === "mouse") {
-              event.preventDefault();
-            }
-            events.setActiveValue(triggerValue);
-          },
-          onPointerUp() {
-            if (itemState.isDisabled) return;
-            events.setActiveValue(null);
+            if (event.defaultPrevented) return;
+            events.tabClick(triggerValue);
           },
           onFocus(event) {
-            events.setFocusedValue(triggerValue);
+            events.tabFocus(props.value);
             events.setIsFocusVisible(event.target.matches(":focus-visible"));
           },
-          onBlur() {
-            events.setFocusedValue(null);
+          onBlur(event) {
+            const target = event.relatedTarget as HTMLElement | null;
+            if (target?.getAttribute("role") !== "tab") {
+              events.tabBlur();
+            }
             events.setIsFocusVisible(false);
           },
-          onKeyDown({ key }) {
-            if (itemState.isDisabled) return;
-
-            switch (key) {
-              case "ArrowLeft":
-                if (orientation !== "horizontal") return;
-
-                events.movePrev();
-                events.focusPrev();
-
-                break;
-              case "ArrowRight":
-                if (orientation !== "horizontal") return;
-
-                events.moveNext();
-                events.focusNext();
-
-                break;
-              case "ArrowUp":
-                if (orientation !== "vertical") return;
-
-                events.movePrev();
-                events.focusPrev();
-
-                break;
-              case "ArrowDown":
-                if (orientation !== "vertical") return;
-
-                events.moveNext();
-                events.focusNext();
-
-                break;
-              case "Home": {
-                const firstValue = tabEnabledValues[0];
-                if (!firstValue) return;
-                events.setValue(firstValue);
-
-                break;
-              }
-              case "End": {
-                const lastValue = tabEnabledValues[tabEnabledValues.length - 1];
-                if (!lastValue) return;
-                events.setValue(lastValue);
-
-                break;
-              }
-              case " ":
-              case "Enter":
-                events.setValue(triggerValue);
-
-                events.focusCurrent();
-                events.setIsFocusVisible(true);
-
-                break;
-            }
-          },
-        }),
-        labelProps: elementProps({
-          id: dom.getTabTriggerLabelId(triggerValue, id),
-          ...itemStateProps,
-          "data-value": triggerValue,
-          "data-orientation": orientation,
-          "data-ownedby": dom.getTabTriggerListId(id),
-          "aria-controls": dom.getTabTriggerRootId(triggerValue, id),
-        }),
-        notificationProps: elementProps({
-          id: dom.getTabTriggerNotificationId(triggerValue, id),
-          ...itemStateProps,
-          "data-value": triggerValue,
-          "data-orientation": orientation,
-          "data-ownedby": dom.getTabTriggerListId(id),
-          "aria-controls": dom.getTabTriggerRootId(triggerValue, id),
         }),
       };
     },
 
-    tabContentListProps: elementProps({
-      id: dom.getTabContentListId(id),
-      "data-orientation": orientation,
-    }),
-    tabContentCameraProps: elementProps({
-      id: dom.getTabContentCameraId(id),
-      "data-orientation": orientation,
-    }),
-    getTabContentProps: (props: ContentProps) => {
-      const { value: contentValue, visibilityMode = "keep" } = props;
-      const tabContentId = dom.getTabContentId(contentValue, id);
-      const tabTriggerId = dom.getTabTriggerRootId(contentValue, id);
+    getContentProps: (props: UseTabsContentProps) => {
+      const { value: contentValue } = props;
+      const triggerId = dom.getTriggerId(contentValue, autoId);
       const isSelected = value === contentValue;
-      const isDisabled = !!dom.itemById(dom.getDisabledElements(id), tabTriggerId);
-      const hidden = visibilityMode === "hidden" ? !isSelected || isDisabled : isDisabled;
 
       return elementProps({
-        id: tabContentId,
+        id: dom.getContentId(contentValue, autoId),
+        tabIndex: -1,
+
         role: "tabpanel",
+        "aria-labelledby": triggerId,
+        "aria-selected": ariaAttr(isSelected),
+        "aria-hidden": !isSelected,
+
         "data-selected": dataAttr(isSelected),
         "data-orientation": orientation,
-        "data-ownedby": dom.getTabTriggerListId(id),
-        "aria-labelledby": tabTriggerId,
-        "aria-selected": ariaAttr(isSelected),
-        "aria-hidden": isDisabled ? undefined : !isSelected,
-        hidden,
+        "data-ownedby": dom.getListId(autoId),
       });
     },
 
-    tabIndicatorProps: elementProps({
-      id: dom.getIndicatorId(id),
-      "data-orientation": orientation,
+    indicatorProps: elementProps({
+      ...stateProps,
     }),
   };
 }

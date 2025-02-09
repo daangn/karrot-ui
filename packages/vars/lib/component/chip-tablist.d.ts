@@ -8,14 +8,14 @@ export declare const vars: {
   },
   "variantNeutralSolid": {
     "enabled": {
-      "triggerList": {
+      "root": {
         "gap": "0px"
       }
     }
   },
   "variantBrandSolid": {
     "enabled": {
-      "triggerList": {
+      "root": {
         "gap": "8px"
       }
     }

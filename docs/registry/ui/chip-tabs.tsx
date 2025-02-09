@@ -1,168 +1,57 @@
 "use client";
 
-import {
-  useLazyContents,
-  useTabs,
-  type ContentProps,
-  type TriggerProps,
-  type UseLazyContentsProps,
-  type UseTabsProps,
-} from "@seed-design/react-tabs";
-import { chipTab } from "@seed-design/recipe/chipTab";
-import { type ChipTabsVariant, chipTabs } from "@seed-design/recipe/chipTabs";
-import clsx from "clsx";
-import * as React from "react";
+import { ChipTabs as SeedChipTabs } from "@seed-design/react";
+import { forwardRef } from "react";
 
-type Assign<T, U> = Omit<T, keyof U> & U;
+export interface ChipTabsRootProps extends SeedChipTabs.RootProps {}
 
-interface ChipTabsContextValue {
-  api: ReturnType<typeof useTabs>;
-  classNames: ReturnType<typeof chipTabs>;
-  shouldRender: (value: string) => boolean;
-  variant: ChipTabsVariant["variant"];
-}
-
-const ChipTabsContext = React.createContext<ChipTabsContextValue | null>(null);
-
-const useChipTabsContext = () => {
-  const context = React.useContext(ChipTabsContext);
-  if (!context) {
-    throw new Error("Tabs cannot be rendered outside the Tabs");
-  }
-  return context;
-};
-
-export interface ChipTabsProps
-  extends Assign<
-      React.HTMLAttributes<HTMLDivElement>,
-      Omit<UseTabsProps, "layout">
-    >,
-    ChipTabsVariant,
-    Omit<UseLazyContentsProps, "currentValue"> {}
-
-/**
- * @see https://v3.seed-design.io/docs/react/components/tabs/chip-tabs
- */
-export const ChipTabs = React.forwardRef<HTMLDivElement, ChipTabsProps>(
+export const ChipTabsRoot = forwardRef<HTMLDivElement, ChipTabsRootProps>(
   (props, ref) => {
-    const { className, lazyMode, isLazy, variant } = props;
-    const api = useTabs(props);
-    const classNames = chipTabs({
-      variant,
-    });
-    const { rootProps, value, restProps } = api;
-    const { shouldRender } = useLazyContents({
-      currentValue: value ?? "",
-      lazyMode,
-      isLazy,
-    });
-
+    const { children, ...otherProps } = props;
     return (
-      <div
-        ref={ref}
-        {...rootProps}
-        {...restProps}
-        className={clsx(classNames.root, className)}
-      >
-        <ChipTabsContext.Provider
-          value={{
-            api,
-            classNames,
-            shouldRender,
-            variant,
-          }}
-        >
-          {props.children}
-        </ChipTabsContext.Provider>
-      </div>
+      <SeedChipTabs.Root ref={ref} {...otherProps}>
+        {children}
+      </SeedChipTabs.Root>
     );
   },
 );
-ChipTabs.displayName = "ChipTabs";
+ChipTabsRoot.displayName = "ChipTabsRoot";
 
-export const ChipTabTriggerList = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...otherProps }, ref) => {
-  const { api, classNames } = useChipTabsContext();
-  const { tabTriggerListProps, triggerSize } = api;
-  const { left } = triggerSize;
-  const { triggerList } = classNames;
+export interface ChipTabsListProps extends SeedChipTabs.ListProps {}
 
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  React.useImperativeHandle(ref, () => containerRef.current as HTMLDivElement);
+export const ChipTabsList = SeedChipTabs.List;
 
-  React.useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current?.scrollTo({
-        // NOTE: 27px is half of tab's min-width
-        left: left - 27,
-        behavior: "smooth",
-      });
-    }
-  }, [left]);
+export interface ChipTabsTriggerProps
+  extends Omit<SeedChipTabs.TriggerProps, "asChild"> {
+  notification?: boolean;
+}
 
-  return (
-    <div
-      ref={containerRef}
-      {...tabTriggerListProps}
-      className={clsx(triggerList, className)}
-      {...otherProps}
-    >
-      {children}
-    </div>
-  );
-});
-ChipTabTriggerList.displayName = "ChipTabTriggerList";
-
-export interface ChipTabTriggerProps
-  extends Assign<React.HTMLAttributes<HTMLButtonElement>, TriggerProps> {}
-
-export const ChipTabTrigger = React.forwardRef<
+export const ChipTabsTrigger = forwardRef<
   HTMLButtonElement,
-  ChipTabTriggerProps
->(({ className, children, value, isDisabled, ...otherProps }, ref) => {
-  const { api, variant } = useChipTabsContext();
-  const { getTabTriggerProps } = api;
-  const { label, root } = chipTab({
-    variant,
-  });
-  const { rootProps, labelProps } = getTabTriggerProps({ value, isDisabled });
-
+  ChipTabsTriggerProps
+>((props, ref) => {
+  const { children, notification, ...otherProps } = props;
   return (
-    <button
-      ref={ref}
-      {...rootProps}
-      className={clsx(root, className)}
-      {...otherProps}
-    >
-      <span className={label} {...labelProps}>
-        {children}
-      </span>
-    </button>
+    <SeedChipTabs.Trigger ref={ref} {...otherProps}>
+      <SeedChipTabs.TriggerLabel>{children}</SeedChipTabs.TriggerLabel>
+    </SeedChipTabs.Trigger>
   );
 });
-ChipTabTrigger.displayName = "ChipTabTrigger";
+ChipTabsTrigger.displayName = "ChipTabsTrigger";
 
-export const ChipTabContent = React.forwardRef<
-  HTMLDivElement,
-  Assign<React.HTMLAttributes<HTMLDivElement>, ContentProps>
->(({ className, children, value, ...otherProps }, ref) => {
-  const { api, classNames, shouldRender } = useChipTabsContext();
-  const { getTabContentProps } = api;
-  const { content } = classNames;
-  const tabContentProps = getTabContentProps({ value });
-  const isRender = shouldRender(value);
+export interface ChipTabsCarouselProps
+  extends Omit<SeedChipTabs.CarouselProps, "asChild"> {}
 
+export const ChipTabsCarousel = (props: ChipTabsCarouselProps) => {
+  const { children, ...otherProps } = props;
   return (
-    <div
-      ref={ref}
-      {...tabContentProps}
-      className={clsx(content, className)}
-      {...otherProps}
-    >
-      {isRender && children}
-    </div>
+    <SeedChipTabs.Carousel {...otherProps}>
+      <SeedChipTabs.CarouselCamera>{children}</SeedChipTabs.CarouselCamera>
+    </SeedChipTabs.Carousel>
   );
-});
-ChipTabContent.displayName = "ChipTabContent";
+};
+ChipTabsCarousel.displayName = "ChipTabsCarousel";
+
+export interface ChipTabsContentProps extends SeedChipTabs.ContentProps {}
+
+export const ChipTabsContent = SeedChipTabs.Content;

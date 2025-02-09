@@ -44,6 +44,14 @@
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
+                },
+                "transformDuration": {
+                  "type": "duration",
+                  "value": "$duration.s4"
+                },
+                "transformTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.easing"
                 }
               }
             }
@@ -63,7 +71,16 @@
               "root": {
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.spacing-x.global-gutter"
+                }
+              },
+              "indicator": {
+                "insetX": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 0,
+                    "unit": "px"
+                  }
                 }
               }
             }
@@ -87,6 +104,12 @@
                     "value": 0,
                     "unit": "px"
                   }
+                }
+              },
+              "indicator": {
+                "insetX": {
+                  "type": "dimension",
+                  "value": "$dimension.spacing-x.global-gutter"
                 }
               }
             }

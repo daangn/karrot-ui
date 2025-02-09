@@ -1,28 +1,26 @@
-import { Tabs, TabContent, TabContentList, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
+import { TabsRoot, TabsContent, TabsTrigger, TabsList } from "seed-design/ui/tabs";
 
 export default function TabsDisabled() {
   return (
     <div style={{ width: "360px" }}>
-      <Tabs defaultValue="1">
-        <TabTriggerList>
-          <TabTrigger value="1">라벨1</TabTrigger>
-          <TabTrigger value="2" isDisabled>
+      <TabsRoot defaultValue="1">
+        <TabsList>
+          <TabsTrigger value="1">라벨1</TabsTrigger>
+          <TabsTrigger value="2" disabled>
             라벨2
-          </TabTrigger>
-          <TabTrigger value="3">라벨3</TabTrigger>
-        </TabTriggerList>
-        <TabContentList>
-          <TabContent value="1">
-            <Content>Content 1</Content>
-          </TabContent>
-          <TabContent value="2">
-            <Content>Content 2</Content>
-          </TabContent>
-          <TabContent value="3">
-            <Content>Content 3</Content>
-          </TabContent>
-        </TabContentList>
-      </Tabs>
+          </TabsTrigger>
+          <TabsTrigger value="3">라벨3</TabsTrigger>
+        </TabsList>
+        <TabsContent value="1">
+          <Content>Content 1</Content>
+        </TabsContent>
+        <TabsContent value="2">
+          <Content>Content 2</Content>
+        </TabsContent>
+        <TabsContent value="3">
+          <Content>Content 3</Content>
+        </TabsContent>
+      </TabsRoot>
     </div>
   );
 }

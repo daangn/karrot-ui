@@ -26,10 +26,14 @@
     "build": "bun build.mjs && tsc"
   },
   "dependencies": {
+    "@radix-ui/react-compose-refs": "^1.1.1",
+    "@radix-ui/react-use-callback-ref": "^1.1.0",
     "@radix-ui/react-use-controllable-state": "1.1.0",
+    "@radix-ui/react-use-layout-effect": "^1.1.0",
     "@radix-ui/react-use-size": "^1.1.0",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
-    "@use-gesture/react": "^10.3.1"
+    "embla-carousel-auto-height": "^8.5.2",
+    "embla-carousel-react": "^8.5.2"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

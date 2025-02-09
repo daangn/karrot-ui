@@ -36,7 +36,7 @@
               "enabled"
             ],
             "slots": {
-              "triggerList": {
+              "root": {
                 "gap": {
                   "type": "dimension",
                   "value": {
@@ -59,7 +59,7 @@
               "enabled"
             ],
             "slots": {
-              "triggerList": {
+              "root": {
                 "gap": {
                   "type": "dimension",
                   "value": {

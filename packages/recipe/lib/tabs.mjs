@@ -8,16 +8,16 @@ const tabsSlotNames = [
     "tabs__root"
   ],
   [
-    "triggerList",
-    "tabs__triggerList"
+    "list",
+    "tabs__list"
   ],
   [
-    "contentList",
-    "tabs__contentList"
+    "carousel",
+    "tabs__carousel"
   ],
   [
-    "contentCamera",
-    "tabs__contentCamera"
+    "carouselCamera",
+    "tabs__carouselCamera"
   ],
   [
     "content",
@@ -26,19 +26,36 @@ const tabsSlotNames = [
   [
     "indicator",
     "tabs__indicator"
+  ],
+  [
+    "trigger",
+    "tabs__trigger"
+  ],
+  [
+    "triggerLabel",
+    "tabs__triggerLabel"
+  ],
+  [
+    "triggerNotification",
+    "tabs__triggerNotification"
   ]
 ];
 
 const defaultVariant = {
-  "layout": "hug",
+  "triggerLayout": "fill",
+  "contentLayout": "hug",
   "size": "small",
-  "fixTriggerList": false
+  "stickyList": false
 };
 
 const compoundVariants = [];
 
 export const tabsVariantMap = {
-  "layout": [
+  "triggerLayout": [
+    "fill",
+    "hug"
+  ],
+  "contentLayout": [
     "fill",
     "hug"
   ],
@@ -46,7 +63,7 @@ export const tabsVariantMap = {
     "small",
     "medium"
   ],
-  "fixTriggerList": [
+  "stickyList": [
     true,
     false
   ]

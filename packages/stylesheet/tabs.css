@@ -1,82 +1,173 @@
 .tabs__root {
-    overflow: hidden;
-}
-.tabs__triggerList {
     position: relative;
+}
+.tabs__list {
     display: flex;
-    flex-direction: row;
+    position: relative;
+    isolation: isolate;
     flex-wrap: nowrap;
     align-items: stretch;
     align-content: stretch;
     overflow-x: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    background: var(--seed-v3-color-bg-layer-default);
-    border-bottom: 1px solid var(--seed-v3-color-stroke-neutral);
 }
-.tabs__triggerList::-webkit-scrollbar {
+.tabs__list::-webkit-scrollbar {
     display: none;
 }
-.tabs__contentList {
-    width: 100%;
+.tabs__list {
+    background: var(--seed-v3-color-bg-layer-default);
+    box-shadow: inset 0 -1px var(--seed-v3-color-stroke-neutral);
 }
-.tabs__contentCamera {
+.tabs__carousel {
+    display: block;
+    overflow: hidden;
+}
+.tabs__carouselCamera {
     display: flex;
-    width: 100%;
-    height: 100%;
+}
+.tabs__carouselCamera[data-auto-height] {
+    align-items: flex-start;
 }
 .tabs__content {
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
+    flex: 0 0 100%;
+    min-width: 0;
+    transform: translate3d(0, 0, 0);
     overflow-y: auto;
     overflow-x: hidden;
+}
+.tabs__content:not([data-carousel]):not(:is(:selected, [data-selected])) {
+    display: none;
 }
 .tabs__indicator {
     position: absolute;
     will-change: left, width;
-    transition: left 0.2s cubic-bezier(0.15, 0.3, 0.25, 1), width 0.2s cubic-bezier(0.15, 0.3, 0.25, 1);
-    left: var(--seed-design-tabs-indicator-left, 0px);
-    width: var(--seed-design-tabs-indicator-width, 0px);
+    transition-property: left, width;
+    transition-duration: var(--seed-v3-duration-s4);
+    transition-timing-function: var(--seed-v3-timing-function-easing);
+    left: var(--indicator-left, 0px);
+    width: var(--indicator-width, 0px);
     color: var(--seed-v3-color-fg-neutral);
     border-bottom: 2px solid var(--seed-v3-color-fg-neutral);
     bottom: 0;
 }
-.tabs__triggerList--layout_fill {
-    padding: 0px 0px;
+.tabs__indicator[data-ssr] {
+    display: none;
+}
+.tabs__trigger {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    border: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    white-space: nowrap;
+}
+.tabs__trigger:is(:disabled, [disabled], [data-disabled]) {
+    cursor: not-allowed;
+}
+.tabs__trigger:is(:selected, [data-selected])[data-ssr]:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--seed-v3-color-fg-neutral);
+}
+.tabs__triggerLabel {
+    position: relative;
+    color: var(--seed-v3-color-fg-neutral-subtle);
+}
+.tabs__triggerLabel:is(:selected, [data-selected]) {
+    color: var(--seed-v3-color-fg-neutral);
+}
+.tabs__triggerLabel:is(:disabled, [disabled], [data-disabled]) {
+    color: var(--seed-v3-color-fg-disabled);
+}
+.tabs__triggerNotification {
+    position: absolute;
+    top: 0;
+    right: calc(-1 * var(--seed-v3-dimension-s1) - var(--seed-v3-dimension-s0_5));
+    align-self: flex-start;
+    background-color: var(--seed-v3-color-bg-brand-solid);
+    width: var(--seed-v3-dimension-s1);
+    height: var(--seed-v3-dimension-s1);
+    border-radius: var(--seed-v3-radius-full);
+}
+.tabs__list--triggerLayout_fill {
+    padding-inline: 0px;
     justify-content: space-around;
 }
-.tabs__indicator--layout_fill {
-    left: calc(var(--seed-design-tabs-indicator-left, 0px) + 16px);
-    width: calc(var(--seed-design-tabs-indicator-width, 0px) - 32px);
+.tabs__indicator--triggerLayout_fill {
+    left: calc(var(--indicator-left, 0px) + var(--seed-v3-dimension-spacing-x-global-gutter));
+    width: calc(var(--indicator-width, 0px) - 2 * var(--seed-v3-dimension-spacing-x-global-gutter));
 }
-.tabs__triggerList--layout_hug {
-    padding: 0px var(--seed-v3-dimension-s4);
+.tabs__trigger--triggerLayout_fill {
+    flex: 1;
+}
+.tabs__list--triggerLayout_hug {
+    padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
     justify-content: flex-start;
 }
-.tabs__indicator--layout_hug {
-    left: calc(var(--seed-design-tabs-indicator-left, 0px));
-    width: calc(var(--seed-design-tabs-indicator-width, 0px));
+.tabs__indicator--triggerLayout_hug {
+    left: calc(var(--indicator-left, 0px) + 0px);
+    width: calc(var(--indicator-width, 0px) - 2 * 0px);
+}
+.tabs__root--contentLayout_fill {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.tabs__carousel--contentLayout_fill {
+    flex: 1;
+}
+.tabs__carouselCamera--contentLayout_fill {
+    height: 100%;
+    align-items: stretch;
+}
+.tabs__root--contentLayout_hug {
+    display: block;
 }
 .tabs__root--size_small {
-    --seed-design-tabs-trigger-list-height: 40px;
+    --tabs-list-height: 40px;
 }
-.tabs__triggerList--size_small {
-    height: 40px;
+.tabs__list--size_small {
+    min-height: 40px;
+}
+.tabs__trigger--size_small {
+    min-height: 40px;
+    padding-inline: var(--seed-v3-dimension-s2_5);
+    padding-block: var(--seed-v3-dimension-s2_5);
+}
+.tabs__triggerLabel--size_small {
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
+    font-weight: var(--seed-v3-font-weight-bold);
 }
 .tabs__root--size_medium {
-    --seed-design-tabs-trigger-list-height: 44px;
+    --tabs-list-height: 44px;
 }
-.tabs__triggerList--size_medium {
-    height: 44px;
+.tabs__list--size_medium {
+    min-height: 44px;
 }
-.tabs__root--fixTriggerList_true {
+.tabs__trigger--size_medium {
+    min-height: 44px;
+    padding-inline: var(--seed-v3-dimension-s2_5);
+    padding-block: var(--seed-v3-dimension-s2_5);
+}
+.tabs__triggerLabel--size_medium {
+    font-size: var(--seed-v3-font-size-s5);
+    line-height: var(--seed-v3-line-height-s5);
+    font-weight: var(--seed-v3-font-weight-bold);
+}
+.tabs__root--stickyList_true {
     position: relative;
 }
-.tabs__triggerList--fixTriggerList_true {
+.tabs__list--stickyList_true {
     position: sticky;
     top: 0;
-}
-.tabs__contentList--fixTriggerList_true {
-    height: calc(100% - var(--seed-design-tabs-trigger-list-height));
+    z-index: 1;
 }

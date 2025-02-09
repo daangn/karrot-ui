@@ -1,26 +1,26 @@
-import { Tabs, TabContent, TabContentList, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
+import { TabsRoot, TabsContent, TabsTrigger, TabsList, TabsCarousel } from "seed-design/ui/tabs";
 
 export default function TabsDynamicHeight() {
   return (
     <div style={{ width: "360px" }}>
-      <Tabs defaultValue="1" lazyMode="unmount" isLazy={true} isSwipeable={false}>
-        <TabTriggerList>
-          <TabTrigger value="1">라벨1</TabTrigger>
-          <TabTrigger value="2">라벨2</TabTrigger>
-          <TabTrigger value="3">라벨3</TabTrigger>
-        </TabTriggerList>
-        <TabContentList>
-          <TabContent value="1">
+      <TabsRoot defaultValue="1" lazyMount unmountOnExit>
+        <TabsList>
+          <TabsTrigger value="1">라벨1</TabsTrigger>
+          <TabsTrigger value="2">라벨2</TabsTrigger>
+          <TabsTrigger value="3">라벨3</TabsTrigger>
+        </TabsList>
+        <TabsCarousel autoHeight>
+          <TabsContent value="1">
             <Content height="100px">Content 1</Content>
-          </TabContent>
-          <TabContent value="2">
+          </TabsContent>
+          <TabsContent value="2">
             <Content height="200px">Content 2</Content>
-          </TabContent>
-          <TabContent value="3">
+          </TabsContent>
+          <TabsContent value="3">
             <Content height="300px">Content 3</Content>
-          </TabContent>
-        </TabContentList>
-      </Tabs>
+          </TabsContent>
+        </TabsCarousel>
+      </TabsRoot>
       <div style={{ height: "100px", backgroundColor: "gray" }}>아래 컨텐츠</div>
     </div>
   );

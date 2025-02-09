@@ -3,6 +3,14 @@ declare interface ChipTabsVariant {
   * @default neutralSolid
   */
   variant: "neutralSolid" | "brandSolid";
+/**
+  * @default hug
+  */
+  contentLayout: "fill" | "hug";
+/**
+  * @default false
+  */
+  stickyList: boolean;
 }
 
 declare type ChipTabsVariantMap = {
@@ -11,7 +19,7 @@ declare type ChipTabsVariantMap = {
 
 export declare type ChipTabsVariantProps = Partial<ChipTabsVariant>;
 
-export declare type ChipTabsSlotName = "root" | "triggerList" | "contentList" | "contentCamera" | "content";
+export declare type ChipTabsSlotName = "root" | "list" | "carousel" | "carouselCamera" | "content" | "trigger" | "triggerLabel";
 
 export declare const chipTabsVariantMap: ChipTabsVariantMap;
 

@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import {
-  ChipTabs,
-  ChipTabsProps,
-  ChipTabTrigger,
-  ChipTabTriggerList,
-} from "seed-design/ui/chip-tabs";
+import { ChipTabs, ChipTabsProps, ChipTabsTrigger, ChipTabsList } from "seed-design/ui/chip-tabs";
 
 import { chipTabsVariantMap } from "@seed-design/recipe/chipTabs";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -15,11 +10,11 @@ import { createStoryWithParameters } from "@/stories/utils/parameters";
 const Component = (props: ChipTabsProps) => {
   return (
     <ChipTabs {...props}>
-      <ChipTabTriggerList>
-        <ChipTabTrigger value="1">Tab 1</ChipTabTrigger>
-        <ChipTabTrigger value="2">Tab 2</ChipTabTrigger>
-        <ChipTabTrigger value="3">Tab 3</ChipTabTrigger>
-      </ChipTabTriggerList>
+      <ChipTabsList>
+        <ChipTabsTrigger value="1">Tab 1</ChipTabsTrigger>
+        <ChipTabsTrigger value="2">Tab 2</ChipTabsTrigger>
+        <ChipTabsTrigger value="3">Tab 3</ChipTabsTrigger>
+      </ChipTabsList>
     </ChipTabs>
   );
 };

@@ -7,4 +7,5 @@ export * from "@seed-design/react-pull-to-refresh";
 export * from "@seed-design/react-radio-group";
 export * from "@seed-design/react-snackbar";
 export * from "@seed-design/react-switch";
+export * from "@seed-design/react-tabs";
 export * from "@seed-design/react-toggle";

@@ -10,9 +10,9 @@ data:
         paddingX: $dimension.s4
   variant=neutral solid:
     enabled:
-      triggerList:
+      root:
         gap: 0px
   variant=brand solid:
     enabled:
-      triggerList:
+      root:
         gap: 8px

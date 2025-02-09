@@ -2,8 +2,7 @@
   "name": "text-field",
   "dependencies": [
     "@seed-design/react",
-    "@daangn/react-monochrome-icon",
-    "@radix-ui/react-slot"
+    "@daangn/react-monochrome-icon"
   ],
   "registries": [
     {

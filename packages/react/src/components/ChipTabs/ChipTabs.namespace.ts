@@ -1,0 +1,16 @@
+export {
+  ChipTabsContent as Content,
+  ChipTabsList as List,
+  ChipTabsRoot as Root,
+  ChipTabsCarouselCamera as CarouselCamera,
+  ChipTabsCarousel as Carousel,
+  ChipTabsTrigger as Trigger,
+  ChipTabsTriggerLabel as TriggerLabel,
+  type ChipTabsContentProps as ContentProps,
+  type ChipTabsListProps as ListProps,
+  type ChipTabsRootProps as RootProps,
+  type ChipTabsCarouselCameraProps as CarouselCameraProps,
+  type ChipTabsCarouselProps as CarouselProps,
+  type ChipTabsTriggerLabelProps as TriggerLabelProps,
+  type ChipTabsTriggerProps as TriggerProps,
+} from "./ChipTabs";

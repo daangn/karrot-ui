@@ -1,7 +1,7 @@
 "use client";
 
 import { RefObject, useRef, useState } from "react";
-import { TabContent, TabContentList, Tabs, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
+import { TabsCarousel, TabsContent, TabsList, TabsRoot, TabsTrigger } from "seed-design/ui/tabs";
 
 export default function TabsScrollTop() {
   const [currentTab, setCurrentTab] = useState("1");
@@ -18,24 +18,24 @@ export default function TabsScrollTop() {
 
   return (
     <div style={{ width: "360px" }}>
-      <Tabs layout="fill" value={currentTab} onValueChange={setCurrentTab} isSwipeable={false}>
-        <TabTriggerList>
-          <TabTrigger onClick={() => handleTriggerClick("1")} value="1">
+      <TabsRoot triggerLayout="fill" value={currentTab} onValueChange={setCurrentTab}>
+        <TabsList>
+          <TabsTrigger onClick={() => handleTriggerClick("1")} value="1">
             라벨1
-          </TabTrigger>
-          <TabTrigger onClick={() => handleTriggerClick("2")} value="2">
+          </TabsTrigger>
+          <TabsTrigger onClick={() => handleTriggerClick("2")} value="2">
             라벨2
-          </TabTrigger>
-        </TabTriggerList>
-        <TabContentList>
-          <TabContent ref={contentRefs["1"]} value="1" style={{ maxHeight: "200px" }}>
+          </TabsTrigger>
+        </TabsList>
+        <TabsCarousel swipeable>
+          <TabsContent ref={contentRefs["1"]} value="1" style={{ maxHeight: "200px" }}>
             <Content height="1000px">Content 1</Content>
-          </TabContent>
-          <TabContent ref={contentRefs["2"]} value="2" style={{ maxHeight: "200px" }}>
+          </TabsContent>
+          <TabsContent ref={contentRefs["2"]} value="2" style={{ maxHeight: "200px" }}>
             <Content height="1000px">Content 2</Content>
-          </TabContent>
-        </TabContentList>
-      </Tabs>
+          </TabsContent>
+        </TabsCarousel>
+      </TabsRoot>
     </div>
   );
 }

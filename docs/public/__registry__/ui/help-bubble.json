@@ -1,8 +1,7 @@
 {
   "name": "help-bubble",
   "dependencies": [
-    "@seed-design/react",
-    "@radix-ui/react-slot"
+    "@seed-design/react"
   ],
   "registries": [
     {

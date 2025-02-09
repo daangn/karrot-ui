@@ -49,16 +49,16 @@ function Tabs(props: React.PropsWithChildren<UseTabsProps>) {
   );
 }
 
-function TabTriggerList(props: React.PropsWithChildren) {
+function TabsList(props: React.PropsWithChildren) {
   const { api } = useTabsContext();
-  const { tabTriggerListProps } = api;
+  const { listProps: tabTriggerListProps } = api;
   return <div {...tabTriggerListProps}>{props.children}</div>;
 }
 
-function TabTrigger(props: React.PropsWithChildren<TriggerProps>) {
+function TabsTrigger(props: React.PropsWithChildren<TriggerProps>) {
   const { api } = useTabsContext();
-  const { getTabTriggerProps } = api;
-  const { labelProps, notificationProps, rootProps } = getTabTriggerProps(props);
+  const { getTriggerProps: getTabsTriggerProps } = api;
+  const { labelProps, notificationProps, rootProps } = getTabsTriggerProps(props);
 
   return (
     <button {...rootProps}>
@@ -78,9 +78,9 @@ function TabContentList(props: React.PropsWithChildren) {
   );
 }
 
-function TabContent(props: React.PropsWithChildren<ContentProps>) {
+function TabsContent(props: React.PropsWithChildren<ContentProps>) {
   const { api } = useTabsContext();
-  const { getTabContentProps } = api;
+  const { getContentProps: getTabContentProps } = api;
   const tabContentProps = getTabContentProps(props);
 
   return <div {...tabContentProps}>{props.children}</div>;
@@ -98,18 +98,18 @@ function UncontrolledTabs({
 }: { items: Record<string, TabItem>; tabsProps: UseTabsProps }) {
   return (
     <Tabs {...tabsProps}>
-      <TabTriggerList>
+      <TabsList>
         {Object.values(items).map(({ value, label, ...restProps }) => (
-          <TabTrigger key={value} value={value} {...restProps}>
+          <TabsTrigger key={value} value={value} {...restProps}>
             {label}
-          </TabTrigger>
+          </TabsTrigger>
         ))}
-      </TabTriggerList>
+      </TabsList>
       <TabContentList>
         {Object.values(items).map(({ value, content }) => (
-          <TabContent key={content} value={value}>
+          <TabsContent key={content} value={value}>
             {content}
-          </TabContent>
+          </TabsContent>
         ))}
       </TabContentList>
     </Tabs>

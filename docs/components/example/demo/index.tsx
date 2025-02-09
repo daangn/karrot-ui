@@ -4,7 +4,7 @@ import { useState } from "react";
 import { type ActivityComponentType } from "@stackflow/react/future";
 import { AppBar, AppBarMain } from "seed-design/ui/app-bar";
 import { AppScreen, AppScreenContent } from "seed-design/ui/app-screen";
-import { Tabs, TabTrigger, TabTriggerList } from "seed-design/ui/tabs";
+import { TabsRoot, TabsTrigger, TabsList } from "seed-design/ui/tabs";
 import { ErrorState } from "seed-design/ui/error-state";
 import { SnackbarProvider } from "seed-design/ui/snackbar";
 import { Recommendations } from "@/components/example/demo/tabs/recommendations";
@@ -41,21 +41,21 @@ const DemoActivity: ActivityComponentType<"demo/index"> = () => {
           <AppBarMain>Demo</AppBarMain>
         </AppBar>
         <AppScreenContent>
-          <Tabs
+          <TabsRoot
             value={tab}
             onValueChange={(value) => setTab(value as Tab)}
-            layout="fill"
+            triggerLayout="fill"
             size="medium"
-            fixTriggerList
+            stickyList
             style={{ height: "100%", overflowY: "auto" }}
           >
-            <TabTriggerList>
+            <TabsList>
               {TABS.map(({ label, value }) => (
-                <TabTrigger key={value} value={value}>
+                <TabsTrigger key={value} value={value}>
                   {label}
-                </TabTrigger>
+                </TabsTrigger>
               ))}
-            </TabTriggerList>
+            </TabsList>
             {tab === "recommendations" && <Recommendations />}
             {tab === "subscriptions" && (
               <ErrorState
@@ -67,7 +67,7 @@ const DemoActivity: ActivityComponentType<"demo/index"> = () => {
                 }}
               />
             )}
-          </Tabs>
+          </TabsRoot>
         </AppScreenContent>
       </AppScreen>
     </SnackbarProvider>

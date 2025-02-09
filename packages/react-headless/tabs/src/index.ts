@@ -1,9 +1,25 @@
-import { useTabs } from "./useTabs";
-import { useLazyContents, type UseLazyContentsProps } from "./useLazyContents";
-import { useSwipeable } from "./useSwipeable";
+export {
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsRoot,
+  TabsCarouselCamera,
+  TabsCarousel,
+  TabsTrigger,
+  type TabsContentProps,
+  type TabsIndicatorProps,
+  type TabsListProps,
+  type TabsRootProps,
+  type TabsCarouselCameraProps,
+  type TabsCarouselProps,
+  type TabsTriggerProps,
+} from "./Tabs";
 
-import type { ContentProps, TriggerProps, UseTabsProps } from "./types";
-import type { UseSwipeableProps } from "./useSwipeable";
+export * as Tabs from "./Tabs.namespace";
 
-export { useLazyContents, useTabs, useSwipeable };
-export type { ContentProps, TriggerProps, UseTabsProps, UseLazyContentsProps, UseSwipeableProps };
+export { useTabsContext, type UseTabsContext } from "./useTabsContext";
+export {
+  useTabsCarouselContext,
+  type UseTabsCarouselContext,
+} from "./useTabsCarouselContext";
+export { useTabsTriggerContext, type UseTabsTriggerContext } from "./useTabsTriggerContext";

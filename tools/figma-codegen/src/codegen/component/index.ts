@@ -415,8 +415,8 @@ const chipTabsHandler: ComponentHandler<ChipTabsProperties> = {
       chipTabsItem.componentProperties.State.value.split("-").includes("Selected"),
     );
 
-    const chipTabTriggerList = createElement(
-      "ChipTabTriggerList",
+    const chipTabsList = createElement(
+      "ChipTabsList",
       undefined,
       await Promise.all(chipTabsItems.map(chipTabsItemHandler.codegen)),
     );
@@ -428,7 +428,7 @@ const chipTabsHandler: ComponentHandler<ChipTabsProperties> = {
       }),
     };
 
-    return createElement("ChipTabs", commonProps, chipTabTriggerList);
+    return createElement("ChipTabs", commonProps, chipTabsList);
   },
 };
 
@@ -445,7 +445,7 @@ const chipTabsItemHandler: ComponentHandler<ChipTabsItemProperties> = {
       }),
     };
 
-    return createElement("ChipTabTrigger", commonProps, props["Label#8876:0"].value);
+    return createElement("ChipTabsTrigger", commonProps, props["Label#8876:0"].value);
   },
 };
 
@@ -1155,7 +1155,7 @@ const tabsHandler: ComponentHandler<TabsProperties> = {
     )?.node;
 
     const tabTriggerList = createElement(
-      "TabTriggerList",
+      "TabsList",
       undefined,
       await Promise.all(
         tabsItems.map(({ layout, node }) => {
@@ -1175,7 +1175,7 @@ const tabsHandler: ComponentHandler<TabsProperties> = {
       tabsItems.map(({ node }) => {
         const value = node.componentProperties["Label#4478:2"].value;
 
-        return createElement("TabContent", { value }, value);
+        return createElement("TabsContent", { value }, value);
       }),
     );
 
@@ -1207,7 +1207,7 @@ const tabsHugItemHandler: ComponentHandler<TabsHugItemProperties> = {
       }),
     };
 
-    return createElement("TabTrigger", commonProps, props["Label#4478:2"].value);
+    return createElement("TabsTrigger", commonProps, props["Label#4478:2"].value);
   },
 };
 
@@ -1227,7 +1227,7 @@ const tabsFillItemHandler: ComponentHandler<TabsFillItemProperties> = {
       }),
     };
 
-    return createElement("TabTrigger", commonProps, props["Label#4478:2"].value);
+    return createElement("TabsTrigger", commonProps, props["Label#4478:2"].value);
   },
 };
 
