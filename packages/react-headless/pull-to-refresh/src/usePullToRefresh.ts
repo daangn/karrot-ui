@@ -45,6 +45,8 @@ interface UsePullToRefreshStateProps {
 interface PullToRefreshContext {
   y0: number;
 
+  y: number;
+
   displacement: number;
 
   displacementRatio: number;
@@ -55,6 +57,7 @@ export type PullToRefreshState = "idle" | "pulling" | "ready" | "loading";
 // We use useSyncExternalStore to only re-render indicator area on drag
 const contextStore = new Store<PullToRefreshContext>({
   y0: 0,
+  y: -1,
   displacement: 0,
   displacementRatio: 0,
 });
@@ -73,9 +76,10 @@ function usePullToRefreshState(props: UsePullToRefreshStateProps) {
   const [state, setState] = useState<PullToRefreshState>("idle");
   const rootRef = useRef<HTMLDivElement | null>(null);
 
-  function setContext({ y0, displacement }: Omit<PullToRefreshContext, "displacementRatio">) {
+  function setContext({ y0, y, displacement }: Omit<PullToRefreshContext, "displacementRatio">) {
     contextStore.setState({
       y0,
+      y,
       displacement,
       displacementRatio: Math.min(displacement / threshold, 1),
     });
@@ -85,16 +89,19 @@ function usePullToRefreshState(props: UsePullToRefreshStateProps) {
   const events = {
     move: ({ y, scrollTop }: { y: number; scrollTop: number }) => {
       if (state === "idle") {
-        if (scrollTop <= 0) {
-          setContext({ y0: y, displacement: 0 });
+        const ctx = contextStore.getState();
+        if (scrollTop <= 0 && ctx.y !== -1 && y > ctx.y) {
+          setContext({ y0: y, y, displacement: 0 });
           props.onPtrPullStart?.(contextStore.getState());
           setState("pulling");
+        } else {
+          contextStore.setState({ ...ctx, y });
         }
       }
       if (state === "pulling" || state === "ready") {
         const { y0 } = contextStore.getState();
         const displacement = (y - y0) * displacementMultiplier;
-        setContext({ y0, displacement });
+        setContext({ y0, y, displacement });
         props.onPtrPullMove?.(contextStore.getState());
 
         if (displacement > threshold) {
@@ -111,14 +118,14 @@ function usePullToRefreshState(props: UsePullToRefreshStateProps) {
       }
       if (state === "ready" && props.onPtrRefresh) {
         setState("loading");
-        setContext({ y0: 0, displacement: threshold });
+        setContext({ y0: 0, y: -1, displacement: threshold });
         props.onPtrRefresh().then(() => {
           setState("idle");
-          setContext({ y0: 0, displacement: 0 });
+          setContext({ y0: 0, y: -1, displacement: 0 });
         });
       } else {
         setState("idle");
-        setContext({ y0: 0, displacement: 0 });
+        setContext({ y0: 0, y: -1, displacement: 0 });
       }
     },
   };
