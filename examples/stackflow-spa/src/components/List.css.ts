@@ -29,7 +29,7 @@ export const title = style({
   color: vars.$color.fg.neutral,
   fontSize: vars.$fontSize.s5,
   lineHeight: vars.$lineHeight.s5,
-  fontWeight: vars.$fontWeight.medium,
+  fontWeight: vars.$fontWeight.regular,
 });
 
 export const icon = style({
@@ -40,4 +40,22 @@ export const icon = style({
   color: vars.$color.fg.neutralMuted,
   width: vars.$dimension.s4,
   height: vars.$dimension.s4,
+});
+
+export const listItemGroup = style({
+  display: "flex",
+  flexDirection: "column",
+  borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
+
+  marginTop: vars.$dimension.s6,
+  fontWeight: vars.$fontWeight.bold,
+});
+
+export const listItemGroupTitle = style({
+  color: vars.$color.fg.neutral,
+  fontSize: vars.$fontSize.s4,
+  lineHeight: vars.$lineHeight.s5,
+
+  paddingInline: vars.$dimension.s4,
+  marginBottom: vars.$dimension.s1,
 });

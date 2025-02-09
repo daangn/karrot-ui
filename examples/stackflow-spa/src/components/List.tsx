@@ -29,3 +29,22 @@ export const ListItem = forwardRef<HTMLButtonElement, ListItemProps>((props, ref
   );
 });
 ListItem.displayName = "ListItem";
+
+interface ListItemGroupProps {
+  title: string;
+}
+
+export const ListItemGroup = forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<ListItemGroupProps>
+>((props, ref) => {
+  const { children, title, ...otherProps } = props;
+
+  return (
+    <div ref={ref} className={styles.listItemGroup} {...otherProps}>
+      <div className={styles.listItemGroupTitle}>{title}</div>
+      {children}
+    </div>
+  );
+});
+ListItemGroup.displayName = "ListItemGroup";
