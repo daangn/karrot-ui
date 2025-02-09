@@ -38,6 +38,8 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ),
     ActivityReactionButton: React.lazy(() => import("../activities/ActivityReactionButton")),
     ActivityErrorState: React.lazy(() => import("../activities/ActivityErrorState")),
+    ActivityFab: React.lazy(() => import("../activities/ActivityFab")),
+    ActivityExtendedFab: React.lazy(() => import("../activities/ActivityExtendedFab")),
     ActivityNotFound,
   },
   plugins: [
@@ -77,6 +79,8 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityMannerTempLevel: "/manner-temp-level",
         ActivityAvatarStack: "/avatar-stack",
         ActivityAvatar: "/avatar",
+        ActivityFab: "/fab",
+        ActivityExtendedFab: "/extended-fab",
         ActivityReactionButton: "/reaction-button",
         ActivityNotFound: "/404",
       },

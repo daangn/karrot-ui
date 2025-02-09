@@ -47,17 +47,6 @@ const ActivityHome: ActivityComponentType = () => {
             <ListItem onClick={() => push("ActivityTransparentBar", {})} title="TransparentBar" />
           </ListItemGroup>
 
-          <ListItemGroup title="Buttons">
-            <ListItem onClick={() => push("ActivityActionButton", {})} title="ActionButton" />
-            <ListItem onClick={() => push("ActivityToggleButton", {})} title="ToggleButton" />
-            <ListItem onClick={() => push("ActivityReactionButton", {})} title="ReactionButton" />
-          </ListItemGroup>
-
-          <ListItemGroup title="Chips">
-            <ListItem onClick={() => push("ActivityActionChip", {})} title="ActionChip" />
-            <ListItem onClick={() => push("ActivityControlChip", {})} title="ControlChip" />
-          </ListItemGroup>
-
           <ListItemGroup title="Avatars">
             <ListItem onClick={() => push("ActivityAvatarStack", {})} title="AvatarStack" />
             <ListItem onClick={() => push("ActivityAvatar", {})} title="Avatar" />
@@ -97,6 +86,12 @@ const ActivityHome: ActivityComponentType = () => {
             />
           </ListItemGroup>
 
+          <ListItemGroup title="Buttons">
+            <ListItem onClick={() => push("ActivityActionButton", {})} title="ActionButton" />
+            <ListItem onClick={() => push("ActivityToggleButton", {})} title="ToggleButton" />
+            <ListItem onClick={() => push("ActivityReactionButton", {})} title="ReactionButton" />
+          </ListItemGroup>
+
           <ListItemGroup title="BottomSheets">
             <ListItem onClick={() => push("ActivityBottomSheet", {})} title="BottomSheet" />
             <DialogPushTrigger
@@ -117,6 +112,16 @@ const ActivityHome: ActivityComponentType = () => {
             >
               <ListItem title="ExtendedActionSheet" />
             </DialogPushTrigger>
+          </ListItemGroup>
+
+          <ListItemGroup title="Chips">
+            <ListItem onClick={() => push("ActivityActionChip", {})} title="ActionChip" />
+            <ListItem onClick={() => push("ActivityControlChip", {})} title="ControlChip" />
+          </ListItemGroup>
+
+          <ListItemGroup title="Fabs">
+            <ListItem onClick={() => push("ActivityFab", {})} title="Fab" />
+            <ListItem onClick={() => push("ActivityExtendedFab", {})} title="ExtendedFab" />
           </ListItemGroup>
 
           <ListItemGroup title="Snackbars">
