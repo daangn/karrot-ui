@@ -262,3 +262,57 @@ export type TextFieldProperties = InferFromDefinition<
 export type ToggleButtonProperties = InferFromDefinition<
   typeof metadata.toggleButton.componentPropertyDefinitions
 >;
+
+export type AppBarProperties = InferFromDefinition<
+  typeof metadata.standardNavigation.componentPropertyDefinitions
+>;
+
+export type AppBarMainProperties = InferFromDefinition<{
+  "Show Right#16958:13": {
+    type: "BOOLEAN";
+    defaultValue: false;
+  };
+  "Subtitle#16958:9": {
+    type: "TEXT";
+    defaultValue: "서브타이틀";
+  };
+  "Logo#16958:5": {
+    type: "INSTANCE_SWAP";
+    defaultValue: "1574:3942";
+    preferredValues: [
+      {
+        type: "COMPONENT_SET";
+        key: "c7dab3f6d0df0a150564e696c0df00bd43ffef3f";
+      },
+    ];
+  };
+  "Show Left#16958:17": {
+    type: "BOOLEAN";
+    defaultValue: false;
+  };
+  "Title#16944:0": {
+    type: "TEXT";
+    defaultValue: "타이틀";
+  };
+  Type: {
+    type: "VARIANT";
+    defaultValue: "Title";
+    variantOptions: ["Title", "Title-Subtitle", "Logo"];
+  };
+}>;
+
+export type AppBarLeftProperties = InferFromDefinition<{
+  Action: {
+    type: "VARIANT";
+    defaultValue: "Back";
+    variantOptions: ["Back", "Close", "Other"];
+  };
+}>;
+
+export type AppBarRightProperties = InferFromDefinition<{
+  Type: {
+    type: "VARIANT";
+    defaultValue: "1 Icon";
+    variantOptions: ["1 Icon", "2 Icons", "3 Icons", "1 Text"];
+  };
+}>;
