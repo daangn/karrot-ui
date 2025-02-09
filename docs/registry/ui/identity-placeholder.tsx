@@ -11,6 +11,9 @@ export interface IdentityPlaceholderProps
   extends React.HTMLAttributes<HTMLDivElement>,
     IdentityPlaceholderVariantProps {}
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/identity-placeholder
+ */
 export const IdentityPlaceholder = React.forwardRef<
   HTMLDivElement,
   IdentityPlaceholderProps

@@ -48,6 +48,9 @@ export interface SnackbarProps extends SeedSnackbar.RootProps {
   shouldCloseOnAction?: boolean;
 }
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/snackbar
+ */
 export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
   (
     {

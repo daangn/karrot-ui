@@ -40,6 +40,9 @@ export interface ChipTabsProps
     ChipTabsVariant,
     Omit<UseLazyContentsProps, "currentValue"> {}
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/tabs/chip-tabs
+ */
 export const ChipTabs = React.forwardRef<HTMLDivElement, ChipTabsProps>(
   (props, ref) => {
     const { className, lazyMode, isLazy, variant } = props;

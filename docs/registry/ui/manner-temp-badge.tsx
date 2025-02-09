@@ -17,6 +17,9 @@ export interface MannerTempBadgeProps
   temperature: number;
 }
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/manner-temp-badge
+ */
 export const MannerTempBadge = React.forwardRef<
   HTMLSpanElement,
   MannerTempBadgeProps

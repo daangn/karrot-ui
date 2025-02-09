@@ -4,7 +4,6 @@ import { ControlChip as SeedControlChip } from "@seed-design/react";
 import { Checkbox, RadioGroup } from "@seed-design/react/primitive";
 import * as React from "react";
 
-
 export interface ToggleControlChipProps
   extends SeedControlChip.RootBaseProps,
     Checkbox.RootProps {
@@ -146,6 +145,9 @@ export const RadioControlChipItem = React.forwardRef<
 );
 RadioControlChipItem.displayName = "ControlChip.RadioItem";
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/control-chip
+ */
 export const ControlChip = Object.assign(
   () => {
     console.warn(

@@ -17,6 +17,9 @@ export interface HelpBubbleTriggerProps
   contentProps?: SeedHelpBubble.ContentProps;
 }
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/help-bubble
+ */
 export const HelpBubbleTrigger = forwardRef<
   HTMLButtonElement,
   HelpBubbleTriggerProps
@@ -68,6 +71,9 @@ export interface HelpBubbleAnchorProps
   children?: React.ReactNode;
 }
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/help-bubble#anchor
+ */
 export const HelpBubbleAnchor = forwardRef<
   HTMLDivElement,
   HelpBubbleAnchorProps

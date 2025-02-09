@@ -11,6 +11,9 @@ export interface AvatarProps extends SeedAvatar.RootProps {
   fallback?: React.ReactNode;
 }
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/avatar
+ */
 export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
   ({ src, alt, fallback, children, ...otherProps }, ref) => {
     return (

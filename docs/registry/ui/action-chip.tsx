@@ -3,7 +3,6 @@
 import { ActionChip as SeedActionChip } from "@seed-design/react";
 import * as React from "react";
 
-
 export interface ActionChipProps extends SeedActionChip.RootProps {
   prefixIcon?: React.ReactNode;
 
@@ -12,6 +11,9 @@ export interface ActionChipProps extends SeedActionChip.RootProps {
   count?: number;
 }
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/action-chip
+ */
 export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
   (
     {

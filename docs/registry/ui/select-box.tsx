@@ -7,9 +7,11 @@ import {
 } from "@seed-design/react";
 import * as React from "react";
 
-
 export interface RadioSelectBoxRootProps extends SeedRadioSelectBox.RootProps {}
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/select-box/radio-select-box
+ */
 export const RadioSelectBoxRoot = React.forwardRef<
   HTMLDivElement,
   RadioSelectBoxRootProps
@@ -72,6 +74,9 @@ export interface CheckSelectBoxProps extends SeedCheckSelectBox.RootProps {
   rootRef?: React.Ref<HTMLLabelElement>;
 }
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/select-box/check-select-box
+ */
 export const CheckSelectBox = React.forwardRef<
   HTMLInputElement,
   CheckSelectBoxProps

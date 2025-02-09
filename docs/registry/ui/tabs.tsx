@@ -66,6 +66,9 @@ interface ReactTabsProps
     Omit<UseLazyContentsProps, "currentValue">,
     TabsProps {}
 
+/**
+ * @see https://v3.seed-design.io/docs/react/components/tabs/tabs
+ */
 export const Tabs = React.forwardRef<HTMLDivElement, ReactTabsProps>(
   (props, ref) => {
     const {
