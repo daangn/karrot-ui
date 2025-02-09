@@ -37,7 +37,6 @@
         "@sanity/visual-editing": "^2.10.5",
         "@seed-design/react": "0.0.0",
         "@seed-design/react-icon": "^0.7.3",
-        "@seed-design/react-popover": "0.0.0-alpha-20241030023710",
         "@seed-design/react-tabs": "0.0.0-alpha-20241209060641",
         "@seed-design/recipe": "0.0.0-alpha-20241212122822",
         "@seed-design/rootage-cli": "0.0.0",
@@ -137,7 +136,7 @@
         "seed-design": "./bin/index.mjs"
       },
       "dependencies": {
-        "@antfu/ni": "^0.22.0",
+        "@antfu/ni": "^23.3.1",
         "@babel/core": "^7.24.9",
         "@babel/parser": "^7.24.8",
         "@babel/plugin-transform-typescript": "^7.24.8",
@@ -231,6 +230,7 @@
         "@seed-design/react-segmented-control": "0.0.0",
         "@seed-design/react-snackbar": "0.0.0",
         "@seed-design/react-switch": "0.0.0-alpha-20241030023710",
+        "@seed-design/react-tabs": "0.0.0-alpha-20241209060641",
         "@seed-design/react-text-field": "0.0.0-alpha-20241030023710",
         "@seed-design/react-toggle": "0.0.0",
         "@seed-design/vars": "0.0.0",
@@ -741,7 +741,7 @@
 
     "@ampproject/remapping": ["@ampproject/remapping@2.3.0", "", { "dependencies": { "@jridgewell/gen-mapping": "^0.3.5", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw=="],
 
-    "@antfu/ni": ["@antfu/ni@0.22.4", "", { "bin": { "na": "bin/na.mjs", "ni": "bin/ni.mjs", "nr": "bin/nr.mjs", "nu": "bin/nu.mjs", "nci": "bin/nci.mjs", "nlx": "bin/nlx.mjs", "nun": "bin/nun.mjs" } }, "sha512-uCzh43cmUwQQcgv2BPyo0JWOMgXhcaE+F2I6Ucmfc7f9ir52lfA4OtZXdfL5D8cMa5GAwuCSNqOshIol8YN82g=="],
+    "@antfu/ni": ["@antfu/ni@23.3.1", "", { "bin": { "ni": "bin/ni.mjs", "nci": "bin/nci.mjs", "nr": "bin/nr.mjs", "nu": "bin/nu.mjs", "nlx": "bin/nlx.mjs", "na": "bin/na.mjs", "nun": "bin/nun.mjs" } }, "sha512-C90iyzm/jLV7Lomv2UzwWUzRv9WZr1oRsFRKsX5HjQL4EXrbi9H/RtBkjCP+NF+ABZXUKpAa4F1dkoTaea4zHg=="],
 
     "@asamuzakjp/css-color": ["@asamuzakjp/css-color@2.8.3", "", { "dependencies": { "@csstools/css-calc": "^2.1.1", "@csstools/css-color-parser": "^3.0.7", "@csstools/css-parser-algorithms": "^3.0.4", "@csstools/css-tokenizer": "^3.0.3", "lru-cache": "^10.4.3" } }, "sha512-GIc76d9UI1hCvOATjZPyHFmE5qhRccp3/zGfMPapK3jBi+yocEzp6BBB0UnfRYP9NP4FANqUZYb0hnfs3TM3hw=="],
 
