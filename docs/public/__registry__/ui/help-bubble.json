@@ -1,7 +1,7 @@
 {
   "name": "help-bubble",
   "dependencies": [
-    "@seed-design/react-popover@0.0.0-alpha-20241030023710",
+    "@seed-design/react-popover",
     "@radix-ui/react-slot"
   ],
   "registries": [

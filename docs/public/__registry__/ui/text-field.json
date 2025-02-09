@@ -1,7 +1,7 @@
 {
   "name": "text-field",
   "dependencies": [
-    "@seed-design/react-text-field@0.0.0-alpha-20241030023710",
+    "@seed-design/react-text-field",
     "@daangn/react-monochrome-icon",
     "@radix-ui/react-slot"
   ],

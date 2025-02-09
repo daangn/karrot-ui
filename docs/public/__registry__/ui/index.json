@@ -225,7 +225,7 @@
   {
     "name": "help-bubble",
     "dependencies": [
-      "@seed-design/react-popover@0.0.0-alpha-20241030023710",
+      "@seed-design/react-popover",
       "@radix-ui/react-slot"
     ],
     "files": [
@@ -235,7 +235,7 @@
   {
     "name": "tabs",
     "dependencies": [
-      "@seed-design/react-tabs@0.0.0-alpha-20241209060641"
+      "@seed-design/react-tabs"
     ],
     "files": [
       "ui:tabs.tsx"
@@ -244,7 +244,7 @@
   {
     "name": "chip-tabs",
     "dependencies": [
-      "@seed-design/react-tabs@0.0.0-alpha-20241209060641"
+      "@seed-design/react-tabs"
     ],
     "files": [
       "ui:chip-tabs.tsx"
@@ -308,7 +308,7 @@
   {
     "name": "text-field",
     "dependencies": [
-      "@seed-design/react-text-field@0.0.0-alpha-20241030023710",
+      "@seed-design/react-text-field",
       "@daangn/react-monochrome-icon",
       "@radix-ui/react-slot"
     ],

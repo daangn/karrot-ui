@@ -1,9 +1,5 @@
 import type { RegistryUI } from "./schema";
 
-import textFieldPkg from "@seed-design/react-text-field/package.json";
-import tabsPkg from "@seed-design/react-tabs/package.json";
-import popoverPkg from "@seed-design/react-popover/package.json";
-
 export const registryUI: RegistryUI = [
   {
     name: "app-screen",
@@ -126,20 +122,17 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "help-bubble",
-    dependencies: [
-      `@seed-design/react-popover@${popoverPkg.version}`,
-      "@radix-ui/react-slot",
-    ],
+    dependencies: ["@seed-design/react-popover", "@radix-ui/react-slot"],
     files: ["ui:help-bubble.tsx"],
   },
   {
     name: "tabs",
-    dependencies: [`@seed-design/react-tabs@${tabsPkg.version}`],
+    dependencies: ["@seed-design/react-tabs"],
     files: ["ui:tabs.tsx"],
   },
   {
     name: "chip-tabs",
-    dependencies: [`@seed-design/react-tabs@${tabsPkg.version}`],
+    dependencies: ["@seed-design/react-tabs"],
     files: ["ui:chip-tabs.tsx"],
   },
   {
@@ -175,7 +168,7 @@ export const registryUI: RegistryUI = [
   {
     name: "text-field",
     dependencies: [
-      `@seed-design/react-text-field@${textFieldPkg.version}`,
+      "@seed-design/react-text-field",
       "@daangn/react-monochrome-icon",
       "@radix-ui/react-slot",
     ],
