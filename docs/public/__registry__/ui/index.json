@@ -225,7 +225,7 @@
   {
     "name": "help-bubble",
     "dependencies": [
-      "@seed-design/react-popover",
+      "@seed-design/react",
       "@radix-ui/react-slot"
     ],
     "files": [
@@ -308,7 +308,7 @@
   {
     "name": "text-field",
     "dependencies": [
-      "@seed-design/react-text-field",
+      "@seed-design/react",
       "@daangn/react-monochrome-icon",
       "@radix-ui/react-slot"
     ],
