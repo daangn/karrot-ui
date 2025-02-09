@@ -28,7 +28,8 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.2",
     "typescript": "^5.4.5",
-    "ultra-runner": "^3.10.5"
+    "ultra-runner": "^3.10.5",
+    "esbuild": "^0.25.0"
   },
   "publishConfig": {
     "access": "public"

@@ -43,5 +43,8 @@
       "dev",
       "build"
     ]
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
   }
 }

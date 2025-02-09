@@ -27,5 +27,8 @@
     "prepack": "rm -rf lib && bun run build",
     "build": "bun build.mjs && tsc",
     "dev": "bun dev.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
   }
 }
