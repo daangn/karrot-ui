@@ -50,6 +50,7 @@ const ActivityHome: ActivityComponentType = () => {
           <ListItemGroup title="Buttons">
             <ListItem onClick={() => push("ActivityActionButton", {})} title="ActionButton" />
             <ListItem onClick={() => push("ActivityToggleButton", {})} title="ToggleButton" />
+            <ListItem onClick={() => push("ActivityReactionButton", {})} title="ReactionButton" />
           </ListItemGroup>
 
           <ListItemGroup title="Chips">

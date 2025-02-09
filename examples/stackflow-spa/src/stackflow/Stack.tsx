@@ -36,6 +36,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityExtendedActionSheet: React.lazy(
       () => import("../activities/ActivityExtendedActionSheet"),
     ),
+    ActivityReactionButton: React.lazy(() => import("../activities/ActivityReactionButton")),
     ActivityErrorState: React.lazy(() => import("../activities/ActivityErrorState")),
     ActivityNotFound,
   },
@@ -76,6 +77,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityMannerTempLevel: "/manner-temp-level",
         ActivityAvatarStack: "/avatar-stack",
         ActivityAvatar: "/avatar",
+        ActivityReactionButton: "/reaction-button",
         ActivityNotFound: "/404",
       },
     }),
