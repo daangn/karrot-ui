@@ -7,7 +7,6 @@ import {
 import clsx from "clsx";
 import * as React from "react";
 
-
 export interface IdentityPlaceholderProps
   extends React.HTMLAttributes<HTMLDivElement>,
     IdentityPlaceholderVariantProps {}
@@ -24,6 +23,8 @@ export const IdentityPlaceholder = React.forwardRef<
         viewBox="0 0 640 640"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Identity placeholder"
       >
         <path
           fillRule="evenodd"

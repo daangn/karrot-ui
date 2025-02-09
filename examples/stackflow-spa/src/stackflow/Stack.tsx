@@ -30,6 +30,8 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityBottomSheet: React.lazy(() => import("../activities/ActivityBottomSheet")),
     ActivityActionSheet: React.lazy(() => import("../activities/ActivityActionSheet")),
     ActivityMannerTempLevel: React.lazy(() => import("../activities/ActivityMannerTempLevel")),
+    ActivityAvatarStack: React.lazy(() => import("../activities/ActivityAvatarStack")),
+    ActivityAvatar: React.lazy(() => import("../activities/ActivityAvatar")),
     ActivityExtendedActionSheet: React.lazy(
       () => import("../activities/ActivityExtendedActionSheet"),
     ),
@@ -70,6 +72,8 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityExtendedActionSheet: "/extended-action-sheet",
         ActivityErrorState: "/error",
         ActivityMannerTempLevel: "/manner-temp-level",
+        ActivityAvatarStack: "/avatar-stack",
+        ActivityAvatar: "/avatar",
         ActivityNotFound: "/404",
       },
     }),

@@ -45,6 +45,8 @@ const ActivityHome: ActivityComponentType = () => {
           <ListItem onClick={() => push("ActivityLayerBar", {})} title="LayerBar" />
           <ListItem onClick={() => push("ActivityTransparentBar", {})} title="TransparentBar" />
           <ListItem onClick={() => push("ActivityMannerTempLevel", {})} title="MannerTempLevel" />
+          <ListItem onClick={() => push("ActivityAvatarStack", {})} title="AvatarStack" />
+          <ListItem onClick={() => push("ActivityAvatar", {})} title="Avatar" />
 
           <AlertDialogRoot {...dialogProps}>
             <AlertDialogTrigger asChild>
