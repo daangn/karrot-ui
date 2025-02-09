@@ -12,6 +12,7 @@ const text = defineRecipe({
   base: {
     root: {
       margin: 0,
+      // @ts-expect-error suppress TextAlign type error
       textAlign: "var(--seed-text-align)",
       color: "var(--seed-text-color)",
       fontSize: "var(--seed-font-size)",
