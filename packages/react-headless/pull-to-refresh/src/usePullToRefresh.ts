@@ -165,6 +165,7 @@ export function usePullToRefresh(props: UsePullToRefreshProps) {
     rootProps: elementProps({
       ...stateProps,
       onTouchMove: (e: React.TouchEvent) => {
+        if (e.defaultPrevented) return;
         events.move({ y: e.touches[0].clientY, scrollTop: e.currentTarget.scrollTop });
       },
       onTouchEnd: () => {

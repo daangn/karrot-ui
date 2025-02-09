@@ -15,7 +15,7 @@ const pullToRefresh = defineRecipe({
       alignItems: "center",
       justifyContent: "center",
 
-      transform: "translateY(min(calc(var(--ptr-displacement, 0) - var(--ptr-size)), 0))",
+      transform: "translateY(min(calc(var(--ptr-displacement, 0) - var(--ptr-size)), 0px))",
       transition: `transform ${vars.$duration.s6}`,
 
       [pseudo("[data-ptr-dragging]")]: {

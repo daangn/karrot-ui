@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(min(calc(var(--ptr-displacement, 0) - var(--ptr-size)), 0));
+    transform: translateY(min(calc(var(--ptr-displacement, 0) - var(--ptr-size)), 0px));
     transition: transform var(--seed-v3-duration-s6);
 }
 .pullToRefresh__indicator[data-ptr-dragging] {
