@@ -32,6 +32,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityMannerTempLevel: React.lazy(() => import("../activities/ActivityMannerTempLevel")),
     ActivityAvatarStack: React.lazy(() => import("../activities/ActivityAvatarStack")),
     ActivityAvatar: React.lazy(() => import("../activities/ActivityAvatar")),
+    ActivityToggleButton: React.lazy(() => import("../activities/ActivityToggleButton")),
     ActivityExtendedActionSheet: React.lazy(
       () => import("../activities/ActivityExtendedActionSheet"),
     ),
@@ -62,6 +63,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityHome: "/",
         ActivityActionButton: "/action-button",
         ActivityActionChip: "/action-chip",
+        ActivityToggleButton: "/toggle-button",
         ActivityControlChip: "/control-chip",
         ActivityHelpBubble: "/help-bubble",
         ActivityLayerBar: "/layer-bar",
