@@ -16,7 +16,6 @@ export interface CalloutProps
   icon?: React.ReactNode;
   title?: React.ReactNode;
   description: React.ReactNode;
-  linkLabel?: React.ReactNode;
   linkProps?: SeedCallout.LinkProps;
 }
 
@@ -26,16 +25,14 @@ export interface CalloutProps
 export const Callout = React.forwardRef<
   React.ElementRef<typeof SeedCallout.Root>,
   CalloutProps
->(({ icon, title, description, linkLabel, linkProps, ...otherProps }, ref) => {
+>(({ icon, title, description, linkProps, ...otherProps }, ref) => {
   return (
     <SeedCallout.Root ref={ref} {...otherProps}>
       {icon && <SeedCallout.Icon svg={icon} />}
       <SeedCallout.TextContent>
         {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
         <SeedCallout.Description>{description}</SeedCallout.Description>
-        {linkLabel && (
-          <SeedCallout.Link {...linkProps}>{linkLabel}</SeedCallout.Link>
-        )}
+        {linkProps && <SeedCallout.Link {...linkProps} />}
       </SeedCallout.TextContent>
     </SeedCallout.Root>
   );
@@ -76,7 +73,6 @@ export interface DismissibleCalloutProps
   extends Omit<SeedCallout.RootProps, "children" | "title" | "asChild"> {
   title?: React.ReactNode;
   description: React.ReactNode;
-  linkLabel?: React.ReactNode;
   linkProps?: SeedCallout.LinkProps;
 }
 
@@ -91,7 +87,6 @@ export const DismissibleCallout = React.forwardRef<
     {
       title,
       description,
-      linkLabel,
       linkProps,
       defaultOpen,
       open,
@@ -105,9 +100,7 @@ export const DismissibleCallout = React.forwardRef<
         <SeedCallout.TextContent>
           {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
           <SeedCallout.Description>{description}</SeedCallout.Description>
-          {linkLabel && (
-            <SeedCallout.Link {...linkProps}>{linkLabel}</SeedCallout.Link>
-          )}
+          {linkProps && <SeedCallout.Link {...linkProps} />}
         </SeedCallout.TextContent>
         {/* You may implement your own i18n for dismiss label */}
         <SeedCallout.DismissButton aria-label="닫기">

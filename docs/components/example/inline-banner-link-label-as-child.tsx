@@ -1,15 +1,17 @@
-import { LinkInlineBanner } from "seed-design/ui/inline-banner";
+import { InlineBanner } from "seed-design/ui/inline-banner";
 
 export default function InlineBannerLinkLabelAsChild() {
   return (
-    <LinkInlineBanner
+    <InlineBanner
       description="사업자 정보를 등록해주세요."
-      linkLabel={
-        <a href="https://www.daangn.com" target="_blank" rel="noreferrer">
-          자세히보기
-        </a>
-      }
-      linkProps={{ asChild: true }}
+      linkProps={{
+        asChild: true,
+        children: (
+          <a href="https://www.daangn.com" target="_blank" rel="noreferrer">
+            자세히 보기
+          </a>
+        ),
+      }}
     />
   );
 }

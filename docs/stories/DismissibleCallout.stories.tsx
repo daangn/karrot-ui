@@ -20,7 +20,7 @@ const CommonStoryTemplate: Story = {
   args: {
     title: "새로운 기능",
     description: "Magna id laboris excepteur tempor duis duis voluptate voluptate non.",
-    linkLabel: "자세히 보기",
+    linkProps: { children: "자세히 보기" },
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={calloutVariantMap} {...args} />

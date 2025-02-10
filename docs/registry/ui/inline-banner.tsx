@@ -16,6 +16,7 @@ export interface InlineBannerProps
   icon?: React.ReactNode;
   title?: React.ReactNode;
   description: React.ReactNode;
+  linkProps?: SeedInlineBanner.LinkProps;
 }
 
 /**
@@ -24,7 +25,7 @@ export interface InlineBannerProps
 export const InlineBanner = React.forwardRef<
   React.ElementRef<typeof SeedInlineBanner.Root>,
   InlineBannerProps
->(({ icon, title, description, ...otherProps }, ref) => {
+>(({ icon, title, description, linkProps, ...otherProps }, ref) => {
   return (
     <SeedInlineBanner.Root ref={ref} {...otherProps}>
       <SeedInlineBanner.Content>
@@ -36,43 +37,11 @@ export const InlineBanner = React.forwardRef<
           </SeedInlineBanner.Description>
         </SeedInlineBanner.TextContent>
       </SeedInlineBanner.Content>
+      {linkProps && <SeedInlineBanner.Link {...linkProps} />}
     </SeedInlineBanner.Root>
   );
 });
 InlineBanner.displayName = "InlineBanner";
-
-export interface LinkInlineBannerProps
-  extends Omit<
-    SeedInlineBanner.RootProps,
-    "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
-  > {
-  icon?: React.ReactNode;
-  title?: React.ReactNode;
-  description: React.ReactNode;
-  linkLabel: React.ReactNode;
-  linkProps?: SeedInlineBanner.LinkProps;
-}
-
-export const LinkInlineBanner = React.forwardRef<
-  React.ElementRef<typeof SeedInlineBanner.Root>,
-  LinkInlineBannerProps
->(({ icon, title, description, linkLabel, linkProps, ...otherProps }, ref) => {
-  return (
-    <SeedInlineBanner.Root ref={ref} {...otherProps}>
-      <SeedInlineBanner.Content>
-        {icon && <SeedInlineBanner.Icon svg={icon} />}
-        <SeedInlineBanner.TextContent>
-          {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
-          <SeedInlineBanner.Description>
-            {description}
-          </SeedInlineBanner.Description>
-        </SeedInlineBanner.TextContent>
-      </SeedInlineBanner.Content>
-      <SeedInlineBanner.Link {...linkProps}>{linkLabel}</SeedInlineBanner.Link>
-    </SeedInlineBanner.Root>
-  );
-});
-LinkInlineBanner.displayName = "LinkInlineBanner";
 
 export interface ActionableInlineBannerProps
   extends Omit<
