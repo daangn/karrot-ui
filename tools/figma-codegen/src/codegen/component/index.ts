@@ -548,7 +548,9 @@ const calloutHandler: ComponentHandler<CalloutProperties> = {
       tone: camelCase(props.Tone.value),
       title,
       description,
-      linkLabel,
+      linkProps: {
+        children: linkLabel,
+      },
       ...(props["Icon#12598:210"].value && {
         icon: createElement(await createIconTagNameFromId(props["Icon#12598:210"].value)),
       }),
@@ -908,7 +910,7 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
         case "Dismissible":
           return "DismissibleInlineBanner";
         case "Link":
-          return "LinkInlineBanner";
+          return "InlineBanner";
         default:
           return "InlineBanner";
       }
@@ -955,8 +957,10 @@ const inlineBannerHandler: ComponentHandler<InlineBannerProperties> = {
       variant: camelCase(props.Variant.value),
       title,
       description,
-      ...(tag === "LinkInlineBanner" && {
-        linkLabel: props["Link Label#1547:81"].value,
+      ...(props.Interaction.value === "Link" && {
+        linkProps: {
+          children: props["Link Label#1547:81"].value,
+        },
       }),
       icon,
     };
