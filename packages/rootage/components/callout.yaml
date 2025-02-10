@@ -10,14 +10,20 @@ data:
         padding: $dimension.s3_5
         gap: $dimension.s3
         cornerRadius: $radius.s2_5
-        fontSize: $font-size.s4
-        lineHeight: $line-height.s4
         minHeight: 50px
       icon:
         size: $dimension.s4
       title:
+        fontSize: $font-size.s4
+        lineHeight: $line-height.s4
         fontWeight: $font-weight.bold
       description:
+        fontSize: $font-size.s4
+        lineHeight: $line-height.s4
+        fontWeight: $font-weight.regular
+      linkLabel:
+        fontSize: $font-size.s4
+        lineHeight: $line-height.s4
         fontWeight: $font-weight.regular
       dismissButton:
         size: $dimension.s10

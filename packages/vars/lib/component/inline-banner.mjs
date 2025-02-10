@@ -8,8 +8,6 @@ export const vars = {
       "content": {
         "gap": "var(--seed-v3-dimension-s2)",
         "paddingY": "var(--seed-v3-dimension-s2_5)",
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
         "minHeight": "var(--seed-v3-dimension-s10)"
       },
       "icon": {
@@ -17,16 +15,20 @@ export const vars = {
         "marginY": "1.5px"
       },
       "title": {
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "description": {
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
       "linkLabel": {
         "height": "var(--seed-v3-dimension-s10)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)",
         "fontSize": "var(--seed-v3-font-size-s2)",
-        "lineHeight": "var(--seed-v3-line-height-s2)"
+        "lineHeight": "var(--seed-v3-line-height-s2)",
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "dismissButton": {
         "size": "var(--seed-v3-dimension-s10)"

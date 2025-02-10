@@ -32,8 +32,6 @@ const callout = defineRecipe({
       border: "none",
 
       textAlign: "start",
-      fontSize: vars.base.enabled.root.fontSize,
-      lineHeight: vars.base.enabled.root.lineHeight,
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       fontFamily: "inherit",
@@ -52,15 +50,22 @@ const callout = defineRecipe({
       marginInlineEnd: "auto",
     },
     title: {
+      fontSize: vars.base.enabled.title.fontSize,
+      lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,
     },
     spacer: {
       letterSpacing: "0.25em",
     },
     description: {
+      fontSize: vars.base.enabled.title.fontSize,
+      lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.description.fontWeight,
     },
     linkLabel: {
+      fontSize: vars.base.enabled.linkLabel.fontSize,
+      lineHeight: vars.base.enabled.linkLabel.lineHeight,
+      fontWeight: vars.base.enabled.linkLabel.fontWeight,
       textDecoration: "underline",
       textUnderlineOffset: "2px",
 

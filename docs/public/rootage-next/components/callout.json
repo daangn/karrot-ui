@@ -29,14 +29,6 @@
                   "type": "dimension",
                   "value": "$radius.s2_5"
                 },
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s4"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s4"
-                },
                 "minHeight": {
                   "type": "dimension",
                   "value": {
@@ -52,12 +44,42 @@
                 }
               },
               "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.bold"
                 }
               },
               "description": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
+              },
+              "linkLabel": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.regular"

@@ -35,14 +35,6 @@
                   "type": "dimension",
                   "value": "$dimension.s2_5"
                 },
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s4"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s4"
-                },
                 "minHeight": {
                   "type": "dimension",
                   "value": "$dimension.s10"
@@ -62,12 +54,28 @@
                 }
               },
               "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.bold"
                 }
               },
               "description": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.medium"
@@ -78,10 +86,6 @@
                   "type": "dimension",
                   "value": "$dimension.s10"
                 },
-                "fontWeight": {
-                  "type": "number",
-                  "value": "$font-weight.regular"
-                },
                 "fontSize": {
                   "type": "dimension",
                   "value": "$font-size.s2"
@@ -89,6 +93,10 @@
                 "lineHeight": {
                   "type": "dimension",
                   "value": "$line-height.s2"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
                 }
               },
               "dismissButton": {

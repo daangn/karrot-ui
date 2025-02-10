@@ -12236,26 +12236,6 @@
                       }
                     },
                     {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
                       "key": "minHeight",
                       "value": {
                         "type": "dimension",
@@ -12284,6 +12264,26 @@
                   "key": "title",
                   "property": [
                     {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
                       "key": "fontWeight",
                       "value": {
                         "type": "token",
@@ -12298,6 +12298,61 @@
                 {
                   "key": "description",
                   "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "linkLabel",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
                     {
                       "key": "fontWeight",
                       "value": {
@@ -17223,26 +17278,6 @@
                       }
                     },
                     {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
                       "key": "minHeight",
                       "value": {
                         "type": "token",
@@ -17281,6 +17316,26 @@
                   "key": "title",
                   "property": [
                     {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
                       "key": "fontWeight",
                       "value": {
                         "type": "token",
@@ -17295,6 +17350,26 @@
                 {
                   "key": "description",
                   "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "s4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "s4"
+                      }
+                    },
                     {
                       "key": "fontWeight",
                       "value": {
@@ -17321,16 +17396,6 @@
                       }
                     },
                     {
-                      "key": "fontWeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "regular"
-                      }
-                    },
-                    {
                       "key": "fontSize",
                       "value": {
                         "type": "token",
@@ -17348,6 +17413,16 @@
                           "line-height"
                         ],
                         "key": "s2"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
                       }
                     }
                   ]

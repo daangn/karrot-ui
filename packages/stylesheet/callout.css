@@ -9,8 +9,6 @@
     border-radius: var(--seed-v3-radius-s2_5);
     border: none;
     text-align: start;
-    font-size: var(--seed-v3-font-size-s4);
-    line-height: var(--seed-v3-line-height-s4);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: inherit;
@@ -27,15 +25,22 @@
     margin-inline-end: auto;
 }
 .callout__title {
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .callout__spacer {
     letter-spacing: 0.25em;
 }
 .callout__description {
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
     font-weight: var(--seed-v3-font-weight-regular);
 }
 .callout__linkLabel {
+    font-size: var(--seed-v3-font-size-s4);
+    line-height: var(--seed-v3-line-height-s4);
+    font-weight: var(--seed-v3-font-weight-regular);
     text-decoration: underline;
     text-underline-offset: 2px;
     display: inline-block;
