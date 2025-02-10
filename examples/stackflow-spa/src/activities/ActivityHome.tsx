@@ -154,34 +154,6 @@ const ActivityHome: ActivityComponentType = () => {
               title="Snackbar (critical)"
             />
           </ListItemGroup>
-          <ListItem
-            onClick={() =>
-              snackbarAdapter.create({
-                render: () => <Snackbar message="Disco Party!" actionLabel="Dance" />,
-              })
-            }
-            title="Snackbar"
-          />
-          <ListItem
-            onClick={() =>
-              snackbarAdapter.create({
-                render: () => (
-                  <Snackbar variant="positive" message="Disco Party!" actionLabel="Dance" />
-                ),
-              })
-            }
-            title="Snackbar (positive)"
-          />
-          <ListItem
-            onClick={() =>
-              snackbarAdapter.create({
-                render: () => (
-                  <Snackbar variant="critical" message="Disco Party!" actionLabel="Dance" />
-                ),
-              })
-            }
-            title="Snackbar (critical)"
-          />
           <ListItem onClick={() => push("ActivityTabs", {})} title="Tabs" />
           <ListItem onClick={() => push("ActivityAnimatedTabs", {})} title="AnimatedTabs" />
           <ListItem onClick={() => push("ActivitySwipeableTabs", {})} title="SwipeableTabs" />
