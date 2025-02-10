@@ -5,24 +5,20 @@ export const vars = {
         "padding": "var(--seed-v3-dimension-s3_5)",
         "gap": "var(--seed-v3-dimension-s3)",
         "cornerRadius": "var(--seed-v3-radius-s2_5)",
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)",
         "minHeight": "50px"
       },
       "icon": {
         "size": "var(--seed-v3-dimension-s4)"
       },
       "title": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "description": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "linkLabel": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "dismissButton": {

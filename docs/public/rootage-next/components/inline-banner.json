@@ -27,6 +27,14 @@
                 }
               },
               "content": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.s4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.s4"
+                },
                 "gap": {
                   "type": "dimension",
                   "value": "$dimension.s2"
@@ -54,28 +62,12 @@
                 }
               },
               "title": {
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s4"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s4"
-                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.bold"
                 }
               },
               "description": {
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s4"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s4"
-                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.medium"

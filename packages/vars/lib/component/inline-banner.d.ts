@@ -6,6 +6,8 @@ export declare const vars: {
         "paddingX": "var(--seed-v3-dimension-s4)"
       },
       "content": {
+        "fontSize": "var(--seed-v3-font-size-s4)",
+        "lineHeight": "var(--seed-v3-line-height-s4)",
         "gap": "var(--seed-v3-dimension-s2)",
         "paddingY": "var(--seed-v3-dimension-s2_5)",
         "minHeight": "var(--seed-v3-dimension-s10)"
@@ -15,13 +17,9 @@ export declare const vars: {
         "marginY": "1.5px"
       },
       "title": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "description": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
       "linkLabel": {

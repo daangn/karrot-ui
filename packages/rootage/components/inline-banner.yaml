@@ -10,6 +10,8 @@ data:
         gap: $dimension.s4
         paddingX: $dimension.s4
       content:
+        fontSize: $font-size.s4
+        lineHeight: $line-height.s4
         gap: $dimension.s2
         paddingY: $dimension.s2_5
         minHeight: $dimension.s10
@@ -17,12 +19,8 @@ data:
         size: $dimension.s4
         marginY: 1.5px
       title:
-        fontSize: $font-size.s4
-        lineHeight: $line-height.s4
         fontWeight: $font-weight.bold
       description:
-        fontSize: $font-size.s4
-        lineHeight: $line-height.s4
         fontWeight: $font-weight.medium
       linkLabel:
         height: $dimension.s10

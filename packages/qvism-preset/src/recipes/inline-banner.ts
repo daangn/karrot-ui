@@ -43,8 +43,10 @@ const inlineBanner = defineRecipe({
       gap: vars.base.enabled.content.gap,
       boxSizing: "border-box",
 
-      paddingBlock: vars.base.enabled.content.paddingY,
+      fontSize: vars.base.enabled.content.fontSize,
+      lineHeight: vars.base.enabled.content.lineHeight,
 
+      paddingBlock: vars.base.enabled.content.paddingY,
       minHeight: vars.base.enabled.content.minHeight,
 
       textAlign: "start",
@@ -58,16 +60,12 @@ const inlineBanner = defineRecipe({
       height: vars.base.enabled.icon.size,
     },
     title: {
-      fontSize: vars.base.enabled.title.fontSize,
-      lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,
     },
     spacer: {
       letterSpacing: "0.25em",
     },
     description: {
-      fontSize: vars.base.enabled.description.fontSize,
-      lineHeight: vars.base.enabled.description.lineHeight,
       fontWeight: vars.base.enabled.description.fontWeight,
     },
     linkLabel: {
