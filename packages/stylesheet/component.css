@@ -2770,6 +2770,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-radius: var(--seed-v3-radius-full);
+  min-height: 20px;
   padding-inline: var(--seed-v3-dimension-s1_5);
   padding-block: var(--seed-v3-dimension-s0_5);
   justify-content: center;
