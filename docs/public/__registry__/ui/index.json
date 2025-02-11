@@ -99,6 +99,9 @@
     "dependencies": [
       "@radix-ui/react-slot"
     ],
+    "innerDependencies": [
+      "ui:progress-circle"
+    ],
     "files": [
       "ui:action-button.tsx"
     ]

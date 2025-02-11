@@ -3,6 +3,9 @@
   "dependencies": [
     "@radix-ui/react-slot"
   ],
+  "innerDependencies": [
+    "ui:progress-circle"
+  ],
   "registries": [
     {
       "name": "action-button.tsx",
