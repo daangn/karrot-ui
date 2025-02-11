@@ -1,10 +1,13 @@
 "use client";
 
-import { PullToRefresh } from "@seed-design/react/primitive";
+import {
+  PullToRefreshRoot,
+  PullToRefreshContent,
+  PullToRefreshIndicator,
+} from "./pull-to-refresh";
 import { AppScreen as SeedAppScreen } from "@seed-design/stackflow";
 import { useActions } from "@stackflow/react";
 import { forwardRef } from "react";
-import { ProgressCircle } from "../ui/progress-circle";
 
 export interface AppScreenProps extends SeedAppScreen.RootProps {}
 
@@ -53,17 +56,15 @@ export const AppScreenContent = forwardRef<
   }
 
   return (
-    <PullToRefresh.Root
+    <PullToRefreshRoot
       asChild
       onPtrReady={onPtrReady}
       onPtrRefresh={onPtrRefresh}
     >
       <SeedAppScreen.Layer ref={ref} {...otherProps}>
-        <PullToRefresh.Indicator>
-          {(props) => <ProgressCircle tone="brand" {...props} />}
-        </PullToRefresh.Indicator>
-        <PullToRefresh.Content asChild>{children}</PullToRefresh.Content>
+        <PullToRefreshIndicator />
+        <PullToRefreshContent asChild>{children}</PullToRefreshContent>
       </SeedAppScreen.Layer>
-    </PullToRefresh.Root>
+    </PullToRefreshRoot>
   );
 });

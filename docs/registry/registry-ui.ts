@@ -4,6 +4,7 @@ export const registryUI: RegistryUI = [
   {
     name: "app-screen",
     files: ["ui:app-screen.tsx", "ui:app-bar.tsx"],
+    innerDependencies: ["ui:pull-to-refresh"],
     dependencies: ["@seed-design/react", "@seed-design/stackflow"],
   },
   {
@@ -49,6 +50,12 @@ export const registryUI: RegistryUI = [
     innerDependencies: ["ui:identity-placeholder"],
     dependencies: ["@seed-design/react"],
     files: ["ui:avatar.tsx"],
+  },
+  {
+    name: "pull-to-refresh",
+    dependencies: ["@seed-design/react"],
+    innerDependencies: ["ui:progress-circle"],
+    files: ["ui:pull-to-refresh.tsx"],
   },
   {
     name: "action-button",

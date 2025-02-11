@@ -5,6 +5,9 @@
       "ui:app-screen.tsx",
       "ui:app-bar.tsx"
     ],
+    "innerDependencies": [
+      "ui:pull-to-refresh"
+    ],
     "dependencies": [
       "@seed-design/react",
       "@seed-design/stackflow"
@@ -92,6 +95,18 @@
     ],
     "files": [
       "ui:avatar.tsx"
+    ]
+  },
+  {
+    "name": "pull-to-refresh",
+    "dependencies": [
+      "@seed-design/react"
+    ],
+    "innerDependencies": [
+      "ui:progress-circle"
+    ],
+    "files": [
+      "ui:pull-to-refresh.tsx"
     ]
   },
   {
