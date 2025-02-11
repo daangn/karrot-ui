@@ -53,6 +53,7 @@ export const registryUI: RegistryUI = [
   {
     name: "action-button",
     dependencies: ["@radix-ui/react-slot"],
+    innerDependencies: ["ui:progress-circle"],
     files: ["ui:action-button.tsx"],
   },
   {
