@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-      - wip # V3
+      - dev # V3
     paths:
       - "docs/**"
       - "packages/recipe/**"
