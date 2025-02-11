@@ -38,6 +38,13 @@ export interface SegmentedControlItemProps
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 
   rootRef?: React.Ref<HTMLLabelElement>;
+
+  /**
+   * The label of the item.
+   * Type is restricted to string for consistent width between font-weight changes.
+   * If you need to render a React element, use each element separately.
+   */
+  children: string;
 }
 
 /**
@@ -49,10 +56,10 @@ export const SegmentedControlItem = React.forwardRef<
 >(({ children, inputProps, rootRef, ...otherProps }, ref) => {
   return (
     <SeedSegmentedControl.Item ref={rootRef} {...otherProps}>
-      <SeedSegmentedControl.SegmentHiddenInput ref={ref} {...inputProps} />
-      <SeedSegmentedControl.SegmentLabel>
+      <SeedSegmentedControl.ItemHiddenInput ref={ref} {...inputProps} />
+      <SeedSegmentedControl.ItemLabel>
         {children}
-      </SeedSegmentedControl.SegmentLabel>
+      </SeedSegmentedControl.ItemLabel>
     </SeedSegmentedControl.Item>
   );
 });

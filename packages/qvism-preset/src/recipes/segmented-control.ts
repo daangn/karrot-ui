@@ -46,19 +46,18 @@ const segmentedControl = defineRecipe({
       transition: `transform ${vars.base.enabled.indicator.transformDuration} ${vars.base.enabled.indicator.transformTimingFunction}`,
     },
     item: {
-      display: "grid",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
       cursor: "pointer",
+      userSelect: "none",
+      boxSizing: "border-box",
 
       minWidth: itemVars.base.enabled.root.minWidth,
-      height: itemVars.base.enabled.root.height,
-
+      minHeight: itemVars.base.enabled.root.height,
+      paddingInline: itemVars.base.enabled.root.paddingX,
       borderRadius: itemVars.base.enabled.root.cornerRadius,
-
-      overflow: "hidden",
-
-      userSelect: "none",
-
-      lineHeight: itemVars.base.enabled.label.lineHeight,
 
       [pseudo(disabled)]: {
         cursor: "not-allowed",
@@ -69,30 +68,37 @@ const segmentedControl = defineRecipe({
       },
     },
     itemLabel: {
-      gridArea: "1 / 1 / 1 / 1",
+      overflowWrap: "break-word",
 
-      paddingInline: `calc(${itemVars.base.enabled.root.paddingX} - 1px)`,
-      marginBlock: "auto",
-
-      textAlign: "center",
       fontWeight: itemVars.base.enabled.label.fontWeight,
       fontSize: itemVars.base.enabled.label.fontSize,
-
-      whiteSpace: "nowrap",
-
-      textOverflow: "ellipsis",
-      overflow: "hidden",
-
+      lineHeight: itemVars.base.enabled.label.lineHeight,
       color: itemVars.base.enabled.label.color,
 
       [pseudo(checked)]: {
         color: itemVars.base.selected.label.color,
-
         fontWeight: itemVars.base.selected.label.fontWeight,
       },
-
       [pseudo(disabled)]: {
         color: itemVars.base.disabled.label.color,
+      },
+
+      // Consistent text width between font-weight changes
+      "&:before": {
+        content: "attr(data-text)",
+        display: "block",
+        visibility: "hidden",
+        height: 0,
+        fontSize: itemVars.base.enabled.label.fontSize,
+        fontWeight: itemVars.base.enabled.label.fontWeight,
+      },
+      "&:after": {
+        content: "attr(data-text)",
+        display: "block",
+        visibility: "hidden",
+        height: 0,
+        fontSize: itemVars.base.enabled.label.fontSize,
+        fontWeight: itemVars.base.selected.label.fontWeight,
       },
     },
   },

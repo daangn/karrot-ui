@@ -43,6 +43,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
     ActivityTabs: React.lazy(() => import("../activities/ActivityTabs")),
     ActivityAnimatedTabs: React.lazy(() => import("../activities/ActivityAnimatedTabs")),
     ActivitySwipeableTabs: React.lazy(() => import("../activities/ActivitySwipeableTabs")),
+    ActivitySegmentedControl: React.lazy(() => import("../activities/ActivitySegmentedControl")),
     ActivityNotFound,
   },
   plugins: [
@@ -88,6 +89,7 @@ const { Stack, useFlow, useStepFlow } = stackflow({
         ActivityTabs: "/tabs",
         ActivitySwipeableTabs: "/swipeable-tabs",
         ActivityAnimatedTabs: "/animated-tabs",
+        ActivitySegmentedControl: "/segmented-control",
         ActivityNotFound: "/404",
       },
     }),

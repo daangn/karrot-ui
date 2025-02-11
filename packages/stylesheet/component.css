@@ -2866,14 +2866,17 @@
 }
 
 .segmentedControl__item {
+  text-align: center;
   cursor: pointer;
-  min-width: 86px;
-  height: var(--seed-v3-dimension-s8);
-  border-radius: var(--seed-v3-radius-full);
   user-select: none;
-  line-height: var(--seed-v3-line-height-s5);
-  display: grid;
-  overflow: hidden;
+  box-sizing: border-box;
+  min-width: 86px;
+  min-height: var(--seed-v3-dimension-s8);
+  padding-inline: var(--seed-v3-dimension-s4);
+  border-radius: var(--seed-v3-radius-full);
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .segmentedControl__item:is(:disabled, [disabled], [data-disabled]) {
@@ -2885,16 +2888,11 @@
 }
 
 .segmentedControl__itemLabel {
-  padding-inline: calc(var(--seed-v3-dimension-s4)  - 1px);
-  text-align: center;
+  overflow-wrap: break-word;
   font-weight: var(--seed-v3-font-weight-medium);
   font-size: var(--seed-v3-font-size-s5);
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  line-height: var(--seed-v3-line-height-s5);
   color: var(--seed-v3-color-fg-neutral-muted);
-  grid-area: 1 / 1 / 1 / 1;
-  margin-block: auto;
-  overflow: hidden;
 }
 
 .segmentedControl__itemLabel:is(:checked, [data-checked]) {
@@ -2904,6 +2902,24 @@
 
 .segmentedControl__itemLabel:is(:disabled, [disabled], [data-disabled]) {
   color: var(--seed-v3-color-fg-disabled);
+}
+
+.segmentedControl__itemLabel:before {
+  content: attr(data-text);
+  visibility: hidden;
+  height: 0;
+  font-size: var(--seed-v3-font-size-s5);
+  font-weight: var(--seed-v3-font-weight-medium);
+  display: block;
+}
+
+.segmentedControl__itemLabel:after {
+  content: attr(data-text);
+  visibility: hidden;
+  height: 0;
+  font-size: var(--seed-v3-font-size-s5);
+  font-weight: var(--seed-v3-font-weight-bold);
+  display: block;
 }
 
 .selectBoxGroup__root {
