@@ -1,6 +1,6 @@
 {
   "name": "Rootage",
-  "version": "0.0",
+  "version": "0.0.0",
   "resources": [
     {
       "path": "/collections.json"
@@ -15,13 +15,25 @@
       "path": "/components/action-chip.json"
     },
     {
-      "path": "/components/avatar.json"
+      "path": "/components/action-sheet-close-button.json"
+    },
+    {
+      "path": "/components/action-sheet-item.json"
+    },
+    {
+      "path": "/components/action-sheet.json"
     },
     {
       "path": "/components/avatar-stack.json"
     },
     {
+      "path": "/components/avatar.json"
+    },
+    {
       "path": "/components/badge.json"
+    },
+    {
+      "path": "/components/bottom-sheet.json"
     },
     {
       "path": "/components/callout.json"
@@ -42,13 +54,19 @@
       "path": "/components/dialog.json"
     },
     {
-      "path": "/components/bottom-sheet.json"
+      "path": "/components/extended-action-sheet-close-button.json"
     },
     {
-      "path": "/components/fab.json"
+      "path": "/components/extended-action-sheet-item.json"
+    },
+    {
+      "path": "/components/extended-action-sheet.json"
     },
     {
       "path": "/components/extended-fab.json"
+    },
+    {
+      "path": "/components/fab.json"
     },
     {
       "path": "/components/help-bubble.json"
@@ -60,6 +78,9 @@
       "path": "/components/inline-banner.json"
     },
     {
+      "path": "/components/manner-temp-badge.json"
+    },
+    {
       "path": "/components/progress-circle.json"
     },
     {
@@ -69,7 +90,7 @@
       "path": "/components/reaction-button.json"
     },
     {
-      "path": "/components/segment.json"
+      "path": "/components/segmented-control-item.json"
     },
     {
       "path": "/components/segmented-control.json"
@@ -79,6 +100,9 @@
     },
     {
       "path": "/components/skeleton.json"
+    },
+    {
+      "path": "/components/snackbar.json"
     },
     {
       "path": "/components/switch.json"
@@ -105,25 +129,25 @@
       "path": "/components/typography.json"
     },
     {
+      "path": "/dimension.json"
+    },
+    {
+      "path": "/duration.json"
+    },
+    {
       "path": "/font-size.json"
     },
     {
       "path": "/font-weight.json"
     },
     {
-      "path": "/line-height.json"
-    },
-    {
       "path": "/gradient.json"
     },
     {
+      "path": "/line-height.json"
+    },
+    {
       "path": "/radius.json"
-    },
-    {
-      "path": "/dimension.json"
-    },
-    {
-      "path": "/duration.json"
     },
     {
       "path": "/timing-function.json"

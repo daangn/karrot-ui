@@ -1,5 +1,7 @@
 import { getRootage } from "@/components/rootage";
+import { Text } from "@/registry/ui/text";
 import { Fragment } from "react";
+import { TextProps } from "@/registry/ui/text";
 
 interface TypographyMapping {
   previousTokenId: string;
@@ -54,14 +56,18 @@ export async function TypographyMappingTable({ mappings }: TypographyMappingTabl
             <td>{item.previousTokenId}</td>
             <td className="align-middle space-y-2">
               {item.newTextStyleIds.length > 0 &&
-                item.newTextStyleIds.map((newTextStyleId, index) => (
-                  <Fragment key={newTextStyleId}>
-                    <div>{newTextStyleId}</div>
-                    {index !== item.newTextStyleIds.length - 1 && (
-                      <div className="text-xs text-center">또는</div>
-                    )}
-                  </Fragment>
-                ))}
+                item.newTextStyleIds.map((newTextStyleId, index) => {
+                  return (
+                    <Fragment key={newTextStyleId}>
+                      <Text textStyle={newTextStyleId as TextProps["textStyle"]}>
+                        {newTextStyleId}
+                      </Text>
+                      {index !== item.newTextStyleIds.length - 1 && (
+                        <div className="text-xs text-center">또는</div>
+                      )}
+                    </Fragment>
+                  );
+                })}
             </td>
             <td>{item.note}</td>
           </tr>
