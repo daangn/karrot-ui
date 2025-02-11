@@ -15,7 +15,7 @@ export const PullToRefreshRoot = withProvider<SVGSVGElement, PullToRefreshRootPr
 
 export interface PullToRefreshIndicatorProps extends PullToRefreshPrimitive.IndicatorProps {}
 
-export const PullToRefreshIndicator = withContext<SVGCircleElement, PullToRefreshIndicatorProps>(
+export const PullToRefreshIndicator = withContext<HTMLDivElement, PullToRefreshIndicatorProps>(
   PullToRefreshPrimitive.Indicator,
   "indicator",
 );

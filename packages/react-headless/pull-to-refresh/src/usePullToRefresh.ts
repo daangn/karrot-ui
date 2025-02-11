@@ -1,5 +1,6 @@
 import { dataAttr, elementProps } from "@seed-design/dom-utils";
 import { useRef, useState, useSyncExternalStore } from "react";
+import { getClientY, isLeftPress, touchEnd, touchMove } from "./normalize-event";
 import { Store } from "./store";
 
 interface UsePullToRefreshStateProps {
@@ -65,6 +66,7 @@ const contextStore = new Store<PullToRefreshContext>({
 const useContextStore = () => {
   return useSyncExternalStore(
     (listener) => contextStore.subscribe(listener),
+    () => contextStore.getState(),
     () => contextStore.getState(),
   );
 };
@@ -164,11 +166,12 @@ export function usePullToRefresh(props: UsePullToRefreshProps) {
     stateProps,
     rootProps: elementProps({
       ...stateProps,
-      onTouchMove: (e: React.TouchEvent) => {
+      [touchMove]: (e: React.TouchEvent | React.PointerEvent) => {
         if (e.defaultPrevented) return;
-        events.move({ y: e.touches[0].clientY, scrollTop: e.currentTarget.scrollTop });
+        if (!isLeftPress(e)) return;
+        events.move({ y: getClientY(e), scrollTop: e.currentTarget.scrollTop });
       },
-      onTouchEnd: () => {
+      [touchEnd]: () => {
         events.end();
       },
       style: {
