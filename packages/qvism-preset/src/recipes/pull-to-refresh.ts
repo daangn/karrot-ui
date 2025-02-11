@@ -8,7 +8,9 @@ const pullToRefresh = defineRecipe({
   base: {
     root: {
       "--ptr-size": "44px",
-      "--ptr-transition-duration": vars.$duration.s6,
+      "--ptr-transition-duration": vars.$duration.d6,
+
+      height: "100%",
     },
     indicator: {
       display: "flex",
@@ -16,7 +18,7 @@ const pullToRefresh = defineRecipe({
       justifyContent: "center",
 
       transform: "translateY(min(calc(var(--ptr-displacement, 0) - var(--ptr-size)), 0px))",
-      transition: `transform ${vars.$duration.s6}`,
+      transition: `transform ${vars.$duration.d6}`,
 
       [pseudo("[data-ptr-dragging]")]: {
         transition: "none",
