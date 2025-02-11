@@ -12,7 +12,6 @@ import {
   jsonschema,
   typescript,
   validate,
-  json,
 } from "@seed-design/rootage-core";
 import {
   parse as parseLegacy,
@@ -220,7 +219,7 @@ async function writeJson() {
   const artifactsPkg = JSON.parse(
     fs.readFileSync(path.join(artifactsDir, "package.json"), "utf-8"),
   );
-  const indexContent = json.genJsonIndex(models, artifactsPkg);
+  const indexContent = exchange.getIndex(models, { version: artifactsPkg.version });
   const indexPath = path.join(process.cwd(), dir, "index.json");
 
   console.log("Writing index to", indexPath);

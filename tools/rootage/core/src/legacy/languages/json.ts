@@ -1,14 +1,13 @@
-import type { PackageJson } from "type-fest";
 import type { Model } from "../types";
 
 export function genJsonIndex(
   models: Model[],
-  artifactsPkg: PackageJson,
   options: {
+    version?: string;
     resourcePrefix?: string;
   } = {},
 ) {
-  const { resourcePrefix = "" } = options;
+  const { version = "0.0.0", resourcePrefix = "" } = options;
 
   // Get all token files - place in root
   const tokenPaths = models
@@ -39,7 +38,7 @@ export function genJsonIndex(
 
   return {
     name: "Rootage",
-    version: artifactsPkg.version || "0.0.0",
+    version,
     resources,
   };
 }
