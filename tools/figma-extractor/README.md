@@ -75,6 +75,7 @@ export default config;
 - Figma API 사용을 위한 토큰 (Figma에서 제공)
 - 등록하지 않는 경우 `FIGMA_PERSONAL_ACCESS_TOKEN` 환경 변수를 사용합니다. (둘 중 하나는 필수)
 - [Personal Access Token 받기](https://www.figma.com/developers/api#access-tokens)
+- 생성된 Access Token은 24시간이 지나면 만료됩니다.
 
 ### `data`
 
