@@ -97,7 +97,7 @@
   {
     "name": "action-button",
     "dependencies": [
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "innerDependencies": [
       "ui:progress-circle"
@@ -301,7 +301,7 @@
   {
     "name": "text-button",
     "dependencies": [
-      "@radix-ui/react-slot"
+      "@seed-design/react"
     ],
     "files": [
       "ui:text-button.tsx"

@@ -1,7 +1,7 @@
 {
   "name": "action-button",
   "dependencies": [
-    "@radix-ui/react-slot"
+    "@seed-design/react"
   ],
   "innerDependencies": [
     "ui:progress-circle"
