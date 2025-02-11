@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Stack, Text } from "@seed-design/react";
 import * as React from "react";
 import { ActionButton, type ActionButtonProps } from "./action-button";
@@ -29,8 +31,8 @@ const primaryActionVariant = {
 } as const;
 
 const descriptionTextStyle = {
-  descriptionOnly: "bodyMediumReadingDefault",
-  withTitle: "bodySmallReadingDefault",
+  descriptionOnly: "t5Regular",
+  withTitle: "t4Regular",
 } as const;
 
 /**
@@ -55,15 +57,15 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>((pro
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      gap="s10"
-      paddingX="s14"
+      gap="x10"
+      paddingX="x14"
       height="full"
       flexGrow={1}
       background={bg[variant]}
       {...otherProps}
     >
-      <Stack gap="s1">
-        <Text align="center" textStyle="titleSmallDefault">
+      <Stack gap="x1">
+        <Text align="center" textStyle="t5Bold">
           {title}
         </Text>
         <Text
@@ -75,13 +77,13 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>((pro
         </Text>
       </Stack>
       {(primaryActionProps || secondaryActionProps) && (
-        <Stack alignItems="center" gap="s4">
+        <Stack alignItems="center" gap="x4">
           {primaryActionProps && (
             <ActionButton variant={primaryActionVariant[variant]} {...primaryActionProps} />
           )}
           {secondaryActionProps && (
             <button {...secondaryActionOtherProps}>
-              <Text color="fg.neutralMuted" fontSize="s4" fontWeight="medium">
+              <Text color="fg.neutralMuted" textStyle="t4Medium">
                 {secondaryActionLabel}
               </Text>
             </button>

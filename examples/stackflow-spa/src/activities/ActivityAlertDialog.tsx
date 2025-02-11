@@ -38,7 +38,7 @@ const ActivityAlertDialog: ActivityComponentType = () => {
           <AlertDialogDescription>다람쥐 헌 쳇바퀴에 타고파</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <Stack gap="s2">
+          <Stack gap="x2">
             <AlertDialogAction asChild>
               <ActionButton>확인</ActionButton>
             </AlertDialogAction>

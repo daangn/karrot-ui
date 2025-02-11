@@ -89,21 +89,21 @@ const Feed = () => {
     <Stack
       as="button"
       style={{ textAlign: "start" }}
-      gap="s2_5"
+      gap="x2_5"
       paddingX="spacingX.globalGutter"
-      paddingY="s1"
+      paddingY="x1"
     >
-      <Stack gap="s2">
-        <Stack gap="s1">
-          <Text as="h1" textStyle="bodyMediumStrong" color="fg.neutral" maxLines={1}>
+      <Stack gap="x2">
+        <Stack gap="x1">
+          <Text as="h1" textStyle="t5Medium" color="fg.neutral" maxLines={1}>
             독서 습관 만들기
           </Text>
-          <Text as="p" textStyle="bodySmallDefault" color="fg.neutralMuted" maxLines={2}>
+          <Text as="p" textStyle="t4Regular" color="fg.neutralMuted" maxLines={2}>
             하루 10페이지부터 시작하자. 취침 전 20분 독서는 수면의 질도 높여주는 일석이조 습관이다.
           </Text>
         </Stack>
-        <Inline alignItems="center" gap="s2">
-          <Text textStyle="bodySmallDefault" color="fg.neutralSubtle">
+        <Inline alignItems="center" gap="x2">
+          <Text textStyle="t4Regular" color="fg.neutralSubtle">
             라이프스타일 ⸱ 서초2동
           </Text>
         </Inline>

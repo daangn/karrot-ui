@@ -11,8 +11,8 @@ export const item = style({
   justifyContent: "space-between",
   alignItems: "center",
 
-  paddingInline: vars.$dimension.s4,
-  minHeight: vars.$dimension.s13,
+  paddingInline: vars.$dimension.x4,
+  minHeight: vars.$dimension.x13,
 
   borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
   ":last-child": {
@@ -27,8 +27,8 @@ export const item = style({
 
 export const title = style({
   color: vars.$color.fg.neutral,
-  fontSize: vars.$fontSize.s5,
-  lineHeight: vars.$lineHeight.s5,
+  fontSize: vars.$fontSize.t5,
+  lineHeight: vars.$lineHeight.t5,
   fontWeight: vars.$fontWeight.regular,
 });
 
@@ -38,8 +38,8 @@ export const icon = style({
   justifyContent: "center",
 
   color: vars.$color.fg.neutralMuted,
-  width: vars.$dimension.s4,
-  height: vars.$dimension.s4,
+  width: vars.$dimension.x4,
+  height: vars.$dimension.x4,
 });
 
 export const listItemGroup = style({
@@ -47,15 +47,15 @@ export const listItemGroup = style({
   flexDirection: "column",
   borderBottom: `1px solid ${vars.$color.stroke.neutral}`,
 
-  marginTop: vars.$dimension.s6,
+  marginTop: vars.$dimension.x6,
   fontWeight: vars.$fontWeight.bold,
 });
 
 export const listItemGroupTitle = style({
   color: vars.$color.fg.neutral,
-  fontSize: vars.$fontSize.s4,
-  lineHeight: vars.$lineHeight.s5,
+  fontSize: vars.$fontSize.t4,
+  lineHeight: vars.$lineHeight.t5,
 
-  paddingInline: vars.$dimension.s4,
-  marginBottom: vars.$dimension.s1,
+  paddingInline: vars.$dimension.x4,
+  marginBottom: vars.$dimension.x1,
 });

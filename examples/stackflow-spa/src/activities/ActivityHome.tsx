@@ -65,7 +65,7 @@ const ActivityHome: ActivityComponentType = () => {
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <Stack gap="s2">
+                  <Stack gap="x2">
                     <ActionButton onClick={() => setOpen(false)}>확인</ActionButton>
                     <ActionButton
                       variant="neutralSolid"
