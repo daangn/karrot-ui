@@ -12,7 +12,7 @@
     background-image: linear-gradient(90deg, var(--seed-gradient-shimmer));
     background-repeat: no-repeat;
     animation-fill-mode: forwards;
-    animation-name: shimmer;
+    animation-name: skeleton-shimmer;
     animation-duration: 1.5s;
     animation-timing-function: var(--seed-timing-function-easing);
     animation-iteration-count: infinite;
@@ -29,7 +29,7 @@
 .skeleton__root--radius_full {
     border-radius: var(--seed-radius-full);
 }
-@keyframes shimmer {
+@keyframes skeleton-shimmer {
     0% {
         transform: translateX(-100%);
     }

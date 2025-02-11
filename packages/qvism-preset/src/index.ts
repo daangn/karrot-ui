@@ -38,6 +38,7 @@ import toggleButton from "./recipes/toggle-button";
 import visuallyHidden from "./recipes/visually-hidden";
 import { appBar, appBarMain } from "./stackflow/app-bar";
 import { appScreen } from "./stackflow/app-screen";
+
 const recipes = {
   avatar,
   avatarStack,
@@ -84,4 +85,6 @@ const recipes = {
   pullToRefresh,
 };
 
-export default recipes;
+export default {
+  recipes,
+};

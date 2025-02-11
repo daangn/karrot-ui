@@ -8,14 +8,12 @@ import { transform } from "lightningcss";
 
 type Definition = SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>;
 
-export function generateBaseRules({
-  name,
-  definition,
-}: {
-  name: string;
-  definition: Definition["base"];
-}) {
-  return Object.entries(definition).map(([slot, style]) => {
+const prefixName = (name: string, options: { prefix?: string } = {}) =>
+  options.prefix ? `${options.prefix}-${name}` : name;
+
+export function generateBaseRules(definition: Definition, options: { prefix?: string } = {}) {
+  const name = prefixName(definition.name, options);
+  return Object.entries(definition.base).map(([slot, style]) => {
     if (!style) {
       return undefined;
     }
@@ -27,14 +25,9 @@ export function generateBaseRules({
   });
 }
 
-export function generateVariantRules({
-  name,
-  definition,
-}: {
-  name: string;
-  definition: Definition["variants"];
-}) {
-  return Object.entries(definition).flatMap(([variantName, variant]) => {
+export function generateVariantRules(definition: Definition, options: { prefix?: string } = {}) {
+  const name = prefixName(definition.name, options);
+  return Object.entries(definition.variants).flatMap(([variantName, variant]) => {
     return Object.entries(variant).flatMap(([variantValue, variantStyles]) => {
       return Object.entries(variantStyles).map(([slot, style]) => {
         if (!style) {
@@ -50,38 +43,40 @@ export function generateVariantRules({
   });
 }
 
-export function generateCompoundVariantRules({
-  name,
-  definition,
-}: {
-  name: string;
-  definition: NonNullable<Definition["compoundVariants"]>;
-}) {
-  return definition.flatMap(({ css, ...selection }) => {
-    return Object.entries(css).map(([slot, style]) => {
-      if (!style) {
-        return undefined;
-      }
+export function generateCompoundVariantRules(
+  definition: Definition,
+  options: { prefix?: string } = {},
+) {
+  const name = prefixName(definition.name, options);
+  return (
+    definition.compoundVariants?.flatMap(({ css, ...selection }) => {
+      return Object.entries(css).map(([slot, style]) => {
+        if (!style) {
+          return undefined;
+        }
 
-      const selector = `.${name}__${slot}--${Object.entries(selection)
-        .map(([variantName, variantValue]) => `${variantName}_${variantValue}`)
-        .join("-")}`;
-      const parsed = postcssJs.parse(style);
+        const selector = `.${name}__${slot}--${Object.entries(selection)
+          .map(([variantName, variantValue]) => `${variantName}_${variantValue}`)
+          .join("-")}`;
+        const parsed = postcssJs.parse(style);
 
-      return postcss.rule({
-        selector: selector,
-        nodes: parsed.nodes,
+        return postcss.rule({
+          selector: selector,
+          nodes: parsed.nodes,
+        });
       });
-    });
-  });
+    }) ?? []
+  );
 }
 
-export function generateKeyframeRules(definition: Definition["keyframes"]) {
-  return Object.entries(definition ?? {}).flatMap(([keyframeName, keyframe]) => {
+export function generateKeyframeRules(definition: Definition, options: { prefix?: string } = {}) {
+  return Object.entries(definition.keyframes ?? {}).flatMap(([keyframeName, keyframe]) => {
+    const name = prefixName([definition.name, keyframeName].join("-"), options);
+
     const parsed = postcssJs.parse(keyframe);
     return postcss.atRule({
       name: "keyframes",
-      params: keyframeName,
+      params: name,
       nodes: parsed.nodes,
     });
   });
@@ -106,38 +101,34 @@ export async function transpileRulesToCss(
 
 export function generateCssRules(
   definition: Definition,
+  options: { prefix?: string } = {},
 ): (postcss.AtRule | postcss.Rule | undefined)[] {
-  const baseRules = generateBaseRules({
-    name: definition.name,
-    definition: definition.base,
-  });
-  const variantRules = generateVariantRules({
-    name: definition.name,
-    definition: definition.variants,
-  });
-  const compoundVariantRules = generateCompoundVariantRules({
-    name: definition.name,
-    definition: definition.compoundVariants ?? [],
-  });
-  const keyframeRules = generateKeyframeRules(definition.keyframes);
+  const baseRules = generateBaseRules(definition, options);
+  const variantRules = generateVariantRules(definition, options);
+  const compoundVariantRules = generateCompoundVariantRules(definition, options);
+  const keyframeRules = generateKeyframeRules(definition);
 
   return [...baseRules, ...variantRules, ...compoundVariantRules, ...keyframeRules];
 }
 
-export async function generateCss(definition: Definition): Promise<string> {
-  return transpileRulesToCss(generateCssRules(definition));
+export async function generateCss(
+  definition: Definition,
+  options: { prefix?: string },
+): Promise<string> {
+  return transpileRulesToCss(generateCssRules(definition, options));
 }
 
 export async function generateCssBundle(
   definitions: Definition[],
-  options: { minify?: boolean } = {},
+  options: { minify?: boolean; filename?: string; prefix?: string } = {},
 ): Promise<string> {
-  const rules = definitions.flatMap(generateCssRules);
+  const { minify = false, filename = "component.css" } = options;
+  const rules = definitions.flatMap((definition) => generateCssRules(definition, options));
   const css = await transpileRulesToCss(rules);
 
   return transform({
-    filename: "component.css",
+    filename,
     code: Buffer.from(css),
-    minify: options.minify,
+    minify,
   }).code.toString();
 }

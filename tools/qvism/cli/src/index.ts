@@ -16,27 +16,33 @@ import path from "node:path";
 const [, , format, dir = "./"] = process.argv;
 
 async function writeCss() {
+  const { recipes, prefix } = preset as Config;
+  const options = { prefix };
+
   await Promise.all(
-    Object.entries(preset as Config).map(async ([name, definition]) => {
-      const cssCode = await generateCss(definition);
+    Object.entries(recipes).map(async ([name, definition]) => {
+      const cssCode = await generateCss(definition, options);
       console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.css`));
       fs.writeFileSync(path.join(process.cwd(), dir, `${name}.css`), cssCode);
     }),
   );
 
-  const css = await generateCssBundle(Object.values(preset as Config));
+  const css = await generateCssBundle(Object.values(recipes), options);
   console.log("Writing css bundle to", path.join(process.cwd(), dir, "component.css"));
   fs.writeFileSync(path.join(process.cwd(), dir, "component.css"), css);
 
-  const minifiedCss = await generateCssBundle(Object.values(preset as Config), { minify: true });
+  const minifiedCss = await generateCssBundle(Object.values(recipes), { minify: true, prefix });
   console.log("Writing minified css bundle to", path.join(process.cwd(), dir, "component.min.css"));
   fs.writeFileSync(path.join(process.cwd(), dir, "component.min.css"), minifiedCss);
 }
 
 async function writeCssInJs() {
+  const { recipes, prefix } = preset as Config;
+  const options = { prefix };
+
   return Promise.all(
-    Object.entries(preset as Config).map(async ([name, definition]) => {
-      const jsCode = generateJs(definition);
+    Object.entries(recipes).map(async ([name, definition]) => {
+      const jsCode = generateJs(definition, options);
       const dtsCode = generateDts(definition);
 
       console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.mjs`));

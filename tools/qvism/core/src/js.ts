@@ -4,10 +4,17 @@ import { escapeReservedWord } from "./reserved-words";
 import type { SlotRecipeDefinition, SlotRecipeVariantRecord } from "./types";
 import { booleanStringToBoolean, isBooleanString } from "./logic";
 
+const prefixName = (name: string, options: { prefix?: string } = {}) =>
+  options.prefix ? `${options.prefix}-${name}` : name;
+
 export function generateJs(
   definition: SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>,
+  options: { prefix?: string } = {},
 ): string {
-  const slotNames = definition.slots.map((slot) => [slot, `${definition.name}__${slot}`]);
+  const slotNames = definition.slots.map((slot) => [
+    slot,
+    `${prefixName(definition.name, options)}__${slot}`,
+  ]);
 
   const variantMap = Object.fromEntries(
     Object.entries(definition.variants).map(([variantName, variant]) => [

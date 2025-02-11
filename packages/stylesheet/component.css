@@ -3374,7 +3374,7 @@
 }
 
 .progressCircle__root[data-progress-state="indeterminate"] {
-  animation: 1.2s cubic-bezier(.35, .25, .65, .75) infinite rotate;
+  animation: 1.2s cubic-bezier(.35, .25, .65, .75) infinite progressCircle-rotate;
 }
 
 .progressCircle__track {
@@ -3390,7 +3390,7 @@
 }
 
 .progressCircle__range[data-progress-state="indeterminate"] {
-  animation: 1.2s cubic-bezier(.35, 0, .65, 1) infinite headDash, 1.2s cubic-bezier(.35, 0, .65, .6) infinite tailDash;
+  animation: 1.2s cubic-bezier(.35, 0, .65, 1) infinite progressCircle-headDash, 1.2s cubic-bezier(.35, 0, .65, .6) infinite progressCircle-tailDash;
 }
 
 .progressCircle__root--tone_neutral {
@@ -3418,7 +3418,7 @@
   --thickness: 5px;
 }
 
-@keyframes rotate {
+@keyframes progressCircle-rotate {
   from {
     transform: rotate(0);
   }
@@ -3428,7 +3428,7 @@
   }
 }
 
-@keyframes headDash {
+@keyframes progressCircle-headDash {
   0% {
     stroke-dasharray: 0 1000%;
   }
@@ -3442,7 +3442,7 @@
   }
 }
 
-@keyframes tailDash {
+@keyframes progressCircle-tailDash {
   0% {
     stroke-dashoffset: 0;
   }
@@ -3849,7 +3849,7 @@
   background-image: linear-gradient(90deg, var(--seed-gradient-shimmer));
   width: 100%;
   height: 100%;
-  animation-name: shimmer;
+  animation-name: skeleton-shimmer;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-timing-function: var(--seed-timing-function-easing);
@@ -3874,7 +3874,7 @@
   border-radius: var(--seed-radius-full);
 }
 
-@keyframes shimmer {
+@keyframes skeleton-shimmer {
   0% {
     transform: translateX(-100%);
   }

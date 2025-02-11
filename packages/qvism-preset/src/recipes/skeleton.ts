@@ -21,7 +21,8 @@ const skeleton = defineRecipe({
         backgroundRepeat: "no-repeat",
         animationFillMode: "forwards",
 
-        animationName: "shimmer",
+        // FIXME: temporal workaround for recipe name prefixing; We have to remove this once we have a proper solution
+        animationName: "skeleton-shimmer",
         animationDuration: vars.base.enabled.shimmer.duration,
         animationTimingFunction: vars.base.enabled.shimmer.timingFunction,
         animationIterationCount: "infinite",

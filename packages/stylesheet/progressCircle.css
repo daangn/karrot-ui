@@ -4,7 +4,7 @@
     position: relative;
 }
 .progressCircle__root[data-progress-state=indeterminate] {
-    animation: rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite;
+    animation: progressCircle-rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite;
 }
 .progressCircle__track {
     stroke: var(--track-color);
@@ -18,8 +18,8 @@
 }
 .progressCircle__range[data-progress-state=indeterminate] {
     animation: 
-          headDash 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
-          tailDash 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
+          progressCircle-headDash 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
+          progressCircle-tailDash 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
         ;
 }
 .progressCircle__root--tone_neutral {
@@ -44,7 +44,7 @@
     --thickness: 5px;
 }
 .progressCircle__root--size_inherit {}
-@keyframes rotate {
+@keyframes progressCircle-rotate {
     from {
         transform: rotate(0deg);
     }
@@ -52,7 +52,7 @@
         transform: rotate(360deg);
     }
 }
-@keyframes headDash {
+@keyframes progressCircle-headDash {
     0% {
         stroke-dasharray: 0, 1000%;
     }
@@ -63,7 +63,7 @@
         stroke-dasharray: var(--circumference), 1000%;
     }
 }
-@keyframes tailDash {
+@keyframes progressCircle-tailDash {
     0% {
         stroke-dashoffset: 0;
     }

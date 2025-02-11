@@ -50,4 +50,8 @@ export interface SlotRecipeDefinition<S extends string, T extends SlotRecipeVari
   keyframes?: Record<string, Partial<Record<"from" | "to" | `${string}%`, StyleObject>>>;
 }
 
-export type Config = Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
+export interface Config {
+  prefix?: string;
+
+  recipes: Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
+}
