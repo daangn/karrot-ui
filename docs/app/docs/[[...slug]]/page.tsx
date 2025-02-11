@@ -12,6 +12,11 @@ function getPath(slug: string[]) {
   return slug.join("/");
 }
 
+function styleToLevel(style: unknown) {
+  if (typeof style !== "string") return;
+  return Number.parseInt(style.split("h")[1]);
+}
+
 export default async function Page({
   params,
 }: {
@@ -29,7 +34,7 @@ export default async function Page({
   const guidelineToc =
     guideline?.toc?.map((item: PortableTextBlock) => {
       return {
-        depth: item.level ?? 0,
+        depth: item.level ?? styleToLevel(item.style) ?? 0,
         title: (
           <PortableContent
             content={{
