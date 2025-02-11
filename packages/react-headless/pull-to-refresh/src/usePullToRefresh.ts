@@ -125,7 +125,7 @@ function usePullToRefreshState(props: UsePullToRefreshStateProps) {
           setState("idle");
           setContext({ y0: 0, y: -1, displacement: 0 });
         });
-      } else {
+      } else if (state === "ready" || state === "pulling") {
         setState("idle");
         setContext({ y0: 0, y: -1, displacement: 0 });
       }
