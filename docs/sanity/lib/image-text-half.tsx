@@ -48,8 +48,11 @@ export function ImageTextHalfPreview({ value }: ImageTextHalfPreviewProps) {
       style={{
         marginTop: "24px",
       }}
-      className={`flex flex-col gap-6 ${imagePosition === "right" ? "sm:flex-row-reverse" : "sm:flex-row"}`}
+      className={`flex flex-col gap-6 ${imagePosition === "left" ? "sm:flex-row-reverse" : "sm:flex-row"}`}
     >
+      <div style={{ flex: 1, padding: 4 }}>
+        <PortableContent content={text} />
+      </div>
       <div className="flex-1 w-full sm:max-w-[50%] rounded-2xl my-4">
         <img
           src={imageUrl() ?? undefined}
@@ -61,10 +64,6 @@ export function ImageTextHalfPreview({ value }: ImageTextHalfPreviewProps) {
             margin: 0,
           }}
         />
-      </div>
-
-      <div style={{ flex: 1, padding: 4 }}>
-        <PortableContent content={text} />
       </div>
     </div>
   );
