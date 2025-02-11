@@ -6,6 +6,37 @@ import { makeStack } from "./Stack";
 
 import type { RegisteredActivityName } from "@stackflow/config";
 import type { ActivityComponentType } from "@stackflow/react/future";
+import { useEffect, useState } from "react";
+import type * as React from "react";
+
+const usePreventScroll = (ref: React.RefObject<HTMLElement>) => {
+  const [isTouchInside, setIsTouchInside] = useState(false);
+
+  useEffect(() => {
+    const handleTouchStart = (event: TouchEvent) => {
+      if (ref.current?.contains(event.target as Node)) {
+        setIsTouchInside(true);
+      } else {
+        setIsTouchInside(false);
+      }
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (isTouchInside) {
+        // Prevent scrolling the page
+        event.preventDefault();
+      }
+    };
+
+    document.addEventListener("touchstart", handleTouchStart, { passive: true });
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, [ref, isTouchInside]);
+};
 
 interface StackflowProps<T extends RegisteredActivityName> {
   activities: {
@@ -21,6 +52,8 @@ export const Stackflow = <T extends RegisteredActivityName>({ activities }: Stac
     rootMargin: "-200px",
     initialTransform: "scale(0.95)",
   });
+
+  usePreventScroll(ref);
 
   return (
     <div
