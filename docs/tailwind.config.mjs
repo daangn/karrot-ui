@@ -8,6 +8,7 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./content/**/*.{md,mdx}",
     "./mdx-components.{ts,tsx}",
+    "./sanity/**/*.{ts,tsx}",
     "../node_modules/fumadocs-ui/dist/**/*.js",
   ],
   theme: seedTheme,
