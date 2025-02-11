@@ -13,11 +13,13 @@ import {
   typescript,
   validate,
 } from "@seed-design/rootage-core";
-import { parse as parseLegacy } from "@seed-design/rootage-core/legacy";
+import {
+  parse as parseLegacy,
+  genJsonIndex as genJsonIndexLegacy,
+} from "@seed-design/rootage-core/legacy";
 import fs from "fs-extra";
 import path from "node:path";
 import YAML from "yaml";
-
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
@@ -55,6 +57,7 @@ async function prepare() {
     models.map((model, i) => ({
       fileName: filePaths[i],
       ast: Authoring.fromObject(model),
+      kind: model.kind,
     })),
   );
 
@@ -194,7 +197,7 @@ async function writeJsonSchema() {
 }
 
 async function writeJson() {
-  const { ctx } = await prepare();
+  const { ctx, models } = await prepare();
 
   for (const { fileName, ast } of getSourceFiles(ctx)) {
     const content = exchange.getModel(ast);
@@ -211,6 +214,16 @@ async function writeJson() {
 
     fs.writeFileSync(writePath, code);
   }
+
+  // Generate and write index.json
+  const artifactsPkg = JSON.parse(
+    fs.readFileSync(path.join(artifactsDir, "package.json"), "utf-8"),
+  );
+  const indexContent = exchange.getIndex(models, { version: artifactsPkg.version });
+  const indexPath = path.join(process.cwd(), dir, "index.json");
+
+  console.log("Writing index to", indexPath);
+  fs.writeFileSync(indexPath, JSON.stringify(indexContent, null, 2));
 }
 
 async function writeJsonLegacy() {
@@ -242,6 +255,16 @@ async function writeJsonLegacy() {
   }
 
   fs.writeFileSync(writePath, code);
+
+  // Generate and write index.json
+  const artifactsPkg = JSON.parse(
+    fs.readFileSync(path.join(artifactsDir, "package.json"), "utf-8"),
+  );
+  const indexContent = genJsonIndexLegacy(models, artifactsPkg);
+  const indexPath = path.join(process.cwd(), dir, "index.json");
+
+  console.log("Writing index to", indexPath);
+  fs.writeFileSync(indexPath, JSON.stringify(indexContent, null, 2));
 }
 
 if (command === "token-ts") {

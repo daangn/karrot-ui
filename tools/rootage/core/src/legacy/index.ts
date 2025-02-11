@@ -3,6 +3,7 @@ export * from "./context";
 export * from "./languages/css";
 export * from "./languages/jsonschema";
 export * from "./languages/typescript";
+export * from "./languages/json";
 export * from "./parse";
 export * from "./resolver";
 export * from "./token";
