@@ -29,7 +29,6 @@ export const initCommand = (cli: CAC) => {
       let config: RawConfig = {
         rsc: false,
         tsx: true,
-        css: true,
         path: "./seed-design",
       };
 
@@ -45,11 +44,6 @@ export const initCommand = (cli: CAC) => {
               p.confirm({
                 message: `${highlight("React Server Components")}를 사용중이신가요?`,
                 initialValue: false,
-              }),
-            css: () =>
-              p.confirm({
-                message: `${highlight("CSS Loader")}를 사용중이신가요? (true일 경우 컴포넌트에 CSS import가 추가됩니다.)`,
-                initialValue: true,
               }),
             path: () =>
               p.text({

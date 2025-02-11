@@ -5,7 +5,6 @@ import path from "path";
 
 import { transformJsx } from "@/src/utils/transformers/transform-jsx";
 import { transformRsc } from "@/src/utils/transformers/transform-rsc";
-import { transformCSS } from "./transform-css";
 
 import { Project, ScriptKind, type SourceFile } from "ts-morph";
 
@@ -23,7 +22,7 @@ export type Transformer<Output = SourceFile> = (
   },
 ) => Promise<Output>;
 
-const transformers: Transformer[] = [transformRsc, transformCSS];
+const transformers: Transformer[] = [transformRsc];
 
 const project = new Project({
   compilerOptions: {},

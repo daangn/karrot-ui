@@ -18,7 +18,6 @@ export const rawConfigSchema = z
     $schema: z.string().optional(),
     rsc: z.coerce.boolean().default(false),
     tsx: z.coerce.boolean().default(true),
-    css: z.coerce.boolean().default(true),
     path: z.string(),
   })
   .strict();

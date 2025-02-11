@@ -16,7 +16,7 @@ Seed Design V3로 마이그레이션하기 위해 필요한 작업들을 안내�
 </Callout>
 
 ```package-install
-@seed-design/stylesheet@alpha @seed-design/react@alpha
+@seed-design/stylesheet@alpha @seed-design/react@alpha @seed-design/recipe@alpha
 ```
 </Step>
 
@@ -63,19 +63,14 @@ npx @seed-design/cli@latest init
 <Step>
 ### seed-design 설정
 ```sh
-◇  Would you like to use TypeScript (recommended)?
+◇  TypeScript를 사용중이신가요?
 │  Yes
 │
-◇  Are you using React Server Components?
+◇  React Server Components를 사용중이신가요?
 │  No
 │
-◇  Would you like to use CSS Loader? (If true, CSS import will be added in components)
-│  Yes
-│
-◇  Enter the path to your seed-design directory
+◇  seed-design 폴더 경로를 입력해주세요. (기본값은 프로젝트 루트에 생성됩니다.)
 │  ./seed-design
-│
-◇  seed-design.json written to seed-design.json
 ```
 </Step>
 </Steps>
@@ -88,7 +83,6 @@ npx @seed-design/cli@latest init
 {
   "rsc": false,
   "tsx": true,
-  "css": true,
   "path": "./seed-design"
 }
 ```

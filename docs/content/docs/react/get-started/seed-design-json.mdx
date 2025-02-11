@@ -24,19 +24,14 @@ npx @seed-design/cli@latest init
 
 ### seed-design 설정
 ```sh
-◇  Would you like to use TypeScript (recommended)?
+◇  TypeScript를 사용중이신가요?
 │  Yes
 │
-◇  Are you using React Server Components?
+◇  React Server Components를 사용중이신가요?
 │  No
 │
-◇  Would you like to use CSS Loader? (If true, CSS import will be added in components)
-│  Yes
-│
-◇  Enter the path to your seed-design directory
+◇  seed-design 폴더 경로를 입력해주세요. (기본값은 프로젝트 루트에 생성됩니다.)
 │  ./seed-design
-│
-◇  seed-design.json written to seed-design.json
 ```
 </Step>
 </Steps>
@@ -113,18 +108,6 @@ seed-design이 필요로 하는 폴더나 파일들은 `path`로 지정된 경�
 ```json title="seed-design.json"
 {
   "tsx": true | false (default: true)
-}
-```
-
-### css
-
-CSS Modules를 사용할지 여부를 설정해요.
-
-`true`로 설정하면 컴포넌트에 CSS import 구문이 추가돼요.
-
-```json title="seed-design.json"
-{
-  "css": true | false (default: true)
 }
 ```
 
