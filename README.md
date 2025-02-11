@@ -2,27 +2,27 @@
 
 **Definitions**
 
-- [@seed-design/rootage](https://github.com/daangn/seed-design/tree/main/packages/rootage)
-- [@seed-design/qvism-preset](https://github.com/daangn/seed-design/tree/main/packages/qvism-preset)
+- [@seed-design/rootage](./packages/rootage)
+- [@seed-design/qvism-preset](./packages/qvism-preset)
 
 **Base Libraries**
 
-- [@seed-design/vars](https://github.com/daangn/seed-design/tree/main/packages/vars)
-- [@seed-design/stylesheet](https://github.com/daangn/seed-design/tree/main/packages/stylesheet)
-- [@seed-design/recipe](https://github.com/daangn/seed-design/tree/main/packages/recipe)
+- [@seed-design/vars](./packages/vars)
+- [@seed-design/stylesheet](./packages/stylesheet)
+- [@seed-design/recipe](./packages/recipe)
 
 **React Libraries**
 
-- [@seed-design/react-headless](https://github.com/daangn/seed-design/tree/main/packages/react-headless)
-- [@seed-design/react](https://github.com/daangn/seed-design/tree/main/packages/react)
-- [@seed-design/stackflow](https://github.com/daangn/seed-design/tree/main/packages/stackflow)
+- [@seed-design/react-headless](./packages/react-headless)
+- [@seed-design/react](./packages/react)
+- [@seed-design/stackflow](./packages/stackflow)
 
 **Tooling**
 
-- [@seed-design/tools/rootage](https://github.com/daangn/seed-design/tree/main/tools/rootage)
-- [@seed-design/tools/qvism](https://github.com/daangn/seed-design/tree/main/tools/qvism)
+- [@seed-design/tools/rootage](./tools/rootage)
+- [@seed-design/tools/qvism](./tools/qvism)
 
 **Documentation**
 
-- [@seed-design/docs](https://github.com/daangn/seed-design/tree/main/docs)
-  - [contributing guide](https://github.com/daangn/seed-design/tree/main/docs/CONTRIBUTING.md)
+- [@seed-design/docs](./docs)
+  - [contributing guide](./docs/CONTRIBUTING.md)
