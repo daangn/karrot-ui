@@ -10,7 +10,7 @@
     "definitions": [
       {
         "variants": {
-          "textStyle": "label-small-default"
+          "textStyle": "screenTitle"
         },
         "definitions": [
           {
@@ -21,11 +21,39 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s1"
+                  "value": "$font-size.t10"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s1"
+                  "value": "$line-height.t10"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "textStyle": "articleBody"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t6"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -38,7 +66,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-small-strong"
+          "textStyle": "t1Regular"
         },
         "definitions": [
           {
@@ -49,11 +77,39 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s1"
+                  "value": "$font-size.t1"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s1"
+                  "value": "$line-height.t1"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "textStyle": "t1Medium"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t1"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t1"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -66,7 +122,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-small-stronger"
+          "textStyle": "t1Bold"
         },
         "definitions": [
           {
@@ -77,11 +133,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s1"
+                  "value": "$font-size.t1"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s1"
+                  "value": "$line-height.t1"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -94,7 +150,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-medium-default"
+          "textStyle": "t2Regular"
         },
         "definitions": [
           {
@@ -105,11 +161,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -122,7 +178,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-medium-strong"
+          "textStyle": "t2Medium"
         },
         "definitions": [
           {
@@ -133,11 +189,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -150,7 +206,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-medium-stronger"
+          "textStyle": "t2Bold"
         },
         "definitions": [
           {
@@ -161,11 +217,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -178,7 +234,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-large-default"
+          "textStyle": "t3Regular"
         },
         "definitions": [
           {
@@ -189,11 +245,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s3"
+                  "value": "$font-size.t3"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s3"
+                  "value": "$line-height.t3"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -206,7 +262,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-large-strong"
+          "textStyle": "t3Medium"
         },
         "definitions": [
           {
@@ -217,11 +273,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s3"
+                  "value": "$font-size.t3"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s3"
+                  "value": "$line-height.t3"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -234,7 +290,7 @@
       },
       {
         "variants": {
-          "textStyle": "label-large-stronger"
+          "textStyle": "t3Bold"
         },
         "definitions": [
           {
@@ -245,11 +301,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s3"
+                  "value": "$font-size.t3"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s3"
+                  "value": "$line-height.t3"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -262,7 +318,7 @@
       },
       {
         "variants": {
-          "textStyle": "body-small-default"
+          "textStyle": "t4Regular"
         },
         "definitions": [
           {
@@ -273,11 +329,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -290,7 +346,7 @@
       },
       {
         "variants": {
-          "textStyle": "body-small-reading-default"
+          "textStyle": "t4Medium"
         },
         "definitions": [
           {
@@ -301,39 +357,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
-                },
-                "fontWeight": {
-                  "type": "number",
-                  "value": "$font-weight.regular"
-                }
-              }
-            }
-          }
-        ]
-      },
-      {
-        "variants": {
-          "textStyle": "body-small-strong"
-        },
-        "definitions": [
-          {
-            "states": [
-              "enabled"
-            ],
-            "slots": {
-              "root": {
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s4"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -346,7 +374,7 @@
       },
       {
         "variants": {
-          "textStyle": "body-small-stronger"
+          "textStyle": "t4Bold"
         },
         "definitions": [
           {
@@ -357,11 +385,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -374,7 +402,7 @@
       },
       {
         "variants": {
-          "textStyle": "body-medium-default"
+          "textStyle": "t5Regular"
         },
         "definitions": [
           {
@@ -385,11 +413,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -402,7 +430,7 @@
       },
       {
         "variants": {
-          "textStyle": "body-medium-reading-default"
+          "textStyle": "t5Medium"
         },
         "definitions": [
           {
@@ -413,39 +441,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
-                },
-                "fontWeight": {
-                  "type": "number",
-                  "value": "$font-weight.regular"
-                }
-              }
-            }
-          }
-        ]
-      },
-      {
-        "variants": {
-          "textStyle": "body-medium-strong"
-        },
-        "definitions": [
-          {
-            "states": [
-              "enabled"
-            ],
-            "slots": {
-              "root": {
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s5"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -458,7 +458,7 @@
       },
       {
         "variants": {
-          "textStyle": "body-medium-stronger"
+          "textStyle": "t5Bold"
         },
         "definitions": [
           {
@@ -469,11 +469,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -486,7 +486,7 @@
       },
       {
         "variants": {
-          "textStyle": "title-small-default"
+          "textStyle": "t6Bold"
         },
         "definitions": [
           {
@@ -497,11 +497,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t6"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -514,7 +514,7 @@
       },
       {
         "variants": {
-          "textStyle": "title-medium-default"
+          "textStyle": "t7Bold"
         },
         "definitions": [
           {
@@ -525,11 +525,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t7"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t7"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -542,7 +542,7 @@
       },
       {
         "variants": {
-          "textStyle": "title-large-default"
+          "textStyle": "t8Bold"
         },
         "definitions": [
           {
@@ -553,11 +553,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s7"
+                  "value": "$font-size.t8"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s7"
+                  "value": "$line-height.t8"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -570,7 +570,7 @@
       },
       {
         "variants": {
-          "textStyle": "heading-small-default"
+          "textStyle": "t9Bold"
         },
         "definitions": [
           {
@@ -581,11 +581,11 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s8"
+                  "value": "$font-size.t9"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s8"
+                  "value": "$line-height.t9"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -598,7 +598,7 @@
       },
       {
         "variants": {
-          "textStyle": "heading-medium-default"
+          "textStyle": "t10Bold"
         },
         "definitions": [
           {
@@ -609,43 +609,15 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s9"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s9"
+                  "value": "$line-height.t5"
                 },
                 "fontWeight": {
                   "type": "number",
-                  "value": "$font-weight.bold"
-                }
-              }
-            }
-          }
-        ]
-      },
-      {
-        "variants": {
-          "textStyle": "heading-large-default"
-        },
-        "definitions": [
-          {
-            "states": [
-              "enabled"
-            ],
-            "slots": {
-              "root": {
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s10"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s10"
-                },
-                "fontWeight": {
-                  "type": "number",
-                  "value": "$font-weight.bold"
+                  "value": "$font-weight.regular"
                 }
               }
             }

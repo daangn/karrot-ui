@@ -7,12 +7,12 @@ data:
   base:
     enabled:
       root:
-        paddingX: $dimension.s4
-  variant=neutral solid:
+        paddingX: $dimension.x4
+  variant=neutralSolid:
     enabled:
       root:
         gap: 0px
-  variant=brand solid:
+  variant=brandSolid:
     enabled:
       root:
         gap: 8px

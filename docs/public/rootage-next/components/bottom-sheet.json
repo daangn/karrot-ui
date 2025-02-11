@@ -23,7 +23,7 @@
                 },
                 "enterDuration": {
                   "type": "duration",
-                  "value": "$duration.s2"
+                  "value": "$duration.d2"
                 },
                 "enterTimingFunction": {
                   "type": "cubicBezier",
@@ -35,7 +35,7 @@
                 },
                 "exitDuration": {
                   "type": "duration",
-                  "value": "$duration.s2"
+                  "value": "$duration.d2"
                 },
                 "exitTimingFunction": {
                   "type": "cubicBezier",
@@ -53,11 +53,11 @@
                 },
                 "cornerTopRadius": {
                   "type": "dimension",
-                  "value": "$radius.s6"
+                  "value": "$radius.r6"
                 },
                 "enterDuration": {
                   "type": "duration",
-                  "value": "$duration.s6"
+                  "value": "$duration.d6"
                 },
                 "enterTimingFunction": {
                   "type": "cubicBezier",
@@ -65,7 +65,7 @@
                 },
                 "exitDuration": {
                   "type": "duration",
-                  "value": "$duration.s4"
+                  "value": "$duration.d4"
                 },
                 "exitTimingFunction": {
                   "type": "cubicBezier",
@@ -75,7 +75,7 @@
               "header": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "paddingX": {
                   "type": "dimension",
@@ -83,11 +83,11 @@
                 },
                 "paddingTop": {
                   "type": "dimension",
-                  "value": "$dimension.s6"
+                  "value": "$dimension.x6"
                 },
                 "paddingBottom": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "body": {
@@ -103,11 +103,11 @@
                 },
                 "paddingTop": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 },
                 "paddingBottom": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "title": {
@@ -117,11 +117,11 @@
                 },
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s8"
+                  "value": "$font-size.t8"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s8"
+                  "value": "$line-height.t8"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -135,11 +135,11 @@
                 },
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t6"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -171,11 +171,11 @@
                 },
                 "fromTop": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 },
                 "fromRight": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 }
               },
               "closeIcon": {

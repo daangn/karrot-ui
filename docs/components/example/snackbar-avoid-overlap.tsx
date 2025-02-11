@@ -13,7 +13,7 @@ function Component() {
   const adapter = useSnackbarAdapter();
 
   return (
-    <Flex direction="column" gap="s4">
+    <Flex direction="column" gap="x4">
       <ActionButton
         onClick={() =>
           adapter.create({
@@ -28,7 +28,7 @@ function Component() {
       <SnackbarAvoidOverlap>
         <Flex
           width="full"
-          height="s16"
+          height="x16"
           background="bg.criticalWeak"
           justifyContent="center"
           alignItems="center"

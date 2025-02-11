@@ -3,7 +3,7 @@ export declare const vars: {
     "enabled": {
       "root": {
         "minHeight": "44px",
-        "paddingX": "var(--seed-v3-dimension-s4)"
+        "paddingX": "var(--seed-v3-dimension-x4)"
       },
       "icon": {
         "size": "24px",
@@ -15,7 +15,7 @@ export declare const vars: {
     "enabled": {
       "root": {
         "minHeight": "56px",
-        "paddingX": "var(--seed-v3-dimension-s4)"
+        "paddingX": "var(--seed-v3-dimension-x4)"
       },
       "icon": {
         "size": "24px",
@@ -66,7 +66,7 @@ export declare const vars: {
   "titleLayoutTitleOnly": {
     "enabled": {
       "title": {
-        "fontSize": "var(--seed-v3-font-size-s6-static)",
+        "fontSize": "var(--seed-v3-font-size-t6-static)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
@@ -74,11 +74,11 @@ export declare const vars: {
   "titleLayoutWithSubtitle": {
     "enabled": {
       "title": {
-        "fontSize": "var(--seed-v3-font-size-s5-static)",
+        "fontSize": "var(--seed-v3-font-size-t5-static)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       },
       "subtitle": {
-        "fontSize": "var(--seed-v3-font-size-s2-static)",
+        "fontSize": "var(--seed-v3-font-size-t2-static)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }

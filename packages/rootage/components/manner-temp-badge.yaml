@@ -8,12 +8,12 @@ data:
     enabled:
       root:
         minHeight: 20px
-        paddingY: $dimension.s0_5
-        paddingX: $dimension.s1_5
+        paddingY: $dimension.x0_5
+        paddingX: $dimension.x1_5
         cornerRadius: $radius.full
       label:
-        fontSize: $font-size.s1
-        lineHeight: $line-height.s1
+        fontSize: $font-size.t1
+        lineHeight: $line-height.t1
         fontWeight: $font-weight.bold
   level=l1:
     enabled:

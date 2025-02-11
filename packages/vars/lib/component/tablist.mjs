@@ -9,7 +9,7 @@ export const vars = {
       "indicator": {
         "height": "2px",
         "color": "var(--seed-v3-color-fg-neutral)",
-        "transformDuration": "var(--seed-v3-duration-s4)",
+        "transformDuration": "var(--seed-v3-duration-d4)",
         "transformTimingFunction": "var(--seed-v3-timing-function-easing)"
       }
     }

@@ -10,7 +10,7 @@ data:
       label:
         color: $color.fg.neutral
       root:
-        gap: $dimension.s2
+        gap: $dimension.x2
 
   weight=default:
     enabled:
@@ -80,24 +80,24 @@ data:
   size=medium:
     enabled:
       root:
-        minHeight: $dimension.s8
+        minHeight: $dimension.x8
       label:
-        fontSize: $font-size.s4
-        lineHeight: $line-height.s4
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
       control:
-        size: $dimension.s5
-        cornerRadius: $radius.s1
+        size: $dimension.x5
+        cornerRadius: $radius.r1
 
   size=large:
     enabled:
       root:
-        minHeight: $dimension.s9
+        minHeight: $dimension.x9
       label:
-        fontSize: $font-size.s5
-        lineHeight: $line-height.s5
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
       control:
-        size: $dimension.s6
-        cornerRadius: $radius.s1
+        size: $dimension.x6
+        cornerRadius: $radius.r1
 
   variant=square,size=medium:
     enabled:

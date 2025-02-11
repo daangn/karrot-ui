@@ -30,15 +30,15 @@
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "prefixIcon": {
@@ -53,11 +53,11 @@
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 },
                 "fontWeight": {
                   "type": "number",

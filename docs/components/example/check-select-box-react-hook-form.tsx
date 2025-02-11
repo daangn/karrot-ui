@@ -32,7 +32,7 @@ export default function CheckSelectBoxReactHookForm() {
   );
 
   return (
-    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+    <Stack gap="x3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
       <CheckSelectBoxGroup>
         <Stack gap="spacingY.componentDefault">
           {POSSIBLE_FRUIT_VALUES.map((name) => {
@@ -53,7 +53,7 @@ export default function CheckSelectBoxReactHookForm() {
           })}
         </Stack>
       </CheckSelectBoxGroup>
-      <Columns gap="s2">
+      <Columns gap="x2">
         <Column width="content">
           <ActionButton type="reset" variant="neutralWeak">
             초기화

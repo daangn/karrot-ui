@@ -26,7 +26,7 @@ const AlertDialogNeutral = () => {
           <AlertDialogDescription>중립적인 선택지를 제공합니다.</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <Columns gap="s2">
+          <Columns gap="x2">
             <Column>
               <AlertDialogAction asChild>
                 <ActionButton variant="neutralSolid">취소</ActionButton>

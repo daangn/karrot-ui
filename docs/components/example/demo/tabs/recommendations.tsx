@@ -78,7 +78,7 @@ export function Recommendations() {
   };
 
   return (
-    <Stack gap="spacingY.componentDefault" paddingTop="s4" paddingBottom="s16">
+    <Stack gap="spacingY.componentDefault" paddingTop="x4" paddingBottom="x16">
       <ExtendedFab
         prefixIcon={<IconPenHorizlineFill />}
         style={{ position: "fixed", insetBlockEnd: "16px", insetInlineEnd: "16px" }}
@@ -128,7 +128,7 @@ export function Recommendations() {
           </BottomSheetRoot>
         ))}
       </Flex>
-      <Stack gap="s4" as="ul">
+      <Stack gap="x4" as="ul">
         {filteredArticles
           .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
           .map((article) => (
@@ -167,7 +167,7 @@ export function FilterBottomSheet({
   return (
     <BottomSheetContent title={FILTERS.find((f) => f.value === filter)?.label}>
       <BottomSheetBody>
-        <Inline gap="s2">
+        <Inline gap="x2">
           {options.map((option: Category) => (
             <ControlChip.Toggle
               size="medium"

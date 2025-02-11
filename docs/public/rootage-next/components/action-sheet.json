@@ -23,7 +23,7 @@
                 },
                 "enterDuration": {
                   "type": "duration",
-                  "value": "$duration.s2"
+                  "value": "$duration.d2"
                 },
                 "enterTimingFunction": {
                   "type": "cubicBezier",
@@ -35,7 +35,7 @@
                 },
                 "exitDuration": {
                   "type": "duration",
-                  "value": "$duration.s2"
+                  "value": "$duration.d2"
                 },
                 "exitTimingFunction": {
                   "type": "cubicBezier",
@@ -53,11 +53,11 @@
                 },
                 "cornerTopRadius": {
                   "type": "dimension",
-                  "value": "$radius.s5"
+                  "value": "$radius.r5"
                 },
                 "enterDuration": {
                   "type": "duration",
-                  "value": "$duration.s6"
+                  "value": "$duration.d6"
                 },
                 "enterTimingFunction": {
                   "type": "cubicBezier",
@@ -65,7 +65,7 @@
                 },
                 "exitDuration": {
                   "type": "duration",
-                  "value": "$duration.s4"
+                  "value": "$duration.d4"
                 },
                 "exitTimingFunction": {
                   "type": "cubicBezier",
@@ -79,21 +79,21 @@
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "title": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -107,11 +107,11 @@
               "description": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s3"
+                  "value": "$font-size.t3"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s3"
+                  "value": "$line-height.t3"
                 },
                 "fontWeight": {
                   "type": "number",

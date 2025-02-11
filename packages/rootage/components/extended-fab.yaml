@@ -16,7 +16,7 @@ data:
               blur: 6px
               spread: 0px
               color: "#00000026"
-  variant=neutral solid:
+  variant=neutralSolid:
     enabled:
       root:
         color: $color.bg.neutral-inverted
@@ -27,7 +27,7 @@ data:
     pressed:
       root:
         color: $color.bg.neutral-inverted-pressed
-  variant=layer floating:
+  variant=layerFloating:
     enabled:
       root:
         color: $color.bg.layer-floating
@@ -42,25 +42,25 @@ data:
     enabled:
       root:
         minHeight: 40px
-        gap: $dimension.s1
-        paddingX: $dimension.s3_5
-        paddingY: $dimension.s2_5
+        gap: $dimension.x1
+        paddingX: $dimension.x3_5
+        paddingY: $dimension.x2_5
       prefixIcon:
         size: 16px
       label:
-        fontSize: $font-size.s4
-        lineHeight: $line-height.s4
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
         fontWeight: $font-weight.medium
   size=medium:
     enabled:
       root:
         minHeight: 48px
-        gap: $dimension.s1
-        paddingX: $dimension.s4
-        paddingY: $dimension.s3
+        gap: $dimension.x1
+        paddingX: $dimension.x4
+        paddingY: $dimension.x3
       prefixIcon:
         size: 16px
       label:
-        fontSize: $font-size.s5
-        lineHeight: $line-height.s5
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
         fontWeight: $font-weight.bold

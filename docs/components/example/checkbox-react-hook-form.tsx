@@ -32,7 +32,7 @@ export default function CheckboxReactHookForm() {
   );
 
   return (
-    <Stack gap="s3" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+    <Stack gap="x3" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
       <Stack>
         {POSSIBLE_FRUIT_VALUES.map((name) => {
           const {
@@ -50,7 +50,7 @@ export default function CheckboxReactHookForm() {
           );
         })}
       </Stack>
-      <Columns gap="s2">
+      <Columns gap="x2">
         <Column width="content">
           <ActionButton type="reset" variant="neutralWeak">
             초기화

@@ -19,39 +19,39 @@
               "root": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "content": {
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s4"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s4"
-                },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
                 },
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s10"
+                  "value": "$dimension.x10"
                 }
               },
               "icon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "marginY": {
                   "type": "dimension",
@@ -76,37 +76,37 @@
               "linkLabel": {
                 "height": {
                   "type": "dimension",
-                  "value": "$dimension.s10"
-                },
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.s2"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$dimension.x10"
                 },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.regular"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t2"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t2"
                 }
               },
               "dismissButton": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s10"
+                  "value": "$dimension.x10"
                 }
               },
               "dismissIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "actionableIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               }
             }
@@ -115,7 +115,7 @@
       },
       {
         "variants": {
-          "variant": "neutral weak"
+          "variant": "neutralWeak"
         },
         "definitions": [
           {
@@ -171,7 +171,7 @@
       },
       {
         "variants": {
-          "variant": "positive weak"
+          "variant": "positiveWeak"
         },
         "definitions": [
           {
@@ -227,7 +227,7 @@
       },
       {
         "variants": {
-          "variant": "informative weak"
+          "variant": "informativeWeak"
         },
         "definitions": [
           {
@@ -283,7 +283,7 @@
       },
       {
         "variants": {
-          "variant": "warning weak"
+          "variant": "warningWeak"
         },
         "definitions": [
           {
@@ -339,7 +339,7 @@
       },
       {
         "variants": {
-          "variant": "warning solid"
+          "variant": "warningSolid"
         },
         "definitions": [
           {
@@ -395,7 +395,7 @@
       },
       {
         "variants": {
-          "variant": "critical weak"
+          "variant": "criticalWeak"
         },
         "definitions": [
           {
@@ -445,7 +445,7 @@
       },
       {
         "variants": {
-          "variant": "critical solid"
+          "variant": "criticalSolid"
         },
         "definitions": [
           {

@@ -3,13 +3,13 @@ export declare const vars: {
     "enabled": {
       "root": {
         "minHeight": "20px",
-        "paddingY": "var(--seed-v3-dimension-s0_5)",
-        "paddingX": "var(--seed-v3-dimension-s1_5)",
+        "paddingY": "var(--seed-v3-dimension-x0_5)",
+        "paddingX": "var(--seed-v3-dimension-x1_5)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s1)",
-        "lineHeight": "var(--seed-v3-line-height-s1)",
+        "fontSize": "var(--seed-v3-font-size-t1)",
+        "lineHeight": "var(--seed-v3-line-height-t1)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }

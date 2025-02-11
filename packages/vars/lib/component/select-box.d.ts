@@ -2,47 +2,47 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-dimension-s4)",
-        "paddingY": "var(--seed-v3-dimension-s5)",
-        "gap": "var(--seed-v3-dimension-s2_5)",
+        "paddingX": "var(--seed-v3-dimension-x4)",
+        "paddingY": "var(--seed-v3-dimension-x5)",
+        "gap": "var(--seed-v3-dimension-x2_5)",
         "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-neutral)",
-        "cornerRadius": "var(--seed-v3-radius-s3)"
+        "cornerRadius": "var(--seed-v3-radius-r3)"
       },
       "content": {
-        "gap": "var(--seed-v3-dimension-s0_5)"
+        "gap": "var(--seed-v3-dimension-x0_5)"
       },
       "label": {
         "color": "var(--seed-v3-color-fg-neutral)",
         "fontWeight": "var(--seed-v3-font-weight-bold)",
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)"
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)"
       },
       "description": {
         "color": "var(--seed-v3-color-fg-neutral-muted)",
         "fontWeight": "var(--seed-v3-font-weight-regular)",
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)"
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
       },
       "checkboxControl": {
-        "size": "var(--seed-v3-dimension-s6)",
+        "size": "var(--seed-v3-dimension-x6)",
         "color": "var(--seed-v3-color-bg-layer-default)",
         "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
-        "cornerRadius": "var(--seed-v3-radius-s1)"
+        "cornerRadius": "var(--seed-v3-radius-r1)"
       },
       "checkboxIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "radioControl": {
-        "size": "var(--seed-v3-dimension-s6)",
+        "size": "var(--seed-v3-dimension-x6)",
         "color": "var(--seed-v3-color-bg-layer-default)",
         "strokeWidth": "1px",
         "strokeColor": "var(--seed-v3-color-stroke-control)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       },
       "radioIcon": {
-        "size": "var(--seed-v3-dimension-s2_5)",
+        "size": "var(--seed-v3-dimension-x2_5)",
         "cornerRadius": "var(--seed-v3-radius-full)"
       }
     },

@@ -4774,7 +4774,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s0_5"
+        "key": "x0_5"
       },
       "values": [
         {
@@ -4794,7 +4794,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s1"
+        "key": "x1"
       },
       "values": [
         {
@@ -4814,7 +4814,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s1_5"
+        "key": "x1_5"
       },
       "values": [
         {
@@ -4834,7 +4834,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s2"
+        "key": "x2"
       },
       "values": [
         {
@@ -4854,7 +4854,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s2_5"
+        "key": "x2_5"
       },
       "values": [
         {
@@ -4874,7 +4874,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s3"
+        "key": "x3"
       },
       "values": [
         {
@@ -4894,7 +4894,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s3_5"
+        "key": "x3_5"
       },
       "values": [
         {
@@ -4914,7 +4914,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s4"
+        "key": "x4"
       },
       "values": [
         {
@@ -4934,7 +4934,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s4_5"
+        "key": "x4_5"
       },
       "values": [
         {
@@ -4954,7 +4954,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s5"
+        "key": "x5"
       },
       "values": [
         {
@@ -4974,7 +4974,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s6"
+        "key": "x6"
       },
       "values": [
         {
@@ -4994,7 +4994,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s7"
+        "key": "x7"
       },
       "values": [
         {
@@ -5014,7 +5014,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s8"
+        "key": "x8"
       },
       "values": [
         {
@@ -5034,7 +5034,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s9"
+        "key": "x9"
       },
       "values": [
         {
@@ -5054,7 +5054,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s10"
+        "key": "x10"
       },
       "values": [
         {
@@ -5074,7 +5074,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s12"
+        "key": "x12"
       },
       "values": [
         {
@@ -5094,7 +5094,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s13"
+        "key": "x13"
       },
       "values": [
         {
@@ -5114,7 +5114,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s14"
+        "key": "x14"
       },
       "values": [
         {
@@ -5134,7 +5134,7 @@
         "group": [
           "dimension"
         ],
-        "key": "s16"
+        "key": "x16"
       },
       "values": [
         {
@@ -5165,7 +5165,7 @@
             "group": [
               "dimension"
             ],
-            "key": "s2"
+            "key": "x2"
           }
         }
       ],
@@ -5189,7 +5189,7 @@
             "group": [
               "dimension"
             ],
-            "key": "s4"
+            "key": "x4"
           }
         }
       ],
@@ -5213,7 +5213,7 @@
             "group": [
               "dimension"
             ],
-            "key": "s3"
+            "key": "x3"
           }
         }
       ],
@@ -5237,7 +5237,7 @@
             "group": [
               "dimension"
             ],
-            "key": "s5"
+            "key": "x5"
           }
         }
       ],
@@ -5250,7 +5250,7 @@
         "group": [
           "duration"
         ],
-        "key": "s1"
+        "key": "d1"
       },
       "values": [
         {
@@ -5270,7 +5270,7 @@
         "group": [
           "duration"
         ],
-        "key": "s2"
+        "key": "d2"
       },
       "values": [
         {
@@ -5290,7 +5290,7 @@
         "group": [
           "duration"
         ],
-        "key": "s3"
+        "key": "d3"
       },
       "values": [
         {
@@ -5310,7 +5310,7 @@
         "group": [
           "duration"
         ],
-        "key": "s4"
+        "key": "d4"
       },
       "values": [
         {
@@ -5330,7 +5330,7 @@
         "group": [
           "duration"
         ],
-        "key": "s5"
+        "key": "d5"
       },
       "values": [
         {
@@ -5350,7 +5350,7 @@
         "group": [
           "duration"
         ],
-        "key": "s6"
+        "key": "d6"
       },
       "values": [
         {
@@ -5370,7 +5370,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s1"
+        "key": "t1"
       },
       "values": [
         {
@@ -5390,7 +5390,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s2"
+        "key": "t2"
       },
       "values": [
         {
@@ -5410,7 +5410,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s3"
+        "key": "t3"
       },
       "values": [
         {
@@ -5430,7 +5430,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s4"
+        "key": "t4"
       },
       "values": [
         {
@@ -5450,7 +5450,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s5"
+        "key": "t5"
       },
       "values": [
         {
@@ -5470,7 +5470,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s6"
+        "key": "t6"
       },
       "values": [
         {
@@ -5490,7 +5490,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s7"
+        "key": "t7"
       },
       "values": [
         {
@@ -5510,7 +5510,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s8"
+        "key": "t8"
       },
       "values": [
         {
@@ -5530,7 +5530,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s9"
+        "key": "t9"
       },
       "values": [
         {
@@ -5550,7 +5550,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s10"
+        "key": "t10"
       },
       "values": [
         {
@@ -5570,7 +5570,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s2-static"
+        "key": "t2-static"
       },
       "values": [
         {
@@ -5590,7 +5590,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s5-static"
+        "key": "t5-static"
       },
       "values": [
         {
@@ -5610,7 +5610,7 @@
         "group": [
           "font-size"
         ],
-        "key": "s6-static"
+        "key": "t6-static"
       },
       "values": [
         {
@@ -5748,7 +5748,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s1"
+        "key": "t1"
       },
       "values": [
         {
@@ -5768,7 +5768,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s2"
+        "key": "t2"
       },
       "values": [
         {
@@ -5788,7 +5788,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s3"
+        "key": "t3"
       },
       "values": [
         {
@@ -5808,7 +5808,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s4"
+        "key": "t4"
       },
       "values": [
         {
@@ -5828,7 +5828,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s5"
+        "key": "t5"
       },
       "values": [
         {
@@ -5848,7 +5848,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s6"
+        "key": "t6"
       },
       "values": [
         {
@@ -5868,7 +5868,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s7"
+        "key": "t7"
       },
       "values": [
         {
@@ -5888,7 +5888,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s8"
+        "key": "t8"
       },
       "values": [
         {
@@ -5908,7 +5908,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s9"
+        "key": "t9"
       },
       "values": [
         {
@@ -5928,7 +5928,7 @@
         "group": [
           "line-height"
         ],
-        "key": "s10"
+        "key": "t10"
       },
       "values": [
         {
@@ -5948,7 +5948,7 @@
         "group": [
           "radius"
         ],
-        "key": "s0_5"
+        "key": "r0_5"
       },
       "values": [
         {
@@ -5968,7 +5968,7 @@
         "group": [
           "radius"
         ],
-        "key": "s1"
+        "key": "r1"
       },
       "values": [
         {
@@ -5988,7 +5988,7 @@
         "group": [
           "radius"
         ],
-        "key": "s1_5"
+        "key": "r1_5"
       },
       "values": [
         {
@@ -6008,7 +6008,7 @@
         "group": [
           "radius"
         ],
-        "key": "s2"
+        "key": "r2"
       },
       "values": [
         {
@@ -6028,7 +6028,7 @@
         "group": [
           "radius"
         ],
-        "key": "s2_5"
+        "key": "r2_5"
       },
       "values": [
         {
@@ -6048,7 +6048,7 @@
         "group": [
           "radius"
         ],
-        "key": "s3"
+        "key": "r3"
       },
       "values": [
         {
@@ -6068,7 +6068,7 @@
         "group": [
           "radius"
         ],
-        "key": "s3_5"
+        "key": "r3_5"
       },
       "values": [
         {
@@ -6088,7 +6088,7 @@
         "group": [
           "radius"
         ],
-        "key": "s4"
+        "key": "r4"
       },
       "values": [
         {
@@ -6108,7 +6108,7 @@
         "group": [
           "radius"
         ],
-        "key": "s5"
+        "key": "r5"
       },
       "values": [
         {
@@ -6128,7 +6128,7 @@
         "group": [
           "radius"
         ],
-        "key": "s6"
+        "key": "r6"
       },
       "values": [
         {
@@ -6329,7 +6329,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -6365,7 +6365,7 @@
         },
         {
           "key": {
-            "variant": "brand solid"
+            "variant": "brandSolid"
           },
           "state": [
             {
@@ -6619,7 +6619,7 @@
         },
         {
           "key": {
-            "variant": "neutral solid"
+            "variant": "neutralSolid"
           },
           "state": [
             {
@@ -6873,7 +6873,7 @@
         },
         {
           "key": {
-            "variant": "neutral weak"
+            "variant": "neutralWeak"
           },
           "state": [
             {
@@ -7127,7 +7127,7 @@
         },
         {
           "key": {
-            "variant": "critical solid"
+            "variant": "criticalSolid"
           },
           "state": [
             {
@@ -7381,7 +7381,7 @@
         },
         {
           "key": {
-            "variant": "neutral outline"
+            "variant": "neutralOutline"
           },
           "state": [
             {
@@ -7665,7 +7665,7 @@
         },
         {
           "key": {
-            "variant": "brand outline"
+            "variant": "brandOutline"
           },
           "state": [
             {
@@ -7967,7 +7967,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -8010,7 +8010,7 @@
         {
           "key": {
             "size": "xsmall",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -8028,7 +8028,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -8038,7 +8038,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -8048,7 +8048,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     }
                   ]
@@ -8063,7 +8063,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -8078,7 +8078,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -8093,7 +8093,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -8103,7 +8103,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -8115,7 +8115,7 @@
         {
           "key": {
             "size": "xsmall",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -8133,7 +8133,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -8143,7 +8143,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     },
                     {
@@ -8153,7 +8153,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     }
                   ]
@@ -8168,7 +8168,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -8197,7 +8197,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     },
                     {
@@ -8207,7 +8207,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s2"
+                        "key": "r2"
                       }
                     }
                   ]
@@ -8240,7 +8240,7 @@
         {
           "key": {
             "size": "small",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -8258,7 +8258,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -8268,7 +8268,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -8278,7 +8278,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -8293,7 +8293,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -8308,7 +8308,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -8323,7 +8323,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -8333,7 +8333,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -8345,7 +8345,7 @@
         {
           "key": {
             "size": "small",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -8363,7 +8363,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     },
                     {
@@ -8373,7 +8373,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -8383,7 +8383,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -8398,7 +8398,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -8427,7 +8427,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s10"
+                        "key": "x10"
                       }
                     },
                     {
@@ -8437,7 +8437,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s2"
+                        "key": "r2"
                       }
                     }
                   ]
@@ -8470,7 +8470,7 @@
         {
           "key": {
             "size": "medium",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -8488,7 +8488,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -8498,7 +8498,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -8508,7 +8508,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -8523,7 +8523,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -8538,7 +8538,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -8553,7 +8553,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -8563,7 +8563,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -8575,7 +8575,7 @@
         {
           "key": {
             "size": "medium",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -8593,7 +8593,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s10"
+                        "key": "x10"
                       }
                     },
                     {
@@ -8603,7 +8603,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     },
                     {
@@ -8613,7 +8613,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -8655,7 +8655,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s13"
+                        "key": "x13"
                       }
                     },
                     {
@@ -8665,7 +8665,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s3"
+                        "key": "r3"
                       }
                     }
                   ]
@@ -8698,7 +8698,7 @@
         {
           "key": {
             "size": "large",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -8716,7 +8716,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -8726,7 +8726,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -8736,7 +8736,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -8777,7 +8777,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -8787,7 +8787,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     }
                   ]
@@ -8799,7 +8799,7 @@
         {
           "key": {
             "size": "large",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -8817,7 +8817,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s13"
+                        "key": "x13"
                       }
                     },
                     {
@@ -8827,7 +8827,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -8837,7 +8837,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -9149,7 +9149,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -9159,7 +9159,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     },
                     {
@@ -9169,7 +9169,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -9184,7 +9184,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -9199,7 +9199,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -9214,7 +9214,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -9229,7 +9229,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -9258,7 +9258,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     },
                     {
@@ -9268,7 +9268,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -9278,7 +9278,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -9293,7 +9293,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -9308,7 +9308,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -9323,7 +9323,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -9338,7 +9338,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -9350,7 +9350,7 @@
         {
           "key": {
             "size": "small",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -9368,7 +9368,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -9380,7 +9380,7 @@
         {
           "key": {
             "size": "small",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -9398,7 +9398,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     }
                   ]
@@ -9413,7 +9413,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -9425,7 +9425,7 @@
         {
           "key": {
             "size": "medium",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -9443,7 +9443,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -9455,7 +9455,7 @@
         {
           "key": {
             "size": "medium",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -9473,7 +9473,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     }
                   ]
@@ -9488,7 +9488,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -9551,7 +9551,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -9566,7 +9566,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -9576,7 +9576,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -9683,7 +9683,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -9698,7 +9698,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -9708,7 +9708,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -9845,7 +9845,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -9872,7 +9872,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -9915,7 +9915,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s5"
+                        "key": "r5"
                       }
                     },
                     {
@@ -9925,7 +9925,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s6"
+                        "key": "d6"
                       }
                     },
                     {
@@ -9945,7 +9945,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -9981,7 +9981,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -9991,7 +9991,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -10006,7 +10006,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -10016,7 +10016,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -10052,7 +10052,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -10062,7 +10062,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -10736,7 +10736,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s6"
+                        "key": "x6"
                       }
                     },
                     {
@@ -10746,7 +10746,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -10756,7 +10756,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -10771,7 +10771,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -10781,7 +10781,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -10810,7 +10810,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -10820,7 +10820,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     },
                     {
@@ -10830,7 +10830,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s0_5"
+                        "key": "x0_5"
                       }
                     }
                   ]
@@ -10845,7 +10845,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s1"
+                        "key": "t1"
                       }
                     },
                     {
@@ -10855,7 +10855,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s1"
+                        "key": "t1"
                       }
                     }
                   ]
@@ -10914,7 +10914,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1_5"
+                        "key": "r1_5"
                       }
                     }
                   ]
@@ -10944,7 +10944,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1"
+                        "key": "r1"
                       }
                     }
                   ]
@@ -11793,7 +11793,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -11820,7 +11820,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -11863,7 +11863,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s6"
+                        "key": "r6"
                       }
                     },
                     {
@@ -11873,7 +11873,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s6"
+                        "key": "d6"
                       }
                     },
                     {
@@ -11893,7 +11893,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -11918,7 +11918,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -11939,7 +11939,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s6"
+                        "key": "x6"
                       }
                     },
                     {
@@ -11949,7 +11949,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -11991,7 +11991,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     },
                     {
@@ -12001,7 +12001,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -12027,7 +12027,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s8"
+                        "key": "t8"
                       }
                     },
                     {
@@ -12037,7 +12037,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s8"
+                        "key": "t8"
                       }
                     },
                     {
@@ -12073,7 +12073,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -12083,7 +12083,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -12145,7 +12145,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -12155,7 +12155,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     }
                   ]
@@ -12212,7 +12212,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -12222,7 +12222,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     },
                     {
@@ -12232,7 +12232,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s2_5"
+                        "key": "r2_5"
                       }
                     },
                     {
@@ -12242,7 +12242,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -12252,7 +12252,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t5"
                       }
                     },
                     {
@@ -12275,7 +12275,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -12335,7 +12335,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s10"
+                        "key": "x10"
                       }
                     }
                   ]
@@ -12350,7 +12350,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -12365,7 +12365,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -13159,7 +13159,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -13672,7 +13672,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     }
                   ]
@@ -13687,7 +13687,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -13697,7 +13697,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -13712,7 +13712,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -13722,7 +13722,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1"
+                        "key": "r1"
                       }
                     }
                   ]
@@ -13751,7 +13751,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     }
                   ]
@@ -13766,7 +13766,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -13776,7 +13776,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -13791,7 +13791,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s6"
+                        "key": "x6"
                       }
                     },
                     {
@@ -13801,7 +13801,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1"
+                        "key": "r1"
                       }
                     }
                   ]
@@ -13946,7 +13946,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -13956,7 +13956,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -13989,7 +13989,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -14010,7 +14010,7 @@
         },
         {
           "key": {
-            "variant": "neutral solid"
+            "variant": "neutralSolid"
           },
           "state": [
             {
@@ -14200,7 +14200,7 @@
         },
         {
           "key": {
-            "variant": "brand solid"
+            "variant": "brandSolid"
           },
           "state": [
             {
@@ -14438,7 +14438,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -14449,7 +14449,7 @@
         },
         {
           "key": {
-            "variant": "neutral solid"
+            "variant": "neutralSolid"
           },
           "state": [
             {
@@ -14476,7 +14476,7 @@
         },
         {
           "key": {
-            "variant": "brand solid"
+            "variant": "brandSolid"
           },
           "state": [
             {
@@ -14943,7 +14943,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -14953,7 +14953,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     },
                     {
@@ -14963,7 +14963,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -14978,7 +14978,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -14993,7 +14993,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -15008,7 +15008,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -15023,7 +15023,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -15052,7 +15052,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     },
                     {
@@ -15062,7 +15062,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -15072,7 +15072,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -15087,7 +15087,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -15102,7 +15102,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -15117,7 +15117,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -15132,7 +15132,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -15144,7 +15144,7 @@
         {
           "key": {
             "size": "small",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -15162,7 +15162,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -15174,7 +15174,7 @@
         {
           "key": {
             "size": "small",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -15192,7 +15192,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     }
                   ]
@@ -15207,7 +15207,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -15219,7 +15219,7 @@
         {
           "key": {
             "size": "medium",
-            "layout": "with text"
+            "layout": "withText"
           },
           "state": [
             {
@@ -15237,7 +15237,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -15249,7 +15249,7 @@
         {
           "key": {
             "size": "medium",
-            "layout": "icon only"
+            "layout": "iconOnly"
           },
           "state": [
             {
@@ -15267,7 +15267,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     }
                   ]
@@ -15282,7 +15282,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -15326,7 +15326,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -15353,7 +15353,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -15396,7 +15396,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s5"
+                        "key": "r5"
                       }
                     },
                     {
@@ -15406,7 +15406,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -15416,7 +15416,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -15426,7 +15426,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -15444,7 +15444,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -15478,7 +15478,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -15510,7 +15510,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     }
                   ]
@@ -15525,7 +15525,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -15535,7 +15535,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -15561,7 +15561,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s7"
+                        "key": "t7"
                       }
                     },
                     {
@@ -15571,7 +15571,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s7"
+                        "key": "t7"
                       }
                     },
                     {
@@ -15607,7 +15607,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -15617,7 +15617,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -15679,7 +15679,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s3"
+                        "key": "r3"
                       }
                     },
                     {
@@ -15689,7 +15689,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -15699,7 +15699,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -15709,7 +15709,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -15735,7 +15735,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -15745,7 +15745,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -15830,7 +15830,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -15840,7 +15840,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -15850,7 +15850,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -15878,7 +15878,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -15888,7 +15888,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -16057,7 +16057,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -16084,7 +16084,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s2"
+                        "key": "d2"
                       }
                     },
                     {
@@ -16138,7 +16138,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -16148,7 +16148,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s5"
+                        "key": "r5"
                       }
                     },
                     {
@@ -16158,7 +16158,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s6"
+                        "key": "d6"
                       }
                     },
                     {
@@ -16178,7 +16178,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -16203,7 +16203,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -16213,7 +16213,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -16228,7 +16228,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -16238,7 +16238,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -16274,7 +16274,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -16289,7 +16289,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s4"
+                        "key": "r4"
                       }
                     }
                   ]
@@ -16328,7 +16328,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -16399,7 +16399,7 @@
         },
         {
           "key": {
-            "variant": "neutral solid"
+            "variant": "neutralSolid"
           },
           "state": [
             {
@@ -16484,7 +16484,7 @@
         },
         {
           "key": {
-            "variant": "layer floating"
+            "variant": "layerFloating"
           },
           "state": [
             {
@@ -16595,7 +16595,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -16605,7 +16605,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -16615,7 +16615,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -16643,7 +16643,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -16653,7 +16653,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -16700,7 +16700,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -16710,7 +16710,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -16720,7 +16720,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -16748,7 +16748,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -16758,7 +16758,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -16938,7 +16938,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s3"
+                        "key": "r3"
                       }
                     },
                     {
@@ -16948,7 +16948,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     },
                     {
@@ -16958,7 +16958,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -16984,7 +16984,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -17010,7 +17010,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -17046,7 +17046,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -17199,7 +17199,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -17209,7 +17209,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -17218,33 +17218,13 @@
                   "key": "content",
                   "property": [
                     {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
                       "key": "gap",
                       "value": {
                         "type": "token",
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -17254,7 +17234,27 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
+                      }
+                    },
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "t4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t4"
                       }
                     },
                     {
@@ -17264,7 +17264,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s10"
+                        "key": "x10"
                       }
                     }
                   ]
@@ -17279,7 +17279,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -17332,27 +17332,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s10"
-                      }
-                    },
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s2"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s2"
+                        "key": "x10"
                       }
                     },
                     {
@@ -17363,6 +17343,26 @@
                           "font-weight"
                         ],
                         "key": "regular"
+                      }
+                    },
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "t2"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t2"
                       }
                     }
                   ]
@@ -17377,7 +17377,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s10"
+                        "key": "x10"
                       }
                     }
                   ]
@@ -17392,7 +17392,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -17407,7 +17407,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -17418,7 +17418,7 @@
         },
         {
           "key": {
-            "variant": "neutral weak"
+            "variant": "neutralWeak"
           },
           "state": [
             {
@@ -17544,7 +17544,7 @@
         },
         {
           "key": {
-            "variant": "positive weak"
+            "variant": "positiveWeak"
           },
           "state": [
             {
@@ -17670,7 +17670,7 @@
         },
         {
           "key": {
-            "variant": "informative weak"
+            "variant": "informativeWeak"
           },
           "state": [
             {
@@ -17796,7 +17796,7 @@
         },
         {
           "key": {
-            "variant": "warning weak"
+            "variant": "warningWeak"
           },
           "state": [
             {
@@ -17922,7 +17922,7 @@
         },
         {
           "key": {
-            "variant": "warning solid"
+            "variant": "warningSolid"
           },
           "state": [
             {
@@ -18048,7 +18048,7 @@
         },
         {
           "key": {
-            "variant": "critical weak"
+            "variant": "criticalWeak"
           },
           "state": [
             {
@@ -18158,7 +18158,7 @@
         },
         {
           "key": {
-            "variant": "critical solid"
+            "variant": "criticalSolid"
           },
           "state": [
             {
@@ -18298,7 +18298,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s0_5"
+                        "key": "x0_5"
                       }
                     },
                     {
@@ -18308,7 +18308,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     },
                     {
@@ -18333,7 +18333,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s1"
+                        "key": "t1"
                       }
                     },
                     {
@@ -18343,7 +18343,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s1"
+                        "key": "t1"
                       }
                     },
                     {
@@ -18676,7 +18676,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s10"
+                        "key": "x10"
                       }
                     },
                     {
@@ -18713,7 +18713,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s6"
+                        "key": "x6"
                       }
                     },
                     {
@@ -18934,7 +18934,7 @@
         },
         {
           "key": {
-            "tone": "static white"
+            "tone": "staticWhite"
           },
           "state": [
             {
@@ -19236,7 +19236,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s6"
+                        "key": "x6"
                       }
                     }
                   ]
@@ -19251,7 +19251,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -19273,7 +19273,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -19302,7 +19302,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     }
                   ]
@@ -19317,7 +19317,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -19339,7 +19339,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -19383,7 +19383,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -19815,7 +19815,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -19835,7 +19835,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -19845,7 +19845,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     },
                     {
@@ -19855,7 +19855,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     }
                   ]
@@ -19883,7 +19883,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -19893,7 +19893,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     }
                   ]
@@ -19908,7 +19908,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -19918,7 +19918,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     }
                   ]
@@ -19968,7 +19968,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     },
                     {
@@ -19988,7 +19988,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -19998,7 +19998,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -20008,7 +20008,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -20036,7 +20036,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -20046,7 +20046,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     }
                   ]
@@ -20061,7 +20061,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -20071,7 +20071,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     }
                   ]
@@ -20125,7 +20125,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -20145,7 +20145,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -20168,7 +20168,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -20178,7 +20178,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -20311,7 +20311,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -20395,7 +20395,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -20438,7 +20438,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -20448,7 +20448,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     },
                     {
@@ -20458,7 +20458,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     },
                     {
@@ -20487,7 +20487,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s3"
+                        "key": "r3"
                       }
                     }
                   ]
@@ -20502,7 +20502,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s0_5"
+                        "key": "x0_5"
                       }
                     }
                   ]
@@ -20538,7 +20538,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -20548,7 +20548,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -20584,7 +20584,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -20594,7 +20594,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -20609,7 +20609,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s6"
+                        "key": "x6"
                       }
                     },
                     {
@@ -20649,7 +20649,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1"
+                        "key": "r1"
                       }
                     }
                   ]
@@ -20664,7 +20664,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -20679,7 +20679,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s6"
+                        "key": "x6"
                       }
                     },
                     {
@@ -20734,7 +20734,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     },
                     {
@@ -21180,7 +21180,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -21190,7 +21190,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -21200,7 +21200,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -21236,7 +21236,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s2"
+                        "key": "r2"
                       }
                     },
                     {
@@ -21254,7 +21254,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -21264,7 +21264,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     },
                     {
@@ -21274,7 +21274,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -21291,7 +21291,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -21318,7 +21318,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -21354,7 +21354,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -21364,7 +21364,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -21402,7 +21402,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -21431,7 +21431,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -21441,7 +21441,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -21798,7 +21798,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -21871,7 +21871,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -21881,7 +21881,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -21940,7 +21940,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -21971,7 +21971,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s0_5"
+                        "key": "x0_5"
                       }
                     }
                   ]
@@ -22054,7 +22054,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     },
                     {
@@ -22064,7 +22064,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -22079,17 +22079,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -22136,7 +22126,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     },
                     {
@@ -22146,7 +22136,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -22161,17 +22151,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -22268,7 +22248,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -22451,7 +22431,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s0_5"
+                        "key": "x0_5"
                       }
                     }
                   ]
@@ -22481,7 +22461,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -22496,7 +22476,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s0_5"
+                        "key": "x0_5"
                       }
                     }
                   ]
@@ -22613,7 +22593,7 @@
         },
         {
           "key": {
-            "tone": "neutral subtle"
+            "tone": "neutralSubtle"
           },
           "state": [
             {
@@ -22691,7 +22671,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1_5"
+                        "key": "r1_5"
                       }
                     }
                   ]
@@ -22706,7 +22686,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -22721,7 +22701,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -22736,7 +22716,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -22746,7 +22726,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     }
                   ]
@@ -22775,7 +22755,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1_5"
+                        "key": "r1_5"
                       }
                     }
                   ]
@@ -22790,7 +22770,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -22805,7 +22785,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -22820,7 +22800,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -22830,7 +22810,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -22859,7 +22839,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s1"
+                        "key": "r1"
                       }
                     }
                   ]
@@ -22874,7 +22854,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -22889,7 +22869,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -22904,7 +22884,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -22914,7 +22894,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -23482,7 +23462,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     },
                     {
@@ -23492,7 +23472,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     }
                   ]
@@ -23507,7 +23487,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -23517,7 +23497,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -23532,7 +23512,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -23542,7 +23522,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -23565,7 +23545,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s2_5"
+                        "key": "r2_5"
                       }
                     },
                     {
@@ -23575,7 +23555,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -23585,7 +23565,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -23595,7 +23575,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -23610,7 +23590,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -23620,7 +23600,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     }
                   ]
@@ -23635,7 +23615,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -23645,7 +23625,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     }
                   ]
@@ -23660,7 +23640,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     }
                   ]
@@ -23675,7 +23655,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     },
                     {
@@ -23685,7 +23665,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t6"
                       }
                     }
                   ]
@@ -23700,7 +23680,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     }
                   ]
@@ -23715,7 +23695,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -23725,7 +23705,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -23748,7 +23728,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -23758,7 +23738,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -23773,7 +23753,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -23783,7 +23763,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -23798,7 +23778,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -23808,7 +23788,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -23823,7 +23803,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -23833,7 +23813,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -23848,7 +23828,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -23858,7 +23838,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -23887,7 +23867,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     },
                     {
@@ -23897,7 +23877,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     }
                   ]
@@ -23912,7 +23892,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -23922,7 +23902,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -23937,7 +23917,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -23947,7 +23927,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -23970,7 +23950,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s2_5"
+                        "key": "r2_5"
                       }
                     },
                     {
@@ -23980,7 +23960,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -23990,7 +23970,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -24000,7 +23980,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -24015,7 +23995,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -24025,7 +24005,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -24040,7 +24020,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -24050,7 +24030,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -24065,7 +24045,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     }
                   ]
@@ -24080,7 +24060,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -24090,7 +24070,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     }
                   ]
@@ -24105,7 +24085,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s5"
+                        "key": "x5"
                       }
                     }
                   ]
@@ -24120,7 +24100,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -24130,7 +24110,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -24153,7 +24133,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -24163,7 +24143,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -24178,7 +24158,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -24188,7 +24168,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -24203,7 +24183,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -24213,7 +24193,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -24228,7 +24208,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -24238,7 +24218,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -24253,7 +24233,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -24263,7 +24243,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -24292,7 +24272,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3"
+                        "key": "x3"
                       }
                     }
                   ]
@@ -24307,7 +24287,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -24317,7 +24297,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -24332,7 +24312,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -24342,7 +24322,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -24365,7 +24345,7 @@
                         "group": [
                           "radius"
                         ],
-                        "key": "s2"
+                        "key": "r2"
                       }
                     },
                     {
@@ -24375,7 +24355,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     },
                     {
@@ -24385,7 +24365,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -24395,7 +24375,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2_5"
+                        "key": "x2_5"
                       }
                     }
                   ]
@@ -24410,7 +24390,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -24420,7 +24400,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -24435,7 +24415,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -24445,7 +24425,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -24460,7 +24440,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -24475,7 +24455,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -24485,7 +24465,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -24500,7 +24480,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -24515,7 +24495,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -24525,7 +24505,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     },
                     {
@@ -24535,7 +24515,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -24550,7 +24530,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -24560,7 +24540,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -24575,7 +24555,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -24585,7 +24565,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -24600,7 +24580,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -24610,7 +24590,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     }
                   ]
@@ -24625,7 +24605,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -24635,7 +24615,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -24650,7 +24630,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -24660,7 +24640,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     }
                   ]
@@ -24693,7 +24673,7 @@
                         "group": [
                           "duration"
                         ],
-                        "key": "s4"
+                        "key": "d4"
                       }
                     },
                     {
@@ -24729,7 +24709,7 @@
         },
         {
           "key": {
-            "variant": "brand solid"
+            "variant": "brandSolid"
           },
           "state": [
             {
@@ -25097,7 +25077,7 @@
         },
         {
           "key": {
-            "variant": "neutral weak"
+            "variant": "neutralWeak"
           },
           "state": [
             {
@@ -25483,7 +25463,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s8"
+                        "key": "x8"
                       }
                     },
                     {
@@ -25503,7 +25483,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -25513,7 +25493,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     },
                     {
@@ -25523,7 +25503,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1_5"
+                        "key": "x1_5"
                       }
                     }
                   ]
@@ -25538,7 +25518,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -25553,7 +25533,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -25568,7 +25548,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -25618,7 +25598,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s9"
+                        "key": "x9"
                       }
                     },
                     {
@@ -25638,7 +25618,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s1"
+                        "key": "x1"
                       }
                     },
                     {
@@ -25648,7 +25628,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     },
                     {
@@ -25658,7 +25638,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s2"
+                        "key": "x2"
                       }
                     }
                   ]
@@ -25673,7 +25653,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -25688,7 +25668,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s3_5"
+                        "key": "x3_5"
                       }
                     }
                   ]
@@ -25703,7 +25683,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     }
                   ]
@@ -25767,7 +25747,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -25825,7 +25805,7 @@
                         "group": [
                           "dimension"
                         ],
-                        "key": "s4"
+                        "key": "x4"
                       }
                     }
                   ]
@@ -26065,7 +26045,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6-static"
+                        "key": "t6-static"
                       }
                     },
                     {
@@ -26104,7 +26084,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5-static"
+                        "key": "t5-static"
                       }
                     },
                     {
@@ -26129,7 +26109,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2-static"
+                        "key": "t2-static"
                       }
                     },
                     {
@@ -26156,7 +26136,7 @@
       "data": [
         {
           "key": {
-            "textStyle": "label-small-default"
+            "textStyle": "screenTitle"
           },
           "state": [
             {
@@ -26174,7 +26154,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s1"
+                        "key": "t10"
                       }
                     },
                     {
@@ -26184,7 +26164,56 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s1"
+                        "key": "t10"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "bold"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "textStyle": "articleBody"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "t5"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t6"
                       }
                     },
                     {
@@ -26205,7 +26234,7 @@
         },
         {
           "key": {
-            "textStyle": "label-small-strong"
+            "textStyle": "t1Regular"
           },
           "state": [
             {
@@ -26223,7 +26252,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s1"
+                        "key": "t1"
                       }
                     },
                     {
@@ -26233,7 +26262,56 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s1"
+                        "key": "t1"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": {
+            "textStyle": "t1Medium"
+          },
+          "state": [
+            {
+              "key": [
+                "enabled"
+              ],
+              "slot": [
+                {
+                  "key": "root",
+                  "property": [
+                    {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "t1"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t1"
                       }
                     },
                     {
@@ -26254,7 +26332,7 @@
         },
         {
           "key": {
-            "textStyle": "label-small-stronger"
+            "textStyle": "t1Bold"
           },
           "state": [
             {
@@ -26272,7 +26350,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s1"
+                        "key": "t1"
                       }
                     },
                     {
@@ -26282,7 +26360,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s1"
+                        "key": "t1"
                       }
                     },
                     {
@@ -26303,7 +26381,7 @@
         },
         {
           "key": {
-            "textStyle": "label-medium-default"
+            "textStyle": "t2Regular"
           },
           "state": [
             {
@@ -26321,7 +26399,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -26331,7 +26409,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -26352,7 +26430,7 @@
         },
         {
           "key": {
-            "textStyle": "label-medium-strong"
+            "textStyle": "t2Medium"
           },
           "state": [
             {
@@ -26370,7 +26448,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -26380,7 +26458,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -26401,7 +26479,7 @@
         },
         {
           "key": {
-            "textStyle": "label-medium-stronger"
+            "textStyle": "t2Bold"
           },
           "state": [
             {
@@ -26419,7 +26497,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -26429,7 +26507,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s2"
+                        "key": "t2"
                       }
                     },
                     {
@@ -26450,7 +26528,7 @@
         },
         {
           "key": {
-            "textStyle": "label-large-default"
+            "textStyle": "t3Regular"
           },
           "state": [
             {
@@ -26468,7 +26546,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -26478,7 +26556,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -26499,7 +26577,7 @@
         },
         {
           "key": {
-            "textStyle": "label-large-strong"
+            "textStyle": "t3Medium"
           },
           "state": [
             {
@@ -26517,7 +26595,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -26527,7 +26605,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -26548,7 +26626,7 @@
         },
         {
           "key": {
-            "textStyle": "label-large-stronger"
+            "textStyle": "t3Bold"
           },
           "state": [
             {
@@ -26566,7 +26644,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -26576,7 +26654,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s3"
+                        "key": "t3"
                       }
                     },
                     {
@@ -26597,7 +26675,7 @@
         },
         {
           "key": {
-            "textStyle": "body-small-default"
+            "textStyle": "t4Regular"
           },
           "state": [
             {
@@ -26615,7 +26693,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -26625,7 +26703,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -26646,7 +26724,7 @@
         },
         {
           "key": {
-            "textStyle": "body-small-reading-default"
+            "textStyle": "t4Medium"
           },
           "state": [
             {
@@ -26664,7 +26742,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -26674,56 +26752,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
-                      }
-                    },
-                    {
-                      "key": "fontWeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "regular"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "textStyle": "body-small-strong"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s4"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -26744,7 +26773,7 @@
         },
         {
           "key": {
-            "textStyle": "body-small-stronger"
+            "textStyle": "t4Bold"
           },
           "state": [
             {
@@ -26762,7 +26791,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -26772,7 +26801,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s4"
+                        "key": "t4"
                       }
                     },
                     {
@@ -26793,7 +26822,7 @@
         },
         {
           "key": {
-            "textStyle": "body-medium-default"
+            "textStyle": "t5Regular"
           },
           "state": [
             {
@@ -26811,7 +26840,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -26821,7 +26850,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -26842,7 +26871,7 @@
         },
         {
           "key": {
-            "textStyle": "body-medium-reading-default"
+            "textStyle": "t5Medium"
           },
           "state": [
             {
@@ -26860,7 +26889,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -26870,56 +26899,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
-                      }
-                    },
-                    {
-                      "key": "fontWeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "regular"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "textStyle": "body-medium-strong"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s5"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -26940,7 +26920,7 @@
         },
         {
           "key": {
-            "textStyle": "body-medium-stronger"
+            "textStyle": "t5Bold"
           },
           "state": [
             {
@@ -26958,7 +26938,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -26968,7 +26948,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t5"
                       }
                     },
                     {
@@ -26989,7 +26969,7 @@
         },
         {
           "key": {
-            "textStyle": "title-small-default"
+            "textStyle": "t6Bold"
           },
           "state": [
             {
@@ -27007,7 +26987,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s5"
+                        "key": "t6"
                       }
                     },
                     {
@@ -27017,7 +26997,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s5"
+                        "key": "t6"
                       }
                     },
                     {
@@ -27038,7 +27018,7 @@
         },
         {
           "key": {
-            "textStyle": "title-medium-default"
+            "textStyle": "t7Bold"
           },
           "state": [
             {
@@ -27056,7 +27036,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s6"
+                        "key": "t7"
                       }
                     },
                     {
@@ -27066,7 +27046,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s6"
+                        "key": "t7"
                       }
                     },
                     {
@@ -27087,7 +27067,7 @@
         },
         {
           "key": {
-            "textStyle": "title-large-default"
+            "textStyle": "t8Bold"
           },
           "state": [
             {
@@ -27105,7 +27085,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s7"
+                        "key": "t8"
                       }
                     },
                     {
@@ -27115,7 +27095,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s7"
+                        "key": "t8"
                       }
                     },
                     {
@@ -27136,7 +27116,7 @@
         },
         {
           "key": {
-            "textStyle": "heading-small-default"
+            "textStyle": "t9Bold"
           },
           "state": [
             {
@@ -27154,7 +27134,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s8"
+                        "key": "t9"
                       }
                     },
                     {
@@ -27164,7 +27144,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s8"
+                        "key": "t9"
                       }
                     },
                     {
@@ -27185,7 +27165,7 @@
         },
         {
           "key": {
-            "textStyle": "heading-medium-default"
+            "textStyle": "t10Bold"
           },
           "state": [
             {
@@ -27203,7 +27183,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "s9"
+                        "key": "t4"
                       }
                     },
                     {
@@ -27213,7 +27193,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "s9"
+                        "key": "t5"
                       }
                     },
                     {
@@ -27223,56 +27203,7 @@
                         "group": [
                           "font-weight"
                         ],
-                        "key": "bold"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": {
-            "textStyle": "heading-large-default"
-          },
-          "state": [
-            {
-              "key": [
-                "enabled"
-              ],
-              "slot": [
-                {
-                  "key": "root",
-                  "property": [
-                    {
-                      "key": "fontSize",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-size"
-                        ],
-                        "key": "s10"
-                      }
-                    },
-                    {
-                      "key": "lineHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "line-height"
-                        ],
-                        "key": "s10"
-                      }
-                    },
-                    {
-                      "key": "fontWeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "bold"
+                        "key": "regular"
                       }
                     }
                   ]

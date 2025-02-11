@@ -19,7 +19,7 @@
               "root": {
                 "padding": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 },
                 "cornerRadius": {
                   "type": "dimension",
@@ -65,7 +65,7 @@
                 },
                 "transformDuration": {
                   "type": "duration",
-                  "value": "$duration.s4"
+                  "value": "$duration.d4"
                 },
                 "transformTimingFunction": {
                   "type": "cubicBezier",

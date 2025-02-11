@@ -47,30 +47,30 @@ export const vars = {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-dimension-s6)"
+        "size": "var(--seed-v3-dimension-x6)"
       },
       "icon": {
-        "size": "var(--seed-v3-dimension-s2_5)"
+        "size": "var(--seed-v3-dimension-x2_5)"
       }
     },
     "disabled": {
       "icon": {
-        "size": "var(--seed-v3-dimension-s3)"
+        "size": "var(--seed-v3-dimension-x3)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-dimension-s5)"
+        "size": "var(--seed-v3-dimension-x5)"
       },
       "icon": {
-        "size": "var(--seed-v3-dimension-s2)"
+        "size": "var(--seed-v3-dimension-x2)"
       }
     },
     "disabled": {
       "icon": {
-        "size": "var(--seed-v3-dimension-s2_5)"
+        "size": "var(--seed-v3-dimension-x2_5)"
       }
     }
   }

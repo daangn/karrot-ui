@@ -19,7 +19,7 @@
               "root": {
                 "colorDuration": {
                   "type": "duration",
-                  "value": "$duration.s4"
+                  "value": "$duration.d4"
                 },
                 "colorTimingFunction": {
                   "type": "cubicBezier",
@@ -38,7 +38,7 @@
       },
       {
         "variants": {
-          "variant": "brand solid"
+          "variant": "brandSolid"
         },
         "definitions": [
           {
@@ -155,7 +155,7 @@
       },
       {
         "variants": {
-          "variant": "neutral solid"
+          "variant": "neutralSolid"
         },
         "definitions": [
           {
@@ -272,7 +272,7 @@
       },
       {
         "variants": {
-          "variant": "neutral weak"
+          "variant": "neutralWeak"
         },
         "definitions": [
           {
@@ -389,7 +389,7 @@
       },
       {
         "variants": {
-          "variant": "critical solid"
+          "variant": "criticalSolid"
         },
         "definitions": [
           {
@@ -506,7 +506,7 @@
       },
       {
         "variants": {
-          "variant": "neutral outline"
+          "variant": "neutralOutline"
         },
         "definitions": [
           {
@@ -638,7 +638,7 @@
       },
       {
         "variants": {
-          "variant": "brand outline"
+          "variant": "brandOutline"
         },
         "definitions": [
           {
@@ -781,7 +781,7 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s8"
+                  "value": "$dimension.x8"
                 },
                 "cornerRadius": {
                   "type": "dimension",
@@ -811,7 +811,7 @@
       {
         "variants": {
           "size": "xsmall",
-          "layout": "with text"
+          "layout": "withText"
         },
         "definitions": [
           {
@@ -822,37 +822,37 @@
               "root": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               }
             }
@@ -862,7 +862,7 @@
       {
         "variants": {
           "size": "xsmall",
-          "layout": "icon only"
+          "layout": "iconOnly"
         },
         "definitions": [
           {
@@ -873,21 +873,21 @@
               "root": {
                 "minWidth": {
                   "type": "dimension",
-                  "value": "$dimension.s8"
+                  "value": "$dimension.x8"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 }
               },
               "icon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               }
             }
@@ -907,11 +907,11 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s9"
+                  "value": "$dimension.x9"
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s2"
+                  "value": "$radius.r2"
                 }
               },
               "progressCircle": {
@@ -937,7 +937,7 @@
       {
         "variants": {
           "size": "small",
-          "layout": "with text"
+          "layout": "withText"
         },
         "definitions": [
           {
@@ -948,37 +948,37 @@
               "root": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               }
             }
@@ -988,7 +988,7 @@
       {
         "variants": {
           "size": "small",
-          "layout": "icon only"
+          "layout": "iconOnly"
         },
         "definitions": [
           {
@@ -999,21 +999,21 @@
               "root": {
                 "minWidth": {
                   "type": "dimension",
-                  "value": "$dimension.s9"
+                  "value": "$dimension.x9"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 }
               },
               "icon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               }
             }
@@ -1033,11 +1033,11 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s10"
+                  "value": "$dimension.x10"
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s2"
+                  "value": "$radius.r2"
                 }
               },
               "progressCircle": {
@@ -1063,7 +1063,7 @@
       {
         "variants": {
           "size": "medium",
-          "layout": "with text"
+          "layout": "withText"
         },
         "definitions": [
           {
@@ -1074,37 +1074,37 @@
               "root": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               }
             }
@@ -1114,7 +1114,7 @@
       {
         "variants": {
           "size": "medium",
-          "layout": "icon only"
+          "layout": "iconOnly"
         },
         "definitions": [
           {
@@ -1125,15 +1125,15 @@
               "root": {
                 "minWidth": {
                   "type": "dimension",
-                  "value": "$dimension.s10"
+                  "value": "$dimension.x10"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 }
               },
               "icon": {
@@ -1162,11 +1162,11 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s13"
+                  "value": "$dimension.x13"
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s3"
+                  "value": "$radius.r3"
                 }
               },
               "progressCircle": {
@@ -1192,7 +1192,7 @@
       {
         "variants": {
           "size": "large",
-          "layout": "with text"
+          "layout": "withText"
         },
         "definitions": [
           {
@@ -1203,15 +1203,15 @@
               "root": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "prefixIcon": {
@@ -1235,11 +1235,11 @@
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t6"
                 }
               }
             }
@@ -1249,7 +1249,7 @@
       {
         "variants": {
           "size": "large",
-          "layout": "icon only"
+          "layout": "iconOnly"
         },
         "definitions": [
           {
@@ -1260,15 +1260,15 @@
               "root": {
                 "minWidth": {
                   "type": "dimension",
-                  "value": "$dimension.s13"
+                  "value": "$dimension.x13"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "icon": {

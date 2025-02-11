@@ -199,7 +199,7 @@
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 }
               },
               "control": {
@@ -251,11 +251,11 @@
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 },
                 "fontWeight": {
                   "type": "number",

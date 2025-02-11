@@ -25,7 +25,7 @@
               "root": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 }
               }
             }
@@ -313,27 +313,27 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s8"
+                  "value": "$dimension.x8"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "control": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1"
+                  "value": "$radius.r1"
                 }
               }
             }
@@ -353,27 +353,27 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s9"
+                  "value": "$dimension.x9"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "control": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s6"
+                  "value": "$dimension.x6"
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1"
+                  "value": "$radius.r1"
                 }
               }
             }

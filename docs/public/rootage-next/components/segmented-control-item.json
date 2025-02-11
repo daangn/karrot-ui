@@ -19,7 +19,7 @@
               "root": {
                 "height": {
                   "type": "dimension",
-                  "value": "$dimension.s8"
+                  "value": "$dimension.x8"
                 },
                 "cornerRadius": {
                   "type": "dimension",
@@ -27,7 +27,7 @@
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "minWidth": {
                   "type": "dimension",
@@ -40,11 +40,11 @@
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 },
                 "fontWeight": {
                   "type": "number",

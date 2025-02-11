@@ -23,7 +23,7 @@
                 },
                 "enterDuration": {
                   "type": "duration",
-                  "value": "$duration.s2"
+                  "value": "$duration.d2"
                 },
                 "enterTimingFunction": {
                   "type": "cubicBezier",
@@ -35,7 +35,7 @@
                 },
                 "exitDuration": {
                   "type": "duration",
-                  "value": "$duration.s2"
+                  "value": "$duration.d2"
                 },
                 "exitTimingFunction": {
                   "type": "cubicBezier",
@@ -57,15 +57,15 @@
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "cornerTopRadius": {
                   "type": "dimension",
-                  "value": "$radius.s5"
+                  "value": "$radius.r5"
                 },
                 "enterDuration": {
                   "type": "duration",
-                  "value": "$duration.s6"
+                  "value": "$duration.d6"
                 },
                 "enterTimingFunction": {
                   "type": "cubicBezier",
@@ -73,7 +73,7 @@
                 },
                 "exitDuration": {
                   "type": "duration",
-                  "value": "$duration.s4"
+                  "value": "$duration.d4"
                 },
                 "exitTimingFunction": {
                   "type": "cubicBezier",
@@ -83,21 +83,21 @@
               "header": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 },
                 "paddingBottom": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "title": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t6"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -111,13 +111,13 @@
               "list": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 }
               },
               "group": {
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s4"
+                  "value": "$radius.r4"
                 }
               },
               "divider": {
@@ -136,7 +136,7 @@
               "footer": {
                 "paddingTop": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 }
               }
             }

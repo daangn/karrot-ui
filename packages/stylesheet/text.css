@@ -12,120 +12,115 @@
     --seed-text-align: inherit;
     --seed-max-lines: initial
 }
-.text__root--textStyle_labelSmallDefault {
-    --seed-font-size: var(--seed-v3-font-size-s1);
-    --seed-line-height: var(--seed-v3-line-height-s1);
+.text__root--textStyle_screenTitle {
+    --seed-font-size: var(--seed-v3-font-size-t10);
+    --seed-line-height: var(--seed-v3-line-height-t10);
+    --seed-font-weight: var(--seed-v3-font-weight-bold)
+}
+.text__root--textStyle_articleBody {
+    --seed-font-size: var(--seed-v3-font-size-t5);
+    --seed-line-height: var(--seed-v3-line-height-t6);
     --seed-font-weight: var(--seed-v3-font-weight-regular)
 }
-.text__root--textStyle_labelSmallStrong {
-    --seed-font-size: var(--seed-v3-font-size-s1);
-    --seed-line-height: var(--seed-v3-line-height-s1);
+.text__root--textStyle_t1Regular {
+    --seed-font-size: var(--seed-v3-font-size-t1);
+    --seed-line-height: var(--seed-v3-line-height-t1);
+    --seed-font-weight: var(--seed-v3-font-weight-regular)
+}
+.text__root--textStyle_t1Medium {
+    --seed-font-size: var(--seed-v3-font-size-t1);
+    --seed-line-height: var(--seed-v3-line-height-t1);
     --seed-font-weight: var(--seed-v3-font-weight-medium)
 }
-.text__root--textStyle_labelSmallStronger {
-    --seed-font-size: var(--seed-v3-font-size-s1);
-    --seed-line-height: var(--seed-v3-line-height-s1);
+.text__root--textStyle_t1Bold {
+    --seed-font-size: var(--seed-v3-font-size-t1);
+    --seed-line-height: var(--seed-v3-line-height-t1);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_labelMediumDefault {
-    --seed-font-size: var(--seed-v3-font-size-s2);
-    --seed-line-height: var(--seed-v3-line-height-s2);
+.text__root--textStyle_t2Regular {
+    --seed-font-size: var(--seed-v3-font-size-t2);
+    --seed-line-height: var(--seed-v3-line-height-t2);
     --seed-font-weight: var(--seed-v3-font-weight-regular)
 }
-.text__root--textStyle_labelMediumStrong {
-    --seed-font-size: var(--seed-v3-font-size-s2);
-    --seed-line-height: var(--seed-v3-line-height-s2);
+.text__root--textStyle_t2Medium {
+    --seed-font-size: var(--seed-v3-font-size-t2);
+    --seed-line-height: var(--seed-v3-line-height-t2);
     --seed-font-weight: var(--seed-v3-font-weight-medium)
 }
-.text__root--textStyle_labelMediumStronger {
-    --seed-font-size: var(--seed-v3-font-size-s2);
-    --seed-line-height: var(--seed-v3-line-height-s2);
+.text__root--textStyle_t2Bold {
+    --seed-font-size: var(--seed-v3-font-size-t2);
+    --seed-line-height: var(--seed-v3-line-height-t2);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_labelLargeDefault {
-    --seed-font-size: var(--seed-v3-font-size-s3);
-    --seed-line-height: var(--seed-v3-line-height-s3);
+.text__root--textStyle_t3Regular {
+    --seed-font-size: var(--seed-v3-font-size-t3);
+    --seed-line-height: var(--seed-v3-line-height-t3);
     --seed-font-weight: var(--seed-v3-font-weight-regular)
 }
-.text__root--textStyle_labelLargeStrong {
-    --seed-font-size: var(--seed-v3-font-size-s3);
-    --seed-line-height: var(--seed-v3-line-height-s3);
+.text__root--textStyle_t3Medium {
+    --seed-font-size: var(--seed-v3-font-size-t3);
+    --seed-line-height: var(--seed-v3-line-height-t3);
     --seed-font-weight: var(--seed-v3-font-weight-medium)
 }
-.text__root--textStyle_labelLargeStronger {
-    --seed-font-size: var(--seed-v3-font-size-s3);
-    --seed-line-height: var(--seed-v3-line-height-s3);
+.text__root--textStyle_t3Bold {
+    --seed-font-size: var(--seed-v3-font-size-t3);
+    --seed-line-height: var(--seed-v3-line-height-t3);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_bodySmallDefault {
-    --seed-font-size: var(--seed-v3-font-size-s4);
-    --seed-line-height: var(--seed-v3-line-height-s4);
+.text__root--textStyle_t4Regular {
+    --seed-font-size: var(--seed-v3-font-size-t4);
+    --seed-line-height: var(--seed-v3-line-height-t4);
     --seed-font-weight: var(--seed-v3-font-weight-regular)
 }
-.text__root--textStyle_bodySmallReadingDefault {
-    --seed-font-size: var(--seed-v3-font-size-s4);
-    --seed-line-height: var(--seed-v3-line-height-s5);
-    --seed-font-weight: var(--seed-v3-font-weight-regular)
-}
-.text__root--textStyle_bodySmallStrong {
-    --seed-font-size: var(--seed-v3-font-size-s4);
-    --seed-line-height: var(--seed-v3-line-height-s4);
+.text__root--textStyle_t4Medium {
+    --seed-font-size: var(--seed-v3-font-size-t4);
+    --seed-line-height: var(--seed-v3-line-height-t4);
     --seed-font-weight: var(--seed-v3-font-weight-medium)
 }
-.text__root--textStyle_bodySmallStronger {
-    --seed-font-size: var(--seed-v3-font-size-s4);
-    --seed-line-height: var(--seed-v3-line-height-s4);
+.text__root--textStyle_t4Bold {
+    --seed-font-size: var(--seed-v3-font-size-t4);
+    --seed-line-height: var(--seed-v3-line-height-t4);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_bodyMediumDefault {
-    --seed-font-size: var(--seed-v3-font-size-s5);
-    --seed-line-height: var(--seed-v3-line-height-s5);
+.text__root--textStyle_t5Regular {
+    --seed-font-size: var(--seed-v3-font-size-t5);
+    --seed-line-height: var(--seed-v3-line-height-t5);
     --seed-font-weight: var(--seed-v3-font-weight-regular)
 }
-.text__root--textStyle_bodyMediumReadingDefault {
-    --seed-font-size: var(--seed-v3-font-size-s5);
-    --seed-line-height: var(--seed-v3-line-height-s6);
-    --seed-font-weight: var(--seed-v3-font-weight-regular)
-}
-.text__root--textStyle_bodyMediumStrong {
-    --seed-font-size: var(--seed-v3-font-size-s5);
-    --seed-line-height: var(--seed-v3-line-height-s5);
+.text__root--textStyle_t5Medium {
+    --seed-font-size: var(--seed-v3-font-size-t5);
+    --seed-line-height: var(--seed-v3-line-height-t5);
     --seed-font-weight: var(--seed-v3-font-weight-medium)
 }
-.text__root--textStyle_bodyMediumStronger {
-    --seed-font-size: var(--seed-v3-font-size-s5);
-    --seed-line-height: var(--seed-v3-line-height-s5);
+.text__root--textStyle_t5Bold {
+    --seed-font-size: var(--seed-v3-font-size-t5);
+    --seed-line-height: var(--seed-v3-line-height-t5);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_titleSmallDefault {
-    --seed-font-size: var(--seed-v3-font-size-s5);
-    --seed-line-height: var(--seed-v3-line-height-s5);
+.text__root--textStyle_t6Bold {
+    --seed-font-size: var(--seed-v3-font-size-t6);
+    --seed-line-height: var(--seed-v3-line-height-t6);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_titleMediumDefault {
-    --seed-font-size: var(--seed-v3-font-size-s6);
-    --seed-line-height: var(--seed-v3-line-height-s6);
+.text__root--textStyle_t7Bold {
+    --seed-font-size: var(--seed-v3-font-size-t7);
+    --seed-line-height: var(--seed-v3-line-height-t7);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_titleLargeDefault {
-    --seed-font-size: var(--seed-v3-font-size-s7);
-    --seed-line-height: var(--seed-v3-line-height-s7);
+.text__root--textStyle_t8Bold {
+    --seed-font-size: var(--seed-v3-font-size-t8);
+    --seed-line-height: var(--seed-v3-line-height-t8);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_headingSmallDefault {
-    --seed-font-size: var(--seed-v3-font-size-s8);
-    --seed-line-height: var(--seed-v3-line-height-s8);
+.text__root--textStyle_t9Bold {
+    --seed-font-size: var(--seed-v3-font-size-t9);
+    --seed-line-height: var(--seed-v3-line-height-t9);
     --seed-font-weight: var(--seed-v3-font-weight-bold)
 }
-.text__root--textStyle_headingMediumDefault {
-    --seed-font-size: var(--seed-v3-font-size-s9);
-    --seed-line-height: var(--seed-v3-line-height-s9);
-    --seed-font-weight: var(--seed-v3-font-weight-bold)
-}
-.text__root--textStyle_headingLargeDefault {
-    --seed-font-size: var(--seed-v3-font-size-s10);
-    --seed-line-height: var(--seed-v3-line-height-s10);
-    --seed-font-weight: var(--seed-v3-font-weight-bold)
+.text__root--textStyle_t10Bold {
+    --seed-font-size: var(--seed-v3-font-size-t4);
+    --seed-line-height: var(--seed-v3-line-height-t5);
+    --seed-font-weight: var(--seed-v3-font-weight-regular)
 }
 .text__root--maxLines_none {
     display: unset;

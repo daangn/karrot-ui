@@ -35,7 +35,7 @@
 }
 .appBar__root--theme_cupertino {
     height: 44px;
-    padding-inline: var(--seed-v3-dimension-s4);
+    padding-inline: var(--seed-v3-dimension-x4);
 }
 .appBar__iconButton--theme_cupertino {
     width: 40px;
@@ -53,7 +53,7 @@
 }
 .appBar__root--theme_android {
     height: 56px;
-    padding-inline: var(--seed-v3-dimension-s4);
+    padding-inline: var(--seed-v3-dimension-x4);
 }
 .appBar__iconButton--theme_android {
     width: 40px;

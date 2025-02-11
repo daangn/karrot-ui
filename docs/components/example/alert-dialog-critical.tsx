@@ -26,7 +26,7 @@ const AlertDialogCritical = () => {
           <AlertDialogDescription>파괴적, 비가역적 작업을 경고합니다.</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <Columns gap="s2">
+          <Columns gap="x2">
             <Column>
               <AlertDialogAction asChild>
                 <ActionButton variant="neutralSolid">취소</ActionButton>

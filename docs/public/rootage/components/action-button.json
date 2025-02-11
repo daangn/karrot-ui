@@ -8,7 +8,7 @@
     "base": {
       "enabled": {
         "root": {
-          "colorDuration": "$duration.s4",
+          "colorDuration": "$duration.d4",
           "colorTimingFunction": "$timing-function.easing"
         },
         "label": {
@@ -16,7 +16,7 @@
         }
       }
     },
-    "variant=brand solid": {
+    "variant=brandSolid": {
       "enabled": {
         "root": {
           "color": "$color.bg.brand-solid"
@@ -66,7 +66,7 @@
         }
       }
     },
-    "variant=neutral solid": {
+    "variant=neutralSolid": {
       "enabled": {
         "root": {
           "color": "$color.bg.neutral-inverted"
@@ -116,7 +116,7 @@
         }
       }
     },
-    "variant=neutral weak": {
+    "variant=neutralWeak": {
       "enabled": {
         "root": {
           "color": "$color.bg.neutral-weak"
@@ -166,7 +166,7 @@
         }
       }
     },
-    "variant=critical solid": {
+    "variant=criticalSolid": {
       "enabled": {
         "root": {
           "color": "$color.bg.critical-solid"
@@ -216,7 +216,7 @@
         }
       }
     },
-    "variant=neutral outline": {
+    "variant=neutralOutline": {
       "enabled": {
         "root": {
           "color": "$color.bg.layer-default",
@@ -269,7 +269,7 @@
         }
       }
     },
-    "variant=brand outline": {
+    "variant=brandOutline": {
       "enabled": {
         "root": {
           "color": "$color.bg.layer-default",
@@ -325,7 +325,7 @@
     "size=xsmall": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s8",
+          "minHeight": "$dimension.x8",
           "cornerRadius": "$radius.full"
         },
         "progressCircle": {
@@ -334,42 +334,42 @@
         }
       }
     },
-    "size=xsmall, layout=with text": {
+    "size=xsmall, layout=withText": {
       "enabled": {
         "root": {
-          "gap": "$dimension.s1",
-          "paddingX": "$dimension.s3_5",
-          "paddingY": "$dimension.s1_5"
+          "gap": "$dimension.x1",
+          "paddingX": "$dimension.x3_5",
+          "paddingY": "$dimension.x1_5"
         },
         "prefixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "suffixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "label": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         }
       }
     },
-    "size=xsmall, layout=icon only": {
+    "size=xsmall, layout=iconOnly": {
       "enabled": {
         "root": {
-          "minWidth": "$dimension.s8",
-          "paddingX": "$dimension.s1_5",
-          "paddingY": "$dimension.s1_5"
+          "minWidth": "$dimension.x8",
+          "paddingX": "$dimension.x1_5",
+          "paddingY": "$dimension.x1_5"
         },
         "icon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         }
       }
     },
     "size=small": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s9",
-          "cornerRadius": "$radius.s2"
+          "minHeight": "$dimension.x9",
+          "cornerRadius": "$radius.r2"
         },
         "progressCircle": {
           "size": "14px",
@@ -377,42 +377,42 @@
         }
       }
     },
-    "size=small, layout=with text": {
+    "size=small, layout=withText": {
       "enabled": {
         "root": {
-          "gap": "$dimension.s1",
-          "paddingX": "$dimension.s3_5",
-          "paddingY": "$dimension.s2"
+          "gap": "$dimension.x1",
+          "paddingX": "$dimension.x3_5",
+          "paddingY": "$dimension.x2"
         },
         "prefixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "suffixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "label": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         }
       }
     },
-    "size=small, layout=icon only": {
+    "size=small, layout=iconOnly": {
       "enabled": {
         "root": {
-          "minWidth": "$dimension.s9",
-          "paddingX": "$dimension.s2",
-          "paddingY": "$dimension.s2"
+          "minWidth": "$dimension.x9",
+          "paddingX": "$dimension.x2",
+          "paddingY": "$dimension.x2"
         },
         "icon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         }
       }
     },
     "size=medium": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s10",
-          "cornerRadius": "$radius.s2"
+          "minHeight": "$dimension.x10",
+          "cornerRadius": "$radius.r2"
         },
         "progressCircle": {
           "size": "16px",
@@ -420,31 +420,31 @@
         }
       }
     },
-    "size=medium, layout=with text": {
+    "size=medium, layout=withText": {
       "enabled": {
         "root": {
-          "gap": "$dimension.s1",
-          "paddingX": "$dimension.s4",
-          "paddingY": "$dimension.s2_5"
+          "gap": "$dimension.x1",
+          "paddingX": "$dimension.x4",
+          "paddingY": "$dimension.x2_5"
         },
         "prefixIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         },
         "suffixIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         },
         "label": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         }
       }
     },
-    "size=medium, layout=icon only": {
+    "size=medium, layout=iconOnly": {
       "enabled": {
         "root": {
-          "minWidth": "$dimension.s10",
-          "paddingX": "$dimension.s2_5",
-          "paddingY": "$dimension.s2_5"
+          "minWidth": "$dimension.x10",
+          "paddingX": "$dimension.x2_5",
+          "paddingY": "$dimension.x2_5"
         },
         "icon": {
           "size": "18px"
@@ -454,8 +454,8 @@
     "size=large": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s13",
-          "cornerRadius": "$radius.s3"
+          "minHeight": "$dimension.x13",
+          "cornerRadius": "$radius.r3"
         },
         "progressCircle": {
           "size": "18px",
@@ -463,12 +463,12 @@
         }
       }
     },
-    "size=large, layout=with text": {
+    "size=large, layout=withText": {
       "enabled": {
         "root": {
-          "gap": "$dimension.s2",
-          "paddingX": "$dimension.s5",
-          "paddingY": "$dimension.s3_5"
+          "gap": "$dimension.x2",
+          "paddingX": "$dimension.x5",
+          "paddingY": "$dimension.x3_5"
         },
         "prefixIcon": {
           "size": "22px"
@@ -477,17 +477,17 @@
           "size": "22px"
         },
         "label": {
-          "fontSize": "$font-size.s6",
-          "lineHeight": "$line-height.s6"
+          "fontSize": "$font-size.t6",
+          "lineHeight": "$line-height.t6"
         }
       }
     },
-    "size=large, layout=icon only": {
+    "size=large, layout=iconOnly": {
       "enabled": {
         "root": {
-          "minWidth": "$dimension.s13",
-          "paddingX": "$dimension.s3_5",
-          "paddingY": "$dimension.s3_5"
+          "minWidth": "$dimension.x13",
+          "paddingX": "$dimension.x3_5",
+          "paddingY": "$dimension.x3_5"
         },
         "icon": {
           "size": "22px"

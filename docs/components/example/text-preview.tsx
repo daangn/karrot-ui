@@ -3,38 +3,35 @@ import { Text } from "seed-design/ui/text";
 
 export default function TextPreview() {
   return (
-    <Flex direction="column" gap="s2">
-      <Text color="fg.neutral" textStyle="labelSmallDefault">
+    <Flex direction="column" gap="x2">
+      <Text color="fg.neutral" textStyle="t1Regular">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="labelMediumDefault">
+      <Text color="fg.neutral" textStyle="t2Regular">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="labelLargeDefault">
+      <Text color="fg.neutral" textStyle="t3Regular">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="bodySmallDefault">
+      <Text color="fg.neutral" textStyle="t4Regular">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="bodyMediumDefault">
+      <Text color="fg.neutral" textStyle="t5Regular">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="titleSmallDefault">
+      <Text color="fg.neutral" textStyle="t6Bold">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="titleMediumDefault">
+      <Text color="fg.neutral" textStyle="t7Bold">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="titleLargeDefault">
+      <Text color="fg.neutral" textStyle="t8Bold">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="headingSmallDefault">
+      <Text color="fg.neutral" textStyle="t9Bold">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
-      <Text color="fg.neutral" textStyle="headingMediumDefault">
-        다람쥐 헌 쳇바퀴에 타고파
-      </Text>
-      <Text color="fg.neutral" textStyle="headingLargeDefault">
+      <Text color="fg.neutral" textStyle="t10Bold">
         다람쥐 헌 쳇바퀴에 타고파
       </Text>
     </Flex>

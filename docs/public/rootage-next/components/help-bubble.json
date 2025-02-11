@@ -23,15 +23,15 @@
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s3"
+                  "value": "$radius.r3"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 }
               },
               "arrow": {
@@ -41,7 +41,7 @@
                 },
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 }
               },
               "title": {
@@ -51,7 +51,7 @@
                 },
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s3"
+                  "value": "$font-size.t3"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -65,7 +65,7 @@
                 },
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s3"
+                  "value": "$font-size.t3"
                 },
                 "fontWeight": {
                   "type": "number",

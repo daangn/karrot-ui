@@ -43,7 +43,7 @@ export declare const vars: {
     "enabled": {
       "root": {
         "height": "24px",
-        "gap": "var(--seed-v3-dimension-s2)"
+        "gap": "var(--seed-v3-dimension-x2)"
       },
       "control": {
         "height": "16px",
@@ -56,8 +56,8 @@ export declare const vars: {
         "width": "12px"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }

@@ -7,7 +7,7 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$dimension.s0_5": {
+      "$dimension.x0_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -18,7 +18,7 @@
           }
         }
       },
-      "$dimension.s1": {
+      "$dimension.x1": {
         "values": {
           "default": {
             "type": "dimension",
@@ -29,7 +29,7 @@
           }
         }
       },
-      "$dimension.s1_5": {
+      "$dimension.x1_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -40,7 +40,7 @@
           }
         }
       },
-      "$dimension.s2": {
+      "$dimension.x2": {
         "values": {
           "default": {
             "type": "dimension",
@@ -51,7 +51,7 @@
           }
         }
       },
-      "$dimension.s2_5": {
+      "$dimension.x2_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -62,7 +62,7 @@
           }
         }
       },
-      "$dimension.s3": {
+      "$dimension.x3": {
         "values": {
           "default": {
             "type": "dimension",
@@ -73,7 +73,7 @@
           }
         }
       },
-      "$dimension.s3_5": {
+      "$dimension.x3_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -84,7 +84,7 @@
           }
         }
       },
-      "$dimension.s4": {
+      "$dimension.x4": {
         "values": {
           "default": {
             "type": "dimension",
@@ -95,7 +95,7 @@
           }
         }
       },
-      "$dimension.s4_5": {
+      "$dimension.x4_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -106,7 +106,7 @@
           }
         }
       },
-      "$dimension.s5": {
+      "$dimension.x5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -117,7 +117,7 @@
           }
         }
       },
-      "$dimension.s6": {
+      "$dimension.x6": {
         "values": {
           "default": {
             "type": "dimension",
@@ -128,7 +128,7 @@
           }
         }
       },
-      "$dimension.s7": {
+      "$dimension.x7": {
         "values": {
           "default": {
             "type": "dimension",
@@ -139,7 +139,7 @@
           }
         }
       },
-      "$dimension.s8": {
+      "$dimension.x8": {
         "values": {
           "default": {
             "type": "dimension",
@@ -150,7 +150,7 @@
           }
         }
       },
-      "$dimension.s9": {
+      "$dimension.x9": {
         "values": {
           "default": {
             "type": "dimension",
@@ -161,7 +161,7 @@
           }
         }
       },
-      "$dimension.s10": {
+      "$dimension.x10": {
         "values": {
           "default": {
             "type": "dimension",
@@ -172,7 +172,7 @@
           }
         }
       },
-      "$dimension.s12": {
+      "$dimension.x12": {
         "values": {
           "default": {
             "type": "dimension",
@@ -183,7 +183,7 @@
           }
         }
       },
-      "$dimension.s13": {
+      "$dimension.x13": {
         "values": {
           "default": {
             "type": "dimension",
@@ -194,7 +194,7 @@
           }
         }
       },
-      "$dimension.s14": {
+      "$dimension.x14": {
         "values": {
           "default": {
             "type": "dimension",
@@ -205,7 +205,7 @@
           }
         }
       },
-      "$dimension.s16": {
+      "$dimension.x16": {
         "values": {
           "default": {
             "type": "dimension",
@@ -220,7 +220,7 @@
         "values": {
           "default": {
             "type": "dimension",
-            "value": "$dimension.s2"
+            "value": "$dimension.x2"
           }
         },
         "description": "Chip 사이의 수평 간격에 사용합니다."
@@ -229,7 +229,7 @@
         "values": {
           "default": {
             "type": "dimension",
-            "value": "$dimension.s4"
+            "value": "$dimension.x4"
           }
         },
         "description": "화면 전체에 적용되는 기본 수평 padding 값입니다."
@@ -238,7 +238,7 @@
         "values": {
           "default": {
             "type": "dimension",
-            "value": "$dimension.s3"
+            "value": "$dimension.x3"
           }
         },
         "description": "컴포넌트 간 수직 간격 토큰이 정의되지 않은 컴포넌트 사이의 수직 간격에 사용합니다."
@@ -247,7 +247,7 @@
         "values": {
           "default": {
             "type": "dimension",
-            "value": "$dimension.s5"
+            "value": "$dimension.x5"
           }
         },
         "description": "Top Navigation과 Page Title 사이의 간격입니다."

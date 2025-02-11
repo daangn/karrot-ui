@@ -19,7 +19,7 @@
               "root": {
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s0_5"
+                  "value": "$dimension.x0_5"
                 }
               },
               "label": {
@@ -31,13 +31,13 @@
               "prefixIcon": {
                 "marginXEnd": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "suffixIcon": {
                 "marginXStart": {
                   "type": "dimension",
-                  "value": "$dimension.s0_5"
+                  "value": "$dimension.x0_5"
                 }
               }
             }
@@ -112,7 +112,7 @@
       },
       {
         "variants": {
-          "tone": "neutral subtle"
+          "tone": "neutralSubtle"
         },
         "definitions": [
           {
@@ -163,29 +163,29 @@
               "root": {
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1_5"
+                  "value": "$radius.r1_5"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t6"
                 }
               }
             }
@@ -205,29 +205,29 @@
               "root": {
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1_5"
+                  "value": "$radius.r1_5"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               }
             }
@@ -247,29 +247,29 @@
               "root": {
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1"
+                  "value": "$radius.r1"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               }
             }

@@ -7,7 +7,7 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$duration.s1": {
+      "$duration.d1": {
         "values": {
           "default": {
             "type": "duration",
@@ -18,7 +18,7 @@
           }
         }
       },
-      "$duration.s2": {
+      "$duration.d2": {
         "values": {
           "default": {
             "type": "duration",
@@ -29,7 +29,7 @@
           }
         }
       },
-      "$duration.s3": {
+      "$duration.d3": {
         "values": {
           "default": {
             "type": "duration",
@@ -40,7 +40,7 @@
           }
         }
       },
-      "$duration.s4": {
+      "$duration.d4": {
         "values": {
           "default": {
             "type": "duration",
@@ -51,7 +51,7 @@
           }
         }
       },
-      "$duration.s5": {
+      "$duration.d5": {
         "values": {
           "default": {
             "type": "duration",
@@ -62,7 +62,7 @@
           }
         }
       },
-      "$duration.s6": {
+      "$duration.d6": {
         "values": {
           "default": {
             "type": "duration",

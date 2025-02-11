@@ -7,7 +7,7 @@ import { Stack } from "seed-design/ui/layout";
 
 export default function InlineBannerWithTitleText() {
   return (
-    <Stack gap="s4" width="full">
+    <Stack gap="x4" width="full">
       <InlineBanner title="타이틀" description="사업자 정보를 등록해주세요." />
       <ActionableInlineBanner title="타이틀" description="사업자 정보를 등록해주세요." />
       <DismissibleInlineBanner title="타이틀" description="사업자 정보를 등록해주세요." />

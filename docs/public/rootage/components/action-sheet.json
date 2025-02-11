@@ -9,35 +9,35 @@
       "enabled": {
         "backdrop": {
           "color": "$color.bg.overlay",
-          "enterDuration": "$duration.s2",
+          "enterDuration": "$duration.d2",
           "enterTimingFunction": "$timing-function.enter",
           "enterOpacity": 0,
-          "exitDuration": "$duration.s2",
+          "exitDuration": "$duration.d2",
           "exitTimingFunction": "$timing-function.exit",
           "exitOpacity": 0
         },
         "content": {
           "color": "$color.bg.layer-floating",
-          "cornerTopRadius": "$radius.s5",
-          "enterDuration": "$duration.s6",
+          "cornerTopRadius": "$radius.r5",
+          "enterDuration": "$duration.d6",
           "enterTimingFunction": "$timing-function.enter-expressive",
-          "exitDuration": "$duration.s4",
+          "exitDuration": "$duration.d4",
           "exitTimingFunction": "$timing-function.exit"
         },
         "header": {
           "paddingX": "$dimension.spacing-x.global-gutter",
-          "paddingY": "$dimension.s3_5",
-          "gap": "$dimension.s1"
+          "paddingY": "$dimension.x3_5",
+          "gap": "$dimension.x1"
         },
         "title": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4",
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4",
           "fontWeight": "$font-weight.bold",
           "color": "$color.fg.neutral-muted"
         },
         "description": {
-          "fontSize": "$font-size.s3",
-          "lineHeight": "$line-height.s3",
+          "fontSize": "$font-size.t3",
+          "lineHeight": "$line-height.t3",
           "fontWeight": "$font-weight.regular",
           "color": "$color.fg.neutral-muted"
         },

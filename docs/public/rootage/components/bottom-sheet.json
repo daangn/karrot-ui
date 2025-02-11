@@ -9,45 +9,45 @@
       "enabled": {
         "backdrop": {
           "color": "$color.bg.overlay",
-          "enterDuration": "$duration.s2",
+          "enterDuration": "$duration.d2",
           "enterTimingFunction": "$timing-function.enter",
           "enterOpacity": 0,
-          "exitDuration": "$duration.s2",
+          "exitDuration": "$duration.d2",
           "exitTimingFunction": "$timing-function.exit",
           "exitOpacity": 0
         },
         "content": {
           "color": "$color.bg.layer-default",
-          "cornerTopRadius": "$radius.s6",
-          "enterDuration": "$duration.s6",
+          "cornerTopRadius": "$radius.r6",
+          "enterDuration": "$duration.d6",
           "enterTimingFunction": "$timing-function.enter-expressive",
-          "exitDuration": "$duration.s4",
+          "exitDuration": "$duration.d4",
           "exitTimingFunction": "$timing-function.exit"
         },
         "header": {
-          "gap": "$dimension.s2",
+          "gap": "$dimension.x2",
           "paddingX": "$dimension.spacing-x.global-gutter",
-          "paddingTop": "$dimension.s6",
-          "paddingBottom": "$dimension.s4"
+          "paddingTop": "$dimension.x6",
+          "paddingBottom": "$dimension.x4"
         },
         "body": {
           "paddingX": "$dimension.spacing-x.global-gutter"
         },
         "footer": {
           "paddingX": "$dimension.spacing-x.global-gutter",
-          "paddingTop": "$dimension.s3",
-          "paddingBottom": "$dimension.s4"
+          "paddingTop": "$dimension.x3",
+          "paddingBottom": "$dimension.x4"
         },
         "title": {
           "color": "$color.fg.neutral",
-          "fontSize": "$font-size.s8",
-          "lineHeight": "$line-height.s8",
+          "fontSize": "$font-size.t8",
+          "lineHeight": "$line-height.t8",
           "fontWeight": "$font-weight.bold"
         },
         "description": {
           "color": "$color.fg.neutral-muted",
-          "fontSize": "$font-size.s6",
-          "lineHeight": "$line-height.s6",
+          "fontSize": "$font-size.t6",
+          "lineHeight": "$line-height.t6",
           "fontWeight": "$font-weight.regular"
         },
         "closeButton": {
@@ -55,8 +55,8 @@
           "cornerRadius": "$radius.full",
           "targetSize": "44px",
           "size": "28px",
-          "fromTop": "$dimension.s5",
-          "fromRight": "$dimension.s5"
+          "fromTop": "$dimension.x5",
+          "fromRight": "$dimension.x5"
         },
         "closeIcon": {
           "color": "$color.fg.neutral",

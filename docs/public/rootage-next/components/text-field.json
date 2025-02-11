@@ -256,31 +256,31 @@
               "header": {
                 "paddingBottom": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "indicator": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "field": {
@@ -293,71 +293,71 @@
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s2_5"
+                  "value": "$radius.r2_5"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 }
               },
               "value": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t6"
                 }
               },
               "prefixText": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t6"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 }
               },
               "suffixText": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6"
+                  "value": "$font-size.t6"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s6"
+                  "value": "$line-height.t6"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 }
               },
               "footer": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingTop": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "minHeight": {
                   "type": "dimension",
@@ -370,51 +370,51 @@
               "description": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "errorMessage": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "errorIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "marginRight": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "characterCount": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               },
               "maxCharacterCount": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               }
             }
@@ -434,31 +434,31 @@
               "header": {
                 "paddingBottom": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "indicator": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "field": {
@@ -471,71 +471,71 @@
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s2_5"
+                  "value": "$radius.r2_5"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 }
               },
               "value": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "prefixText": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 }
               },
               "suffixText": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 }
               },
               "footer": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingTop": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "minHeight": {
                   "type": "dimension",
@@ -548,51 +548,51 @@
               "description": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "errorMessage": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "errorIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "marginRight": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "characterCount": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               },
               "maxCharacterCount": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               }
             }
@@ -612,27 +612,27 @@
               "header": {
                 "paddingBottom": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "indicator": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "field": {
@@ -645,125 +645,125 @@
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s2"
+                  "value": "$radius.r2"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 }
               },
               "value": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "prefixText": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "suffixText": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "footer": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingTop": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "description": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               },
               "errorMessage": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               },
               "errorIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "marginRight": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "characterCount": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               },
               "maxCharacterCount": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               }
             }

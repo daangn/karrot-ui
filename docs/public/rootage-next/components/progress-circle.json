@@ -21,7 +21,7 @@
               "root": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s10"
+                  "value": "$dimension.x10"
                 },
                 "thickness": {
                   "type": "dimension",
@@ -48,7 +48,7 @@
               "root": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s6"
+                  "value": "$dimension.x6"
                 },
                 "thickness": {
                   "type": "dimension",
@@ -205,7 +205,7 @@
       },
       {
         "variants": {
-          "tone": "static white"
+          "tone": "staticWhite"
         },
         "definitions": [
           {

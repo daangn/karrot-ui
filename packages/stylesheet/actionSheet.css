@@ -17,7 +17,7 @@
 .actionSheet__backdrop:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
     animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-s2);
+    animation-duration: var(--seed-v3-duration-d2);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 0;
@@ -27,7 +27,7 @@
 .actionSheet__backdrop:is([data-state="open"], [data-open]) {
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter);
-    animation-duration: var(--seed-v3-duration-s2);
+    animation-duration: var(--seed-v3-duration-d2);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 0;
     --seed-enter-opacity: 0;
@@ -42,13 +42,13 @@
     word-break: break-all;
     z-index: calc(var(--sheet-z-index) + var(--layer-index, 0));
     background: var(--seed-v3-color-bg-layer-floating);
-    border-top-left-radius: var(--seed-v3-radius-s5);
-    border-top-right-radius: var(--seed-v3-radius-s5);
+    border-top-left-radius: var(--seed-v3-radius-r5);
+    border-top-right-radius: var(--seed-v3-radius-r5);
 }
 .actionSheet__content:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
     animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-s4);
+    animation-duration: var(--seed-v3-duration-d4);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 100%;
@@ -58,7 +58,7 @@
 .actionSheet__content:is([data-state="open"], [data-open]) {
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter-expressive);
-    animation-duration: var(--seed-v3-duration-s6);
+    animation-duration: var(--seed-v3-duration-d6);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 100%;
     --seed-enter-opacity: 1;
@@ -70,8 +70,8 @@
     align-items: center;
     position: relative;
     padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
-    padding-block: var(--seed-v3-dimension-s3_5);
-    gap: var(--seed-v3-dimension-s1);
+    padding-block: var(--seed-v3-dimension-x3_5);
+    gap: var(--seed-v3-dimension-x1);
 }
 .actionSheet__header:after {
     content: '';
@@ -85,14 +85,14 @@
 }
 .actionSheet__title {
     color: var(--seed-v3-color-fg-neutral-muted);
-    font-size: var(--seed-v3-font-size-s4);
-    line-height: var(--seed-v3-line-height-s4);
+    font-size: var(--seed-v3-font-size-t4);
+    line-height: var(--seed-v3-line-height-t4);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .actionSheet__description {
     color: var(--seed-v3-color-fg-neutral-muted);
-    font-size: var(--seed-v3-font-size-s3);
-    line-height: var(--seed-v3-line-height-s3);
+    font-size: var(--seed-v3-font-size-t3);
+    line-height: var(--seed-v3-line-height-t3);
     font-weight: var(--seed-v3-font-weight-regular);
 }
 .actionSheet__list {

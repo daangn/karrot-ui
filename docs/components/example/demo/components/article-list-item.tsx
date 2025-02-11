@@ -18,29 +18,29 @@ export function ArticleListItem(article: ArticleProps) {
       as="button"
       onClick={() => push("demo/article-detail", { article })}
       style={{ textAlign: "start" }}
-      gap="s2_5"
+      gap="x2_5"
       paddingX="spacingX.globalGutter"
-      paddingY="s1"
+      paddingY="x1"
     >
       <Inline justifyContent="spaceBetween" alignItems="center">
         <ArticleAuthor author={author} />
       </Inline>
-      <Stack gap="s2">
-        <Stack gap="s1">
-          <Text as="h1" textStyle="bodyMediumStrong" color="fg.neutral" maxLines={1}>
+      <Stack gap="x2">
+        <Stack gap="x1">
+          <Text as="h1" textStyle="t5Bold" color="fg.neutral" maxLines={1}>
             {title}
           </Text>
-          <Text as="p" textStyle="bodySmallDefault" color="fg.neutralMuted" maxLines={2}>
+          <Text as="p" textStyle="t4Regular" color="fg.neutralMuted" maxLines={2}>
             {content}
           </Text>
         </Stack>
-        <Inline alignItems="center" gap="s2">
+        <Inline alignItems="center" gap="x2">
           {isPopular && (
             <Badge variant="outline" tone="brand">
               인기
             </Badge>
           )}
-          <Text textStyle="bodySmallDefault" color="fg.neutralSubtle">
+          <Text textStyle="t4Regular" color="fg.neutralSubtle">
             {categoryName} ⸱ 서초2동 ⸱ {formatDate(createdAt)}
           </Text>
         </Inline>

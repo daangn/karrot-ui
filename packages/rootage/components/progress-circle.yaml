@@ -8,12 +8,12 @@ data:
   size=40:
     enabled:
       root:
-        size: $dimension.s10
+        size: $dimension.x10
         thickness: 5px
   size=24:
     enabled:
       root:
-        size: $dimension.s6
+        size: $dimension.x6
         thickness: 3px
   indeterminate=false:
     enabled:
@@ -48,7 +48,7 @@ data:
         color: $color.palette.carrot-200
       range:
         color: $color.bg.brand-solid
-  tone=static white:
+  tone=staticWhite:
     enabled:
       track:
         color: $color.palette.static-white-alpha-200

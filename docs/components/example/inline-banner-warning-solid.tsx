@@ -8,7 +8,7 @@ import { Stack } from "seed-design/ui/layout";
 
 export default function InlineBannerWarningSolid() {
   return (
-    <Stack gap="s4" width="full">
+    <Stack gap="x4" width="full">
       <InlineBanner
         variant="warningSolid"
         icon={<IconExclamationmarkCircleFill />}

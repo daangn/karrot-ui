@@ -7,7 +7,7 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$font-size.s1": {
+      "$font-size.t1": {
         "values": {
           "default": {
             "type": "dimension",
@@ -18,7 +18,7 @@
           }
         }
       },
-      "$font-size.s2": {
+      "$font-size.t2": {
         "values": {
           "default": {
             "type": "dimension",
@@ -29,7 +29,7 @@
           }
         }
       },
-      "$font-size.s3": {
+      "$font-size.t3": {
         "values": {
           "default": {
             "type": "dimension",
@@ -40,7 +40,7 @@
           }
         }
       },
-      "$font-size.s4": {
+      "$font-size.t4": {
         "values": {
           "default": {
             "type": "dimension",
@@ -51,7 +51,7 @@
           }
         }
       },
-      "$font-size.s5": {
+      "$font-size.t5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -62,7 +62,7 @@
           }
         }
       },
-      "$font-size.s6": {
+      "$font-size.t6": {
         "values": {
           "default": {
             "type": "dimension",
@@ -73,7 +73,7 @@
           }
         }
       },
-      "$font-size.s7": {
+      "$font-size.t7": {
         "values": {
           "default": {
             "type": "dimension",
@@ -84,7 +84,7 @@
           }
         }
       },
-      "$font-size.s8": {
+      "$font-size.t8": {
         "values": {
           "default": {
             "type": "dimension",
@@ -95,7 +95,7 @@
           }
         }
       },
-      "$font-size.s9": {
+      "$font-size.t9": {
         "values": {
           "default": {
             "type": "dimension",
@@ -106,7 +106,7 @@
           }
         }
       },
-      "$font-size.s10": {
+      "$font-size.t10": {
         "values": {
           "default": {
             "type": "dimension",
@@ -117,7 +117,7 @@
           }
         }
       },
-      "$font-size.s2-static": {
+      "$font-size.t2-static": {
         "values": {
           "default": {
             "type": "dimension",
@@ -128,7 +128,7 @@
           }
         }
       },
-      "$font-size.s5-static": {
+      "$font-size.t5-static": {
         "values": {
           "default": {
             "type": "dimension",
@@ -139,7 +139,7 @@
           }
         }
       },
-      "$font-size.s6-static": {
+      "$font-size.t6-static": {
         "values": {
           "default": {
             "type": "dimension",

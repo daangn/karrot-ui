@@ -86,76 +86,76 @@
     "size=small": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s8",
-          "paddingY": "$dimension.s1_5",
-          "gap": "$dimension.s1"
+          "minHeight": "$dimension.x8",
+          "paddingY": "$dimension.x1_5",
+          "gap": "$dimension.x1"
         },
         "label": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.t4"
         },
         "prefixIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         },
         "suffixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "count": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.t4"
         }
       }
     },
     "size=medium": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s9",
-          "paddingY": "$dimension.s2",
-          "gap": "$dimension.s1"
+          "minHeight": "$dimension.x9",
+          "paddingY": "$dimension.x2",
+          "gap": "$dimension.x1"
         },
         "label": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.t4"
         },
         "prefixIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         },
         "suffixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "count": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.t4"
         }
       }
     },
-    "size=small,layout=with text": {
+    "size=small,layout=withText": {
       "enabled": {
         "root": {
-          "paddingX": "$dimension.s3"
+          "paddingX": "$dimension.x3"
         }
       }
     },
-    "size=small,layout=icon only": {
+    "size=small,layout=iconOnly": {
       "enabled": {
         "root": {
-          "minWidth": "$dimension.s8"
+          "minWidth": "$dimension.x8"
         },
         "icon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         }
       }
     },
-    "size=medium,layout=with text": {
+    "size=medium,layout=withText": {
       "enabled": {
         "root": {
-          "paddingX": "$dimension.s3_5"
+          "paddingX": "$dimension.x3_5"
         }
       }
     },
-    "size=medium,layout=icon only": {
+    "size=medium,layout=iconOnly": {
       "enabled": {
         "root": {
-          "minWidth": "$dimension.s9"
+          "minWidth": "$dimension.x9"
         },
         "icon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         }
       }
     }

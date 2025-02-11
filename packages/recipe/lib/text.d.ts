@@ -2,7 +2,7 @@ declare interface TextVariant {
   /**
   * @default bodyMediumDefault
   */
-  textStyle: "labelSmallDefault" | "labelSmallStrong" | "labelSmallStronger" | "labelMediumDefault" | "labelMediumStrong" | "labelMediumStronger" | "labelLargeDefault" | "labelLargeStrong" | "labelLargeStronger" | "bodySmallDefault" | "bodySmallReadingDefault" | "bodySmallStrong" | "bodySmallStronger" | "bodyMediumDefault" | "bodyMediumReadingDefault" | "bodyMediumStrong" | "bodyMediumStronger" | "titleSmallDefault" | "titleMediumDefault" | "titleLargeDefault" | "headingSmallDefault" | "headingMediumDefault" | "headingLargeDefault";
+  textStyle: "screenTitle" | "articleBody" | "t1Regular" | "t1Medium" | "t1Bold" | "t2Regular" | "t2Medium" | "t2Bold" | "t3Regular" | "t3Medium" | "t3Bold" | "t4Regular" | "t4Medium" | "t4Bold" | "t5Regular" | "t5Medium" | "t5Bold" | "t6Bold" | "t7Bold" | "t8Bold" | "t9Bold" | "t10Bold";
 /**
   * @default none
   */

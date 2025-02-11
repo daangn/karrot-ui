@@ -8,7 +8,7 @@ data:
   base:
     enabled:
       root:
-        padding: $dimension.s1
+        padding: $dimension.x1
         cornerRadius: $radius.full
         color: $color.bg.neutral-weak
       indicator:
@@ -22,5 +22,5 @@ data:
               blur: 6px
               spread: 0px
               color: "#0000000d"
-        transformDuration: $duration.s4
+        transformDuration: $duration.d4
         transformTimingFunction: $timing-function.easing

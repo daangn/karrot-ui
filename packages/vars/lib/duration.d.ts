@@ -1,6 +1,6 @@
-export declare const s1 = "var(--seed-v3-duration-s1)";
-export declare const s2 = "var(--seed-v3-duration-s2)";
-export declare const s3 = "var(--seed-v3-duration-s3)";
-export declare const s4 = "var(--seed-v3-duration-s4)";
-export declare const s5 = "var(--seed-v3-duration-s5)";
-export declare const s6 = "var(--seed-v3-duration-s6)";
+export declare const d1 = "var(--seed-v3-duration-d1)";
+export declare const d2 = "var(--seed-v3-duration-d2)";
+export declare const d3 = "var(--seed-v3-duration-d3)";
+export declare const d4 = "var(--seed-v3-duration-d4)";
+export declare const d5 = "var(--seed-v3-duration-d5)";
+export declare const d6 = "var(--seed-v3-duration-d6)";

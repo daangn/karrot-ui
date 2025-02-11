@@ -104,197 +104,197 @@
     "size=xlarge": {
       "enabled": {
         "header": {
-          "paddingBottom": "$dimension.s3",
-          "gap": "$dimension.s1_5"
+          "paddingBottom": "$dimension.x3",
+          "gap": "$dimension.x1_5"
         },
         "label": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         },
         "indicator": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         },
         "field": {
           "minHeight": "56px",
-          "cornerRadius": "$radius.s2_5",
-          "gap": "$dimension.s2",
-          "paddingX": "$dimension.s4",
-          "paddingY": "$dimension.s3"
+          "cornerRadius": "$radius.r2_5",
+          "gap": "$dimension.x2",
+          "paddingX": "$dimension.x4",
+          "paddingY": "$dimension.x3"
         },
         "value": {
-          "fontSize": "$font-size.s6",
-          "lineHeight": "$line-height.s6"
+          "fontSize": "$font-size.t6",
+          "lineHeight": "$line-height.t6"
         },
         "prefixText": {
-          "fontSize": "$font-size.s6",
-          "lineHeight": "$line-height.s6"
+          "fontSize": "$font-size.t6",
+          "lineHeight": "$line-height.t6"
         },
         "prefixIcon": {
-          "size": "$dimension.s5"
+          "size": "$dimension.x5"
         },
         "suffixText": {
-          "fontSize": "$font-size.s6",
-          "lineHeight": "$line-height.s6"
+          "fontSize": "$font-size.t6",
+          "lineHeight": "$line-height.t6"
         },
         "suffixIcon": {
-          "size": "$dimension.s5"
+          "size": "$dimension.x5"
         },
         "footer": {
-          "gap": "$dimension.s3_5",
-          "paddingTop": "$dimension.s2",
+          "gap": "$dimension.x3_5",
+          "paddingTop": "$dimension.x2",
           "minHeight": "20px"
         },
         "description": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "errorMessage": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "errorIcon": {
-          "size": "$dimension.s4",
-          "marginRight": "$dimension.s1"
+          "size": "$dimension.x4",
+          "marginRight": "$dimension.x1"
         },
         "characterCount": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         },
         "maxCharacterCount": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         }
       }
     },
     "size=large": {
       "enabled": {
         "header": {
-          "paddingBottom": "$dimension.s3",
-          "gap": "$dimension.s1_5"
+          "paddingBottom": "$dimension.x3",
+          "gap": "$dimension.x1_5"
         },
         "label": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         },
         "indicator": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         },
         "field": {
           "minHeight": "52px",
-          "cornerRadius": "$radius.s2_5",
-          "gap": "$dimension.s2",
-          "paddingX": "$dimension.s4",
-          "paddingY": "$dimension.s3"
+          "cornerRadius": "$radius.r2_5",
+          "gap": "$dimension.x2",
+          "paddingX": "$dimension.x4",
+          "paddingY": "$dimension.x3"
         },
         "value": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         },
         "prefixText": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         },
         "prefixIcon": {
-          "size": "$dimension.s5"
+          "size": "$dimension.x5"
         },
         "suffixText": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5"
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5"
         },
         "suffixIcon": {
-          "size": "$dimension.s5"
+          "size": "$dimension.x5"
         },
         "footer": {
-          "gap": "$dimension.s3_5",
-          "paddingTop": "$dimension.s2",
+          "gap": "$dimension.x3_5",
+          "paddingTop": "$dimension.x2",
           "minHeight": "20px"
         },
         "description": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "errorMessage": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "errorIcon": {
-          "size": "$dimension.s4",
-          "marginRight": "$dimension.s1"
+          "size": "$dimension.x4",
+          "marginRight": "$dimension.x1"
         },
         "characterCount": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         },
         "maxCharacterCount": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         }
       }
     },
     "size=medium": {
       "enabled": {
         "header": {
-          "paddingBottom": "$dimension.s3"
+          "paddingBottom": "$dimension.x3"
         },
         "label": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "indicator": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "field": {
           "minHeight": "40px",
-          "cornerRadius": "$radius.s2",
-          "gap": "$dimension.s1_5",
-          "paddingX": "$dimension.s3_5",
-          "paddingY": "$dimension.s2_5"
+          "cornerRadius": "$radius.r2",
+          "gap": "$dimension.x1_5",
+          "paddingX": "$dimension.x3_5",
+          "paddingY": "$dimension.x2_5"
         },
         "value": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "prefixText": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "prefixIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         },
         "suffixText": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4"
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4"
         },
         "suffixIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         },
         "footer": {
-          "gap": "$dimension.s3_5",
-          "paddingTop": "$dimension.s2",
-          "minHeight": "$dimension.s4"
+          "gap": "$dimension.x3_5",
+          "paddingTop": "$dimension.x2",
+          "minHeight": "$dimension.x4"
         },
         "description": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         },
         "errorMessage": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         },
         "errorIcon": {
-          "size": "$dimension.s3_5",
-          "marginRight": "$dimension.s1"
+          "size": "$dimension.x3_5",
+          "marginRight": "$dimension.x1"
         },
         "characterCount": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         },
         "maxCharacterCount": {
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2"
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         }
       }
     }

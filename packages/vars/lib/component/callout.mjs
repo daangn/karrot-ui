@@ -2,15 +2,15 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "padding": "var(--seed-v3-dimension-s3_5)",
-        "gap": "var(--seed-v3-dimension-s3)",
-        "cornerRadius": "var(--seed-v3-radius-s2_5)",
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
+        "padding": "var(--seed-v3-dimension-x3_5)",
+        "gap": "var(--seed-v3-dimension-x3)",
+        "cornerRadius": "var(--seed-v3-radius-r2_5)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t5)",
         "minHeight": "50px"
       },
       "icon": {
-        "size": "var(--seed-v3-dimension-s4)"
+        "size": "var(--seed-v3-dimension-x4)"
       },
       "title": {
         "fontWeight": "var(--seed-v3-font-weight-bold)"
@@ -22,13 +22,13 @@ export const vars = {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "dismissButton": {
-        "size": "var(--seed-v3-dimension-s10)"
+        "size": "var(--seed-v3-dimension-x10)"
       },
       "dismissIcon": {
-        "size": "var(--seed-v3-dimension-s4)"
+        "size": "var(--seed-v3-dimension-x4)"
       },
       "actionableIcon": {
-        "size": "var(--seed-v3-dimension-s4)"
+        "size": "var(--seed-v3-dimension-x4)"
       }
     }
   },

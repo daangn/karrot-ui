@@ -7,21 +7,21 @@ data:
   size=large:
     enabled:
       root:
-        minHeight: $dimension.s6
-        paddingX: $dimension.s2
-        paddingY: $dimension.s1
+        minHeight: $dimension.x6
+        paddingX: $dimension.x2
+        paddingY: $dimension.x1
       label:
-        fontSize: $font-size.s2
-        lineHeight: $line-height.s2
+        fontSize: $font-size.t2
+        lineHeight: $line-height.t2
   size=medium:
     enabled:
       root:
-        minHeight: $dimension.s5
-        paddingX: $dimension.s1_5
-        paddingY: $dimension.s0_5
+        minHeight: $dimension.x5
+        paddingX: $dimension.x1_5
+        paddingY: $dimension.x0_5
       label:
-        fontSize: $font-size.s1
-        lineHeight: $line-height.s1
+        fontSize: $font-size.t1
+        lineHeight: $line-height.t1
   shape=pill:
     enabled:
       root:
@@ -29,11 +29,11 @@ data:
   shape=rectangle, size=large:
     enabled:
       root:
-        borderRadius: $radius.s1_5
+        borderRadius: $radius.r1_5
   shape=rectangle, size=medium:
     enabled:
       root:
-        borderRadius: $radius.s1
+        borderRadius: $radius.r1
   variant=weak:
     enabled:
       label:

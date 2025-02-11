@@ -13,9 +13,9 @@
     display: flex;
     flex-direction: column;
     background: var(--seed-v3-color-bg-neutral-solid);
-    padding-inline: var(--seed-v3-dimension-s3);
-    padding-block: var(--seed-v3-dimension-s3);
-    border-radius: var(--seed-v3-radius-s3);
+    padding-inline: var(--seed-v3-dimension-x3);
+    padding-block: var(--seed-v3-dimension-x3);
+    border-radius: var(--seed-v3-radius-r3);
     word-break: keep-all;
 }
 .helpBubble__content:is(:hidden, [hidden], [data-hidden]) {
@@ -28,12 +28,12 @@
 }
 .helpBubble__title {
     color: var(--seed-v3-color-palette-static-white);
-    font-size: var(--seed-v3-font-size-s3);
+    font-size: var(--seed-v3-font-size-t3);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .helpBubble__description {
     color: var(--seed-v3-color-palette-static-white);
-    font-size: var(--seed-v3-font-size-s3);
+    font-size: var(--seed-v3-font-size-t3);
     font-weight: var(--seed-v3-font-weight-regular);
 }
 .helpBubble__closeButton {

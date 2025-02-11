@@ -13,15 +13,15 @@
     text-overflow: ellipsis
 }
 .appBarMain__title--layout_titleOnly {
-    font-size: var(--seed-v3-font-size-s6-static);
+    font-size: var(--seed-v3-font-size-t6-static);
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .appBarMain__title--layout_withSubtitle {
-    font-size: var(--seed-v3-font-size-s5-static);
+    font-size: var(--seed-v3-font-size-t5-static);
     font-weight: var(--seed-v3-font-weight-bold)
 }
 .appBarMain__subtitle--layout_withSubtitle {
-    font-size: var(--seed-v3-font-size-s2-static);
+    font-size: var(--seed-v3-font-size-t2-static);
     font-weight: var(--seed-v3-font-weight-regular)
 }
 .appBarMain__root--theme_cupertino {

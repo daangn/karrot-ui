@@ -62,8 +62,8 @@ export default function MultilineTextFieldReactHookForm() {
   );
 
   return (
-    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
-      <Columns gap="s2">
+    <Stack gap="x3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+      <Columns gap="x2">
         <Column>
           <TextField
             label="자기소개"
@@ -93,7 +93,7 @@ export default function MultilineTextFieldReactHookForm() {
           </TextField>
         </Column>
       </Columns>
-      <Columns gap="s2">
+      <Columns gap="x2">
         <Column width="content">
           <ActionButton type="reset" variant="neutralWeak">
             초기화

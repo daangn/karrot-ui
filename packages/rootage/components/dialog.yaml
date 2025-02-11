@@ -8,38 +8,38 @@ data:
     enabled:
       backdrop:
         color: $color.bg.overlay
-        enterDuration: $duration.s2
+        enterDuration: $duration.d2
         enterTimingFunction: $timing-function.enter
         enterOpacity: 0
-        exitDuration: $duration.s2
+        exitDuration: $duration.d2
         exitTimingFunction: $timing-function.exit
         exitOpacity: 0
       content:
         color: $color.bg.layer-default
-        cornerRadius: $radius.s5
-        marginX: $dimension.s8
-        paddingX: $dimension.s5
-        paddingY: $dimension.s5
+        cornerRadius: $radius.r5
+        marginX: $dimension.x8
+        paddingX: $dimension.x5
+        paddingY: $dimension.x5
         maxWidth: 272px
-        enterDuration: $duration.s4
+        enterDuration: $duration.d4
         enterTimingFunction: $timing-function.enter-expressive
         enterOpacity: 0
         enterScale: 1.3
-        exitDuration: $duration.s2
+        exitDuration: $duration.d2
         exitTimingFunction: $timing-function.exit
         exitOpacity: 0
       header:
-        gap: $dimension.s1_5
+        gap: $dimension.x1_5
       footer:
-        paddingTop: $dimension.s4
-        gap: $dimension.s2
+        paddingTop: $dimension.x4
+        gap: $dimension.x2
       title:
         color: $color.fg.neutral
-        fontSize: $font-size.s7
-        lineHeight: $line-height.s7
+        fontSize: $font-size.t7
+        lineHeight: $line-height.t7
         fontWeight: $font-weight.bold
       description:
         color: $color.fg.neutral
-        fontSize: $font-size.s5
-        lineHeight: $line-height.s5
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
         fontWeight: $font-weight.regular

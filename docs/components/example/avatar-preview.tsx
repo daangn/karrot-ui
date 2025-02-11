@@ -4,7 +4,7 @@ import { Flex } from "seed-design/ui/layout";
 
 export default function AvatarPreview() {
   return (
-    <Flex gap="s4">
+    <Flex gap="x4">
       <Avatar
         size="80"
         src="https://avatars.githubusercontent.com/u/54893898?v=4"

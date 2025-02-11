@@ -3,7 +3,7 @@ import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 
 export default function MultilineTextFieldReadOnly() {
   return (
-    <Columns width="full" gap="s3">
+    <Columns width="full" gap="x3">
       <Column>
         <TextField label="라벨" description="설명을 써주세요" readOnly>
           <TextFieldTextarea placeholder="플레이스홀더" />

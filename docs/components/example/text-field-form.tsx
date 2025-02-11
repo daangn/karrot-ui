@@ -81,8 +81,8 @@ export default function TextFieldForm() {
   };
 
   return (
-    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit} onReset={handleReset}>
-      <Columns gap="s2">
+    <Stack gap="x3" width="full" as="form" onSubmit={handleSubmit} onReset={handleReset}>
+      <Columns gap="x2">
         <Column>
           <TextField
             label="이름"
@@ -111,7 +111,7 @@ export default function TextFieldForm() {
           </TextField>
         </Column>
       </Columns>
-      <Columns gap="s2">
+      <Columns gap="x2">
         <Column width="content">
           <ActionButton type="reset" variant="neutralWeak">
             초기화

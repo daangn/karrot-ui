@@ -7,14 +7,14 @@ data:
   base:
     enabled:
       root:
-        paddingX: $dimension.s3_5
-        paddingY: $dimension.s2
+        paddingX: $dimension.x3_5
+        paddingY: $dimension.x2
         cornerRadius: $radius.full
         minHeight: 36px
       label:
-        fontSize: $font-size.s4
+        fontSize: $font-size.t4
         fontWeight: $font-weight.bold
-  variant=neutral solid:
+  variant=neutralSolid:
     enabled:
       label:
         color: $color.fg.neutral
@@ -38,7 +38,7 @@ data:
         color: $color.bg.disabled
       label:
         color: $color.fg.disabled
-  variant=brand solid:
+  variant=brandSolid:
     enabled:
       root:
         color: $color.bg.neutral-weak

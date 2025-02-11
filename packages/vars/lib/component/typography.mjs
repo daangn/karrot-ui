@@ -1,208 +1,199 @@
 export const vars = {
-  "textStyleLabelSmallDefault": {
+  "textStyleScreenTitle": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s1)",
-        "lineHeight": "var(--seed-v3-line-height-s1)",
+        "fontSize": "var(--seed-v3-font-size-t10)",
+        "lineHeight": "var(--seed-v3-line-height-t10)",
+        "fontWeight": "var(--seed-v3-font-weight-bold)"
+      }
+    }
+  },
+  "textStyleArticleBody": {
+    "enabled": {
+      "root": {
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t6)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
   },
-  "textStyleLabelSmallStrong": {
+  "textStyleT1Regular": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s1)",
-        "lineHeight": "var(--seed-v3-line-height-s1)",
+        "fontSize": "var(--seed-v3-font-size-t1)",
+        "lineHeight": "var(--seed-v3-line-height-t1)",
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
+      }
+    }
+  },
+  "textStyleT1Medium": {
+    "enabled": {
+      "root": {
+        "fontSize": "var(--seed-v3-font-size-t1)",
+        "lineHeight": "var(--seed-v3-line-height-t1)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
   },
-  "textStyleLabelSmallStronger": {
+  "textStyleT1Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s1)",
-        "lineHeight": "var(--seed-v3-line-height-s1)",
+        "fontSize": "var(--seed-v3-font-size-t1)",
+        "lineHeight": "var(--seed-v3-line-height-t1)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleLabelMediumDefault": {
+  "textStyleT2Regular": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s2)",
-        "lineHeight": "var(--seed-v3-line-height-s2)",
+        "fontSize": "var(--seed-v3-font-size-t2)",
+        "lineHeight": "var(--seed-v3-line-height-t2)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
   },
-  "textStyleLabelMediumStrong": {
+  "textStyleT2Medium": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s2)",
-        "lineHeight": "var(--seed-v3-line-height-s2)",
+        "fontSize": "var(--seed-v3-font-size-t2)",
+        "lineHeight": "var(--seed-v3-line-height-t2)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
   },
-  "textStyleLabelMediumStronger": {
+  "textStyleT2Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s2)",
-        "lineHeight": "var(--seed-v3-line-height-s2)",
+        "fontSize": "var(--seed-v3-font-size-t2)",
+        "lineHeight": "var(--seed-v3-line-height-t2)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleLabelLargeDefault": {
+  "textStyleT3Regular": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s3)",
-        "lineHeight": "var(--seed-v3-line-height-s3)",
+        "fontSize": "var(--seed-v3-font-size-t3)",
+        "lineHeight": "var(--seed-v3-line-height-t3)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
   },
-  "textStyleLabelLargeStrong": {
+  "textStyleT3Medium": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s3)",
-        "lineHeight": "var(--seed-v3-line-height-s3)",
+        "fontSize": "var(--seed-v3-font-size-t3)",
+        "lineHeight": "var(--seed-v3-line-height-t3)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
   },
-  "textStyleLabelLargeStronger": {
+  "textStyleT3Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s3)",
-        "lineHeight": "var(--seed-v3-line-height-s3)",
+        "fontSize": "var(--seed-v3-font-size-t3)",
+        "lineHeight": "var(--seed-v3-line-height-t3)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleBodySmallDefault": {
+  "textStyleT4Regular": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
   },
-  "textStyleBodySmallReadingDefault": {
+  "textStyleT4Medium": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s5)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
-      }
-    }
-  },
-  "textStyleBodySmallStrong": {
-    "enabled": {
-      "root": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
   },
-  "textStyleBodySmallStronger": {
+  "textStyleT4Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleBodyMediumDefault": {
+  "textStyleT5Regular": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)",
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)",
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
   },
-  "textStyleBodyMediumReadingDefault": {
+  "textStyleT5Medium": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s6)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
-      }
-    }
-  },
-  "textStyleBodyMediumStrong": {
-    "enabled": {
-      "root": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)",
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
   },
-  "textStyleBodyMediumStronger": {
+  "textStyleT5Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)",
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleTitleSmallDefault": {
+  "textStyleT6Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)",
+        "fontSize": "var(--seed-v3-font-size-t6)",
+        "lineHeight": "var(--seed-v3-line-height-t6)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleTitleMediumDefault": {
+  "textStyleT7Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s6)",
-        "lineHeight": "var(--seed-v3-line-height-s6)",
+        "fontSize": "var(--seed-v3-font-size-t7)",
+        "lineHeight": "var(--seed-v3-line-height-t7)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleTitleLargeDefault": {
+  "textStyleT8Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s7)",
-        "lineHeight": "var(--seed-v3-line-height-s7)",
+        "fontSize": "var(--seed-v3-font-size-t8)",
+        "lineHeight": "var(--seed-v3-line-height-t8)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleHeadingSmallDefault": {
+  "textStyleT9Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s8)",
-        "lineHeight": "var(--seed-v3-line-height-s8)",
+        "fontSize": "var(--seed-v3-font-size-t9)",
+        "lineHeight": "var(--seed-v3-line-height-t9)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }
   },
-  "textStyleHeadingMediumDefault": {
+  "textStyleT10Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-v3-font-size-s9)",
-        "lineHeight": "var(--seed-v3-line-height-s9)",
-        "fontWeight": "var(--seed-v3-font-weight-bold)"
-      }
-    }
-  },
-  "textStyleHeadingLargeDefault": {
-    "enabled": {
-      "root": {
-        "fontSize": "var(--seed-v3-font-size-s10)",
-        "lineHeight": "var(--seed-v3-line-height-s10)",
-        "fontWeight": "var(--seed-v3-font-weight-bold)"
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t5)",
+        "fontWeight": "var(--seed-v3-font-weight-regular)"
       }
     }
   }

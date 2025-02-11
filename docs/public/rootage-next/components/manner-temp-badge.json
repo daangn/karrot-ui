@@ -26,11 +26,11 @@
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s0_5"
+                  "value": "$dimension.x0_5"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 },
                 "cornerRadius": {
                   "type": "dimension",
@@ -40,11 +40,11 @@
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s1"
+                  "value": "$font-size.t1"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s1"
+                  "value": "$line-height.t1"
                 },
                 "fontWeight": {
                   "type": "number",

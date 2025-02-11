@@ -4,7 +4,7 @@ import { Stack } from "seed-design/ui/layout";
 
 export default function InlineBannerCriticalWeak() {
   return (
-    <Stack gap="s4" width="full">
+    <Stack gap="x4" width="full">
       <InlineBanner
         variant="criticalWeak"
         icon={<IconExclamationmarkCircleFill />}

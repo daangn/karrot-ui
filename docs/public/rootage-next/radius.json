@@ -7,7 +7,7 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$radius.s0_5": {
+      "$radius.r0_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -18,7 +18,7 @@
           }
         }
       },
-      "$radius.s1": {
+      "$radius.r1": {
         "values": {
           "default": {
             "type": "dimension",
@@ -29,7 +29,7 @@
           }
         }
       },
-      "$radius.s1_5": {
+      "$radius.r1_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -40,7 +40,7 @@
           }
         }
       },
-      "$radius.s2": {
+      "$radius.r2": {
         "values": {
           "default": {
             "type": "dimension",
@@ -51,7 +51,7 @@
           }
         }
       },
-      "$radius.s2_5": {
+      "$radius.r2_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -62,7 +62,7 @@
           }
         }
       },
-      "$radius.s3": {
+      "$radius.r3": {
         "values": {
           "default": {
             "type": "dimension",
@@ -73,7 +73,7 @@
           }
         }
       },
-      "$radius.s3_5": {
+      "$radius.r3_5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -84,7 +84,7 @@
           }
         }
       },
-      "$radius.s4": {
+      "$radius.r4": {
         "values": {
           "default": {
             "type": "dimension",
@@ -95,7 +95,7 @@
           }
         }
       },
-      "$radius.s5": {
+      "$radius.r5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -106,7 +106,7 @@
           }
         }
       },
-      "$radius.s6": {
+      "$radius.r6": {
         "values": {
           "default": {
             "type": "dimension",

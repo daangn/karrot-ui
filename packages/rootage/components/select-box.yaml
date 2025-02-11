@@ -7,40 +7,40 @@ data:
   base:
     enabled:
       root:
-        paddingX: $dimension.s4
-        paddingY: $dimension.s5
-        gap: $dimension.s2_5
+        paddingX: $dimension.x4
+        paddingY: $dimension.x5
+        gap: $dimension.x2_5
         strokeWidth: 1px
         strokeColor: $color.stroke.neutral
-        cornerRadius: $radius.s3
+        cornerRadius: $radius.r3
       content:
-        gap: $dimension.s0_5
+        gap: $dimension.x0_5
       label:
         color: $color.fg.neutral
         fontWeight: $font-weight.bold
-        fontSize: $font-size.s5
-        lineHeight: $line-height.s5
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
       description:
         color: $color.fg.neutral-muted
         fontWeight: $font-weight.regular
-        fontSize: $font-size.s4
-        lineHeight: $line-height.s4
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
       checkboxControl:
-        size: $dimension.s6
+        size: $dimension.x6
         color: $color.bg.layer-default
         strokeWidth: 1px
         strokeColor: $color.stroke.control
-        cornerRadius: $radius.s1
+        cornerRadius: $radius.r1
       checkboxIcon:
-        size: $dimension.s3_5
+        size: $dimension.x3_5
       radioControl:
-        size: $dimension.s6
+        size: $dimension.x6
         color: $color.bg.layer-default
         strokeWidth: 1px
         strokeColor: $color.stroke.control
         cornerRadius: $radius.full
       radioIcon:
-        size: $dimension.s2_5
+        size: $dimension.x2_5
         cornerRadius: $radius.full
 
     enabled,pressed:

@@ -2,40 +2,40 @@ import { Flex } from "seed-design/ui/layout";
 
 export default function FlexPreview() {
   return (
-    <Flex direction="row" background="bg.layerDefault" gap="s2" width="full" borderRadius="s2">
+    <Flex direction="row" background="bg.layerDefault" gap="x2" width="full" borderRadius="r2">
       <Flex
         direction="column"
         background="bg.brandSolid"
-        gap="s1_5"
-        paddingX="s2"
-        paddingY="s2"
+        gap="x1_5"
+        paddingX="x2"
+        paddingY="x2"
         flexGrow={1}
-        borderRadius="s2"
+        borderRadius="r2"
       >
-        <Flex background="bg.neutralWeak" paddingX="s4" paddingY="s3" borderRadius="s1">
+        <Flex background="bg.neutralWeak" paddingX="x4" paddingY="x3" borderRadius="r1">
           1
         </Flex>
-        <Flex background="bg.neutralWeak" paddingX="s4" paddingY="s3" borderRadius="s1">
+        <Flex background="bg.neutralWeak" paddingX="x4" paddingY="x3" borderRadius="r1">
           2
         </Flex>
       </Flex>
       <Flex
         direction="row"
         background="bg.brandSolid"
-        gap="s1_5"
-        paddingX="s2"
-        paddingY="s2"
+        gap="x1_5"
+        paddingX="x2"
+        paddingY="x2"
         flexGrow={1}
-        borderRadius="s2"
+        borderRadius="r2"
       >
-        <Flex background="bg.neutralWeak" paddingX="s4" paddingY="s3" borderRadius="s1">
+        <Flex background="bg.neutralWeak" paddingX="x4" paddingY="x3" borderRadius="r1">
           3
         </Flex>
-        <Flex background="bg.neutralWeak" paddingX="s4" paddingY="s3" borderRadius="s1">
+        <Flex background="bg.neutralWeak" paddingX="x4" paddingY="x3" borderRadius="r1">
           4
         </Flex>
       </Flex>
-      <Flex background="bg.brandSolid" paddingX="s4" paddingY="s3" borderRadius="s2">
+      <Flex background="bg.brandSolid" paddingX="x4" paddingY="x3" borderRadius="r2">
         5
       </Flex>
     </Flex>

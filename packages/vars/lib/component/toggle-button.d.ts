@@ -2,7 +2,7 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "colorDuration": "var(--seed-v3-duration-s4)",
+        "colorDuration": "var(--seed-v3-duration-d4)",
         "colorTimingFunction": "var(--seed-v3-timing-function-easing)"
       },
       "label": {
@@ -157,20 +157,20 @@ export declare const vars: {
   "sizeXsmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-dimension-s8)",
+        "minHeight": "var(--seed-v3-dimension-x8)",
         "cornerRadius": "var(--seed-v3-radius-full)",
-        "gap": "var(--seed-v3-dimension-s1)",
-        "paddingX": "var(--seed-v3-dimension-s3_5)",
-        "paddingY": "var(--seed-v3-dimension-s1_5)"
+        "gap": "var(--seed-v3-dimension-x1)",
+        "paddingX": "var(--seed-v3-dimension-x3_5)",
+        "paddingY": "var(--seed-v3-dimension-x1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)"
+        "fontSize": "var(--seed-v3-font-size-t4)"
       },
       "progressCircle": {
         "size": "14px",
@@ -181,20 +181,20 @@ export declare const vars: {
   "sizeSmall": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-dimension-s9)",
+        "minHeight": "var(--seed-v3-dimension-x9)",
         "cornerRadius": "var(--seed-v3-radius-full)",
-        "gap": "var(--seed-v3-dimension-s1)",
-        "paddingX": "var(--seed-v3-dimension-s4)",
-        "paddingY": "var(--seed-v3-dimension-s2)"
+        "gap": "var(--seed-v3-dimension-x1)",
+        "paddingX": "var(--seed-v3-dimension-x4)",
+        "paddingY": "var(--seed-v3-dimension-x2)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)"
+        "fontSize": "var(--seed-v3-font-size-t4)"
       },
       "progressCircle": {
         "size": "14px",

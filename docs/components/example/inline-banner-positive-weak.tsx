@@ -8,7 +8,7 @@ import { Stack } from "seed-design/ui/layout";
 
 export default function InlineBannerPositiveWeak() {
   return (
-    <Stack gap="s4" width="full">
+    <Stack gap="x4" width="full">
       <InlineBanner
         variant="positiveWeak"
         icon={<IconCheckmarkCircleFill />}

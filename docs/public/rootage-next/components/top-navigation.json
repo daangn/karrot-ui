@@ -28,7 +28,7 @@
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "icon": {
@@ -71,7 +71,7 @@
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "icon": {
@@ -210,7 +210,7 @@
               "title": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s6-static"
+                  "value": "$font-size.t6-static"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -234,7 +234,7 @@
               "title": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5-static"
+                  "value": "$font-size.t5-static"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -244,7 +244,7 @@
               "subtitle": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2-static"
+                  "value": "$font-size.t2-static"
                 },
                 "fontWeight": {
                   "type": "number",

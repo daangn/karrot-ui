@@ -33,7 +33,7 @@ export default function RadioSelectBoxReactHookForm() {
   );
 
   return (
-    <Stack gap="s3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
+    <Stack gap="x3" width="full" as="form" onSubmit={handleSubmit(onValid)} onReset={onReset}>
       <RadioSelectBoxRoot aria-label="Fruit" {...field}>
         <Stack gap="spacingY.componentDefault">
           {POSSIBLE_FRUIT_VALUES.map((value) => (
@@ -41,7 +41,7 @@ export default function RadioSelectBoxReactHookForm() {
           ))}
         </Stack>
       </RadioSelectBoxRoot>
-      <Columns gap="s2">
+      <Columns gap="x2">
         <Column width="content">
           <ActionButton type="reset" variant="neutralWeak">
             초기화

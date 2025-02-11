@@ -17,7 +17,7 @@
 .dialog__backdrop:is([data-state="open"], [data-open]) {
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter);
-    animation-duration: var(--seed-v3-duration-s2);
+    animation-duration: var(--seed-v3-duration-d2);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 0;
     --seed-enter-opacity: 0;
@@ -26,7 +26,7 @@
 .dialog__backdrop:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
     animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-s2);
+    animation-duration: var(--seed-v3-duration-d2);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 0;
@@ -43,14 +43,14 @@
     z-index: calc(var(--dialog-z-index) + var(--layer-index, 0));
     background: var(--seed-v3-color-bg-layer-default);
     max-width: 272px;
-    margin: auto var(--seed-v3-dimension-s8);
-    padding: var(--seed-v3-dimension-s5) var(--seed-v3-dimension-s5);
-    border-radius: var(--seed-v3-radius-s5);
+    margin: auto var(--seed-v3-dimension-x8);
+    padding: var(--seed-v3-dimension-x5) var(--seed-v3-dimension-x5);
+    border-radius: var(--seed-v3-radius-r5);
 }
 .dialog__content:is([data-state="open"], [data-open]) {
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter-expressive);
-    animation-duration: var(--seed-v3-duration-s4);
+    animation-duration: var(--seed-v3-duration-d4);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 0;
     --seed-enter-opacity: 0;
@@ -59,7 +59,7 @@
 .dialog__content:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
     animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-s2);
+    animation-duration: var(--seed-v3-duration-d2);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 0;
@@ -69,19 +69,19 @@
 .dialog__header {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-dimension-s1_5);
+    gap: var(--seed-v3-dimension-x1_5);
 }
 .dialog__title {
     color: var(--seed-v3-color-fg-neutral);
-    font-size: var(--seed-v3-font-size-s7);
-    line-height: var(--seed-v3-line-height-s7);
+    font-size: var(--seed-v3-font-size-t7);
+    line-height: var(--seed-v3-line-height-t7);
     font-weight: var(--seed-v3-font-weight-bold);
     margin: 0;
 }
 .dialog__description {
     color: var(--seed-v3-color-fg-neutral);
-    font-size: var(--seed-v3-font-size-s5);
-    line-height: var(--seed-v3-line-height-s5);
+    font-size: var(--seed-v3-font-size-t5);
+    line-height: var(--seed-v3-line-height-t5);
     font-weight: var(--seed-v3-font-weight-regular);
     margin: 0;
     white-space: pre-wrap;
@@ -90,5 +90,5 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding-top: var(--seed-v3-dimension-s4);
+    padding-top: var(--seed-v3-dimension-x4);
 }

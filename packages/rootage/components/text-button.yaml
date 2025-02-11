@@ -7,13 +7,13 @@ data:
   base:
     enabled:
       root:
-        paddingY: $dimension.s0_5
+        paddingY: $dimension.x0_5
       label:
         fontWeight: $font-weight.regular
       prefixIcon:
-        marginXEnd: $dimension.s1
+        marginXEnd: $dimension.x1
       suffixIcon:
-        marginXStart: $dimension.s0_5
+        marginXStart: $dimension.x0_5
     pressed:
       root:
         color: $color.palette.gray-200
@@ -29,7 +29,7 @@ data:
     enabled:
       root:
         color: $color.fg.neutral
-  tone=neutral subtle:
+  tone=neutralSubtle:
     enabled:
       root:
         color: $color.fg.neutral-subtle
@@ -40,33 +40,33 @@ data:
   size=large:
     enabled:
       root:
-        cornerRadius: $radius.s1_5
+        cornerRadius: $radius.r1_5
       prefixIcon:
-        size: $dimension.s4
+        size: $dimension.x4
       suffixIcon:
-        size: $dimension.s4
+        size: $dimension.x4
       label:
-        fontSize: $font-size.s6
-        lineHeight: $line-height.s6
+        fontSize: $font-size.t6
+        lineHeight: $line-height.t6
   size=medium:
     enabled:
       root:
-        cornerRadius: $radius.s1_5
+        cornerRadius: $radius.r1_5
       prefixIcon:
-        size: $dimension.s3_5
+        size: $dimension.x3_5
       suffixIcon:
-        size: $dimension.s3_5
+        size: $dimension.x3_5
       label:
-        fontSize: $font-size.s5
-        lineHeight: $line-height.s5
+        fontSize: $font-size.t5
+        lineHeight: $line-height.t5
   size=small:
     enabled:
       root:
-        cornerRadius: $radius.s1
+        cornerRadius: $radius.r1
       prefixIcon:
-        size: $dimension.s3_5
+        size: $dimension.x3_5
       suffixIcon:
-        size: $dimension.s3_5
+        size: $dimension.x3_5
       label:
-        fontSize: $font-size.s4
-        lineHeight: $line-height.s4
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4

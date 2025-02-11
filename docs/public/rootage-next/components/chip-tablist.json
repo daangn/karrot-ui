@@ -19,7 +19,7 @@
               "root": {
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               }
             }
@@ -28,7 +28,7 @@
       },
       {
         "variants": {
-          "variant": "neutral solid"
+          "variant": "neutralSolid"
         },
         "definitions": [
           {
@@ -51,7 +51,7 @@
       },
       {
         "variants": {
-          "variant": "brand solid"
+          "variant": "brandSolid"
         },
         "definitions": [
           {

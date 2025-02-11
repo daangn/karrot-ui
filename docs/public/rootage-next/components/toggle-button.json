@@ -19,7 +19,7 @@
               "root": {
                 "colorDuration": {
                   "type": "duration",
-                  "value": "$duration.s4"
+                  "value": "$duration.d4"
                 },
                 "colorTimingFunction": {
                   "type": "cubicBezier",
@@ -38,7 +38,7 @@
       },
       {
         "variants": {
-          "variant": "brand solid"
+          "variant": "brandSolid"
         },
         "definitions": [
           {
@@ -212,7 +212,7 @@
       },
       {
         "variants": {
-          "variant": "neutral weak"
+          "variant": "neutralWeak"
         },
         "definitions": [
           {
@@ -397,7 +397,7 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s8"
+                  "value": "$dimension.x8"
                 },
                 "cornerRadius": {
                   "type": "dimension",
@@ -405,33 +405,33 @@
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 }
               },
               "progressCircle": {
@@ -467,7 +467,7 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s9"
+                  "value": "$dimension.x9"
                 },
                 "cornerRadius": {
                   "type": "dimension",
@@ -475,33 +475,33 @@
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 }
               },
               "progressCircle": {

@@ -6,9 +6,9 @@ export default function BoxPreview() {
       background="bg.brandWeak"
       borderWidth={2}
       borderColor="stroke.brand"
-      borderRadius="s2"
-      paddingX="s3"
-      paddingY="s2"
+      borderRadius="r2"
+      paddingX="x3"
+      paddingY="x2"
     >
       Box Example
     </Box>

@@ -7,52 +7,52 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$line-height.s1": {
+      "$line-height.t1": {
         "values": {
           "default": "0.9375rem"
         }
       },
-      "$line-height.s2": {
+      "$line-height.t2": {
         "values": {
           "default": "1rem"
         }
       },
-      "$line-height.s3": {
+      "$line-height.t3": {
         "values": {
           "default": "1.125rem"
         }
       },
-      "$line-height.s4": {
+      "$line-height.t4": {
         "values": {
           "default": "1.1875rem"
         }
       },
-      "$line-height.s5": {
+      "$line-height.t5": {
         "values": {
           "default": "1.375rem"
         }
       },
-      "$line-height.s6": {
+      "$line-height.t6": {
         "values": {
           "default": "1.5rem"
         }
       },
-      "$line-height.s7": {
+      "$line-height.t7": {
         "values": {
           "default": "1.6875rem"
         }
       },
-      "$line-height.s8": {
+      "$line-height.t8": {
         "values": {
           "default": "1.875rem"
         }
       },
-      "$line-height.s9": {
+      "$line-height.t9": {
         "values": {
           "default": "2rem"
         }
       },
-      "$line-height.s10": {
+      "$line-height.t10": {
         "values": {
           "default": "2.1875rem"
         }

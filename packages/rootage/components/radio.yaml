@@ -37,18 +37,18 @@ data:
   size=large:
     enabled:
       root:
-        size: $dimension.s6
+        size: $dimension.x6
       icon:
-        size: $dimension.s2_5
+        size: $dimension.x2_5
     disabled:
       icon:
-        size: $dimension.s3
+        size: $dimension.x3
   size=medium:
     enabled:
       root:
-        size: $dimension.s5
+        size: $dimension.x5
       icon:
-        size: $dimension.s2
+        size: $dimension.x2
     disabled:
       icon:
-        size: $dimension.s2_5
+        size: $dimension.x2_5

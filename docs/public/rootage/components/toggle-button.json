@@ -8,7 +8,7 @@
     "base": {
       "enabled": {
         "root": {
-          "colorDuration": "$duration.s4",
+          "colorDuration": "$duration.d4",
           "colorTimingFunction": "$timing-function.easing"
         },
         "label": {
@@ -16,7 +16,7 @@
         }
       }
     },
-    "variant=brand solid": {
+    "variant=brandSolid": {
       "enabled": {
         "root": {
           "color": "$color.bg.brand-solid"
@@ -88,7 +88,7 @@
         }
       }
     },
-    "variant=neutral weak": {
+    "variant=neutralWeak": {
       "enabled": {
         "root": {
           "color": "$color.bg.neutral-weak"
@@ -163,20 +163,20 @@
     "size=xsmall": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s8",
+          "minHeight": "$dimension.x8",
           "cornerRadius": "$radius.full",
-          "gap": "$dimension.s1",
-          "paddingX": "$dimension.s3_5",
-          "paddingY": "$dimension.s1_5"
+          "gap": "$dimension.x1",
+          "paddingX": "$dimension.x3_5",
+          "paddingY": "$dimension.x1_5"
         },
         "prefixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "suffixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "label": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.t4"
         },
         "progressCircle": {
           "size": "14px",
@@ -187,20 +187,20 @@
     "size=small": {
       "enabled": {
         "root": {
-          "minHeight": "$dimension.s9",
+          "minHeight": "$dimension.x9",
           "cornerRadius": "$radius.full",
-          "gap": "$dimension.s1",
-          "paddingX": "$dimension.s4",
-          "paddingY": "$dimension.s2"
+          "gap": "$dimension.x1",
+          "paddingX": "$dimension.x4",
+          "paddingY": "$dimension.x2"
         },
         "prefixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "suffixIcon": {
-          "size": "$dimension.s3_5"
+          "size": "$dimension.x3_5"
         },
         "label": {
-          "fontSize": "$font-size.s4"
+          "fontSize": "$font-size.t4"
         },
         "progressCircle": {
           "size": "14px",

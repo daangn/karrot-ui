@@ -18,7 +18,7 @@ const BottomSheetPreview = () => {
       <BottomSheetContent title="제목" description="설명을 작성할 수 있어요">
         {/* BottomSheetBody is simple paddingX helper. */}
         {/* If you need to omit padding, replace with <Stack /> or other layout you need. */}
-        <BottomSheetBody minHeight="s16">Content</BottomSheetBody>
+        <BottomSheetBody minHeight="x16">Content</BottomSheetBody>
         <BottomSheetFooter>
           <ActionButton variant="neutralSolid">확인</ActionButton>
         </BottomSheetFooter>

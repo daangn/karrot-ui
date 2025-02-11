@@ -8,18 +8,18 @@
     "base": {
       "enabled": {
         "root": {
-          "paddingX": "$dimension.s4"
+          "paddingX": "$dimension.x4"
         }
       }
     },
-    "variant=neutral solid": {
+    "variant=neutralSolid": {
       "enabled": {
         "root": {
           "gap": "0px"
         }
       }
     },
-    "variant=brand solid": {
+    "variant=brandSolid": {
       "enabled": {
         "root": {
           "gap": "8px"

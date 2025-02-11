@@ -7,52 +7,52 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$radius.s0_5": {
+      "$radius.r0_5": {
         "values": {
           "default": "2px"
         }
       },
-      "$radius.s1": {
+      "$radius.r1": {
         "values": {
           "default": "4px"
         }
       },
-      "$radius.s1_5": {
+      "$radius.r1_5": {
         "values": {
           "default": "6px"
         }
       },
-      "$radius.s2": {
+      "$radius.r2": {
         "values": {
           "default": "8px"
         }
       },
-      "$radius.s2_5": {
+      "$radius.r2_5": {
         "values": {
           "default": "10px"
         }
       },
-      "$radius.s3": {
+      "$radius.r3": {
         "values": {
           "default": "12px"
         }
       },
-      "$radius.s3_5": {
+      "$radius.r3_5": {
         "values": {
           "default": "14px"
         }
       },
-      "$radius.s4": {
+      "$radius.r4": {
         "values": {
           "default": "16px"
         }
       },
-      "$radius.s5": {
+      "$radius.r5": {
         "values": {
           "default": "20px"
         }
       },
-      "$radius.s6": {
+      "$radius.r6": {
         "values": {
           "default": "24px"
         }

@@ -7,67 +7,67 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$font-size.s1": {
+      "$font-size.t1": {
         "values": {
           "default": "0.6875rem"
         }
       },
-      "$font-size.s2": {
+      "$font-size.t2": {
         "values": {
           "default": "0.75rem"
         }
       },
-      "$font-size.s3": {
+      "$font-size.t3": {
         "values": {
           "default": "0.8125rem"
         }
       },
-      "$font-size.s4": {
+      "$font-size.t4": {
         "values": {
           "default": "0.875rem"
         }
       },
-      "$font-size.s5": {
+      "$font-size.t5": {
         "values": {
           "default": "1rem"
         }
       },
-      "$font-size.s6": {
+      "$font-size.t6": {
         "values": {
           "default": "1.125rem"
         }
       },
-      "$font-size.s7": {
+      "$font-size.t7": {
         "values": {
           "default": "1.25rem"
         }
       },
-      "$font-size.s8": {
+      "$font-size.t8": {
         "values": {
           "default": "1.375rem"
         }
       },
-      "$font-size.s9": {
+      "$font-size.t9": {
         "values": {
           "default": "1.5rem"
         }
       },
-      "$font-size.s10": {
+      "$font-size.t10": {
         "values": {
           "default": "1.625rem"
         }
       },
-      "$font-size.s2-static": {
+      "$font-size.t2-static": {
         "values": {
           "default": "12px"
         }
       },
-      "$font-size.s5-static": {
+      "$font-size.t5-static": {
         "values": {
           "default": "16px"
         }
       },
-      "$font-size.s6-static": {
+      "$font-size.t6-static": {
         "values": {
           "default": "18px"
         }

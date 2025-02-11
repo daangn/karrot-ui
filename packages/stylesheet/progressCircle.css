@@ -36,11 +36,11 @@
 }
 .progressCircle__root--tone_inherit {}
 .progressCircle__root--size_24 {
-    --size: var(--seed-v3-dimension-s6);
+    --size: var(--seed-v3-dimension-x6);
     --thickness: 3px;
 }
 .progressCircle__root--size_40 {
-    --size: var(--seed-v3-dimension-s10);
+    --size: var(--seed-v3-dimension-x10);
     --thickness: 5px;
 }
 .progressCircle__root--size_inherit {}

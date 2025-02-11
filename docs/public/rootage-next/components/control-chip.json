@@ -209,39 +209,39 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s8"
+                  "value": "$dimension.x8"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "count": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 }
               }
             }
@@ -261,39 +261,39 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s9"
+                  "value": "$dimension.x9"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 }
               },
               "prefixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               },
               "suffixIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "count": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 }
               }
             }
@@ -303,7 +303,7 @@
       {
         "variants": {
           "size": "small",
-          "layout": "with text"
+          "layout": "withText"
         },
         "definitions": [
           {
@@ -314,7 +314,7 @@
               "root": {
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3"
+                  "value": "$dimension.x3"
                 }
               }
             }
@@ -324,7 +324,7 @@
       {
         "variants": {
           "size": "small",
-          "layout": "icon only"
+          "layout": "iconOnly"
         },
         "definitions": [
           {
@@ -335,13 +335,13 @@
               "root": {
                 "minWidth": {
                   "type": "dimension",
-                  "value": "$dimension.s8"
+                  "value": "$dimension.x8"
                 }
               },
               "icon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               }
             }
@@ -351,7 +351,7 @@
       {
         "variants": {
           "size": "medium",
-          "layout": "with text"
+          "layout": "withText"
         },
         "definitions": [
           {
@@ -362,7 +362,7 @@
               "root": {
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               }
             }
@@ -372,7 +372,7 @@
       {
         "variants": {
           "size": "medium",
-          "layout": "icon only"
+          "layout": "iconOnly"
         },
         "definitions": [
           {
@@ -383,13 +383,13 @@
               "root": {
                 "minWidth": {
                   "type": "dimension",
-                  "value": "$dimension.s9"
+                  "value": "$dimension.x9"
                 }
               },
               "icon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 }
               }
             }

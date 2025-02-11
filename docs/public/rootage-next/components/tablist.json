@@ -47,7 +47,7 @@
                 },
                 "transformDuration": {
                   "type": "duration",
-                  "value": "$duration.s4"
+                  "value": "$duration.d4"
                 },
                 "transformTimingFunction": {
                   "type": "cubicBezier",

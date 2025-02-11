@@ -56,7 +56,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
         </AppBarRight>
       </AppBar>
       <AppScreenContent>
-        <Stack gap="s4">
+        <Stack gap="x4">
           <Box style={{ aspectRatio: "1 / 1", position: "relative" }}>
             <img
               src={img.src}
@@ -66,7 +66,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
             />
             {isImageLoading && <Skeleton width="full" height="full" radius="0" />}
           </Box>
-          <Stack gap="s6" paddingBottom="s4">
+          <Stack gap="x6" paddingBottom="x4">
             <Stack
               paddingX="spacingX.globalGutter"
               gap="spacingY.componentDefault"
@@ -77,13 +77,13 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
                   인기
                 </Badge>
               )}
-              <Stack gap="s1">
-                <Text as="h1" textStyle="titleLargeDefault" color="fg.neutral">
+              <Stack gap="x1">
+                <Text as="h1" textStyle="t7Bold" color="fg.neutral">
                   {article.title}
                 </Text>
                 <Text
                   as="p"
-                  textStyle="bodyMediumReadingDefault"
+                  textStyle="articleBody"
                   color="fg.neutralMuted"
                   style={{ wordBreak: "keep-all" }}
                 >
@@ -95,7 +95,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
                   <ArticleAuthor author={article.author} />
                 </Column>
                 <Column width="content">
-                  <Text textStyle="labelMediumDefault" color="fg.neutralMuted">
+                  <Text textStyle="t2Regular" color="fg.neutralMuted">
                     {categoryName} ⸱ {formatDate(article.createdAt)}
                   </Text>
                 </Column>
@@ -118,7 +118,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
                   </SegmentedControlItem>
                 ))}
               </SegmentedControl>
-              <Box paddingY="s3">
+              <Box paddingY="x3">
                 <ErrorState title="댓글 없음" description="댓글이 없습니다." />
               </Box>
               <TextField label="댓글" maxGraphemeCount={200}>

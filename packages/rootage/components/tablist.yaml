@@ -13,7 +13,7 @@ data:
       indicator:
         height: 2px
         color: $color.fg.neutral
-        transformDuration: $duration.s4
+        transformDuration: $duration.d4
         transformTimingFunction: $timing-function.easing
   layout=hug:
     enabled:

@@ -8,7 +8,7 @@ data:
     enabled:
       root:
         color: $color.bg.neutral-weak
-        colorDuration: $duration.s4
+        colorDuration: $duration.d4
         colorTimingFunction: $timing-function.easing
       label:
         color: $color.fg.neutral
@@ -61,38 +61,38 @@ data:
   size=xsmall:
     enabled:
       root:
-        minHeight: $dimension.s8
+        minHeight: $dimension.x8
         cornerRadius: $radius.full
-        gap: $dimension.s1
-        paddingX: $dimension.s3
-        paddingY: $dimension.s1_5
+        gap: $dimension.x1
+        paddingX: $dimension.x3
+        paddingY: $dimension.x1_5
       prefixIcon:
         size: 18px
       label:
-        fontSize: $font-size.s3
-        lineHeight: $line-height.s3
+        fontSize: $font-size.t3
+        lineHeight: $line-height.t3
       count:
-        fontSize: $font-size.s3
-        lineHeight: $line-height.s3
+        fontSize: $font-size.t3
+        lineHeight: $line-height.t3
       progressCircle:
         size: 14px
         thickness: 2px
   size=small:
     enabled:
       root:
-        minHeight: $dimension.s9
+        minHeight: $dimension.x9
         cornerRadius: $radius.full
-        gap: $dimension.s1
-        paddingX: $dimension.s3_5
-        paddingY: $dimension.s2
+        gap: $dimension.x1
+        paddingX: $dimension.x3_5
+        paddingY: $dimension.x2
       prefixIcon:
         size: 18px
       label:
-        fontSize: $font-size.s3
-        lineHeight: $line-height.s3
+        fontSize: $font-size.t3
+        lineHeight: $line-height.t3
       count:
-        fontSize: $font-size.s3
-        lineHeight: $line-height.s3
+        fontSize: $font-size.t3
+        lineHeight: $line-height.t3
       progressCircle:
         size: 14px
         thickness: 2px

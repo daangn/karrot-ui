@@ -2,18 +2,18 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "gap": "var(--seed-v3-dimension-s4)",
-        "paddingX": "var(--seed-v3-dimension-s4)"
+        "gap": "var(--seed-v3-dimension-x4)",
+        "paddingX": "var(--seed-v3-dimension-x4)"
       },
       "content": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
-        "gap": "var(--seed-v3-dimension-s2)",
-        "paddingY": "var(--seed-v3-dimension-s2_5)",
-        "minHeight": "var(--seed-v3-dimension-s10)"
+        "gap": "var(--seed-v3-dimension-x2)",
+        "paddingY": "var(--seed-v3-dimension-x2_5)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)",
+        "minHeight": "var(--seed-v3-dimension-x10)"
       },
       "icon": {
-        "size": "var(--seed-v3-dimension-s4)",
+        "size": "var(--seed-v3-dimension-x4)",
         "marginY": "1.5px"
       },
       "title": {
@@ -23,19 +23,19 @@ export declare const vars: {
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       },
       "linkLabel": {
-        "height": "var(--seed-v3-dimension-s10)",
-        "fontSize": "var(--seed-v3-font-size-s2)",
-        "lineHeight": "var(--seed-v3-line-height-s2)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
+        "height": "var(--seed-v3-dimension-x10)",
+        "fontWeight": "var(--seed-v3-font-weight-regular)",
+        "fontSize": "var(--seed-v3-font-size-t2)",
+        "lineHeight": "var(--seed-v3-line-height-t2)"
       },
       "dismissButton": {
-        "size": "var(--seed-v3-dimension-s10)"
+        "size": "var(--seed-v3-dimension-x10)"
       },
       "dismissIcon": {
-        "size": "var(--seed-v3-dimension-s4)"
+        "size": "var(--seed-v3-dimension-x4)"
       },
       "actionableIcon": {
-        "size": "var(--seed-v3-dimension-s4)"
+        "size": "var(--seed-v3-dimension-x4)"
       }
     }
   },

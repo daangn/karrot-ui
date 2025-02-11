@@ -8,18 +8,18 @@
     "base": {
       "enabled": {
         "root": {
-          "gap": "$dimension.s4",
-          "paddingX": "$dimension.s4"
+          "gap": "$dimension.x4",
+          "paddingX": "$dimension.x4"
         },
         "content": {
-          "fontSize": "$font-size.s4",
-          "lineHeight": "$line-height.s4",
-          "gap": "$dimension.s2",
-          "paddingY": "$dimension.s2_5",
-          "minHeight": "$dimension.s10"
+          "gap": "$dimension.x2",
+          "paddingY": "$dimension.x2_5",
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4",
+          "minHeight": "$dimension.x10"
         },
         "icon": {
-          "size": "$dimension.s4",
+          "size": "$dimension.x4",
           "marginY": "1.5px"
         },
         "title": {
@@ -29,23 +29,23 @@
           "fontWeight": "$font-weight.medium"
         },
         "linkLabel": {
-          "height": "$dimension.s10",
-          "fontSize": "$font-size.s2",
-          "lineHeight": "$line-height.s2",
-          "fontWeight": "$font-weight.regular"
+          "height": "$dimension.x10",
+          "fontWeight": "$font-weight.regular",
+          "fontSize": "$font-size.t2",
+          "lineHeight": "$line-height.t2"
         },
         "dismissButton": {
-          "size": "$dimension.s10"
+          "size": "$dimension.x10"
         },
         "dismissIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         },
         "actionableIcon": {
-          "size": "$dimension.s4"
+          "size": "$dimension.x4"
         }
       }
     },
-    "variant=neutral weak": {
+    "variant=neutralWeak": {
       "enabled": {
         "root": {
           "color": "$color.bg.neutral-weak"
@@ -70,7 +70,7 @@
         }
       }
     },
-    "variant=positive weak": {
+    "variant=positiveWeak": {
       "enabled": {
         "root": {
           "color": "$color.bg.positive-weak"
@@ -95,7 +95,7 @@
         }
       }
     },
-    "variant=informative weak": {
+    "variant=informativeWeak": {
       "enabled": {
         "root": {
           "color": "$color.bg.informative-weak"
@@ -120,7 +120,7 @@
         }
       }
     },
-    "variant=warning weak": {
+    "variant=warningWeak": {
       "enabled": {
         "root": {
           "color": "$color.bg.warning-weak"
@@ -145,7 +145,7 @@
         }
       }
     },
-    "variant=warning solid": {
+    "variant=warningSolid": {
       "enabled": {
         "root": {
           "color": "$color.bg.warning-solid"
@@ -170,7 +170,7 @@
         }
       }
     },
-    "variant=critical weak": {
+    "variant=criticalWeak": {
       "enabled": {
         "root": {
           "color": "$color.bg.critical-weak"
@@ -192,7 +192,7 @@
         }
       }
     },
-    "variant=critical solid": {
+    "variant=criticalSolid": {
       "enabled": {
         "root": {
           "color": "$color.bg.critical-solid"

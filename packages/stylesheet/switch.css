@@ -47,7 +47,7 @@
 }
 .switch__root--size_small {
     min-height: 24px;
-    gap: var(--seed-v3-dimension-s2);
+    gap: var(--seed-v3-dimension-x2);
 }
 .switch__control--size_small {
     min-inline-size: 26px;
@@ -63,8 +63,8 @@
     transform: translateX(calc(26px - 16px));
 }
 .switch__label--size_small {
-    font-size: var(--seed-v3-font-size-s4);
-    line-height: var(--seed-v3-line-height-s4);
+    font-size: var(--seed-v3-font-size-t4);
+    line-height: var(--seed-v3-line-height-t4);
     font-weight: var(--seed-v3-font-weight-regular);
     margin-top: calc(12px - 0.59375rem);
 }

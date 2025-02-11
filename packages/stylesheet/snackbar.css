@@ -5,14 +5,14 @@
     align-items: center;
     width: 100%;
     background: var(--seed-v3-color-bg-neutral-solid);
-    border-radius: var(--seed-v3-radius-s2);
-    padding-inline: var(--seed-v3-dimension-s4);
-    padding-block: var(--seed-v3-dimension-s2_5);
+    border-radius: var(--seed-v3-radius-r2);
+    padding-inline: var(--seed-v3-dimension-x4);
+    padding-block: var(--seed-v3-dimension-x2_5);
     min-height: 44px;
-    gap: var(--seed-v3-dimension-s2);
+    gap: var(--seed-v3-dimension-x2);
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter);
-    animation-duration: var(--seed-v3-duration-s4);
+    animation-duration: var(--seed-v3-duration-d4);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 100%;
     --seed-enter-opacity: 0;
@@ -21,7 +21,7 @@
 .snackbar__root:not([data-open]) {
     animation: seed-exit;
     animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-s4);
+    animation-duration: var(--seed-v3-duration-d4);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 100%;
@@ -32,8 +32,8 @@
     flex-grow: 1;
     margin: 0;
     color: var(--seed-v3-color-palette-static-white);
-    font-size: var(--seed-v3-font-size-s4);
-    line-height: var(--seed-v3-line-height-s4);
+    font-size: var(--seed-v3-font-size-t4);
+    line-height: var(--seed-v3-line-height-t4);
     font-weight: var(--seed-v3-font-weight-regular);
 }
 .snackbar__prefixIcon {
@@ -57,8 +57,8 @@
     outline: none;
     flex-shrink: 0;
     color: var(--seed-v3-color-fg-brand);
-    font-size: var(--seed-v3-font-size-s4);
-    line-height: var(--seed-v3-line-height-s4);
+    font-size: var(--seed-v3-font-size-t4);
+    line-height: var(--seed-v3-line-height-t4);
     font-weight: var(--seed-v3-font-weight-bold);
 }
 .snackbar__actionButton:after {
@@ -66,8 +66,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: calc(-1 * var(--seed-v3-dimension-s2));
-    right: calc(-1 * var(--seed-v3-dimension-s2));
+    left: calc(-1 * var(--seed-v3-dimension-x2));
+    right: calc(-1 * var(--seed-v3-dimension-x2));
     min-height: 44px;
     background: transparent;
 }

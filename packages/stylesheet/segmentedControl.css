@@ -4,7 +4,7 @@
     min-width: fit-content;
     max-width: 100%;
     position: relative;
-    padding: var(--seed-v3-dimension-s1);
+    padding: var(--seed-v3-dimension-x1);
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-neutral-weak);
     grid-auto-flow: column;
@@ -17,13 +17,13 @@
     z-index: -1;
     will-change: transform;
     transform: translateX(calc(var(--segment-index) * 100%));
-    inset-block: var(--seed-v3-dimension-s1);
-    inset-inline-start: var(--seed-v3-dimension-s1);
-    width: calc((100% - var(--seed-v3-dimension-s1) * 2) / var(--segment-count));
+    inset-block: var(--seed-v3-dimension-x1);
+    inset-inline-start: var(--seed-v3-dimension-x1);
+    width: calc((100% - var(--seed-v3-dimension-x1) * 2) / var(--segment-count));
     border-radius: var(--seed-v3-radius-full);
     background-color: var(--seed-v3-color-bg-layer-default);
     box-shadow: 0px 1px 6px 0px #0000000d;
-    transition: transform var(--seed-v3-duration-s4) var(--seed-v3-timing-function-easing);
+    transition: transform var(--seed-v3-duration-d4) var(--seed-v3-timing-function-easing);
 }
 .segmentedControl__item {
     display: flex;
@@ -34,8 +34,8 @@
     user-select: none;
     box-sizing: border-box;
     min-width: 86px;
-    min-height: var(--seed-v3-dimension-s8);
-    padding-inline: var(--seed-v3-dimension-s4);
+    min-height: var(--seed-v3-dimension-x8);
+    padding-inline: var(--seed-v3-dimension-x4);
     border-radius: var(--seed-v3-radius-full);
 }
 .segmentedControl__item:is(:disabled, [disabled], [data-disabled]) {
@@ -47,8 +47,8 @@
 .segmentedControl__itemLabel {
     overflow-wrap: break-word;
     font-weight: var(--seed-v3-font-weight-medium);
-    font-size: var(--seed-v3-font-size-s5);
-    line-height: var(--seed-v3-line-height-s5);
+    font-size: var(--seed-v3-font-size-t5);
+    line-height: var(--seed-v3-line-height-t5);
     color: var(--seed-v3-color-fg-neutral-muted);
 }
 .segmentedControl__itemLabel:is(:checked, [data-checked]) {
@@ -63,7 +63,7 @@
     display: block;
     visibility: hidden;
     height: 0;
-    font-size: var(--seed-v3-font-size-s5);
+    font-size: var(--seed-v3-font-size-t5);
     font-weight: var(--seed-v3-font-weight-medium);
 }
 .segmentedControl__itemLabel:after {
@@ -71,6 +71,6 @@
     display: block;
     visibility: hidden;
     height: 0;
-    font-size: var(--seed-v3-font-size-s5);
+    font-size: var(--seed-v3-font-size-t5);
     font-weight: var(--seed-v3-font-weight-bold);
 }

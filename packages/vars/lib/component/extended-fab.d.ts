@@ -47,16 +47,16 @@ export declare const vars: {
     "enabled": {
       "root": {
         "minHeight": "40px",
-        "gap": "var(--seed-v3-dimension-s1)",
-        "paddingX": "var(--seed-v3-dimension-s3_5)",
-        "paddingY": "var(--seed-v3-dimension-s2_5)"
+        "gap": "var(--seed-v3-dimension-x1)",
+        "paddingX": "var(--seed-v3-dimension-x3_5)",
+        "paddingY": "var(--seed-v3-dimension-x2_5)"
       },
       "prefixIcon": {
         "size": "16px"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)",
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)",
         "fontWeight": "var(--seed-v3-font-weight-medium)"
       }
     }
@@ -65,16 +65,16 @@ export declare const vars: {
     "enabled": {
       "root": {
         "minHeight": "48px",
-        "gap": "var(--seed-v3-dimension-s1)",
-        "paddingX": "var(--seed-v3-dimension-s4)",
-        "paddingY": "var(--seed-v3-dimension-s3)"
+        "gap": "var(--seed-v3-dimension-x1)",
+        "paddingX": "var(--seed-v3-dimension-x4)",
+        "paddingY": "var(--seed-v3-dimension-x3)"
       },
       "prefixIcon": {
         "size": "16px"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)",
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)",
         "fontWeight": "var(--seed-v3-font-weight-bold)"
       }
     }

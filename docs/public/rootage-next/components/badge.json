@@ -21,25 +21,25 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s6"
+                  "value": "$dimension.x6"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s1"
+                  "value": "$dimension.x1"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s2"
+                  "value": "$font-size.t2"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s2"
+                  "value": "$line-height.t2"
                 }
               }
             }
@@ -59,25 +59,25 @@
               "root": {
                 "minHeight": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 },
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s1_5"
+                  "value": "$dimension.x1_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s0_5"
+                  "value": "$dimension.x0_5"
                 }
               },
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s1"
+                  "value": "$font-size.t1"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s1"
+                  "value": "$line-height.t1"
                 }
               }
             }
@@ -118,7 +118,7 @@
               "root": {
                 "borderRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1_5"
+                  "value": "$radius.r1_5"
                 }
               }
             }
@@ -139,7 +139,7 @@
               "root": {
                 "borderRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1"
+                  "value": "$radius.r1"
                 }
               }
             }

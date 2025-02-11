@@ -26,7 +26,7 @@ const AlertDialogSingle = () => {
           <AlertDialogDescription>이 작업은 되돌릴 수 없습니다.</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <Columns gap="s2">
+          <Columns gap="x2">
             <Column>
               <AlertDialogAction asChild>
                 <ActionButton variant="neutralSolid">취소</ActionButton>

@@ -7,32 +7,32 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$duration.s1": {
+      "$duration.d1": {
         "values": {
           "default": "50ms"
         }
       },
-      "$duration.s2": {
+      "$duration.d2": {
         "values": {
           "default": "100ms"
         }
       },
-      "$duration.s3": {
+      "$duration.d3": {
         "values": {
           "default": "150ms"
         }
       },
-      "$duration.s4": {
+      "$duration.d4": {
         "values": {
           "default": "200ms"
         }
       },
-      "$duration.s5": {
+      "$duration.d5": {
         "values": {
           "default": "250ms"
         }
       },
-      "$duration.s6": {
+      "$duration.d6": {
         "values": {
           "default": "300ms"
         }

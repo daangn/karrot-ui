@@ -19,15 +19,15 @@
               "root": {
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s4"
+                  "value": "$dimension.x4"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s5"
+                  "value": "$dimension.x5"
                 },
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 },
                 "strokeWidth": {
                   "type": "dimension",
@@ -42,13 +42,13 @@
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s3"
+                  "value": "$radius.r3"
                 }
               },
               "content": {
                 "gap": {
                   "type": "dimension",
-                  "value": "$dimension.s0_5"
+                  "value": "$dimension.x0_5"
                 }
               },
               "label": {
@@ -62,11 +62,11 @@
                 },
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s5"
+                  "value": "$font-size.t5"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s5"
+                  "value": "$line-height.t5"
                 }
               },
               "description": {
@@ -80,17 +80,17 @@
                 },
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.s4"
+                  "value": "$line-height.t4"
                 }
               },
               "checkboxControl": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s6"
+                  "value": "$dimension.x6"
                 },
                 "color": {
                   "type": "color",
@@ -109,19 +109,19 @@
                 },
                 "cornerRadius": {
                   "type": "dimension",
-                  "value": "$radius.s1"
+                  "value": "$radius.r1"
                 }
               },
               "checkboxIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 }
               },
               "radioControl": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s6"
+                  "value": "$dimension.x6"
                 },
                 "color": {
                   "type": "color",
@@ -146,7 +146,7 @@
               "radioIcon": {
                 "size": {
                   "type": "dimension",
-                  "value": "$dimension.s2_5"
+                  "value": "$dimension.x2_5"
                 },
                 "cornerRadius": {
                   "type": "dimension",

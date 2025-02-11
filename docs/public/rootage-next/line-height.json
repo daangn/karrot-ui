@@ -7,7 +7,7 @@
   "data": {
     "collection": "global",
     "tokens": {
-      "$line-height.s1": {
+      "$line-height.t1": {
         "values": {
           "default": {
             "type": "dimension",
@@ -18,7 +18,7 @@
           }
         }
       },
-      "$line-height.s2": {
+      "$line-height.t2": {
         "values": {
           "default": {
             "type": "dimension",
@@ -29,7 +29,7 @@
           }
         }
       },
-      "$line-height.s3": {
+      "$line-height.t3": {
         "values": {
           "default": {
             "type": "dimension",
@@ -40,7 +40,7 @@
           }
         }
       },
-      "$line-height.s4": {
+      "$line-height.t4": {
         "values": {
           "default": {
             "type": "dimension",
@@ -51,7 +51,7 @@
           }
         }
       },
-      "$line-height.s5": {
+      "$line-height.t5": {
         "values": {
           "default": {
             "type": "dimension",
@@ -62,7 +62,7 @@
           }
         }
       },
-      "$line-height.s6": {
+      "$line-height.t6": {
         "values": {
           "default": {
             "type": "dimension",
@@ -73,7 +73,7 @@
           }
         }
       },
-      "$line-height.s7": {
+      "$line-height.t7": {
         "values": {
           "default": {
             "type": "dimension",
@@ -84,7 +84,7 @@
           }
         }
       },
-      "$line-height.s8": {
+      "$line-height.t8": {
         "values": {
           "default": {
             "type": "dimension",
@@ -95,7 +95,7 @@
           }
         }
       },
-      "$line-height.s9": {
+      "$line-height.t9": {
         "values": {
           "default": {
             "type": "dimension",
@@ -106,7 +106,7 @@
           }
         }
       },
-      "$line-height.s10": {
+      "$line-height.t10": {
         "values": {
           "default": {
             "type": "dimension",

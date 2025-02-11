@@ -3,7 +3,7 @@ import { MannerTempBadge } from "seed-design/ui/manner-temp-badge";
 
 export default function BadgePreview() {
   return (
-    <Stack gap="s1">
+    <Stack gap="x1">
       <MannerTempBadge temperature={12.5} />
       <MannerTempBadge temperature={36.2} />
       <MannerTempBadge temperature={36.5} />

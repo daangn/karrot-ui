@@ -8,14 +8,14 @@
     "base": {
       "enabled": {
         "root": {
-          "height": "$dimension.s8",
+          "height": "$dimension.x8",
           "cornerRadius": "$radius.full",
-          "paddingX": "$dimension.s4",
+          "paddingX": "$dimension.x4",
           "minWidth": "86px"
         },
         "label": {
-          "fontSize": "$font-size.s5",
-          "lineHeight": "$line-height.s5",
+          "fontSize": "$font-size.t5",
+          "lineHeight": "$line-height.t5",
           "fontWeight": "$font-weight.medium",
           "color": "$color.fg.neutral-muted"
         }

@@ -2,16 +2,16 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "paddingY": "var(--seed-v3-dimension-s0_5)"
+        "paddingY": "var(--seed-v3-dimension-x0_5)"
       },
       "label": {
         "fontWeight": "var(--seed-v3-font-weight-regular)"
       },
       "prefixIcon": {
-        "marginXEnd": "var(--seed-v3-dimension-s1)"
+        "marginXEnd": "var(--seed-v3-dimension-x1)"
       },
       "suffixIcon": {
-        "marginXStart": "var(--seed-v3-dimension-s0_5)"
+        "marginXStart": "var(--seed-v3-dimension-x0_5)"
       }
     },
     "pressed": {
@@ -56,51 +56,51 @@ export declare const vars: {
   "sizeLarge": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-s1_5)"
+        "cornerRadius": "var(--seed-v3-radius-r1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-dimension-s4)"
+        "size": "var(--seed-v3-dimension-x4)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-dimension-s4)"
+        "size": "var(--seed-v3-dimension-x4)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s6)",
-        "lineHeight": "var(--seed-v3-line-height-s6)"
+        "fontSize": "var(--seed-v3-font-size-t6)",
+        "lineHeight": "var(--seed-v3-line-height-t6)"
       }
     }
   },
   "sizeMedium": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-s1_5)"
+        "cornerRadius": "var(--seed-v3-radius-r1_5)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)"
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)"
       }
     }
   },
   "sizeSmall": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-s1)"
+        "cornerRadius": "var(--seed-v3-radius-r1)"
       },
       "prefixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "suffixIcon": {
-        "size": "var(--seed-v3-dimension-s3_5)"
+        "size": "var(--seed-v3-dimension-x3_5)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)"
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
       }
     }
   }

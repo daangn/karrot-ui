@@ -19,11 +19,11 @@
               "root": {
                 "paddingX": {
                   "type": "dimension",
-                  "value": "$dimension.s3_5"
+                  "value": "$dimension.x3_5"
                 },
                 "paddingY": {
                   "type": "dimension",
-                  "value": "$dimension.s2"
+                  "value": "$dimension.x2"
                 },
                 "cornerRadius": {
                   "type": "dimension",
@@ -40,7 +40,7 @@
               "label": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.s4"
+                  "value": "$font-size.t4"
                 },
                 "fontWeight": {
                   "type": "number",
@@ -53,7 +53,7 @@
       },
       {
         "variants": {
-          "variant": "neutral solid"
+          "variant": "neutralSolid"
         },
         "definitions": [
           {
@@ -157,7 +157,7 @@
       },
       {
         "variants": {
-          "variant": "brand solid"
+          "variant": "brandSolid"
         },
         "definitions": [
           {

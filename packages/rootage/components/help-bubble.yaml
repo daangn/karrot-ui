@@ -8,19 +8,19 @@ data:
     enabled:
       root:
         color: $color.bg.neutral-solid
-        cornerRadius: $radius.s3
-        paddingX: $dimension.s3
-        paddingY: $dimension.s3
+        cornerRadius: $radius.r3
+        paddingX: $dimension.x3
+        paddingY: $dimension.x3
       arrow:
         color: $color.bg.neutral-solid
-        size: $dimension.s2_5
+        size: $dimension.x2_5
       title:
         color: $color.palette.static-white
-        fontSize: $font-size.s3
+        fontSize: $font-size.t3
         fontWeight: $font-weight.bold
       description:
         color: $color.palette.static-white
-        fontSize: $font-size.s3
+        fontSize: $font-size.t3
         fontWeight: $font-weight.regular
       closeButton:
         color: $color.palette.static-white

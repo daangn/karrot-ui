@@ -9,7 +9,7 @@ data:
     enabled:
       root:
         minHeight: 44px
-        paddingX: $dimension.s4
+        paddingX: $dimension.x4
       icon:
         size: 24px
         targetSize: 40px
@@ -17,7 +17,7 @@ data:
     enabled:
       root:
         minHeight: 56px
-        paddingX: $dimension.s4
+        paddingX: $dimension.x4
       icon:
         size: 24px
         targetSize: 40px
@@ -49,13 +49,13 @@ data:
   titleLayout=titleOnly:
     enabled:
       title:
-        fontSize: $font-size.s6-static
+        fontSize: $font-size.t6-static
         fontWeight: $font-weight.bold
   titleLayout=withSubtitle:
     enabled:
       title:
-        fontSize: $font-size.s5-static
+        fontSize: $font-size.t5-static
         fontWeight: $font-weight.bold
       subtitle:
-        fontSize: $font-size.s2-static
+        fontSize: $font-size.t2-static
         fontWeight: $font-weight.regular

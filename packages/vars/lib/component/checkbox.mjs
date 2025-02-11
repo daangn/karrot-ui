@@ -5,7 +5,7 @@ export const vars = {
         "color": "var(--seed-v3-color-fg-neutral)"
       },
       "root": {
-        "gap": "var(--seed-v3-dimension-s2)"
+        "gap": "var(--seed-v3-dimension-x2)"
       }
     }
   },
@@ -113,30 +113,30 @@ export const vars = {
   "sizeMedium": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-dimension-s8)"
+        "minHeight": "var(--seed-v3-dimension-x8)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s4)",
-        "lineHeight": "var(--seed-v3-line-height-s4)"
+        "fontSize": "var(--seed-v3-font-size-t4)",
+        "lineHeight": "var(--seed-v3-line-height-t4)"
       },
       "control": {
-        "size": "var(--seed-v3-dimension-s5)",
-        "cornerRadius": "var(--seed-v3-radius-s1)"
+        "size": "var(--seed-v3-dimension-x5)",
+        "cornerRadius": "var(--seed-v3-radius-r1)"
       }
     }
   },
   "sizeLarge": {
     "enabled": {
       "root": {
-        "minHeight": "var(--seed-v3-dimension-s9)"
+        "minHeight": "var(--seed-v3-dimension-x9)"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-s5)",
-        "lineHeight": "var(--seed-v3-line-height-s5)"
+        "fontSize": "var(--seed-v3-font-size-t5)",
+        "lineHeight": "var(--seed-v3-line-height-t5)"
       },
       "control": {
-        "size": "var(--seed-v3-dimension-s6)",
-        "cornerRadius": "var(--seed-v3-radius-s1)"
+        "size": "var(--seed-v3-dimension-x6)",
+        "cornerRadius": "var(--seed-v3-radius-r1)"
       }
     }
   },

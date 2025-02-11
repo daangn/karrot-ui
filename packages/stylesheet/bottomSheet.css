@@ -17,7 +17,7 @@
 .bottomSheet__backdrop:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
     animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-s2);
+    animation-duration: var(--seed-v3-duration-d2);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 0;
@@ -27,7 +27,7 @@
 .bottomSheet__backdrop:is([data-state="open"], [data-open]) {
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter);
-    animation-duration: var(--seed-v3-duration-s2);
+    animation-duration: var(--seed-v3-duration-d2);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 0;
     --seed-enter-opacity: 0;
@@ -42,13 +42,13 @@
     word-break: break-all;
     z-index: calc(var(--sheet-z-index) + var(--layer-index, 0));
     background: var(--seed-v3-color-bg-layer-default);
-    border-top-left-radius: var(--seed-v3-radius-s6);
-    border-top-right-radius: var(--seed-v3-radius-s6);
+    border-top-left-radius: var(--seed-v3-radius-r6);
+    border-top-right-radius: var(--seed-v3-radius-r6);
 }
 .bottomSheet__content:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
     animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-s4);
+    animation-duration: var(--seed-v3-duration-d4);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 100%;
@@ -58,7 +58,7 @@
 .bottomSheet__content:is([data-state="open"], [data-open]) {
     animation: seed-enter;
     animation-timing-function: var(--seed-v3-timing-function-enter-expressive);
-    animation-duration: var(--seed-v3-duration-s6);
+    animation-duration: var(--seed-v3-duration-d6);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 100%;
     --seed-enter-opacity: 1;
@@ -67,22 +67,22 @@
 .bottomSheet__header {
     display: flex;
     flex-direction: column;
-    gap: var(--seed-v3-dimension-s2);
+    gap: var(--seed-v3-dimension-x2);
     padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
-    padding-top: var(--seed-v3-dimension-s6);
-    padding-bottom: var(--seed-v3-dimension-s4);
+    padding-top: var(--seed-v3-dimension-x6);
+    padding-bottom: var(--seed-v3-dimension-x4);
 }
 .bottomSheet__title {
     color: var(--seed-v3-color-fg-neutral);
-    font-size: var(--seed-v3-font-size-s8);
-    line-height: var(--seed-v3-line-height-s8);
+    font-size: var(--seed-v3-font-size-t8);
+    line-height: var(--seed-v3-line-height-t8);
     font-weight: var(--seed-v3-font-weight-bold);
     margin: 0;
 }
 .bottomSheet__description {
     color: var(--seed-v3-color-fg-neutral-muted);
-    font-size: var(--seed-v3-font-size-s6);
-    line-height: var(--seed-v3-line-height-s6);
+    font-size: var(--seed-v3-font-size-t6);
+    line-height: var(--seed-v3-line-height-t6);
     font-weight: var(--seed-v3-font-weight-regular);
     margin: 0;
     white-space: pre-wrap;
@@ -96,16 +96,16 @@
     display: flex;
     flex-direction: column;
     padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
-    padding-top: var(--seed-v3-dimension-s3);
-    padding-bottom: var(--seed-v3-dimension-s4);
+    padding-top: var(--seed-v3-dimension-x3);
+    padding-bottom: var(--seed-v3-dimension-x4);
 }
 .bottomSheet__closeButton {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: var(--seed-v3-dimension-s5);
-    right: var(--seed-v3-dimension-s5);
+    top: var(--seed-v3-dimension-x5);
+    right: var(--seed-v3-dimension-x5);
     border-radius: var(--seed-v3-radius-full);
     background: var(--seed-v3-color-palette-gray-300);
     width: 28px;
