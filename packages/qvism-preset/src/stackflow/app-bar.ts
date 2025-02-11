@@ -268,7 +268,9 @@ export const appBar = defineRecipe({
     divider: {
       true: {
         root: {
-          boxShadow: `inset 0px calc(-1 * ${vars.dividerTrue.enabled.root.strokeWidth}) 0 ${vars.dividerTrue.enabled.root.strokeColor}`,
+          "&:before": {
+            boxShadow: `inset 0px calc(-1 * ${vars.dividerTrue.enabled.root.strokeWidth}) 0 ${vars.dividerTrue.enabled.root.strokeColor}`,
+          },
         },
       },
     },

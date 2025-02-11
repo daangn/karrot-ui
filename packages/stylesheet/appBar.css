@@ -209,6 +209,6 @@
 .appBar__icon--tone_transparent {
     color: var(--seed-v3-color-palette-static-white);
 }
-.appBar__root--divider_true {
+.appBar__root--divider_true:before {
     box-shadow: inset 0px calc(-1 * 1px) 0 var(--seed-v3-color-stroke-neutral-muted);
 }

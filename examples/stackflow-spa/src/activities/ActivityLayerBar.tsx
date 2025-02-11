@@ -14,7 +14,7 @@ import { IconBellLine } from "@daangn/react-monochrome-icon";
 const ActivityLayerBar: ActivityComponentType = () => {
   return (
     <AppScreen>
-      <AppBar tone="layer">
+      <AppBar tone="layer" divider>
         <AppBarLeft>
           <AppBarBackButton />
         </AppBarLeft>
