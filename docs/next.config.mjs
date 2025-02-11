@@ -6,12 +6,7 @@ const withMDX = createMDX();
 const config = {
   output: "export",
   reactStrictMode: true,
-  transpilePackages: [
-    "@seed-design/react-tabs",
-    "@seed-design/react-popover",
-    "@seed-design/react",
-    "@seed-design/stackflow",
-  ],
+  transpilePackages: ["@seed-design/react", "@seed-design/stackflow"],
   images: {
     // FIXME: temporal use for static export; will remove after image optimization setup
     unoptimized: true,
