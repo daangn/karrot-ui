@@ -20,7 +20,7 @@ export function stringifyValueLit(lit: AST.ValueLit): string {
   switch (lit.kind) {
     case "DimensionLit":
       return lit.unit === "rem"
-        ? `${css.stringifyValueLit(lit)} (${lit.value}rem)`
+        ? `${lit.value * 16}px (${css.stringifyValueLit(lit)})`
         : css.stringifyValueLit(lit);
     default:
       return css.stringifyValueLit(lit);
