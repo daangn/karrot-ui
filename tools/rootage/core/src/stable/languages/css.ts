@@ -8,7 +8,7 @@ import type {
   ValueLit,
 } from "../parser/ast";
 
-const PREFIX = "seed-v3";
+const PREFIX = "seed";
 
 function stringifyCubicBezierLit(expr: CubicBezierLit): string {
   return `cubic-bezier(${expr.value.join(", ")})`;

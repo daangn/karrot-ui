@@ -2,7 +2,7 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-dimension-x4)"
+        "paddingX": "var(--seed-dimension-x4)"
       }
     }
   },

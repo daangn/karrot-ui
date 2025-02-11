@@ -11,13 +11,13 @@
 .actionSheet__backdrop {
     position: fixed;
     inset: 0;
-    background: var(--seed-v3-color-bg-overlay);
+    background: var(--seed-color-bg-overlay);
     z-index: calc(var(--sheet-z-index) + var(--layer-index, 0));
 }
 .actionSheet__backdrop:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
-    animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-d2);
+    animation-timing-function: var(--seed-timing-function-exit);
+    animation-duration: var(--seed-duration-d2);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 0;
@@ -26,8 +26,8 @@
 }
 .actionSheet__backdrop:is([data-state="open"], [data-open]) {
     animation: seed-enter;
-    animation-timing-function: var(--seed-v3-timing-function-enter);
-    animation-duration: var(--seed-v3-duration-d2);
+    animation-timing-function: var(--seed-timing-function-enter);
+    animation-duration: var(--seed-duration-d2);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 0;
     --seed-enter-opacity: 0;
@@ -41,14 +41,14 @@
     box-sizing: border-box;
     word-break: break-all;
     z-index: calc(var(--sheet-z-index) + var(--layer-index, 0));
-    background: var(--seed-v3-color-bg-layer-floating);
-    border-top-left-radius: var(--seed-v3-radius-r5);
-    border-top-right-radius: var(--seed-v3-radius-r5);
+    background: var(--seed-color-bg-layer-floating);
+    border-top-left-radius: var(--seed-radius-r5);
+    border-top-right-radius: var(--seed-radius-r5);
 }
 .actionSheet__content:not(:is([data-state="open"], [data-open])) {
     animation: seed-exit;
-    animation-timing-function: var(--seed-v3-timing-function-exit);
-    animation-duration: var(--seed-v3-duration-d4);
+    animation-timing-function: var(--seed-timing-function-exit);
+    animation-duration: var(--seed-duration-d4);
     animation-fill-mode: forwards;
     --seed-exit-translate-x: 0;
     --seed-exit-translate-y: 100%;
@@ -57,8 +57,8 @@
 }
 .actionSheet__content:is([data-state="open"], [data-open]) {
     animation: seed-enter;
-    animation-timing-function: var(--seed-v3-timing-function-enter-expressive);
-    animation-duration: var(--seed-v3-duration-d6);
+    animation-timing-function: var(--seed-timing-function-enter-expressive);
+    animation-duration: var(--seed-duration-d6);
     --seed-enter-translate-x: 0;
     --seed-enter-translate-y: 100%;
     --seed-enter-opacity: 1;
@@ -69,31 +69,31 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
-    padding-block: var(--seed-v3-dimension-x3_5);
-    gap: var(--seed-v3-dimension-x1);
+    padding-inline: var(--seed-dimension-spacing-x-global-gutter);
+    padding-block: var(--seed-dimension-x3_5);
+    gap: var(--seed-dimension-x1);
 }
 .actionSheet__header:after {
     content: '';
     display: block;
     position: absolute;
-    left: var(--seed-v3-dimension-spacing-x-global-gutter);
-    right: var(--seed-v3-dimension-spacing-x-global-gutter);
+    left: var(--seed-dimension-spacing-x-global-gutter);
+    right: var(--seed-dimension-spacing-x-global-gutter);
     bottom: 0;
     height: 1px;
-    background: var(--seed-v3-color-stroke-neutral);
+    background: var(--seed-color-stroke-neutral);
 }
 .actionSheet__title {
-    color: var(--seed-v3-color-fg-neutral-muted);
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
-    font-weight: var(--seed-v3-font-weight-bold);
+    color: var(--seed-color-fg-neutral-muted);
+    font-size: var(--seed-font-size-t4);
+    line-height: var(--seed-line-height-t4);
+    font-weight: var(--seed-font-weight-bold);
 }
 .actionSheet__description {
-    color: var(--seed-v3-color-fg-neutral-muted);
-    font-size: var(--seed-v3-font-size-t3);
-    line-height: var(--seed-v3-line-height-t3);
-    font-weight: var(--seed-v3-font-weight-regular);
+    color: var(--seed-color-fg-neutral-muted);
+    font-size: var(--seed-font-size-t3);
+    line-height: var(--seed-line-height-t3);
+    font-weight: var(--seed-font-weight-regular);
 }
 .actionSheet__list {
     display: flex;

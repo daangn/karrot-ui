@@ -2,19 +2,19 @@
     display: inline-block;
     box-sizing: border-box;
     overflow: hidden;
-    background: var(--seed-v3-color-palette-gray-200);
+    background: var(--seed-color-palette-gray-200);
 }
 .skeleton__root::after {
     content: '';
     display: block;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(90deg, var(--seed-v3-gradient-shimmer));
+    background-image: linear-gradient(90deg, var(--seed-gradient-shimmer));
     background-repeat: no-repeat;
     animation-fill-mode: forwards;
     animation-name: shimmer;
     animation-duration: 1.5s;
-    animation-timing-function: var(--seed-v3-timing-function-easing);
+    animation-timing-function: var(--seed-timing-function-easing);
     animation-iteration-count: infinite;
 }
 .skeleton__root--radius_0 {
@@ -27,7 +27,7 @@
     border-radius: 16px;
 }
 .skeleton__root--radius_full {
-    border-radius: var(--seed-v3-radius-full);
+    border-radius: var(--seed-radius-full);
 }
 @keyframes shimmer {
     0% {

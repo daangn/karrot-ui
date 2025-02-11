@@ -1,1 +1,1 @@
-export declare const shimmer = "var(--seed-v3-gradient-shimmer)";
+export declare const shimmer = "var(--seed-gradient-shimmer)";

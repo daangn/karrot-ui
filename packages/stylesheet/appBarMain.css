@@ -13,16 +13,16 @@
     text-overflow: ellipsis
 }
 .appBarMain__title--layout_titleOnly {
-    font-size: var(--seed-v3-font-size-t6-static);
-    font-weight: var(--seed-v3-font-weight-bold)
+    font-size: var(--seed-font-size-t6-static);
+    font-weight: var(--seed-font-weight-bold)
 }
 .appBarMain__title--layout_withSubtitle {
-    font-size: var(--seed-v3-font-size-t5-static);
-    font-weight: var(--seed-v3-font-weight-bold)
+    font-size: var(--seed-font-size-t5-static);
+    font-weight: var(--seed-font-weight-bold)
 }
 .appBarMain__subtitle--layout_withSubtitle {
-    font-size: var(--seed-v3-font-size-t2-static);
-    font-weight: var(--seed-v3-font-weight-regular)
+    font-size: var(--seed-font-size-t2-static);
+    font-weight: var(--seed-font-weight-regular)
 }
 .appBarMain__root--theme_cupertino {
     position: absolute;
@@ -122,20 +122,20 @@
     opacity: calc(1 - var(--swipe-back-displacement-ratio, 0))
 }
 .appBarMain__root--tone_layer {
-    color: var(--seed-v3-color-fg-neutral)
+    color: var(--seed-color-fg-neutral)
 }
 .appBarMain__title--tone_layer {
-    color: var(--seed-v3-color-fg-neutral)
+    color: var(--seed-color-fg-neutral)
 }
 .appBarMain__subtitle--tone_layer {
-    color: var(--seed-v3-color-fg-neutral-muted)
+    color: var(--seed-color-fg-neutral-muted)
 }
 .appBarMain__root--tone_transparent {
-    color: var(--seed-v3-color-palette-static-white)
+    color: var(--seed-color-palette-static-white)
 }
 .appBarMain__title--tone_transparent {
-    color: var(--seed-v3-color-palette-static-white)
+    color: var(--seed-color-palette-static-white)
 }
 .appBarMain__subtitle--tone_transparent {
-    color: var(--seed-v3-color-palette-static-white)
+    color: var(--seed-color-palette-static-white)
 }

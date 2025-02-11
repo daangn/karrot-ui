@@ -7,7 +7,7 @@ test("stringifyTokenReference should stringify token expression", () => {
 
   const result = stringifyTokenReference(token);
 
-  expect(result).toEqual("var(--seed-v3-color-bg-layer-1)");
+  expect(result).toEqual("var(--seed-color-bg-layer-1)");
 });
 
 test("stringifyValueExpression should stringify shadow expression", () => {
@@ -122,17 +122,17 @@ test("getTokenCss should generate css code", () => {
 
   expect(result).toMatchInlineSnapshot(`
     ":root[data-theme=\\"light\\"] {
-      --seed-v3-color-palette-gray-00: #ffffff;
-      --seed-v3-color-bg-layer-1: var(--seed-v3-color-palette-gray-00);
+      --seed-color-palette-gray-00: #ffffff;
+      --seed-color-bg-layer-1: var(--seed-color-palette-gray-00);
     }
 
     :root[data-theme=\\"dark\\"] {
-      --seed-v3-color-palette-gray-00: #000000;
-      --seed-v3-color-bg-layer-1: var(--seed-v3-color-palette-gray-00);
+      --seed-color-palette-gray-00: #000000;
+      --seed-color-bg-layer-1: var(--seed-color-palette-gray-00);
     }
 
     :root {
-      --seed-v3-dimension-s1: 4px;
+      --seed-dimension-s1: 4px;
     }"
   `);
 });

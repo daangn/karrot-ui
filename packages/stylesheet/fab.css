@@ -18,21 +18,21 @@
     cursor: not-allowed;
 }
 .fab__root {
-    background: var(--seed-v3-color-bg-layer-floating);
-    border-radius: var(--seed-v3-radius-full);
+    background: var(--seed-color-bg-layer-floating);
+    border-radius: var(--seed-radius-full);
     box-shadow: 0px 2px 6px 0px #00000026;
     width: 44px;
     height: 44px;
 }
 .fab__root:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-layer-floating-pressed);
+    background: var(--seed-color-bg-layer-floating-pressed);
 }
 .fab__icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
     width: 22px;
     height: 22px;
 }

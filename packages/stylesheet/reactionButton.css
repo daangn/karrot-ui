@@ -16,53 +16,53 @@
     outline: none;
 }
 .reactionButton__root {
-    transition: background-color var(--seed-v3-duration-d4) var(--seed-v3-timing-function-easing);
-    background: var(--seed-v3-color-bg-neutral-weak);
+    transition: background-color var(--seed-duration-d4) var(--seed-timing-function-easing);
+    background: var(--seed-color-bg-neutral-weak);
 }
 .reactionButton__root:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .reactionButton__root:is([aria-pressed=true], [data-pressed]) {
-    background: var(--seed-v3-color-bg-layer-default);
-    box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-brand);
+    background: var(--seed-color-bg-layer-default);
+    box-shadow: inset 0 0 0 1px var(--seed-color-stroke-brand);
 }
 .reactionButton__root:is([aria-pressed=true], [data-pressed]):is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-layer-default-pressed);
+    background: var(--seed-color-bg-layer-default-pressed);
 }
 .reactionButton__root:is(:disabled, [disabled], [data-disabled]) {
     cursor: not-allowed;
-    background: var(--seed-v3-color-bg-disabled);
-    box-shadow: inset 0 0 0 0px var(--seed-v3-color-stroke-brand);
+    background: var(--seed-color-bg-disabled);
+    box-shadow: inset 0 0 0 0px var(--seed-color-stroke-brand);
 }
 .reactionButton__root[data-loading] {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .reactionButton__root:is([aria-pressed=true], [data-pressed])[data-loading] {
-    background: var(--seed-v3-color-bg-layer-default-pressed);
-    box-shadow: inset 0 0 0 1px var(--seed-v3-color-stroke-brand);
+    background: var(--seed-color-bg-layer-default-pressed);
+    box-shadow: inset 0 0 0 1px var(--seed-color-stroke-brand);
 }
 .reactionButton__label {
-    font-weight: var(--seed-v3-font-weight-medium);
-    color: var(--seed-v3-color-fg-neutral);
+    font-weight: var(--seed-font-weight-medium);
+    color: var(--seed-color-fg-neutral);
 }
 .reactionButton__label:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-color-fg-brand);
 }
 .reactionButton__label:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .reactionButton__label[data-loading] {
     opacity: 0;
 }
 .reactionButton__count {
-    font-weight: var(--seed-v3-font-weight-bold);
-    color: var(--seed-v3-color-fg-neutral);
+    font-weight: var(--seed-font-weight-bold);
+    color: var(--seed-color-fg-neutral);
 }
 .reactionButton__count:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-color-fg-brand);
 }
 .reactionButton__count:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .reactionButton__count[data-loading] {
     opacity: 0;
@@ -72,13 +72,13 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .reactionButton__prefixIcon:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-color-fg-brand);
 }
 .reactionButton__prefixIcon:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .reactionButton__prefixIcon[data-loading] {
     opacity: 0;
@@ -86,30 +86,30 @@
 .reactionButton__progressIndicator {
     position: absolute;
     display: none;
-    --track-color: var(--seed-v3-color-palette-gray-500);
-    --range-color: var(--seed-v3-color-fg-neutral);
+    --track-color: var(--seed-color-palette-gray-500);
+    --range-color: var(--seed-color-fg-neutral);
 }
 .reactionButton__progressIndicator:is([aria-pressed=true], [data-pressed]) {
-    --track-color: var(--seed-v3-color-palette-carrot-200);
-    --range-color: var(--seed-v3-color-fg-brand);
+    --track-color: var(--seed-color-palette-carrot-200);
+    --range-color: var(--seed-color-fg-brand);
 }
 .reactionButton__progressIndicator[data-loading] {
     display: flex;
 }
 .reactionButton__root--size_xsmall {
-    height: var(--seed-v3-dimension-x8);
-    border-radius: var(--seed-v3-radius-full);
-    gap: var(--seed-v3-dimension-x1);
-    padding-inline: var(--seed-v3-dimension-x3);
-    padding-block: var(--seed-v3-dimension-x1_5);
+    height: var(--seed-dimension-x8);
+    border-radius: var(--seed-radius-full);
+    gap: var(--seed-dimension-x1);
+    padding-inline: var(--seed-dimension-x3);
+    padding-block: var(--seed-dimension-x1_5);
 }
 .reactionButton__label--size_xsmall {
-    font-size: var(--seed-v3-font-size-t3);
-    line-height: var(--seed-v3-line-height-t3);
+    font-size: var(--seed-font-size-t3);
+    line-height: var(--seed-line-height-t3);
 }
 .reactionButton__count--size_xsmall {
-    font-size: var(--seed-v3-font-size-t3);
-    line-height: var(--seed-v3-line-height-t3);
+    font-size: var(--seed-font-size-t3);
+    line-height: var(--seed-line-height-t3);
 }
 .reactionButton__prefixIcon--size_xsmall {
     width: 18px;
@@ -120,19 +120,19 @@
     --thickness: 2px;
 }
 .reactionButton__root--size_small {
-    height: var(--seed-v3-dimension-x9);
-    border-radius: var(--seed-v3-radius-full);
-    gap: var(--seed-v3-dimension-x1);
-    padding-inline: var(--seed-v3-dimension-x3_5);
-    padding-block: var(--seed-v3-dimension-x2);
+    height: var(--seed-dimension-x9);
+    border-radius: var(--seed-radius-full);
+    gap: var(--seed-dimension-x1);
+    padding-inline: var(--seed-dimension-x3_5);
+    padding-block: var(--seed-dimension-x2);
 }
 .reactionButton__label--size_small {
-    font-size: var(--seed-v3-font-size-t3);
-    line-height: var(--seed-v3-line-height-t3);
+    font-size: var(--seed-font-size-t3);
+    line-height: var(--seed-line-height-t3);
 }
 .reactionButton__count--size_small {
-    font-size: var(--seed-v3-font-size-t3);
-    line-height: var(--seed-v3-line-height-t3);
+    font-size: var(--seed-font-size-t3);
+    line-height: var(--seed-line-height-t3);
 }
 .reactionButton__prefixIcon--size_small {
     width: 18px;

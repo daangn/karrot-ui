@@ -97,7 +97,7 @@ export const VariantTable = (props: Props) => {
                         style={{
                           fontSize: "12px",
                           paddingRight: "2px",
-                          color: "var(--seed-v3-color-fg-placeholder)",
+                          color: "var(--seed-color-fg-placeholder)",
                         }}
                       >
                         {key}:

@@ -10,15 +10,15 @@
     -moz-osx-font-smoothing: grayscale;
     font-family: inherit;
     padding-inline: 0;
-    padding-block: var(--seed-v3-dimension-x0_5);
+    padding-block: var(--seed-dimension-x0_5);
 }
 .textButton__root:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
     cursor: not-allowed;
 }
 .textButton__root:is(:active, [data-active]) {
-    background-color: var(--seed-v3-color-palette-gray-200);
-    box-shadow: 0 0 0 2px var(--seed-v3-color-palette-gray-200);
+    background-color: var(--seed-color-palette-gray-200);
+    box-shadow: 0 0 0 2px var(--seed-color-palette-gray-200);
 }
 .textButton__root:is(:disabled, [disabled], [data-disabled]):is(:active, [data-active]) {
     background-color: transparent;
@@ -26,71 +26,71 @@
 }
 .textButton__label {
     text-align: center;
-    font-weight: var(--seed-v3-font-weight-regular);
+    font-weight: var(--seed-font-weight-regular);
 }
 .textButton__prefixIcon {
-    margin-inline-end: var(--seed-v3-dimension-x1);
+    margin-inline-end: var(--seed-dimension-x1);
 }
 .textButton__suffixIcon {
-    margin-inline-start: var(--seed-v3-dimension-x0_5);
+    margin-inline-start: var(--seed-dimension-x0_5);
 }
 .textButton__root--tone_brand {
-    color: var(--seed-v3-color-fg-brand);
+    color: var(--seed-color-fg-brand);
 }
 .textButton__root--tone_neutral {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .textButton__root--tone_neutralSubtle {
-    color: var(--seed-v3-color-fg-neutral-subtle);
+    color: var(--seed-color-fg-neutral-subtle);
 }
 .textButton__root--tone_critical {
-    color: var(--seed-v3-color-fg-critical);
+    color: var(--seed-color-fg-critical);
 }
 .textButton__root--size_large {
     min-height: 2rem;
-    border-radius: var(--seed-v3-radius-r1_5);
+    border-radius: var(--seed-radius-r1_5);
 }
 .textButton__prefixIcon--size_large {
-    width: var(--seed-v3-dimension-x4);
-    height: var(--seed-v3-dimension-x4);
+    width: var(--seed-dimension-x4);
+    height: var(--seed-dimension-x4);
 }
 .textButton__suffixIcon--size_large {
-    width: var(--seed-v3-dimension-x4);
-    height: var(--seed-v3-dimension-x4);
+    width: var(--seed-dimension-x4);
+    height: var(--seed-dimension-x4);
 }
 .textButton__label--size_large {
-    font-size: var(--seed-v3-font-size-t6);
-    line-height: var(--seed-v3-line-height-t6);
+    font-size: var(--seed-font-size-t6);
+    line-height: var(--seed-line-height-t6);
 }
 .textButton__root--size_medium {
     min-height: 1.875rem;
-    border-radius: var(--seed-v3-radius-r1_5);
+    border-radius: var(--seed-radius-r1_5);
 }
 .textButton__prefixIcon--size_medium {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .textButton__suffixIcon--size_medium {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .textButton__label--size_medium {
-    font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
+    font-size: var(--seed-font-size-t5);
+    line-height: var(--seed-line-height-t5);
 }
 .textButton__root--size_small {
     min-height: 1.75rem;
-    border-radius: var(--seed-v3-radius-r1);
+    border-radius: var(--seed-radius-r1);
 }
 .textButton__prefixIcon--size_small {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .textButton__suffixIcon--size_small {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .textButton__label--size_small {
-    font-size: var(--seed-v3-font-size-t4);
-    line-height: var(--seed-v3-line-height-t4);
+    font-size: var(--seed-font-size-t4);
+    line-height: var(--seed-line-height-t4);
 }

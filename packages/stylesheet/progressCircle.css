@@ -23,24 +23,24 @@
         ;
 }
 .progressCircle__root--tone_neutral {
-    --track-color: var(--seed-v3-color-palette-gray-200);
-    --range-color: var(--seed-v3-color-palette-gray-500);
+    --track-color: var(--seed-color-palette-gray-200);
+    --range-color: var(--seed-color-palette-gray-500);
 }
 .progressCircle__root--tone_brand {
-    --track-color: var(--seed-v3-color-palette-carrot-200);
-    --range-color: var(--seed-v3-color-bg-brand-solid);
+    --track-color: var(--seed-color-palette-carrot-200);
+    --range-color: var(--seed-color-bg-brand-solid);
 }
 .progressCircle__root--tone_staticWhite {
-    --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
-    --range-color: var(--seed-v3-color-palette-static-white);
+    --track-color: var(--seed-color-palette-static-white-alpha-200);
+    --range-color: var(--seed-color-palette-static-white);
 }
 .progressCircle__root--tone_inherit {}
 .progressCircle__root--size_24 {
-    --size: var(--seed-v3-dimension-x6);
+    --size: var(--seed-dimension-x6);
     --thickness: 3px;
 }
 .progressCircle__root--size_40 {
-    --size: var(--seed-v3-dimension-x10);
+    --size: var(--seed-dimension-x10);
     --thickness: 5px;
 }
 .progressCircle__root--size_inherit {}

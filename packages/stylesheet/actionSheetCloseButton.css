@@ -2,17 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--seed-v3-color-bg-layer-floating);
+    background-color: var(--seed-color-bg-layer-floating);
     min-height: 50px;
-    padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
-    padding-block: var(--seed-v3-dimension-x3_5);
+    padding-inline: var(--seed-dimension-spacing-x-global-gutter);
+    padding-block: var(--seed-dimension-x3_5);
 }
 .actionSheetCloseButton__root:is(:active, [data-active]) {
-    background-color: var(--seed-v3-color-bg-layer-floating-pressed);
+    background-color: var(--seed-color-bg-layer-floating-pressed);
 }
 .actionSheetCloseButton__label {
-    color: var(--seed-v3-color-fg-neutral);
-    font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
-    font-weight: var(--seed-v3-font-weight-bold);
+    color: var(--seed-color-fg-neutral);
+    font-size: var(--seed-font-size-t5);
+    line-height: var(--seed-line-height-t5);
+    font-weight: var(--seed-font-weight-bold);
 }

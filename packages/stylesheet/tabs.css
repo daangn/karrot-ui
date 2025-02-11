@@ -16,8 +16,8 @@
     display: none;
 }
 .tabs__list {
-    background: var(--seed-v3-color-bg-layer-default);
-    box-shadow: inset 0 -1px var(--seed-v3-color-stroke-neutral);
+    background: var(--seed-color-bg-layer-default);
+    box-shadow: inset 0 -1px var(--seed-color-stroke-neutral);
 }
 .tabs__carousel {
     display: block;
@@ -43,12 +43,12 @@
     position: absolute;
     will-change: left, width;
     transition-property: left, width;
-    transition-duration: var(--seed-v3-duration-d4);
-    transition-timing-function: var(--seed-v3-timing-function-easing);
+    transition-duration: var(--seed-duration-d4);
+    transition-timing-function: var(--seed-timing-function-easing);
     left: var(--indicator-left, 0px);
     width: var(--indicator-width, 0px);
-    color: var(--seed-v3-color-fg-neutral);
-    border-bottom: 2px solid var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
+    border-bottom: 2px solid var(--seed-color-fg-neutral);
     bottom: 0;
 }
 .tabs__indicator[data-ssr] {
@@ -75,41 +75,41 @@
     left: 0;
     right: 0;
     height: 2px;
-    background-color: var(--seed-v3-color-fg-neutral);
+    background-color: var(--seed-color-fg-neutral);
 }
 .tabs__triggerLabel {
     position: relative;
-    color: var(--seed-v3-color-fg-neutral-subtle);
+    color: var(--seed-color-fg-neutral-subtle);
 }
 .tabs__triggerLabel:is(:selected, [data-selected]) {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .tabs__triggerLabel:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .tabs__triggerNotification {
     position: absolute;
     top: 0;
-    right: calc(-1 * var(--seed-v3-dimension-x1) - var(--seed-v3-dimension-x0_5));
+    right: calc(-1 * var(--seed-dimension-x1) - var(--seed-dimension-x0_5));
     align-self: flex-start;
-    background-color: var(--seed-v3-color-bg-brand-solid);
-    width: var(--seed-v3-dimension-x1);
-    height: var(--seed-v3-dimension-x1);
-    border-radius: var(--seed-v3-radius-full);
+    background-color: var(--seed-color-bg-brand-solid);
+    width: var(--seed-dimension-x1);
+    height: var(--seed-dimension-x1);
+    border-radius: var(--seed-radius-full);
 }
 .tabs__list--triggerLayout_fill {
     padding-inline: 0px;
     justify-content: space-around;
 }
 .tabs__indicator--triggerLayout_fill {
-    left: calc(var(--indicator-left, 0px) + var(--seed-v3-dimension-spacing-x-global-gutter));
-    width: calc(var(--indicator-width, 0px) - 2 * var(--seed-v3-dimension-spacing-x-global-gutter));
+    left: calc(var(--indicator-left, 0px) + var(--seed-dimension-spacing-x-global-gutter));
+    width: calc(var(--indicator-width, 0px) - 2 * var(--seed-dimension-spacing-x-global-gutter));
 }
 .tabs__trigger--triggerLayout_fill {
     flex: 1;
 }
 .tabs__list--triggerLayout_hug {
-    padding-inline: var(--seed-v3-dimension-spacing-x-global-gutter);
+    padding-inline: var(--seed-dimension-spacing-x-global-gutter);
     justify-content: flex-start;
 }
 .tabs__indicator--triggerLayout_hug {
@@ -139,12 +139,12 @@
 }
 .tabs__trigger--size_small {
     min-height: 40px;
-    padding-inline: var(--seed-v3-dimension-x2_5);
-    padding-block: var(--seed-v3-dimension-x2_5);
+    padding-inline: var(--seed-dimension-x2_5);
+    padding-block: var(--seed-dimension-x2_5);
 }
 .tabs__triggerLabel--size_small {
-    font-size: var(--seed-v3-font-size-t4);
-    font-weight: var(--seed-v3-font-weight-bold);
+    font-size: var(--seed-font-size-t4);
+    font-weight: var(--seed-font-weight-bold);
 }
 .tabs__root--size_medium {
     --tabs-list-height: 44px;
@@ -154,12 +154,12 @@
 }
 .tabs__trigger--size_medium {
     min-height: 44px;
-    padding-inline: var(--seed-v3-dimension-x2_5);
-    padding-block: var(--seed-v3-dimension-x2_5);
+    padding-inline: var(--seed-dimension-x2_5);
+    padding-block: var(--seed-dimension-x2_5);
 }
 .tabs__triggerLabel--size_medium {
-    font-size: var(--seed-v3-font-size-t5);
-    font-weight: var(--seed-v3-font-weight-bold);
+    font-size: var(--seed-font-size-t5);
+    font-weight: var(--seed-font-weight-bold);
 }
 .tabs__root--stickyList_true {
     position: relative;

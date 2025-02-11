@@ -2,18 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--seed-v3-color-bg-neutral-weak);
+    background-color: var(--seed-color-bg-neutral-weak);
     min-height: 52px;
-    padding-inline: var(--seed-v3-dimension-x5);
-    padding-block: var(--seed-v3-dimension-x3_5);
-    border-radius: var(--seed-v3-radius-r3);
+    padding-inline: var(--seed-dimension-x5);
+    padding-block: var(--seed-dimension-x3_5);
+    border-radius: var(--seed-radius-r3);
 }
 .extendedActionSheetCloseButton__root:is(:active, [data-active]) {
-    background-color: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background-color: var(--seed-color-bg-neutral-weak-pressed);
 }
 .extendedActionSheetCloseButton__label {
-    color: var(--seed-v3-color-fg-neutral);
-    font-size: var(--seed-v3-font-size-t5);
-    line-height: var(--seed-v3-line-height-t5);
-    font-weight: var(--seed-v3-font-weight-medium);
+    color: var(--seed-color-fg-neutral);
+    font-size: var(--seed-font-size-t5);
+    line-height: var(--seed-line-height-t5);
+    font-weight: var(--seed-font-weight-medium);
 }

@@ -19,10 +19,10 @@
     cursor: not-allowed;
 }
 .toggleButton__root {
-    transition: background-color var(--seed-v3-duration-d4) var(--seed-v3-timing-function-easing);
+    transition: background-color var(--seed-duration-d4) var(--seed-timing-function-easing);
 }
 .toggleButton__label {
-    font-weight: var(--seed-v3-font-weight-bold);
+    font-weight: var(--seed-font-weight-bold);
 }
 .toggleButton__label[data-loading] {
     opacity: 0;
@@ -53,156 +53,156 @@
     display: flex;
 }
 .toggleButton__root--variant_brandSolid {
-    background: var(--seed-v3-color-bg-brand-solid);
+    background: var(--seed-color-bg-brand-solid);
 }
 .toggleButton__root--variant_brandSolid:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-brand-solid-pressed);
+    background: var(--seed-color-bg-brand-solid-pressed);
 }
 .toggleButton__root--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
-    background: var(--seed-v3-color-bg-neutral-weak);
+    background: var(--seed-color-bg-neutral-weak);
 }
 .toggleButton__root--variant_brandSolid:is([aria-pressed=true], [data-pressed]):is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .toggleButton__root--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
-    background: var(--seed-v3-color-bg-disabled);
+    background: var(--seed-color-bg-disabled);
 }
 .toggleButton__root--variant_brandSolid[data-loading] {
-    background: var(--seed-v3-color-bg-brand-solid-pressed);
+    background: var(--seed-color-bg-brand-solid-pressed);
 }
 .toggleButton__root--variant_brandSolid:is([aria-pressed=true], [data-pressed])[data-loading] {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .toggleButton__label--variant_brandSolid {
-    color: var(--seed-v3-color-palette-static-white);
+    color: var(--seed-color-palette-static-white);
 }
 .toggleButton__label--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__label--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .toggleButton__prefixIcon--variant_brandSolid {
-    color: var(--seed-v3-color-palette-static-white);
+    color: var(--seed-color-palette-static-white);
 }
 .toggleButton__prefixIcon--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__prefixIcon--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .toggleButton__suffixIcon--variant_brandSolid {
-    color: var(--seed-v3-color-palette-static-white);
+    color: var(--seed-color-palette-static-white);
 }
 .toggleButton__suffixIcon--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__suffixIcon--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .toggleButton__progressIndicator--variant_brandSolid {
-    --track-color: var(--seed-v3-color-palette-static-white-alpha-200);
-    --range-color: var(--seed-v3-color-palette-static-white);
+    --track-color: var(--seed-color-palette-static-white-alpha-200);
+    --range-color: var(--seed-color-palette-static-white);
 }
 .toggleButton__progressIndicator--variant_brandSolid:is([aria-pressed=true], [data-pressed]) {
-    --track-color: var(--seed-v3-color-palette-gray-500);
-    --range-color: var(--seed-v3-color-fg-neutral);
+    --track-color: var(--seed-color-palette-gray-500);
+    --range-color: var(--seed-color-fg-neutral);
 }
 .toggleButton__root--variant_neutralWeak {
-    background: var(--seed-v3-color-bg-neutral-weak);
+    background: var(--seed-color-bg-neutral-weak);
 }
 .toggleButton__root--variant_neutralWeak:is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .toggleButton__root--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
-    background: var(--seed-v3-color-bg-neutral-weak);
+    background: var(--seed-color-bg-neutral-weak);
 }
 .toggleButton__root--variant_neutralWeak:is([aria-pressed=true], [data-pressed]):is(:active, [data-active]) {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .toggleButton__root--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
-    background: var(--seed-v3-color-bg-disabled);
+    background: var(--seed-color-bg-disabled);
 }
 .toggleButton__root--variant_neutralWeak[data-loading] {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .toggleButton__root--variant_neutralWeak:is([aria-pressed=true], [data-pressed])[data-loading] {
-    background: var(--seed-v3-color-bg-neutral-weak-pressed);
+    background: var(--seed-color-bg-neutral-weak-pressed);
 }
 .toggleButton__label--variant_neutralWeak {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__label--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__label--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .toggleButton__prefixIcon--variant_neutralWeak {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__prefixIcon--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__prefixIcon--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .toggleButton__suffixIcon--variant_neutralWeak {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__suffixIcon--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
-    color: var(--seed-v3-color-fg-neutral);
+    color: var(--seed-color-fg-neutral);
 }
 .toggleButton__suffixIcon--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
-    color: var(--seed-v3-color-fg-disabled);
+    color: var(--seed-color-fg-disabled);
 }
 .toggleButton__progressIndicator--variant_neutralWeak {
-    --track-color: var(--seed-v3-color-palette-gray-500);
-    --range-color: var(--seed-v3-color-fg-neutral);
+    --track-color: var(--seed-color-palette-gray-500);
+    --range-color: var(--seed-color-fg-neutral);
 }
 .toggleButton__progressIndicator--variant_neutralWeak:is([aria-pressed=true], [data-pressed]) {
-    --track-color: var(--seed-v3-color-palette-gray-500);
-    --range-color: var(--seed-v3-color-fg-neutral);
+    --track-color: var(--seed-color-palette-gray-500);
+    --range-color: var(--seed-color-fg-neutral);
 }
 .toggleButton__root--size_xsmall {
-    height: var(--seed-v3-dimension-x8);
-    border-radius: var(--seed-v3-radius-full);
-    gap: var(--seed-v3-dimension-x1);
-    padding-inline: var(--seed-v3-dimension-x3_5);
-    padding-block: var(--seed-v3-dimension-x1_5);
+    height: var(--seed-dimension-x8);
+    border-radius: var(--seed-radius-full);
+    gap: var(--seed-dimension-x1);
+    padding-inline: var(--seed-dimension-x3_5);
+    padding-block: var(--seed-dimension-x1_5);
 }
 .toggleButton__label--size_xsmall {
-    font-size: var(--seed-v3-font-size-t4);
+    font-size: var(--seed-font-size-t4);
 }
 .toggleButton__prefixIcon--size_xsmall {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .toggleButton__suffixIcon--size_xsmall {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .toggleButton__progressIndicator--size_xsmall {
     --size: 14px;
     --thickness: 2px;
 }
 .toggleButton__root--size_small {
-    height: var(--seed-v3-dimension-x9);
-    border-radius: var(--seed-v3-radius-full);
-    gap: var(--seed-v3-dimension-x1);
-    padding-inline: var(--seed-v3-dimension-x4);
-    padding-block: var(--seed-v3-dimension-x2);
+    height: var(--seed-dimension-x9);
+    border-radius: var(--seed-radius-full);
+    gap: var(--seed-dimension-x1);
+    padding-inline: var(--seed-dimension-x4);
+    padding-block: var(--seed-dimension-x2);
 }
 .toggleButton__label--size_small {
-    font-size: var(--seed-v3-font-size-t4);
+    font-size: var(--seed-font-size-t4);
 }
 .toggleButton__prefixIcon--size_small {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .toggleButton__suffixIcon--size_small {
-    width: var(--seed-v3-dimension-x3_5);
-    height: var(--seed-v3-dimension-x3_5);
+    width: var(--seed-dimension-x3_5);
+    height: var(--seed-dimension-x3_5);
 }
 .toggleButton__progressIndicator--size_small {
     --size: 14px;
