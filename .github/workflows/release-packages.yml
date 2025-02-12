@@ -31,7 +31,7 @@ jobs:
           bun-version: latest
 
       - name: Install Dependencies
-        run: bun install --immutable
+        run: bun install --frozen-lockfile
 
       - name: 릴리즈 Pull Request를 만들거나 패키지를 배포해요
         id: changesets
