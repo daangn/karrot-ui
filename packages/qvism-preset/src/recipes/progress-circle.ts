@@ -12,7 +12,7 @@ const progressCircle = defineRecipe({
 
       "&[data-progress-state=indeterminate]": {
         // FIXME: temporal workaround for recipe name prefixing; We have to remove this once we have a proper solution
-        animation: `progressCircle-rotate ${vars.indeterminateTrue.enabled.range.rotateDuration} ${vars.indeterminateTrue.enabled.range.rotateTimingFunction} infinite`,
+        animation: `progress-circle-rotate ${vars.indeterminateTrue.enabled.range.rotateDuration} ${vars.indeterminateTrue.enabled.range.rotateTimingFunction} infinite`,
       },
     },
     track: {
@@ -31,8 +31,8 @@ const progressCircle = defineRecipe({
       "&[data-progress-state=indeterminate]": {
         // FIXME: temporal workaround for recipe name prefixing; We have to remove this once we have a proper solution
         animation: `
-          progressCircle-headDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.headTimingFunction} infinite normal none running,
-          progressCircle-tailDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.tailTimingFunction} infinite normal none running
+          progress-circle-headDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.headTimingFunction} infinite normal none running,
+          progress-circle-tailDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.tailTimingFunction} infinite normal none running
         `,
       },
     },
