@@ -23,7 +23,6 @@ export function replaceImportDeclarations({
 }: ReplaceImportDeclarationsParams) {
   const availableNewNames = match.identifier.map(({ oldName }) => oldName);
 
-  // biome-ignore lint/complexity/noForEach: <explanation>
   importDeclarations.forEach((imp) => {
     const currentSpecifiers = imp.node.specifiers;
     const currentSourceValue = imp.node.source.value;
@@ -311,7 +310,6 @@ export function replaceIdentifiers({
   track,
   filePath,
 }: ReplaceIdentifiersParams) {
-  // biome-ignore lint/complexity/noForEach: <explanation>
   identifiers.forEach((identifier) => {
     // import specifier인 경우 아무것도 안 함 (replaceImportDeclarations에서 처리)
     if (
@@ -378,7 +376,6 @@ export function replaceStringLiterals({
   track,
   filePath,
 }: ReplaceStringLiteralsProps) {
-  // biome-ignore lint/complexity/noForEach: <explanation>
   stringLiterals.forEach((stringLiteral) => {
     const identifierMatchFound = match.identifier.find(
       ({ oldName }) => oldName === stringLiteral.node.value,
