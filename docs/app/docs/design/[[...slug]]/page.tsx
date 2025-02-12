@@ -22,7 +22,7 @@ export default async function Page({
 
   const MDX = page.data.body;
   const path = getPath(params.slug ?? []);
-  const guideline = await client.fetch(GUIDELINE_QUERY, { path });
+  const guideline = await client.fetch(GUIDELINE_QUERY, { path: `design/${path}` });
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full} lastUpdate={page.data.lastModified}>
