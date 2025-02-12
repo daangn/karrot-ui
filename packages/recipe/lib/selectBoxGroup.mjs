@@ -5,7 +5,7 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const selectBoxGroupSlotNames = [
   [
     "root",
-    "selectBoxGroup__root"
+    "seed-select-box-group__root"
   ]
 ];
 

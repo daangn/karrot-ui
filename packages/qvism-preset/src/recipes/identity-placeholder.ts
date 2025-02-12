@@ -2,7 +2,7 @@ import { identityPlaceholder as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 
 const identityPlaceholder = defineRecipe({
-  name: "identityPlaceholder",
+  name: "identity-placeholder",
   slots: ["root", "image"],
   base: {
     root: {

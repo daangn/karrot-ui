@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { not, pseudo } from "../utils/pseudo";
 
 const avatarStack = defineRecipe({
-  name: "avatarStack",
+  name: "avatar-stack",
   slots: ["root", "item"],
   base: {
     root: {

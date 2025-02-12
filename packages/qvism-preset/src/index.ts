@@ -86,5 +86,6 @@ const recipes = {
 };
 
 export default {
+  prefix: "seed",
   recipes,
 };

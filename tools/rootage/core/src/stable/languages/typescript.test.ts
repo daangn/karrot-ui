@@ -1,7 +1,11 @@
 import { describe, expect, it, test } from "vitest";
 import YAML from "yaml";
 import { Authoring } from "../parser";
-import { getComponentSpecDts, getComponentSpecMjs, getTokenDts, getTokenMjs } from "./typescript";
+import { createStringifier } from "./typescript";
+
+const { getComponentSpecDts, getComponentSpecMjs, getTokenDts, getTokenMjs } = createStringifier({
+  prefix: "seed",
+});
 
 describe("getTokenMjs", () => {
   it("should generate esm definitions", () => {

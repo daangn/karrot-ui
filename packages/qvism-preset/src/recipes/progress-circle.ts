@@ -2,7 +2,7 @@ import { progressCircle as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 
 const progressCircle = defineRecipe({
-  name: "progressCircle",
+  name: "progress-circle",
   slots: ["root", "track", "range"],
   base: {
     root: {

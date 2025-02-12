@@ -5,15 +5,15 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const extendedFabSlotNames = [
   [
     "root",
-    "extendedFab__root"
+    "seed-extended-fab__root"
   ],
   [
     "label",
-    "extendedFab__label"
+    "seed-extended-fab__label"
   ],
   [
     "prefixIcon",
-    "extendedFab__prefixIcon"
+    "seed-extended-fab__prefixIcon"
   ]
 ];
 

@@ -5,43 +5,43 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const inlineBannerSlotNames = [
   [
     "root",
-    "inlineBanner__root"
+    "seed-inline-banner__root"
   ],
   [
     "content",
-    "inlineBanner__content"
+    "seed-inline-banner__content"
   ],
   [
     "icon",
-    "inlineBanner__icon"
+    "seed-inline-banner__icon"
   ],
   [
     "title",
-    "inlineBanner__title"
+    "seed-inline-banner__title"
   ],
   [
     "spacer",
-    "inlineBanner__spacer"
+    "seed-inline-banner__spacer"
   ],
   [
     "description",
-    "inlineBanner__description"
+    "seed-inline-banner__description"
   ],
   [
     "linkLabel",
-    "inlineBanner__linkLabel"
+    "seed-inline-banner__linkLabel"
   ],
   [
     "actionableIcon",
-    "inlineBanner__actionableIcon"
+    "seed-inline-banner__actionableIcon"
   ],
   [
     "dismissButton",
-    "inlineBanner__dismissButton"
+    "seed-inline-banner__dismissButton"
   ],
   [
     "dismissIcon",
-    "inlineBanner__dismissIcon"
+    "seed-inline-banner__dismissIcon"
   ]
 ];
 

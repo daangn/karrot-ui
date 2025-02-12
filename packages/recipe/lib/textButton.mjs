@@ -5,19 +5,19 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const textButtonSlotNames = [
   [
     "root",
-    "textButton__root"
+    "seed-text-button__root"
   ],
   [
     "prefixIcon",
-    "textButton__prefixIcon"
+    "seed-text-button__prefixIcon"
   ],
   [
     "suffixIcon",
-    "textButton__suffixIcon"
+    "seed-text-button__suffixIcon"
   ],
   [
     "label",
-    "textButton__label"
+    "seed-text-button__label"
   ]
 ];
 

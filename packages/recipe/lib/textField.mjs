@@ -5,71 +5,71 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const textFieldSlotNames = [
   [
     "root",
-    "textField__root"
+    "seed-text-field__root"
   ],
   [
     "header",
-    "textField__header"
+    "seed-text-field__header"
   ],
   [
     "label",
-    "textField__label"
+    "seed-text-field__label"
   ],
   [
     "indicator",
-    "textField__indicator"
+    "seed-text-field__indicator"
   ],
   [
     "field",
-    "textField__field"
+    "seed-text-field__field"
   ],
   [
     "value",
-    "textField__value"
+    "seed-text-field__value"
   ],
   [
     "prefixText",
-    "textField__prefixText"
+    "seed-text-field__prefixText"
   ],
   [
     "prefixIcon",
-    "textField__prefixIcon"
+    "seed-text-field__prefixIcon"
   ],
   [
     "suffixText",
-    "textField__suffixText"
+    "seed-text-field__suffixText"
   ],
   [
     "suffixIcon",
-    "textField__suffixIcon"
+    "seed-text-field__suffixIcon"
   ],
   [
     "footer",
-    "textField__footer"
+    "seed-text-field__footer"
   ],
   [
     "description",
-    "textField__description"
+    "seed-text-field__description"
   ],
   [
     "errorMessage",
-    "textField__errorMessage"
+    "seed-text-field__errorMessage"
   ],
   [
     "errorIcon",
-    "textField__errorIcon"
+    "seed-text-field__errorIcon"
   ],
   [
     "characterCountArea",
-    "textField__characterCountArea"
+    "seed-text-field__characterCountArea"
   ],
   [
     "characterCount",
-    "textField__characterCount"
+    "seed-text-field__characterCount"
   ],
   [
     "maxCharacterCount",
-    "textField__maxCharacterCount"
+    "seed-text-field__maxCharacterCount"
   ]
 ];
 

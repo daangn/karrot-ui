@@ -1,4 +1,4 @@
-.helpBubble__backdrop {
+.seed-help-bubble__backdrop {
     position: fixed;
     inset: 0;
     z-index: 1000;
@@ -6,10 +6,10 @@
     height: 100vh;
     background: var(--seed-color-bg-overlay);
 }
-.helpBubble__backdrop:is(:hidden, [hidden], [data-hidden]) {
+.seed-help-bubble__backdrop:is(:hidden, [hidden], [data-hidden]) {
     display: none !important;
 }
-.helpBubble__content {
+.seed-help-bubble__content {
     display: flex;
     flex-direction: column;
     background: var(--seed-color-bg-neutral-solid);
@@ -18,25 +18,25 @@
     border-radius: var(--seed-radius-r3);
     word-break: keep-all;
 }
-.helpBubble__content:is(:hidden, [hidden], [data-hidden]) {
+.seed-help-bubble__content:is(:hidden, [hidden], [data-hidden]) {
     display: none !important;
 }
-.helpBubble__arrow {
+.seed-help-bubble__arrow {
     fill: var(--seed-color-bg-neutral-solid);
     width: 10px;
     height: 6px;
 }
-.helpBubble__title {
+.seed-help-bubble__title {
     color: var(--seed-color-palette-static-white);
     font-size: var(--seed-font-size-t3);
     font-weight: var(--seed-font-weight-bold);
 }
-.helpBubble__description {
+.seed-help-bubble__description {
     color: var(--seed-color-palette-static-white);
     font-size: var(--seed-font-size-t3);
     font-weight: var(--seed-font-weight-regular);
 }
-.helpBubble__closeButton {
+.seed-help-bubble__closeButton {
     position: absolute;
     display: flex;
     align-items: center;
@@ -47,7 +47,7 @@
     width: 32px;
     height: 32px;
 }
-.helpBubble__closeIcon {
+.seed-help-bubble__closeIcon {
     width: 14px;
     height: 14px;
 }

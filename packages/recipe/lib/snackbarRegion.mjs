@@ -5,7 +5,7 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const snackbarRegionSlotNames = [
   [
     "root",
-    "snackbarRegion__root"
+    "seed-snackbar-region__root"
   ]
 ];
 

@@ -6,7 +6,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 
 const extendedActionSheetItem = defineRecipe({
-  name: "extendedActionSheetItem",
+  name: "extended-action-sheet-item",
   slots: ["root", "prefixIcon", "label"],
   base: {
     root: {

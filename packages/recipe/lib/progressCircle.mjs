@@ -5,15 +5,15 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const progressCircleSlotNames = [
   [
     "root",
-    "progressCircle__root"
+    "seed-progress-circle__root"
   ],
   [
     "track",
-    "progressCircle__track"
+    "seed-progress-circle__track"
   ],
   [
     "range",
-    "progressCircle__range"
+    "seed-progress-circle__range"
   ]
 ];
 

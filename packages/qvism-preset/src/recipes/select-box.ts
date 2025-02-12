@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, checked, pseudo } from "../utils/pseudo";
 
 export const selectBoxGroup = defineRecipe({
-  name: "selectBoxGroup",
+  name: "select-box-group",
   slots: ["root"],
   base: {
     root: {
@@ -17,7 +17,7 @@ export const selectBoxGroup = defineRecipe({
 });
 
 export const selectBox = defineRecipe({
-  name: "selectBox",
+  name: "select-box",
   slots: [
     "root",
     "content",

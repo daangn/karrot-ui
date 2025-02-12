@@ -20,10 +20,10 @@ export function stringifyValueLit(lit: AST.ValueLit): string {
   switch (lit.kind) {
     case "DimensionLit":
       return lit.unit === "rem"
-        ? `${css.stringifyValueLit(lit)} (${lit.value}rem)`
-        : css.stringifyValueLit(lit);
+        ? `${css.staticStringifier.value(lit)} (${lit.value}rem)`
+        : css.staticStringifier.value(lit);
     default:
-      return css.stringifyValueLit(lit);
+      return css.staticStringifier.value(lit);
   }
 }
 

@@ -1,4 +1,4 @@
-.extendedActionSheetCloseButton__root {
+.seed-extended-action-sheet-close-button__root {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,10 +8,10 @@
     padding-block: var(--seed-dimension-x3_5);
     border-radius: var(--seed-radius-r3);
 }
-.extendedActionSheetCloseButton__root:is(:active, [data-active]) {
+.seed-extended-action-sheet-close-button__root:is(:active, [data-active]) {
     background-color: var(--seed-color-bg-neutral-weak-pressed);
 }
-.extendedActionSheetCloseButton__label {
+.seed-extended-action-sheet-close-button__label {
     color: var(--seed-color-fg-neutral);
     font-size: var(--seed-font-size-t5);
     line-height: var(--seed-line-height-t5);

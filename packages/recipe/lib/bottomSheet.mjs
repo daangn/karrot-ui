@@ -5,43 +5,43 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const bottomSheetSlotNames = [
   [
     "positioner",
-    "bottomSheet__positioner"
+    "seed-bottom-sheet__positioner"
   ],
   [
     "backdrop",
-    "bottomSheet__backdrop"
+    "seed-bottom-sheet__backdrop"
   ],
   [
     "content",
-    "bottomSheet__content"
+    "seed-bottom-sheet__content"
   ],
   [
     "header",
-    "bottomSheet__header"
+    "seed-bottom-sheet__header"
   ],
   [
     "body",
-    "bottomSheet__body"
+    "seed-bottom-sheet__body"
   ],
   [
     "footer",
-    "bottomSheet__footer"
+    "seed-bottom-sheet__footer"
   ],
   [
     "title",
-    "bottomSheet__title"
+    "seed-bottom-sheet__title"
   ],
   [
     "description",
-    "bottomSheet__description"
+    "seed-bottom-sheet__description"
   ],
   [
     "closeButton",
-    "bottomSheet__closeButton"
+    "seed-bottom-sheet__closeButton"
   ],
   [
     "closeIcon",
-    "bottomSheet__closeIcon"
+    "seed-bottom-sheet__closeIcon"
   ]
 ];
 

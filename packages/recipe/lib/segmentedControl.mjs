@@ -5,19 +5,19 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const segmentedControlSlotNames = [
   [
     "root",
-    "segmentedControl__root"
+    "seed-segmented-control__root"
   ],
   [
     "indicator",
-    "segmentedControl__indicator"
+    "seed-segmented-control__indicator"
   ],
   [
     "item",
-    "segmentedControl__item"
+    "seed-segmented-control__item"
   ],
   [
     "itemLabel",
-    "segmentedControl__itemLabel"
+    "seed-segmented-control__itemLabel"
   ]
 ];
 

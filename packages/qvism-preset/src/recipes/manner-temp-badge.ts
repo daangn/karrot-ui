@@ -2,7 +2,7 @@ import { mannerTempBadge as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 
 const mannerTempBadge = defineRecipe({
-  name: "mannerTempBadge",
+  name: "manner-temp-badge",
   slots: ["root", "label"],
   base: {
     root: {

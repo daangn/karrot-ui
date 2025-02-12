@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const fabSlotNames = [
   [
     "root",
-    "fab__root"
+    "seed-fab__root"
   ],
   [
     "icon",
-    "fab__icon"
+    "seed-fab__icon"
   ]
 ];
 

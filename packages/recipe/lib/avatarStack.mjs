@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const avatarStackSlotNames = [
   [
     "root",
-    "avatarStack__root"
+    "seed-avatar-stack__root"
   ],
   [
     "item",
-    "avatarStack__item"
+    "seed-avatar-stack__item"
   ]
 ];
 

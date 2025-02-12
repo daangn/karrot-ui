@@ -5,27 +5,27 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const actionChipSlotNames = [
   [
     "root",
-    "actionChip__root"
+    "seed-action-chip__root"
   ],
   [
     "label",
-    "actionChip__label"
+    "seed-action-chip__label"
   ],
   [
     "icon",
-    "actionChip__icon"
+    "seed-action-chip__icon"
   ],
   [
     "prefixIcon",
-    "actionChip__prefixIcon"
+    "seed-action-chip__prefixIcon"
   ],
   [
     "suffixIcon",
-    "actionChip__suffixIcon"
+    "seed-action-chip__suffixIcon"
   ],
   [
     "count",
-    "actionChip__count"
+    "seed-action-chip__count"
   ]
 ];
 

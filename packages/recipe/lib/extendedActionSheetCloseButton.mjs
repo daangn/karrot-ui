@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const extendedActionSheetCloseButtonSlotNames = [
   [
     "root",
-    "extendedActionSheetCloseButton__root"
+    "seed-extended-action-sheet-close-button__root"
   ],
   [
     "label",
-    "extendedActionSheetCloseButton__label"
+    "seed-extended-action-sheet-close-button__label"
   ]
 ];
 

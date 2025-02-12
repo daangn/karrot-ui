@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 
 const extendedActionSheetCloseButton = defineRecipe({
-  name: "extendedActionSheetCloseButton",
+  name: "extended-action-sheet-close-button",
   slots: ["root", "label"],
   base: {
     root: {

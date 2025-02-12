@@ -5,39 +5,39 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const tabsSlotNames = [
   [
     "root",
-    "tabs__root"
+    "seed-tabs__root"
   ],
   [
     "list",
-    "tabs__list"
+    "seed-tabs__list"
   ],
   [
     "carousel",
-    "tabs__carousel"
+    "seed-tabs__carousel"
   ],
   [
     "carouselCamera",
-    "tabs__carouselCamera"
+    "seed-tabs__carouselCamera"
   ],
   [
     "content",
-    "tabs__content"
+    "seed-tabs__content"
   ],
   [
     "indicator",
-    "tabs__indicator"
+    "seed-tabs__indicator"
   ],
   [
     "trigger",
-    "tabs__trigger"
+    "seed-tabs__trigger"
   ],
   [
     "triggerLabel",
-    "tabs__triggerLabel"
+    "seed-tabs__triggerLabel"
   ],
   [
     "triggerNotification",
-    "tabs__triggerNotification"
+    "seed-tabs__triggerNotification"
   ]
 ];
 

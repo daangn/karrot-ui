@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, disabled, focus, pseudo } from "../utils/pseudo";
 
 const extendedFab = defineRecipe({
-  name: "extendedFab",
+  name: "extended-fab",
   slots: ["root", "label", "prefixIcon"],
   base: {
     root: {

@@ -5,7 +5,7 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const textSlotNames = [
   [
     "root",
-    "text__root"
+    "seed-text__root"
   ]
 ];
 

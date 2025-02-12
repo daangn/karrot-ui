@@ -5,27 +5,27 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const controlChipSlotNames = [
   [
     "root",
-    "controlChip__root"
+    "seed-control-chip__root"
   ],
   [
     "label",
-    "controlChip__label"
+    "seed-control-chip__label"
   ],
   [
     "icon",
-    "controlChip__icon"
+    "seed-control-chip__icon"
   ],
   [
     "prefixIcon",
-    "controlChip__prefixIcon"
+    "seed-control-chip__prefixIcon"
   ],
   [
     "suffixIcon",
-    "controlChip__suffixIcon"
+    "seed-control-chip__suffixIcon"
   ],
   [
     "count",
-    "controlChip__count"
+    "seed-control-chip__count"
   ]
 ];
 

@@ -5,35 +5,35 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const helpBubbleSlotNames = [
   [
     "positioner",
-    "helpBubble__positioner"
+    "seed-help-bubble__positioner"
   ],
   [
     "backdrop",
-    "helpBubble__backdrop"
+    "seed-help-bubble__backdrop"
   ],
   [
     "content",
-    "helpBubble__content"
+    "seed-help-bubble__content"
   ],
   [
     "arrow",
-    "helpBubble__arrow"
+    "seed-help-bubble__arrow"
   ],
   [
     "title",
-    "helpBubble__title"
+    "seed-help-bubble__title"
   ],
   [
     "description",
-    "helpBubble__description"
+    "seed-help-bubble__description"
   ],
   [
     "closeButton",
-    "helpBubble__closeButton"
+    "seed-help-bubble__closeButton"
   ],
   [
     "closeIcon",
-    "helpBubble__closeIcon"
+    "seed-help-bubble__closeIcon"
   ]
 ];
 

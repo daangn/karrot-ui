@@ -5,7 +5,7 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const visuallyHiddenSlotNames = [
   [
     "root",
-    "visuallyHidden__root"
+    "seed-visually-hidden__root"
   ]
 ];
 

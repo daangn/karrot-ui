@@ -5,31 +5,31 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const chipTabsSlotNames = [
   [
     "root",
-    "chipTabs__root"
+    "seed-chip-tabs__root"
   ],
   [
     "list",
-    "chipTabs__list"
+    "seed-chip-tabs__list"
   ],
   [
     "carousel",
-    "chipTabs__carousel"
+    "seed-chip-tabs__carousel"
   ],
   [
     "carouselCamera",
-    "chipTabs__carouselCamera"
+    "seed-chip-tabs__carouselCamera"
   ],
   [
     "content",
-    "chipTabs__content"
+    "seed-chip-tabs__content"
   ],
   [
     "trigger",
-    "chipTabs__trigger"
+    "seed-chip-tabs__trigger"
   ],
   [
     "triggerLabel",
-    "chipTabs__triggerLabel"
+    "seed-chip-tabs__triggerLabel"
   ]
 ];
 

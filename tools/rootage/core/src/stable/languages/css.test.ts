@@ -1,16 +1,20 @@
 import { expect, test } from "vitest";
 import { factory, Authoring } from "../parser";
-import { getTokenCss, stringifyTokenReference, stringifyValueLit } from "./css";
+import { createStringifier, getTokenCss } from "./css";
 
-test("stringifyTokenReference should stringify token expression", () => {
+const { value, tokenReference } = createStringifier({
+  prefix: "seed",
+});
+
+test("stringifier.tokenReference should stringify token expression", () => {
   const token = factory.createTokenLit("$color.bg.layer-1");
 
-  const result = stringifyTokenReference(token);
+  const result = tokenReference(token);
 
   expect(result).toEqual("var(--seed-color-bg-layer-1)");
 });
 
-test("stringifyValueExpression should stringify shadow expression", () => {
+test("stringifier.value should stringify shadow expression", () => {
   const shadow = factory.createShadowLit([
     factory.createShadowLayerLit(
       factory.createColorHexLit("#000000"),
@@ -21,18 +25,18 @@ test("stringifyValueExpression should stringify shadow expression", () => {
     ),
   ]);
 
-  const result = stringifyValueLit(shadow);
+  const result = value(shadow);
 
   expect(result).toEqual("2px 3px 4px 0px #000000");
 });
 
-test("stringifyValueExpression should stringify gradient expression", () => {
+test("stringifier.value should stringify gradient expression", () => {
   const gradient = factory.createGradientLit([
     factory.createGradientStopLit(factory.createColorHexLit("#000000"), factory.createNumberLit(0)),
     factory.createGradientStopLit(factory.createColorHexLit("#ffffff"), factory.createNumberLit(1)),
   ]);
 
-  const result = stringifyValueLit(gradient);
+  const result = value(gradient);
 
   expect(result).toEqual("#000000 0%, #ffffff 100%");
 });
@@ -107,6 +111,7 @@ test("getTokenCss should generate css code", () => {
       tokens: tokens.flatMap((x) => Authoring.parseTokensDocument(x).data),
     },
     {
+      prefix: "seed",
       banner: "",
       selectors: {
         global: {

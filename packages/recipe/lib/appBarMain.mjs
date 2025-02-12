@@ -5,15 +5,15 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const appBarMainSlotNames = [
   [
     "root",
-    "appBarMain__root"
+    "seed-app-bar-main__root"
   ],
   [
     "title",
-    "appBarMain__title"
+    "seed-app-bar-main__title"
   ],
   [
     "subtitle",
-    "appBarMain__subtitle"
+    "seed-app-bar-main__subtitle"
   ]
 ];
 

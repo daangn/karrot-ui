@@ -5,23 +5,23 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const toggleButtonSlotNames = [
   [
     "root",
-    "toggleButton__root"
+    "seed-toggle-button__root"
   ],
   [
     "label",
-    "toggleButton__label"
+    "seed-toggle-button__label"
   ],
   [
     "prefixIcon",
-    "toggleButton__prefixIcon"
+    "seed-toggle-button__prefixIcon"
   ],
   [
     "suffixIcon",
-    "toggleButton__suffixIcon"
+    "seed-toggle-button__suffixIcon"
   ],
   [
     "progressIndicator",
-    "toggleButton__progressIndicator"
+    "seed-toggle-button__progressIndicator"
   ]
 ];
 

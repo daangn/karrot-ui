@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const pullToRefreshSlotNames = [
   [
     "root",
-    "pullToRefresh__root"
+    "seed-pull-to-refresh__root"
   ],
   [
     "indicator",
-    "pullToRefresh__indicator"
+    "seed-pull-to-refresh__indicator"
   ]
 ];
 

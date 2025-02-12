@@ -1,50 +1,50 @@
-.progressCircle__root {
+.seed-progress-circle__root {
     display: inline-flex;
     box-sizing: border-box;
     position: relative;
 }
-.progressCircle__root[data-progress-state=indeterminate] {
+.seed-progress-circle__root[data-progress-state=indeterminate] {
     animation: progressCircle-rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite;
 }
-.progressCircle__track {
+.seed-progress-circle__track {
     stroke: var(--track-color);
 }
-.progressCircle__range {
+.seed-progress-circle__range {
     stroke: var(--range-color);
     stroke-linecap: round;
     transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0, 0, 0.15, 1);
     transition-property: stroke-dasharray;
 }
-.progressCircle__range[data-progress-state=indeterminate] {
+.seed-progress-circle__range[data-progress-state=indeterminate] {
     animation: 
           progressCircle-headDash 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
           progressCircle-tailDash 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
         ;
 }
-.progressCircle__root--tone_neutral {
+.seed-progress-circle__root--tone_neutral {
     --track-color: var(--seed-color-palette-gray-200);
     --range-color: var(--seed-color-palette-gray-500);
 }
-.progressCircle__root--tone_brand {
+.seed-progress-circle__root--tone_brand {
     --track-color: var(--seed-color-palette-carrot-200);
     --range-color: var(--seed-color-bg-brand-solid);
 }
-.progressCircle__root--tone_staticWhite {
+.seed-progress-circle__root--tone_staticWhite {
     --track-color: var(--seed-color-palette-static-white-alpha-200);
     --range-color: var(--seed-color-palette-static-white);
 }
-.progressCircle__root--tone_inherit {}
-.progressCircle__root--size_24 {
+.seed-progress-circle__root--tone_inherit {}
+.seed-progress-circle__root--size_24 {
     --size: var(--seed-dimension-x6);
     --thickness: 3px;
 }
-.progressCircle__root--size_40 {
+.seed-progress-circle__root--size_40 {
     --size: var(--seed-dimension-x10);
     --thickness: 5px;
 }
-.progressCircle__root--size_inherit {}
-@keyframes progressCircle-rotate {
+.seed-progress-circle__root--size_inherit {}
+@keyframes progress-circle-rotate {
     from {
         transform: rotate(0deg);
     }
@@ -52,7 +52,7 @@
         transform: rotate(360deg);
     }
 }
-@keyframes progressCircle-headDash {
+@keyframes progress-circle-headDash {
     0% {
         stroke-dasharray: 0, 1000%;
     }
@@ -63,7 +63,7 @@
         stroke-dasharray: var(--circumference), 1000%;
     }
 }
-@keyframes progressCircle-tailDash {
+@keyframes progress-circle-tailDash {
     0% {
         stroke-dashoffset: 0;
     }

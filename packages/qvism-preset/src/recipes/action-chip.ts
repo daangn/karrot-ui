@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, disabled, focus, pseudo } from "../utils/pseudo";
 
 const actionChip = defineRecipe({
-  name: "actionChip",
+  name: "action-chip",
   slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "count"],
   base: {
     root: {

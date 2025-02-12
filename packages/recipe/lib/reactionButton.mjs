@@ -5,23 +5,23 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const reactionButtonSlotNames = [
   [
     "root",
-    "reactionButton__root"
+    "seed-reaction-button__root"
   ],
   [
     "label",
-    "reactionButton__label"
+    "seed-reaction-button__label"
   ],
   [
     "count",
-    "reactionButton__count"
+    "seed-reaction-button__count"
   ],
   [
     "prefixIcon",
-    "reactionButton__prefixIcon"
+    "seed-reaction-button__prefixIcon"
   ],
   [
     "progressIndicator",
-    "reactionButton__progressIndicator"
+    "seed-reaction-button__progressIndicator"
   ]
 ];
 

@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const mannerTempBadgeSlotNames = [
   [
     "root",
-    "mannerTempBadge__root"
+    "seed-manner-temp-badge__root"
   ],
   [
     "label",
-    "mannerTempBadge__label"
+    "seed-manner-temp-badge__label"
   ]
 ];
 

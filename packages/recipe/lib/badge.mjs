@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const badgeSlotNames = [
   [
     "root",
-    "badge__root"
+    "seed-badge__root"
   ],
   [
     "label",
-    "badge__label"
+    "seed-badge__label"
   ]
 ];
 

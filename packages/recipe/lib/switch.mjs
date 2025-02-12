@@ -5,19 +5,19 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const switchSlotNames = [
   [
     "root",
-    "switch__root"
+    "seed-switch__root"
   ],
   [
     "control",
-    "switch__control"
+    "seed-switch__control"
   ],
   [
     "thumb",
-    "switch__thumb"
+    "seed-switch__thumb"
   ],
   [
     "label",
-    "switch__label"
+    "seed-switch__label"
   ]
 ];
 

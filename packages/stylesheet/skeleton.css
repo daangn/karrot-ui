@@ -1,10 +1,10 @@
-.skeleton__root {
+.seed-skeleton__root {
     display: inline-block;
     box-sizing: border-box;
     overflow: hidden;
     background: var(--seed-color-palette-gray-200);
 }
-.skeleton__root::after {
+.seed-skeleton__root::after {
     content: '';
     display: block;
     width: 100%;
@@ -17,16 +17,16 @@
     animation-timing-function: var(--seed-timing-function-easing);
     animation-iteration-count: infinite;
 }
-.skeleton__root--radius_0 {
+.seed-skeleton__root--radius_0 {
     border-radius: 0px;
 }
-.skeleton__root--radius_8 {
+.seed-skeleton__root--radius_8 {
     border-radius: 8px;
 }
-.skeleton__root--radius_16 {
+.seed-skeleton__root--radius_16 {
     border-radius: 16px;
 }
-.skeleton__root--radius_full {
+.seed-skeleton__root--radius_full {
     border-radius: var(--seed-radius-full);
 }
 @keyframes skeleton-shimmer {

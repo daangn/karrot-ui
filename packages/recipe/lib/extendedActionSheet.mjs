@@ -5,35 +5,35 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const extendedActionSheetSlotNames = [
   [
     "backdrop",
-    "extendedActionSheet__backdrop"
+    "seed-extended-action-sheet__backdrop"
   ],
   [
     "positioner",
-    "extendedActionSheet__positioner"
+    "seed-extended-action-sheet__positioner"
   ],
   [
     "content",
-    "extendedActionSheet__content"
+    "seed-extended-action-sheet__content"
   ],
   [
     "header",
-    "extendedActionSheet__header"
+    "seed-extended-action-sheet__header"
   ],
   [
     "title",
-    "extendedActionSheet__title"
+    "seed-extended-action-sheet__title"
   ],
   [
     "list",
-    "extendedActionSheet__list"
+    "seed-extended-action-sheet__list"
   ],
   [
     "group",
-    "extendedActionSheet__group"
+    "seed-extended-action-sheet__group"
   ],
   [
     "footer",
-    "extendedActionSheet__footer"
+    "seed-extended-action-sheet__footer"
   ]
 ];
 

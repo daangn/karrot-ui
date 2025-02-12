@@ -5,35 +5,35 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const selectBoxSlotNames = [
   [
     "root",
-    "selectBox__root"
+    "seed-select-box__root"
   ],
   [
     "content",
-    "selectBox__content"
+    "seed-select-box__content"
   ],
   [
     "label",
-    "selectBox__label"
+    "seed-select-box__label"
   ],
   [
     "description",
-    "selectBox__description"
+    "seed-select-box__description"
   ],
   [
     "checkboxControl",
-    "selectBox__checkboxControl"
+    "seed-select-box__checkboxControl"
   ],
   [
     "checkboxIcon",
-    "selectBox__checkboxIcon"
+    "seed-select-box__checkboxIcon"
   ],
   [
     "radioControl",
-    "selectBox__radioControl"
+    "seed-select-box__radioControl"
   ],
   [
     "radioIcon",
-    "selectBox__radioIcon"
+    "seed-select-box__radioIcon"
   ]
 ];
 

@@ -14,7 +14,7 @@ import {
 } from "./pseudo";
 
 export const appScreen = defineRecipe({
-  name: "appScreen",
+  name: "app-screen",
   slots: ["root", "layer", "dim", "edge"],
   base: {
     root: {

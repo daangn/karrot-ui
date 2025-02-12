@@ -1,4 +1,4 @@
-.identityPlaceholder__root {
+.seed-identity-placeholder__root {
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
@@ -9,7 +9,7 @@
     height: 100%;
     background-color: var(--seed-color-palette-gray-400)
 }
-.identityPlaceholder__image {
+.seed-identity-placeholder__image {
     display: block;
     width: 100%;
     height: 100%;

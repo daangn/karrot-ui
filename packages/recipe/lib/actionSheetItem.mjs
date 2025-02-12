@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const actionSheetItemSlotNames = [
   [
     "root",
-    "actionSheetItem__root"
+    "seed-action-sheet-item__root"
   ],
   [
     "label",
-    "actionSheetItem__label"
+    "seed-action-sheet-item__label"
   ]
 ];
 

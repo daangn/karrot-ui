@@ -5,27 +5,27 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const actionButtonSlotNames = [
   [
     "root",
-    "actionButton__root"
+    "seed-action-button__root"
   ],
   [
     "label",
-    "actionButton__label"
+    "seed-action-button__label"
   ],
   [
     "icon",
-    "actionButton__icon"
+    "seed-action-button__icon"
   ],
   [
     "prefixIcon",
-    "actionButton__prefixIcon"
+    "seed-action-button__prefixIcon"
   ],
   [
     "suffixIcon",
-    "actionButton__suffixIcon"
+    "seed-action-button__suffixIcon"
   ],
   [
     "progressIndicator",
-    "actionButton__progressIndicator"
+    "seed-action-button__progressIndicator"
   ]
 ];
 

@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { disabled, focus, active, pseudo, loading } from "../utils/pseudo";
 
 const actionButton = defineRecipe({
-  name: "actionButton",
+  name: "action-button",
   slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "progressIndicator"],
   base: {
     root: {

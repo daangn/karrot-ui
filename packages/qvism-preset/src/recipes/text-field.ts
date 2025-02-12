@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { pseudo, focus, disabled, not, readOnly, invalid } from "../utils/pseudo";
 
 const textField = defineRecipe({
-  name: "textField",
+  name: "text-field",
   slots: [
     "root",
     "header",

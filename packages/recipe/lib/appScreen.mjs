@@ -5,19 +5,19 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const appScreenSlotNames = [
   [
     "root",
-    "appScreen__root"
+    "seed-app-screen__root"
   ],
   [
     "layer",
-    "appScreen__layer"
+    "seed-app-screen__layer"
   ],
   [
     "dim",
-    "appScreen__dim"
+    "seed-app-screen__dim"
   ],
   [
     "edge",
-    "appScreen__edge"
+    "seed-app-screen__edge"
   ]
 ];
 

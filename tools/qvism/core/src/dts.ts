@@ -1,10 +1,9 @@
 import { outdent } from "outdent";
 
+import { camelCase, pascalCase } from "change-case";
 import { isBooleanString, not } from "./logic";
 import { escapeReservedWord } from "./reserved-words";
 import type { SlotRecipeDefinition, SlotRecipeVariantRecord, StyleObject } from "./types";
-
-const capitalize = (str: string) => str[0]!.toUpperCase() + str.slice(1);
 
 const stringLiteralType = (key: string) => `"${key}"`;
 
@@ -50,7 +49,8 @@ const generateVariantInterface = (
 export function generateDts(
   definition: SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>,
 ): string {
-  const capitalizedName = capitalize(definition.name);
+  const capitalizedName = pascalCase(definition.name);
+  const jsName = camelCase(definition.name);
   const variantInterface = generateVariantInterface(
     definition.variants,
     definition.defaultVariants,
@@ -70,9 +70,9 @@ export function generateDts(
   
   export declare type ${capitalizedName}SlotName = ${slotNameType};
   
-  export declare const ${definition.name}VariantMap: ${capitalizedName}VariantMap;
+  export declare const ${jsName}VariantMap: ${capitalizedName}VariantMap;
   
-  export declare const ${escapeReservedWord(definition.name)}: ((
+  export declare const ${escapeReservedWord(jsName)}: ((
     props?: ${capitalizedName}VariantProps,
   ) => Record<${capitalizedName}SlotName, string>) & {
     splitVariantProps: <T extends ${capitalizedName}VariantProps>(

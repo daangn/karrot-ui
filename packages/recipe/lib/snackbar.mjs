@@ -5,19 +5,19 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const snackbarSlotNames = [
   [
     "root",
-    "snackbar__root"
+    "seed-snackbar__root"
   ],
   [
     "message",
-    "snackbar__message"
+    "seed-snackbar__message"
   ],
   [
     "prefixIcon",
-    "snackbar__prefixIcon"
+    "seed-snackbar__prefixIcon"
   ],
   [
     "actionButton",
-    "snackbar__actionButton"
+    "seed-snackbar__actionButton"
   ]
 ];
 

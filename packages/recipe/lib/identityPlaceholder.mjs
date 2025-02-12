@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const identityPlaceholderSlotNames = [
   [
     "root",
-    "identityPlaceholder__root"
+    "seed-identity-placeholder__root"
   ],
   [
     "image",
-    "identityPlaceholder__image"
+    "seed-identity-placeholder__image"
   ]
 ];
 

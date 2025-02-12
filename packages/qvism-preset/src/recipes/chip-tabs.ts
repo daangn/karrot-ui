@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, disabled, not, pseudo, selected } from "../utils/pseudo";
 
 const chipTabs = defineRecipe({
-  name: "chipTabs",
+  name: "chip-tabs",
   slots: ["root", "list", "carousel", "carouselCamera", "content", "trigger", "triggerLabel"],
   base: {
     root: {

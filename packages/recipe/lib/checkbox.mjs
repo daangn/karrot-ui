@@ -5,19 +5,19 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const checkboxSlotNames = [
   [
     "root",
-    "checkbox__root"
+    "seed-checkbox__root"
   ],
   [
     "control",
-    "checkbox__control"
+    "seed-checkbox__control"
   ],
   [
     "icon",
-    "checkbox__icon"
+    "seed-checkbox__icon"
   ],
   [
     "label",
-    "checkbox__label"
+    "seed-checkbox__label"
   ]
 ];
 

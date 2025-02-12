@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 
 const actionSheetCloseButton = defineRecipe({
-  name: "actionSheetCloseButton",
+  name: "action-sheet-close-button",
   slots: ["root", "label"],
   base: {
     root: {

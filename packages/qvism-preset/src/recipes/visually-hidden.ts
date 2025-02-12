@@ -1,7 +1,7 @@
 import { defineRecipe } from "../utils/define-recipe";
 
 const visuallyHidden = defineRecipe({
-  name: "visuallyHidden",
+  name: "visually-hidden",
   slots: ["root"],
   base: {
     root: {
