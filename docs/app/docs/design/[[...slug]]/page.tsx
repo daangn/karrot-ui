@@ -6,15 +6,9 @@ import { PortableContent } from "@/sanity/lib/sanity-content";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PortableTextBlock } from "sanity";
 
 function getPath(slug: string[]) {
   return slug.join("/");
-}
-
-function styleToLevel(style: unknown) {
-  if (typeof style !== "string") return;
-  return Number.parseInt(style.split("h")[1]);
 }
 
 export default async function Page({
@@ -22,37 +16,16 @@ export default async function Page({
 }: {
   params: { slug?: string[] };
 }) {
-  const page = source.getPage(params.slug);
+  const fullPath = ["design", ...(params.slug ?? [])];
+  const page = source.getPage(fullPath);
   if (!page) notFound();
 
   const MDX = page.data.body;
   const path = getPath(params.slug ?? []);
-  const guideline = params.slug?.includes("design")
-    ? await client.fetch(GUIDELINE_QUERY, { path })
-    : null;
-
-  const guidelineToc =
-    guideline?.toc?.map((item: PortableTextBlock) => {
-      return {
-        depth: item.level ?? styleToLevel(item.style) ?? 0,
-        title: (
-          <PortableContent
-            content={{
-              ...item,
-              style: undefined,
-            }}
-          />
-        ),
-        url: `#${item._key}`,
-      };
-    }) ?? [];
+  const guideline = await client.fetch(GUIDELINE_QUERY, { path });
 
   return (
-    <DocsPage
-      toc={[...guidelineToc, ...page.data.toc]}
-      full={page.data.full}
-      lastUpdate={page.data.lastModified}
-    >
+    <DocsPage toc={page.data.toc} full={page.data.full} lastUpdate={page.data.lastModified}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
@@ -64,11 +37,17 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return source.generateParams();
+  return source
+    .generateParams()
+    .filter((params) => params.slug?.[0] === "design")
+    .map((params) => ({
+      slug: params.slug?.slice(1),
+    }));
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = source.getPage(params.slug);
+  const fullPath = ["design", ...(params.slug ?? [])];
+  const page = source.getPage(fullPath);
   if (!page) notFound();
 
   return {
