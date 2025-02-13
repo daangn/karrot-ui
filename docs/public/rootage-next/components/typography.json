@@ -609,15 +609,15 @@
               "root": {
                 "fontSize": {
                   "type": "dimension",
-                  "value": "$font-size.t4"
+                  "value": "$font-size.t10"
                 },
                 "lineHeight": {
                   "type": "dimension",
-                  "value": "$line-height.t5"
+                  "value": "$line-height.t10"
                 },
                 "fontWeight": {
                   "type": "number",
-                  "value": "$font-weight.regular"
+                  "value": "$font-weight.bold"
                 }
               }
             }

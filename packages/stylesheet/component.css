@@ -4132,9 +4132,9 @@
 }
 
 .text__root--textStyle_t10Bold {
-  --seed-font-size: var(--seed-v3-font-size-t4);
-  --seed-line-height: var(--seed-v3-line-height-t5);
-  --seed-font-weight: var(--seed-v3-font-weight-regular);
+  --seed-font-size: var(--seed-v3-font-size-t10);
+  --seed-line-height: var(--seed-v3-line-height-t10);
+  --seed-font-weight: var(--seed-v3-font-weight-bold);
 }
 
 .text__root--maxLines_none {

@@ -197,9 +197,9 @@
     "textStyle=t10Bold": {
       "enabled": {
         "root": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t5",
-          "fontWeight": "$font-weight.regular"
+          "fontSize": "$font-size.t10",
+          "lineHeight": "$line-height.t10",
+          "fontWeight": "$font-weight.bold"
         }
       }
     }

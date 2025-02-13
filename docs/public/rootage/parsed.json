@@ -27183,7 +27183,7 @@
                         "group": [
                           "font-size"
                         ],
-                        "key": "t4"
+                        "key": "t10"
                       }
                     },
                     {
@@ -27193,7 +27193,7 @@
                         "group": [
                           "line-height"
                         ],
-                        "key": "t5"
+                        "key": "t10"
                       }
                     },
                     {
@@ -27203,7 +27203,7 @@
                         "group": [
                           "font-weight"
                         ],
-                        "key": "regular"
+                        "key": "bold"
                       }
                     }
                   ]
