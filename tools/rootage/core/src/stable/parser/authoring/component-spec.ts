@@ -2,7 +2,10 @@ import type {
   ComponentSpecDeclaration,
   ComponentSpecDocument,
   PropertyDeclaration,
+  PropertySchemaDeclaration,
+  SchemaDeclaration,
   SlotDeclaration,
+  SlotSchemaDeclaration,
   StateDeclaration,
   VariantDeclaration,
 } from "../ast";
@@ -27,11 +30,21 @@ export function parseComponentSpecDeclaration(
   const { id, name } = model.metadata;
   const body: VariantDeclaration[] = [];
 
-  for (const [key, value] of Object.entries(model.data)) {
+  for (const [key, value] of Object.entries(model.data.definitions)) {
     body.push(parseVariantDeclaration(key, value));
   }
 
-  return factory.createComponentSpecDeclaration(id, name, body);
+  return factory.createComponentSpecDeclaration(
+    id,
+    name,
+    parseSchemaDeclaration(
+      model.data.schema ?? {
+        // TODO: make schema required; temporarily default to empty schema
+        slots: [],
+      },
+    ),
+    body,
+  );
 }
 
 function parseVariantExpression(variantExpression: string) {
@@ -59,7 +72,7 @@ function parseStateExpression(stateExpression: string) {
 
 function parseVariantDeclaration(
   key: string,
-  decl: Document.ComponentSpecData[string],
+  decl: Document.ComponentSpecVariantDefinitions,
 ): VariantDeclaration {
   const variantExprs = Object.entries(parseVariantExpression(key)).map(([k, v]) =>
     factory.createVariantExpression(k, v),
@@ -128,4 +141,24 @@ function parsePropertyDeclaration(property: string, lhValue: Document.Value): Pr
     case "GradientLit":
       return factory.createGradientPropertyDeclaration(property, valueLit);
   }
+}
+
+function parsePropertySchemaDeclaration(
+  model: Document.ComponentSpecPropertySchema,
+): PropertySchemaDeclaration {
+  return factory.createPropertySchemaDeclaration(model.name, model.type, model.description);
+}
+
+function parseSlotSchemaDeclaration(
+  model: Document.ComponentSpecSlotSchema,
+): SlotSchemaDeclaration {
+  return factory.createSlotSchemaDeclaration(
+    model.name,
+    model.properties.map(parsePropertySchemaDeclaration),
+    model.description,
+  );
+}
+
+function parseSchemaDeclaration(model: Document.ComponentSpecSchema): SchemaDeclaration {
+  return factory.createSchemaDeclaration(model.slots.map(parseSlotSchemaDeclaration));
 }

@@ -76,7 +76,24 @@ export interface VariantDeclaration {
 export interface ComponentSpecData {
   id: string;
   name: string;
+  schema: ComponentSpecSchema;
   definitions: VariantDeclaration[];
+}
+
+export interface ComponentSpecPropertySchema {
+  name: string;
+  type: "color" | "dimension" | "number" | "duration" | "cubicBezier" | "shadow" | "gradient";
+  description?: string;
+}
+
+export interface ComponentSpecSlotSchema {
+  name: string;
+  properties: ComponentSpecPropertySchema[];
+  description?: string;
+}
+
+export interface ComponentSpecSchema {
+  slots: ComponentSpecSlotSchema[];
 }
 
 export interface TokensModel {

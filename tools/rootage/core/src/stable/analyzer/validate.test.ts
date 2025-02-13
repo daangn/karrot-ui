@@ -44,10 +44,17 @@ describe("validate", () => {
           id: "3"
           name: component
         data:
-          base:
-            enabled:
-              default:
-                color: "$color.bg.layer-1"`),
+          schema:
+            slots:
+              - name: root
+                properties:
+                  - name: color
+                    type: color
+          definitions:
+            base:
+              enabled:
+                default:
+                  color: "$color.bg.layer-1"`),
       },
     ];
 
@@ -174,10 +181,17 @@ describe("validate", () => {
           id: "3"
           name: component
         data:
-          base:
-            enabled:
-              default:
-                color: "$color.bg.layer-1"`),
+          schema:
+            slots:
+              - name: root
+                properties:
+                  - name: color
+                    type: color
+          definitions:
+            base:
+              enabled:
+                default:
+                  color: "$color.bg.layer-1"`),
       },
     ];
 

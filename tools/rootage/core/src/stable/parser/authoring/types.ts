@@ -81,13 +81,36 @@ export interface ComponentSpecModel {
 }
 
 export interface ComponentSpecData {
-  [variantExpression: string]: {
-    [state: string]: {
-      [slot: string]: {
-        [property: string]: Value;
-      };
+  schema?: ComponentSpecSchema;
+  definitions: ComponentSpecDefinitions;
+}
+
+export interface ComponentSpecVariantDefinitions {
+  [state: string]: {
+    [slot: string]: {
+      [property: string]: Value;
     };
   };
+}
+
+export interface ComponentSpecDefinitions {
+  [variantExpression: string]: ComponentSpecVariantDefinitions;
+}
+
+export interface ComponentSpecPropertySchema {
+  name: string;
+  type: "color" | "dimension" | "number" | "duration" | "cubicBezier" | "shadow" | "gradient";
+  description?: string;
+}
+
+export interface ComponentSpecSlotSchema {
+  name: string;
+  properties: ComponentSpecPropertySchema[];
+  description?: string;
+}
+
+export interface ComponentSpecSchema {
+  slots: ComponentSpecSlotSchema[];
 }
 
 export type Model = TokenCollectionsModel | TokensModel | ComponentSpecModel;

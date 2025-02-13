@@ -265,17 +265,32 @@ describe("resolveReferences", () => {
             id: "testid",
           },
           data: {
-            base: {
-              enabled: {
-                root: {
-                  color: "$color.bg.layer-default",
+            schema: {
+              slots: [
+                {
+                  name: "root",
+                  properties: [
+                    {
+                      name: "color",
+                      type: "color",
+                    },
+                  ],
+                },
+              ],
+            },
+            definitions: {
+              base: {
+                enabled: {
+                  root: {
+                    color: "$color.bg.layer-default",
+                  },
                 },
               },
-            },
-            "tone=layer": {
-              enabled: {
-                root: {
-                  color: "$color.bg.layer-default",
+              "tone=layer": {
+                enabled: {
+                  root: {
+                    color: "$color.bg.layer-default",
+                  },
                 },
               },
             },
@@ -403,10 +418,25 @@ describe("getTypeResolvedSourceFile", () => {
             id: "testid",
           },
           data: {
-            base: {
-              enabled: {
-                root: {
-                  color: "$color.bg.layer-1",
+            schema: {
+              slots: [
+                {
+                  name: "root",
+                  properties: [
+                    {
+                      name: "color",
+                      type: "color",
+                    },
+                  ],
+                },
+              ],
+            },
+            definitions: {
+              base: {
+                enabled: {
+                  root: {
+                    color: "$color.bg.layer-1",
+                  },
                 },
               },
             },

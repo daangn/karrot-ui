@@ -2,7 +2,10 @@ import type {
   ComponentSpecDeclaration,
   ComponentSpecDocument,
   PropertyDeclaration,
+  PropertySchemaDeclaration,
+  SchemaDeclaration,
   SlotDeclaration,
+  SlotSchemaDeclaration,
   StateDeclaration,
   VariantDeclaration,
 } from "../ast";
@@ -38,7 +41,12 @@ export function parseComponentSpecDeclaration(
     body.push(parseVariantDeclaration(variantDecl));
   }
 
-  return factory.createComponentSpecDeclaration(id, name, body);
+  return factory.createComponentSpecDeclaration(
+    id,
+    name,
+    parseSchemaDeclaration(data.schema),
+    body,
+  );
 }
 
 function parseVariantDeclaration(input: Document.VariantDeclaration): VariantDeclaration {
@@ -103,4 +111,24 @@ function parsePropertyDeclaration(property: string, lhValue: Document.Value): Pr
     case "gradient":
       return factory.createGradientPropertyDeclaration(property, parseGradientValue(lhValue));
   }
+}
+
+function parsePropertySchemaDeclaration(
+  model: Document.ComponentSpecPropertySchema,
+): PropertySchemaDeclaration {
+  return factory.createPropertySchemaDeclaration(model.name, model.type, model.description);
+}
+
+function parseSlotSchemaDeclaration(
+  model: Document.ComponentSpecSlotSchema,
+): SlotSchemaDeclaration {
+  return factory.createSlotSchemaDeclaration(
+    model.name,
+    model.properties.map(parsePropertySchemaDeclaration),
+    model.description,
+  );
+}
+
+function parseSchemaDeclaration(model: Document.ComponentSpecSchema): SchemaDeclaration {
+  return factory.createSchemaDeclaration(model.slots.map(parseSlotSchemaDeclaration));
 }

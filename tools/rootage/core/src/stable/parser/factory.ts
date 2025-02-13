@@ -47,6 +47,9 @@ import type {
   GradientTokenValueDeclaration,
   UnresolvedTokenValueDeclaration,
   UnresolvedPropertyDeclaration,
+  SchemaDeclaration,
+  PropertySchemaDeclaration,
+  SlotSchemaDeclaration,
 } from "./ast";
 
 /**
@@ -371,6 +374,52 @@ export function createVariantDeclaration(
 }
 
 // -----------------------------------------------------------------------------
+// SchemaDeclaration
+// -----------------------------------------------------------------------------
+
+/**
+ * SchemaDeclaration factory
+ */
+export function createSchemaDeclaration(slots: SlotSchemaDeclaration[]): SchemaDeclaration {
+  return {
+    kind: "SchemaDeclaration",
+    slots,
+  };
+}
+
+/**
+ * SlotSchemaDeclaration factory
+ */
+export function createSlotSchemaDeclaration(
+  name: string,
+  properties: PropertySchemaDeclaration[],
+  description?: string,
+): SlotSchemaDeclaration {
+  return {
+    kind: "SlotSchemaDeclaration",
+    name,
+    properties,
+    description,
+  };
+}
+
+/**
+ * PropertySchemaDeclaration factory
+ */
+export function createPropertySchemaDeclaration(
+  name: string,
+  type: "color" | "dimension" | "number" | "duration" | "cubicBezier" | "shadow" | "gradient",
+  description?: string,
+): PropertySchemaDeclaration {
+  return {
+    kind: "PropertySchemaDeclaration",
+    name,
+    type,
+    description,
+  };
+}
+
+// -----------------------------------------------------------------------------
 // ComponentSpecDeclaration
 // -----------------------------------------------------------------------------
 
@@ -380,12 +429,14 @@ export function createVariantDeclaration(
 export function createComponentSpecDeclaration(
   id: string,
   name: string,
+  schema: SchemaDeclaration,
   body: VariantDeclaration[],
 ): ComponentSpecDeclaration {
   return {
     kind: "ComponentSpecDeclaration",
     id,
     name,
+    schema,
     body,
   };
 }

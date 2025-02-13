@@ -12,10 +12,17 @@ describe("getComponentSpecModel", () => {
     id: test
     name: test
   data:
-    base:
-      enabled:
-        root:
-          color: "#ffffff"
+    schema:
+      slots:
+        - name: root
+          properties:
+            - name: color
+              type: color
+    definitions:
+      base:
+        enabled:
+          root:
+            color: "#ffffff"
   `;
 
     const transformed = getComponentSpecModel(
@@ -31,6 +38,19 @@ describe("getComponentSpecModel", () => {
       data: {
         id: "test",
         name: "test",
+        schema: {
+          slots: [
+            {
+              name: "root",
+              properties: [
+                {
+                  name: "color",
+                  type: "color",
+                },
+              ],
+            },
+          ],
+        },
         definitions: [
           {
             variants: {},
@@ -62,14 +82,21 @@ describe("getComponentSpecModel", () => {
     id: test
     name: test
   data:
-    base:
-      enabled:
-        root:
-          color: "#ffffff"
-    variant=primary:
-      enabled:
-        root:
-          color: "#000000"
+    schema:
+      slots:
+        - name: root
+          properties:
+            - name: color
+              type: color
+    definitions:
+      base:
+        enabled:
+          root:
+            color: "#ffffff"
+      variant=primary:
+        enabled:
+          root:
+            color: "#000000"
   `;
 
     const transformed = getComponentSpecModel(
@@ -85,6 +112,19 @@ describe("getComponentSpecModel", () => {
       data: {
         id: "test",
         name: "test",
+        schema: {
+          slots: [
+            {
+              name: "root",
+              properties: [
+                {
+                  name: "color",
+                  type: "color",
+                },
+              ],
+            },
+          ],
+        },
         definitions: [
           {
             variants: {},
@@ -132,10 +172,17 @@ describe("getComponentSpecModel", () => {
     id: test
     name: test
   data:
-    base:
-      enabled,selected:
-        root:
-          color: "#ffffff"
+    schema:
+      slots:
+        - name: root
+          properties:
+            - name: color
+              type: color
+    definitions:
+      base:
+        enabled,selected:
+          root:
+            color: "#ffffff"
   `;
 
     const transformed = getComponentSpecModel(
@@ -151,6 +198,19 @@ describe("getComponentSpecModel", () => {
       data: {
         id: "test",
         name: "test",
+        schema: {
+          slots: [
+            {
+              name: "root",
+              properties: [
+                {
+                  name: "color",
+                  type: "color",
+                },
+              ],
+            },
+          ],
+        },
         definitions: [
           {
             variants: {},
@@ -182,14 +242,21 @@ describe("getComponentSpecModel", () => {
     id: test
     name: test
   data:
-    base:
-      enabled:
-        root:
-          color: "#ffffff"
-    variant=primary,shape=rounded:
-      enabled:
-        root:
-          color: "#000000"
+    schema:
+      slots:
+        - name: root
+          properties:
+            - name: color
+              type: color
+    definitions:
+      base:
+        enabled:
+          root:
+            color: "#ffffff"
+      variant=primary,shape=rounded:
+        enabled:
+          root:
+            color: "#000000"
   `;
 
     const transformed = getComponentSpecModel(
@@ -205,6 +272,19 @@ describe("getComponentSpecModel", () => {
       data: {
         id: "test",
         name: "test",
+        schema: {
+          slots: [
+            {
+              name: "root",
+              properties: [
+                {
+                  name: "color",
+                  type: "color",
+                },
+              ],
+            },
+          ],
+        },
         definitions: [
           {
             variants: {},
@@ -252,22 +332,29 @@ describe("getComponentSpecModel", () => {
     id: test
     name: test
   data:
-    base:
-      enabled:
-        root:
-          shadow:
-            type: shadow
-            value:
-              - offsetX: 0px
-                offsetY: 3px
-                blur: 8px
-                spread: 0px
-                color: "#00000026"
-              - offsetX: 0px
-                offsetY: 1px
-                blur: 3px
-                spread: 0px
-                color: "#0000000f"
+    schema:
+      slots:
+        - name: root
+          properties:
+            - name: shadow
+              type: shadow
+    definitions:
+      base:
+        enabled:
+          root:
+            shadow:
+              type: shadow
+              value:
+                - offsetX: 0px
+                  offsetY: 3px
+                  blur: 8px
+                  spread: 0px
+                  color: "#00000026"
+                - offsetX: 0px
+                  offsetY: 1px
+                  blur: 3px
+                  spread: 0px
+                  color: "#0000000f"
   `;
 
     const parsed = getComponentSpecModel(Authoring.parseComponentSpecDocument(YAML.parse(yaml)));
@@ -281,6 +368,19 @@ describe("getComponentSpecModel", () => {
       data: {
         id: "test",
         name: "test",
+        schema: {
+          slots: [
+            {
+              name: "root",
+              properties: [
+                {
+                  name: "shadow",
+                  type: "shadow",
+                },
+              ],
+            },
+          ],
+        },
         definitions: [
           {
             variants: {},

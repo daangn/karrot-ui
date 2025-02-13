@@ -1,4 +1,5 @@
 import type { AST, Authoring, Exchange } from "../../parser";
+import { compactObject } from "../../utils/compact";
 
 export function getModel(
   ast: AST.TokensDocument | AST.TokenCollectionsDocument | AST.ComponentSpecDocument,
@@ -231,12 +232,31 @@ export function getComponentSpecModel(ast: AST.ComponentSpecDocument): Exchange.
     return { variants, definitions };
   }
 
+  function buildSchema(schema: AST.SchemaDeclaration): Exchange.ComponentSpecSchema {
+    return {
+      slots: schema.slots.map((slot) =>
+        compactObject({
+          name: slot.name,
+          properties: slot.properties.map((prop) =>
+            compactObject({
+              name: prop.name,
+              type: prop.type,
+              description: prop.description,
+            }),
+          ),
+          description: slot.description,
+        }),
+      ),
+    };
+  }
+
   return {
     kind: "ComponentSpec",
     metadata: { id, name },
     data: {
       id,
       name,
+      schema: buildSchema(ast.data.schema),
       definitions: ast.data.body.map(buildVariant),
     },
   };

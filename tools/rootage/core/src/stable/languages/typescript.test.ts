@@ -271,14 +271,21 @@ metadata:
   id: test
   name: test
 data:
-  base:
-    enabled:
-      root:
-        color: "#ffffff"
-  variant=primary:
-    enabled:
-      root:
-        color: "#000000"
+  schema:
+    slots:
+      - name: root
+        properties:
+          - name: color
+            type: color
+  definitions:
+    base:
+      enabled:
+        root:
+          color: "#ffffff"
+    variant=primary:
+      enabled:
+        root:
+          color: "#000000"
 `;
   const model = Authoring.parseComponentSpecDocument(YAML.parse(yaml));
 
@@ -311,14 +318,21 @@ metadata:
   id: test
   name: test
 data:
-  base:
-    enabled:
-      root:
-        color: "#ffffff"
-  variant=primary:
-    enabled:
-      root:
-        color: "#000000"
+  schema:
+    slots:
+      - name: root
+        properties:
+          - name: color
+            type: color
+  definitions:
+    base:
+      enabled:
+        root:
+          color: "#ffffff"
+    variant=primary:
+      enabled:
+        root:
+          color: "#000000"
 `;
   const model = Authoring.parseComponentSpecDocument(YAML.parse(yaml));
 
