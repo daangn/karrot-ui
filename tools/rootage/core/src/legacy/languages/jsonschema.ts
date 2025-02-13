@@ -5,51 +5,57 @@ import type { RootageAST } from "../types";
 export function getJsonSchema(ast: RootageAST): string {
   const { tokens } = ast;
 
-  const tokenAnnotations = tokens.map(({ token, values }) => {
-    const title = stringifyTokenExpression(token);
+  const tokenAnnotations = tokens
+    .sort((a, b) => {
+      const titleA = stringifyTokenExpression(a.token);
+      const titleB = stringifyTokenExpression(b.token);
+      return titleA.localeCompare(titleB);
+    })
+    .map(({ token, values }) => {
+      const title = stringifyTokenExpression(token);
 
-    const readableValues = values.map(({ mode, value }) => {
-      const readableValue = (() => {
-        switch (value.type) {
-          case "token":
-            return stringifyTokenExpression(value);
-          case "color":
-            return value.value;
-          case "gradient":
-            return value.value
-              .map(({ position, color }) => `${Math.round(position * 100)}%: ${color}`)
-              .join(", ");
-          case "number":
-            return `${value.value}`;
-          case "dimension":
-            return `${value.value}${value.unit}`;
-          case "duration":
-            return `${value.value}${value.unit}`;
-          case "cubicBezier":
-            return value.value.join(", ");
-          case "shadow":
-            return value.value
-              .map(
-                ({ offsetX, offsetY, blur, spread, color }) =>
-                  `${offsetX.value}${offsetX.unit} ${offsetY.value}${offsetY.unit} ${blur.value}${blur.unit} ${spread.value}${spread.unit} ${color}`,
-              )
-              .join(" / ");
-          default:
-            return `${value}`;
-        }
-      })();
+      const readableValues = values.map(({ mode, value }) => {
+        const readableValue = (() => {
+          switch (value.type) {
+            case "token":
+              return stringifyTokenExpression(value);
+            case "color":
+              return value.value;
+            case "gradient":
+              return value.value
+                .map(({ position, color }) => `${Math.round(position * 100)}%: ${color}`)
+                .join(", ");
+            case "number":
+              return `${value.value}`;
+            case "dimension":
+              return `${value.value}${value.unit}`;
+            case "duration":
+              return `${value.value}${value.unit}`;
+            case "cubicBezier":
+              return value.value.join(", ");
+            case "shadow":
+              return value.value
+                .map(
+                  ({ offsetX, offsetY, blur, spread, color }) =>
+                    `${offsetX.value}${offsetX.unit} ${offsetY.value}${offsetY.unit} ${blur.value}${blur.unit} ${spread.value}${spread.unit} ${color}`,
+                )
+                .join(" / ");
+            default:
+              return `${value}`;
+          }
+        })();
 
-      return { mode, value: readableValue };
+        return { mode, value: readableValue };
+      });
+
+      return {
+        title,
+        description: readableValues.map(({ mode, value }) => `${mode}: ${value}`).join("\\n"),
+        markdownDescription: readableValues
+          .map(({ mode, value }) => `- ${mode}: \`${value}\``)
+          .join("\\n\\n"),
+      };
     });
-
-    return {
-      title,
-      description: readableValues.map(({ mode, value }) => `${mode}: ${value}`).join("\\n"),
-      markdownDescription: readableValues
-        .map(({ mode, value }) => `- ${mode}: \`${value}\``)
-        .join("\\n\\n"),
-    };
-  });
 
   return dedent.withOptions({ escapeSpecialCharacters: false })`{
     "$schema": "http://json-schema.org/draft-07/schema#",

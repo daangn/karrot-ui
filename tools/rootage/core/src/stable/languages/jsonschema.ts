@@ -6,51 +6,58 @@ function stringifyTokenExpression(token: TokenLit): string {
 }
 
 export function getJsonSchema(tokens: TokenDeclaration[]): string {
-  const tokenAnnotations = tokens.map(({ token, values }) => {
-    const title = stringifyTokenExpression(token);
+  const tokenAnnotations = tokens
+    .sort((a, b) => {
+      const titleA = stringifyTokenExpression(a.token);
+      const titleB = stringifyTokenExpression(b.token);
+      return titleA.localeCompare(titleB);
+    })
+    .map(({ token, values }) => {
+      const title = stringifyTokenExpression(token);
+      const readableValues = values.map(({ mode, value }) => {
+        const readableValue = (() => {
+          switch (value.kind) {
+            case "TokenLit":
+              return stringifyTokenExpression(value);
+            case "ColorHexLit":
+              return value.value;
+            case "GradientLit":
+              return value.stops
+                .map(
+                  ({ position, color }) => `${Math.round(position.value * 100)}%: ${color.value}`,
+                )
+                .join(", ");
+            case "NumberLit":
+              return `${value.value}`;
+            case "DimensionLit":
+              return `${value.value}${value.unit}`;
+            case "DurationLit":
+              return `${value.value}${value.unit}`;
+            case "CubicBezierLit":
+              return value.value.join(", ");
+            case "ShadowLit":
+              return value.layers
+                .map(
+                  ({ offsetX, offsetY, blur, spread, color }) =>
+                    `${offsetX.value}${offsetX.unit} ${offsetY.value}${offsetY.unit} ${blur.value}${blur.unit} ${spread.value}${spread.unit} ${color}`,
+                )
+                .join(" / ");
+            default:
+              return `${value}`;
+          }
+        })();
 
-    const readableValues = values.map(({ mode, value }) => {
-      const readableValue = (() => {
-        switch (value.kind) {
-          case "TokenLit":
-            return stringifyTokenExpression(value);
-          case "ColorHexLit":
-            return value.value;
-          case "GradientLit":
-            return value.stops
-              .map(({ position, color }) => `${Math.round(position.value * 100)}%: ${color.value}`)
-              .join(", ");
-          case "NumberLit":
-            return `${value.value}`;
-          case "DimensionLit":
-            return `${value.value}${value.unit}`;
-          case "DurationLit":
-            return `${value.value}${value.unit}`;
-          case "CubicBezierLit":
-            return value.value.join(", ");
-          case "ShadowLit":
-            return value.layers
-              .map(
-                ({ offsetX, offsetY, blur, spread, color }) =>
-                  `${offsetX.value}${offsetX.unit} ${offsetY.value}${offsetY.unit} ${blur.value}${blur.unit} ${spread.value}${spread.unit} ${color}`,
-              )
-              .join(" / ");
-          default:
-            return `${value}`;
-        }
-      })();
+        return { mode, value: readableValue };
+      });
 
-      return { mode, value: readableValue };
+      return {
+        title,
+        description: readableValues.map(({ mode, value }) => `${mode}: ${value}`).join("\\n"),
+        markdownDescription: readableValues
+          .map(({ mode, value }) => `- ${mode}: \`${value}\``)
+          .join("\\n\\n"),
+      };
     });
-
-    return {
-      title,
-      description: readableValues.map(({ mode, value }) => `${mode}: ${value}`).join("\\n"),
-      markdownDescription: readableValues
-        .map(({ mode, value }) => `- ${mode}: \`${value}\``)
-        .join("\\n\\n"),
-    };
-  });
 
   return dedent.withOptions({ escapeSpecialCharacters: false })`{
     "$schema": "http://json-schema.org/draft-07/schema#",
