@@ -2,13 +2,13 @@
 
 import { cac } from "cac";
 import { execaNode } from "execa";
+import { readdirSync } from "fs";
 import { createRequire } from "module";
 import { dirname, resolve } from "path";
-import { createTrack, LOG_PREFIX } from "./utils/log.js";
-import { readdirSync } from "fs";
+import { minVersion, satisfies } from "semver";
 import { z } from "zod";
-import { satisfies, minVersion } from "semver";
 import { getGitInfo } from "./utils/git.js";
+import { createTrack, LOG_PREFIX } from "./utils/log.js";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("../package.json");
@@ -109,9 +109,6 @@ async function runTransform(
   const jscodeshiftPath = require.resolve("jscodeshift/bin/jscodeshift");
   const { log, parser, extensions, ignoreConfig, track: isTrackEnabled } = options;
 
-  // `../`로 시작하는 path에서 ignore-pattern 작동하지 않는 문제
-  // https://github.com/facebook/jscodeshift/issues/556
-
   const fixedPaths = paths.map((path) => resolve(process.cwd(), path));
   const fixedPathsCombined = fixedPaths.join(" ");
 
@@ -124,7 +121,11 @@ async function runTransform(
 
   await execaNode({
     stdout: "inherit",
-    env: { LOG: `${log}`, TRACK: `${isTrackEnabled}`, GIT_INFO: JSON.stringify(gitInfo) },
+    env: {
+      LOG: `${log}`,
+      TRACK: `${isTrackEnabled}`,
+      GIT_INFO: JSON.stringify(gitInfo),
+    },
   })`
     ${jscodeshiftPath} ${fixedPathsCombined}
       -t ${transformPath}
@@ -135,9 +136,7 @@ async function runTransform(
 }
 
 function getAvailableTransforms() {
-  return readdirSync(TRANSFORM_PATH)
-    .filter((file) => file.endsWith(".mjs") || file.endsWith(".js") || file.endsWith(".cjs"))
-    .map((file) => file.split(".").slice(0, -1).join("."));
+  return readdirSync(TRANSFORM_PATH);
 }
 
 function printTransforms(transforms: string[]) {
