@@ -56,7 +56,11 @@ export default async function Page({
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        {guideline && <PortableContent content={guideline.content} />}
+        {guideline && (
+          <div className="mb-8">
+            <PortableContent content={guideline.content} />
+          </div>
+        )}
         <MDX components={mdxComponents} />
       </DocsBody>
     </DocsPage>
