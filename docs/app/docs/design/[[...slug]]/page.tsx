@@ -3,12 +3,19 @@ import { mdxComponents } from "@/components/mdx/mdx-components";
 import { client } from "@/sanity/lib/client";
 import { GUIDELINE_QUERY } from "@/sanity/lib/queries";
 import { PortableContent } from "@/sanity/lib/sanity-content";
+import { PortableText } from "@portabletext/react";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { PortableTextBlock } from "sanity";
 
 function getPath(slug: string[]) {
   return slug.join("/");
+}
+
+function styleToLevel(style: unknown) {
+  if (typeof style !== "string") return;
+  return Number.parseInt(style.split("h")[1]);
 }
 
 export default async function Page({
@@ -22,10 +29,30 @@ export default async function Page({
 
   const MDX = page.data.body;
   const path = getPath(params.slug ?? []);
+
   const guideline = await client.fetch(GUIDELINE_QUERY, { path: `design/${path}` });
+  const guidelineToc =
+    guideline?.toc?.map((item: PortableTextBlock) => {
+      return {
+        depth: item.level ?? styleToLevel(item.style) ?? 0,
+        title: (
+          <PortableText
+            value={{
+              ...(item as PortableTextBlock),
+              style: undefined,
+            }}
+          />
+        ),
+        url: `#${item._key}`,
+      };
+    }) ?? [];
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} lastUpdate={page.data.lastModified}>
+    <DocsPage
+      toc={[...guidelineToc, ...page.data.toc]}
+      full={page.data.full}
+      lastUpdate={page.data.lastModified}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
