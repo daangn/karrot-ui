@@ -4,7 +4,7 @@
     position: relative;
 }
 .seed-progress-circle__root[data-progress-state=indeterminate] {
-    animation: progress-circle-rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite;
+    animation: rotate 1.2s cubic-bezier(0.35, 0.25, 0.65, 0.75) infinite;
 }
 .seed-progress-circle__track {
     stroke: var(--track-color);
@@ -18,8 +18,8 @@
 }
 .seed-progress-circle__range[data-progress-state=indeterminate] {
     animation: 
-          progress-circle-headDash 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
-          progress-circle-tailDash 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
+          progress-circle-head 1.2s cubic-bezier(0.35, 0, 0.65, 1) infinite normal none running,
+          progress-circle-tail 1.2s cubic-bezier(0.35, 0, 0.65, 0.6) infinite normal none running
         ;
 }
 .seed-progress-circle__root--tone_neutral {
@@ -44,33 +44,3 @@
     --thickness: 5px;
 }
 .seed-progress-circle__root--size_inherit {}
-@keyframes progress-circle-rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-@keyframes progress-circle-headDash {
-    0% {
-        stroke-dasharray: 0, 1000%;
-    }
-    75% {
-        stroke-dasharray: var(--circumference), 1000%;
-    }
-    100% {
-        stroke-dasharray: var(--circumference), 1000%;
-    }
-}
-@keyframes progress-circle-tailDash {
-    0% {
-        stroke-dashoffset: 0;
-    }
-    33.33% {
-        stroke-dashoffset: 0;
-    }
-    100% {
-        stroke-dashoffset: calc(var(--circumference) * -1);
-    }
-}

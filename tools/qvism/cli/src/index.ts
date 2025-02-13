@@ -3,11 +3,12 @@
 // TODO: load preset from config file
 
 import {
-  generateCss,
   generateCssBundle,
+  generateCssEach,
   generateDts,
   generateJs,
   type Config,
+  type Preset,
 } from "@seed-design/qvism-core";
 import preset from "@seed-design/qvism-preset";
 import fs from "fs-extra";
@@ -15,33 +16,41 @@ import path from "node:path";
 
 const [, , format, dir = "./"] = process.argv;
 
-async function writeCss() {
-  const { recipes, prefix } = preset as Config;
-  const options = { prefix };
+const PREFIX = "seed"; // TODO: move to config file
 
+function buildConfig(preset: Preset, config: Partial<Config>) {
+  return {
+    prefix: PREFIX,
+    ...preset,
+    ...config,
+  };
+}
+
+async function writeCss() {
+  const config = buildConfig(preset, {});
+  const files = await generateCssEach(config);
   await Promise.all(
-    Object.entries(recipes).map(async ([name, definition]) => {
-      const cssCode = await generateCss(definition, options);
+    files.map(async ({ name, css: cssCode }) => {
       console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.css`));
       fs.writeFileSync(path.join(process.cwd(), dir, `${name}.css`), cssCode);
     }),
   );
 
-  const css = await generateCssBundle(Object.values(recipes), options);
+  const css = await generateCssBundle(config);
   console.log("Writing css bundle to", path.join(process.cwd(), dir, "component.css"));
   fs.writeFileSync(path.join(process.cwd(), dir, "component.css"), css);
 
-  const minifiedCss = await generateCssBundle(Object.values(recipes), { minify: true, prefix });
+  const minifiedCss = await generateCssBundle({ ...config, minify: true });
   console.log("Writing minified css bundle to", path.join(process.cwd(), dir, "component.min.css"));
   fs.writeFileSync(path.join(process.cwd(), dir, "component.min.css"), minifiedCss);
 }
 
 async function writeCssInJs() {
-  const { recipes, prefix } = preset as Config;
-  const options = { prefix };
-
+  const config = buildConfig(preset, {});
+  const options = { prefix: config.prefix };
   return Promise.all(
-    Object.entries(recipes).map(async ([name, definition]) => {
+    Object.values(config.theme.recipes).map(async (definition) => {
+      const name = definition.name;
       const jsCode = generateJs(definition, options);
       const dtsCode = generateDts(definition);
 

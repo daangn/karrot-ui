@@ -47,11 +47,31 @@ export interface SlotRecipeDefinition<S extends string, T extends SlotRecipeVari
     }
   >;
   defaultVariants: Required<RecipeSelection<T>>;
-  keyframes?: Record<string, Partial<Record<"from" | "to" | `${string}%`, StyleObject>>>;
 }
 
-export interface Config {
+export interface KeyframeDefinition {
+  from?: StyleObject;
+  to?: StyleObject;
+  [key: `${string}%`]: StyleObject;
+}
+
+export interface Theme {
+  recipes: Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
+
+  keyframes: Record<string, KeyframeDefinition>;
+}
+
+export interface CssgenOptions {
   prefix?: string;
 
-  recipes: Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
+  minify?: boolean;
+}
+
+// TODO: add extendable option to each theme items
+export interface Config extends CssgenOptions {
+  theme: Theme;
+}
+
+export interface Preset {
+  theme: Theme;
 }

@@ -3374,7 +3374,7 @@
 }
 
 .seed-progress-circle__root[data-progress-state="indeterminate"] {
-  animation: 1.2s cubic-bezier(.35, .25, .65, .75) infinite progress-circle-rotate;
+  animation: 1.2s cubic-bezier(.35, .25, .65, .75) infinite rotate;
 }
 
 .seed-progress-circle__track {
@@ -3390,7 +3390,7 @@
 }
 
 .seed-progress-circle__range[data-progress-state="indeterminate"] {
-  animation: 1.2s cubic-bezier(.35, 0, .65, 1) infinite progress-circle-headDash, 1.2s cubic-bezier(.35, 0, .65, .6) infinite progress-circle-tailDash;
+  animation: 1.2s cubic-bezier(.35, 0, .65, 1) infinite progress-circle-head, 1.2s cubic-bezier(.35, 0, .65, .6) infinite progress-circle-tail;
 }
 
 .seed-progress-circle__root--tone_neutral {
@@ -3416,44 +3416,6 @@
 .seed-progress-circle__root--size_40 {
   --size: var(--seed-dimension-x10);
   --thickness: 5px;
-}
-
-@keyframes progress-circle-rotate {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes progress-circle-headDash {
-  0% {
-    stroke-dasharray: 0 1000%;
-  }
-
-  75% {
-    stroke-dasharray: var(--circumference), 1000%;
-  }
-
-  100% {
-    stroke-dasharray: var(--circumference), 1000%;
-  }
-}
-
-@keyframes progress-circle-tailDash {
-  0% {
-    stroke-dashoffset: 0;
-  }
-
-  33.33% {
-    stroke-dashoffset: 0;
-  }
-
-  100% {
-    stroke-dashoffset: calc(var(--circumference) * -1);
-  }
 }
 
 .seed-tabs__root {
@@ -3849,7 +3811,7 @@
   background-image: linear-gradient(90deg, var(--seed-gradient-shimmer));
   width: 100%;
   height: 100%;
-  animation-name: skeleton-shimmer;
+  animation-name: slide-x;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-timing-function: var(--seed-timing-function-easing);
@@ -3872,16 +3834,6 @@
 
 .seed-skeleton__root--radius_full {
   border-radius: var(--seed-radius-full);
-}
-
-@keyframes skeleton-shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
 }
 
 .seed-snackbar__root {
@@ -5234,4 +5186,52 @@
 
 .seed-pull-to-refresh__indicator[data-ptr-dragging] {
   transition: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-x {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes progress-circle-head {
+  0% {
+    stroke-dasharray: 0 1000%;
+  }
+
+  75% {
+    stroke-dasharray: var(--circumference), 1000%;
+  }
+
+  100% {
+    stroke-dasharray: var(--circumference), 1000%;
+  }
+}
+
+@keyframes progress-circle-tail {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  33.33% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: calc(var(--circumference) * -1);
+  }
 }
