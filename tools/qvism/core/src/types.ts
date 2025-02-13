@@ -56,15 +56,25 @@ export interface KeyframeDefinition {
 }
 
 export interface Theme {
+  tokens: {
+    // TODO: implement qvism tokens; currently using rootage-generated token.css
+    _raw: string;
+  };
+
   recipes: Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
 
   keyframes: Record<string, KeyframeDefinition>;
+
+  // TODO: Do we actually need patterns?
+  patterns: Record<string, StyleObject>;
 }
 
 export interface CssgenOptions {
   prefix?: string;
 
   minify?: boolean;
+
+  globalCss?: StyleObject;
 }
 
 // TODO: add extendable option to each theme items

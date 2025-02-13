@@ -28,21 +28,17 @@ function buildConfig(preset: Preset, config: Partial<Config>) {
 
 async function writeCss() {
   const config = buildConfig(preset, {});
-  const files = await generateCssEach(config);
-  await Promise.all(
-    files.map(async ({ name, css: cssCode }) => {
-      console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.css`));
-      fs.writeFileSync(path.join(process.cwd(), dir, `${name}.css`), cssCode);
-    }),
-  );
 
   const css = await generateCssBundle(config);
-  console.log("Writing css bundle to", path.join(process.cwd(), dir, "component.css"));
-  fs.writeFileSync(path.join(process.cwd(), dir, "component.css"), css);
+  console.log("Writing css bundle to", path.join(process.cwd(), dir, "design-system.css"));
+  fs.writeFileSync(path.join(process.cwd(), dir, "design-system.css"), css);
 
   const minifiedCss = await generateCssBundle({ ...config, minify: true });
-  console.log("Writing minified css bundle to", path.join(process.cwd(), dir, "component.min.css"));
-  fs.writeFileSync(path.join(process.cwd(), dir, "component.min.css"), minifiedCss);
+  console.log(
+    "Writing minified css bundle to",
+    path.join(process.cwd(), dir, "design-system.min.css"),
+  );
+  fs.writeFileSync(path.join(process.cwd(), dir, "design-system.min.css"), minifiedCss);
 }
 
 async function writeCssInJs() {

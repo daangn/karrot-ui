@@ -2,6 +2,7 @@ import postcss from "postcss";
 import postcssJs from "postcss-js";
 import postcssNested from "postcss-nested";
 
+import { transform } from "lightningcss";
 import { compact } from "./compact";
 import type {
   Config,
@@ -10,7 +11,6 @@ import type {
   SlotRecipeVariantRecord,
   Theme,
 } from "./types";
-import { transform } from "lightningcss";
 
 type RecipeDefinition = SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>;
 
@@ -19,16 +19,18 @@ const prefixName = (name: string, options: { prefix?: string } = {}) =>
 
 export function generateBaseRules(definition: RecipeDefinition, options: { prefix?: string } = {}) {
   const name = prefixName(definition.name, options);
-  return Object.entries(definition.base).map(([slot, style]) => {
-    if (!style) {
-      return undefined;
-    }
-    const parsed = postcssJs.parse(style);
-    return postcss.rule({
-      selector: `.${name}__${slot}`,
-      nodes: parsed.nodes,
-    });
-  });
+  return compact(
+    Object.entries(definition.base).map(([slot, style]) => {
+      if (!style) {
+        return undefined;
+      }
+      const parsed = postcssJs.parse(style);
+      return postcss.rule({
+        selector: `.${name}__${slot}`,
+        nodes: parsed.nodes,
+      });
+    }),
+  );
 }
 
 export function generateVariantRules(
@@ -36,20 +38,22 @@ export function generateVariantRules(
   options: { prefix?: string } = {},
 ) {
   const name = prefixName(definition.name, options);
-  return Object.entries(definition.variants).flatMap(([variantName, variant]) => {
-    return Object.entries(variant).flatMap(([variantValue, variantStyles]) => {
-      return Object.entries(variantStyles).map(([slot, style]) => {
-        if (!style) {
-          return undefined;
-        }
-        const parsed = postcssJs.parse(style);
-        return postcss.rule({
-          selector: `.${name}__${slot}--${variantName}_${variantValue}`,
-          nodes: parsed.nodes,
+  return compact(
+    Object.entries(definition.variants).flatMap(([variantName, variant]) => {
+      return Object.entries(variant).flatMap(([variantValue, variantStyles]) => {
+        return Object.entries(variantStyles).map(([slot, style]) => {
+          if (!style) {
+            return undefined;
+          }
+          const parsed = postcssJs.parse(style);
+          return postcss.rule({
+            selector: `.${name}__${slot}--${variantName}_${variantValue}`,
+            nodes: parsed.nodes,
+          });
         });
       });
-    });
-  });
+    }),
+  );
 }
 
 export function generateCompoundVariantRules(
@@ -57,7 +61,7 @@ export function generateCompoundVariantRules(
   options: { prefix?: string } = {},
 ) {
   const name = prefixName(definition.name, options);
-  return (
+  return compact(
     definition.compoundVariants?.flatMap(({ css, ...selection }) => {
       return Object.entries(css).map(([slot, style]) => {
         if (!style) {
@@ -74,7 +78,7 @@ export function generateCompoundVariantRules(
           nodes: parsed.nodes,
         });
       });
-    }) ?? []
+    }) ?? [],
   );
 }
 
@@ -89,9 +93,7 @@ export function generateKeyframeRules(definitions: Record<string, KeyframeDefini
   });
 }
 
-export async function transpileRulesToCss(
-  rules: (postcss.AtRule | postcss.Rule | undefined)[],
-): Promise<string> {
+export async function transpileRulesToCss(rules: postcss.ChildNode[]): Promise<string> {
   const root = postcss.root({
     nodes: compact(rules),
   });
@@ -106,15 +108,30 @@ export async function transpileRulesToCss(
   return css;
 }
 
-export function generateRecipeRules(
-  recipe: RecipeDefinition,
-  options: { prefix?: string } = {},
-): (postcss.AtRule | postcss.Rule | undefined)[] {
+export function generateRecipeRules(recipe: RecipeDefinition, options: { prefix?: string } = {}) {
   const baseRules = generateBaseRules(recipe, options);
   const variantRules = generateVariantRules(recipe, options);
   const compoundVariantRules = generateCompoundVariantRules(recipe, options);
 
   return [...baseRules, ...variantRules, ...compoundVariantRules];
+}
+
+export function generateTokenRules(tokens: Theme["tokens"]): postcss.ChildNode[] {
+  return postcss.parse(tokens._raw).nodes;
+}
+
+export function generatePatternRules(
+  patterns: Theme["patterns"],
+  options: { prefix?: string } = {},
+): postcss.ChildNode[] {
+  return Object.entries(patterns).flatMap(([name, style]) => {
+    const prefixedName = prefixName(name, options);
+    const parsed = postcssJs.parse(style);
+    return postcss.rule({
+      selector: `.${prefixedName}`,
+      nodes: parsed.nodes,
+    });
+  });
 }
 
 export async function generateCssEach(config: Config): Promise<{ name: string; css: string }[]> {
@@ -145,11 +162,14 @@ export async function generateCssEach(config: Config): Promise<{ name: string; c
 export async function generateCssBundle(config: Config): Promise<string> {
   const { minify = false, prefix, theme } = config;
   const options = { prefix };
+  const globalRules = postcssJs.parse(config.globalCss ?? {}).nodes;
+  const tokenRules = generateTokenRules(theme.tokens);
   const recipeRules = Object.values(theme.recipes).flatMap((recipe) =>
     generateRecipeRules(recipe, options),
   );
   const keyframeRules = generateKeyframeRules(theme.keyframes);
-  const rules = [...recipeRules, ...keyframeRules];
+  const patternRules = generatePatternRules(theme.patterns, options);
+  const rules = [...globalRules, ...tokenRules, ...recipeRules, ...keyframeRules, ...patternRules];
   const css = await transpileRulesToCss(rules);
 
   return transform({

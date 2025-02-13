@@ -206,6 +206,7 @@
         "@seed-design/vars": "0.0.0",
       },
       "devDependencies": {
+        "@seed-design/rootage-cli": "0.0.0",
         "esbuild": "^0.25.0",
       },
     },
@@ -540,7 +541,6 @@
       "version": "3.0.0-alpha-20241212122822",
       "devDependencies": {
         "@seed-design/qvism-cli": "0.0.0",
-        "@seed-design/rootage-cli": "0.0.0",
       },
     },
     "packages/utils/dom-utils": {

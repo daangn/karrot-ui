@@ -11,9 +11,8 @@
   },
   "scripts": {
     "prepack": "bun generate",
-    "generate": "bun qvism:generate && bun rootage:generate",
-    "qvism:generate": "bun qvism css",
-    "rootage:generate": "bun rootage token-css"
+    "generate": "bun qvism:generate",
+    "qvism:generate": "bun qvism css"
   },
   "exports": {
     "./*.css": "./*.css",
@@ -23,7 +22,6 @@
     "*.css"
   ],
   "devDependencies": {
-    "@seed-design/qvism-cli": "0.0.0",
-    "@seed-design/rootage-cli": "0.0.0"
+    "@seed-design/qvism-cli": "0.0.0"
   }
 }
