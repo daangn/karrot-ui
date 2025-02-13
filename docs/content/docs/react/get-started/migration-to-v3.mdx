@@ -24,16 +24,18 @@ Seed Design V3로 마이그레이션하기 위해 필요한 작업들을 안내�
 {/* ----------------------------------------------------------------------- */}
 
 <Step>
-### token.css import하기
+### CSS import
 
 <Callout>
 `token.css`는 V3에 새롭게 추가된 컬러 토큰과 같은 디자인 시스템의 토큰들을 포함하고 있어요.
 
 현재는 V2의 `global.css`와 공존하고 있지만, 추후에는 삭제될 예정입니다.
+
 </Callout>
 
 ```ts title="index.tsx"
 import "@seed-design/stylesheet/token.css";
+import "@seed-design/stylesheet/component.min.css";
 ```
 </Step>
 

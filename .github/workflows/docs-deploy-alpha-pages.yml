@@ -3,6 +3,7 @@ on:
     branches:
       - "**"
       - "!main"
+      - "!dev" # V3 deployment; remove this when V3 is stable
     paths:
       - "docs/**"
       - "packages/recipe/**"
@@ -33,13 +34,13 @@ jobs:
           path: |
             docs/.next/cache
           # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-
 
       - name: Install Dependencies
-        run: bun install --immutable
+        run: bun install --frozen-lockfile
 
       - name: Build Packages
         run: bun build-only-package && bun rootage:build

@@ -39,7 +39,7 @@ export const PortableContent = ({
             </Heading>
           ),
           h3: ({ value, children }) => (
-            <Heading as="h3" className="mt-2 mb-1" id={value._key}>
+            <Heading as="h3" id={value._key}>
               {children}
             </Heading>
           ),

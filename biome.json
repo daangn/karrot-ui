@@ -9,7 +9,7 @@
     "enabled": false
   },
   "formatter": {
-    "ignore": ["package.json", "**/archive/**/*", "**/.next/**/*"],
+    "ignore": ["package.json", "**/archive/**/*", "**/.next/**/*", "__testfixtures__"],
     "enabled": true,
     "indentStyle": "space",
     "lineEnding": "lf",
@@ -29,7 +29,8 @@
       ".source",
       ".vscode",
       "out",
-      "bin"
+      "bin",
+      "__testfixtures__"
     ],
     "rules": {
       "recommended": true,

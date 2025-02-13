@@ -191,9 +191,9 @@ export declare const vars: {
   "textStyleT10Bold": {
     "enabled": {
       "root": {
-        "fontSize": "var(--seed-font-size-t4)",
-        "lineHeight": "var(--seed-line-height-t5)",
-        "fontWeight": "var(--seed-font-weight-regular)"
+        "fontSize": "var(--seed-font-size-t10)",
+        "lineHeight": "var(--seed-line-height-t10)",
+        "fontWeight": "var(--seed-font-weight-bold)"
       }
     }
   }

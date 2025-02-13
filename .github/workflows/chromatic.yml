@@ -35,7 +35,7 @@ jobs:
           bun-version: latest
       
       - name: Install dependencies
-        run: bun install --immutable
+        run: bun install --frozen-lockfile
       
       - name: Build
         run: bun build-only-package

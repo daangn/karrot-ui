@@ -3,6 +3,7 @@ import { mdxComponents } from "@/components/mdx/mdx-components";
 import { client } from "@/sanity/lib/client";
 import { GUIDELINE_QUERY } from "@/sanity/lib/queries";
 import { PortableContent } from "@/sanity/lib/sanity-content";
+import { PortableText } from "@portabletext/react";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,28 +13,32 @@ function getPath(slug: string[]) {
   return slug.join("/");
 }
 
+function styleToLevel(style: unknown) {
+  if (typeof style !== "string") return;
+  return Number.parseInt(style.split("h")[1]);
+}
+
 export default async function Page({
   params,
 }: {
   params: { slug?: string[] };
 }) {
-  const page = source.getPage(params.slug);
+  const fullPath = ["design", ...(params.slug ?? [])];
+  const page = source.getPage(fullPath);
   if (!page) notFound();
 
   const MDX = page.data.body;
   const path = getPath(params.slug ?? []);
-  const guideline = params.slug?.includes("design")
-    ? await client.fetch(GUIDELINE_QUERY, { path })
-    : null;
 
+  const guideline = await client.fetch(GUIDELINE_QUERY, { path: `design/${path}` });
   const guidelineToc =
     guideline?.toc?.map((item: PortableTextBlock) => {
       return {
-        depth: item.level ?? 0,
+        depth: item.level ?? styleToLevel(item.style) ?? 0,
         title: (
-          <PortableContent
-            content={{
-              ...item,
+          <PortableText
+            value={{
+              ...(item as PortableTextBlock),
               style: undefined,
             }}
           />
@@ -51,7 +56,11 @@ export default async function Page({
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        {guideline && <PortableContent content={guideline.content} />}
+        {guideline && (
+          <div className="mb-8">
+            <PortableContent content={guideline.content} />
+          </div>
+        )}
         <MDX components={mdxComponents} />
       </DocsBody>
     </DocsPage>
@@ -59,11 +68,17 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return source.generateParams();
+  return source
+    .generateParams()
+    .filter((params) => params.slug?.[0] === "design")
+    .map((params) => ({
+      slug: params.slug?.slice(1),
+    }));
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = source.getPage(params.slug);
+  const fullPath = ["design", ...(params.slug ?? [])];
+  const page = source.getPage(fullPath);
   if (!page) notFound();
 
   return {

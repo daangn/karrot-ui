@@ -28,8 +28,19 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            docs/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-
+
       - name: Install Dependencies
-        run: bun install --immutable
+        run: bun install --frozen-lockfile
 
       - name: Build Packages
         run: bun build-only-package && bun rootage:build
@@ -43,4 +54,4 @@ jobs:
         run: |
           CLOUDFLARE_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} \
           CLOUDFLARE_API_TOKEN=${{ secrets.CF_API_TOKEN }} \
-          bun wrangler pages deploy ./docs/out --project-name=seed-design-v3 --branch=main
+          bun wrangler pages deploy ./docs/out --project-name=seed-design-v3 --branch=${{ github.ref_name }}
