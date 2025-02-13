@@ -1,0 +1,19 @@
+{
+  "extends": "@create-figma-plugin/tsconfig",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@figma", "node_modules/@types"],
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "@/iconography/*": ["src/features/iconography/*"],
+      "@/design-system/*": ["src/features/design-system/*"],
+      "@/shared/*": ["src/shared/*"],
+      "@/env": ["src/shared/env.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}
