@@ -1,0 +1,23 @@
+{
+  "name": "@seed-design/mapping",
+  "version": "0.0.0",
+  "sideEffects": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daangn/seed-design.git",
+    "directory": "packages/mapping"
+  },
+  "files": [
+    "*.d.ts",
+    "*.mjs"
+  ],
+  "exports": {
+    "./*": {
+      "types": "./*.d.ts",
+      "default": "./*.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

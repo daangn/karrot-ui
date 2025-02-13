@@ -2,34 +2,29 @@ import { resolveToken, type AST } from "@seed-design/rootage-core";
 import { getRootage, stringifyValueLit } from "@/components/rootage";
 import { ExpandableTokenCell } from "@/components/expandable-token-cell";
 import { Fragment } from "react";
-
-interface TokenMapping {
-  previousTokenId: string;
-  newTokenIds: AST.TokenRef[];
-  note?: string;
-}
+import { type FoundationTokenMapping } from "@seed-design/mapping/color";
 
 interface TokenMappingTableProps {
-  mappings: TokenMapping[];
+  mappings: FoundationTokenMapping[];
 }
 
 export interface TokenMappingItem {
-  previousTokenId: TokenMapping["previousTokenId"];
+  previousTokenId: string;
   newTokens: {
-    id: TokenMapping["newTokenIds"][number];
+    id: string;
     values: string[];
     resolvedValue: AST.ValueLit;
   }[];
-  note?: TokenMapping["note"];
+  description?: string;
 }
 
 export async function TokenMappingTable({ mappings }: TokenMappingTableProps) {
   const rootage = await getRootage();
 
   const tableItems: TokenMappingItem[] = mappings.map((mapping) => ({
-    previousTokenId: mapping.previousTokenId,
-    newTokens: mapping.newTokenIds.map((newId) => {
-      const { path, value } = resolveToken(rootage, newId, {
+    previousTokenId: mapping.previous,
+    newTokens: mapping.next.map((newId) => {
+      const { path, value } = resolveToken(rootage, newId as `$${string}`, {
         global: "default",
         color: "theme-light",
       });
@@ -40,7 +35,7 @@ export async function TokenMappingTable({ mappings }: TokenMappingTableProps) {
         resolvedValue: value,
       };
     }),
-    note: mapping.note,
+    description: mapping.description,
   }));
 
   return (
@@ -72,7 +67,7 @@ export async function TokenMappingTable({ mappings }: TokenMappingTableProps) {
                   </Fragment>
                 ))}
             </td>
-            <td>{item.note}</td>
+            <td>{item.description}</td>
           </tr>
         ))}
       </tbody>
