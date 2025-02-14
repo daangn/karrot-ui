@@ -110,7 +110,7 @@ export const registryUI: RegistryUI = [
   },
   {
     name: "identity-placeholder",
-    dependencies: [],
+    dependencies: ["@seed-design/react"],
     files: ["ui:identity-placeholder.tsx"],
   },
   {
