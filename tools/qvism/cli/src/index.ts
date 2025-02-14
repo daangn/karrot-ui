@@ -4,7 +4,6 @@
 
 import {
   generateCssBundle,
-  generateCssEach,
   generateDts,
   generateJs,
   type Config,
