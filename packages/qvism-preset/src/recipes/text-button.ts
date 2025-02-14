@@ -1,4 +1,4 @@
-import { textButton as vars } from "@seed-design/vars/component";
+import { textButton as vars } from "@seed-design/css/vars/component";
 
 import { defineRecipe } from "../utils/define-recipe";
 import { disabled, active, pseudo } from "../utils/pseudo";

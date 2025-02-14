@@ -1,4 +1,4 @@
-import { actionSheetItem as vars, actionSheet as rootVars } from "@seed-design/vars/component";
+import { actionSheetItem as vars, actionSheet as rootVars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 

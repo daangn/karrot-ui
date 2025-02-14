@@ -7,9 +7,7 @@
 
 **Base Libraries**
 
-- [@seed-design/vars](./packages/vars)
-- [@seed-design/stylesheet](./packages/stylesheet)
-- [@seed-design/recipe](./packages/recipe)
+- [@seed-design/css](./packages/css)
 
 **React Libraries**
 

@@ -1,4 +1,4 @@
-import "@seed-design/stylesheet/design-system.min.css";
+import "@seed-design/css/seed.min.css";
 import "@stackflow/plugin-basic-ui/index.css";
 import "simple-reveal/index.css";
 import "./global.css";

@@ -1,10 +1,10 @@
 import { Dialog as DialogPrimitive, useDialogContext } from "@seed-design/react-dialog";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { actionSheet, type ActionSheetVariantProps } from "@seed-design/recipe/action-sheet";
+import { actionSheet, type ActionSheetVariantProps } from "@seed-design/css/recipes/action-sheet";
 import {
   actionSheetItem,
   type ActionSheetItemVariantProps,
-} from "@seed-design/recipe/action-sheet-item";
+} from "@seed-design/css/recipes/action-sheet-item";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

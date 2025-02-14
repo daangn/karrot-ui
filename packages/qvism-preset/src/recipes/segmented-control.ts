@@ -1,7 +1,7 @@
 import {
   segmentedControlItem as itemVars,
   segmentedControl as vars,
-} from "@seed-design/vars/component";
+} from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, checked, disabled, not, pseudo } from "../utils/pseudo";
 

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { vars } from "@seed-design/vars";
+import { vars } from "@seed-design/css/vars";
 
 export const root = style({
   display: "flex",

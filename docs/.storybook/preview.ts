@@ -1,5 +1,5 @@
 // import Seed Design
-import "@seed-design/stylesheet/token.css";
+import "@seed-design/css/seed.css";
 
 import type { Preview } from "@storybook/react";
 

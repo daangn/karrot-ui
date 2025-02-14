@@ -1,1 +1,1 @@
-export * from "@seed-design/vars";
+export * from "@seed-design/css/vars";

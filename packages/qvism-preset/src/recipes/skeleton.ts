@@ -1,4 +1,4 @@
-import { skeleton as vars } from "@seed-design/vars/component";
+import { skeleton as vars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 
 const skeleton = defineRecipe({

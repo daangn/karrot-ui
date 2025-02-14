@@ -1,4 +1,4 @@
-import { identityPlaceholder as vars } from "@seed-design/vars/component";
+import { identityPlaceholder as vars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 
 const identityPlaceholder = defineRecipe({

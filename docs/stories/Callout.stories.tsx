@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Callout } from "seed-design/ui/callout";
 
-import { calloutVariantMap } from "@seed-design/recipe/callout";
+import { calloutVariantMap } from "@seed-design/css/recipes/callout";
 import { VariantTable } from "./components/variant-table";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";

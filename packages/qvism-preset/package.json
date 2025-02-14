@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@seed-design/qvism-core": "0.0.0",
-    "@seed-design/vars": "0.0.0"
+    "@seed-design/css": "0.0.0"
   },
   "devDependencies": {
     "@seed-design/rootage-cli": "0.0.0",

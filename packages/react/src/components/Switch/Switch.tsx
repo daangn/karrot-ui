@@ -1,5 +1,5 @@
 import { Switch as SwitchPrimitive, useSwitchContext } from "@seed-design/react-switch";
-import { switchStyle, type SwitchVariantProps } from "@seed-design/recipe/switch";
+import { switchStyle, type SwitchVariantProps } from "@seed-design/css/recipes/switch";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { createWithStateProps } from "../../utils/createWithStateProps";

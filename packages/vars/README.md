@@ -1,2 +1,0 @@
-# @seed-design/vars
-

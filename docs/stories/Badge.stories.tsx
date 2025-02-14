@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Badge } from "seed-design/ui/badge";
 
-import { badgeVariantMap } from "@seed-design/recipe/badge";
+import { badgeVariantMap } from "@seed-design/css/recipes/badge";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

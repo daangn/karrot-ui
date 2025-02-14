@@ -7,7 +7,7 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { fab, fabVariantMap } from "@seed-design/recipe/fab";
+import { fab, fabVariantMap } from "@seed-design/css/recipes/fab";
 
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { Fab, type FabProps } from "../design-system/ui/fab";

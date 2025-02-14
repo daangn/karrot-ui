@@ -16,6 +16,7 @@ import path from "node:path";
 const [, , format, dir = "./"] = process.argv;
 
 const PREFIX = "seed"; // TODO: move to config file
+const FILENAME = "seed"; // TODO: move to config file
 
 function buildConfig(preset: Preset, config: Partial<Config>) {
   return {
@@ -29,15 +30,15 @@ async function writeCss() {
   const config = buildConfig(preset, {});
 
   const css = await generateCssBundle(config);
-  console.log("Writing css bundle to", path.join(process.cwd(), dir, "design-system.css"));
-  fs.writeFileSync(path.join(process.cwd(), dir, "design-system.css"), css);
+  console.log("Writing css bundle to", path.join(process.cwd(), dir, `${FILENAME}.css`));
+  fs.writeFileSync(path.join(process.cwd(), dir, `${FILENAME}.css`), css);
 
   const minifiedCss = await generateCssBundle({ ...config, minify: true });
   console.log(
     "Writing minified css bundle to",
-    path.join(process.cwd(), dir, "design-system.min.css"),
+    path.join(process.cwd(), dir, `${FILENAME}.min.css`),
   );
-  fs.writeFileSync(path.join(process.cwd(), dir, "design-system.min.css"), minifiedCss);
+  fs.writeFileSync(path.join(process.cwd(), dir, `${FILENAME}.min.css`), minifiedCss);
 }
 
 async function writeCssInJs() {

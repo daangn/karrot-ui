@@ -1,10 +1,10 @@
 # @seed-design/rootage
 
-This package is a preset for [@seed-design/tools/rootage](https://github.com/daangn/seed-design/tree/main/tools/rootage)
+This package is a preset for [@seed-design/tools/rootage](../../tools/rootage)
 
 Following libraries are generated from this preset.
 
-- [@seed-design/stylesheet](https://github.com/daangn/seed-design/tree/main/packages/stylesheet)
-- [@seed-design/vars](https://github.com/daangn/seed-design/tree/main/packages/vars)
+- [@seed-design/qvism-preset/token.css](../qvism-preset/src/token.css)
+- [@seed-design/css/vars](../css/vars)
 
 Also, Swift(iOS) and Kotlin(Android) enums could be generated from this preset.

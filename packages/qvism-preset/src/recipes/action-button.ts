@@ -1,4 +1,4 @@
-import { actionButton as vars } from "@seed-design/vars/component";
+import { actionButton as vars } from "@seed-design/css/vars/component";
 
 import { defineRecipe } from "../utils/define-recipe";
 import { disabled, focus, active, pseudo, loading } from "../utils/pseudo";

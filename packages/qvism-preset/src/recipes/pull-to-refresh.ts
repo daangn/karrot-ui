@@ -1,4 +1,4 @@
-import { vars } from "@seed-design/vars";
+import { vars } from "@seed-design/css/vars";
 import { defineRecipe } from "../utils/define-recipe";
 import { pseudo } from "../utils/pseudo";
 

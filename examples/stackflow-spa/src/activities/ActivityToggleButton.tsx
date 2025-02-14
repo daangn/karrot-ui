@@ -7,7 +7,7 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { toggleButton, toggleButtonVariantMap } from "@seed-design/recipe/toggle-button";
+import { toggleButton, toggleButtonVariantMap } from "@seed-design/css/recipes/toggle-button";
 
 import { IconThumbUpFill } from "@daangn/react-monochrome-icon";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";

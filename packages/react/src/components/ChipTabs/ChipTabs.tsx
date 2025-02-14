@@ -4,7 +4,7 @@ import {
   useTabsContext,
   useTabsTriggerContext,
 } from "@seed-design/react-tabs";
-import { chipTabs, type ChipTabsVariantProps } from "@seed-design/recipe/chip-tabs";
+import { chipTabs, type ChipTabsVariantProps } from "@seed-design/css/recipes/chip-tabs";
 import type React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

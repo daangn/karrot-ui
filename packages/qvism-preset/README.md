@@ -1,8 +1,8 @@
 # @seed-design/qvism-preset
 
-This package is a preset for [@seed-design/tools/qvism](https://github.com/daangn/seed-design/tree/main/tools/qvism).
+This package is a preset for [@seed-design/tools/qvism](../../tools/qvism).
 
 Following libraries are generated from this preset.
 
-- [@seed-design/stylesheet](https://github.com/daangn/seed-design/tree/main/packages/stylesheet)
-- [@seed-design/recipe](https://github.com/daangn/seed-design/tree/main/packages/recipe)
+- [@seed-design/css/seed.css](../css)
+- [@seed-design/css/recipes](../css/recipes)

@@ -7,7 +7,7 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { avatarStack, avatarStackVariantMap } from "@seed-design/recipe/avatar-stack";
+import { avatarStack, avatarStackVariantMap } from "@seed-design/css/recipes/avatar-stack";
 
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { Avatar, AvatarBadge, type AvatarProps } from "../design-system/ui/avatar";

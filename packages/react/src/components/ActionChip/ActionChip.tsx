@@ -1,5 +1,5 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { actionChip, type ActionChipVariantProps } from "@seed-design/recipe/action-chip";
+import { actionChip, type ActionChipVariantProps } from "@seed-design/css/recipes/action-chip";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";

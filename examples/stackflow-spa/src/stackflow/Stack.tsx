@@ -1,4 +1,4 @@
-import { vars } from "@seed-design/vars";
+import { vars } from "@seed-design/css/vars";
 import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import { historySyncPlugin } from "@stackflow/plugin-history-sync";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
