@@ -51,6 +51,13 @@ const toggleButton = defineRecipe({
 
             "--track-color": vars.variantBrandSolid.selected.progressCircle.trackColor,
             "--range-color": vars.variantBrandSolid.selected.progressCircle.rangeColor,
+
+            ...prefixIcon({
+              color: vars.variantBrandSolid.selected.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantBrandSolid.selected.suffixIcon.color,
+            }),
           },
           [pseudo(pressed, active)]: {
             background: vars.variantBrandSolid.selectedPressed.root.color,
@@ -98,6 +105,13 @@ const toggleButton = defineRecipe({
 
             "--track-color": vars.variantNeutralWeak.selected.progressCircle.trackColor,
             "--range-color": vars.variantNeutralWeak.selected.progressCircle.rangeColor,
+
+            ...prefixIcon({
+              color: vars.variantNeutralWeak.selected.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralWeak.selected.suffixIcon.color,
+            }),
           },
           [pseudo(pressed, active)]: {
             background: vars.variantNeutralWeak.selectedPressed.root.color,

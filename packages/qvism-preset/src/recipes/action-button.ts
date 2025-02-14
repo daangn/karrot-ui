@@ -117,6 +117,7 @@ const actionButton = defineRecipe({
       neutralWeak: {
         root: {
           background: vars.variantNeutralWeak.enabled.root.color,
+          color: vars.variantNeutralWeak.enabled.label.color,
           ...prefixIcon({
             color: vars.variantNeutralWeak.enabled.prefixIcon.color,
           }),

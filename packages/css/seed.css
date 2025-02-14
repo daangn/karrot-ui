@@ -840,6 +840,7 @@
 
 .seed-action-button__root--variant_neutralWeak {
   background: var(--seed-color-bg-neutral-weak);
+  color: var(--seed-color-fg-neutral);
   --seed-prefix-icon-color: var(--seed-color-fg-neutral);
   --seed-suffix-icon-color: var(--seed-color-fg-neutral);
   --seed-only-icon-color: var(--seed-color-fg-neutral);
@@ -1085,6 +1086,8 @@
   color: var(--seed-color-fg-neutral);
   --track-color: var(--seed-color-palette-gray-500);
   --range-color: var(--seed-color-fg-neutral);
+  --seed-prefix-icon-color: var(--seed-color-fg-neutral);
+  --seed-suffix-icon-color: var(--seed-color-fg-neutral);
 }
 
 .seed-toggle-button__root--variant_brandSolid:is([aria-pressed="true"], [data-pressed]):is(:active, [data-active]) {
@@ -1127,6 +1130,8 @@
   color: var(--seed-color-fg-neutral);
   --track-color: var(--seed-color-palette-gray-500);
   --range-color: var(--seed-color-fg-neutral);
+  --seed-prefix-icon-color: var(--seed-color-fg-neutral);
+  --seed-suffix-icon-color: var(--seed-color-fg-neutral);
 }
 
 .seed-toggle-button__root--variant_neutralWeak:is([aria-pressed="true"], [data-pressed]):is(:active, [data-active]) {
