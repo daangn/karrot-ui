@@ -1,6 +1,9 @@
 "use client";
 
-import { SegmentedControl as SeedSegmentedControl } from "@seed-design/react";
+import {
+  ConsistentWidth,
+  SegmentedControl as SeedSegmentedControl,
+} from "@seed-design/react";
 import * as React from "react";
 
 export interface SegmentedControlProps extends SeedSegmentedControl.RootProps {}
@@ -57,7 +60,7 @@ export const SegmentedControlItem = React.forwardRef<
   return (
     <SeedSegmentedControl.Item ref={rootRef} {...otherProps}>
       <SeedSegmentedControl.ItemHiddenInput ref={ref} {...inputProps} />
-      {children}
+      <ConsistentWidth>{children}</ConsistentWidth>
     </SeedSegmentedControl.Item>
   );
 });

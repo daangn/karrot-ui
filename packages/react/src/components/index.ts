@@ -10,6 +10,7 @@ export * from "./Celcius";
 export * from "./Checkbox";
 export * from "./ChipTabs";
 export * from "./Columns";
+export * from "./ConsistentWidth";
 export * from "./ControlChip";
 export * from "./Count";
 export * from "./Dialog";
