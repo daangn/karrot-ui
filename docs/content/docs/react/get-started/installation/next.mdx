@@ -5,7 +5,7 @@ title: Next.js
 Next.js 프로젝트에서 seed-design 컴포넌트를 사용하기 위한 설정들에 대해서 알아봐요.
 
 <Tabs items={['Pages Router', 'App Router']}>
-  {/* Pages Router */}
+  {  /* Pages Router */}
   <Tab value="Pages Router">
     <Steps>
     <Step>
@@ -14,7 +14,7 @@ Next.js 프로젝트에서 seed-design 컴포넌트를 사용하기 위한 설�
     필요한 의존성들을 설치해요.
 
     ```package-install
-    @seed-design/stylesheet@alpha @seed-design/recipe@alpha
+    @seed-design/css
     ```
     </Step>
 
@@ -90,10 +90,10 @@ Next.js 프로젝트에서 seed-design 컴포넌트를 사용하기 위한 설�
     <Step>
     
 
-    ### token.css import하기
+    ### seed.css import하기
 
     ```tsx title="pages/_app.tsx"
-    import "@seed-design/stylesheet/token.css"; // [!code highlight]
+    import "@seed-design/css/seed.css"; // [!code highlight]
 
     function MyApp({ Component, pageProps }) {
       return <Component {...pageProps} />;
@@ -171,7 +171,7 @@ npx @seed-design/cli@latest add box-button
 
 </Tab>
 
-{/* App Router */}
+{  /* App Router */}
 <Tab value="App Router">
 준비중입니다...
 </Tab>
