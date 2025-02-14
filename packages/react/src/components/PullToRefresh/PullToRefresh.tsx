@@ -1,5 +1,5 @@
 import { PullToRefresh as PullToRefreshPrimitive } from "@seed-design/react-pull-to-refresh";
-import { pullToRefresh, type PullToRefreshVariantProps } from "@seed-design/recipe/pullToRefresh";
+import { pullToRefresh, type PullToRefreshVariantProps } from "@seed-design/recipe/pull-to-refresh";
 import { createStyleContext } from "../../utils/createStyleContext";
 
 const { withContext, withProvider } = createStyleContext(pullToRefresh);

@@ -1,6 +1,6 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { Toggle as TogglePrimitive, useToggleContext } from "@seed-design/react-toggle";
-import { toggleButton, type ToggleButtonVariantProps } from "@seed-design/recipe/toggleButton";
+import { toggleButton, type ToggleButtonVariantProps } from "@seed-design/recipe/toggle-button";
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";

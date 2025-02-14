@@ -7,7 +7,7 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { extendedFab, extendedFabVariantMap } from "@seed-design/recipe/extendedFab";
+import { extendedFab, extendedFabVariantMap } from "@seed-design/recipe/extended-fab";
 
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";

@@ -1,5 +1,5 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { visuallyHidden } from "@seed-design/recipe/visuallyHidden";
+import { visuallyHidden } from "@seed-design/recipe/visually-hidden";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 

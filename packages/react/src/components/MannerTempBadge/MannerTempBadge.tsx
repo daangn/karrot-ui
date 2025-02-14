@@ -2,7 +2,7 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import {
   mannerTempBadge,
   type MannerTempBadgeVariantProps,
-} from "@seed-design/recipe/mannerTempBadge";
+} from "@seed-design/recipe/manner-temp-badge";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 

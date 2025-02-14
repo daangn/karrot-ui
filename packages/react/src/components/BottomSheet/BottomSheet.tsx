@@ -1,6 +1,6 @@
 import { Dialog as DialogPrimitive, useDialogContext } from "@seed-design/react-dialog";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { bottomSheet, type BottomSheetVariantProps } from "@seed-design/recipe/bottomSheet";
+import { bottomSheet, type BottomSheetVariantProps } from "@seed-design/recipe/bottom-sheet";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 import { Box, type BoxProps } from "../Box";

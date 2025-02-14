@@ -1,5 +1,5 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe/actionButton";
+import { actionButton, type ActionButtonVariantProps } from "@seed-design/recipe/action-button";
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";

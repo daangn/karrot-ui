@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Avatar, AvatarStack } from "seed-design/ui/avatar";
 
-import { avatarStackVariantMap } from "@seed-design/recipe/avatarStack";
+import { avatarStackVariantMap } from "@seed-design/recipe/avatar-stack";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

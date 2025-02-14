@@ -1,4 +1,4 @@
-import { appScreen, type AppScreenVariantProps } from "@seed-design/recipe/appScreen";
+import { appScreen, type AppScreenVariantProps } from "@seed-design/recipe/app-screen";
 import { forwardRef, useMemo } from "react";
 import { AppScreen as AppScreenPrimitive } from "../../primitive";
 import { createStyleContext } from "../../utils/createStyleContext";

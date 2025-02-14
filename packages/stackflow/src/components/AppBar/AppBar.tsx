@@ -1,13 +1,13 @@
 import { Slot } from "@radix-ui/react-slot";
 import { mergeProps } from "@seed-design/dom-utils";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { type AppBarVariantProps, appBar } from "@seed-design/recipe/appBar";
+import { type AppBarVariantProps, appBar } from "@seed-design/recipe/app-bar";
 import clsx from "clsx";
 import { forwardRef } from "react";
 import { AppBar as AppBarPrimitive } from "../../primitive";
 import { useAppBarContext } from "../../primitive/AppBar/useAppBarContext";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { appBarMain, type AppBarMainVariantProps } from "@seed-design/recipe/appBarMain";
+import { appBarMain, type AppBarMainVariantProps } from "@seed-design/recipe/app-bar-main";
 
 const { PropsProvider, ClassNamesProvider, useProps, withContext, useClassNames } =
   createStyleContext(appBar);

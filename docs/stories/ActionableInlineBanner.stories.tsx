@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionableInlineBanner } from "seed-design/ui/inline-banner";
 
-import { inlineBannerVariantMap } from "@seed-design/recipe/inlineBanner";
+import { inlineBannerVariantMap } from "@seed-design/recipe/inline-banner";
 import { VariantTable } from "./components/variant-table";
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";

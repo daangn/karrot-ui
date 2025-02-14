@@ -1,7 +1,7 @@
 import { useCheckboxContext } from "@seed-design/react-checkbox";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { useRadioGroupItemContext } from "@seed-design/react-radio-group";
-import { controlChip, type ControlChipVariantProps } from "@seed-design/recipe/controlChip";
+import { controlChip, type ControlChipVariantProps } from "@seed-design/recipe/control-chip";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

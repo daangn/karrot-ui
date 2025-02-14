@@ -7,7 +7,7 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { actionButton, actionButtonVariantMap } from "@seed-design/recipe/actionButton";
+import { actionButton, actionButtonVariantMap } from "@seed-design/recipe/action-button";
 
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";

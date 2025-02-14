@@ -1,8 +1,8 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { Snackbar as SnackbarPrimitive } from "@seed-design/react-snackbar";
 import { snackbar, type SnackbarVariantProps } from "@seed-design/recipe/snackbar";
-import { snackbarRegion } from "@seed-design/recipe/snackbarRegion";
-import { visuallyHidden } from "@seed-design/recipe/visuallyHidden";
+import { snackbarRegion } from "@seed-design/recipe/snackbar-region";
+import { visuallyHidden } from "@seed-design/recipe/visually-hidden";
 import clsx from "clsx";
 import { forwardRef, useMemo } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";

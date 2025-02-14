@@ -1,5 +1,5 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { extendedFab, type ExtendedFabVariantProps } from "@seed-design/recipe/extendedFab";
+import { extendedFab, type ExtendedFabVariantProps } from "@seed-design/recipe/extended-fab";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";
 

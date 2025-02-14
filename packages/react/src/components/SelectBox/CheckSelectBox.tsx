@@ -1,7 +1,7 @@
 import { Checkbox as CheckboxPrimitive, useCheckboxContext } from "@seed-design/react-checkbox";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { selectBox } from "@seed-design/recipe/selectBox";
-import { selectBoxGroup } from "@seed-design/recipe/selectBoxGroup";
+import { selectBox } from "@seed-design/recipe/select-box";
+import { selectBoxGroup } from "@seed-design/recipe/select-box-group";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 import { Icon, type IconProps } from "../private/Icon";

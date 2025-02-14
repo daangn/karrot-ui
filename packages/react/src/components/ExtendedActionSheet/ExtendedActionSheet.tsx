@@ -3,15 +3,15 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import {
   extendedActionSheet,
   type ExtendedActionSheetVariantProps,
-} from "@seed-design/recipe/extendedActionSheet";
+} from "@seed-design/recipe/extended-action-sheet";
 import {
   extendedActionSheetCloseButton,
   type ExtendedActionSheetCloseButtonVariantProps,
-} from "@seed-design/recipe/extendedActionSheetCloseButton";
+} from "@seed-design/recipe/extended-action-sheet-close-button";
 import {
   extendedActionSheetItem,
   type ExtendedActionSheetItemVariantProps,
-} from "@seed-design/recipe/extendedActionSheetItem";
+} from "@seed-design/recipe/extended-action-sheet-item";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

@@ -1,6 +1,6 @@
 import { Popover as PopoverPrimitive, usePopoverContext } from "@seed-design/react-popover";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { helpBubble, type HelpBubbleVariantProps } from "@seed-design/recipe/helpBubble";
+import { helpBubble, type HelpBubbleVariantProps } from "@seed-design/recipe/help-bubble";
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

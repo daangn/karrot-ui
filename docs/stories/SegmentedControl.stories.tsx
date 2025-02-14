@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { SegmentedControl, SegmentedControlItem } from "seed-design/ui/segmented-control";
 
-import { segmentedControlVariantMap } from "@seed-design/recipe/segmentedControl";
+import { segmentedControlVariantMap } from "@seed-design/recipe/segmented-control";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { useState } from "react";

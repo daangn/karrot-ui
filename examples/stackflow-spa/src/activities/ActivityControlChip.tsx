@@ -7,7 +7,7 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { controlChip, controlChipVariantMap } from "@seed-design/recipe/controlChip";
+import { controlChip, controlChipVariantMap } from "@seed-design/recipe/control-chip";
 
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";

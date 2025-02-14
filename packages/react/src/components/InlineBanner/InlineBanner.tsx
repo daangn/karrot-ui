@@ -2,7 +2,7 @@ import clsx from "clsx";
 import * as React from "react";
 
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { inlineBanner, type InlineBannerVariantProps } from "@seed-design/recipe/inlineBanner";
+import { inlineBanner, type InlineBannerVariantProps } from "@seed-design/recipe/inline-banner";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";
 import {
