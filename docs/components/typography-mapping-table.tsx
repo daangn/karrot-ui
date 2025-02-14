@@ -2,15 +2,10 @@ import { getRootage } from "@/components/rootage";
 import { Text } from "@/registry/ui/text";
 import { Fragment } from "react";
 import { TextProps } from "@/registry/ui/text";
-
-interface TypographyMapping {
-  previousTokenId: string;
-  newTextStyleIds: string[];
-  note?: string;
-}
+import type { FoundationTokenMapping } from "@seed-design/mapping";
 
 interface TypographyMappingTableProps {
-  mappings: TypographyMapping[];
+  mappings: FoundationTokenMapping[];
 }
 
 export async function TypographyMappingTable({ mappings }: TypographyMappingTableProps) {
@@ -20,9 +15,9 @@ export async function TypographyMappingTable({ mappings }: TypographyMappingTabl
     throw new Error("Typography component spec not found");
   }
 
-  const tableItems: TypographyMapping[] = mappings.map((item) => ({
-    previousTokenId: item.previousTokenId,
-    newTextStyleIds: item.newTextStyleIds.map((id) => {
+  const tableItems: FoundationTokenMapping[] = mappings.map((item) => ({
+    previous: item.previous,
+    next: item.next.map((id) => {
       const typography = rootage.componentSpecEntities.typography.body.find(({ variants }) =>
         variants.some((variant) => variant.name === "textStyle" && variant.value === id),
       );
@@ -33,7 +28,7 @@ export async function TypographyMappingTable({ mappings }: TypographyMappingTabl
 
       return id;
     }),
-    note: item.note,
+    description: item.description,
   }));
 
   return (
@@ -52,24 +47,24 @@ export async function TypographyMappingTable({ mappings }: TypographyMappingTabl
       </thead>
       <tbody>
         {tableItems.map((item) => (
-          <tr key={item.previousTokenId}>
-            <td>{item.previousTokenId}</td>
+          <tr key={item.previous}>
+            <td>{item.previous}</td>
             <td className="align-middle space-y-2">
-              {item.newTextStyleIds.length > 0 &&
-                item.newTextStyleIds.map((newTextStyleId, index) => {
+              {item.next.length > 0 &&
+                item.next.map((newTextStyleId, index) => {
                   return (
                     <Fragment key={newTextStyleId}>
                       <Text textStyle={newTextStyleId as TextProps["textStyle"]}>
                         {newTextStyleId}
                       </Text>
-                      {index !== item.newTextStyleIds.length - 1 && (
+                      {index !== item.next.length - 1 && (
                         <div className="text-xs text-center">또는</div>
                       )}
                     </Fragment>
                   );
                 })}
             </td>
-            <td>{item.note}</td>
+            <td>{item.description}</td>
           </tr>
         ))}
       </tbody>

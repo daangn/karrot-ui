@@ -1,23 +1,21 @@
 {
   "name": "@seed-design/mapping",
   "version": "0.0.0",
-  "sideEffects": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daangn/seed-design.git",
-    "directory": "packages/mapping"
-  },
-  "files": [
-    "*.d.ts",
-    "*.mjs"
-  ],
+  "private": true,
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
   "exports": {
-    "./*": {
-      "types": "./*.d.ts",
-      "default": "./*.mjs"
+    ".": {
+      "types": "./index.d.ts"
+    },
+    "./color": {
+      "types": "./color.d.ts",
+      "import": "./color.mjs"
+    },
+    "./typography": {
+      "types": "./typography.d.ts",
+      "import": "./typography.mjs"
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

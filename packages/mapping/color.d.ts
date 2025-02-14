@@ -1,8 +1,4 @@
-export interface FoundationTokenMapping {
-  previous: string;
-  next: string[];
-  description?: string;
-}
+import type { FoundationTokenMapping } from "./index";
 
 export declare const semanticColorMappings: FoundationTokenMapping[];
 export declare const scaleColorMappings: FoundationTokenMapping[];
