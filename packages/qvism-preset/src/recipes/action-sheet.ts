@@ -17,7 +17,6 @@ const actionSheet = defineRecipe({
     "description",
     "list",
     "closeButton",
-    "closeButtonLabel",
   ],
   base: {
     positioner: {
@@ -120,15 +119,14 @@ const actionSheet = defineRecipe({
       paddingInline: closeVars.base.enabled.root.paddingX,
       paddingBlock: closeVars.base.enabled.root.paddingY,
 
-      [pseudo(active)]: {
-        backgroundColor: closeVars.base.pressed.root.color,
-      },
-    },
-    closeButtonLabel: {
       color: closeVars.base.enabled.label.color,
       fontSize: closeVars.base.enabled.label.fontSize,
       lineHeight: closeVars.base.enabled.label.lineHeight,
       fontWeight: closeVars.base.enabled.label.fontWeight,
+
+      [pseudo(active)]: {
+        backgroundColor: closeVars.base.pressed.root.color,
+      },
     },
   },
   variants: {},

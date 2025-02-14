@@ -6,27 +6,16 @@ import {
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 
-const { withProvider, withContext } = createStyleContext(mannerTempBadge);
+const { withProvider } = createStyleContext(mannerTempBadge);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface MannerTempBadgeRootProps
+export interface MannerTempBadgeProps
   extends MannerTempBadgeVariantProps,
     PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const MannerTempBadgeRoot = withProvider<HTMLSpanElement, MannerTempBadgeRootProps>(
+export const MannerTempBadge = withProvider<HTMLSpanElement, MannerTempBadgeProps>(
   Primitive.span,
   "root",
-);
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface MannerTempBadgeLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const MannerTempBadgeLabel = withContext<HTMLSpanElement, MannerTempBadgeLabelProps>(
-  Primitive.span,
-  "label",
 );

@@ -1,6 +1,12 @@
 import { IconPlusFill } from "@daangn/react-monochrome-icon";
+import { PrefixIcon } from "@seed-design/react";
 import { ActionButton } from "seed-design/ui/action-button";
 
 export default function ActionButtonPrefixIcon() {
-  return <ActionButton prefixIcon={<IconPlusFill />}>라벨</ActionButton>;
+  return (
+    <ActionButton>
+      <PrefixIcon svg={<IconPlusFill />} />
+      라벨
+    </ActionButton>
+  );
 }

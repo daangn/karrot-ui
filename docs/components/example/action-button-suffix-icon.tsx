@@ -1,6 +1,12 @@
 import { IconChevronRightFill } from "@daangn/react-monochrome-icon";
+import { SuffixIcon } from "@seed-design/react";
 import { ActionButton } from "seed-design/ui/action-button";
 
 export default function ActionButtonSuffixIcon() {
-  return <ActionButton suffixIcon={<IconChevronRightFill />}>라벨</ActionButton>;
+  return (
+    <ActionButton>
+      라벨
+      <SuffixIcon svg={<IconChevronRightFill />} />
+    </ActionButton>
+  );
 }

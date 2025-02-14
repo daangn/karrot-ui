@@ -1,40 +1,32 @@
 "use client";
 
-import { ToggleButton as SeedToggleButton } from "@seed-design/react";
+import {
+  ToggleButton as SeedToggleButton,
+  type ToggleButtonProps as SeedToggleButtonProps,
+} from "@seed-design/react";
 import * as React from "react";
-import { ProgressCircle } from "./progress-circle";
+import { LoadingIndicator } from "./loading-indicator";
 
-export interface ToggleButtonProps extends SeedToggleButton.RootProps {
-  prefixIcon?: React.ReactNode;
-
-  suffixIcon?: React.ReactNode;
-}
+export interface ToggleButtonProps extends SeedToggleButtonProps {}
 
 /**
  * @see https://v3.seed-design.io/docs/react/components/toggle-button
+ * If `asChild` is enabled, manual handling of `LoadingIndicator` is required.
  */
 export const ToggleButton = React.forwardRef<
-  React.ElementRef<typeof SeedToggleButton.Root>,
+  React.ElementRef<typeof SeedToggleButton>,
   ToggleButtonProps
->(
-  (
-    { loading = false, prefixIcon, suffixIcon, children, ...otherProps },
-    ref,
-  ) => {
-    return (
-      <SeedToggleButton.Root ref={ref} loading={loading} {...otherProps}>
-        {prefixIcon && <SeedToggleButton.PrefixIcon svg={prefixIcon} />}
-        <SeedToggleButton.Label>{children}</SeedToggleButton.Label>
-        {suffixIcon && <SeedToggleButton.SuffixIcon svg={suffixIcon} />}
-        {loading ? (
-          <SeedToggleButton.ProgressIndicator>
-            <ProgressCircle size="inherit" tone="inherit" />
-          </SeedToggleButton.ProgressIndicator>
-        ) : null}
-      </SeedToggleButton.Root>
-    );
-  },
-);
+>(({ loading = false, children, ...otherProps }, ref) => {
+  return (
+    <SeedToggleButton ref={ref} loading={loading} {...otherProps}>
+      {loading && !otherProps.asChild ? (
+        <LoadingIndicator>{children}</LoadingIndicator>
+      ) : (
+        children
+      )}
+    </SeedToggleButton>
+  );
+});
 ToggleButton.displayName = "ToggleButton";
 
 /**

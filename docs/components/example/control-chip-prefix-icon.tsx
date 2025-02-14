@@ -1,8 +1,14 @@
 "use client";
 
 import { IconPlusFill } from "@daangn/react-monochrome-icon";
+import { PrefixIcon } from "@seed-design/react";
 import { ControlChip } from "seed-design/ui/control-chip";
 
 export default function ControlChipPrefixIcon() {
-  return <ControlChip.Toggle prefixIcon={<IconPlusFill />}>라벨</ControlChip.Toggle>;
+  return (
+    <ControlChip.Toggle>
+      <PrefixIcon svg={<IconPlusFill />} />
+      라벨
+    </ControlChip.Toggle>
+  );
 }

@@ -58,19 +58,27 @@ export const registryUI: RegistryUI = [
     files: ["ui:pull-to-refresh.tsx"],
   },
   {
-    name: "action-button",
+    name: "loading-indicator",
     dependencies: ["@seed-design/react"],
     innerDependencies: ["ui:progress-circle"],
+    files: ["ui:loading-indicator.tsx"],
+  },
+  {
+    name: "action-button",
+    dependencies: ["@seed-design/react"],
+    innerDependencies: ["ui:loading-indicator"],
     files: ["ui:action-button.tsx"],
   },
   {
     name: "toggle-button",
     dependencies: ["@seed-design/react"],
+    innerDependencies: ["ui:loading-indicator"],
     files: ["ui:toggle-button.tsx"],
   },
   {
     name: "reaction-button",
     dependencies: ["@seed-design/react"],
+    innerDependencies: ["ui:loading-indicator"],
     files: ["ui:reaction-button.tsx"],
   },
   {
@@ -169,9 +177,9 @@ export const registryUI: RegistryUI = [
     files: ["ui:skeleton.tsx"],
   },
   {
-    name: "text-button",
+    name: "link-with-icon",
     dependencies: ["@seed-design/react"],
-    files: ["ui:text-button.tsx"],
+    files: ["ui:link-with-icon.tsx"],
   },
   {
     name: "text-field",

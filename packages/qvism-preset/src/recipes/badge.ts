@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 
 const badge = defineRecipe({
   name: "badge",
-  slots: ["root", "label"],
+  slots: ["root"],
   base: {
     root: {
       display: "inline-flex",
@@ -25,8 +25,7 @@ const badge = defineRecipe({
           minHeight: vars.sizeMedium.enabled.root.minHeight,
           paddingInline: vars.sizeMedium.enabled.root.paddingX,
           paddingBlock: vars.sizeMedium.enabled.root.paddingY,
-        },
-        label: {
+
           fontSize: vars.sizeMedium.enabled.label.fontSize,
           lineHeight: vars.sizeMedium.enabled.label.lineHeight,
         },
@@ -36,8 +35,7 @@ const badge = defineRecipe({
           minHeight: vars.sizeLarge.enabled.root.minHeight,
           paddingInline: vars.sizeLarge.enabled.root.paddingX,
           paddingBlock: vars.sizeLarge.enabled.root.paddingY,
-        },
-        label: {
+
           fontSize: vars.sizeLarge.enabled.label.fontSize,
           lineHeight: vars.sizeLarge.enabled.label.lineHeight,
         },
@@ -53,17 +51,17 @@ const badge = defineRecipe({
     },
     variant: {
       weak: {
-        label: {
+        root: {
           fontWeight: vars.variantWeak.enabled.label.fontWeight,
         },
       },
       solid: {
-        label: {
+        root: {
           fontWeight: vars.variantSolid.enabled.label.fontWeight,
         },
       },
       outline: {
-        label: {
+        root: {
           fontWeight: vars.variantOutline.enabled.label.fontWeight,
         },
       },
@@ -101,8 +99,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneNeutralVariantWeak.enabled.root.color,
-        },
-        label: {
           color: vars.toneNeutralVariantWeak.enabled.label.color,
         },
       },
@@ -113,8 +109,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneNeutralVariantSolid.enabled.root.color,
-        },
-        label: {
           color: vars.toneNeutralVariantSolid.enabled.label.color,
         },
       },
@@ -125,8 +119,6 @@ const badge = defineRecipe({
       css: {
         root: {
           boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneNeutralVariantOutline.enabled.root.strokeColor}`,
-        },
-        label: {
           color: vars.toneNeutralVariantOutline.enabled.label.color,
         },
       },
@@ -137,8 +129,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneBrandVariantWeak.enabled.root.color,
-        },
-        label: {
           color: vars.toneBrandVariantWeak.enabled.label.color,
         },
       },
@@ -149,8 +139,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneBrandVariantSolid.enabled.root.color,
-        },
-        label: {
           color: vars.toneBrandVariantSolid.enabled.label.color,
         },
       },
@@ -161,8 +149,6 @@ const badge = defineRecipe({
       css: {
         root: {
           boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneBrandVariantOutline.enabled.root.strokeColor}`,
-        },
-        label: {
           color: vars.toneBrandVariantOutline.enabled.label.color,
         },
       },
@@ -173,8 +159,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneInformativeVariantWeak.enabled.root.color,
-        },
-        label: {
           color: vars.toneInformativeVariantWeak.enabled.label.color,
         },
       },
@@ -185,8 +169,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneInformativeVariantSolid.enabled.root.color,
-        },
-        label: {
           color: vars.toneInformativeVariantSolid.enabled.label.color,
         },
       },
@@ -197,8 +179,6 @@ const badge = defineRecipe({
       css: {
         root: {
           boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneInformativeVariantOutline.enabled.root.strokeColor}`,
-        },
-        label: {
           color: vars.toneInformativeVariantOutline.enabled.label.color,
         },
       },
@@ -209,8 +189,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.tonePositiveVariantWeak.enabled.root.color,
-        },
-        label: {
           color: vars.tonePositiveVariantWeak.enabled.label.color,
         },
       },
@@ -221,8 +199,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.tonePositiveVariantSolid.enabled.root.color,
-        },
-        label: {
           color: vars.tonePositiveVariantSolid.enabled.label.color,
         },
       },
@@ -233,8 +209,6 @@ const badge = defineRecipe({
       css: {
         root: {
           boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.tonePositiveVariantOutline.enabled.root.strokeColor}`,
-        },
-        label: {
           color: vars.tonePositiveVariantOutline.enabled.label.color,
         },
       },
@@ -245,8 +219,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneCriticalVariantWeak.enabled.root.color,
-        },
-        label: {
           color: vars.toneCriticalVariantWeak.enabled.label.color,
         },
       },
@@ -257,8 +229,6 @@ const badge = defineRecipe({
       css: {
         root: {
           backgroundColor: vars.toneCriticalVariantSolid.enabled.root.color,
-        },
-        label: {
           color: vars.toneCriticalVariantSolid.enabled.label.color,
         },
       },
@@ -269,8 +239,6 @@ const badge = defineRecipe({
       css: {
         root: {
           boxShadow: `inset 0 0 0 ${vars.variantOutline.enabled.root.strokeWidth} ${vars.toneCriticalVariantOutline.enabled.root.strokeColor}`,
-        },
-        label: {
           color: vars.toneCriticalVariantOutline.enabled.label.color,
         },
       },

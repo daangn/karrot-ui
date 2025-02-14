@@ -12,6 +12,7 @@ import { reactionButton, reactionButtonVariantMap } from "@seed-design/css/recip
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ReactionButton, type ReactionButtonProps } from "../design-system/ui/reaction-button";
 import { IconFaceSmileCircleFill } from "@daangn/react-monochrome-icon";
+import { Count, PrefixIcon } from "@seed-design/react";
 
 const initialVariants = {
   size: "small",
@@ -32,13 +33,10 @@ const ActivityReactionButton: ActivityComponentType = () => {
           initialVariants={initialVariants}
           recipeFn={reactionButton}
           render={(variants) => (
-            <ReactionButton
-              prefixIcon={<IconFaceSmileCircleFill />}
-              key={JSON.stringify(variants)}
-              {...variants}
-              count={10}
-            >
+            <ReactionButton key={JSON.stringify(variants)} {...variants}>
+              <PrefixIcon svg={<IconFaceSmileCircleFill />} />
               야옹쓰
+              <Count>10</Count>
             </ReactionButton>
           )}
         />

@@ -1,7 +1,7 @@
 "use client";
 
 import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
-import { HelpBubble as SeedHelpBubble } from "@seed-design/react";
+import { OnlyIcon, HelpBubble as SeedHelpBubble } from "@seed-design/react";
 import { forwardRef } from "react";
 
 export interface HelpBubbleTriggerProps extends Omit<SeedHelpBubble.RootProps, "children"> {
@@ -36,7 +36,7 @@ export const HelpBubbleTrigger = forwardRef<HTMLButtonElement, HelpBubbleTrigger
           <SeedHelpBubble.Content {...contentProps}>
             {showCloseButton ? (
               <SeedHelpBubble.CloseButton>
-                <SeedHelpBubble.CloseIcon svg={<IconXmarkLine />} />
+                <OnlyIcon svg={<IconXmarkLine />} />
               </SeedHelpBubble.CloseButton>
             ) : null}
             <SeedHelpBubble.Arrow>
@@ -81,7 +81,7 @@ export const HelpBubbleAnchor = forwardRef<HTMLDivElement, HelpBubbleAnchorProps
         <SeedHelpBubble.Content>
           {showCloseButton ? (
             <SeedHelpBubble.CloseButton>
-              <SeedHelpBubble.CloseIcon svg={<IconXmarkLine />} />
+              <OnlyIcon svg={<IconXmarkLine />} />
             </SeedHelpBubble.CloseButton>
           ) : null}
           <SeedHelpBubble.Arrow>

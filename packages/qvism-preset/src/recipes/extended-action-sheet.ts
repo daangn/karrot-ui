@@ -18,7 +18,6 @@ const extendedActionSheet = defineRecipe({
     "group",
     "footer",
     "closeButton",
-    "closeButtonLabel",
   ],
   base: {
     positioner: {
@@ -122,15 +121,14 @@ const extendedActionSheet = defineRecipe({
       paddingBlock: closeVars.base.enabled.root.paddingY,
       borderRadius: closeVars.base.enabled.root.cornerRadius,
 
-      [pseudo(active)]: {
-        backgroundColor: closeVars.base.pressed.root.color,
-      },
-    },
-    closeButtonLabel: {
       color: closeVars.base.enabled.label.color,
       fontSize: closeVars.base.enabled.label.fontSize,
       lineHeight: closeVars.base.enabled.label.lineHeight,
       fontWeight: closeVars.base.enabled.label.fontWeight,
+
+      [pseudo(active)]: {
+        backgroundColor: closeVars.base.pressed.root.color,
+      },
     },
   },
   variants: {},

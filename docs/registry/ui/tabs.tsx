@@ -42,10 +42,8 @@ export const TabsTrigger = forwardRef<HTMLButtonElement, TabsTriggerProps>(
     const { children, notification, ...otherProps } = props;
     return (
       <SeedTabs.Trigger ref={ref} {...otherProps}>
-        <SeedTabs.TriggerLabel>
-          {children}
-          {notification && <SeedTabs.TriggerNotification />}
-        </SeedTabs.TriggerLabel>
+        {children}
+        {notification && <SeedTabs.TriggerNotification />}
       </SeedTabs.Trigger>
     );
   },
@@ -68,3 +66,8 @@ TabsCarousel.displayName = "TabsCarousel";
 export interface TabsContentProps extends SeedTabs.ContentProps {}
 
 export const TabsContent = SeedTabs.Content;
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

@@ -7,7 +7,7 @@
     {
       "name": "extended-fab.tsx",
       "type": "ui",
-      "content": "\"use client\";\n\nimport { ExtendedFab as SeedExtendedFab } from \"@seed-design/react\";\nimport * as React from \"react\";\n\nexport interface ExtendedFabProps extends SeedExtendedFab.RootProps {\n  prefixIcon?: React.ReactNode;\n}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/extended-fab\n */\nexport const ExtendedFab = React.forwardRef<\n  HTMLButtonElement,\n  ExtendedFabProps\n>(({ children, prefixIcon, ...otherProps }, ref) => {\n  return (\n    <SeedExtendedFab.Root ref={ref} {...otherProps}>\n      {prefixIcon && <SeedExtendedFab.PrefixIcon svg={prefixIcon} />}\n      <SeedExtendedFab.Label>{children}</SeedExtendedFab.Label>\n    </SeedExtendedFab.Root>\n  );\n});\nExtendedFab.displayName = \"ExtendedFab\";\n"
+      "content": "\"use client\";\n\nimport {\n  ExtendedFab as SeedExtendedFab,\n  type ExtendedFabProps as SeedExtendedFabProps,\n} from \"@seed-design/react\";\n\nexport interface ExtendedFabProps extends SeedExtendedFabProps {}\n\n/**\n * @see https://v3.seed-design.io/docs/react/components/extended-fab\n */\nexport const ExtendedFab = SeedExtendedFab;\n\n/**\n * This file is generated snippet from the Seed Design.\n * You can extend the functionality from this snippet if needed.\n */\n"
     }
   ]
 }

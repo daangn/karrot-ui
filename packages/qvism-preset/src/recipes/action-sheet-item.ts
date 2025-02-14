@@ -4,7 +4,7 @@ import { active, pseudo } from "../utils/pseudo";
 
 const actionSheetItem = defineRecipe({
   name: "action-sheet-item",
-  slots: ["root", "label"],
+  slots: ["root"],
   base: {
     root: {
       display: "flex",
@@ -16,6 +16,10 @@ const actionSheetItem = defineRecipe({
       minHeight: vars.base.enabled.root.minHeight,
       paddingInline: vars.base.enabled.root.paddingX,
       paddingBlock: vars.base.enabled.root.paddingY,
+
+      fontSize: vars.base.enabled.label.fontSize,
+      lineHeight: vars.base.enabled.label.lineHeight,
+      fontWeight: vars.base.enabled.label.fontWeight,
 
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.root.color,
@@ -32,21 +36,16 @@ const actionSheetItem = defineRecipe({
         background: rootVars.base.enabled.divider.strokeColor,
       },
     },
-    label: {
-      fontSize: vars.base.enabled.label.fontSize,
-      lineHeight: vars.base.enabled.label.lineHeight,
-      fontWeight: vars.base.enabled.label.fontWeight,
-    },
   },
   variants: {
     tone: {
       neutral: {
-        label: {
+        root: {
           color: vars.toneNeutral.enabled.label.color,
         },
       },
       critical: {
-        label: {
+        root: {
           color: vars.toneCritical.enabled.label.color,
         },
       },

@@ -1,18 +1,12 @@
-import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import {
-  SegmentedControl as SegmentedControlPrimitive,
-  useSegmentedControlItemContext,
-} from "@seed-design/react-segmented-control";
 import {
   segmentedControl,
   type SegmentedControlVariantProps,
 } from "@seed-design/css/recipes/segmented-control";
-import { forwardRef } from "react";
+import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
+import { SegmentedControl as SegmentedControlPrimitive } from "@seed-design/react-segmented-control";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { createWithStateProps } from "../../utils/createWithStateProps";
 
 const { withProvider, withContext } = createStyleContext(segmentedControl);
-const withStateProps = createWithStateProps([useSegmentedControlItemContext]);
 
 export interface SegmentedControlRootProps
   extends SegmentedControlVariantProps,
@@ -43,21 +37,3 @@ export interface SegmentedControlItemHiddenInputProps
   extends SegmentedControlPrimitive.ItemHiddenInputProps {}
 
 export const SegmentedControlItemHiddenInput = SegmentedControlPrimitive.ItemHiddenInput;
-
-export interface SegmentedControlItemLabelProps
-  extends PrimitiveProps,
-    Omit<React.HTMLAttributes<HTMLSpanElement>, "children"> {
-  children: string;
-}
-
-const ConsistentWidthLabel = forwardRef<
-  HTMLSpanElement,
-  PrimitiveProps & Omit<React.HTMLAttributes<HTMLSpanElement>, "children"> & { children: string }
->((props, ref) => {
-  return <Primitive.span data-text={props.children} ref={ref} {...props} />;
-});
-
-export const SegmentedControlItemLabel = withContext<
-  HTMLSpanElement,
-  SegmentedControlItemLabelProps
->(withStateProps(ConsistentWidthLabel), "itemLabel");

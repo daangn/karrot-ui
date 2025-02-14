@@ -10,10 +10,7 @@ export {
   ExtendedActionSheetList,
   ExtendedActionSheetGroup,
   ExtendedActionSheetItem,
-  ExtendedActionSheetItemLabel,
-  ExtendedActionSheetItemPrefixIcon,
   ExtendedActionSheetCloseButton,
-  ExtendedActionSheetCloseButtonLabel,
   type ExtendedActionSheetBackdropProps,
   type ExtendedActionSheetPositionerProps,
   type ExtendedActionSheetContentProps,
@@ -25,10 +22,7 @@ export {
   type ExtendedActionSheetListProps,
   type ExtendedActionSheetGroupProps,
   type ExtendedActionSheetItemProps,
-  type ExtendedActionSheetItemLabelProps,
-  type ExtendedActionSheetItemPrefixIconProps,
   type ExtendedActionSheetCloseButtonProps,
-  type ExtendedActionSheetCloseButtonLabelProps,
 } from "./ExtendedActionSheet";
 
 export * as ExtendedActionSheet from "./ExtendedActionSheet.namespace";

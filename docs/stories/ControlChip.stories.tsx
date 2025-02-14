@@ -7,6 +7,7 @@ import { controlChipVariantMap } from "@seed-design/css/recipes/control-chip";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
+import { Count, PrefixIcon, SuffixIcon } from "@seed-design/react";
 
 const meta = {
   component: ControlChip.Toggle,
@@ -23,17 +24,23 @@ const conditionMap = {
     true: { checked: true },
   },
   layout: {
-    withText: { layout: "withText", children: "Control Chip" },
+    withText: {
+      layout: "withText",
+      children: (
+        <>
+          <PrefixIcon svg={<IconBellFill />} />
+          Control Chip
+          <Count>10</Count>
+          <SuffixIcon svg={<IconChevronDownFill />} />
+        </>
+      ),
+    },
     iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
   },
 };
 
 const CommonStoryTemplate: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronDownFill />,
-    count: 10,
-  },
+  args: {},
   render: (args) => (
     <VariantTable
       Component={meta.component}

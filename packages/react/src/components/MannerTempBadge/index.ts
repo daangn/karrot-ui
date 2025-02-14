@@ -1,8 +1,4 @@
 export {
-  MannerTempBadgeLabel,
-  MannerTempBadgeRoot,
-  type MannerTempBadgeLabelProps,
-  type MannerTempBadgeRootProps,
+  MannerTempBadge,
+  type MannerTempBadgeProps,
 } from "./MannerTempBadge";
-
-export * as MannerTempBadge from "./MannerTempBadge.namespace";

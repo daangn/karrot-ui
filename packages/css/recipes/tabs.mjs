@@ -32,10 +32,6 @@ const tabsSlotNames = [
     "seed-tabs__trigger"
   ],
   [
-    "triggerLabel",
-    "seed-tabs__triggerLabel"
-  ],
-  [
     "triggerNotification",
     "seed-tabs__triggerNotification"
   ]

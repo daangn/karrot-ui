@@ -6,26 +6,6 @@ const controlChipSlotNames = [
   [
     "root",
     "seed-control-chip__root"
-  ],
-  [
-    "label",
-    "seed-control-chip__label"
-  ],
-  [
-    "icon",
-    "seed-control-chip__icon"
-  ],
-  [
-    "prefixIcon",
-    "seed-control-chip__prefixIcon"
-  ],
-  [
-    "suffixIcon",
-    "seed-control-chip__suffixIcon"
-  ],
-  [
-    "count",
-    "seed-control-chip__count"
   ]
 ];
 

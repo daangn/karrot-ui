@@ -38,10 +38,6 @@ const bottomSheetSlotNames = [
   [
     "closeButton",
     "seed-bottom-sheet__closeButton"
-  ],
-  [
-    "closeIcon",
-    "seed-bottom-sheet__closeIcon"
   ]
 ];
 

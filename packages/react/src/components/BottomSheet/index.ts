@@ -10,7 +10,6 @@ export {
   BottomSheetTitle,
   BottomSheetTrigger,
   BottomSheetCloseButton,
-  BottomSheetCloseIcon,
   type BottomSheetBackdropProps,
   type BottomSheetBodyProps,
   type BottomSheetContentProps,
@@ -22,7 +21,6 @@ export {
   type BottomSheetTitleProps,
   type BottomSheetTriggerProps,
   type BottomSheetCloseButtonProps,
-  type BottomSheetCloseIconProps,
 } from "./BottomSheet";
 
 export * as BottomSheet from "./BottomSheet.namespace";

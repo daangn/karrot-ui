@@ -2,11 +2,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionButton } from "seed-design/ui/action-button";
 
+import { createStoryWithParameters } from "@/stories/utils/parameters";
 import { IconBellFill, IconChevronRightFill } from "@daangn/react-monochrome-icon";
 import { actionButtonVariantMap } from "@seed-design/css/recipes/action-button";
+import { PrefixIcon, SuffixIcon } from "@seed-design/react";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
-import { createStoryWithParameters } from "@/stories/utils/parameters";
 
 const meta = {
   component: ActionButton,
@@ -28,11 +29,23 @@ const conditionMap = {
   },
   layout: {
     textOnly: { layout: "withText", children: "Action Button" },
-    iconFirst: { layout: "withText", children: "Action Button", prefixIcon: <IconBellFill /> },
+    iconFirst: {
+      layout: "withText",
+      children: (
+        <>
+          <PrefixIcon svg={<IconBellFill />} />
+          Action Button
+        </>
+      ),
+    },
     iconLast: {
       layout: "withText",
-      children: "Action Button",
-      suffixIcon: <IconChevronRightFill />,
+      children: (
+        <>
+          Action Button
+          <SuffixIcon svg={<IconChevronRightFill />} />
+        </>
+      ),
     },
     iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
   },

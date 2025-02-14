@@ -1,5 +1,4 @@
-import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { Toggle as TogglePrimitive, useToggleContext } from "@seed-design/react-toggle";
+import { Toggle as TogglePrimitive } from "@seed-design/react-toggle";
 import {
   toggleButton,
   type ToggleButtonVariantProps,
@@ -7,24 +6,20 @@ import {
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon, type IconProps } from "../private/Icon";
 import {
   PendingButtonProvider,
   usePendingButton,
-  usePendingButtonContext,
   type UsePendingButtonProps,
-} from "../private/usePendingButton";
+} from "../LoadingIndicator/usePendingButton";
 
-const { ClassNamesProvider, withContext } = createStyleContext(toggleButton);
-const withStateProps = createWithStateProps([usePendingButtonContext, useToggleContext]);
+const { ClassNamesProvider } = createStyleContext(toggleButton);
 
-export interface ToggleButtonRootProps
+export interface ToggleButtonProps
   extends ToggleButtonVariantProps,
     UsePendingButtonProps,
     TogglePrimitive.RootProps {}
 
-export const ToggleButtonRoot = React.forwardRef<HTMLButtonElement, ToggleButtonRootProps>(
+export const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProps>(
   ({ variant = "brandSolid", size = "small", loading = false, className, ...otherProps }, ref) => {
     const classNames = toggleButton({ variant, size });
     const api = usePendingButton({ loading, disabled: otherProps.disabled });
@@ -43,36 +38,4 @@ export const ToggleButtonRoot = React.forwardRef<HTMLButtonElement, ToggleButton
     );
   },
 );
-ToggleButtonRoot.displayName = "ToggleButton";
-
-export interface ToggleButtonLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const ToggleButtonLabel = withContext<HTMLSpanElement, ToggleButtonLabelProps>(
-  withStateProps(Primitive.span),
-  "label",
-);
-
-export interface ToggleButtonPrefixIconProps extends IconProps {}
-
-export const ToggleButtonPrefixIcon = withContext<SVGSVGElement, ToggleButtonPrefixIconProps>(
-  withStateProps(Icon),
-  "prefixIcon",
-);
-
-export interface ToggleButtonSuffixIconProps extends IconProps {}
-
-export const ToggleButtonSuffixIcon = withContext<SVGSVGElement, ToggleButtonSuffixIconProps>(
-  withStateProps(Icon),
-  "suffixIcon",
-);
-
-export interface ToggleButtonProgressIndicatorProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLDivElement> {}
-
-export const ToggleButtonProgressIndicator = withContext<
-  HTMLDivElement,
-  ToggleButtonProgressIndicatorProps
->(withStateProps(Primitive.div), "progressIndicator");
+ToggleButton.displayName = "ToggleButton";

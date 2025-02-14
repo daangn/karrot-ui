@@ -1,7 +1,5 @@
-import type { SlotRecipeDefinition, SlotRecipeVariantRecord } from "@seed-design/qvism-core";
+import type { SlotRecipeDefinition } from "@seed-design/qvism-core";
 
-export function defineRecipe<S extends string, V extends SlotRecipeVariantRecord<S>>(
-  definition: SlotRecipeDefinition<S, V>,
-): SlotRecipeDefinition<S, V> {
+export function defineRecipe<T extends SlotRecipeDefinition<string, any>>(definition: T): T {
   return definition;
 }

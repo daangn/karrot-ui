@@ -6,26 +6,6 @@ const actionButtonSlotNames = [
   [
     "root",
     "seed-action-button__root"
-  ],
-  [
-    "label",
-    "seed-action-button__label"
-  ],
-  [
-    "icon",
-    "seed-action-button__icon"
-  ],
-  [
-    "prefixIcon",
-    "seed-action-button__prefixIcon"
-  ],
-  [
-    "suffixIcon",
-    "seed-action-button__suffixIcon"
-  ],
-  [
-    "progressIndicator",
-    "seed-action-button__progressIndicator"
   ]
 ];
 

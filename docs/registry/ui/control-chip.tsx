@@ -1,88 +1,41 @@
 "use client";
 
-import { ControlChip as SeedControlChip } from "@seed-design/react";
+import {
+  ControlChip as SeedControlChip,
+  type ControlChipBaseProps as SeedControlChipBaseProps,
+  type ControlChipProps as SeedControlChipProps,
+} from "@seed-design/react";
 import { Checkbox, RadioGroup } from "@seed-design/react/primitive";
 import * as React from "react";
 
-export interface ToggleControlChipProps
-  extends SeedControlChip.RootBaseProps,
-    Checkbox.RootProps {
-  prefixIcon?: React.ReactNode;
-
-  suffixIcon?: React.ReactNode;
-
-  count?: number;
-
+export interface ToggleControlChipProps extends SeedControlChipBaseProps, Checkbox.RootProps {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 
   rootRef?: React.Ref<HTMLLabelElement>;
 }
 
-export const ToggleControlChip = React.forwardRef<
-  HTMLInputElement,
-  ToggleControlChipProps
->(
-  (
-    {
-      children,
-      prefixIcon,
-      suffixIcon,
-      count,
-      size,
-      layout = "withText",
-      inputProps,
-      rootRef,
-      ...otherProps
-    },
-    ref,
-  ) => {
+export const ToggleControlChip = React.forwardRef<HTMLInputElement, ToggleControlChipProps>(
+  ({ children, size, layout = "withText", inputProps, rootRef, ...otherProps }, ref) => {
     return (
-      <SeedControlChip.Root asChild size={size} layout={layout}>
+      <SeedControlChip asChild size={size} layout={layout}>
         <Checkbox.Root ref={rootRef} {...otherProps}>
-          {layout === "withText" ? (
-            <>
-              {prefixIcon && <SeedControlChip.PrefixIcon svg={prefixIcon} />}
-              <SeedControlChip.Label>{children}</SeedControlChip.Label>
-              {count && <SeedControlChip.Count>{count}</SeedControlChip.Count>}
-              {suffixIcon && <SeedControlChip.SuffixIcon svg={suffixIcon} />}
-            </>
-          ) : (
-            <SeedControlChip.Icon svg={children} />
-          )}
+          {children}
           <Checkbox.HiddenInput ref={ref} {...inputProps} />
         </Checkbox.Root>
-      </SeedControlChip.Root>
+      </SeedControlChip>
     );
   },
 );
 ToggleControlChip.displayName = "ControlChip.Toggle";
 
-export interface ButtonControlChipProps extends SeedControlChip.RootProps {
-  prefixIcon?: React.ReactNode;
+export interface ButtonControlChipProps extends SeedControlChipProps {}
 
-  suffixIcon?: React.ReactNode;
-}
-
-export const ButtonControlChip = React.forwardRef<
-  HTMLButtonElement,
-  ButtonControlChipProps
->(
-  (
-    { children, prefixIcon, suffixIcon, layout = "withText", ...otherProps },
-    ref,
-  ) => {
+export const ButtonControlChip = React.forwardRef<HTMLButtonElement, ButtonControlChipProps>(
+  ({ children, ...otherProps }, ref) => {
     return (
-      <SeedControlChip.Root ref={ref} layout={layout} {...otherProps}>
-        {layout === "withText" ? (
-          <>
-            {prefixIcon && <SeedControlChip.PrefixIcon svg={prefixIcon} />}
-            <SeedControlChip.Label>{children}</SeedControlChip.Label>
-            {suffixIcon && <SeedControlChip.SuffixIcon svg={suffixIcon} />}
-          </>
-        ) : (
-          <SeedControlChip.Icon svg={children} />
-        )}
-      </SeedControlChip.Root>
+      <SeedControlChip ref={ref} {...otherProps}>
+        {children}
+      </SeedControlChip>
     );
   },
 );
@@ -92,66 +45,30 @@ export interface RadioControlChipRootProps extends RadioGroup.RootProps {}
 
 export const RadioControlChipRoot = RadioGroup.Root;
 
-export interface RadioControlChipItemProps
-  extends SeedControlChip.RootBaseProps,
-    RadioGroup.ItemProps {
-  prefixIcon?: React.ReactNode;
-
-  suffixIcon?: React.ReactNode;
-
-  count?: number;
-
+export interface RadioControlChipItemProps extends SeedControlChipBaseProps, RadioGroup.ItemProps {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 
   rootRef?: React.Ref<HTMLLabelElement>;
 }
 
-export const RadioControlChipItem = React.forwardRef<
-  HTMLInputElement,
-  RadioControlChipItemProps
->(
-  (
-    {
-      children,
-      prefixIcon,
-      suffixIcon,
-      count,
-      size,
-      layout = "withText",
-      inputProps,
-      rootRef,
-      ...otherProps
-    },
-    ref,
-  ) => {
+export const RadioControlChipItem = React.forwardRef<HTMLInputElement, RadioControlChipItemProps>(
+  ({ children, inputProps, rootRef, size, layout = "withText", ...otherProps }, ref) => {
     return (
-      <SeedControlChip.Root asChild size={size} layout={layout}>
+      <SeedControlChip asChild size={size} layout={layout}>
         <RadioGroup.Item ref={rootRef} {...otherProps}>
-          {layout === "withText" ? (
-            <>
-              {prefixIcon && <SeedControlChip.PrefixIcon svg={prefixIcon} />}
-              <SeedControlChip.Label>{children}</SeedControlChip.Label>
-              {count && <SeedControlChip.Count>{count}</SeedControlChip.Count>}
-              {suffixIcon && <SeedControlChip.SuffixIcon svg={suffixIcon} />}
-            </>
-          ) : (
-            <SeedControlChip.Icon svg={children} />
-          )}
+          {children}
           <RadioGroup.ItemHiddenInput ref={ref} {...inputProps} />
         </RadioGroup.Item>
-      </SeedControlChip.Root>
+      </SeedControlChip>
     );
   },
 );
 RadioControlChipItem.displayName = "ControlChip.RadioItem";
 
-/**
- * @see https://v3.seed-design.io/docs/react/components/control-chip
- */
 export const ControlChip = Object.assign(
   () => {
     console.warn(
-      "ControlChip is a base component and should not be rendered. Use ControlChip.Toggle or ControlChip.Radio instead.",
+      "ControlChip is a base component and should not be rendered. Use ControlChip.Toggle or ControlChip.Button instead.",
     );
   },
   {

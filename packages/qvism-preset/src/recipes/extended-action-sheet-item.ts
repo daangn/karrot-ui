@@ -4,10 +4,11 @@ import {
 } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
+import { prefixIcon } from "../utils/icon";
 
 const extendedActionSheetItem = defineRecipe({
   name: "extended-action-sheet-item",
-  slots: ["root", "prefixIcon", "label"],
+  slots: ["root"],
   base: {
     root: {
       display: "flex",
@@ -21,42 +22,38 @@ const extendedActionSheetItem = defineRecipe({
       gap: vars.base.enabled.root.gap,
       boxShadow: `inset 0 calc(-1 * ${rootVars.base.enabled.divider.strokeBottomWidth}) 0 ${rootVars.base.enabled.divider.strokeColor}`,
 
+      fontSize: vars.base.enabled.label.fontSize,
+      lineHeight: vars.base.enabled.label.lineHeight,
+      fontWeight: vars.base.enabled.label.fontWeight,
+
       [pseudo(active)]: {
         backgroundColor: vars.base.pressed.root.color,
       },
       "&:last-child": {
         boxShadow: "none",
       },
-    },
-    label: {
-      fontSize: vars.base.enabled.label.fontSize,
-      lineHeight: vars.base.enabled.label.lineHeight,
-      fontWeight: vars.base.enabled.label.fontWeight,
-    },
-    prefixIcon: {
-      display: "inline-flex",
-      flexShrink: 0,
 
-      width: vars.base.enabled.prefixIcon.size,
-      height: vars.base.enabled.prefixIcon.size,
+      ...prefixIcon({
+        size: vars.base.enabled.prefixIcon.size,
+      }),
     },
   },
   variants: {
     tone: {
       neutral: {
-        label: {
+        root: {
           color: vars.toneNeutral.enabled.label.color,
-        },
-        prefixIcon: {
-          color: vars.toneNeutral.enabled.prefixIcon.color,
+          ...prefixIcon({
+            color: vars.toneNeutral.enabled.prefixIcon.color,
+          }),
         },
       },
       critical: {
-        label: {
+        root: {
           color: vars.toneCritical.enabled.label.color,
-        },
-        prefixIcon: {
-          color: vars.toneCritical.enabled.prefixIcon.color,
+          ...prefixIcon({
+            color: vars.toneCritical.enabled.prefixIcon.color,
+          }),
         },
       },
     },

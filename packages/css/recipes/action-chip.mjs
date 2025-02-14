@@ -6,26 +6,6 @@ const actionChipSlotNames = [
   [
     "root",
     "seed-action-chip__root"
-  ],
-  [
-    "label",
-    "seed-action-chip__label"
-  ],
-  [
-    "icon",
-    "seed-action-chip__icon"
-  ],
-  [
-    "prefixIcon",
-    "seed-action-chip__prefixIcon"
-  ],
-  [
-    "suffixIcon",
-    "seed-action-chip__suffixIcon"
-  ],
-  [
-    "count",
-    "seed-action-chip__count"
   ]
 ];
 

@@ -1,18 +1,17 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { extendedFab, type ExtendedFabVariantProps } from "@seed-design/css/recipes/extended-fab";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { Icon, type IconProps } from "../private/Icon";
 
-const { withContext, withProvider } = createStyleContext(extendedFab);
+const { withProvider } = createStyleContext(extendedFab);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ExtendedFabRootProps
+export interface ExtendedFabProps
   extends ExtendedFabVariantProps,
     PrimitiveProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const ExtendedFabRoot = withProvider<HTMLButtonElement, ExtendedFabRootProps>(
+export const ExtendedFab = withProvider<HTMLButtonElement, ExtendedFabProps>(
   Primitive.button,
   "root",
   {
@@ -21,24 +20,4 @@ export const ExtendedFabRoot = withProvider<HTMLButtonElement, ExtendedFabRootPr
       size: "medium",
     },
   },
-);
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ExtendedFabLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const ExtendedFabLabel = withContext<HTMLSpanElement, ExtendedFabLabelProps>(
-  Primitive.span,
-  "label",
-);
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ExtendedFabPrefixIconProps extends IconProps {}
-
-export const ExtendedFabPrefixIcon = withContext<SVGSVGElement, ExtendedFabPrefixIconProps>(
-  Icon,
-  "prefixIcon",
 );

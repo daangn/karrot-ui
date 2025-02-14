@@ -15,7 +15,7 @@ declare type ActionChipVariantMap = {
 
 export declare type ActionChipVariantProps = Partial<ActionChipVariant>;
 
-export declare type ActionChipSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "count";
+export declare type ActionChipSlotName = "root";
 
 export declare const actionChipVariantMap: ActionChipVariantMap;
 

@@ -8,6 +8,7 @@ import {
   ExtendedActionSheetRoot,
 } from "../design-system/ui/extended-action-sheet";
 import { createCallbackActivity } from "../stackflow/createCallbackActivity";
+import { PrefixIcon } from "@seed-design/react";
 
 type Action = "add" | "edit" | "delete" | "test1" | "test2";
 
@@ -36,34 +37,28 @@ const ActivityExtendedActionSheet: ActivityComponentType = () => {
     <ExtendedActionSheetRoot open={activity.isActive} onOpenChange={handleClose}>
       <ExtendedActionSheetContent title="Actions" layerIndex={activity.zIndex * 5}>
         <ExtendedActionSheetGroup>
-          <ExtendedActionSheetItem
-            onClick={handleAction("add")}
-            prefixIcon={<IconPlusLine />}
-            label="Add"
-          />
-          <ExtendedActionSheetItem
-            onClick={handleAction("edit")}
-            prefixIcon={<IconPencilLine />}
-            label="Edit"
-          />
+          <ExtendedActionSheetItem onClick={handleAction("add")}>
+            <PrefixIcon svg={<IconPlusLine />} />
+            Add
+          </ExtendedActionSheetItem>
+          <ExtendedActionSheetItem onClick={handleAction("edit")}>
+            <PrefixIcon svg={<IconPencilLine />} />
+            Edit
+          </ExtendedActionSheetItem>
         </ExtendedActionSheetGroup>
         <ExtendedActionSheetGroup>
-          <ExtendedActionSheetItem
-            onClick={handleAction("test1")}
-            prefixIcon={<IconPlusLine />}
-            label="Test1"
-          />
-          <ExtendedActionSheetItem
-            onClick={handleAction("test2")}
-            prefixIcon={<IconPlusLine />}
-            label="Test2"
-          />
-          <ExtendedActionSheetItem
-            onClick={handleAction("delete")}
-            tone="critical"
-            prefixIcon={<IconTrashcanLine />}
-            label="Delete"
-          />
+          <ExtendedActionSheetItem onClick={handleAction("test1")}>
+            <PrefixIcon svg={<IconPlusLine />} />
+            Test1
+          </ExtendedActionSheetItem>
+          <ExtendedActionSheetItem onClick={handleAction("test2")}>
+            <PrefixIcon svg={<IconPlusLine />} />
+            Test2
+          </ExtendedActionSheetItem>
+          <ExtendedActionSheetItem onClick={handleAction("delete")} tone="critical">
+            <PrefixIcon svg={<IconTrashcanLine />} />
+            Delete
+          </ExtendedActionSheetItem>
         </ExtendedActionSheetGroup>
       </ExtendedActionSheetContent>
     </ExtendedActionSheetRoot>

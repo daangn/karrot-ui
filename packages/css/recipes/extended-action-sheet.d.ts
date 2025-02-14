@@ -8,7 +8,7 @@ declare type ExtendedActionSheetVariantMap = {
 
 export declare type ExtendedActionSheetVariantProps = Partial<ExtendedActionSheetVariant>;
 
-export declare type ExtendedActionSheetSlotName = "backdrop" | "positioner" | "content" | "header" | "title" | "list" | "group" | "footer" | "closeButton" | "closeButtonLabel";
+export declare type ExtendedActionSheetSlotName = "backdrop" | "positioner" | "content" | "header" | "title" | "list" | "group" | "footer" | "closeButton";
 
 export declare const extendedActionSheetVariantMap: ExtendedActionSheetVariantMap;
 

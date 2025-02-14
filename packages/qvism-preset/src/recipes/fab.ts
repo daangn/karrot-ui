@@ -2,10 +2,11 @@ import { fab as vars } from "@seed-design/css/vars/component";
 
 import { defineRecipe } from "../utils/define-recipe";
 import { active, disabled, focus, pseudo } from "../utils/pseudo";
+import { onlyIcon } from "../utils/icon";
 
 const fab = defineRecipe({
   name: "fab",
-  slots: ["root", "icon"],
+  slots: ["root"],
   base: {
     root: {
       display: "inline-flex",
@@ -32,19 +33,14 @@ const fab = defineRecipe({
       width: vars.base.enabled.root.size,
       height: vars.base.enabled.root.size,
 
+      ...onlyIcon({
+        color: vars.base.enabled.icon.color,
+        size: vars.base.enabled.icon.size,
+      }),
+
       [pseudo(active)]: {
         background: vars.base.pressed.root.color,
       },
-    },
-    icon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-
-      color: vars.base.enabled.icon.color,
-      width: vars.base.enabled.icon.size,
-      height: vars.base.enabled.icon.size,
     },
   },
   variants: {},

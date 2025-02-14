@@ -7,6 +7,7 @@ import { extendedFabVariantMap } from "@seed-design/css/recipes/extended-fab";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
+import { PrefixIcon } from "@seed-design/react";
 
 const meta = {
   component: ExtendedFab,
@@ -19,8 +20,12 @@ type Story = StoryObj<typeof meta>;
 
 const CommonStoryTemplate: Story = {
   args: {
-    prefixIcon: <IconBellFill />,
-    children: "라벨",
+    children: (
+      <>
+        <PrefixIcon svg={<IconBellFill />} />
+        라벨
+      </>
+    ),
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={extendedFabVariantMap} {...args} />

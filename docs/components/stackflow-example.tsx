@@ -2,11 +2,10 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import * as React from "react";
 import * as Index from "./example/index.json";
 
-import ErrorBoundary from "./error-boundary";
 import { CodeBlock } from "./code-block";
+import ErrorBoundary from "./error-boundary";
 
-import { Stackflow } from "./stackflow/Stackflow";
-import type { RegisteredActivityName } from "@stackflow/config";
+import { StackflowPreview } from "./stackflow-preview";
 
 interface StackflowExampleProps {
   names: string[];
@@ -14,23 +13,6 @@ interface StackflowExampleProps {
 
 export function StackflowExample(props: StackflowExampleProps) {
   const { names } = props;
-
-  const activities = React.useMemo(() => {
-    const Components = names.map((name) => {
-      const Component = React.lazy(() => import(`./example/${name}.tsx`));
-
-      if (!Component) {
-        throw new Error(`Component not found: ${name}`);
-      }
-
-      return {
-        name: name as RegisteredActivityName,
-        component: Component,
-      };
-    });
-
-    return Components;
-  }, [names]);
 
   const code = React.useMemo(() => {
     if (names.length === 0) return "";
@@ -45,16 +27,14 @@ export function StackflowExample(props: StackflowExampleProps) {
 
   return (
     <ErrorBoundary>
-      <React.Suspense fallback={null}>
-        <Tabs items={["미리보기", "코드"]}>
-          <Tab value="미리보기">
-            <Stackflow activities={activities} />
-          </Tab>
-          <Tab value="코드">
-            <CodeBlock lang="tsx" wrapper={{ allowCopy: true }} code={code} />
-          </Tab>
-        </Tabs>
-      </React.Suspense>
+      <Tabs items={["미리보기", "코드"]}>
+        <Tab value="미리보기">
+          <StackflowPreview names={names} />
+        </Tab>
+        <Tab value="코드">
+          <CodeBlock lang="tsx" wrapper={{ allowCopy: true }} code={code} />
+        </Tab>
+      </Tabs>
     </ErrorBoundary>
   );
 }

@@ -37,17 +37,6 @@ export const TabsTrigger = withContext<HTMLButtonElement, TabsTriggerProps>(
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface TabsTriggerLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const TabsTriggerLabel = withContext<HTMLSpanElement, TabsTriggerLabelProps>(
-  withStateProps(Primitive.span),
-  "triggerLabel",
-);
-
-////////////////////////////////////////////////////////////////////////////////////
-
 export interface TabsTriggerNotificationProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLDivElement> {}

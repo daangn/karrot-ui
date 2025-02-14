@@ -6,22 +6,6 @@ const toggleButtonSlotNames = [
   [
     "root",
     "seed-toggle-button__root"
-  ],
-  [
-    "label",
-    "seed-toggle-button__label"
-  ],
-  [
-    "prefixIcon",
-    "seed-toggle-button__prefixIcon"
-  ],
-  [
-    "suffixIcon",
-    "seed-toggle-button__suffixIcon"
-  ],
-  [
-    "progressIndicator",
-    "seed-toggle-button__progressIndicator"
   ]
 ];
 

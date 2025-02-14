@@ -4,7 +4,7 @@ import { active, disabled, not, pseudo, selected } from "../utils/pseudo";
 
 const chipTabs = defineRecipe({
   name: "chip-tabs",
-  slots: ["root", "list", "carousel", "carouselCamera", "content", "trigger", "triggerLabel"],
+  slots: ["root", "list", "carousel", "carouselCamera", "content", "trigger"],
   base: {
     root: {
       position: "relative",
@@ -63,8 +63,7 @@ const chipTabs = defineRecipe({
       borderRadius: triggerVars.base.enabled.root.cornerRadius,
       padding: `${triggerVars.base.enabled.root.paddingY} ${triggerVars.base.enabled.root.paddingX}`,
       minHeight: triggerVars.base.enabled.root.minHeight,
-    },
-    triggerLabel: {
+
       fontSize: triggerVars.base.enabled.label.fontSize,
       fontWeight: triggerVars.base.enabled.label.fontWeight,
     },
@@ -76,8 +75,12 @@ const chipTabs = defineRecipe({
           gap: vars.variantNeutralSolid.enabled.root.gap,
         },
         trigger: {
+          color: triggerVars.variantNeutralSolid.enabled.label.color,
+          fontWeight: triggerVars.base.enabled.label.fontWeight,
+
           [pseudo(selected)]: {
             backgroundColor: triggerVars.variantNeutralSolid.selected.root.color,
+            color: triggerVars.variantNeutralSolid.selected.label.color,
           },
 
           [pseudo(active)]: {
@@ -91,26 +94,11 @@ const chipTabs = defineRecipe({
           [pseudo(disabled)]: {
             cursor: "not-allowed",
             backgroundColor: undefined,
-          },
-
-          [pseudo(disabled, selected)]: {
-            backgroundColor: triggerVars.variantNeutralSolid.selectedDisabled.root.color,
-          },
-        },
-
-        triggerLabel: {
-          color: triggerVars.variantNeutralSolid.enabled.label.color,
-          fontWeight: triggerVars.base.enabled.label.fontWeight,
-
-          [pseudo(selected)]: {
-            color: triggerVars.variantNeutralSolid.selected.label.color,
-          },
-
-          [pseudo(disabled)]: {
             color: triggerVars.variantNeutralSolid.disabled.label.color,
           },
 
           [pseudo(disabled, selected)]: {
+            backgroundColor: triggerVars.variantNeutralSolid.selectedDisabled.root.color,
             color: triggerVars.variantNeutralSolid.selectedDisabled.label.color,
           },
         },
@@ -120,11 +108,15 @@ const chipTabs = defineRecipe({
           gap: vars.variantBrandSolid.enabled.root.gap,
         },
         trigger: {
-          fontWeight: triggerVars.variantBrandSolid.enabled.label.fontWeight,
           backgroundColor: triggerVars.variantBrandSolid.enabled.root.color,
+
+          color: triggerVars.variantBrandSolid.enabled.label.color,
+          fontWeight: triggerVars.variantBrandSolid.enabled.label.fontWeight,
 
           [pseudo(selected)]: {
             backgroundColor: triggerVars.variantBrandSolid.selected.root.color,
+            color: triggerVars.variantBrandSolid.selected.label.color,
+            fontWeight: triggerVars.variantBrandSolid.selected.label.fontWeight,
           },
 
           [pseudo(active)]: {
@@ -138,24 +130,11 @@ const chipTabs = defineRecipe({
           [pseudo(disabled)]: {
             cursor: "not-allowed",
             backgroundColor: triggerVars.variantBrandSolid.disabled.root.color,
+            color: triggerVars.variantBrandSolid.disabled.label.color,
           },
 
           [pseudo(disabled, selected)]: {
             backgroundColor: triggerVars.variantBrandSolid.selectedDisabled.root.color,
-          },
-        },
-
-        triggerLabel: {
-          color: triggerVars.variantBrandSolid.enabled.label.color,
-          fontWeight: triggerVars.variantBrandSolid.enabled.label.fontWeight,
-
-          [pseudo(selected)]: {
-            color: triggerVars.variantBrandSolid.selected.label.color,
-            fontWeight: triggerVars.variantBrandSolid.selected.label.fontWeight,
-          },
-
-          [pseudo(disabled)]: {
-            color: triggerVars.variantBrandSolid.disabled.label.color,
           },
         },
       },

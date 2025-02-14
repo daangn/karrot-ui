@@ -11,7 +11,7 @@ declare type ReactionButtonVariantMap = {
 
 export declare type ReactionButtonVariantProps = Partial<ReactionButtonVariant>;
 
-export declare type ReactionButtonSlotName = "root" | "label" | "count" | "prefixIcon" | "progressIndicator";
+export declare type ReactionButtonSlotName = "root";
 
 export declare const reactionButtonVariantMap: ReactionButtonVariantMap;
 

@@ -1,4 +1,4 @@
-import { Primitive } from "@seed-design/react-primitive";
+import { Slot } from "@radix-ui/react-slot";
 import { forwardRef } from "react";
 
 export interface IconProps {
@@ -7,9 +7,8 @@ export interface IconProps {
 
 export const Icon = forwardRef<SVGSVGElement, IconProps>(({ svg, ...otherProps }, ref) => {
   return (
-    // biome-ignore lint/a11y/noSvgWithoutTitle: SVG is used as a child of a button element, so it is not required to have a title
-    <Primitive.svg ref={ref} aria-hidden asChild {...otherProps}>
+    <Slot ref={ref as React.ForwardedRef<HTMLElement>} aria-hidden {...otherProps}>
       {svg}
-    </Primitive.svg>
+    </Slot>
   );
 });

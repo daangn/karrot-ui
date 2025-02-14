@@ -19,7 +19,7 @@ declare type ChipTabsVariantMap = {
 
 export declare type ChipTabsVariantProps = Partial<ChipTabsVariant>;
 
-export declare type ChipTabsSlotName = "root" | "list" | "carousel" | "carouselCamera" | "content" | "trigger" | "triggerLabel";
+export declare type ChipTabsSlotName = "root" | "list" | "carousel" | "carouselCamera" | "content" | "trigger";
 
 export declare const chipTabsVariantMap: ChipTabsVariantMap;
 

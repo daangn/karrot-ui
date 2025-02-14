@@ -6,14 +6,6 @@ const extendedActionSheetItemSlotNames = [
   [
     "root",
     "seed-extended-action-sheet-item__root"
-  ],
-  [
-    "prefixIcon",
-    "seed-extended-action-sheet-item__prefixIcon"
-  ],
-  [
-    "label",
-    "seed-extended-action-sheet-item__label"
   ]
 ];
 

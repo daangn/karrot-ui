@@ -2,6 +2,7 @@ import { bottomSheet as vars } from "@seed-design/css/vars/component";
 import { enterAnimation, exitAnimation } from "../utils/animation";
 import { defineRecipe } from "../utils/define-recipe";
 import { not, open, pseudo } from "../utils/pseudo";
+import { onlyIcon } from "../utils/icon";
 
 const bottomSheet = defineRecipe({
   name: "bottom-sheet",
@@ -15,7 +16,6 @@ const bottomSheet = defineRecipe({
     "title",
     "description",
     "closeButton",
-    "closeIcon",
   ],
   base: {
     positioner: {
@@ -134,18 +134,16 @@ const bottomSheet = defineRecipe({
       width: vars.base.enabled.closeButton.size,
       height: vars.base.enabled.closeButton.size,
 
+      ...onlyIcon({
+        color: vars.base.enabled.closeIcon.color,
+        size: vars.base.enabled.closeIcon.size,
+      }),
+
       "&:after": {
         content: '""',
         position: "absolute",
         inset: `calc((${vars.base.enabled.closeButton.size} - ${vars.base.enabled.closeButton.targetSize}) / 2)`,
       },
-    },
-    closeIcon: {
-      flexShrink: 0,
-
-      color: vars.base.enabled.closeIcon.color,
-      width: vars.base.enabled.closeIcon.size,
-      height: vars.base.enabled.closeIcon.size,
     },
   },
   variants: {},

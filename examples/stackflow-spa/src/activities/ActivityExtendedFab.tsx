@@ -12,6 +12,7 @@ import { extendedFab, extendedFabVariantMap } from "@seed-design/css/recipes/ext
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ExtendedFab, type ExtendedFabProps } from "../design-system/ui/extended-fab";
+import { PrefixIcon } from "@seed-design/react";
 
 const initialVariants = {
   variant: "neutralSolid",
@@ -33,7 +34,8 @@ const ActivityExtendedFab: ActivityComponentType = () => {
           initialVariants={initialVariants}
           recipeFn={extendedFab}
           render={(variants) => (
-            <ExtendedFab prefixIcon={<IconPlusFill />} key={JSON.stringify(variants)} {...variants}>
+            <ExtendedFab key={JSON.stringify(variants)} {...variants}>
+              <PrefixIcon svg={<IconPlusFill />} />
               Hello
             </ExtendedFab>
           )}

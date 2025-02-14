@@ -10,8 +10,7 @@ import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 
 const { withRootProvider, withContext } = createStyleContext(actionSheet);
-const { withProvider: withItemProvider, withContext: withItemContext } =
-  createStyleContext(actionSheetItem);
+const { withProvider: withItemProvider } = createStyleContext(actionSheetItem);
 const withStateProps = createWithStateProps([useDialogContext]);
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -110,33 +109,9 @@ export const ActionSheetItem = withItemProvider<HTMLButtonElement, ActionSheetIt
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ActionSheetItemLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {
-  asChild?: boolean;
-}
-
-export const ActionSheetItemLabel = withItemContext<HTMLSpanElement, ActionSheetItemLabelProps>(
-  withStateProps(Primitive.span),
-  "label",
-);
-
-////////////////////////////////////////////////////////////////////////////////////
-
 export interface ActionSheetCloseButtonProps extends DialogPrimitive.CloseButtonProps {}
 
 export const ActionSheetCloseButton = withContext<HTMLDivElement, ActionSheetCloseButtonProps>(
   DialogPrimitive.CloseButton,
   "closeButton",
 );
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ActionSheetCloseButtonLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const ActionSheetCloseButtonLabel = withContext<
-  HTMLSpanElement,
-  ActionSheetCloseButtonLabelProps
->(Primitive.span, "closeButtonLabel");

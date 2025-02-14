@@ -1,31 +1,24 @@
-import { ReactionButton as SeedReactionButton } from "@seed-design/react";
+import {
+  ReactionButton as SeedReactionButton,
+  type ReactionButtonProps as SeedReactionButtonProps,
+} from "@seed-design/react";
 import * as React from "react";
-import { ProgressCircle } from "./progress-circle";
+import { LoadingIndicator } from "./loading-indicator";
 
-export interface ReactionButtonProps extends SeedReactionButton.RootProps {
-  prefixIcon?: React.ReactNode;
-
-  count?: number;
-}
+export interface ReactionButtonProps extends SeedReactionButtonProps {}
 
 /**
  * @see https://v3.seed-design.io/docs/react/components/reaction-button
+ * If `asChild` is enabled, manual handling of `LoadingIndicator` is required.
  */
 export const ReactionButton = React.forwardRef<
-  React.ElementRef<typeof SeedReactionButton.Root>,
+  React.ElementRef<typeof SeedReactionButton>,
   ReactionButtonProps
->(({ loading = false, prefixIcon, count, children, ...otherProps }, ref) => {
+>(({ loading = false, children, ...otherProps }, ref) => {
   return (
-    <SeedReactionButton.Root ref={ref} loading={loading} {...otherProps}>
-      {prefixIcon && <SeedReactionButton.PrefixIcon svg={prefixIcon} />}
-      <SeedReactionButton.Label>{children}</SeedReactionButton.Label>
-      {count !== undefined && <SeedReactionButton.Count>{count}</SeedReactionButton.Count>}
-      {loading ? (
-        <SeedReactionButton.ProgressIndicator>
-          <ProgressCircle size="inherit" tone="inherit" />
-        </SeedReactionButton.ProgressIndicator>
-      ) : null}
-    </SeedReactionButton.Root>
+    <SeedReactionButton ref={ref} loading={loading} {...otherProps}>
+      {loading ? <LoadingIndicator>{children}</LoadingIndicator> : children}
+    </SeedReactionButton>
   );
 });
 ReactionButton.displayName = "ReactionButton";

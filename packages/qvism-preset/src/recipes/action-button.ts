@@ -2,10 +2,11 @@ import { actionButton as vars } from "@seed-design/css/vars/component";
 
 import { defineRecipe } from "../utils/define-recipe";
 import { disabled, focus, active, pseudo, loading } from "../utils/pseudo";
+import { onlyIcon, prefixIcon, suffixIcon } from "../utils/icon";
 
 const actionButton = defineRecipe({
   name: "action-button",
-  slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "progressIndicator"],
+  slots: ["root"],
   base: {
     root: {
       display: "inline-flex",
@@ -32,218 +33,163 @@ const actionButton = defineRecipe({
 
       fontWeight: vars.base.enabled.label.fontWeight,
     },
-    label: {
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    icon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    prefixIcon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    suffixIcon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    progressIndicator: {
-      position: "absolute",
-      display: "none",
-
-      [pseudo(loading)]: {
-        display: "flex",
-      },
-    },
   },
   variants: {
     variant: {
       brandSolid: {
         root: {
           background: vars.variantBrandSolid.enabled.root.color,
+          color: vars.variantBrandSolid.enabled.label.color,
+
+          ...prefixIcon({
+            color: vars.variantBrandSolid.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantBrandSolid.enabled.suffixIcon.color,
+          }),
+          ...onlyIcon({
+            color: vars.variantBrandSolid.enabled.icon.color,
+          }),
+
+          "--track-color": vars.variantBrandSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantBrandSolid.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantBrandSolid.pressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantBrandSolid.disabled.root.color,
+            color: vars.variantBrandSolid.disabled.label.color,
+            ...prefixIcon({
+              color: vars.variantBrandSolid.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantBrandSolid.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantBrandSolid.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantBrandSolid.loading.root.color,
           },
         },
-        label: {
-          color: vars.variantBrandSolid.enabled.label.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.label.color,
-          },
-        },
-        icon: {
-          color: vars.variantBrandSolid.enabled.icon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.icon.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantBrandSolid.enabled.prefixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantBrandSolid.enabled.suffixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantBrandSolid.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantBrandSolid.enabled.progressCircle.rangeColor,
-        },
       },
       neutralSolid: {
         root: {
           background: vars.variantNeutralSolid.enabled.root.color,
+          color: vars.variantNeutralSolid.enabled.label.color,
+          ...prefixIcon({
+            color: vars.variantNeutralSolid.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantNeutralSolid.enabled.suffixIcon.color,
+          }),
+          ...onlyIcon({
+            color: vars.variantNeutralSolid.enabled.icon.color,
+          }),
+
+          "--track-color": vars.variantNeutralSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantNeutralSolid.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantNeutralSolid.pressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantNeutralSolid.disabled.root.color,
+            color: vars.variantNeutralSolid.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantNeutralSolid.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralSolid.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantNeutralSolid.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralSolid.loading.root.color,
           },
         },
-        label: {
-          color: vars.variantNeutralSolid.enabled.label.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralSolid.disabled.label.color,
-          },
-        },
-        icon: {
-          color: vars.variantNeutralSolid.enabled.icon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralSolid.disabled.icon.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantNeutralSolid.enabled.prefixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralSolid.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantNeutralSolid.enabled.suffixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralSolid.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantNeutralSolid.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantNeutralSolid.enabled.progressCircle.rangeColor,
-        },
       },
       neutralWeak: {
         root: {
           background: vars.variantNeutralWeak.enabled.root.color,
+          color: vars.variantNeutralWeak.enabled.label.color,
+          ...prefixIcon({
+            color: vars.variantNeutralWeak.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantNeutralWeak.enabled.suffixIcon.color,
+          }),
+          ...onlyIcon({
+            color: vars.variantNeutralWeak.enabled.icon.color,
+          }),
+
+          "--track-color": vars.variantNeutralWeak.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantNeutralWeak.pressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantNeutralWeak.disabled.root.color,
+            color: vars.variantNeutralWeak.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantNeutralWeak.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralWeak.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantNeutralWeak.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralWeak.loading.root.color,
           },
         },
-        label: {
-          color: vars.variantNeutralWeak.enabled.label.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.label.color,
-          },
-        },
-        icon: {
-          color: vars.variantNeutralWeak.enabled.icon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.icon.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantNeutralWeak.enabled.prefixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantNeutralWeak.enabled.suffixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantNeutralWeak.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
-        },
       },
       criticalSolid: {
         root: {
           background: vars.variantCriticalSolid.enabled.root.color,
+          color: vars.variantCriticalSolid.enabled.label.color,
+          ...prefixIcon({
+            color: vars.variantCriticalSolid.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantCriticalSolid.enabled.suffixIcon.color,
+          }),
+          ...onlyIcon({
+            color: vars.variantCriticalSolid.enabled.icon.color,
+          }),
+
+          "--track-color": vars.variantCriticalSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantCriticalSolid.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantCriticalSolid.pressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantCriticalSolid.disabled.root.color,
+            color: vars.variantCriticalSolid.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantCriticalSolid.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantCriticalSolid.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantCriticalSolid.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantCriticalSolid.loading.root.color,
           },
-        },
-        label: {
-          color: vars.variantCriticalSolid.enabled.label.color,
-          [pseudo(disabled)]: {
-            color: vars.variantCriticalSolid.disabled.label.color,
-          },
-        },
-        icon: {
-          color: vars.variantCriticalSolid.enabled.icon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantCriticalSolid.disabled.icon.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantCriticalSolid.enabled.prefixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantCriticalSolid.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantCriticalSolid.enabled.suffixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantCriticalSolid.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantCriticalSolid.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantCriticalSolid.enabled.progressCircle.rangeColor,
         },
       },
       brandOutline: {
@@ -252,44 +198,41 @@ const actionButton = defineRecipe({
           background: vars.variantBrandOutline.enabled.root.color,
           borderWidth: vars.variantBrandOutline.enabled.root.strokeWidth,
           borderColor: vars.variantBrandOutline.enabled.root.strokeColor,
+          color: vars.variantBrandOutline.enabled.label.color,
+          ...prefixIcon({
+            color: vars.variantBrandOutline.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantBrandOutline.enabled.suffixIcon.color,
+          }),
+          ...onlyIcon({
+            color: vars.variantBrandOutline.enabled.icon.color,
+          }),
+
+          "--track-color": vars.variantBrandOutline.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantBrandOutline.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantBrandOutline.pressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantBrandOutline.disabled.root.color,
             borderColor: vars.variantBrandOutline.disabled.root.strokeColor,
+            color: vars.variantBrandOutline.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantBrandOutline.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantBrandOutline.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantBrandOutline.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantBrandOutline.loading.root.color,
           },
-        },
-        label: {
-          color: vars.variantBrandOutline.enabled.label.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandOutline.disabled.label.color,
-          },
-        },
-        icon: {
-          color: vars.variantBrandOutline.enabled.icon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandOutline.disabled.icon.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantBrandOutline.enabled.prefixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandOutline.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantBrandOutline.enabled.suffixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantBrandOutline.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantBrandOutline.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantBrandOutline.enabled.progressCircle.rangeColor,
         },
       },
       neutralOutline: {
@@ -298,44 +241,41 @@ const actionButton = defineRecipe({
           background: vars.variantNeutralOutline.enabled.root.color,
           borderWidth: vars.variantNeutralOutline.enabled.root.strokeWidth,
           borderColor: vars.variantNeutralOutline.enabled.root.strokeColor,
+          color: vars.variantNeutralOutline.enabled.label.color,
+          ...prefixIcon({
+            color: vars.variantNeutralOutline.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantNeutralOutline.enabled.suffixIcon.color,
+          }),
+          ...onlyIcon({
+            color: vars.variantNeutralOutline.enabled.icon.color,
+          }),
+
+          "--track-color": vars.variantNeutralOutline.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantNeutralOutline.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantNeutralOutline.pressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantNeutralOutline.disabled.root.color,
             borderColor: vars.variantNeutralOutline.disabled.root.strokeColor,
+            color: vars.variantNeutralOutline.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantNeutralOutline.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralOutline.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantNeutralOutline.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralOutline.loading.root.color,
           },
-        },
-        label: {
-          color: vars.variantNeutralOutline.enabled.label.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralOutline.disabled.label.color,
-          },
-        },
-        icon: {
-          color: vars.variantNeutralOutline.enabled.icon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralOutline.disabled.icon.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantNeutralOutline.enabled.prefixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralOutline.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantNeutralOutline.enabled.suffixIcon.color,
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralOutline.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantNeutralOutline.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantNeutralOutline.enabled.progressCircle.rangeColor,
         },
       },
     },
@@ -344,8 +284,7 @@ const actionButton = defineRecipe({
         root: {
           height: vars.sizeXsmall.enabled.root.minHeight,
           borderRadius: vars.sizeXsmall.enabled.root.cornerRadius,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeXsmall.enabled.progressCircle.size,
           "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
         },
@@ -354,8 +293,7 @@ const actionButton = defineRecipe({
         root: {
           height: vars.sizeSmall.enabled.root.minHeight,
           borderRadius: vars.sizeSmall.enabled.root.cornerRadius,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeSmall.enabled.progressCircle.size,
           "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
         },
@@ -364,8 +302,7 @@ const actionButton = defineRecipe({
         root: {
           height: vars.sizeMedium.enabled.root.minHeight,
           borderRadius: vars.sizeMedium.enabled.root.cornerRadius,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeMedium.enabled.progressCircle.size,
           "--thickness": vars.sizeMedium.enabled.progressCircle.thickness,
         },
@@ -374,8 +311,7 @@ const actionButton = defineRecipe({
         root: {
           height: vars.sizeLarge.enabled.root.minHeight,
           borderRadius: vars.sizeLarge.enabled.root.cornerRadius,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeLarge.enabled.progressCircle.size,
           "--thickness": vars.sizeLarge.enabled.progressCircle.thickness,
         },
@@ -395,17 +331,14 @@ const actionButton = defineRecipe({
           gap: vars.sizeXsmallLayoutWithText.enabled.root.gap,
           paddingInline: vars.sizeXsmallLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeXsmallLayoutWithText.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeXsmallLayoutWithText.enabled.label.fontSize,
-        },
-        prefixIcon: {
-          width: vars.sizeXsmallLayoutWithText.enabled.prefixIcon.size,
-          height: vars.sizeXsmallLayoutWithText.enabled.prefixIcon.size,
-        },
-        suffixIcon: {
-          width: vars.sizeXsmallLayoutWithText.enabled.suffixIcon.size,
-          height: vars.sizeXsmallLayoutWithText.enabled.suffixIcon.size,
+
+          ...prefixIcon({
+            size: vars.sizeXsmallLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeXsmallLayoutWithText.enabled.suffixIcon.size,
+          }),
         },
       },
     },
@@ -417,10 +350,10 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeXsmallLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeXsmallLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeXsmallLayoutIconOnly.enabled.root.paddingY,
-        },
-        icon: {
-          width: vars.sizeXsmallLayoutIconOnly.enabled.icon.size,
-          height: vars.sizeXsmallLayoutIconOnly.enabled.icon.size,
+
+          ...onlyIcon({
+            size: vars.sizeXsmallLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
     },
@@ -432,17 +365,14 @@ const actionButton = defineRecipe({
           gap: vars.sizeSmallLayoutWithText.enabled.root.gap,
           paddingInline: vars.sizeSmallLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeSmallLayoutWithText.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeSmallLayoutWithText.enabled.label.fontSize,
-        },
-        prefixIcon: {
-          width: vars.sizeSmallLayoutWithText.enabled.prefixIcon.size,
-          height: vars.sizeSmallLayoutWithText.enabled.prefixIcon.size,
-        },
-        suffixIcon: {
-          width: vars.sizeSmallLayoutWithText.enabled.suffixIcon.size,
-          height: vars.sizeSmallLayoutWithText.enabled.suffixIcon.size,
+
+          ...prefixIcon({
+            size: vars.sizeSmallLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeSmallLayoutWithText.enabled.suffixIcon.size,
+          }),
         },
       },
     },
@@ -454,10 +384,10 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeSmallLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeSmallLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeSmallLayoutIconOnly.enabled.root.paddingY,
-        },
-        icon: {
-          width: vars.sizeSmallLayoutIconOnly.enabled.icon.size,
-          height: vars.sizeSmallLayoutIconOnly.enabled.icon.size,
+
+          ...onlyIcon({
+            size: vars.sizeSmallLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
     },
@@ -469,17 +399,14 @@ const actionButton = defineRecipe({
           gap: vars.sizeMediumLayoutWithText.enabled.root.gap,
           paddingInline: vars.sizeMediumLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeMediumLayoutWithText.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeMediumLayoutWithText.enabled.label.fontSize,
-        },
-        prefixIcon: {
-          width: vars.sizeMediumLayoutWithText.enabled.prefixIcon.size,
-          height: vars.sizeMediumLayoutWithText.enabled.prefixIcon.size,
-        },
-        suffixIcon: {
-          width: vars.sizeMediumLayoutWithText.enabled.suffixIcon.size,
-          height: vars.sizeMediumLayoutWithText.enabled.suffixIcon.size,
+
+          ...prefixIcon({
+            size: vars.sizeMediumLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeMediumLayoutWithText.enabled.suffixIcon.size,
+          }),
         },
       },
     },
@@ -491,10 +418,10 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeMediumLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeMediumLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeMediumLayoutIconOnly.enabled.root.paddingY,
-        },
-        icon: {
-          width: vars.sizeMediumLayoutIconOnly.enabled.icon.size,
-          height: vars.sizeMediumLayoutIconOnly.enabled.icon.size,
+
+          ...onlyIcon({
+            size: vars.sizeMediumLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
     },
@@ -506,17 +433,14 @@ const actionButton = defineRecipe({
           gap: vars.sizeLargeLayoutWithText.enabled.root.gap,
           paddingInline: vars.sizeLargeLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeLargeLayoutWithText.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeLargeLayoutWithText.enabled.label.fontSize,
-        },
-        prefixIcon: {
-          width: vars.sizeLargeLayoutWithText.enabled.prefixIcon.size,
-          height: vars.sizeLargeLayoutWithText.enabled.prefixIcon.size,
-        },
-        suffixIcon: {
-          width: vars.sizeLargeLayoutWithText.enabled.suffixIcon.size,
-          height: vars.sizeLargeLayoutWithText.enabled.suffixIcon.size,
+
+          ...prefixIcon({
+            size: vars.sizeLargeLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeLargeLayoutWithText.enabled.suffixIcon.size,
+          }),
         },
       },
     },
@@ -528,10 +452,10 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeLargeLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeLargeLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeLargeLayoutIconOnly.enabled.root.paddingY,
-        },
-        icon: {
-          width: vars.sizeLargeLayoutIconOnly.enabled.icon.size,
-          height: vars.sizeLargeLayoutIconOnly.enabled.icon.size,
+
+          ...onlyIcon({
+            size: vars.sizeLargeLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
     },

@@ -1,14 +1,4 @@
 export {
-  ToggleButtonLabel,
-  ToggleButtonPrefixIcon,
-  ToggleButtonProgressIndicator,
-  ToggleButtonRoot,
-  ToggleButtonSuffixIcon,
-  type ToggleButtonLabelProps,
-  type ToggleButtonPrefixIconProps,
-  type ToggleButtonProgressIndicatorProps,
-  type ToggleButtonRootProps,
-  type ToggleButtonSuffixIconProps,
+  ToggleButton,
+  type ToggleButtonProps,
 } from "./ToggleButton";
-
-export * as ToggleButton from "./ToggleButton.namespace";

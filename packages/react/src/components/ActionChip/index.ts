@@ -1,16 +1,4 @@
 export {
-  ActionChipCount,
-  ActionChipIcon,
-  ActionChipLabel,
-  ActionChipPrefixIcon,
-  ActionChipRoot,
-  ActionChipSuffixIcon,
-  type ActionChipCountProps,
-  type ActionChipIconProps,
-  type ActionChipLabelProps,
-  type ActionChipPrefixIconProps,
-  type ActionChipRootProps,
-  type ActionChipSuffixIconProps,
+  ActionChip,
+  type ActionChipProps,
 } from "./ActionChip";
-
-export * as ActionChip from "./ActionChip.namespace";

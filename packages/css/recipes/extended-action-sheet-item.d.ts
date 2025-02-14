@@ -11,7 +11,7 @@ declare type ExtendedActionSheetItemVariantMap = {
 
 export declare type ExtendedActionSheetItemVariantProps = Partial<ExtendedActionSheetItemVariant>;
 
-export declare type ExtendedActionSheetItemSlotName = "root" | "prefixIcon" | "label";
+export declare type ExtendedActionSheetItemSlotName = "root";
 
 export declare const extendedActionSheetItemVariantMap: ExtendedActionSheetItemVariantMap;
 

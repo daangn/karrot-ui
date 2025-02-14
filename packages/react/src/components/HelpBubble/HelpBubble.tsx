@@ -5,7 +5,6 @@ import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 import { withStyleProps, type StyleProps } from "../../utils/styled";
-import { Icon, type IconProps } from "../private/Icon";
 
 const { withRootProvider, withContext } = createStyleContext(helpBubble);
 const withStateProps = createWithStateProps([usePopoverContext]);
@@ -124,15 +123,6 @@ export interface HelpBubbleCloseButtonProps extends PopoverPrimitive.CloseButton
 export const HelpBubbleCloseButton = withContext<HTMLButtonElement, HelpBubbleCloseButtonProps>(
   PopoverPrimitive.CloseButton,
   "closeButton",
-);
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface HelpBubbleCloseIconProps extends IconProps {}
-
-export const HelpBubbleCloseIcon = withContext<SVGSVGElement, HelpBubbleCloseIconProps>(
-  withStateProps(Icon),
-  "closeIcon",
 );
 
 ////////////////////////////////////////////////////////////////////////////////////

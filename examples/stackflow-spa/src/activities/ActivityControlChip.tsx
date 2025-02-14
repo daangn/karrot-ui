@@ -12,6 +12,7 @@ import { controlChip, controlChipVariantMap } from "@seed-design/css/recipes/con
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ControlChip, type ToggleControlChipProps } from "../design-system/ui/control-chip";
+import { Count } from "@seed-design/react";
 
 const initialVariants = {
   size: "medium",
@@ -33,8 +34,14 @@ const ActivityControlChip: ActivityComponentType = () => {
           initialVariants={initialVariants}
           recipeFn={controlChip}
           render={(variants) => (
-            <ControlChip.Toggle count={10} key={JSON.stringify(variants)} {...variants}>
-              {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
+            <ControlChip.Toggle key={JSON.stringify(variants)} {...variants}>
+              {variants.layout === "withText" ? (
+                <>
+                  야옹 <Count>10</Count>
+                </>
+              ) : (
+                <IconPlusFill />
+              )}
             </ControlChip.Toggle>
           )}
         />

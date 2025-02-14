@@ -8,17 +8,13 @@ type SVGExtraProperties = {
   cy?: string;
 };
 
-export type StyleObject = CSS.Properties &
+type SimpleStyleObject = CSS.Properties & { [K in string as `--${K}`]?: string };
+
+export type StyleObject = SimpleStyleObject &
   SVGExtraProperties & {
-    [P in CSS.SimplePseudos as `&${P}`]?: CSS.Properties & {
-      [K in string as `--${K}`]?: string;
-    };
+    [P in CSS.SimplePseudos as `&${P}`]?: SimpleStyleObject;
   } & {
-    [K in string as `&${K}`]?: CSS.Properties & {
-      [K in string as `--${K}`]?: string;
-    };
-  } & {
-    [K in string as `--${K}`]?: string;
+    [P in string as `&${P}`]?: SimpleStyleObject;
   };
 
 type RecipeVariantRecord = Record<any, Record<any, StyleObject>>;
