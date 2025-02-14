@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ActionButton } from "seed-design/ui/action-button";
 
 import { createStoryWithParameters } from "@/stories/utils/parameters";
-import { IconBellFill } from "@daangn/react-monochrome-icon";
+import { IconBellFill, IconChevronRightFill } from "@daangn/react-monochrome-icon";
 import { actionButtonVariantMap } from "@seed-design/css/recipes/action-button";
 import { PrefixIcon, SuffixIcon } from "@seed-design/react";
 import { SeedThemeDecorator } from "./components/decorator";
@@ -43,7 +43,7 @@ const conditionMap = {
       children: (
         <>
           Action Button
-          <SuffixIcon svg={<IconBellFill />} />
+          <SuffixIcon svg={<IconChevronRightFill />} />
         </>
       ),
     },
