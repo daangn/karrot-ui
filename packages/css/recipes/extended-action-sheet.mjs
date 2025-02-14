@@ -38,10 +38,6 @@ const extendedActionSheetSlotNames = [
   [
     "closeButton",
     "seed-extended-action-sheet__closeButton"
-  ],
-  [
-    "closeButtonLabel",
-    "seed-extended-action-sheet__closeButtonLabel"
   ]
 ];
 

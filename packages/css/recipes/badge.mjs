@@ -6,10 +6,6 @@ const badgeSlotNames = [
   [
     "root",
     "seed-badge__root"
-  ],
-  [
-    "label",
-    "seed-badge__label"
   ]
 ];
 

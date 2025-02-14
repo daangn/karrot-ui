@@ -1,11 +1,11 @@
 import { toggleButton as vars } from "@seed-design/css/vars/component";
-
 import { defineRecipe } from "../utils/define-recipe";
-import { active, pressed, disabled, focus, loading, pseudo } from "../utils/pseudo";
+import { prefixIcon, suffixIcon } from "../utils/icon";
+import { active, disabled, focus, loading, pressed, pseudo } from "../utils/pseudo";
 
 const toggleButton = defineRecipe({
   name: "toggle-button",
-  slots: ["root", "label", "prefixIcon", "suffixIcon", "progressIndicator"],
+  slots: ["root"],
   base: {
     root: {
       display: "inline-flex",
@@ -20,6 +20,7 @@ const toggleButton = defineRecipe({
       textDecoration: "none",
       fontFamily: "inherit",
       flexShrink: 0,
+      fontWeight: vars.base.enabled.label.fontWeight,
 
       [pseudo(focus)]: {
         outline: "none",
@@ -30,58 +31,33 @@ const toggleButton = defineRecipe({
 
       transition: `background-color ${vars.base.enabled.root.colorDuration} ${vars.base.enabled.root.colorTimingFunction}`,
     },
-    label: {
-      fontWeight: vars.base.enabled.label.fontWeight,
-
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    prefixIcon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    suffixIcon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    progressIndicator: {
-      position: "absolute",
-      display: "none",
-
-      [pseudo(loading)]: {
-        display: "flex",
-      },
-    },
   },
   variants: {
     variant: {
       brandSolid: {
         root: {
           background: vars.variantBrandSolid.enabled.root.color,
+          color: vars.variantBrandSolid.enabled.label.color,
+
+          "--track-color": vars.variantBrandSolid.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantBrandSolid.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantBrandSolid.pressed.root.color,
           },
           [pseudo(pressed)]: {
             background: vars.variantBrandSolid.selected.root.color,
+            color: vars.variantBrandSolid.selected.label.color,
+
+            "--track-color": vars.variantBrandSolid.selected.progressCircle.trackColor,
+            "--range-color": vars.variantBrandSolid.selected.progressCircle.rangeColor,
           },
           [pseudo(pressed, active)]: {
             background: vars.variantBrandSolid.selectedPressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantBrandSolid.disabled.root.color,
+            color: vars.variantBrandSolid.disabled.label.color,
           },
           [pseudo(loading)]: {
             background: vars.variantBrandSolid.loading.root.color,
@@ -89,57 +65,39 @@ const toggleButton = defineRecipe({
           [pseudo(pressed, loading)]: {
             background: vars.variantBrandSolid.selectedLoading.root.color,
           },
-        },
-        label: {
-          color: vars.variantBrandSolid.enabled.label.color,
-          [pseudo(pressed)]: {
-            color: vars.variantBrandSolid.selected.label.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.label.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantBrandSolid.enabled.prefixIcon.color,
-          [pseudo(pressed)]: {
-            color: vars.variantBrandSolid.selected.prefixIcon.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantBrandSolid.enabled.suffixIcon.color,
-          [pseudo(pressed)]: {
-            color: vars.variantBrandSolid.selected.suffixIcon.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantBrandSolid.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantBrandSolid.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantBrandSolid.enabled.progressCircle.rangeColor,
-          [pseudo(pressed)]: {
-            "--track-color": vars.variantBrandSolid.selected.progressCircle.trackColor,
-            "--range-color": vars.variantBrandSolid.selected.progressCircle.rangeColor,
-          },
+
+          ...prefixIcon({
+            color: vars.variantBrandSolid.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantBrandSolid.enabled.suffixIcon.color,
+          }),
         },
       },
       neutralWeak: {
         root: {
           background: vars.variantNeutralWeak.enabled.root.color,
+          color: vars.variantNeutralWeak.enabled.label.color,
+
+          "--track-color": vars.variantNeutralWeak.enabled.progressCircle.trackColor,
+          "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
+
           [pseudo(active)]: {
             background: vars.variantNeutralWeak.pressed.root.color,
           },
           [pseudo(pressed)]: {
             background: vars.variantNeutralWeak.selected.root.color,
+            color: vars.variantNeutralWeak.selected.label.color,
+
+            "--track-color": vars.variantNeutralWeak.selected.progressCircle.trackColor,
+            "--range-color": vars.variantNeutralWeak.selected.progressCircle.rangeColor,
           },
           [pseudo(pressed, active)]: {
             background: vars.variantNeutralWeak.selectedPressed.root.color,
           },
           [pseudo(disabled)]: {
             background: vars.variantNeutralWeak.disabled.root.color,
+            color: vars.variantNeutralWeak.disabled.label.color,
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralWeak.loading.root.color,
@@ -147,41 +105,13 @@ const toggleButton = defineRecipe({
           [pseudo(pressed, loading)]: {
             background: vars.variantNeutralWeak.selectedLoading.root.color,
           },
-        },
-        label: {
-          color: vars.variantNeutralWeak.enabled.label.color,
-          [pseudo(pressed)]: {
-            color: vars.variantNeutralWeak.selected.label.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.label.color,
-          },
-        },
-        prefixIcon: {
-          color: vars.variantNeutralWeak.enabled.prefixIcon.color,
-          [pseudo(pressed)]: {
-            color: vars.variantNeutralWeak.selected.prefixIcon.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.prefixIcon.color,
-          },
-        },
-        suffixIcon: {
-          color: vars.variantNeutralWeak.enabled.suffixIcon.color,
-          [pseudo(pressed)]: {
-            color: vars.variantNeutralWeak.selected.suffixIcon.color,
-          },
-          [pseudo(disabled)]: {
-            color: vars.variantNeutralWeak.disabled.suffixIcon.color,
-          },
-        },
-        progressIndicator: {
-          "--track-color": vars.variantNeutralWeak.enabled.progressCircle.trackColor,
-          "--range-color": vars.variantNeutralWeak.enabled.progressCircle.rangeColor,
-          [pseudo(pressed)]: {
-            "--track-color": vars.variantNeutralWeak.selected.progressCircle.trackColor,
-            "--range-color": vars.variantNeutralWeak.selected.progressCircle.rangeColor,
-          },
+
+          ...prefixIcon({
+            color: vars.variantNeutralWeak.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantNeutralWeak.enabled.suffixIcon.color,
+          }),
         },
       },
     },
@@ -193,21 +123,17 @@ const toggleButton = defineRecipe({
           gap: vars.sizeXsmall.enabled.root.gap,
           paddingInline: vars.sizeXsmall.enabled.root.paddingX,
           paddingBlock: vars.sizeXsmall.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeXsmall.enabled.label.fontSize,
-        },
-        prefixIcon: {
-          width: vars.sizeXsmall.enabled.prefixIcon.size,
-          height: vars.sizeXsmall.enabled.prefixIcon.size,
-        },
-        suffixIcon: {
-          width: vars.sizeXsmall.enabled.suffixIcon.size,
-          height: vars.sizeXsmall.enabled.suffixIcon.size,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeXsmall.enabled.progressCircle.size,
           "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeXsmall.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeXsmall.enabled.suffixIcon.size,
+          }),
         },
       },
       small: {
@@ -217,21 +143,17 @@ const toggleButton = defineRecipe({
           gap: vars.sizeSmall.enabled.root.gap,
           paddingInline: vars.sizeSmall.enabled.root.paddingX,
           paddingBlock: vars.sizeSmall.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
-        },
-        prefixIcon: {
-          width: vars.sizeSmall.enabled.prefixIcon.size,
-          height: vars.sizeSmall.enabled.prefixIcon.size,
-        },
-        suffixIcon: {
-          width: vars.sizeSmall.enabled.suffixIcon.size,
-          height: vars.sizeSmall.enabled.suffixIcon.size,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeSmall.enabled.progressCircle.size,
           "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeSmall.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeSmall.enabled.suffixIcon.size,
+          }),
         },
       },
     },

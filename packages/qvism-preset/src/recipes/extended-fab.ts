@@ -2,10 +2,11 @@ import { extendedFab as vars } from "@seed-design/css/vars/component";
 
 import { defineRecipe } from "../utils/define-recipe";
 import { active, disabled, focus, pseudo } from "../utils/pseudo";
+import { prefixIcon } from "../utils/icon";
 
 const extendedFab = defineRecipe({
   name: "extended-fab",
-  slots: ["root", "label", "prefixIcon"],
+  slots: ["root"],
   base: {
     root: {
       display: "inline-flex",
@@ -31,43 +32,35 @@ const extendedFab = defineRecipe({
       borderRadius: vars.base.enabled.root.cornerRadius,
       boxShadow: vars.base.enabled.root.shadow,
     },
-    prefixIcon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-    },
   },
   variants: {
     variant: {
       neutralSolid: {
         root: {
           background: vars.variantNeutralSolid.enabled.root.color,
+          color: vars.variantNeutralSolid.enabled.label.color,
 
           [pseudo(active)]: {
             background: vars.variantNeutralSolid.pressed.root.color,
           },
-        },
-        label: {
-          color: vars.variantNeutralSolid.enabled.label.color,
-        },
-        prefixIcon: {
-          color: vars.variantNeutralSolid.enabled.prefixIcon.color,
+
+          ...prefixIcon({
+            color: vars.variantNeutralSolid.enabled.prefixIcon.color,
+          }),
         },
       },
       layerFloating: {
         root: {
           background: vars.variantLayerFloating.enabled.root.color,
+          color: vars.variantLayerFloating.enabled.label.color,
 
           [pseudo(active)]: {
             background: vars.variantLayerFloating.pressed.root.color,
           },
-        },
-        label: {
-          color: vars.variantLayerFloating.enabled.label.color,
-        },
-        prefixIcon: {
-          color: vars.variantLayerFloating.enabled.prefixIcon.color,
+
+          ...prefixIcon({
+            color: vars.variantLayerFloating.enabled.prefixIcon.color,
+          }),
         },
       },
     },
@@ -78,15 +71,14 @@ const extendedFab = defineRecipe({
           paddingBlock: vars.sizeSmall.enabled.root.paddingY,
           minHeight: vars.sizeSmall.enabled.root.minHeight,
           gap: vars.sizeSmall.enabled.root.gap,
-        },
-        label: {
+
           fontSize: vars.sizeSmall.enabled.label.fontSize,
           lineHeight: vars.sizeSmall.enabled.label.lineHeight,
           fontWeight: vars.sizeSmall.enabled.label.fontWeight,
-        },
-        prefixIcon: {
-          width: vars.sizeSmall.enabled.prefixIcon.size,
-          height: vars.sizeSmall.enabled.prefixIcon.size,
+
+          ...prefixIcon({
+            size: vars.sizeSmall.enabled.prefixIcon.size,
+          }),
         },
       },
       medium: {
@@ -95,15 +87,14 @@ const extendedFab = defineRecipe({
           paddingBlock: vars.sizeMedium.enabled.root.paddingY,
           minHeight: vars.sizeMedium.enabled.root.minHeight,
           gap: vars.sizeMedium.enabled.root.gap,
-        },
-        label: {
+
           fontSize: vars.sizeMedium.enabled.label.fontSize,
           lineHeight: vars.sizeMedium.enabled.label.lineHeight,
           fontWeight: vars.sizeMedium.enabled.label.fontWeight,
-        },
-        prefixIcon: {
-          width: vars.sizeMedium.enabled.prefixIcon.size,
-          height: vars.sizeMedium.enabled.prefixIcon.size,
+
+          ...prefixIcon({
+            size: vars.sizeMedium.enabled.prefixIcon.size,
+          }),
         },
       },
     },

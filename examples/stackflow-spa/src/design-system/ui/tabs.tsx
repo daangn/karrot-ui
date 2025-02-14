@@ -36,10 +36,8 @@ export const TabsTrigger = forwardRef<HTMLButtonElement, TabsTriggerProps>((prop
   const { children, notification, ...otherProps } = props;
   return (
     <SeedTabs.Trigger ref={ref} {...otherProps}>
-      <SeedTabs.TriggerLabel>
-        {children}
-        {notification && <SeedTabs.TriggerNotification />}
-      </SeedTabs.TriggerLabel>
+      {children}
+      {notification && <SeedTabs.TriggerNotification />}
     </SeedTabs.Trigger>
   );
 });

@@ -7,6 +7,7 @@ import { reactionButtonVariantMap } from "@seed-design/css/recipes/reaction-butt
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
+import { Count, PrefixIcon } from "@seed-design/react";
 
 const meta = {
   component: ReactionButton,
@@ -27,16 +28,31 @@ const conditionMap = {
     true: { loading: true },
   },
   pressed: {
-    false: { pressed: false, children: "미선택" },
-    true: { pressed: true, children: "선택됨" },
+    false: {
+      pressed: false,
+      children: (
+        <>
+          <PrefixIcon svg={<IconBellFill />} />
+          미선택
+          <Count>1</Count>
+        </>
+      ),
+    },
+    true: {
+      pressed: true,
+      children: (
+        <>
+          <PrefixIcon svg={<IconBellFill />} />
+          선택됨
+          <Count>1</Count>
+        </>
+      ),
+    },
   },
 };
 
 const CommonStoryTemplate: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    count: 1,
-  },
+  args: {},
   render: (args) => (
     <VariantTable
       Component={meta.component}

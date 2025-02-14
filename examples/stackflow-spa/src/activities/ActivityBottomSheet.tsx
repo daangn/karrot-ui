@@ -1,4 +1,4 @@
-import type { ActivityComponentType } from "@stackflow/react";
+import { useActivity, type ActivityComponentType } from "@stackflow/react";
 
 import { ActionButton } from "../design-system/ui/action-button";
 import {
@@ -11,16 +11,21 @@ import { useFlow } from "../stackflow";
 
 const ActivityBottomSheet: ActivityComponentType = () => {
   const { pop } = useFlow();
+  const activity = useActivity();
 
-  const handleOpenChange = (open: boolean) => {
+  const handleClose = (open: boolean) => {
     if (!open) {
       pop();
     }
   };
 
   return (
-    <BottomSheetRoot defaultOpen onOpenChange={handleOpenChange}>
-      <BottomSheetContent title="제목" description="다람쥐 헌 쳇바퀴에 타고파">
+    <BottomSheetRoot open={activity.isActive} onOpenChange={handleClose}>
+      <BottomSheetContent
+        title="제목"
+        description="다람쥐 헌 쳇바퀴에 타고파"
+        layerIndex={activity.zIndex * 5}
+      >
         <BottomSheetBody alignItems="center" justifyContent="center" height="300px">
           Content
         </BottomSheetBody>

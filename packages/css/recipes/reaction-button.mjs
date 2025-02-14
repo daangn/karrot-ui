@@ -6,22 +6,6 @@ const reactionButtonSlotNames = [
   [
     "root",
     "seed-reaction-button__root"
-  ],
-  [
-    "label",
-    "seed-reaction-button__label"
-  ],
-  [
-    "count",
-    "seed-reaction-button__count"
-  ],
-  [
-    "prefixIcon",
-    "seed-reaction-button__prefixIcon"
-  ],
-  [
-    "progressIndicator",
-    "seed-reaction-button__progressIndicator"
   ]
 ];
 

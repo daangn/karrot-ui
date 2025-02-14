@@ -5,13 +5,11 @@ export {
   ChipTabsCarouselCamera,
   ChipTabsCarousel,
   ChipTabsTrigger,
-  ChipTabsTriggerLabel,
   type ChipTabsContentProps,
   type ChipTabsListProps,
   type ChipTabsRootProps,
   type ChipTabsCarouselCameraProps,
   type ChipTabsCarouselProps,
-  type ChipTabsTriggerLabelProps,
   type ChipTabsTriggerProps,
 } from "./ChipTabs";
 

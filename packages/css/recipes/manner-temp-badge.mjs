@@ -6,10 +6,6 @@ const mannerTempBadgeSlotNames = [
   [
     "root",
     "seed-manner-temp-badge__root"
-  ],
-  [
-    "label",
-    "seed-manner-temp-badge__label"
   ]
 ];
 

@@ -6,14 +6,6 @@ const extendedFabSlotNames = [
   [
     "root",
     "seed-extended-fab__root"
-  ],
-  [
-    "label",
-    "seed-extended-fab__label"
-  ],
-  [
-    "prefixIcon",
-    "seed-extended-fab__prefixIcon"
   ]
 ];
 

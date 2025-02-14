@@ -1,32 +1,16 @@
 "use client";
 
-import { ActionChip as SeedActionChip } from "@seed-design/react";
+import {
+  ActionChip as SeedActionChip,
+  type ActionChipProps as SeedActionChipProps,
+} from "@seed-design/react";
 import * as React from "react";
 
-export interface ActionChipProps extends SeedActionChip.RootProps {
-  prefixIcon?: React.ReactNode;
-
-  suffixIcon?: React.ReactNode;
-
-  count?: number;
-}
+export interface ActionChipProps extends SeedActionChipProps {}
 
 export const ActionChip = React.forwardRef<HTMLButtonElement, ActionChipProps>(
-  ({ children, prefixIcon, suffixIcon, count, layout = "withText", ...otherProps }, ref) => {
-    return (
-      <SeedActionChip.Root ref={ref} layout={layout} {...otherProps}>
-        {layout === "withText" ? (
-          <>
-            {prefixIcon && <SeedActionChip.PrefixIcon svg={prefixIcon} />}
-            <SeedActionChip.Label>{children}</SeedActionChip.Label>
-            {count && <SeedActionChip.Count>{count}</SeedActionChip.Count>}
-            {suffixIcon && <SeedActionChip.SuffixIcon svg={suffixIcon} />}
-          </>
-        ) : (
-          <SeedActionChip.Icon svg={children} />
-        )}
-      </SeedActionChip.Root>
-    );
+  ({ ...otherProps }, ref) => {
+    return <SeedActionChip ref={ref} {...otherProps} />;
   },
 );
 ActionChip.displayName = "ActionChip";

@@ -1,13 +1,13 @@
 "use client";
 
 import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
-import { BottomSheet as SeedBottomSheet } from "@seed-design/react";
+import { OnlyIcon, BottomSheet as SeedBottomSheet } from "@seed-design/react";
 import { forwardRef } from "react";
 
 export interface BottomSheetRootProps extends SeedBottomSheet.RootProps {}
 
 /**
- * @see https://v3.seed-design.io/docs/react/components/bottom-sheet
+ * @see https://v3.seed-design.io/docs/react/components/action-sheet
  */
 export const BottomSheetRoot = (props: BottomSheetRootProps) => {
   const { children, ...otherProps } = props;
@@ -67,7 +67,7 @@ export const BottomSheetContent = forwardRef<
         {children}
         {/* You may implement your own i18n for dismiss label */}
         <SeedBottomSheet.CloseButton>
-          <SeedBottomSheet.CloseIcon svg={<IconXmarkLine />} />
+          <OnlyIcon svg={<IconXmarkLine />} />
         </SeedBottomSheet.CloseButton>
       </SeedBottomSheet.Content>
     </SeedBottomSheet.Positioner>
@@ -81,3 +81,8 @@ export const BottomSheetBody = SeedBottomSheet.Body;
 export interface BottomSheetFooterProps extends SeedBottomSheet.FooterProps {}
 
 export const BottomSheetFooter = SeedBottomSheet.Footer;
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

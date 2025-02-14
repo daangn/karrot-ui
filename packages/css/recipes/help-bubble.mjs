@@ -30,10 +30,6 @@ const helpBubbleSlotNames = [
   [
     "closeButton",
     "seed-help-bubble__closeButton"
-  ],
-  [
-    "closeIcon",
-    "seed-help-bubble__closeIcon"
   ]
 ];
 

@@ -14,10 +14,6 @@ const segmentedControlSlotNames = [
   [
     "item",
     "seed-segmented-control__item"
-  ],
-  [
-    "itemLabel",
-    "seed-segmented-control__itemLabel"
   ]
 ];
 

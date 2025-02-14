@@ -12,6 +12,7 @@ import { toggleButton, toggleButtonVariantMap } from "@seed-design/css/recipes/t
 import { IconThumbUpFill } from "@daangn/react-monochrome-icon";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ToggleButton, type ToggleButtonProps } from "../design-system/ui/toggle-button";
+import { PrefixIcon } from "@seed-design/react";
 
 const initialVariants = {
   variant: "brandSolid",
@@ -34,7 +35,8 @@ const ActivityToggleButton: ActivityComponentType = () => {
           recipeFn={toggleButton}
           render={(variants) => (
             <ToggleButton key={JSON.stringify(variants)} {...variants}>
-              <IconThumbUpFill />
+              <PrefixIcon svg={<IconThumbUpFill />} />
+              Like
             </ToggleButton>
           )}
         />

@@ -1,7 +1,7 @@
 "use client";
 
 import IconXmarkLine from "@daangn/react-monochrome-icon/IconXmarkLine";
-import { HelpBubble as SeedHelpBubble } from "@seed-design/react";
+import { OnlyIcon, HelpBubble as SeedHelpBubble } from "@seed-design/react";
 import { forwardRef } from "react";
 
 export interface HelpBubbleTriggerProps
@@ -17,9 +17,6 @@ export interface HelpBubbleTriggerProps
   contentProps?: SeedHelpBubble.ContentProps;
 }
 
-/**
- * @see https://v3.seed-design.io/docs/react/components/help-bubble
- */
 export const HelpBubbleTrigger = forwardRef<
   HTMLButtonElement,
   HelpBubbleTriggerProps
@@ -42,7 +39,7 @@ export const HelpBubbleTrigger = forwardRef<
         <SeedHelpBubble.Content {...contentProps}>
           {showCloseButton ? (
             <SeedHelpBubble.CloseButton>
-              <SeedHelpBubble.CloseIcon svg={<IconXmarkLine />} />
+              <OnlyIcon svg={<IconXmarkLine />} />
             </SeedHelpBubble.CloseButton>
           ) : null}
           <SeedHelpBubble.Arrow>
@@ -71,9 +68,6 @@ export interface HelpBubbleAnchorProps
   children?: React.ReactNode;
 }
 
-/**
- * @see https://v3.seed-design.io/docs/react/components/help-bubble#anchor
- */
 export const HelpBubbleAnchor = forwardRef<
   HTMLDivElement,
   HelpBubbleAnchorProps
@@ -95,7 +89,7 @@ export const HelpBubbleAnchor = forwardRef<
         <SeedHelpBubble.Content>
           {showCloseButton ? (
             <SeedHelpBubble.CloseButton>
-              <SeedHelpBubble.CloseIcon svg={<IconXmarkLine />} />
+              <OnlyIcon svg={<IconXmarkLine />} />
             </SeedHelpBubble.CloseButton>
           ) : null}
           <SeedHelpBubble.Arrow>
@@ -112,3 +106,8 @@ export const HelpBubbleAnchor = forwardRef<
     </SeedHelpBubble.Root>
   );
 });
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

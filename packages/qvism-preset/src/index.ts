@@ -1,3 +1,4 @@
+import { vars } from "@seed-design/css/vars";
 import { keyframes } from "./keyframes";
 import { recipes } from "./recipes";
 import { tokens } from "./tokens";
@@ -22,6 +23,43 @@ export default {
         "--seed-safe-area-top": "env(safe-area-inset-top)",
         "--seed-safe-area-bottom": "env(safe-area-inset-bottom)",
       },
+    },
+    ".seed-loading-indicator": {
+      position: "absolute",
+      display: "inline-flex",
+    },
+    ".seed-prefix-icon": {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexShrink: 0,
+      width: "var(--seed-prefix-icon-size)",
+      height: "var(--seed-prefix-icon-size)",
+      color: "var(--seed-prefix-icon-color, currentColor)",
+    },
+    ".seed-suffix-icon": {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexShrink: 0,
+      width: "var(--seed-suffix-icon-size)",
+      height: "var(--seed-suffix-icon-size)",
+      color: "var(--seed-suffix-icon-color, currentColor)",
+    },
+    ".seed-only-icon": {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexShrink: 0,
+      width: "var(--seed-only-icon-size)",
+      height: "var(--seed-only-icon-size)",
+      color: "var(--seed-only-icon-color, currentColor)",
+    },
+    ".seed-count": {
+      fontSize: "var(--seed-count-font-size)",
+      lineHeight: "var(--seed-count-line-height)",
+      fontWeight: "var(--seed-count-font-weight)",
+      color: "var(--seed-count-color)",
     },
     ".seed-box": {
       "--seed-box-background": "initial",
@@ -117,6 +155,23 @@ export default {
       alignContent: "var(--seed-box-align-content)",
       alignSelf: "var(--seed-box-align-self)",
       gap: "var(--seed-box-gap)",
+    },
+    ".seed-consistent-width": {
+      // Consistent text width between font-weight changes
+      "&:before": {
+        content: "attr(data-text)",
+        display: "block",
+        visibility: "hidden",
+        height: 0,
+        fontWeight: vars.$fontWeight.regular,
+      },
+      "&:after": {
+        content: "attr(data-text)",
+        display: "block",
+        visibility: "hidden",
+        height: 0,
+        fontWeight: vars.$fontWeight.bold,
+      },
     },
   },
 };

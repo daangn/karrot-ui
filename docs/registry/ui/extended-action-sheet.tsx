@@ -64,9 +64,7 @@ export const ExtendedActionSheetContent = forwardRef<
         <SeedExtendedActionSheet.Footer>
           {/* You may implement your own i18n for dismiss label */}
           <SeedExtendedActionSheet.CloseButton>
-            <SeedExtendedActionSheet.CloseButtonLabel>
-              취소
-            </SeedExtendedActionSheet.CloseButtonLabel>
+            취소
           </SeedExtendedActionSheet.CloseButton>
         </SeedExtendedActionSheet.Footer>
       </SeedExtendedActionSheet.Content>
@@ -80,22 +78,11 @@ export interface ExtendedActionSheetGroupProps
 export const ExtendedActionSheetGroup = SeedExtendedActionSheet.Group;
 
 export interface ExtendedActionSheetItemProps
-  extends Omit<SeedExtendedActionSheet.ItemProps, "asChild" | "children"> {
-  label: React.ReactNode;
+  extends SeedExtendedActionSheet.ItemProps {}
 
-  prefixIcon?: React.ReactNode;
-}
+export const ExtendedActionSheetItem = SeedExtendedActionSheet.Item;
 
-export const ExtendedActionSheetItem = forwardRef<
-  HTMLButtonElement,
-  ExtendedActionSheetItemProps
->(({ label, prefixIcon, ...otherProps }, ref) => {
-  return (
-    <SeedExtendedActionSheet.Item ref={ref} {...otherProps}>
-      <SeedExtendedActionSheet.ItemPrefixIcon svg={prefixIcon} />
-      <SeedExtendedActionSheet.ItemLabel>
-        {label}
-      </SeedExtendedActionSheet.ItemLabel>
-    </SeedExtendedActionSheet.Item>
-  );
-});
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

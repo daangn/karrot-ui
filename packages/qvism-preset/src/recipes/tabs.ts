@@ -12,7 +12,6 @@ const tabs = defineRecipe({
     "content",
     "indicator",
     "trigger",
-    "triggerLabel",
     "triggerNotification",
   ],
   base: {
@@ -87,8 +86,16 @@ const tabs = defineRecipe({
       boxSizing: "border-box",
       backgroundColor: "transparent",
       whiteSpace: "nowrap",
+
+      color: triggerVars.base.enabled.label.color,
+
+      [pseudo(selected)]: {
+        color: triggerVars.base.selected.label.color,
+      },
+
       [pseudo(disabled)]: {
         cursor: "not-allowed",
+        color: triggerVars.base.disabled.label.color,
       },
 
       [pseudo(selected, "[data-ssr]:after")]: {
@@ -99,16 +106,6 @@ const tabs = defineRecipe({
         right: 0,
         height: vars.base.enabled.indicator.height,
         backgroundColor: vars.base.enabled.indicator.color,
-      },
-    },
-    triggerLabel: {
-      position: "relative",
-      color: triggerVars.base.enabled.label.color,
-      [pseudo(selected)]: {
-        color: triggerVars.base.selected.label.color,
-      },
-      [pseudo(disabled)]: {
-        color: triggerVars.base.disabled.label.color,
       },
     },
     triggerNotification: {
@@ -190,8 +187,7 @@ const tabs = defineRecipe({
           minHeight: triggerVars.sizeSmall.enabled.root.minHeight,
           paddingInline: triggerVars.sizeSmall.enabled.root.paddingX,
           paddingBlock: triggerVars.sizeSmall.enabled.root.paddingY,
-        },
-        triggerLabel: {
+
           fontSize: triggerVars.sizeSmall.enabled.label.fontSize,
           lineHeight: triggerVars.sizeSmall.enabled.label.lineHeight,
           fontWeight: triggerVars.sizeSmall.enabled.label.fontWeight,
@@ -208,8 +204,7 @@ const tabs = defineRecipe({
           minHeight: triggerVars.sizeMedium.enabled.root.minHeight,
           paddingInline: triggerVars.sizeMedium.enabled.root.paddingX,
           paddingBlock: triggerVars.sizeMedium.enabled.root.paddingY,
-        },
-        triggerLabel: {
+
           fontSize: triggerVars.sizeMedium.enabled.label.fontSize,
           lineHeight: triggerVars.sizeMedium.enabled.label.lineHeight,
           fontWeight: triggerVars.sizeMedium.enabled.label.fontWeight,

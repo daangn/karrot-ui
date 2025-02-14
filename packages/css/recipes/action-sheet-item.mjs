@@ -6,10 +6,6 @@ const actionSheetItemSlotNames = [
   [
     "root",
     "seed-action-sheet-item__root"
-  ],
-  [
-    "label",
-    "seed-action-sheet-item__label"
   ]
 ];
 

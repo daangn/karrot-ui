@@ -9,7 +9,9 @@ import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScree
 
 import { actionButton, actionButtonVariantMap } from "@seed-design/css/recipes/action-button";
 
+import { IconChevronDownFill } from "@daangn/react-monochrome-icon";
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
+import { OnlyIcon, PrefixIcon, SuffixIcon } from "@seed-design/react";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ActionButton, type ActionButtonProps } from "../design-system/ui/action-button";
 
@@ -34,8 +36,16 @@ const ActivityActionButton: ActivityComponentType = () => {
           initialVariants={initialVariants}
           recipeFn={actionButton}
           render={(variants) => (
-            <ActionButton key={JSON.stringify(variants)} {...variants}>
-              {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
+            <ActionButton loading key={JSON.stringify(variants)} {...variants}>
+              {variants.layout === "withText" ? (
+                <>
+                  <PrefixIcon svg={<IconPlusFill />} />
+                  야옹
+                  <SuffixIcon svg={<IconChevronDownFill />} />
+                </>
+              ) : (
+                <OnlyIcon svg={<IconPlusFill />} />
+              )}
             </ActionButton>
           )}
         />

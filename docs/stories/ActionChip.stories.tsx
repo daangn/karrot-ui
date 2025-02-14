@@ -7,6 +7,7 @@ import { VariantTable } from "./components/variant-table";
 import { IconBellFill, IconChevronDownFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
+import { Count, PrefixIcon, SuffixIcon } from "@seed-design/react";
 
 const meta = {
   component: ActionChip,
@@ -19,17 +20,23 @@ type Story = StoryObj<typeof meta>;
 
 const conditionMap = {
   layout: {
-    withText: { layout: "withText", children: "Control Chip" },
+    withText: {
+      layout: "withText",
+      children: (
+        <>
+          <PrefixIcon svg={<IconBellFill />} />
+          Control Chip
+          <Count>10</Count>
+          <SuffixIcon svg={<IconChevronDownFill />} />
+        </>
+      ),
+    },
     iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
   },
 };
 
 const CommonStoryTemplate: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronDownFill />,
-    count: 10,
-  },
+  args: {},
   render: (args) => (
     <VariantTable
       Component={meta.component}

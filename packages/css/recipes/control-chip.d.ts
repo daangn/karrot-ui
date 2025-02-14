@@ -15,7 +15,7 @@ declare type ControlChipVariantMap = {
 
 export declare type ControlChipVariantProps = Partial<ControlChipVariant>;
 
-export declare type ControlChipSlotName = "root" | "label" | "icon" | "prefixIcon" | "suffixIcon" | "count";
+export declare type ControlChipSlotName = "root";
 
 export declare const controlChipVariantMap: ControlChipVariantMap;
 

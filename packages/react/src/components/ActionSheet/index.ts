@@ -9,9 +9,7 @@ export {
   ActionSheetTrigger,
   ActionSheetList,
   ActionSheetItem,
-  ActionSheetItemLabel,
   ActionSheetCloseButton,
-  ActionSheetCloseButtonLabel,
   type ActionSheetBackdropProps,
   type ActionSheetPositionerProps,
   type ActionSheetContentProps,
@@ -22,9 +20,7 @@ export {
   type ActionSheetTriggerProps,
   type ActionSheetListProps,
   type ActionSheetItemProps,
-  type ActionSheetItemLabelProps,
   type ActionSheetCloseButtonProps,
-  type ActionSheetCloseButtonLabelProps,
 } from "./ActionSheet";
 
 export * as ActionSheet from "./ActionSheet.namespace";

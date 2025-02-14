@@ -57,10 +57,13 @@ export const SegmentedControlItem = React.forwardRef<
   return (
     <SeedSegmentedControl.Item ref={rootRef} {...otherProps}>
       <SeedSegmentedControl.ItemHiddenInput ref={ref} {...inputProps} />
-      <SeedSegmentedControl.ItemLabel>
-        {children}
-      </SeedSegmentedControl.ItemLabel>
+      {children}
     </SeedSegmentedControl.Item>
   );
 });
 SegmentedControlItem.displayName = "SegmentedControlItem";
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

@@ -1,41 +1,27 @@
-import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import {
   actionButton,
   type ActionButtonVariantProps,
 } from "@seed-design/css/recipes/action-button";
+import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon, type IconProps } from "../private/Icon";
 import {
   PendingButtonProvider,
   usePendingButton,
-  usePendingButtonContext,
   type UsePendingButtonProps,
-} from "../private/usePendingButton";
+} from "../LoadingIndicator/usePendingButton";
 
-const { ClassNamesProvider, withContext } = createStyleContext(actionButton);
-const withStateProps = createWithStateProps([usePendingButtonContext]);
+const { ClassNamesProvider } = createStyleContext(actionButton);
 
-export interface ActionButtonRootProps
+export interface ActionButtonProps
   extends ActionButtonVariantProps,
     UsePendingButtonProps,
     PrimitiveProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButtonRootProps>(
-  (
-    {
-      variant = "brandSolid",
-      size = "medium",
-      loading = false,
-      layout = "withText",
-      className,
-      ...otherProps
-    },
-    ref,
-  ) => {
+export const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
+  ({ variant, size, loading = false, layout = "withText", className, ...otherProps }, ref) => {
     const classNames = actionButton({ variant, layout, size });
     const api = usePendingButton({ loading, disabled: otherProps.disabled });
 
@@ -59,43 +45,4 @@ export const ActionButtonRoot = React.forwardRef<HTMLButtonElement, ActionButton
     );
   },
 );
-ActionButtonRoot.displayName = "ActionButton";
-
-export interface ActionButtonLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const ActionButtonLabel = withContext<HTMLSpanElement, ActionButtonLabelProps>(
-  withStateProps(Primitive.span),
-  "label",
-);
-
-export interface ActionButtonPrefixIconProps extends IconProps {}
-
-export const ActionButtonPrefixIcon = withContext<SVGSVGElement, ActionButtonPrefixIconProps>(
-  withStateProps(Icon),
-  "prefixIcon",
-);
-
-export interface ActionButtonSuffixIconProps extends IconProps {}
-
-export const ActionButtonSuffixIcon = withContext<SVGSVGElement, ActionButtonSuffixIconProps>(
-  withStateProps(Icon),
-  "suffixIcon",
-);
-
-export interface ActionButtonIconProps extends IconProps {}
-
-export const ActionButtonIcon = withContext<SVGSVGElement, ActionButtonIconProps>(
-  withStateProps(Icon),
-  "icon",
-);
-
-export interface ActionButtonProgressIndicatorProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLDivElement> {}
-
-export const ActionButtonProgressIndicator = withContext<
-  HTMLDivElement,
-  ActionButtonProgressIndicatorProps
->(withStateProps(Primitive.div), "progressIndicator");
+ActionButton.displayName = "ActionButton";

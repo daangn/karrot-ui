@@ -7,6 +7,7 @@ import { toggleButtonVariantMap } from "@seed-design/css/recipes/toggle-button";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
+import { PrefixIcon, SuffixIcon } from "@seed-design/react";
 
 const meta = {
   component: ToggleButton,
@@ -27,16 +28,30 @@ const conditionMap = {
     true: { loading: true },
   },
   pressed: {
-    false: { pressed: false, children: "미선택" },
-    true: { pressed: true, children: "선택됨" },
+    false: {
+      pressed: false,
+      children: (
+        <>
+          <PrefixIcon svg={<IconBellFill />} />
+          미선택
+          <SuffixIcon svg={<IconChevronRightFill />} />
+        </>
+      ),
+    },
+    true: {
+      pressed: true,
+      children: (
+        <>
+          <PrefixIcon svg={<IconBellFill />} />
+          선택됨
+          <SuffixIcon svg={<IconChevronRightFill />} />
+        </>
+      ),
+    },
   },
 };
 
 const CommonStoryTemplate: Story = {
-  args: {
-    prefixIcon: <IconBellFill />,
-    suffixIcon: <IconChevronRightFill />,
-  },
   render: (args) => (
     <VariantTable
       Component={meta.component}

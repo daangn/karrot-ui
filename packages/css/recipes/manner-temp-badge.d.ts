@@ -11,7 +11,7 @@ declare type MannerTempBadgeVariantMap = {
 
 export declare type MannerTempBadgeVariantProps = Partial<MannerTempBadgeVariant>;
 
-export declare type MannerTempBadgeSlotName = "root" | "label";
+export declare type MannerTempBadgeSlotName = "root";
 
 export declare const mannerTempBadgeVariantMap: MannerTempBadgeVariantMap;
 

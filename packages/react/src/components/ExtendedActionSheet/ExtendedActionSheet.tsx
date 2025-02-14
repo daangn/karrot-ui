@@ -11,11 +11,9 @@ import {
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon, type IconProps } from "../private/Icon";
 
 const { withRootProvider, withContext } = createStyleContext(extendedActionSheet);
-const { withProvider: withItemProvider, withContext: withItemContext } =
-  createStyleContext(extendedActionSheetItem);
+const { withProvider: withItemProvider } = createStyleContext(extendedActionSheetItem);
 const withStateProps = createWithStateProps([useDialogContext]);
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -121,28 +119,6 @@ export const ExtendedActionSheetItem = withItemProvider<
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ExtendedActionSheetItemLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {
-  asChild?: boolean;
-}
-
-export const ExtendedActionSheetItemLabel = withItemContext<
-  HTMLSpanElement,
-  ExtendedActionSheetItemLabelProps
->(withStateProps(Primitive.span), "label");
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ExtendedActionSheetItemPrefixIconProps extends IconProps {}
-
-export const ExtendedActionSheetItemPrefixIcon = withItemContext<
-  HTMLSpanElement,
-  ExtendedActionSheetItemPrefixIconProps
->(withStateProps(Icon), "prefixIcon");
-
-////////////////////////////////////////////////////////////////////////////////////
-
 export interface ExtendedActionSheetFooterProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLDivElement> {}
@@ -160,14 +136,3 @@ export const ExtendedActionSheetCloseButton = withContext<
   HTMLDivElement,
   ExtendedActionSheetCloseButtonProps
 >(DialogPrimitive.CloseButton, "closeButton");
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ExtendedActionSheetCloseButtonLabelProps
-  extends PrimitiveProps,
-    React.HTMLAttributes<HTMLSpanElement> {}
-
-export const ExtendedActionSheetCloseButtonLabel = withContext<
-  HTMLSpanElement,
-  ExtendedActionSheetCloseButtonLabelProps
->(Primitive.span, "closeButtonLabel");

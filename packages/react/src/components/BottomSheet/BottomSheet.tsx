@@ -4,7 +4,6 @@ import { bottomSheet, type BottomSheetVariantProps } from "@seed-design/css/reci
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 import { withStyleProps, type StyleProps } from "../../utils/styled";
-import { Icon, type IconProps } from "../private/Icon";
 
 const { withRootProvider, withContext } = createStyleContext(bottomSheet);
 const withStateProps = createWithStateProps([useDialogContext]);
@@ -115,15 +114,6 @@ export interface BottomSheetCloseButtonProps
     React.HTMLAttributes<HTMLButtonElement> {}
 
 export const BottomSheetCloseButton = withContext<HTMLButtonElement, BottomSheetCloseButtonProps>(
-  withStateProps(Primitive.button),
+  DialogPrimitive.CloseButton,
   "closeButton",
-);
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface BottomSheetCloseIconProps extends IconProps {}
-
-export const BottomSheetCloseIcon = withContext<SVGSVGElement, BottomSheetCloseIconProps>(
-  Icon,
-  "closeIcon",
 );

@@ -15,7 +15,7 @@ declare type ExtendedFabVariantMap = {
 
 export declare type ExtendedFabVariantProps = Partial<ExtendedFabVariant>;
 
-export declare type ExtendedFabSlotName = "root" | "label" | "prefixIcon";
+export declare type ExtendedFabSlotName = "root";
 
 export declare const extendedFabVariantMap: ExtendedFabVariantMap;
 

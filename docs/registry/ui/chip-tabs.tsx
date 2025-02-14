@@ -1,43 +1,18 @@
 "use client";
 
 import { ChipTabs as SeedChipTabs } from "@seed-design/react";
-import { forwardRef } from "react";
 
 export interface ChipTabsRootProps extends SeedChipTabs.RootProps {}
 
-export const ChipTabsRoot = forwardRef<HTMLDivElement, ChipTabsRootProps>(
-  (props, ref) => {
-    const { children, ...otherProps } = props;
-    return (
-      <SeedChipTabs.Root ref={ref} {...otherProps}>
-        {children}
-      </SeedChipTabs.Root>
-    );
-  },
-);
-ChipTabsRoot.displayName = "ChipTabsRoot";
+export const ChipTabsRoot = SeedChipTabs.Root;
 
 export interface ChipTabsListProps extends SeedChipTabs.ListProps {}
 
 export const ChipTabsList = SeedChipTabs.List;
 
-export interface ChipTabsTriggerProps
-  extends Omit<SeedChipTabs.TriggerProps, "asChild"> {
-  notification?: boolean;
-}
+export interface ChipTabsTriggerProps extends SeedChipTabs.TriggerProps {}
 
-export const ChipTabsTrigger = forwardRef<
-  HTMLButtonElement,
-  ChipTabsTriggerProps
->((props, ref) => {
-  const { children, notification, ...otherProps } = props;
-  return (
-    <SeedChipTabs.Trigger ref={ref} {...otherProps}>
-      <SeedChipTabs.TriggerLabel>{children}</SeedChipTabs.TriggerLabel>
-    </SeedChipTabs.Trigger>
-  );
-});
-ChipTabsTrigger.displayName = "ChipTabsTrigger";
+export const ChipTabsTrigger = SeedChipTabs.Trigger;
 
 export interface ChipTabsCarouselProps
   extends Omit<SeedChipTabs.CarouselProps, "asChild"> {}

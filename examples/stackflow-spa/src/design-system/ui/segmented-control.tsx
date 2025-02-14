@@ -53,7 +53,7 @@ export const SegmentedControlItem = React.forwardRef<HTMLInputElement, Segmented
     return (
       <SeedSegmentedControl.Item ref={rootRef} {...otherProps}>
         <SeedSegmentedControl.ItemHiddenInput ref={ref} {...inputProps} />
-        <SeedSegmentedControl.ItemLabel>{children}</SeedSegmentedControl.ItemLabel>
+        {children}
       </SeedSegmentedControl.Item>
     );
   },

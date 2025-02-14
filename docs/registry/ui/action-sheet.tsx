@@ -65,11 +65,7 @@ export const ActionSheetContent = forwardRef<
         )}
         <SeedActionSheet.List>{children}</SeedActionSheet.List>
         {/* You may implement your own i18n for dismiss label */}
-        <SeedActionSheet.CloseButton>
-          <SeedActionSheet.CloseButtonLabel>
-            취소
-          </SeedActionSheet.CloseButtonLabel>
-        </SeedActionSheet.CloseButton>
+        <SeedActionSheet.CloseButton>취소</SeedActionSheet.CloseButton>
       </SeedActionSheet.Content>
     </SeedActionSheet.Positioner>
   );
@@ -86,7 +82,12 @@ export const ActionSheetItem = forwardRef<
 >(({ label, ...otherProps }, ref) => {
   return (
     <SeedActionSheet.Item ref={ref} {...otherProps}>
-      <SeedActionSheet.ItemLabel>{label}</SeedActionSheet.ItemLabel>
+      {label}
     </SeedActionSheet.Item>
   );
 });
+
+/**
+ * This file is generated snippet from the Seed Design.
+ * You can extend the functionality from this snippet if needed.
+ */

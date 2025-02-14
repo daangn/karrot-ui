@@ -8,7 +8,7 @@ declare type FabVariantMap = {
 
 export declare type FabVariantProps = Partial<FabVariant>;
 
-export declare type FabSlotName = "root" | "icon";
+export declare type FabSlotName = "root";
 
 export declare const fabVariantMap: FabVariantMap;
 

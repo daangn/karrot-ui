@@ -6,10 +6,6 @@ const fabSlotNames = [
   [
     "root",
     "seed-fab__root"
-  ],
-  [
-    "icon",
-    "seed-fab__icon"
   ]
 ];
 

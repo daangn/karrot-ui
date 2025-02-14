@@ -2,21 +2,14 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { fab, type FabVariantProps } from "@seed-design/css/recipes/fab";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { Icon, type IconProps } from "../private/Icon";
 
-const { withContext, withProvider } = createStyleContext(fab);
+const { withProvider } = createStyleContext(fab);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface FabRootProps
+export interface FabProps
   extends FabVariantProps,
     PrimitiveProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const FabRoot = withProvider<HTMLButtonElement, FabRootProps>(Primitive.button, "root");
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface FabIconProps extends IconProps {}
-
-export const FabIcon = withContext<SVGSVGElement, FabIconProps>(Icon, "icon");
+export const Fab = withProvider<HTMLButtonElement, FabProps>(Primitive.button, "root");

@@ -26,10 +26,6 @@ const chipTabsSlotNames = [
   [
     "trigger",
     "seed-chip-tabs__trigger"
-  ],
-  [
-    "triggerLabel",
-    "seed-chip-tabs__triggerLabel"
   ]
 ];
 

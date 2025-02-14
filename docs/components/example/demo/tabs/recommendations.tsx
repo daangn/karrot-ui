@@ -17,6 +17,7 @@ import { Snackbar, useSnackbarAdapter } from "seed-design/ui/snackbar";
 import { ExtendedFab } from "seed-design/ui/extended-fab";
 import { ARTICLES, CATEGORIES, type Category } from "@/components/example/demo/data";
 import { ArticleListItem } from "@/components/example/demo/components/article-list-item";
+import { PrefixIcon, SuffixIcon } from "@seed-design/react";
 
 const FILTERS = [
   { label: "카테고리", value: "category" },
@@ -79,10 +80,8 @@ export function Recommendations() {
 
   return (
     <Stack gap="spacingY.componentDefault" paddingTop="x4" paddingBottom="x16">
-      <ExtendedFab
-        prefixIcon={<IconPenHorizlineFill />}
-        style={{ position: "fixed", insetBlockEnd: "16px", insetInlineEnd: "16px" }}
-      >
+      <ExtendedFab style={{ position: "fixed", insetBlockEnd: "16px", insetInlineEnd: "16px" }}>
+        <PrefixIcon svg={<IconPenHorizlineFill />} />
         글쓰기
       </ExtendedFab>
       <Flex gap="spacingX.betweenChips" paddingX="spacingX.globalGutter" overflowX="auto">
@@ -99,7 +98,6 @@ export function Recommendations() {
                 <ControlChip.Button
                   size="medium"
                   layout="withText"
-                  suffixIcon={<IconChevronDownFill />}
                   onClick={value !== "category" ? onUnavailableFilterClick : undefined}
                 >
                   {selectedFilters[value]?.length
@@ -107,16 +105,17 @@ export function Recommendations() {
                         .map((id) => CATEGORIES.find((c) => c.id === id)?.name)
                         .join(", ") || label
                     : label}
+                  <SuffixIcon svg={<IconChevronDownFill />} />
                 </ControlChip.Button>
               </BottomSheetTrigger>
             ) : (
               <ControlChip.Button
                 size="medium"
                 layout="withText"
-                suffixIcon={<IconChevronDownFill />}
                 onClick={onUnavailableFilterClick}
               >
                 {label}
+                <SuffixIcon svg={<IconChevronDownFill />} />
               </ControlChip.Button>
             )}
             <FilterBottomSheet

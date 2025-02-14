@@ -1,19 +1,11 @@
 import { helpBubble as vars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { hidden, pseudo } from "../utils/pseudo";
+import { onlyIcon } from "../utils/icon";
 
 const helpBubble = defineRecipe({
   name: "help-bubble",
-  slots: [
-    "positioner",
-    "backdrop",
-    "content",
-    "arrow",
-    "title",
-    "description",
-    "closeButton",
-    "closeIcon",
-  ],
+  slots: ["positioner", "backdrop", "content", "arrow", "title", "description", "closeButton"],
   base: {
     backdrop: {
       position: "fixed",
@@ -71,10 +63,11 @@ const helpBubble = defineRecipe({
       color: vars.base.enabled.closeButton.color,
       width: vars.base.enabled.closeButton.targetSize,
       height: vars.base.enabled.closeButton.targetSize,
-    },
-    closeIcon: {
-      width: vars.base.enabled.closeButton.size,
-      height: vars.base.enabled.closeButton.size,
+
+      ...onlyIcon({
+        color: vars.base.enabled.closeButton.color,
+        size: vars.base.enabled.closeButton.size,
+      }),
     },
   },
   variants: {},

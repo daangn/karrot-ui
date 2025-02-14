@@ -57,11 +57,7 @@ export const ExtendedActionSheetContent = forwardRef<
         <SeedExtendedActionSheet.List>{children}</SeedExtendedActionSheet.List>
         <SeedExtendedActionSheet.Footer>
           {/* You may implement your own i18n for dismiss label */}
-          <SeedExtendedActionSheet.CloseButton>
-            <SeedExtendedActionSheet.CloseButtonLabel>
-              취소
-            </SeedExtendedActionSheet.CloseButtonLabel>
-          </SeedExtendedActionSheet.CloseButton>
+          <SeedExtendedActionSheet.CloseButton>취소</SeedExtendedActionSheet.CloseButton>
         </SeedExtendedActionSheet.Footer>
       </SeedExtendedActionSheet.Content>
     </SeedExtendedActionSheet.Positioner>
@@ -72,20 +68,6 @@ export interface ExtendedActionSheetGroupProps extends SeedExtendedActionSheet.G
 
 export const ExtendedActionSheetGroup = SeedExtendedActionSheet.Group;
 
-export interface ExtendedActionSheetItemProps
-  extends Omit<SeedExtendedActionSheet.ItemProps, "asChild" | "children"> {
-  label: React.ReactNode;
+export interface ExtendedActionSheetItemProps extends SeedExtendedActionSheet.ItemProps {}
 
-  prefixIcon?: React.ReactNode;
-}
-
-export const ExtendedActionSheetItem = forwardRef<HTMLButtonElement, ExtendedActionSheetItemProps>(
-  ({ label, prefixIcon, ...otherProps }, ref) => {
-    return (
-      <SeedExtendedActionSheet.Item ref={ref} {...otherProps}>
-        <SeedExtendedActionSheet.ItemPrefixIcon svg={prefixIcon} />
-        <SeedExtendedActionSheet.ItemLabel>{label}</SeedExtendedActionSheet.ItemLabel>
-      </SeedExtendedActionSheet.Item>
-    );
-  },
-);
+export const ExtendedActionSheetItem = SeedExtendedActionSheet.Item;

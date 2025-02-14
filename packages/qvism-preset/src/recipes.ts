@@ -18,6 +18,7 @@ import fab from "./recipes/fab";
 import helpBubble from "./recipes/help-bubble";
 import identityPlaceholder from "./recipes/identity-placeholder";
 import inlineBanner from "./recipes/inline-banner";
+import linkWithIcon from "./recipes/link-with-icon";
 import mannerTempBadge from "./recipes/manner-temp-badge";
 import progressCircle from "./recipes/progress-circle";
 import pullToRefresh from "./recipes/pull-to-refresh";
@@ -30,7 +31,6 @@ import { snackbar, snackbarRegion } from "./recipes/snackbar";
 import switchRecipe from "./recipes/switch";
 import tabs from "./recipes/tabs";
 import text from "./recipes/text";
-import textButton from "./recipes/text-button";
 import textField from "./recipes/text-field";
 import toggleButton from "./recipes/toggle-button";
 import visuallyHidden from "./recipes/visually-hidden";
@@ -72,7 +72,7 @@ export const recipes = {
   snackbar,
   snackbarRegion,
   text,
-  textButton,
+  linkWithIcon,
   textField,
   visuallyHidden,
   appScreen,

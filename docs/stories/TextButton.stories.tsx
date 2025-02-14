@@ -1,17 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { TextButton } from "seed-design/ui/text-button";
+import { LinkWithIcon } from "@/registry/ui/link-with-icon";
 
-import { textButtonVariantMap } from "@seed-design/css/recipes/text-button";
+import { linkWithIconVariantMap } from "@seed-design/css/recipes/link-with-icon";
 import { VariantTable } from "./components/variant-table";
-import { IconPlusCircleLine } from "@daangn/react-monochrome-icon";
+import { IconChevronRightLine } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
+import { SuffixIcon } from "@seed-design/react";
 
 const meta = {
-  component: TextButton,
+  component: LinkWithIcon,
   decorators: [SeedThemeDecorator],
-} satisfies Meta<typeof TextButton>;
+} satisfies Meta<typeof LinkWithIcon>;
 
 export default meta;
 
@@ -26,13 +27,17 @@ const conditionMap = {
 
 const CommonStoryTemplate: Story = {
   args: {
-    children: "새 글",
-    icon: <IconPlusCircleLine />,
+    children: (
+      <>
+        더보기
+        <SuffixIcon svg={<IconChevronRightLine />} />
+      </>
+    ),
   },
   render: (args) => (
     <VariantTable
       Component={meta.component}
-      variantMap={textButtonVariantMap}
+      variantMap={linkWithIconVariantMap}
       conditionMap={conditionMap}
       {...args}
     />

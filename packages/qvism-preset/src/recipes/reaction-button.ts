@@ -1,11 +1,13 @@
 import { reactionButton as vars } from "@seed-design/css/vars/component";
 
 import { defineRecipe } from "../utils/define-recipe";
-import { active, pressed, disabled, focus, loading, pseudo } from "../utils/pseudo";
+import { prefixIcon } from "../utils/icon";
+import { active, disabled, focus, loading, pressed, pseudo } from "../utils/pseudo";
+import { count } from "../utils/count";
 
 const reactionButton = defineRecipe({
   name: "reaction-button",
-  slots: ["root", "label", "count", "prefixIcon", "progressIndicator"],
+  slots: ["root"],
   base: {
     root: {
       display: "inline-flex",
@@ -27,12 +29,32 @@ const reactionButton = defineRecipe({
 
       transition: `background-color ${vars.base.enabled.root.colorDuration} ${vars.base.enabled.root.colorTimingFunction}`,
       background: vars.base.enabled.root.color,
+      fontWeight: vars.base.enabled.label.fontWeight,
+      color: vars.base.enabled.label.color,
+
+      "--track-color": vars.base.enabled.progressCircle.trackColor,
+      "--range-color": vars.base.enabled.progressCircle.rangeColor,
+
+      ...count({
+        lineHeight: 1,
+        fontWeight: vars.base.enabled.count.fontWeight,
+        color: vars.base.enabled.count.color,
+      }),
+
       [pseudo(active)]: {
         background: vars.base.pressed.root.color,
       },
       [pseudo(pressed)]: {
         background: vars.base.selected.root.color,
+        color: vars.base.selected.label.color,
         boxShadow: `inset 0 0 0 ${vars.base.selected.root.strokeWidth} ${vars.base.selected.root.strokeColor}`,
+
+        ...prefixIcon({
+          color: vars.base.selected.prefixIcon.color,
+        }),
+        ...count({
+          color: vars.base.selected.count.color,
+        }),
       },
       [pseudo(pressed, active)]: {
         background: vars.base.selectedPressed.root.color,
@@ -40,7 +62,15 @@ const reactionButton = defineRecipe({
       [pseudo(disabled)]: {
         cursor: "not-allowed",
         background: vars.base.disabled.root.color,
+        color: vars.base.disabled.label.color,
         boxShadow: `inset 0 0 0 ${vars.base.disabled.root.strokeWidth} ${vars.base.selected.root.strokeColor}`,
+
+        ...prefixIcon({
+          color: vars.base.disabled.prefixIcon.color,
+        }),
+        ...count({
+          color: vars.base.disabled.count.color,
+        }),
       },
       [pseudo(loading)]: {
         background: vars.base.loading.root.color,
@@ -48,63 +78,9 @@ const reactionButton = defineRecipe({
       [pseudo(pressed, loading)]: {
         background: vars.base.selectedLoading.root.color,
         boxShadow: `inset 0 0 0 ${vars.base.selectedLoading.root.strokeWidth} ${vars.base.selected.root.strokeColor}`,
-      },
-    },
-    label: {
-      fontWeight: vars.base.enabled.label.fontWeight,
-      color: vars.base.enabled.label.color,
-      [pseudo(pressed)]: {
-        color: vars.base.selected.label.color,
-      },
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.label.color,
-      },
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    count: {
-      fontWeight: vars.base.enabled.count.fontWeight,
-      color: vars.base.enabled.count.color,
-      [pseudo(pressed)]: {
-        color: vars.base.selected.count.color,
-      },
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.count.color,
-      },
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    prefixIcon: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
 
-      color: vars.base.enabled.prefixIcon.color,
-      [pseudo(pressed)]: {
-        color: vars.base.selected.prefixIcon.color,
-      },
-      [pseudo(disabled)]: {
-        color: vars.base.disabled.prefixIcon.color,
-      },
-      [pseudo(loading)]: {
-        opacity: 0,
-      },
-    },
-    progressIndicator: {
-      position: "absolute",
-      display: "none",
-
-      "--track-color": vars.base.enabled.progressCircle.trackColor,
-      "--range-color": vars.base.enabled.progressCircle.rangeColor,
-      [pseudo(pressed)]: {
         "--track-color": vars.base.selected.progressCircle.trackColor,
         "--range-color": vars.base.selected.progressCircle.rangeColor,
-      },
-      [pseudo(loading)]: {
-        display: "flex",
       },
     },
   },
@@ -117,22 +93,19 @@ const reactionButton = defineRecipe({
           gap: vars.sizeXsmall.enabled.root.gap,
           paddingInline: vars.sizeXsmall.enabled.root.paddingX,
           paddingBlock: vars.sizeXsmall.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeXsmall.enabled.label.fontSize,
           lineHeight: vars.sizeXsmall.enabled.label.lineHeight,
-        },
-        count: {
-          fontSize: vars.sizeXsmall.enabled.count.fontSize,
-          lineHeight: vars.sizeXsmall.enabled.count.lineHeight,
-        },
-        prefixIcon: {
-          width: vars.sizeXsmall.enabled.prefixIcon.size,
-          height: vars.sizeXsmall.enabled.prefixIcon.size,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeXsmall.enabled.progressCircle.size,
           "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeXsmall.enabled.prefixIcon.size,
+          }),
+          ...count({
+            fontSize: vars.sizeXsmall.enabled.count.fontSize,
+            lineHeight: vars.sizeXsmall.enabled.count.lineHeight,
+          }),
         },
       },
       small: {
@@ -142,22 +115,19 @@ const reactionButton = defineRecipe({
           gap: vars.sizeSmall.enabled.root.gap,
           paddingInline: vars.sizeSmall.enabled.root.paddingX,
           paddingBlock: vars.sizeSmall.enabled.root.paddingY,
-        },
-        label: {
           fontSize: vars.sizeSmall.enabled.label.fontSize,
           lineHeight: vars.sizeSmall.enabled.label.lineHeight,
-        },
-        count: {
-          fontSize: vars.sizeSmall.enabled.count.fontSize,
-          lineHeight: vars.sizeSmall.enabled.count.lineHeight,
-        },
-        prefixIcon: {
-          width: vars.sizeSmall.enabled.prefixIcon.size,
-          height: vars.sizeSmall.enabled.prefixIcon.size,
-        },
-        progressIndicator: {
+
           "--size": vars.sizeSmall.enabled.progressCircle.size,
           "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeSmall.enabled.prefixIcon.size,
+          }),
+          ...count({
+            fontSize: vars.sizeSmall.enabled.count.fontSize,
+            lineHeight: vars.sizeSmall.enabled.count.lineHeight,
+          }),
         },
       },
     },

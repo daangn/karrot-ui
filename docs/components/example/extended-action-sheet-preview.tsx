@@ -1,6 +1,7 @@
 "use client";
 
 import { IconEyeSlashLine } from "@daangn/react-monochrome-icon";
+import { PrefixIcon } from "@seed-design/react";
 import { ActionButton } from "seed-design/ui/action-button";
 import {
   ExtendedActionSheetContent,
@@ -18,17 +19,28 @@ const ExtendedActionSheetPreview = () => {
       </ExtendedActionSheetTrigger>
       <ExtendedActionSheetContent aria-label="Extended Action Sheet">
         <ExtendedActionSheetGroup>
-          <ExtendedActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 1" />
-          <ExtendedActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 2" />
-          <ExtendedActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 3" />
+          <ExtendedActionSheetItem>
+            <PrefixIcon svg={<IconEyeSlashLine />} />
+            Action 1
+          </ExtendedActionSheetItem>
+          <ExtendedActionSheetItem>
+            <PrefixIcon svg={<IconEyeSlashLine />} />
+            Action 2
+          </ExtendedActionSheetItem>
+          <ExtendedActionSheetItem>
+            <PrefixIcon svg={<IconEyeSlashLine />} />
+            Action 3
+          </ExtendedActionSheetItem>
         </ExtendedActionSheetGroup>
         <ExtendedActionSheetGroup>
-          <ExtendedActionSheetItem prefixIcon={<IconEyeSlashLine />} label="Action 4" />
-          <ExtendedActionSheetItem
-            tone="critical"
-            prefixIcon={<IconEyeSlashLine />}
-            label="Action 5"
-          />
+          <ExtendedActionSheetItem>
+            <PrefixIcon svg={<IconEyeSlashLine />} />
+            Action 4
+          </ExtendedActionSheetItem>
+          <ExtendedActionSheetItem tone="critical">
+            <PrefixIcon svg={<IconEyeSlashLine />} />
+            Action 5
+          </ExtendedActionSheetItem>
         </ExtendedActionSheetGroup>
       </ExtendedActionSheetContent>
     </ExtendedActionSheetRoot>

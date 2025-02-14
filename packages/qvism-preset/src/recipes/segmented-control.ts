@@ -7,7 +7,7 @@ import { active, checked, disabled, not, pseudo } from "../utils/pseudo";
 
 const segmentedControl = defineRecipe({
   name: "segmented-control",
-  slots: ["root", "indicator", "item", "itemLabel"],
+  slots: ["root", "indicator", "item"],
   base: {
     root: {
       display: "grid",
@@ -53,22 +53,12 @@ const segmentedControl = defineRecipe({
       cursor: "pointer",
       userSelect: "none",
       boxSizing: "border-box",
+      overflowWrap: "break-word",
 
       minWidth: itemVars.base.enabled.root.minWidth,
       minHeight: itemVars.base.enabled.root.height,
       paddingInline: itemVars.base.enabled.root.paddingX,
       borderRadius: itemVars.base.enabled.root.cornerRadius,
-
-      [pseudo(disabled)]: {
-        cursor: "not-allowed",
-      },
-
-      [pseudo(not(checked), active)]: {
-        backgroundColor: itemVars.base.pressed.root.color,
-      },
-    },
-    itemLabel: {
-      overflowWrap: "break-word",
 
       fontWeight: itemVars.base.enabled.label.fontWeight,
       fontSize: itemVars.base.enabled.label.fontSize,
@@ -79,26 +69,14 @@ const segmentedControl = defineRecipe({
         color: itemVars.base.selected.label.color,
         fontWeight: itemVars.base.selected.label.fontWeight,
       },
+
       [pseudo(disabled)]: {
+        cursor: "not-allowed",
         color: itemVars.base.disabled.label.color,
       },
 
-      // Consistent text width between font-weight changes
-      "&:before": {
-        content: "attr(data-text)",
-        display: "block",
-        visibility: "hidden",
-        height: 0,
-        fontSize: itemVars.base.enabled.label.fontSize,
-        fontWeight: itemVars.base.enabled.label.fontWeight,
-      },
-      "&:after": {
-        content: "attr(data-text)",
-        display: "block",
-        visibility: "hidden",
-        height: 0,
-        fontSize: itemVars.base.enabled.label.fontSize,
-        fontWeight: itemVars.base.selected.label.fontWeight,
+      [pseudo(not(checked), active)]: {
+        backgroundColor: itemVars.base.pressed.root.color,
       },
     },
   },

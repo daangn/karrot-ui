@@ -8,7 +8,7 @@ declare type BottomSheetVariantMap = {
 
 export declare type BottomSheetVariantProps = Partial<BottomSheetVariant>;
 
-export declare type BottomSheetSlotName = "positioner" | "backdrop" | "content" | "header" | "body" | "footer" | "title" | "description" | "closeButton" | "closeIcon";
+export declare type BottomSheetSlotName = "positioner" | "backdrop" | "content" | "header" | "body" | "footer" | "title" | "description" | "closeButton";
 
 export declare const bottomSheetVariantMap: BottomSheetVariantMap;
 

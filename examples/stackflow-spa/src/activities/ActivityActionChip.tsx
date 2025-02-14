@@ -12,6 +12,7 @@ import { actionChip, actionChipVariantMap } from "@seed-design/css/recipes/actio
 import IconPlusFill from "@daangn/react-monochrome-icon/IconPlusFill";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ActionChip, type ActionChipProps } from "../design-system/ui/action-chip";
+import { Count } from "@seed-design/react";
 
 const initialVariants = {
   size: "medium",
@@ -33,8 +34,14 @@ const ActivityActionChip: ActivityComponentType = () => {
           initialVariants={initialVariants}
           recipeFn={actionChip}
           render={(variants) => (
-            <ActionChip count={10} key={JSON.stringify(variants)} {...variants}>
-              {variants.layout === "withText" ? "야옹" : <IconPlusFill />}
+            <ActionChip key={JSON.stringify(variants)} {...variants}>
+              {variants.layout === "withText" ? (
+                <>
+                  야옹 <Count>10</Count>
+                </>
+              ) : (
+                <IconPlusFill />
+              )}
             </ActionChip>
           )}
         />

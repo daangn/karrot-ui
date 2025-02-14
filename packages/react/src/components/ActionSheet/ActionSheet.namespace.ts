@@ -9,9 +9,7 @@ export {
   ActionSheetTrigger as Trigger,
   ActionSheetList as List,
   ActionSheetItem as Item,
-  ActionSheetItemLabel as ItemLabel,
   ActionSheetCloseButton as CloseButton,
-  ActionSheetCloseButtonLabel as CloseButtonLabel,
   type ActionSheetBackdropProps as BackdropProps,
   type ActionSheetPositionerProps as PositionerProps,
   type ActionSheetContentProps as ContentProps,
@@ -22,7 +20,5 @@ export {
   type ActionSheetTriggerProps as TriggerProps,
   type ActionSheetListProps as ListProps,
   type ActionSheetItemProps as ItemProps,
-  type ActionSheetItemLabelProps as ItemLabelProps,
   type ActionSheetCloseButtonProps as CloseButtonProps,
-  type ActionSheetCloseButtonLabelProps as CloseButtonLabelProps,
 } from "./ActionSheet";

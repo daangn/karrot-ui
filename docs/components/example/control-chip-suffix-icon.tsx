@@ -1,8 +1,14 @@
 "use client";
 
 import { IconChevronDownFill } from "@daangn/react-monochrome-icon";
+import { SuffixIcon } from "@seed-design/react";
 import { ControlChip } from "seed-design/ui/control-chip";
 
 export default function ControlChipSuffixIcon() {
-  return <ControlChip.Toggle suffixIcon={<IconChevronDownFill />}>라벨</ControlChip.Toggle>;
+  return (
+    <ControlChip.Toggle>
+      라벨
+      <SuffixIcon svg={<IconChevronDownFill />} />
+    </ControlChip.Toggle>
+  );
 }

@@ -1,10 +1,4 @@
 export {
-  ExtendedFabRoot,
-  ExtendedFabLabel,
-  ExtendedFabPrefixIcon,
-  type ExtendedFabRootProps,
-  type ExtendedFabLabelProps,
-  type ExtendedFabPrefixIconProps,
+  ExtendedFab,
+  type ExtendedFabProps,
 } from "./ExtendedFab";
-
-export * as ExtendedFab from "./ExtendedFab.namespace";
