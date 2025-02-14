@@ -50,5 +50,5 @@ fs.readdirSync("./src/transforms").forEach((folder) => {
       external: [...Object.keys(pkg.dependencies)],
       define,
     })
-    .catch(() => process.exit(1))
+    .catch(() => process.exit(1));
 });

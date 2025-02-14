@@ -1,0 +1,21 @@
+{
+  "name": "@seed-design/mapping",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts"
+    },
+    "./color": {
+      "types": "./color.d.ts",
+      "import": "./color.mjs"
+    },
+    "./typography": {
+      "types": "./typography.d.ts",
+      "import": "./typography.mjs"
+    }
+  }
+}
