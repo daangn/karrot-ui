@@ -10,7 +10,7 @@ const textSlotNames = [
 ];
 
 const defaultVariant = {
-  "textStyle": "bodyMediumDefault",
+  "textStyle": "t5Regular",
   "maxLines": "none"
 };
 

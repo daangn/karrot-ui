@@ -31,6 +31,7 @@ export const vars = {
       },
       "label": {
         "fontSize": "var(--seed-font-size-t5)",
+        "lineHeight": "var(--seed-line-height-t5)",
         "fontWeight": "var(--seed-font-weight-bold)"
       }
     }
@@ -44,6 +45,7 @@ export const vars = {
       },
       "label": {
         "fontSize": "var(--seed-font-size-t4)",
+        "lineHeight": "var(--seed-line-height-t4)",
         "fontWeight": "var(--seed-font-weight-bold)"
       }
     }

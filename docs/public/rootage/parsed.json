@@ -22083,6 +22083,16 @@
                       }
                     },
                     {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t5"
+                      }
+                    },
+                    {
                       "key": "fontWeight",
                       "value": {
                         "type": "token",
@@ -22150,6 +22160,16 @@
                         "type": "token",
                         "group": [
                           "font-size"
+                        ],
+                        "key": "t4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
                         ],
                         "key": "t4"
                       }

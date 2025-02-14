@@ -102,6 +102,10 @@
                   "type": "dimension",
                   "value": "$font-size.t5"
                 },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t5"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.bold"
@@ -142,6 +146,10 @@
                 "fontSize": {
                   "type": "dimension",
                   "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
                 },
                 "fontWeight": {
                   "type": "number",

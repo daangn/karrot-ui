@@ -74,7 +74,7 @@ const text = defineRecipe({
     },
   },
   defaultVariants: {
-    textStyle: "bodyMediumDefault",
+    textStyle: "t5Regular",
     maxLines: "none",
   },
 });

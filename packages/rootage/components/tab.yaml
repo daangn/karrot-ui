@@ -27,6 +27,7 @@ data:
         paddingY: $dimension.x2_5
       label:
         fontSize: $font-size.t5
+        lineHeight: $line-height.t5
         fontWeight: $font-weight.bold
   size=small:
     enabled:
@@ -36,4 +37,5 @@ data:
         paddingY: $dimension.x2_5
       label:
         fontSize: $font-size.t4
+        lineHeight: $line-height.t4
         fontWeight: $font-weight.bold

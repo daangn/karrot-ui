@@ -4118,6 +4118,7 @@
 
 .seed-tabs__triggerLabel--size_small {
   font-size: var(--seed-font-size-t4);
+  line-height: var(--seed-line-height-t4);
   font-weight: var(--seed-font-weight-bold);
 }
 
@@ -4137,6 +4138,7 @@
 
 .seed-tabs__triggerLabel--size_medium {
   font-size: var(--seed-font-size-t5);
+  line-height: var(--seed-line-height-t5);
   font-weight: var(--seed-font-weight-bold);
 }
 
