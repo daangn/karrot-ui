@@ -22,6 +22,16 @@
   position: absolute;
 }
 
+[data-seed-icon], .seed-only-icon {
+  width: var(--seed-only-icon-size);
+  height: var(--seed-only-icon-size);
+  color: var(--seed-only-icon-color, currentColor);
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
 .seed-prefix-icon {
   width: var(--seed-prefix-icon-size);
   height: var(--seed-prefix-icon-size);
@@ -36,16 +46,6 @@
   width: var(--seed-suffix-icon-size);
   height: var(--seed-suffix-icon-size);
   color: var(--seed-suffix-icon-color, currentColor);
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  display: inline-flex;
-}
-
-.seed-only-icon {
-  width: var(--seed-only-icon-size);
-  height: var(--seed-only-icon-size);
-  color: var(--seed-only-icon-color, currentColor);
   flex-shrink: 0;
   justify-content: center;
   align-items: center;

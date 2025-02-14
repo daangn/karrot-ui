@@ -28,6 +28,15 @@ export default {
       position: "absolute",
       display: "inline-flex",
     },
+    "[data-seed-icon], .seed-only-icon": {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexShrink: 0,
+      width: "var(--seed-only-icon-size)",
+      height: "var(--seed-only-icon-size)",
+      color: "var(--seed-only-icon-color, currentColor)",
+    },
     ".seed-prefix-icon": {
       display: "inline-flex",
       alignItems: "center",
@@ -45,15 +54,6 @@ export default {
       width: "var(--seed-suffix-icon-size)",
       height: "var(--seed-suffix-icon-size)",
       color: "var(--seed-suffix-icon-color, currentColor)",
-    },
-    ".seed-only-icon": {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
-      width: "var(--seed-only-icon-size)",
-      height: "var(--seed-only-icon-size)",
-      color: "var(--seed-only-icon-color, currentColor)",
     },
     ".seed-count": {
       fontSize: "var(--seed-count-font-size)",
