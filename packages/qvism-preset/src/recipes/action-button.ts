@@ -98,6 +98,16 @@ const actionButton = defineRecipe({
           [pseudo(disabled)]: {
             background: vars.variantNeutralSolid.disabled.root.color,
             color: vars.variantNeutralSolid.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantNeutralSolid.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralSolid.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantNeutralSolid.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralSolid.loading.root.color,
@@ -126,6 +136,16 @@ const actionButton = defineRecipe({
           [pseudo(disabled)]: {
             background: vars.variantNeutralWeak.disabled.root.color,
             color: vars.variantNeutralWeak.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantNeutralWeak.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralWeak.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantNeutralWeak.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralWeak.loading.root.color,
@@ -155,6 +175,16 @@ const actionButton = defineRecipe({
           [pseudo(disabled)]: {
             background: vars.variantCriticalSolid.disabled.root.color,
             color: vars.variantCriticalSolid.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantCriticalSolid.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantCriticalSolid.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantCriticalSolid.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantCriticalSolid.loading.root.color,
@@ -188,6 +218,16 @@ const actionButton = defineRecipe({
             background: vars.variantBrandOutline.disabled.root.color,
             borderColor: vars.variantBrandOutline.disabled.root.strokeColor,
             color: vars.variantBrandOutline.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantBrandOutline.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantBrandOutline.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantBrandOutline.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantBrandOutline.loading.root.color,
@@ -221,6 +261,16 @@ const actionButton = defineRecipe({
             background: vars.variantNeutralOutline.disabled.root.color,
             borderColor: vars.variantNeutralOutline.disabled.root.strokeColor,
             color: vars.variantNeutralOutline.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantNeutralOutline.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralOutline.disabled.suffixIcon.color,
+            }),
+            ...onlyIcon({
+              color: vars.variantNeutralOutline.disabled.icon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralOutline.loading.root.color,

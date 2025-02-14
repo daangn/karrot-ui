@@ -829,6 +829,9 @@
 .seed-action-button__root--variant_neutralSolid:is(:disabled, [disabled], [data-disabled]) {
   background: var(--seed-color-bg-disabled);
   color: var(--seed-color-fg-disabled);
+  --seed-prefix-icon-color: var(--seed-color-fg-disabled);
+  --seed-suffix-icon-color: var(--seed-color-fg-disabled);
+  --seed-only-icon-color: var(--seed-color-fg-disabled);
 }
 
 .seed-action-button__root--variant_neutralSolid[data-loading] {
@@ -851,6 +854,9 @@
 .seed-action-button__root--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
   background: var(--seed-color-bg-disabled);
   color: var(--seed-color-fg-disabled);
+  --seed-prefix-icon-color: var(--seed-color-fg-disabled);
+  --seed-suffix-icon-color: var(--seed-color-fg-disabled);
+  --seed-only-icon-color: var(--seed-color-fg-disabled);
 }
 
 .seed-action-button__root--variant_neutralWeak[data-loading] {
@@ -874,6 +880,9 @@
 .seed-action-button__root--variant_criticalSolid:is(:disabled, [disabled], [data-disabled]) {
   background: var(--seed-color-bg-disabled);
   color: var(--seed-color-fg-disabled);
+  --seed-prefix-icon-color: var(--seed-color-fg-disabled);
+  --seed-suffix-icon-color: var(--seed-color-fg-disabled);
+  --seed-only-icon-color: var(--seed-color-fg-disabled);
 }
 
 .seed-action-button__root--variant_criticalSolid[data-loading] {
@@ -901,6 +910,9 @@
   background: var(--seed-color-bg-layer-default);
   border-color: var(--seed-color-stroke-neutral);
   color: var(--seed-color-fg-disabled);
+  --seed-prefix-icon-color: var(--seed-color-fg-disabled);
+  --seed-suffix-icon-color: var(--seed-color-fg-disabled);
+  --seed-only-icon-color: var(--seed-color-fg-disabled);
 }
 
 .seed-action-button__root--variant_brandOutline[data-loading] {
@@ -928,6 +940,9 @@
   background: var(--seed-color-bg-layer-default);
   border-color: var(--seed-color-stroke-neutral);
   color: var(--seed-color-fg-disabled);
+  --seed-prefix-icon-color: var(--seed-color-fg-disabled);
+  --seed-suffix-icon-color: var(--seed-color-fg-disabled);
+  --seed-only-icon-color: var(--seed-color-fg-disabled);
 }
 
 .seed-action-button__root--variant_neutralOutline[data-loading] {
@@ -1079,6 +1094,8 @@
 .seed-toggle-button__root--variant_brandSolid:is(:disabled, [disabled], [data-disabled]) {
   background: var(--seed-color-bg-disabled);
   color: var(--seed-color-fg-disabled);
+  --seed-prefix-icon-color: var(--seed-color-fg-disabled);
+  --seed-suffix-icon-color: var(--seed-color-fg-disabled);
 }
 
 .seed-toggle-button__root--variant_brandSolid[data-loading] {
@@ -1119,6 +1136,8 @@
 .seed-toggle-button__root--variant_neutralWeak:is(:disabled, [disabled], [data-disabled]) {
   background: var(--seed-color-bg-disabled);
   color: var(--seed-color-fg-disabled);
+  --seed-prefix-icon-color: var(--seed-color-fg-disabled);
+  --seed-suffix-icon-color: var(--seed-color-fg-disabled);
 }
 
 .seed-toggle-button__root--variant_neutralWeak[data-loading], .seed-toggle-button__root--variant_neutralWeak:is([aria-pressed="true"], [data-pressed])[data-loading] {

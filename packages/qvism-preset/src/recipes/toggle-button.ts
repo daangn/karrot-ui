@@ -58,6 +58,13 @@ const toggleButton = defineRecipe({
           [pseudo(disabled)]: {
             background: vars.variantBrandSolid.disabled.root.color,
             color: vars.variantBrandSolid.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantBrandSolid.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantBrandSolid.disabled.suffixIcon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantBrandSolid.loading.root.color,
@@ -98,6 +105,13 @@ const toggleButton = defineRecipe({
           [pseudo(disabled)]: {
             background: vars.variantNeutralWeak.disabled.root.color,
             color: vars.variantNeutralWeak.disabled.label.color,
+
+            ...prefixIcon({
+              color: vars.variantNeutralWeak.disabled.prefixIcon.color,
+            }),
+            ...suffixIcon({
+              color: vars.variantNeutralWeak.disabled.suffixIcon.color,
+            }),
           },
           [pseudo(loading)]: {
             background: vars.variantNeutralWeak.loading.root.color,
