@@ -1,11 +1,25 @@
-import { extendedActionSheet as vars } from "@seed-design/vars/component";
+import {
+  extendedActionSheet as vars,
+  extendedActionSheetCloseButton as closeVars,
+} from "@seed-design/vars/component";
 import { enterAnimation, exitAnimation } from "../utils/animation";
 import { defineRecipe } from "../utils/define-recipe";
-import { not, open, pseudo } from "../utils/pseudo";
+import { active, not, open, pseudo } from "../utils/pseudo";
 
 const extendedActionSheet = defineRecipe({
   name: "extended-action-sheet",
-  slots: ["backdrop", "positioner", "content", "header", "title", "list", "group", "footer"],
+  slots: [
+    "backdrop",
+    "positioner",
+    "content",
+    "header",
+    "title",
+    "list",
+    "group",
+    "footer",
+    "closeButton",
+    "closeButtonLabel",
+  ],
   base: {
     positioner: {
       position: "fixed",
@@ -96,6 +110,27 @@ const extendedActionSheet = defineRecipe({
       alignItems: "stretch",
 
       paddingTop: vars.base.enabled.footer.paddingTop,
+    },
+    closeButton: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+
+      backgroundColor: closeVars.base.enabled.root.color,
+      minHeight: closeVars.base.enabled.root.minHeight,
+      paddingInline: closeVars.base.enabled.root.paddingX,
+      paddingBlock: closeVars.base.enabled.root.paddingY,
+      borderRadius: closeVars.base.enabled.root.cornerRadius,
+
+      [pseudo(active)]: {
+        backgroundColor: closeVars.base.pressed.root.color,
+      },
+    },
+    closeButtonLabel: {
+      color: closeVars.base.enabled.label.color,
+      fontSize: closeVars.base.enabled.label.fontSize,
+      lineHeight: closeVars.base.enabled.label.lineHeight,
+      fontWeight: closeVars.base.enabled.label.fontWeight,
     },
   },
   variants: {},

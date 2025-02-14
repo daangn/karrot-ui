@@ -1,7 +1,6 @@
 import actionButton from "./recipes/action-button";
 import actionChip from "./recipes/action-chip";
 import actionSheet from "./recipes/action-sheet";
-import actionSheetCloseButton from "./recipes/action-sheet-close-button";
 import actionSheetItem from "./recipes/action-sheet-item";
 import avatar from "./recipes/avatar";
 import avatarStack from "./recipes/avatar-stack";
@@ -13,7 +12,6 @@ import chipTabs from "./recipes/chip-tabs";
 import controlChip from "./recipes/control-chip";
 import dialog from "./recipes/dialog";
 import extendedActionSheet from "./recipes/extended-action-sheet";
-import extendedActionSheetCloseButton from "./recipes/extended-action-sheet-close-button";
 import extendedActionSheetItem from "./recipes/extended-action-sheet-item";
 import extendedFab from "./recipes/extended-fab";
 import fab from "./recipes/fab";
@@ -48,10 +46,8 @@ export const recipes = {
   bottomSheet,
   actionSheet,
   actionSheetItem,
-  actionSheetCloseButton,
   extendedActionSheet,
   extendedActionSheetItem,
-  extendedActionSheetCloseButton,
   fab,
   extendedFab,
   badge,

@@ -5,10 +5,6 @@ import {
   type ExtendedActionSheetVariantProps,
 } from "@seed-design/recipe/extended-action-sheet";
 import {
-  extendedActionSheetCloseButton,
-  type ExtendedActionSheetCloseButtonVariantProps,
-} from "@seed-design/recipe/extended-action-sheet-close-button";
-import {
   extendedActionSheetItem,
   type ExtendedActionSheetItemVariantProps,
 } from "@seed-design/recipe/extended-action-sheet-item";
@@ -20,8 +16,6 @@ import { Icon, type IconProps } from "../private/Icon";
 const { withRootProvider, withContext } = createStyleContext(extendedActionSheet);
 const { withProvider: withItemProvider, withContext: withItemContext } =
   createStyleContext(extendedActionSheetItem);
-const { withProvider: withCloseButtonProvider, withContext: withCloseButtonContext } =
-  createStyleContext(extendedActionSheetCloseButton);
 const withStateProps = createWithStateProps([useDialogContext]);
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -160,14 +154,12 @@ export const ExtendedActionSheetFooter = withContext<
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ExtendedActionSheetCloseButtonProps
-  extends DialogPrimitive.CloseButtonProps,
-    ExtendedActionSheetCloseButtonVariantProps {}
+export interface ExtendedActionSheetCloseButtonProps extends DialogPrimitive.CloseButtonProps {}
 
-export const ExtendedActionSheetCloseButton = withCloseButtonProvider<
+export const ExtendedActionSheetCloseButton = withContext<
   HTMLDivElement,
   ExtendedActionSheetCloseButtonProps
->(DialogPrimitive.CloseButton, "root");
+>(DialogPrimitive.CloseButton, "closeButton");
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -175,7 +167,7 @@ export interface ExtendedActionSheetCloseButtonLabelProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const ExtendedActionSheetCloseButtonLabel = withCloseButtonContext<
+export const ExtendedActionSheetCloseButtonLabel = withContext<
   HTMLSpanElement,
   ExtendedActionSheetCloseButtonLabelProps
->(Primitive.span, "label");
+>(Primitive.span, "closeButtonLabel");

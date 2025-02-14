@@ -2,10 +2,6 @@ import { Dialog as DialogPrimitive, useDialogContext } from "@seed-design/react-
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { actionSheet, type ActionSheetVariantProps } from "@seed-design/recipe/action-sheet";
 import {
-  actionSheetCloseButton,
-  type ActionSheetCloseButtonVariantProps,
-} from "@seed-design/recipe/action-sheet-close-button";
-import {
   actionSheetItem,
   type ActionSheetItemVariantProps,
 } from "@seed-design/recipe/action-sheet-item";
@@ -16,8 +12,6 @@ import { createWithStateProps } from "../../utils/createWithStateProps";
 const { withRootProvider, withContext } = createStyleContext(actionSheet);
 const { withProvider: withItemProvider, withContext: withItemContext } =
   createStyleContext(actionSheetItem);
-const { withProvider: withCloseButtonProvider, withContext: withCloseButtonContext } =
-  createStyleContext(actionSheetCloseButton);
 const withStateProps = createWithStateProps([useDialogContext]);
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -129,14 +123,12 @@ export const ActionSheetItemLabel = withItemContext<HTMLSpanElement, ActionSheet
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ActionSheetCloseButtonProps
-  extends DialogPrimitive.CloseButtonProps,
-    ActionSheetCloseButtonVariantProps {}
+export interface ActionSheetCloseButtonProps extends DialogPrimitive.CloseButtonProps {}
 
-export const ActionSheetCloseButton = withCloseButtonProvider<
-  HTMLDivElement,
-  ActionSheetCloseButtonProps
->(DialogPrimitive.CloseButton, "root");
+export const ActionSheetCloseButton = withContext<HTMLDivElement, ActionSheetCloseButtonProps>(
+  DialogPrimitive.CloseButton,
+  "closeButton",
+);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -144,7 +136,7 @@ export interface ActionSheetCloseButtonLabelProps
   extends PrimitiveProps,
     React.HTMLAttributes<HTMLSpanElement> {}
 
-export const ActionSheetCloseButtonLabel = withCloseButtonContext<
+export const ActionSheetCloseButtonLabel = withContext<
   HTMLSpanElement,
   ActionSheetCloseButtonLabelProps
->(Primitive.span, "label");
+>(Primitive.span, "closeButtonLabel");
