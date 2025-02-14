@@ -1,5 +1,5 @@
 {
-  "name": "@seed-design/mapping",
+  "name": "@seed-design/migration-index",
   "version": "0.0.0",
   "private": true,
   "main": "./index.js",

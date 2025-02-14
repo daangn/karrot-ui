@@ -2,7 +2,7 @@ import { resolveToken, type AST } from "@seed-design/rootage-core";
 import { getRootage, stringifyValueLit } from "@/components/rootage";
 import { ExpandableTokenCell } from "@/components/expandable-token-cell";
 import { Fragment } from "react";
-import type { FoundationTokenMapping } from "@seed-design/mapping";
+import type { FoundationTokenMapping } from "@seed-design/migration-index";
 
 interface TokenMappingTableProps {
   mappings: FoundationTokenMapping[];

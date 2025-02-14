@@ -1,5 +1,5 @@
 import type * as jscodeshift from "jscodeshift";
-import { colorMappings } from "@seed-design/mapping/color";
+import { colorMappings } from "@seed-design/migration-index/color";
 import { TokenMigrationReporter } from "../../utils/reporter.js";
 import { handleImports } from "./import-handler.js";
 import { getMemberExpressionName, buildMemberExpression } from "./ast-utils.js";

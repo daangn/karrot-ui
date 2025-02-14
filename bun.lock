@@ -35,7 +35,7 @@
         "@sanity/table": "^1.1.3",
         "@sanity/vision": "3",
         "@sanity/visual-editing": "^2.10.5",
-        "@seed-design/mapping": "0.0.0",
+        "@seed-design/migration-index": "0.0.0",
         "@seed-design/react": "0.0.0",
         "@seed-design/react-icon": "^0.7.3",
         "@seed-design/recipe": "0.0.0-alpha-20241212122822",
@@ -166,7 +166,7 @@
       "version": "0.0.11",
       "bin": "./bin/index.mjs",
       "dependencies": {
-        "@seed-design/mapping": "0.0.0",
+        "@seed-design/migration-index": "0.0.0",
         "cac": "^6.7.14",
         "es-toolkit": "^1.25.2",
         "execa": "^9.4.1",
@@ -199,8 +199,8 @@
         "esbuild": "^0.25.0",
       },
     },
-    "packages/mapping": {
-      "name": "@seed-design/mapping",
+    "packages/migration-index": {
+      "name": "@seed-design/migration-index",
       "version": "0.0.0",
     },
     "packages/qvism-preset": {
@@ -1624,7 +1624,7 @@
 
     "@seed-design/figma-spec-widget": ["@seed-design/figma-spec-widget@workspace:tools/figma-spec-widget"],
 
-    "@seed-design/mapping": ["@seed-design/mapping@workspace:packages/mapping"],
+    "@seed-design/migration-index": ["@seed-design/migration-index@workspace:packages/migration-index"],
 
     "@seed-design/qvism-cli": ["@seed-design/qvism-cli@workspace:tools/qvism/cli"],
 

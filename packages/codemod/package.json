@@ -19,7 +19,7 @@
     "test": "LOG=true bun vitest"
   },
   "dependencies": {
-    "@seed-design/mapping": "0.0.0",
+    "@seed-design/migration-index": "0.0.0",
     "cac": "^6.7.14",
     "es-toolkit": "^1.25.2",
     "execa": "^9.4.1",

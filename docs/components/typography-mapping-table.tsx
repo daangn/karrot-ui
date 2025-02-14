@@ -2,7 +2,7 @@ import { getRootage } from "@/components/rootage";
 import { Text } from "@/registry/ui/text";
 import { Fragment } from "react";
 import { TextProps } from "@/registry/ui/text";
-import type { FoundationTokenMapping } from "@seed-design/mapping";
+import type { FoundationTokenMapping } from "@seed-design/migration-index";
 
 interface TypographyMappingTableProps {
   mappings: FoundationTokenMapping[];
