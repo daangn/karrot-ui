@@ -1913,6 +1913,27 @@
   display: flex;
 }
 
+.seed-action-sheet__closeButton {
+  background-color: var(--seed-color-bg-layer-floating);
+  min-height: 50px;
+  padding-inline: var(--seed-dimension-spacing-x-global-gutter);
+  padding-block: var(--seed-dimension-x3_5);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.seed-action-sheet__closeButton:is(:active, [data-active]) {
+  background-color: var(--seed-color-bg-layer-floating-pressed);
+}
+
+.seed-action-sheet__closeButtonLabel {
+  color: var(--seed-color-fg-neutral);
+  font-size: var(--seed-font-size-t5);
+  line-height: var(--seed-line-height-t5);
+  font-weight: var(--seed-font-weight-bold);
+}
+
 .seed-action-sheet-item__root {
   background-color: var(--seed-color-bg-layer-floating);
   min-height: 50px;
@@ -1951,27 +1972,6 @@
 
 .seed-action-sheet-item__label--tone_critical {
   color: var(--seed-color-fg-critical);
-}
-
-.seed-action-sheet-close-button__root {
-  background-color: var(--seed-color-bg-layer-floating);
-  min-height: 50px;
-  padding-inline: var(--seed-dimension-spacing-x-global-gutter);
-  padding-block: var(--seed-dimension-x3_5);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.seed-action-sheet-close-button__root:is(:active, [data-active]) {
-  background-color: var(--seed-color-bg-layer-floating-pressed);
-}
-
-.seed-action-sheet-close-button__label {
-  color: var(--seed-color-fg-neutral);
-  font-size: var(--seed-font-size-t5);
-  line-height: var(--seed-line-height-t5);
-  font-weight: var(--seed-font-weight-bold);
 }
 
 .seed-extended-action-sheet__positioner {
@@ -2086,6 +2086,28 @@
   display: flex;
 }
 
+.seed-extended-action-sheet__closeButton {
+  background-color: var(--seed-color-bg-neutral-weak);
+  min-height: 52px;
+  padding-inline: var(--seed-dimension-x5);
+  padding-block: var(--seed-dimension-x3_5);
+  border-radius: var(--seed-radius-r3);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.seed-extended-action-sheet__closeButton:is(:active, [data-active]) {
+  background-color: var(--seed-color-bg-neutral-weak-pressed);
+}
+
+.seed-extended-action-sheet__closeButtonLabel {
+  color: var(--seed-color-fg-neutral);
+  font-size: var(--seed-font-size-t5);
+  line-height: var(--seed-line-height-t5);
+  font-weight: var(--seed-font-weight-medium);
+}
+
 .seed-extended-action-sheet-item__root {
   background-color: var(--seed-color-bg-neutral-weak);
   min-height: 52px;
@@ -2125,28 +2147,6 @@
 
 .seed-extended-action-sheet-item__label--tone_critical, .seed-extended-action-sheet-item__prefixIcon--tone_critical {
   color: var(--seed-color-fg-critical);
-}
-
-.seed-extended-action-sheet-close-button__root {
-  background-color: var(--seed-color-bg-neutral-weak);
-  min-height: 52px;
-  padding-inline: var(--seed-dimension-x5);
-  padding-block: var(--seed-dimension-x3_5);
-  border-radius: var(--seed-radius-r3);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.seed-extended-action-sheet-close-button__root:is(:active, [data-active]) {
-  background-color: var(--seed-color-bg-neutral-weak-pressed);
-}
-
-.seed-extended-action-sheet-close-button__label {
-  color: var(--seed-color-fg-neutral);
-  font-size: var(--seed-font-size-t5);
-  line-height: var(--seed-line-height-t5);
-  font-weight: var(--seed-font-weight-medium);
 }
 
 .seed-fab__root {
