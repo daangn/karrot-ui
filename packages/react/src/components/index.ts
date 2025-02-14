@@ -17,6 +17,7 @@ export * from "./ExtendedFab";
 export * from "./Fab";
 export * from "./Flex";
 export * from "./HelpBubble";
+export * from "./IdentityPlaceholder";
 export * from "./Inline";
 export * from "./InlineBanner";
 export * from "./MannerTempBadge";
