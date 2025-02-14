@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { selectBoxGroupVariantMap } from "@seed-design/recipe/select-group";
+import { selectBoxGroupVariantMap } from "@seed-design/recipe/select-box-group";
 import { CheckSelectBox } from "seed-design/ui/select-box";
 
 import { SeedThemeDecorator } from "./components/decorator";
