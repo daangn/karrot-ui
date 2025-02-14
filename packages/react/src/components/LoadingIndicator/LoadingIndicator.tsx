@@ -19,7 +19,9 @@ export const LoadingIndicator = forwardRef<HTMLSpanElement, LoadingIndicatorProp
       >
         {indicator}
       </Primitive.span>
-      <Primitive.span style={{ opacity: 0 }}>{children}</Primitive.span>
+      <Primitive.span style={{ opacity: 0, display: "inherit", gap: "inherit" }}>
+        {children}
+      </Primitive.span>
     </>
   );
 });
