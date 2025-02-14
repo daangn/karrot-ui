@@ -64,9 +64,6 @@ export interface Theme {
   recipes: Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
 
   keyframes: Record<string, KeyframeDefinition>;
-
-  // TODO: Do we actually need patterns?
-  patterns: Record<string, StyleObject>;
 }
 
 export interface CssgenOptions {

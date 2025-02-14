@@ -3,7 +3,7 @@ import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { bottomSheet, type BottomSheetVariantProps } from "@seed-design/recipe/bottom-sheet";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Box, type BoxProps } from "../Box";
+import { withStyleProps, type StyleProps } from "../../utils/styled";
 import { Icon, type IconProps } from "../private/Icon";
 
 const { withRootProvider, withContext } = createStyleContext(bottomSheet);
@@ -84,10 +84,16 @@ export const BottomSheetDescription = withContext<
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface BottomSheetBodyProps extends BoxProps {}
+export interface BottomSheetBodyProps
+  extends PrimitiveProps,
+    Pick<
+      StyleProps,
+      "paddingX" | "height" | "maxHeight" | "minHeight" | "justifyContent" | "alignItems"
+    >,
+    React.HTMLAttributes<HTMLDivElement> {}
 
 export const BottomSheetBody = withContext<HTMLDivElement, BottomSheetBodyProps>(
-  withStateProps(Box),
+  withStyleProps(withStateProps(Primitive.div)),
   "body",
 );
 

@@ -19,7 +19,7 @@ const ActivityHelpBubble: ActivityComponentType = () => {
         </AppBarLeft>
         <AppBarMain>Help Bubble</AppBarMain>
       </AppBar>
-      <AppScreenContent style={{ overflowY: "auto", height: "200vh" }}>
+      <AppScreenContent>
         <div style={{ display: "flex", paddingTop: "20vh", justifyContent: "center" }}>
           <HelpBubbleTrigger title="Flip 테스트">
             <ActionButton>Flip 테스트</ActionButton>
@@ -54,6 +54,7 @@ const ActivityHelpBubble: ActivityComponentType = () => {
             <ActionButton>Placement=bottom 테스트</ActionButton>
           </HelpBubbleTrigger>
         </div>
+        <div style={{ height: "100vh" }} />
       </AppScreenContent>
     </AppScreen>
   );

@@ -4,7 +4,7 @@ import { helpBubble, type HelpBubbleVariantProps } from "@seed-design/recipe/hel
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Box, type BoxProps } from "../Box";
+import { withStyleProps, type StyleProps } from "../../utils/styled";
 import { Icon, type IconProps } from "../private/Icon";
 
 const { withRootProvider, withContext } = createStyleContext(helpBubble);
@@ -62,11 +62,11 @@ export const HelpBubbleBackdrop = withContext<HTMLDivElement, HelpBubbleBackdrop
 
 export interface HelpBubbleContentProps
   extends PrimitiveProps,
-    Pick<BoxProps, "maxWidth">,
+    Pick<StyleProps, "maxWidth">,
     React.HTMLAttributes<HTMLDivElement> {}
 
 export const HelpBubbleContent = withContext<HTMLDivElement, HelpBubbleContentProps>(
-  withStateProps(Box),
+  withStyleProps(withStateProps(Primitive.div)),
   "content",
 );
 

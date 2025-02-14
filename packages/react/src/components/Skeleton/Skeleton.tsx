@@ -1,13 +1,18 @@
+import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
 import { skeleton, type SkeletonVariantProps } from "@seed-design/recipe/skeleton";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { Box, type BoxProps } from "../Box";
+import { withStyleProps, type StyleProps } from "../../utils/styled";
 
 const { withProvider } = createStyleContext(skeleton);
 
 export interface SkeletonProps
   extends SkeletonVariantProps,
-    Pick<BoxProps, "width" | "height">,
+    PrimitiveProps,
+    Pick<StyleProps, "height" | "width">,
     Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {}
 
-export const Skeleton = withProvider<HTMLDivElement, SkeletonProps>(Box, "root");
+export const Skeleton = withProvider<HTMLDivElement, SkeletonProps>(
+  withStyleProps(Primitive.div),
+  "root",
+);
