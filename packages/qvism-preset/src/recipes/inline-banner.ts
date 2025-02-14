@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { pseudo } from "../utils/pseudo";
 
 const inlineBanner = defineRecipe({
-  name: "inlineBanner",
+  name: "inline-banner",
   slots: [
     "root",
     "content",

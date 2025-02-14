@@ -8,8 +8,6 @@ import type {
   ValueLit,
 } from "../parser/ast";
 
-const PREFIX = "seed-v3";
-
 function stringifyCubicBezierLit(expr: CubicBezierLit): string {
   return `cubic-bezier(${expr.value.join(", ")})`;
 }
@@ -26,7 +24,7 @@ function stringifyGradientLit(expr: GradientLit): string {
   return expr.stops.map((item) => `${item.color.value} ${item.position.value * 100}%`).join(", ");
 }
 
-export function stringifyValueLit(expr: ValueLit): string {
+function stringifyValueLit(expr: ValueLit): string {
   if (expr.kind === "ColorHexLit") {
     return expr.value;
   }
@@ -58,20 +56,68 @@ export function stringifyValueLit(expr: ValueLit): string {
   throw new Error("Invalid value expression");
 }
 
-export function stringifyTokenName(token: TokenLit) {
-  if (token.group.length === 0) {
-    return `--${PREFIX}-${token.key.toString().replaceAll(".", "\\.")}`;
+export const staticStringifier = {
+  value: stringifyValueLit,
+};
+
+export function createStringifier(options: { prefix?: string } = {}) {
+  const { prefix } = options;
+
+  function tokenName(token: TokenLit) {
+    const words = [
+      prefix,
+      token.group.join("-"),
+      token.key.toString().replaceAll(".", "\\."),
+    ].filter(Boolean);
+    return `--${words.join("-")}`;
   }
 
-  return `--${PREFIX}-${token.group.join("-")}-${token.key.toString().replaceAll(".", "\\.")}`;
+  function tokenReference(token: TokenLit) {
+    return `var(${tokenName(token)})`;
+  }
+
+  function valueOrToken(value: ValueLit | TokenLit): string {
+    return value.kind === "TokenLit" ? tokenReference(value) : staticStringifier.value(value);
+  }
+
+  function declaration({ decl, mode }: { decl: TokenDeclaration; mode: string }) {
+    return `${tokenName(decl.token)}: ${valueOrToken(decl.values.find((v) => v.mode === mode)!.value)};`;
+  }
+
+  function rule({
+    selector,
+    decls,
+    mode,
+  }: { selector: string; decls: TokenDeclaration[]; mode: string }) {
+    const declsStr = decls.map((decl) => declaration({ decl, mode })).join("\n  ");
+    return `${selector} {
+  ${declsStr}
+}`;
+  }
+
+  function root(rules: { selector: string; decls: TokenDeclaration[]; mode: string }[]) {
+    return rules.map(({ selector, decls, mode }) => rule({ selector, decls, mode })).join("\n\n");
+  }
+
+  return {
+    ...staticStringifier,
+    tokenName,
+    tokenReference,
+    valueOrToken,
+    declaration,
+    rule,
+    root,
+  };
 }
 
-export function stringifyTokenReference(token: TokenLit) {
-  return `var(${stringifyTokenName(token)})`;
-}
-
-export function stringifyCssValue(value: ValueLit | TokenLit): string {
-  return value.kind === "TokenLit" ? stringifyTokenReference(value) : stringifyValueLit(value);
+export interface CssOptions {
+  prefix?: string;
+  banner?: string;
+  selectors: {
+    [collection: string]: {
+      [mode: string]: string;
+    };
+  };
 }
 
 export function getTokenCss(
@@ -79,44 +125,27 @@ export function getTokenCss(
     tokens: TokenDeclaration[];
     tokenCollections: TokenCollectionDeclaration[];
   },
-  options: {
-    banner: string;
-    selectors: {
-      [collection: string]: {
-        [mode: string]: string;
-      };
-    };
-  },
+  options: CssOptions,
 ) {
+  const stringifier = createStringifier(options);
   const { tokens, tokenCollections } = ast;
 
-  const rules = tokenCollections
-    .flatMap((collection) => {
-      const inCollection = tokens.filter((token) => token.collection === collection.name);
-      return collection.modes
-        .map((mode) => {
-          const decls = inCollection
-            .map(
-              (binding) =>
-                `${stringifyTokenName(binding.token)}: ${stringifyCssValue(binding.values.find((v) => v.mode === mode)!.value)};`,
-            )
-            .join("\n  ");
+  const rules = tokenCollections.flatMap((collection) => {
+    const inCollection = tokens.filter((token) => token.collection === collection.name);
+    return collection.modes.map((mode) => {
+      const selector = options.selectors[collection.name]?.[mode];
 
-          const selector = options.selectors[collection.name]?.[mode];
+      if (!selector) {
+        throw new Error(
+          `Selector for collection ${collection.name} and mode ${mode} is not defined`,
+        );
+      }
 
-          if (!selector) {
-            throw new Error(
-              `Selector for collection ${collection.name} and mode ${mode} is not defined`,
-            );
-          }
+      return { selector, decls: inCollection, mode };
+    });
+  });
 
-          return `${selector} {
-  ${decls}
-}`;
-        })
-        .join("\n\n");
-    })
-    .join("\n\n");
+  const code = stringifier.root(rules);
 
-  return `${options.banner}${rules}`;
+  return `${options.banner ?? ""}${code}`;
 }

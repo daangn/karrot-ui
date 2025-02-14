@@ -13,7 +13,7 @@ import {
 } from "./pseudo";
 
 export const appBarMain = defineRecipe({
-  name: "appBarMain",
+  name: "app-bar-main",
   slots: ["root", "title", "subtitle"],
   base: {
     root: {
@@ -126,7 +126,7 @@ export const appBarMain = defineRecipe({
 });
 
 export const appBar = defineRecipe({
-  name: "appBar",
+  name: "app-bar",
   slots: ["root", "left", "right", "iconButton", "icon"],
   base: {
     root: {

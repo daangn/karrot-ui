@@ -2,22 +2,22 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-bg-layer-default)",
+        "color": "var(--seed-color-bg-layer-default)",
         "strokeBottomWidth": "1px",
-        "strokeColor": "var(--seed-v3-color-stroke-neutral)"
+        "strokeColor": "var(--seed-color-stroke-neutral)"
       },
       "indicator": {
         "height": "2px",
-        "color": "var(--seed-v3-color-fg-neutral)",
-        "transformDuration": "var(--seed-v3-duration-d4)",
-        "transformTimingFunction": "var(--seed-v3-timing-function-easing)"
+        "color": "var(--seed-color-fg-neutral)",
+        "transformDuration": "var(--seed-duration-d4)",
+        "transformTimingFunction": "var(--seed-timing-function-easing)"
       }
     }
   },
   "layoutHug": {
     "enabled": {
       "root": {
-        "paddingX": "var(--seed-v3-dimension-spacing-x-global-gutter)"
+        "paddingX": "var(--seed-dimension-spacing-x-global-gutter)"
       },
       "indicator": {
         "insetX": "0px"
@@ -30,7 +30,7 @@ export const vars = {
         "paddingX": "0px"
       },
       "indicator": {
-        "insetX": "var(--seed-v3-dimension-spacing-x-global-gutter)"
+        "insetX": "var(--seed-dimension-spacing-x-global-gutter)"
       }
     }
   },

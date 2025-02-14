@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, pressed, disabled, focus, loading, pseudo } from "../utils/pseudo";
 
 const toggleButton = defineRecipe({
-  name: "toggleButton",
+  name: "toggle-button",
   slots: ["root", "label", "prefixIcon", "suffixIcon", "progressIndicator"],
   base: {
     root: {

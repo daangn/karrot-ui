@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { pseudo } from "../utils/pseudo";
 
 const pullToRefresh = defineRecipe({
-  name: "pullToRefresh",
+  name: "pull-to-refresh",
   slots: ["root", "indicator"],
   base: {
     root: {

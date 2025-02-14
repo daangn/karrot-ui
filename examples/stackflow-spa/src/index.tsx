@@ -1,7 +1,5 @@
 import "./reset.css";
-import "@seed-design/stylesheet/base.css";
-import "@seed-design/stylesheet/token.css";
-import "@seed-design/stylesheet/component.css";
+import "@seed-design/stylesheet/design-system.min.css";
 import "@stackflow/plugin-basic-ui/index.css";
 import "./global.css";
 

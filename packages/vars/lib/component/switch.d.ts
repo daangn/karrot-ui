@@ -2,17 +2,17 @@ export declare const vars: {
   "base": {
     "enabled": {
       "control": {
-        "color": "var(--seed-v3-color-palette-gray-600)",
-        "cornerRadius": "var(--seed-v3-radius-full)"
+        "color": "var(--seed-color-palette-gray-600)",
+        "cornerRadius": "var(--seed-radius-full)"
       },
       "thumb": {
-        "color": "var(--seed-v3-color-palette-static-white)",
-        "cornerRadius": "var(--seed-v3-radius-full)"
+        "color": "var(--seed-color-palette-static-white)",
+        "cornerRadius": "var(--seed-radius-full)"
       }
     },
     "enabledSelected": {
       "control": {
-        "color": "var(--seed-v3-color-bg-brand-solid)"
+        "color": "var(--seed-color-bg-brand-solid)"
       }
     },
     "disabled": {
@@ -43,7 +43,7 @@ export declare const vars: {
     "enabled": {
       "root": {
         "height": "24px",
-        "gap": "var(--seed-v3-dimension-x2)"
+        "gap": "var(--seed-dimension-x2)"
       },
       "control": {
         "height": "16px",
@@ -56,9 +56,9 @@ export declare const vars: {
         "width": "12px"
       },
       "label": {
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
+        "fontSize": "var(--seed-font-size-t4)",
+        "lineHeight": "var(--seed-line-height-t4)",
+        "fontWeight": "var(--seed-font-weight-regular)"
       }
     }
   }

@@ -5,11 +5,11 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const radioSlotNames = [
   [
     "root",
-    "radio__root"
+    "seed-radio__root"
   ],
   [
     "icon",
-    "radio__icon"
+    "seed-radio__icon"
   ]
 ];
 

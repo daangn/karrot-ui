@@ -47,7 +47,41 @@ export interface SlotRecipeDefinition<S extends string, T extends SlotRecipeVari
     }
   >;
   defaultVariants: Required<RecipeSelection<T>>;
-  keyframes?: Record<string, Partial<Record<"from" | "to" | `${string}%`, StyleObject>>>;
 }
 
-export type Config = Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
+export interface KeyframeDefinition {
+  from?: StyleObject;
+  to?: StyleObject;
+  [key: `${string}%`]: StyleObject;
+}
+
+export interface Theme {
+  tokens: {
+    // TODO: implement qvism tokens; currently using rootage-generated token.css
+    _raw: string;
+  };
+
+  recipes: Record<string, SlotRecipeDefinition<string, SlotRecipeVariantRecord<string>>>;
+
+  keyframes: Record<string, KeyframeDefinition>;
+
+  // TODO: Do we actually need patterns?
+  patterns: Record<string, StyleObject>;
+}
+
+export interface CssgenOptions {
+  prefix?: string;
+
+  minify?: boolean;
+
+  globalCss?: StyleObject;
+}
+
+// TODO: add extendable option to each theme items
+export interface Config extends CssgenOptions {
+  theme: Theme;
+}
+
+export interface Preset {
+  theme: Theme;
+}

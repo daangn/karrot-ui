@@ -73,7 +73,7 @@ export const iOSAnimations = {
     },
     interaction: {
       opacity: "calc(1 - var(--swipe-back-displacement-ratio, 0))",
-      translateX: "var(--swipe-back-displacement, 0) * 0.25",
+      translateX: "calc(var(--swipe-back-displacement, 0) * 0.25)",
     },
     out: {
       opacity: "0",

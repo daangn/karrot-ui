@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 
 const actionSheetItem = defineRecipe({
-  name: "actionSheetItem",
+  name: "action-sheet-item",
   slots: ["root", "label"],
   base: {
     root: {

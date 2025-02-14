@@ -22,7 +22,7 @@
     "test:all": "bun vitest run",
     "generate:all": "bun rootage:generate && bun qvism:generate",
     "rootage:build": "ultra -r --build rootage:build",
-    "rootage:generate": "bun --filter @seed-design/vars rootage:generate && bun --filter @seed-design/stylesheet rootage:generate && bun --filter @seed-design/rootage-cli generate:schema && bun --filter docs generate:rootage",
+    "rootage:generate": "bun --filter @seed-design/vars rootage:generate && bun --filter @seed-design/rootage-cli generate:schema && bun --filter docs generate:rootage",
     "rootage:generate:watch": "watchlist packages/rootage/artifacts -- bun rootage:generate",
     "rootage:test": "bun vitest run --project rootage --reporter=verbose",
     "rootage:test:watch": "vitest dev --project rootage",

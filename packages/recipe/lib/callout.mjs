@@ -5,43 +5,43 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const calloutSlotNames = [
   [
     "root",
-    "callout__root"
+    "seed-callout__root"
   ],
   [
     "icon",
-    "callout__icon"
+    "seed-callout__icon"
   ],
   [
     "textContent",
-    "callout__textContent"
+    "seed-callout__textContent"
   ],
   [
     "title",
-    "callout__title"
+    "seed-callout__title"
   ],
   [
     "spacer",
-    "callout__spacer"
+    "seed-callout__spacer"
   ],
   [
     "description",
-    "callout__description"
+    "seed-callout__description"
   ],
   [
     "linkLabel",
-    "callout__linkLabel"
+    "seed-callout__linkLabel"
   ],
   [
     "actionableIcon",
-    "callout__actionableIcon"
+    "seed-callout__actionableIcon"
   ],
   [
     "dismissButton",
-    "callout__dismissButton"
+    "seed-callout__dismissButton"
   ],
   [
     "dismissIcon",
-    "callout__dismissIcon"
+    "seed-callout__dismissIcon"
   ]
 ];
 

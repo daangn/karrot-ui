@@ -1,1 +1,1 @@
-export const shimmer = "var(--seed-v3-gradient-shimmer)";
+export const shimmer = "var(--seed-gradient-shimmer)";

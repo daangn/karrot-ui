@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, checked, disabled, focus, pseudo } from "../utils/pseudo";
 
 const controlChip = defineRecipe({
-  name: "controlChip",
+  name: "control-chip",
   slots: ["root", "label", "icon", "prefixIcon", "suffixIcon", "count"],
   base: {
     root: {

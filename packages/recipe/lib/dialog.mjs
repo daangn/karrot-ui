@@ -5,35 +5,35 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const dialogSlotNames = [
   [
     "positioner",
-    "dialog__positioner"
+    "seed-dialog__positioner"
   ],
   [
     "backdrop",
-    "dialog__backdrop"
+    "seed-dialog__backdrop"
   ],
   [
     "content",
-    "dialog__content"
+    "seed-dialog__content"
   ],
   [
     "header",
-    "dialog__header"
+    "seed-dialog__header"
   ],
   [
     "footer",
-    "dialog__footer"
+    "seed-dialog__footer"
   ],
   [
     "action",
-    "dialog__action"
+    "seed-dialog__action"
   ],
   [
     "title",
-    "dialog__title"
+    "seed-dialog__title"
   ],
   [
     "description",
-    "dialog__description"
+    "seed-dialog__description"
   ]
 ];
 

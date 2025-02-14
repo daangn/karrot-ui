@@ -76,11 +76,16 @@ async function prepare() {
   };
 }
 
+const PREFIX = "seed";
+const tsStringifier = typescript.createStringifier({
+  prefix: PREFIX,
+});
+
 async function writeTokenTs() {
   const { ctx } = await prepare();
 
-  const mjsResults = typescript.getTokenMjs(getTokenDeclarations(ctx));
-  const dtsResults = typescript.getTokenDts(getTokenDeclarations(ctx));
+  const mjsResults = tsStringifier.getTokenMjs(getTokenDeclarations(ctx));
+  const dtsResults = tsStringifier.getTokenDts(getTokenDeclarations(ctx));
 
   for (const result of mjsResults) {
     const writePath = path.join(process.cwd(), dir, result.path);
@@ -107,7 +112,7 @@ async function writeComponentSpec() {
 
   const specs = getComponentSpecDeclarations(ctx);
   for (const spec of specs) {
-    const mjsCode = typescript.getComponentSpecMjs(spec);
+    const mjsCode = tsStringifier.getComponentSpecMjs(spec);
     const mjsWritePath = path.join(process.cwd(), dir, `${spec.id}.mjs`);
 
     console.log("Writing", spec.name, "to", mjsWritePath);
@@ -117,7 +122,7 @@ async function writeComponentSpec() {
     }
     fs.writeFileSync(mjsWritePath, mjsCode);
 
-    const dtsCode = typescript.getComponentSpecDts(spec);
+    const dtsCode = tsStringifier.getComponentSpecDts(spec);
     const dtsWritePath = path.join(process.cwd(), dir, `${spec.id}.d.ts`);
 
     console.log("Writing", spec.name, "to", dtsWritePath);
@@ -125,14 +130,14 @@ async function writeComponentSpec() {
     fs.writeFileSync(dtsWritePath, dtsCode);
   }
 
-  const mjsIndexCode = typescript.getComponentSpecIndexMjs(specs);
+  const mjsIndexCode = tsStringifier.getComponentSpecIndexMjs(specs);
   const mjsIndexWritePath = path.join(process.cwd(), dir, "index.mjs");
 
   console.log("Writing index to", mjsIndexWritePath);
 
   fs.writeFileSync(mjsIndexWritePath, mjsIndexCode);
 
-  const dtsIndexCode = typescript.getComponentSpecIndexDts(specs);
+  const dtsIndexCode = tsStringifier.getComponentSpecIndexDts(specs);
   const dtsIndexWritePath = path.join(process.cwd(), dir, "index.d.ts");
 
   console.log("Writing index to", dtsIndexWritePath);
@@ -149,6 +154,7 @@ async function writeTokenCss() {
       tokenCollections: getTokenCollectionDeclarations(ctx),
     },
     {
+      prefix: PREFIX,
       banner: `:root[data-seed] {
   color-scheme: light dark;
 }

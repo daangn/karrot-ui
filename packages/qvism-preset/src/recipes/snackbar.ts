@@ -5,7 +5,7 @@ import { enterAnimation, exitAnimation } from "../utils/animation";
 const MAX_Z_INDEX = 2147483647;
 
 export const snackbarRegion = defineRecipe({
-  name: "snackbarRegion",
+  name: "snackbar-region",
   slots: ["root"],
   base: {
     root: {

@@ -6,7 +6,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, checked, disabled, not, pseudo } from "../utils/pseudo";
 
 const segmentedControl = defineRecipe({
-  name: "segmentedControl",
+  name: "segmented-control",
   slots: ["root", "indicator", "item", "itemLabel"],
   base: {
     root: {

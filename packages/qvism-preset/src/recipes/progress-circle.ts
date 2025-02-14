@@ -2,7 +2,7 @@ import { progressCircle as vars } from "@seed-design/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 
 const progressCircle = defineRecipe({
-  name: "progressCircle",
+  name: "progress-circle",
   slots: ["root", "track", "range"],
   base: {
     root: {
@@ -29,8 +29,8 @@ const progressCircle = defineRecipe({
       // indeterminate
       "&[data-progress-state=indeterminate]": {
         animation: `
-          headDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.headTimingFunction} infinite normal none running,
-          tailDash ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.tailTimingFunction} infinite normal none running
+          progress-circle-head ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.headTimingFunction} infinite normal none running,
+          progress-circle-tail ${vars.indeterminateTrue.enabled.range.lengthDuration} ${vars.indeterminateTrue.enabled.range.tailTimingFunction} infinite normal none running
         `,
       },
     },
@@ -74,40 +74,6 @@ const progressCircle = defineRecipe({
       },
       inherit: {
         root: {},
-      },
-    },
-  },
-  keyframes: {
-    rotate: {
-      from: {
-        transform: "rotate(0deg)",
-      },
-      to: {
-        transform: "rotate(360deg)",
-      },
-    },
-
-    headDash: {
-      "0%": {
-        strokeDasharray: "0, 1000%",
-      },
-      "75%": {
-        strokeDasharray: "var(--circumference), 1000%",
-      },
-      "100%": {
-        strokeDasharray: "var(--circumference), 1000%",
-      },
-    },
-
-    tailDash: {
-      "0%": {
-        strokeDashoffset: 0,
-      },
-      "33.33%": {
-        strokeDashoffset: 0,
-      },
-      "100%": {
-        strokeDashoffset: "calc(var(--circumference) * -1)",
       },
     },
   },

@@ -38,12 +38,12 @@ export function ComponentExample(props: ComponentExampleProps) {
             width: "100%",
             display: "flex",
             flexDirection: "column",
-            backgroundColor: "var(--seed-v3-color-bg-layer-default)",
+            backgroundColor: "var(--seed-color-bg-layer-default)",
             justifyContent: "center",
             alignItems: "center",
             padding: "10px",
             borderRadius: ".75rem",
-            border: "1px solid var(--seed-v3-color-stroke-neutral)",
+            border: "1px solid var(--seed-color-stroke-neutral)",
           }}
         >
           {Preview}
@@ -64,7 +64,7 @@ export function ComponentExample(props: ComponentExampleProps) {
                 width: "100%",
                 display: "flex",
                 flexDirection: "column",
-                backgroundColor: "var(--seed-v3-color-bg-layer-default)",
+                backgroundColor: "var(--seed-color-bg-layer-default)",
                 justifyContent: "center",
                 alignItems: "center",
                 padding: "10px",

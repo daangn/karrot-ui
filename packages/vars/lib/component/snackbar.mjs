@@ -2,41 +2,41 @@ export const vars = {
   "base": {
     "enabled": {
       "region": {
-        "paddingX": "var(--seed-v3-dimension-x2)",
-        "paddingY": "var(--seed-v3-dimension-x2)",
-        "offsetDuration": "var(--seed-v3-duration-d4)",
-        "offsetTimingFunction": "var(--seed-v3-timing-function-easing)"
+        "paddingX": "var(--seed-dimension-x2)",
+        "paddingY": "var(--seed-dimension-x2)",
+        "offsetDuration": "var(--seed-duration-d4)",
+        "offsetTimingFunction": "var(--seed-timing-function-easing)"
       },
       "root": {
-        "color": "var(--seed-v3-color-bg-neutral-solid)",
-        "cornerRadius": "var(--seed-v3-radius-r2)",
+        "color": "var(--seed-color-bg-neutral-solid)",
+        "cornerRadius": "var(--seed-radius-r2)",
         "minHeight": "44px",
-        "paddingX": "var(--seed-v3-dimension-x4)",
-        "paddingY": "var(--seed-v3-dimension-x2_5)",
-        "gap": "var(--seed-v3-dimension-x2)",
+        "paddingX": "var(--seed-dimension-x4)",
+        "paddingY": "var(--seed-dimension-x2_5)",
+        "gap": "var(--seed-dimension-x2)",
         "enterOpacity": "0",
-        "enterDuration": "var(--seed-v3-duration-d4)",
-        "enterTimingFunction": "var(--seed-v3-timing-function-enter)",
+        "enterDuration": "var(--seed-duration-d4)",
+        "enterTimingFunction": "var(--seed-timing-function-enter)",
         "exitOpacity": "0",
-        "exitDuration": "var(--seed-v3-duration-d4)",
-        "exitTimingFunction": "var(--seed-v3-timing-function-exit)"
+        "exitDuration": "var(--seed-duration-d4)",
+        "exitTimingFunction": "var(--seed-timing-function-exit)"
       },
       "message": {
-        "color": "var(--seed-v3-color-palette-static-white)",
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)",
-        "fontWeight": "var(--seed-v3-font-weight-regular)"
+        "color": "var(--seed-color-palette-static-white)",
+        "fontSize": "var(--seed-font-size-t4)",
+        "lineHeight": "var(--seed-line-height-t4)",
+        "fontWeight": "var(--seed-font-weight-regular)"
       },
       "prefixIcon": {
         "size": "24px"
       },
       "actionButton": {
-        "targetPaddingX": "var(--seed-v3-dimension-x2)",
+        "targetPaddingX": "var(--seed-dimension-x2)",
         "targetMinHeight": "44px",
-        "color": "var(--seed-v3-color-fg-brand)",
-        "fontSize": "var(--seed-v3-font-size-t4)",
-        "lineHeight": "var(--seed-v3-line-height-t4)",
-        "fontWeight": "var(--seed-v3-font-weight-bold)"
+        "color": "var(--seed-color-fg-brand)",
+        "fontSize": "var(--seed-font-size-t4)",
+        "lineHeight": "var(--seed-line-height-t4)",
+        "fontWeight": "var(--seed-font-weight-bold)"
       }
     }
   },
@@ -44,14 +44,14 @@ export const vars = {
   "variantPositive": {
     "enabled": {
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-positive)"
+        "color": "var(--seed-color-fg-positive)"
       }
     }
   },
   "variantCritical": {
     "enabled": {
       "prefixIcon": {
-        "color": "var(--seed-v3-color-fg-critical)"
+        "color": "var(--seed-color-fg-critical)"
       }
     }
   }

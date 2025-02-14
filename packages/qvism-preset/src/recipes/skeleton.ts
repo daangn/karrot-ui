@@ -21,7 +21,7 @@ const skeleton = defineRecipe({
         backgroundRepeat: "no-repeat",
         animationFillMode: "forwards",
 
-        animationName: "shimmer",
+        animationName: "slide-x",
         animationDuration: vars.base.enabled.shimmer.duration,
         animationTimingFunction: vars.base.enabled.shimmer.timingFunction,
         animationIterationCount: "infinite",
@@ -49,16 +49,6 @@ const skeleton = defineRecipe({
         root: {
           borderRadius: vars.radiusFull.enabled.root.cornerRadius,
         },
-      },
-    },
-  },
-  keyframes: {
-    shimmer: {
-      "0%": {
-        transform: "translateX(-100%)",
-      },
-      "100%": {
-        transform: "translateX(100%)",
       },
     },
   },

@@ -2,7 +2,7 @@ export const vars = {
   "size40": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-dimension-x10)",
+        "size": "var(--seed-dimension-x10)",
         "thickness": "5px"
       }
     }
@@ -10,7 +10,7 @@ export const vars = {
   "size24": {
     "enabled": {
       "root": {
-        "size": "var(--seed-v3-dimension-x6)",
+        "size": "var(--seed-dimension-x6)",
         "thickness": "3px"
       }
     }
@@ -37,30 +37,30 @@ export const vars = {
   "toneNeutral": {
     "enabled": {
       "track": {
-        "color": "var(--seed-v3-color-palette-gray-200)"
+        "color": "var(--seed-color-palette-gray-200)"
       },
       "range": {
-        "color": "var(--seed-v3-color-palette-gray-500)"
+        "color": "var(--seed-color-palette-gray-500)"
       }
     }
   },
   "toneBrand": {
     "enabled": {
       "track": {
-        "color": "var(--seed-v3-color-palette-carrot-200)"
+        "color": "var(--seed-color-palette-carrot-200)"
       },
       "range": {
-        "color": "var(--seed-v3-color-bg-brand-solid)"
+        "color": "var(--seed-color-bg-brand-solid)"
       }
     }
   },
   "toneStaticWhite": {
     "enabled": {
       "track": {
-        "color": "var(--seed-v3-color-palette-static-white-alpha-200)"
+        "color": "var(--seed-color-palette-static-white-alpha-200)"
       },
       "range": {
-        "color": "var(--seed-v3-color-palette-static-white)"
+        "color": "var(--seed-color-palette-static-white)"
       }
     }
   }

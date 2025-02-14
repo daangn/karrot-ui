@@ -22,11 +22,15 @@
   "scripts": {
     "clean": "rm -rf lib",
     "prepack": "bun run clean && bun run build",
-    "build": "bun ./build.mjs"
+    "build": "bun rootage token-css ./src && bun run ./write-tokens.mjs && bun ./build.mjs"
   },
   "dependencies": {
     "@seed-design/qvism-core": "0.0.0",
     "@seed-design/vars": "0.0.0"
+  },
+  "devDependencies": {
+    "@seed-design/rootage-cli": "0.0.0",
+    "esbuild": "^0.25.0"
   },
   "publishConfig": {
     "access": "public"
@@ -35,8 +39,5 @@
     "concurrent": [
       "build"
     ]
-  },
-  "devDependencies": {
-    "esbuild": "^0.25.0"
   }
 }

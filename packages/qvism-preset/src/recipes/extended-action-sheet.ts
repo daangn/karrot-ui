@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { not, open, pseudo } from "../utils/pseudo";
 
 const extendedActionSheet = defineRecipe({
-  name: "extendedActionSheet",
+  name: "extended-action-sheet",
   slots: ["backdrop", "positioner", "content", "header", "title", "list", "group", "footer"],
   base: {
     positioner: {

@@ -2,11 +2,11 @@ export declare const vars: {
   "base": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-full)"
+        "cornerRadius": "var(--seed-radius-full)"
       },
       "badge": {
-        "cornerRadius": "var(--seed-v3-radius-full)",
-        "color": "var(--seed-v3-color-bg-layer-default)"
+        "cornerRadius": "var(--seed-radius-full)",
+        "color": "var(--seed-color-bg-layer-default)"
       }
     }
   },

@@ -5,7 +5,7 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const skeletonSlotNames = [
   [
     "root",
-    "skeleton__root"
+    "seed-skeleton__root"
   ]
 ];
 

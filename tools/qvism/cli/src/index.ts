@@ -3,11 +3,11 @@
 // TODO: load preset from config file
 
 import {
-  generateCss,
   generateCssBundle,
   generateDts,
   generateJs,
   type Config,
+  type Preset,
 } from "@seed-design/qvism-core";
 import preset from "@seed-design/qvism-preset";
 import fs from "fs-extra";
@@ -15,28 +15,38 @@ import path from "node:path";
 
 const [, , format, dir = "./"] = process.argv;
 
+const PREFIX = "seed"; // TODO: move to config file
+
+function buildConfig(preset: Preset, config: Partial<Config>) {
+  return {
+    prefix: PREFIX,
+    ...preset,
+    ...config,
+  };
+}
+
 async function writeCss() {
-  await Promise.all(
-    Object.entries(preset as Config).map(async ([name, definition]) => {
-      const cssCode = await generateCss(definition);
-      console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.css`));
-      fs.writeFileSync(path.join(process.cwd(), dir, `${name}.css`), cssCode);
-    }),
+  const config = buildConfig(preset, {});
+
+  const css = await generateCssBundle(config);
+  console.log("Writing css bundle to", path.join(process.cwd(), dir, "design-system.css"));
+  fs.writeFileSync(path.join(process.cwd(), dir, "design-system.css"), css);
+
+  const minifiedCss = await generateCssBundle({ ...config, minify: true });
+  console.log(
+    "Writing minified css bundle to",
+    path.join(process.cwd(), dir, "design-system.min.css"),
   );
-
-  const css = await generateCssBundle(Object.values(preset as Config));
-  console.log("Writing css bundle to", path.join(process.cwd(), dir, "component.css"));
-  fs.writeFileSync(path.join(process.cwd(), dir, "component.css"), css);
-
-  const minifiedCss = await generateCssBundle(Object.values(preset as Config), { minify: true });
-  console.log("Writing minified css bundle to", path.join(process.cwd(), dir, "component.min.css"));
-  fs.writeFileSync(path.join(process.cwd(), dir, "component.min.css"), minifiedCss);
+  fs.writeFileSync(path.join(process.cwd(), dir, "design-system.min.css"), minifiedCss);
 }
 
 async function writeCssInJs() {
+  const config = buildConfig(preset, {});
+  const options = { prefix: config.prefix };
   return Promise.all(
-    Object.entries(preset as Config).map(async ([name, definition]) => {
-      const jsCode = generateJs(definition);
+    Object.values(config.theme.recipes).map(async (definition) => {
+      const name = definition.name;
+      const jsCode = generateJs(definition, options);
       const dtsCode = generateDts(definition);
 
       console.log("Writing", name, "to", path.join(process.cwd(), dir, `${name}.mjs`));

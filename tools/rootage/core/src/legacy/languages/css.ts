@@ -7,7 +7,7 @@ import type {
   ValueExpression,
 } from "../types";
 
-const PREFIX = "seed-v3";
+const PREFIX = "seed";
 
 function stringifyCubicBezierExpression(expr: CubicBezierExpression): string {
   return `cubic-bezier(${expr.value.join(", ")})`;

@@ -2,12 +2,12 @@ export const vars = {
   "base": {
     "enabled": {
       "root": {
-        "color": "var(--seed-v3-color-palette-gray-200)"
+        "color": "var(--seed-color-palette-gray-200)"
       },
       "shimmer": {
         "duration": "1.5s",
-        "timingFunction": "var(--seed-v3-timing-function-easing)",
-        "color": "var(--seed-v3-gradient-shimmer)"
+        "timingFunction": "var(--seed-timing-function-easing)",
+        "color": "var(--seed-gradient-shimmer)"
       }
     }
   },
@@ -35,7 +35,7 @@ export const vars = {
   "radiusFull": {
     "enabled": {
       "root": {
-        "cornerRadius": "var(--seed-v3-radius-full)"
+        "cornerRadius": "var(--seed-radius-full)"
       }
     }
   }

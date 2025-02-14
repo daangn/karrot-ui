@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { disabled, active, pseudo } from "../utils/pseudo";
 
 const textButton = defineRecipe({
-  name: "textButton",
+  name: "text-button",
   slots: ["root", "prefixIcon", "suffixIcon", "label"],
   base: {
     root: {

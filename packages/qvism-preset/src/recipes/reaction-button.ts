@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { active, pressed, disabled, focus, loading, pseudo } from "../utils/pseudo";
 
 const reactionButton = defineRecipe({
-  name: "reactionButton",
+  name: "reaction-button",
   slots: ["root", "label", "count", "prefixIcon", "progressIndicator"],
   base: {
     root: {

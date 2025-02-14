@@ -5,19 +5,19 @@ import { splitVariantProps } from "./splitVariantProps.mjs";
 const avatarSlotNames = [
   [
     "root",
-    "avatar__root"
+    "seed-avatar__root"
   ],
   [
     "image",
-    "avatar__image"
+    "seed-avatar__image"
   ],
   [
     "fallback",
-    "avatar__fallback"
+    "seed-avatar__fallback"
   ],
   [
     "badge",
-    "avatar__badge"
+    "seed-avatar__badge"
   ]
 ];
 

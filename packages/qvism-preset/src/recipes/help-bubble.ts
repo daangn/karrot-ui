@@ -3,7 +3,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { hidden, pseudo } from "../utils/pseudo";
 
 const helpBubble = defineRecipe({
-  name: "helpBubble",
+  name: "help-bubble",
   slots: [
     "positioner",
     "backdrop",

@@ -4,7 +4,7 @@ import { defineRecipe } from "../utils/define-recipe";
 import { not, open, pseudo } from "../utils/pseudo";
 
 const bottomSheet = defineRecipe({
-  name: "bottomSheet",
+  name: "bottom-sheet",
   slots: [
     "positioner",
     "backdrop",
