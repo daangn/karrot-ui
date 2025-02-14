@@ -1,6 +1,6 @@
 # @seed-design/design-token
 
-DEPRECATED: see [@seed-design/vars](packages\vars) for the latest version.
+DEPRECATED: see [@seed-design/css](../css) for the latest version.
 
 > Seed Design 디자인 토큰은 [KDT](https://github.com/daangn/kdt/tree/main/language) 의미론을 따릅니다.
 

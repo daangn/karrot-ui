@@ -1,5 +1,7 @@
 # @seed-design/stylesheet
 
+DEPRECATED: see [@seed-design/css](../css) for the latest version.
+
 ## Installation
 
 ```sh
