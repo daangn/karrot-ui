@@ -120,20 +120,6 @@ export function generateTokenRules(tokens: Theme["tokens"]): postcss.ChildNode[]
   return postcss.parse(tokens._raw).nodes;
 }
 
-export function generatePatternRules(
-  patterns: Theme["patterns"],
-  options: { prefix?: string } = {},
-): postcss.ChildNode[] {
-  return Object.entries(patterns).flatMap(([name, style]) => {
-    const prefixedName = prefixName(name, options);
-    const parsed = postcssJs.parse(style);
-    return postcss.rule({
-      selector: `.${prefixedName}`,
-      nodes: parsed.nodes,
-    });
-  });
-}
-
 export async function generateCssEach(config: Config): Promise<{ name: string; css: string }[]> {
   const { minify = false, prefix, theme } = config;
 
@@ -168,8 +154,7 @@ export async function generateCssBundle(config: Config): Promise<string> {
     generateRecipeRules(recipe, options),
   );
   const keyframeRules = generateKeyframeRules(theme.keyframes);
-  const patternRules = generatePatternRules(theme.patterns, options);
-  const rules = [...globalRules, ...tokenRules, ...recipeRules, ...keyframeRules, ...patternRules];
+  const rules = [...globalRules, ...tokenRules, ...recipeRules, ...keyframeRules];
   const css = await transpileRulesToCss(rules);
 
   return transform({

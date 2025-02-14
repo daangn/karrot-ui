@@ -11,6 +11,11 @@ const skeleton = defineRecipe({
       overflow: "hidden",
       background: vars.base.enabled.root.color,
 
+      "--seed-box-width": "initial",
+      "--seed-box-height": "initial",
+      width: "--seed-box-width",
+      height: "--seed-box-height",
+
       "&::after": {
         content: "''",
         display: "block",

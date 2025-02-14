@@ -38,6 +38,9 @@ const helpBubble = defineRecipe({
       borderRadius: vars.base.enabled.root.cornerRadius,
       wordBreak: "keep-all",
 
+      "--seed-box-max-width": "initial",
+      maxWidth: "var(--seed-box-max-width)",
+
       [pseudo(hidden)]: {
         display: "none !important",
       },

@@ -1,7 +1,7 @@
 import { defineKeyframes } from "./utils/define-keyframes";
 
 export const keyframes = defineKeyframes({
-  enter: {
+  "seed-enter": {
     from: {
       opacity: "var(--seed-enter-opacity, 1)",
       transform: `translate3d(var(--seed-enter-translate-x, 0), var(--seed-enter-translate-y, 0), 0)
@@ -10,7 +10,7 @@ export const keyframes = defineKeyframes({
     },
   },
 
-  exit: {
+  "seed-exit": {
     to: {
       opacity: "var(--seed-exit-opacity, 1)",
       transform: `translate3d(var(--seed-exit-translate-x, 0), var(--seed-exit-translate-y, 0), 0)
