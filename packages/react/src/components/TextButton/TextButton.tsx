@@ -1,5 +1,5 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { textButton, type TextButtonVariantProps } from "@seed-design/recipe/text-button";
+import { textButton, type TextButtonVariantProps } from "@seed-design/css/recipes/text-button";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";
 

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { TextField, TextFieldInput } from "seed-design/ui/text-field";
 
 import { IconPaperplaneLine } from "@daangn/react-monochrome-icon";
-import { textFieldVariantMap } from "@seed-design/recipe/text-field";
+import { textFieldVariantMap } from "@seed-design/css/recipes/text-field";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

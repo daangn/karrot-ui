@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { vars } from "@seed-design/vars";
+import { vars } from "@seed-design/css/vars";
 import { IconHeartFill, IconHeartLine } from "@daangn/react-monochrome-icon";
 import useSessionState from "hooks/useSessionState";
 import useWatchArticle from "hooks/mutation/useWatchArticle";

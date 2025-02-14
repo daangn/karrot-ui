@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionableCallout } from "seed-design/ui/callout";
 
-import { calloutVariantMap } from "@seed-design/recipe/callout";
+import { calloutVariantMap } from "@seed-design/css/recipes/callout";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

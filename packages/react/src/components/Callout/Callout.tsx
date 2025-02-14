@@ -2,7 +2,7 @@ import clsx from "clsx";
 import * as React from "react";
 
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { callout, type CalloutVariantProps } from "@seed-design/recipe/callout";
+import { callout, type CalloutVariantProps } from "@seed-design/css/recipes/callout";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";
 import {

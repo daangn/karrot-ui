@@ -1,4 +1,4 @@
-import { vars } from "@seed-design/vars";
+import { vars } from "@seed-design/css/vars";
 import { style } from "@vanilla-extract/css";
 
 export const root = style({

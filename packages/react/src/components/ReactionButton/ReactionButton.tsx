@@ -3,7 +3,7 @@ import { Toggle as TogglePrimitive, useToggleContext } from "@seed-design/react-
 import {
   reactionButton,
   type ReactionButtonVariantProps,
-} from "@seed-design/recipe/reaction-button";
+} from "@seed-design/css/recipes/reaction-button";
 import clsx from "clsx";
 import * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";

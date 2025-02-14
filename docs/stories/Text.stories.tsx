@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Text } from "seed-design/ui/text";
 
-import { textVariantMap } from "@seed-design/recipe/text";
+import { textVariantMap } from "@seed-design/css/recipes/text";
 import { VariantTable } from "./components/variant-table";
 import { SeedThemeDecorator } from "./components/decorator";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

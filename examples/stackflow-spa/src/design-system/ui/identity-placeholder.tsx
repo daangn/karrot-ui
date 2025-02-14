@@ -1,7 +1,7 @@
 import {
   identityPlaceholder,
   type IdentityPlaceholderVariantProps,
-} from "@seed-design/recipe/identity-placeholder";
+} from "@seed-design/css/recipes/identity-placeholder";
 import clsx from "clsx";
 import * as React from "react";
 

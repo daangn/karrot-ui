@@ -35,14 +35,13 @@
         "@sanity/table": "^1.1.3",
         "@sanity/vision": "3",
         "@sanity/visual-editing": "^2.10.5",
+        "@seed-design/css": "0.0.0",
         "@seed-design/migration-index": "0.0.0",
         "@seed-design/react": "0.0.0",
         "@seed-design/react-icon": "^0.7.3",
-        "@seed-design/recipe": "0.0.0-alpha-20241212122822",
         "@seed-design/rootage-cli": "0.0.0",
         "@seed-design/rootage-core": "0.0.0",
         "@seed-design/stackflow": "0.0.0",
-        "@seed-design/stylesheet": "3.0.0-alpha-20241212122822",
         "@stackflow/config": "^1.2.0",
         "@stackflow/core": "^1.1.0",
         "@stackflow/plugin-basic-ui": "^1.10.0",
@@ -99,11 +98,10 @@
         "@daangn/react-monochrome-icon": "^0.0.13",
         "@radix-ui/react-slot": "^1.1.1",
         "@radix-ui/react-use-callback-ref": "^1.1.0",
+        "@seed-design/css": "0.0.0",
         "@seed-design/react": "0.0.0",
-        "@seed-design/recipe": "0.0.0-alpha-20241212122822",
         "@seed-design/stackflow": "0.0.0",
         "@seed-design/stylesheet": "3.0.0-alpha-20241212122822",
-        "@seed-design/vars": "0.0.0",
         "@stackflow/compat-await-push": "^1.1.13",
         "@stackflow/core": "^1.1.0",
         "@stackflow/plugin-basic-ui": "^1.11.1",
@@ -192,6 +190,14 @@
         "@daangn/react-multicolor-icon": "^0.0.11",
       },
     },
+    "packages/css": {
+      "name": "@seed-design/css",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@seed-design/qvism-cli": "0.0.0",
+        "@seed-design/rootage-cli": "0.0.0",
+      },
+    },
     "packages/design-token": {
       "name": "@seed-design/design-token",
       "version": "1.0.4-alpha-20241203133940",
@@ -207,8 +213,8 @@
       "name": "@seed-design/qvism-preset",
       "version": "0.0.0",
       "dependencies": {
+        "@seed-design/css": "0.0.0",
         "@seed-design/qvism-core": "0.0.0",
-        "@seed-design/vars": "0.0.0",
       },
       "devDependencies": {
         "@seed-design/rootage-cli": "0.0.0",
@@ -222,6 +228,7 @@
         "@radix-ui/react-compose-refs": "^1.1.1",
         "@radix-ui/react-use-controllable-state": "1.1.0",
         "@radix-ui/react-use-layout-effect": "^1.1.0",
+        "@seed-design/css": "0.0.0",
         "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
         "@seed-design/react-avatar": "0.0.0-alpha-20241030023710",
         "@seed-design/react-checkbox": "0.0.0-alpha-20241030023710",
@@ -237,16 +244,12 @@
         "@seed-design/react-tabs": "0.0.0-alpha-20241209060641",
         "@seed-design/react-text-field": "0.0.0-alpha-20241030023710",
         "@seed-design/react-toggle": "0.0.0",
-        "@seed-design/vars": "0.0.0",
         "clsx": "^2.1.1",
       },
       "devDependencies": {
         "esbuild": "^0.25.0",
       },
       "peerDependencies": {
-        "@seed-design/recipe": "*",
-        "@stackflow/react": ">=1.4.1",
-        "@stackflow/react-ui-core": ">=1.2.1",
         "react": ">=18.0.0",
         "react-dom": ">=18.0.0",
       },
@@ -506,14 +509,6 @@
         "react-dom": "^17.0.0 || ^18.0.0",
       },
     },
-    "packages/recipe": {
-      "name": "@seed-design/recipe",
-      "version": "0.0.0-alpha-20241212122822",
-      "devDependencies": {
-        "@seed-design/qvism-cli": "0.0.0",
-        "esbuild": "^0.25.0",
-      },
-    },
     "packages/rootage": {
       "name": "@seed-design/rootage-artifacts",
       "version": "0.0.0",
@@ -534,7 +529,7 @@
         "esbuild": "^0.25.0",
       },
       "peerDependencies": {
-        "@seed-design/recipe": "*",
+        "@seed-design/css": "*",
         "@stackflow/react": ">=1.4.1",
         "@stackflow/react-ui-core": ">=1.2.1",
         "react": ">=18.0.0",
@@ -544,9 +539,6 @@
     "packages/stylesheet": {
       "name": "@seed-design/stylesheet",
       "version": "3.0.0-alpha-20241212122822",
-      "devDependencies": {
-        "@seed-design/qvism-cli": "0.0.0",
-      },
     },
     "packages/utils/dom-utils": {
       "name": "@seed-design/dom-utils",
@@ -561,13 +553,6 @@
       "peerDependencies": {
         "react": ">=18.0.0",
         "react-dom": ">=18.0.0",
-      },
-    },
-    "packages/vars": {
-      "name": "@seed-design/vars",
-      "version": "0.0.0",
-      "devDependencies": {
-        "@seed-design/rootage-cli": "0.0.0",
       },
     },
     "tools/figma-checklist-widget": {
@@ -1608,6 +1593,8 @@
 
     "@seed-design/codemod": ["@seed-design/codemod@workspace:packages/codemod"],
 
+    "@seed-design/css": ["@seed-design/css@workspace:packages/css"],
+
     "@seed-design/design-token": ["@seed-design/design-token@workspace:packages/design-token"],
 
     "@seed-design/dom-utils": ["@seed-design/dom-utils@workspace:packages/utils/dom-utils"],
@@ -1666,8 +1653,6 @@
 
     "@seed-design/react-toggle": ["@seed-design/react-toggle@workspace:packages/react-headless/toggle"],
 
-    "@seed-design/recipe": ["@seed-design/recipe@workspace:packages/recipe"],
-
     "@seed-design/rootage-artifacts": ["@seed-design/rootage-artifacts@workspace:packages/rootage"],
 
     "@seed-design/rootage-cli": ["@seed-design/rootage-cli@workspace:tools/rootage/cli"],
@@ -1679,8 +1664,6 @@
     "@seed-design/stackflow-spa": ["@seed-design/stackflow-spa@workspace:examples/stackflow-spa"],
 
     "@seed-design/stylesheet": ["@seed-design/stylesheet@workspace:packages/stylesheet"],
-
-    "@seed-design/vars": ["@seed-design/vars@workspace:packages/vars"],
 
     "@sentry-internal/browser-utils": ["@sentry-internal/browser-utils@8.54.0", "", { "dependencies": { "@sentry/core": "8.54.0" } }, "sha512-DKWCqb4YQosKn6aD45fhKyzhkdG7N6goGFDeyTaJFREJDFVDXiNDsYZu30nJ6BxMM7uQIaARhPAC5BXfoED3pQ=="],
 

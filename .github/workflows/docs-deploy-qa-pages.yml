@@ -5,8 +5,7 @@ on:
       - dev # V3 deployment; remove this when V3 is stable
     paths:
       - "examples/stackflow-spa/**"
-      - "packages/recipe/**"
-      - "packages/stylesheet/**"
+      - "packages/css/**"
       - "packages/react/**"
       - "packages/stackflow/**"
 

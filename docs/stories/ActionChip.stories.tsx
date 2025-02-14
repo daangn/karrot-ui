@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ActionChip } from "seed-design/ui/action-chip";
 
-import { actionChipVariantMap } from "@seed-design/recipe/action-chip";
+import { actionChipVariantMap } from "@seed-design/css/recipes/action-chip";
 import { VariantTable } from "./components/variant-table";
 import { IconBellFill, IconChevronDownFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";

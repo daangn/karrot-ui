@@ -7,8 +7,8 @@ import type {
   Radius,
   SpacingX,
   SpacingY,
-} from "@seed-design/vars";
-import { vars } from "@seed-design/vars";
+} from "@seed-design/css/vars";
+import { vars } from "@seed-design/css/vars";
 import { forwardRef } from "react";
 
 function handleColor(color: string | undefined) {

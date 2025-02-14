@@ -6,7 +6,7 @@ import {
 import {
   segmentedControl,
   type SegmentedControlVariantProps,
-} from "@seed-design/recipe/segmented-control";
+} from "@seed-design/css/recipes/segmented-control";
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

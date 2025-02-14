@@ -9,19 +9,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prepack": "bun generate",
-    "generate": "bun qvism:generate",
-    "qvism:generate": "bun qvism css"
-  },
   "exports": {
-    "./*.css": "./*.css",
+    "./global.css": "./global.css",
     "./package.json": "./package.json"
   },
   "files": [
     "*.css"
-  ],
-  "devDependencies": {
-    "@seed-design/qvism-cli": "0.0.0"
-  }
+  ]
 }

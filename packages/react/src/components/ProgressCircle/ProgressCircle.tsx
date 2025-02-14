@@ -2,7 +2,7 @@ import { ProgressCircle as ProgressCirclePrimitive } from "@seed-design/react-pr
 import {
   progressCircle,
   type ProgressCircleVariantProps,
-} from "@seed-design/recipe/progress-circle";
+} from "@seed-design/css/recipes/progress-circle";
 import { createStyleContext } from "../../utils/createStyleContext";
 
 const { withContext, withProvider } = createStyleContext(progressCircle);

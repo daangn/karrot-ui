@@ -1,4 +1,4 @@
-import { textField as vars } from "@seed-design/vars/component";
+import { textField as vars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { pseudo, focus, disabled, not, readOnly, invalid } from "../utils/pseudo";
 

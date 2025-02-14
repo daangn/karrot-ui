@@ -1,4 +1,4 @@
-import { controlChip as vars } from "@seed-design/vars/component";
+import { controlChip as vars } from "@seed-design/css/vars/component";
 
 import { defineRecipe } from "../utils/define-recipe";
 import { active, checked, disabled, focus, pseudo } from "../utils/pseudo";

@@ -40,6 +40,7 @@
     "@radix-ui/react-compose-refs": "^1.1.1",
     "@radix-ui/react-use-controllable-state": "1.1.0",
     "@radix-ui/react-use-layout-effect": "^1.1.0",
+    "@seed-design/css": "0.0.0",
     "@seed-design/dom-utils": "0.0.0-alpha-20241030023710",
     "@seed-design/react-avatar": "0.0.0-alpha-20241030023710",
     "@seed-design/react-checkbox": "0.0.0-alpha-20241030023710",
@@ -55,13 +56,9 @@
     "@seed-design/react-text-field": "0.0.0-alpha-20241030023710",
     "@seed-design/react-tabs": "0.0.0-alpha-20241209060641",
     "@seed-design/react-toggle": "0.0.0",
-    "@seed-design/vars": "0.0.0",
     "clsx": "^2.1.1"
   },
   "peerDependencies": {
-    "@seed-design/recipe": "*",
-    "@stackflow/react": ">=1.4.1",
-    "@stackflow/react-ui-core": ">=1.2.1",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },

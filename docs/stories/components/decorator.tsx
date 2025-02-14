@@ -1,7 +1,6 @@
 import type { Decorator } from "@storybook/react";
 import { useEffect } from "react";
 
-import "@seed-design/stylesheet/component.min.css";
 import { FONT_SCALE_MAP, type FontScales } from "@/stories/utils/parameters";
 
 export const SeedThemeDecorator: Decorator = (Story, ctx) => {

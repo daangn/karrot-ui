@@ -1,6 +1,6 @@
 import { Dialog as DialogPrimitive, useDialogContext } from "@seed-design/react-dialog";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { dialog, type DialogVariantProps } from "@seed-design/recipe/dialog";
+import { dialog, type DialogVariantProps } from "@seed-design/css/recipes/dialog";
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

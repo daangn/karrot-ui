@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Avatar } from "seed-design/ui/avatar";
 
 import { IdentityPlaceholder } from "seed-design/ui/identity-placeholder";
-import { avatarVariantMap } from "@seed-design/recipe/avatar";
+import { avatarVariantMap } from "@seed-design/css/recipes/avatar";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

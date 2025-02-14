@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ProgressCircle } from "seed-design/ui/progress-circle";
 
-import { progressCircleVariantMap } from "@seed-design/recipe/progress-circle";
+import { progressCircleVariantMap } from "@seed-design/css/recipes/progress-circle";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Fab } from "seed-design/ui/fab";
 
 import { IconBellFill } from "@daangn/react-monochrome-icon";
-import { fabVariantMap } from "@seed-design/recipe/fab";
+import { fabVariantMap } from "@seed-design/css/recipes/fab";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

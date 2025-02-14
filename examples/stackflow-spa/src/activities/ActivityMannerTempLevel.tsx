@@ -7,7 +7,10 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { mannerTempBadge, mannerTempBadgeVariantMap } from "@seed-design/recipe/manner-temp-badge";
+import {
+  mannerTempBadge,
+  mannerTempBadgeVariantMap,
+} from "@seed-design/css/recipes/manner-temp-badge";
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { MannerTempBadge, type MannerTempBadgeProps } from "../design-system/ui/manner-temp-badge";
 

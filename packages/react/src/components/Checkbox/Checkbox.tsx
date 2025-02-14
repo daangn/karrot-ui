@@ -1,7 +1,7 @@
 import { mergeProps } from "@seed-design/dom-utils";
 import { Checkbox as CheckboxPrimitive, useCheckboxContext } from "@seed-design/react-checkbox";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { checkbox, type CheckboxVariantProps } from "@seed-design/recipe/checkbox";
+import { checkbox, type CheckboxVariantProps } from "@seed-design/css/recipes/checkbox";
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";

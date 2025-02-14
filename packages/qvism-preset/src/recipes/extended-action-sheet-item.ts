@@ -1,7 +1,7 @@
 import {
   extendedActionSheetItem as vars,
   extendedActionSheet as rootVars,
-} from "@seed-design/vars/component";
+} from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
 

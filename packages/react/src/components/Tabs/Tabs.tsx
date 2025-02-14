@@ -4,7 +4,7 @@ import {
   useTabsContext,
   useTabsTriggerContext,
 } from "@seed-design/react-tabs";
-import { tabs, type TabsVariantProps } from "@seed-design/recipe/tabs";
+import { tabs, type TabsVariantProps } from "@seed-design/css/recipes/tabs";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
 import type React from "react";

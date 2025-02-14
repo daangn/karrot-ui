@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { TextButton } from "seed-design/ui/text-button";
 
-import { textButtonVariantMap } from "@seed-design/recipe/text-button";
+import { textButtonVariantMap } from "@seed-design/css/recipes/text-button";
 import { VariantTable } from "./components/variant-table";
 import { IconPlusCircleLine } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";

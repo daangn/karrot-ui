@@ -7,7 +7,7 @@ import {
 } from "../design-system/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../design-system/stackflow/AppScreen";
 
-import { reactionButton, reactionButtonVariantMap } from "@seed-design/recipe/reaction-button";
+import { reactionButton, reactionButtonVariantMap } from "@seed-design/css/recipes/reaction-button";
 
 import { ComponentAnalyzer } from "../components/ComponentAnalyzer";
 import { ReactionButton, type ReactionButtonProps } from "../design-system/ui/reaction-button";

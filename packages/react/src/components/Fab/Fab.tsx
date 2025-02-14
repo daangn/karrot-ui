@@ -1,5 +1,5 @@
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
-import { fab, type FabVariantProps } from "@seed-design/recipe/fab";
+import { fab, type FabVariantProps } from "@seed-design/css/recipes/fab";
 import type * as React from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { Icon, type IconProps } from "../private/Icon";

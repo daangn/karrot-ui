@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ActionButton } from "seed-design/ui/action-button";
 
 import { IconBellFill, IconChevronRightFill } from "@daangn/react-monochrome-icon";
-import { actionButtonVariantMap } from "@seed-design/recipe/action-button";
+import { actionButtonVariantMap } from "@seed-design/css/recipes/action-button";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";

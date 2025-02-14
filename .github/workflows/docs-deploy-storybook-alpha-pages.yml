@@ -7,8 +7,7 @@ on:
 
     paths:
       - "docs/**"
-      - "packages/recipe/**"
-      - "packages/stylesheet/**"
+      - "packages/css/**"
       - "packages/react/**"
       - "packages/stackflow/**"
 

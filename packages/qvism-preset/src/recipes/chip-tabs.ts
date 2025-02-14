@@ -1,4 +1,4 @@
-import { chipTablist as vars, chipTab as triggerVars } from "@seed-design/vars/component";
+import { chipTablist as vars, chipTab as triggerVars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, disabled, not, pseudo, selected } from "../utils/pseudo";
 
