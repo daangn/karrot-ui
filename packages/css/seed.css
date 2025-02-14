@@ -3155,7 +3155,7 @@
   gap: var(--seed-dimension-x3);
   border-radius: var(--seed-radius-r2_5);
   font-size: var(--seed-font-size-t4);
-  line-height: var(--seed-line-height-t5);
+  line-height: var(--seed-line-height-t4);
   text-align: start;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

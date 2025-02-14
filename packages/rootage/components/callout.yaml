@@ -11,7 +11,7 @@ data:
         gap: $dimension.x3
         cornerRadius: $radius.r2_5
         fontSize: $font-size.t4
-        lineHeight: $line-height.t5
+        lineHeight: $line-height.t4
         minHeight: 50px
       icon:
         size: $dimension.x4
