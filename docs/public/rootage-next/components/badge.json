@@ -310,13 +310,13 @@
               "root": {
                 "color": {
                   "type": "color",
-                  "value": "$color.bg.brand-weak"
+                  "value": "$color.palette.carrot-100"
                 }
               },
               "label": {
                 "color": {
                   "type": "color",
-                  "value": "$color.fg.brand-contrast"
+                  "value": "$color.palette.carrot-900"
                 }
               }
             }

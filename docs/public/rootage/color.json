@@ -475,10 +475,10 @@
           "theme-dark": "#f7f0cd"
         }
       },
-      "$color.fg.neutral": {
+      "$color.fg.brand": {
         "values": {
-          "theme-light": "$color.palette.gray-1000",
-          "theme-dark": "$color.palette.gray-1000"
+          "theme-light": "$color.palette.carrot-600",
+          "theme-dark": "$color.palette.carrot-700"
         }
       },
       "$color.fg.critical": {
@@ -487,10 +487,10 @@
           "theme-dark": "$color.palette.red-700"
         }
       },
-      "$color.fg.positive": {
+      "$color.fg.disabled": {
         "values": {
-          "theme-light": "$color.palette.green-700",
-          "theme-dark": "$color.palette.green-700"
+          "theme-light": "$color.palette.gray-500",
+          "theme-dark": "$color.palette.gray-500"
         }
       },
       "$color.fg.informative": {
@@ -499,34 +499,28 @@
           "theme-dark": "$color.palette.blue-700"
         }
       },
-      "$color.fg.placeholder": {
-        "values": {
-          "theme-light": "$color.palette.gray-600",
-          "theme-dark": "$color.palette.gray-600"
-        }
-      },
-      "$color.fg.disabled": {
-        "values": {
-          "theme-light": "$color.palette.gray-500",
-          "theme-dark": "$color.palette.gray-500"
-        }
-      },
-      "$color.fg.brand": {
-        "values": {
-          "theme-light": "$color.palette.carrot-600",
-          "theme-dark": "$color.palette.carrot-700"
-        }
-      },
       "$color.fg.magic": {
         "values": {
           "theme-light": "$color.palette.purple-700",
           "theme-dark": "$color.palette.purple-700"
         }
       },
-      "$color.fg.brand-contrast": {
+      "$color.fg.neutral": {
         "values": {
-          "theme-light": "$color.palette.carrot-800",
-          "theme-dark": "$color.palette.carrot-900"
+          "theme-light": "$color.palette.gray-1000",
+          "theme-dark": "$color.palette.gray-1000"
+        }
+      },
+      "$color.fg.placeholder": {
+        "values": {
+          "theme-light": "$color.palette.gray-600",
+          "theme-dark": "$color.palette.gray-600"
+        }
+      },
+      "$color.fg.positive": {
+        "values": {
+          "theme-light": "$color.palette.green-700",
+          "theme-dark": "$color.palette.green-700"
         }
       },
       "$color.fg.critical-contrast": {
@@ -547,6 +541,12 @@
           "theme-dark": "$color.palette.purple-900"
         }
       },
+      "$color.fg.neutral-inverted": {
+        "values": {
+          "theme-light": "$color.palette.gray-00",
+          "theme-dark": "$color.palette.gray-100"
+        }
+      },
       "$color.fg.neutral-muted": {
         "values": {
           "theme-light": "$color.palette.gray-800",
@@ -557,12 +557,6 @@
         "values": {
           "theme-light": "$color.palette.gray-700",
           "theme-dark": "$color.palette.gray-700"
-        }
-      },
-      "$color.fg.neutral-inverted": {
-        "values": {
-          "theme-light": "$color.palette.gray-00",
-          "theme-dark": "$color.palette.gray-100"
         }
       },
       "$color.fg.positive-contrast": {
@@ -577,22 +571,16 @@
           "theme-dark": "$color.palette.yellow-900"
         }
       },
-      "$color.bg.overlay": {
-        "values": {
-          "theme-light": "$color.palette.static-black-alpha-500",
-          "theme-dark": "$color.palette.static-black-alpha-500"
-        }
-      },
       "$color.bg.disabled": {
         "values": {
           "theme-light": "$color.palette.gray-200",
           "theme-dark": "$color.palette.gray-200"
         }
       },
-      "$color.bg.brand-weak": {
+      "$color.bg.overlay": {
         "values": {
-          "theme-light": "$color.palette.carrot-100",
-          "theme-dark": "$color.palette.carrot-200"
+          "theme-light": "$color.palette.static-black-alpha-500",
+          "theme-dark": "$color.palette.static-black-alpha-500"
         }
       },
       "$color.bg.brand-solid": {
@@ -607,22 +595,16 @@
           "theme-dark": "$color.palette.carrot-800"
         }
       },
-      "$color.bg.brand-weak-pressed": {
+      "$color.bg.critical-solid": {
         "values": {
-          "theme-light": "$color.palette.carrot-200",
-          "theme-dark": "$color.palette.carrot-300"
+          "theme-light": "$color.palette.red-700",
+          "theme-dark": "$color.palette.red-600"
         }
       },
       "$color.bg.critical-weak": {
         "values": {
           "theme-light": "$color.palette.red-100",
           "theme-dark": "$color.palette.red-100"
-        }
-      },
-      "$color.bg.critical-solid": {
-        "values": {
-          "theme-light": "$color.palette.red-700",
-          "theme-dark": "$color.palette.red-600"
         }
       },
       "$color.bg.critical-solid-pressed": {
@@ -637,16 +619,16 @@
           "theme-dark": "$color.palette.red-200"
         }
       },
-      "$color.bg.informative-weak": {
-        "values": {
-          "theme-light": "$color.palette.blue-100",
-          "theme-dark": "$color.palette.blue-100"
-        }
-      },
       "$color.bg.informative-solid": {
         "values": {
           "theme-light": "$color.palette.blue-700",
           "theme-dark": "$color.palette.blue-600"
+        }
+      },
+      "$color.bg.informative-weak": {
+        "values": {
+          "theme-light": "$color.palette.blue-100",
+          "theme-dark": "$color.palette.blue-100"
         }
       },
       "$color.bg.informative-solid-pressed": {
@@ -661,6 +643,12 @@
           "theme-dark": "$color.palette.blue-200"
         }
       },
+      "$color.bg.layer-basement": {
+        "values": {
+          "theme-light": "$color.palette.gray-200",
+          "theme-dark": "$color.palette.gray-100"
+        }
+      },
       "$color.bg.layer-default": {
         "values": {
           "theme-light": "$color.palette.gray-00",
@@ -670,12 +658,6 @@
       "$color.bg.layer-fill": {
         "values": {
           "theme-light": "$color.palette.gray-100",
-          "theme-dark": "$color.palette.gray-100"
-        }
-      },
-      "$color.bg.layer-basement": {
-        "values": {
-          "theme-light": "$color.palette.gray-200",
           "theme-dark": "$color.palette.gray-100"
         }
       },
@@ -721,12 +703,6 @@
           "theme-dark": "$color.palette.purple-200"
         }
       },
-      "$color.bg.neutral-weak": {
-        "values": {
-          "theme-light": "$color.palette.gray-200",
-          "theme-dark": "$color.palette.gray-300"
-        }
-      },
       "$color.bg.neutral-inverted": {
         "values": {
           "theme-light": "$color.palette.gray-900",
@@ -736,6 +712,12 @@
       "$color.bg.neutral-solid": {
         "values": {
           "theme-light": "$color.palette.gray-1000",
+          "theme-dark": "$color.palette.gray-300"
+        }
+      },
+      "$color.bg.neutral-weak": {
+        "values": {
+          "theme-light": "$color.palette.gray-200",
           "theme-dark": "$color.palette.gray-300"
         }
       },
@@ -769,16 +751,16 @@
           "theme-dark": "$color.palette.static-black-alpha-200"
         }
       },
-      "$color.bg.positive-weak": {
-        "values": {
-          "theme-light": "$color.palette.green-100",
-          "theme-dark": "$color.palette.green-100"
-        }
-      },
       "$color.bg.positive-solid": {
         "values": {
           "theme-light": "$color.palette.green-700",
           "theme-dark": "$color.palette.green-500"
+        }
+      },
+      "$color.bg.positive-weak": {
+        "values": {
+          "theme-light": "$color.palette.green-100",
+          "theme-dark": "$color.palette.green-100"
         }
       },
       "$color.bg.positive-solid-pressed": {
@@ -811,28 +793,10 @@
           "theme-dark": "$color.palette.yellow-200"
         }
       },
-      "$color.stroke.neutral": {
-        "values": {
-          "theme-light": "$color.palette.gray-300",
-          "theme-dark": "$color.palette.gray-300"
-        }
-      },
-      "$color.stroke.on-image": {
-        "values": {
-          "theme-light": "$color.palette.static-black-alpha-50",
-          "theme-dark": "$color.palette.static-black-alpha-50"
-        }
-      },
       "$color.stroke.brand": {
         "values": {
           "theme-light": "$color.palette.carrot-300",
           "theme-dark": "$color.palette.carrot-300"
-        }
-      },
-      "$color.stroke.field": {
-        "values": {
-          "theme-light": "$color.palette.gray-400",
-          "theme-dark": "$color.palette.gray-400"
         }
       },
       "$color.stroke.control": {
@@ -847,16 +811,28 @@
           "theme-dark": "$color.palette.red-300"
         }
       },
-      "$color.stroke.positive": {
+      "$color.stroke.field": {
         "values": {
-          "theme-light": "$color.palette.green-300",
-          "theme-dark": "$color.palette.green-300"
+          "theme-light": "$color.palette.gray-400",
+          "theme-dark": "$color.palette.gray-400"
         }
       },
       "$color.stroke.informative": {
         "values": {
           "theme-light": "$color.palette.blue-300",
           "theme-dark": "$color.palette.blue-300"
+        }
+      },
+      "$color.stroke.neutral": {
+        "values": {
+          "theme-light": "$color.palette.gray-300",
+          "theme-dark": "$color.palette.gray-300"
+        }
+      },
+      "$color.stroke.positive": {
+        "values": {
+          "theme-light": "$color.palette.green-300",
+          "theme-dark": "$color.palette.green-300"
         }
       },
       "$color.stroke.field-focused": {
@@ -871,40 +847,10 @@
           "theme-dark": "$color.palette.gray-200"
         }
       },
-      "$color.manner-temp.l1.text": {
+      "$color.stroke.on-image": {
         "values": {
-          "theme-light": "#62666a",
-          "theme-dark": "#b1b5b9"
-        }
-      },
-      "$color.manner-temp.l2.text": {
-        "values": {
-          "theme-light": "#2592f7",
-          "theme-dark": "#7cbaf4"
-        }
-      },
-      "$color.manner-temp.l3.text": {
-        "values": {
-          "theme-light": "#0099c8",
-          "theme-dark": "#47c3eb"
-        }
-      },
-      "$color.manner-temp.l4.text": {
-        "values": {
-          "theme-light": "#03a07e",
-          "theme-dark": "#33cc94"
-        }
-      },
-      "$color.manner-temp.l5.text": {
-        "values": {
-          "theme-light": "#d28500",
-          "theme-dark": "#ffa100"
-        }
-      },
-      "$color.manner-temp.l6.text": {
-        "values": {
-          "theme-light": "#f06000",
-          "theme-dark": "#ff9147"
+          "theme-light": "$color.palette.static-black-alpha-50",
+          "theme-dark": "$color.palette.static-black-alpha-50"
         }
       },
       "$color.manner-temp.l1.bg": {
@@ -913,10 +859,22 @@
           "theme-dark": "#222226"
         }
       },
+      "$color.manner-temp.l1.text": {
+        "values": {
+          "theme-light": "#62666a",
+          "theme-dark": "#b1b5b9"
+        }
+      },
       "$color.manner-temp.l2.bg": {
         "values": {
           "theme-light": "#e7f2fc",
           "theme-dark": "#16212b"
+        }
+      },
+      "$color.manner-temp.l2.text": {
+        "values": {
+          "theme-light": "#2592f7",
+          "theme-dark": "#7cbaf4"
         }
       },
       "$color.manner-temp.l3.bg": {
@@ -925,10 +883,22 @@
           "theme-dark": "#12262c"
         }
       },
+      "$color.manner-temp.l3.text": {
+        "values": {
+          "theme-light": "#0099c8",
+          "theme-dark": "#47c3eb"
+        }
+      },
       "$color.manner-temp.l4.bg": {
         "values": {
           "theme-light": "#ebf9f4",
           "theme-dark": "#162822"
+        }
+      },
+      "$color.manner-temp.l4.text": {
+        "values": {
+          "theme-light": "#03a07e",
+          "theme-dark": "#33cc94"
         }
       },
       "$color.manner-temp.l5.bg": {
@@ -937,10 +907,22 @@
           "theme-dark": "#2e2312"
         }
       },
+      "$color.manner-temp.l5.text": {
+        "values": {
+          "theme-light": "#d28500",
+          "theme-dark": "#ffa100"
+        }
+      },
       "$color.manner-temp.l6.bg": {
         "values": {
           "theme-light": "#fff0e5",
           "theme-dark": "#2e1d12"
+        }
+      },
+      "$color.manner-temp.l6.text": {
+        "values": {
+          "theme-light": "#f06000",
+          "theme-dark": "#ff9147"
         }
       }
     }
