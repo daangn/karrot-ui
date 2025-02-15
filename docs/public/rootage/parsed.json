@@ -577,7 +577,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#121212"
+            "value": "#000000"
           }
         }
       ]
@@ -604,7 +604,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#1a1c20"
+            "value": "#16171b"
           }
         }
       ]
@@ -631,7 +631,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#25272c"
+            "value": "#1b1d22"
           }
         }
       ]
@@ -658,7 +658,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#2c2e34"
+            "value": "#292c32"
           }
         }
       ]
@@ -685,7 +685,7 @@
           "mode": "theme-dark",
           "value": {
             "type": "color",
-            "value": "#3e4145"
+            "value": "#393d46"
           }
         }
       ]
@@ -2711,7 +2711,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-200"
+            "key": "gray-300"
           }
         }
       ]
@@ -3131,7 +3131,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-100"
+            "key": "gray-00"
           }
         }
       ]
@@ -3166,7 +3166,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-00"
+            "key": "gray-100"
           }
         }
       ]
@@ -3201,7 +3201,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-100"
+            "key": "gray-200"
           }
         }
       ]
@@ -3236,7 +3236,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-100"
+            "key": "gray-200"
           }
         }
       ]
@@ -3271,7 +3271,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-200"
+            "key": "gray-300"
           }
         }
       ]
@@ -3306,7 +3306,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-300"
+            "key": "gray-400"
           }
         }
       ]
@@ -4181,7 +4181,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-300"
+            "key": "gray-400"
           }
         }
       ]
@@ -4286,7 +4286,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-200"
+            "key": "gray-300"
           }
         }
       ]
