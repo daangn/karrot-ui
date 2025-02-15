@@ -49,36 +49,41 @@ cli
       );
     }
 
-    if (generateAll || dataTypes.includes("components")) {
-      await generateComponentMetadata({
-        fileKey,
-        dir: resolvedDir,
-        options: config.data.components,
-      });
-    }
+    try {
+      if (generateAll || dataTypes.includes("components")) {
+        await generateComponentMetadata({
+          fileKey,
+          dir: resolvedDir,
+          options: config.data.components,
+        });
+      }
 
-    if (generateAll || dataTypes.includes("component-sets")) {
-      await generateComponentSetMetadata({
-        fileKey,
-        dir: resolvedDir,
-        options: config.data.componentSets,
-      });
-    }
+      if (generateAll || dataTypes.includes("component-sets")) {
+        await generateComponentSetMetadata({
+          fileKey,
+          dir: resolvedDir,
+          options: config.data.componentSets,
+        });
+      }
 
-    if (generateAll || dataTypes.includes("styles")) {
-      await generateStyleMetadata({
-        fileKey,
-        dir: resolvedDir,
-        options: config.data.styles,
-      });
-    }
+      if (generateAll || dataTypes.includes("styles")) {
+        await generateStyleMetadata({
+          fileKey,
+          dir: resolvedDir,
+          options: config.data.styles,
+        });
+      }
 
-    if (generateAll || dataTypes.includes("variables")) {
-      await generateVariableMetadata({
-        fileKey,
-        dir: resolvedDir,
-        options: config.data.variables,
-      });
+      if (generateAll || dataTypes.includes("variables")) {
+        await generateVariableMetadata({
+          fileKey,
+          dir: resolvedDir,
+          options: config.data.variables,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      process.exit(1);
     }
   });
 
