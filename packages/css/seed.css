@@ -3544,6 +3544,7 @@
 .seed-chip-tabs__trigger--variant_neutralSolid {
   color: var(--seed-color-fg-neutral);
   font-weight: var(--seed-font-weight-bold);
+  background-color: #0000;
 }
 
 .seed-chip-tabs__trigger--variant_neutralSolid:is(:selected, [data-selected]) {

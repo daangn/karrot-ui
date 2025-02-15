@@ -75,6 +75,8 @@ const chipTabs = defineRecipe({
           gap: vars.variantNeutralSolid.enabled.root.gap,
         },
         trigger: {
+          backgroundColor: "transparent",
+
           color: triggerVars.variantNeutralSolid.enabled.label.color,
           fontWeight: triggerVars.base.enabled.label.fontWeight,
 
