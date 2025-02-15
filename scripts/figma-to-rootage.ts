@@ -195,8 +195,13 @@ const figmaVariables = JSON.parse(
   fs.readFileSync(path.join(import.meta.dirname, "./data/variables.json"), "utf-8"),
 ) as LocalVariable[];
 
+const writePath = path.join(import.meta.dirname, "../packages/rootage/color.yaml");
+if (!fs.existsSync(path.dirname(writePath))) {
+  fs.mkdirSync(path.dirname(writePath), { recursive: true });
+}
+
 fs.writeFileSync(
-  path.join(import.meta.dirname, "../packages/rootage/color.yaml"),
+  writePath,
   getColorRootageTokens(
     figmaVariables
       .filter((variable) => !variable.remote && !variable.deletedButReferenced)
