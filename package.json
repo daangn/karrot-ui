@@ -21,6 +21,7 @@
     "format:all": "bun biome format --fix",
     "test:all": "bun vitest run",
     "generate:all": "bun rootage:generate && bun qvism:generate",
+    "figma:sync": "bun figma-extractor scripts/data variables && bun run ./scripts/figma-to-rootage.ts",
     "rootage:build": "ultra -r --build rootage:build",
     "rootage:generate": "bun --filter @seed-design/css rootage:generate && bun --filter @seed-design/qvism-preset rootage:generate && bun --filter @seed-design/rootage-cli generate:schema && bun --filter docs generate:rootage",
     "rootage:generate:watch": "watchlist packages/rootage/artifacts -- bun rootage:generate",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",
     "@changesets/cli": "^2.27.9",
+    "@seed-design/figma-extractor": "workspace:*",
     "@testing-library/dom": "^10.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.0",
