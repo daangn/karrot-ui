@@ -15,3 +15,5 @@ lib
 docs/.next
 docs/.source
 docs/out
+
+scripts/data
