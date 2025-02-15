@@ -20,7 +20,7 @@ const COMPONENT_KEYS = [
   "radio",
 ];
 const getSpecUrl = (key: string) =>
-  `https://raw.githubusercontent.com/daangn/seed-design/wip/packages/rootage/artifacts/${key}.yaml`;
+  `https://raw.githubusercontent.com/daangn/seed-design/dev/packages/rootage/artifacts/${key}.yaml`;
 
 function Widget() {
   const [componentKey, setComponentKey] = useSyncedState<string>("componentKey", "");
