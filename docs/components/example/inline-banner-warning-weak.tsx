@@ -11,17 +11,17 @@ export default function InlineBannerWarningWeak() {
     <Stack gap="x4" width="full">
       <InlineBanner
         variant="warningWeak"
-        icon={<IconExclamationmarkCircleFill />}
+        prefixIcon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <ActionableInlineBanner
         variant="warningWeak"
-        icon={<IconExclamationmarkCircleFill />}
+        prefixIcon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <DismissibleInlineBanner
         variant="warningWeak"
-        icon={<IconExclamationmarkCircleFill />}
+        prefixIcon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
     </Stack>

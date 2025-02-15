@@ -1,6 +1,10 @@
 "use client";
 
-import { Callout as SeedCallout } from "@seed-design/react";
+import {
+  PrefixIcon,
+  Callout as SeedCallout,
+  SuffixIcon,
+} from "@seed-design/react";
 import * as React from "react";
 
 import {
@@ -13,9 +17,12 @@ export interface CalloutProps
     SeedCallout.RootProps,
     "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
   > {
-  icon?: React.ReactNode;
+  prefixIcon?: React.ReactNode;
+
   title?: React.ReactNode;
+
   description: React.ReactNode;
+
   linkProps?: SeedCallout.LinkProps;
 }
 
@@ -25,15 +32,15 @@ export interface CalloutProps
 export const Callout = React.forwardRef<
   React.ElementRef<typeof SeedCallout.Root>,
   CalloutProps
->(({ icon, title, description, linkProps, ...otherProps }, ref) => {
+>(({ prefixIcon, title, description, linkProps, ...otherProps }, ref) => {
   return (
     <SeedCallout.Root ref={ref} {...otherProps}>
-      {icon && <SeedCallout.Icon svg={icon} />}
-      <SeedCallout.TextContent>
+      {prefixIcon && <PrefixIcon svg={prefixIcon} />}
+      <SeedCallout.Content>
         {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
         <SeedCallout.Description>{description}</SeedCallout.Description>
         {linkProps && <SeedCallout.Link {...linkProps} />}
-      </SeedCallout.TextContent>
+      </SeedCallout.Content>
     </SeedCallout.Root>
   );
 });
@@ -45,6 +52,7 @@ export interface ActionableCalloutProps
     "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
   > {
   title?: React.ReactNode;
+
   description: React.ReactNode;
 }
 
@@ -58,11 +66,11 @@ export const ActionableCallout = React.forwardRef<
   return (
     <SeedCallout.Root ref={ref} {...otherProps} asChild>
       <button type="button">
-        <SeedCallout.TextContent>
+        <SeedCallout.Content>
           {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
           <SeedCallout.Description>{description}</SeedCallout.Description>
-        </SeedCallout.TextContent>
-        <SeedCallout.ActionableIcon svg={<IconChevronRightLine />} />
+        </SeedCallout.Content>
+        <SuffixIcon svg={<IconChevronRightLine />} />
       </button>
     </SeedCallout.Root>
   );
@@ -72,7 +80,9 @@ ActionableCallout.displayName = "ActionableCallout";
 export interface DismissibleCalloutProps
   extends Omit<SeedCallout.RootProps, "children" | "title" | "asChild"> {
   title?: React.ReactNode;
+
   description: React.ReactNode;
+
   linkProps?: SeedCallout.LinkProps;
 }
 
@@ -97,15 +107,15 @@ export const DismissibleCallout = React.forwardRef<
   ) => {
     return (
       <SeedCallout.Root ref={ref} {...otherProps}>
-        <SeedCallout.TextContent>
+        <SeedCallout.Content>
           {title && <SeedCallout.Title>{title}</SeedCallout.Title>}
           <SeedCallout.Description>{description}</SeedCallout.Description>
           {linkProps && <SeedCallout.Link {...linkProps} />}
-        </SeedCallout.TextContent>
+        </SeedCallout.Content>
         {/* You may implement your own i18n for dismiss label */}
-        <SeedCallout.DismissButton aria-label="닫기">
-          <SeedCallout.DismissIcon svg={<IconXmarkLine />} />
-        </SeedCallout.DismissButton>
+        <SeedCallout.CloseButton aria-label="닫기">
+          <SuffixIcon svg={<IconXmarkLine />} />
+        </SeedCallout.CloseButton>
       </SeedCallout.Root>
     );
   },

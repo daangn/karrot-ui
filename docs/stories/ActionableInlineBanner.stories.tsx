@@ -21,7 +21,7 @@ const CommonStoryTemplate: Story = {
   args: {
     description:
       "Ex do aliqua est non ea adipisicing nostrud. Exercitation ea mollit sunt magna quis quis exercitation.",
-    icon: <IconBellFill />,
+    prefixIcon: <IconBellFill />,
   },
   render: (args) => (
     <VariantTable Component={meta.component} variantMap={inlineBannerVariantMap} {...args} />

@@ -44,6 +44,9 @@ export default {
       flexShrink: 0,
       width: "var(--seed-prefix-icon-size)",
       height: "var(--seed-prefix-icon-size)",
+      marginLeft: "var(--seed-prefix-icon-margin-left)",
+      marginRight: "var(--seed-prefix-icon-margin-right)",
+      marginTop: "var(--seed-prefix-icon-margin-top)",
       color: "var(--seed-prefix-icon-color, currentColor)",
     },
     ".seed-suffix-icon": {
@@ -53,6 +56,9 @@ export default {
       flexShrink: 0,
       width: "var(--seed-suffix-icon-size)",
       height: "var(--seed-suffix-icon-size)",
+      marginLeft: "var(--seed-suffix-icon-margin-left)",
+      marginRight: "var(--seed-suffix-icon-margin-right)",
+      marginTop: "var(--seed-suffix-icon-margin-top)",
       color: "var(--seed-suffix-icon-color, currentColor)",
     },
     ".seed-count": {

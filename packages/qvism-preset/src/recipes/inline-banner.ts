@@ -1,120 +1,107 @@
 import { inlineBanner as vars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { pseudo } from "../utils/pseudo";
+import { prefixIcon, suffixIcon } from "../utils/icon";
+
+const closeButtonNegativeMargin = `(${vars.base.enabled.suffixIcon.targetSize} - ${vars.base.enabled.suffixIcon.size}) * -0.5`;
+const prefixIconVerticalAdjustMargin = `(${vars.base.enabled.root.minHeight} - ${vars.base.enabled.prefixIcon.size}) * 0.5 - ${vars.base.enabled.root.paddingY}`;
+const suffixIconVerticalAdjustMargin = `(${vars.base.enabled.root.minHeight} - ${vars.base.enabled.suffixIcon.size}) * 0.5 - ${vars.base.enabled.root.paddingY}`;
 
 const inlineBanner = defineRecipe({
   name: "inline-banner",
-  slots: [
-    "root",
-    "content",
-    "icon",
-    "title",
-    "spacer",
-    "description",
-    "linkLabel",
-    "actionableIcon",
-    "dismissButton",
-    "dismissIcon",
-  ],
+  slots: ["root", "content", "title", "description", "link", "closeButton"],
   base: {
     root: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      gap: vars.base.enabled.root.gap,
-
-      width: "100%",
+      boxSizing: "border-box",
+      border: "none",
+      fontFamily: "inherit",
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
-      paddingInline: vars.base.enabled.root.paddingX,
+      display: "flex",
+      alignItems: "flex-start",
+      width: "100%",
+      minHeight: vars.base.enabled.root.minHeight,
 
-      border: "none",
-      paddingBlock: 0,
-      fontFamily: "inherit",
+      paddingInline: vars.base.enabled.root.paddingX,
+      paddingBlock: vars.base.enabled.root.paddingY,
+
+      ...prefixIcon({
+        size: vars.base.enabled.prefixIcon.size,
+        marginRight: vars.base.enabled.prefixIcon.marginRight,
+        marginTop: `calc(${prefixIconVerticalAdjustMargin})`,
+      }),
+      ...suffixIcon({
+        size: vars.base.enabled.suffixIcon.size,
+        marginLeft: vars.base.enabled.suffixIcon.marginLeft,
+        marginTop: `calc(${suffixIconVerticalAdjustMargin})`,
+      }),
 
       [pseudo(":is(button)")]: {
         cursor: "pointer",
       },
     },
     content: {
-      display: "flex",
-      alignItems: "flex-start",
-      gap: vars.base.enabled.content.gap,
+      display: "inline-flex",
       boxSizing: "border-box",
-
-      fontSize: vars.base.enabled.content.fontSize,
-      lineHeight: vars.base.enabled.content.lineHeight,
-
-      paddingBlock: vars.base.enabled.content.paddingY,
-      minHeight: vars.base.enabled.content.minHeight,
-
       textAlign: "start",
-    },
-    icon: {
-      flex: "none",
 
-      marginBlock: vars.base.enabled.icon.marginY,
-
-      width: vars.base.enabled.icon.size,
-      height: vars.base.enabled.icon.size,
+      marginInlineEnd: "auto",
     },
     title: {
+      fontSize: vars.base.enabled.title.fontSize,
+      lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,
-    },
-    spacer: {
-      letterSpacing: "0.25em",
+      marginInlineEnd: "1ch",
     },
     description: {
+      fontSize: vars.base.enabled.description.fontSize,
+      lineHeight: vars.base.enabled.description.lineHeight,
       fontWeight: vars.base.enabled.description.fontWeight,
     },
-    linkLabel: {
-      flex: "none",
+    link: {
+      flexShrink: 0,
+      flexGrow: 0,
+      fontFamily: "inherit",
+      border: "none",
+      backgroundColor: "transparent",
+      cursor: "pointer",
 
       display: "flex",
       alignItems: "center",
 
-      height: vars.base.enabled.linkLabel.height,
+      height: vars.base.enabled.link.height,
+      marginLeft: vars.base.enabled.link.marginLeft,
 
-      fontWeight: vars.base.enabled.linkLabel.fontWeight,
-      fontSize: vars.base.enabled.linkLabel.fontSize,
-      lineHeight: vars.base.enabled.linkLabel.lineHeight,
-      fontFamily: "inherit",
+      fontSize: vars.base.enabled.link.fontSize,
+      lineHeight: vars.base.enabled.link.lineHeight,
+      fontWeight: vars.base.enabled.link.fontWeight,
 
       textDecoration: "underline",
       textUnderlineOffset: "2px",
-
-      border: "none",
-      backgroundColor: "transparent",
-      padding: 0,
-      cursor: "pointer",
     },
-    actionableIcon: {
-      flex: "none",
-
-      width: vars.base.enabled.actionableIcon.size,
-      height: vars.base.enabled.actionableIcon.size,
-    },
-    dismissButton: {
-      flex: "none",
+    closeButton: {
+      flexShrink: 0,
+      flexGrow: 0,
 
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
 
-      width: vars.base.enabled.dismissButton.size,
-      height: vars.base.enabled.dismissButton.size,
+      width: vars.base.enabled.suffixIcon.targetSize,
+      height: vars.base.enabled.suffixIcon.targetSize,
 
-      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.dismissIcon.size}) * -0.5)`,
+      margin: `calc(${closeButtonNegativeMargin})`,
+      // Consume suffixIcon margin here, and reset suffix icon margin.
+      marginTop: `calc(${closeButtonNegativeMargin} + ${suffixIconVerticalAdjustMargin})`,
+      marginLeft: `calc(${closeButtonNegativeMargin} + ${vars.base.enabled.suffixIcon.marginLeft})`,
+      "--seed-suffix-icon-margin-top": "initial",
+      "--seed-suffix-icon-margin-left": "initial",
 
       border: "none",
       backgroundColor: "transparent",
       padding: 0,
       cursor: "pointer",
-    },
-    dismissIcon: {
-      width: vars.base.enabled.dismissIcon.size,
-      height: vars.base.enabled.dismissIcon.size,
     },
   },
   defaultVariants: {
@@ -125,9 +112,14 @@ const inlineBanner = defineRecipe({
       neutralWeak: {
         root: {
           backgroundColor: vars.variantNeutralWeak.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantNeutralWeak.enabled.icon.color,
+          color: vars.variantNeutralWeak.enabled.description.color,
+
+          ...prefixIcon({
+            color: vars.variantNeutralWeak.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantNeutralWeak.enabled.suffixIcon.color,
+          }),
         },
         title: {
           color: vars.variantNeutralWeak.enabled.title.color,
@@ -135,22 +127,21 @@ const inlineBanner = defineRecipe({
         description: {
           color: vars.variantNeutralWeak.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.variantNeutralWeak.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.variantNeutralWeak.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.variantNeutralWeak.enabled.dismissIcon.color,
+        link: {
+          color: vars.variantNeutralWeak.enabled.link.color,
         },
       },
       positiveWeak: {
         root: {
           backgroundColor: vars.variantPositiveWeak.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantPositiveWeak.enabled.icon.color,
+          color: vars.variantPositiveWeak.enabled.description.color,
+
+          ...prefixIcon({
+            color: vars.variantPositiveWeak.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantPositiveWeak.enabled.suffixIcon.color,
+          }),
         },
         title: {
           color: vars.variantPositiveWeak.enabled.title.color,
@@ -158,22 +149,21 @@ const inlineBanner = defineRecipe({
         description: {
           color: vars.variantPositiveWeak.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.variantPositiveWeak.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.variantPositiveWeak.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.variantPositiveWeak.enabled.dismissIcon.color,
+        link: {
+          color: vars.variantPositiveWeak.enabled.link.color,
         },
       },
       informativeWeak: {
         root: {
           backgroundColor: vars.variantInformativeWeak.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantInformativeWeak.enabled.icon.color,
+          color: vars.variantInformativeWeak.enabled.description.color,
+
+          ...prefixIcon({
+            color: vars.variantInformativeWeak.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantInformativeWeak.enabled.suffixIcon.color,
+          }),
         },
         title: {
           color: vars.variantInformativeWeak.enabled.title.color,
@@ -181,22 +171,21 @@ const inlineBanner = defineRecipe({
         description: {
           color: vars.variantInformativeWeak.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.variantInformativeWeak.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.variantInformativeWeak.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.variantInformativeWeak.enabled.dismissIcon.color,
+        link: {
+          color: vars.variantInformativeWeak.enabled.link.color,
         },
       },
       warningWeak: {
         root: {
           backgroundColor: vars.variantWarningWeak.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantWarningWeak.enabled.icon.color,
+          color: vars.variantWarningWeak.enabled.description.color,
+
+          ...prefixIcon({
+            color: vars.variantWarningWeak.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantWarningWeak.enabled.suffixIcon.color,
+          }),
         },
         title: {
           color: vars.variantWarningWeak.enabled.title.color,
@@ -204,22 +193,21 @@ const inlineBanner = defineRecipe({
         description: {
           color: vars.variantWarningWeak.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.variantWarningWeak.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.variantWarningWeak.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.variantWarningWeak.enabled.dismissIcon.color,
+        link: {
+          color: vars.variantWarningWeak.enabled.link.color,
         },
       },
       warningSolid: {
         root: {
           backgroundColor: vars.variantWarningSolid.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantWarningSolid.enabled.icon.color,
+          color: vars.variantWarningSolid.enabled.description.color,
+
+          ...prefixIcon({
+            color: vars.variantWarningSolid.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantWarningSolid.enabled.suffixIcon.color,
+          }),
         },
         title: {
           color: vars.variantWarningSolid.enabled.title.color,
@@ -227,22 +215,21 @@ const inlineBanner = defineRecipe({
         description: {
           color: vars.variantWarningSolid.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.variantWarningSolid.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.variantWarningSolid.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.variantWarningSolid.enabled.dismissIcon.color,
+        link: {
+          color: vars.variantWarningSolid.enabled.link.color,
         },
       },
       criticalWeak: {
         root: {
           backgroundColor: vars.variantCriticalWeak.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantCriticalWeak.enabled.icon.color,
+          color: vars.variantCriticalWeak.enabled.description.color,
+
+          ...prefixIcon({
+            color: vars.variantCriticalWeak.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantCriticalWeak.enabled.suffixIcon.color,
+          }),
         },
         title: {
           color: vars.variantCriticalWeak.enabled.title.color,
@@ -250,19 +237,21 @@ const inlineBanner = defineRecipe({
         description: {
           color: vars.variantCriticalWeak.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.variantCriticalWeak.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.variantCriticalWeak.enabled.actionableIcon.color,
+        link: {
+          color: vars.variantCriticalWeak.enabled.link.color,
         },
       },
       criticalSolid: {
         root: {
           backgroundColor: vars.variantCriticalSolid.enabled.root.color,
-        },
-        icon: {
-          color: vars.variantCriticalSolid.enabled.icon.color,
+          color: vars.variantCriticalSolid.enabled.description.color,
+
+          ...prefixIcon({
+            color: vars.variantCriticalSolid.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.variantCriticalSolid.enabled.suffixIcon.color,
+          }),
         },
         title: {
           color: vars.variantCriticalSolid.enabled.title.color,
@@ -270,11 +259,8 @@ const inlineBanner = defineRecipe({
         description: {
           color: vars.variantCriticalSolid.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.variantCriticalSolid.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.variantCriticalSolid.enabled.actionableIcon.color,
+        link: {
+          color: vars.variantCriticalSolid.enabled.link.color,
         },
       },
     },

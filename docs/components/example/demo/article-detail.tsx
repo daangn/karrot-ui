@@ -103,7 +103,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
               <Callout
                 tone="neutral"
                 description="따뜻한 댓글을 남겨주세요."
-                icon={<IconILowercaseSerifCircleFill />}
+                prefixIcon={<IconILowercaseSerifCircleFill />}
               />
               <SegmentedControl
                 aria-label="댓글 정렬 방식"

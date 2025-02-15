@@ -11,17 +11,17 @@ export default function InlineBannerInformativeWeak() {
     <Stack gap="x4" width="full">
       <InlineBanner
         variant="informativeWeak"
-        icon={<IconILowercaseSerifCircleFill />}
+        prefixIcon={<IconILowercaseSerifCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <ActionableInlineBanner
         variant="informativeWeak"
-        icon={<IconILowercaseSerifCircleFill />}
+        prefixIcon={<IconILowercaseSerifCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <DismissibleInlineBanner
         variant="informativeWeak"
-        icon={<IconILowercaseSerifCircleFill />}
+        prefixIcon={<IconILowercaseSerifCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
     </Stack>

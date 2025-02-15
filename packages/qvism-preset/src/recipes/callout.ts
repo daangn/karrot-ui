@@ -1,105 +1,90 @@
 import { callout as vars } from "@seed-design/css/vars/component";
 import { defineRecipe } from "../utils/define-recipe";
 import { active, pseudo } from "../utils/pseudo";
+import { prefixIcon, suffixIcon } from "../utils/icon";
 
 const callout = defineRecipe({
   name: "callout",
-  slots: [
-    "root",
-    "icon",
-    "textContent",
-    "title",
-    "spacer",
-    "description",
-    "linkLabel",
-    "actionableIcon",
-    "dismissButton",
-    "dismissIcon",
-  ],
+  slots: ["root", "content", "title", "description", "link", "closeButton"],
   base: {
     root: {
-      display: "flex",
-      alignItems: "center",
-
-      width: "100%",
-      minHeight: vars.base.enabled.root.minHeight,
-      boxSizing: "border-box",
-
-      padding: vars.base.enabled.root.padding,
-      gap: vars.base.enabled.root.gap,
-
-      borderRadius: vars.base.enabled.root.cornerRadius,
       border: "none",
-
-      fontSize: vars.base.enabled.root.fontSize,
-      lineHeight: vars.base.enabled.root.lineHeight,
-      textAlign: "start",
+      boxSizing: "border-box",
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       fontFamily: "inherit",
+
+      display: "flex",
+      alignItems: "center",
+      textAlign: "start",
+
+      width: "100%",
+      minHeight: vars.base.enabled.root.minHeight,
+
+      paddingInline: vars.base.enabled.root.paddingX,
+      paddingBlock: vars.base.enabled.root.paddingY,
+      gap: vars.base.enabled.root.gap,
+
+      borderRadius: vars.base.enabled.root.cornerRadius,
+
+      ...prefixIcon({
+        size: vars.base.enabled.prefixIcon.size,
+      }),
+      ...suffixIcon({
+        size: vars.base.enabled.suffixIcon.size,
+      }),
 
       [pseudo(":is(button)")]: {
         cursor: "pointer",
       },
     },
-    icon: {
-      flex: "none",
-
-      width: vars.base.enabled.icon.size,
-      height: vars.base.enabled.icon.size,
-    },
-    textContent: {
+    content: {
+      display: "inline-flex",
       marginInlineEnd: "auto",
     },
     title: {
+      fontSize: vars.base.enabled.title.fontSize,
+      lineHeight: vars.base.enabled.title.lineHeight,
       fontWeight: vars.base.enabled.title.fontWeight,
-    },
-    spacer: {
-      letterSpacing: "0.25em",
+      marginInlineEnd: "1ch",
     },
     description: {
+      fontSize: vars.base.enabled.description.fontSize,
+      lineHeight: vars.base.enabled.description.lineHeight,
       fontWeight: vars.base.enabled.description.fontWeight,
     },
-    linkLabel: {
+    link: {
       fontFamily: "inherit",
-      fontSize: "inherit",
-      lineHeight: "inherit",
-      fontWeight: vars.base.enabled.linkLabel.fontWeight,
-      textDecoration: "underline",
-      textUnderlineOffset: "2px",
-
       display: "inline-block",
       backgroundColor: "transparent",
       padding: 0,
       border: "none",
       cursor: "pointer",
+
+      fontSize: vars.base.enabled.link.fontSize,
+      lineHeight: vars.base.enabled.link.lineHeight,
+      fontWeight: vars.base.enabled.link.fontWeight,
+      textDecoration: "underline",
+      textUnderlineOffset: "2px",
+
+      marginInlineStart: "1ch",
     },
-    actionableIcon: {
-      flex: "none",
-
-      width: vars.base.enabled.actionableIcon.size,
-      height: vars.base.enabled.actionableIcon.size,
-    },
-    dismissButton: {
-      flex: "none",
-
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-
-      width: vars.base.enabled.dismissButton.size,
-      height: vars.base.enabled.dismissButton.size,
-
-      margin: `calc((${vars.base.enabled.dismissButton.size} - ${vars.base.enabled.dismissIcon.size}) * -0.5)`,
-
+    closeButton: {
       border: "none",
       backgroundColor: "transparent",
       padding: 0,
       cursor: "pointer",
-    },
-    dismissIcon: {
-      width: vars.base.enabled.dismissIcon.size,
-      height: vars.base.enabled.dismissIcon.size,
+
+      flexGrow: 0,
+      flexShrink: 0,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+
+      width: vars.base.enabled.suffixIcon.targetSize,
+      height: vars.base.enabled.suffixIcon.targetSize,
+
+      margin: `calc((${vars.base.enabled.suffixIcon.targetSize} - ${vars.base.enabled.suffixIcon.size}) * -0.5)`,
     },
   },
   defaultVariants: {
@@ -111,12 +96,16 @@ const callout = defineRecipe({
         root: {
           backgroundColor: vars.toneNeutral.enabled.root.color,
 
+          ...prefixIcon({
+            color: vars.toneNeutral.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.toneNeutral.enabled.suffixIcon.color,
+          }),
+
           [pseudo(":is(button)", active)]: {
             backgroundColor: vars.toneNeutral.pressed.root.color,
           },
-        },
-        icon: {
-          color: vars.toneNeutral.enabled.icon.color,
         },
         title: {
           color: vars.toneNeutral.enabled.title.color,
@@ -124,26 +113,24 @@ const callout = defineRecipe({
         description: {
           color: vars.toneNeutral.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.toneNeutral.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.toneNeutral.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.toneNeutral.enabled.dismissIcon.color,
+        link: {
+          color: vars.toneNeutral.enabled.link.color,
         },
       },
       informative: {
         root: {
           backgroundColor: vars.toneInformative.enabled.root.color,
 
+          ...prefixIcon({
+            color: vars.toneInformative.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.toneInformative.enabled.suffixIcon.color,
+          }),
+
           [pseudo(":is(button)", active)]: {
             backgroundColor: vars.toneInformative.pressed.root.color,
           },
-        },
-        icon: {
-          color: vars.toneInformative.enabled.icon.color,
         },
         title: {
           color: vars.toneInformative.enabled.title.color,
@@ -151,26 +138,24 @@ const callout = defineRecipe({
         description: {
           color: vars.toneInformative.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.toneInformative.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.toneInformative.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.toneInformative.enabled.dismissIcon.color,
+        link: {
+          color: vars.toneInformative.enabled.link.color,
         },
       },
       warning: {
         root: {
           backgroundColor: vars.toneWarning.enabled.root.color,
 
+          ...prefixIcon({
+            color: vars.toneWarning.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.toneWarning.enabled.suffixIcon.color,
+          }),
+
           [pseudo(":is(button)", active)]: {
             backgroundColor: vars.toneWarning.pressed.root.color,
           },
-        },
-        icon: {
-          color: vars.toneWarning.enabled.icon.color,
         },
         title: {
           color: vars.toneWarning.enabled.title.color,
@@ -178,26 +163,24 @@ const callout = defineRecipe({
         description: {
           color: vars.toneWarning.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.toneWarning.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.toneWarning.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.toneWarning.enabled.dismissIcon.color,
+        link: {
+          color: vars.toneWarning.enabled.link.color,
         },
       },
       critical: {
         root: {
           backgroundColor: vars.toneCritical.enabled.root.color,
 
+          ...prefixIcon({
+            color: vars.toneCritical.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.toneCritical.enabled.suffixIcon.color,
+          }),
+
           [pseudo(":is(button)", active)]: {
             backgroundColor: vars.toneCritical.pressed.root.color,
           },
-        },
-        icon: {
-          color: vars.toneCritical.enabled.icon.color,
         },
         title: {
           color: vars.toneCritical.enabled.title.color,
@@ -205,26 +188,24 @@ const callout = defineRecipe({
         description: {
           color: vars.toneCritical.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.toneCritical.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.toneCritical.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.toneCritical.enabled.dismissIcon.color,
+        link: {
+          color: vars.toneCritical.enabled.link.color,
         },
       },
       magic: {
         root: {
           backgroundColor: vars.toneMagic.enabled.root.color,
 
+          ...prefixIcon({
+            color: vars.toneMagic.enabled.prefixIcon.color,
+          }),
+          ...suffixIcon({
+            color: vars.toneMagic.enabled.suffixIcon.color,
+          }),
+
           [pseudo(":is(button)", active)]: {
             backgroundColor: vars.toneMagic.pressed.root.color,
           },
-        },
-        icon: {
-          color: vars.toneMagic.enabled.icon.color,
         },
         title: {
           color: vars.toneMagic.enabled.title.color,
@@ -232,14 +213,8 @@ const callout = defineRecipe({
         description: {
           color: vars.toneMagic.enabled.description.color,
         },
-        linkLabel: {
-          color: vars.toneMagic.enabled.linkLabel.color,
-        },
-        actionableIcon: {
-          color: vars.toneMagic.enabled.actionableIcon.color,
-        },
-        dismissIcon: {
-          color: vars.toneMagic.enabled.dismissIcon.color,
+        link: {
+          color: vars.toneMagic.enabled.link.color,
         },
       },
     },

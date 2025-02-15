@@ -8,40 +8,24 @@ const calloutSlotNames = [
     "seed-callout__root"
   ],
   [
-    "icon",
-    "seed-callout__icon"
-  ],
-  [
-    "textContent",
-    "seed-callout__textContent"
+    "content",
+    "seed-callout__content"
   ],
   [
     "title",
     "seed-callout__title"
   ],
   [
-    "spacer",
-    "seed-callout__spacer"
-  ],
-  [
     "description",
     "seed-callout__description"
   ],
   [
-    "linkLabel",
-    "seed-callout__linkLabel"
+    "link",
+    "seed-callout__link"
   ],
   [
-    "actionableIcon",
-    "seed-callout__actionableIcon"
-  ],
-  [
-    "dismissButton",
-    "seed-callout__dismissButton"
-  ],
-  [
-    "dismissIcon",
-    "seed-callout__dismissIcon"
+    "closeButton",
+    "seed-callout__closeButton"
   ]
 ];
 

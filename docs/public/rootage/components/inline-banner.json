@@ -8,40 +8,35 @@
     "base": {
       "enabled": {
         "root": {
-          "gap": "$dimension.x4",
-          "paddingX": "$dimension.x4"
-        },
-        "content": {
-          "gap": "$dimension.x2",
+          "paddingX": "$dimension.x4",
           "paddingY": "$dimension.x2_5",
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4",
           "minHeight": "$dimension.x10"
         },
-        "icon": {
+        "prefixIcon": {
           "size": "$dimension.x4",
-          "marginY": "1.5px"
+          "marginRight": "$dimension.x2"
         },
         "title": {
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4",
           "fontWeight": "$font-weight.bold"
         },
         "description": {
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4",
           "fontWeight": "$font-weight.medium"
         },
-        "linkLabel": {
+        "link": {
           "height": "$dimension.x10",
-          "fontWeight": "$font-weight.regular",
           "fontSize": "$font-size.t2",
-          "lineHeight": "$line-height.t2"
+          "lineHeight": "$line-height.t2",
+          "fontWeight": "$font-weight.regular",
+          "marginLeft": "$dimension.x4"
         },
-        "dismissButton": {
-          "size": "$dimension.x10"
-        },
-        "dismissIcon": {
-          "size": "$dimension.x4"
-        },
-        "actionableIcon": {
-          "size": "$dimension.x4"
+        "suffixIcon": {
+          "size": "$dimension.x4",
+          "targetSize": "$dimension.x10",
+          "marginLeft": "$dimension.x4"
         }
       }
     },
@@ -50,7 +45,7 @@
         "root": {
           "color": "$color.bg.neutral-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.neutral"
         },
         "title": {
@@ -59,13 +54,10 @@
         "description": {
           "color": "$color.fg.neutral"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.neutral"
         },
-        "dismissIcon": {
-          "color": "$color.fg.neutral"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.neutral"
         }
       }
@@ -75,7 +67,7 @@
         "root": {
           "color": "$color.bg.positive-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.positive-contrast"
         },
         "title": {
@@ -84,13 +76,10 @@
         "description": {
           "color": "$color.fg.positive-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.positive-contrast"
         },
-        "dismissIcon": {
-          "color": "$color.fg.positive-contrast"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.positive-contrast"
         }
       }
@@ -100,7 +89,7 @@
         "root": {
           "color": "$color.bg.informative-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.informative-contrast"
         },
         "title": {
@@ -109,13 +98,10 @@
         "description": {
           "color": "$color.fg.informative-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.informative-contrast"
         },
-        "dismissIcon": {
-          "color": "$color.fg.informative-contrast"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.informative-contrast"
         }
       }
@@ -125,7 +111,7 @@
         "root": {
           "color": "$color.bg.warning-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.warning-contrast"
         },
         "title": {
@@ -134,13 +120,10 @@
         "description": {
           "color": "$color.fg.warning-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.warning-contrast"
         },
-        "dismissIcon": {
-          "color": "$color.fg.warning-contrast"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.warning-contrast"
         }
       }
@@ -150,7 +133,7 @@
         "root": {
           "color": "$color.bg.warning-solid"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.neutral"
         },
         "title": {
@@ -159,13 +142,10 @@
         "description": {
           "color": "$color.fg.neutral"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.neutral"
         },
-        "dismissIcon": {
-          "color": "$color.fg.neutral"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.neutral"
         }
       }
@@ -175,7 +155,7 @@
         "root": {
           "color": "$color.bg.critical-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.critical-contrast"
         },
         "title": {
@@ -184,10 +164,10 @@
         "description": {
           "color": "$color.fg.critical-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.critical-contrast"
         },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.critical-contrast"
         }
       }
@@ -197,7 +177,7 @@
         "root": {
           "color": "$color.bg.critical-solid"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.palette.static-white"
         },
         "title": {
@@ -206,10 +186,10 @@
         "description": {
           "color": "$color.palette.static-white"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.palette.static-white"
         },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.palette.static-white"
         }
       }

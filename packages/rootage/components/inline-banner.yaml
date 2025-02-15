@@ -7,137 +7,125 @@ data:
   base:
     enabled:
       root:
-        gap: $dimension.x4
         paddingX: $dimension.x4
-      content:
-        gap: $dimension.x2
         paddingY: $dimension.x2_5
+        minHeight: $dimension.x10
+      prefixIcon:
+        size: $dimension.x4
+        marginRight: $dimension.x2
+      title:
         fontSize: $font-size.t4
         lineHeight: $line-height.t4
-        minHeight: $dimension.x10
-      icon:
-        size: $dimension.x4
-        marginY: 1.5px
-      title:
         fontWeight: $font-weight.bold
       description:
+        fontSize: $font-size.t4
+        lineHeight: $line-height.t4
         fontWeight: $font-weight.medium
-      linkLabel:
+      link:
         height: $dimension.x10
-        fontWeight: $font-weight.regular
         fontSize: $font-size.t2
         lineHeight: $line-height.t2
-      dismissButton:
-        size: $dimension.x10
-      dismissIcon:
+        fontWeight: $font-weight.regular
+        marginLeft: $dimension.x4
+      suffixIcon:
         size: $dimension.x4
-      actionableIcon:
-        size: $dimension.x4
+        targetSize: $dimension.x10
+        marginLeft: $dimension.x4
   variant=neutralWeak:
     enabled:
       root:
         color: $color.bg.neutral-weak
-      icon:
+      prefixIcon:
         color: $color.fg.neutral
       title:
         color: $color.fg.neutral
       description:
         color: $color.fg.neutral
-      linkLabel:
+      link:
         color: $color.fg.neutral
-      dismissIcon:
-        color: $color.fg.neutral
-      actionableIcon:
+      suffixIcon:
         color: $color.fg.neutral
   variant=positiveWeak:
     enabled:
       root:
         color: $color.bg.positive-weak
-      icon:
+      prefixIcon:
         color: $color.fg.positive-contrast
       title:
         color: $color.fg.positive-contrast
       description:
         color: $color.fg.positive-contrast
-      linkLabel:
+      link:
         color: $color.fg.positive-contrast
-      dismissIcon:
-        color: $color.fg.positive-contrast
-      actionableIcon:
+      suffixIcon:
         color: $color.fg.positive-contrast
   variant=informativeWeak:
     enabled:
       root:
         color: $color.bg.informative-weak
-      icon:
+      prefixIcon:
         color: $color.fg.informative-contrast
       title:
         color: $color.fg.informative-contrast
       description:
         color: $color.fg.informative-contrast
-      linkLabel:
+      link:
         color: $color.fg.informative-contrast
-      dismissIcon:
-        color: $color.fg.informative-contrast
-      actionableIcon:
+      suffixIcon:
         color: $color.fg.informative-contrast
   variant=warningWeak:
     enabled:
       root:
         color: $color.bg.warning-weak
-      icon:
+      prefixIcon:
         color: $color.fg.warning-contrast
       title:
         color: $color.fg.warning-contrast
       description:
         color: $color.fg.warning-contrast
-      linkLabel:
+      link:
         color: $color.fg.warning-contrast
-      dismissIcon:
-        color: $color.fg.warning-contrast
-      actionableIcon:
+      suffixIcon:
         color: $color.fg.warning-contrast
   variant=warningSolid:
     enabled:
       root:
         color: $color.bg.warning-solid
-      icon:
+      prefixIcon:
         color: $color.fg.neutral
       title:
         color: $color.fg.neutral
       description:
         color: $color.fg.neutral
-      linkLabel:
+      link:
         color: $color.fg.neutral
-      dismissIcon:
-        color: $color.fg.neutral
-      actionableIcon:
+      suffixIcon:
         color: $color.fg.neutral
   variant=criticalWeak:
     enabled:
       root:
         color: $color.bg.critical-weak
-      icon:
+      prefixIcon:
         color: $color.fg.critical-contrast
       title:
         color: $color.fg.critical-contrast
       description:
         color: $color.fg.critical-contrast
-      linkLabel:
+      link:
         color: $color.fg.critical-contrast
-      actionableIcon:
+      suffixIcon:
         color: $color.fg.critical-contrast
   variant=criticalSolid:
     enabled:
       root:
         color: $color.bg.critical-solid
-      icon:
+      prefixIcon:
         color: $color.palette.static-white
       title:
         color: $color.palette.static-white
       description:
         color: $color.palette.static-white
-      linkLabel:
+      link:
         color: $color.palette.static-white
-      actionableIcon:
+      suffixIcon:
         color: $color.palette.static-white

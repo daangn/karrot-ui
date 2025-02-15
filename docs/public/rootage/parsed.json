@@ -12206,7 +12206,17 @@
                   "key": "root",
                   "property": [
                     {
-                      "key": "padding",
+                      "key": "paddingX",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "x3_5"
+                      }
+                    },
+                    {
+                      "key": "paddingY",
                       "value": {
                         "type": "token",
                         "group": [
@@ -12236,6 +12246,34 @@
                       }
                     },
                     {
+                      "key": "minHeight",
+                      "value": {
+                        "type": "dimension",
+                        "value": 50,
+                        "unit": "px"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "size",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "x4"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "title",
+                  "property": [
+                    {
                       "key": "fontSize",
                       "value": {
                         "type": "token",
@@ -12256,34 +12294,6 @@
                       }
                     },
                     {
-                      "key": "minHeight",
-                      "value": {
-                        "type": "dimension",
-                        "value": 50,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "x4"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "title",
-                  "property": [
-                    {
                       "key": "fontWeight",
                       "value": {
                         "type": "token",
@@ -12299,20 +12309,25 @@
                   "key": "description",
                   "property": [
                     {
-                      "key": "fontWeight",
+                      "key": "fontSize",
                       "value": {
                         "type": "token",
                         "group": [
-                          "font-weight"
+                          "font-size"
                         ],
-                        "key": "regular"
+                        "key": "t4"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "linkLabel",
-                  "property": [
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t4"
+                      }
+                    },
                     {
                       "key": "fontWeight",
                       "value": {
@@ -12326,10 +12341,45 @@
                   ]
                 },
                 {
-                  "key": "dismissButton",
+                  "key": "link",
                   "property": [
                     {
-                      "key": "size",
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "t4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t4"
+                      }
+                    },
+                    {
+                      "key": "fontWeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-weight"
+                        ],
+                        "key": "regular"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "suffixIcon",
+                  "property": [
+                    {
+                      "key": "targetSize",
                       "value": {
                         "type": "token",
                         "group": [
@@ -12337,27 +12387,7 @@
                         ],
                         "key": "x10"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "x4"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
-                  "property": [
+                    },
                     {
                       "key": "size",
                       "value": {
@@ -12401,7 +12431,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12449,7 +12479,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -12465,23 +12495,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "neutral"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12550,7 +12564,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12598,7 +12612,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -12614,23 +12628,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "informative-contrast"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12699,7 +12697,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12747,7 +12745,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -12763,23 +12761,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "warning-contrast"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12848,7 +12830,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12896,7 +12878,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -12912,23 +12894,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "critical-contrast"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -12997,7 +12963,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -13045,7 +13011,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -13061,23 +13027,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "magic-contrast"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17193,16 +17143,6 @@
                   "key": "root",
                   "property": [
                     {
-                      "key": "gap",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "x4"
-                      }
-                    },
-                    {
                       "key": "paddingX",
                       "value": {
                         "type": "token",
@@ -17210,21 +17150,6 @@
                           "dimension"
                         ],
                         "key": "x4"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "content",
-                  "property": [
-                    {
-                      "key": "gap",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "x2"
                       }
                     },
                     {
@@ -17237,6 +17162,46 @@
                         "key": "x2_5"
                       }
                     },
+                    {
+                      "key": "minHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "x10"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "prefixIcon",
+                  "property": [
+                    {
+                      "key": "size",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "x4"
+                      }
+                    },
+                    {
+                      "key": "marginRight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "x2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "title",
+                  "property": [
                     {
                       "key": "fontSize",
                       "value": {
@@ -17257,44 +17222,6 @@
                         "key": "t4"
                       }
                     },
-                    {
-                      "key": "minHeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "x10"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "icon",
-                  "property": [
-                    {
-                      "key": "size",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "dimension"
-                        ],
-                        "key": "x4"
-                      }
-                    },
-                    {
-                      "key": "marginY",
-                      "value": {
-                        "type": "dimension",
-                        "value": 1.5,
-                        "unit": "px"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "title",
-                  "property": [
                     {
                       "key": "fontWeight",
                       "value": {
@@ -17311,6 +17238,26 @@
                   "key": "description",
                   "property": [
                     {
+                      "key": "fontSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "font-size"
+                        ],
+                        "key": "t4"
+                      }
+                    },
+                    {
+                      "key": "lineHeight",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "line-height"
+                        ],
+                        "key": "t4"
+                      }
+                    },
+                    {
                       "key": "fontWeight",
                       "value": {
                         "type": "token",
@@ -17323,7 +17270,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "height",
@@ -17333,16 +17280,6 @@
                           "dimension"
                         ],
                         "key": "x10"
-                      }
-                    },
-                    {
-                      "key": "fontWeight",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "font-weight"
-                        ],
-                        "key": "regular"
                       }
                     },
                     {
@@ -17364,29 +17301,19 @@
                         ],
                         "key": "t2"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "dismissButton",
-                  "property": [
+                    },
                     {
-                      "key": "size",
+                      "key": "fontWeight",
                       "value": {
                         "type": "token",
                         "group": [
-                          "dimension"
+                          "font-weight"
                         ],
-                        "key": "x10"
+                        "key": "regular"
                       }
-                    }
-                  ]
-                },
-                {
-                  "key": "dismissIcon",
-                  "property": [
+                    },
                     {
-                      "key": "size",
+                      "key": "marginLeft",
                       "value": {
                         "type": "token",
                         "group": [
@@ -17398,10 +17325,30 @@
                   ]
                 },
                 {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "size",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "x4"
+                      }
+                    },
+                    {
+                      "key": "targetSize",
+                      "value": {
+                        "type": "token",
+                        "group": [
+                          "dimension"
+                        ],
+                        "key": "x10"
+                      }
+                    },
+                    {
+                      "key": "marginLeft",
                       "value": {
                         "type": "token",
                         "group": [
@@ -17443,7 +17390,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17491,7 +17438,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -17507,23 +17454,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "neutral"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17569,7 +17500,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17617,7 +17548,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -17633,23 +17564,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "positive-contrast"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17695,7 +17610,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17743,7 +17658,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -17759,23 +17674,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "informative-contrast"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17821,7 +17720,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17869,7 +17768,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -17885,23 +17784,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "warning-contrast"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17947,7 +17830,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -17995,7 +17878,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -18011,23 +17894,7 @@
                   ]
                 },
                 {
-                  "key": "dismissIcon",
-                  "property": [
-                    {
-                      "key": "color",
-                      "value": {
-                        "type": "token",
-                        "group": [
-                          "color",
-                          "fg"
-                        ],
-                        "key": "neutral"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -18073,7 +17940,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -18121,7 +17988,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -18137,7 +18004,7 @@
                   ]
                 },
                 {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -18183,7 +18050,7 @@
                   ]
                 },
                 {
-                  "key": "icon",
+                  "key": "prefixIcon",
                   "property": [
                     {
                       "key": "color",
@@ -18231,7 +18098,7 @@
                   ]
                 },
                 {
-                  "key": "linkLabel",
+                  "key": "link",
                   "property": [
                     {
                       "key": "color",
@@ -18247,7 +18114,7 @@
                   ]
                 },
                 {
-                  "key": "actionableIcon",
+                  "key": "suffixIcon",
                   "property": [
                     {
                       "key": "color",

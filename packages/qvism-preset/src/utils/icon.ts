@@ -1,73 +1,73 @@
 export interface IconProps {
   size?: string;
   color?: string;
+  marginLeft?: string;
+  marginRight?: string;
+  marginTop?: string;
 }
 
 export function prefixIcon(props: IconProps) {
-  if (props.size && props.color) {
-    return {
-      "--seed-prefix-icon-size": props.size,
-      "--seed-prefix-icon-color": props.color,
-    };
-  }
+  const result: Record<`--${string}`, string> = {};
 
   if (props.size) {
-    return {
-      "--seed-prefix-icon-size": props.size,
-    };
+    result["--seed-prefix-icon-size"] = props.size;
   }
 
   if (props.color) {
-    return {
-      "--seed-prefix-icon-color": props.color,
-    };
+    result["--seed-prefix-icon-color"] = props.color;
   }
 
-  return {};
+  if (props.marginLeft) {
+    result["--seed-prefix-icon-margin-left"] = props.marginLeft;
+  }
+
+  if (props.marginRight) {
+    result["--seed-prefix-icon-margin-right"] = props.marginRight;
+  }
+
+  if (props.marginTop) {
+    result["--seed-prefix-icon-margin-top"] = props.marginTop;
+  }
+
+  return result;
 }
 
 export function suffixIcon(props: IconProps) {
-  if (props.size && props.color) {
-    return {
-      "--seed-suffix-icon-size": props.size,
-      "--seed-suffix-icon-color": props.color,
-    };
-  }
+  const result: Record<`--${string}`, string> = {};
 
   if (props.size) {
-    return {
-      "--seed-suffix-icon-size": props.size,
-    };
+    result["--seed-suffix-icon-size"] = props.size;
   }
 
   if (props.color) {
-    return {
-      "--seed-suffix-icon-color": props.color,
-    };
+    result["--seed-suffix-icon-color"] = props.color;
   }
 
-  return {};
+  if (props.marginLeft) {
+    result["--seed-suffix-icon-margin-left"] = props.marginLeft;
+  }
+
+  if (props.marginRight) {
+    result["--seed-suffix-icon-margin-right"] = props.marginRight;
+  }
+
+  if (props.marginTop) {
+    result["--seed-suffix-icon-margin-top"] = props.marginTop;
+  }
+
+  return result;
 }
 
-export function onlyIcon(props: IconProps) {
-  if (props.size && props.color) {
-    return {
-      "--seed-only-icon-size": props.size,
-      "--seed-only-icon-color": props.color,
-    };
-  }
+export function onlyIcon(props: Pick<IconProps, "size" | "color">) {
+  const result: Record<`--${string}`, string> = {};
 
   if (props.size) {
-    return {
-      "--seed-only-icon-size": props.size,
-    };
+    result["--seed-only-icon-size"] = props.size;
   }
 
   if (props.color) {
-    return {
-      "--seed-only-icon-color": props.color,
-    };
+    result["--seed-only-icon-color"] = props.color;
   }
 
-  return {};
+  return result;
 }
