@@ -1,5 +1,3 @@
-"use client";
-
 import { TextField, TextFieldInput } from "seed-design/ui/text-field";
 
 export default function TextFieldPreview() {

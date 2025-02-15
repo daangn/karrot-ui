@@ -1,5 +1,3 @@
-"use client";
-
 import { AppBar, AppScreen } from "@seed-design/stackflow";
 import { ActivityComponentType } from "@stackflow/react/future";
 import { Stack } from "seed-design/ui/layout";

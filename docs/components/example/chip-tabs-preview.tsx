@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { ChipTabsRoot, ChipTabsTrigger, ChipTabsList } from "seed-design/ui/chip-tabs";
 

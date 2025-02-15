@@ -1,5 +1,3 @@
-"use client";
-
 import { ActionButton } from "seed-design/ui/action-button";
 import {
   AlertDialogAction,

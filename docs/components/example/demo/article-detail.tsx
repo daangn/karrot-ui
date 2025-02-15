@@ -1,5 +1,3 @@
-"use client";
-
 import { CATEGORIES, type Article } from "@/components/example/demo/data";
 import type { ActivityComponentType } from "@stackflow/react/future";
 import { AppScreen, AppScreenContent } from "seed-design/ui/app-screen";

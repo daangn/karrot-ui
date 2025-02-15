@@ -1,5 +1,3 @@
-"use client";
-
 import { Stack } from "@seed-design/react";
 import { RadioSelectBoxItem, RadioSelectBoxRoot } from "seed-design/ui/select-box";
 

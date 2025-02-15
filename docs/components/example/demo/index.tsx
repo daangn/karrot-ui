@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { type ActivityComponentType } from "@stackflow/react/future";
 import { AppBar, AppBarMain } from "seed-design/ui/app-bar";

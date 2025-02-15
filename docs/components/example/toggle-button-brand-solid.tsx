@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { ToggleButton } from "seed-design/ui/toggle-button";
 

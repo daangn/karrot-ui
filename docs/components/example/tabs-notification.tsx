@@ -1,5 +1,3 @@
-"use client";
-
 import { TabsRoot, TabsContent, TabsTrigger, TabsList } from "seed-design/ui/tabs";
 
 export default function TabsNotification() {

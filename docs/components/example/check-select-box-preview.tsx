@@ -1,5 +1,3 @@
-"use client";
-
 import { Stack } from "@seed-design/react";
 import { CheckSelectBox, CheckSelectBoxGroup } from "seed-design/ui/select-box";
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { Stack } from "@seed-design/react";
 import { ErrorState } from "seed-design/ui/error-state";
 

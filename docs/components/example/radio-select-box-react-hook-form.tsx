@@ -1,5 +1,3 @@
-"use client";
-
 import { Column, Columns, Stack } from "@seed-design/react";
 import { useCallback, type FormEvent } from "react";
 import { useController, useForm } from "react-hook-form";

@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo, useState } from "react";
 import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 

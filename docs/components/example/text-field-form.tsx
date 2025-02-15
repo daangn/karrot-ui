@@ -1,5 +1,3 @@
-"use client";
-
 import { ActionButton } from "seed-design/ui/action-button";
 import { TextField, TextFieldInput } from "seed-design/ui/text-field";
 import { useState, useCallback, type FormEvent } from "react";

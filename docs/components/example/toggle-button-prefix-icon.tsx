@@ -1,5 +1,3 @@
-"use client";
-
 import { IconCheckmarkLine, IconPlusLine } from "@daangn/react-monochrome-icon";
 import { PrefixIcon } from "@seed-design/react";
 import { useState } from "react";

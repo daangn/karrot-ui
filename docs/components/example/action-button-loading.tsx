@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { ActionButton } from "seed-design/ui/action-button";
 

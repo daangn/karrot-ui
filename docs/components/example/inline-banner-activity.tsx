@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 
 import { InlineBanner, type InlineBannerProps } from "seed-design/ui/inline-banner";

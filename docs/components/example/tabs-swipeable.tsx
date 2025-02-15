@@ -1,5 +1,3 @@
-"use client";
-
 import { TabsRoot, TabsList, TabsTrigger, TabsCarousel, TabsContent } from "seed-design/ui/tabs";
 
 export default function TabsSwipeable() {

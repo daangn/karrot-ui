@@ -1,5 +1,3 @@
-"use client";
-
 import { useActivity } from "@stackflow/react";
 import { useFlow, ActivityComponentType } from "@stackflow/react/future";
 import { ActionButton } from "seed-design/ui/action-button";

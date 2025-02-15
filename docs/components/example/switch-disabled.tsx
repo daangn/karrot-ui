@@ -1,5 +1,3 @@
-"use client";
-
 import { Switch } from "seed-design/ui/switch";
 
 export default function SwitchDisabled() {

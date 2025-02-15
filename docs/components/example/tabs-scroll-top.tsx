@@ -1,5 +1,3 @@
-"use client";
-
 import { RefObject, useRef, useState } from "react";
 import { TabsCarousel, TabsContent, TabsList, TabsRoot, TabsTrigger } from "seed-design/ui/tabs";
 

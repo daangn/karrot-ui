@@ -1,5 +1,3 @@
-"use client";
-
 import { IconFaceSmileCircleFill } from "@daangn/react-monochrome-icon";
 import { PrefixIcon } from "@seed-design/react";
 import { useState } from "react";

@@ -1,5 +1,3 @@
-"use client";
-
 import { Column, Columns } from "@seed-design/react";
 import { ActionButton } from "seed-design/ui/action-button";
 import {

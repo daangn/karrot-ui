@@ -1,5 +1,3 @@
-"use client";
-
 import { ActionButton } from "seed-design/ui/action-button";
 import { useController, useForm } from "react-hook-form";
 import { TextField, TextFieldInput } from "seed-design/ui/text-field";

@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo, useState } from "react";
 import { IconChevronDownFill, IconPenHorizlineFill } from "@daangn/react-monochrome-icon";
 

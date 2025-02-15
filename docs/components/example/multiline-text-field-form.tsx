@@ -1,5 +1,3 @@
-"use client";
-
 import { ActionButton } from "seed-design/ui/action-button";
 import { TextField, TextFieldTextarea } from "seed-design/ui/text-field";
 import { Column, Columns, Inline, Stack } from "seed-design/ui/layout";

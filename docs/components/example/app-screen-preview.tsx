@@ -1,5 +1,3 @@
-"use client";
-
 import { IconBellFill } from "@daangn/react-monochrome-icon";
 import type { ActivityComponentType } from "@stackflow/react/future";
 import {

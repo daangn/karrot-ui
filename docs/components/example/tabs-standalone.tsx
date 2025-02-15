@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { TabsRoot, TabsList, TabsTrigger } from "seed-design/ui/tabs";
 
