@@ -103,10 +103,10 @@ export const vars = {
   "toneBrandVariantWeak": {
     "enabled": {
       "root": {
-        "color": "var(--seed-color-bg-brand-weak)"
+        "color": "var(--seed-color-palette-carrot-100)"
       },
       "label": {
-        "color": "var(--seed-color-fg-brand-contrast)"
+        "color": "var(--seed-color-palette-carrot-900)"
       }
     }
   },

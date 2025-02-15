@@ -109,10 +109,10 @@
     "tone=brand, variant=weak": {
       "enabled": {
         "root": {
-          "color": "$color.bg.brand-weak"
+          "color": "$color.palette.carrot-100"
         },
         "label": {
-          "color": "$color.fg.brand-contrast"
+          "color": "$color.palette.carrot-900"
         }
       }
     },

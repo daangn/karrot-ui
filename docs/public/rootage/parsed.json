@@ -2129,7 +2129,7 @@
           "color",
           "fg"
         ],
-        "key": "neutral"
+        "key": "brand"
       },
       "values": [
         {
@@ -2140,7 +2140,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-1000"
+            "key": "carrot-600"
           }
         },
         {
@@ -2151,7 +2151,7 @@
               "color",
               "palette"
             ],
-            "key": "gray-1000"
+            "key": "carrot-700"
           }
         }
       ]
@@ -2199,7 +2199,7 @@
           "color",
           "fg"
         ],
-        "key": "positive"
+        "key": "disabled"
       },
       "values": [
         {
@@ -2210,7 +2210,7 @@
               "color",
               "palette"
             ],
-            "key": "green-700"
+            "key": "gray-500"
           }
         },
         {
@@ -2221,7 +2221,7 @@
               "color",
               "palette"
             ],
-            "key": "green-700"
+            "key": "gray-500"
           }
         }
       ]
@@ -2269,111 +2269,6 @@
           "color",
           "fg"
         ],
-        "key": "placeholder"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-600"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-600"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "fg"
-        ],
-        "key": "disabled"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-500"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-500"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "fg"
-        ],
-        "key": "brand"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "carrot-600"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "carrot-700"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "fg"
-        ],
         "key": "magic"
       },
       "values": [
@@ -2409,7 +2304,7 @@
           "color",
           "fg"
         ],
-        "key": "brand-contrast"
+        "key": "neutral"
       },
       "values": [
         {
@@ -2420,7 +2315,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-800"
+            "key": "gray-1000"
           }
         },
         {
@@ -2431,7 +2326,77 @@
               "color",
               "palette"
             ],
-            "key": "carrot-900"
+            "key": "gray-1000"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "fg"
+        ],
+        "key": "placeholder"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-600"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-600"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "fg"
+        ],
+        "key": "positive"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "green-700"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "green-700"
           }
         }
       ]
@@ -2549,6 +2514,41 @@
           "color",
           "fg"
         ],
+        "key": "neutral-inverted"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-00"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-100"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "fg"
+        ],
         "key": "neutral-muted"
       },
       "values": [
@@ -2607,41 +2607,6 @@
               "palette"
             ],
             "key": "gray-700"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "fg"
-        ],
-        "key": "neutral-inverted"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-00"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-100"
           }
         }
       ]
@@ -2724,41 +2689,6 @@
           "color",
           "bg"
         ],
-        "key": "overlay"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-black-alpha-500"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-black-alpha-500"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
         "key": "disabled"
       },
       "values": [
@@ -2794,7 +2724,7 @@
           "color",
           "bg"
         ],
-        "key": "brand-weak"
+        "key": "overlay"
       },
       "values": [
         {
@@ -2805,7 +2735,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-100"
+            "key": "static-black-alpha-500"
           }
         },
         {
@@ -2816,7 +2746,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-200"
+            "key": "static-black-alpha-500"
           }
         }
       ]
@@ -2899,7 +2829,7 @@
           "color",
           "bg"
         ],
-        "key": "brand-weak-pressed"
+        "key": "critical-solid"
       },
       "values": [
         {
@@ -2910,7 +2840,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-200"
+            "key": "red-700"
           }
         },
         {
@@ -2921,7 +2851,7 @@
               "color",
               "palette"
             ],
-            "key": "carrot-300"
+            "key": "red-600"
           }
         }
       ]
@@ -2957,41 +2887,6 @@
               "palette"
             ],
             "key": "red-100"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
-        "key": "critical-solid"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "red-700"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "red-600"
           }
         }
       ]
@@ -3074,41 +2969,6 @@
           "color",
           "bg"
         ],
-        "key": "informative-weak"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "blue-100"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "blue-100"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
         "key": "informative-solid"
       },
       "values": [
@@ -3132,6 +2992,41 @@
               "palette"
             ],
             "key": "blue-600"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "bg"
+        ],
+        "key": "informative-weak"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "blue-100"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "blue-100"
           }
         }
       ]
@@ -3214,6 +3109,41 @@
           "color",
           "bg"
         ],
+        "key": "layer-basement"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-200"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-100"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "bg"
+        ],
         "key": "layer-default"
       },
       "values": [
@@ -3261,41 +3191,6 @@
               "palette"
             ],
             "key": "gray-100"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-100"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
-        "key": "layer-basement"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-200"
           }
         },
         {
@@ -3564,41 +3459,6 @@
           "color",
           "bg"
         ],
-        "key": "neutral-weak"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-200"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-300"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
         "key": "neutral-inverted"
       },
       "values": [
@@ -3646,6 +3506,41 @@
               "palette"
             ],
             "key": "gray-1000"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-300"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "bg"
+        ],
+        "key": "neutral-weak"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-200"
           }
         },
         {
@@ -3844,41 +3739,6 @@
           "color",
           "bg"
         ],
-        "key": "positive-weak"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "green-100"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "green-100"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "bg"
-        ],
         "key": "positive-solid"
       },
       "values": [
@@ -3902,6 +3762,41 @@
               "palette"
             ],
             "key": "green-500"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "bg"
+        ],
+        "key": "positive-weak"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "green-100"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "green-100"
           }
         }
       ]
@@ -4089,76 +3984,6 @@
           "color",
           "stroke"
         ],
-        "key": "neutral"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-300"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-300"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "stroke"
-        ],
-        "key": "on-image"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-black-alpha-50"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "static-black-alpha-50"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "stroke"
-        ],
         "key": "brand"
       },
       "values": [
@@ -4182,41 +4007,6 @@
               "palette"
             ],
             "key": "carrot-300"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "stroke"
-        ],
-        "key": "field"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-400"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "token",
-            "group": [
-              "color",
-              "palette"
-            ],
-            "key": "gray-400"
           }
         }
       ]
@@ -4299,7 +4089,7 @@
           "color",
           "stroke"
         ],
-        "key": "positive"
+        "key": "field"
       },
       "values": [
         {
@@ -4310,7 +4100,7 @@
               "color",
               "palette"
             ],
-            "key": "green-300"
+            "key": "gray-400"
           }
         },
         {
@@ -4321,7 +4111,7 @@
               "color",
               "palette"
             ],
-            "key": "green-300"
+            "key": "gray-400"
           }
         }
       ]
@@ -4357,6 +4147,76 @@
               "palette"
             ],
             "key": "blue-300"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "stroke"
+        ],
+        "key": "neutral"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-300"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "gray-300"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "stroke"
+        ],
+        "key": "positive"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "green-300"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "green-300"
           }
         }
       ]
@@ -4437,6 +4297,69 @@
         "type": "token",
         "group": [
           "color",
+          "stroke"
+        ],
+        "key": "on-image"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "static-black-alpha-50"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "token",
+            "group": [
+              "color",
+              "palette"
+            ],
+            "key": "static-black-alpha-50"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l1"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#eff0f1"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#222226"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
           "manner-temp",
           "l1"
         ],
@@ -4455,6 +4378,34 @@
           "value": {
             "type": "color",
             "value": "#b1b5b9"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l2"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#e7f2fc"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#16212b"
           }
         }
       ]
@@ -4496,6 +4447,34 @@
           "manner-temp",
           "l3"
         ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#e3f6fc"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#12262c"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l3"
+        ],
         "key": "text"
       },
       "values": [
@@ -4511,6 +4490,34 @@
           "value": {
             "type": "color",
             "value": "#47c3eb"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l4"
+        ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#ebf9f4"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#162822"
           }
         }
       ]
@@ -4552,6 +4559,34 @@
           "manner-temp",
           "l5"
         ],
+        "key": "bg"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#fff5e5"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#2e2312"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l5"
+        ],
         "key": "text"
       },
       "values": [
@@ -4580,174 +4615,6 @@
           "manner-temp",
           "l6"
         ],
-        "key": "text"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#f06000"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#ff9147"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "manner-temp",
-          "l1"
-        ],
-        "key": "bg"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#eff0f1"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#222226"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "manner-temp",
-          "l2"
-        ],
-        "key": "bg"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#e7f2fc"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#16212b"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "manner-temp",
-          "l3"
-        ],
-        "key": "bg"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#e3f6fc"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#12262c"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "manner-temp",
-          "l4"
-        ],
-        "key": "bg"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#ebf9f4"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#162822"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "manner-temp",
-          "l5"
-        ],
-        "key": "bg"
-      },
-      "values": [
-        {
-          "mode": "theme-light",
-          "value": {
-            "type": "color",
-            "value": "#fff5e5"
-          }
-        },
-        {
-          "mode": "theme-dark",
-          "value": {
-            "type": "color",
-            "value": "#2e2312"
-          }
-        }
-      ]
-    },
-    {
-      "collection": "color",
-      "token": {
-        "type": "token",
-        "group": [
-          "color",
-          "manner-temp",
-          "l6"
-        ],
         "key": "bg"
       },
       "values": [
@@ -4763,6 +4630,34 @@
           "value": {
             "type": "color",
             "value": "#2e1d12"
+          }
+        }
+      ]
+    },
+    {
+      "collection": "color",
+      "token": {
+        "type": "token",
+        "group": [
+          "color",
+          "manner-temp",
+          "l6"
+        ],
+        "key": "text"
+      },
+      "values": [
+        {
+          "mode": "theme-light",
+          "value": {
+            "type": "color",
+            "value": "#f06000"
+          }
+        },
+        {
+          "mode": "theme-dark",
+          "value": {
+            "type": "color",
+            "value": "#ff9147"
           }
         }
       ]
@@ -11214,9 +11109,9 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "bg"
+                          "palette"
                         ],
-                        "key": "brand-weak"
+                        "key": "carrot-100"
                       }
                     }
                   ]
@@ -11230,9 +11125,9 @@
                         "type": "token",
                         "group": [
                           "color",
-                          "fg"
+                          "palette"
                         ],
-                        "key": "brand-contrast"
+                        "key": "carrot-900"
                       }
                     }
                   ]
