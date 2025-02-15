@@ -17,24 +17,30 @@
             ],
             "slots": {
               "root": {
-                "gap": {
-                  "type": "dimension",
-                  "value": "$dimension.x4"
-                },
                 "paddingX": {
                   "type": "dimension",
                   "value": "$dimension.x4"
-                }
-              },
-              "content": {
-                "gap": {
-                  "type": "dimension",
-                  "value": "$dimension.x2"
                 },
                 "paddingY": {
                   "type": "dimension",
                   "value": "$dimension.x2_5"
                 },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": "$dimension.x10"
+                }
+              },
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
+                },
+                "marginRight": {
+                  "type": "dimension",
+                  "value": "$dimension.x2"
+                }
+              },
+              "title": {
                 "fontSize": {
                   "type": "dimension",
                   "value": "$font-size.t4"
@@ -43,44 +49,29 @@
                   "type": "dimension",
                   "value": "$line-height.t4"
                 },
-                "minHeight": {
-                  "type": "dimension",
-                  "value": "$dimension.x10"
-                }
-              },
-              "icon": {
-                "size": {
-                  "type": "dimension",
-                  "value": "$dimension.x4"
-                },
-                "marginY": {
-                  "type": "dimension",
-                  "value": {
-                    "value": 1.5,
-                    "unit": "px"
-                  }
-                }
-              },
-              "title": {
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.bold"
                 }
               },
               "description": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.medium"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "height": {
                   "type": "dimension",
                   "value": "$dimension.x10"
-                },
-                "fontWeight": {
-                  "type": "number",
-                  "value": "$font-weight.regular"
                 },
                 "fontSize": {
                   "type": "dimension",
@@ -89,22 +80,26 @@
                 "lineHeight": {
                   "type": "dimension",
                   "value": "$line-height.t2"
-                }
-              },
-              "dismissButton": {
-                "size": {
-                  "type": "dimension",
-                  "value": "$dimension.x10"
-                }
-              },
-              "dismissIcon": {
-                "size": {
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                },
+                "marginLeft": {
                   "type": "dimension",
                   "value": "$dimension.x4"
                 }
               },
-              "actionableIcon": {
+              "suffixIcon": {
                 "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
+                },
+                "targetSize": {
+                  "type": "dimension",
+                  "value": "$dimension.x10"
+                },
+                "marginLeft": {
                   "type": "dimension",
                   "value": "$dimension.x4"
                 }
@@ -129,7 +124,7 @@
                   "value": "$color.bg.neutral-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
@@ -147,19 +142,13 @@
                   "value": "$color.fg.neutral"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.neutral"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
@@ -185,7 +174,7 @@
                   "value": "$color.bg.positive-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.positive-contrast"
@@ -203,19 +192,13 @@
                   "value": "$color.fg.positive-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.positive-contrast"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.positive-contrast"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.positive-contrast"
@@ -241,7 +224,7 @@
                   "value": "$color.bg.informative-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.informative-contrast"
@@ -259,19 +242,13 @@
                   "value": "$color.fg.informative-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.informative-contrast"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.informative-contrast"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.informative-contrast"
@@ -297,7 +274,7 @@
                   "value": "$color.bg.warning-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.warning-contrast"
@@ -315,19 +292,13 @@
                   "value": "$color.fg.warning-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.warning-contrast"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.warning-contrast"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.warning-contrast"
@@ -353,7 +324,7 @@
                   "value": "$color.bg.warning-solid"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
@@ -371,19 +342,13 @@
                   "value": "$color.fg.neutral"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.neutral"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
@@ -409,7 +374,7 @@
                   "value": "$color.bg.critical-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.critical-contrast"
@@ -427,13 +392,13 @@
                   "value": "$color.fg.critical-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.critical-contrast"
                 }
               },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.critical-contrast"
@@ -459,7 +424,7 @@
                   "value": "$color.bg.critical-solid"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.palette.static-white"
@@ -477,13 +442,13 @@
                   "value": "$color.palette.static-white"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.palette.static-white"
                 }
               },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.palette.static-white"

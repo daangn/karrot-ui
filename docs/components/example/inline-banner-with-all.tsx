@@ -10,17 +10,17 @@ export default function InlineBannerWithAll() {
   return (
     <Stack gap="x4" width="full">
       <InlineBanner
-        icon={<IconBellFill />}
+        prefixIcon={<IconBellFill />}
         title="타이틀"
         description="사업자 정보를 등록해주세요."
       />
       <ActionableInlineBanner
-        icon={<IconBellFill />}
+        prefixIcon={<IconBellFill />}
         title="타이틀"
         description="사업자 정보를 등록해주세요."
       />
       <DismissibleInlineBanner
-        icon={<IconBellFill />}
+        prefixIcon={<IconBellFill />}
         title="타이틀"
         description="사업자 정보를 등록해주세요."
       />

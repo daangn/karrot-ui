@@ -8,32 +8,32 @@
     "base": {
       "enabled": {
         "root": {
-          "padding": "$dimension.x3_5",
+          "paddingX": "$dimension.x3_5",
+          "paddingY": "$dimension.x3_5",
           "gap": "$dimension.x3",
           "cornerRadius": "$radius.r2_5",
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4",
           "minHeight": "50px"
         },
-        "icon": {
+        "prefixIcon": {
           "size": "$dimension.x4"
         },
         "title": {
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4",
           "fontWeight": "$font-weight.bold"
         },
         "description": {
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4",
           "fontWeight": "$font-weight.regular"
         },
-        "linkLabel": {
+        "link": {
+          "fontSize": "$font-size.t4",
+          "lineHeight": "$line-height.t4",
           "fontWeight": "$font-weight.regular"
         },
-        "dismissButton": {
-          "size": "$dimension.x10"
-        },
-        "dismissIcon": {
-          "size": "$dimension.x4"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
+          "targetSize": "$dimension.x10",
           "size": "$dimension.x4"
         }
       }
@@ -43,7 +43,7 @@
         "root": {
           "color": "$color.bg.neutral-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.neutral"
         },
         "title": {
@@ -52,13 +52,10 @@
         "description": {
           "color": "$color.fg.neutral"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.neutral"
         },
-        "dismissIcon": {
-          "color": "$color.fg.neutral"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.neutral"
         }
       },
@@ -73,7 +70,7 @@
         "root": {
           "color": "$color.bg.informative-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.informative-contrast"
         },
         "title": {
@@ -82,13 +79,10 @@
         "description": {
           "color": "$color.fg.informative-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.informative-contrast"
         },
-        "dismissIcon": {
-          "color": "$color.fg.informative-contrast"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.informative-contrast"
         }
       },
@@ -103,7 +97,7 @@
         "root": {
           "color": "$color.bg.warning-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.warning-contrast"
         },
         "title": {
@@ -112,13 +106,10 @@
         "description": {
           "color": "$color.fg.warning-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.warning-contrast"
         },
-        "dismissIcon": {
-          "color": "$color.fg.warning-contrast"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.warning-contrast"
         }
       },
@@ -133,7 +124,7 @@
         "root": {
           "color": "$color.bg.critical-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.critical-contrast"
         },
         "title": {
@@ -142,13 +133,10 @@
         "description": {
           "color": "$color.fg.critical-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.critical-contrast"
         },
-        "dismissIcon": {
-          "color": "$color.fg.critical-contrast"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.critical-contrast"
         }
       },
@@ -163,7 +151,7 @@
         "root": {
           "color": "$color.bg.magic-weak"
         },
-        "icon": {
+        "prefixIcon": {
           "color": "$color.fg.magic-contrast"
         },
         "title": {
@@ -172,13 +160,10 @@
         "description": {
           "color": "$color.fg.magic-contrast"
         },
-        "linkLabel": {
+        "link": {
           "color": "$color.fg.magic-contrast"
         },
-        "dismissIcon": {
-          "color": "$color.fg.magic-contrast"
-        },
-        "actionableIcon": {
+        "suffixIcon": {
           "color": "$color.fg.magic-contrast"
         }
       },

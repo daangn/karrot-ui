@@ -12,36 +12,20 @@ const inlineBannerSlotNames = [
     "seed-inline-banner__content"
   ],
   [
-    "icon",
-    "seed-inline-banner__icon"
-  ],
-  [
     "title",
     "seed-inline-banner__title"
-  ],
-  [
-    "spacer",
-    "seed-inline-banner__spacer"
   ],
   [
     "description",
     "seed-inline-banner__description"
   ],
   [
-    "linkLabel",
-    "seed-inline-banner__linkLabel"
+    "link",
+    "seed-inline-banner__link"
   ],
   [
-    "actionableIcon",
-    "seed-inline-banner__actionableIcon"
-  ],
-  [
-    "dismissButton",
-    "seed-inline-banner__dismissButton"
-  ],
-  [
-    "dismissIcon",
-    "seed-inline-banner__dismissIcon"
+    "closeButton",
+    "seed-inline-banner__closeButton"
   ]
 ];
 

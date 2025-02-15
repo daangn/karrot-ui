@@ -17,7 +17,11 @@
             ],
             "slots": {
               "root": {
-                "padding": {
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x3_5"
+                },
+                "paddingY": {
                   "type": "dimension",
                   "value": "$dimension.x3_5"
                 },
@@ -29,14 +33,6 @@
                   "type": "dimension",
                   "value": "$radius.r2_5"
                 },
-                "fontSize": {
-                  "type": "dimension",
-                  "value": "$font-size.t4"
-                },
-                "lineHeight": {
-                  "type": "dimension",
-                  "value": "$line-height.t4"
-                },
                 "minHeight": {
                   "type": "dimension",
                   "value": {
@@ -45,43 +41,59 @@
                   }
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "size": {
                   "type": "dimension",
                   "value": "$dimension.x4"
                 }
               },
               "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.bold"
                 }
               },
               "description": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.regular"
                 }
               },
-              "linkLabel": {
+              "link": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
+                },
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.regular"
                 }
               },
-              "dismissButton": {
-                "size": {
+              "suffixIcon": {
+                "targetSize": {
                   "type": "dimension",
                   "value": "$dimension.x10"
-                }
-              },
-              "dismissIcon": {
-                "size": {
-                  "type": "dimension",
-                  "value": "$dimension.x4"
-                }
-              },
-              "actionableIcon": {
+                },
                 "size": {
                   "type": "dimension",
                   "value": "$dimension.x4"
@@ -107,7 +119,7 @@
                   "value": "$color.bg.neutral-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
@@ -125,19 +137,13 @@
                   "value": "$color.fg.neutral"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.neutral"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.neutral"
@@ -176,7 +182,7 @@
                   "value": "$color.bg.informative-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.informative-contrast"
@@ -194,19 +200,13 @@
                   "value": "$color.fg.informative-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.informative-contrast"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.informative-contrast"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.informative-contrast"
@@ -245,7 +245,7 @@
                   "value": "$color.bg.warning-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.warning-contrast"
@@ -263,19 +263,13 @@
                   "value": "$color.fg.warning-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.warning-contrast"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.warning-contrast"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.warning-contrast"
@@ -314,7 +308,7 @@
                   "value": "$color.bg.critical-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.critical-contrast"
@@ -332,19 +326,13 @@
                   "value": "$color.fg.critical-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.critical-contrast"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.critical-contrast"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.critical-contrast"
@@ -383,7 +371,7 @@
                   "value": "$color.bg.magic-weak"
                 }
               },
-              "icon": {
+              "prefixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.magic-contrast"
@@ -401,19 +389,13 @@
                   "value": "$color.fg.magic-contrast"
                 }
               },
-              "linkLabel": {
+              "link": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.magic-contrast"
                 }
               },
-              "dismissIcon": {
-                "color": {
-                  "type": "color",
-                  "value": "$color.fg.magic-contrast"
-                }
-              },
-              "actionableIcon": {
+              "suffixIcon": {
                 "color": {
                   "type": "color",
                   "value": "$color.fg.magic-contrast"

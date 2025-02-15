@@ -7,12 +7,12 @@ export default function InlineBannerCriticalSolid() {
     <Stack gap="x4" width="full">
       <InlineBanner
         variant="criticalSolid"
-        icon={<IconExclamationmarkCircleFill />}
+        prefixIcon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <ActionableInlineBanner
         variant="criticalSolid"
-        icon={<IconExclamationmarkCircleFill />}
+        prefixIcon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
     </Stack>

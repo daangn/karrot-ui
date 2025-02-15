@@ -11,17 +11,17 @@ export default function InlineBannerPositiveWeak() {
     <Stack gap="x4" width="full">
       <InlineBanner
         variant="positiveWeak"
-        icon={<IconCheckmarkCircleFill />}
+        prefixIcon={<IconCheckmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <ActionableInlineBanner
         variant="positiveWeak"
-        icon={<IconCheckmarkCircleFill />}
+        prefixIcon={<IconCheckmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <DismissibleInlineBanner
         variant="positiveWeak"
-        icon={<IconCheckmarkCircleFill />}
+        prefixIcon={<IconCheckmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
     </Stack>

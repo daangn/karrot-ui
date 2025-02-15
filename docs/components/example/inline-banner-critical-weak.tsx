@@ -7,12 +7,12 @@ export default function InlineBannerCriticalWeak() {
     <Stack gap="x4" width="full">
       <InlineBanner
         variant="criticalWeak"
-        icon={<IconExclamationmarkCircleFill />}
+        prefixIcon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
       <ActionableInlineBanner
         variant="criticalWeak"
-        icon={<IconExclamationmarkCircleFill />}
+        prefixIcon={<IconExclamationmarkCircleFill />}
         description="사업자 정보를 등록해주세요."
       />
     </Stack>

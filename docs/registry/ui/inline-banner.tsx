@@ -1,6 +1,10 @@
 "use client";
 
-import { InlineBanner as SeedInlineBanner } from "@seed-design/react";
+import {
+  PrefixIcon,
+  InlineBanner as SeedInlineBanner,
+  SuffixIcon,
+} from "@seed-design/react";
 import * as React from "react";
 
 import {
@@ -13,9 +17,12 @@ export interface InlineBannerProps
     SeedInlineBanner.RootProps,
     "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
   > {
-  icon?: React.ReactNode;
+  prefixIcon?: React.ReactNode;
+
   title?: React.ReactNode;
+
   description: React.ReactNode;
+
   linkProps?: SeedInlineBanner.LinkProps;
 }
 
@@ -25,17 +32,15 @@ export interface InlineBannerProps
 export const InlineBanner = React.forwardRef<
   React.ElementRef<typeof SeedInlineBanner.Root>,
   InlineBannerProps
->(({ icon, title, description, linkProps, ...otherProps }, ref) => {
+>(({ prefixIcon, title, description, linkProps, ...otherProps }, ref) => {
   return (
     <SeedInlineBanner.Root ref={ref} {...otherProps}>
+      {prefixIcon && <PrefixIcon svg={prefixIcon} />}
       <SeedInlineBanner.Content>
-        {icon && <SeedInlineBanner.Icon svg={icon} />}
-        <SeedInlineBanner.TextContent>
-          {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
-          <SeedInlineBanner.Description>
-            {description}
-          </SeedInlineBanner.Description>
-        </SeedInlineBanner.TextContent>
+        {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
+        <SeedInlineBanner.Description>
+          {description}
+        </SeedInlineBanner.Description>
       </SeedInlineBanner.Content>
       {linkProps && <SeedInlineBanner.Link {...linkProps} />}
     </SeedInlineBanner.Root>
@@ -48,8 +53,10 @@ export interface ActionableInlineBannerProps
     SeedInlineBanner.RootProps,
     "children" | "title" | "asChild" | "open" | "defaultOpen" | "onDismiss"
   > {
-  icon?: React.ReactNode;
+  prefixIcon?: React.ReactNode;
+
   title?: React.ReactNode;
+
   description: React.ReactNode;
 }
 
@@ -59,20 +66,18 @@ export interface ActionableInlineBannerProps
 export const ActionableInlineBanner = React.forwardRef<
   React.ElementRef<typeof SeedInlineBanner.Root>,
   ActionableInlineBannerProps
->(({ icon, title, description, ...otherProps }, ref) => {
+>(({ prefixIcon, title, description, ...otherProps }, ref) => {
   return (
     <SeedInlineBanner.Root ref={ref} {...otherProps} asChild>
       <button type="button">
+        {prefixIcon && <PrefixIcon svg={prefixIcon} />}
         <SeedInlineBanner.Content>
-          {icon && <SeedInlineBanner.Icon svg={icon} />}
-          <SeedInlineBanner.TextContent>
-            {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
-            <SeedInlineBanner.Description>
-              {description}
-            </SeedInlineBanner.Description>
-          </SeedInlineBanner.TextContent>
+          {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
+          <SeedInlineBanner.Description>
+            {description}
+          </SeedInlineBanner.Description>
         </SeedInlineBanner.Content>
-        <SeedInlineBanner.ActionableIcon svg={<IconChevronRightLine />} />
+        <SuffixIcon svg={<IconChevronRightLine />} />
       </button>
     </SeedInlineBanner.Root>
   );
@@ -84,9 +89,13 @@ export interface DismissibleInlineBannerProps
     SeedInlineBanner.RootProps,
     "variant" | "children" | "title" | "asChild"
   > {
-  icon?: React.ReactNode;
+  prefixIcon?: React.ReactNode;
+
   title?: React.ReactNode;
+
   description: React.ReactNode;
+
+  // While critical variants are discouraged in dismissible, you may remove the restriction if needed.
   variant?: Exclude<
     SeedInlineBanner.RootProps["variant"],
     "criticalWeak" | "criticalSolid"
@@ -99,22 +108,20 @@ export interface DismissibleInlineBannerProps
 export const DismissibleInlineBanner = React.forwardRef<
   React.ElementRef<typeof SeedInlineBanner.Root>,
   DismissibleInlineBannerProps
->(({ icon, title, description, ...otherProps }, ref) => {
+>(({ prefixIcon, title, description, ...otherProps }, ref) => {
   return (
     <SeedInlineBanner.Root ref={ref} {...otherProps}>
+      {prefixIcon && <PrefixIcon svg={prefixIcon} />}
       <SeedInlineBanner.Content>
-        {icon && <SeedInlineBanner.Icon svg={icon} />}
-        <SeedInlineBanner.TextContent>
-          {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
-          <SeedInlineBanner.Description>
-            {description}
-          </SeedInlineBanner.Description>
-        </SeedInlineBanner.TextContent>
+        {title && <SeedInlineBanner.Title>{title}</SeedInlineBanner.Title>}
+        <SeedInlineBanner.Description>
+          {description}
+        </SeedInlineBanner.Description>
       </SeedInlineBanner.Content>
       {/* You may implement your own i18n for dismiss label */}
-      <SeedInlineBanner.DismissButton aria-label="닫기">
-        <SeedInlineBanner.DismissIcon svg={<IconXmarkLine />} />
-      </SeedInlineBanner.DismissButton>
+      <SeedInlineBanner.CloseButton aria-label="닫기">
+        <SuffixIcon svg={<IconXmarkLine />} />
+      </SeedInlineBanner.CloseButton>
     </SeedInlineBanner.Root>
   );
 });

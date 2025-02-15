@@ -11,17 +11,17 @@ export default function InlineBannerNeutralWeak() {
     <Stack gap="x4" width="full">
       <InlineBanner
         variant="neutralWeak"
-        icon={<IconBellFill />}
+        prefixIcon={<IconBellFill />}
         description="사업자 정보를 등록해주세요."
       />
       <ActionableInlineBanner
         variant="neutralWeak"
-        icon={<IconBellFill />}
+        prefixIcon={<IconBellFill />}
         description="사업자 정보를 등록해주세요."
       />
       <DismissibleInlineBanner
         variant="neutralWeak"
-        icon={<IconBellFill />}
+        prefixIcon={<IconBellFill />}
         description="사업자 정보를 등록해주세요."
       />
     </Stack>
