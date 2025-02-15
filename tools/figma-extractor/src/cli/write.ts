@@ -21,6 +21,10 @@ export function createContent(metadataItem: MetadataItem) {
   return { mjs, dts };
 }
 
+export function createJson(metadataItems: MetadataItem[]) {
+  return JSON.stringify(metadataItems, null, 2);
+}
+
 export function createIndex(metadataItems: MetadataItem[]) {
   const mjsLines = [];
   const dtsLines = [];

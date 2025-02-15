@@ -1,8 +1,7 @@
 import path from "node:path";
 import { getVariableMetadataItemsInFile, type VariableMetadataItem } from "../api/variables";
-import { createContent, createIndex, getFileName, writeFile } from "../cli/write";
-import { POSSIBLE_DATA_TYPES } from "../constants";
 import { defaultFilter, defaultTransform, type Filter, type Transform } from "../cli/config";
+import { createJson, writeFile } from "../cli/write";
 
 export type GenerateVariablesMetadataOptions = {
   filter?: Filter<VariableMetadataItem>;
@@ -31,23 +30,9 @@ export async function generateVariableMetadata({
     return;
   }
 
-  for await (const data of variablesMetadata) {
-    const { mjs, dts } = createContent(data);
+  const jsonPath = path.join(dir, "variables.json");
 
-    const mjsPath = path.join(dir, POSSIBLE_DATA_TYPES.VARIABLES, `${getFileName(data.name)}.mjs`);
-    const dtsPath = path.join(dir, POSSIBLE_DATA_TYPES.VARIABLES, `${getFileName(data.name)}.d.ts`);
-
-    await writeFile(mjsPath, mjs);
-    await writeFile(dtsPath, dts);
-  }
-
-  const { mjs, dts } = createIndex(variablesMetadata);
-
-  const mjsPath = path.join(dir, POSSIBLE_DATA_TYPES.VARIABLES, "index.mjs");
-  const dtsPath = path.join(dir, POSSIBLE_DATA_TYPES.VARIABLES, "index.d.ts");
-
-  await writeFile(mjsPath, mjs);
-  await writeFile(dtsPath, dts);
+  await writeFile(jsonPath, createJson(variablesMetadata));
 
   console.log(`variable 메타데이터 ${variablesMetadata.length}개 생성 완료`);
 }
