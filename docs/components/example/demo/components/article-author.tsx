@@ -5,7 +5,7 @@ import { Inline } from "seed-design/ui/layout";
 
 export function ArticleAuthor({ author }: { author: string }) {
   return (
-    <Inline gap="x1_5" alignItems="center">
+    <Inline gap="x1_5" align="center">
       <Avatar
         fallback={<IdentityPlaceholder identity="person" />}
         size="20"

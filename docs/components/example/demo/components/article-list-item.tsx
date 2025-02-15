@@ -22,9 +22,7 @@ export function ArticleListItem(article: ArticleProps) {
       paddingX="spacingX.globalGutter"
       paddingY="x1"
     >
-      <Inline justifyContent="spaceBetween" alignItems="center">
-        <ArticleAuthor author={author} />
-      </Inline>
+      <ArticleAuthor author={author} />
       <Stack gap="x2">
         <Stack gap="x1">
           <Text as="h1" textStyle="t5Bold" color="fg.neutral" maxLines={1}>
@@ -34,7 +32,7 @@ export function ArticleListItem(article: ArticleProps) {
             {content}
           </Text>
         </Stack>
-        <Inline alignItems="center" gap="x2">
+        <Inline align="center" gap="x2">
           {isPopular && (
             <Badge variant="outline" tone="brand">
               인기

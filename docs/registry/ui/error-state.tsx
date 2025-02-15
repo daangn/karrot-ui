@@ -82,7 +82,7 @@ export const ErrorState = React.forwardRef<HTMLDivElement, ErrorStateProps>(
           </Text>
         </Stack>
         {(primaryActionProps || secondaryActionProps) && (
-          <Stack alignItems="center" gap="x4">
+          <Stack align="center" gap="x4">
             {primaryActionProps && (
               <ActionButton
                 variant={primaryActionVariant[variant]}

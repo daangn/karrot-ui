@@ -65,11 +65,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
             {isImageLoading && <Skeleton width="full" height="full" radius="0" />}
           </Box>
           <Stack gap="x6" paddingBottom="x4">
-            <Stack
-              paddingX="spacingX.globalGutter"
-              gap="spacingY.componentDefault"
-              alignItems="flexStart"
-            >
+            <Stack paddingX="spacingX.globalGutter" gap="spacingY.componentDefault" align="left">
               {article.isPopular && (
                 <Badge variant="outline" tone="brand" size="large">
                   인기
@@ -88,7 +84,7 @@ const DemoArticleDetail: ActivityComponentType<"demo/article-detail"> = ({
                   {article.content}
                 </Text>
               </Stack>
-              <Columns width="full" alignItems="center">
+              <Columns width="full" align="center">
                 <Column>
                   <ArticleAuthor author={article.author} />
                 </Column>
