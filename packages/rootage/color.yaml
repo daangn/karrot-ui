@@ -88,23 +88,23 @@ data:
     $color.palette.gray-00:
       values:
         theme-light: "#ffffff"
-        theme-dark: "#121212"
+        theme-dark: "#000000"
     $color.palette.gray-100:
       values:
         theme-light: "#f7f8f9"
-        theme-dark: "#1a1c20"
+        theme-dark: "#16171b"
     $color.palette.gray-200:
       values:
         theme-light: "#f3f4f5"
-        theme-dark: "#25272c"
+        theme-dark: "#1b1d22"
     $color.palette.gray-300:
       values:
         theme-light: "#eeeff1"
-        theme-dark: "#2c2e34"
+        theme-dark: "#292c32"
     $color.palette.gray-400:
       values:
         theme-light: "#dcdee3"
-        theme-dark: "#3e4145"
+        theme-dark: "#393d46"
     $color.palette.gray-500:
       values:
         theme-light: "#d1d3d8"
@@ -384,7 +384,7 @@ data:
     $color.bg.disabled:
       values:
         theme-light: $color.palette.gray-200
-        theme-dark: $color.palette.gray-200
+        theme-dark: $color.palette.gray-300
     $color.bg.overlay:
       values:
         theme-light: $color.palette.static-black-alpha-500
@@ -432,27 +432,27 @@ data:
     $color.bg.layer-basement:
       values:
         theme-light: $color.palette.gray-200
-        theme-dark: $color.palette.gray-100
+        theme-dark: $color.palette.gray-00
     $color.bg.layer-default:
       values:
         theme-light: $color.palette.gray-00
-        theme-dark: $color.palette.gray-00
+        theme-dark: $color.palette.gray-100
     $color.bg.layer-fill:
       values:
         theme-light: $color.palette.gray-100
-        theme-dark: $color.palette.gray-100
+        theme-dark: $color.palette.gray-200
     $color.bg.layer-floating:
       values:
         theme-light: $color.palette.gray-00
-        theme-dark: $color.palette.gray-100
+        theme-dark: $color.palette.gray-200
     $color.bg.layer-default-pressed:
       values:
         theme-light: $color.palette.gray-100
-        theme-dark: $color.palette.gray-200
+        theme-dark: $color.palette.gray-300
     $color.bg.layer-floating-pressed:
       values:
         theme-light: $color.palette.gray-100
-        theme-dark: $color.palette.gray-300
+        theme-dark: $color.palette.gray-400
     $color.bg.magic-solid:
       values:
         theme-light: $color.palette.purple-700
@@ -552,7 +552,7 @@ data:
     $color.stroke.neutral:
       values:
         theme-light: $color.palette.gray-300
-        theme-dark: $color.palette.gray-300
+        theme-dark: $color.palette.gray-400
     $color.stroke.positive:
       values:
         theme-light: $color.palette.green-300
@@ -564,7 +564,7 @@ data:
     $color.stroke.neutral-muted:
       values:
         theme-light: $color.palette.gray-200
-        theme-dark: $color.palette.gray-200
+        theme-dark: $color.palette.gray-300
     $color.stroke.on-image:
       values:
         theme-light: $color.palette.static-black-alpha-50
