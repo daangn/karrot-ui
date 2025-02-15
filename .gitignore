@@ -11,3 +11,7 @@
 
 lib
 !docs/**/lib
+
+docs/.next
+docs/.source
+docs/out
