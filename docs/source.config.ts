@@ -1,5 +1,4 @@
-import { rehypeCode, remarkHeading, remarkStructure } from "fumadocs-core/mdx-plugins";
-import { fileGenerator, remarkDocGen, remarkInstall } from "fumadocs-docgen";
+import { remarkInstall } from "fumadocs-docgen";
 import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from "fumadocs-mdx/config";
 import { z } from "zod";
 
