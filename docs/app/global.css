@@ -1,6 +1,139 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+@source ".";
+@source "../components";
+@source "../content";
+@source "../sanity";
+@source "../../node_modules/fumadocs-ui/dist/**/*.js";
+
+@theme {
+  --seed-color-palette-gray-0: var(--seed-color-palette-gray-00);
+  --seed-color-palette-gray-100: var(--seed-color-palette-gray-100);
+  --seed-color-palette-gray-200: var(--seed-color-palette-gray-200);
+  --seed-color-palette-gray-300: var(--seed-color-palette-gray-300);
+  --seed-color-palette-gray-400: var(--seed-color-palette-gray-400);
+  --seed-color-palette-gray-500: var(--seed-color-palette-gray-500);
+  --seed-color-palette-gray-600: var(--seed-color-palette-gray-600);
+  --seed-color-palette-gray-700: var(--seed-color-palette-gray-700);
+  --seed-color-palette-gray-800: var(--seed-color-palette-gray-800);
+  --seed-color-palette-gray-900: var(--seed-color-palette-gray-900);
+
+  --seed-color-palette-blue-100: var(--seed-color-palette-blue-100);
+  --seed-color-palette-blue-200: var(--seed-color-palette-blue-200);
+  --seed-color-palette-blue-300: var(--seed-color-palette-blue-300);
+  --seed-color-palette-blue-400: var(--seed-color-palette-blue-400);
+  --seed-color-palette-blue-500: var(--seed-color-palette-blue-500);
+  --seed-color-palette-blue-600: var(--seed-color-palette-blue-600);
+  --seed-color-palette-blue-700: var(--seed-color-palette-blue-700);
+  --seed-color-palette-blue-800: var(--seed-color-palette-blue-800);
+  --seed-color-palette-blue-900: var(--seed-color-palette-blue-900);
+  --seed-color-palette-blue-1000: var(--seed-color-palette-blue-1000);
+
+  --seed-color-palette-carrot-100: var(--seed-color-palette-carrot-100);
+  --seed-color-palette-carrot-200: var(--seed-color-palette-carrot-200);
+  --seed-color-palette-carrot-300: var(--seed-color-palette-carrot-300);
+  --seed-color-palette-carrot-400: var(--seed-color-palette-carrot-400);
+  --seed-color-palette-carrot-500: var(--seed-color-palette-carrot-500);
+  --seed-color-palette-carrot-600: var(--seed-color-palette-carrot-600);
+  --seed-color-palette-carrot-700: var(--seed-color-palette-carrot-700);
+  --seed-color-palette-carrot-800: var(--seed-color-palette-carrot-800);
+  --seed-color-palette-carrot-900: var(--seed-color-palette-carrot-900);
+  --seed-color-palette-carrot-1000: var(--seed-color-palette-carrot-1000);
+
+  --seed-color-palette-green-100: var(--seed-color-palette-green-100);
+  --seed-color-palette-green-200: var(--seed-color-palette-green-200);
+  --seed-color-palette-green-300: var(--seed-color-palette-green-300);
+  --seed-color-palette-green-400: var(--seed-color-palette-green-400);
+  --seed-color-palette-green-500: var(--seed-color-palette-green-500);
+  --seed-color-palette-green-600: var(--seed-color-palette-green-600);
+  --seed-color-palette-green-700: var(--seed-color-palette-green-700);
+  --seed-color-palette-green-800: var(--seed-color-palette-green-800);
+  --seed-color-palette-green-900: var(--seed-color-palette-green-900);
+  --seed-color-palette-green-1000: var(--seed-color-palette-green-1000);
+
+  --seed-color-palette-purple-100: var(--seed-color-palette-purple-100);
+  --seed-color-palette-purple-200: var(--seed-color-palette-purple-200);
+  --seed-color-palette-purple-300: var(--seed-color-palette-purple-300);
+  --seed-color-palette-purple-400: var(--seed-color-palette-purple-400);
+  --seed-color-palette-purple-500: var(--seed-color-palette-purple-500);
+  --seed-color-palette-purple-600: var(--seed-color-palette-purple-600);
+  --seed-color-palette-purple-700: var(--seed-color-palette-purple-700);
+  --seed-color-palette-purple-800: var(--seed-color-palette-purple-800);
+  --seed-color-palette-purple-900: var(--seed-color-palette-purple-900);
+  --seed-color-palette-purple-1000: var(--seed-color-palette-purple-1000);
+
+  --seed-color-palette-red-100: var(--seed-color-palette-red-100);
+  --seed-color-palette-red-200: var(--seed-color-palette-red-200);
+  --seed-color-palette-red-300: var(--seed-color-palette-red-300);
+  --seed-color-palette-red-400: var(--seed-color-palette-red-400);
+  --seed-color-palette-red-500: var(--seed-color-palette-red-500);
+  --seed-color-palette-red-600: var(--seed-color-palette-red-600);
+  --seed-color-palette-red-700: var(--seed-color-palette-red-700);
+  --seed-color-palette-red-800: var(--seed-color-palette-red-800);
+  --seed-color-palette-red-900: var(--seed-color-palette-red-900);
+  --seed-color-palette-red-1000: var(--seed-color-palette-red-1000);
+
+  --seed-color-palette-yellow-100: var(--seed-color-palette-yellow-100);
+  --seed-color-palette-yellow-200: var(--seed-color-palette-yellow-200);
+  --seed-color-palette-yellow-300: var(--seed-color-palette-yellow-300);
+  --seed-color-palette-yellow-400: var(--seed-color-palette-yellow-400);
+  --seed-color-palette-yellow-500: var(--seed-color-palette-yellow-500);
+  --seed-color-palette-yellow-600: var(--seed-color-palette-yellow-600);
+  --seed-color-palette-yellow-700: var(--seed-color-palette-yellow-700);
+  --seed-color-palette-yellow-800: var(--seed-color-palette-yellow-800);
+  --seed-color-palette-yellow-900: var(--seed-color-palette-yellow-900);
+  --seed-color-palette-yellow-1000: var(--seed-color-palette-yellow-1000);
+
+  --seed-color-palette-static-black: var(--seed-color-palette-static-black);
+  --seed-color-palette-static-black-alpha-50: var(
+    --seed-color-palette-static-black-alpha-50
+  );
+  --seed-color-palette-static-black-alpha-200: var(
+    --seed-color-palette-static-black-alpha-200
+  );
+  --seed-color-palette-static-black-alpha-500: var(
+    --seed-color-palette-static-black-alpha-500
+  );
+
+  --seed-color-palette-static-white: var(--seed-color-palette-static-white);
+  --seed-color-palette-static-white-alpha-50: var(
+    --seed-color-palette-static-white-alpha-50
+  );
+  --seed-color-palette-static-white-alpha-200: var(
+    --seed-color-palette-static-white-alpha-200
+  );
+
+  --seed-color-fg-brand-contrast: var(--seed-color-fg-brand-contrast);
+  --seed-color-fg-brand: var(--seed-color-fg-brand);
+
+  --seed-color-fg-critical-contrast: var(--seed-color-fg-critical-contrast);
+  --seed-color-fg-critical: var(--seed-color-fg-critical);
+
+  --seed-color-fg-disabled: var(--seed-color-fg-disabled);
+
+  --seed-color-fg-informative-contrast: var(
+    --seed-color-fg-informative-contrast
+  );
+  --seed-color-fg-informative: var(--seed-color-fg-informative);
+
+  --seed-color-bg-layer-basement: var(--seed-color-bg-layer-basement);
+  --seed-color-bg-layer-default-pressed: var(
+    --seed-color-bg-layer-default-pressed
+  );
+  --seed-color-bg-layer-default: var(--seed-color-bg-layer-default);
+  --seed-color-bg-layer-fill: var(--seed-color-bg-layer-fill);
+  --seed-color-bg-layer-floating-pressed: var(
+    --seed-color-bg-layer-floating-pressed
+  );
+  --seed-color-bg-layer-floating: var(--seed-color-bg-layer-floating);
+
+  --seed-color-stroke-brand: var(--seed-color-stroke-brand);
+  --seed-color-stroke-control: var(--seed-color-stroke-control);
+  --seed-color-stroke-field: var(--seed-color-stroke-field);
+  --seed-color-stroke-field-focused: var(--seed-color-stroke-field-focused);
+}
 
 .react {
   --primary: var(--react-color);
@@ -14,58 +147,58 @@
   --design-color: 250 80% 54%;
   --react-color: 220deg 91% 54%;
 
-  --fd-background: 0 0% 100%;
-  --fd-foreground: 222.2 47.4% 11.2%;
-  --fd-muted: 210 40% 96.1%;
-  --fd-muted-foreground: 215.4 16.3% 46.9%;
-  --fd-card: 0 0% 100%;
-  --fd-card-foreground: 222.2 47.4% 11.2%;
-  --fd-popover: 0 0% 100%;
-  --fd-popover-foreground: 222.2 47.4% 11.2%;
-  --fd-border: 214.3 31.8% 91.4%;
-  --fd-input: 214.3 31.8% 91.4%;
-  --fd-primary: 222.2 47.4% 11.2%;
-  --fd-primary-foreground: 210 40% 98%;
-  --fd-secondary: 210 40% 96.1%;
-  --fd-secondary-foreground: 222.2 47.4% 11.2%;
-  --fd-accent: 210 40% 96.1%;
-  --fd-accent-foreground: 222.2 47.4% 11.2%;
-  --fd-destructive: 0 100% 50%;
-  --fd-destructive-foreground: 210 40% 98%;
-  --fd-ring: 215 20.2% 65.1%;
+  --color-fd-background: #ffffff;
+  --color-fd-foreground: #0f172a;
+  --color-fd-muted: #f1f5f9;
+  --color-fd-muted-foreground: #64748b;
+  --color-fd-card: #ffffff;
+  --color-fd-card-foreground: #0f172a;
+  --color-fd-popover: #ffffff;
+  --color-fd-popover-foreground: #0f172a;
+  --color-fd-border: #e2e8f0;
+  --color-fd-input: #e2e8f0;
+  --color-fd-primary: #0f172a;
+  --color-fd-primary-foreground: #f8fafc;
+  --color-fd-secondary: #f1f5f9;
+  --color-fd-secondary-foreground: #0f172a;
+  --color-fd-accent: #f1f5f9;
+  --color-fd-accent-foreground: #0f172a;
+  --color-fd-destructive: #ff0000;
+  --color-fd-destructive-foreground: #f8fafc;
+  --color-fd-ring: #94a3b8;
 
   /* Lift Dialog, Sheet z-index for documentation */
   --layer-index: 100;
 }
 
 #nd-sidebar {
-  --fd-muted-foreground: 0 0% 30%;
+  --color-fd-muted-foreground: #4d4d4d;
 }
 
 .dark {
   --design-color: 250 100% 80%;
   --react-color: 217deg 92% 76%;
 
-  --fd-background: 0 0% 8.9%;
-  --fd-foreground: 0 0% 92%;
-  --fd-muted: 0 0% 12.9%;
-  --fd-muted-foreground: 0 0% 60.9%;
-  --fd-popover: 0 0% 9.8%;
-  --fd-popover-foreground: 0 0% 88%;
-  --fd-card: 0 0% 10%;
-  --fd-card-foreground: 0 0% 98%;
-  --fd-border: 0 0% 18%;
-  --fd-primary: 0 0% 98%;
-  --fd-primary-foreground: 0 0% 9%;
-  --fd-secondary: 0 0% 12.9%;
-  --fd-secondary-foreground: 0 0% 98%;
-  --fd-accent: 0 0% 16.9%;
-  --fd-accent-foreground: 0 0% 90%;
-  --fd-ring: 0 0% 14.9%;
+  --color-fd-background: #171717;
+  --color-fd-foreground: #ebebeb;
+  --color-fd-muted: #212121;
+  --color-fd-muted-foreground: #9b9b9b;
+  --color-fd-popover: #191919;
+  --color-fd-popover-foreground: #e0e0e0;
+  --color-fd-card: #1a1a1a;
+  --color-fd-card-foreground: #fafafa;
+  --color-fd-border: #2e2e2e;
+  --color-fd-primary: #fafafa;
+  --color-fd-primary-foreground: #171717;
+  --color-fd-secondary: #212121;
+  --color-fd-secondary-foreground: #fafafa;
+  --color-fd-accent: #2b2b2b;
+  --color-fd-accent-foreground: #e6e6e6;
+  --color-fd-ring: #262626;
 }
 
 .dark #nd-sidebar {
-  --fd-muted: 0deg 0% 16%;
+  --color-fd-muted: #292929;
 }
 
 .example-reset {

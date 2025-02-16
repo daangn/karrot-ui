@@ -13,10 +13,18 @@ export default async function Page({
   const page = source.getPage(fullPath);
   if (!page) notFound();
 
-  const MDX = page.data.body;
+  const { body: MDX, toc, lastModified } = await page.data.load();
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full} lastUpdate={page.data.lastModified}>
+    <DocsPage
+      toc={toc}
+      tableOfContent={{
+        style: "clerk",
+        single: false,
+      }}
+      full={page.data.full}
+      lastUpdate={lastModified}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
