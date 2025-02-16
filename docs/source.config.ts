@@ -1,8 +1,26 @@
-import { defineDocs, defineConfig } from "fumadocs-mdx/config";
-import { remarkInstall } from "fumadocs-docgen";
-import { remarkStructure } from "fumadocs-core/mdx-plugins";
+import { rehypeCode, remarkHeading, remarkStructure } from "fumadocs-core/mdx-plugins";
+import { fileGenerator, remarkDocGen, remarkInstall } from "fumadocs-docgen";
+import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from "fumadocs-mdx/config";
+import { z } from "zod";
 
-export const { docs, meta } = defineDocs();
+export const docs = defineDocs({
+  dir: "content/docs",
+  docs: {
+    async: true,
+    schema: frontmatterSchema.extend({
+      index: z.boolean().default(false),
+      /**
+       * API routes only
+       */
+      method: z.string().optional(),
+    }),
+  },
+  meta: {
+    schema: metaSchema.extend({
+      description: z.string().optional(),
+    }),
+  },
+});
 
 export default defineConfig({
   lastModifiedTime: "git",
@@ -16,7 +34,16 @@ export default defineConfig({
           },
         },
       ],
-      remarkStructure,
     ],
+    rehypeCodeOptions: {
+      lazy: true,
+      experimentalJSEngine: true,
+      langs: ["ts", "js", "html", "tsx", "mdx"],
+      inline: "tailing-curly-colon",
+      themes: {
+        light: "catppuccin-latte",
+        dark: "catppuccin-mocha",
+      },
+    },
   },
 });

@@ -1,7 +1,6 @@
-import { docs, meta } from "@/.source";
-import { loader } from "fumadocs-core/source";
-import { createMDXSource } from "fumadocs-mdx";
+import { docs } from "@/.source";
 import { IconContainer } from "@/components/ui/icon";
+import { loader } from "fumadocs-core/source";
 
 import { icons } from "lucide-react";
 import { createElement } from "react";
@@ -14,5 +13,5 @@ export const source = loader({
         icon: icons[icon as keyof typeof icons],
       });
   },
-  source: createMDXSource(docs, meta),
+  source: docs.toFumadocsSource(),
 });

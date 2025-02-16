@@ -27,7 +27,7 @@ export default async function Page({
   const page = source.getPage(fullPath);
   if (!page) notFound();
 
-  const MDX = page.data.body;
+  const { body: MDX, toc, lastModified } = await page.data.load();
   const path = getPath(params.slug ?? []);
 
   const guideline = await client.fetch(GUIDELINE_QUERY, { path: `design/${path}` });
@@ -48,16 +48,11 @@ export default async function Page({
     }) ?? [];
 
   return (
-    <DocsPage
-      toc={[...guidelineToc, ...page.data.toc]}
-      full={page.data.full}
-      lastUpdate={page.data.lastModified}
-    >
+    <DocsPage toc={[...guidelineToc, ...toc]} full={page.data.full} lastUpdate={lastModified}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         {guideline && <PortableContent content={guideline.content} />}
-        <div className="h-8" />
         <MDX components={mdxComponents} />
       </DocsBody>
     </DocsPage>
