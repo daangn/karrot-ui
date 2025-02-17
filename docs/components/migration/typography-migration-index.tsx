@@ -1,21 +1,17 @@
 import { getRootage } from "@/components/rootage";
-import { Text } from "@/registry/ui/text";
+import { Text, TextProps } from "@/registry/ui/text";
+import { FoundationTokenMapping } from "@seed-design/migration-index";
+import { typographyMappings } from "@seed-design/migration-index/typography";
 import { Fragment } from "react";
-import { TextProps } from "@/registry/ui/text";
-import type { FoundationTokenMapping } from "@seed-design/migration-index";
 
-interface TypographyMappingTableProps {
-  mappings: FoundationTokenMapping[];
-}
-
-export async function TypographyMappingTable({ mappings }: TypographyMappingTableProps) {
+export async function TypographyMigrationIndex() {
   const rootage = await getRootage();
 
   if (!("typography" in rootage.componentSpecEntities)) {
     throw new Error("Typography component spec not found");
   }
 
-  const tableItems: FoundationTokenMapping[] = mappings.map((item) => ({
+  const tableItems: FoundationTokenMapping[] = typographyMappings.map((item) => ({
     previous: item.previous,
     next: item.next.map((id) => {
       const typography = rootage.componentSpecEntities.typography.body.find(({ variants }) =>

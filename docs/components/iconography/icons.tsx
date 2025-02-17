@@ -15,7 +15,7 @@ import { IconSearch } from "./icon-search";
 import { IconSegmentedControl } from "./icon-segmented-control";
 import { Suspense } from "react";
 
-export const Icons = () => {
+export const IconLibrary = () => {
   return (
     <NuqsAdapter>
       <Suspense>
