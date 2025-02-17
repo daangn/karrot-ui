@@ -5,15 +5,36 @@
     "name": "Identity Placeholder"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "color": "$color.palette.gray-400"
-        },
-        "image": {
-          "color": "#f7f8fa"
-        }
+    "id": "identity-placeholder",
+    "name": "Identity Placeholder",
+    "schema": {
+      "slots": []
+    },
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.gray-400"
+                }
+              },
+              "image": {
+                "color": {
+                  "type": "color",
+                  "value": "#f7f8fa"
+                }
+              }
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

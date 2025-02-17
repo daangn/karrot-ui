@@ -7,6 +7,9 @@
   "data": {
     "id": "bottom-sheet",
     "name": "Bottom Sheet",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

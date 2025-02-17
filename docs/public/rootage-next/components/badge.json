@@ -7,6 +7,64 @@
   "data": {
     "id": "badge",
     "name": "Badge",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "minHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingX",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingY",
+              "type": "dimension"
+            },
+            {
+              "name": "borderRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeColor",
+              "type": "color"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "properties": [
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {
@@ -95,7 +153,7 @@
             ],
             "slots": {
               "root": {
-                "borderRadius": {
+                "cornerRadius": {
                   "type": "dimension",
                   "value": "$radius.full"
                 }
@@ -116,7 +174,7 @@
             ],
             "slots": {
               "root": {
-                "borderRadius": {
+                "cornerRadius": {
                   "type": "dimension",
                   "value": "$radius.r1_5"
                 }
@@ -137,7 +195,7 @@
             ],
             "slots": {
               "root": {
-                "borderRadius": {
+                "cornerRadius": {
                   "type": "dimension",
                   "value": "$radius.r1"
                 }

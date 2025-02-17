@@ -4,15 +4,16 @@ metadata:
   id: chip-tablist
   name: Chip Tablist
 data:
-  base:
-    enabled:
-      root:
-        paddingX: $dimension.x4
-  variant=neutralSolid:
-    enabled:
-      root:
-        gap: 0px
-  variant=brandSolid:
-    enabled:
-      root:
-        gap: 8px
+  definitions:
+    base:
+      enabled:
+        root:
+          paddingX: $dimension.x4
+    variant=neutralSolid:
+      enabled:
+        root:
+          gap: 0px
+    variant=brandSolid:
+      enabled:
+        root:
+          gap: 8px

@@ -4,50 +4,75 @@ metadata:
   id: manner-temp-badge
   name: Manner Temp Badge
 data:
-  base:
-    enabled:
-      root:
-        minHeight: 20px
-        paddingY: $dimension.x0_5
-        paddingX: $dimension.x1_5
-        cornerRadius: $radius.full
-      label:
-        fontSize: $font-size.t1
-        lineHeight: $line-height.t1
-        fontWeight: $font-weight.bold
-  level=l1:
-    enabled:
-      root:
-        color: $color.manner-temp.l1.bg
-      label:
-        color: $color.manner-temp.l1.text
-  level=l2:
-    enabled:
-      root:
-        color: $color.manner-temp.l2.bg
-      label:
-        color: $color.manner-temp.l2.text
-  level=l3:
-    enabled:
-      root:
-        color: $color.manner-temp.l3.bg
-      label:
-        color: $color.manner-temp.l3.text
-  level=l4:
-    enabled:
-      root:
-        color: $color.manner-temp.l4.bg
-      label:
-        color: $color.manner-temp.l4.text
-  level=l5:
-    enabled:
-      root:
-        color: $color.manner-temp.l5.bg
-      label:
-        color: $color.manner-temp.l5.text
-  level=l6:
-    enabled:
-      root:
-        color: $color.manner-temp.l6.bg
-      label:
-        color: $color.manner-temp.l6.text
+  schema:
+    slots:
+      - name: root
+        properties:
+          - name: minHeight
+            type: dimension
+          - name: paddingY
+            type: dimension
+          - name: paddingX
+            type: dimension
+          - name: cornerRadius
+            type: dimension
+          - name: color
+            type: color
+      - name: label
+        properties:
+          - name: fontSize
+            type: dimension
+          - name: lineHeight
+            type: dimension
+          - name: fontWeight
+            type: number
+          - name: color
+            type: color
+  definitions:
+    base:
+      enabled:
+        root:
+          minHeight: 20px
+          paddingY: $dimension.x0_5
+          paddingX: $dimension.x1_5
+          cornerRadius: $radius.full
+        label:
+          fontSize: $font-size.t1
+          lineHeight: $line-height.t1
+          fontWeight: $font-weight.bold
+    level=l1:
+      enabled:
+        root:
+          color: $color.manner-temp.l1.bg
+        label:
+          color: $color.manner-temp.l1.text
+    level=l2:
+      enabled:
+        root:
+          color: $color.manner-temp.l2.bg
+        label:
+          color: $color.manner-temp.l2.text
+    level=l3:
+      enabled:
+        root:
+          color: $color.manner-temp.l3.bg
+        label:
+          color: $color.manner-temp.l3.text
+    level=l4:
+      enabled:
+        root:
+          color: $color.manner-temp.l4.bg
+        label:
+          color: $color.manner-temp.l4.text
+    level=l5:
+      enabled:
+        root:
+          color: $color.manner-temp.l5.bg
+        label:
+          color: $color.manner-temp.l5.text
+    level=l6:
+      enabled:
+        root:
+          color: $color.manner-temp.l6.bg
+        label:
+          color: $color.manner-temp.l6.text

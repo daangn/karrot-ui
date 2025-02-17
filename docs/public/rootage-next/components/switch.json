@@ -7,6 +7,9 @@
   "data": {
     "id": "switch",
     "name": "Switch",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

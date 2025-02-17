@@ -4,137 +4,166 @@ metadata:
   id: badge
   name: Badge
 data:
-  size=large:
-    enabled:
-      root:
-        minHeight: $dimension.x6
-        paddingX: $dimension.x2
-        paddingY: $dimension.x1
-      label:
-        fontSize: $font-size.t2
-        lineHeight: $line-height.t2
-  size=medium:
-    enabled:
-      root:
-        minHeight: $dimension.x5
-        paddingX: $dimension.x1_5
-        paddingY: $dimension.x0_5
-      label:
-        fontSize: $font-size.t1
-        lineHeight: $line-height.t1
-  shape=pill:
-    enabled:
-      root:
-        borderRadius: $radius.full
-  shape=rectangle, size=large:
-    enabled:
-      root:
-        borderRadius: $radius.r1_5
-  shape=rectangle, size=medium:
-    enabled:
-      root:
-        borderRadius: $radius.r1
-  variant=weak:
-    enabled:
-      label:
-        fontWeight: $font-weight.medium
-  variant=solid:
-    enabled:
-      label:
-        fontWeight: $font-weight.bold
-  variant=outline:
-    enabled:
-      root:
-        strokeWidth: 1px
-      label:
-        fontWeight: $font-weight.bold
-  tone=neutral, variant=weak:
-    enabled:
-      root:
-        color: $color.bg.neutral-weak
-      label:
-        color: $color.fg.neutral
-  tone=neutral, variant=solid:
-    enabled:
-      root:
-        color: $color.bg.neutral-inverted
-      label:
-        color: $color.fg.neutral-inverted
-  tone=neutral, variant=outline:
-    enabled:
-      root:
-        strokeColor: $color.stroke.neutral
-      label:
-        color: $color.fg.neutral
-  tone=brand, variant=weak:
-    enabled:
-      root:
-        color: $color.palette.carrot-100
-      label:
-        color: $color.palette.carrot-900
-  tone=brand, variant=solid:
-    enabled:
-      root:
-        color: $color.bg.brand-solid
-      label:
-        color: $color.palette.static-white
-  tone=brand, variant=outline:
-    enabled:
-      root:
-        strokeColor: $color.stroke.brand
-      label:
-        color: $color.fg.brand
-  tone=informative, variant=weak:
-    enabled:
-      root:
-        color: $color.bg.informative-weak
-      label:
-        color: $color.fg.informative-contrast
-  tone=informative, variant=solid:
-    enabled:
-      root:
-        color: $color.bg.informative-solid
-      label:
-        color: $color.palette.static-white
-  tone=informative, variant=outline:
-    enabled:
-      root:
-        strokeColor: $color.stroke.informative
-      label:
-        color: $color.fg.informative
-  tone=positive, variant=weak:
-    enabled:
-      root:
-        color: $color.bg.positive-weak
-      label:
-        color: $color.fg.positive-contrast
-  tone=positive, variant=solid:
-    enabled:
-      root:
-        color: $color.bg.positive-solid
-      label:
-        color: $color.palette.static-white
-  tone=positive, variant=outline:
-    enabled:
-      root:
-        strokeColor: $color.stroke.positive
-      label:
-        color: $color.fg.positive
-  tone=critical, variant=weak:
-    enabled:
-      root:
-        color: $color.bg.critical-weak
-      label:
-        color: $color.fg.critical-contrast
-  tone=critical, variant=solid:
-    enabled:
-      root:
-        color: $color.bg.critical-solid
-      label:
-        color: $color.palette.static-white
-  tone=critical, variant=outline:
-    enabled:
-      root:
-        strokeColor: $color.stroke.critical
-      label:
-        color: $color.fg.critical
+  schema:
+    slots:
+      - name: root
+        properties:
+          - name: minHeight
+            type: dimension
+          - name: paddingX
+            type: dimension
+          - name: paddingY
+            type: dimension
+          - name: borderRadius
+            type: dimension
+          - name: strokeWidth
+            type: dimension
+          - name: strokeColor
+            type: color
+          - name: color
+            type: color
+      - name: label
+        properties:
+          - name: fontSize
+            type: dimension
+          - name: lineHeight
+            type: dimension
+          - name: fontWeight
+            type: number
+          - name: color
+            type: color
+  definitions:
+    size=large:
+      enabled:
+        root:
+          minHeight: $dimension.x6
+          paddingX: $dimension.x2
+          paddingY: $dimension.x1
+        label:
+          fontSize: $font-size.t2
+          lineHeight: $line-height.t2
+    size=medium:
+      enabled:
+        root:
+          minHeight: $dimension.x5
+          paddingX: $dimension.x1_5
+          paddingY: $dimension.x0_5
+        label:
+          fontSize: $font-size.t1
+          lineHeight: $line-height.t1
+    shape=pill:
+      enabled:
+        root:
+          cornerRadius: $radius.full
+    shape=rectangle, size=large:
+      enabled:
+        root:
+          cornerRadius: $radius.r1_5
+    shape=rectangle, size=medium:
+      enabled:
+        root:
+          cornerRadius: $radius.r1
+    variant=weak:
+      enabled:
+        label:
+          fontWeight: $font-weight.medium
+    variant=solid:
+      enabled:
+        label:
+          fontWeight: $font-weight.bold
+    variant=outline:
+      enabled:
+        root:
+          strokeWidth: 1px
+        label:
+          fontWeight: $font-weight.bold
+    tone=neutral, variant=weak:
+      enabled:
+        root:
+          color: $color.bg.neutral-weak
+        label:
+          color: $color.fg.neutral
+    tone=neutral, variant=solid:
+      enabled:
+        root:
+          color: $color.bg.neutral-inverted
+        label:
+          color: $color.fg.neutral-inverted
+    tone=neutral, variant=outline:
+      enabled:
+        root:
+          strokeColor: $color.stroke.neutral
+        label:
+          color: $color.fg.neutral
+    tone=brand, variant=weak:
+      enabled:
+        root:
+          color: $color.palette.carrot-100
+        label:
+          color: $color.palette.carrot-900
+    tone=brand, variant=solid:
+      enabled:
+        root:
+          color: $color.bg.brand-solid
+        label:
+          color: $color.palette.static-white
+    tone=brand, variant=outline:
+      enabled:
+        root:
+          strokeColor: $color.stroke.brand
+        label:
+          color: $color.fg.brand
+    tone=informative, variant=weak:
+      enabled:
+        root:
+          color: $color.bg.informative-weak
+        label:
+          color: $color.fg.informative-contrast
+    tone=informative, variant=solid:
+      enabled:
+        root:
+          color: $color.bg.informative-solid
+        label:
+          color: $color.palette.static-white
+    tone=informative, variant=outline:
+      enabled:
+        root:
+          strokeColor: $color.stroke.informative
+        label:
+          color: $color.fg.informative
+    tone=positive, variant=weak:
+      enabled:
+        root:
+          color: $color.bg.positive-weak
+        label:
+          color: $color.fg.positive-contrast
+    tone=positive, variant=solid:
+      enabled:
+        root:
+          color: $color.bg.positive-solid
+        label:
+          color: $color.palette.static-white
+    tone=positive, variant=outline:
+      enabled:
+        root:
+          strokeColor: $color.stroke.positive
+        label:
+          color: $color.fg.positive
+    tone=critical, variant=weak:
+      enabled:
+        root:
+          color: $color.bg.critical-weak
+        label:
+          color: $color.fg.critical-contrast
+    tone=critical, variant=solid:
+      enabled:
+        root:
+          color: $color.bg.critical-solid
+        label:
+          color: $color.palette.static-white
+    tone=critical, variant=outline:
+      enabled:
+        root:
+          strokeColor: $color.stroke.critical
+        label:
+          color: $color.fg.critical

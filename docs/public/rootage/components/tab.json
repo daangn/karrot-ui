@@ -5,56 +5,164 @@
     "name": "Tab"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "label": {
-          "color": "$color.fg.neutral-subtle"
-        },
-        "notification": {
-          "size": "$dimension.x1",
-          "cornerRadius": "$radius.full",
-          "color": "$color.bg.brand-solid",
-          "marginLeft": "$dimension.x0_5"
-        }
-      },
-      "selected": {
-        "label": {
-          "color": "$color.fg.neutral"
-        }
-      },
-      "disabled": {
-        "label": {
-          "color": "$color.fg.disabled"
-        }
-      }
+    "id": "tab",
+    "name": "Tab",
+    "schema": {
+      "slots": []
     },
-    "size=medium": {
-      "enabled": {
-        "root": {
-          "minHeight": "44px",
-          "paddingX": "$dimension.x2_5",
-          "paddingY": "$dimension.x2_5"
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-subtle"
+                }
+              },
+              "notification": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x1"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                },
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
+                },
+                "marginLeft": {
+                  "type": "dimension",
+                  "value": "$dimension.x0_5"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "medium"
         },
-        "label": {
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5",
-          "fontWeight": "$font-weight.bold"
-        }
-      }
-    },
-    "size=small": {
-      "enabled": {
-        "root": {
-          "minHeight": "40px",
-          "paddingX": "$dimension.x2_5",
-          "paddingY": "$dimension.x2_5"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 44,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x2_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.x2_5"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t5"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "small"
         },
-        "label": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4",
-          "fontWeight": "$font-weight.bold"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 40,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x2_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.x2_5"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

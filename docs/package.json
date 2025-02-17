@@ -14,7 +14,7 @@
     "generate:all": "bun generate:registry && bun generate:example && bun generate:rootage",
     "generate:registry": "bun scripts/generate-registry.ts",
     "generate:example": "bun scripts/generate-example.ts",
-    "generate:rootage": "rootage json-legacy public/rootage/ && rootage json public/rootage-next",
+    "generate:rootage": "rootage json public/rootage/ && rootage json public/rootage-next",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

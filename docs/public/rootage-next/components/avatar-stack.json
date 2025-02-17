@@ -7,6 +7,9 @@
   "data": {
     "id": "avatar-stack",
     "name": "Avatar Stack",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

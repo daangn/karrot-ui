@@ -4,118 +4,185 @@ metadata:
   id: callout
   name: Callout
 data:
-  base:
-    enabled:
-      root:
-        paddingX: $dimension.x3_5
-        paddingY: $dimension.x3_5
-        gap: $dimension.x3
-        cornerRadius: $radius.r2_5
-        minHeight: 50px
-      prefixIcon:
-        size: $dimension.x4
-      title:
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
-        fontWeight: $font-weight.bold
-      description:
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
-        fontWeight: $font-weight.regular
-      link:
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
-        fontWeight: $font-weight.regular
-      suffixIcon:
-        targetSize: $dimension.x10
-        size: $dimension.x4
-
-  tone=neutral:
-    enabled:
-      root:
-        color: $color.bg.neutral-weak
-      prefixIcon:
-        color: $color.fg.neutral
-      title:
-        color: $color.fg.neutral
-      description:
-        color: $color.fg.neutral
-      link:
-        color: $color.fg.neutral
-      suffixIcon:
-        color: $color.fg.neutral
-    pressed:
-      root:
-        color: $color.bg.neutral-weak-pressed
-
-  tone=informative:
-    enabled:
-      root:
-        color: $color.bg.informative-weak
-      prefixIcon:
-        color: $color.fg.informative-contrast
-      title:
-        color: $color.fg.informative-contrast
-      description:
-        color: $color.fg.informative-contrast
-      link:
-        color: $color.fg.informative-contrast
-      suffixIcon:
-        color: $color.fg.informative-contrast
-    pressed:
-      root:
-        color: $color.bg.informative-weak-pressed
-
-  tone=warning:
-    enabled:
-      root:
-        color: $color.bg.warning-weak
-      prefixIcon:
-        color: $color.fg.warning-contrast
-      title:
-        color: $color.fg.warning-contrast
-      description:
-        color: $color.fg.warning-contrast
-      link:
-        color: $color.fg.warning-contrast
-      suffixIcon:
-        color: $color.fg.warning-contrast
-    pressed:
-      root:
-        color: $color.bg.warning-weak-pressed
-
-  tone=critical:
-    enabled:
-      root:
-        color: $color.bg.critical-weak
-      prefixIcon:
-        color: $color.fg.critical-contrast
-      title:
-        color: $color.fg.critical-contrast
-      description:
-        color: $color.fg.critical-contrast
-      link:
-        color: $color.fg.critical-contrast
-      suffixIcon:
-        color: $color.fg.critical-contrast
-    pressed:
-      root:
-        color: $color.bg.critical-weak-pressed
-
-  tone=magic:
-    enabled:
-      root:
-        color: $color.bg.magic-weak
-      prefixIcon:
-        color: $color.fg.magic-contrast
-      title:
-        color: $color.fg.magic-contrast
-      description:
-        color: $color.fg.magic-contrast
-      link:
-        color: $color.fg.magic-contrast
-      suffixIcon:
-        color: $color.fg.magic-contrast
-    pressed:
-      root:
-        color: $color.bg.magic-weak-pressed
+  schema:
+    slots:
+      - name: root
+        properties:
+          - name: paddingX
+            type: dimension
+          - name: paddingY
+            type: dimension
+          - name: gap
+            type: dimension
+          - name: cornerRadius
+            type: dimension
+          - name: minHeight
+            type: dimension
+          - name: color
+            type: color
+      - name: prefixIcon
+        properties:
+          - name: size
+            type: dimension
+          - name: marginRight
+            type: dimension
+          - name: color
+            type: color
+      - name: title
+        properties:
+          - name: fontSize
+            type: dimension
+          - name: lineHeight
+            type: dimension
+          - name: fontWeight
+            type: number
+          - name: color
+            type: color
+      - name: description
+        properties:
+          - name: fontSize
+            type: dimension
+          - name: lineHeight
+            type: dimension
+          - name: fontWeight
+            type: number
+          - name: color
+            type: color
+      - name: link
+        properties:
+          - name: height
+            type: dimension
+          - name: fontSize
+            type: dimension
+          - name: lineHeight
+            type: dimension
+          - name: fontWeight
+            type: number
+          - name: marginLeft
+            type: dimension
+          - name: color
+            type: color
+      - name: suffixIcon
+        properties:
+          - name: size
+            type: dimension
+          - name: targetSize
+            type: dimension
+          - name: marginLeft
+            type: dimension
+          - name: color
+            type: color
+  definitions:
+    base:
+      enabled:
+        root:
+          paddingX: $dimension.x3_5
+          paddingY: $dimension.x3_5
+          gap: $dimension.x3
+          cornerRadius: $radius.r2_5
+          minHeight: 50px
+        prefixIcon:
+          size: $dimension.x4
+        title:
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+          fontWeight: $font-weight.bold
+        description:
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+          fontWeight: $font-weight.regular
+        link:
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+          fontWeight: $font-weight.regular
+          height: $dimension.x10
+          marginLeft: $dimension.x4
+        suffixIcon:
+          size: $dimension.x4
+          targetSize: $dimension.x10
+          marginLeft: $dimension.x4
+    tone=neutral:
+      enabled:
+        root:
+          color: $color.bg.neutral-weak
+        prefixIcon:
+          color: $color.fg.neutral
+        title:
+          color: $color.fg.neutral
+        description:
+          color: $color.fg.neutral
+        link:
+          color: $color.fg.neutral
+        suffixIcon:
+          color: $color.fg.neutral
+      pressed:
+        root:
+          color: $color.bg.neutral-weak-pressed
+    tone=informative:
+      enabled:
+        root:
+          color: $color.bg.informative-weak
+        prefixIcon:
+          color: $color.fg.informative-contrast
+        title:
+          color: $color.fg.informative-contrast
+        description:
+          color: $color.fg.informative-contrast
+        link:
+          color: $color.fg.informative-contrast
+        suffixIcon:
+          color: $color.fg.informative-contrast
+      pressed:
+        root:
+          color: $color.bg.informative-weak-pressed
+    tone=warning:
+      enabled:
+        root:
+          color: $color.bg.warning-weak
+        prefixIcon:
+          color: $color.fg.warning-contrast
+        title:
+          color: $color.fg.warning-contrast
+        description:
+          color: $color.fg.warning-contrast
+        link:
+          color: $color.fg.warning-contrast
+        suffixIcon:
+          color: $color.fg.warning-contrast
+      pressed:
+        root:
+          color: $color.bg.warning-weak-pressed
+    tone=critical:
+      enabled:
+        root:
+          color: $color.bg.critical-weak
+        prefixIcon:
+          color: $color.fg.critical-contrast
+        title:
+          color: $color.fg.critical-contrast
+        description:
+          color: $color.fg.critical-contrast
+        link:
+          color: $color.fg.critical-contrast
+        suffixIcon:
+          color: $color.fg.critical-contrast
+      pressed:
+        root:
+          color: $color.bg.critical-weak-pressed
+    tone=magic:
+      enabled:
+        root:
+          color: $color.bg.magic-weak
+        prefixIcon:
+          color: $color.fg.magic-contrast
+        title:
+          color: $color.fg.magic-contrast
+        description:
+          color: $color.fg.magic-contrast
+        link:
+          color: $color.fg.magic-contrast
+        suffixIcon:
+          color: $color.fg.magic-contrast
+      pressed:
+        root:
+          color: $color.bg.magic-weak-pressed

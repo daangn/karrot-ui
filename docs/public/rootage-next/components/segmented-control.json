@@ -7,6 +7,9 @@
   "data": {
     "id": "segmented-control",
     "name": "Segmented Control",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

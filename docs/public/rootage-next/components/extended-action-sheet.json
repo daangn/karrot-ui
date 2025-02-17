@@ -7,6 +7,9 @@
   "data": {
     "id": "extended-action-sheet",
     "name": "Extended Action Sheet",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

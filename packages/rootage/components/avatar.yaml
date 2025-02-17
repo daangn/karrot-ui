@@ -4,52 +4,69 @@ metadata:
   id: avatar
   name: Avatar
 data:
-  base:
-    enabled:
-      root:
-        cornerRadius: $radius.full
-      badge:
-        cornerRadius: $radius.full
-        color: $color.bg.layer-default
-  size=20:
-    enabled:
-      root:
-        size: 20px
-      badge:
-        size: 10px
-  size=24:
-    enabled:
-      root:
-        size: 24px
-      badge:
-        size: 12px
-  size=36:
-    enabled:
-      root:
-        size: 36px
-      badge:
-        size: 16px
-  size=48:
-    enabled:
-      root:
-        size: 48px
-      badge:
-        size: 24px
-  size=64:
-    enabled:
-      root:
-        size: 64px
-      badge:
-        size: 24px
-  size=80:
-    enabled:
-      root:
-        size: 80px
-      badge:
-        size: 24px
-  size=96:
-    enabled:
-      root:
-        size: 96px
-      badge:
-        size: 32px
+  schema:
+    slots:
+      - name: root
+        properties:
+          - name: cornerRadius
+            type: dimension
+          - name: size
+            type: dimension
+      - name: badge
+        properties:
+          - name: cornerRadius
+            type: dimension
+          - name: color
+            type: color
+          - name: size
+            type: dimension
+  definitions:
+    base:
+      enabled:
+        root:
+          cornerRadius: $radius.full
+        badge:
+          cornerRadius: $radius.full
+          color: $color.bg.layer-default
+    size=20:
+      enabled:
+        root:
+          size: 20px
+        badge:
+          size: 10px
+    size=24:
+      enabled:
+        root:
+          size: 24px
+        badge:
+          size: 12px
+    size=36:
+      enabled:
+        root:
+          size: 36px
+        badge:
+          size: 16px
+    size=48:
+      enabled:
+        root:
+          size: 48px
+        badge:
+          size: 24px
+    size=64:
+      enabled:
+        root:
+          size: 64px
+        badge:
+          size: 24px
+    size=80:
+      enabled:
+        root:
+          size: 80px
+        badge:
+          size: 24px
+    size=96:
+      enabled:
+        root:
+          size: 96px
+        badge:
+          size: 32px

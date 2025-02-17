@@ -9,32 +9,68 @@
     "tokens": {
       "$duration.d1": {
         "values": {
-          "default": "50ms"
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 50,
+              "unit": "ms"
+            }
+          }
         }
       },
       "$duration.d2": {
         "values": {
-          "default": "100ms"
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 100,
+              "unit": "ms"
+            }
+          }
         }
       },
       "$duration.d3": {
         "values": {
-          "default": "150ms"
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 150,
+              "unit": "ms"
+            }
+          }
         }
       },
       "$duration.d4": {
         "values": {
-          "default": "200ms"
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 200,
+              "unit": "ms"
+            }
+          }
         }
       },
       "$duration.d5": {
         "values": {
-          "default": "250ms"
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 250,
+              "unit": "ms"
+            }
+          }
         }
       },
       "$duration.d6": {
         "values": {
-          "default": "300ms"
+          "default": {
+            "type": "duration",
+            "value": {
+              "value": 300,
+              "unit": "ms"
+            }
+          }
         }
       }
     }

@@ -5,57 +5,58 @@ metadata:
   id: top-navigation
   name: Top Navigation
 data:
-  theme=cupertino:
-    enabled:
-      root:
-        minHeight: 44px
-        paddingX: $dimension.x4
-      icon:
-        size: 24px
-        targetSize: 40px
-  theme=android:
-    enabled:
-      root:
-        minHeight: 56px
-        paddingX: $dimension.x4
-      icon:
-        size: 24px
-        targetSize: 40px
-  tone=layer:
-    enabled:
-      root:
-        color: $color.bg.layer-default
-      title:
-        color: $color.fg.neutral
-      subtitle:
-        color: $color.fg.neutral-muted
-      icon:
-        color: $color.fg.neutral
-  tone=transparent:
-    enabled:
-      root:
-        color: "#00000000"
-      title:
-        color: $color.palette.static-white
-      subtitle:
-        color: $color.palette.static-white
-      icon:
-        color: $color.palette.static-white
-  divider=true:
-    enabled:
-      root:
-        strokeColor: $color.stroke.neutral-muted
-        strokeWidth: 1px
-  titleLayout=titleOnly:
-    enabled:
-      title:
-        fontSize: $font-size.t6-static
-        fontWeight: $font-weight.bold
-  titleLayout=withSubtitle:
-    enabled:
-      title:
-        fontSize: $font-size.t5-static
-        fontWeight: $font-weight.bold
-      subtitle:
-        fontSize: $font-size.t2-static
-        fontWeight: $font-weight.regular
+  definitions:
+    theme=cupertino:
+      enabled:
+        root:
+          minHeight: 44px
+          paddingX: $dimension.x4
+        icon:
+          size: 24px
+          targetSize: 40px
+    theme=android:
+      enabled:
+        root:
+          minHeight: 56px
+          paddingX: $dimension.x4
+        icon:
+          size: 24px
+          targetSize: 40px
+    tone=layer:
+      enabled:
+        root:
+          color: $color.bg.layer-default
+        title:
+          color: $color.fg.neutral
+        subtitle:
+          color: $color.fg.neutral-muted
+        icon:
+          color: $color.fg.neutral
+    tone=transparent:
+      enabled:
+        root:
+          color: "#00000000"
+        title:
+          color: $color.palette.static-white
+        subtitle:
+          color: $color.palette.static-white
+        icon:
+          color: $color.palette.static-white
+    divider=true:
+      enabled:
+        root:
+          strokeColor: $color.stroke.neutral-muted
+          strokeWidth: 1px
+    titleLayout=titleOnly:
+      enabled:
+        title:
+          fontSize: $font-size.t6-static
+          fontWeight: $font-weight.bold
+    titleLayout=withSubtitle:
+      enabled:
+        title:
+          fontSize: $font-size.t5-static
+          fontWeight: $font-weight.bold
+        subtitle:
+          fontSize: $font-size.t2-static
+          fontWeight: $font-weight.regular

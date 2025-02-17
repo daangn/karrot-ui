@@ -4,136 +4,137 @@ metadata:
   id: toggle-button
   name: Toggle Button
 data:
-  base:
-    enabled:
-      root:
-        colorDuration: $duration.d4
-        colorTimingFunction: $timing-function.easing
-      label:
-        fontWeight: $font-weight.bold
-  variant=brandSolid:
-    enabled:
-      root:
-        color: $color.bg.brand-solid
-      label:
-        color: $color.palette.static-white
-      prefixIcon:
-        color: $color.palette.static-white
-      suffixIcon:
-        color: $color.palette.static-white
-      progressCircle:
-        trackColor: $color.palette.static-white-alpha-200
-        rangeColor: $color.palette.static-white
-    pressed:
-      root:
-        color: $color.bg.brand-solid-pressed
-    selected:
-      root:
-        color: $color.bg.neutral-weak
-      label:
-        color: $color.fg.neutral
-      prefixIcon:
-        color: $color.fg.neutral
-      suffixIcon:
-        color: $color.fg.neutral
-      progressCircle:
-        trackColor: $color.palette.gray-500
-        rangeColor: $color.fg.neutral
-    selected,pressed:
-      root:
-        color: $color.bg.neutral-weak-pressed
-    disabled:
-      root:
-        color: $color.bg.disabled
-      label:
-        color: $color.fg.disabled
-      prefixIcon:
-        color: $color.fg.disabled
-      suffixIcon:
-        color: $color.fg.disabled
-    loading:
-      root:
-        color: $color.bg.brand-solid-pressed
-    selected,loading:
-      root:
-        color: $color.bg.neutral-weak-pressed
-  variant=neutralWeak:
-    enabled:
-      root:
-        color: $color.bg.neutral-weak
-      label:
-        color: $color.fg.neutral
-      prefixIcon:
-        color: $color.fg.neutral
-      suffixIcon:
-        color: $color.fg.neutral
-      progressCircle:
-        trackColor: $color.palette.gray-500
-        rangeColor: $color.fg.neutral
-    pressed:
-      root:
-        color: $color.bg.neutral-weak-pressed
-    selected:
-      root:
-        color: $color.bg.neutral-weak
-      label:
-        color: $color.fg.neutral
-      prefixIcon:
-        color: $color.fg.neutral
-      suffixIcon:
-        color: $color.fg.neutral
-      progressCircle:
-        trackColor: $color.palette.gray-500
-        rangeColor: $color.fg.neutral
-    selected,pressed:
-      root:
-        color: $color.bg.neutral-weak-pressed
-    disabled:
-      root:
-        color: $color.bg.disabled
-      label:
-        color: $color.fg.disabled
-      prefixIcon:
-        color: $color.fg.disabled
-      suffixIcon:
-        color: $color.fg.disabled
-    loading:
-      root:
-        color: $color.bg.neutral-weak-pressed
-    selected,loading:
-      root:
-        color: $color.bg.neutral-weak-pressed
-  size=xsmall:
-    enabled:
-      root:
-        minHeight: $dimension.x8
-        cornerRadius: $radius.full
-        gap: $dimension.x1
-        paddingX: $dimension.x3_5
-        paddingY: $dimension.x1_5
-      prefixIcon:
-        size: $dimension.x3_5
-      suffixIcon:
-        size: $dimension.x3_5
-      label:
-        fontSize: $font-size.t4
-      progressCircle:
-        size: 14px
-        thickness: 2px
-  size=small:
-    enabled:
-      root:
-        minHeight: $dimension.x9
-        cornerRadius: $radius.full
-        gap: $dimension.x1
-        paddingX: $dimension.x4
-        paddingY: $dimension.x2
-      prefixIcon:
-        size: $dimension.x3_5
-      suffixIcon:
-        size: $dimension.x3_5
-      label:
-        fontSize: $font-size.t4
-      progressCircle:
-        size: 14px
-        thickness: 2px
+  definitions:
+    base:
+      enabled:
+        root:
+          colorDuration: $duration.d4
+          colorTimingFunction: $timing-function.easing
+        label:
+          fontWeight: $font-weight.bold
+    variant=brandSolid:
+      enabled:
+        root:
+          color: $color.bg.brand-solid
+        label:
+          color: $color.palette.static-white
+        prefixIcon:
+          color: $color.palette.static-white
+        suffixIcon:
+          color: $color.palette.static-white
+        progressCircle:
+          trackColor: $color.palette.static-white-alpha-200
+          rangeColor: $color.palette.static-white
+      pressed:
+        root:
+          color: $color.bg.brand-solid-pressed
+      selected:
+        root:
+          color: $color.bg.neutral-weak
+        label:
+          color: $color.fg.neutral
+        prefixIcon:
+          color: $color.fg.neutral
+        suffixIcon:
+          color: $color.fg.neutral
+        progressCircle:
+          trackColor: $color.palette.gray-500
+          rangeColor: $color.fg.neutral
+      selected,pressed:
+        root:
+          color: $color.bg.neutral-weak-pressed
+      disabled:
+        root:
+          color: $color.bg.disabled
+        label:
+          color: $color.fg.disabled
+        prefixIcon:
+          color: $color.fg.disabled
+        suffixIcon:
+          color: $color.fg.disabled
+      loading:
+        root:
+          color: $color.bg.brand-solid-pressed
+      selected,loading:
+        root:
+          color: $color.bg.neutral-weak-pressed
+    variant=neutralWeak:
+      enabled:
+        root:
+          color: $color.bg.neutral-weak
+        label:
+          color: $color.fg.neutral
+        prefixIcon:
+          color: $color.fg.neutral
+        suffixIcon:
+          color: $color.fg.neutral
+        progressCircle:
+          trackColor: $color.palette.gray-500
+          rangeColor: $color.fg.neutral
+      pressed:
+        root:
+          color: $color.bg.neutral-weak-pressed
+      selected:
+        root:
+          color: $color.bg.neutral-weak
+        label:
+          color: $color.fg.neutral
+        prefixIcon:
+          color: $color.fg.neutral
+        suffixIcon:
+          color: $color.fg.neutral
+        progressCircle:
+          trackColor: $color.palette.gray-500
+          rangeColor: $color.fg.neutral
+      selected,pressed:
+        root:
+          color: $color.bg.neutral-weak-pressed
+      disabled:
+        root:
+          color: $color.bg.disabled
+        label:
+          color: $color.fg.disabled
+        prefixIcon:
+          color: $color.fg.disabled
+        suffixIcon:
+          color: $color.fg.disabled
+      loading:
+        root:
+          color: $color.bg.neutral-weak-pressed
+      selected,loading:
+        root:
+          color: $color.bg.neutral-weak-pressed
+    size=xsmall:
+      enabled:
+        root:
+          minHeight: $dimension.x8
+          cornerRadius: $radius.full
+          gap: $dimension.x1
+          paddingX: $dimension.x3_5
+          paddingY: $dimension.x1_5
+        prefixIcon:
+          size: $dimension.x3_5
+        suffixIcon:
+          size: $dimension.x3_5
+        label:
+          fontSize: $font-size.t4
+        progressCircle:
+          size: 14px
+          thickness: 2px
+    size=small:
+      enabled:
+        root:
+          minHeight: $dimension.x9
+          cornerRadius: $radius.full
+          gap: $dimension.x1
+          paddingX: $dimension.x4
+          paddingY: $dimension.x2
+        prefixIcon:
+          size: $dimension.x3_5
+        suffixIcon:
+          size: $dimension.x3_5
+        label:
+          fontSize: $font-size.t4
+        progressCircle:
+          size: 14px
+          thickness: 2px

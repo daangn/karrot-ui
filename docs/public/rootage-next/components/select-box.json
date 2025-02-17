@@ -7,6 +7,166 @@
   "data": {
     "id": "select-box",
     "name": "Select Box",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "paddingX",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingY",
+              "type": "dimension"
+            },
+            {
+              "name": "gap",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeColor",
+              "type": "color"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "content",
+          "properties": [
+            {
+              "name": "gap",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "description",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "checkboxControl",
+          "properties": [
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "strokeWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeColor",
+              "type": "color"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "checkboxIcon",
+          "properties": [
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "radioControl",
+          "properties": [
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "strokeWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeColor",
+              "type": "color"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "radioIcon",
+          "properties": [
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {},

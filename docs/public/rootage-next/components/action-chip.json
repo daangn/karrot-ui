@@ -7,6 +7,120 @@
   "data": {
     "id": "action-chip",
     "name": "Action Chip",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "minHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingY",
+              "type": "dimension"
+            },
+            {
+              "name": "gap",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingX",
+              "type": "dimension"
+            },
+            {
+              "name": "minWidth",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "prefixIcon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "suffixIcon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {},

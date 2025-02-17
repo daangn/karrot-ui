@@ -5,89 +5,259 @@
     "name": "Top Navigation"
   },
   "data": {
-    "theme=cupertino": {
-      "enabled": {
-        "root": {
-          "minHeight": "44px",
-          "paddingX": "$dimension.x4"
-        },
-        "icon": {
-          "size": "24px",
-          "targetSize": "40px"
-        }
-      }
+    "id": "top-navigation",
+    "name": "Top Navigation",
+    "schema": {
+      "slots": []
     },
-    "theme=android": {
-      "enabled": {
-        "root": {
-          "minHeight": "56px",
-          "paddingX": "$dimension.x4"
+    "definitions": [
+      {
+        "variants": {
+          "theme": "cupertino"
         },
-        "icon": {
-          "size": "24px",
-          "targetSize": "40px"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 44,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                },
+                "targetSize": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 40,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "theme": "android"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 56,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                },
+                "targetSize": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 40,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "tone": "layer"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                }
+              },
+              "title": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "subtitle": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-muted"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "tone": "transparent"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "#00000000"
+                }
+              },
+              "title": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "subtitle": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "divider": "true"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.neutral-muted"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "titleLayout": "titleOnly"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t6-static"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "titleLayout": "withSubtitle"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "title": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t5-static"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              },
+              "subtitle": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t2-static"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
+              }
+            }
+          }
+        ]
       }
-    },
-    "tone=layer": {
-      "enabled": {
-        "root": {
-          "color": "$color.bg.layer-default"
-        },
-        "title": {
-          "color": "$color.fg.neutral"
-        },
-        "subtitle": {
-          "color": "$color.fg.neutral-muted"
-        },
-        "icon": {
-          "color": "$color.fg.neutral"
-        }
-      }
-    },
-    "tone=transparent": {
-      "enabled": {
-        "root": {
-          "color": "#00000000"
-        },
-        "title": {
-          "color": "$color.palette.static-white"
-        },
-        "subtitle": {
-          "color": "$color.palette.static-white"
-        },
-        "icon": {
-          "color": "$color.palette.static-white"
-        }
-      }
-    },
-    "divider=true": {
-      "enabled": {
-        "root": {
-          "strokeColor": "$color.stroke.neutral-muted",
-          "strokeWidth": "1px"
-        }
-      }
-    },
-    "titleLayout=titleOnly": {
-      "enabled": {
-        "title": {
-          "fontSize": "$font-size.t6-static",
-          "fontWeight": "$font-weight.bold"
-        }
-      }
-    },
-    "titleLayout=withSubtitle": {
-      "enabled": {
-        "title": {
-          "fontSize": "$font-size.t5-static",
-          "fontWeight": "$font-weight.bold"
-        },
-        "subtitle": {
-          "fontSize": "$font-size.t2-static",
-          "fontWeight": "$font-weight.regular"
-        }
-      }
-    }
+    ]
   }
 }

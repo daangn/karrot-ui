@@ -7,6 +7,9 @@
   "data": {
     "id": "typography",
     "name": "Typography",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {

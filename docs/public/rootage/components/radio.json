@@ -5,80 +5,257 @@
     "name": "Radio"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "color": "$color.bg.layer-default",
-          "strokeWidth": "1px",
-          "strokeColor": "$color.stroke.control",
-          "cornerRadius": "$radius.full"
+    "id": "radio",
+    "name": "Radio",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeColor",
+              "type": "color"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            }
+          ]
         },
-        "icon": {
-          "cornerRadius": "$radius.full"
+        {
+          "name": "icon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
         }
-      },
-      "enabled,pressed": {
-        "root": {
-          "color": "$color.bg.layer-default-pressed"
-        }
-      },
-      "enabled,selected": {
-        "root": {
-          "color": "$color.bg.brand-solid",
-          "strokeWidth": "0px"
-        },
-        "icon": {
-          "color": "$color.palette.static-white"
-        }
-      },
-      "enabled,selected,pressed": {
-        "root": {
-          "color": "$color.bg.brand-solid-pressed"
-        }
-      },
-      "disabled": {
-        "root": {
-          "color": "$color.palette.gray-300"
-        }
-      },
-      "disabled,selected": {
-        "root": {
-          "strokeColor": "$color.palette.gray-300"
-        },
-        "icon": {
-          "color": "$color.palette.gray-300"
-        }
-      }
+      ]
     },
-    "size=large": {
-      "enabled": {
-        "root": {
-          "size": "$dimension.x6"
-        },
-        "icon": {
-          "size": "$dimension.x2_5"
-        }
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 1,
+                    "unit": "px"
+                  }
+                },
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.stroke.control"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
+              },
+              "icon": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "selected"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
+                },
+                "strokeWidth": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 0,
+                    "unit": "px"
+                  }
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "selected",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.gray-300"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled",
+              "selected"
+            ],
+            "slots": {
+              "root": {
+                "strokeColor": {
+                  "type": "color",
+                  "value": "$color.palette.gray-300"
+                }
+              },
+              "icon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.gray-300"
+                }
+              }
+            }
+          }
+        ]
       },
-      "disabled": {
-        "icon": {
-          "size": "$dimension.x3"
-        }
-      }
-    },
-    "size=medium": {
-      "enabled": {
-        "root": {
-          "size": "$dimension.x5"
+      {
+        "variants": {
+          "size": "large"
         },
-        "icon": {
-          "size": "$dimension.x2"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x6"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x2_5"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x3"
+                }
+              }
+            }
+          }
+        ]
       },
-      "disabled": {
-        "icon": {
-          "size": "$dimension.x2_5"
-        }
+      {
+        "variants": {
+          "size": "medium"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x5"
+                }
+              },
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x2"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "icon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x2_5"
+                }
+              }
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

@@ -4,38 +4,39 @@ metadata:
   id: avatar-stack
   name: Avatar Stack
 data:
-  base:
-    enabled:
-      item:
-        cornerRadius: $radius.full
-        strokeColor: $color.bg.layer-default
-  size=20:
-    enabled:
-      root:
-        gap: -5px
-      item:
-        strokeWidth: 2px
-  size=24:
-    enabled:
-      root:
-        gap: -6px
-      item:
-        strokeWidth: 2px
-  size=36:
-    enabled:
-      root:
-        gap: -8px
-      item:
-        strokeWidth: 3px
-  size=48:
-    enabled:
-      root:
-        gap: -10px
-      item:
-        strokeWidth: 4px
-  size=64:
-    enabled:
-      root:
-        gap: -10px
-      item:
-        strokeWidth: 4px
+  definitions:
+    base:
+      enabled:
+        item:
+          cornerRadius: $radius.full
+          strokeColor: $color.bg.layer-default
+    size=20:
+      enabled:
+        root:
+          gap: -5px
+        item:
+          strokeWidth: 2px
+    size=24:
+      enabled:
+        root:
+          gap: -6px
+        item:
+          strokeWidth: 2px
+    size=36:
+      enabled:
+        root:
+          gap: -8px
+        item:
+          strokeWidth: 3px
+    size=48:
+      enabled:
+        root:
+          gap: -10px
+        item:
+          strokeWidth: 4px
+    size=64:
+      enabled:
+        root:
+          gap: -10px
+        item:
+          strokeWidth: 4px

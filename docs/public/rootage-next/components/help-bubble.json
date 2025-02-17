@@ -7,6 +7,9 @@
   "data": {
     "id": "help-bubble",
     "name": "Help Bubble",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

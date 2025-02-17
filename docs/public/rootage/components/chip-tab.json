@@ -5,101 +5,273 @@
     "name": "Chip Tab"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "paddingX": "$dimension.x3_5",
-          "paddingY": "$dimension.x2",
-          "cornerRadius": "$radius.full",
-          "minHeight": "36px"
-        },
-        "label": {
-          "fontSize": "$font-size.t4",
-          "fontWeight": "$font-weight.bold"
-        }
-      }
+    "id": "chip-tab",
+    "name": "Chip Tab",
+    "schema": {
+      "slots": []
     },
-    "variant=neutralSolid": {
-      "enabled": {
-        "label": {
-          "color": "$color.fg.neutral",
-          "fontWeight": "$font-weight.bold"
-        }
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x3_5"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.x2"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 36,
+                    "unit": "px"
+                  }
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          }
+        ]
       },
-      "enabled,pressed": {
-        "root": {
-          "color": "$color.bg.layer-default-pressed"
-        }
-      },
-      "selected": {
-        "root": {
-          "color": "$color.bg.neutral-inverted"
+      {
+        "variants": {
+          "variant": "neutralSolid"
         },
-        "label": {
-          "color": "$color.fg.neutral-inverted"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-inverted"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-inverted-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          }
+        ]
       },
-      "selected,pressed": {
-        "root": {
-          "color": "$color.bg.neutral-inverted-pressed"
-        }
-      },
-      "disabled": {
-        "label": {
-          "color": "$color.fg.disabled"
-        }
-      },
-      "selected,disabled": {
-        "root": {
-          "color": "$color.bg.disabled"
+      {
+        "variants": {
+          "variant": "brandSolid"
         },
-        "label": {
-          "color": "$color.fg.disabled"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral-muted"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.medium"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "enabled",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.brand-solid-pressed"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.disabled"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "selected",
+              "disabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.disabled"
+                }
+              }
+            }
+          }
+        ]
       }
-    },
-    "variant=brandSolid": {
-      "enabled": {
-        "root": {
-          "color": "$color.bg.neutral-weak"
-        },
-        "label": {
-          "color": "$color.fg.neutral-muted",
-          "fontWeight": "$font-weight.medium"
-        }
-      },
-      "enabled,pressed": {
-        "root": {
-          "color": "$color.bg.neutral-weak-pressed"
-        }
-      },
-      "selected": {
-        "root": {
-          "color": "$color.bg.brand-solid"
-        },
-        "label": {
-          "color": "$color.palette.static-white",
-          "fontWeight": "$font-weight.bold"
-        }
-      },
-      "selected,pressed": {
-        "root": {
-          "color": "$color.bg.brand-solid-pressed"
-        }
-      },
-      "disabled": {
-        "root": {
-          "color": "$color.bg.disabled"
-        },
-        "label": {
-          "color": "$color.fg.disabled"
-        }
-      },
-      "selected,disabled": {
-        "root": {
-          "color": "$color.bg.disabled"
-        }
-      }
-    }
+    ]
   }
 }
