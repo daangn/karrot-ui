@@ -1,16 +1,23 @@
 import { source } from "@/app/source";
-import { createFromSource } from "fumadocs-core/search/server";
+import { AdvancedIndex, createSearchAPI } from "fumadocs-core/search/server";
 
 // it should be cached forever
 export const revalidate = false;
 
-export const { staticGET: GET } = createFromSource(source, (page) => {
-  return {
-    title: page.data.title,
-    description: page.data.description,
-    url: page.url,
-    id: page.url,
-    structuredData: page.data.structuredData,
-    tag: page.slugs[0],
-  };
+export const { staticGET: GET } = createSearchAPI("advanced", {
+  indexes: () =>
+    Promise.all(
+      source.getPages().map(async (page) => {
+        const { structuredData } = await page.data.load();
+
+        return {
+          id: page.url,
+          title: page.data.title,
+          description: page.data.description,
+          structuredData,
+          tag: page.slugs[0],
+          url: page.url,
+        } satisfies AdvancedIndex;
+      }),
+    ),
 });

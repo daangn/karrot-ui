@@ -1,23 +1,11 @@
+import { remarkStructure } from "fumadocs-core/mdx-plugins";
 import { remarkInstall } from "fumadocs-docgen";
-import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from "fumadocs-mdx/config";
-import { z } from "zod";
+import { defineConfig, defineDocs } from "fumadocs-mdx/config";
 
 export const docs = defineDocs({
   dir: "content/docs",
   docs: {
     async: true,
-    schema: frontmatterSchema.extend({
-      index: z.boolean().default(false),
-      /**
-       * API routes only
-       */
-      method: z.string().optional(),
-    }),
-  },
-  meta: {
-    schema: metaSchema.extend({
-      description: z.string().optional(),
-    }),
   },
 });
 
