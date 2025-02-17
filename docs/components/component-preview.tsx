@@ -1,8 +1,6 @@
 "use client";
 
-import { ProgressCircle } from "@/registry/ui/progress-circle";
 import * as React from "react";
-import { SimpleReveal } from "simple-reveal";
 
 interface ComponentPreviewProps {
   name: string;
