@@ -7,6 +7,9 @@
   "data": {
     "id": "fab",
     "name": "Fab",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

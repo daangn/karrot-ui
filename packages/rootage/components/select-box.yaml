@@ -4,72 +4,149 @@ metadata:
   id: select-box
   name: Select Box
 data:
-  base:
-    enabled:
-      root:
-        paddingX: $dimension.x4
-        paddingY: $dimension.x5
-        gap: $dimension.x2_5
-        strokeWidth: 1px
-        strokeColor: $color.stroke.neutral
-        cornerRadius: $radius.r3
-      content:
-        gap: $dimension.x0_5
-      label:
-        color: $color.fg.neutral
-        fontWeight: $font-weight.bold
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t5
-      description:
-        color: $color.fg.neutral-muted
-        fontWeight: $font-weight.regular
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
-      checkboxControl:
-        size: $dimension.x6
-        color: $color.bg.layer-default
-        strokeWidth: 1px
-        strokeColor: $color.stroke.control
-        cornerRadius: $radius.r1
-      checkboxIcon:
-        size: $dimension.x3_5
-      radioControl:
-        size: $dimension.x6
-        color: $color.bg.layer-default
-        strokeWidth: 1px
-        strokeColor: $color.stroke.control
-        cornerRadius: $radius.full
-      radioIcon:
-        size: $dimension.x2_5
-        cornerRadius: $radius.full
+  schema:
+    slots:
+      - name: root
+        properties:
+          - name: paddingX
+            type: dimension
+          - name: paddingY
+            type: dimension
+          - name: gap
+            type: dimension
+          - name: strokeWidth
+            type: dimension
+          - name: strokeColor
+            type: color
+          - name: cornerRadius
+            type: dimension
+          - name: color
+            type: color
+      - name: content
+        properties:
+          - name: gap
+            type: dimension
+      - name: label
+        properties:
+          - name: color
+            type: color
+          - name: fontWeight
+            type: number
+          - name: fontSize
+            type: dimension
+          - name: lineHeight
+            type: dimension
+      - name: description
+        properties:
+          - name: color
+            type: color
+          - name: fontWeight
+            type: number
+          - name: fontSize
+            type: dimension
+          - name: lineHeight
+            type: dimension
+      - name: checkboxControl
+        properties:
+          - name: size
+            type: dimension
+          - name: color
+            type: color
+          - name: strokeWidth
+            type: dimension
+          - name: strokeColor
+            type: color
+          - name: cornerRadius
+            type: dimension
+      - name: checkboxIcon
+        properties:
+          - name: size
+            type: dimension
+      - name: radioControl
+        properties:
+          - name: size
+            type: dimension
+          - name: color
+            type: color
+          - name: strokeWidth
+            type: dimension
+          - name: strokeColor
+            type: color
+          - name: cornerRadius
+            type: dimension
+      - name: radioIcon
+        properties:
+          - name: size
+            type: dimension
+          - name: cornerRadius
+            type: dimension
+  definitions:
+    base:
+      enabled:
+        root:
+          paddingX: $dimension.x4
+          paddingY: $dimension.x5
+          gap: $dimension.x2_5
+          strokeWidth: 1px
+          strokeColor: $color.stroke.neutral
+          cornerRadius: $radius.r3
+        content:
+          gap: $dimension.x0_5
+        label:
+          color: $color.fg.neutral
+          fontWeight: $font-weight.bold
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t5
+        description:
+          color: $color.fg.neutral-muted
+          fontWeight: $font-weight.regular
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+        checkboxControl:
+          size: $dimension.x6
+          color: $color.bg.layer-default
+          strokeWidth: 1px
+          strokeColor: $color.stroke.control
+          cornerRadius: $radius.r1
+        checkboxIcon:
+          size: $dimension.x3_5
+        radioControl:
+          size: $dimension.x6
+          color: $color.bg.layer-default
+          strokeWidth: 1px
+          strokeColor: $color.stroke.control
+          cornerRadius: $radius.full
+        radioIcon:
+          size: $dimension.x2_5
+          cornerRadius: $radius.full
 
-    enabled,pressed:
-      root:
-        color: $color.bg.layer-default-pressed
-      checkboxControl:
-        color: $color.bg.layer-default-pressed
-      radioControl:
-        color: $color.bg.layer-default-pressed
+      enabled,pressed:
+        root:
+          color: $color.bg.layer-default-pressed
+        checkboxControl:
+          color: $color.bg.layer-default-pressed
+        radioControl:
+          color: $color.bg.layer-default-pressed
 
-    enabled,selected:
-      root:
-        color: $color.bg.neutral-weak
-        strokeColor: $color.stroke.control
-      checkboxControl:
-        color: $color.bg.brand-solid
-        strokeWidth: 0
-      checkboxIcon:
-        color: $color.palette.static-white
-      radioControl:
-        color: $color.bg.brand-solid
-        strokeWidth: 0
-      radioIcon:
-        color: $color.palette.static-white
+      enabled,selected:
+        root:
+          color: $color.bg.neutral-weak
+          strokeColor: $color.stroke.control
+        checkboxControl:
+          color: $color.bg.brand-solid
+          strokeWidth: 0
+        checkboxIcon:
+          color: $color.palette.static-white
+        radioControl:
+          color: $color.bg.brand-solid
+          strokeWidth: 0
+        radioIcon:
+          color: $color.palette.static-white
 
-    enabled,selected,pressed:
-      root:
-        color: $color.bg.neutral-weak-pressed
-      checkboxControl:
-        color: $color.bg.brand-solid-pressed
-      radioControl:
-        color: $color.bg.brand-solid-pressed
+      enabled,selected,pressed:
+        root:
+          color: $color.bg.neutral-weak-pressed
+        checkboxControl:
+          color: $color.bg.brand-solid-pressed
+        radioControl:
+          color: $color.bg.brand-solid-pressed

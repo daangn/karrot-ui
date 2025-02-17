@@ -5,49 +5,130 @@
     "name": "Link With Icon"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "paddingY": "$dimension.x0_5",
-          "gap": "$dimension.x0_5"
-        },
-        "label": {
-          "fontWeight": "$font-weight.regular"
-        }
-      }
+    "id": "link-with-icon",
+    "name": "Link With Icon",
+    "schema": {
+      "slots": []
     },
-    "size=t6": {
-      "enabled": {
-        "suffixIcon": {
-          "size": "$dimension.x4"
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.x0_5"
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.x0_5"
+                }
+              },
+              "label": {
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "t6"
         },
-        "label": {
-          "fontSize": "$font-size.t6",
-          "lineHeight": "$line-height.t6"
-        }
-      }
-    },
-    "size=t5": {
-      "enabled": {
-        "suffixIcon": {
-          "size": "$dimension.x3_5"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t6"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t6"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "t5"
         },
-        "label": {
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5"
-        }
-      }
-    },
-    "size=t4": {
-      "enabled": {
-        "suffixIcon": {
-          "size": "$dimension.x3_5"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x3_5"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t5"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "t4"
         },
-        "label": {
-          "fontSize": "$font-size.t4",
-          "lineHeight": "$line-height.t4"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x3_5"
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t4"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t4"
+                }
+              }
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

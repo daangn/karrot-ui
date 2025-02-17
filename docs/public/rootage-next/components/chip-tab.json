@@ -7,6 +7,9 @@
   "data": {
     "id": "chip-tab",
     "name": "Chip Tab",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

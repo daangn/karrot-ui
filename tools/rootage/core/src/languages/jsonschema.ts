@@ -84,6 +84,18 @@ export function getJsonSchema(tokens: TokenDeclaration[]): string {
       "data": {
         "type": "object",
         "properties": {
+          "definitions": {
+            "$ref": "#/definitions/definitions"
+          }
+        }
+      }
+    },
+    "required": ["kind", "metadata", "data"],
+    "additionalProperties": false,
+    "definitions": {
+      "definitions": {
+        "type": "object",
+        "properties": {
           "base": {
             "$ref": "#/definitions/variant"
           }
@@ -94,11 +106,7 @@ export function getJsonSchema(tokens: TokenDeclaration[]): string {
           }
         },
         "additionalProperties": false
-      }
-    },
-    "required": ["kind", "metadata", "data"],
-    "additionalProperties": false,
-    "definitions": {
+      },
       "variant": {
         "type": "object",
         "additionalProperties": {

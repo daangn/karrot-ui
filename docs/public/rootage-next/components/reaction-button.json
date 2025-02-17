@@ -7,6 +7,9 @@
   "data": {
     "id": "reaction-button",
     "name": "Reaction Button",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

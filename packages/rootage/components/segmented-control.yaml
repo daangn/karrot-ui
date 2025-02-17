@@ -5,22 +5,23 @@ metadata:
   id: segmented-control
   name: Segmented Control
 data:
-  base:
-    enabled:
-      root:
-        padding: $dimension.x1
-        cornerRadius: $radius.full
-        color: $color.bg.neutral-weak
-      indicator:
-        color: $color.bg.layer-default
-        cornerRadius: $radius.full
-        shadow:
-          type: shadow
-          value:
-            - offsetX: 0px
-              offsetY: 1px
-              blur: 6px
-              spread: 0px
-              color: "#0000000d"
-        transformDuration: $duration.d4
-        transformTimingFunction: $timing-function.easing
+  definitions:
+    base:
+      enabled:
+        root:
+          padding: $dimension.x1
+          cornerRadius: $radius.full
+          color: $color.bg.neutral-weak
+        indicator:
+          color: $color.bg.layer-default
+          cornerRadius: $radius.full
+          shadow:
+            type: shadow
+            value:
+              - offsetX: 0px
+                offsetY: 1px
+                blur: 6px
+                spread: 0px
+                color: "#0000000d"
+          transformDuration: $duration.d4
+          transformTimingFunction: $timing-function.easing

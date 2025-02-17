@@ -7,6 +7,9 @@
   "data": {
     "id": "top-navigation",
     "name": "Top Navigation",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {

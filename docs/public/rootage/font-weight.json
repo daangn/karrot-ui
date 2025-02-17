@@ -9,17 +9,26 @@
     "tokens": {
       "$font-weight.regular": {
         "values": {
-          "default": 400
+          "default": {
+            "type": "number",
+            "value": 400
+          }
         }
       },
       "$font-weight.medium": {
         "values": {
-          "default": 500
+          "default": {
+            "type": "number",
+            "value": 500
+          }
         }
       },
       "$font-weight.bold": {
         "values": {
-          "default": 700
+          "default": {
+            "type": "number",
+            "value": 700
+          }
         }
       }
     }

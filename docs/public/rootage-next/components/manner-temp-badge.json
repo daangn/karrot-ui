@@ -7,6 +7,56 @@
   "data": {
     "id": "manner-temp-badge",
     "name": "Manner Temp Badge",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "minHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingY",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingX",
+              "type": "dimension"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "properties": [
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {},

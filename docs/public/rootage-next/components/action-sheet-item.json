@@ -7,6 +7,9 @@
   "data": {
     "id": "action-sheet-item",
     "name": "Action Sheet Item",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

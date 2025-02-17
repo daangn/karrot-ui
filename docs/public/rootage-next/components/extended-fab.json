@@ -7,6 +7,9 @@
   "data": {
     "id": "extended-fab",
     "name": "Extended Fab",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

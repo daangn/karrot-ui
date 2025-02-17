@@ -8,7 +8,7 @@ const external = Object.keys({
 });
 
 const baseConfig = {
-  entryPoints: ["./src/index.ts", "./src/legacy/index.ts"],
+  entryPoints: ["./src/index.ts"],
   outdir: "lib",
   target: "es2019",
   bundle: true,

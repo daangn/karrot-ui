@@ -5,45 +5,136 @@
     "name": "Skeleton"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "color": "$color.palette.gray-200"
+    "id": "skeleton",
+    "name": "Skeleton",
+    "schema": {
+      "slots": []
+    },
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.gray-200"
+                }
+              },
+              "shimmer": {
+                "duration": {
+                  "type": "duration",
+                  "value": {
+                    "value": 1.5,
+                    "unit": "s"
+                  }
+                },
+                "timingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.easing"
+                },
+                "color": {
+                  "type": "gradient",
+                  "value": "$gradient.shimmer"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "radius": "0"
         },
-        "shimmer": {
-          "duration": "1.5s",
-          "timingFunction": "$timing-function.easing",
-          "color": "$gradient.shimmer"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 0,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "radius": "8"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 8,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "radius": "16"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 16,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "radius": "full"
+        },
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
+              }
+            }
+          }
+        ]
       }
-    },
-    "radius=0": {
-      "enabled": {
-        "root": {
-          "cornerRadius": "0px"
-        }
-      }
-    },
-    "radius=8": {
-      "enabled": {
-        "root": {
-          "cornerRadius": "8px"
-        }
-      }
-    },
-    "radius=16": {
-      "enabled": {
-        "root": {
-          "cornerRadius": "16px"
-        }
-      }
-    },
-    "radius=full": {
-      "enabled": {
-        "root": {
-          "cornerRadius": "$radius.full"
-        }
-      }
-    }
+    ]
   }
 }

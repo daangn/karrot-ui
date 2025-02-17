@@ -4,23 +4,24 @@ metadata:
   id: fab
   name: Fab
 data:
-  base:
-    enabled:
-      root:
-        color: $color.bg.layer-floating
-        cornerRadius: $radius.full
-        size: 44px
-        shadow:
-          type: shadow
-          value:
-            - offsetX: 0px
-              offsetY: 2px
-              blur: 6px
-              spread: 0px
-              color: "#00000026"
-      icon:
-        color: $color.fg.neutral
-        size: 22px
-    pressed:
-      root:
-        color: $color.bg.layer-floating-pressed
+  definitions:
+    base:
+      enabled:
+        root:
+          color: $color.bg.layer-floating
+          cornerRadius: $radius.full
+          size: 44px
+          shadow:
+            type: shadow
+            value:
+              - offsetX: 0px
+                offsetY: 2px
+                blur: 6px
+                spread: 0px
+                color: "#00000026"
+        icon:
+          color: $color.fg.neutral
+          size: 22px
+      pressed:
+        root:
+          color: $color.bg.layer-floating-pressed

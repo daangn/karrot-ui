@@ -7,6 +7,148 @@
   "data": {
     "id": "callout",
     "name": "Callout",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "paddingX",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingY",
+              "type": "dimension"
+            },
+            {
+              "name": "gap",
+              "type": "dimension"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "minHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "prefixIcon",
+          "properties": [
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "marginRight",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "title",
+          "properties": [
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "description",
+          "properties": [
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "link",
+          "properties": [
+            {
+              "name": "height",
+              "type": "dimension"
+            },
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "marginLeft",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "suffixIcon",
+          "properties": [
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "targetSize",
+              "type": "dimension"
+            },
+            {
+              "name": "marginLeft",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {},
@@ -87,14 +229,26 @@
                 "fontWeight": {
                   "type": "number",
                   "value": "$font-weight.regular"
+                },
+                "height": {
+                  "type": "dimension",
+                  "value": "$dimension.x10"
+                },
+                "marginLeft": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
                 }
               },
               "suffixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
+                },
                 "targetSize": {
                   "type": "dimension",
                   "value": "$dimension.x10"
                 },
-                "size": {
+                "marginLeft": {
                   "type": "dimension",
                   "value": "$dimension.x4"
                 }

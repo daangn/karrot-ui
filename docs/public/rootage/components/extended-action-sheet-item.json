@@ -5,49 +5,137 @@
     "name": "Extended Action Sheet Item"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "color": "$color.bg.neutral-weak",
-          "minHeight": "52px",
-          "paddingX": "$dimension.x4",
-          "paddingY": "$dimension.x3_5",
-          "gap": "$dimension.x3_5"
-        },
-        "prefixIcon": {
-          "size": "22px"
-        },
-        "label": {
-          "fontSize": "$font-size.t5",
-          "lineHeight": "$line-height.t5",
-          "fontWeight": "$font-weight.regular"
-        }
+    "id": "extended-action-sheet-item",
+    "name": "Extended Action Sheet Item",
+    "schema": {
+      "slots": []
+    },
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak"
+                },
+                "minHeight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 52,
+                    "unit": "px"
+                  }
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x4"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.x3_5"
+                },
+                "gap": {
+                  "type": "dimension",
+                  "value": "$dimension.x3_5"
+                }
+              },
+              "prefixIcon": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 22,
+                    "unit": "px"
+                  }
+                }
+              },
+              "label": {
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t5"
+                },
+                "lineHeight": {
+                  "type": "dimension",
+                  "value": "$line-height.t5"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
+              }
+            }
+          },
+          {
+            "states": [
+              "pressed"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-weak-pressed"
+                }
+              }
+            }
+          }
+        ]
       },
-      "pressed": {
-        "root": {
-          "color": "$color.bg.neutral-weak-pressed"
-        }
-      }
-    },
-    "tone=neutral": {
-      "enabled": {
-        "prefixIcon": {
-          "color": "$color.fg.neutral"
+      {
+        "variants": {
+          "tone": "neutral"
         },
-        "label": {
-          "color": "$color.fg.neutral"
-        }
-      }
-    },
-    "tone=critical": {
-      "enabled": {
-        "prefixIcon": {
-          "color": "$color.fg.critical"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.neutral"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "tone": "critical"
         },
-        "label": {
-          "color": "$color.fg.critical"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "prefixIcon": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.critical"
+                }
+              },
+              "label": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.fg.critical"
+                }
+              }
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

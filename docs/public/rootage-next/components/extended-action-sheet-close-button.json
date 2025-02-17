@@ -7,6 +7,9 @@
   "data": {
     "id": "extended-action-sheet-close-button",
     "name": "Extended Action Sheet Close Button",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

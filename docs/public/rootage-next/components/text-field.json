@@ -7,6 +7,9 @@
   "data": {
     "id": "text-field",
     "name": "Text Field",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

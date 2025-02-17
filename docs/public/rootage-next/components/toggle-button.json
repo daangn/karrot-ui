@@ -7,6 +7,9 @@
   "data": {
     "id": "toggle-button",
     "name": "Toggle Button",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

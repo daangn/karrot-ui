@@ -7,6 +7,9 @@
   "data": {
     "id": "tab",
     "name": "Tab",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

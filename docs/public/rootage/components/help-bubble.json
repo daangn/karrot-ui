@@ -5,39 +5,120 @@
     "name": "Help Bubble"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "color": "$color.bg.neutral-solid",
-          "cornerRadius": "$radius.r3",
-          "paddingX": "$dimension.x3",
-          "paddingY": "$dimension.x3"
-        },
-        "arrow": {
-          "color": "$color.bg.neutral-solid",
-          "size": "$dimension.x2_5"
-        },
-        "title": {
-          "color": "$color.palette.static-white",
-          "fontSize": "$font-size.t3",
-          "fontWeight": "$font-weight.bold"
-        },
-        "description": {
-          "color": "$color.palette.static-white",
-          "fontSize": "$font-size.t3",
-          "fontWeight": "$font-weight.regular"
-        },
-        "closeButton": {
-          "color": "$color.palette.static-white",
-          "fromRight": "4px",
-          "fromTop": "4px",
-          "size": "14px",
-          "targetSize": "32px"
-        },
-        "backdrop": {
-          "color": "$color.bg.overlay"
-        }
+    "id": "help-bubble",
+    "name": "Help Bubble",
+    "schema": {
+      "slots": []
+    },
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-solid"
+                },
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.r3"
+                },
+                "paddingX": {
+                  "type": "dimension",
+                  "value": "$dimension.x3"
+                },
+                "paddingY": {
+                  "type": "dimension",
+                  "value": "$dimension.x3"
+                }
+              },
+              "arrow": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.neutral-solid"
+                },
+                "size": {
+                  "type": "dimension",
+                  "value": "$dimension.x2_5"
+                }
+              },
+              "title": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t3"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.bold"
+                }
+              },
+              "description": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fontSize": {
+                  "type": "dimension",
+                  "value": "$font-size.t3"
+                },
+                "fontWeight": {
+                  "type": "number",
+                  "value": "$font-weight.regular"
+                }
+              },
+              "closeButton": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.palette.static-white"
+                },
+                "fromRight": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 4,
+                    "unit": "px"
+                  }
+                },
+                "fromTop": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 4,
+                    "unit": "px"
+                  }
+                },
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 14,
+                    "unit": "px"
+                  }
+                },
+                "targetSize": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 32,
+                    "unit": "px"
+                  }
+                }
+              },
+              "backdrop": {
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.overlay"
+                }
+              }
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

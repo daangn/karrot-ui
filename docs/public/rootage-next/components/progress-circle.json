@@ -7,6 +7,65 @@
   "data": {
     "id": "progress-circle",
     "name": "Progress Circle",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "thickness",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "track",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "range",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "lengthDuration",
+              "type": "duration"
+            },
+            {
+              "name": "lengthTimingFunction",
+              "type": "timingFunction"
+            },
+            {
+              "name": "rotateDuration",
+              "type": "duration"
+            },
+            {
+              "name": "headTimingFunction",
+              "type": "timingFunction"
+            },
+            {
+              "name": "tailTimingFunction",
+              "type": "timingFunction"
+            },
+            {
+              "name": "rotateTimingFunction",
+              "type": "timingFunction"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {

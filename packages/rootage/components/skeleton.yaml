@@ -4,27 +4,28 @@ metadata:
   id: skeleton
   name: Skeleton
 data:
-  base:
-    enabled:
-      root:
-        color: $color.palette.gray-200
-      shimmer:
-        duration: 1.5s
-        timingFunction: $timing-function.easing
-        color: $gradient.shimmer
-  radius=0:
-    enabled:
-      root:
-        cornerRadius: 0px
-  radius=8:
-    enabled:
-      root:
-        cornerRadius: 8px
-  radius=16:
-    enabled:
-      root:
-        cornerRadius: 16px
-  radius=full:
-    enabled:
-      root:
-        cornerRadius: $radius.full
+  definitions:
+    base:
+      enabled:
+        root:
+          color: $color.palette.gray-200
+        shimmer:
+          duration: 1.5s
+          timingFunction: $timing-function.easing
+          color: $gradient.shimmer
+    radius=0:
+      enabled:
+        root:
+          cornerRadius: 0px
+    radius=8:
+      enabled:
+        root:
+          cornerRadius: 8px
+    radius=16:
+      enabled:
+        root:
+          cornerRadius: 16px
+    radius=full:
+      enabled:
+        root:
+          cornerRadius: $radius.full

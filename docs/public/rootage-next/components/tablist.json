@@ -7,6 +7,9 @@
   "data": {
     "id": "tablist",
     "name": "Tablist",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

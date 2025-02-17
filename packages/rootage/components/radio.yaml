@@ -9,21 +9,21 @@ data:
       - name: root
         properties:
           - name: color
-            type: string
+            type: color
           - name: size
-            type: string
+            type: dimension
           - name: strokeWidth
-            type: string
+            type: dimension
           - name: strokeColor
-            type: string
+            type: color
           - name: cornerRadius
-            type: string
+            type: dimension
       - name: icon
         properties:
           - name: color
-            type: string
+            type: color
           - name: size
-            type: string
+            type: dimension
   definitions:
     base:
       enabled:

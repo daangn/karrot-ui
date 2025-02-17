@@ -13,10 +13,6 @@ import {
   typescript,
   validate,
 } from "@seed-design/rootage-core";
-import {
-  parse as parseLegacy,
-  genJsonIndex as genJsonIndexLegacy,
-} from "@seed-design/rootage-core/legacy";
 import fs from "fs-extra";
 import path from "node:path";
 import YAML from "yaml";
@@ -52,7 +48,6 @@ async function prepare() {
   const fileContents = await Promise.all(filePaths.map((name) => fs.readFile(name, "utf-8")));
 
   const models = fileContents.map((content) => YAML.parse(content) as Authoring.Model);
-  const astLegacy = parseLegacy(models);
   const ctx = buildContext(
     models.map((model, i) => ({
       fileName: filePaths[i],
@@ -69,7 +64,6 @@ async function prepare() {
   }
 
   return {
-    astLegacy,
     ctx,
     filePaths,
     models,
@@ -232,47 +226,6 @@ async function writeJson() {
   fs.writeFileSync(indexPath, JSON.stringify(indexContent, null, 2));
 }
 
-async function writeJsonLegacy() {
-  const { astLegacy, models, filePaths } = await prepare();
-  const entries = filePaths.map((file, index) => ({ file, content: models[index] }));
-
-  for (const { file, content } of entries) {
-    const code = JSON.stringify(content, null, 2);
-    const relativePath = path.relative(artifactsDir, file);
-    const withoutExt = relativePath.replace(path.extname(relativePath), "");
-    const writePath = path.join(process.cwd(), dir, `${withoutExt}.json`);
-
-    console.log("Writing", withoutExt, "to", writePath);
-
-    if (!fs.existsSync(path.dirname(writePath))) {
-      fs.mkdirpSync(path.dirname(writePath));
-    }
-
-    fs.writeFileSync(writePath, code);
-  }
-
-  const code = JSON.stringify(astLegacy, null, 2);
-  const writePath = path.join(process.cwd(), dir, "parsed.json");
-
-  console.log("Writing parsed.json to", writePath);
-
-  if (!fs.existsSync(path.dirname(writePath))) {
-    fs.mkdirpSync(path.dirname(writePath));
-  }
-
-  fs.writeFileSync(writePath, code);
-
-  // Generate and write index.json
-  const artifactsPkg = JSON.parse(
-    fs.readFileSync(path.join(artifactsDir, "package.json"), "utf-8"),
-  );
-  const indexContent = genJsonIndexLegacy(models, artifactsPkg);
-  const indexPath = path.join(process.cwd(), dir, "index.json");
-
-  console.log("Writing index to", indexPath);
-  fs.writeFileSync(indexPath, JSON.stringify(indexContent, null, 2));
-}
-
 if (command === "token-ts") {
   console.log("Start");
   writeTokenTs().then(() => {
@@ -308,14 +261,6 @@ if (command === "json-schema") {
 if (command === "json") {
   console.log("Start");
   writeJson().then(() => {
-    console.log("Done");
-    process.exit(0);
-  });
-}
-
-if (command === "json-legacy") {
-  console.log("Start");
-  writeJsonLegacy().then(() => {
     console.log("Done");
     process.exit(0);
   });

@@ -7,6 +7,9 @@
   "data": {
     "id": "identity-placeholder",
     "name": "Identity Placeholder",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

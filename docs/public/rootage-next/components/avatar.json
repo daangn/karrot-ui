@@ -7,6 +7,40 @@
   "data": {
     "id": "avatar",
     "name": "Avatar",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "badge",
+          "properties": [
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {},

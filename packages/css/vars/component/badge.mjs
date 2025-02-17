@@ -28,21 +28,21 @@ export const vars = {
   "shapePill": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-radius-full)"
+        "cornerRadius": "var(--seed-radius-full)"
       }
     }
   },
   "shapeRectangleSizeLarge": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-radius-r1_5)"
+        "cornerRadius": "var(--seed-radius-r1_5)"
       }
     }
   },
   "shapeRectangleSizeMedium": {
     "enabled": {
       "root": {
-        "borderRadius": "var(--seed-radius-r1)"
+        "cornerRadius": "var(--seed-radius-r1)"
       }
     }
   },

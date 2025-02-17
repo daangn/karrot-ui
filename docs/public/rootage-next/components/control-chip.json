@@ -7,6 +7,128 @@
   "data": {
     "id": "control-chip",
     "name": "Control Chip",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "strokeColor",
+              "type": "color"
+            },
+            {
+              "name": "strokeWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "minHeight",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingY",
+              "type": "dimension"
+            },
+            {
+              "name": "gap",
+              "type": "dimension"
+            },
+            {
+              "name": "paddingX",
+              "type": "dimension"
+            },
+            {
+              "name": "minWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            },
+            {
+              "name": "lineHeight",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "prefixIcon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "suffixIcon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "fontWeight",
+              "type": "number"
+            },
+            {
+              "name": "fontSize",
+              "type": "dimension"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {},

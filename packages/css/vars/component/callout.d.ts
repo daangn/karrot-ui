@@ -24,11 +24,14 @@ export declare const vars: {
       "link": {
         "fontSize": "var(--seed-font-size-t4)",
         "lineHeight": "var(--seed-line-height-t4)",
-        "fontWeight": "var(--seed-font-weight-regular)"
+        "fontWeight": "var(--seed-font-weight-regular)",
+        "height": "var(--seed-dimension-x10)",
+        "marginLeft": "var(--seed-dimension-x4)"
       },
       "suffixIcon": {
+        "size": "var(--seed-dimension-x4)",
         "targetSize": "var(--seed-dimension-x10)",
-        "size": "var(--seed-dimension-x4)"
+        "marginLeft": "var(--seed-dimension-x4)"
       }
     }
   },

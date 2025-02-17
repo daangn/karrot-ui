@@ -7,6 +7,48 @@
   "data": {
     "id": "radio",
     "name": "Radio",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeWidth",
+              "type": "dimension"
+            },
+            {
+              "name": "strokeColor",
+              "type": "color"
+            },
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "properties": [
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
+        }
+      ]
+    },
     "definitions": [
       {
         "variants": {},

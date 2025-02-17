@@ -4,25 +4,26 @@ metadata:
   id: action-sheet-item
   name: Action Sheet Item
 data:
-  base:
-    enabled:
-      root:
-        color: $color.bg.layer-floating
-        minHeight: 50px
-        paddingX: $dimension.spacing-x.global-gutter
-        paddingY: $dimension.x3_5
-      label:
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t5
-        fontWeight: $font-weight.regular
-    pressed:
-      root:
-        color: $color.bg.layer-floating-pressed
-  tone=neutral:
-    enabled:
-      label:
-        color: $color.fg.neutral
-  tone=critical:
-    enabled:
-      label:
-        color: $color.fg.critical
+  definitions:
+    base:
+      enabled:
+        root:
+          color: $color.bg.layer-floating
+          minHeight: 50px
+          paddingX: $dimension.spacing-x.global-gutter
+          paddingY: $dimension.x3_5
+        label:
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t5
+          fontWeight: $font-weight.regular
+      pressed:
+        root:
+          color: $color.bg.layer-floating-pressed
+    tone=neutral:
+      enabled:
+        label:
+          color: $color.fg.neutral
+    tone=critical:
+      enabled:
+        label:
+          color: $color.fg.critical

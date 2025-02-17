@@ -7,6 +7,9 @@
   "data": {
     "id": "skeleton",
     "name": "Skeleton",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

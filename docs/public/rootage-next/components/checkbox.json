@@ -7,6 +7,9 @@
   "data": {
     "id": "checkbox",
     "name": "Checkbox",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},

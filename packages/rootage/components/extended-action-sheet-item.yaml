@@ -4,32 +4,33 @@ metadata:
   id: extended-action-sheet-item
   name: Extended Action Sheet Item
 data:
-  base:
-    enabled:
-      root:
-        color: $color.bg.neutral-weak
-        minHeight: 52px
-        paddingX: $dimension.x4
-        paddingY: $dimension.x3_5
-        gap: $dimension.x3_5
-      prefixIcon:
-        size: 22px
-      label:
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t5
-        fontWeight: $font-weight.regular
-    pressed:
-      root:
-        color: $color.bg.neutral-weak-pressed
-  tone=neutral:
-    enabled:
-      prefixIcon:
-        color: $color.fg.neutral
-      label:
-        color: $color.fg.neutral
-  tone=critical:
-    enabled:
-      prefixIcon:
-        color: $color.fg.critical
-      label:
-        color: $color.fg.critical
+  definitions:
+    base:
+      enabled:
+        root:
+          color: $color.bg.neutral-weak
+          minHeight: 52px
+          paddingX: $dimension.x4
+          paddingY: $dimension.x3_5
+          gap: $dimension.x3_5
+        prefixIcon:
+          size: 22px
+        label:
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t5
+          fontWeight: $font-weight.regular
+      pressed:
+        root:
+          color: $color.bg.neutral-weak-pressed
+    tone=neutral:
+      enabled:
+        prefixIcon:
+          color: $color.fg.neutral
+        label:
+          color: $color.fg.neutral
+    tone=critical:
+      enabled:
+        prefixIcon:
+          color: $color.fg.critical
+        label:
+          color: $color.fg.critical

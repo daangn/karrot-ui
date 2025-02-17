@@ -5,86 +5,295 @@
     "name": "Avatar"
   },
   "data": {
-    "base": {
-      "enabled": {
-        "root": {
-          "cornerRadius": "$radius.full"
+    "id": "avatar",
+    "name": "Avatar",
+    "schema": {
+      "slots": [
+        {
+          "name": "root",
+          "properties": [
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
         },
-        "badge": {
-          "cornerRadius": "$radius.full",
-          "color": "$color.bg.layer-default"
+        {
+          "name": "badge",
+          "properties": [
+            {
+              "name": "cornerRadius",
+              "type": "dimension"
+            },
+            {
+              "name": "color",
+              "type": "color"
+            },
+            {
+              "name": "size",
+              "type": "dimension"
+            }
+          ]
         }
-      }
+      ]
     },
-    "size=20": {
-      "enabled": {
-        "root": {
-          "size": "20px"
+    "definitions": [
+      {
+        "variants": {},
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                }
+              },
+              "badge": {
+                "cornerRadius": {
+                  "type": "dimension",
+                  "value": "$radius.full"
+                },
+                "color": {
+                  "type": "color",
+                  "value": "$color.bg.layer-default"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "20"
         },
-        "badge": {
-          "size": "10px"
-        }
-      }
-    },
-    "size=24": {
-      "enabled": {
-        "root": {
-          "size": "24px"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 20,
+                    "unit": "px"
+                  }
+                }
+              },
+              "badge": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 10,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "24"
         },
-        "badge": {
-          "size": "12px"
-        }
-      }
-    },
-    "size=36": {
-      "enabled": {
-        "root": {
-          "size": "36px"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                }
+              },
+              "badge": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 12,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "36"
         },
-        "badge": {
-          "size": "16px"
-        }
-      }
-    },
-    "size=48": {
-      "enabled": {
-        "root": {
-          "size": "48px"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 36,
+                    "unit": "px"
+                  }
+                }
+              },
+              "badge": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 16,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "48"
         },
-        "badge": {
-          "size": "24px"
-        }
-      }
-    },
-    "size=64": {
-      "enabled": {
-        "root": {
-          "size": "64px"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 48,
+                    "unit": "px"
+                  }
+                }
+              },
+              "badge": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "64"
         },
-        "badge": {
-          "size": "24px"
-        }
-      }
-    },
-    "size=80": {
-      "enabled": {
-        "root": {
-          "size": "80px"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 64,
+                    "unit": "px"
+                  }
+                }
+              },
+              "badge": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "80"
         },
-        "badge": {
-          "size": "24px"
-        }
-      }
-    },
-    "size=96": {
-      "enabled": {
-        "root": {
-          "size": "96px"
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 80,
+                    "unit": "px"
+                  }
+                }
+              },
+              "badge": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 24,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "variants": {
+          "size": "96"
         },
-        "badge": {
-          "size": "32px"
-        }
+        "definitions": [
+          {
+            "states": [
+              "enabled"
+            ],
+            "slots": {
+              "root": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 96,
+                    "unit": "px"
+                  }
+                }
+              },
+              "badge": {
+                "size": {
+                  "type": "dimension",
+                  "value": {
+                    "value": 32,
+                    "unit": "px"
+                  }
+                }
+              }
+            }
+          }
+        ]
       }
-    }
+    ]
   }
 }

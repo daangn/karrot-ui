@@ -8,7 +8,6 @@
     "collection": "color",
     "tokens": {
       "$gradient.shimmer": {
-        "description": "Shimmer effect, used for loading states",
         "values": {
           "theme-light": {
             "type": "gradient",
@@ -52,7 +51,8 @@
               }
             ]
           }
-        }
+        },
+        "description": "Shimmer effect, used for loading states"
       }
     }
   }

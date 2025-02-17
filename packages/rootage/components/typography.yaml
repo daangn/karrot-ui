@@ -4,135 +4,136 @@ metadata:
   id: typography
   name: Typography
 data:
-  textStyle=screenTitle:
-    enabled:
-      root:
-        fontSize: $font-size.t10
-        lineHeight: $line-height.t10
-        fontWeight: $font-weight.bold
-  textStyle=articleBody:
-    enabled:
-      root:
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t6
-        fontWeight: $font-weight.regular
-  textStyle=t1Regular:
-    enabled:
-      root:
-        fontSize: $font-size.t1
-        lineHeight: $line-height.t1
-        fontWeight: $font-weight.regular
-  textStyle=t1Medium:
-    enabled:
-      root:
-        fontSize: $font-size.t1
-        lineHeight: $line-height.t1
-        fontWeight: $font-weight.medium
-  textStyle=t1Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t1
-        lineHeight: $line-height.t1
-        fontWeight: $font-weight.bold
-  textStyle=t2Regular:
-    enabled:
-      root:
-        fontSize: $font-size.t2
-        lineHeight: $line-height.t2
-        fontWeight: $font-weight.regular
-  textStyle=t2Medium:
-    enabled:
-      root:
-        fontSize: $font-size.t2
-        lineHeight: $line-height.t2
-        fontWeight: $font-weight.medium
-  textStyle=t2Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t2
-        lineHeight: $line-height.t2
-        fontWeight: $font-weight.bold
-  textStyle=t3Regular:
-    enabled:
-      root:
-        fontSize: $font-size.t3
-        lineHeight: $line-height.t3
-        fontWeight: $font-weight.regular
-  textStyle=t3Medium:
-    enabled:
-      root:
-        fontSize: $font-size.t3
-        lineHeight: $line-height.t3
-        fontWeight: $font-weight.medium
-  textStyle=t3Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t3
-        lineHeight: $line-height.t3
-        fontWeight: $font-weight.bold
-  textStyle=t4Regular:
-    enabled:
-      root:
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
-        fontWeight: $font-weight.regular
-  textStyle=t4Medium:
-    enabled:
-      root:
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
-        fontWeight: $font-weight.medium
-  textStyle=t4Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t4
-        lineHeight: $line-height.t4
-        fontWeight: $font-weight.bold
-  textStyle=t5Regular:
-    enabled:
-      root:
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t5
-        fontWeight: $font-weight.regular
-  textStyle=t5Medium:
-    enabled:
-      root:
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t5
-        fontWeight: $font-weight.medium
-  textStyle=t5Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t5
-        lineHeight: $line-height.t5
-        fontWeight: $font-weight.bold
-  textStyle=t6Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t6
-        lineHeight: $line-height.t6
-        fontWeight: $font-weight.bold
-  textStyle=t7Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t7
-        lineHeight: $line-height.t7
-        fontWeight: $font-weight.bold
-  textStyle=t8Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t8
-        lineHeight: $line-height.t8
-        fontWeight: $font-weight.bold
-  textStyle=t9Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t9
-        lineHeight: $line-height.t9
-        fontWeight: $font-weight.bold
-  textStyle=t10Bold:
-    enabled:
-      root:
-        fontSize: $font-size.t10
-        lineHeight: $line-height.t10
-        fontWeight: $font-weight.bold
+  definitions:
+    textStyle=screenTitle:
+      enabled:
+        root:
+          fontSize: $font-size.t10
+          lineHeight: $line-height.t10
+          fontWeight: $font-weight.bold
+    textStyle=articleBody:
+      enabled:
+        root:
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t6
+          fontWeight: $font-weight.regular
+    textStyle=t1Regular:
+      enabled:
+        root:
+          fontSize: $font-size.t1
+          lineHeight: $line-height.t1
+          fontWeight: $font-weight.regular
+    textStyle=t1Medium:
+      enabled:
+        root:
+          fontSize: $font-size.t1
+          lineHeight: $line-height.t1
+          fontWeight: $font-weight.medium
+    textStyle=t1Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t1
+          lineHeight: $line-height.t1
+          fontWeight: $font-weight.bold
+    textStyle=t2Regular:
+      enabled:
+        root:
+          fontSize: $font-size.t2
+          lineHeight: $line-height.t2
+          fontWeight: $font-weight.regular
+    textStyle=t2Medium:
+      enabled:
+        root:
+          fontSize: $font-size.t2
+          lineHeight: $line-height.t2
+          fontWeight: $font-weight.medium
+    textStyle=t2Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t2
+          lineHeight: $line-height.t2
+          fontWeight: $font-weight.bold
+    textStyle=t3Regular:
+      enabled:
+        root:
+          fontSize: $font-size.t3
+          lineHeight: $line-height.t3
+          fontWeight: $font-weight.regular
+    textStyle=t3Medium:
+      enabled:
+        root:
+          fontSize: $font-size.t3
+          lineHeight: $line-height.t3
+          fontWeight: $font-weight.medium
+    textStyle=t3Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t3
+          lineHeight: $line-height.t3
+          fontWeight: $font-weight.bold
+    textStyle=t4Regular:
+      enabled:
+        root:
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+          fontWeight: $font-weight.regular
+    textStyle=t4Medium:
+      enabled:
+        root:
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+          fontWeight: $font-weight.medium
+    textStyle=t4Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+          fontWeight: $font-weight.bold
+    textStyle=t5Regular:
+      enabled:
+        root:
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t5
+          fontWeight: $font-weight.regular
+    textStyle=t5Medium:
+      enabled:
+        root:
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t5
+          fontWeight: $font-weight.medium
+    textStyle=t5Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t5
+          fontWeight: $font-weight.bold
+    textStyle=t6Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t6
+          lineHeight: $line-height.t6
+          fontWeight: $font-weight.bold
+    textStyle=t7Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t7
+          lineHeight: $line-height.t7
+          fontWeight: $font-weight.bold
+    textStyle=t8Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t8
+          lineHeight: $line-height.t8
+          fontWeight: $font-weight.bold
+    textStyle=t9Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t9
+          lineHeight: $line-height.t9
+          fontWeight: $font-weight.bold
+    textStyle=t10Bold:
+      enabled:
+        root:
+          fontSize: $font-size.t10
+          lineHeight: $line-height.t10
+          fontWeight: $font-weight.bold

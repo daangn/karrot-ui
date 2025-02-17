@@ -7,6 +7,9 @@
   "data": {
     "id": "link-with-icon",
     "name": "Link With Icon",
+    "schema": {
+      "slots": []
+    },
     "definitions": [
       {
         "variants": {},
