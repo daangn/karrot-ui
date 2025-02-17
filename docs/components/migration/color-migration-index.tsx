@@ -1,11 +1,14 @@
-import { resolveToken, type AST } from "@seed-design/rootage-core";
 import { getRootage, stringifyValueLit } from "@/components/rootage";
-import { ExpandableTokenCell } from "@/components/expandable-token-cell";
-import { Fragment } from "react";
-import type { FoundationTokenMapping } from "@seed-design/migration-index";
+import {
+  scaleColorMappings,
+  semanticColorMappings,
+  staticColorMappings,
+} from "@seed-design/migration-index/color";
+import { resolveToken, type AST } from "@seed-design/rootage-core";
+import { ColorMigrationRow } from "./color-migration-row";
 
-interface TokenMappingTableProps {
-  mappings: FoundationTokenMapping[];
+interface ColorMigrationIndexProps {
+  prefix: "semantic" | "scale" | "static";
 }
 
 export interface TokenMappingItem {
@@ -18,8 +21,13 @@ export interface TokenMappingItem {
   description?: string;
 }
 
-export async function TokenMappingTable({ mappings }: TokenMappingTableProps) {
+export async function ColorMigrationIndex({ prefix }: ColorMigrationIndexProps) {
   const rootage = await getRootage();
+  const mappings = {
+    semantic: semanticColorMappings,
+    scale: scaleColorMappings,
+    static: staticColorMappings,
+  }[prefix];
 
   const tableItems: TokenMappingItem[] = mappings.map((mapping) => ({
     previousTokenId: mapping.previous,
@@ -54,21 +62,7 @@ export async function TokenMappingTable({ mappings }: TokenMappingTableProps) {
       </thead>
       <tbody>
         {tableItems.map((item) => (
-          <tr key={item.previousTokenId}>
-            <td>{item.previousTokenId}</td>
-            <td className="align-middle space-y-2">
-              {item.newTokens.length > 0 &&
-                item.newTokens.map((newToken, index) => (
-                  <Fragment key={newToken.id}>
-                    <ExpandableTokenCell newToken={newToken} />
-                    {index !== item.newTokens.length - 1 && (
-                      <div className="text-xs text-center">또는</div>
-                    )}
-                  </Fragment>
-                ))}
-            </td>
-            <td>{item.description}</td>
-          </tr>
+          <ColorMigrationRow key={item.previousTokenId} item={item} />
         ))}
       </tbody>
     </table>

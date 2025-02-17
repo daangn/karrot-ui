@@ -4,7 +4,7 @@ import * as V2Icons from "@seed-design/react-icon";
 import Link from "fumadocs-core/link";
 import * as changecase from "change-case";
 
-export const V3 = ({
+export const V3Icon = ({
   name,
   type,
 }: {
@@ -29,7 +29,7 @@ export const V3 = ({
   );
 };
 
-export const V2 = ({ name }: { name: keyof typeof V2Icons }) => {
+export const V2Icon = ({ name }: { name: keyof typeof V2Icons }) => {
   const OldIcon = V2Icons[name];
 
   if (!OldIcon) {
@@ -44,7 +44,7 @@ export const V2 = ({ name }: { name: keyof typeof V2Icons }) => {
   );
 };
 
-export const V2Color = ({ name }: { name: keyof typeof V2ServiceIcons }) => {
+export const V2IconColor = ({ name }: { name: keyof typeof V2ServiceIcons }) => {
   return (
     <div className="flex items-center gap-2">
       {V2ServiceIcons[name]}

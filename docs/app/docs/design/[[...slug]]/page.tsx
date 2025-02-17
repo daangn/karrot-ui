@@ -1,5 +1,5 @@
 import { source } from "@/app/source";
-import { mdxComponents } from "@/components/mdx/mdx-components";
+import { mdxComponents } from "@/components/mdx-components";
 import { client } from "@/sanity/lib/client";
 import { GUIDELINE_QUERY } from "@/sanity/lib/queries";
 import { PortableContent } from "@/sanity/lib/sanity-content";

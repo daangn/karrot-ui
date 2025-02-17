@@ -1,5 +1,5 @@
 import { source } from "@/app/source";
-import { mdxComponents } from "@/components/mdx/mdx-components";
+import { mdxComponents } from "@/components/mdx-components";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";

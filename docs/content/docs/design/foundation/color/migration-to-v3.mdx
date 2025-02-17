@@ -3,9 +3,7 @@ title: Migration to V3
 description: SEED V2 색상에서 마이그레이션하는 방법을 안내합니다.
 ---
 
-import { TokenMappingTable } from "@/components/token-mapping-table";
 import { IconPaletteLine } from "@daangn/react-monochrome-icon";
-import { semanticColorMappings, scaleColorMappings, staticColorMappings } from "@seed-design/migration-index/color";
 
 ## 개요
 
@@ -15,21 +13,15 @@ V2 색상 토큰을 사용 중인 경우, V3 색상 토큰 맵핑을 활용하�
 
 ### Semantic Tokens
 
-<TokenMappingTable
-  mappings={semanticColorMappings}
-/>
+<ColorMigrationIndex prefix="semantic" />
 
 ### Scale Tokens
 
-<TokenMappingTable
-  mappings={scaleColorMappings}
-/>
+<ColorMigrationIndex prefix="scale" />
 
 ### Static Tokens
 
-<TokenMappingTable
-  mappings={staticColorMappings}
-/>
+<ColorMigrationIndex prefix="static" />
 
 ## 링크
 
