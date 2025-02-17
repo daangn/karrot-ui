@@ -5,6 +5,8 @@ import { stringifyVariants } from "./rootage";
 
 interface ComponentSpecTableProps {
   id: string;
+
+  variants?: string[];
 }
 
 export async function ComponentSpecBlock(props: ComponentSpecTableProps) {
@@ -17,6 +19,10 @@ export async function ComponentSpecBlock(props: ComponentSpecTableProps) {
 
   return componentSpec.body.map((variantDecl) => {
     const variantKey = stringifyVariants(variantDecl.variants);
+    if (props.variants && !props.variants.includes(variantKey)) {
+      return null;
+    }
+
     return (
       <Fragment key={variantKey}>
         <h3>{variantKey}</h3>
