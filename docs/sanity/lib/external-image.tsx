@@ -12,14 +12,11 @@ export const ExternalImage = ({ value, className }: ExternalImageProps) => {
   const { imageUrl, alt } = value;
 
   return (
-    <div className={clsx("relative aspect-video my-4", className)}>
+    <div className={clsx("relative my-4", className)}>
       <img
         src={imageUrl}
         alt={alt || "외부 이미지"}
-        className={clsx(
-          "aspect-video w-full h-full object-cover rounded-2xl overflow-hidden",
-          className,
-        )}
+        className={clsx("w-full h-full object-cover rounded-2xl overflow-hidden", className)}
         loading="lazy"
       />
     </div>
