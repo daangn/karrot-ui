@@ -1899,12 +1899,24 @@
   line-height: var(--seed-line-height-t2);
 }
 
+.seed-badge__root--shape_pill {
+  border-radius: var(--seed-radius-full);
+}
+
 .seed-badge__root--variant_weak {
   font-weight: var(--seed-font-weight-medium);
 }
 
 .seed-badge__root--variant_solid, .seed-badge__root--variant_outline {
   font-weight: var(--seed-font-weight-bold);
+}
+
+.seed-badge__root--shape_rectangle-size_medium {
+  border-radius: var(--seed-radius-r1);
+}
+
+.seed-badge__root--shape_rectangle-size_large {
+  border-radius: var(--seed-radius-r1_5);
 }
 
 .seed-badge__root--tone_neutral-variant_weak {
