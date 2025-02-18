@@ -1,4 +1,4 @@
-import { OnlyIcon, Fab as SeedFab, type FabProps as SeedFabProps } from "@seed-design/react";
+import { Icon, Fab as SeedFab, type FabProps as SeedFabProps } from "@seed-design/react";
 import * as React from "react";
 
 export interface FabProps extends Omit<SeedFabProps, "asChild"> {}
@@ -14,7 +14,7 @@ export const Fab = React.forwardRef<HTMLButtonElement, FabProps>(
 
     return (
       <SeedFab ref={ref} {...otherProps}>
-        <OnlyIcon svg={children} />
+        <Icon svg={children} />
       </SeedFab>
     );
   },

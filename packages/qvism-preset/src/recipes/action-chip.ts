@@ -67,6 +67,9 @@ const actionChip = defineRecipe({
           ...count({
             fontSize: vars.sizeMedium.enabled.count.fontSize,
           }),
+          ...prefixIcon({ size: vars.sizeMedium.enabled.prefixIcon.size }),
+          ...suffixIcon({ size: vars.sizeMedium.enabled.suffixIcon.size }),
+          ...onlyIcon({ size: vars.sizeMediumLayoutIconOnly.enabled.icon.size }),
         },
       },
       small: {
@@ -79,6 +82,9 @@ const actionChip = defineRecipe({
           ...count({
             fontSize: vars.sizeSmall.enabled.count.fontSize,
           }),
+          ...prefixIcon({ size: vars.sizeSmall.enabled.prefixIcon.size }),
+          ...suffixIcon({ size: vars.sizeSmall.enabled.suffixIcon.size }),
+          ...onlyIcon({ size: vars.sizeSmallLayoutIconOnly.enabled.icon.size }),
         },
       },
     },
@@ -94,8 +100,6 @@ const actionChip = defineRecipe({
       css: {
         root: {
           paddingInline: vars.sizeMediumLayoutWithText.enabled.root.paddingX,
-          ...prefixIcon({ size: vars.sizeMedium.enabled.prefixIcon.size }),
-          ...suffixIcon({ size: vars.sizeMedium.enabled.suffixIcon.size }),
         },
       },
     },
@@ -105,7 +109,6 @@ const actionChip = defineRecipe({
       css: {
         root: {
           minWidth: vars.sizeMediumLayoutIconOnly.enabled.root.minWidth,
-          ...onlyIcon({ size: vars.sizeMediumLayoutIconOnly.enabled.icon.size }),
         },
       },
     },
@@ -115,8 +118,6 @@ const actionChip = defineRecipe({
       css: {
         root: {
           paddingInline: vars.sizeSmallLayoutWithText.enabled.root.paddingX,
-          ...prefixIcon({ size: vars.sizeSmall.enabled.prefixIcon.size }),
-          ...suffixIcon({ size: vars.sizeSmall.enabled.suffixIcon.size }),
         },
       },
     },
@@ -126,7 +127,6 @@ const actionChip = defineRecipe({
       css: {
         root: {
           minWidth: vars.sizeSmallLayoutIconOnly.enabled.root.minWidth,
-          ...onlyIcon({ size: vars.sizeSmallLayoutIconOnly.enabled.icon.size }),
         },
       },
     },

@@ -7,7 +7,7 @@ import { controlChipVariantMap } from "@seed-design/css/recipes/control-chip";
 import { SeedThemeDecorator } from "./components/decorator";
 import { VariantTable } from "./components/variant-table";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
-import { Count, PrefixIcon, SuffixIcon } from "@seed-design/react";
+import { Count, Icon, PrefixIcon, SuffixIcon } from "@seed-design/react";
 
 const meta = {
   component: ControlChip.Toggle,
@@ -35,7 +35,7 @@ const conditionMap = {
         </>
       ),
     },
-    iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
+    iconOnly: { layout: "iconOnly", children: <Icon svg={<IconBellFill />} /> },
   },
 };
 

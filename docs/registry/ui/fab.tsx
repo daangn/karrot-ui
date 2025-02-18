@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  OnlyIcon,
+  Icon,
   Fab as SeedFab,
   type FabProps as SeedFabProps,
 } from "@seed-design/react";
@@ -22,7 +22,7 @@ export const Fab = React.forwardRef<HTMLButtonElement, FabProps>(
 
     return (
       <SeedFab ref={ref} {...otherProps}>
-        <OnlyIcon svg={children} />
+        <Icon svg={children} />
       </SeedFab>
     );
   },

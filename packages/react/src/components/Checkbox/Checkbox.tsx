@@ -5,7 +5,7 @@ import { checkbox, type CheckboxVariantProps } from "@seed-design/css/recipes/ch
 import { forwardRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon } from "../private/Icon";
+import { InternalIcon } from "../private/Icon";
 
 const { withProvider, withContext, useClassNames } = createStyleContext(checkbox);
 const withStateProps = createWithStateProps([useCheckboxContext]);
@@ -72,9 +72,9 @@ export const CheckboxIndicator = forwardRef<SVGSVGElement, CheckboxIndicatorProp
       );
     }
 
-    if (indeterminate) return <Icon ref={ref} svg={indeterminateSvg} {...mergedProps} />;
-    if (checked) return <Icon ref={ref} svg={checkedSvg} {...mergedProps} />;
-    if (uncheckedSvg) return <Icon ref={ref} svg={uncheckedSvg} {...mergedProps} />;
+    if (indeterminate) return <InternalIcon ref={ref} svg={indeterminateSvg} {...mergedProps} />;
+    if (checked) return <InternalIcon ref={ref} svg={checkedSvg} {...mergedProps} />;
+    if (uncheckedSvg) return <InternalIcon ref={ref} svg={uncheckedSvg} {...mergedProps} />;
     return null;
   },
 );

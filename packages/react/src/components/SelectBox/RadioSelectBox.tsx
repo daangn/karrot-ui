@@ -7,7 +7,7 @@ import { selectBox } from "@seed-design/css/recipes/select-box";
 import { selectBoxGroup } from "@seed-design/css/recipes/select-box-group";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon, type IconProps } from "../private/Icon";
+import { InternalIcon, type InternalIconProps } from "../private/Icon";
 
 const { withProvider: withGroupProvider } = createStyleContext(selectBoxGroup);
 const { withProvider, withContext } = createStyleContext(selectBox);
@@ -61,10 +61,10 @@ export const RadioSelectBoxControl = withContext<HTMLDivElement, RadioSelectBoxC
   "radioControl",
 );
 
-export interface RadioSelectBoxIconProps extends IconProps {}
+export interface RadioSelectBoxIconProps extends InternalIconProps {}
 
 export const RadioSelectBoxIcon = withContext<SVGSVGElement, RadioSelectBoxIconProps>(
-  withStateProps(Icon),
+  withStateProps(InternalIcon),
   "radioIcon",
 );
 

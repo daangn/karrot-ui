@@ -1,8 +1,8 @@
 export {
-  OnlyIcon,
+  Icon,
   PrefixIcon,
   SuffixIcon,
-  type OnlyIconProps,
+  type IconProps,
   type PrefixIconProps,
   type SuffixIconProps,
 } from "./Icon";

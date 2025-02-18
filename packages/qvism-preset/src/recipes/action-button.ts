@@ -287,6 +287,16 @@ const actionButton = defineRecipe({
 
           "--size": vars.sizeXsmall.enabled.progressCircle.size,
           "--thickness": vars.sizeXsmall.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeXsmallLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeXsmallLayoutWithText.enabled.suffixIcon.size,
+          }),
+          ...onlyIcon({
+            size: vars.sizeXsmallLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
       small: {
@@ -296,6 +306,16 @@ const actionButton = defineRecipe({
 
           "--size": vars.sizeSmall.enabled.progressCircle.size,
           "--thickness": vars.sizeSmall.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeSmallLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeSmallLayoutWithText.enabled.suffixIcon.size,
+          }),
+          ...onlyIcon({
+            size: vars.sizeSmallLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
       medium: {
@@ -305,6 +325,16 @@ const actionButton = defineRecipe({
 
           "--size": vars.sizeMedium.enabled.progressCircle.size,
           "--thickness": vars.sizeMedium.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeMediumLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeMediumLayoutWithText.enabled.suffixIcon.size,
+          }),
+          ...onlyIcon({
+            size: vars.sizeMediumLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
       large: {
@@ -314,6 +344,16 @@ const actionButton = defineRecipe({
 
           "--size": vars.sizeLarge.enabled.progressCircle.size,
           "--thickness": vars.sizeLarge.enabled.progressCircle.thickness,
+
+          ...prefixIcon({
+            size: vars.sizeLargeLayoutWithText.enabled.prefixIcon.size,
+          }),
+          ...suffixIcon({
+            size: vars.sizeLargeLayoutWithText.enabled.suffixIcon.size,
+          }),
+          ...onlyIcon({
+            size: vars.sizeLargeLayoutIconOnly.enabled.icon.size,
+          }),
         },
       },
     },
@@ -332,13 +372,6 @@ const actionButton = defineRecipe({
           paddingInline: vars.sizeXsmallLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeXsmallLayoutWithText.enabled.root.paddingY,
           fontSize: vars.sizeXsmallLayoutWithText.enabled.label.fontSize,
-
-          ...prefixIcon({
-            size: vars.sizeXsmallLayoutWithText.enabled.prefixIcon.size,
-          }),
-          ...suffixIcon({
-            size: vars.sizeXsmallLayoutWithText.enabled.suffixIcon.size,
-          }),
         },
       },
     },
@@ -350,10 +383,6 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeXsmallLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeXsmallLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeXsmallLayoutIconOnly.enabled.root.paddingY,
-
-          ...onlyIcon({
-            size: vars.sizeXsmallLayoutIconOnly.enabled.icon.size,
-          }),
         },
       },
     },
@@ -366,13 +395,6 @@ const actionButton = defineRecipe({
           paddingInline: vars.sizeSmallLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeSmallLayoutWithText.enabled.root.paddingY,
           fontSize: vars.sizeSmallLayoutWithText.enabled.label.fontSize,
-
-          ...prefixIcon({
-            size: vars.sizeSmallLayoutWithText.enabled.prefixIcon.size,
-          }),
-          ...suffixIcon({
-            size: vars.sizeSmallLayoutWithText.enabled.suffixIcon.size,
-          }),
         },
       },
     },
@@ -384,10 +406,6 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeSmallLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeSmallLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeSmallLayoutIconOnly.enabled.root.paddingY,
-
-          ...onlyIcon({
-            size: vars.sizeSmallLayoutIconOnly.enabled.icon.size,
-          }),
         },
       },
     },
@@ -400,13 +418,6 @@ const actionButton = defineRecipe({
           paddingInline: vars.sizeMediumLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeMediumLayoutWithText.enabled.root.paddingY,
           fontSize: vars.sizeMediumLayoutWithText.enabled.label.fontSize,
-
-          ...prefixIcon({
-            size: vars.sizeMediumLayoutWithText.enabled.prefixIcon.size,
-          }),
-          ...suffixIcon({
-            size: vars.sizeMediumLayoutWithText.enabled.suffixIcon.size,
-          }),
         },
       },
     },
@@ -418,10 +429,6 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeMediumLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeMediumLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeMediumLayoutIconOnly.enabled.root.paddingY,
-
-          ...onlyIcon({
-            size: vars.sizeMediumLayoutIconOnly.enabled.icon.size,
-          }),
         },
       },
     },
@@ -434,13 +441,6 @@ const actionButton = defineRecipe({
           paddingInline: vars.sizeLargeLayoutWithText.enabled.root.paddingX,
           paddingBlock: vars.sizeLargeLayoutWithText.enabled.root.paddingY,
           fontSize: vars.sizeLargeLayoutWithText.enabled.label.fontSize,
-
-          ...prefixIcon({
-            size: vars.sizeLargeLayoutWithText.enabled.prefixIcon.size,
-          }),
-          ...suffixIcon({
-            size: vars.sizeLargeLayoutWithText.enabled.suffixIcon.size,
-          }),
         },
       },
     },
@@ -452,10 +452,6 @@ const actionButton = defineRecipe({
           minWidth: vars.sizeLargeLayoutIconOnly.enabled.root.minWidth,
           paddingInline: vars.sizeLargeLayoutIconOnly.enabled.root.paddingX,
           paddingBlock: vars.sizeLargeLayoutIconOnly.enabled.root.paddingY,
-
-          ...onlyIcon({
-            size: vars.sizeLargeLayoutIconOnly.enabled.icon.size,
-          }),
         },
       },
     },

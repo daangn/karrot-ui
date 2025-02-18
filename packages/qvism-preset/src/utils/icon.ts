@@ -62,12 +62,39 @@ export function onlyIcon(props: Pick<IconProps, "size" | "color">) {
   const result: Record<`--${string}`, string> = {};
 
   if (props.size) {
-    result["--seed-only-icon-size"] = props.size;
+    result["--seed-icon-size"] = props.size;
   }
 
   if (props.color) {
-    result["--seed-only-icon-color"] = props.color;
+    result["--seed-icon-color"] = props.color;
   }
 
   return result;
+
+  // return {
+  //   ...result,
+
+  //   "@supports (selector(:where(div)))": {
+  //     "& :where(svg)": {
+  //       display: "inline-flex",
+  //       alignItems: "center",
+  //       justifyContent: "center",
+  //       flexShrink: 0,
+  //       width: props.size,
+  //       height: props.size,
+  //       color: props.color,
+  //     },
+  //   },
+  //   "@supports not (selector(:where(div)))": {
+  //     "& svg": {
+  //       display: "inline-flex",
+  //       alignItems: "center",
+  //       justifyContent: "center",
+  //       flexShrink: 0,
+  //       width: props.size,
+  //       height: props.size,
+  //       color: props.color,
+  //     },
+  //   },
+  // };
 }
