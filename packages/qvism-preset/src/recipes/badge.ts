@@ -45,7 +45,7 @@ const badge = defineRecipe({
       rectangle: {},
       pill: {
         root: {
-          borderRadius: vars.shapePill.enabled.root.borderRadius,
+          borderRadius: vars.shapePill.enabled.root.cornerRadius,
         },
       },
     },
@@ -80,7 +80,7 @@ const badge = defineRecipe({
       size: "medium",
       css: {
         root: {
-          borderRadius: vars.shapeRectangleSizeMedium.enabled.root.borderRadius,
+          borderRadius: vars.shapeRectangleSizeMedium.enabled.root.cornerRadius,
         },
       },
     },
@@ -89,7 +89,7 @@ const badge = defineRecipe({
       size: "large",
       css: {
         root: {
-          borderRadius: vars.shapeRectangleSizeLarge.enabled.root.borderRadius,
+          borderRadius: vars.shapeRectangleSizeLarge.enabled.root.cornerRadius,
         },
       },
     },
