@@ -1,5 +1,4 @@
-import { remarkStructure } from "fumadocs-core/mdx-plugins";
-import { remarkInstall } from "fumadocs-docgen";
+import { fileGenerator, remarkDocGen, remarkInstall } from "fumadocs-docgen";
 import { defineConfig, defineDocs } from "fumadocs-mdx/config";
 
 export const docs = defineDocs({
@@ -21,6 +20,7 @@ export default defineConfig({
           },
         },
       ],
+      [remarkDocGen, { generators: [fileGenerator()] }],
     ],
     rehypeCodeOptions: {
       lazy: true,
