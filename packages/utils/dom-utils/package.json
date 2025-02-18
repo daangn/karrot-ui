@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/dom-utils",
-  "version": "0.0.0-alpha-20241030023710",
+  "version": "0.0.1-rc.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
@@ -32,7 +32,7 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.5",
     "esbuild": "^0.25.0"
   },
   "publishConfig": {

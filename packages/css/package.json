@@ -1,6 +1,6 @@
 {
   "name": "@seed-design/css",
-  "version": "0.0.0",
+  "version": "0.0.1-rc.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daangn/seed-design.git",
@@ -41,7 +41,7 @@
     "*.css"
   ],
   "devDependencies": {
-    "@seed-design/rootage-cli": "0.0.0",
-    "@seed-design/qvism-cli": "0.0.0"
+    "@seed-design/qvism-cli": "0.0.0",
+    "@seed-design/rootage-cli": "0.0.0"
   }
 }

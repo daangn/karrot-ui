@@ -8,6 +8,8 @@
   "updateInternalDependencies": "patch",
   "ignore": [
     "docs",
+    "@seed-design/qvism-cli",
+    "@seed-design/qvism-preset",
     "@seed-design/stackflow-spa",
     "@seed-design/figma-checklist-widget",
     "@seed-design/figma-codegen",
