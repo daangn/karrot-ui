@@ -12,7 +12,7 @@
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-use-callback-ref": "^1.1.0",
     "@seed-design/css": "0.0.1-rc.0",
-    "@seed-design/react": "0.0.1-rc.0",
+    "@seed-design/react": "0.0.1-rc.1",
     "@seed-design/stackflow": "0.0.1-rc.0",
     "@stackflow/compat-await-push": "^1.1.13",
     "@stackflow/core": "^1.1.0",

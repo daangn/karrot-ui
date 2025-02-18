@@ -43,6 +43,7 @@
     "@seed-design/figma-v3-migration": "0.0.0"
   },
   "changesets": [
+    "dirty-dragons-nail",
     "empty-brooms-hammer"
   ]
 }
