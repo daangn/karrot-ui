@@ -23,6 +23,8 @@
       "require": "./lib/primitive.js",
       "import": "./lib/primitive.mjs"
     },
+    "./seed.css": "./lib/seed.css",
+    "./seed.min.css": "./lib/seed.min.css",
     "./package.json": "./package.json"
   },
   "main": "./lib/index.js",
@@ -63,7 +65,8 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.25.0",
+    "esbuild-plugin-copy": "^2.1.1"
   },
   "publishConfig": {
     "access": "public"

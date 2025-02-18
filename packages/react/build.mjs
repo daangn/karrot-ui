@@ -1,4 +1,5 @@
 import { build } from "esbuild";
+import { copy } from "esbuild-plugin-copy";
 
 import pkg from "./package.json" assert { type: "json" };
 
@@ -14,6 +15,15 @@ const baseConfig = {
   bundle: true,
   sourcemap: true,
   external,
+  plugins: [
+    copy({
+      resolveFrom: "cwd",
+      assets: {
+        from: ["../css/*.css"],
+        to: ["./lib"],
+      },
+    }),
+  ],
 };
 
 Promise.all([
