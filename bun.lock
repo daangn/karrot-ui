@@ -7,6 +7,8 @@
         "@biomejs/biome": "^1.9.3",
         "@changesets/cli": "^2.27.9",
         "@seed-design/figma-extractor": "workspace:*",
+        "@seed-design/qvism-cli": "workspace:*",
+        "@seed-design/rootage-cli": "workspace:*",
         "@testing-library/dom": "^10.1.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^16.0.0",
@@ -41,7 +43,6 @@
         "@seed-design/migration-index": "0.0.0",
         "@seed-design/react": "0.0.1-rc.0",
         "@seed-design/react-icon": "^0.7.3",
-        "@seed-design/rootage-cli": "0.0.0",
         "@seed-design/rootage-core": "0.0.0",
         "@seed-design/stackflow": "0.0.1-rc.0",
         "@stackflow/config": "^1.2.0",
@@ -195,10 +196,6 @@
     "packages/css": {
       "name": "@seed-design/css",
       "version": "0.0.1-rc.0",
-      "devDependencies": {
-        "@seed-design/qvism-cli": "0.0.0",
-        "@seed-design/rootage-cli": "0.0.0",
-      },
     },
     "packages/design-token": {
       "name": "@seed-design/design-token",
@@ -219,7 +216,6 @@
         "@seed-design/qvism-core": "0.0.0",
       },
       "devDependencies": {
-        "@seed-design/rootage-cli": "0.0.0",
         "esbuild": "^0.25.0",
       },
     },

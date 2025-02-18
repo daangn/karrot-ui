@@ -41,6 +41,8 @@
     "@biomejs/biome": "^1.9.3",
     "@changesets/cli": "^2.27.9",
     "@seed-design/figma-extractor": "workspace:*",
+    "@seed-design/qvism-cli": "workspace:*",
+    "@seed-design/rootage-cli": "workspace:*",
     "@testing-library/dom": "^10.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.0",
