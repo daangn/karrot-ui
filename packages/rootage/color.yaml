@@ -96,11 +96,11 @@ data:
     $color.palette.gray-200:
       values:
         theme-light: "#f3f4f5"
-        theme-dark: "#1b1d22"
+        theme-dark: "#1b1c22"
     $color.palette.gray-300:
       values:
         theme-light: "#eeeff1"
-        theme-dark: "#292c32"
+        theme-dark: "#2c2f35"
     $color.palette.gray-400:
       values:
         theme-light: "#dcdee3"
@@ -452,7 +452,7 @@ data:
     $color.bg.layer-floating-pressed:
       values:
         theme-light: $color.palette.gray-100
-        theme-dark: $color.palette.gray-400
+        theme-dark: $color.palette.gray-300
     $color.bg.magic-solid:
       values:
         theme-light: $color.palette.purple-700
@@ -552,7 +552,7 @@ data:
     $color.stroke.neutral:
       values:
         theme-light: $color.palette.gray-300
-        theme-dark: $color.palette.gray-400
+        theme-dark: $color.palette.gray-300
     $color.stroke.positive:
       values:
         theme-light: $color.palette.green-300
@@ -564,7 +564,7 @@ data:
     $color.stroke.neutral-muted:
       values:
         theme-light: $color.palette.gray-200
-        theme-dark: $color.palette.gray-300
+        theme-dark: $color.palette.gray-200
     $color.stroke.on-image:
       values:
         theme-light: $color.palette.static-black-alpha-50
