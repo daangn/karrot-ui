@@ -36,7 +36,6 @@
     "not ie 11"
   ],
   "scripts": {
-    "prepack": "bun run build",
     "build": "bun build.mjs && tsc --emitDeclarationOnly"
   },
   "peerDependencies": {

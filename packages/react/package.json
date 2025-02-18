@@ -31,7 +31,6 @@
     "src"
   ],
   "scripts": {
-    "prepack": "bun run build",
     "clean": "rm -rf lib",
     "build": "bun build.mjs && tsc --emitDeclarationOnly",
     "dev": "bun run dev.mjs"

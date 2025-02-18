@@ -21,7 +21,6 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "prepack": "bun run clean && bun run build",
     "build": "bun build.mjs && tsc",
     "qvism:build": "bun run build",
     "test": "vitest"

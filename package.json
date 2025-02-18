@@ -16,7 +16,7 @@
     "build": "ultra -r build",
     "build-only-package": "ultra -r --filter 'packages/*' build",
     "build-only-tools": "ultra -r --filter 'tools/*' build",
-    "release": "bun changeset publish",
+    "release": "bun build-only-package && bun changeset publish",
     "version": "changeset version && bun build-only-package && bun install --no-immutable",
     "format:all": "bun biome format --fix",
     "test:all": "bun vitest run",

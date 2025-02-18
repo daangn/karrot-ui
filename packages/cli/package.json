@@ -19,7 +19,6 @@
     "node": ">=18"
   },
   "scripts": {
-    "prepack": "bun run build",
     "build": "ENV=prod bun ./build.mjs",
     "dev": "ENV=dev bun ./dev.mjs",
     "test": "bun vitest"
