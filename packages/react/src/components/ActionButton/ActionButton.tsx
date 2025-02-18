@@ -11,6 +11,7 @@ import {
   usePendingButton,
   type UsePendingButtonProps,
 } from "../LoadingIndicator/usePendingButton";
+import { IconRequired } from "../Icon/Icon";
 
 const { ClassNamesProvider } = createStyleContext(actionButton);
 
@@ -21,7 +22,10 @@ export interface ActionButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
-  ({ variant, size, loading = false, layout = "withText", className, ...otherProps }, ref) => {
+  (
+    { variant, size, loading = false, layout = "withText", className, children, ...otherProps },
+    ref,
+  ) => {
     const classNames = actionButton({ variant, layout, size });
     const api = usePendingButton({ loading, disabled: otherProps.disabled });
 
@@ -34,12 +38,16 @@ export const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProp
     return (
       <ClassNamesProvider value={classNames}>
         <PendingButtonProvider value={api}>
-          <Primitive.button
-            ref={ref}
-            className={clsx(classNames.root, className)}
-            {...api.stateProps}
-            {...otherProps}
-          />
+          <IconRequired enabled={layout === "iconOnly"}>
+            <Primitive.button
+              ref={ref}
+              className={clsx(classNames.root, className)}
+              {...api.stateProps}
+              {...otherProps}
+            >
+              {children}
+            </Primitive.button>
+          </IconRequired>
         </PendingButtonProvider>
       </ClassNamesProvider>
     );

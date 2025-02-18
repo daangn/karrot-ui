@@ -7,7 +7,7 @@ import { VariantTable } from "./components/variant-table";
 import { IconBellFill, IconChevronDownFill } from "@daangn/react-monochrome-icon";
 import { SeedThemeDecorator } from "./components/decorator";
 import { createStoryWithParameters } from "@/stories/utils/parameters";
-import { Count, PrefixIcon, SuffixIcon } from "@seed-design/react";
+import { Count, Icon, PrefixIcon, SuffixIcon } from "@seed-design/react";
 
 const meta = {
   component: ActionChip,
@@ -31,7 +31,7 @@ const conditionMap = {
         </>
       ),
     },
-    iconOnly: { layout: "iconOnly", children: <IconBellFill /> },
+    iconOnly: { layout: "iconOnly", children: <Icon svg={<IconBellFill />} /> },
   },
 };
 

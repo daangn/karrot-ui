@@ -78,6 +78,9 @@ const controlChip = defineRecipe({
           gap: vars.sizeMedium.enabled.root.gap,
           fontSize: vars.sizeMedium.enabled.label.fontSize,
 
+          ...prefixIcon({ size: vars.sizeMedium.enabled.prefixIcon.size }),
+          ...suffixIcon({ size: vars.sizeMedium.enabled.suffixIcon.size }),
+          ...onlyIcon({ size: vars.sizeMediumLayoutIconOnly.enabled.icon.size }),
           ...count({
             fontSize: vars.sizeMedium.enabled.count.fontSize,
           }),
@@ -90,6 +93,9 @@ const controlChip = defineRecipe({
           gap: vars.sizeSmall.enabled.root.gap,
           fontSize: vars.sizeSmall.enabled.label.fontSize,
 
+          ...prefixIcon({ size: vars.sizeSmall.enabled.prefixIcon.size }),
+          ...suffixIcon({ size: vars.sizeSmall.enabled.suffixIcon.size }),
+          ...onlyIcon({ size: vars.sizeSmallLayoutIconOnly.enabled.icon.size }),
           ...count({
             fontSize: vars.sizeSmall.enabled.count.fontSize,
           }),
@@ -108,8 +114,6 @@ const controlChip = defineRecipe({
       css: {
         root: {
           paddingInline: vars.sizeMediumLayoutWithText.enabled.root.paddingX,
-          ...prefixIcon({ size: vars.sizeMedium.enabled.prefixIcon.size }),
-          ...suffixIcon({ size: vars.sizeMedium.enabled.suffixIcon.size }),
         },
       },
     },
@@ -119,7 +123,6 @@ const controlChip = defineRecipe({
       css: {
         root: {
           minWidth: vars.sizeMediumLayoutIconOnly.enabled.root.minWidth,
-          ...onlyIcon({ size: vars.sizeMediumLayoutIconOnly.enabled.icon.size }),
         },
       },
     },
@@ -129,8 +132,6 @@ const controlChip = defineRecipe({
       css: {
         root: {
           paddingInline: vars.sizeSmallLayoutWithText.enabled.root.paddingX,
-          ...prefixIcon({ size: vars.sizeSmall.enabled.prefixIcon.size }),
-          ...suffixIcon({ size: vars.sizeSmall.enabled.suffixIcon.size }),
         },
       },
     },
@@ -140,7 +141,6 @@ const controlChip = defineRecipe({
       css: {
         root: {
           minWidth: vars.sizeSmallLayoutIconOnly.enabled.root.minWidth,
-          ...onlyIcon({ size: vars.sizeSmallLayoutIconOnly.enabled.icon.size }),
         },
       },
     },

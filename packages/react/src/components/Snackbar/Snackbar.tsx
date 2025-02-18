@@ -6,7 +6,7 @@ import { visuallyHidden } from "@seed-design/css/recipes/visually-hidden";
 import clsx from "clsx";
 import { forwardRef, useMemo } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
-import { Icon, type IconProps } from "../private/Icon";
+import { InternalIcon, type InternalIconProps } from "../private/Icon";
 
 const { withProvider: withRegionProvider } = createStyleContext(snackbarRegion);
 const { withProvider, withContext } = createStyleContext(snackbar);
@@ -48,10 +48,10 @@ export const SnackbarMessage = withContext<HTMLDivElement, SnackbarMessageProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface SnackbarPrefixIconProps extends IconProps {}
+export interface SnackbarPrefixIconProps extends InternalIconProps {}
 
 export const SnackbarPrefixIcon = withContext<HTMLDivElement, SnackbarPrefixIconProps>(
-  Icon,
+  InternalIcon,
   "prefixIcon",
 );
 

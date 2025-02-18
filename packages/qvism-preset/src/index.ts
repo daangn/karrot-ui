@@ -28,20 +28,18 @@ export default {
       position: "absolute",
       display: "inline-flex",
     },
-    "[data-seed-icon], .seed-only-icon": {
+    ".seed-icon, .seed-prefix-icon, .seed-suffix-icon": {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
       flexShrink: 0,
-      width: "var(--seed-only-icon-size)",
-      height: "var(--seed-only-icon-size)",
-      color: "var(--seed-only-icon-color, currentColor)",
+    },
+    ".seed-icon": {
+      width: "var(--seed-icon-size)",
+      height: "var(--seed-icon-size)",
+      color: "var(--seed-icon-color, currentColor)",
     },
     ".seed-prefix-icon": {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
       width: "var(--seed-prefix-icon-size)",
       height: "var(--seed-prefix-icon-size)",
       marginLeft: "var(--seed-prefix-icon-margin-left)",
@@ -50,10 +48,6 @@ export default {
       color: "var(--seed-prefix-icon-color, currentColor)",
     },
     ".seed-suffix-icon": {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexShrink: 0,
       width: "var(--seed-suffix-icon-size)",
       height: "var(--seed-suffix-icon-size)",
       marginLeft: "var(--seed-suffix-icon-margin-left)",

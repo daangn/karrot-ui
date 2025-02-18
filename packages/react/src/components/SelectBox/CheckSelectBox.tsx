@@ -4,7 +4,7 @@ import { selectBox } from "@seed-design/css/recipes/select-box";
 import { selectBoxGroup } from "@seed-design/css/recipes/select-box-group";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon, type IconProps } from "../private/Icon";
+import { InternalIcon, type InternalIconProps } from "../private/Icon";
 import { forwardRef } from "react";
 
 const { withProvider: withGroupProvider } = createStyleContext(selectBoxGroup);
@@ -67,10 +67,10 @@ export const CheckSelectBoxControl = withContext<HTMLDivElement, CheckSelectBoxC
   "checkboxControl",
 );
 
-export interface CheckSelectBoxIconProps extends IconProps {}
+export interface CheckSelectBoxIconProps extends InternalIconProps {}
 
 export const CheckSelectBoxIcon = withContext<SVGSVGElement, CheckSelectBoxIconProps>(
-  withStateProps(Icon),
+  withStateProps(InternalIcon),
   "checkboxIcon",
 );
 

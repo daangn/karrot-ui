@@ -7,7 +7,7 @@ import type * as React from "react";
 import { forwardRef, useCallback, useRef } from "react";
 import { createStyleContext } from "../../utils/createStyleContext";
 import { createWithStateProps } from "../../utils/createWithStateProps";
-import { Icon, type IconProps } from "../private/Icon";
+import { InternalIcon, type InternalIconProps } from "../private/Icon";
 import { composeRefs } from "@radix-ui/react-compose-refs";
 
 const { withProvider, withContext, useClassNames } = createStyleContext(textField);
@@ -77,10 +77,10 @@ export const TextFieldField = withContext<HTMLDivElement, TextFieldFieldProps>(
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface TextFieldPrefixIconProps extends IconProps {}
+export interface TextFieldPrefixIconProps extends InternalIconProps {}
 
 export const TextFieldPrefixIcon = withContext<SVGSVGElement, TextFieldPrefixIconProps>(
-  withStateProps(Icon),
+  withStateProps(InternalIcon),
   "prefixIcon",
 );
 
@@ -97,10 +97,10 @@ export const TextFieldPrefixText = withContext<HTMLSpanElement, TextFieldPrefixT
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface TextFieldSuffixIconProps extends IconProps {}
+export interface TextFieldSuffixIconProps extends InternalIconProps {}
 
 export const TextFieldSuffixIcon = withContext<SVGSVGElement, TextFieldSuffixIconProps>(
-  withStateProps(Icon),
+  withStateProps(InternalIcon),
   "suffixIcon",
 );
 
@@ -219,10 +219,10 @@ export const TextFieldErrorMessage = withContext<HTMLSpanElement, TextFieldError
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface TextFieldErrorIconProps extends IconProps {}
+export interface TextFieldErrorIconProps extends InternalIconProps {}
 
 export const TextFieldErrorIcon = withContext<SVGSVGElement, TextFieldErrorIconProps>(
-  withStateProps(Icon),
+  withStateProps(InternalIcon),
   "errorIcon",
 );
 
