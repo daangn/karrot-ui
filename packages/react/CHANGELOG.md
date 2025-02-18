@@ -1,5 +1,11 @@
 # @seed-design/react
 
+## 0.0.1-rc.1
+
+### Patch Changes
+
+- 6ee6544: re-export stylesheet from @seed-design/css package.
+
 ## 0.0.1-rc.0
 
 ### Patch Changes
