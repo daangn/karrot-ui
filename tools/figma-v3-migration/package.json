@@ -1,5 +1,7 @@
 {
-  "name": "figma-v3-migration",
+  "name": "@seed-design/figma-v3-migration",
+  "private": true,
+  "version": "0.0.0",
   "dependencies": {
     "@create-figma-plugin/ui": "^3.2.1",
     "@create-figma-plugin/utilities": "^3.2.1",
