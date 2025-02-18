@@ -92,8 +92,5 @@
         ]
       }
     }
-  },
-  "patchedDependencies": {
-    "fumadocs-ui@15.0.8": "patches/fumadocs-ui@15.0.8.patch"
   }
 }
